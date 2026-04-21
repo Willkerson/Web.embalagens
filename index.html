@@ -3,34 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Catálogo completo de embalagens e caixas de papelão. Qualidade, variedade e preços competitivos.">
-    <meta name="theme-color" content="#2563eb">
-    <title>Catálogo de Embalagens | Caixas e Papelão de Qualidade</title>
+    <title>Catálogo | Cia das Embalagens</title>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        
+
         :root {
+            /* Cores Dinâmicas */
             --primary: #2563eb;
             --primary-dark: #1e40af;
             --secondary: #10b981;
             --text-dark: #1f2937;
-            --text-light: #6b7280;
             --bg-light: #f9fafb;
             --border: #e5e7eb;
             --white: #ffffff;
         }
-        
+
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
             color: var(--text-dark);
             background-color: var(--bg-light);
             line-height: 1.6;
         }
-        
-        a { text-decoration: none; color: inherit; }
-        button { font-family: inherit; cursor: pointer; border: none; transition: all 0.3s ease; }
-        
-        /* Header e Hero */
+
+        /* Transição suave para a mudança de cor */
+        header, .hero, .filter-btn, .product-btn, .category-title {
+            transition: all 0.4s ease;
+        }
+
         header {
             background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
             color: var(--white);
@@ -38,113 +37,61 @@
             position: sticky;
             top: 0;
             z-index: 100;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
         }
-        
-        .header-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        
-        .logo { font-size: 24px; font-weight: 700; display: flex; align-items: center; gap: 8px; }
-        
-        .contact-btn {
-            background: var(--secondary);
-            color: var(--white);
-            padding: 8px 16px;
-            border-radius: 6px;
-            font-size: 14px;
-            font-weight: 600;
-        }
-        
+
+        .header-container { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; }
+
         .hero {
             background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
-            color: var(--white);
-            padding: 3rem 1rem;
-            text-align: center;
+            color: var(--white); padding: 3rem 1rem; text-align: center;
         }
 
-        /* Menu de Filtros e Cores Ativas */
         main { max-width: 1200px; margin: 0 auto; padding: 2rem 1rem; }
-        
         .filters-wrapper { margin-bottom: 2rem; }
         .filters, .submenu { display: flex; gap: 8px; flex-wrap: wrap; justify-content: center; }
-        
-        .submenu { 
-            margin-top: 12px; 
-            display: none; 
-            padding: 10px; 
-            background: #eef2ff; 
-            border-radius: 8px; 
-        }
-        
-        .filter-btn {
-            padding: 10px 20px;
-            border: 2px solid var(--border);
-            background: var(--white);
-            color: var(--text-dark);
-            border-radius: 6px;
-            font-weight: 600;
-            font-size: 14px;
+
+        .submenu {
+            margin-top: 12px; display: none; padding: 15px;
+            background: #eef2ff; border-radius: 8px; border: 1px solid var(--border);
         }
 
-        /* Classe que aplica a cor quando clicado */
+        .filter-btn {
+            padding: 10px 20px; border: 2px solid var(--border);
+            background: var(--white); color: var(--text-dark);
+            border-radius: 6px; font-weight: 600; cursor: pointer;
+        }
+
         .filter-btn.active {
             background: var(--primary) !important;
             color: var(--white) !important;
             border-color: var(--primary) !important;
         }
-        
-        .filter-btn:hover { border-color: var(--primary); color: var(--primary); }
 
-        /* Estilo dos Produtos */
         .category-section { margin-bottom: 3rem; }
         .category-title {
-            font-size: 1.8rem;
-            font-weight: 700;
-            margin-bottom: 1.5rem;
-            color: var(--text-dark);
-            padding-bottom: 1rem;
-            border-bottom: 3px solid var(--primary);
-            display: inline-block;
+            font-size: 1.8rem; font-weight: 700; margin-bottom: 1.5rem;
+            border-bottom: 3px solid var(--primary); display: inline-block;
         }
-        
-        .products-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-            gap: 1.5rem;
-        }
-        
+
+        .products-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 1.5rem; }
+
         .product-card {
-            background: var(--white);
-            border: 1px solid var(--border);
-            border-radius: 8px;
-            overflow: hidden;
-            transition: all 0.3s ease;
-            cursor: pointer;
+            background: var(--white); border: 1px solid var(--border);
+            border-radius: 8px; overflow: hidden; cursor: pointer;
         }
-        
-        .product-card:hover { transform: translateY(-8px); box-shadow: 0 12px 24px rgba(0,0,0,0.1); }
+
         .product-image { width: 100%; height: 180px; background: #f3f4f6; display: flex; align-items: center; justify-content: center; font-size: 64px; }
         .product-content { padding: 1.5rem; }
-        .product-name { font-size: 1.1rem; font-weight: 700; margin-bottom: 0.5rem; }
         .product-price { font-size: 1.3rem; font-weight: 700; color: var(--primary); margin-bottom: 1rem; }
         .product-btn { width: 100%; padding: 10px; background: var(--primary); color: var(--white); border-radius: 6px; font-weight: 600; }
 
-        /* Modal */
-        .modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); z-index: 1000; align-items: center; justify-content: center; padding: 1rem; }
+        .modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); z-index: 1000; align-items: center; justify-content: center; }
         .modal.active { display: flex; }
-        .modal-content { background: var(--white); border-radius: 8px; padding: 2rem; max-width: 500px; width: 100%; position: relative; }
-        .modal-close { position: absolute; top: 1rem; right: 1rem; font-size: 20px; }
+        .modal-content { background: var(--white); border-radius: 8px; padding: 2rem; max-width: 500px; width: 90%; position: relative; }
+        .modal-close { position: absolute; top: 1rem; right: 1rem; cursor: pointer; }
 
-        /* Footer (Recuperado) */
-        footer { background: var(--text-dark); color: var(--white); padding: 3rem 1rem; text-align: center; margin-top: 3rem; }
-        .footer-title { font-size: 1.2rem; font-weight: 700; margin-bottom: 1rem; }
+        footer { background: var(--text-dark); color: var(--white); padding: 3rem 1rem; text-align: center; }
         .contact-link { color: #10b981; font-weight: 600; }
-        .copyright { font-size: 0.9rem; color: rgba(255,255,255,0.6); margin-top: 2rem; padding-top: 1rem; border-top: 1px solid rgba(255,255,255,0.1); }
     </style>
 </head>
 <body>
@@ -152,95 +99,111 @@
     <header>
         <div class="header-container">
             <div class="logo">📦 Cia das embalagens</div>
-            <button class="contact-btn" onclick="scrollToContact()">Contato</button>
+            <button class="filter-btn" style="background: var(--secondary); color: white; border: none;" onclick="scrollToContact()">Contato</button>
         </div>
     </header>
-    
+
     <div class="hero">
-        <div class="hero-container">
-            <h1>Soluções Completas em Embalagens</h1>
-            <p>Caixas de papelão, envelopes e personalizados com qualidade garantida.</p>
-        </div>
+        <h1>Soluções Completas em Embalagens</h1>
+        <p>Qualidade e variedade para o seu negócio.</p>
     </div>
-    
+
     <main>
         <div class="filters-wrapper">
             <div class="filters">
-                <button class="filter-btn active" data-filter="todos" onclick="applyFilter('todos', 'todos', this)">Todos os Produtos</button>
-                <button class="filter-btn" data-filter="caixas" onclick="toggleSubmenu(this)">Caixas ▾</button>
-                <button class="filter-btn" data-filter="envelopes" onclick="applyFilter('envelopes', 'todos', this)">Envelopes</button>
-                <button class="filter-btn" data-filter="corrugado" onclick="applyFilter('corrugado', 'todos', this)">Papelão</button>
-                <button class="filter-btn" data-filter="personalizados" onclick="applyFilter('personalizados', 'todos', this)">Personalizados</button>
+                <button class="filter-btn active" data-filter="todos" onclick="handleMenuClick(this)">Todos</button>
+                <button class="filter-btn" data-filter="caixas" data-target="submenu-caixas" onclick="handleMenuClick(this)">Caixas ▾</button>
+                <button class="filter-btn" data-filter="sacos" data-target="submenu-sacos" onclick="handleMenuClick(this)">Sacos ▾</button>
+                <button class="filter-btn" data-filter="corrugado" onclick="handleMenuClick(this)">Papelão</button>
             </div>
 
             <div class="submenu" id="submenu-caixas">
-                <button class="filter-btn" onclick="applyFilter('caixas', 'todos', this)">Todas as Caixas</button>
-                <button class="filter-btn" onclick="applyFilter('caixas', 'correios', this)">Padrão Correios</button>
-                <button class="filter-btn" onclick="applyFilter('caixas', 'estilo', this)">Outros Estilos</button>
+                <button class="filter-btn" onclick="applyFilter('caixas', 'todos', this); mudarCorTema('#2563eb')">Todas</button>
+                <button class="filter-btn" onclick="applyFilter('caixas', 'Correios', this)">Correios</button>
+                <button class="filter-btn" onclick="applyFilter('caixas', 'Bolo', this)">Bolo</button>
+                <button class="filter-btn" onclick="applyFilter('caixas', 'Pizza', this)">Pizza</button>
+            </div>
+
+            <div class="submenu" id="submenu-sacos">
+                <button class="filter-btn" onclick="applyFilter('sacos', 'todos', this); mudarCorTema('#2563eb')">Todas</button>
+                <button class="filter-btn" onclick="applyFilter('sacos', 'Preta', this); mudarCorTema('#1f2937')">Preta</button>
+                <button class="filter-btn" onclick="applyFilter('sacos', 'Branca', this); mudarCorTema('#94a3b8')">Branca</button>
+                <button class="filter-btn" onclick="applyFilter('sacos', 'Verde', this); mudarCorTema('#22c55e')">Verde</button>
             </div>
         </div>
-        
+
         <div id="productsContainer"></div>
     </main>
 
     <div class="modal" id="modal">
         <div class="modal-content">
-            <button class="modal-close" onclick="closeModal()">✕</button>
+            <span class="modal-close" onclick="closeModal()">✕</span>
             <div id="modalEmoji" style="font-size: 48px; text-align: center;"></div>
-            <h2 id="modalTitle" style="text-align: center;"></h2>
+            <h2 id="modalTitle" style="text-align: center; margin-top: 10px;"></h2>
             <div id="modalSpecs" style="margin: 1.5rem 0;"></div>
-            <div id="modalPrice" class="product-price" style="text-align: center; background: #dbeafe; padding: 10px; border-radius: 5px;"></div>
-            <button class="product-btn" style="margin-top: 20px;" onclick="sendMessage('Olá! Gostaria de um orçamento.')">Solicitar Orçamento</button>
+            <div id="modalPrice" class="product-price" style="text-align: center;"></div>
+            <button class="product-btn" onclick="sendMessage()">Solicitar Orçamento</button>
         </div>
     </div>
 
-    <footer id="contact">
-        <div class="footer-title">📞 Entre em Contato</div>
+   <footer id="contact">
+        <div class="footer-title">📍 Nossa Loja</div>
+        <p class="address-text">Av. Paula Ferreira, 2871 - Vila Pereira Barreto<br>São Paulo - SP, 02915-100</p>
+        <div class="footer-title">📞 Contatos</div>
         <p>WhatsApp: <a href="https://wa.me/5511972999835" class="contact-link">+55 11 97299-9835</a></p>
         <p>Instagram: <a href="https://www.instagram.com/ciadasembalagens_/" class="contact-link">@ciadasembalagens_</a></p>
-        
-        <div class="copyright">
-            © 2026 CIA EMBALAGENS. Todos os direitos reservados.
-        </div>
     </footer>
 
-    <script>
-        const produtos = [
-            { id: 1, nome: "Caixa tipo Nº0 CORREIOS", categoria: "caixas", sub: "correios", emoji: "📦", descricao: "Pequenos itens", preco: "R$ 2,80", specs: { "Dimensões": "16x11x03cm", "Material": "Ondulado" } },
-            { id: 2, nome: "Caixa tipo Nº1 CORREIOS", categoria: "caixas", sub: "correios", emoji: "📫", descricao: "Itens médios", preco: "R$ 1,50", specs: { "Dimensões": "20x13x07cm", "Material": "Ondulado" } },
-            { id: 3, nome: "Caixa tipo Nº2 CORREIOS", categoria: "caixas", sub: "correios", emoji: "📦", descricao: "Reforçada", preco: "R$ 3,20", specs: { "Dimensões": "27x18x09cm", "Material": "Ondulado" } },
-            { id: 4, nome: "Caixa tipo Nº3 CORREIOS", categoria: "caixas", sub: "correios", emoji: "📦", descricao: "Envios Sedex", preco: "R$ 3,20", specs: { "Dimensões": "31x22x12cm", "Material": "Ondulado" } },
-            { id: 5, nome: "Caixa tipo Nº4 CORREIOS", categoria: "caixas", sub: "correios", emoji: "📦", descricao: "Envios Grandes", preco: "R$ 3,20", specs: { "Dimensões": "31x22x12cm", "Material": "Ondulado" } },
-            { id: 7, nome: "Caixa com Divisórias", categoria: "caixas", sub: "estilo", emoji: "📊", descricao: "Organização", preco: "R$ 2,10", specs: { "Tipo": "Colmeia", "Material": "Resistente" } },
-            { id: 8, nome: "Caixa com Tampa Separada", categoria: "caixas", sub: "estilo", emoji: "🎁", descricao: "Para presentes", preco: "R$ 4,50", specs: { "Acabamento": "Premium", "Cor": "Branca" } },
-            { id: 6, nome: "Caixa Customizada Logo", categoria: "personalizados", sub: "todos", emoji: "🎨", descricao: "Sua marca aqui", preco: "Sob consulta", specs: { "Mínimo": "100 un", "Impressão": "Offset" } },
-            { id: 9, nome: "Papelão Liso Branco", categoria: "corrugado", sub: "todos", emoji: "🧾", descricao: "Folhas para corte", preco: "R$ 35,00/m²", specs: { "Espessura": "2mm", "Cor": "Branco" } }
-        ];
 
+  <script>
+    const produtos = [
+        // --- CAIXAS ---
+        { id: 1, nome: "Caixa Tipo Nº0 CORREIOS", categoria: "caixas", sub: "Correios", emoji: "📫", preco: "R$ 2,80", specs: { "Dimensões": "16x11x03cm", "Material": "Ondulado" } },
+        { id: 2, nome: "Caixa Tipo Nº1 CORREIOS", categoria: "caixas", sub: "Correios", emoji: "📫", preco: "R$ 1,50", specs: { "Dimensões": "20x13x07cm", "Material": "Ondulado" } },
+        { id: 3, nome: "Caixa Tipo Nº2 CORREIOS", categoria: "caixas", sub: "Correios", emoji: "📫", preco: "R$ 3,20", specs: { "Dimensões": "27x18x09cm", "Material": "Ondulado" } },
+        { id: 4, nome: "Caixa Tipo Nº3 CORREIOS", categoria: "caixas", sub: "Correios", emoji: "📫", preco: "R$ 3,20", specs: { "Dimensões": "31x22x12cm", "Material": "Ondulado" } },
+        { id: 5, nome: "Caixa Tipo Nº4 CORREIOS", categoria: "caixas", sub: "Correios", emoji: "📫", preco: "R$ 3,20", specs: { "Dimensões": "31x22x12cm", "Material": "Ondulado" } },
+        { id: 6, nome: "CAIXA 22X11X0.5", categoria: "caixas", sub: "todos", emoji: "📦", preco: "R$ 3,20", specs: { "Dimensões": "22x11x0.5" } },
+        { id: 7, nome: "Caixa De Bolo Nº9", categoria: "caixas", sub: "Bolo", emoji: "🍰", preco: "R$ 2,10", specs: { "Tipo": "Bolo" } },
+        { id: 8, nome: "Caixa De Bolo Nº7 MEDIA", categoria: "caixas", sub: "Bolo", emoji: "🍰", preco: "R$ 2,10", specs: { "Tamanho": "Média" } },
+        { id: 9, nome: "Caixa De Bolo Nº7 ALTA", categoria: "caixas", sub: "Bolo", emoji: "🍰", preco: "R$ 2,10", specs: { "Tamanho": "Alta" } },
+        { id: 10, nome: "Caixa De Pizza", categoria: "caixas", sub: "Pizza", emoji: "🍕", preco: "R$ 3,20", specs: { "Dimensões": "35x35cm" } },
+
+        // --- SACOLAS PRETAS (NOVAS MEDIDAS) ---
+        { id: 12, nome: "Sacola Preta 45x60", categoria: "sacos", sub: "Preta", emoji: "🛍️", preco: "Sob consulta", specs: { "Medida": "45x60", "Cor": "Preta" } },
+        { id: 13, nome: "Sacola Preta 60x80", categoria: "sacos", sub: "Preta", emoji: "🛍️", preco: "Sob consulta", specs: { "Medida": "60x80", "Cor": "Preta" } },
+        { id: 14, nome: "Sacola Preta 90x100", categoria: "sacos", sub: "Preta", emoji: "🛍️", preco: "Sob consulta", specs: { "Medida": "90x100", "Cor": "Preta" } },
+        { id: 15, nome: "Sacola Preta 40x50", categoria: "sacos", sub: "Preta", emoji: "🛍️", preco: "Sob consulta", specs: { "Medida": "40x50", "Cor": "Preta" } },
+        { id: 16, nome: "Sacola Preta 30x40", categoria: "sacos", sub: "Preta", emoji: "🛍️", preco: "Sob consulta", specs: { "Medida": "30x40", "Cor": "Preta" } },
+        { id: 17, nome: "Sacola Preta 35x45", categoria: "sacos", sub: "Preta", emoji: "🛍️", preco: "Sob consulta", specs: { "Medida": "35x45", "Cor": "Preta" } },
+
+        // --- OUTROS ---
+        { id: 11, nome: "Papelão Corrugado", categoria: "corrugado", sub: "todos", emoji: "🧾", preco: "R$ 15,00", specs: { "Tipo": "Rolo" } }
+    ];
         let currentCat = "todos";
         let currentSub = "todos";
+
+        // FUNÇÃO NOVA: Muda a cor do tema
+        function mudarCorTema(cor) {
+            const root = document.documentElement;
+            root.style.setProperty('--primary', cor);
+            // Se for preto, deixa o dark como preto puro, senão escurece um pouco a cor base
+            root.style.setProperty('--primary-dark', cor === '#1f2937' ? '#000000' : cor);
+        }
 
         function renderProducts() {
             const container = document.getElementById("productsContainer");
             container.innerHTML = "";
+            const filtered = produtos.filter(p => (currentCat === "todos" || p.categoria === currentCat) && (currentSub === "todos" || p.sub === currentSub));
 
-            let filtered = produtos.filter(p => {
-                const matchCat = currentCat === "todos" || p.categoria === currentCat;
-                const matchSub = currentSub === "todos" || p.sub === currentSub;
-                return matchCat && matchSub;
-            });
-
-            const sections = { caixas: "Caixas de Papelão", envelopes: "Envelopes", corrugado: "Papelão Corrugado", personalizados: "Produtos Personalizados" };
+            const sections = { caixas: "Caixas", sacos: "Sacos e Sacolas", corrugado: "Papelão" };
             const grouped = {};
-            filtered.forEach(p => {
-                if (!grouped[p.categoria]) grouped[p.categoria] = [];
-                grouped[p.categoria].push(p);
-            });
+            filtered.forEach(p => { if(!grouped[p.categoria]) grouped[p.categoria] = []; grouped[p.categoria].push(p); });
 
             Object.entries(grouped).forEach(([cat, items]) => {
                 const section = document.createElement("div");
                 section.className = "category-section";
-                section.innerHTML = `<h2 class="category-title">${sections[cat]}</h2>`;
+                section.innerHTML = `<h2 class="category-title">${sections[cat] || cat}</h2>`;
                 const grid = document.createElement("div");
                 grid.className = "products-grid";
                 items.forEach(prod => {
@@ -259,40 +222,24 @@
             });
         }
 
-        function toggleSubmenu(btn) {
-            const sub = document.getElementById("submenu-caixas");
-            const isOpen = sub.style.display === "flex";
-            
-            // Fecha todos e remove cores
+        function handleMenuClick(btn) {
+            const cat = btn.getAttribute('data-filter');
+            const targetId = btn.getAttribute('data-target');
+            document.querySelectorAll('.filters .filter-btn').forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
             document.querySelectorAll('.submenu').forEach(s => s.style.display = 'none');
-            
-            if (!isOpen) {
-                sub.style.display = "flex";
-                applyFilter('caixas', 'todos', btn);
-            } else {
-                sub.style.display = "none";
-                applyFilter('todos', 'todos', document.querySelector('[data-filter="todos"]'));
-            }
+            if(targetId) document.getElementById(targetId).style.display = 'flex';
+
+            mudarCorTema('#2563eb'); // Volta ao azul padrão ao mudar categoria principal
+            currentCat = cat; currentSub = "todos"; renderProducts();
         }
 
         function applyFilter(cat, sub, btn) {
-            currentCat = cat;
-            currentSub = sub;
-
-            // Gerenciar cores dos botões
-            if (btn) {
-                // Se for botão do submenu, limpa apenas outros do submenu
-                if (btn.parentElement.classList.contains('submenu')) {
-                    document.querySelectorAll('.submenu .filter-btn').forEach(b => b.classList.remove('active'));
-                } else {
-                    // Se for menu principal, limpa tudo
-                    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
-                }
+            currentCat = cat; currentSub = sub;
+            if(btn) {
+                btn.parentElement.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
                 btn.classList.add('active');
             }
-
-            if(cat !== 'caixas') document.getElementById("submenu-caixas").style.display = "none";
-            
             renderProducts();
         }
 
@@ -301,21 +248,12 @@
             document.getElementById("modalEmoji").textContent = prod.emoji;
             document.getElementById("modalTitle").textContent = prod.nome;
             document.getElementById("modalPrice").textContent = prod.preco;
-            let specs = "";
-            for (let [key, val] of Object.entries(prod.specs)) { specs += `<p><strong>${key}:</strong> ${val}</p>`; }
-            document.getElementById("modalSpecs").innerHTML = specs;
             document.getElementById("modal").classList.add("active");
         }
 
         function closeModal() { document.getElementById("modal").classList.remove("active"); }
-
-        function sendMessage(msg) {
-            window.open(`https://wa.me/5511972999835?text=${encodeURIComponent(msg)}`, "_blank");
-        }
-
-        function scrollToContact() {
-            document.getElementById("contact").scrollIntoView({ behavior: "smooth" });
-        }
+        function sendMessage() { window.open("https://wa.me/5511972999835", "_blank"); }
+        function scrollToContact() { document.getElementById("contact").scrollIntoView({ behavior: "smooth" }); }
 
         renderProducts();
     </script>
