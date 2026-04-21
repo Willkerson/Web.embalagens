@@ -4,7 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Catálogo completo de embalagens e caixas de papelão. Qualidade, variedade e preços competitivos.">
-
+    <meta name="theme-color" content="#2563eb">
+    <title>Catálogo de Embalagens | Caixas e Papelão de Qualidade</title>
+    <style>
         * {
             margin: 0;
             padding: 0;
@@ -114,8 +116,7 @@
             padding: 2rem 1rem;
         }
         
-        /* FILTRO PRINCIPAL */
-        .filters-main {
+        .filters {
             display: flex;
             gap: 8px;
             margin-bottom: 2rem;
@@ -123,7 +124,7 @@
             justify-content: center;
         }
         
-        .filter-btn-main {
+        .filter-btn {
             padding: 10px 20px;
             border: 2px solid var(--border);
             background: var(--white);
@@ -134,60 +135,12 @@
             transition: all 0.3s ease;
         }
         
-        .filter-btn-main:hover {
+        .filter-btn:hover {
             border-color: var(--primary);
             color: var(--primary);
         }
         
-        .filter-btn-main.active {
-            background: var(--primary);
-            color: var(--white);
-            border-color: var(--primary);
-        }
-        
-        /* FILTRO SECUNDÁRIO (Subcategorias) */
-        .filters-sub {
-            display: flex;
-            gap: 8px;
-            margin-bottom: 2rem;
-            flex-wrap: wrap;
-            justify-content: center;
-            padding: 1rem;
-            background: var(--white);
-            border-radius: 8px;
-            border: 1px solid var(--border);
-        }
-        
-        .filters-sub.hidden {
-            display: none;
-        }
-        
-        .sub-category-title {
-            width: 100%;
-            text-align: center;
-            font-weight: 600;
-            color: var(--primary);
-            margin-bottom: 0.75rem;
-            font-size: 14px;
-        }
-        
-        .filter-btn-sub {
-            padding: 8px 16px;
-            border: 1px solid var(--border);
-            background: var(--white);
-            color: var(--text-dark);
-            border-radius: 6px;
-            font-weight: 500;
-            font-size: 13px;
-            transition: all 0.3s ease;
-        }
-        
-        .filter-btn-sub:hover {
-            background: #f0f7ff;
-            border-color: var(--primary);
-        }
-        
-        .filter-btn-sub.active {
+        .filter-btn.active {
             background: var(--primary);
             color: var(--white);
             border-color: var(--primary);
@@ -205,18 +158,6 @@
             padding-bottom: 1rem;
             border-bottom: 3px solid var(--primary);
             display: inline-block;
-            animation: fadeInDown 0.6s ease-out;
-        }
-
-        @keyframes fadeInDown {
-            from {
-                opacity: 0;
-                transform: translateY(-20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
         }
         
         .products-grid {
@@ -233,7 +174,6 @@
             transition: all 0.3s ease;
             cursor: pointer;
             box-shadow: 0 1px 3px rgba(0,0,0,0.1);
-            animation: fadeInUp 0.5s ease-out;
         }
         
         .product-card:hover {
@@ -269,19 +209,6 @@
             margin-bottom: 0.75rem;
         }
         
-        .product-subcategory {
-            display: inline-block;
-            background: #d1fae5;
-            color: var(--secondary);
-            padding: 4px 12px;
-            border-radius: 20px;
-            font-size: 11px;
-            font-weight: 700;
-            text-transform: uppercase;
-            margin-left: 0.5rem;
-            margin-bottom: 0.75rem;
-        }
-        
         .product-name {
             font-size: 1.1rem;
             font-weight: 700;
@@ -293,6 +220,23 @@
             font-size: 0.9rem;
             color: var(--text-light);
             margin-bottom: 1rem;
+        }
+        
+        .product-specs {
+            font-size: 0.85rem;
+            color: var(--text-light);
+            margin-bottom: 1rem;
+            padding-top: 1rem;
+            border-top: 1px solid var(--border);
+        }
+        
+        .spec-item {
+            margin-bottom: 0.5rem;
+        }
+        
+        .spec-label {
+            font-weight: 600;
+            color: var(--text-dark);
         }
         
         .product-price {
@@ -449,8 +393,6 @@
             background: var(--primary);
             color: var(--white);
         }
-
-
         
         /* Footer */
         footer {
@@ -509,23 +451,7 @@
             border-top: 1px solid rgba(255,255,255,0.2);
         }
         
-        .no-products {
-            text-align: center;
-            padding: 2rem;
-            color: var(--text-light);
-        }
-        
         /* Responsive */
-        @media (max-width: 1024px) {
-            .location-container {
-                grid-template-columns: 1fr;
-            }
-
-            .location-map {
-                height: 300px;
-            }
-        }
-
         @media (max-width: 768px) {
             .hero h1 {
                 font-size: 1.8rem;
@@ -544,14 +470,12 @@
                 flex-direction: column;
                 gap: 1rem;
             }
-
-            .location-title {
-                font-size: 1.4rem;
-            }
-
-            .location-map {
-                height: 250px;
-            }
+        }
+        
+        .no-products {
+            text-align: center;
+            padding: 2rem;
+            color: var(--text-light);
         }
     </style>
 </head>
@@ -576,19 +500,17 @@
     
     <!-- Main Content -->
     <main>
-        <!-- FILTRO PRINCIPAL -->
-        <div class="filters-main" id="mainFilters"></div>
-        
-        <!-- FILTRO SECUNDÁRIO (Subcategorias) -->
-        <div class="filters-sub hidden" id="subFilters">
-            <div class="sub-category-title" id="subCategoryTitle"></div>
-            <div id="subFilterBtns"></div>
+        <!-- Filters -->
+        <div class="filters">
+            <button class="filter-btn active" onclick="filterProducts('todos')">Todos os Produtos</button>
+            <button class="filter-btn" onclick="filterProducts('caixas')">Caixas</button>
+            <button class="filter-btn" onclick="filterProducts('envelopes')">Envelopes</button>
+            <button class="filter-btn" onclick="filterProducts('corrugado')">Papelão Corrugado</button>
+            <button class="filter-btn" onclick="filterProducts('personalizados')">Personalizados</button>
         </div>
         
         <!-- Produtos -->
         <div id="productsContainer"></div>
-
-
     </main>
     
     <!-- Modal -->
@@ -609,36 +531,16 @@
     <!-- Footer -->
     <footer id="contact">
         <div class="footer-content">
-            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-bottom: 2rem; text-align: left;">
-                <!-- Contato -->
-                <div class="footer-contact">
-                    <div class="footer-title">📞 Entre em Contato</div>
-                    <p style="margin: 1rem 0; font-size: 1rem;">
-                        <strong>WhatsApp:</strong><br>
-                        <a href="https://api.whatsapp.com/send?phone=5511972999835&text=Olá, visualizei o catálogo online e gostaria de mais informações" style="color: #10b981; font-weight: 600; font-size: 1.1rem;">+55 11 97299-9835</a>
-                    </p>
-                    <p style="margin: 1rem 0; font-size: 1rem;">
-                        <strong>Instagram:</strong><br>
-                        <a href="https://www.instagram.com/ciadasembalagens_/" style="color: #10b981; font-weight: 600; font-size: 1rem;">@ciadasembalagens_</a>
-                    </p>
-                </div>
-
-                <!-- Endereço -->
-                <div class="footer-contact">
-                    <div class="footer-title">📍 Localização</div>
-                    <p style="margin: 1rem 0; font-size: 1rem; line-height: 1.8;">
-                        <strong>Av. Paula Ferreira, 2871</strong><br>
-                        Vila Pereira Barreto<br>
-                        São Paulo - SP<br>
-                        CEP: 02915-100
-                    </p>
-                    <a href="https://maps.google.com/?q=Av.+Paula+Ferreira,+2871,+São+Paulo" target="_blank" style="color: #10b981; font-weight: 600; text-decoration: underline;">Abrir no Google Maps →</a>
-                </div>
+            <div class="footer-contact">
+                <div class="footer-title">📞 Entre em Contato</div>
+                <p style="margin: 0.5rem 0;">WhatsApp: <a href="https://api.whatsapp.com/send?phone=5511972999835&text=Ol%C3%A1%2C+visualizei+a+propaganda+no+Instagram+gostaria+de+saber+se+tem+cobertura+a+minha+regi%C3%A3o&utm_source=ig&utm_medium=social&utm_content=link_in_bio&fbclid=PAZXh0bgNhZW0CMTEAc3J0YwZhcHBfaWQMMjU2MjgxMDQwNTU4AAGnCg-gAQOUArFA07cd6ueBdzTRq7wlmIIXWR79wyV76SbxGRMsgKXdF4JPHjw_aem_Ds5V5fY5OItpTYWKlhmYfQ" style="color: #10b981; font-weight: 600;">+55 11 97299-9835</a></p>
+                <p style="margin: 0.5rem 0;">Instagram: <a href="https://www.instagram.com/ciadasembalagens_/" style="color: #10b981; font-weight: 600;">Instagram.com/ciadasembalagens_/</a></p>
             </div>
             
             <div class="social-links">
-                <a href="https://www.instagram.com/ciadasembalagens_/" target="_blank" class="social-btn" title="Instagram">📱</a>
-                <a href="https://api.whatsapp.com/send?phone=5511972999835&text=Olá, visualizei o catálogo online" target="_blank" class="social-btn" title="WhatsApp">💬</a>
+                <a href="https://instagram.com/embalagensdev" class="social-btn" title="Instagram">📱</a>
+    
+                <a href="https://wa.me/5511999999999" class="social-btn" title="WhatsApp">💬</a>
             </div>
             
             <div class="copyright">
@@ -646,31 +548,29 @@
                 Desenvolvido para melhorar sua experiência de compra online.
             </div>
         </div>
-
-        // ========================
-        // PRODUTOS - ADICIONE AQUI
-        // ========================
+    </footer>
+    
+    <!-- Modal -->
+    <script>
         const produtos = [
-            // CAIXAS - CORREIOS
             {
                 id: 1,
-                nome: "Caixa tipo Nº0 CORREIOS",
+                nome: "Caixa tipo Nº0 CORREIOS ",
                 categoria: "caixas",
-                subcategoria: "correios",
                 emoji: "📦",
                 descricao: "Perfeita para pequenos itens e produtos leves",
                 preco: "R$ 2,80",
                 specs: {
                     "Dimensões": "16cm x 11cm x 03cm",
-                    "Material": "Papelão ondulado",
+                    "Material": "Papelão ondulado ",
                     "Acabamento": "Com reforço interno"
+                
                 }
             },
             {
                 id: 2,
                 nome: "Caixa tipo Nº1 CORREIOS",
                 categoria: "caixas",
-                subcategoria: "correios",
                 emoji: "📫",
                 descricao: "Perfeita para pequenos itens e produtos leves",
                 preco: "R$ 1,50",
@@ -678,13 +578,14 @@
                     "Dimensões": "20cm x 13cm x 07cm",
                     "Material": "Papelão ondulado",
                     "Acabamento": "Com reforço interno"
+           
+    
                 }
             },
             {
                 id: 3,
                 nome: "Caixa tipo Nº2 CORREIOS",
                 categoria: "caixas",
-                subcategoria: "correios",
                 emoji: "📦",
                 descricao: "Perfeita para pequenos itens e produtos leves",
                 preco: "R$ 3,20",
@@ -694,25 +595,23 @@
                     "Acabamento": "Com reforço interno"
                 }
             },
-            {
+             {
                 id: 4,
                 nome: "Caixa tipo Nº3 CORREIOS",
                 categoria: "caixas",
-                subcategoria: "correios",
                 emoji: "📦",
                 descricao: "Perfeita para pequenos itens e produtos leves",
                 preco: "R$ 3,20",
                 specs: {
                     "Dimensões": "31cm x 22cm x 12cm",
-                    "Material": "Papelão ondulado",
+                    "Material": "Papelão ondulado ",
                     "Acabamento": "Com reforço interno"
                 }
             },
-            {
+      {
                 id: 5,
                 nome: "Caixa tipo Nº4 CORREIOS",
                 categoria: "caixas",
-                subcategoria: "correios",
                 emoji: "📦",
                 descricao: "Perfeita para pequenos itens e produtos leves",
                 preco: "R$ 3,20",
@@ -722,13 +621,24 @@
                     "Acabamento": "Com reforço interno"
                 }
             },
-
-            // CAIXAS - OUTRAS (não Correios)
             {
                 id: 6,
+                nome: "Caixa Customizada com Logo",
+                categoria: "personalizados",
+                emoji: "🎨",
+                descricao: "Sua marca impressa com qualidade profissional",
+                preco: "Sob consulta",
+                specs: {
+                    "Dimensões": "Personalizado conforme seu projeto",
+                    "Impressão": "Offset de até 4 cores",
+                    "Material": "Papelão premium 100% reciclado",
+                    "Quantidade Mínima": "100 unidades"
+                }
+            },
+            {
+                id: 7,
                 nome: "Caixa com Divisórias",
                 categoria: "caixas",
-                subcategoria: "outras",
                 emoji: "📊",
                 descricao: "Organização perfeita para produtos variados",
                 preco: "R$ 2,10",
@@ -740,10 +650,9 @@
                 }
             },
             {
-                id: 7,
+                id: 8,
                 nome: "Caixa com Tampa Separada",
-                categoria: "caixas",
-                subcategoria: "outras",
+                categoria: "personalizados",
                 emoji: "🎁",
                 descricao: "Premium para presentes e artigos de valor",
                 preco: "R$ 4,50",
@@ -754,30 +663,10 @@
                     "Quantidade Mínima": "50 unidades"
                 }
             },
-
-            // PERSONALIZADOS
-            {
-                id: 8,
-                nome: "Caixa Customizada com Logo",
-                categoria: "personalizados",
-                subcategoria: "impressas",
-                emoji: "🎨",
-                descricao: "Sua marca impressa com qualidade profissional",
-                preco: "Sob consulta",
-                specs: {
-                    "Dimensões": "Personalizado conforme seu projeto",
-                    "Impressão": "Offset de até 4 cores",
-                    "Material": "Papelão premium 100% reciclado",
-                    "Quantidade Mínima": "100 unidades"
-                }
-            },
-
-            // PAPELÃO CORRUGADO
             {
                 id: 9,
                 nome: "Papelão Liso Branco",
                 categoria: "corrugado",
-                subcategoria: "branco",
                 emoji: "🧾",
                 descricao: "Ideal para impressão direta de seus designs",
                 preco: "R$ 35,00/m²",
@@ -789,129 +678,40 @@
                 }
             }
         ];
-
-        // ========================
-        // CONFIGURAÇÃO DE CATEGORIAS
-        // ========================
-        const categoriesConfig = {
-            "caixas": {
-                label: "Caixas de Papelão",
-                subcategorias: [
-                    { id: "correios", label: "Caixas Correios" },
-                    { id: "outras", label: "Outras Caixas" }
-                ]
-            },
-            "personalizados": {
-                label: "Produtos Personalizados",
-                subcategorias: [
-                    { id: "impressas", label: "Caixas Impressas" }
-                ]
-            },
-            "corrugado": {
-                label: "Papelão Corrugado",
-                subcategorias: [
-                    { id: "branco", label: "Papelão Branco" }
-                ]
-            }
-        };
-
-        let currentCategory = null;
-        let currentSubcategory = "todos";
-
-        // Criar filtros principais
-        function renderMainFilters() {
-            const container = document.getElementById("mainFilters");
-            container.innerHTML = '<button class="filter-btn-main active" onclick="filterByCategory(null)">Todos os Produtos</button>';
-            
-            Object.entries(categoriesConfig).forEach(([key, config]) => {
-                const btn = document.createElement("button");
-                btn.className = "filter-btn-main";
-                btn.textContent = config.label;
-                btn.onclick = () => filterByCategory(key);
-                container.appendChild(btn);
-            });
-        }
-
-        // Filtrar por categoria principal
-        function filterByCategory(category) {
-            currentCategory = category;
-            currentSubcategory = "todos";
-
-            // Atualizar botões principais
-            document.querySelectorAll(".filter-btn-main").forEach(btn => btn.classList.remove("active"));
-            event.target.classList.add("active");
-
-            // Mostrar/ocultar filtros secundários
-            const subFiltersContainer = document.getElementById("subFilters");
-            if (category && categoriesConfig[category]) {
-                document.getElementById("subCategoryTitle").textContent = `Tipos de ${categoriesConfig[category].label.toLowerCase()}:`;
-                renderSubFilters(category);
-                subFiltersContainer.classList.remove("hidden");
-            } else {
-                subFiltersContainer.classList.add("hidden");
-            }
-
-            renderProducts();
-        }
-
-        // Criar filtros secundários
-        function renderSubFilters(category) {
-            const container = document.getElementById("subFilterBtns");
-            container.innerHTML = '<button class="filter-btn-sub active" onclick="filterBySubcategory(\'todos\')">Todos</button>';
-            
-            const subcats = categoriesConfig[category].subcategorias;
-            subcats.forEach(subcat => {
-                const btn = document.createElement("button");
-                btn.className = "filter-btn-sub";
-                btn.textContent = subcat.label;
-                btn.onclick = () => filterBySubcategory(subcat.id);
-                container.appendChild(btn);
-            });
-        }
-
-        // Filtrar por subcategoria
-        function filterBySubcategory(subcat) {
-            currentSubcategory = subcat;
-            
-            document.querySelectorAll(".filter-btn-sub").forEach(btn => btn.classList.remove("active"));
-            event.target.classList.add("active");
-            
-            renderProducts();
-        }
-
-        // Renderizar produtos
+        
+        let currentFilter = "todos";
+        
         function renderProducts() {
             const container = document.getElementById("productsContainer");
             container.innerHTML = "";
             
-            let filtered = produtos;
-
-            // Filtrar por categoria principal
-            if (currentCategory) {
-                filtered = filtered.filter(p => p.categoria === currentCategory);
-            }
-
-            // Filtrar por subcategoria
-            if (currentSubcategory !== "todos" && currentCategory) {
-                filtered = filtered.filter(p => p.subcategoria === currentSubcategory);
-            }
-
+            const filtered = currentFilter === "todos" 
+                ? produtos 
+                : produtos.filter(p => p.categoria === currentFilter);
+            
             if (filtered.length === 0) {
                 container.innerHTML = '<div class="no-products">Nenhum produto encontrado nesta categoria.</div>';
                 return;
             }
-
+            
             // Agrupar por categoria
             const grouped = {};
             filtered.forEach(p => {
                 if (!grouped[p.categoria]) grouped[p.categoria] = [];
                 grouped[p.categoria].push(p);
             });
-
+            
+            const categoryNames = {
+                caixas: "Caixas de Papelão",
+                envelopes: "Envelopes",
+                corrugado: "Papelão Corrugado",
+                personalizados: "Produtos Personalizados"
+            };
+            
             Object.entries(grouped).forEach(([cat, prods]) => {
                 const section = document.createElement("div");
                 section.className = "category-section";
-                section.innerHTML = `<h2 class="category-title">${categoriesConfig[cat]?.label || cat}</h2>`;
+                section.innerHTML = `<h2 class="category-title">${categoryNames[cat]}</h2>`;
                 
                 const grid = document.createElement("div");
                 grid.className = "products-grid";
@@ -921,14 +721,10 @@
                     card.className = "product-card";
                     card.onclick = () => openModal(produto);
                     
-                    const subcatLabel = categoriesConfig[produto.categoria]?.subcategorias
-                        .find(s => s.id === produto.subcategoria)?.label || '';
-                    
                     card.innerHTML = `
                         <div class="product-image">${produto.emoji}</div>
                         <div class="product-content">
                             <span class="product-category">${produto.categoria}</span>
-                            ${subcatLabel ? `<span class="product-subcategory">${subcatLabel}</span>` : ''}
                             <h3 class="product-name">${produto.nome}</h3>
                             <p class="product-desc">${produto.descricao}</p>
                             <div class="product-price">${produto.preco}</div>
@@ -943,7 +739,14 @@
                 container.appendChild(section);
             });
         }
-
+        
+        function filterProducts(categoria) {
+            currentFilter = categoria;
+            document.querySelectorAll(".filter-btn").forEach(btn => btn.classList.remove("active"));
+            event.target.classList.add("active");
+            renderProducts();
+        }
+        
         function openModal(produto) {
             document.getElementById("modalEmoji").textContent = produto.emoji;
             document.getElementById("modalTitle").textContent = produto.nome;
@@ -962,26 +765,24 @@
             document.getElementById("modalSpecs").innerHTML = specsHTML;
             document.getElementById("modal").classList.add("active");
         }
-
+        
         function closeModal() {
             document.getElementById("modal").classList.remove("active");
         }
-
+        
         function sendMessage(text) {
-            const whatsappLink = "https://api.whatsapp.com/send?phone=5511972999835&text=" + encodeURIComponent(text);
+            const whatsappLink = "https://wa.me/5511999999999?text=" + encodeURIComponent(text);
             window.open(whatsappLink, "_blank");
         }
-
+        
         function scrollToContact() {
             document.getElementById("contact").scrollIntoView({ behavior: "smooth" });
         }
-
+        
         document.getElementById("modal").onclick = function(e) {
             if (e.target === this) closeModal();
         };
-
-        // Inicializar
-        renderMainFilters();
+        
         renderProducts();
     </script>
 </body>
