@@ -1,0 +1,791 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Catálogo completo de embalagens e caixas de papelão. Qualidade, variedade e preços competitivos.">
+    <meta name="theme-color" content="#2563eb">
+    <title>Catálogo de Embalagens | Caixas e Papelão de Qualidade</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        :root {
+            --primary: #2563eb;
+            --primary-dark: #1e40af;
+            --secondary: #10b981;
+            --text-dark: #1f2937;
+            --text-light: #6b7280;
+            --bg-light: #f9fafb;
+            --border: #e5e7eb;
+            --white: #ffffff;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            color: var(--text-dark);
+            background-color: var(--bg-light);
+            line-height: 1.6;
+        }
+        
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+        
+        button {
+            font-family: inherit;
+            cursor: pointer;
+            border: none;
+            transition: all 0.3s ease;
+        }
+        
+        /* Header e Hero */
+        header {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            color: var(--white);
+            padding: 2rem 1rem;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        
+        .header-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 24px;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .contact-btn {
+            background: var(--secondary);
+            color: var(--white);
+            padding: 8px 16px;
+            border-radius: 6px;
+            font-size: 14px;
+            font-weight: 600;
+        }
+        
+        .contact-btn:hover {
+            background: #059669;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(16, 185, 129, 0.4);
+        }
+        
+        .hero {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            color: var(--white);
+            padding: 3rem 1rem;
+            text-align: center;
+        }
+        
+        .hero-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+        
+        .hero p {
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+            opacity: 0.95;
+        }
+        
+        /* Main Content */
+        main {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem 1rem;
+        }
+        
+        .filters {
+            display: flex;
+            gap: 8px;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        
+        .filter-btn {
+            padding: 10px 20px;
+            border: 2px solid var(--border);
+            background: var(--white);
+            color: var(--text-dark);
+            border-radius: 6px;
+            font-weight: 600;
+            font-size: 14px;
+            transition: all 0.3s ease;
+        }
+        
+        .filter-btn:hover {
+            border-color: var(--primary);
+            color: var(--primary);
+        }
+        
+        .filter-btn.active {
+            background: var(--primary);
+            color: var(--white);
+            border-color: var(--primary);
+        }
+        
+        .category-section {
+            margin-bottom: 3rem;
+        }
+        
+        .category-title {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            color: var(--text-dark);
+            padding-bottom: 1rem;
+            border-bottom: 3px solid var(--primary);
+            display: inline-block;
+        }
+        
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+            gap: 1.5rem;
+        }
+        
+        .product-card {
+            background: var(--white);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+        
+        .product-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 24px rgba(0,0,0,0.15);
+            border-color: var(--primary);
+        }
+        
+        .product-image {
+            width: 100%;
+            height: 180px;
+            background: linear-gradient(135deg, #f3f4f6 0%, #e5e7eb 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 64px;
+            border-bottom: 1px solid var(--border);
+        }
+        
+        .product-content {
+            padding: 1.5rem;
+        }
+        
+        .product-category {
+            display: inline-block;
+            background: #dbeafe;
+            color: var(--primary);
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 11px;
+            font-weight: 700;
+            text-transform: uppercase;
+            margin-bottom: 0.75rem;
+        }
+        
+        .product-name {
+            font-size: 1.1rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            color: var(--text-dark);
+        }
+        
+        .product-desc {
+            font-size: 0.9rem;
+            color: var(--text-light);
+            margin-bottom: 1rem;
+        }
+        
+        .product-specs {
+            font-size: 0.85rem;
+            color: var(--text-light);
+            margin-bottom: 1rem;
+            padding-top: 1rem;
+            border-top: 1px solid var(--border);
+        }
+        
+        .spec-item {
+            margin-bottom: 0.5rem;
+        }
+        
+        .spec-label {
+            font-weight: 600;
+            color: var(--text-dark);
+        }
+        
+        .product-price {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+        
+        .product-btn {
+            width: 100%;
+            padding: 10px;
+            background: var(--primary);
+            color: var(--white);
+            border-radius: 6px;
+            font-weight: 600;
+            font-size: 14px;
+        }
+        
+        .product-btn:hover {
+            background: var(--primary-dark);
+            transform: scale(1.02);
+        }
+        
+        /* Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 1000;
+            align-items: center;
+            justify-content: center;
+            padding: 1rem;
+        }
+        
+        .modal.active {
+            display: flex;
+        }
+        
+        .modal-content {
+            background: var(--white);
+            border-radius: 8px;
+            padding: 2rem;
+            max-width: 600px;
+            width: 100%;
+            max-height: 90vh;
+            overflow-y: auto;
+            position: relative;
+        }
+        
+        .modal-close {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: var(--bg-light);
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            color: var(--text-light);
+            transition: all 0.3s ease;
+        }
+        
+        .modal-close:hover {
+            background: var(--primary);
+            color: var(--white);
+        }
+        
+        .modal-emoji {
+            font-size: 48px;
+            text-align: center;
+            margin-bottom: 1rem;
+        }
+        
+        .modal-title {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            color: var(--text-dark);
+        }
+        
+        .specs-container {
+            margin-bottom: 2rem;
+        }
+        
+        .spec-group {
+            margin-bottom: 1.5rem;
+        }
+        
+        .spec-group-label {
+            font-size: 12px;
+            font-weight: 700;
+            color: var(--text-light);
+            text-transform: uppercase;
+            margin-bottom: 0.5rem;
+        }
+        
+        .spec-group-value {
+            font-size: 1rem;
+            color: var(--text-dark);
+            font-weight: 500;
+        }
+        
+        .modal-price {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+            padding: 1rem;
+            background: #dbeafe;
+            border-radius: 6px;
+            text-align: center;
+        }
+        
+        .modal-actions {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+        }
+        
+        .action-btn {
+            padding: 12px;
+            border-radius: 6px;
+            font-weight: 600;
+            font-size: 14px;
+            transition: all 0.3s ease;
+        }
+        
+        .action-btn-primary {
+            background: var(--primary);
+            color: var(--white);
+        }
+        
+        .action-btn-primary:hover {
+            background: var(--primary-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(37, 99, 235, 0.4);
+        }
+        
+        .action-btn-secondary {
+            background: var(--bg-light);
+            color: var(--primary);
+            border: 2px solid var(--primary);
+        }
+        
+        .action-btn-secondary:hover {
+            background: var(--primary);
+            color: var(--white);
+        }
+        
+        /* Footer */
+        footer {
+            background: var(--text-dark);
+            color: var(--white);
+            padding: 2rem 1rem;
+            text-align: center;
+            margin-top: 3rem;
+        }
+        
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .footer-contact {
+            margin-bottom: 1.5rem;
+        }
+        
+        .footer-title {
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+        
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin: 1.5rem 0;
+        }
+        
+        .social-btn {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-weight: 700;
+            transition: all 0.3s ease;
+        }
+        
+        .social-btn:hover {
+            background: var(--primary);
+            transform: translateY(-4px);
+        }
+        
+        .copyright {
+            font-size: 0.9rem;
+            color: rgba(255,255,255,0.7);
+            margin-top: 1.5rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid rgba(255,255,255,0.2);
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+            
+            .products-grid {
+                grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+                gap: 1rem;
+            }
+            
+            .modal-actions {
+                grid-template-columns: 1fr;
+            }
+            
+            .header-container {
+                flex-direction: column;
+                gap: 1rem;
+            }
+        }
+        
+        .no-products {
+            text-align: center;
+            padding: 2rem;
+            color: var(--text-light);
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                📦 Embalagens Pro
+            </div>
+            <button class="contact-btn" onclick="scrollToContact()">Contato</button>
+        </div>
+    </header>
+    
+    <!-- Hero -->
+    <div class="hero">
+        <div class="hero-container">
+            <h1>Soluções Completas em Embalagens</h1>
+            <p>Caixas de papelão, envelopes e embalagens personalizadas para sua empresa. Qualidade garantida com preços competitivos.</p>
+        </div>
+    </div>
+    
+    <!-- Main Content -->
+    <main>
+        <!-- Filters -->
+        <div class="filters">
+            <button class="filter-btn active" onclick="filterProducts('todos')">Todos os Produtos</button>
+            <button class="filter-btn" onclick="filterProducts('caixas')">Caixas</button>
+            <button class="filter-btn" onclick="filterProducts('envelopes')">Envelopes</button>
+            <button class="filter-btn" onclick="filterProducts('corrugado')">Papelão Corrugado</button>
+            <button class="filter-btn" onclick="filterProducts('personalizados')">Personalizados</button>
+        </div>
+        
+        <!-- Produtos -->
+        <div id="productsContainer"></div>
+    </main>
+    
+    <!-- Modal -->
+    <div class="modal" id="modal">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeModal()">✕</button>
+            <div class="modal-emoji" id="modalEmoji"></div>
+            <h2 class="modal-title" id="modalTitle"></h2>
+            <div class="specs-container" id="modalSpecs"></div>
+            <div class="modal-price" id="modalPrice"></div>
+            <div class="modal-actions">
+                <button class="action-btn action-btn-primary" onclick="sendMessage('Quero fazer um orçamento para este produto')">Orçamento</button>
+                <button class="action-btn action-btn-secondary" onclick="sendMessage('Posso customizar este produto com meu logo?')">Customizar</button>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Footer -->
+    <footer id="contact">
+        <div class="footer-content">
+            <div class="footer-contact">
+                <div class="footer-title">📞 Entre em Contato</div>
+                <p style="margin: 0.5rem 0;">WhatsApp: <a href="https://wa.me/5511999999999" style="color: #10b981; font-weight: 600;">+55 11 99999-9999</a></p>
+                <p style="margin: 0.5rem 0;">Email: <a href="mailto:contato@embalagensdev.com.br" style="color: #10b981; font-weight: 600;">contato@embalagensdev.com.br</a></p>
+            </div>
+            
+            <div class="social-links">
+                <a href="https://instagram.com/embalagensdev" class="social-btn" title="Instagram">📱</a>
+                <a href="https://facebook.com/embalagensdev" class="social-btn" title="Facebook">f</a>
+                <a href="https://wa.me/5511999999999" class="social-btn" title="WhatsApp">💬</a>
+            </div>
+            
+            <div class="copyright">
+                © 2024 Embalagens Pro. Todos os direitos reservados.<br>
+                Desenvolvido para melhorar sua experiência de compra online.
+            </div>
+        </div>
+    </footer>
+    
+    <!-- Modal -->
+    <script>
+        const produtos = [
+            {
+                id: 1,
+                nome: "Caixa Pequena Padrão",
+                categoria: "caixas",
+                emoji: "📦",
+                descricao: "Perfeita para pequenos itens e produtos leves",
+                preco: "R$ 0,80",
+                specs: {
+                    "Dimensões": "10 x 10 x 10 cm",
+                    "Material": "Papelão ondulado 2 mm",
+                    "Quantidade Mínima": "100 unidades",
+                    "Acabamento": "Natural ou impresso"
+                }
+            },
+            {
+                id: 2,
+                nome: "Caixa Média Reforçada",
+                categoria: "caixas",
+                emoji: "📫",
+                descricao: "Ideal para produtos mais pesados",
+                preco: "R$ 1,50",
+                specs: {
+                    "Dimensões": "20 x 15 x 15 cm",
+                    "Material": "Papelão ondulado 3 mm",
+                    "Quantidade Mínima": "50 unidades",
+                    "Acabamento": "Com alças ou abas"
+                }
+            },
+            {
+                id: 3,
+                nome: "Caixa Grande Especial",
+                categoria: "caixas",
+                emoji: "📦",
+                descricao: "Para cargas maiores e volume elevado",
+                preco: "R$ 3,20",
+                specs: {
+                    "Dimensões": "40 x 30 x 25 cm",
+                    "Material": "Papelão ondulado 4 mm",
+                    "Quantidade Mínima": "25 unidades",
+                    "Acabamento": "Com reforço interno"
+                }
+            },
+            {
+                id: 4,
+                nome: "Envelope de Papelão",
+                categoria: "envelopes",
+                emoji: "✉️",
+                descricao: "Proteção segura para documentos e pequenos itens",
+                preco: "R$ 0,45",
+                specs: {
+                    "Dimensões": "25 x 35 cm",
+                    "Material": "Papelão 1 mm",
+                    "Quantidade Mínima": "500 unidades",
+                    "Acabamento": "Com aba adesiva"
+                }
+            },
+            {
+                id: 5,
+                nome: "Papelão Corrugado em Bobina",
+                categoria: "corrugado",
+                emoji: "🎀",
+                descricao: "Para proteção, amortecimento e embalagem",
+                preco: "R$ 45,00/m²",
+                specs: {
+                    "Espessura": "2 ou 3 mm",
+                    "Formato": "Bobina contínua",
+                    "Largura": "Até 1,5 m",
+                    "Quantidade Mínima": "50 m²"
+                }
+            },
+            {
+                id: 6,
+                nome: "Caixa Customizada com Logo",
+                categoria: "personalizados",
+                emoji: "🎨",
+                descricao: "Sua marca impressa com qualidade profissional",
+                preco: "Sob consulta",
+                specs: {
+                    "Dimensões": "Personalizado conforme seu projeto",
+                    "Impressão": "Offset de até 4 cores",
+                    "Material": "Papelão premium 100% reciclado",
+                    "Quantidade Mínima": "100 unidades"
+                }
+            },
+            {
+                id: 7,
+                nome: "Caixa com Divisórias",
+                categoria: "caixas",
+                emoji: "📊",
+                descricao: "Organização perfeita para produtos variados",
+                preco: "R$ 2,10",
+                specs: {
+                    "Dimensões": "30 x 20 x 15 cm",
+                    "Divisões": "Customizáveis de acordo com a necessidade",
+                    "Material": "Papelão ondulado resistente",
+                    "Quantidade Mínima": "50 unidades"
+                }
+            },
+            {
+                id: 8,
+                nome: "Caixa com Tampa Separada",
+                categoria: "personalizados",
+                emoji: "🎁",
+                descricao: "Premium para presentes e artigos de valor",
+                preco: "R$ 4,50",
+                specs: {
+                    "Dimensões": "25 x 25 x 15 cm",
+                    "Material": "Papelão premium branco de alta qualidade",
+                    "Acabamento": "Tampa articulada e fechamento elegante",
+                    "Quantidade Mínima": "50 unidades"
+                }
+            },
+            {
+                id: 9,
+                nome: "Papelão Liso Branco",
+                categoria: "corrugado",
+                emoji: "🧾",
+                descricao: "Ideal para impressão direta de seus designs",
+                preco: "R$ 35,00/m²",
+                specs: {
+                    "Espessura": "1 ou 2 mm",
+                    "Cor": "Branco puro brilhante",
+                    "Formato": "Bobina ou folhas cortadas",
+                    "Quantidade Mínima": "100 m²"
+                }
+            }
+        ];
+        
+        let currentFilter = "todos";
+        
+        function renderProducts() {
+            const container = document.getElementById("productsContainer");
+            container.innerHTML = "";
+            
+            const filtered = currentFilter === "todos" 
+                ? produtos 
+                : produtos.filter(p => p.categoria === currentFilter);
+            
+            if (filtered.length === 0) {
+                container.innerHTML = '<div class="no-products">Nenhum produto encontrado nesta categoria.</div>';
+                return;
+            }
+            
+            // Agrupar por categoria
+            const grouped = {};
+            filtered.forEach(p => {
+                if (!grouped[p.categoria]) grouped[p.categoria] = [];
+                grouped[p.categoria].push(p);
+            });
+            
+            const categoryNames = {
+                caixas: "Caixas de Papelão",
+                envelopes: "Envelopes",
+                corrugado: "Papelão Corrugado",
+                personalizados: "Produtos Personalizados"
+            };
+            
+            Object.entries(grouped).forEach(([cat, prods]) => {
+                const section = document.createElement("div");
+                section.className = "category-section";
+                section.innerHTML = `<h2 class="category-title">${categoryNames[cat]}</h2>`;
+                
+                const grid = document.createElement("div");
+                grid.className = "products-grid";
+                
+                prods.forEach(produto => {
+                    const card = document.createElement("div");
+                    card.className = "product-card";
+                    card.onclick = () => openModal(produto);
+                    
+                    card.innerHTML = `
+                        <div class="product-image">${produto.emoji}</div>
+                        <div class="product-content">
+                            <span class="product-category">${produto.categoria}</span>
+                            <h3 class="product-name">${produto.nome}</h3>
+                            <p class="product-desc">${produto.descricao}</p>
+                            <div class="product-price">${produto.preco}</div>
+                            <button class="product-btn">Ver Detalhes</button>
+                        </div>
+                    `;
+                    
+                    grid.appendChild(card);
+                });
+                
+                section.appendChild(grid);
+                container.appendChild(section);
+            });
+        }
+        
+        function filterProducts(categoria) {
+            currentFilter = categoria;
+            document.querySelectorAll(".filter-btn").forEach(btn => btn.classList.remove("active"));
+            event.target.classList.add("active");
+            renderProducts();
+        }
+        
+        function openModal(produto) {
+            document.getElementById("modalEmoji").textContent = produto.emoji;
+            document.getElementById("modalTitle").textContent = produto.nome;
+            document.getElementById("modalPrice").textContent = produto.preco;
+            
+            let specsHTML = "";
+            Object.entries(produto.specs).forEach(([label, valor]) => {
+                specsHTML += `
+                    <div class="spec-group">
+                        <div class="spec-group-label">${label}</div>
+                        <div class="spec-group-value">${valor}</div>
+                    </div>
+                `;
+            });
+            
+            document.getElementById("modalSpecs").innerHTML = specsHTML;
+            document.getElementById("modal").classList.add("active");
+        }
+        
+        function closeModal() {
+            document.getElementById("modal").classList.remove("active");
+        }
+        
+        function sendMessage(text) {
+            const whatsappLink = "https://wa.me/5511999999999?text=" + encodeURIComponent(text);
+            window.open(whatsappLink, "_blank");
+        }
+        
+        function scrollToContact() {
+            document.getElementById("contact").scrollIntoView({ behavior: "smooth" });
+        }
+        
+        document.getElementById("modal").onclick = function(e) {
+            if (e.target === this) closeModal();
+        };
+        
+        renderProducts();
+    </script>
+</body>
+</html>
