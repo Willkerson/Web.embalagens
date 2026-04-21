@@ -172,14 +172,19 @@
         /* ========================================== */
         /* HERO SECTION (BANNER PRINCIPAL)            */
         /* ========================================== */
-        .hero {
+           .hero {
             position: relative;
             min-height: 95vh;
             display: flex;
             align-items: center;
             justify-content: center;
-            /* Azul mais claro no gradiente conforme solicitado */
-            background: linear-gradient(135deg, var(--azul-600) 0%, var(--azul-400) 100%);
+
+            /* Imagem de fundo com uma máscara azul escurecida para dar contraste ao texto */
+            background: linear-gradient(rgba(15, 23, 42, 0.75), rgba(37, 99, 235, 0.65)), url('lojafundo.png');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+
             overflow: hidden;
             padding: 8rem 1.5rem 6rem;
             text-align: center;
@@ -1296,127 +1301,25 @@
          * Base de Dados dos Produtos (Ampliando o escopo B2B)
          * Propriedades: id, nome, categoria, icone, descricao, preco, unidade, especificacoes
          */
-  const listaProdutos = [
-    // --- CATEGORIA: CAIXAS (SEDEX / CORREIOS) ---
-    {
-        id: 1,
-        nome: "Caixa Tipo Nº0 CORREIOS",
-        categoria: "caixas",
-        sub: "Correios",
-        emoji: "📫",
-        preco: "R$ 3,50",
-        descricao: "Perfeita para e-commerce de pequenos acessórios, joias e peças eletrônicas.",
-        specs: { "Dimensões": "16x11x07cm", "Material": "Papelão Ondulado", "Padrão": "Envios Sedex/PAC" }
-    },
-    {
-        id: 2,
-        nome: "Caixa Tipo Nº1 CORREIOS",
-        categoria: "caixas",
-        sub: "Correios",
-        emoji: "📫",
-        preco: "R$ 4,60",
-        descricao: "O tamanho intermediário ideal para cosméticos, perfumes e miudezas em geral.",
-        specs: { "Dimensões": "21x15x6.5cm", "Material": "Papelão Ondulado", "Padrão": "Envios Sedex/PAC" }
-    },
-    {
-        id: 3,
-        nome: "Caixa Tipo Nº2 CORREIOS",
-        categoria: "caixas",
-        sub: "Correios",
-        emoji: "📫",
-        preco: "R$ 5,60",
-        descricao: "Extrema versatilidade para e-commerce de vestuário, livros e kits médios.",
-        specs: { "Dimensões": "26x17x08cm", "Material": "Papelão Ondulado", "Padrão": "Envios Sedex/PAC" }
-    },
-    {
-        id: 4,
-        nome: "Caixa Tipo Nº3 CORREIOS",
-        categoria: "caixas",
-        sub: "Correios",
-        emoji: "📫",
-        preco: "R$ 8,80",
-        descricao: "Acomoda produtos volumosos com segurança. Ideal para calçados e utensílios.",
-        specs: { "Dimensões": "30x20x11cm", "Material": "Papelão Ondulado", "Padrão": "Envios Sedex/PAC" }
-    },
-    {
-        id: 5,
-        nome: "Caixa Tipo Nº4 CORREIOS",
-        categoria: "caixas",
-        sub: "Correios",
-        emoji: "📫",
-        preco: "R$ 13,00",
-        descricao: "Modelo de grande capacidade para itens pesados ou múltiplos envios.",
-        specs: { "Dimensões": "34x27x11cm", "Material": "Papelão Ondulado", "Padrão": "Envios Sedex/PAC" }
-    },
-    {
-        id: 11,
-        nome: "Caixa De Celular",
-        categoria: "caixas",
-        sub: "Correios",
-        emoji: "📱",
-        preco: "R$ 2,50",
-        descricao: "Segurança máxima para transporte de smartphones e eletrônicos finos.",
-        specs: { "Dimensões": "35x35cm", "Material": "Ondulado Resistente" }
-    },
+ const listaProdutos = [
+            // CATEGORIA: SEDEX / CORREIOS
+            { id: 1, nome: "Caixa Nº0 Padrão Envios", categoria: "sedex", icone: "ph-package", descricao: "Perfeita para e-commerce de pequenos acessórios, joias e peças eletrônicas.", preco: 2.80, unidade: "/unidade", especificacoes: { "Medidas Externas": "16 x 11 x 03 cm", "Tipo de Onda": "Onda B (Simples)", "Gramatura": "400g/m²", "Coluna (ECT)": "4 kgf/cm" } },
+            { id: 2, nome: "Caixa Nº1 Padrão Envios", categoria: "sedex", icone: "ph-box-arrow-up", descricao: "O tamanho intermediário ideal para cosméticos, perfumes e miudezas em geral.", preco: 3.50, unidade: "/unidade", especificacoes: { "Medidas Externas": "20 x 13 x 07 cm", "Tipo de Onda": "Onda B (Simples)", "Gramatura": "400g/m²", "Coluna (ECT)": "4 kgf/cm" } },
+            { id: 3, nome: "Caixa Nº2 Padrão Envios", categoria: "sedex", icone: "ph-archive-box", descricao: "Extrema versatilidade para e-commerce de vestuário, livros e kits médios.", preco: 4.20, unidade: "/unidade", especificacoes: { "Medidas Externas": "27 x 18 x 09 cm", "Tipo de Onda": "Onda C (Média)", "Gramatura": "450g/m²", "Coluna (ECT)": "5 kgf/cm" } },
+            { id: 4, nome: "Caixa Nº3 Padrão Envios", categoria: "sedex", icone: "ph-cube", descricao: "Acomoda produtos volumosos com segurança. Ideal para calçados e utensílios.", preco: 5.80, unidade: "/unidade", especificacoes: { "Medidas Externas": "31 x 22 x 12 cm", "Tipo de Onda": "Onda C (Média)", "Gramatura": "450g/m²", "Coluna (ECT)": "6 kgf/cm" } },
 
-    // --- CATEGORIA: CAIXAS (OUTROS MODELOS) ---
-    {
-        id: 6,
-        nome: "CAIXA 32X32X22",
-        categoria: "caixas",
-        sub: "todos",
-        emoji: "📦",
-        preco: "R$ 13,80",
-        descricao: "Caixa reforçada para uso geral e mudanças.",
-        specs: { "Dimensões": "32X32X22", "Tipo": "Maleta" }
-    },
-    {
-        id: 7,
-        nome: "Caixa De Bolo Nº9",
-        categoria: "caixas",
-        sub: "Bolo",
-        emoji: "🍰",
-        preco: "R$ 2,10",
-        descricao: "Base rígida para transporte seguro de bolos e tortas.",
-        specs: { "Tipo": "Bolo / Confeitaria" }
-    },
-    {
-        id: 8,
-        nome: "Caixa De Bolo Nº7 MEDIA",
-        categoria: "caixas",
-        sub: "Bolo",
-        emoji: "🍰",
-        preco: "R$ 2,10",
-        specs: { "Tamanho": "Média" }
-    },
-    {
-        id: 9,
-        nome: "Caixa De Bolo Nº7 ALTA",
-        categoria: "caixas",
-        sub: "Bolo",
-        emoji: "🍰",
-        preco: "R$ 2,10",
-        specs: { "Tamanho": "Alta" }
-    },
-    {
-        id: 10,
-        nome: "Caixa De Pizza",
-        categoria: "caixas",
-        sub: "Pizza",
-        emoji: "🍕",
-        preco: "R$ 3,20",
-        descricao: "Embalagem térmica que mantém a qualidade do alimento.",
-        specs: { "Dimensões": "35x35cm" }
-    },
+            // CATEGORIA: E-COMMERCE (Design Diferenciado)
+            { id: 5, nome: "Caixa Corte e Vinco Invertida", categoria: "ecommerce", icone: "ph-gift", descricao: "Modelo de montagem rápida, não necessita de fita adesiva no fundo. Excelente unboxing.", preco: 6.50, unidade: "/unidade", especificacoes: { "Medidas Externas": "Vários tamanhos", "Montagem": "Encaixe / Automontável", "Acabamento": "Pardo ou Branco", "Uso Indicado": "Premium E-commerce" } },
+            { id: 6, nome: "Caixa Maleta para Garrafas", categoria: "ecommerce", icone: "ph-wine", descricao: "Com colmeias internas (divisórias) para transporte seguro de vinhos e destilados.", preco: 8.90, unidade: "/unidade", especificacoes: { "Capacidade": "2, 4 ou 6 garrafas", "Tipo de Onda": "Onda Dupla (BC)", "Resistência": "Extra Forte", "Acessório": "Acompanha divisórias" } },
 
-    // --- CATEGORIA: SACOLAS PRETAS ---
-    { id: 12, nome: "Sacola Preta 45x60", categoria: "sacos", sub: "Preta", emoji: "🛍️", preco: "Sob consulta", specs: { "Medida": "45x60", "Cor": "Preta" } },
-    { id: 13, nome: "Sacola Preta 60x80", categoria: "sacos", sub: "Preta", emoji: "🛍️", preco: "Sob consulta", specs: { "Medida": "60x80", "Cor": "Preta" } },
-    { id: 14, nome: "Sacola Preta 90x100", categoria: "sacos", sub: "Preta", emoji: "🛍️", preco: "Sob consulta", specs: { "Medida": "90x100", "Cor": "Preta" } },
-    { id: 15, nome: "Sacola Preta 40x50", categoria: "sacos", sub: "Preta", emoji: "🛍️", preco: "Sob consulta", specs: { "Medida": "40x50", "Cor": "Preta" } },
-    { id: 16, nome: "Sacola Preta 30x40", categoria: "sacos", sub: "Preta", emoji: "🛍️", preco: "Sob consulta", specs: { "Medida": "30x40", "Cor": "Preta" } },
-    { id: 17, nome: "Sacola Preta 35x45", categoria: "sacos", sub: "Preta", emoji: "🛍️", preco: "Sob consulta", specs: { "Medida": "35x45", "Cor": "Preta" } }
-];
+            // CATEGORIA: PERSONALIZADOS
+            { id: 7, nome: "Caixa Master com Logotipo", categoria: "personalizados", icone: "ph-paint-brush-broad", descricao: "Impressão flexográfica da sua marca para gerar autoridade no momento da entrega.", preco: "Sob consulta", unidade: "", especificacoes: { "Dimensões": "Desenvolvido sob medida", "Impressão": "Até 3 cores (Flexo)", "Clichê": "Custo único inicial", "Lote Mínimo": "300 unidades" } },
+            { id: 8, nome: "Caixa Premium Branca", categoria: "personalizados", icone: "ph-star", descricao: "Papelão Kraft branco na parte externa, ideal para cosméticos e produtos de saúde.", preco: "Sob consulta", unidade: "", especificacoes: { "Revestimento": "Kraft Branco", "Dimensões": "Personalizável", "Impressão": "Offset / Flexo", "Lote Mínimo": "500 unidades" } },
+
+            // CATEGORIA: INSUMOS INDUSTRIAIS
+            { id: 9, nome: "Bobina de Papelão Ondulado", categoria: "insumos", icone: "ph-scroll", descricao: "Proteção flexível para indústrias moveleiras, reformas e forração de pisos.", preco: 45.00, unidade: "/m²", especificacoes: { "Largura da Bobina": "1,20m ou 1,40m", "Gramatura": "Onda Simples (Face Única)", "Venda Mínima": "100 m²", "Peso Aprox.": "30kg por rolo" } },
+            { id: 10, nome: "Chapa de Papelão Duplo (BC)", categoria: "insumos", icone: "ph-stack", descricao: "Chapas rígidas para separação de paletes ou confecção de projetos próprios.", preco: 12.50, unidade: "/chapa", especificacoes: { "Medida Padrão": "1,00 x 1,20m", "Tipo de Onda": "Dupla (Onda B + C)", "Espessura": "Aprox. 6mm", "Venda Mínima": "50 chapas" } }
+        ];
 
         // Variáveis de Estado
         let produtoSelecionado = null;
