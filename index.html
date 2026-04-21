@@ -1,988 +1,143 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Catálogo completo de embalagens e caixas de papelão. Qualidade, variedade e preços competitivos.">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cia das Embalagens</title>
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        :root {
-            --primary: #2563eb;
-            --primary-dark: #1e40af;
-            --secondary: #10b981;
-            --text-dark: #1f2937;
-            --text-light: #6b7280;
-            --bg-light: #f9fafb;
-            --border: #e5e7eb;
-            --white: #ffffff;
-        }
-        
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-            color: var(--text-dark);
-            background-color: var(--bg-light);
-            line-height: 1.6;
-        }
-        
-        a {
-            text-decoration: none;
-            color: inherit;
-        }
-        
-        button {
-            font-family: inherit;
-            cursor: pointer;
-            border: none;
-            transition: all 0.3s ease;
-        }
-        
-        /* Header e Hero */
-        header {
-            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
-            color: var(--white);
-            padding: 2rem 1rem;
-            position: sticky;
-            top: 0;
-            z-index: 100;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-        }
-        
-        .header-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        
-        .logo {
-            font-size: 24px;
-            font-weight: 700;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-        
-        .contact-btn {
-            background: var(--secondary);
-            color: var(--white);
-            padding: 8px 16px;
-            border-radius: 6px;
-            font-size: 14px;
-            font-weight: 600;
-        }
-        
-        .contact-btn:hover {
-            background: #059669;
-            transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(16, 185, 129, 0.4);
-        }
-        
-        .hero {
-            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
-            color: var(--white);
-            padding: 3rem 1rem;
-            text-align: center;
-        }
-        
-        .hero-container {
-            max-width: 800px;
-            margin: 0 auto;
-        }
-        
-        .hero h1 {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-            font-weight: 700;
-        }
-        
-        .hero p {
-            font-size: 1.1rem;
-            margin-bottom: 2rem;
-            opacity: 0.95;
-        }
-        
-        /* Main Content */
-        main {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 2rem 1rem;
-        }
-        
-        /* FILTRO PRINCIPAL */
-        .filters-main {
-            display: flex;
-            gap: 8px;
-            margin-bottom: 2rem;
-            flex-wrap: wrap;
-            justify-content: center;
-        }
-        
-        .filter-btn-main {
-            padding: 10px 20px;
-            border: 2px solid var(--border);
-            background: var(--white);
-            color: var(--text-dark);
-            border-radius: 6px;
-            font-weight: 600;
-            font-size: 14px;
-            transition: all 0.3s ease;
-        }
-        
-        .filter-btn-main:hover {
-            border-color: var(--primary);
-            color: var(--primary);
-        }
-        
-        .filter-btn-main.active {
-            background: var(--primary);
-            color: var(--white);
-            border-color: var(--primary);
-        }
-        
-        /* FILTRO SECUNDÁRIO (Subcategorias) */
-        .filters-sub {
-            display: flex;
-            gap: 8px;
-            margin-bottom: 2rem;
-            flex-wrap: wrap;
-            justify-content: center;
-            padding: 1rem;
-            background: var(--white);
-            border-radius: 8px;
-            border: 1px solid var(--border);
-        }
-        
-        .filters-sub.hidden {
-            display: none;
-        }
-        
-        .sub-category-title {
-            width: 100%;
-            text-align: center;
-            font-weight: 600;
-            color: var(--primary);
-            margin-bottom: 0.75rem;
-            font-size: 14px;
-        }
-        
-        .filter-btn-sub {
-            padding: 8px 16px;
-            border: 1px solid var(--border);
-            background: var(--white);
-            color: var(--text-dark);
-            border-radius: 6px;
-            font-weight: 500;
-            font-size: 13px;
-            transition: all 0.3s ease;
-        }
-        
-        .filter-btn-sub:hover {
-            background: #f0f7ff;
-            border-color: var(--primary);
-        }
-        
-        .filter-btn-sub.active {
-            background: var(--primary);
-            color: var(--white);
-            border-color: var(--primary);
-        }
-        
-        .category-section {
-            margin-bottom: 3rem;
-        }
-        
-        .category-title {
-            font-size: 1.8rem;
-            font-weight: 700;
-            margin-bottom: 1.5rem;
-            color: var(--text-dark);
-            padding-bottom: 1rem;
-            border-bottom: 3px solid var(--primary);
-            display: inline-block;
-            animation: fadeInDown 0.6s ease-out;
-        }
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
 
-        @keyframes fadeInDown {
-            from {
-                opacity: 0;
-                transform: translateY(-20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-        
-        .products-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-            gap: 1.5rem;
-        }
-        
-        .product-card {
-            background: var(--white);
-            border: 1px solid var(--border);
-            border-radius: 8px;
-            overflow: hidden;
-            transition: all 0.3s ease;
-            cursor: pointer;
-            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
-            animation: fadeInUp 0.5s ease-out;
-        }
-        
-        .product-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 12px 24px rgba(0,0,0,0.15);
-            border-color: var(--primary);
-        }
-        
-        .product-image {
-            width: 100%;
-            height: 180px;
-            background: linear-gradient(135deg, #f3f4f6 0%, #e5e7eb 100%);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 64px;
-            border-bottom: 1px solid var(--border);
-        }
-        
-        .product-content {
-            padding: 1.5rem;
-        }
-        
-        .product-category {
-            display: inline-block;
-            background: #dbeafe;
-            color: var(--primary);
-            padding: 4px 12px;
-            border-radius: 20px;
-            font-size: 11px;
-            font-weight: 700;
-            text-transform: uppercase;
-            margin-bottom: 0.75rem;
-        }
-        
-        .product-subcategory {
-            display: inline-block;
-            background: #d1fae5;
-            color: var(--secondary);
-            padding: 4px 12px;
-            border-radius: 20px;
-            font-size: 11px;
-            font-weight: 700;
-            text-transform: uppercase;
-            margin-left: 0.5rem;
-            margin-bottom: 0.75rem;
-        }
-        
-        .product-name {
-            font-size: 1.1rem;
-            font-weight: 700;
-            margin-bottom: 0.5rem;
-            color: var(--text-dark);
-        }
-        
-        .product-desc {
-            font-size: 0.9rem;
-            color: var(--text-light);
-            margin-bottom: 1rem;
-        }
-        
-        .product-price {
-            font-size: 1.3rem;
-            font-weight: 700;
-            color: var(--primary);
-            margin-bottom: 1rem;
-        }
-        
-        .product-btn {
-            width: 100%;
-            padding: 10px;
-            background: var(--primary);
-            color: var(--white);
-            border-radius: 6px;
-            font-weight: 600;
-            font-size: 14px;
-        }
-        
-        .product-btn:hover {
-            background: var(--primary-dark);
-            transform: scale(1.02);
-        }
-        
-        /* Modal */
-        .modal {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.5);
-            z-index: 1000;
-            align-items: center;
-            justify-content: center;
-            padding: 1rem;
-        }
-        
-        .modal.active {
-            display: flex;
-        }
-        
-        .modal-content {
-            background: var(--white);
-            border-radius: 8px;
-            padding: 2rem;
-            max-width: 600px;
-            width: 100%;
-            max-height: 90vh;
-            overflow-y: auto;
-            position: relative;
-        }
-        
-        .modal-close {
-            position: absolute;
-            top: 1rem;
-            right: 1rem;
-            background: var(--bg-light);
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 20px;
-            color: var(--text-light);
-            transition: all 0.3s ease;
-        }
-        
-        .modal-close:hover {
-            background: var(--primary);
-            color: var(--white);
-        }
-        
-        .modal-emoji {
-            font-size: 48px;
-            text-align: center;
-            margin-bottom: 1rem;
-        }
-        
-        .modal-title {
-            font-size: 1.8rem;
-            font-weight: 700;
-            margin-bottom: 1.5rem;
-            color: var(--text-dark);
-        }
-        
-        .specs-container {
-            margin-bottom: 2rem;
-        }
-        
-        .spec-group {
-            margin-bottom: 1.5rem;
-        }
-        
-        .spec-group-label {
-            font-size: 12px;
-            font-weight: 700;
-            color: var(--text-light);
-            text-transform: uppercase;
-            margin-bottom: 0.5rem;
-        }
-        
-        .spec-group-value {
-            font-size: 1rem;
-            color: var(--text-dark);
-            font-weight: 500;
-        }
-        
-        .modal-price {
-            font-size: 1.8rem;
-            font-weight: 700;
-            color: var(--primary);
-            margin-bottom: 1.5rem;
-            padding: 1rem;
-            background: #dbeafe;
-            border-radius: 6px;
-            text-align: center;
-        }
-        
-        .modal-actions {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 1rem;
-        }
-        
-        .action-btn {
-            padding: 12px;
-            border-radius: 6px;
-            font-weight: 600;
-            font-size: 14px;
-            transition: all 0.3s ease;
-        }
-        
-        .action-btn-primary {
-            background: var(--primary);
-            color: var(--white);
-        }
-        
-        .action-btn-primary:hover {
-            background: var(--primary-dark);
-            transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(37, 99, 235, 0.4);
-        }
-        
-        .action-btn-secondary {
-            background: var(--bg-light);
-            color: var(--primary);
-            border: 2px solid var(--primary);
-        }
-        
-        .action-btn-secondary:hover {
-            background: var(--primary);
-            color: var(--white);
-        }
+body{font-family:sans-serif;background:#f5f5f5;}
 
+header{
+background:#2563eb;
+color:#fff;
+padding:15px;
+display:flex;
+justify-content:space-between;
+}
 
-        
-        /* Footer */
-        footer {
-            background: var(--text-dark);
-            color: var(--white);
-            padding: 2rem 1rem;
-            text-align: center;
-            margin-top: 3rem;
-        }
-        
-        .footer-content {
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-        
-        .footer-contact {
-            margin-bottom: 1.5rem;
-        }
-        
-        .footer-title {
-            font-size: 1.2rem;
-            font-weight: 700;
-            margin-bottom: 0.5rem;
-        }
-        
-        .social-links {
-            display: flex;
-            justify-content: center;
-            gap: 1rem;
-            margin: 1.5rem 0;
-        }
-        
-        .social-btn {
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            background: rgba(255,255,255,0.2);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--white);
-            font-weight: 700;
-            transition: all 0.3s ease;
-        }
-        
-        .social-btn:hover {
-            background: var(--primary);
-            transform: translateY(-4px);
-        }
-        
-        .copyright {
-            font-size: 0.9rem;
-            color: rgba(255,255,255,0.7);
-            margin-top: 1.5rem;
-            padding-top: 1.5rem;
-            border-top: 1px solid rgba(255,255,255,0.2);
-        }
-        
-        .no-products {
-            text-align: center;
-            padding: 2rem;
-            color: var(--text-light);
-        }
-        
-        /* Responsive */
-        @media (max-width: 1024px) {
-            .location-container {
-                grid-template-columns: 1fr;
-            }
+.hero{
+background:#1e40af;
+color:#fff;
+padding:40px;
+text-align:center;
+}
 
-            .location-map {
-                height: 300px;
-            }
-        }
+.products{
+display:grid;
+grid-template-columns:repeat(auto-fill,minmax(200px,1fr));
+gap:15px;
+padding:20px;
+}
 
-        @media (max-width: 768px) {
-            .hero h1 {
-                font-size: 1.8rem;
-            }
-            
-            .products-grid {
-                grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-                gap: 1rem;
-            }
-            
-            .modal-actions {
-                grid-template-columns: 1fr;
-            }
-            
-            .header-container {
-                flex-direction: column;
-                gap: 1rem;
-            }
+.card{
+background:#fff;
+padding:15px;
+border-radius:8px;
+cursor:pointer;
+}
 
-            .location-title {
-                font-size: 1.4rem;
-            }
+.card:hover{transform:translateY(-5px);}
 
-            .location-map {
-                height: 250px;
-            }
-        }
-    </style>
+button{
+margin-top:10px;
+padding:8px;
+background:#2563eb;
+color:#fff;
+border:none;
+width:100%;
+}
+
+.modal{
+display:none;
+position:fixed;
+top:0;left:0;
+width:100%;height:100%;
+background:rgba(0,0,0,0.5);
+align-items:center;
+justify-content:center;
+}
+
+.modal.active{display:flex;}
+
+.modal-box{
+background:#fff;
+padding:20px;
+border-radius:8px;
+}
+</style>
 </head>
+
 <body>
-    <!-- Header -->
-    <header>
-        <div class="header-container">
-            <div class="logo">
-                📦 Cia das embalagens
-            </div>
-            <button class="contact-btn" onclick="scrollToContact()">Contato</button>
-        </div>
-    </header>
-    
-    <!-- Hero -->
-    <div class="hero">
-        <div class="hero-container">
-            <h1>Soluções Completas em Embalagens</h1>
-            <p>Caixas de papelão, envelopes e embalagens personalizadas para sua empresa. Qualidade garantida com preços competitivos.</p>
-        </div>
-    </div>
-    
-    <!-- Main Content -->
-    <main>
-        <!-- FILTRO PRINCIPAL -->
-        <div class="filters-main" id="mainFilters"></div>
-        
-        <!-- FILTRO SECUNDÁRIO (Subcategorias) -->
-        <div class="filters-sub hidden" id="subFilters">
-            <div class="sub-category-title" id="subCategoryTitle"></div>
-            <div id="subFilterBtns"></div>
-        </div>
-        
-        <!-- Produtos -->
-        <div id="productsContainer"></div>
 
+<header>
+<div>📦 Cia das Embalagens</div>
+<button onclick="scrollToContact()">Contato</button>
+</header>
 
-    </main>
-    
-    <!-- Modal -->
-    <div class="modal" id="modal">
-        <div class="modal-content">
-            <button class="modal-close" onclick="closeModal()">✕</button>
-            <div class="modal-emoji" id="modalEmoji"></div>
-            <h2 class="modal-title" id="modalTitle"></h2>
-            <div class="specs-container" id="modalSpecs"></div>
-            <div class="modal-price" id="modalPrice"></div>
-            <div class="modal-actions">
-                <button class="action-btn action-btn-primary" onclick="sendMessage('Quero fazer um orçamento para este produto')">Orçamento</button>
-                <button class="action-btn action-btn-secondary" onclick="sendMessage('Posso customizar este produto com meu logo?')">Customizar</button>
-            </div>
-        </div>
-    </div>
-    
-    <!-- Footer -->
-    <footer id="contact">
-        <div class="footer-content">
-            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-bottom: 2rem; text-align: left;">
-                <!-- Contato -->
-                <div class="footer-contact">
-                    <div class="footer-title">📞 Entre em Contato</div>
-                    <p style="margin: 1rem 0; font-size: 1rem;">
-                        <strong>WhatsApp:</strong><br>
-                        <a href="https://api.whatsapp.com/send?phone=5511972999835&text=Olá, visualizei o catálogo online e gostaria de mais informações" style="color: #10b981; font-weight: 600; font-size: 1.1rem;">+55 11 97299-9835</a>
-                    </p>
-                    <p style="margin: 1rem 0; font-size: 1rem;">
-                        <strong>Instagram:</strong><br>
-                        <a href="https://www.instagram.com/ciadasembalagens_/" style="color: #10b981; font-weight: 600; font-size: 1rem;">@ciadasembalagens_</a>
-                    </p>
-                </div>
+<div class="hero">
+<h1>Catálogo de Embalagens</h1>
+</div>
 
-                <!-- Endereço -->
-                <div class="footer-contact">
-                    <div class="footer-title">📍 Localização</div>
-                    <p style="margin: 1rem 0; font-size: 1rem; line-height: 1.8;">
-                        <strong>Av. Paula Ferreira, 2871</strong><br>
-                        Vila Pereira Barreto<br>
-                        São Paulo - SP<br>
-                        CEP: 02915-100
-                    </p>
-                    <a href="https://maps.google.com/?q=Av.+Paula+Ferreira,+2871,+São+Paulo" target="_blank" style="color: #10b981; font-weight: 600; text-decoration: underline;">Abrir no Google Maps →</a>
-                </div>
-            </div>
-            
-            <div class="social-links">
-                <a href="https://www.instagram.com/ciadasembalagens_/" target="_blank" class="social-btn" title="Instagram">📱</a>
-                <a href="https://api.whatsapp.com/send?phone=5511972999835&text=Olá, visualizei o catálogo online" target="_blank" class="social-btn" title="WhatsApp">💬</a>
-            </div>
-            
-            <div class="copyright">
-                © 2026 CIA EMBALAGENS. Todos os direitos reservados.<br>
-                Desenvolvido para melhorar sua experiência de compra online.
-            </div>
-        </div>
+<div class="products" id="produtos"></div>
 
-        // ========================
-        // PRODUTOS - ADICIONE AQUI
-        // ========================
-        const produtos = [
-            // CAIXAS - CORREIOS
-            {
-                id: 1,
-                nome: "Caixa tipo Nº0 CORREIOS",
-                categoria: "caixas",
-                subcategoria: "correios",
-                emoji: "📦",
-                descricao: "Perfeita para pequenos itens e produtos leves",
-                preco: "R$ 2,80",
-                specs: {
-                    "Dimensões": "16cm x 11cm x 03cm",
-                    "Material": "Papelão ondulado",
-                    "Acabamento": "Com reforço interno"
-                }
-            },
-            {
-                id: 2,
-                nome: "Caixa tipo Nº1 CORREIOS",
-                categoria: "caixas",
-                subcategoria: "correios",
-                emoji: "📫",
-                descricao: "Perfeita para pequenos itens e produtos leves",
-                preco: "R$ 1,50",
-                specs: {
-                    "Dimensões": "20cm x 13cm x 07cm",
-                    "Material": "Papelão ondulado",
-                    "Acabamento": "Com reforço interno"
-                }
-            },
-            {
-                id: 3,
-                nome: "Caixa tipo Nº2 CORREIOS",
-                categoria: "caixas",
-                subcategoria: "correios",
-                emoji: "📦",
-                descricao: "Perfeita para pequenos itens e produtos leves",
-                preco: "R$ 3,20",
-                specs: {
-                    "Dimensões": "27cm x 18cm x 09cm",
-                    "Material": "Papelão ondulado",
-                    "Acabamento": "Com reforço interno"
-                }
-            },
-            {
-                id: 4,
-                nome: "Caixa tipo Nº3 CORREIOS",
-                categoria: "caixas",
-                subcategoria: "correios",
-                emoji: "📦",
-                descricao: "Perfeita para pequenos itens e produtos leves",
-                preco: "R$ 3,20",
-                specs: {
-                    "Dimensões": "31cm x 22cm x 12cm",
-                    "Material": "Papelão ondulado",
-                    "Acabamento": "Com reforço interno"
-                }
-            },
-            {
-                id: 5,
-                nome: "Caixa tipo Nº4 CORREIOS",
-                categoria: "caixas",
-                subcategoria: "correios",
-                emoji: "📦",
-                descricao: "Perfeita para pequenos itens e produtos leves",
-                preco: "R$ 3,20",
-                specs: {
-                    "Dimensões": "31cm x 22cm x 12cm",
-                    "Material": "Papelão ondulado",
-                    "Acabamento": "Com reforço interno"
-                }
-            },
+<footer id="contact" style="padding:20px;background:#111;color:#fff;">
+WhatsApp: 11 97299-9835
+</footer>
 
-            // CAIXAS - OUTRAS (não Correios)
-            {
-                id: 6,
-                nome: "Caixa com Divisórias",
-                categoria: "caixas",
-                subcategoria: "outras",
-                emoji: "📊",
-                descricao: "Organização perfeita para produtos variados",
-                preco: "R$ 2,10",
-                specs: {
-                    "Dimensões": "30 x 20 x 15 cm",
-                    "Divisões": "Customizáveis de acordo com a necessidade",
-                    "Material": "Papelão ondulado resistente",
-                    "Quantidade Mínima": "50 unidades"
-                }
-            },
-            {
-                id: 7,
-                nome: "Caixa com Tampa Separada",
-                categoria: "caixas",
-                subcategoria: "outras",
-                emoji: "🎁",
-                descricao: "Premium para presentes e artigos de valor",
-                preco: "R$ 4,50",
-                specs: {
-                    "Dimensões": "25 x 25 x 15 cm",
-                    "Material": "Papelão premium branco de alta qualidade",
-                    "Acabamento": "Tampa articulada e fechamento elegante",
-                    "Quantidade Mínima": "50 unidades"
-                }
-            },
+<div class="modal" id="modal">
+<div class="modal-box">
+<button onclick="fechar()">X</button>
+<h2 id="titulo"></h2>
+<p id="preco"></p>
+</div>
+</div>
 
-            // PERSONALIZADOS
-            {
-                id: 8,
-                nome: "Caixa Customizada com Logo",
-                categoria: "personalizados",
-                subcategoria: "impressas",
-                emoji: "🎨",
-                descricao: "Sua marca impressa com qualidade profissional",
-                preco: "Sob consulta",
-                specs: {
-                    "Dimensões": "Personalizado conforme seu projeto",
-                    "Impressão": "Offset de até 4 cores",
-                    "Material": "Papelão premium 100% reciclado",
-                    "Quantidade Mínima": "100 unidades"
-                }
-            },
+<script>
 
-            // PAPELÃO CORRUGADO
-            {
-                id: 9,
-                nome: "Papelão Liso Branco",
-                categoria: "corrugado",
-                subcategoria: "branco",
-                emoji: "🧾",
-                descricao: "Ideal para impressão direta de seus designs",
-                preco: "R$ 35,00/m²",
-                specs: {
-                    "Espessura": "1 ou 2 mm",
-                    "Cor": "Branco puro brilhante",
-                    "Formato": "Bobina ou folhas cortadas",
-                    "Quantidade Mínima": "100 m²"
-                }
-            }
-        ];
+const lista = [
+{nome:"Caixa Nº1",preco:"R$2,00"},
+{nome:"Caixa Nº2",preco:"R$3,00"}
+];
 
-        // ========================
-        // CONFIGURAÇÃO DE CATEGORIAS
-        // ========================
-        const categoriesConfig = {
-            "caixas": {
-                label: "Caixas de Papelão",
-                subcategorias: [
-                    { id: "correios", label: "Caixas Correios" },
-                    { id: "outras", label: "Outras Caixas" }
-                ]
-            },
-            "personalizados": {
-                label: "Produtos Personalizados",
-                subcategorias: [
-                    { id: "impressas", label: "Caixas Impressas" }
-                ]
-            },
-            "corrugado": {
-                label: "Papelão Corrugado",
-                subcategorias: [
-                    { id: "branco", label: "Papelão Branco" }
-                ]
-            }
-        };
+function render(){
+const div=document.getElementById("produtos");
 
-        let currentCategory = null;
-        let currentSubcategory = "todos";
+lista.forEach(p=>{
+const card=document.createElement("div");
+card.className="card";
 
-        // Criar filtros principais
-        function renderMainFilters() {
-            const container = document.getElementById("mainFilters");
-            container.innerHTML = '<button class="filter-btn-main active" onclick="filterByCategory(null)">Todos os Produtos</button>';
-            
-            Object.entries(categoriesConfig).forEach(([key, config]) => {
-                const btn = document.createElement("button");
-                btn.className = "filter-btn-main";
-                btn.textContent = config.label;
-                btn.onclick = () => filterByCategory(key);
-                container.appendChild(btn);
-            });
-        }
+card.innerHTML=`
+<h3>${p.nome}</h3>
+<p>${p.preco}</p>
+<button>Ver</button>
+`;
 
-        // Filtrar por categoria principal
-        function filterByCategory(category) {
-            currentCategory = category;
-            currentSubcategory = "todos";
+card.onclick=()=>abrir(p);
 
-            // Atualizar botões principais
-            document.querySelectorAll(".filter-btn-main").forEach(btn => btn.classList.remove("active"));
-            event.target.classList.add("active");
+div.appendChild(card);
+});
+}
 
-            // Mostrar/ocultar filtros secundários
-            const subFiltersContainer = document.getElementById("subFilters");
-            if (category && categoriesConfig[category]) {
-                document.getElementById("subCategoryTitle").textContent = `Tipos de ${categoriesConfig[category].label.toLowerCase()}:`;
-                renderSubFilters(category);
-                subFiltersContainer.classList.remove("hidden");
-            } else {
-                subFiltersContainer.classList.add("hidden");
-            }
+function abrir(p){
+document.getElementById("titulo").textContent=p.nome;
+document.getElementById("preco").textContent=p.preco;
+document.getElementById("modal").classList.add("active");
+}
 
-            renderProducts();
-        }
+function fechar(){
+document.getElementById("modal").classList.remove("active");
+}
 
-        // Criar filtros secundários
-        function renderSubFilters(category) {
-            const container = document.getElementById("subFilterBtns");
-            container.innerHTML = '<button class="filter-btn-sub active" onclick="filterBySubcategory(\'todos\')">Todos</button>';
-            
-            const subcats = categoriesConfig[category].subcategorias;
-            subcats.forEach(subcat => {
-                const btn = document.createElement("button");
-                btn.className = "filter-btn-sub";
-                btn.textContent = subcat.label;
-                btn.onclick = () => filterBySubcategory(subcat.id);
-                container.appendChild(btn);
-            });
-        }
+function scrollToContact(){
+document.getElementById("contact").scrollIntoView({behavior:"smooth"});
+}
 
-        // Filtrar por subcategoria
-        function filterBySubcategory(subcat) {
-            currentSubcategory = subcat;
-            
-            document.querySelectorAll(".filter-btn-sub").forEach(btn => btn.classList.remove("active"));
-            event.target.classList.add("active");
-            
-            renderProducts();
-        }
+render();
 
-        // Renderizar produtos
-        function renderProducts() {
-            const container = document.getElementById("productsContainer");
-            container.innerHTML = "";
-            
-            let filtered = produtos;
+</script>
 
-            // Filtrar por categoria principal
-            if (currentCategory) {
-                filtered = filtered.filter(p => p.categoria === currentCategory);
-            }
-
-            // Filtrar por subcategoria
-            if (currentSubcategory !== "todos" && currentCategory) {
-                filtered = filtered.filter(p => p.subcategoria === currentSubcategory);
-            }
-
-            if (filtered.length === 0) {
-                container.innerHTML = '<div class="no-products">Nenhum produto encontrado nesta categoria.</div>';
-                return;
-            }
-
-            // Agrupar por categoria
-            const grouped = {};
-            filtered.forEach(p => {
-                if (!grouped[p.categoria]) grouped[p.categoria] = [];
-                grouped[p.categoria].push(p);
-            });
-
-            Object.entries(grouped).forEach(([cat, prods]) => {
-                const section = document.createElement("div");
-                section.className = "category-section";
-                section.innerHTML = `<h2 class="category-title">${categoriesConfig[cat]?.label || cat}</h2>`;
-                
-                const grid = document.createElement("div");
-                grid.className = "products-grid";
-                
-                prods.forEach(produto => {
-                    const card = document.createElement("div");
-                    card.className = "product-card";
-                    card.onclick = () => openModal(produto);
-                    
-                    const subcatLabel = categoriesConfig[produto.categoria]?.subcategorias
-                        .find(s => s.id === produto.subcategoria)?.label || '';
-                    
-                    card.innerHTML = `
-                        <div class="product-image">${produto.emoji}</div>
-                        <div class="product-content">
-                            <span class="product-category">${produto.categoria}</span>
-                            ${subcatLabel ? `<span class="product-subcategory">${subcatLabel}</span>` : ''}
-                            <h3 class="product-name">${produto.nome}</h3>
-                            <p class="product-desc">${produto.descricao}</p>
-                            <div class="product-price">${produto.preco}</div>
-                            <button class="product-btn">Ver Detalhes</button>
-                        </div>
-                    `;
-                    
-                    grid.appendChild(card);
-                });
-                
-                section.appendChild(grid);
-                container.appendChild(section);
-            });
-        }
-
-        function openModal(produto) {
-            document.getElementById("modalEmoji").textContent = produto.emoji;
-            document.getElementById("modalTitle").textContent = produto.nome;
-            document.getElementById("modalPrice").textContent = produto.preco;
-            
-            let specsHTML = "";
-            Object.entries(produto.specs).forEach(([label, valor]) => {
-                specsHTML += `
-                    <div class="spec-group">
-                        <div class="spec-group-label">${label}</div>
-                        <div class="spec-group-value">${valor}</div>
-                    </div>
-                `;
-            });
-            
-            document.getElementById("modalSpecs").innerHTML = specsHTML;
-            document.getElementById("modal").classList.add("active");
-        }
-
-        function closeModal() {
-            document.getElementById("modal").classList.remove("active");
-        }
-
-        function sendMessage(text) {
-            const whatsappLink = "https://api.whatsapp.com/send?phone=5511972999835&text=" + encodeURIComponent(text);
-            window.open(whatsappLink, "_blank");
-        }
-
-        function scrollToContact() {
-            document.getElementById("contact").scrollIntoView({ behavior: "smooth" });
-        }
-
-        document.getElementById("modal").onclick = function(e) {
-            if (e.target === this) closeModal();
-        };
-
-        // Inicializar
-        renderMainFilters();
-        renderProducts();
-    </script>
 </body>
 </html>
