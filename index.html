@@ -679,39 +679,128 @@
             }
         ];
         
-        let currentFilter = "todos";
-        
+       // ========================
+        // CONFIGURAÇÃO DE CATEGORIAS
+        // ========================
+        const categoriesConfig = {
+            "caixas": {
+                label: "Caixas de Papelão",
+                subcategorias: [
+                    { id: "correios", label: "Caixas Correios" },
+                    { id: "outras", label: "Outras Caixas" }
+                ]
+            },
+            "personalizados": {
+                label: "Produtos Personalizados",
+                subcategorias: [
+                    { id: "impressas", label: "Caixas Impressas" }
+                ]
+            },
+            "corrugado": {
+                label: "Papelão Corrugado",
+                subcategorias: [
+                    { id: "branco", label: "Papelão Branco" }
+                ]
+            }
+        };
+ 
+        let currentCategory = null;
+        let currentSubcategory = "todos";
+ 
+        // Criar filtros principais
+        function renderMainFilters() {
+            const container = document.getElementById("mainFilters");
+            container.innerHTML = '<button class="filter-btn-main active" onclick="filterByCategory(null)">Todos os Produtos</button>';
+            
+            Object.entries(categoriesConfig).forEach(([key, config]) => {
+                const btn = document.createElement("button");
+                btn.className = "filter-btn-main";
+                btn.textContent = config.label;
+                btn.onclick = () => filterByCategory(key);
+                container.appendChild(btn);
+            });
+        }
+ 
+        // Filtrar por categoria principal
+        function filterByCategory(category) {
+            currentCategory = category;
+            currentSubcategory = "todos";
+ 
+            // Atualizar botões principais
+            document.querySelectorAll(".filter-btn-main").forEach(btn => btn.classList.remove("active"));
+            event.target.classList.add("active");
+ 
+            // Mostrar/ocultar filtros secundários
+            const subFiltersContainer = document.getElementById("subFilters");
+            if (category && categoriesConfig[category]) {
+                document.getElementById("subCategoryTitle").textContent = `Tipos de ${categoriesConfig[category].label.toLowerCase()}:`;
+                renderSubFilters(category);
+                subFiltersContainer.classList.remove("hidden");
+            } else {
+                subFiltersContainer.classList.add("hidden");
+            }
+ 
+            renderProducts();
+        }
+ 
+        // Criar filtros secundários
+        function renderSubFilters(category) {
+            const container = document.getElementById("subFilterBtns");
+            container.innerHTML = '<button class="filter-btn-sub active" onclick="filterBySubcategory(\'todos\')">Todos</button>';
+            
+            const subcats = categoriesConfig[category].subcategorias;
+            subcats.forEach(subcat => {
+                const btn = document.createElement("button");
+                btn.className = "filter-btn-sub";
+                btn.textContent = subcat.label;
+                btn.onclick = () => filterBySubcategory(subcat.id);
+                container.appendChild(btn);
+            });
+        }
+ 
+        // Filtrar por subcategoria
+        function filterBySubcategory(subcat) {
+            currentSubcategory = subcat;
+            
+            document.querySelectorAll(".filter-btn-sub").forEach(btn => btn.classList.remove("active"));
+            event.target.classList.add("active");
+            
+            renderProducts();
+        }
+ 
+        // Renderizar produtos
         function renderProducts() {
             const container = document.getElementById("productsContainer");
             container.innerHTML = "";
             
-            const filtered = currentFilter === "todos" 
-                ? produtos 
-                : produtos.filter(p => p.categoria === currentFilter);
-            
+            let filtered = produtos;
+ 
+            // Filtrar por categoria principal
+            if (currentCategory) {
+                filtered = filtered.filter(p => p.categoria === currentCategory);
+            }
+ 
+            // Filtrar por subcategoria
+            if (currentSubcategory !== "todos" && currentCategory) {
+                filtered = filtered.filter(p => p.subcategoria === currentSubcategory);
+            }
+ 
             if (filtered.length === 0) {
                 container.innerHTML = '<div class="no-products">Nenhum produto encontrado nesta categoria.</div>';
                 return;
             }
-            
+ 
             // Agrupar por categoria
             const grouped = {};
             filtered.forEach(p => {
                 if (!grouped[p.categoria]) grouped[p.categoria] = [];
                 grouped[p.categoria].push(p);
             });
-            
-            const categoryNames = {
-                caixas: "Caixas de Papelão",
-                envelopes: "Envelopes",
-                corrugado: "Papelão Corrugado",
-                personalizados: "Produtos Personalizados"
-            };
-            
+ 
             Object.entries(grouped).forEach(([cat, prods]) => {
                 const section = document.createElement("div");
                 section.className = "category-section";
-                section.innerHTML = `<h2 class="category-title">${categoryNames[cat]}</h2>`;
+                section.innerHTML = `<h2 class="category-title">${categoriesConfig[cat]?.label || cat}</h2>`;
                 
                 const grid = document.createElement("div");
                 grid.className = "products-grid";
@@ -721,10 +810,14 @@
                     card.className = "product-card";
                     card.onclick = () => openModal(produto);
                     
+                    const subcatLabel = categoriesConfig[produto.categoria]?.subcategorias
+                        .find(s => s.id === produto.subcategoria)?.label || '';
+                    
                     card.innerHTML = `
                         <div class="product-image">${produto.emoji}</div>
                         <div class="product-content">
                             <span class="product-category">${produto.categoria}</span>
+                            ${subcatLabel ? `<span class="product-subcategory">${subcatLabel}</span>` : ''}
                             <h3 class="product-name">${produto.nome}</h3>
                             <p class="product-desc">${produto.descricao}</p>
                             <div class="product-price">${produto.preco}</div>
@@ -739,14 +832,7 @@
                 container.appendChild(section);
             });
         }
-        
-        function filterProducts(categoria) {
-            currentFilter = categoria;
-            document.querySelectorAll(".filter-btn").forEach(btn => btn.classList.remove("active"));
-            event.target.classList.add("active");
-            renderProducts();
-        }
-        
+ 
         function openModal(produto) {
             document.getElementById("modalEmoji").textContent = produto.emoji;
             document.getElementById("modalTitle").textContent = produto.nome;
@@ -765,25 +851,28 @@
             document.getElementById("modalSpecs").innerHTML = specsHTML;
             document.getElementById("modal").classList.add("active");
         }
-        
+ 
         function closeModal() {
             document.getElementById("modal").classList.remove("active");
         }
-        
+ 
         function sendMessage(text) {
-            const whatsappLink = "https://wa.me/5511999999999?text=" + encodeURIComponent(text);
+            const whatsappLink = "https://api.whatsapp.com/send?phone=5511972999835&text=" + encodeURIComponent(text);
             window.open(whatsappLink, "_blank");
         }
-        
+ 
         function scrollToContact() {
             document.getElementById("contact").scrollIntoView({ behavior: "smooth" });
         }
-        
+ 
         document.getElementById("modal").onclick = function(e) {
             if (e.target === this) closeModal();
         };
-        
+ 
+        // Inicializar
+        renderMainFilters();
         renderProducts();
     </script>
 </body>
+</html>
 </html>
