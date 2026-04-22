@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Catálogo completo de embalagens corporativas e caixas de papelão direto da fábrica. Qualidade premium, resistência e logística inteligente para sua empresa.">
+    <meta name="description" content="Catálogo completo de embalagens corporativas e caixas de papelão direto da fábrica.">
     <meta name="theme-color" content="#0f172a">
     <title>Cia Das Embalagens | Soluções em Papelão</title>
     
@@ -21,854 +21,940 @@
             --azul-500: #3b82f6;
             --azul-400: #60a5fa;
             --azul-100: #dbeafe;
-            --azul-50: #eff6ff;
-            --verde-whatsapp: #25d366;
-            --verde-whatsapp-hover: #128c7e;
+            --azul-50:  #eff6ff;
+            --verde-wa:       #25d366;
+            --verde-wa-hover: #128c7e;
             --texto-escuro: #0f172a;
-            --texto-corpo: #475569;
+            --texto-corpo:  #475569;
             --texto-mutado: #94a3b8;
             --fundo-pagina: #f8fafc;
             --fundo-cartao: #ffffff;
             --bordas: #e2e8f0;
-            --sombra-card: 0 10px 15px -3px rgba(0, 0, 0, 0.04), 0 4px 6px -2px rgba(0, 0, 0, 0.02);
-            --sombra-hover: 0 20px 25px -5px rgba(37, 99, 235, 0.1), 0 10px 10px -5px rgba(37, 99, 235, 0.04);
-            --transicao-padrao: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            --transicao-lenta: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            --sombra-card:  0 10px 15px -3px rgba(0,0,0,.04), 0 4px 6px -2px rgba(0,0,0,.02);
+            --sombra-hover: 0 20px 25px -5px rgba(37,99,235,.1), 0 10px 10px -5px rgba(37,99,235,.04);
+            --tr: all .3s cubic-bezier(.4,0,.2,1);
         }
+        *{margin:0;padding:0;box-sizing:border-box;font-family:'Inter',sans-serif;-webkit-font-smoothing:antialiased;}
+        html{scroll-behavior:smooth;}
+        body{background:var(--fundo-pagina);color:var(--texto-corpo);line-height:1.6;overflow-x:hidden;display:flex;flex-direction:column;min-height:100vh;}
+        a{text-decoration:none;color:inherit;}
+        button{cursor:pointer;border:none;background:none;outline:none;}
+        h1,h2,h3,h4,h5,h6{color:var(--texto-escuro);font-weight:800;letter-spacing:-.02em;}
+        .container{width:100%;max-width:1200px;margin:0 auto;padding:0 1.5rem;}
 
-        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', sans-serif; -webkit-font-smoothing: antialiased; }
-        html { scroll-behavior: smooth; }
-        body { background-color: var(--fundo-pagina); color: var(--texto-corpo); line-height: 1.6; overflow-x: hidden; display: flex; flex-direction: column; min-height: 100vh; }
-        a { text-decoration: none; color: inherit; }
-        button { cursor: pointer; border: none; background: none; outline: none; }
-        h1, h2, h3, h4, h5, h6 { color: var(--texto-escuro); font-weight: 800; letter-spacing: -0.02em; }
+        /* ── HEADER ─────────────────────────────────────────── */
+        header{position:fixed;top:0;left:0;width:100%;background:rgba(255,255,255,.92);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);z-index:1000;border-bottom:1px solid rgba(226,232,240,.6);padding:1.2rem 0;transition:var(--tr);}
+        .cabecalho-container{display:flex;justify-content:space-between;align-items:center;width:100%;max-width:1200px;margin:0 auto;padding:0 1.5rem;gap:1rem;}
+        .logo{font-size:1.5rem;font-weight:800;color:var(--azul-900);display:flex;align-items:center;gap:10px;letter-spacing:-.03em;transition:var(--tr);}
+        .logo:hover{opacity:.8;}
+        .logo i{color:var(--azul-600);font-size:2rem;}
+        .header-acoes{display:flex;align-items:center;gap:12px;}
+        .btn-header{background:var(--azul-600);color:#fff;padding:12px 24px;border-radius:99px;font-weight:600;font-size:.9rem;display:flex;align-items:center;gap:8px;transition:var(--tr);box-shadow:0 4px 10px rgba(37,99,235,.2);}
+        .btn-header:hover{background:var(--azul-800);transform:translateY(-2px);}
 
-        .container { width: 100%; max-width: 1200px; margin: 0 auto; padding: 0 1.5rem; }
+        /* ── BOTÃO CARRINHO NO HEADER ───────────────────────── */
+        .btn-carrinho-header{position:relative;background:#fff;border:2px solid var(--bordas);color:var(--texto-escuro);padding:11px 20px;border-radius:99px;font-weight:700;font-size:.9rem;display:flex;align-items:center;gap:8px;transition:var(--tr);}
+        .btn-carrinho-header:hover{border-color:var(--azul-400);color:var(--azul-600);background:var(--azul-50);}
+        .badge-carrinho{position:absolute;top:-8px;right:-8px;background:var(--verde-wa);color:#fff;font-size:.7rem;font-weight:800;width:22px;height:22px;border-radius:50%;display:flex;align-items:center;justify-content:center;border:2px solid #fff;transition:var(--tr);transform:scale(0);}
+        .badge-carrinho.visivel{transform:scale(1);}
 
-        /* HEADER */
-        header { position: fixed; top: 0; left: 0; width: 100%; background: rgba(255,255,255,0.92); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); z-index: 1000; border-bottom: 1px solid rgba(226,232,240,0.6); padding: 1.2rem 0; transition: var(--transicao-padrao); }
-        .cabecalho-container { display: flex; justify-content: space-between; align-items: center; width: 100%; max-width: 1200px; margin: 0 auto; padding: 0 1.5rem; }
-        .logo { font-size: 1.5rem; font-weight: 800; color: var(--azul-900); display: flex; align-items: center; gap: 10px; letter-spacing: -0.03em; transition: var(--transicao-padrao); }
-        .logo:hover { opacity: 0.8; }
-        .logo i { color: var(--azul-600); font-size: 2rem; }
-        .btn-header { background: var(--azul-600); color: white; padding: 12px 28px; border-radius: 99px; font-weight: 600; font-size: 0.95rem; display: flex; align-items: center; gap: 8px; transition: var(--transicao-padrao); box-shadow: 0 4px 10px rgba(37,99,235,0.2); }
-        .btn-header:hover { background: var(--azul-800); transform: translateY(-2px); box-shadow: 0 6px 15px rgba(30,58,138,0.3); }
+        /* ── HERO ───────────────────────────────────────────── */
+        .hero{position:relative;min-height:95vh;display:flex;align-items:center;justify-content:center;background:linear-gradient(rgba(15,23,42,.75),rgba(37,99,235,.65)),url('https://willkerson.github.io/Web.embalagens/lojafundo.png');background-size:cover;background-position:center;overflow:hidden;padding:8rem 1.5rem 6rem;text-align:center;}
+        .hero::before{content:'';position:absolute;top:-20%;left:-10%;width:60vw;height:60vw;background:radial-gradient(circle,rgba(255,255,255,.15) 0%,transparent 60%);filter:blur(120px);z-index:1;border-radius:50%;}
+        .hero::after{content:'';position:absolute;bottom:-10%;right:-10%;width:50vw;height:50vw;background:radial-gradient(circle,rgba(255,255,255,.1) 0%,transparent 60%);filter:blur(100px);z-index:1;border-radius:50%;}
+        .hero-container{position:relative;z-index:2;max-width:900px;display:flex;flex-direction:column;align-items:center;}
+        .hero h1{color:#fff;font-size:clamp(2.8rem,6vw,5rem);font-weight:800;line-height:1.05;letter-spacing:-.04em;margin-bottom:1.5rem;}
+        .hero h1 span{color:var(--azul-100);position:relative;display:inline-block;}
+        .hero h1 span::after{content:'';position:absolute;bottom:5px;left:0;width:100%;height:8px;background:rgba(255,255,255,.3);border-radius:4px;z-index:-1;}
+        .btn-hero{background:#fff;color:var(--azul-900);padding:20px 48px;border-radius:99px;font-weight:800;font-size:1.15rem;display:inline-flex;align-items:center;gap:12px;transition:var(--tr);box-shadow:0 10px 25px rgba(0,0,0,.2);}
+        .btn-hero i{font-size:1.4rem;color:var(--azul-600);}
+        .btn-hero:hover{transform:translateY(-4px);box-shadow:0 15px 35px rgba(0,0,0,.3);background:var(--azul-50);}
+        .indicador-rolagem{position:absolute;bottom:40px;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:12px;color:rgba(255,255,255,.9);font-size:.85rem;font-weight:500;text-transform:uppercase;letter-spacing:.1em;z-index:5;animation:pulsarText 2.5s infinite ease-in-out;cursor:pointer;}
+        .seta-rolagem{width:20px;height:20px;border-bottom:3px solid #fff;border-right:3px solid #fff;transform:rotate(45deg);animation:quicarSeta 2s infinite cubic-bezier(.25,.46,.45,.94);}
+        @keyframes quicarSeta{0%,20%,50%,80%,100%{transform:translateY(0) translateX(-50%) rotate(45deg);}40%{transform:translateY(-12px) translateX(-50%) rotate(45deg);}60%{transform:translateY(-6px) translateX(-50%) rotate(45deg);}}
+        @keyframes pulsarText{0%,100%{opacity:.5;}50%{opacity:1;}}
 
-        /* HERO */
-        .hero { position: relative; min-height: 95vh; display: flex; align-items: center; justify-content: center; background: linear-gradient(rgba(15,23,42,0.75), rgba(37,99,235,0.65)), url('https://willkerson.github.io/Web.embalagens/lojafundo.png'); background-size: cover; background-position: center; background-repeat: no-repeat; overflow: hidden; padding: 8rem 1.5rem 6rem; text-align: center; }
-        .hero::before { content: ''; position: absolute; top: -20%; left: -10%; width: 60vw; height: 60vw; background: radial-gradient(circle, rgba(255,255,255,0.15) 0%, transparent 60%); filter: blur(120px); z-index: 1; border-radius: 50%; }
-        .hero::after { content: ''; position: absolute; bottom: -10%; right: -10%; width: 50vw; height: 50vw; background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 60%); filter: blur(100px); z-index: 1; border-radius: 50%; }
-        .hero-container { position: relative; z-index: 2; max-width: 900px; display: flex; flex-direction: column; align-items: center; }
-        .hero h1 { color: white; font-size: clamp(2.8rem, 6vw, 5rem); font-weight: 800; line-height: 1.05; letter-spacing: -0.04em; margin-bottom: 1.5rem; }
-        .hero h1 span { color: var(--azul-100); position: relative; display: inline-block; }
-        .hero h1 span::after { content: ''; position: absolute; bottom: 5px; left: 0; width: 100%; height: 8px; background: rgba(255,255,255,0.3); border-radius: 4px; z-index: -1; }
-        .hero p { color: var(--azul-50); font-size: clamp(1.1rem, 2vw, 1.35rem); margin-bottom: 3.5rem; max-width: 700px; margin-inline: auto; font-weight: 400; opacity: 0.95; line-height: 1.7; }
-        .btn-hero { background: #ffffff; color: var(--azul-900); padding: 20px 48px; border-radius: 99px; font-weight: 800; font-size: 1.15rem; display: inline-flex; align-items: center; gap: 12px; transition: var(--transicao-padrao); box-shadow: 0 10px 25px rgba(0,0,0,0.2); position: relative; overflow: hidden; }
-        .btn-hero i { font-size: 1.4rem; color: var(--azul-600); }
-        .btn-hero:hover { transform: translateY(-4px); box-shadow: 0 15px 35px rgba(0,0,0,0.3); background: var(--azul-50); }
-        .indicador-rolagem { position: absolute; bottom: 40px; left: 50%; transform: translateX(-50%); display: flex; flex-direction: column; align-items: center; gap: 12px; color: rgba(255,255,255,0.9); font-size: 0.85rem; font-weight: 500; text-transform: uppercase; letter-spacing: 0.1em; z-index: 5; animation: pulsarText 2.5s infinite ease-in-out; cursor: pointer; }
-        .seta-rolagem { width: 20px; height: 20px; border-bottom: 3px solid rgba(255,255,255,1); border-right: 3px solid rgba(255,255,255,1); transform: rotate(45deg); animation: quicarSeta 2s infinite cubic-bezier(0.25,0.46,0.45,0.94); }
-        @keyframes quicarSeta { 0%,20%,50%,80%,100% { transform: translateY(0) translateX(-50%) rotate(45deg); } 40% { transform: translateY(-12px) translateX(-50%) rotate(45deg); } 60% { transform: translateY(-6px) translateX(-50%) rotate(45deg); } }
-        @keyframes pulsarText { 0%,100% { opacity: 0.5; } 50% { opacity: 1; } }
+        /* ── CONFIANÇA ──────────────────────────────────────── */
+        .secao-confianca{width:100%;background:transparent;position:relative;z-index:10;}
+        .faixa-confianca{max-width:1100px;margin:-60px auto 4rem;background:#fff;border-radius:24px;box-shadow:0 25px 50px -12px rgba(0,0,0,.08);padding:3rem;border:1px solid var(--bordas);}
+        .slider-container{overflow:hidden;position:relative;width:100%;padding:1rem 0;}
+        .slider-track{display:flex;transition:transform .5s ease-in-out;gap:20px;}
+        .feedback-card{min-width:calc(33.333% - 14px);background:var(--fundo-pagina);padding:2rem;border-radius:16px;border:1px solid var(--bordas);}
+        .feedback-texto{font-style:italic;font-size:.95rem;margin-bottom:1rem;color:var(--texto-corpo);}
+        .feedback-autor{font-weight:700;color:var(--azul-600);display:flex;align-items:center;gap:8px;}
 
-        /* CONFIANÇA */
-        .secao-confianca { width: 100%; background: transparent; position: relative; z-index: 10; }
-        .faixa-confianca { max-width: 1100px; margin: -60px auto 4rem; background: #ffffff; border-radius: 24px; box-shadow: 0 25px 50px -12px rgba(0,0,0,0.08); padding: 3rem; border: 1px solid var(--bordas); display: block; }
-        .slider-container { overflow: hidden; position: relative; width: 100%; padding: 1rem 0; }
-        .slider-track { display: flex; transition: transform 0.5s ease-in-out; gap: 20px; }
-        .feedback-card { min-width: calc(33.333% - 14px); background: var(--fundo-pagina); padding: 2rem; border-radius: 16px; border: 1px solid var(--bordas); }
-        .feedback-texto { font-style: italic; font-size: 0.95rem; margin-bottom: 1rem; color: var(--texto-corpo); }
-        .feedback-autor { font-weight: 700; color: var(--azul-600); display: flex; align-items: center; gap: 8px; }
+        /* ── SOBRE ──────────────────────────────────────────── */
+        .secao-sobre{padding:4rem 0 6rem;background:#fff;border-top:1px solid var(--bordas);border-bottom:1px solid var(--bordas);margin-bottom:5rem;}
+        .sobre-grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center;}
+        .sobre-conteudo h2{font-size:2.5rem;margin-bottom:1.5rem;line-height:1.2;}
+        .sobre-imagem{background:var(--azul-50);border-radius:24px;padding:3rem;text-align:center;border:1px solid var(--azul-100);}
+        .sobre-imagem i{font-size:8rem;color:var(--azul-600);opacity:.8;}
 
-        /* SOBRE */
-        .secao-sobre { padding: 4rem 0 6rem; background-color: #ffffff; border-top: 1px solid var(--bordas); border-bottom: 1px solid var(--bordas); margin-bottom: 5rem; }
-        .sobre-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
-        .sobre-conteudo h2 { font-size: 2.5rem; margin-bottom: 1.5rem; line-height: 1.2; }
-        .sobre-imagem { background: var(--azul-50); border-radius: 24px; padding: 3rem; text-align: center; border: 1px solid var(--azul-100); position: relative; overflow: hidden; }
-        .sobre-imagem i { font-size: 8rem; color: var(--azul-600); opacity: 0.8; }
+        /* ── CATÁLOGO ───────────────────────────────────────── */
+        .secao-catalogo{padding:2rem 0 6rem;}
+        .cabecalho-catalogo{text-align:center;margin-bottom:4rem;max-width:700px;margin-inline:auto;}
+        .cabecalho-catalogo h2{font-size:2.8rem;margin-bottom:1rem;}
+        .cabecalho-catalogo p{font-size:1.1rem;color:var(--texto-mutado);}
+        .filtros-wrapper{margin-bottom:1.5rem;}
+        .filtros{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;}
+        .btn-filtro{padding:14px 28px;background:#fff;border:1px solid var(--bordas);color:var(--texto-corpo);border-radius:99px;font-weight:600;font-size:1rem;transition:var(--tr);display:flex;align-items:center;gap:10px;box-shadow:0 2px 4px rgba(0,0,0,.02);}
+        .btn-filtro:hover{border-color:var(--azul-400);color:var(--azul-600);background:var(--azul-50);transform:translateY(-2px);}
+        .btn-filtro.ativo{background:var(--azul-600)!important;color:#fff!important;border-color:var(--azul-600)!important;box-shadow:0 8px 20px rgba(37,99,235,.25);}
 
-        /* ============================================ */
-        /* CATÁLOGO COM SISTEMA DE SUBCATEGORIAS        */
-        /* ============================================ */
-        .secao-catalogo { padding: 2rem 0 6rem; }
-        .cabecalho-catalogo { text-align: center; margin-bottom: 4rem; max-width: 700px; margin-inline: auto; }
-        .cabecalho-catalogo h2 { font-size: 2.8rem; margin-bottom: 1rem; }
-        .cabecalho-catalogo p { font-size: 1.1rem; color: var(--texto-mutado); }
+        .subcategorias-bar{display:none;gap:10px;justify-content:center;flex-wrap:wrap;margin-bottom:3rem;padding:1.25rem 1.5rem;background:var(--azul-50);border:1px solid var(--azul-100);border-radius:18px;animation:fadeIn .3s ease;}
+        .subcategorias-bar.visivel{display:flex;}
+        .btn-subcategoria{padding:10px 22px;background:#fff;border:1px solid var(--azul-100);color:var(--azul-700);border-radius:99px;font-weight:600;font-size:.9rem;transition:var(--tr);display:flex;align-items:center;gap:8px;}
+        .btn-subcategoria:hover{background:var(--azul-100);transform:translateY(-1px);}
+        .btn-subcategoria.ativo{background:var(--azul-700);color:#fff;border-color:var(--azul-700);box-shadow:0 4px 12px rgba(29,78,216,.25);}
 
-        /* Filtros principais (categorias) */
-        .filtros-wrapper { margin-bottom: 1.5rem; }
-        .filtros-label { font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--texto-mutado); margin-bottom: 0.75rem; padding-left: 4px; }
-        .filtros { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+        .breadcrumb{display:none;align-items:center;gap:8px;font-size:.9rem;color:var(--texto-mutado);margin-bottom:2rem;font-weight:500;}
+        .breadcrumb.visivel{display:flex;}
+        .breadcrumb span{color:var(--azul-600);font-weight:700;}
 
-        .btn-filtro { padding: 14px 28px; background: #ffffff; border: 1px solid var(--bordas); color: var(--texto-corpo); border-radius: 99px; font-weight: 600; font-size: 1rem; transition: var(--transicao-padrao); display: flex; align-items: center; gap: 10px; box-shadow: 0 2px 4px rgba(0,0,0,0.02); }
-        .btn-filtro:hover { border-color: var(--azul-400); color: var(--azul-600); background: var(--azul-50); transform: translateY(-2px); }
-        .btn-filtro.ativo { background: var(--azul-600) !important; color: #ffffff !important; border-color: var(--azul-600) !important; box-shadow: 0 8px 20px rgba(37,99,235,0.25); }
+        .grade-subcategorias{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:1.5rem;margin-bottom:4rem;}
+        .card-subcategoria{background:#fff;border:1px solid var(--bordas);border-radius:20px;padding:2rem 1.5rem;display:flex;flex-direction:column;align-items:center;text-align:center;gap:1rem;cursor:pointer;transition:var(--tr);box-shadow:var(--sombra-card);}
+        .card-subcategoria:hover{transform:translateY(-6px);border-color:var(--azul-100);box-shadow:var(--sombra-hover);}
+        .card-subcategoria .icone-sub{font-size:3rem;color:var(--azul-600);background:var(--azul-50);padding:1rem;border-radius:16px;}
+        .card-subcategoria h3{font-size:1.1rem;color:var(--texto-escuro);}
+        .card-subcategoria .badge-qtd{background:var(--azul-600);color:#fff;font-size:.75rem;font-weight:700;padding:4px 12px;border-radius:99px;}
 
-        /* ── Barra de subcategorias ── */
-        .subcategorias-bar {
-            display: none; /* oculta por padrão, JS exibe quando necessário */
-            gap: 10px;
-            justify-content: center;
-            flex-wrap: wrap;
-            margin-bottom: 3rem;
-            padding: 1.25rem 1.5rem;
-            background: var(--azul-50);
-            border: 1px solid var(--azul-100);
-            border-radius: 18px;
-            animation: fadeIn 0.3s ease;
-        }
-        .subcategorias-bar.visivel { display: flex; }
+        @keyframes fadeIn{from{opacity:0;transform:translateY(10px);}to{opacity:1;transform:translateY(0);}}
 
-        .btn-subcategoria {
-            padding: 10px 22px;
-            background: #ffffff;
-            border: 1px solid var(--azul-100);
-            color: var(--azul-700);
-            border-radius: 99px;
-            font-weight: 600;
-            font-size: 0.9rem;
-            transition: var(--transicao-padrao);
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-        .btn-subcategoria:hover { background: var(--azul-100); transform: translateY(-1px); }
-        .btn-subcategoria.ativo { background: var(--azul-700); color: #ffffff; border-color: var(--azul-700); box-shadow: 0 4px 12px rgba(29,78,216,0.25); }
+        .secao-categoria{margin-bottom:7rem;animation:fadeIn .6s ease-out;}
+        .titulo-categoria{color:var(--texto-escuro);font-size:2.2rem;font-weight:800;margin-bottom:3rem;display:flex;align-items:center;gap:16px;letter-spacing:-.03em;}
+        .titulo-categoria i{color:var(--azul-600);background:var(--azul-50);padding:12px;border-radius:16px;}
+        .grade-produtos{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:2.5rem;}
 
-        /* Breadcrumb de navegação */
-        .breadcrumb {
-            display: none;
-            align-items: center;
-            gap: 8px;
-            font-size: 0.9rem;
-            color: var(--texto-mutado);
-            margin-bottom: 2rem;
-            font-weight: 500;
-        }
-        .breadcrumb.visivel { display: flex; }
-        .breadcrumb span { color: var(--azul-600); font-weight: 700; }
-        .breadcrumb i { font-size: 1rem; }
+        /* ── CARD DE PRODUTO ────────────────────────────────── */
+        .cartao-produto{background:var(--fundo-cartao);border-radius:28px;border:1px solid var(--bordas);overflow:hidden;box-shadow:var(--sombra-card);transition:var(--tr);display:flex;flex-direction:column;position:relative;}
+        .cartao-produto:hover{transform:translateY(-8px);box-shadow:var(--sombra-hover);border-color:var(--azul-100);}
+        /* destaque quando no carrinho */
+        .cartao-produto.no-carrinho{border-color:var(--verde-wa);box-shadow:0 0 0 3px rgba(37,211,102,.15);}
 
-        /* Cards de categoria — exibidos quando filtro = "caixas" sem subcategoria */
-        .grade-subcategorias {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-            gap: 1.5rem;
-            margin-bottom: 4rem;
-        }
-        .card-subcategoria {
-            background: #ffffff;
-            border: 1px solid var(--bordas);
-            border-radius: 20px;
-            padding: 2rem 1.5rem;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            text-align: center;
-            gap: 1rem;
-            cursor: pointer;
-            transition: var(--transicao-padrao);
-            box-shadow: var(--sombra-card);
-        }
-        .card-subcategoria:hover { transform: translateY(-6px); border-color: var(--azul-200, #bfdbfe); box-shadow: var(--sombra-hover); }
-        .card-subcategoria .icone-sub { font-size: 3rem; color: var(--azul-600); background: var(--azul-50); padding: 1rem; border-radius: 16px; }
-        .card-subcategoria h3 { font-size: 1.2rem; color: var(--texto-escuro); }
-        .card-subcategoria p { font-size: 0.9rem; color: var(--texto-mutado); }
-        .card-subcategoria .badge-qtd { background: var(--azul-600); color: white; font-size: 0.75rem; font-weight: 700; padding: 4px 12px; border-radius: 99px; }
+        .imagem-produto{width:100%;height:220px;background:linear-gradient(135deg,#f8fafc 0%,#eff6ff 100%);display:flex;align-items:center;justify-content:center;color:var(--azul-400);font-size:5.5rem;transition:var(--tr);border-bottom:1px solid var(--bordas);position:relative;}
+        .cartao-produto:hover .imagem-produto{color:var(--azul-600);}
+        /* selo "no carrinho" */
+        .selo-carrinho{position:absolute;top:12px;right:12px;background:var(--verde-wa);color:#fff;font-size:.75rem;font-weight:800;padding:5px 12px;border-radius:99px;display:flex;align-items:center;gap:5px;opacity:0;transform:scale(.8);transition:var(--tr);}
+        .cartao-produto.no-carrinho .selo-carrinho{opacity:1;transform:scale(1);}
 
-        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+        .conteudo-produto{padding:2rem 1.75rem;display:flex;flex-direction:column;flex-grow:1;background:#fff;z-index:2;}
+        .nome-produto{font-size:1.3rem;font-weight:800;color:var(--texto-escuro);margin-bottom:.4rem;line-height:1.2;letter-spacing:-.02em;}
+        .desc-produto{font-size:.95rem;color:var(--texto-mutado);margin-bottom:1.5rem;flex-grow:1;line-height:1.6;}
+        .container-preco{background:var(--azul-50);border:1px solid var(--azul-100);border-radius:16px;padding:14px 18px;margin-bottom:1.5rem;display:flex;flex-direction:column;align-items:flex-start;position:relative;}
+        .container-preco::before{content:'';position:absolute;left:0;top:0;height:100%;width:4px;background:var(--azul-600);border-radius:16px 0 0 16px;}
+        .preco-label{font-size:.7rem;color:var(--azul-800);font-weight:700;text-transform:uppercase;letter-spacing:.08em;margin-bottom:3px;}
+        .preco-linha{display:flex;align-items:baseline;gap:4px;}
+        .preco-valor{font-size:2rem;font-weight:900;color:var(--azul-600);letter-spacing:-.04em;line-height:1;}
+        .preco-unit{font-size:.9rem;color:var(--texto-mutado);font-weight:600;}
 
-        .secao-categoria { margin-bottom: 7rem; animation: fadeIn 0.6s ease-out; }
-        .titulo-categoria { color: var(--texto-escuro); font-size: 2.2rem; font-weight: 800; margin-bottom: 3rem; display: flex; align-items: center; gap: 16px; letter-spacing: -0.03em; }
-        .titulo-categoria i { color: var(--azul-600); background: var(--azul-50); padding: 12px; border-radius: 16px; }
-        .grade-produtos { display: grid; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); gap: 2.5rem; }
+        /* ── AÇÕES DO CARD: qtd + add ───────────────────────── */
+        .acoes-produto{display:flex;gap:10px;align-items:center;}
+        .controle-qtd{display:flex;align-items:center;gap:0;border:2px solid var(--bordas);border-radius:12px;overflow:hidden;background:#fff;}
+        .btn-qtd{width:36px;height:42px;display:flex;align-items:center;justify-content:center;font-size:1.2rem;font-weight:800;color:var(--azul-600);transition:var(--tr);flex-shrink:0;}
+        .btn-qtd:hover{background:var(--azul-50);}
+        .input-qtd{width:42px;height:42px;border:none;text-align:center;font-size:1rem;font-weight:700;color:var(--texto-escuro);background:transparent;-moz-appearance:textfield;}
+        .input-qtd::-webkit-outer-spin-button,.input-qtd::-webkit-inner-spin-button{-webkit-appearance:none;}
+        .btn-add-carrinho{flex:1;padding:12px;background:var(--azul-600);color:#fff;border-radius:12px;font-weight:700;font-size:.95rem;transition:var(--tr);display:flex;align-items:center;justify-content:center;gap:8px;}
+        .btn-add-carrinho:hover{background:var(--azul-800);transform:translateY(-1px);}
+        .btn-add-carrinho.adicionado{background:var(--verde-wa);}
+        .btn-add-carrinho.adicionado:hover{background:var(--verde-wa-hover);}
+        .btn-ver-espec{padding:10px 16px;border:2px solid var(--bordas);border-radius:12px;color:var(--texto-mutado);font-size:.85rem;font-weight:600;transition:var(--tr);}
+        .btn-ver-espec:hover{border-color:var(--azul-400);color:var(--azul-600);}
 
-        /* Cartões de Produto */
-        .cartao-produto { background: var(--fundo-cartao); border-radius: 28px; border: 1px solid var(--bordas); overflow: hidden; box-shadow: var(--sombra-card); transition: var(--transicao-padrao); display: flex; flex-direction: column; position: relative; }
-        .cartao-produto:hover { transform: translateY(-10px); box-shadow: var(--sombra-hover); border-color: var(--azul-100); }
-        .imagem-produto { width: 100%; height: 260px; background: linear-gradient(135deg, #f8fafc 0%, #eff6ff 100%); display: flex; align-items: center; justify-content: center; color: var(--azul-400); font-size: 6rem; transition: var(--transicao-padrao); border-bottom: 1px solid var(--bordas); }
-        .cartao-produto:hover .imagem-produto { color: var(--azul-600); transform: scale(1.02); }
-        .conteudo-produto { padding: 2.5rem 2rem; display: flex; flex-direction: column; flex-grow: 1; background: #ffffff; z-index: 2; }
-        .nome-produto { font-size: 1.4rem; font-weight: 800; color: var(--texto-escuro); margin-bottom: 0.5rem; line-height: 1.2; letter-spacing: -0.02em; }
-        .desc-produto { font-size: 1rem; color: var(--texto-mutado); margin-bottom: 2rem; flex-grow: 1; line-height: 1.6; }
-        .container-preco { background: var(--azul-50); border: 1px solid var(--azul-100); border-radius: 16px; padding: 16px 20px; margin-bottom: 2rem; display: flex; flex-direction: column; align-items: flex-start; position: relative; }
-        .container-preco::before { content: ''; position: absolute; left: 0; top: 0; height: 100%; width: 4px; background: var(--azul-600); border-radius: 16px 0 0 16px; }
-        .preco-label { font-size: 0.75rem; color: var(--azul-800); font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 4px; }
-        .preco-linha { display: flex; align-items: baseline; gap: 4px; }
-        .preco-valor { font-size: 2.2rem; font-weight: 900; color: var(--azul-600); letter-spacing: -0.04em; line-height: 1; }
-        .preco-unit { font-size: 0.95rem; color: var(--texto-mutado); font-weight: 600; }
-        .btn-produto { width: 100%; padding: 18px; background: transparent; color: var(--azul-600); border: 2px solid var(--azul-100); border-radius: 14px; font-weight: 700; font-size: 1.05rem; transition: var(--transicao-padrao); text-align: center; display: flex; justify-content: center; align-items: center; gap: 10px; }
-        .cartao-produto:hover .btn-produto { background: var(--azul-600); color: #ffffff; border-color: var(--azul-600); }
+        /* ── PAINEL CARRINHO (SIDEBAR) ──────────────────────── */
+        .overlay-carrinho{position:fixed;inset:0;background:rgba(15,23,42,.6);backdrop-filter:blur(6px);z-index:1500;opacity:0;pointer-events:none;transition:opacity .3s ease;}
+        .overlay-carrinho.aberto{opacity:1;pointer-events:all;}
 
-        /* MODAL */
-        .modal-fundo { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(15,23,42,0.85); backdrop-filter: blur(12px); z-index: 2000; align-items: center; justify-content: center; padding: 1.5rem; opacity: 0; transition: opacity 0.3s ease; }
-        .modal-fundo.ativo { display: flex; opacity: 1; }
-        .modal-conteudo { background: #ffffff; width: 100%; max-width: 650px; border-radius: 32px; padding: 3.5rem; transform: scale(0.9) translateY(30px); transition: all 0.4s cubic-bezier(0.175,0.885,0.32,1.275); position: relative; box-shadow: 0 30px 60px -12px rgba(0,0,0,0.4); max-height: 90vh; overflow-y: auto; }
-        .modal-fundo.ativo .modal-conteudo { transform: scale(1) translateY(0); }
-        .btn-fechar { position: absolute; top: 1.5rem; right: 1.5rem; background: var(--fundo-pagina); width: 48px; height: 48px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.4rem; color: var(--texto-mutado); transition: var(--transicao-padrao); }
-        .btn-fechar:hover { background: var(--bordas); color: var(--texto-escuro); transform: rotate(90deg); }
-        .modal-cabecalho { text-align: center; margin-bottom: 2.5rem; display: flex; flex-direction: column; align-items: center; }
-        .modal-icone { font-size: 5rem; color: var(--azul-600); margin-bottom: 1.5rem; background: var(--azul-50); padding: 20px; border-radius: 24px; }
-        .modal-titulo { font-size: 2.2rem; font-weight: 800; color: var(--texto-escuro); line-height: 1.2; letter-spacing: -0.03em; margin-bottom: 1rem; }
-        .modal-container-preco { background: var(--azul-600); padding: 12px 24px; border-radius: 99px; color: #ffffff; display: inline-flex; align-items: baseline; gap: 6px; box-shadow: 0 10px 20px rgba(37,99,235,0.2); }
-        .modal-preco-valor { font-size: 2.5rem; font-weight: 900; letter-spacing: -0.04em; }
-        .modal-preco-unit { font-size: 1.1rem; opacity: 0.9; font-weight: 500; }
-        .modal-especificacoes { background: var(--fundo-pagina); border-radius: 20px; padding: 2rem; margin-bottom: 3rem; border: 1px solid var(--bordas); }
-        .grupo-espec { display: flex; justify-content: space-between; align-items: center; padding: 16px 0; border-bottom: 1px solid var(--bordas); }
-        .grupo-espec:last-child { border-bottom: none; padding-bottom: 0; }
-        .label-espec { font-size: 1rem; color: var(--texto-mutado); font-weight: 600; display: flex; align-items: center; gap: 12px; }
-        .label-espec i { font-size: 1.3rem; }
-        .valor-espec { font-size: 1.1rem; font-weight: 700; color: var(--texto-escuro); text-align: right; }
-        .botoes-acao { display: grid; grid-template-columns: 1fr; gap: 1.5rem; }
-        .btn-acao { padding: 20px; border-radius: 16px; font-weight: 800; font-size: 1.1rem; display: flex; align-items: center; justify-content: center; gap: 12px; transition: var(--transicao-padrao); }
-        .btn-acao:active { transform: scale(0.97); }
-        .btn-acao-primario { background: var(--verde-whatsapp); color: #ffffff; box-shadow: 0 10px 25px rgba(37,211,102,0.35); }
-        .btn-acao-primario:hover { background: var(--verde-whatsapp-hover); box-shadow: 0 15px 35px rgba(37,211,102,0.45); transform: translateY(-3px); }
+        .sidebar-carrinho{position:fixed;top:0;right:0;height:100%;width:440px;max-width:95vw;background:#fff;z-index:1600;display:flex;flex-direction:column;box-shadow:-20px 0 60px rgba(0,0,0,.15);transform:translateX(100%);transition:transform .4s cubic-bezier(.4,0,.2,1);}
+        .sidebar-carrinho.aberto{transform:translateX(0);}
 
-        /* WhatsApp Flutuante */
-        .whatsapp-flutuante { position: fixed; bottom: 30px; right: 30px; background-color: var(--verde-whatsapp); color: #ffffff; width: 70px; height: 70px; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 15px 35px rgba(37,211,102,0.4); z-index: 999; transition: var(--transicao-padrao); font-size: 2.4rem; }
-        .whatsapp-flutuante:hover { transform: scale(1.1) translateY(-5px); background-color: var(--verde-whatsapp-hover); }
+        .sidebar-header{padding:2rem 2rem 1.5rem;border-bottom:1px solid var(--bordas);display:flex;justify-content:space-between;align-items:center;flex-shrink:0;}
+        .sidebar-header h3{font-size:1.5rem;display:flex;align-items:center;gap:10px;}
+        .sidebar-header h3 i{color:var(--azul-600);}
+        .btn-fechar-sidebar{background:var(--fundo-pagina);width:40px;height:40px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.2rem;color:var(--texto-mutado);transition:var(--tr);}
+        .btn-fechar-sidebar:hover{background:var(--bordas);color:var(--texto-escuro);transform:rotate(90deg);}
 
-        /* FOOTER */
-        footer { background: var(--azul-900); color: #ffffff; padding: 6rem 0 3rem; margin-top: auto; }
-        .rodape-container { max-width: 1200px; margin: 0 auto; padding: 0 1.5rem; display: grid; grid-template-columns: 1.5fr 1fr 1fr; gap: 4rem; }
-        .rodape-coluna h4 { color: #ffffff; font-size: 1.2rem; margin-bottom: 1.5rem; text-transform: uppercase; letter-spacing: 0.05em; }
-        .rodape-logo { font-size: 2rem; font-weight: 800; margin-bottom: 1.5rem; display: flex; align-items: center; gap: 12px; color: #ffffff; letter-spacing: -0.03em; }
-        .rodape-sobre { color: var(--texto-mutado); font-size: 1.05rem; line-height: 1.8; margin-bottom: 2rem; max-width: 400px; }
-        .rodape-lista { list-style: none; }
-        .rodape-lista li { margin-bottom: 1rem; }
-        .rodape-lista a { color: var(--azul-100); transition: var(--transicao-padrao); display: flex; align-items: center; gap: 8px; }
-        .rodape-lista a:hover { color: var(--verde-whatsapp); transform: translateX(5px); }
-        .copyright { border-top: 1px solid rgba(255,255,255,0.1); padding-top: 2.5rem; color: var(--texto-mutado); font-size: 0.95rem; margin-top: 5rem; text-align: center; }
-        .address-text { color: var(--texto-mutado); font-size: 0.95rem; line-height: 1.7; margin-top: 0.5rem; }
+        .sidebar-itens{flex:1;overflow-y:auto;padding:1.5rem 2rem;}
+        .sidebar-vazio{display:flex;flex-direction:column;align-items:center;justify-content:center;height:100%;gap:1rem;color:var(--texto-mutado);text-align:center;}
+        .sidebar-vazio i{font-size:4rem;opacity:.3;}
+        .sidebar-vazio p{font-size:1.1rem;font-weight:600;}
 
-        /* RESPONSIVO */
-        @media (max-width: 1024px) { .rodape-container { grid-template-columns: 1fr 1fr; } .sobre-grid { gap: 2rem; } }
-        @media (max-width: 768px) {
-            .hero { padding-top: 10rem; min-height: 80vh; }
-            .hero h1 { font-size: 2.8rem; }
-            .faixa-confianca { margin: -30px 1.5rem 4rem; padding: 2rem; }
-            .feedback-card { min-width: 100%; }
-            .sobre-grid { grid-template-columns: 1fr; }
-            .sobre-imagem { display: none; }
-            .filtros { justify-content: flex-start; overflow-x: auto; flex-wrap: nowrap; padding-bottom: 10px; -webkit-overflow-scrolling: touch; }
-            .grade-produtos { grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); }
-            .botoes-acao { gap: 1rem; }
-            .modal-conteudo { padding: 2.5rem 1.5rem; border-radius: 24px; }
-            .modal-titulo { font-size: 1.8rem; }
-            .rodape-container { grid-template-columns: 1fr; gap: 3rem; text-align: center; }
-            .rodape-logo { justify-content: center; }
-            .rodape-sobre { margin: 0 auto 2rem; }
-            .rodape-lista a { justify-content: center; }
+        .item-carrinho{display:flex;align-items:center;gap:1rem;padding:1.25rem 0;border-bottom:1px solid var(--bordas);}
+        .item-carrinho:last-child{border-bottom:none;}
+        .item-icone{font-size:2rem;color:var(--azul-500);background:var(--azul-50);padding:.75rem;border-radius:12px;flex-shrink:0;}
+        .item-info{flex:1;min-width:0;}
+        .item-nome{font-size:.95rem;font-weight:700;color:var(--texto-escuro);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+        .item-preco-unit{font-size:.8rem;color:var(--texto-mutado);}
+        .item-controles{display:flex;align-items:center;gap:8px;flex-shrink:0;}
+        .item-controle-qtd{display:flex;align-items:center;border:1.5px solid var(--bordas);border-radius:8px;overflow:hidden;}
+        .item-btn-qtd{width:28px;height:30px;display:flex;align-items:center;justify-content:center;font-size:1rem;font-weight:800;color:var(--azul-600);transition:var(--tr);}
+        .item-btn-qtd:hover{background:var(--azul-50);}
+        .item-qtd-val{width:32px;text-align:center;font-size:.9rem;font-weight:700;color:var(--texto-escuro);}
+        .item-subtotal{font-size:.95rem;font-weight:800;color:var(--azul-600);min-width:65px;text-align:right;}
+        .btn-remover-item{color:var(--texto-mutado);font-size:1rem;transition:var(--tr);padding:4px;}
+        .btn-remover-item:hover{color:#ef4444;}
+
+        .sidebar-footer{padding:1.5rem 2rem 2rem;border-top:1px solid var(--bordas);flex-shrink:0;background:#fff;}
+        .resumo-total{display:flex;justify-content:space-between;align-items:center;margin-bottom:1.25rem;}
+        .resumo-total .label{font-size:1rem;font-weight:600;color:var(--texto-mutado);}
+        .resumo-total .valor{font-size:1.8rem;font-weight:900;color:var(--azul-600);letter-spacing:-.03em;}
+        .btn-enviar-wpp{width:100%;padding:18px;background:var(--verde-wa);color:#fff;border-radius:16px;font-weight:800;font-size:1.15rem;display:flex;align-items:center;justify-content:center;gap:12px;transition:var(--tr);box-shadow:0 10px 25px rgba(37,211,102,.35);}
+        .btn-enviar-wpp:hover{background:var(--verde-wa-hover);transform:translateY(-2px);box-shadow:0 15px 35px rgba(37,211,102,.45);}
+        .btn-limpar{width:100%;padding:12px;color:var(--texto-mutado);font-size:.9rem;font-weight:600;margin-top:.75rem;transition:var(--tr);border-radius:10px;}
+        .btn-limpar:hover{background:var(--fundo-pagina);color:#ef4444;}
+        .aviso-wpp{font-size:.8rem;color:var(--texto-mutado);text-align:center;margin-top:.75rem;display:flex;align-items:center;justify-content:center;gap:6px;}
+
+        /* ── MODAL ──────────────────────────────────────────── */
+        .modal-fundo{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(15,23,42,.85);backdrop-filter:blur(12px);z-index:2000;align-items:center;justify-content:center;padding:1.5rem;opacity:0;transition:opacity .3s ease;}
+        .modal-fundo.ativo{display:flex;opacity:1;}
+        .modal-conteudo{background:#fff;width:100%;max-width:620px;border-radius:32px;padding:3rem;transform:scale(.9) translateY(30px);transition:all .4s cubic-bezier(.175,.885,.32,1.275);position:relative;box-shadow:0 30px 60px -12px rgba(0,0,0,.4);max-height:90vh;overflow-y:auto;}
+        .modal-fundo.ativo .modal-conteudo{transform:scale(1) translateY(0);}
+        .btn-fechar{position:absolute;top:1.5rem;right:1.5rem;background:var(--fundo-pagina);width:44px;height:44px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.3rem;color:var(--texto-mutado);transition:var(--tr);}
+        .btn-fechar:hover{background:var(--bordas);color:var(--texto-escuro);transform:rotate(90deg);}
+        .modal-cabecalho{text-align:center;margin-bottom:2rem;display:flex;flex-direction:column;align-items:center;}
+        .modal-icone{font-size:4.5rem;color:var(--azul-600);margin-bottom:1.2rem;background:var(--azul-50);padding:18px;border-radius:22px;}
+        .modal-titulo{font-size:2rem;font-weight:800;color:var(--texto-escuro);line-height:1.2;letter-spacing:-.03em;margin-bottom:.75rem;}
+        .modal-container-preco{background:var(--azul-600);padding:10px 22px;border-radius:99px;color:#fff;display:inline-flex;align-items:baseline;gap:5px;}
+        .modal-preco-valor{font-size:2.2rem;font-weight:900;letter-spacing:-.04em;}
+        .modal-preco-unit{font-size:1rem;opacity:.9;font-weight:500;}
+        .modal-especificacoes{background:var(--fundo-pagina);border-radius:18px;padding:1.75rem;margin-bottom:2rem;border:1px solid var(--bordas);}
+        .grupo-espec{display:flex;justify-content:space-between;align-items:center;padding:14px 0;border-bottom:1px solid var(--bordas);}
+        .grupo-espec:last-child{border-bottom:none;padding-bottom:0;}
+        .label-espec{font-size:.95rem;color:var(--texto-mutado);font-weight:600;display:flex;align-items:center;gap:10px;}
+        .valor-espec{font-size:1rem;font-weight:700;color:var(--texto-escuro);}
+
+        /* ── WHATSAPP FLUTUANTE ─────────────────────────────── */
+        .whatsapp-flutuante{position:fixed;bottom:30px;right:30px;background:var(--verde-wa);color:#fff;width:64px;height:64px;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 15px 35px rgba(37,211,102,.4);z-index:999;transition:var(--tr);font-size:2.2rem;}
+        .whatsapp-flutuante:hover{transform:scale(1.1) translateY(-4px);background:var(--verde-wa-hover);}
+
+        /* ── FOOTER ─────────────────────────────────────────── */
+        footer{background:var(--azul-900);color:#fff;padding:6rem 0 3rem;margin-top:auto;}
+        .rodape-container{max-width:1200px;margin:0 auto;padding:0 1.5rem;display:grid;grid-template-columns:1.5fr 1fr 1fr;gap:4rem;}
+        .rodape-coluna h4{color:#fff;font-size:1.1rem;margin-bottom:1.5rem;text-transform:uppercase;letter-spacing:.05em;}
+        .rodape-logo{font-size:1.8rem;font-weight:800;margin-bottom:1.5rem;display:flex;align-items:center;gap:12px;color:#fff;letter-spacing:-.03em;}
+        .rodape-sobre{color:var(--texto-mutado);font-size:1rem;line-height:1.8;margin-bottom:2rem;max-width:400px;}
+        .rodape-lista{list-style:none;}
+        .rodape-lista li{margin-bottom:1rem;}
+        .rodape-lista a{color:var(--azul-100);transition:var(--tr);display:flex;align-items:center;gap:8px;}
+        .rodape-lista a:hover{color:var(--verde-wa);transform:translateX(5px);}
+        .address-text{color:var(--texto-mutado);font-size:.95rem;line-height:1.7;margin-top:.5rem;}
+        .copyright{border-top:1px solid rgba(255,255,255,.1);padding-top:2.5rem;color:var(--texto-mutado);font-size:.9rem;margin-top:5rem;text-align:center;}
+
+        /* ── RESPONSIVO ─────────────────────────────────────── */
+        @media(max-width:1024px){.rodape-container{grid-template-columns:1fr 1fr;}.sobre-grid{gap:2rem;}}
+        @media(max-width:768px){
+            .hero{padding-top:10rem;min-height:80vh;}
+            .hero h1{font-size:2.6rem;}
+            .faixa-confianca{margin:-30px 1.5rem 4rem;padding:2rem;}
+            .feedback-card{min-width:100%;}
+            .sobre-grid{grid-template-columns:1fr;}
+            .sobre-imagem{display:none;}
+            .filtros{justify-content:flex-start;overflow-x:auto;flex-wrap:nowrap;padding-bottom:10px;-webkit-overflow-scrolling:touch;}
+            .grade-produtos{grid-template-columns:1fr;}
+            .modal-conteudo{padding:2rem 1.25rem;border-radius:22px;}
+            .modal-titulo{font-size:1.7rem;}
+            .rodape-container{grid-template-columns:1fr;gap:3rem;text-align:center;}
+            .rodape-logo{justify-content:center;}
+            .rodape-sobre{margin:0 auto 2rem;}
+            .rodape-lista a{justify-content:center;}
+            .sidebar-carrinho{width:100%;max-width:100%;}
         }
     </style>
 </head>
 <body>
 
-    <header id="main-header">
-        <div class="cabecalho-container">
-            <a href="#" class="logo">
-                <i class="ph-fill ph-package"></i> Cia Das Embalagens
-            </a>
+<!-- ═══════════════════════════════════════════════════════
+     HEADER
+════════════════════════════════════════════════════════ -->
+<header id="main-header">
+    <div class="cabecalho-container">
+        <a href="#" class="logo">
+            <i class="ph-fill ph-package"></i> Cia Das Embalagens
+        </a>
+        <div class="header-acoes">
+            <!-- BOTÃO CARRINHO -->
+            <button class="btn-carrinho-header" onclick="abrirCarrinho()">
+                <i class="ph-bold ph-shopping-cart"></i> Carrinho
+                <span class="badge-carrinho" id="badgeCarrinho">0</span>
+            </button>
             <button class="btn-header" onclick="rolarPara('contato')">
                 <i class="ph ph-headset"></i> Atendimento
             </button>
         </div>
-    </header>
+    </div>
+</header>
 
-    <section class="hero" id="inicio">
-        <div class="hero-container">
-            <h1>Soluções completas em <span>Embalagens.</span></h1>
-            <button class="btn-hero" onclick="rolarPara('produtos')">
-                <i class="ph-bold ph-squares-four"></i> Explorar Catálogo
-            </button>
-        </div>
-        <div class="indicador-rolagem" onclick="rolarPara('sobre')">
-            <span>Role para explorar</span>
-            <div class="seta-rolagem"></div>
-        </div>
-    </section>
+<!-- ═══════════════════════════════════════════════════════
+     HERO
+════════════════════════════════════════════════════════ -->
+<section class="hero" id="inicio">
+    <div class="hero-container">
+        <h1>Soluções completas em <span>Embalagens.</span></h1>
+        <button class="btn-hero" onclick="rolarPara('produtos')">
+            <i class="ph-bold ph-squares-four"></i> Explorar Catálogo
+        </button>
+    </div>
+    <div class="indicador-rolagem" onclick="rolarPara('sobre')">
+        <span>Role para explorar</span>
+        <div class="seta-rolagem"></div>
+    </div>
+</section>
 
-    <section class="secao-confianca">
-        <div class="container">
-            <div class="faixa-confianca">
-                <h3 style="text-align:center; margin-bottom:2rem; color:var(--azul-800);">O que nossos clientes dizem</h3>
-                <div class="slider-container">
-                    <div class="slider-track" id="feedbackSlider">
-                        <div class="feedback-card">
-                            <p class="feedback-texto">"Muitooo bom, recomendo o atendimento é 10... pessoal da uma atenção boa 👌 comprei umas marmitas é top."</p>
-                            <div class="feedback-autor"><i class="ph-fill ph-user-circle"></i> Shirley Cristina</div>
-                        </div>
-                        <div class="feedback-card">
-                            <p class="feedback-texto">"Tem muita coisa boa e o preço ótimo; os Atendentes são muito simpáticos."</p>
-                            <div class="feedback-autor"><i class="ph-fill ph-user-circle"></i> Francis Luci</div>
-                        </div>
-                        <div class="feedback-card">
-                            <p class="feedback-texto">"A empresa tem tudo em descartáveis, o atendimento é ótimo, tem estacionamento e um ponto de ônibus em frente. Facinho de chegar."</p>
-                            <div class="feedback-autor"><i class="ph-fill ph-user-circle"></i> Adelaide Rocha</div>
-                        </div>
+<!-- ═══════════════════════════════════════════════════════
+     CONFIANÇA
+════════════════════════════════════════════════════════ -->
+<section class="secao-confianca">
+    <div class="container">
+        <div class="faixa-confianca">
+            <h3 style="text-align:center;margin-bottom:2rem;color:var(--azul-800);">O que nossos clientes dizem</h3>
+            <div class="slider-container">
+                <div class="slider-track" id="feedbackSlider">
+                    <div class="feedback-card">
+                        <p class="feedback-texto">"Muitooo bom, recomendo o atendimento é 10... pessoal da uma atenção boa 👌 comprei umas marmitas é top."</p>
+                        <div class="feedback-autor"><i class="ph-fill ph-user-circle"></i> Shirley Cristina</div>
+                    </div>
+                    <div class="feedback-card">
+                        <p class="feedback-texto">"Tem muita coisa boa e o preço ótimo; os Atendentes são muito simpáticos."</p>
+                        <div class="feedback-autor"><i class="ph-fill ph-user-circle"></i> Francis Luci</div>
+                    </div>
+                    <div class="feedback-card">
+                        <p class="feedback-texto">"A empresa tem tudo em descartáveis, o atendimento é ótimo, tem estacionamento e um ponto de ônibus em frente. Facinho de chegar."</p>
+                        <div class="feedback-autor"><i class="ph-fill ph-user-circle"></i> Adelaide Rocha</div>
                     </div>
                 </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="secao-sobre" id="sobre">
-        <div class="container">
-            <div class="sobre-grid">
-                <div class="sobre-conteudo">
-                    <h2 style="color:var(--azul-800);">Estrutura industrial preparada para sua demanda.</h2>
-                </div>
-                <div class="sobre-imagem">
-                    <i class="ph-duotone ph-buildings"></i>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <main class="secao-catalogo" id="produtos">
-        <div class="container">
-            <div class="cabecalho-catalogo">
-                <h2>Catálogo de Produtos</h2>
-                <p>Selecione a categoria desejada abaixo para visualizar nossas soluções. Todos os produtos podem ser faturados para CNPJ.</p>
-            </div>
-
-            <!-- Filtros principais -->
-            <div class="filtros-wrapper">
-                <div class="filtros" id="containerFiltros">
-                    <button class="btn-filtro ativo" onclick="filtrarCategoria('todos', this)">
-                        <i class="ph-bold ph-squares-four"></i> Visão Geral
-                    </button>
-                    <button class="btn-filtro" onclick="filtrarCategoria('caixas', this)">
-                        <i class="ph-bold ph-package"></i> Caixas
-                    </button>
-                    <button class="btn-filtro" onclick="filtrarCategoria('insumos', this)">
-                        <i class="ph-bold ph-scroll"></i> Insumos Industriais
-                    </button>
-                </div>
-            </div>
-
-            <!-- Barra de subcategorias (aparece quando "Caixas" está ativo) -->
-            <div class="subcategorias-bar" id="barraSubcategorias">
-                <button class="btn-subcategoria ativo" onclick="filtrarSubcategoria('todas', this)">
-                    <i class="ph-bold ph-squares-four"></i> Todas as Caixas
-                </button>
-                <button class="btn-subcategoria" onclick="filtrarSubcategoria('sedex', this)">
-                    <i class="ph-bold ph-box-arrow-up"></i> Padrão Correios
-                </button>
-                <button class="btn-subcategoria" onclick="filtrarSubcategoria('confeiteiros', this)">
-                    <i class="ph-bold ph-cake"></i> Para Doces
-                </button>
-                <button class="btn-subcategoria" onclick="filtrarSubcategoria('salgado', this)">
-                    <i class="ph-bold ph-fork-knife"></i> Para Salgados
-                </button>
-                <button class="btn-subcategoria" onclick="filtrarSubcategoria('geral', this)">
-                    <i class="ph-bold ph-cube"></i> Uso Geral
-                </button>
-            </div>
-
-            <!-- Breadcrumb -->
-            <div class="breadcrumb" id="breadcrumb">
-                <i class="ph-bold ph-package"></i>
-                <span>Caixas</span>
-                <i class="ph-bold ph-caret-right"></i>
-                <span id="breadcrumbSub">Todas</span>
-            </div>
-
-            <!-- Área de produtos -->
-            <div id="containerProdutos"></div>
-        </div>
-    </main>
-
-    <!-- Modal -->
-    <div class="modal-fundo" id="modalProduto">
-        <div class="modal-conteudo">
-            <button class="btn-fechar" onclick="fecharModal()"><i class="ph-bold ph-x"></i></button>
-            <div class="modal-cabecalho">
-                <div class="modal-icone" id="modalIcone"></div>
-                <h2 class="modal-titulo" id="modalTitulo"></h2>
-                <div class="modal-container-preco" id="modalContainerPreco">
-                    <span class="modal-preco-valor" id="modalPrecoValor"></span>
-                    <span class="modal-preco-unit" id="modalPrecoUnit"></span>
-                </div>
-            </div>
-            <div class="modal-especificacoes" id="modalEspecificacoes"></div>
-            <div class="botoes-acao">
-                <button class="btn-acao btn-acao-primario" onclick="acionarVendas('orcamento')">
-                    <i class="ph-fill ph-whatsapp-logo"></i> Solicitar Cotação
-                </button>
             </div>
         </div>
     </div>
+</section>
 
-    <a href="https://wa.me/5511972999835?text=Ol%C3%A1%2C+visitei+o+site+corporativo+e+gostaria+de+atendimento" target="_blank" class="whatsapp-flutuante" title="Fale com nosso setor comercial">
-        <i class="ph-fill ph-whatsapp-logo"></i>
-    </a>
-
-    <footer id="contato">
-        <div class="rodape-container">
-            <div class="rodape-coluna">
-                <div class="rodape-logo"><i class="ph-fill ph-package"></i> Cia Das Embalagens</div>
-                <p class="rodape-sobre">Sua estrutura logística merece a melhor proteção. Qualidade premium em papelão ondulado focado em atender o mercado empresarial com excelência e pontualidade.</p>
+<!-- ═══════════════════════════════════════════════════════
+     SOBRE
+════════════════════════════════════════════════════════ -->
+<section class="secao-sobre" id="sobre">
+    <div class="container">
+        <div class="sobre-grid">
+            <div class="sobre-conteudo">
+                <h2 style="color:var(--azul-800);">Estrutura industrial preparada para sua demanda.</h2>
             </div>
-            <div class="rodape-coluna">
-                <h4>Atendimento Comercial</h4>
-                <ul class="rodape-lista">
-                    <li><a href="https://wa.me/5511972999835" target="_blank"><i class="ph-fill ph-whatsapp-logo" style="font-size:1.4rem;color:var(--verde-whatsapp);"></i> (11) 97299-9835</a></li>
-                    <li><a href="mailto:contato@ciaembalagens.com.br"><i class="ph-fill ph-envelope-simple" style="font-size:1.4rem;"></i> contato@ciaembalagens.com.br</a></li>
-                    <li><a href="https://www.instagram.com/ciadasembalagens_/" target="_blank"><i class="ph-fill ph-instagram-logo" style="font-size:1.4rem;"></i> @ciadasembalagens_</a></li>
-                </ul>
-                <div class="footer-title" style="margin-top:1.5rem; font-weight:700; color:#fff;">📍 Nossa Loja</div>
-                <p class="address-text">Av. Paula Ferreira, 2871 - Vila Pereira Barreto<br>São Paulo - SP, 02915-100</p>
-            </div>
-            <div class="rodape-coluna">
-                <h4>Acesso Rápido</h4>
-                <ul class="rodape-lista">
-                    <li><a href="#inicio"><i class="ph-bold ph-caret-right"></i> Início</a></li>
-                    <li><a href="#sobre"><i class="ph-bold ph-caret-right"></i> Nossa Fábrica</a></li>
-                    <li><a href="#produtos"><i class="ph-bold ph-caret-right"></i> Catálogo</a></li>
-                </ul>
+            <div class="sobre-imagem">
+                <i class="ph-duotone ph-buildings"></i>
             </div>
         </div>
-        <div class="container">
-            <div class="copyright">
-                © 2026 Cia Das Embalagens. Todos os direitos reservados. CNPJ: 00.000.000/0000-00<br>
-                Desenvolvido para alta performance corporativa.
+    </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════
+     CATÁLOGO
+════════════════════════════════════════════════════════ -->
+<main class="secao-catalogo" id="produtos">
+    <div class="container">
+        <div class="cabecalho-catalogo">
+            <h2>Catálogo de Produtos</h2>
+            <p>Selecione os produtos desejados, ajuste as quantidades e envie seu pedido direto pelo WhatsApp.</p>
+        </div>
+
+        <div class="filtros-wrapper">
+            <div class="filtros" id="containerFiltros">
+                <button class="btn-filtro ativo" onclick="filtrarCategoria('todos',this)">
+                    <i class="ph-bold ph-squares-four"></i> Visão Geral
+                </button>
+                <button class="btn-filtro" onclick="filtrarCategoria('caixas',this)">
+                    <i class="ph-bold ph-package"></i> Caixas
+                </button>
+                <button class="btn-filtro" onclick="filtrarCategoria('insumos',this)">
+                    <i class="ph-bold ph-scroll"></i> Insumos Industriais
+                </button>
             </div>
         </div>
-    </footer>
 
-    <script>
-        /**
-         * ─────────────────────────────────────────────────────────────
-         *  BASE DE DADOS DOS PRODUTOS
-         *
-         *  Cada produto agora tem dois campos de classificação:
-         *    • categoria   → grupo principal: "caixas" | "insumos"
-         *    • subcategoria → refinamento dentro do grupo:
-         *                     "sedex" | "confeiteiros" | "salgado" | "geral"
-         * ─────────────────────────────────────────────────────────────
-         */
-        const listaProdutos = [
+        <div class="subcategorias-bar" id="barraSubcategorias">
+            <button class="btn-subcategoria ativo" onclick="filtrarSubcategoria('todas',this)">
+                <i class="ph-bold ph-squares-four"></i> Todas as Caixas
+            </button>
+            <button class="btn-subcategoria" onclick="filtrarSubcategoria('sedex',this)">
+                <i class="ph-bold ph-box-arrow-up"></i> Padrão Correios
+            </button>
+            <button class="btn-subcategoria" onclick="filtrarSubcategoria('confeiteiros',this)">
+                <i class="ph-bold ph-cake"></i> Para Doces
+            </button>
+            <button class="btn-subcategoria" onclick="filtrarSubcategoria('salgado',this)">
+                <i class="ph-bold ph-fork-knife"></i> Para Salgados
+            </button>
+            <button class="btn-subcategoria" onclick="filtrarSubcategoria('geral',this)">
+                <i class="ph-bold ph-cube"></i> Uso Geral
+            </button>
+        </div>
 
-            // ── CAIXAS › PADRÃO CORREIOS ──────────────────────────────
-            {
-                id: 1, nome: "Caixa Nº0", categoria: "caixas", subcategoria: "sedex",
-                icone: "ph-package",
-                descricao: "Perfeita para e-commerce de pequenos acessórios, joias e peças eletrônicas.",
-                preco: 3.50, unidade: "/unidade",
-                especificacoes: { "Medidas Externas": "16 x 11 x 07 cm", "Material": "Ondulado" }
-            },
-            {
-                id: 2, nome: "Caixa Nº1", categoria: "caixas", subcategoria: "sedex",
-                icone: "ph-box-arrow-up",
-                descricao: "Ideal para cosméticos, perfumes e miudezas em geral.",
-                preco: 4.60, unidade: "/unidade",
-                especificacoes: { "Medidas Externas": "21 x 15 x 6.5 cm", "Material": "Ondulado" }
-            },
-            {
-                id: 3, nome: "Caixa Nº2", categoria: "caixas", subcategoria: "sedex",
-                icone: "ph-archive-box",
-                descricao: "Extrema versatilidade para vestuário, livros e kits médios.",
-                preco: 5.60, unidade: "/unidade",
-                especificacoes: { "Medidas Externas": "26 x 17 x 08 cm", "Material": "Ondulado" }
-            },
-            {
-                id: 4, nome: "Caixa Nº3", categoria: "caixas", subcategoria: "sedex",
-                icone: "ph-cube",
-                descricao: "Acomoda produtos volumosos com segurança. Ideal para calçados e utensílios.",
-                preco: 8.80, unidade: "/unidade",
-                especificacoes: { "Medidas Externas": "30 x 20 x 11 cm", "Material": "Ondulado" }
-            },
-            {
-                id: 5, nome: "Caixa Nº4", categoria: "caixas", subcategoria: "sedex",
-                icone: "ph-package",
-                descricao: "Para volumes maiores no e-commerce — ideal para eletrodomésticos pequenos.",
-                preco: 13.00, unidade: "/unidade",
-                especificacoes: { "Medidas Externas": "34 x 27 x 11 cm", "Material": "Ondulado" }
-            },
+        <div class="breadcrumb" id="breadcrumb">
+            <i class="ph-bold ph-package"></i>
+            <span>Caixas</span>
+            <i class="ph-bold ph-caret-right"></i>
+            <span id="breadcrumbSub">Todas</span>
+        </div>
 
-            // ── CAIXAS › USO GERAL ────────────────────────────────────
-            {
-                id: 6, nome: "Caixa 32x32x22", categoria: "caixas", subcategoria: "geral",
-                icone: "ph-box-arrow-up",
-                descricao: "Caixa multiuso de médio porte, ideal para armazenagem e transporte variado.",
-                preco: 3.50, unidade: "/unidade",
-                especificacoes: { "Medidas Externas": "32 x 32 x 22 cm", "Material": "Ondulado" }
-            },
+        <div id="containerProdutos"></div>
+    </div>
+</main>
 
-            // ── CAIXAS › PARA DOCES (CONFEITEIROS) ───────────────────
-            {
-                id: 7, nome: "Caixa De Bolo Nº9", categoria: "caixas", subcategoria: "confeiteiros",
-                icone: "ph-archive-box",
-                descricao: "Para bolos grandes de festa e comemorações especiais.",
-                preco: 10.99, unidade: "/unidade",
-                especificacoes: { "Medidas Externas": "40 x 40 x 12 cm", "Material": "Ondulado" }
-            },
-            {
-                id: 8, nome: "Caixa De Bolo Nº7 Média", categoria: "caixas", subcategoria: "confeiteiros",
-                icone: "ph-archive-box",
-                descricao: "Bolos de tamanho médio para aniversários e encomendas.",
-                preco: 6.20, unidade: "/unidade",
-                especificacoes: { "Medidas Externas": "28 x 28 x 10 cm", "Material": "Ondulado" }
-            },
-            {
-                id: 9, nome: "Caixa De Bolo Nº7 Com Alça", categoria: "caixas", subcategoria: "confeiteiros",
-                icone: "ph-archive-box",
-                descricao: "Mesma praticidade do Nº7, com alça integrada para fácil transporte.",
-                preco: 6.50, unidade: "/unidade",
-                especificacoes: { "Medidas Externas": "28 x 28 x 10 cm", "Material": "Ondulado" }
-            },
-            {
-                id: 10, nome: "Caixa De Bolo Nº6", categoria: "caixas", subcategoria: "confeiteiros",
-                icone: "ph-archive-box",
-                descricao: "Perfeita para bolos individuais e mini cakes.",
-                preco: 5.70, unidade: "/unidade",
-                especificacoes: { "Medidas Externas": "26 x 26 x 10 cm", "Material": "Ondulado" }
-            },
-            {
-                id: 12, nome: "Caixa De Bolo Nº5", categoria: "caixas", subcategoria: "confeiteiros",
-                icone: "ph-archive-box",
-                descricao: "Tamanho compacto para naked cakes e bolos de pote.",
-                preco: 4.50, unidade: "/unidade",
-                especificacoes: { "Medidas Externas": "22 x 22 x 10 cm", "Material": "Ondulado" }
-            },
-            {
-                id: 13, nome: "Caixa De Bolo Nº3", categoria: "caixas", subcategoria: "confeiteiros",
-                icone: "ph-archive-box",
-                descricao: "Para bolos baixos, alfajores empilhados e tortas rasas.",
-                preco: 5.00, unidade: "/unidade",
-                especificacoes: { "Medidas Externas": "25 x 25 x 5 cm", "Material": "Ondulado" }
-            },
-            {
-                id: 16, nome: "Caixa Para Copinho (50 Divisórias)", categoria: "caixas", subcategoria: "confeiteiros",
-                icone: "ph-archive-box",
-                descricao: "Ideal para transporte seguro de copinhos de mousse e brigadeiro.",
-                preco: 3.99, unidade: "/unidade",
-                especificacoes: { "Medidas Externas": "40 x 40 x 12 cm", "Material": "Ondulado" }
-            },
-            {
-                id: 17, nome: "Caixa Para Cupcakes (até 25 un.)", categoria: "caixas", subcategoria: "confeiteiros",
-                icone: "ph-archive-box",
-                descricao: "Guarde seus deliciosos cupcakes com segurança — comporta até 25 unidades.",
-                preco: 6.55, unidade: "/unidade",
-                especificacoes: { "Medidas Externas": "40 x 40 x 12 cm", "Material": "Ondulado" }
-            },
+<!-- ═══════════════════════════════════════════════════════
+     MODAL ESPECIFICAÇÕES
+════════════════════════════════════════════════════════ -->
+<div class="modal-fundo" id="modalProduto">
+    <div class="modal-conteudo">
+        <button class="btn-fechar" onclick="fecharModal()"><i class="ph-bold ph-x"></i></button>
+        <div class="modal-cabecalho">
+            <div class="modal-icone" id="modalIcone"></div>
+            <h2 class="modal-titulo" id="modalTitulo"></h2>
+            <div class="modal-container-preco" id="modalContainerPreco">
+                <span class="modal-preco-valor" id="modalPrecoValor"></span>
+                <span class="modal-preco-unit" id="modalPrecoUnit"></span>
+            </div>
+        </div>
+        <div class="modal-especificacoes" id="modalEspecificacoes"></div>
+        <button class="btn-enviar-wpp" style="width:100%;" onclick="adicionarDoModal()">
+            <i class="ph-fill ph-shopping-cart"></i> Adicionar ao Carrinho
+        </button>
+    </div>
+</div>
 
-            // ── CAIXAS › PARA SALGADOS ────────────────────────────────
-            {
-                id: 14, nome: "Caixa De Esfiha Nº2", categoria: "caixas", subcategoria: "salgado",
-                icone: "ph-archive-box",
-                descricao: "Perfeita para esfihas, salgadinhos e porções individuais.",
-                preco: 3.50, unidade: "/unidade",
-                especificacoes: { "Medidas Externas": "20 x 20 x 5 cm", "Material": "Ondulado" }
-            },
-            {
-                id: 15, nome: "Caixa De Pizza", categoria: "caixas", subcategoria: "salgado",
-                icone: "ph-archive-box",
-                descricao: "Caixa clássica para pizzas — mantém o calor e a crocância.",
-                preco: 3.50, unidade: "/unidade",
-                especificacoes: { "Medidas Externas": "35 x 35 cm", "Material": "Ondulado" }
-            },
-        ];
+<!-- ═══════════════════════════════════════════════════════
+     OVERLAY + SIDEBAR CARRINHO
+════════════════════════════════════════════════════════ -->
+<div class="overlay-carrinho" id="overlayCarrinho" onclick="fecharCarrinho()"></div>
 
-        // ─── RÓTULOS AMIGÁVEIS ───────────────────────────────────────
-        const labelSubcategorias = {
-            sedex:        { label: "Padrão Correios",   icone: "ph-box-arrow-up" },
-            confeiteiros: { label: "Para Doces",        icone: "ph-cake"          },
-            salgado:      { label: "Para Salgados",     icone: "ph-fork-knife"    },
-            geral:        { label: "Uso Geral",         icone: "ph-cube"          },
-        };
+<aside class="sidebar-carrinho" id="sidebarCarrinho">
+    <div class="sidebar-header">
+        <h3><i class="ph-fill ph-shopping-cart"></i> Meu Pedido</h3>
+        <button class="btn-fechar-sidebar" onclick="fecharCarrinho()">
+            <i class="ph-bold ph-x"></i>
+        </button>
+    </div>
 
-        const iconesEspecificacoes = {
-            "Medidas Externas": "ph-ruler", "Dimensões": "ph-ruler",
-            "Tipo de Onda": "ph-waves", "Gramatura": "ph-scales",
-            "Venda Mínima": "ph-shopping-cart-simple", "Montagem": "ph-puzzle-piece",
-            "Capacidade": "ph-package", "Material": "ph-cube"
-        };
+    <div class="sidebar-itens" id="sidebarItens">
+        <!-- itens renderizados via JS -->
+    </div>
 
-        // ─── ESTADO DA UI ────────────────────────────────────────────
-        let estadoAtual = { categoria: "todos", subcategoria: "todas" };
-        let produtoSelecionado = null;
+    <div class="sidebar-footer">
+        <div class="resumo-total">
+            <span class="label">Total estimado</span>
+            <span class="valor" id="totalCarrinho">R$ 0,00</span>
+        </div>
+        <button class="btn-enviar-wpp" onclick="enviarWhatsApp()">
+            <i class="ph-fill ph-whatsapp-logo"></i> Enviar Pedido pelo WhatsApp
+        </button>
+        <button class="btn-limpar" onclick="limparCarrinho()">
+            <i class="ph-bold ph-trash"></i> Limpar carrinho
+        </button>
+        <p class="aviso-wpp">
+            <i class="ph-fill ph-lock-simple" style="color:var(--verde-wa);"></i>
+            Seus dados só vão para o WhatsApp da loja
+        </p>
+    </div>
+</aside>
 
-        // ─── HELPERS ─────────────────────────────────────────────────
-        const formatarMoeda = v => typeof v === "string"
-            ? v
-            : v.toLocaleString("pt-BR", { style: "currency", currency: "BRL" });
+<!-- WhatsApp fixo -->
+<a href="https://wa.me/5511972999835?text=Ol%C3%A1%2C+visitei+o+site+e+gostaria+de+atendimento" target="_blank" class="whatsapp-flutuante" title="Fale conosco">
+    <i class="ph-fill ph-whatsapp-logo"></i>
+</a>
 
-        function ativarBotao(grupo, botaoClicado) {
-            document.querySelectorAll(grupo).forEach(b => b.classList.remove("ativo"));
-            botaoClicado.classList.add("ativo");
-        }
+<!-- ═══════════════════════════════════════════════════════
+     FOOTER
+════════════════════════════════════════════════════════ -->
+<footer id="contato">
+    <div class="rodape-container">
+        <div class="rodape-coluna">
+            <div class="rodape-logo"><i class="ph-fill ph-package"></i> Cia Das Embalagens</div>
+            <p class="rodape-sobre">Sua estrutura logística merece a melhor proteção. Qualidade premium em papelão ondulado para o mercado empresarial.</p>
+        </div>
+        <div class="rodape-coluna">
+            <h4>Atendimento Comercial</h4>
+            <ul class="rodape-lista">
+                <li><a href="https://wa.me/5511972999835" target="_blank"><i class="ph-fill ph-whatsapp-logo" style="font-size:1.4rem;color:var(--verde-wa);"></i> (11) 97299-9835</a></li>
+                <li><a href="mailto:contato@ciaembalagens.com.br"><i class="ph-fill ph-envelope-simple" style="font-size:1.4rem;"></i> contato@ciaembalagens.com.br</a></li>
+                <li><a href="https://www.instagram.com/ciadasembalagens_/" target="_blank"><i class="ph-fill ph-instagram-logo" style="font-size:1.4rem;"></i> @ciadasembalagens_</a></li>
+            </ul>
+            <div style="margin-top:1.5rem;font-weight:700;color:#fff;">📍 Nossa Loja</div>
+            <p class="address-text">Av. Paula Ferreira, 2871 - Vila Pereira Barreto<br>São Paulo - SP, 02915-100</p>
+        </div>
+        <div class="rodape-coluna">
+            <h4>Acesso Rápido</h4>
+            <ul class="rodape-lista">
+                <li><a href="#inicio"><i class="ph-bold ph-caret-right"></i> Início</a></li>
+                <li><a href="#sobre"><i class="ph-bold ph-caret-right"></i> Nossa Fábrica</a></li>
+                <li><a href="#produtos"><i class="ph-bold ph-caret-right"></i> Catálogo</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="container">
+        <div class="copyright">
+            © 2026 Cia Das Embalagens. Todos os direitos reservados.<br>
+            Desenvolvido para alta performance corporativa.
+        </div>
+    </div>
+</footer>
 
-        // ─── FILTROS PRINCIPAIS (categoria) ─────────────────────────
-        function filtrarCategoria(cat, el) {
-            estadoAtual.categoria = cat;
-            estadoAtual.subcategoria = "todas";
-            ativarBotao(".btn-filtro", el);
+<!-- ═══════════════════════════════════════════════════════
+     JAVASCRIPT
+════════════════════════════════════════════════════════ -->
+<script>
+/* ─── BASE DE DADOS ────────────────────────────────────── */
+const listaProdutos = [
+    // CORREIOS
+    { id:1,  nome:"Caixa Nº0",                       categoria:"caixas", subcategoria:"sedex",        icone:"ph-package",     descricao:"Para pequenos acessórios, joias e eletrônicos.",       preco:3.50,  unidade:"/unidade", especificacoes:{"Medidas Externas":"16 x 11 x 07 cm","Material":"Ondulado"} },
+    { id:2,  nome:"Caixa Nº1",                       categoria:"caixas", subcategoria:"sedex",        icone:"ph-box-arrow-up",descricao:"Ideal para cosméticos, perfumes e miudezas.",           preco:4.60,  unidade:"/unidade", especificacoes:{"Medidas Externas":"21 x 15 x 6.5 cm","Material":"Ondulado"} },
+    { id:3,  nome:"Caixa Nº2",                       categoria:"caixas", subcategoria:"sedex",        icone:"ph-archive-box", descricao:"Vestuário, livros e kits médios.",                      preco:5.60,  unidade:"/unidade", especificacoes:{"Medidas Externas":"26 x 17 x 08 cm","Material":"Ondulado"} },
+    { id:4,  nome:"Caixa Nº3",                       categoria:"caixas", subcategoria:"sedex",        icone:"ph-cube",        descricao:"Calçados e utensílios com segurança.",                  preco:8.80,  unidade:"/unidade", especificacoes:{"Medidas Externas":"30 x 20 x 11 cm","Material":"Ondulado"} },
+    { id:5,  nome:"Caixa Nº4",                       categoria:"caixas", subcategoria:"sedex",        icone:"ph-package",     descricao:"Para volumes maiores no e-commerce.",                   preco:13.00, unidade:"/unidade", especificacoes:{"Medidas Externas":"34 x 27 x 11 cm","Material":"Ondulado"} },
+    // GERAL
+    { id:6,  nome:"Caixa 32x32x22",                  categoria:"caixas", subcategoria:"geral",        icone:"ph-box-arrow-up",descricao:"Multiuso de médio porte para armazenagem e transporte.", preco:3.50,  unidade:"/unidade", especificacoes:{"Medidas Externas":"32 x 32 x 22 cm","Material":"Ondulado"} },
+    // CONFEITEIROS
+    { id:7,  nome:"Caixa De Bolo Nº9",               categoria:"caixas", subcategoria:"confeiteiros", icone:"ph-archive-box", descricao:"Para bolos grandes de festa e comemorações.",           preco:10.99, unidade:"/unidade", especificacoes:{"Medidas Externas":"40 x 40 x 12 cm","Material":"Ondulado"} },
+    { id:8,  nome:"Caixa De Bolo Nº7 Média",         categoria:"caixas", subcategoria:"confeiteiros", icone:"ph-archive-box", descricao:"Bolos de tamanho médio para aniversários.",             preco:6.20,  unidade:"/unidade", especificacoes:{"Medidas Externas":"28 x 28 x 10 cm","Material":"Ondulado"} },
+    { id:9,  nome:"Caixa De Bolo Nº7 Com Alça",      categoria:"caixas", subcategoria:"confeiteiros", icone:"ph-archive-box", descricao:"Igual ao Nº7 com alça integrada para transporte.",      preco:6.50,  unidade:"/unidade", especificacoes:{"Medidas Externas":"28 x 28 x 10 cm","Material":"Ondulado"} },
+    { id:10, nome:"Caixa De Bolo Nº6",               categoria:"caixas", subcategoria:"confeiteiros", icone:"ph-archive-box", descricao:"Perfeita para bolos individuais e mini cakes.",         preco:5.70,  unidade:"/unidade", especificacoes:{"Medidas Externas":"26 x 26 x 10 cm","Material":"Ondulado"} },
+    { id:11, nome:"Caixa De Bolo Nº5",               categoria:"caixas", subcategoria:"confeiteiros", icone:"ph-archive-box", descricao:"Naked cakes e bolos de pote.",                          preco:4.50,  unidade:"/unidade", especificacoes:{"Medidas Externas":"22 x 22 x 10 cm","Material":"Ondulado"} },
+    { id:12, nome:"Caixa De Bolo Nº3",               categoria:"caixas", subcategoria:"confeiteiros", icone:"ph-archive-box", descricao:"Bolos baixos, alfajores e tortas rasas.",               preco:5.00,  unidade:"/unidade", especificacoes:{"Medidas Externas":"25 x 25 x 5 cm","Material":"Ondulado"} },
+    { id:13, nome:"Caixa Para Copinho (50 Divisórias)",categoria:"caixas",subcategoria:"confeiteiros", icone:"ph-archive-box", descricao:"Transporte seguro de copinhos de mousse e brigadeiro.", preco:3.99,  unidade:"/unidade", especificacoes:{"Medidas Externas":"40 x 40 x 12 cm","Material":"Ondulado"} },
+    { id:14, nome:"Caixa Para Cupcakes (até 25 un.)",categoria:"caixas", subcategoria:"confeiteiros", icone:"ph-archive-box", descricao:"Comporta até 25 cupcakes com segurança.",               preco:6.55,  unidade:"/unidade", especificacoes:{"Medidas Externas":"40 x 40 x 12 cm","Material":"Ondulado"} },
+    // SALGADOS
+    { id:15, nome:"Caixa De Esfiha Nº2",             categoria:"caixas", subcategoria:"salgado",      icone:"ph-archive-box", descricao:"Para esfihas, salgadinhos e porções individuais.",      preco:3.50,  unidade:"/unidade", especificacoes:{"Medidas Externas":"20 x 20 x 5 cm","Material":"Ondulado"} },
+    { id:16, nome:"Caixa De Pizza",                  categoria:"caixas", subcategoria:"salgado",      icone:"ph-archive-box", descricao:"Mantém o calor e a crocância da pizza.",                preco:3.50,  unidade:"/unidade", especificacoes:{"Medidas Externas":"35 x 35 cm","Material":"Ondulado"} },
+];
 
-            const barra    = document.getElementById("barraSubcategorias");
-            const bc       = document.getElementById("breadcrumb");
+const labelSubcategorias = {
+    sedex:        { label:"Padrão Correios",  icone:"ph-box-arrow-up" },
+    confeiteiros: { label:"Para Doces",       icone:"ph-cake"          },
+    salgado:      { label:"Para Salgados",    icone:"ph-fork-knife"    },
+    geral:        { label:"Uso Geral",        icone:"ph-cube"          },
+};
 
-            if (cat === "caixas") {
-                barra.classList.add("visivel");
-                bc.classList.add("visivel");
-                document.getElementById("breadcrumbSub").textContent = "Todas";
-                // Reseta subcategoria para "todas"
-                document.querySelectorAll(".btn-subcategoria").forEach((b, i) => {
-                    b.classList.toggle("ativo", i === 0);
-                });
-            } else {
-                barra.classList.remove("visivel");
-                bc.classList.remove("visivel");
-            }
+const iconesEspec = {
+    "Medidas Externas":"ph-ruler","Dimensões":"ph-ruler",
+    "Tipo de Onda":"ph-waves","Gramatura":"ph-scales",
+    "Material":"ph-cube","Capacidade":"ph-package"
+};
 
-            renderizarProdutos();
-        }
+/* ─── ESTADO ───────────────────────────────────────────── */
+let estado = { categoria:"todos", subcategoria:"todas" };
+let produtoModal = null;
 
-        // ─── FILTROS SECUNDÁRIOS (subcategoria) ──────────────────────
-        function filtrarSubcategoria(sub, el) {
-            estadoAtual.subcategoria = sub;
-            ativarBotao(".btn-subcategoria", el);
+// carrinho: { [id]: { produto, qtd } }
+let carrinho = {};
 
-            const sub_label = sub === "todas"
-                ? "Todas"
-                : (labelSubcategorias[sub]?.label || sub);
-            document.getElementById("breadcrumbSub").textContent = sub_label;
+/* ─── CARRINHO ─────────────────────────────────────────── */
+function totalItens() {
+    return Object.values(carrinho).reduce((s,i) => s + i.qtd, 0);
+}
 
-            renderizarProdutos();
-        }
+function totalValor() {
+    return Object.values(carrinho).reduce((s,i) => {
+        const p = typeof i.produto.preco === "number" ? i.produto.preco : 0;
+        return s + p * i.qtd;
+    }, 0);
+}
 
-        // ─── RENDERIZAÇÃO ─────────────────────────────────────────────
-        function renderizarProdutos() {
-            const container = document.getElementById("containerProdutos");
-            container.innerHTML = "";
+function atualizarBadge() {
+    const badge = document.getElementById("badgeCarrinho");
+    const n = totalItens();
+    badge.textContent = n;
+    badge.classList.toggle("visivel", n > 0);
+}
 
-            const { categoria, subcategoria } = estadoAtual;
+function adicionarAoCarrinho(id, qtd) {
+    const produto = listaProdutos.find(p => p.id === id);
+    if (!produto) return;
+    qtd = Math.max(1, parseInt(qtd) || 1);
 
-            // Filtragem
-            let filtrados = listaProdutos;
-            if (categoria !== "todos") {
-                filtrados = filtrados.filter(p => p.categoria === categoria);
-            }
-            if (categoria === "caixas" && subcategoria !== "todas") {
-                filtrados = filtrados.filter(p => p.subcategoria === subcategoria);
-            }
+    if (carrinho[id]) {
+        carrinho[id].qtd += qtd;
+    } else {
+        carrinho[id] = { produto, qtd };
+    }
+    atualizarBadge();
+    atualizarCardVisual(id);
+    // feedback visual no botão
+    const btn = document.getElementById(`btn-add-${id}`);
+    if (btn) {
+        btn.classList.add("adicionado");
+        btn.innerHTML = `<i class="ph-fill ph-check"></i> Adicionado!`;
+        setTimeout(() => {
+            btn.classList.remove("adicionado");
+            btn.innerHTML = `<i class="ph-bold ph-shopping-cart"></i> Adicionar`;
+        }, 1800);
+    }
+}
 
-            if (filtrados.length === 0) {
-                container.innerHTML = `<p style="text-align:center;color:var(--texto-mutado);padding:4rem 0;">Nenhum produto encontrado nesta categoria.</p>`;
-                return;
-            }
+function atualizarCardVisual(id) {
+    const card = document.getElementById(`card-${id}`);
+    if (!card) return;
+    if (carrinho[id]) {
+        card.classList.add("no-carrinho");
+    } else {
+        card.classList.remove("no-carrinho");
+    }
+}
 
-            // Quando "todos" → agrupa por subcategoria dentro de caixas + insumos
-            // Quando categoria específica → mostra tudo em uma única grade
-            if (categoria === "todos") {
-                // Agrupamos por subcategoria e exibimos seções
-                const grupos = {};
-                filtrados.forEach(p => {
-                    const chave = p.categoria + "_" + (p.subcategoria || "geral");
-                    if (!grupos[chave]) grupos[chave] = { label: obterLabelGrupo(p), produtos: [] };
-                    grupos[chave].produtos.push(p);
-                });
-                Object.values(grupos).forEach(g => criarSecao(g.label, g.produtos, container));
+function alterarQtdCarrinho(id, delta) {
+    if (!carrinho[id]) return;
+    carrinho[id].qtd = Math.max(1, carrinho[id].qtd + delta);
+    renderizarSidebar();
+    atualizarBadge();
+}
 
-            } else if (categoria === "caixas" && subcategoria === "todas") {
-                // Mostra mini-cards de subcategoria + depois a grade completa
-                renderizarVisaoSubcategorias(filtrados, container);
+function removerDoCarrinho(id) {
+    delete carrinho[id];
+    renderizarSidebar();
+    atualizarBadge();
+    atualizarCardVisual(id);
+}
 
-            } else {
-                // Filtro específico → grade simples sem seção
-                const titulo = categoria === "caixas"
-                    ? (labelSubcategorias[subcategoria]?.label || "Caixas")
-                    : "Insumos Industriais";
-                criarSecao(titulo, filtrados, container);
-            }
-        }
+function limparCarrinho() {
+    if (!Object.keys(carrinho).length) return;
+    if (!confirm("Deseja limpar todos os itens do carrinho?")) return;
+    carrinho = {};
+    // remove visual de todos os cards
+    document.querySelectorAll(".cartao-produto.no-carrinho").forEach(c => c.classList.remove("no-carrinho"));
+    renderizarSidebar();
+    atualizarBadge();
+}
 
-        function obterLabelGrupo(produto) {
-            if (produto.categoria === "caixas") {
-                return labelSubcategorias[produto.subcategoria]?.label || "Caixas";
-            }
-            return "Insumos Industriais";
-        }
+function renderizarSidebar() {
+    const container = document.getElementById("sidebarItens");
+    const totalEl   = document.getElementById("totalCarrinho");
+    const itens = Object.values(carrinho);
 
-        /**
-         * Visão "Todas as Caixas": exibe cards de subcategoria
-         * clicáveis e depois a grade com todos os produtos
-         */
-        function renderizarVisaoSubcategorias(produtos, container) {
-            // Mini-cards de subcategoria
-            const subcats = [...new Set(produtos.map(p => p.subcategoria))];
+    if (!itens.length) {
+        container.innerHTML = `
+            <div class="sidebar-vazio">
+                <i class="ph-light ph-shopping-cart"></i>
+                <p>Seu carrinho está vazio</p>
+                <span style="font-size:.9rem;color:var(--texto-mutado);">Adicione produtos do catálogo</span>
+            </div>`;
+        totalEl.textContent = "R$ 0,00";
+        return;
+    }
 
-            const gradeSubcats = document.createElement("div");
-            gradeSubcats.className = "grade-subcategorias";
+    container.innerHTML = itens.map(({ produto: p, qtd }) => {
+        const sub = typeof p.preco === "number"
+            ? (p.preco * qtd).toLocaleString("pt-BR",{style:"currency",currency:"BRL"})
+            : "—";
+        const unitFmt = typeof p.preco === "number"
+            ? p.preco.toLocaleString("pt-BR",{style:"currency",currency:"BRL"})
+            : "Sob consulta";
+        return `
+        <div class="item-carrinho">
+            <div class="item-icone"><i class="ph-duotone ${p.icone}"></i></div>
+            <div class="item-info">
+                <div class="item-nome">${p.nome}</div>
+                <div class="item-preco-unit">${unitFmt}${p.unidade}</div>
+            </div>
+            <div class="item-controles">
+                <div class="item-controle-qtd">
+                    <button class="item-btn-qtd" onclick="alterarQtdCarrinho(${p.id},-1)">−</button>
+                    <span class="item-qtd-val">${qtd}</span>
+                    <button class="item-btn-qtd" onclick="alterarQtdCarrinho(${p.id},1)">+</button>
+                </div>
+                <span class="item-subtotal">${sub}</span>
+                <button class="btn-remover-item" onclick="removerDoCarrinho(${p.id})" title="Remover">
+                    <i class="ph-bold ph-trash"></i>
+                </button>
+            </div>
+        </div>`;
+    }).join("");
 
-            subcats.forEach(sub => {
-                const info = labelSubcategorias[sub] || { label: sub, icone: "ph-cube" };
-                const count = produtos.filter(p => p.subcategoria === sub).length;
+    totalEl.textContent = totalValor().toLocaleString("pt-BR",{style:"currency",currency:"BRL"});
+}
 
-                const card = document.createElement("div");
-                card.className = "card-subcategoria";
-                card.innerHTML = `
-                    <div class="icone-sub"><i class="ph-duotone ${info.icone}"></i></div>
-                    <h3>${info.label}</h3>
-                    <span class="badge-qtd">${count} ${count === 1 ? "produto" : "produtos"}</span>
-                `;
-                card.onclick = () => {
-                    // Clica no botão correspondente na barra
-                    const botoes = document.querySelectorAll(".btn-subcategoria");
-                    botoes.forEach(b => {
-                        if (b.textContent.trim().includes(info.label)) {
-                            filtrarSubcategoria(sub, b);
-                        }
-                    });
-                };
-                gradeSubcats.appendChild(card);
-            });
+function abrirCarrinho() {
+    renderizarSidebar();
+    document.getElementById("sidebarCarrinho").classList.add("aberto");
+    document.getElementById("overlayCarrinho").classList.add("aberto");
+    document.body.style.overflow = "hidden";
+}
 
-            container.appendChild(gradeSubcats);
+function fecharCarrinho() {
+    document.getElementById("sidebarCarrinho").classList.remove("aberto");
+    document.getElementById("overlayCarrinho").classList.remove("aberto");
+    document.body.style.overflow = "";
+}
 
-            // Grade completa abaixo
-            criarSecao("Todas as Caixas", produtos, container);
-        }
+/* ─── ENVIO WHATSAPP ───────────────────────────────────── */
+function enviarWhatsApp() {
+    const itens = Object.values(carrinho);
+    if (!itens.length) {
+        alert("Adicione pelo menos um produto ao carrinho antes de enviar.");
+        return;
+    }
 
-        function criarSecao(titulo, produtos, container) {
-            const secao = document.createElement("div");
-            secao.className = "secao-categoria";
-            secao.innerHTML = `
-                <h2 class="titulo-categoria">
-                    <i class="ph-fill ph-squares-four"></i> ${titulo}
-                </h2>
-            `;
-            const grade = document.createElement("div");
-            grade.className = "grade-produtos";
+    const linhas = itens.map(({ produto: p, qtd }) => {
+        const fmt = typeof p.preco === "number"
+            ? p.preco.toLocaleString("pt-BR",{style:"currency",currency:"BRL"})
+            : "Sob consulta";
+        const sub = typeof p.preco === "number"
+            ? (p.preco * qtd).toLocaleString("pt-BR",{style:"currency",currency:"BRL"})
+            : "";
+        return `• ${p.nome} — ${qtd}x ${fmt}${sub ? ` = ${sub}` : ""}`;
+    });
 
-            produtos.forEach(produto => {
-                const cartao = document.createElement("div");
-                cartao.className = "cartao-produto";
-                cartao.onclick = () => abrirModal(produto);
+    const total = totalValor().toLocaleString("pt-BR",{style:"currency",currency:"BRL"});
 
-                const ehConsulta = produto.preco === "Sob consulta";
-                const htmlPreco = ehConsulta
-                    ? `<div class="container-preco" style="background:var(--fundo-pagina);border-color:var(--bordas);">
-                           <span class="preco-valor" style="font-size:1.5rem;color:var(--texto-escuro);">Sob consulta</span>
-                       </div>`
-                    : `<div class="container-preco">
-                           <span class="preco-label">A partir de</span>
-                           <div class="preco-linha">
-                               <span class="preco-valor">${formatarMoeda(produto.preco)}</span>
-                               <span class="preco-unit">${produto.unidade}</span>
-                           </div>
-                       </div>`;
+    const msg =
+`Olá! 👋 Gostaria de fazer um pedido pela Cia Das Embalagens.
 
-                cartao.innerHTML = `
-                    <div class="imagem-produto">
-                        <i class="ph-light ${produto.icone}"></i>
-                    </div>
-                    <div class="conteudo-produto">
-                        <h3 class="nome-produto">${produto.nome}</h3>
-                        <p class="desc-produto">${produto.descricao}</p>
-                        ${htmlPreco}
-                        <button class="btn-produto">
-                            <i class="ph-bold ph-magnifying-glass"></i> Ver Especificações
-                        </button>
-                    </div>
-                `;
-                grade.appendChild(cartao);
-            });
+🛒 *Itens do Pedido:*
+${linhas.join("\n")}
 
-            secao.appendChild(grade);
-            container.appendChild(secao);
-        }
+💰 *Total estimado:* ${total}
 
-        // ─── MODAL ───────────────────────────────────────────────────
-        function abrirModal(produto) {
-            produtoSelecionado = produto;
-            document.getElementById("modalIcone").innerHTML = `<i class="ph-duotone ${produto.icone}"></i>`;
-            document.getElementById("modalTitulo").textContent = produto.nome;
+Poderia confirmar disponibilidade e prazo de entrega? Obrigado(a)!`;
 
-            const cpModal = document.getElementById("modalContainerPreco");
-            if (produto.preco === "Sob consulta") {
-                document.getElementById("modalPrecoValor").textContent = "Sob Consulta";
-                document.getElementById("modalPrecoValor").style.fontSize = "1.8rem";
-                document.getElementById("modalPrecoUnit").textContent = "";
-                cpModal.style.background = "var(--texto-escuro)";
-            } else {
-                document.getElementById("modalPrecoValor").textContent = formatarMoeda(produto.preco);
-                document.getElementById("modalPrecoValor").style.fontSize = "2.5rem";
-                document.getElementById("modalPrecoUnit").textContent = produto.unidade;
-                cpModal.style.background = "var(--azul-600)";
-            }
+    const url = `https://wa.me/5511972999835?text=${encodeURIComponent(msg)}`;
+    window.open(url, "_blank");
+}
 
-            let htmlEspec = "";
-            Object.entries(produto.especificacoes).forEach(([k, v]) => {
-                const icone = iconesEspecificacoes[k] || "ph-check-circle";
-                htmlEspec += `
-                    <div class="grupo-espec">
-                        <span class="label-espec">
-                            <i class="ph-bold ${icone}" style="color:var(--azul-600);"></i> ${k}
-                        </span>
-                        <span class="valor-espec">${v}</span>
-                    </div>`;
-            });
-            document.getElementById("modalEspecificacoes").innerHTML = htmlEspec;
-            document.getElementById("modalProduto").classList.add("ativo");
-            document.body.style.overflow = "hidden";
-        }
+/* ─── MODAL ESPECIFICAÇÕES ─────────────────────────────── */
+function abrirModal(produto) {
+    produtoModal = produto;
+    document.getElementById("modalIcone").innerHTML = `<i class="ph-duotone ${produto.icone}"></i>`;
+    document.getElementById("modalTitulo").textContent = produto.nome;
 
-        function fecharModal() {
-            document.getElementById("modalProduto").classList.remove("ativo");
-            document.body.style.overflow = "";
-        }
+    const cpModal = document.getElementById("modalContainerPreco");
+    if (produto.preco === "Sob consulta") {
+        document.getElementById("modalPrecoValor").textContent = "Sob Consulta";
+        document.getElementById("modalPrecoUnit").textContent = "";
+        cpModal.style.background = "var(--texto-escuro)";
+    } else {
+        document.getElementById("modalPrecoValor").textContent = produto.preco.toLocaleString("pt-BR",{style:"currency",currency:"BRL"});
+        document.getElementById("modalPrecoUnit").textContent = produto.unidade;
+        cpModal.style.background = "var(--azul-600)";
+    }
 
-        // ─── WHATSAPP ────────────────────────────────────────────────
-        function acionarVendas(intencao) {
-            const num = "5511972999835";
-            const nome = produtoSelecionado?.nome || "produtos da fábrica";
-            let texto = intencao === "orcamento"
-                ? `Olá! Visitei o site corporativo e gostaria de solicitar uma cotação para: *${nome}*. Podemos conversar sobre volumes e prazos?`
-                : `Olá! Gostaria de falar com um consultor da Cia Embalagens.`;
-            window.open(`https://wa.me/${num}?text=${encodeURIComponent(texto)}`, "_blank");
-        }
+    let htmlE = "";
+    Object.entries(produto.especificacoes).forEach(([k,v]) => {
+        const ic = iconesEspec[k] || "ph-check-circle";
+        htmlE += `<div class="grupo-espec">
+            <span class="label-espec"><i class="ph-bold ${ic}" style="color:var(--azul-600);"></i> ${k}</span>
+            <span class="valor-espec">${v}</span>
+        </div>`;
+    });
+    document.getElementById("modalEspecificacoes").innerHTML = htmlE;
+    document.getElementById("modalProduto").classList.add("ativo");
+    document.body.style.overflow = "hidden";
+}
 
-        // ─── SCROLL / HEADER ─────────────────────────────────────────
-        function rolarPara(id) {
-            const el = document.getElementById(id);
-            if (el) window.scrollTo({ top: el.getBoundingClientRect().top + window.scrollY - 80, behavior: "smooth" });
-        }
+function fecharModal() {
+    document.getElementById("modalProduto").classList.remove("ativo");
+    document.body.style.overflow = "";
+}
 
-        window.addEventListener("scroll", () => {
-            const h = document.getElementById("main-header");
-            const ir = document.querySelector(".indicador-rolagem");
-            if (window.scrollY > 50) {
-                h.style.padding = "0.6rem 0";
-                h.style.boxShadow = "0 10px 30px rgba(0,0,0,0.05)";
-                if (ir) ir.style.opacity = "0";
-            } else {
-                h.style.padding = "1.2rem 0";
-                h.style.boxShadow = "none";
-                if (ir) ir.style.opacity = "1";
-            }
+function adicionarDoModal() {
+    if (produtoModal) {
+        adicionarAoCarrinho(produtoModal.id, 1);
+        fecharModal();
+        setTimeout(abrirCarrinho, 200);
+    }
+}
+
+document.getElementById("modalProduto").addEventListener("click", e => {
+    if (e.target === document.getElementById("modalProduto")) fecharModal();
+});
+
+/* ─── FILTROS ──────────────────────────────────────────── */
+function filtrarCategoria(cat, el) {
+    estado.categoria    = cat;
+    estado.subcategoria = "todas";
+    document.querySelectorAll(".btn-filtro").forEach(b => b.classList.remove("ativo"));
+    el.classList.add("ativo");
+
+    const barra = document.getElementById("barraSubcategorias");
+    const bc    = document.getElementById("breadcrumb");
+
+    if (cat === "caixas") {
+        barra.classList.add("visivel");
+        bc.classList.add("visivel");
+        document.getElementById("breadcrumbSub").textContent = "Todas";
+        document.querySelectorAll(".btn-subcategoria").forEach((b,i) => b.classList.toggle("ativo", i===0));
+    } else {
+        barra.classList.remove("visivel");
+        bc.classList.remove("visivel");
+    }
+    renderizarProdutos();
+}
+
+function filtrarSubcategoria(sub, el) {
+    estado.subcategoria = sub;
+    document.querySelectorAll(".btn-subcategoria").forEach(b => b.classList.remove("ativo"));
+    el.classList.add("ativo");
+    const lbl = sub === "todas" ? "Todas" : (labelSubcategorias[sub]?.label || sub);
+    document.getElementById("breadcrumbSub").textContent = lbl;
+    renderizarProdutos();
+}
+
+/* ─── RENDERIZAÇÃO ─────────────────────────────────────── */
+function renderizarProdutos() {
+    const container = document.getElementById("containerProdutos");
+    container.innerHTML = "";
+
+    let filtrados = listaProdutos;
+    if (estado.categoria !== "todos")
+        filtrados = filtrados.filter(p => p.categoria === estado.categoria);
+    if (estado.categoria === "caixas" && estado.subcategoria !== "todas")
+        filtrados = filtrados.filter(p => p.subcategoria === estado.subcategoria);
+
+    if (!filtrados.length) {
+        container.innerHTML = `<p style="text-align:center;color:var(--texto-mutado);padding:4rem 0;">Nenhum produto encontrado.</p>`;
+        return;
+    }
+
+    if (estado.categoria === "todos") {
+        const grupos = {};
+        filtrados.forEach(p => {
+            const k = p.categoria + "_" + (p.subcategoria||"geral");
+            if (!grupos[k]) grupos[k] = { label: obterLabel(p), produtos:[] };
+            grupos[k].produtos.push(p);
         });
+        Object.values(grupos).forEach(g => criarSecao(g.label, g.produtos, container));
 
-        // ─── SLIDER ──────────────────────────────────────────────────
-        let slideIndex = 0;
-        setInterval(() => {
-            const track = document.getElementById("feedbackSlider");
-            if (!track) return;
-            const cards = document.querySelectorAll(".feedback-card");
-            const vis = window.innerWidth > 768 ? 3 : 1;
-            slideIndex = (slideIndex + 1) > cards.length - vis ? 0 : slideIndex + 1;
-            track.style.transform = `translateX(-${slideIndex * (100 / vis)}%)`;
-        }, 4000);
+    } else if (estado.categoria === "caixas" && estado.subcategoria === "todas") {
+        renderizarVisaoSubcategorias(filtrados, container);
+    } else {
+        const tit = estado.categoria === "caixas"
+            ? (labelSubcategorias[estado.subcategoria]?.label || "Caixas")
+            : "Insumos Industriais";
+        criarSecao(tit, filtrados, container);
+    }
+}
 
-        // ─── MODAL FORA ──────────────────────────────────────────────
-        document.getElementById("modalProduto").addEventListener("click", function(e) {
-            if (e.target === this) fecharModal();
-        });
+function obterLabel(p) {
+    if (p.categoria === "caixas") return labelSubcategorias[p.subcategoria]?.label || "Caixas";
+    return "Insumos Industriais";
+}
 
-        // ─── INIT ─────────────────────────────────────────────────────
-        window.onload = () => renderizarProdutos();
-    </script>
+function renderizarVisaoSubcategorias(produtos, container) {
+    const subcats = [...new Set(produtos.map(p => p.subcategoria))];
+    const grade = document.createElement("div");
+    grade.className = "grade-subcategorias";
+    subcats.forEach(sub => {
+        const info  = labelSubcategorias[sub] || { label:sub, icone:"ph-cube" };
+        const count = produtos.filter(p => p.subcategoria === sub).length;
+        const card  = document.createElement("div");
+        card.className = "card-subcategoria";
+        card.innerHTML = `
+            <div class="icone-sub"><i class="ph-duotone ${info.icone}"></i></div>
+            <h3>${info.label}</h3>
+            <span class="badge-qtd">${count} ${count===1?"produto":"produtos"}</span>`;
+        card.onclick = () => {
+            document.querySelectorAll(".btn-subcategoria").forEach(b => {
+                if (b.textContent.trim().includes(info.label)) filtrarSubcategoria(sub, b);
+            });
+        };
+        grade.appendChild(card);
+    });
+    container.appendChild(grade);
+    criarSecao("Todas as Caixas", produtos, container);
+}
+
+function criarSecao(titulo, produtos, container) {
+    const secao = document.createElement("div");
+    secao.className = "secao-categoria";
+    secao.innerHTML = `<h2 class="titulo-categoria"><i class="ph-fill ph-squares-four"></i> ${titulo}</h2>`;
+
+    const grade = document.createElement("div");
+    grade.className = "grade-produtos";
+
+    produtos.forEach(p => {
+        const noCarrinho = !!carrinho[p.id];
+        const card = document.createElement("div");
+        card.className = "cartao-produto" + (noCarrinho ? " no-carrinho" : "");
+        card.id = `card-${p.id}`;
+
+        const ehConsulta = p.preco === "Sob consulta";
+        const precoFmt   = !ehConsulta ? p.preco.toLocaleString("pt-BR",{style:"currency",currency:"BRL"}) : "Sob consulta";
+
+        const htmlPreco = ehConsulta
+            ? `<div class="container-preco" style="background:var(--fundo-pagina);border-color:var(--bordas);">
+                   <span class="preco-valor" style="font-size:1.5rem;color:var(--texto-escuro);">Sob consulta</span>
+               </div>`
+            : `<div class="container-preco">
+                   <span class="preco-label">A partir de</span>
+                   <div class="preco-linha">
+                       <span class="preco-valor">${precoFmt}</span>
+                       <span class="preco-unit">${p.unidade}</span>
+                   </div>
+               </div>`;
+
+        card.innerHTML = `
+            <div class="imagem-produto">
+                <div class="selo-carrinho"><i class="ph-fill ph-check"></i> No carrinho</div>
+                <i class="ph-light ${p.icone}"></i>
+            </div>
+            <div class="conteudo-produto">
+                <h3 class="nome-produto">${p.nome}</h3>
+                <p class="desc-produto">${p.descricao}</p>
+                ${htmlPreco}
+                <div class="acoes-produto">
+                    <div class="controle-qtd">
+                        <button class="btn-qtd" onclick="event.stopPropagation();alterarInputQtd(${p.id},-1)">−</button>
+                        <input class="input-qtd" id="qtd-${p.id}" type="number" value="1" min="1" onclick="event.stopPropagation()">
+                        <button class="btn-qtd" onclick="event.stopPropagation();alterarInputQtd(${p.id},1)">+</button>
+                    </div>
+                    <button class="btn-add-carrinho ${noCarrinho ? 'adicionado':''}"
+                        id="btn-add-${p.id}"
+                        onclick="event.stopPropagation();adicionarAoCarrinho(${p.id}, document.getElementById('qtd-${p.id}').value)">
+                        <i class="ph-bold ph-shopping-cart"></i> Adicionar
+                    </button>
+                    <button class="btn-ver-espec" onclick="abrirModal(listaProdutos.find(x=>x.id===${p.id}))" title="Ver especificações">
+                        <i class="ph-bold ph-info"></i>
+                    </button>
+                </div>
+            </div>`;
+
+        grade.appendChild(card);
+    });
+
+    secao.appendChild(grade);
+    container.appendChild(secao);
+}
+
+function alterarInputQtd(id, delta) {
+    const input = document.getElementById(`qtd-${id}`);
+    if (!input) return;
+    input.value = Math.max(1, (parseInt(input.value)||1) + delta);
+}
+
+/* ─── SCROLL / HEADER ──────────────────────────────────── */
+function rolarPara(id) {
+    const el = document.getElementById(id);
+    if (el) window.scrollTo({ top: el.getBoundingClientRect().top + window.scrollY - 80, behavior:"smooth" });
+}
+
+window.addEventListener("scroll", () => {
+    const h  = document.getElementById("main-header");
+    const ir = document.querySelector(".indicador-rolagem");
+    if (window.scrollY > 50) {
+        h.style.padding = ".6rem 0";
+        h.style.boxShadow = "0 10px 30px rgba(0,0,0,.05)";
+        if (ir) ir.style.opacity = "0";
+    } else {
+        h.style.padding = "1.2rem 0";
+        h.style.boxShadow = "none";
+        if (ir) ir.style.opacity = "1";
+    }
+});
+
+/* ─── SLIDER ───────────────────────────────────────────── */
+let slideIdx = 0;
+setInterval(() => {
+    const track = document.getElementById("feedbackSlider");
+    if (!track) return;
+    const cards = document.querySelectorAll(".feedback-card");
+    const vis   = window.innerWidth > 768 ? 3 : 1;
+    slideIdx    = slideIdx + 1 > cards.length - vis ? 0 : slideIdx + 1;
+    track.style.transform = `translateX(-${slideIdx * (100/vis)}%)`;
+}, 4000);
+
+/* ─── INIT ─────────────────────────────────────────────── */
+window.onload = () => renderizarProdutos();
+</script>
 </body>
 </html>
