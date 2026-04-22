@@ -1330,60 +1330,72 @@ const titulosCategorias = {
 };
 
 function renderizarProdutos() {
-    const container = document.getElementById("containerProdutos");
-    if (!container) return;
-    container.innerHTML = "";
-    
-    // Filtro inteligente para Array ou String
-    const filtrados = listaProdutos.filter(p => {
-        if (filtroAtual === "todos") return true;
-        return Array.isArray(p.categoria) ? p.categoria.includes(filtroAtual) : p.categoria === filtroAtual;
-    });
-        
-    const produtosAgrupados = {};
-    
-    filtrados.forEach(produto => {
-        let chave = (filtroAtual !== "todos") 
-            ? filtroAtual 
-            : (Array.isArray(produto.categoria) ? produto.categoria[0] : produto.categoria);
+            const container = document.getElementById("containerProdutos");
+            if (!container) return;
+            container.innerHTML = "";
+            
+            // Filtra o array permitindo múltiplas categorias
+            const filtrados = filtroAtual === "todos" 
+                ? listaProdutos 
+                : listaProdutos.filter(p => Array.isArray(p.categoria) ? p.categoria.includes(filtroAtual) : p.categoria === filtroAtual);
+                
+            const produtosAgrupados = {};
+            
+            filtrados.forEach(produto => {
+                let chave;
+                if (filtroAtual !== "todos") {
+                    chave = filtroAtual;
+                } else {
+                    chave = Array.isArray(produto.categoria) ? produto.categoria[0] : produto.categoria;
+                }
 
-        if (!produtosAgrupados[chave]) produtosAgrupados[chave] = [];
-        produtosAgrupados[chave].push(produto);
-    });
+                if (!produtosAgrupados[chave]) {
+                    produtosAgrupados[chave] = [];
+                }
+                produtosAgrupados[chave].push(produto);
+            });
 
-    Object.entries(produtosAgrupados).forEach(([chaveCategoria, listaDeProdutos]) => {
-        const secao = document.createElement("div");
-        secao.className = "secao-categoria";
-        
-        secao.innerHTML = `
-            <h2 class="titulo-categoria">
-                <i class="ph-fill ph-squares-four"></i> 
-                ${titulosCategorias[chaveCategoria] || "Outros Produtos"}
-            </h2>
-        `;
+            // Constrói o HTML
+            Object.entries(produtosAgrupados).forEach(([chaveCategoria, listaDeProdutos]) => {
+                const secao = document.createElement("div");
+                secao.className = "secao-categoria";
+                
+                secao.innerHTML = `
+                    <h2 class="titulo-categoria">
+                        <i class="ph-fill ph-squares-four"></i> 
+                        ${titulosCategorias[chaveCategoria] || "Outros Produtos"}
+                    </h2>
+                `;
 
-        const grade = document.createElement("div");
-        grade.className = "grade-produtos";
+                const grade = document.createElement("div");
+                grade.className = "grade-produtos";
 
-        listaDeProdutos.forEach((produto) => {
-            const cartao = document.createElement("div");
-            cartao.className = "cartao-produto";
-            cartao.onclick = () => abrirModal(produto);
-            cartao.innerHTML = `
-                <div class="icone-produto"><i class="ph-fill ${produto.icone}"></i></div>
-                <div class="conteudo-produto">
-                    <h3 class="nome-produto">${produto.nome}</h3>
-                    <p class="preco-produto">${formatarMoeda(produto.preco)}<span class="unidade">${produto.unidade || ""}</span></p>
-                    <button class="botao-ver">Ver Detalhes</button>
-                </div>
-            `;
-            grade.appendChild(cartao);
-        });
+                listaDeProdutos.forEach((produto) => {
+                    const cartao = document.createElement("div");
+                    cartao.className = "cartao-produto";
+                    cartao.onclick = () => abrirModal(produto);
+                    
+                    cartao.innerHTML = `
+                        <div class="icone-produto">
+                            <i class="ph-fill ${produto.icone}"></i>
+                        </div>
+                        <div class="conteudo-produto">
+                            <h3 class="nome-produto">${produto.nome}</h3>
+                            <p class="preco-produto">${formatarMoeda(produto.preco)}<span class="unidade">${produto.unidade || ""}</span></p>
+                            <button class="botao-ver">Ver Detalhes</button>
+                        </div>
+                    `;
+                    grade.appendChild(cartao);
+                });
 
-        secao.appendChild(grade);
-        container.appendChild(secao);
-    });
+                secao.appendChild(grade);
+                container.appendChild(secao);
+            }); 
+        } // <--- ESTA CHAVE FECHA A FUNÇÃO E RESOLVE O ERRO NA LINHA SEGUINTE
 
+        // Variáveis de Estado (Agora o navegador vai ler estas linhas corretamente)
+        let produtoSelecionado = null;
+        let filtroAtual = "todos";
                     // Lógica para o Preço Corporativo
                     const ehSobConsulta = produto.preco === "Sob consulta";
                     let htmlPreco = "";
