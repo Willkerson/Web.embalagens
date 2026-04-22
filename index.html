@@ -1244,7 +1244,7 @@
             
             <div class="rodape-coluna">
                 <div class="rodape-logo">
-                    <i class="ph-fill ph-package"></i> Cia Embalagens
+                    <i class="ph-fill ph-package"></i> Cia Das Embalagens
                 </div>
                 <p class="rodape-sobre">Sua estrutura logística merece a melhor proteção. Qualidade premium em papelão ondulado focado em atender o mercado empresarial com excelência e pontualidade.</p>
             </div>
@@ -1290,7 +1290,7 @@
         
         <div class="container">
             <div class="copyright">
-                © 2026 Cia Embalagens. Todos os direitos reservados. CNPJ: 00.000.000/0000-00<br>
+                © 2026 Cia Das Embalagens. Todos os direitos reservados. CNPJ: 00.000.000/0000-00<br>
                 Desenvolvido para alta performance corporativa.
             </div>
         </div>
@@ -1303,22 +1303,23 @@
          */
  const listaProdutos = [
             // CATEGORIA: SEDEX / CORREIOS
-            { id: 1, nome: "Caixa Nº0 Padrão Envios", categoria: "sedex", icone: "ph-package", descricao: "Perfeita para e-commerce de pequenos acessórios, joias e peças eletrônicas.", preco: 2.80, unidade: "/unidade", especificacoes: { "Medidas Externas": "16 x 11 x 03 cm", "Tipo de Onda": "Onda B (Simples)", "Gramatura": "400g/m²", "Coluna (ECT)": "4 kgf/cm" } },
-            { id: 2, nome: "Caixa Nº1 Padrão Envios", categoria: "sedex", icone: "ph-box-arrow-up", descricao: "O tamanho intermediário ideal para cosméticos, perfumes e miudezas em geral.", preco: 3.50, unidade: "/unidade", especificacoes: { "Medidas Externas": "20 x 13 x 07 cm", "Tipo de Onda": "Onda B (Simples)", "Gramatura": "400g/m²", "Coluna (ECT)": "4 kgf/cm" } },
-            { id: 3, nome: "Caixa Nº2 Padrão Envios", categoria: "sedex", icone: "ph-archive-box", descricao: "Extrema versatilidade para e-commerce de vestuário, livros e kits médios.", preco: 4.20, unidade: "/unidade", especificacoes: { "Medidas Externas": "27 x 18 x 09 cm", "Tipo de Onda": "Onda C (Média)", "Gramatura": "450g/m²", "Coluna (ECT)": "5 kgf/cm" } },
-            { id: 4, nome: "Caixa Nº3 Padrão Envios", categoria: "sedex", icone: "ph-cube", descricao: "Acomoda produtos volumosos com segurança. Ideal para calçados e utensílios.", preco: 5.80, unidade: "/unidade", especificacoes: { "Medidas Externas": "31 x 22 x 12 cm", "Tipo de Onda": "Onda C (Média)", "Gramatura": "450g/m²", "Coluna (ECT)": "6 kgf/cm" } },
-
-            // CATEGORIA: E-COMMERCE (Design Diferenciado)
-            { id: 5, nome: "Caixa Corte e Vinco Invertida", categoria: "ecommerce", icone: "ph-gift", descricao: "Modelo de montagem rápida, não necessita de fita adesiva no fundo. Excelente unboxing.", preco: 6.50, unidade: "/unidade", especificacoes: { "Medidas Externas": "Vários tamanhos", "Montagem": "Encaixe / Automontável", "Acabamento": "Pardo ou Branco", "Uso Indicado": "Premium E-commerce" } },
-            { id: 6, nome: "Caixa Maleta para Garrafas", categoria: "ecommerce", icone: "ph-wine", descricao: "Com colmeias internas (divisórias) para transporte seguro de vinhos e destilados.", preco: 8.90, unidade: "/unidade", especificacoes: { "Capacidade": "2, 4 ou 6 garrafas", "Tipo de Onda": "Onda Dupla (BC)", "Resistência": "Extra Forte", "Acessório": "Acompanha divisórias" } },
+            { id: 1, nome: "Caixa Nº0 Padrão Envios", categoria: "sedex", icone: "ph-package", descricao: "Perfeita para e-commerce de pequenos acessórios, joias e peças eletrônicas.", preco: 3.50, unidade: "/unidade", especificacoes: { "Medidas Externas": "16 x 11 x 07 cm", "Material": "Ondulado" } },
+            { id: 2, nome: "Caixa Nº1 Padrão Envios", categoria: "sedex", icone: "ph-box-arrow-up", descricao: "O tamanho intermediário ideal para cosméticos, perfumes e miudezas em geral.", preco: 4.60, unidade: "/unidade", especificacoes: {"Medidas Externas": "21 x 15 x 6.5 cm", "Material": "Ondulado" } },
+            { id: 3, nome: "Caixa Nº2 Padrão Envios", categoria: "sedex", icone: "ph-archive-box", descricao: "Extrema versatilidade para e-commerce de vestuário, livros e kits médios.", preco: 5.60, unidade: "/unidade", especificacoes: { "Medidas Externas": "26 x 17 x 08 cm", "Material": "Ondulado" } },
+            { id: 4, nome: "Caixa Nº3 Padrão Envios", categoria: "sedex", icone: "ph-cube", descricao: "Acomoda produtos volumosos com segurança. Ideal para calçados e utensílios.", preco: 8.80, unidade: "/unidade", especificacoes: { "Medidas Externas": "30 x 20 x 11 cm", "Material": "Ondulado" } },
+                  { id: 5, nome: "Caixa Nº4 Padrão Envios", categoria: "sedex", icone: "ph-package", descricao: "Perfeita para e-commerce de pequenos acessórios, joias e peças eletrônicas.", preco: 13.00, unidade: "/unidade", especificacoes: { "Medidas Externas": "34x27x11cm", "Material": "Ondulado" } },
+            { id: 6, nome: "Caixa 32x32x22", categoria: "caixa", icone: "ph-box-arrow-up", descricao: "O tamanho intermediário ideal para cosméticos, perfumes e miudezas em geral.", preco: 3.50, unidade: "/unidade", especificacoes: { "Medidas Externas": "32 x 32 x 22 cm", "Material": "Ondulado" } },
+            { id: 7, nome: "Caixa De Bolo Nº9 , categoria: "bolo", icone: "ph-archive-box", descricao: "Extrema versatilidade para e-commerce de vestuário, livros e kits médios.", preco: 10,99, unidade: "/unidade", especificacoes: { "Medidas Externas": "40 x 40 x 12 cm", "Material": "Ondulado" } },
+            { id: 8, nome: "Caixa De Bolo Nº7 Media", categoria: "bolo", icone: "ph-archive-box", descricao: "Extrema versatilidade para e-commerce de vestuário, livros e kits médios.", preco: 6.20, unidade: "/unidade", especificacoes: { "Medidas Externas": "28 x 28 x 10 cm", "Material": "Ondulado" } },
+            { id: 9, nome: "Caixa De Bolo Nº7 Com Alça", categoria: "bolo", icone: "ph-archive-box", descricao: "Extrema versatilidade para e-commerce de vestuário, livros e kits médios.", preco: 6.50, unidade: "/unidade", especificacoes: { "Medidas Externas": "28 x 28 x 10 cm", "Material": "Ondulado" } },
 
             // CATEGORIA: PERSONALIZADOS
-            { id: 7, nome: "Caixa Master com Logotipo", categoria: "personalizados", icone: "ph-paint-brush-broad", descricao: "Impressão flexográfica da sua marca para gerar autoridade no momento da entrega.", preco: "Sob consulta", unidade: "", especificacoes: { "Dimensões": "Desenvolvido sob medida", "Impressão": "Até 3 cores (Flexo)", "Clichê": "Custo único inicial", "Lote Mínimo": "300 unidades" } },
-            { id: 8, nome: "Caixa Premium Branca", categoria: "personalizados", icone: "ph-star", descricao: "Papelão Kraft branco na parte externa, ideal para cosméticos e produtos de saúde.", preco: "Sob consulta", unidade: "", especificacoes: { "Revestimento": "Kraft Branco", "Dimensões": "Personalizável", "Impressão": "Offset / Flexo", "Lote Mínimo": "500 unidades" } },
+            { id: 11, nome: "Caixa Master com Logotipo", categoria: "personalizados", icone: "ph-paint-brush-broad", descricao: "Impressão flexográfica da sua marca para gerar autoridade no momento da entrega.", preco: "Sob consulta", unidade: "", especificacoes: { "Dimensões": "Desenvolvido sob medida", "Impressão": "Até 3 cores (Flexo)", "Clichê": "Custo único inicial", "Lote Mínimo": "300 unidades" } },
+            { id: 12, nome: "Caixa Premium Branca", categoria: "personalizados", icone: "ph-star", descricao: "Papelão Kraft branco na parte externa, ideal para cosméticos e produtos de saúde.", preco: "Sob consulta", unidade: "", especificacoes: { "Revestimento": "Kraft Branco", "Dimensões": "Personalizável", "Impressão": "Offset / Flexo", "Lote Mínimo": "500 unidades" } },
 
             // CATEGORIA: INSUMOS INDUSTRIAIS
-            { id: 9, nome: "Bobina de Papelão Ondulado", categoria: "insumos", icone: "ph-scroll", descricao: "Proteção flexível para indústrias moveleiras, reformas e forração de pisos.", preco: 45.00, unidade: "/m²", especificacoes: { "Largura da Bobina": "1,20m ou 1,40m", "Gramatura": "Onda Simples (Face Única)", "Venda Mínima": "100 m²", "Peso Aprox.": "30kg por rolo" } },
-            { id: 10, nome: "Chapa de Papelão Duplo (BC)", categoria: "insumos", icone: "ph-stack", descricao: "Chapas rígidas para separação de paletes ou confecção de projetos próprios.", preco: 12.50, unidade: "/chapa", especificacoes: { "Medida Padrão": "1,00 x 1,20m", "Tipo de Onda": "Dupla (Onda B + C)", "Espessura": "Aprox. 6mm", "Venda Mínima": "50 chapas" } }
+            { id: 13, nome: "Bobina de Papelão Ondulado", categoria: "insumos", icone: "ph-scroll", descricao: "Proteção flexível para indústrias moveleiras, reformas e forração de pisos.", preco: 45.00, unidade: "/m²", especificacoes: { "Largura da Bobina": "1,20m ou 1,40m", "Gramatura": "Onda Simples (Face Única)", "Venda Mínima": "100 m²", "Peso Aprox.": "30kg por rolo" } },
+            { id: 14, nome: "Chapa de Papelão Duplo (BC)", categoria: "insumos", icone: "ph-stack", descricao: "Chapas rígidas para separação de paletes ou confecção de projetos próprios.", preco: 12.50, unidade: "/chapa", especificacoes: { "Medida Padrão": "1,00 x 1,20m", "Tipo de Onda": "Dupla (Onda B + C)", "Espessura": "Aprox. 6mm", "Venda Mínima": "50 chapas" } }
         ];
 
         // Variáveis de Estado
