@@ -3,398 +3,1801 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cia Das Embalagens | Soluções Premium</title>
+    <meta name="description" content="Catálogo completo de embalagens corporativas e caixas de papelão direto da fábrica.">
+    <meta name="theme-color" content="#0a0f1e">
+    <title>Cia Das Embalagens | Soluções em Papelão</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <script src="https://unpkg.com/@phosphor-icons/web"></script>
     <style>
-        :root {
-            --blue-50: #eff6ff; --blue-100: #dbeafe; --blue-200: #bfdbfe; --blue-300: #93c5fd;
-            --blue-400: #60a5fa; --blue-500: #3b82f6; --blue-600: #2563eb; --blue-700: #1d4ed8;
-            --blue-800: #1e40af; --blue-900: #1e3a8a; --blue-950: #172554;
-            --green-wa: #25d366; --bg-page: #f8fafc; --text-dark: #0f172a;
-            --text-muted: #64748b; --border: #e2e8f0; --white: #ffffff;
-            --tr: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-            --shadow-sm: 0 2px 4px rgba(0,0,0,0.05);
-            --shadow-md: 0 10px 25px -5px rgba(0,0,0,0.1), 0 8px 10px -6px rgba(0,0,0,0.1);
-            --shadow-lg: 0 20px 50px -12px rgba(0,0,0,0.15);
-        }
+/* ═══════════════════════════════════════════════
+   DESIGN SYSTEM — CIA DAS EMBALAGENS v2
+═══════════════════════════════════════════════ */
+:root {
+    --blue-950: #0a0f1e;
+    --blue-900: #0f172a;
+    --blue-800: #1e3a8a;
+    --blue-700: #1d4ed8;
+    --blue-600: #2563eb;
+    --blue-500: #3b82f6;
+    --blue-400: #60a5fa;
+    --blue-300: #93c5fd;
+    --blue-100: #dbeafe;
+    --blue-50:  #eff6ff;
+    --green-wa: #25d366;
+    --green-wa-h: #128c7e;
+    --text-dark: #0f172a;
+    --text-body: #475569;
+    --text-muted: #94a3b8;
+    --bg-page: #f8fafc;
+    --bg-card: #ffffff;
+    --border: #e2e8f0;
+    --shadow-card: 0 4px 24px -4px rgba(15,23,42,.06), 0 1px 4px rgba(15,23,42,.04);
+    --shadow-hover: 0 24px 48px -8px rgba(37,99,235,.18), 0 8px 16px -4px rgba(37,99,235,.08);
+    --tr: all .35s cubic-bezier(.4,0,.2,1);
+    --tr-spring: all .5s cubic-bezier(.175,.885,.32,1.275);
+    --radius-card: 24px;
+    --radius-btn: 99px;
+}
 
-        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', system-ui, -apple-system, sans-serif; }
-        body { background: var(--bg-page); color: var(--text-dark); overflow-x: hidden; scroll-behavior: smooth; }
-        
-        /* Cursor Personalizado */
-        .cursor { position: fixed; width: 8px; height: 8px; background: var(--blue-600); border-radius: 50%; pointer-events: none; z-index: 9999; transition: transform 0.1s; mix-blend-mode: difference; }
-        .cursor-follower { position: fixed; width: 32px; height: 32px; border: 2px solid var(--blue-400); border-radius: 50%; pointer-events: none; z-index: 9998; transition: transform 0.15s cubic-bezier(0.17, 0.67, 0.83, 0.67); opacity: 0.5; }
+*, *::before, *::after { margin:0; padding:0; box-sizing:border-box; font-family:'Inter',sans-serif; -webkit-font-smoothing:antialiased; }
+html { scroll-behavior:smooth; }
+body { background:var(--bg-page); color:var(--text-body); line-height:1.6; overflow-x:hidden; display:flex; flex-direction:column; min-height:100vh; }
+a { text-decoration:none; color:inherit; }
+button { cursor:pointer; border:none; background:none; outline:none; }
+h1,h2,h3,h4,h5,h6 { color:var(--text-dark); font-weight:800; letter-spacing:-.025em; }
 
-        /* Header Premium */
-        header { position: fixed; top: 0; width: 100%; z-index: 1000; transition: var(--tr); padding: 1.25rem 5%; display: flex; justify-content: space-between; align-items: center; }
-        header.scrolled { background: rgba(255, 255, 255, 0.85); backdrop-filter: blur(20px); padding: 0.8rem 5%; border-bottom: 1px solid rgba(255,255,255,0.3); box-shadow: var(--shadow-sm); }
-        
-        .logo { font-size: 1.5rem; font-weight: 800; color: var(--blue-900); display: flex; align-items: center; gap: 10px; text-decoration: none; }
-        .logo i { font-size: 1.8rem; color: var(--blue-600); }
+/* ── CURSOR PERSONALIZADO ── */
+.cursor { position:fixed; width:12px; height:12px; background:var(--blue-500); border-radius:50%; pointer-events:none; z-index:9999; transform:translate(-50%,-50%); transition:transform .1s ease, width .3s ease, height .3s ease, opacity .3s ease; mix-blend-mode:multiply; }
+.cursor-ring { position:fixed; width:40px; height:40px; border:2px solid rgba(37,99,235,.4); border-radius:50%; pointer-events:none; z-index:9998; transform:translate(-50%,-50%); transition:transform .15s ease, width .3s ease, height .3s ease, opacity .3s ease; }
+body:hover .cursor { opacity:1; }
+.cursor.hover { width:20px; height:20px; }
+.cursor-ring.hover { width:56px; height:56px; border-color:rgba(37,99,235,.6); }
 
-        .nav-actions { display: flex; gap: 1rem; align-items: center; }
-        .btn-cart-trigger { background: var(--white); border: 1px solid var(--border); padding: 0.6rem 1.2rem; border-radius: 50px; display: flex; align-items: center; gap: 8px; font-weight: 600; transition: var(--tr); position: relative; }
-        .btn-cart-trigger:hover { border-color: var(--blue-400); transform: translateY(-2px); box-shadow: var(--shadow-md); }
-        .cart-count { background: var(--blue-600); color: white; font-size: 0.75rem; width: 20px; height: 20px; border-radius: 50%; display: flex; align-items: center; justify-content: center; position: absolute; top: -5px; right: -5px; }
+/* ── CONTAINER ── */
+.container { width:100%; max-width:1200px; margin:0 auto; padding:0 1.5rem; }
 
-        /* Hero Section */
-        .hero { height: 90vh; background: linear-gradient(135deg, var(--blue-950) 0%, var(--blue-900) 100%); display: flex; align-items: center; justify-content: center; position: relative; overflow: hidden; color: white; text-align: center; padding: 0 10%; }
-        .hero-bg-anim { position: absolute; inset: 0; opacity: 0.4; }
-        .hero-content { position: relative; z-index: 10; max-width: 900px; }
-        .hero h1 { font-size: 4rem; font-weight: 900; line-height: 1.1; margin-bottom: 1.5rem; letter-spacing: -0.02em; animation: fadeInUp 1s both; }
-        .hero p { font-size: 1.25rem; opacity: 0.8; margin-bottom: 2.5rem; animation: fadeInUp 1s 0.2s both; }
-        .hero-btns { display: flex; gap: 1rem; justify-content: center; animation: fadeInUp 1s 0.4s both; }
-        
-        .btn-primary { background: var(--blue-600); color: white; padding: 1rem 2.5rem; border-radius: 50px; font-weight: 700; text-decoration: none; transition: var(--tr); display: flex; align-items: center; gap: 10px; border: none; cursor: pointer; }
-        .btn-primary:hover { background: var(--blue-700); transform: scale(1.05); box-shadow: 0 15px 30px rgba(37, 99, 235, 0.4); }
+/* ══════════════════════════════════════════════
+   HEADER
+══════════════════════════════════════════════ */
+header {
+    position:fixed; top:0; left:0; width:100%;
+    background:rgba(255,255,255,.85);
+    backdrop-filter:blur(20px) saturate(180%);
+    -webkit-backdrop-filter:blur(20px) saturate(180%);
+    z-index:1000; border-bottom:1px solid rgba(226,232,240,.5);
+    padding:1.1rem 0; transition:var(--tr);
+}
+header.scrolled { padding:.65rem 0; box-shadow:0 8px 32px -8px rgba(15,23,42,.08); }
+.header-inner { display:flex; justify-content:space-between; align-items:center; width:100%; max-width:1200px; margin:0 auto; padding:0 1.5rem; gap:1rem; }
+.logo { font-size:1.45rem; font-weight:900; color:var(--blue-900); display:flex; align-items:center; gap:10px; letter-spacing:-.04em; transition:var(--tr); }
+.logo:hover { opacity:.75; transform:translateY(-1px); }
+.logo-icon { width:38px; height:38px; background:linear-gradient(135deg,var(--blue-600),var(--blue-800)); border-radius:10px; display:flex; align-items:center; justify-content:center; color:#fff; font-size:1.2rem; box-shadow:0 4px 12px rgba(37,99,235,.3); flex-shrink:0; }
+.header-actions { display:flex; align-items:center; gap:10px; }
+.btn-header-cart {
+    position:relative; background:#fff; border:1.5px solid var(--border);
+    color:var(--text-dark); padding:10px 20px; border-radius:var(--radius-btn);
+    font-weight:700; font-size:.88rem; display:flex; align-items:center; gap:8px;
+    transition:var(--tr); box-shadow:var(--shadow-card);
+}
+.btn-header-cart:hover { border-color:var(--blue-400); color:var(--blue-600); background:var(--blue-50); transform:translateY(-2px); box-shadow:0 8px 20px rgba(37,99,235,.12); }
+.btn-header-cta {
+    background:linear-gradient(135deg,var(--blue-600),var(--blue-700));
+    color:#fff; padding:10px 22px; border-radius:var(--radius-btn);
+    font-weight:700; font-size:.88rem; display:flex; align-items:center; gap:8px;
+    transition:var(--tr); box-shadow:0 4px 14px rgba(37,99,235,.3);
+}
+.btn-header-cta:hover { background:linear-gradient(135deg,var(--blue-700),var(--blue-800)); transform:translateY(-2px); box-shadow:0 8px 24px rgba(37,99,235,.4); }
+.cart-badge { position:absolute; top:-7px; right:-7px; background:var(--green-wa); color:#fff; font-size:.65rem; font-weight:900; width:20px; height:20px; border-radius:50%; display:flex; align-items:center; justify-content:center; border:2px solid #fff; transition:var(--tr-spring); transform:scale(0); }
+.cart-badge.visible { transform:scale(1); }
 
-        /* Filtros Profissionais */
-        .catalog-container { padding: 5rem 5%; min-height: 100vh; }
-        .section-header { text-align: center; margin-bottom: 4rem; }
-        .section-header h2 { font-size: 2.5rem; font-weight: 800; margin-bottom: 1rem; }
-        
-        .filter-wrapper { background: white; padding: 0.5rem; border-radius: 100px; display: inline-flex; gap: 5px; border: 1px solid var(--border); margin-bottom: 3rem; box-shadow: var(--shadow-sm); }
-        .filter-btn { padding: 0.8rem 1.8rem; border-radius: 100px; border: none; background: transparent; font-weight: 600; cursor: pointer; transition: var(--tr); color: var(--text-muted); }
-        .filter-btn.active { background: var(--blue-600); color: white; box-shadow: var(--shadow-md); }
+/* ══════════════════════════════════════════════
+   HERO
+══════════════════════════════════════════════ */
+.hero {
+    position:relative; min-height:100vh;
+    display:flex; align-items:center; justify-content:center;
+    background:linear-gradient(160deg, rgba(10,15,30,.88) 0%, rgba(30,58,138,.75) 60%, rgba(37,99,235,.6) 100%),
+               url('https://willkerson.github.io/Web.embalagens/lojafundo.png');
+    background-size:cover; background-position:center;
+    overflow:hidden; padding:8rem 1.5rem 6rem; text-align:center;
+}
+/* Partículas flutuantes */
+.hero-particles { position:absolute; inset:0; z-index:1; pointer-events:none; overflow:hidden; }
+.particle {
+    position:absolute; border-radius:50%;
+    background:rgba(255,255,255,.12);
+    animation:floatParticle linear infinite;
+}
+@keyframes floatParticle {
+    0%   { transform:translateY(100vh) scale(0); opacity:0; }
+    10%  { opacity:1; }
+    90%  { opacity:.6; }
+    100% { transform:translateY(-10vh) scale(1.2); opacity:0; }
+}
+/* Orbs de luz */
+.hero-orb { position:absolute; border-radius:50%; filter:blur(80px); z-index:1; pointer-events:none; animation:orbFloat 8s ease-in-out infinite; }
+.hero-orb-1 { width:50vw; height:50vw; background:radial-gradient(circle,rgba(96,165,250,.2),transparent 60%); top:-15%; left:-10%; animation-delay:0s; }
+.hero-orb-2 { width:40vw; height:40vw; background:radial-gradient(circle,rgba(139,92,246,.15),transparent 60%); bottom:-10%; right:-5%; animation-delay:-4s; }
+@keyframes orbFloat { 0%,100%{transform:translate(0,0) scale(1);} 33%{transform:translate(3%,4%) scale(1.05);} 66%{transform:translate(-2%,2%) scale(.97);} }
 
-        /* Menu de Sacolas Simplificado */
-        .sacolas-filter-pro { background: white; border-radius: 24px; padding: 2rem; margin-bottom: 3rem; border: 1px solid var(--border); display: none; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 2rem; box-shadow: var(--shadow-md); animation: fadeIn 0.5s both; text-align: left; }
-        .sacolas-filter-pro.active { display: grid; }
-        .filter-group { display: flex; flex-direction: column; gap: 10px; }
-        .filter-group label { font-size: 0.85rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; color: var(--text-muted); }
-        .select-pro { padding: 0.8rem 1.2rem; border-radius: 12px; border: 1px solid var(--border); background: var(--bg-page); font-weight: 600; cursor: pointer; transition: var(--tr); }
-        .select-pro:focus { border-color: var(--blue-500); outline: none; box-shadow: 0 0 0 4px var(--blue-100); }
+.hero-content { position:relative; z-index:2; max-width:860px; display:flex; flex-direction:column; align-items:center; gap:2rem; }
+.hero-tag {
+    display:inline-flex; align-items:center; gap:8px;
+    background:rgba(255,255,255,.12); backdrop-filter:blur(10px);
+    border:1px solid rgba(255,255,255,.2); border-radius:var(--radius-btn);
+    color:rgba(255,255,255,.9); font-size:.82rem; font-weight:600;
+    padding:8px 18px; letter-spacing:.04em; text-transform:uppercase;
+    animation:fadeSlideDown .8s ease both;
+}
+.hero-tag-dot { width:8px; height:8px; background:var(--green-wa); border-radius:50%; animation:pulse 2s infinite; }
+@keyframes pulse { 0%,100%{box-shadow:0 0 0 0 rgba(37,211,102,.4);} 50%{box-shadow:0 0 0 6px rgba(37,211,102,0);} }
 
-        /* Grid de Produtos */
-        .products-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 2.5rem; }
-        .product-card { background: white; border-radius: 24px; padding: 1.5rem; border: 1px solid var(--border); transition: var(--tr); position: relative; overflow: hidden; display: flex; flex-direction: column; animation: fadeInUp 0.6s both; }
-        .product-card:hover { transform: translateY(-10px); box-shadow: var(--shadow-lg); border-color: var(--blue-200); }
-        
-        .product-img-wrapper { background: var(--bg-page); border-radius: 18px; height: 200px; display: flex; align-items: center; justify-content: center; margin-bottom: 1.5rem; position: relative; transition: var(--tr); }
-        .product-card:hover .product-img-wrapper { background: var(--blue-50); }
-        .product-img-wrapper svg { width: 120px; height: 120px; transition: var(--tr); }
-        .product-card:hover .product-img-wrapper svg { transform: scale(1.1) rotate(5deg); }
+.hero h1 {
+    color:#fff; font-size:clamp(2.8rem,6.5vw,5.2rem);
+    font-weight:900; line-height:1.04; letter-spacing:-.05em;
+    animation:fadeSlideUp .9s ease .1s both;
+}
+.hero h1 .highlight {
+    background:linear-gradient(135deg,#93c5fd,#c4b5fd);
+    -webkit-background-clip:text; -webkit-text-fill-color:transparent;
+    background-clip:text; position:relative;
+}
+.hero-desc { color:rgba(255,255,255,.75); font-size:1.15rem; max-width:560px; line-height:1.7; animation:fadeSlideUp .9s ease .2s both; }
+.hero-actions { display:flex; gap:14px; flex-wrap:wrap; justify-content:center; animation:fadeSlideUp .9s ease .3s both; }
+.btn-hero-primary {
+    background:#fff; color:var(--blue-900); padding:18px 44px;
+    border-radius:var(--radius-btn); font-weight:800; font-size:1.05rem;
+    display:inline-flex; align-items:center; gap:10px; transition:var(--tr);
+    box-shadow:0 12px 32px rgba(0,0,0,.25);
+}
+.btn-hero-primary:hover { transform:translateY(-4px); box-shadow:0 20px 48px rgba(0,0,0,.35); background:var(--blue-50); }
+.btn-hero-primary i { color:var(--blue-600); font-size:1.3rem; }
+.btn-hero-secondary {
+    background:rgba(255,255,255,.1); color:#fff; padding:18px 36px;
+    border-radius:var(--radius-btn); font-weight:700; font-size:1.05rem;
+    display:inline-flex; align-items:center; gap:10px; transition:var(--tr);
+    border:1.5px solid rgba(255,255,255,.25); backdrop-filter:blur(8px);
+}
+.btn-hero-secondary:hover { background:rgba(255,255,255,.2); transform:translateY(-4px); border-color:rgba(255,255,255,.5); }
 
-        .product-info h3 { font-size: 1.25rem; font-weight: 700; margin-bottom: 0.5rem; }
-        .product-info p { color: var(--text-muted); font-size: 0.9rem; line-height: 1.5; margin-bottom: 1.5rem; flex-grow: 1; }
-        
-        .product-footer { display: flex; justify-content: space-between; align-items: center; margin-top: auto; }
-        .price { display: flex; flex-direction: column; }
-        .price-val { font-size: 1.4rem; font-weight: 800; color: var(--blue-900); }
-        .price-unit { font-size: 0.75rem; color: var(--text-muted); font-weight: 600; }
+/* Stats hero */
+.hero-stats { display:flex; gap:2.5rem; animation:fadeSlideUp .9s ease .45s both; flex-wrap:wrap; justify-content:center; }
+.hero-stat { text-align:center; }
+.hero-stat-val { font-size:2rem; font-weight:900; color:#fff; letter-spacing:-.04em; line-height:1; }
+.hero-stat-label { font-size:.78rem; color:rgba(255,255,255,.6); font-weight:500; text-transform:uppercase; letter-spacing:.06em; margin-top:4px; }
+.hero-stat-divider { width:1px; background:rgba(255,255,255,.2); align-self:stretch; }
 
-        .btn-add-cart { width: 48px; height: 48px; border-radius: 14px; border: none; background: var(--blue-600); color: white; display: flex; align-items: center; justify-content: center; cursor: pointer; transition: var(--tr); font-size: 1.2rem; }
-        .btn-add-cart:hover { background: var(--blue-700); transform: rotate(15deg) scale(1.1); }
+/* Scroll indicator */
+.scroll-hint { position:absolute; bottom:36px; left:50%; transform:translateX(-50%); z-index:5; display:flex; flex-direction:column; align-items:center; gap:10px; cursor:pointer; transition:var(--tr); animation:fadeSlideUp .9s ease .6s both; }
+.scroll-hint:hover { transform:translateX(-50%) translateY(-4px); }
+.scroll-hint-text { color:rgba(255,255,255,.6); font-size:.75rem; font-weight:600; text-transform:uppercase; letter-spacing:.12em; }
+.scroll-hint-mouse { width:24px; height:38px; border:2px solid rgba(255,255,255,.4); border-radius:12px; display:flex; justify-content:center; padding-top:6px; }
+.scroll-hint-dot { width:4px; height:8px; background:rgba(255,255,255,.7); border-radius:2px; animation:scrollDot 2s ease-in-out infinite; }
+@keyframes scrollDot { 0%,100%{transform:translateY(0);opacity:1;} 60%{transform:translateY(10px);opacity:0;} }
 
-        /* Animação Fly-to-Cart */
-        .flying-item { position: fixed; z-index: 9999; pointer-events: none; transition: all 0.8s cubic-bezier(0.19, 1, 0.22, 1); width: 60px; height: 60px; }
+/* ── Animações de entrada ── */
+@keyframes fadeSlideDown { from{opacity:0;transform:translateY(-20px);} to{opacity:1;transform:translateY(0);} }
+@keyframes fadeSlideUp   { from{opacity:0;transform:translateY(24px);}  to{opacity:1;transform:translateY(0);} }
+@keyframes fadeIn        { from{opacity:0;transform:translateY(12px);}  to{opacity:1;transform:translateY(0);} }
+@keyframes scaleIn       { from{opacity:0;transform:scale(.92);}        to{opacity:1;transform:scale(1);} }
 
-        /* Sidebar Carrinho */
-        .cart-sidebar { position: fixed; right: -450px; top: 0; width: 450px; height: 100vh; background: white; z-index: 2000; transition: 0.5s cubic-bezier(0.77, 0, 0.175, 1); padding: 2rem; display: flex; flex-direction: column; box-shadow: -10px 0 30px rgba(0,0,0,0.1); }
-        .cart-sidebar.open { right: 0; }
-        .cart-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem; border-bottom: 1px solid var(--border); padding-bottom: 1rem; }
-        .cart-items { flex-grow: 1; overflow-y: auto; display: flex; flex-direction: column; gap: 1.5rem; }
-        
-        .cart-item { display: flex; gap: 1rem; align-items: center; padding: 1rem; background: var(--bg-page); border-radius: 16px; animation: fadeIn 0.4s both; }
-        .cart-item-img { width: 60px; height: 60px; background: white; border-radius: 10px; display: flex; align-items: center; justify-content: center; }
-        .cart-item-img svg { width: 40px; height: 40px; }
+/* ══════════════════════════════════════════════
+   SEÇÃO DEPOIMENTOS
+══════════════════════════════════════════════ */
+.section-trust { width:100%; background:transparent; position:relative; z-index:10; }
+.trust-card {
+    max-width:1100px; margin:-64px auto 5rem;
+    background:#fff; border-radius:28px;
+    box-shadow:0 32px 64px -16px rgba(15,23,42,.1);
+    padding:3rem; border:1px solid var(--border);
+    animation:scaleIn .7s ease .2s both;
+}
+.trust-title { text-align:center; margin-bottom:2rem; font-size:1.1rem; color:var(--blue-800); font-weight:700; letter-spacing:.02em; }
+.stars { color:#f59e0b; font-size:.9rem; margin-bottom:.5rem; }
+.slider-wrap { overflow:hidden; position:relative; width:100%; }
+.slider-track { display:flex; transition:transform .6s cubic-bezier(.4,0,.2,1); gap:20px; }
+.feedback-card {
+    min-width:calc(33.333% - 14px); background:var(--bg-page);
+    padding:1.75rem; border-radius:18px; border:1px solid var(--border);
+    transition:var(--tr);
+}
+.feedback-card:hover { transform:translateY(-4px); box-shadow:var(--shadow-card); border-color:var(--blue-100); }
+.feedback-text { font-style:italic; font-size:.93rem; margin-bottom:1rem; color:var(--text-body); line-height:1.65; }
+.feedback-author { font-weight:700; color:var(--blue-600); display:flex; align-items:center; gap:8px; font-size:.9rem; }
+.feedback-author i { font-size:1.3rem; }
 
-        /* Animações */
-        @keyframes fadeInUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
-        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
-        @keyframes bounce { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
+/* ══════════════════════════════════════════════
+   SEÇÃO SOBRE
+══════════════════════════════════════════════ */
+.section-about { padding:5rem 0; background:#fff; border-top:1px solid var(--border); border-bottom:1px solid var(--border); margin-bottom:5rem; }
+.about-grid { display:grid; grid-template-columns:1fr 1fr; gap:5rem; align-items:center; }
+.about-content h2 { font-size:2.4rem; line-height:1.15; margin-bottom:1.25rem; }
+.about-content h2 span { color:var(--blue-600); }
+.about-content p { color:var(--text-body); font-size:1.05rem; line-height:1.8; margin-bottom:2rem; }
+.about-stats { display:grid; grid-template-columns:1fr 1fr; gap:1.25rem; }
+.about-stat-card {
+    background:var(--bg-page); border-radius:16px; padding:1.5rem;
+    border:1px solid var(--border); text-align:center; transition:var(--tr);
+}
+.about-stat-card:hover { border-color:var(--blue-200,#bfdbfe); transform:translateY(-3px); box-shadow:var(--shadow-card); }
+.about-stat-num { font-size:2.2rem; font-weight:900; color:var(--blue-600); letter-spacing:-.04em; line-height:1; }
+.about-stat-label { font-size:.8rem; color:var(--text-muted); font-weight:600; text-transform:uppercase; letter-spacing:.06em; margin-top:5px; }
+.about-visual {
+    background:linear-gradient(135deg,var(--blue-50),#ede9fe);
+    border-radius:28px; padding:3.5rem; text-align:center;
+    border:1px solid var(--blue-100); position:relative; overflow:hidden;
+}
+.about-visual::before {
+    content:''; position:absolute; top:-30%; right:-20%;
+    width:60%; height:60%; background:radial-gradient(circle,rgba(37,99,235,.12),transparent 70%);
+    border-radius:50%;
+}
+.about-visual i { font-size:7rem; color:var(--blue-600); opacity:.85; position:relative; z-index:1; }
 
-        /* Responsive */
-        @media (max-width: 768px) {
-            .hero h1 { font-size: 2.5rem; }
-            .cart-sidebar { width: 100%; right: -100%; }
-        }
+/* ══════════════════════════════════════════════
+   CATÁLOGO — CABEÇALHO
+══════════════════════════════════════════════ */
+.section-catalog { padding:2rem 0 7rem; }
+.catalog-header { text-align:center; margin-bottom:3.5rem; max-width:680px; margin-inline:auto; }
+.catalog-header h2 { font-size:2.6rem; margin-bottom:.75rem; }
+.catalog-header p { font-size:1.05rem; color:var(--text-muted); }
+.section-label {
+    display:inline-flex; align-items:center; gap:8px;
+    background:var(--blue-50); color:var(--blue-700);
+    border:1px solid var(--blue-100); border-radius:var(--radius-btn);
+    font-size:.78rem; font-weight:700; padding:6px 16px;
+    text-transform:uppercase; letter-spacing:.06em; margin-bottom:1rem;
+}
+
+/* ══════════════════════════════════════════════
+   FILTROS
+══════════════════════════════════════════════ */
+.filters-wrapper { margin-bottom:1.25rem; }
+.filters {
+    display:flex; gap:10px; justify-content:center; flex-wrap:wrap;
+    background:var(--bg-page); padding:1rem; border-radius:20px;
+    border:1px solid var(--border);
+}
+.btn-filter {
+    padding:12px 24px; background:#fff; border:1.5px solid var(--border);
+    color:var(--text-body); border-radius:var(--radius-btn);
+    font-weight:600; font-size:.92rem; transition:var(--tr);
+    display:flex; align-items:center; gap:9px;
+    box-shadow:0 1px 3px rgba(0,0,0,.04);
+}
+.btn-filter:hover { border-color:var(--blue-300); color:var(--blue-600); background:var(--blue-50); transform:translateY(-2px); box-shadow:0 6px 16px rgba(37,99,235,.1); }
+.btn-filter.active { background:linear-gradient(135deg,var(--blue-600),var(--blue-700)) !important; color:#fff !important; border-color:transparent !important; box-shadow:0 8px 20px rgba(37,99,235,.3) !important; transform:translateY(-2px); }
+.btn-filter.active i { color:#fff !important; }
+
+/* Sub-bars */
+.sub-bar-base {
+    display:none; gap:10px; justify-content:center; flex-wrap:wrap;
+    margin-bottom:1rem; padding:1.1rem 1.5rem;
+    border-radius:16px; animation:fadeIn .35s ease;
+}
+.sub-bar-base.visible { display:flex; }
+.subcategories-bar { background:var(--blue-50); border:1px solid var(--blue-100); }
+.btn-sub {
+    padding:9px 20px; background:#fff; border:1.5px solid var(--blue-100);
+    color:var(--blue-700); border-radius:var(--radius-btn);
+    font-weight:600; font-size:.88rem; transition:var(--tr);
+    display:flex; align-items:center; gap:7px;
+}
+.btn-sub:hover { background:var(--blue-100); transform:translateY(-1px); }
+.btn-sub.active { background:var(--blue-700); color:#fff; border-color:var(--blue-700); box-shadow:0 4px 12px rgba(29,78,216,.25); }
+
+/* Sacolas tipo */
+.sacolas-tipo-bar { background:#0f0f1e; border:1px solid #1e1e3a; }
+.btn-tipo-sacola { padding:9px 20px; border-radius:var(--radius-btn); font-weight:700; font-size:.88rem; transition:var(--tr); display:flex; align-items:center; gap:9px; border:2px solid transparent; }
+.btn-tipo-sacola:hover { transform:translateY(-2px); }
+.btn-tipo-sacola.tipo-preta { background:#111; color:#e2e8f0; border-color:#333; }
+.btn-tipo-sacola.tipo-preta:hover { border-color:#888; background:#1a1a2e; }
+.btn-tipo-sacola.tipo-preta.active { background:#e2e8f0; color:#111; border-color:#e2e8f0; box-shadow:0 4px 14px rgba(255,255,255,.2); }
+.btn-tipo-sacola.tipo-verde { background:#064e3b; color:#6ee7b7; border-color:#065f46; }
+.btn-tipo-sacola.tipo-verde:hover { background:#065f46; border-color:#34d399; }
+.btn-tipo-sacola.tipo-verde.active { background:#10b981; color:#fff; border-color:#10b981; box-shadow:0 4px 14px rgba(16,185,129,.4); }
+.btn-tipo-sacola.tipo-branca { background:#fff; color:#374151; border-color:#d1d5db; }
+.btn-tipo-sacola.tipo-branca:hover { background:#f9fafb; border-color:#9ca3af; }
+.btn-tipo-sacola.tipo-branca.active { background:#374151; color:#fff; border-color:#374151; box-shadow:0 4px 14px rgba(55,65,81,.4); }
+.btn-tipo-sacola.tipo-crystal { background:linear-gradient(135deg,rgba(147,197,253,.15),rgba(196,181,253,.15)); color:#93c5fd; border-color:rgba(147,197,253,.4); }
+.btn-tipo-sacola.tipo-crystal:hover { background:linear-gradient(135deg,rgba(147,197,253,.25),rgba(196,181,253,.25)); border-color:#93c5fd; }
+.btn-tipo-sacola.tipo-crystal.active { background:linear-gradient(135deg,#60a5fa,#a78bfa); color:#fff; border-color:transparent; box-shadow:0 4px 18px rgba(96,165,250,.45); }
+.btn-tipo-sacola.tipo-kraft { background:#78350f; color:#fde68a; border-color:#92400e; }
+.btn-tipo-sacola.tipo-kraft:hover { background:#92400e; border-color:#fbbf24; }
+.btn-tipo-sacola.tipo-kraft.active { background:#f59e0b; color:#1c1917; border-color:#f59e0b; box-shadow:0 4px 14px rgba(245,158,11,.4); }
+.btn-tipo-sacola.tipo-kraft-alca { background:#2d1a08; color:#fef08a; border-color:#b45309; }
+.btn-tipo-sacola.tipo-kraft-alca:hover { background:#3d2a10; border-color:#fbbf24; }
+.btn-tipo-sacola.tipo-kraft-alca.active { background:#fbbf24; color:#1c1917; border-color:#fbbf24; box-shadow:0 4px 14px rgba(251,191,36,.45); }
+
+.cor-dot { width:13px; height:13px; border-radius:50%; flex-shrink:0; border:1.5px solid rgba(255,255,255,.25); }
+.cor-dot-preta { background:#111; }
+.cor-dot-verde { background:#10b981; }
+.cor-dot-branca { background:#fff; border-color:#d1d5db; }
+.cor-dot-crystal { background:linear-gradient(135deg,#60a5fa,#a78bfa); }
+.cor-dot-kraft { background:#f59e0b; }
+.cor-dot-kraft-alca { background:linear-gradient(135deg,#fbbf24,#b45309); }
+
+/* Sacolas tamanho */
+.sacolas-tamanho-bar { display:none; gap:10px; justify-content:center; flex-wrap:wrap; margin-bottom:3rem; padding:1.1rem 1.5rem; border-radius:16px; animation:fadeIn .35s ease; }
+.sacolas-tamanho-bar.visible { display:flex; }
+.sacolas-tamanho-bar.tema-preta   { background:#0a0a14; border:1px solid #1e1e30; }
+.sacolas-tamanho-bar.tema-verde   { background:#022c22; border:1px solid #064e3b; }
+.sacolas-tamanho-bar.tema-branca  { background:#f3f4f6; border:1px solid #d1d5db; }
+.sacolas-tamanho-bar.tema-crystal { background:linear-gradient(135deg,rgba(30,58,138,.2),rgba(88,28,135,.2)); border:1px solid rgba(147,197,253,.3); }
+.sacolas-tamanho-bar.tema-kraft   { background:#1c1008; border:1px solid #78350f; }
+.btn-tamanho-sacola { padding:8px 18px; border-radius:var(--radius-btn); font-weight:600; font-size:.86rem; transition:var(--tr); display:flex; align-items:center; gap:7px; }
+.btn-tamanho-sacola:hover { transform:translateY(-1px); }
+.tema-preta .btn-tamanho-sacola { background:#1a1a2e; border:1.5px solid #2a2a3e; color:#94a3b8; }
+.tema-preta .btn-tamanho-sacola:hover { background:#2a2a3e; border-color:#64748b; }
+.tema-preta .btn-tamanho-sacola.active { background:#e2e8f0; color:#0f0f1a; border-color:#e2e8f0; }
+.tema-verde .btn-tamanho-sacola { background:#064e3b; border:1.5px solid #065f46; color:#6ee7b7; }
+.tema-verde .btn-tamanho-sacola:hover { background:#065f46; border-color:#34d399; }
+.tema-verde .btn-tamanho-sacola.active { background:#10b981; color:#fff; border-color:#10b981; }
+.tema-branca .btn-tamanho-sacola { background:#fff; border:1.5px solid #d1d5db; color:#374151; }
+.tema-branca .btn-tamanho-sacola:hover { background:#f9fafb; border-color:#9ca3af; }
+.tema-branca .btn-tamanho-sacola.active { background:#374151; color:#fff; border-color:#374151; }
+.tema-crystal .btn-tamanho-sacola { background:rgba(30,58,138,.25); border:1.5px solid rgba(147,197,253,.3); color:#93c5fd; }
+.tema-crystal .btn-tamanho-sacola:hover { background:rgba(30,58,138,.4); border-color:#60a5fa; }
+.tema-crystal .btn-tamanho-sacola.active { background:linear-gradient(135deg,#3b82f6,#8b5cf6); color:#fff; border-color:transparent; }
+.tema-kraft .btn-tamanho-sacola { background:#78350f; border:1.5px solid #92400e; color:#fde68a; }
+.tema-kraft .btn-tamanho-sacola:hover { background:#92400e; border-color:#fbbf24; }
+.tema-kraft .btn-tamanho-sacola.active { background:#f59e0b; color:#1c1917; border-color:#f59e0b; }
+
+/* Isopor sub */
+.subcategorias-bar-isopor { background:#e0f7fa; border:1px solid #b2ebf2; }
+.btn-sub-isopor { padding:9px 20px; background:#fff; border:1px solid #b2ebf2; color:#00838f; border-radius:var(--radius-btn); font-weight:600; font-size:.88rem; transition:var(--tr); display:flex; align-items:center; gap:7px; }
+.btn-sub-isopor:hover { background:#e0f7fa; transform:translateY(-1px); }
+.btn-sub-isopor.active { background:#00838f; color:#fff; border-color:#00838f; box-shadow:0 4px 12px rgba(0,131,143,.3); }
+
+/* Marmitex marca */
+.marmitex-marca-bar { display:none; gap:10px; justify-content:center; flex-wrap:wrap; margin-bottom:1rem; padding:1rem 1.5rem; border-radius:14px; animation:fadeIn .35s ease; background:#fff8e1; border:1px solid #ffe082; }
+.marmitex-marca-bar.visible { display:flex; }
+.btn-marca-marmitex { padding:8px 18px; background:#fff; border:1.5px solid #ffe082; color:#f57f17; border-radius:var(--radius-btn); font-weight:700; font-size:.86rem; transition:var(--tr); display:flex; align-items:center; gap:7px; }
+.btn-marca-marmitex:hover { background:#fff8e1; border-color:#ffb300; transform:translateY(-1px); }
+.btn-marca-marmitex.active { background:#f57f17; color:#fff; border-color:#f57f17; box-shadow:0 4px 12px rgba(245,127,23,.3); }
+
+/* Plástico sub */
+.subcategorias-bar-plastico { background:#f0fdf4; border:1px solid #bbf7d0; }
+.btn-sub-plastico { padding:9px 20px; background:#fff; border:1px solid #bbf7d0; color:#15803d; border-radius:var(--radius-btn); font-weight:600; font-size:.88rem; transition:var(--tr); display:flex; align-items:center; gap:7px; }
+.btn-sub-plastico:hover { background:#f0fdf4; transform:translateY(-1px); }
+.btn-sub-plastico.active { background:#15803d; color:#fff; border-color:#15803d; box-shadow:0 4px 12px rgba(21,128,61,.3); }
+
+/* Plástico marca */
+.plastico-marca-bar { display:none; gap:10px; justify-content:center; flex-wrap:wrap; margin-bottom:1rem; padding:1rem 1.5rem; border-radius:14px; animation:fadeIn .35s ease; background:#f0fdf4; border:1px solid #bbf7d0; }
+.plastico-marca-bar.visible { display:flex; }
+.btn-marca-plastico { padding:8px 18px; background:#fff; border:1.5px solid #bbf7d0; color:#15803d; border-radius:var(--radius-btn); font-weight:700; font-size:.86rem; transition:var(--tr); display:flex; align-items:center; gap:7px; }
+.btn-marca-plastico:hover { background:#f0fdf4; border-color:#4ade80; transform:translateY(-1px); }
+.btn-marca-plastico.active { background:#15803d; color:#fff; border-color:#15803d; box-shadow:0 4px 12px rgba(21,128,61,.3); }
+
+/* Sacolas pacote */
+.sacolas-pacote-bar { display:none; gap:10px; justify-content:center; flex-wrap:wrap; margin-bottom:3rem; padding:1rem 1.5rem; border-radius:14px; animation:fadeIn .35s ease; background:#0a0a12; border:1px solid #1e1e30; }
+.sacolas-pacote-bar.visible { display:flex; }
+.btn-pacote-sacola { padding:8px 18px; border-radius:var(--radius-btn); font-weight:700; font-size:.84rem; transition:var(--tr); display:flex; align-items:center; gap:7px; background:#1a1a2e; border:1.5px solid #2a2a3e; color:#94a3b8; }
+.btn-pacote-sacola:hover { background:#2a2a3e; border-color:#64748b; transform:translateY(-1px); }
+.btn-pacote-sacola.active { background:#e2e8f0; color:#0f0f1a; border-color:#e2e8f0; font-weight:800; }
+
+/* Breadcrumb */
+.breadcrumb { display:none; align-items:center; gap:8px; font-size:.88rem; color:var(--text-muted); margin-bottom:2rem; font-weight:500; }
+.breadcrumb.visible { display:flex; }
+.breadcrumb span { color:var(--blue-600); font-weight:700; }
+
+/* ══════════════════════════════════════════════
+   GRADE DE PRODUTOS
+══════════════════════════════════════════════ */
+.product-section { margin-bottom:6rem; animation:fadeIn .5s ease-out; }
+.section-title {
+    color:var(--text-dark); font-size:2rem; font-weight:800;
+    margin-bottom:2.5rem; display:flex; align-items:center; gap:14px;
+    letter-spacing:-.03em; padding-bottom:1.25rem;
+    border-bottom:2px solid var(--border);
+}
+.section-title i { color:var(--blue-600); background:var(--blue-50); padding:10px; border-radius:14px; font-size:1.4rem; }
+.titulo-sacola i { color:#e2e8f0; background:#1a1a2e; }
+.titulo-sacola-verde i { color:#6ee7b7; background:#022c22; }
+.titulo-sacola-branca i { color:#374151; background:#f3f4f6; }
+.titulo-sacola-crystal i { color:#93c5fd; background:linear-gradient(135deg,#0f172a,#1e1b4b); }
+.titulo-isopor i { color:#00838f; background:#e0f7fa; }
+.titulo-sacola-kraft i, .titulo-sacola-kraft-alca i { color:#fde68a; background:#1c1008; }
+.titulo-plastico i { color:#15803d; background:#f0fdf4; }
+
+.products-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(310px,1fr)); gap:2rem; }
+
+/* ── CARD DE PRODUTO ── */
+.product-card {
+    background:var(--bg-card); border-radius:var(--radius-card);
+    border:1.5px solid var(--border); overflow:hidden;
+    box-shadow:var(--shadow-card); transition:var(--tr);
+    display:flex; flex-direction:column; position:relative;
+    /* Reveal animation */
+    opacity:0; transform:translateY(24px);
+}
+.product-card.revealed { opacity:1; transform:translateY(0); }
+.product-card:hover { transform:translateY(-10px) scale(1.01); box-shadow:var(--shadow-hover); border-color:var(--blue-200,#bfdbfe); }
+.product-card.in-cart { border-color:var(--green-wa) !important; box-shadow:0 0 0 3px rgba(37,211,102,.12) !important; }
+
+/* Imagem produto */
+.product-img {
+    width:100%; height:210px; display:flex; align-items:center; justify-content:center;
+    transition:var(--tr); border-bottom:1.5px solid var(--border);
+    position:relative; overflow:hidden;
+    background:linear-gradient(135deg,#f8fafc 0%,var(--blue-50) 100%);
+}
+.product-img svg { width:125px; height:125px; transition:var(--tr); filter:drop-shadow(0 4px 12px rgba(37,99,235,.12)); }
+.product-card:hover .product-img svg { transform:scale(1.1) rotate(-2deg); }
+/* Overlay shimmer */
+.product-img::after {
+    content:''; position:absolute; inset:0;
+    background:linear-gradient(105deg,transparent 40%,rgba(255,255,255,.4) 50%,transparent 60%);
+    transform:translateX(-100%); transition:transform .6s ease;
+}
+.product-card:hover .product-img::after { transform:translateX(100%); }
+
+.cart-seal {
+    position:absolute; top:12px; right:12px;
+    background:var(--green-wa); color:#fff; font-size:.72rem; font-weight:800;
+    padding:5px 12px; border-radius:var(--radius-btn);
+    display:flex; align-items:center; gap:5px;
+    opacity:0; transform:scale(.75) translateY(-4px); transition:var(--tr-spring);
+}
+.product-card.in-cart .cart-seal { opacity:1; transform:scale(1) translateY(0); }
+
+/* Conteúdo do card */
+.product-body { padding:1.75rem; display:flex; flex-direction:column; flex-grow:1; }
+.product-name { font-size:1.2rem; font-weight:800; color:var(--text-dark); margin-bottom:.35rem; line-height:1.25; letter-spacing:-.025em; }
+.product-desc { font-size:.9rem; color:var(--text-muted); margin-bottom:1.25rem; flex-grow:1; line-height:1.65; }
+.price-box {
+    background:var(--blue-50); border:1.5px solid var(--blue-100);
+    border-radius:14px; padding:12px 16px; margin-bottom:1.25rem;
+    display:flex; flex-direction:column; align-items:flex-start;
+    position:relative; overflow:hidden;
+}
+.price-box::before { content:''; position:absolute; left:0; top:0; height:100%; width:3px; background:linear-gradient(to bottom,var(--blue-500),var(--blue-700)); border-radius:14px 0 0 14px; }
+.price-label { font-size:.68rem; color:var(--blue-800); font-weight:700; text-transform:uppercase; letter-spacing:.08em; margin-bottom:2px; }
+.price-row { display:flex; align-items:baseline; gap:4px; }
+.price-value { font-size:1.9rem; font-weight:900; color:var(--blue-600); letter-spacing:-.04em; line-height:1; }
+.price-unit { font-size:.85rem; color:var(--text-muted); font-weight:600; }
+
+/* Ações */
+.product-actions { display:flex; gap:9px; align-items:center; }
+.qty-control { display:flex; align-items:center; border:1.5px solid var(--border); border-radius:12px; overflow:hidden; background:#fff; }
+.btn-qty { width:34px; height:40px; display:flex; align-items:center; justify-content:center; font-size:1.1rem; font-weight:800; color:var(--blue-600); transition:var(--tr); flex-shrink:0; }
+.btn-qty:hover { background:var(--blue-50); }
+.input-qty { width:40px; height:40px; border:none; text-align:center; font-size:.95rem; font-weight:700; color:var(--text-dark); background:transparent; -moz-appearance:textfield; }
+.input-qty::-webkit-outer-spin-button, .input-qty::-webkit-inner-spin-button { -webkit-appearance:none; }
+.btn-add {
+    flex:1; padding:11px; background:linear-gradient(135deg,var(--blue-600),var(--blue-700));
+    color:#fff; border-radius:12px; font-weight:700; font-size:.9rem;
+    transition:var(--tr); display:flex; align-items:center; justify-content:center; gap:7px;
+    position:relative; overflow:hidden;
+}
+.btn-add::before { content:''; position:absolute; inset:0; background:rgba(255,255,255,0); transition:background .2s ease; }
+.btn-add:hover::before { background:rgba(255,255,255,.1); }
+.btn-add:hover { transform:translateY(-1px); box-shadow:0 6px 16px rgba(37,99,235,.3); }
+.btn-add:active { transform:scale(.97); }
+.btn-add.added { background:linear-gradient(135deg,var(--green-wa),#1aab52) !important; }
+.btn-info { padding:9px 14px; border:1.5px solid var(--border); border-radius:12px; color:var(--text-muted); font-size:.82rem; font-weight:600; transition:var(--tr); }
+.btn-info:hover { border-color:var(--blue-300); color:var(--blue-600); background:var(--blue-50); }
+
+/* Ripple effect */
+.ripple { position:absolute; border-radius:50%; background:rgba(255,255,255,.4); transform:scale(0); animation:rippleAnim .6s linear; pointer-events:none; }
+@keyframes rippleAnim { to { transform:scale(4); opacity:0; } }
+
+/* ── CARDS ESPECIAIS ── */
+/* Sacola Preta */
+.sacola-preta-card { background:#1a1a2e !important; border-color:#2a2a3e !important; }
+.sacola-preta-card:hover { border-color:#555 !important; box-shadow:0 24px 48px -8px rgba(0,0,0,.5) !important; }
+.sacola-preta-card .product-body { background:#1a1a2e; }
+.sacola-preta-card .product-name { color:#f1f5f9 !important; }
+.sacola-preta-card .product-desc { color:#64748b !important; }
+.sacola-preta-card .product-img { background:linear-gradient(135deg,#0f0f1a,#1a1a2e) !important; border-bottom-color:#2a2a3e !important; }
+.sacola-preta-card .price-box { background:#0f0f1a !important; border-color:#2a2a3e !important; }
+.sacola-preta-card .price-box::before { background:linear-gradient(to bottom,#64748b,#475569) !important; }
+.sacola-preta-card .price-label { color:#64748b !important; }
+.sacola-preta-card .price-value { color:#e2e8f0 !important; }
+.sacola-preta-card .qty-control { border-color:#2a2a3e !important; background:#0f0f1a !important; }
+.sacola-preta-card .btn-qty { color:#94a3b8 !important; }
+.sacola-preta-card .btn-qty:hover { background:#1a1a2e !important; }
+.sacola-preta-card .input-qty { color:#f1f5f9 !important; }
+.sacola-preta-card .btn-add { background:linear-gradient(135deg,#374151,#4b5563) !important; }
+.sacola-preta-card .btn-add:hover { box-shadow:0 6px 16px rgba(0,0,0,.4) !important; }
+.sacola-preta-card .btn-info { border-color:#2a2a3e !important; color:#475569 !important; }
+.sacola-preta-card .btn-info:hover { border-color:#64748b !important; color:#cbd5e1 !important; }
+
+/* Sacola Verde */
+.sacola-verde-card { background:#022c22 !important; border-color:#064e3b !important; }
+.sacola-verde-card:hover { border-color:#34d399 !important; box-shadow:0 24px 48px -8px rgba(16,185,129,.2) !important; }
+.sacola-verde-card .product-body { background:#022c22; }
+.sacola-verde-card .product-name { color:#6ee7b7 !important; }
+.sacola-verde-card .product-desc { color:#34d399 !important; opacity:.7; }
+.sacola-verde-card .product-img { background:linear-gradient(135deg,#022c22,#064e3b) !important; border-bottom-color:#064e3b !important; }
+.sacola-verde-card .price-box { background:#011a14 !important; border-color:#064e3b !important; }
+.sacola-verde-card .price-box::before { background:linear-gradient(to bottom,#10b981,#059669) !important; }
+.sacola-verde-card .price-label { color:#34d399 !important; }
+.sacola-verde-card .price-value { color:#6ee7b7 !important; }
+.sacola-verde-card .qty-control { border-color:#064e3b !important; background:#011a14 !important; }
+.sacola-verde-card .btn-qty { color:#34d399 !important; }
+.sacola-verde-card .btn-qty:hover { background:#064e3b !important; }
+.sacola-verde-card .input-qty { color:#6ee7b7 !important; }
+.sacola-verde-card .btn-add { background:linear-gradient(135deg,#065f46,#10b981) !important; color:#fff !important; }
+.sacola-verde-card .btn-info { border-color:#064e3b !important; color:#065f46 !important; }
+.sacola-verde-card .btn-info:hover { border-color:#34d399 !important; color:#6ee7b7 !important; }
+
+/* Sacola Branca */
+.sacola-branca-card { background:#fff !important; border-color:#d1d5db !important; }
+.sacola-branca-card:hover { border-color:#9ca3af !important; box-shadow:0 24px 48px -8px rgba(0,0,0,.1) !important; }
+.sacola-branca-card .product-img { background:linear-gradient(135deg,#f9fafb,#f3f4f6) !important; border-bottom-color:#d1d5db !important; }
+.sacola-branca-card .price-box { background:#f3f4f6 !important; border-color:#d1d5db !important; }
+.sacola-branca-card .price-box::before { background:linear-gradient(to bottom,#374151,#1f2937) !important; }
+.sacola-branca-card .btn-add { background:linear-gradient(135deg,#374151,#1f2937) !important; }
+
+/* Sacola Crystal */
+.sacola-crystal-card { background:linear-gradient(135deg,#0f172a,#1e1b4b) !important; border-color:rgba(147,197,253,.25) !important; }
+.sacola-crystal-card:hover { border-color:#60a5fa !important; box-shadow:0 24px 48px -8px rgba(96,165,250,.25) !important; }
+.sacola-crystal-card .product-body { background:transparent; }
+.sacola-crystal-card .product-name { color:#c7d2fe !important; }
+.sacola-crystal-card .product-desc { color:#818cf8 !important; }
+.sacola-crystal-card .product-img { background:linear-gradient(135deg,rgba(30,27,75,.8),rgba(15,23,42,.8)) !important; border-bottom-color:rgba(147,197,253,.15) !important; }
+.sacola-crystal-card .price-box { background:rgba(30,27,75,.5) !important; border-color:rgba(147,197,253,.2) !important; }
+.sacola-crystal-card .price-box::before { background:linear-gradient(to bottom,#3b82f6,#8b5cf6) !important; }
+.sacola-crystal-card .price-label { color:#818cf8 !important; }
+.sacola-crystal-card .price-value { color:#c7d2fe !important; }
+.sacola-crystal-card .qty-control { border-color:rgba(147,197,253,.2) !important; background:rgba(30,27,75,.5) !important; }
+.sacola-crystal-card .btn-qty { color:#818cf8 !important; }
+.sacola-crystal-card .btn-qty:hover { background:rgba(30,27,75,.8) !important; }
+.sacola-crystal-card .input-qty { color:#c7d2fe !important; }
+.sacola-crystal-card .btn-add { background:linear-gradient(135deg,#3b82f6,#8b5cf6) !important; }
+.sacola-crystal-card .btn-info { border-color:rgba(147,197,253,.2) !important; color:rgba(96,165,250,.5) !important; }
+.sacola-crystal-card .btn-info:hover { border-color:#60a5fa !important; color:#93c5fd !important; }
+
+/* Sacola Kraft */
+.sacola-kraft-card { background:#1c1008 !important; border-color:#78350f !important; }
+.sacola-kraft-card:hover { border-color:#f59e0b !important; box-shadow:0 24px 48px -8px rgba(245,158,11,.2) !important; }
+.sacola-kraft-card .product-body { background:#1c1008; }
+.sacola-kraft-card .product-name { color:#fde68a !important; }
+.sacola-kraft-card .product-desc { color:#d97706 !important; opacity:.8; }
+.sacola-kraft-card .product-img { background:linear-gradient(135deg,#1c1008,#2d1a08) !important; border-bottom-color:#78350f !important; }
+.sacola-kraft-card .price-box { background:#0f0804 !important; border-color:#78350f !important; }
+.sacola-kraft-card .price-box::before { background:linear-gradient(to bottom,#f59e0b,#d97706) !important; }
+.sacola-kraft-card .price-label { color:#d97706 !important; }
+.sacola-kraft-card .price-value { color:#fde68a !important; }
+.sacola-kraft-card .qty-control { border-color:#78350f !important; background:#0f0804 !important; }
+.sacola-kraft-card .btn-qty { color:#d97706 !important; }
+.sacola-kraft-card .btn-qty:hover { background:#2d1a08 !important; }
+.sacola-kraft-card .input-qty { color:#fde68a !important; }
+.sacola-kraft-card .btn-add { background:linear-gradient(135deg,#92400e,#f59e0b) !important; color:#1c1917 !important; }
+.sacola-kraft-card .btn-info { border-color:#78350f !important; color:#78350f !important; }
+.sacola-kraft-card .btn-info:hover { border-color:#f59e0b !important; color:#fde68a !important; }
+
+/* Sacola Kraft c/ Alça */
+.sacola-kraft-alca-card { background:#1c1008 !important; border:2px solid #b45309 !important; }
+.sacola-kraft-alca-card:hover { border-color:#fbbf24 !important; box-shadow:0 24px 48px -8px rgba(251,191,36,.25) !important; }
+.sacola-kraft-alca-card .product-body { background:#1c1008; }
+.sacola-kraft-alca-card .product-name { color:#fef08a !important; }
+.sacola-kraft-alca-card .product-desc { color:#fcd34d !important; opacity:.8; }
+.sacola-kraft-alca-card .product-img { background:linear-gradient(135deg,#1c1008,#2d1a08) !important; border-bottom-color:#b45309 !important; }
+.sacola-kraft-alca-card .price-box { background:#0f0804 !important; border-color:#b45309 !important; }
+.sacola-kraft-alca-card .price-box::before { background:linear-gradient(to bottom,#fbbf24,#b45309) !important; }
+.sacola-kraft-alca-card .price-label { color:#fcd34d !important; }
+.sacola-kraft-alca-card .price-value { color:#fef08a !important; }
+.sacola-kraft-alca-card .qty-control { border-color:#b45309 !important; background:#0f0804 !important; }
+.sacola-kraft-alca-card .btn-qty { color:#fcd34d !important; }
+.sacola-kraft-alca-card .btn-qty:hover { background:#2d1a08 !important; }
+.sacola-kraft-alca-card .input-qty { color:#fef08a !important; }
+.sacola-kraft-alca-card .btn-add { background:linear-gradient(135deg,#b45309,#fbbf24) !important; color:#1c1917 !important; }
+.sacola-kraft-alca-card .btn-info { border-color:#b45309 !important; color:#b45309 !important; }
+.sacola-kraft-alca-card .btn-info:hover { border-color:#fbbf24 !important; color:#fef08a !important; }
+
+/* Isopor */
+.isopor-card:hover { border-color:#00acc1 !important; box-shadow:0 24px 48px -8px rgba(0,131,143,.15) !important; }
+.isopor-card .product-img { background:linear-gradient(135deg,#e0f7fa,#f0fdff) !important; border-bottom-color:#b2ebf2 !important; }
+.isopor-card .price-box { background:#e0f7fa !important; border-color:#b2ebf2 !important; }
+.isopor-card .price-box::before { background:linear-gradient(to bottom,#00838f,#005662) !important; }
+.isopor-card .price-label { color:#00838f !important; }
+.isopor-card .price-value { color:#00838f !important; }
+.isopor-card .btn-add { background:linear-gradient(135deg,#00838f,#005662) !important; }
+.isopor-card .btn-add:hover { box-shadow:0 6px 16px rgba(0,131,143,.3) !important; }
+
+/* Plástico */
+.plastico-card { border-color:#bbf7d0 !important; }
+.plastico-card:hover { border-color:#4ade80 !important; box-shadow:0 24px 48px -8px rgba(21,128,61,.12) !important; }
+.plastico-card .product-img { background:linear-gradient(135deg,#f0fdf4,#dcfce7) !important; border-bottom-color:#bbf7d0 !important; }
+.plastico-card .price-box { background:#f0fdf4 !important; border-color:#bbf7d0 !important; }
+.plastico-card .price-box::before { background:linear-gradient(to bottom,#15803d,#166534) !important; }
+.plastico-card .price-label { color:#15803d !important; }
+.plastico-card .price-value { color:#15803d !important; }
+.plastico-card .btn-add { background:linear-gradient(135deg,#15803d,#166534) !important; }
+.plastico-card .btn-add:hover { box-shadow:0 6px 16px rgba(21,128,61,.3) !important; }
+
+/* Badge de marca */
+.brand-badge { position:absolute; top:12px; left:12px; font-size:.68rem; font-weight:800; padding:4px 10px; border-radius:var(--radius-btn); z-index:3; letter-spacing:.02em; }
+
+/* ══════════════════════════════════════════════
+   SIDEBAR CARRINHO
+══════════════════════════════════════════════ */
+.cart-overlay { position:fixed; inset:0; background:rgba(10,15,30,.65); backdrop-filter:blur(8px); z-index:1500; opacity:0; pointer-events:none; transition:opacity .35s ease; }
+.cart-overlay.open { opacity:1; pointer-events:all; }
+.cart-sidebar {
+    position:fixed; top:0; right:0; height:100%; width:440px; max-width:95vw;
+    background:#fff; z-index:1600; display:flex; flex-direction:column;
+    box-shadow:-24px 0 64px rgba(0,0,0,.12); transform:translateX(100%);
+    transition:transform .45s cubic-bezier(.4,0,.2,1);
+}
+.cart-sidebar.open { transform:translateX(0); }
+.cart-header { padding:1.75rem 2rem 1.5rem; border-bottom:1px solid var(--border); display:flex; justify-content:space-between; align-items:center; flex-shrink:0; }
+.cart-header h3 { font-size:1.4rem; display:flex; align-items:center; gap:10px; }
+.cart-header h3 i { color:var(--blue-600); }
+.btn-close-cart { background:var(--bg-page); width:38px; height:38px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:1.1rem; color:var(--text-muted); transition:var(--tr); }
+.btn-close-cart:hover { background:var(--border); color:var(--text-dark); transform:rotate(90deg); }
+.cart-items { flex:1; overflow-y:auto; padding:1.5rem 2rem; }
+.cart-empty { display:flex; flex-direction:column; align-items:center; justify-content:center; height:100%; gap:1rem; color:var(--text-muted); text-align:center; }
+.cart-empty i { font-size:4rem; opacity:.25; }
+.cart-empty p { font-size:1.05rem; font-weight:600; }
+.cart-item { display:flex; align-items:center; gap:1rem; padding:1.1rem 0; border-bottom:1px solid var(--border); animation:fadeIn .3s ease; }
+.cart-item:last-child { border-bottom:none; }
+.cart-item-icon { font-size:1.8rem; color:var(--blue-500); background:var(--blue-50); padding:.7rem; border-radius:12px; flex-shrink:0; }
+.cart-item-info { flex:1; min-width:0; }
+.cart-item-name { font-size:.9rem; font-weight:700; color:var(--text-dark); white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+.cart-item-price { font-size:.78rem; color:var(--text-muted); }
+.cart-item-controls { display:flex; align-items:center; gap:7px; flex-shrink:0; }
+.cart-qty-ctrl { display:flex; align-items:center; border:1.5px solid var(--border); border-radius:8px; overflow:hidden; }
+.cart-qty-btn { width:26px; height:28px; display:flex; align-items:center; justify-content:center; font-size:.95rem; font-weight:800; color:var(--blue-600); transition:var(--tr); }
+.cart-qty-btn:hover { background:var(--blue-50); }
+.cart-qty-val { width:30px; text-align:center; font-size:.85rem; font-weight:700; color:var(--text-dark); }
+.cart-subtotal { font-size:.9rem; font-weight:800; color:var(--blue-600); min-width:60px; text-align:right; }
+.btn-remove-item { color:var(--text-muted); font-size:.95rem; transition:var(--tr); padding:4px; }
+.btn-remove-item:hover { color:#ef4444; transform:scale(1.2); }
+.cart-footer { padding:1.5rem 2rem 2rem; border-top:1px solid var(--border); flex-shrink:0; }
+.cart-total-row { display:flex; justify-content:space-between; align-items:center; margin-bottom:1.25rem; }
+.cart-total-label { font-size:.95rem; font-weight:600; color:var(--text-muted); }
+.cart-total-val { font-size:1.7rem; font-weight:900; color:var(--blue-600); letter-spacing:-.03em; }
+.btn-send-wpp {
+    width:100%; padding:16px; background:linear-gradient(135deg,var(--green-wa),#1aab52);
+    color:#fff; border-radius:14px; font-weight:800; font-size:1.05rem;
+    display:flex; align-items:center; justify-content:center; gap:10px;
+    transition:var(--tr); box-shadow:0 8px 24px rgba(37,211,102,.3);
+}
+.btn-send-wpp:hover { transform:translateY(-2px); box-shadow:0 14px 36px rgba(37,211,102,.45); }
+.btn-clear { width:100%; padding:11px; color:var(--text-muted); font-size:.88rem; font-weight:600; margin-top:.6rem; transition:var(--tr); border-radius:10px; }
+.btn-clear:hover { background:var(--bg-page); color:#ef4444; }
+.wpp-notice { font-size:.76rem; color:var(--text-muted); text-align:center; margin-top:.6rem; display:flex; align-items:center; justify-content:center; gap:5px; }
+
+/* ══════════════════════════════════════════════
+   MODAL
+══════════════════════════════════════════════ */
+.modal-backdrop {
+    display:none; position:fixed; inset:0;
+    background:rgba(10,15,30,.88); backdrop-filter:blur(14px);
+    z-index:2000; align-items:center; justify-content:center; padding:1.5rem;
+    opacity:0; transition:opacity .3s ease;
+}
+.modal-backdrop.active { display:flex; opacity:1; }
+.modal-box {
+    background:#fff; width:100%; max-width:600px; border-radius:28px;
+    padding:2.75rem; transform:scale(.88) translateY(32px);
+    transition:all .45s cubic-bezier(.175,.885,.32,1.275);
+    position:relative; box-shadow:0 40px 80px -20px rgba(0,0,0,.45);
+    max-height:90vh; overflow-y:auto;
+}
+.modal-backdrop.active .modal-box { transform:scale(1) translateY(0); }
+.btn-close-modal { position:absolute; top:1.4rem; right:1.4rem; background:var(--bg-page); width:42px; height:42px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:1.2rem; color:var(--text-muted); transition:var(--tr); }
+.btn-close-modal:hover { background:var(--border); color:var(--text-dark); transform:rotate(90deg); }
+.modal-head { text-align:center; margin-bottom:2rem; display:flex; flex-direction:column; align-items:center; }
+.modal-icon { font-size:4rem; color:var(--blue-600); margin-bottom:1.1rem; background:var(--blue-50); padding:16px; border-radius:20px; display:flex; align-items:center; justify-content:center; }
+.modal-icon svg { width:65px; height:65px; }
+.modal-title { font-size:1.85rem; font-weight:800; color:var(--text-dark); line-height:1.2; letter-spacing:-.03em; margin-bottom:.65rem; }
+.modal-price-pill { background:var(--blue-600); padding:9px 22px; border-radius:var(--radius-btn); color:#fff; display:inline-flex; align-items:baseline; gap:5px; }
+.modal-price-val { font-size:2rem; font-weight:900; letter-spacing:-.04em; }
+.modal-price-unit { font-size:.95rem; opacity:.9; font-weight:500; }
+.modal-specs { background:var(--bg-page); border-radius:16px; padding:1.5rem; margin-bottom:1.75rem; border:1px solid var(--border); }
+.spec-row { display:flex; justify-content:space-between; align-items:center; padding:12px 0; border-bottom:1px solid var(--border); }
+.spec-row:last-child { border-bottom:none; padding-bottom:0; }
+.spec-label { font-size:.9rem; color:var(--text-muted); font-weight:600; display:flex; align-items:center; gap:9px; }
+.spec-value { font-size:.95rem; font-weight:700; color:var(--text-dark); }
+
+/* ══════════════════════════════════════════════
+   WHATSAPP FLUTUANTE
+══════════════════════════════════════════════ */
+.whatsapp-float {
+    position:fixed; bottom:28px; right:28px;
+    background:linear-gradient(135deg,var(--green-wa),#1aab52);
+    color:#fff; width:62px; height:62px; border-radius:50%;
+    display:flex; align-items:center; justify-content:center;
+    box-shadow:0 12px 32px rgba(37,211,102,.45); z-index:999;
+    transition:var(--tr); font-size:2rem;
+}
+.whatsapp-float:hover { transform:scale(1.12) translateY(-4px); box-shadow:0 20px 48px rgba(37,211,102,.55); }
+.whatsapp-float::before {
+    content:''; position:absolute; inset:-4px; border-radius:50%;
+    border:2px solid rgba(37,211,102,.4);
+    animation:waPulse 2.5s ease-in-out infinite;
+}
+@keyframes waPulse { 0%,100%{transform:scale(1);opacity:.6;} 50%{transform:scale(1.15);opacity:0;} }
+
+/* ══════════════════════════════════════════════
+   FOOTER
+══════════════════════════════════════════════ */
+footer { background:var(--blue-950); color:#fff; padding:5.5rem 0 3rem; margin-top:auto; }
+.footer-grid { max-width:1200px; margin:0 auto; padding:0 1.5rem; display:grid; grid-template-columns:1.6fr 1fr 1fr; gap:4rem; }
+.footer-col h4 { color:rgba(255,255,255,.5); font-size:.78rem; font-weight:700; margin-bottom:1.5rem; text-transform:uppercase; letter-spacing:.1em; }
+.footer-logo { font-size:1.65rem; font-weight:900; margin-bottom:1.25rem; display:flex; align-items:center; gap:12px; color:#fff; letter-spacing:-.04em; }
+.footer-logo .logo-icon { background:linear-gradient(135deg,var(--blue-600),var(--blue-700)); }
+.footer-desc { color:rgba(255,255,255,.45); font-size:.95rem; line-height:1.8; margin-bottom:2rem; max-width:380px; }
+.footer-links { list-style:none; }
+.footer-links li { margin-bottom:.9rem; }
+.footer-links a { color:rgba(255,255,255,.55); transition:var(--tr); display:flex; align-items:center; gap:8px; font-size:.95rem; }
+.footer-links a:hover { color:var(--green-wa); transform:translateX(5px); }
+.footer-address { color:rgba(255,255,255,.4); font-size:.9rem; line-height:1.75; margin-top:.5rem; }
+.footer-divider { border:none; border-top:1px solid rgba(255,255,255,.08); margin:4rem 0 2.5rem; }
+.footer-copy { max-width:1200px; margin:0 auto; padding:0 1.5rem; color:rgba(255,255,255,.3); font-size:.85rem; text-align:center; }
+
+/* ══════════════════════════════════════════════
+   SCROLL REVEAL
+══════════════════════════════════════════════ */
+.reveal { opacity:0; transform:translateY(28px); transition:opacity .65s ease, transform .65s ease; }
+.reveal.revealed { opacity:1; transform:translateY(0); }
+
+/* ══════════════════════════════════════════════
+   RESPONSIVO
+══════════════════════════════════════════════ */
+@media(max-width:1024px) {
+    .footer-grid { grid-template-columns:1fr 1fr; }
+    .about-grid { gap:2.5rem; }
+}
+@media(max-width:768px) {
+    .hero { padding-top:9rem; min-height:85vh; }
+    .hero h1 { font-size:2.5rem; }
+    .hero-stats { gap:1.5rem; }
+    .hero-stat-divider { display:none; }
+    .trust-card { margin:-32px 1.25rem 4rem; padding:1.75rem; }
+    .feedback-card { min-width:100%; }
+    .about-grid { grid-template-columns:1fr; }
+    .about-visual { display:none; }
+    .filters { justify-content:flex-start; overflow-x:auto; flex-wrap:nowrap; padding-bottom:10px; -webkit-overflow-scrolling:touch; }
+    .products-grid { grid-template-columns:1fr; }
+    .modal-box { padding:1.75rem 1.25rem; border-radius:20px; }
+    .modal-title { font-size:1.6rem; }
+    .footer-grid { grid-template-columns:1fr; gap:2.5rem; text-align:center; }
+    .footer-logo { justify-content:center; }
+    .footer-desc { margin:0 auto 2rem; }
+    .footer-links a { justify-content:center; }
+    .cart-sidebar { width:100%; max-width:100%; }
+    .cursor, .cursor-ring { display:none; }
+    .hero-actions { flex-direction:column; align-items:center; }
+}
     </style>
 </head>
 <body>
-    <div class="cursor"></div>
-    <div class="cursor-follower"></div>
 
-    <header id="mainHeader">
+<!-- Cursor personalizado -->
+<div class="cursor" id="cursor"></div>
+<div class="cursor-ring" id="cursorRing"></div>
+
+<!-- ══ HEADER ══ -->
+<header id="main-header">
+    <div class="header-inner">
         <a href="#" class="logo">
-            <i class="ph-fill ph-package"></i>
-            <span>Cia Das Embalagens</span>
+            <div class="logo-icon"><i class="ph-fill ph-package"></i></div>
+            Cia Das Embalagens
         </a>
-        <div class="nav-actions">
-            <button class="btn-cart-trigger" onclick="toggleCart()">
-                <i class="ph-bold ph-shopping-cart"></i>
-                <span>Meu Pedido</span>
-                <div class="cart-count" id="cartCount">0</div>
+        <div class="header-actions">
+            <button class="btn-header-cart" onclick="abrirCarrinho()">
+                <i class="ph-bold ph-shopping-cart"></i> Carrinho
+                <span class="cart-badge" id="badgeCarrinho">0</span>
             </button>
-            <a href="https://wa.me/5511972999835" class="btn-primary" style="padding: 0.6rem 1.5rem;">
-                <i class="ph-fill ph-whatsapp-logo"></i>
-                <span>Suporte</span>
-            </a>
-        </div>
-    </header>
-
-    <section class="hero">
-        <div class="hero-content">
-            <h1>Embalagens que elevam seu negócio.</h1>
-            <p>Qualidade industrial direto da fábrica para São Paulo. Soluções completas em papelão, plástico e isopor.</p>
-            <div class="hero-btns">
-                <a href="#catalogo" class="btn-primary">
-                    <i class="ph-bold ph-eye"></i>
-                    Ver Catálogo
-                </a>
-                <button class="btn-primary" style="background: rgba(255,255,255,0.1); backdrop-filter: blur(10px);">
-                    Nossa Fábrica
-                </button>
-            </div>
-        </div>
-    </section>
-
-    <main class="catalog-container" id="catalogo">
-        <div class="section-header">
-            <h2>Nosso Catálogo</h2>
-            <div class="filter-wrapper">
-                <button class="filter-btn active" onclick="setCategory('caixas', this)">Caixas</button>
-                <button class="filter-btn" onclick="setCategory('sacolas', this)">Sacolas</button>
-                <button class="filter-btn" onclick="setCategory('isopor', this)">Isopor</button>
-                <button class="filter-btn" onclick="setCategory('plastico', this)">Plásticos</button>
-            </div>
-
-            <!-- Filtro de Sacolas Profissional -->
-            <div class="sacolas-filter-pro" id="sacolasFilter">
-                <div class="filter-group">
-                    <label>Tipo de Material</label>
-                    <select class="select-pro" id="tipoMaterial" onchange="updateSacolas()">
-                        <option value="preta">Plástica Preta (Lixo)</option>
-                        <option value="branca">Plástica Branca</option>
-                        <option value="verde">Plástica Verde</option>
-                        <option value="crystal">Plástica Crystal</option>
-                        <option value="kraft">Papel Kraft</option>
-                        <option value="kraft-alca">Kraft com Alça</option>
-                    </select>
-                </div>
-                <div class="filter-group">
-                    <label>Tamanho</label>
-                    <select class="select-pro" id="tamanhoSacola" onchange="updateSacolas()">
-                        <option value="todos">Todos os Tamanhos</option>
-                        <option value="p">Pequena</option>
-                        <option value="m">Média</option>
-                        <option value="g">Grande</option>
-                    </select>
-                </div>
-                <div class="filter-group" id="pacoteGroup">
-                    <label>Quantidade/Pacote</label>
-                    <select class="select-pro" id="pacoteSacola" onchange="updateSacolas()">
-                        <option value="todos">Todos</option>
-                        <option value="10un">10 Unidades</option>
-                        <option value="50un">50 Unidades</option>
-                    </select>
-                </div>
-            </div>
-        </div>
-
-        <div class="products-grid" id="productGrid">
-            <!-- Produtos renderizados via JS -->
-        </div>
-    </main>
-
-    <div class="cart-sidebar" id="cartSidebar">
-        <div class="cart-header">
-            <h3>Seu Pedido</h3>
-            <button onclick="toggleCart()" style="background:none; border:none; font-size: 1.5rem; cursor:pointer;"><i class="ph-bold ph-x"></i></button>
-        </div>
-        <div class="cart-items" id="cartItems">
-            <!-- Itens do carrinho -->
-        </div>
-        <div style="margin-top: 2rem; border-top: 1px solid var(--border); padding-top: 1.5rem;">
-            <div style="display: flex; justify-content: space-between; font-weight: 800; font-size: 1.2rem; margin-bottom: 1.5rem;">
-                <span>Total Estimado:</span>
-                <span id="cartTotal">R$ 0,00</span>
-            </div>
-            <button class="btn-primary" style="width: 100%; justify-content: center;" onclick="sendWhatsApp()">
-                <i class="ph-fill ph-whatsapp-logo"></i>
-                Enviar para WhatsApp
+            <button class="btn-header-cta" onclick="rolarPara('contato')">
+                <i class="ph ph-headset"></i> Atendimento
             </button>
         </div>
     </div>
+</header>
 
-    <script>
-        /* SVGs PREMIUM PERSONALIZADOS */
-        const SVGS = {
-            caixa_sedex: `<svg viewBox="0 0 100 100"><rect x="15" y="40" width="70" height="45" fill="#fef3c7" stroke="#92400e" stroke-width="2"/><path d="M15 40 L50 20 L85 40 L50 60 Z" fill="#fbbf24" stroke="#92400e" stroke-width="2"/><path d="M50 60 L50 85" fill="none" stroke="#92400e" stroke-width="2"/><path d="M20 45 L45 32" stroke="#92400e" stroke-width="1" opacity="0.3"/></svg>`,
-            caixa_bolo: `<svg viewBox="0 0 100 100"><rect x="20" y="50" width="60" height="35" rx="2" fill="#fff" stroke="#cbd5e1" stroke-width="2"/><path d="M20 50 L50 30 L80 50 Z" fill="#f8fafc" stroke="#cbd5e1" stroke-width="2"/><circle cx="50" cy="45" r="8" fill="#e2e8f0" stroke="#94a3b8" stroke-width="1"/></svg>`,
-            sacola_preta: `<svg viewBox="0 0 100 100"><path d="M30 20 L70 20 L80 90 L20 90 Z" fill="#1e293b" stroke="#0f172a" stroke-width="2"/><path d="M40 20 Q50 5 60 20" fill="none" stroke="#0f172a" stroke-width="3" stroke-linecap="round"/></svg>`,
-            sacola_branca: `<svg viewBox="0 0 100 100"><path d="M30 20 L70 20 L80 90 L20 90 Z" fill="#fff" stroke="#e2e8f0" stroke-width="2"/><path d="M40 20 Q50 5 60 20" fill="none" stroke="#94a3b8" stroke-width="2" stroke-linecap="round"/></svg>`,
-            sacola_verde: `<svg viewBox="0 0 100 100"><path d="M30 20 L70 20 L80 90 L20 90 Z" fill="#22c55e" fill-opacity="0.2" stroke="#16a34a" stroke-width="2"/><path d="M40 20 Q50 5 60 20" fill="none" stroke="#16a34a" stroke-width="2" stroke-linecap="round"/></svg>`,
-            sacola_kraft: `<svg viewBox="0 0 100 100"><rect x="25" y="30" width="50" height="60" fill="#d97706" fill-opacity="0.3" stroke="#92400e" stroke-width="2"/><path d="M35 30 Q50 10 65 30" fill="none" stroke="#92400e" stroke-width="2" stroke-linecap="round"/></svg>`,
-            isopor_caixa: `<svg viewBox="0 0 100 100"><rect x="20" y="45" width="60" height="40" rx="2" fill="#fff" stroke="#94a3b8" stroke-width="2"/><rect x="15" y="35" width="70" height="12" rx="2" fill="#f1f5f9" stroke="#94a3b8" stroke-width="2"/><path d="M30 35 L30 25 L70 25 L70 35" fill="none" stroke="#94a3b8" stroke-width="2"/></svg>`,
-            marmita_plastica: `<svg viewBox="0 0 100 100"><rect x="15" y="45" width="70" height="35" rx="8" fill="#e0f2fe" stroke="#0369a1" stroke-width="2"/><rect x="10" y="35" width="80" height="12" rx="4" fill="#fff" fill-opacity="0.8" stroke="#0369a1" stroke-width="2"/></svg>`
-        };
+<!-- ══ HERO ══ -->
+<section class="hero" id="inicio">
+    <div class="hero-particles" id="heroParticles"></div>
+    <div class="hero-orb hero-orb-1"></div>
+    <div class="hero-orb hero-orb-2"></div>
+    <div class="hero-content">
+        <div class="hero-tag">
+            <span class="hero-tag-dot"></span>
+            Direto da Fábrica · São Paulo
+        </div>
+        <h1>Soluções completas em<br><span class="highlight">Embalagens.</span></h1>
+        <p class="hero-desc">Do papelão ao plástico, do isopor às sacolas — tudo para o seu negócio em um só lugar, com qualidade industrial e preço de fábrica.</p>
+        <div class="hero-actions">
+            <button class="btn-hero-primary" onclick="rolarPara('produtos')">
+                <i class="ph-bold ph-squares-four"></i> Explorar Catálogo
+            </button>
+            <a class="btn-hero-secondary" href="https://wa.me/5511972999835" target="_blank">
+                <i class="ph-fill ph-whatsapp-logo"></i> Falar no WhatsApp
+            </a>
+        </div>
+        <div class="hero-stats">
+            <div class="hero-stat">
+                <div class="hero-stat-val" data-count="100">0+</div>
+                <div class="hero-stat-label">Produtos</div>
+            </div>
+            <div class="hero-stat-divider"></div>
+            <div class="hero-stat">
+                <div class="hero-stat-val" data-count="15">0+</div>
+                <div class="hero-stat-label">Anos no Mercado</div>
+            </div>
+            <div class="hero-stat-divider"></div>
+            <div class="hero-stat">
+                <div class="hero-stat-val" data-count="5000">0+</div>
+                <div class="hero-stat-label">Clientes Atendidos</div>
+            </div>
+        </div>
+    </div>
+    <div class="scroll-hint" onclick="rolarPara('sobre')">
+        <div class="scroll-hint-mouse"><div class="scroll-hint-dot"></div></div>
+        <span class="scroll-hint-text">Role para explorar</span>
+    </div>
+</section>
 
-        const PRODUTOS = [
-            {id:1, nome:"Caixa Nº0", cat:"caixas", sub:"sedex", desc:"Para pequenos acessórios e joias.", preco:3.50, svg: SVGS.caixa_sedex},
-            {id:2, nome:"Caixa Nº1", cat:"caixas", sub:"sedex", desc:"Ideal para cosméticos e perfumes.", preco:4.60, svg: SVGS.caixa_sedex},
-            {id:3, nome:"Caixa Nº2", cat:"caixas", sub:"sedex", desc:"Vestuário, livros e kits médios.", preco:5.60, svg: SVGS.caixa_sedex},
-            {id:7, nome:"Caixa de Bolo Nº9", cat:"caixas", sub:"confeiteiros", desc:"Para bolos grandes de festa.", preco:10.99, svg: SVGS.caixa_bolo},
-            {id:17, nome:"Saco Preto 100L", cat:"sacolas", tipo:"preta", tam:"p", pac:"10un", desc:"Resistência industrial.", preco:0, svg: SVGS.sacola_preta},
-            {id:23, nome:"Sacola Verde 30x40", cat:"sacolas", tipo:"verde", tam:"p", desc:"Sacola plástica reforçada.", preco:0, svg: SVGS.sacola_verde},
-            {id:28, nome:"Sacola Branca 30x40", cat:"sacolas", tipo:"branca", tam:"p", desc:"Sacola plástica clássica.", preco:0, svg: SVGS.sacola_branca},
-            {id:70, nome:"Sacola Kraft P", cat:"sacolas", tipo:"kraft", tam:"p", desc:"Papel sustentável premium.", preco:0, svg: SVGS.sacola_kraft},
-            {id:41, nome:"Caixa Isopor 5L", cat:"isopor", sub:"caixa", desc:"Transporte térmico seguro.", preco:0, svg: SVGS.isopor_caixa},
-            {id:86, nome:"Marmita 250ml", cat:"plastico", sub:"marmita", desc:"Pode ir ao freezer e micro-ondas.", preco:0, svg: SVGS.marmita_plastica}
-        ];
+<!-- ══ DEPOIMENTOS ══ -->
+<section class="section-trust">
+    <div class="container">
+        <div class="trust-card">
+            <p class="trust-title">⭐ O que nossos clientes dizem</p>
+            <div class="slider-wrap">
+                <div class="slider-track" id="feedbackSlider">
+                    <div class="feedback-card">
+                        <div class="stars">★★★★★</div>
+                        <p class="feedback-text">"Muitooo bom, recomendo o atendimento é 10... pessoal da uma atenção boa 👌 comprei umas marmitas é top."</p>
+                        <div class="feedback-author"><i class="ph-fill ph-user-circle"></i> Shirley Cristina</div>
+                    </div>
+                    <div class="feedback-card">
+                        <div class="stars">★★★★★</div>
+                        <p class="feedback-text">"Tem muita coisa boa e o preço ótimo; os Atendentes são muito simpáticos."</p>
+                        <div class="feedback-author"><i class="ph-fill ph-user-circle"></i> Francis Luci</div>
+                    </div>
+                    <div class="feedback-card">
+                        <div class="stars">★★★★★</div>
+                        <p class="feedback-text">"A empresa tem tudo em descartáveis, o atendimento é ótimo, tem estacionamento e um ponto de ônibus em frente. Facinho de chegar."</p>
+                        <div class="feedback-author"><i class="ph-fill ph-user-circle"></i> Adelaide Rocha</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 
-        let currentCat = 'caixas';
-        let cart = [];
+<!-- ══ SOBRE ══ -->
+<section class="section-about reveal" id="sobre">
+    <div class="container">
+        <div class="about-grid">
+            <div class="about-content">
+                <div class="section-label"><i class="ph-bold ph-factory"></i> Nossa Estrutura</div>
+                <h2>Estrutura industrial preparada para <span>sua demanda.</span></h2>
+                <p>Somos uma empresa especializada em embalagens corporativas com estrutura fabril própria. Atendemos desde pequenos empreendedores até grandes indústrias com agilidade, qualidade e os melhores preços do mercado.</p>
+                <div class="about-stats">
+                    <div class="about-stat-card reveal">
+                        <div class="about-stat-num" data-count="100">0</div>
+                        <div class="about-stat-label">Produtos em estoque</div>
+                    </div>
+                    <div class="about-stat-card reveal">
+                        <div class="about-stat-num" data-count="15">0</div>
+                        <div class="about-stat-label">Anos de experiência</div>
+                    </div>
+                    <div class="about-stat-card reveal">
+                        <div class="about-stat-num" data-count="5000">0</div>
+                        <div class="about-stat-label">Clientes atendidos</div>
+                    </div>
+                    <div class="about-stat-card reveal">
+                        <div class="about-stat-num" data-count="6">0</div>
+                        <div class="about-stat-label">Categorias de produtos</div>
+                    </div>
+                </div>
+            </div>
+            <div class="about-visual">
+                <i class="ph-duotone ph-buildings"></i>
+            </div>
+        </div>
+    </div>
+</section>
 
-        /* CURSOR LOGIC */
-        const cursor = document.querySelector('.cursor');
-        const follower = document.querySelector('.cursor-follower');
-        document.addEventListener('mousemove', (e) => {
-            cursor.style.transform = `translate3d(${e.clientX}px, ${e.clientY}px, 0)`;
-            follower.style.transform = `translate3d(${e.clientX - 12}px, ${e.clientY - 12}px, 0)`;
-        });
+<!-- ══ CATÁLOGO ══ -->
+<main class="section-catalog" id="produtos">
+    <div class="container">
+        <div class="catalog-header reveal">
+            <div class="section-label"><i class="ph-bold ph-package"></i> Catálogo Completo</div>
+            <h2>Nossos Produtos</h2>
+            <p>Selecione os produtos desejados, ajuste as quantidades e envie seu pedido direto pelo WhatsApp.</p>
+        </div>
 
-        /* HEADER SCROLL */
-        window.addEventListener('scroll', () => {
-            document.getElementById('mainHeader').classList.toggle('scrolled', window.scrollY > 50);
-        });
+        <!-- Filtros principais -->
+        <div class="filters-wrapper">
+            <div class="filters" id="containerFiltros">
+                <button class="btn-filter active" onclick="filtrarCategoria('todos',this)"><i class="ph-bold ph-squares-four"></i> Visão Geral</button>
+                <button class="btn-filter" onclick="filtrarCategoria('caixas',this)"><i class="ph-bold ph-package"></i> Caixas</button>
+                <button class="btn-filter" onclick="filtrarCategoria('sacolas',this)"><i class="ph-bold ph-shopping-bag"></i> Sacolas</button>
+                <button class="btn-filter" onclick="filtrarCategoria('isopor',this)"><i class="ph-bold ph-snowflake"></i> Isopor</button>
+                <button class="btn-filter" onclick="filtrarCategoria('insumos',this)"><i class="ph-bold ph-scroll"></i> Insumos Industriais</button>
+                <button class="btn-filter" onclick="filtrarCategoria('plastico',this)"><i class="ph-bold ph-flask"></i> Embalagens Plásticas</button>
+            </div>
+        </div>
 
-        /* RENDER PRODUTOS */
-        function renderProducts() {
-            const grid = document.getElementById('productGrid');
-            grid.innerHTML = '';
-            
-            const filtered = PRODUTOS.filter(p => {
-                if (currentCat === 'sacolas') {
-                    const tipo = document.getElementById('tipoMaterial').value;
-                    const tam = document.getElementById('tamanhoSacola').value;
-                    return p.cat === 'sacolas' && p.tipo === tipo && (tam === 'todos' || p.tam === tam);
-                }
-                return p.cat === currentCat;
+        <!-- Subcategorias Caixas -->
+        <div class="sub-bar-base subcategories-bar" id="barraSubcategorias">
+            <button class="btn-sub active" onclick="filtrarSub('todas',this,'caixas')"><i class="ph-bold ph-squares-four"></i> Todas as Caixas</button>
+            <button class="btn-sub" onclick="filtrarSub('sedex',this,'caixas')"><i class="ph-bold ph-box-arrow-up"></i> Padrão Correios</button>
+            <button class="btn-sub" onclick="filtrarSub('confeiteiros',this,'caixas')"><i class="ph-bold ph-cake"></i> Para Doces</button>
+            <button class="btn-sub" onclick="filtrarSub('salgado',this,'caixas')"><i class="ph-bold ph-fork-knife"></i> Para Salgados</button>
+            <button class="btn-sub" onclick="filtrarSub('geral',this,'caixas')"><i class="ph-bold ph-cube"></i> Uso Geral</button>
+        </div>
+
+        <!-- Sacolas Tipo -->
+        <div class="sub-bar-base sacolas-tipo-bar" id="barraTipoSacolas">
+            <button class="btn-tipo-sacola tipo-preta active" onclick="selecionarTipoSacola('preta',this)"><span class="cor-dot cor-dot-preta"></span> Preta</button>
+            <button class="btn-tipo-sacola tipo-verde" onclick="selecionarTipoSacola('verde',this)"><span class="cor-dot cor-dot-verde"></span> Verde</button>
+            <button class="btn-tipo-sacola tipo-branca" onclick="selecionarTipoSacola('branca',this)"><span class="cor-dot cor-dot-branca"></span> Branca</button>
+            <button class="btn-tipo-sacola tipo-crystal" onclick="selecionarTipoSacola('crystal',this)"><span class="cor-dot cor-dot-crystal"></span> Crystal</button>
+            <button class="btn-tipo-sacola tipo-kraft" onclick="selecionarTipoSacola('kraft',this)"><span class="cor-dot cor-dot-kraft"></span> Kraft</button>
+            <button class="btn-tipo-sacola tipo-kraft-alca" onclick="selecionarTipoSacola('kraft-alca',this)"><span class="cor-dot cor-dot-kraft-alca"></span> Kraft c/ Alça</button>
+        </div>
+
+        <!-- Sacolas Pacote -->
+        <div class="sacolas-pacote-bar" id="barraPacoteSacolas">
+            <button class="btn-pacote-sacola active" onclick="filtrarPacoteSacola('todos',this)"><i class="ph-bold ph-squares-four"></i> Todos os Pacotes</button>
+            <button class="btn-pacote-sacola" onclick="filtrarPacoteSacola('10un',this)"><i class="ph-bold ph-stack"></i> Pacote c/ 10 un</button>
+            <button class="btn-pacote-sacola" onclick="filtrarPacoteSacola('50un',this)"><i class="ph-bold ph-stack"></i> Pacote c/ 50 un</button>
+        </div>
+
+        <!-- Sacolas Tamanho -->
+        <div class="sacolas-tamanho-bar tema-preta" id="barraTamanhoSacolas">
+            <button class="btn-tamanho-sacola active" onclick="filtrarTamanhoSacola('todas',this)"><i class="ph-bold ph-squares-four"></i> Todos os Tamanhos</button>
+            <button class="btn-tamanho-sacola" onclick="filtrarTamanhoSacola('p',this)"><i class="ph-bold ph-shopping-bag"></i> Pequenas</button>
+            <button class="btn-tamanho-sacola" onclick="filtrarTamanhoSacola('m',this)"><i class="ph-bold ph-shopping-bag"></i> Médias</button>
+            <button class="btn-tamanho-sacola" onclick="filtrarTamanhoSacola('g',this)"><i class="ph-bold ph-shopping-bag"></i> Grandes</button>
+        </div>
+
+        <!-- Subcategorias Isopor -->
+        <div class="sub-bar-base subcategorias-bar-isopor" id="barraSubcategoriasIsopor">
+            <button class="btn-sub-isopor active" onclick="filtrarSub('todas',this,'isopor')"><i class="ph-bold ph-squares-four"></i> Todos</button>
+            <button class="btn-sub-isopor" onclick="filtrarSub('marmitex',this,'isopor')"><i class="ph-bold ph-bowl-food"></i> Marmitex</button>
+            <button class="btn-sub-isopor" onclick="filtrarSub('caixa-isopor',this,'isopor')"><i class="ph-bold ph-cube"></i> Caixas de Isopor</button>
+            <button class="btn-sub-isopor" onclick="filtrarSub('copo-isopor',this,'isopor')"><i class="ph-bold ph-coffee"></i> Copos de Isopor</button>
+            <button class="btn-sub-isopor" onclick="filtrarSub('disco-isopor',this,'isopor')"><i class="ph-bold ph-circle"></i> Disco para Pizza</button>
+        </div>
+
+        <!-- Filtro Marca Marmitex -->
+        <div class="marmitex-marca-bar" id="barraMarcaMarmitex">
+            <button class="btn-marca-marmitex active" onclick="filtrarMarcaMarmitex('todas',this)"><i class="ph-bold ph-squares-four"></i> Todas as Marcas</button>
+            <button class="btn-marca-marmitex" onclick="filtrarMarcaMarmitex('Copabras',this)"><i class="ph-bold ph-tag"></i> Copabras</button>
+            <button class="btn-marca-marmitex" onclick="filtrarMarcaMarmitex('Bom Apetite',this)"><i class="ph-bold ph-tag"></i> Bom Apetite</button>
+        </div>
+
+        <!-- Subcategorias Plástico -->
+        <div class="sub-bar-base subcategorias-bar-plastico" id="barraSubcategoriasPlastico">
+            <button class="btn-sub-plastico active" onclick="filtrarSub('todas',this,'plastico')"><i class="ph-bold ph-squares-four"></i> Todas</button>
+            <button class="btn-sub-plastico" onclick="filtrarSub('bolo-plastico',this,'plastico')"><i class="ph-bold ph-cake"></i> Embalagens de Bolo</button>
+            <button class="btn-sub-plastico" onclick="filtrarSub('marmita-plastico',this,'plastico')"><i class="ph-bold ph-bowl-food"></i> Marmitas para Congelar</button>
+        </div>
+
+        <!-- Filtro Marca Plástico Bolo -->
+        <div class="plastico-marca-bar" id="barraMarcaPlastico">
+            <button class="btn-marca-plastico active" onclick="filtrarMarcaPlastico('todas',this)"><i class="ph-bold ph-squares-four"></i> Todas as Marcas</button>
+            <button class="btn-marca-plastico" onclick="filtrarMarcaPlastico('Galvanotek',this)"><i class="ph-bold ph-tag"></i> Galvanotek</button>
+            <button class="btn-marca-plastico" onclick="filtrarMarcaPlastico('Hiverpack',this)"><i class="ph-bold ph-tag"></i> Hiverpack</button>
+        </div>
+
+        <!-- Filtro Marca Marmita Plástico -->
+        <div class="plastico-marca-bar" id="barraMarcaMarmitaPlastico" style="background:#fff3e0;border-color:#ffcc02;">
+            <button class="btn-marca-plastico active" style="border-color:#ffcc02;color:#e65100;" onclick="filtrarMarcaMarmitaPlastico('todas',this)"><i class="ph-bold ph-squares-four"></i> Todas as Marcas</button>
+            <button class="btn-marca-plastico" style="border-color:#ffcc02;color:#e65100;" onclick="filtrarMarcaMarmitaPlastico('Prafesta',this)"><i class="ph-bold ph-tag"></i> Prafesta</button>
+        </div>
+
+        <!-- Breadcrumb -->
+        <div class="breadcrumb" id="breadcrumb">
+            <i class="ph-bold ph-package" id="breadcrumbIcon"></i>
+            <span id="breadcrumbCat">Caixas</span>
+            <i class="ph-bold ph-caret-right"></i>
+            <span id="breadcrumbSub">Todas</span>
+        </div>
+
+        <div id="containerProdutos"></div>
+    </div>
+</main>
+
+<!-- ══ MODAL ══ -->
+<div class="modal-backdrop" id="modalProduto">
+    <div class="modal-box">
+        <button class="btn-close-modal" onclick="fecharModal()"><i class="ph-bold ph-x"></i></button>
+        <div class="modal-head">
+            <div class="modal-icon" id="modalIcone"></div>
+            <h2 class="modal-title" id="modalTitulo"></h2>
+            <div class="modal-price-pill" id="modalContainerPreco">
+                <span class="modal-price-val" id="modalPrecoValor"></span>
+                <span class="modal-price-unit" id="modalPrecoUnit"></span>
+            </div>
+        </div>
+        <div class="modal-specs" id="modalEspecificacoes"></div>
+        <button class="btn-send-wpp" style="width:100%;" onclick="adicionarDoModal()">
+            <i class="ph-fill ph-shopping-cart"></i> Adicionar ao Carrinho
+        </button>
+    </div>
+</div>
+
+<!-- ══ CARRINHO ══ -->
+<div class="cart-overlay" id="overlayCarrinho" onclick="fecharCarrinho()"></div>
+<aside class="cart-sidebar" id="sidebarCarrinho">
+    <div class="cart-header">
+        <h3><i class="ph-fill ph-shopping-cart"></i> Meu Pedido</h3>
+        <button class="btn-close-cart" onclick="fecharCarrinho()"><i class="ph-bold ph-x"></i></button>
+    </div>
+    <div class="cart-items" id="sidebarItens"></div>
+    <div class="cart-footer">
+        <div class="cart-total-row">
+            <span class="cart-total-label">Total estimado</span>
+            <span class="cart-total-val" id="totalCarrinho">R$ 0,00</span>
+        </div>
+        <button class="btn-send-wpp" onclick="enviarWhatsApp()">
+            <i class="ph-fill ph-whatsapp-logo"></i> Enviar Pedido pelo WhatsApp
+        </button>
+        <button class="btn-clear" onclick="limparCarrinho()"><i class="ph-bold ph-trash"></i> Limpar carrinho</button>
+        <p class="wpp-notice"><i class="ph-fill ph-lock-simple" style="color:var(--green-wa);"></i> Seus dados só vão para o WhatsApp da loja</p>
+    </div>
+</aside>
+
+<!-- ══ WHATSAPP FLUTUANTE ══ -->
+<a href="https://wa.me/5511972999835?text=Ol%C3%A1%2C+visitei+o+site+e+gostaria+de+atendimento" target="_blank" class="whatsapp-float">
+    <i class="ph-fill ph-whatsapp-logo"></i>
+</a>
+
+<!-- ══ FOOTER ══ -->
+<footer id="contato">
+    <div class="footer-grid">
+        <div class="footer-col">
+            <div class="footer-logo">
+                <div class="logo-icon"><i class="ph-fill ph-package"></i></div>
+                Cia Das Embalagens
+            </div>
+            <p class="footer-desc">Sua estrutura logística merece a melhor proteção. Qualidade premium em papelão ondulado para o mercado empresarial.</p>
+        </div>
+        <div class="footer-col">
+            <h4>Atendimento Comercial</h4>
+            <ul class="footer-links">
+                <li><a href="https://wa.me/5511972999835" target="_blank"><i class="ph-fill ph-whatsapp-logo" style="font-size:1.3rem;color:var(--green-wa);"></i> (11) 97299-9835</a></li>
+                <li><a href="mailto:contato@ciaembalagens.com.br"><i class="ph-fill ph-envelope-simple" style="font-size:1.3rem;"></i> contato@ciaembalagens.com.br</a></li>
+                <li><a href="https://www.instagram.com/ciadasembalagens_/" target="_blank"><i class="ph-fill ph-instagram-logo" style="font-size:1.3rem;"></i> @ciadasembalagens_</a></li>
+            </ul>
+            <div style="margin-top:1.25rem;font-weight:700;color:rgba(255,255,255,.7);font-size:.9rem;">📍 Nossa Loja</div>
+            <p class="footer-address">Av. Paula Ferreira, 2871 - Vila Pereira Barreto<br>São Paulo - SP, 02915-100</p>
+        </div>
+        <div class="footer-col">
+            <h4>Acesso Rápido</h4>
+            <ul class="footer-links">
+                <li><a href="#inicio"><i class="ph-bold ph-caret-right"></i> Início</a></li>
+                <li><a href="#sobre"><i class="ph-bold ph-caret-right"></i> Nossa Fábrica</a></li>
+                <li><a href="#produtos"><i class="ph-bold ph-caret-right"></i> Catálogo</a></li>
+            </ul>
+        </div>
+    </div>
+    <hr class="footer-divider">
+    <div class="footer-copy">© 2026 Cia Das Embalagens. Todos os direitos reservados. · Desenvolvido para alta performance corporativa.</div>
+</footer>
+
+<script>
+/* ══════════════════════════════════════════════
+   CURSOR PERSONALIZADO
+══════════════════════════════════════════════ */
+const cursor = document.getElementById('cursor');
+const cursorRing = document.getElementById('cursorRing');
+let mouseX = 0, mouseY = 0, ringX = 0, ringY = 0;
+document.addEventListener('mousemove', e => {
+    mouseX = e.clientX; mouseY = e.clientY;
+    cursor.style.left = mouseX + 'px'; cursor.style.top = mouseY + 'px';
+});
+function animateRing() {
+    ringX += (mouseX - ringX) * 0.12;
+    ringY += (mouseY - ringY) * 0.12;
+    cursorRing.style.left = ringX + 'px'; cursorRing.style.top = ringY + 'px';
+    requestAnimationFrame(animateRing);
+}
+animateRing();
+document.querySelectorAll('button, a, .product-card, .btn-filter, .feedback-card').forEach(el => {
+    el.addEventListener('mouseenter', () => { cursor.classList.add('hover'); cursorRing.classList.add('hover'); });
+    el.addEventListener('mouseleave', () => { cursor.classList.remove('hover'); cursorRing.classList.remove('hover'); });
+});
+
+/* ══════════════════════════════════════════════
+   PARTÍCULAS HERO
+══════════════════════════════════════════════ */
+(function createParticles() {
+    const container = document.getElementById('heroParticles');
+    for (let i = 0; i < 22; i++) {
+        const p = document.createElement('div');
+        p.className = 'particle';
+        const size = Math.random() * 10 + 4;
+        p.style.cssText = `
+            width:${size}px; height:${size}px;
+            left:${Math.random() * 100}%;
+            animation-duration:${Math.random() * 12 + 8}s;
+            animation-delay:${Math.random() * 10}s;
+            opacity:${Math.random() * .4 + .1};
+        `;
+        container.appendChild(p);
+    }
+})();
+
+/* ══════════════════════════════════════════════
+   CONTADOR ANIMADO
+══════════════════════════════════════════════ */
+function animateCount(el, target, suffix = '+') {
+    let current = 0;
+    const duration = 1800;
+    const step = target / (duration / 16);
+    const timer = setInterval(() => {
+        current = Math.min(current + step, target);
+        el.textContent = Math.floor(current).toLocaleString('pt-BR') + suffix;
+        if (current >= target) clearInterval(timer);
+    }, 16);
+}
+
+/* ══════════════════════════════════════════════
+   SCROLL REVEAL + CONTADORES
+══════════════════════════════════════════════ */
+const revealObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('revealed');
+            // Animar contadores dentro do elemento
+            entry.target.querySelectorAll('[data-count]').forEach(el => {
+                const target = parseInt(el.dataset.count);
+                animateCount(el, target);
             });
+            revealObserver.unobserve(entry.target);
+        }
+    });
+}, { threshold: 0.12 });
 
-            filtered.forEach((p, index) => {
-                const card = document.createElement('div');
-                card.className = 'product-card';
-                card.style.animationDelay = `${index * 0.1}s`;
-                card.innerHTML = `
-                    <div class="product-img-wrapper" id="img-${p.id}">
-                        ${p.svg}
+document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+
+/* Contadores do hero (disparam ao carregar) */
+window.addEventListener('load', () => {
+    setTimeout(() => {
+        document.querySelectorAll('.hero-stat-val[data-count]').forEach(el => {
+            const target = parseInt(el.dataset.count);
+            animateCount(el, target);
+        });
+    }, 900);
+});
+
+/* ══════════════════════════════════════════════
+   HEADER SCROLL
+══════════════════════════════════════════════ */
+window.addEventListener('scroll', () => {
+    const h = document.getElementById('main-header');
+    const ir = document.querySelector('.scroll-hint');
+    if (window.scrollY > 60) {
+        h.classList.add('scrolled');
+        if (ir) ir.style.opacity = '0';
+    } else {
+        h.classList.remove('scrolled');
+        if (ir) ir.style.opacity = '1';
+    }
+});
+
+/* ══════════════════════════════════════════════
+   SLIDER DEPOIMENTOS
+══════════════════════════════════════════════ */
+let slideIdx = 0;
+setInterval(() => {
+    const track = document.getElementById('feedbackSlider');
+    if (!track) return;
+    const cards = document.querySelectorAll('.feedback-card');
+    const vis = window.innerWidth > 768 ? 3 : 1;
+    slideIdx = slideIdx + 1 > cards.length - vis ? 0 : slideIdx + 1;
+    track.style.transform = `translateX(-${slideIdx * (100 / vis)}%)`;
+}, 4200);
+
+/* ══════════════════════════════════════════════
+   RIPPLE NOS BOTÕES
+══════════════════════════════════════════════ */
+document.addEventListener('click', e => {
+    const btn = e.target.closest('.btn-add, .btn-hero-primary, .btn-send-wpp');
+    if (!btn) return;
+    const rect = btn.getBoundingClientRect();
+    const r = document.createElement('span');
+    r.className = 'ripple';
+    const size = Math.max(rect.width, rect.height);
+    r.style.cssText = `width:${size}px;height:${size}px;left:${e.clientX-rect.left-size/2}px;top:${e.clientY-rect.top-size/2}px;`;
+    btn.style.position = 'relative'; btn.style.overflow = 'hidden';
+    btn.appendChild(r);
+    setTimeout(() => r.remove(), 700);
+});
+
+/* ══════════════════════════════════════════════
+   SVGs
+══════════════════════════════════════════════ */
+const svgProdutos = {
+    caixa_correio:`<svg viewBox="0 0 130 130" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="15" y="45" width="100" height="70" rx="4" fill="#dbeafe" stroke="#2563eb" stroke-width="2.5"/><path d="M15 55 L65 80 L115 55" stroke="#2563eb" stroke-width="2.5" fill="none"/><rect x="52" y="45" width="26" height="18" rx="2" fill="#bfdbfe" stroke="#2563eb" stroke-width="2"/><path d="M30 25 L65 10 L100 25 L115 45 L15 45 Z" fill="#bfdbfe" stroke="#2563eb" stroke-width="2"/><circle cx="65" cy="82" r="4" fill="#2563eb"/></svg>`,
+    caixa_bolo:`<svg viewBox="0 0 130 130" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="10" y="50" width="110" height="65" rx="5" fill="#fce7f3" stroke="#db2777" stroke-width="2.5"/><rect x="10" y="38" width="110" height="18" rx="4" fill="#fbcfe8" stroke="#db2777" stroke-width="2"/><rect x="50" y="16" width="30" height="28" rx="3" fill="#fce7f3" stroke="#db2777" stroke-width="2"/><circle cx="65" cy="12" r="5" fill="#f472b6"/><path d="M30 68 Q40 58 50 68 Q60 58 70 68 Q80 58 90 68 Q100 58 110 68" stroke="#db2777" stroke-width="2" fill="none"/><circle cx="40" cy="95" r="4" fill="#f472b6"/><circle cx="65" cy="100" r="4" fill="#ec4899"/><circle cx="90" cy="95" r="4" fill="#f472b6"/></svg>`,
+    caixa_pizza:`<svg viewBox="0 0 130 130" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="8" y="50" width="114" height="65" rx="5" fill="#fef3c7" stroke="#d97706" stroke-width="2.5"/><rect x="8" y="38" width="114" height="18" rx="4" fill="#fde68a" stroke="#d97706" stroke-width="2"/><circle cx="65" cy="82" r="30" fill="#fed7aa" stroke="#d97706" stroke-width="2"/><path d="M65 52 L95 100 L35 100 Z" fill="#fbbf24" opacity="0.4"/><circle cx="50" cy="78" r="4" fill="#ef4444"/><circle cx="72" cy="70" r="4" fill="#ef4444"/><circle cx="65" cy="88" r="3" fill="#ef4444"/><circle cx="80" cy="85" r="3" fill="#16a34a"/><circle cx="52" cy="90" r="3" fill="#16a34a"/></svg>`,
+    caixa_geral:`<svg viewBox="0 0 130 130" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="15" y="35" width="100" height="80" rx="4" fill="#e0f2fe" stroke="#0284c7" stroke-width="2.5"/><rect x="15" y="35" width="100" height="22" rx="4" fill="#bae6fd" stroke="#0284c7" stroke-width="2"/><rect x="48" y="35" width="34" height="22" rx="2" fill="#7dd3fc" stroke="#0284c7" stroke-width="2"/><line x1="40" y1="70" x2="90" y2="70" stroke="#0284c7" stroke-width="2" stroke-dasharray="5,3"/><line x1="40" y1="85" x2="90" y2="85" stroke="#0284c7" stroke-width="2" stroke-dasharray="5,3"/><line x1="40" y1="100" x2="75" y2="100" stroke="#0284c7" stroke-width="2" stroke-dasharray="5,3"/></svg>`,
+    saco_lixo:`<svg viewBox="0 0 130 130" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M35 45 Q28 45 26 52 L18 108 Q17 115 25 115 L105 115 Q113 115 112 108 L104 52 Q102 45 95 45 Z" fill="#1e293b" stroke="#64748b" stroke-width="2"/><path d="M48 45 Q48 28 65 28 Q82 28 82 45" stroke="#94a3b8" stroke-width="3" fill="none" stroke-linecap="round"/><line x1="48" y1="65" x2="82" y2="65" stroke="#475569" stroke-width="1.5" stroke-dasharray="4,3"/><line x1="42" y1="80" x2="88" y2="80" stroke="#475569" stroke-width="1.5" stroke-dasharray="4,3"/></svg>`,
+    sacola_verde:`<svg viewBox="0 0 130 130" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M35 45 Q28 45 26 52 L18 108 Q17 115 25 115 L105 115 Q113 115 112 108 L104 52 Q102 45 95 45 Z" fill="#064e3b" stroke="#34d399" stroke-width="2"/><path d="M48 45 Q48 28 65 28 Q82 28 82 45" stroke="#6ee7b7" stroke-width="3" fill="none" stroke-linecap="round"/><circle cx="65" cy="80" r="14" fill="#065f46" stroke="#10b981" stroke-width="1.5"/><path d="M57 80 L62 85 L73 74" stroke="#6ee7b7" stroke-width="2.5" stroke-linecap="round" fill="none"/></svg>`,
+    sacola_branca:`<svg viewBox="0 0 130 130" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M35 45 Q28 45 26 52 L18 108 Q17 115 25 115 L105 115 Q113 115 112 108 L104 52 Q102 45 95 45 Z" fill="#f9fafb" stroke="#9ca3af" stroke-width="2"/><path d="M48 45 Q48 28 65 28 Q82 28 82 45" stroke="#6b7280" stroke-width="3" fill="none" stroke-linecap="round"/><line x1="45" y1="65" x2="85" y2="65" stroke="#d1d5db" stroke-width="1.5"/><line x1="40" y1="78" x2="90" y2="78" stroke="#d1d5db" stroke-width="1.5"/><line x1="42" y1="91" x2="88" y2="91" stroke="#d1d5db" stroke-width="1.5"/></svg>`,
+    sacola_crystal:`<svg viewBox="0 0 130 130" fill="none" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="cg" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#bfdbfe" stop-opacity="0.5"/><stop offset="100%" stop-color="#c4b5fd" stop-opacity="0.3"/></linearGradient></defs><path d="M35 45 Q28 45 26 52 L18 108 Q17 115 25 115 L105 115 Q113 115 112 108 L104 52 Q102 45 95 45 Z" fill="url(#cg)" stroke="#60a5fa" stroke-width="2"/><path d="M48 45 Q48 28 65 28 Q82 28 82 45" stroke="#a78bfa" stroke-width="3" fill="none" stroke-linecap="round"/><ellipse cx="65" cy="85" rx="22" ry="18" fill="rgba(96,165,250,0.1)" stroke="#60a5fa" stroke-width="1" stroke-dasharray="3,2"/></svg>`,
+    sacola_kraft:`<svg viewBox="0 0 130 130" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M35 45 Q28 45 26 52 L18 108 Q17 115 25 115 L105 115 Q113 115 112 108 L104 52 Q102 45 95 45 Z" fill="#78350f" stroke="#f59e0b" stroke-width="2"/><path d="M48 45 Q48 28 65 28 Q82 28 82 45" stroke="#fde68a" stroke-width="3" fill="none" stroke-linecap="round"/><rect x="38" y="62" width="54" height="38" rx="3" fill="#92400e" stroke="#d97706" stroke-width="1.5"/><line x1="47" y1="72" x2="83" y2="72" stroke="#fbbf24" stroke-width="1.5"/><line x1="47" y1="80" x2="83" y2="80" stroke="#fbbf24" stroke-width="1.5"/></svg>`,
+    sacola_kraft_alca:`<svg viewBox="0 0 130 130" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M35 50 Q28 50 26 57 L18 108 Q17 115 25 115 L105 115 Q113 115 112 108 L104 57 Q102 50 95 50 Z" fill="#1c1008" stroke="#b45309" stroke-width="2"/><path d="M48 50 Q44 32 55 22 Q65 15 75 22 Q86 32 82 50" stroke="#fbbf24" stroke-width="3" fill="none" stroke-linecap="round"/><circle cx="48" cy="50" r="5" fill="#fbbf24"/><circle cx="82" cy="50" r="5" fill="#fbbf24"/><rect x="36" y="65" width="58" height="36" rx="3" fill="#2d1a08" stroke="#b45309" stroke-width="1.5"/><line x1="46" y1="75" x2="84" y2="75" stroke="#fef08a" stroke-width="1.5"/><line x1="46" y1="84" x2="84" y2="84" stroke="#fef08a" stroke-width="1.5"/></svg>`,
+    marmitex:`<svg viewBox="0 0 130 130" fill="none" xmlns="http://www.w3.org/2000/svg"><ellipse cx="65" cy="55" rx="52" ry="18" fill="#e0f7fa" stroke="#00838f" stroke-width="2.5"/><path d="M13 55 Q13 95 65 95 Q117 95 117 55" fill="#f0fdff" stroke="#00838f" stroke-width="2.5"/><ellipse cx="65" cy="55" rx="38" ry="12" fill="#ccf2f5" stroke="#00acc1" stroke-width="1.5"/><ellipse cx="65" cy="55" rx="24" ry="7" fill="#b2ebf2"/><text x="65" y="112" text-anchor="middle" font-size="10" fill="#00838f" font-weight="bold" font-family="sans-serif">ISOPOR</text></svg>`,
+    caixa_isopor:`<svg viewBox="0 0 130 130" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="15" y="55" width="100" height="62" rx="5" fill="#e0f7fa" stroke="#00838f" stroke-width="2.5"/><rect x="12" y="42" width="106" height="18" rx="4" fill="#b2ebf2" stroke="#00838f" stroke-width="2"/><rect x="42" y="42" width="46" height="18" rx="2" fill="#80deea" stroke="#00838f" stroke-width="1.5"/><path d="M22 68 L108 68" stroke="#00acc1" stroke-width="1.5" stroke-dasharray="5,3"/><path d="M22 82 L108 82" stroke="#00acc1" stroke-width="1.5" stroke-dasharray="5,3"/><path d="M20 22 L35 14 L110 14 L110 42 L15 42 Z" fill="#cff3f7" stroke="#00838f" stroke-width="2"/><text x="65" y="112" text-anchor="middle" font-size="9" fill="#00838f" font-weight="bold" font-family="sans-serif">ISOPOR</text></svg>`,
+    copo_isopor:`<svg viewBox="0 0 130 130" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M35 30 L42 105 Q42 112 65 112 Q88 112 88 105 L95 30 Z" fill="#e0f7fa" stroke="#00838f" stroke-width="2.5"/><path d="M35 30 L95 30" stroke="#00838f" stroke-width="2.5"/><path d="M37 48 L93 48" stroke="#b2ebf2" stroke-width="1.5"/><path d="M39 64 L91 64" stroke="#b2ebf2" stroke-width="1.5"/><path d="M41 80 L89 80" stroke="#b2ebf2" stroke-width="1.5"/><ellipse cx="65" cy="30" rx="30" ry="6" fill="#cff3f7" stroke="#00838f" stroke-width="2"/><path d="M50 18 Q65 8 80 18" stroke="#00acc1" stroke-width="2.5" fill="none" stroke-linecap="round"/></svg>`,
+    disco_pizza:`<svg viewBox="0 0 130 130" fill="none" xmlns="http://www.w3.org/2000/svg"><ellipse cx="65" cy="65" rx="55" ry="12" fill="#e0f7fa" stroke="#00838f" stroke-width="2.5"/><ellipse cx="65" cy="60" rx="55" ry="12" fill="#f0fdff" stroke="#00838f" stroke-width="2.5"/><ellipse cx="65" cy="60" rx="42" ry="8" fill="#e0f7fa" stroke="#00acc1" stroke-width="1.5" stroke-dasharray="6,3"/><ellipse cx="65" cy="60" rx="28" ry="5" fill="#b2ebf2"/><text x="65" y="90" text-anchor="middle" font-size="9" fill="#00838f" font-weight="bold" font-family="sans-serif">PIZZA</text></svg>`,
+    embalagem_bolo:`<svg viewBox="0 0 130 130" fill="none" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="cupula-grad" x1="0" y1="0" x2="0.3" y2="1"><stop offset="0%" stop-color="#e0f2fe" stop-opacity="0.85"/><stop offset="100%" stop-color="#bae6fd" stop-opacity="0.45"/></linearGradient></defs><rect x="18" y="92" width="94" height="16" rx="4" fill="#f1f5f9" stroke="#94a3b8" stroke-width="2"/><path d="M18 92 Q14 60 35 35 Q52 18 65 18 Q78 18 95 35 Q116 60 112 92" fill="url(#cupula-grad)" stroke="#38bdf8" stroke-width="2"/><ellipse cx="65" cy="18" rx="30" ry="8" fill="#e0f2fe" fill-opacity="0.6" stroke="#38bdf8" stroke-width="1.5"/><path d="M30 55 Q38 40 50 35" stroke="white" stroke-width="3" stroke-linecap="round" opacity="0.7"/><ellipse cx="65" cy="85" rx="34" ry="9" fill="#fde68a" stroke="#d97706" stroke-width="1.5"/><rect x="31" y="65" width="68" height="22" rx="3" fill="#fef3c7" stroke="#d97706" stroke-width="1.5"/><ellipse cx="65" cy="65" rx="34" ry="9" fill="#fde68a" stroke="#d97706" stroke-width="1.5"/><rect x="55" y="52" width="4" height="14" rx="2" fill="#f87171"/><rect x="65" y="49" width="4" height="17" rx="2" fill="#60a5fa"/><rect x="75" y="52" width="4" height="14" rx="2" fill="#a78bfa"/><ellipse cx="57" cy="51" rx="3" ry="4" fill="#fbbf24" opacity="0.9"/><ellipse cx="67" cy="48" rx="3" ry="4" fill="#fbbf24" opacity="0.9"/><ellipse cx="77" cy="51" rx="3" ry="4" fill="#fbbf24" opacity="0.9"/></svg>`,
+    marmita_plastica:`<svg viewBox="0 0 130 130" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="10" y="28" width="110" height="34" rx="6" fill="#f8fafc" stroke="#cbd5e1" stroke-width="2"/><path d="M10 56 Q10 62 16 62 L114 62 Q120 62 120 56" fill="#e2e8f0" stroke="#cbd5e1" stroke-width="1.5"/><rect x="14" y="62" width="102" height="50" rx="5" fill="#ffffff" stroke="#cbd5e1" stroke-width="2"/><rect x="20" y="68" width="90" height="38" rx="3" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1"/><line x1="20" y1="87" x2="110" y2="87" stroke="#e2e8f0" stroke-width="1.5"/><line x1="75" y1="87" x2="75" y2="106" stroke="#e2e8f0" stroke-width="1.5"/><ellipse cx="47" cy="77" rx="18" ry="8" fill="#fbbf24" opacity="0.55"/><ellipse cx="90" cy="77" rx="14" ry="7" fill="#86efac" opacity="0.55"/><ellipse cx="55" cy="97" rx="14" ry="6" fill="#f87171" opacity="0.45"/><ellipse cx="88" cy="97" rx="9" ry="5" fill="#fde68a" opacity="0.5"/><path d="M22 35 Q50 32 80 35" stroke="white" stroke-width="2.5" stroke-linecap="round" opacity="0.8"/><rect x="38" y="33" width="54" height="18" rx="4" fill="#e65100"/><text x="65" y="45" text-anchor="middle" font-size="9" fill="white" font-weight="900" font-family="sans-serif" letter-spacing="0.5">PRAFESTA</text></svg>`,
+    default:`<svg viewBox="0 0 130 130" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="20" y="30" width="90" height="80" rx="6" fill="#dbeafe" stroke="#2563eb" stroke-width="2.5"/><rect x="20" y="30" width="90" height="24" rx="6" fill="#bfdbfe" stroke="#2563eb" stroke-width="2"/><rect x="46" y="30" width="38" height="24" rx="3" fill="#93c5fd" stroke="#2563eb" stroke-width="2"/><line x1="35" y1="72" x2="95" y2="72" stroke="#3b82f6" stroke-width="2" stroke-dasharray="5,3"/><line x1="35" y1="86" x2="95" y2="86" stroke="#3b82f6" stroke-width="2" stroke-dasharray="5,3"/><line x1="35" y1="100" x2="75" y2="100" stroke="#3b82f6" stroke-width="2" stroke-dasharray="5,3"/></svg>`
+};
+
+function getSvg(produto) {
+    const cat=produto.categoria, sub=produto.subcategoria||'', tipo=produto.tipo||'';
+    if(cat==='sacolas'){
+        if(tipo==='preta') return svgProdutos.saco_lixo;
+        if(tipo==='verde') return svgProdutos.sacola_verde;
+        if(tipo==='branca') return svgProdutos.sacola_branca;
+        if(tipo==='crystal') return svgProdutos.sacola_crystal;
+        if(tipo==='kraft-alca') return svgProdutos.sacola_kraft_alca;
+        if(tipo==='kraft') return svgProdutos.sacola_kraft;
+    }
+    if(cat==='isopor'){
+        if(sub==='marmitex') return svgProdutos.marmitex;
+        if(sub==='caixa-isopor') return svgProdutos.caixa_isopor;
+        if(sub==='copo-isopor') return svgProdutos.copo_isopor;
+        if(sub==='disco-isopor') return svgProdutos.disco_pizza;
+    }
+    if(cat==='plastico'){
+        if(sub==='marmita-plastico') return svgProdutos.marmita_plastica;
+        if(sub==='bolo-plastico') return svgProdutos.embalagem_bolo;
+    }
+    if(cat==='caixas'){
+        if(sub==='confeiteiros') return svgProdutos.caixa_bolo;
+        if(sub==='salgado') return svgProdutos.caixa_pizza;
+        if(sub==='sedex') return svgProdutos.caixa_correio;
+        if(sub==='geral') return svgProdutos.caixa_geral;
+    }
+    return svgProdutos.default;
+}
+
+/* ══════════════════════════════════════════════
+   DADOS DE PRODUTOS
+══════════════════════════════════════════════ */
+const listaProdutos = [
+    {id:1,nome:"Caixa Nº0",categoria:"caixas",subcategoria:"sedex",icone:"ph-package",descricao:"Para pequenos acessórios, joias e eletrônicos.",preco:3.50,unidade:"/unidade",especificacoes:{"Medidas Externas":"16 x 11 x 07 cm","Material":"Ondulado"}},
+    {id:2,nome:"Caixa Nº1",categoria:"caixas",subcategoria:"sedex",icone:"ph-box-arrow-up",descricao:"Ideal para cosméticos, perfumes e miudezas.",preco:4.60,unidade:"/unidade",especificacoes:{"Medidas Externas":"21 x 15 x 6.5 cm","Material":"Ondulado"}},
+    {id:3,nome:"Caixa Nº2",categoria:"caixas",subcategoria:"sedex",icone:"ph-archive-box",descricao:"Vestuário, livros e kits médios.",preco:5.60,unidade:"/unidade",especificacoes:{"Medidas Externas":"26 x 17 x 08 cm","Material":"Ondulado"}},
+    {id:4,nome:"Caixa Nº3",categoria:"caixas",subcategoria:"sedex",icone:"ph-cube",descricao:"Calçados e utensílios com segurança.",preco:8.80,unidade:"/unidade",especificacoes:{"Medidas Externas":"30 x 20 x 11 cm","Material":"Ondulado"}},
+    {id:5,nome:"Caixa Nº4",categoria:"caixas",subcategoria:"sedex",icone:"ph-package",descricao:"Para volumes maiores no e-commerce.",preco:13.00,unidade:"/unidade",especificacoes:{"Medidas Externas":"34 x 27 x 11 cm","Material":"Ondulado"}},
+    {id:6,nome:"Caixa 32x32x22",categoria:"caixas",subcategoria:"geral",icone:"ph-archive-box",descricao:"Multiuso de médio porte para armazenagem e transporte.",preco:13.80,unidade:"/unidade",especificacoes:{"Medidas Externas":"32 x 32 x 22 cm","Material":"Ondulado"}},
+    {id:7,nome:"Caixa De Bolo Nº9",categoria:"caixas",subcategoria:"confeiteiros",icone:"ph-archive-box",descricao:"Para bolos grandes de festa e comemorações.",preco:10.99,unidade:"/unidade",especificacoes:{"Medidas Externas":"40 x 40 x 12 cm","Material":"Ondulado"}},
+    {id:8,nome:"Caixa De Bolo Nº7 Média",categoria:"caixas",subcategoria:"confeiteiros",icone:"ph-archive-box",descricao:"Bolos de tamanho médio para aniversários.",preco:6.20,unidade:"/unidade",especificacoes:{"Medidas Externas":"28 x 28 x 10 cm","Material":"Ondulado"}},
+    {id:9,nome:"Caixa De Bolo Nº7 Com Alça",categoria:"caixas",subcategoria:"confeiteiros",icone:"ph-archive-box",descricao:"Igual ao Nº7 com alça integrada para transporte.",preco:6.50,unidade:"/unidade",especificacoes:{"Medidas Externas":"28 x 28 x 10 cm","Material":"Ondulado"}},
+    {id:10,nome:"Caixa De Bolo Nº6",categoria:"caixas",subcategoria:"confeiteiros",icone:"ph-archive-box",descricao:"Perfeita para bolos individuais e mini cakes.",preco:5.70,unidade:"/unidade",especificacoes:{"Medidas Externas":"26 x 26 x 10 cm","Material":"Ondulado"}},
+    {id:11,nome:"Caixa De Bolo Nº5",categoria:"caixas",subcategoria:"confeiteiros",icone:"ph-archive-box",descricao:"Naked cakes e bolos de pote.",preco:4.50,unidade:"/unidade",especificacoes:{"Medidas Externas":"22 x 22 x 10 cm","Material":"Ondulado"}},
+    {id:12,nome:"Caixa De Bolo Nº3",categoria:"caixas",subcategoria:"confeiteiros",icone:"ph-archive-box",descricao:"Bolos baixos, alfajores e tortas rasas.",preco:5.00,unidade:"/unidade",especificacoes:{"Medidas Externas":"25 x 25 x 5 cm","Material":"Ondulado"}},
+    {id:13,nome:"Caixa Para Copinho (50 Divisórias)",categoria:"caixas",subcategoria:"confeiteiros",icone:"ph-archive-box",descricao:"Transporte seguro de copinhos de mousse e brigadeiro.",preco:3.99,unidade:"/unidade",especificacoes:{"Medidas Externas":"40 x 40 x 12 cm","Material":"Ondulado"}},
+    {id:14,nome:"Caixa Para Cupcakes (até 25 un.)",categoria:"caixas",subcategoria:"confeiteiros",icone:"ph-archive-box",descricao:"Comporta até 25 cupcakes com segurança.",preco:6.55,unidade:"/unidade",especificacoes:{"Medidas Externas":"40 x 40 x 12 cm","Material":"Ondulado"}},
+    {id:15,nome:"Caixa De Esfiha Nº2",categoria:"caixas",subcategoria:"salgado",icone:"ph-archive-box",descricao:"Para esfihas, salgadinhos e porções individuais.",preco:3.50,unidade:"/unidade",especificacoes:{"Medidas Externas":"20 x 20 x 5 cm","Material":"Ondulado"}},
+    {id:16,nome:"Caixa De Pizza",categoria:"caixas",subcategoria:"salgado",icone:"ph-archive-box",descricao:"Mantém o calor e a crocância da pizza.",preco:3.50,unidade:"/unidade",especificacoes:{"Medidas Externas":"35 x 35 cm","Material":"Ondulado"}},
+    {id:17,nome:"Saco Preto 100L — Pct 10un",categoria:"sacolas",tipo:"preta",tamanho:"p",pacote:"10un",icone:"ph-trash",descricao:"Saco de lixo preto 100L. Pacote com 10 unidades.",preco:"Sob consulta",unidade:"/pacote",especificacoes:{"Capacidade":"100 litros","Cor":"Preto","Embalagem":"Pacote c/ 10 unidades","Uso":"Uso doméstico, coleta de resíduos"}},
+    {id:90,nome:"Saco Preto 100L — Pct 50un",categoria:"sacolas",tipo:"preta",tamanho:"p",pacote:"50un",icone:"ph-trash",descricao:"Saco de lixo preto 100L. Pacote econômico com 50 unidades.",preco:"Sob consulta",unidade:"/pacote",especificacoes:{"Capacidade":"100 litros","Cor":"Preto","Embalagem":"Pacote c/ 50 unidades","Uso":"Uso comercial, coleta de resíduos"}},
+    {id:19,nome:"Saco Preto 200L — Pct 10un",categoria:"sacolas",tipo:"preta",tamanho:"m",pacote:"10un",icone:"ph-trash",descricao:"Saco preto 200L para grandes volumes. Pacote com 10 unidades.",preco:"Sob consulta",unidade:"/pacote",especificacoes:{"Capacidade":"200 litros","Cor":"Preto","Embalagem":"Pacote c/ 10 unidades","Uso":"Resíduos industriais, entulho leve"}},
+    {id:20,nome:"Saco Preto 200L — Pct 50un",categoria:"sacolas",tipo:"preta",tamanho:"m",pacote:"50un",icone:"ph-trash",descricao:"Saco preto 200L. Pacote econômico com 50 unidades.",preco:"Sob consulta",unidade:"/pacote",especificacoes:{"Capacidade":"200 litros","Cor":"Preto","Embalagem":"Pacote c/ 50 unidades","Uso":"Coleta comercial, resíduos"}},
+    {id:18,nome:"Saco Preto 40L — Pct 10un",categoria:"sacolas",tipo:"preta",tamanho:"p",pacote:"10un",icone:"ph-trash",descricao:"Saco preto 40L compacto. Pacote com 10 unidades.",preco:"Sob consulta",unidade:"/pacote",especificacoes:{"Capacidade":"40 litros","Cor":"Preto","Embalagem":"Pacote c/ 10 unidades","Uso":"Lixeiras domésticas, banheiro, cozinha"}},
+    {id:21,nome:"Saco Preto 100L Reforçado — Pct 10un",categoria:"sacolas",tipo:"preta",tamanho:"g",pacote:"10un",icone:"ph-trash",descricao:"Saco preto 100L reforçado para resíduos pesados.",preco:"Sob consulta",unidade:"/pacote",especificacoes:{"Capacidade":"100 litros","Cor":"Preto","Embalagem":"Pacote c/ 10 unidades","Uso":"Resíduos pesados, uso industrial"}},
+    {id:22,nome:"Saco Preto Extra Grande — Pct 50un",categoria:"sacolas",tipo:"preta",tamanho:"g",pacote:"50un",icone:"ph-trash",descricao:"Saco preto extra grande. Pacote econômico com 50 unidades.",preco:"Sob consulta",unidade:"/pacote",especificacoes:{"Cor":"Preto","Embalagem":"Pacote c/ 50 unidades","Uso":"Grandes volumes, armazenagem, logística"}},
+    {id:23,nome:"Sacola Verde 30x40",categoria:"sacolas",tipo:"verde",tamanho:"p",icone:"ph-shopping-bag",descricao:"Sacola verde resistente. Vendida por kg.",preco:"Sob consulta",unidade:"/kg",especificacoes:{"Medidas":"30 x 40 cm","Cor":"Verde","Material":"Plástico resistente","Venda":"Por kg"}},
+    {id:24,nome:"Sacola Verde 35x45",categoria:"sacolas",tipo:"verde",tamanho:"p",icone:"ph-shopping-bag",descricao:"Sacola verde 35x45. Vendida por kg.",preco:"Sob consulta",unidade:"/kg",especificacoes:{"Medidas":"35 x 45 cm","Cor":"Verde","Material":"Plástico resistente","Venda":"Por kg"}},
+    {id:25,nome:"Sacola Verde 40x50",categoria:"sacolas",tipo:"verde",tamanho:"m",icone:"ph-shopping-bag",descricao:"Sacola verde médio porte. Vendida por kg.",preco:"Sob consulta",unidade:"/kg",especificacoes:{"Medidas":"40 x 50 cm","Cor":"Verde","Material":"Plástico resistente","Venda":"Por kg"}},
+    {id:26,nome:"Sacola Verde 45x60",categoria:"sacolas",tipo:"verde",tamanho:"m",icone:"ph-shopping-bag",descricao:"Sacola verde 45x60. Vendida por kg.",preco:"Sob consulta",unidade:"/kg",especificacoes:{"Medidas":"45 x 60 cm","Cor":"Verde","Material":"Plástico resistente","Venda":"Por kg"}},
+    {id:27,nome:"Sacola Verde 60x80",categoria:"sacolas",tipo:"verde",tamanho:"g",icone:"ph-shopping-bag",descricao:"Sacola verde grande. Vendida por kg.",preco:"Sob consulta",unidade:"/kg",especificacoes:{"Medidas":"60 x 80 cm","Cor":"Verde","Material":"Plástico resistente","Venda":"Por kg"}},
+    {id:28,nome:"Sacola Branca 30x40",categoria:"sacolas",tipo:"branca",tamanho:"p",icone:"ph-shopping-bag",descricao:"Sacola branca clássica. Vendida por kg.",preco:"Sob consulta",unidade:"/kg",especificacoes:{"Medidas":"30 x 40 cm","Cor":"Branca","Material":"Plástico","Venda":"Por kg"}},
+    {id:29,nome:"Sacola Branca 35x45",categoria:"sacolas",tipo:"branca",tamanho:"p",icone:"ph-shopping-bag",descricao:"Sacola branca 35x45. Vendida por kg.",preco:"Sob consulta",unidade:"/kg",especificacoes:{"Medidas":"35 x 45 cm","Cor":"Branca","Material":"Plástico","Venda":"Por kg"}},
+    {id:30,nome:"Sacola Branca 40x50",categoria:"sacolas",tipo:"branca",tamanho:"m",icone:"ph-shopping-bag",descricao:"Sacola branca médio porte. Vendida por kg.",preco:"Sob consulta",unidade:"/kg",especificacoes:{"Medidas":"40 x 50 cm","Cor":"Branca","Material":"Plástico","Venda":"Por kg"}},
+    {id:31,nome:"Sacola Branca 45x60",categoria:"sacolas",tipo:"branca",tamanho:"m",icone:"ph-shopping-bag",descricao:"Sacola branca 45x60. Vendida por kg.",preco:"Sob consulta",unidade:"/kg",especificacoes:{"Medidas":"45 x 60 cm","Cor":"Branca","Material":"Plástico","Venda":"Por kg"}},
+    {id:32,nome:"Sacola Branca 60x80",categoria:"sacolas",tipo:"branca",tamanho:"g",icone:"ph-shopping-bag",descricao:"Sacola branca grande. Vendida por kg.",preco:"Sob consulta",unidade:"/kg",especificacoes:{"Medidas":"60 x 80 cm","Cor":"Branca","Material":"Plástico","Venda":"Por kg"}},
+    {id:33,nome:"Sacola Crystal 30x40",categoria:"sacolas",tipo:"crystal",tamanho:"p",icone:"ph-shopping-bag",descricao:"Crystal transparente 30x40. Vendida por kg.",preco:"Sob consulta",unidade:"/kg",especificacoes:{"Medidas":"30 x 40 cm","Cor":"Transparente","Material":"Plástico cristal","Venda":"Por kg"}},
+    {id:34,nome:"Sacola Crystal 35x45",categoria:"sacolas",tipo:"crystal",tamanho:"p",icone:"ph-shopping-bag",descricao:"Crystal 35x45. Vendida por kg.",preco:"Sob consulta",unidade:"/kg",especificacoes:{"Medidas":"35 x 45 cm","Cor":"Transparente","Material":"Plástico cristal","Venda":"Por kg"}},
+    {id:35,nome:"Sacola Crystal 40x50",categoria:"sacolas",tipo:"crystal",tamanho:"m",icone:"ph-shopping-bag",descricao:"Crystal médio porte. Vendida por kg.",preco:"Sob consulta",unidade:"/kg",especificacoes:{"Medidas":"40 x 50 cm","Cor":"Transparente","Material":"Plástico cristal","Venda":"Por kg"}},
+    {id:36,nome:"Sacola Crystal 45x60",categoria:"sacolas",tipo:"crystal",tamanho:"m",icone:"ph-shopping-bag",descricao:"Crystal 45x60, elegante e resistente. Vendida por kg.",preco:"Sob consulta",unidade:"/kg",especificacoes:{"Medidas":"45 x 60 cm","Cor":"Transparente","Material":"Plástico cristal","Venda":"Por kg"}},
+    {id:37,nome:"Sacola Crystal 60x80",categoria:"sacolas",tipo:"crystal",tamanho:"g",icone:"ph-shopping-bag",descricao:"Crystal grande. Vendida por kg.",preco:"Sob consulta",unidade:"/kg",especificacoes:{"Medidas":"60 x 80 cm","Cor":"Transparente","Material":"Plástico cristal","Venda":"Por kg"}},
+    {id:70,nome:"Sacola Kraft 30x40",categoria:"sacolas",tipo:"kraft",tamanho:"p",icone:"ph-shopping-bag",descricao:"Sacola kraft artesanal, sustentável e resistente. Vendida por kg.",preco:"Sob consulta",unidade:"/kg",especificacoes:{"Medidas":"30 x 40 cm","Cor":"Kraft natural","Material":"Papel kraft","Venda":"Por kg"}},
+    {id:71,nome:"Sacola Kraft 35x45",categoria:"sacolas",tipo:"kraft",tamanho:"p",icone:"ph-shopping-bag",descricao:"Kraft pequena 35x45. Vendida por kg.",preco:"Sob consulta",unidade:"/kg",especificacoes:{"Medidas":"35 x 45 cm","Cor":"Kraft natural","Material":"Papel kraft","Venda":"Por kg"}},
+    {id:72,nome:"Sacola Kraft 40x50",categoria:"sacolas",tipo:"kraft",tamanho:"m",icone:"ph-shopping-bag",descricao:"Kraft médio porte. Perfeita para padarias e empórios. Vendida por kg.",preco:"Sob consulta",unidade:"/kg",especificacoes:{"Medidas":"40 x 50 cm","Cor":"Kraft natural","Material":"Papel kraft","Venda":"Por kg"}},
+    {id:73,nome:"Sacola Kraft 45x60",categoria:"sacolas",tipo:"kraft",tamanho:"m",icone:"ph-shopping-bag",descricao:"Kraft 45x60 para pedidos médios-grandes. Vendida por kg.",preco:"Sob consulta",unidade:"/kg",especificacoes:{"Medidas":"45 x 60 cm","Cor":"Kraft natural","Material":"Papel kraft","Venda":"Por kg"}},
+    {id:74,nome:"Sacola Kraft 60x80",categoria:"sacolas",tipo:"kraft",tamanho:"g",icone:"ph-shopping-bag",descricao:"Kraft grande para grandes volumes. Vendida por kg.",preco:"Sob consulta",unidade:"/kg",especificacoes:{"Medidas":"60 x 80 cm","Cor":"Kraft natural","Material":"Papel kraft","Venda":"Por kg"}},
+    {id:91,nome:"Sacola Kraft c/ Alça 25x35",categoria:"sacolas",tipo:"kraft-alca",tamanho:"p",icone:"ph-bag",descricao:"Sacola kraft com alça retorcida. Ideal para presentes. Vendida por kg.",preco:"Sob consulta",unidade:"/kg",especificacoes:{"Medidas":"25 x 35 cm","Cor":"Kraft natural","Material":"Papel kraft","Alça":"Retorcida","Venda":"Por kg"}},
+    {id:92,nome:"Sacola Kraft c/ Alça 30x40",categoria:"sacolas",tipo:"kraft-alca",tamanho:"p",icone:"ph-bag",descricao:"Kraft com alça 30x40 para presentear com estilo. Vendida por kg.",preco:"Sob consulta",unidade:"/kg",especificacoes:{"Medidas":"30 x 40 cm","Cor":"Kraft natural","Material":"Papel kraft","Alça":"Retorcida","Venda":"Por kg"}},
+    {id:93,nome:"Sacola Kraft c/ Alça 35x45",categoria:"sacolas",tipo:"kraft-alca",tamanho:"p",icone:"ph-bag",descricao:"Kraft com alça 35x45 para lojas e empórios. Vendida por kg.",preco:"Sob consulta",unidade:"/kg",especificacoes:{"Medidas":"35 x 45 cm","Cor":"Kraft natural","Material":"Papel kraft","Alça":"Retorcida","Venda":"Por kg"}},
+    {id:94,nome:"Sacola Kraft c/ Alça 40x50",categoria:"sacolas",tipo:"kraft-alca",tamanho:"m",icone:"ph-bag",descricao:"Kraft com alça médio porte. Perfeita para roupas e calçados. Vendida por kg.",preco:"Sob consulta",unidade:"/kg",especificacoes:{"Medidas":"40 x 50 cm","Cor":"Kraft natural","Material":"Papel kraft","Alça":"Retorcida","Venda":"Por kg"}},
+    {id:95,nome:"Sacola Kraft c/ Alça 45x60",categoria:"sacolas",tipo:"kraft-alca",tamanho:"m",icone:"ph-bag",descricao:"Kraft com alça 45x60. Para restaurantes e lojas. Vendida por kg.",preco:"Sob consulta",unidade:"/kg",especificacoes:{"Medidas":"45 x 60 cm","Cor":"Kraft natural","Material":"Papel kraft","Alça":"Retorcida","Venda":"Por kg"}},
+    {id:96,nome:"Sacola Kraft c/ Alça 60x80",categoria:"sacolas",tipo:"kraft-alca",tamanho:"g",icone:"ph-bag",descricao:"Kraft com alça grande para grandes pedidos. Vendida por kg.",preco:"Sob consulta",unidade:"/kg",especificacoes:{"Medidas":"60 x 80 cm","Cor":"Kraft natural","Material":"Papel kraft","Alça":"Retorcida","Venda":"Por kg"}},
+    {id:38,nome:"Marmitex Nº8 — Copabras",categoria:"isopor",subcategoria:"marmitex",marca:"Copabras",icone:"ph-bowl-food",descricao:"Marmitex oval Copabras Nº8 para refeições completas.",preco:"Sob consulta",unidade:"",especificacoes:{"Marca":"Copabras","Número":"Nº8","Formato":"Oval","Material":"Isopor EPS","Uso":"Refeições, marmitas, delivery"}},
+    {id:39,nome:"Marmitex Nº9 — Copabras",categoria:"isopor",subcategoria:"marmitex",marca:"Copabras",icone:"ph-bowl-food",descricao:"Marmitex Copabras Nº9 para refeições fartas.",preco:"Sob consulta",unidade:"",especificacoes:{"Marca":"Copabras","Número":"Nº9","Formato":"Oval","Material":"Isopor EPS","Uso":"Refeições, delivery, marmitaria"}},
+    {id:40,nome:"Marmitex Nº10 — Copabras",categoria:"isopor",subcategoria:"marmitex",marca:"Copabras",icone:"ph-bowl-food",descricao:"Marmitex Copabras Nº10 para porções generosas.",preco:"Sob consulta",unidade:"",especificacoes:{"Marca":"Copabras","Número":"Nº10","Formato":"Oval","Material":"Isopor EPS","Uso":"Buffet, eventos, delivery especial"}},
+    {id:75,nome:"Marmitex Nº8 — Bom Apetite",categoria:"isopor",subcategoria:"marmitex",marca:"Bom Apetite",icone:"ph-bowl-food",descricao:"Marmitex oval Bom Apetite Nº8. Qualidade superior.",preco:"Sob consulta",unidade:"",especificacoes:{"Marca":"Bom Apetite","Número":"Nº8","Formato":"Oval","Material":"Isopor EPS","Uso":"Refeições, marmitas, delivery"}},
+    {id:76,nome:"Marmitex Nº9 — Bom Apetite",categoria:"isopor",subcategoria:"marmitex",marca:"Bom Apetite",icone:"ph-bowl-food",descricao:"Marmitex Bom Apetite Nº9 para refeições fartas.",preco:"Sob consulta",unidade:"",especificacoes:{"Marca":"Bom Apetite","Número":"Nº9","Formato":"Oval","Material":"Isopor EPS","Uso":"Refeições, delivery, marmitaria"}},
+    {id:77,nome:"Marmitex Nº10 — Bom Apetite",categoria:"isopor",subcategoria:"marmitex",marca:"Bom Apetite",icone:"ph-bowl-food",descricao:"Marmitex Bom Apetite Nº10 extra-grande.",preco:"Sob consulta",unidade:"",especificacoes:{"Marca":"Bom Apetite","Número":"Nº10","Formato":"Oval","Material":"Isopor EPS","Uso":"Buffet, eventos, delivery especial"}},
+    {id:41,nome:"Caixa de Isopor 5L",categoria:"isopor",subcategoria:"caixa-isopor",icone:"ph-cube",descricao:"Caixa de isopor pequena para transporte de alimentos e medicamentos.",preco:"Sob consulta",unidade:"",especificacoes:{"Capacidade":"5 litros","Material":"Isopor EPS","Uso":"Alimentos, medicamentos, transporte frigorificado"}},
+    {id:42,nome:"Caixa de Isopor 12L",categoria:"isopor",subcategoria:"caixa-isopor",icone:"ph-cube",descricao:"Capacidade intermediária para frutos do mar, carnes e bebidas.",preco:"Sob consulta",unidade:"",especificacoes:{"Capacidade":"12 litros","Material":"Isopor EPS","Uso":"Frutos do mar, carnes, bebidas geladas"}},
+    {id:43,nome:"Caixa de Isopor 20L",categoria:"isopor",subcategoria:"caixa-isopor",icone:"ph-cube",descricao:"Grande capacidade para transporte de volumes refrigerados.",preco:"Sob consulta",unidade:"",especificacoes:{"Capacidade":"20 litros","Material":"Isopor EPS","Uso":"Eventos, pesca, transporte em quantidade"}},
+    {id:44,nome:"Copo de Isopor 50ml",categoria:"isopor",subcategoria:"copo-isopor",icone:"ph-coffee",descricao:"Copo pequeno para cafezinho e amostras.",preco:"Sob consulta",unidade:"",especificacoes:{"Capacidade":"50 ml","Material":"Isopor EPS","Uso":"Café, shots, amostras"}},
+    {id:45,nome:"Copo de Isopor 120ml",categoria:"isopor",subcategoria:"copo-isopor",icone:"ph-coffee",descricao:"Copo para café e chás.",preco:"Sob consulta",unidade:"",especificacoes:{"Capacidade":"120 ml","Material":"Isopor EPS","Uso":"Café, chá, caldos quentes"}},
+    {id:46,nome:"Copo de Isopor 180ml",categoria:"isopor",subcategoria:"copo-isopor",icone:"ph-coffee",descricao:"Copo médio para bebidas quentes e frias.",preco:"Sob consulta",unidade:"",especificacoes:{"Capacidade":"180 ml","Material":"Isopor EPS","Uso":"Bebidas quentes e frias, eventos"}},
+    {id:47,nome:"Copo de Isopor 300ml",categoria:"isopor",subcategoria:"copo-isopor",icone:"ph-coffee",descricao:"Copo grande para refrescos, sucos e bebidas geladas.",preco:"Sob consulta",unidade:"",especificacoes:{"Capacidade":"300 ml","Material":"Isopor EPS","Uso":"Sucos, refrescos, bebidas geladas"}},
+    {id:78,nome:"Disco de Isopor para Pizza 25cm",categoria:"isopor",subcategoria:"disco-isopor",icone:"ph-circle",descricao:"Disco redondo de isopor para pizzas pequenas.",preco:"Sob consulta",unidade:"",especificacoes:{"Diâmetro":"25 cm","Formato":"Redondo","Material":"Isopor EPS","Uso":"Pizzas pequenas, tortas individuais"}},
+    {id:79,nome:"Disco de Isopor para Pizza 35cm",categoria:"isopor",subcategoria:"disco-isopor",icone:"ph-circle",descricao:"Disco de isopor padrão para pizzas médias.",preco:"Sob consulta",unidade:"",especificacoes:{"Diâmetro":"35 cm","Formato":"Redondo","Material":"Isopor EPS","Uso":"Pizzas médias, pizzarias, delivery"}},
+    {id:80,nome:"Disco de Isopor para Pizza 45cm",categoria:"isopor",subcategoria:"disco-isopor",icone:"ph-circle",descricao:"Disco de isopor para pizzas grandes.",preco:"Sob consulta",unidade:"",especificacoes:{"Diâmetro":"45 cm","Formato":"Redondo","Material":"Isopor EPS","Uso":"Pizzas grandes, rodízios, eventos"}},
+    {id:81,nome:"Embalagem G60",categoria:"plastico",subcategoria:"bolo-plastico",marca:"Galvanotek",icone:"ph-cake",descricao:"Embalagem plástica G60 Galvanotek para bolos baixos e tortas.",preco:"Sob consulta",unidade:"",especificacoes:{"Modelo":"G60","Marca":"Galvanotek","Altura interna":"6 cm","Material":"PET transparente","Uso":"Bolos baixos, tortas"}},
+    {id:82,nome:"Embalagem G70",categoria:"plastico",subcategoria:"bolo-plastico",marca:"Galvanotek",icone:"ph-cake",descricao:"A clássica G70 Galvanotek para bolos altos.",preco:"Sob consulta",unidade:"",especificacoes:{"Modelo":"G70","Marca":"Galvanotek","Altura interna":"7 cm","Material":"PET transparente","Uso":"Bolos altos, naked cakes"}},
+    {id:97,nome:"Embalagem G80",categoria:"plastico",subcategoria:"bolo-plastico",marca:"Galvanotek",icone:"ph-cake",descricao:"G80 Galvanotek para bolos ainda mais altos e recheados.",preco:"Sob consulta",unidade:"",especificacoes:{"Modelo":"G80","Marca":"Galvanotek","Altura interna":"8 cm","Material":"PET transparente","Uso":"Bolos altos, tortas geladas"}},
+    {id:98,nome:"Embalagem G34P",categoria:"plastico",subcategoria:"bolo-plastico",marca:"Galvanotek",icone:"ph-cake",descricao:"G34P Galvanotek para bolo de dois andares ou formato retangular.",preco:"Sob consulta",unidade:"",especificacoes:{"Modelo":"G34P","Marca":"Galvanotek","Formato":"Retangular","Material":"PET transparente","Uso":"Bolos retangulares, tortas"}},
+    {id:99,nome:"Embalagem G680",categoria:"plastico",subcategoria:"bolo-plastico",marca:"Galvanotek",icone:"ph-cake",descricao:"G680 Galvanotek para bolos de andar.",preco:"Sob consulta",unidade:"",especificacoes:{"Modelo":"G680","Marca":"Galvanotek","Material":"PET transparente","Uso":"Bolos de andar, confeitaria premium"}},
+    {id:100,nome:"Embalagem G360",categoria:"plastico",subcategoria:"bolo-plastico",marca:"Galvanotek",icone:"ph-cake",descricao:"G360 Galvanotek para bolos redondos.",preco:"Sob consulta",unidade:"",especificacoes:{"Modelo":"G360","Marca":"Galvanotek","Material":"PET transparente","Uso":"Bolos redondos, tortas"}},
+    {id:101,nome:"Embalagem G350",categoria:"plastico",subcategoria:"bolo-plastico",marca:"Galvanotek",icone:"ph-cake",descricao:"G350 Galvanotek para bolos menores e mini cakes.",preco:"Sob consulta",unidade:"",especificacoes:{"Modelo":"G350","Marca":"Galvanotek","Material":"PET transparente","Uso":"Mini bolo, smash cake"}},
+    {id:102,nome:"Embalagem para Fatia",categoria:"plastico",subcategoria:"bolo-plastico",marca:"Galvanotek",icone:"ph-cake",descricao:"Embalagem triangular Galvanotek para fatia de bolo ou torta.",preco:"Sob consulta",unidade:"",especificacoes:{"Formato":"Triangular","Marca":"Galvanotek","Material":"PET transparente","Uso":"Fatias de bolo, torta"}},
+    {id:103,nome:"Embalagem HV60",categoria:"plastico",subcategoria:"bolo-plastico",marca:"Hiverpack",icone:"ph-cake",descricao:"Embalagem Hiverpack HV60 para bolos baixos.",preco:"Sob consulta",unidade:"",especificacoes:{"Modelo":"HV60","Marca":"Hiverpack","Altura interna":"6 cm","Material":"PET premium","Uso":"Bolos baixos, tortas"}},
+    {id:104,nome:"Embalagem HV70",categoria:"plastico",subcategoria:"bolo-plastico",marca:"Hiverpack",icone:"ph-cake",descricao:"Hiverpack HV70 para bolos altos.",preco:"Sob consulta",unidade:"",especificacoes:{"Modelo":"HV70","Marca":"Hiverpack","Altura interna":"7 cm","Material":"PET premium","Uso":"Bolos altos, naked cakes"}},
+    {id:105,nome:"Embalagem HV80",categoria:"plastico",subcategoria:"bolo-plastico",marca:"Hiverpack",icone:"ph-cake",descricao:"HV80 Hiverpack para bolos extra-altos.",preco:"Sob consulta",unidade:"",especificacoes:{"Modelo":"HV80","Marca":"Hiverpack","Altura interna":"8 cm","Material":"PET premium","Uso":"Bolos altos, tortas geladas"}},
+    {id:106,nome:"Embalagem HV100",categoria:"plastico",subcategoria:"bolo-plastico",marca:"Hiverpack",icone:"ph-cake",descricao:"HV100 Hiverpack para bolos de grande porte.",preco:"Sob consulta",unidade:"",especificacoes:{"Modelo":"HV100","Marca":"Hiverpack","Altura interna":"10 cm","Material":"PET premium","Uso":"Bolos grandes, confeitaria premium"}},
+    {id:107,nome:"Embalagem para Fatia",categoria:"plastico",subcategoria:"bolo-plastico",marca:"Hiverpack",icone:"ph-cake",descricao:"Embalagem para fatia Hiverpack. Material premium.",preco:"Sob consulta",unidade:"",especificacoes:{"Formato":"Triangular","Marca":"Hiverpack","Material":"PET premium","Uso":"Fatias, tortas, quiche"}},
+    {id:86,nome:"Marmita Prafesta 250ml",categoria:"plastico",subcategoria:"marmita-plastico",marca:"Prafesta",icone:"ph-bowl-food",descricao:"Marmita Prafesta 250ml com tampa. Própria para congelamento.",preco:"Sob consulta",unidade:"",especificacoes:{"Capacidade":"250 ml","Marca":"Prafesta","Tampa":"Inclusa","Material":"Polipropileno (PP)","Temperatura":"-20°C a +120°C","Uso":"Congelamento, micro-ondas, delivery"}},
+    {id:87,nome:"Marmita Prafesta 500ml",categoria:"plastico",subcategoria:"marmita-plastico",marca:"Prafesta",icone:"ph-bowl-food",descricao:"Marmita Prafesta 500ml com tampa. Vai ao congelador e micro-ondas.",preco:"Sob consulta",unidade:"",especificacoes:{"Capacidade":"500 ml","Marca":"Prafesta","Tampa":"Inclusa","Material":"Polipropileno (PP)","Temperatura":"-20°C a +120°C","Uso":"Congelamento, micro-ondas, delivery"}},
+    {id:88,nome:"Marmita Prafesta 750ml",categoria:"plastico",subcategoria:"marmita-plastico",marca:"Prafesta",icone:"ph-bowl-food",descricao:"Marmita Prafesta 750ml com tampa. Para refeições completas.",preco:"Sob consulta",unidade:"",especificacoes:{"Capacidade":"750 ml","Marca":"Prafesta","Tampa":"Inclusa","Material":"Polipropileno (PP)","Temperatura":"-20°C a +120°C","Uso":"Congelamento, micro-ondas, delivery"}},
+    {id:89,nome:"Marmita Prafesta 1000ml",categoria:"plastico",subcategoria:"marmita-plastico",marca:"Prafesta",icone:"ph-bowl-food",descricao:"Marmita Prafesta 1000ml com tampa. Para refeições fartas.",preco:"Sob consulta",unidade:"",especificacoes:{"Capacidade":"1000 ml","Marca":"Prafesta","Tampa":"Inclusa","Material":"Polipropileno (PP)","Temperatura":"-20°C a +120°C","Uso":"Congelamento, micro-ondas, delivery"}},
+];
+
+const iconesEspec = {
+    "Medidas Externas":"ph-ruler","Dimensões":"ph-ruler","Medidas":"ph-ruler",
+    "Tipo de Onda":"ph-waves","Gramatura":"ph-scales","Material":"ph-cube",
+    "Capacidade":"ph-package","Número":"ph-hash","Formato":"ph-shapes",
+    "Uso":"ph-check-circle","Cor":"ph-palette","Marca":"ph-tag",
+    "Venda":"ph-storefront","Unidades por pacote":"ph-stack","Temperatura":"ph-thermometer",
+    "Altura":"ph-arrows-vertical","Diâmetro":"ph-circle","Modelo":"ph-tag",
+    "Alça":"ph-link","Tampa":"ph-check-circle",
+};
+
+const sacolarConfig = {
+    preta:      {cardClass:"sacola-preta-card",    tituloClass:" titulo-sacola",           nomeTipo:"Sacolas Pretas",       tema:"tema-preta"},
+    verde:      {cardClass:"sacola-verde-card",    tituloClass:" titulo-sacola-verde",     nomeTipo:"Sacolas Verdes",       tema:"tema-verde"},
+    branca:     {cardClass:"sacola-branca-card",   tituloClass:" titulo-sacola-branca",    nomeTipo:"Sacolas Brancas",      tema:"tema-branca"},
+    crystal:    {cardClass:"sacola-crystal-card",  tituloClass:" titulo-sacola-crystal",   nomeTipo:"Sacolas Crystal",      tema:"tema-crystal"},
+    kraft:      {cardClass:"sacola-kraft-card",    tituloClass:" titulo-sacola-kraft",     nomeTipo:"Sacolas Kraft",        tema:"tema-kraft"},
+    "kraft-alca":{cardClass:"sacola-kraft-alca-card",tituloClass:" titulo-sacola-kraft-alca",nomeTipo:"Sacolas Kraft c/ Alça",tema:"tema-kraft"},
+};
+
+/* ── ESTADO ── */
+let estado = {
+    categoria:"todos", subcategoria:"todas", tipoSacola:"preta",
+    tamanhoSacola:"todas", pacoteSacola:"todos",
+    marcaMarmitex:"todas", marcaPlastico:"todas", marcaMarmitaPlastico:"todas"
+};
+let produtoModal = null;
+let carrinho = {};
+
+/* ══════════════════════════════════════════════
+   CARRINHO
+══════════════════════════════════════════════ */
+function totalItens(){return Object.values(carrinho).reduce((s,i)=>s+i.qtd,0);}
+function totalValor(){return Object.values(carrinho).reduce((s,i)=>{const p=typeof i.produto.preco==="number"?i.produto.preco:0;return s+p*i.qtd;},0);}
+
+function atualizarBadge(){
+    const b=document.getElementById("badgeCarrinho"),n=totalItens();
+    b.textContent=n; b.classList.toggle("visible",n>0);
+}
+
+function adicionarAoCarrinho(id,qtd){
+    const produto=listaProdutos.find(p=>p.id===id); if(!produto)return;
+    qtd=Math.max(1,parseInt(qtd)||1);
+    if(carrinho[id]) carrinho[id].qtd+=qtd;
+    else carrinho[id]={produto,qtd};
+    atualizarBadge(); atualizarCardVisual(id);
+    const btn=document.getElementById(`btn-add-${id}`);
+    if(btn){
+        btn.classList.add("added");
+        btn.innerHTML=`<i class="ph-fill ph-check"></i> Adicionado!`;
+        setTimeout(()=>{btn.classList.remove("added");btn.innerHTML=`<i class="ph-bold ph-shopping-cart"></i> Adicionar`;},1800);
+    }
+}
+
+function atualizarCardVisual(id){
+    const c=document.getElementById(`card-${id}`);
+    if(c) c.classList.toggle("in-cart",!!carrinho[id]);
+}
+
+function alterarQtdCarrinho(id,delta){
+    if(!carrinho[id])return;
+    carrinho[id].qtd=Math.max(1,carrinho[id].qtd+delta);
+    renderizarSidebar(); atualizarBadge();
+}
+
+function removerDoCarrinho(id){
+    delete carrinho[id]; renderizarSidebar(); atualizarBadge(); atualizarCardVisual(id);
+}
+
+function limparCarrinho(){
+    if(!Object.keys(carrinho).length)return;
+    if(!confirm("Deseja limpar todos os itens do carrinho?"))return;
+    carrinho={};
+    document.querySelectorAll(".product-card.in-cart").forEach(c=>c.classList.remove("in-cart"));
+    renderizarSidebar(); atualizarBadge();
+}
+
+function renderizarSidebar(){
+    const container=document.getElementById("sidebarItens"),totalEl=document.getElementById("totalCarrinho");
+    const itens=Object.values(carrinho);
+    if(!itens.length){
+        container.innerHTML=`<div class="cart-empty"><i class="ph-light ph-shopping-cart"></i><p>Seu carrinho está vazio</p><span style="font-size:.88rem;color:var(--text-muted);">Adicione produtos do catálogo</span></div>`;
+        totalEl.textContent="R$ 0,00"; return;
+    }
+    container.innerHTML=itens.map(({produto:p,qtd})=>{
+        const sub=typeof p.preco==="number"?(p.preco*qtd).toLocaleString("pt-BR",{style:"currency",currency:"BRL"}):"—";
+        const uf=typeof p.preco==="number"?p.preco.toLocaleString("pt-BR",{style:"currency",currency:"BRL"}):"Sob consulta";
+        return `<div class="cart-item">
+            <div class="cart-item-icon"><i class="ph-duotone ${p.icone}"></i></div>
+            <div class="cart-item-info"><div class="cart-item-name">${p.nome}</div><div class="cart-item-price">${uf}${p.unidade}</div></div>
+            <div class="cart-item-controls">
+                <div class="cart-qty-ctrl">
+                    <button class="cart-qty-btn" onclick="alterarQtdCarrinho(${p.id},-1)">−</button>
+                    <span class="cart-qty-val">${qtd}</span>
+                    <button class="cart-qty-btn" onclick="alterarQtdCarrinho(${p.id},1)">+</button>
+                </div>
+                <span class="cart-subtotal">${sub}</span>
+                <button class="btn-remove-item" onclick="removerDoCarrinho(${p.id})"><i class="ph-bold ph-trash"></i></button>
+            </div>
+        </div>`;
+    }).join("");
+    totalEl.textContent=totalValor().toLocaleString("pt-BR",{style:"currency",currency:"BRL"});
+}
+
+function abrirCarrinho(){renderizarSidebar();document.getElementById("sidebarCarrinho").classList.add("open");document.getElementById("overlayCarrinho").classList.add("open");document.body.style.overflow="hidden";}
+function fecharCarrinho(){document.getElementById("sidebarCarrinho").classList.remove("open");document.getElementById("overlayCarrinho").classList.remove("open");document.body.style.overflow="";}
+
+function enviarWhatsApp(){
+    const itens=Object.values(carrinho);
+    if(!itens.length){alert("Adicione pelo menos um produto ao carrinho antes de enviar.");return;}
+    const linhas=itens.map(({produto:p,qtd})=>{
+        const fmt=typeof p.preco==="number"?p.preco.toLocaleString("pt-BR",{style:"currency",currency:"BRL"}):"Sob consulta";
+        const sub=typeof p.preco==="number"?(p.preco*qtd).toLocaleString("pt-BR",{style:"currency",currency:"BRL"}):"";
+        return `• ${p.nome} — ${qtd}x ${fmt}${sub?` = ${sub}`:""}`;
+    });
+    const total=totalValor().toLocaleString("pt-BR",{style:"currency",currency:"BRL"});
+    const msg=`Olá! Gostaria de fazer um pedido pela Cia Das Embalagens.\n\n*Itens do Pedido:*\n${linhas.join("\n")}\n\n*Total estimado:* ${total}\n\nPoderia confirmar se há no estoque esses itens? Obrigado(a)!`;
+    window.open(`https://wa.me/5511972999835?text=${encodeURIComponent(msg)}`,"_blank");
+}
+
+/* ══════════════════════════════════════════════
+   MODAL
+══════════════════════════════════════════════ */
+function abrirModal(produto){
+    produtoModal=produto;
+    document.getElementById("modalIcone").innerHTML=getSvg(produto);
+    document.getElementById("modalTitulo").textContent=produto.nome;
+    const cp=document.getElementById("modalContainerPreco");
+    if(produto.preco==="Sob consulta"){
+        document.getElementById("modalPrecoValor").textContent="Sob Consulta";
+        document.getElementById("modalPrecoUnit").textContent="";
+        cp.style.background="var(--text-dark)";
+    } else {
+        document.getElementById("modalPrecoValor").textContent=produto.preco.toLocaleString("pt-BR",{style:"currency",currency:"BRL"});
+        document.getElementById("modalPrecoUnit").textContent=produto.unidade;
+        cp.style.background="var(--blue-600)";
+    }
+    let html="";
+    Object.entries(produto.especificacoes).forEach(([k,v])=>{
+        const ic=iconesEspec[k]||"ph-check-circle";
+        html+=`<div class="spec-row"><span class="spec-label"><i class="ph-bold ${ic}" style="color:var(--blue-600);"></i> ${k}</span><span class="spec-value">${v}</span></div>`;
+    });
+    document.getElementById("modalEspecificacoes").innerHTML=html;
+    document.getElementById("modalProduto").classList.add("active");
+    document.body.style.overflow="hidden";
+}
+function fecharModal(){document.getElementById("modalProduto").classList.remove("active");document.body.style.overflow="";}
+function adicionarDoModal(){if(produtoModal){adicionarAoCarrinho(produtoModal.id,1);fecharModal();setTimeout(abrirCarrinho,200);}}
+document.getElementById("modalProduto").addEventListener("click",e=>{if(e.target===document.getElementById("modalProduto"))fecharModal();});
+
+/* ══════════════════════════════════════════════
+   FILTROS
+══════════════════════════════════════════════ */
+function filtrarCategoria(cat,el){
+    estado.categoria=cat; estado.subcategoria="todas"; estado.tipoSacola="preta";
+    estado.tamanhoSacola="todas"; estado.pacoteSacola="todos";
+    estado.marcaMarmitex="todas"; estado.marcaPlastico="todas"; estado.marcaMarmitaPlastico="todas";
+
+    document.querySelectorAll(".btn-filter").forEach(b=>b.classList.remove("active"));
+    el.classList.add("active");
+
+    ["barraSubcategorias","barraTipoSacolas","barraTamanhoSacolas","barraPacoteSacolas",
+     "barraSubcategoriasIsopor","barraMarcaMarmitex","barraSubcategoriasPlastico",
+     "barraMarcaPlastico","barraMarcaMarmitaPlastico","breadcrumb"].forEach(id=>{
+        const el2=document.getElementById(id);
+        if(el2){el2.classList.remove("visible");el2.classList.remove("visivel");}
+    });
+
+    if(cat==="caixas"){
+        document.getElementById("barraSubcategorias").classList.add("visible");
+        document.getElementById("breadcrumb").classList.add("visible");
+        document.getElementById("breadcrumbCat").textContent="Caixas";
+        document.getElementById("breadcrumbSub").textContent="Todas";
+        document.querySelectorAll("#barraSubcategorias .btn-sub").forEach((b,i)=>b.classList.toggle("active",i===0));
+    } else if(cat==="sacolas"){
+        document.getElementById("barraTipoSacolas").classList.add("visible");
+        document.querySelectorAll(".btn-tipo-sacola").forEach((b,i)=>b.classList.toggle("active",i===0));
+        const barraT=document.getElementById("barraTamanhoSacolas");
+        barraT.className="sacolas-tamanho-bar visible tema-preta";
+        document.querySelectorAll(".btn-tamanho-sacola").forEach((b,i)=>b.classList.toggle("active",i===0));
+        document.getElementById("barraPacoteSacolas").classList.add("visible");
+        document.querySelectorAll(".btn-pacote-sacola").forEach((b,i)=>b.classList.toggle("active",i===0));
+        document.getElementById("breadcrumb").classList.add("visible");
+        document.getElementById("breadcrumbCat").textContent="Sacolas";
+        document.getElementById("breadcrumbSub").textContent="Pretas — Todos os Tamanhos — Todos os Pacotes";
+    } else if(cat==="isopor"){
+        document.getElementById("barraSubcategoriasIsopor").classList.add("visible");
+        document.getElementById("barraMarcaMarmitex").classList.add("visible");
+        document.getElementById("breadcrumb").classList.add("visible");
+        document.getElementById("breadcrumbCat").textContent="Isopor";
+        document.getElementById("breadcrumbSub").textContent="Todos";
+        document.querySelectorAll("#barraSubcategoriasIsopor .btn-sub-isopor").forEach((b,i)=>b.classList.toggle("active",i===0));
+        document.querySelectorAll(".btn-marca-marmitex").forEach((b,i)=>b.classList.toggle("active",i===0));
+    } else if(cat==="plastico"){
+        document.getElementById("barraSubcategoriasPlastico").classList.add("visible");
+        document.getElementById("barraMarcaPlastico").classList.add("visible");
+        document.getElementById("breadcrumb").classList.add("visible");
+        document.getElementById("breadcrumbCat").textContent="Embalagens Plásticas";
+        document.getElementById("breadcrumbSub").textContent="Todas";
+        document.querySelectorAll("#barraSubcategoriasPlastico .btn-sub-plastico").forEach((b,i)=>b.classList.toggle("active",i===0));
+        document.querySelectorAll(".btn-marca-plastico").forEach((b,i)=>b.classList.toggle("active",i===0));
+    }
+    renderizarProdutos();
+}
+
+function filtrarSub(sub,el,cat){
+    estado.subcategoria=sub; estado.marcaMarmitex="todas"; estado.marcaPlastico="todas"; estado.marcaMarmitaPlastico="todas";
+    const sels={caixas:"#barraSubcategorias .btn-sub",isopor:"#barraSubcategoriasIsopor .btn-sub-isopor",plastico:"#barraSubcategoriasPlastico .btn-sub-plastico"};
+    document.querySelectorAll(sels[cat]).forEach(b=>b.classList.remove("active"));
+    el.classList.add("active");
+
+    const barraMarca=document.getElementById("barraMarcaMarmitex");
+    const barraMarcaP=document.getElementById("barraMarcaPlastico");
+    const barraMarcaMP=document.getElementById("barraMarcaMarmitaPlastico");
+
+    if(cat==="isopor"){
+        const showMarca=(sub==="marmitex"||sub==="todas");
+        barraMarca.classList.toggle("visible",showMarca);
+        if(showMarca) document.querySelectorAll(".btn-marca-marmitex").forEach((b,i)=>b.classList.toggle("active",i===0));
+    }
+    if(cat==="plastico"){
+        if(sub==="bolo-plastico"){barraMarcaP.classList.add("visible");barraMarcaMP.classList.remove("visible");document.querySelectorAll(".btn-marca-plastico").forEach((b,i)=>b.classList.toggle("active",i===0));}
+        else if(sub==="marmita-plastico"){barraMarcaP.classList.remove("visible");barraMarcaMP.classList.add("visible");document.querySelectorAll("#barraMarcaMarmitaPlastico .btn-marca-plastico").forEach((b,i)=>b.classList.toggle("active",i===0));}
+        else{barraMarcaP.classList.add("visible");barraMarcaMP.classList.add("visible");document.querySelectorAll(".btn-marca-plastico").forEach((b,i)=>b.classList.toggle("active",i===0));document.querySelectorAll("#barraMarcaMarmitaPlastico .btn-marca-plastico").forEach((b,i)=>b.classList.toggle("active",i===0));}
+    }
+
+    const nomes={caixas:{todas:"Todas",sedex:"Padrão Correios",confeiteiros:"Para Doces",salgado:"Para Salgados",geral:"Uso Geral"},isopor:{todas:"Todos",marmitex:"Marmitex","caixa-isopor":"Caixas de Isopor","copo-isopor":"Copos de Isopor","disco-isopor":"Disco para Pizza"},plastico:{todas:"Todas","bolo-plastico":"Embalagens de Bolo","marmita-plastico":"Marmitas para Congelar"}};
+    document.getElementById("breadcrumbSub").textContent=(nomes[cat]&&nomes[cat][sub])||sub;
+    renderizarProdutos();
+}
+
+function filtrarMarcaMarmitex(marca,el){estado.marcaMarmitex=marca;document.querySelectorAll(".btn-marca-marmitex").forEach(b=>b.classList.remove("active"));el.classList.add("active");renderizarProdutos();}
+function filtrarMarcaPlastico(marca,el){estado.marcaPlastico=marca;el.closest('.plastico-marca-bar').querySelectorAll('.btn-marca-plastico').forEach(b=>b.classList.remove("active"));el.classList.add("active");renderizarProdutos();}
+function filtrarMarcaMarmitaPlastico(marca,el){estado.marcaMarmitaPlastico=marca;document.querySelectorAll("#barraMarcaMarmitaPlastico .btn-marca-plastico").forEach(b=>b.classList.remove("active"));el.classList.add("active");renderizarProdutos();}
+
+function selecionarTipoSacola(tipo,el){
+    estado.tipoSacola=tipo; estado.tamanhoSacola="todas"; estado.pacoteSacola="todos";
+    document.querySelectorAll(".btn-tipo-sacola").forEach(b=>b.classList.remove("active"));
+    el.classList.add("active");
+    const barraT=document.getElementById("barraTamanhoSacolas");
+    const barraTema=(tipo==="kraft-alca")?"tema-kraft":`tema-${tipo}`;
+    barraT.className=`sacolas-tamanho-bar visible ${barraTema}`;
+    document.querySelectorAll(".btn-tamanho-sacola").forEach((b,i)=>b.classList.toggle("active",i===0));
+    const barraPacote=document.getElementById("barraPacoteSacolas");
+    if(tipo==="preta"){barraPacote.classList.add("visible");document.querySelectorAll(".btn-pacote-sacola").forEach((b,i)=>b.classList.toggle("active",i===0));}
+    else barraPacote.classList.remove("visible");
+    const nomes={preta:"Pretas",verde:"Verdes",branca:"Brancas",crystal:"Crystal",kraft:"Kraft","kraft-alca":"Kraft c/ Alça"};
+    document.getElementById("breadcrumbSub").textContent=tipo==="preta"?`${nomes[tipo]} — Todos os Tamanhos — Todos os Pacotes`:`${nomes[tipo]} — Todos os Tamanhos`;
+    renderizarProdutos();
+}
+
+function filtrarTamanhoSacola(tamanho,el){
+    estado.tamanhoSacola=tamanho;
+    document.querySelectorAll(".btn-tamanho-sacola").forEach(b=>b.classList.remove("active"));
+    el.classList.add("active");
+    const nomeTamanho={todas:"Todos os Tamanhos",p:"Pequenas",m:"Médias",g:"Grandes"};
+    const nomeTipo={preta:"Pretas",verde:"Verdes",branca:"Brancas",crystal:"Crystal",kraft:"Kraft","kraft-alca":"Kraft c/ Alça"};
+    const t=nomeTipo[estado.tipoSacola]||estado.tipoSacola, tam=nomeTamanho[tamanho];
+    if(estado.tipoSacola==="preta"){const nomePacote={todos:"Todos os Pacotes","10un":"Pacote 10un","50un":"Pacote 50un"};document.getElementById("breadcrumbSub").textContent=`${t} — ${tam} — ${nomePacote[estado.pacoteSacola]}`;}
+    else document.getElementById("breadcrumbSub").textContent=`${t} — ${tam}`;
+    renderizarProdutos();
+}
+
+function filtrarPacoteSacola(pacote,el){
+    estado.pacoteSacola=pacote;
+    document.querySelectorAll(".btn-pacote-sacola").forEach(b=>b.classList.remove("active"));
+    el.classList.add("active");
+    const nomeTamanho={todas:"Todos os Tamanhos",p:"Pequenas",m:"Médias",g:"Grandes"};
+    const nomePacote={todos:"Todos os Pacotes","10un":"Pacote 10un","50un":"Pacote 50un"};
+    document.getElementById("breadcrumbSub").textContent=`Pretas — ${nomeTamanho[estado.tamanhoSacola]} — ${nomePacote[pacote]}`;
+    renderizarProdutos();
+}
+
+/* ══════════════════════════════════════════════
+   RENDERIZAÇÃO
+══════════════════════════════════════════════ */
+function renderizarProdutos(){
+    const container=document.getElementById("containerProdutos");
+    container.innerHTML="";
+
+    if(estado.categoria==="todos"){
+        const grupos={};
+        listaProdutos.forEach(p=>{
+            const key=obterKeyGrupo(p);
+            let label;
+            if(p.categoria==="sacolas") label=sacolarConfig[p.tipo]?.nomeTipo||"Sacolas";
+            else label=obterLabelGrupoGeral(p);
+            if(!grupos[key]) grupos[key]={label,produtos:[],cat:p.categoria,tipo:p.tipo};
+            grupos[key].produtos.push(p);
+        });
+        Object.values(grupos).forEach(g=>criarSecao(g.label,g.produtos,container,g.cat,g.tipo));
+        return;
+    }
+
+    if(estado.categoria==="sacolas"){
+        const filtrados=listaProdutos.filter(p=>{
+            if(p.categoria!=="sacolas")return false;
+            if(p.tipo!==estado.tipoSacola)return false;
+            if(estado.tamanhoSacola!=="todas"&&p.tamanho!==estado.tamanhoSacola)return false;
+            if(estado.tipoSacola==="preta"&&estado.pacoteSacola!=="todos"&&p.pacote!==estado.pacoteSacola)return false;
+            return true;
+        });
+        if(!filtrados.length){container.innerHTML=`<p style="text-align:center;color:var(--text-muted);padding:4rem 0;">Nenhum produto encontrado.</p>`;return;}
+        criarSecao(sacolarConfig[estado.tipoSacola].nomeTipo,filtrados,container,"sacolas",estado.tipoSacola);
+        return;
+    }
+
+    if(estado.categoria==="isopor"){
+        const filtrados=listaProdutos.filter(p=>{
+            if(p.categoria!=="isopor")return false;
+            if(estado.subcategoria!=="todas"&&p.subcategoria!==estado.subcategoria)return false;
+            if(estado.marcaMarmitex!=="todas"&&p.subcategoria==="marmitex"&&p.marca!==estado.marcaMarmitex)return false;
+            return true;
+        });
+        if(!filtrados.length){container.innerHTML=`<p style="text-align:center;color:var(--text-muted);padding:4rem 0;">Nenhum produto encontrado.</p>`;return;}
+        criarSecao("Isopor",filtrados,container,"isopor");
+        return;
+    }
+
+    if(estado.categoria==="caixas"){
+        const filtrados=listaProdutos.filter(p=>p.categoria==="caixas"&&(estado.subcategoria==="todas"||p.subcategoria===estado.subcategoria));
+        if(!filtrados.length){container.innerHTML=`<p style="text-align:center;color:var(--text-muted);padding:4rem 0;">Nenhum produto encontrado.</p>`;return;}
+        criarSecao("Caixas",filtrados,container,"caixas");
+        return;
+    }
+
+    if(estado.categoria==="plastico"){
+        const filtrados=listaProdutos.filter(p=>{
+            if(p.categoria!=="plastico")return false;
+            if(estado.subcategoria!=="todas"&&p.subcategoria!==estado.subcategoria)return false;
+            if((estado.subcategoria==="bolo-plastico"||estado.subcategoria==="todas")&&estado.marcaPlastico!=="todas"&&p.subcategoria==="bolo-plastico"&&p.marca!==estado.marcaPlastico)return false;
+            if((estado.subcategoria==="marmita-plastico"||estado.subcategoria==="todas")&&estado.marcaMarmitaPlastico!=="todas"&&p.subcategoria==="marmita-plastico"&&p.marca!==estado.marcaMarmitaPlastico)return false;
+            return true;
+        });
+        if(!filtrados.length){container.innerHTML=`<p style="text-align:center;color:var(--text-muted);padding:4rem 0;">Nenhum produto encontrado.</p>`;return;}
+        criarSecao("Embalagens Plásticas",filtrados,container,"plastico");
+        return;
+    }
+
+    container.innerHTML=`<p style="text-align:center;color:var(--text-muted);padding:4rem 0;font-size:1.1rem;">Em breve.</p>`;
+}
+
+function obterLabelGrupoGeral(p){
+    const labelSub={sedex:"Padrão Correios",confeiteiros:"Para Doces",salgado:"Para Salgados",geral:"Uso Geral",marmitex:"Marmitex","caixa-isopor":"Caixas de Isopor","copo-isopor":"Copos de Isopor","disco-isopor":"Disco para Pizza","bolo-plastico":"Embalagem de Bolo","marmita-plastico":"Marmita para Congelar"};
+    if(p.categoria==="caixas") return `Caixas — ${labelSub[p.subcategoria]||p.subcategoria}`;
+    if(p.categoria==="isopor") return `Isopor — ${labelSub[p.subcategoria]||p.subcategoria}`;
+    if(p.categoria==="plastico") return `Plástico — ${labelSub[p.subcategoria]||p.subcategoria}`;
+    return p.categoria;
+}
+
+function obterKeyGrupo(p){
+    if(p.categoria==="sacolas") return "sacolas_"+p.tipo;
+    return p.categoria+"_"+(p.subcategoria||"");
+}
+
+/* Scroll reveal para cards de produto */
+const cardObserver = new IntersectionObserver((entries) => {
+    entries.forEach((entry, i) => {
+        if(entry.isIntersecting){
+            setTimeout(() => entry.target.classList.add('revealed'), i * 50);
+            cardObserver.unobserve(entry.target);
+        }
+    });
+}, { threshold: 0.08 });
+
+function criarSecao(titulo,produtos,container,cat,tipo){
+    const secao=document.createElement("div");
+    secao.className="product-section";
+
+    let tituloClass="section-title";
+    let icone="ph-squares-four";
+    if(cat==="sacolas"&&tipo){
+        const cfg=sacolarConfig[tipo];
+        tituloClass+=(cfg?.tituloClass||" titulo-sacola");
+        icone="ph-shopping-bag";
+    } else if(cat==="isopor"){tituloClass+=" titulo-isopor";icone="ph-snowflake";}
+    else if(cat==="caixas"){icone="ph-package";}
+    else if(cat==="plastico"){tituloClass+=" titulo-plastico";icone="ph-flask";}
+
+    secao.innerHTML=`<h2 class="${tituloClass}"><i class="ph-fill ${icone}"></i> ${titulo}</h2>`;
+    const grade=document.createElement("div");
+    grade.className="products-grid";
+
+    produtos.forEach(p=>{
+        const noCarrinho=!!carrinho[p.id];
+        let extraClass="";
+        if(p.categoria==="sacolas"&&p.tipo) extraClass=" "+(sacolarConfig[p.tipo]?.cardClass||"sacola-preta-card");
+        else if(p.categoria==="isopor") extraClass=" isopor-card";
+        else if(p.categoria==="plastico") extraClass=" plastico-card";
+
+        const card=document.createElement("div");
+        card.className=`product-card${extraClass}${noCarrinho?" in-cart":""}`;
+        card.id=`card-${p.id}`;
+
+        const ehC=p.preco==="Sob consulta";
+        const pFmt=!ehC?p.preco.toLocaleString("pt-BR",{style:"currency",currency:"BRL"}):"";
+        const htmlPreco=ehC
+            ?`<div class="price-box"><span class="price-label">Consulte-nos</span><span class="price-value" style="font-size:1.4rem;">Sob consulta</span></div>`
+            :`<div class="price-box"><span class="price-label">A partir de</span><div class="price-row"><span class="price-value">${pFmt}</span><span class="price-unit">${p.unidade}</span></div></div>`;
+
+        let badgeMarca='';
+        if(p.subcategoria==='marmitex'&&p.marca) badgeMarca=`<span class="brand-badge" style="background:#f57f17;color:#fff;">${p.marca}</span>`;
+        else if(p.subcategoria==='bolo-plastico'&&p.marca){const cor=p.marca==='Galvanotek'?'#15803d':'#0369a1';badgeMarca=`<span class="brand-badge" style="background:${cor};color:#fff;">${p.marca}</span>`;}
+        else if(p.subcategoria==='marmita-plastico'&&p.marca) badgeMarca=`<span class="brand-badge" style="background:#e65100;color:#fff;">${p.marca}</span>`;
+
+        card.innerHTML=`
+            <div class="product-img">
+                <div class="cart-seal"><i class="ph-fill ph-check"></i> No carrinho</div>
+                ${badgeMarca}
+                ${getSvg(p)}
+            </div>
+            <div class="product-body">
+                <h3 class="product-name">${p.nome}</h3>
+                <p class="product-desc">${p.descricao}</p>
+                ${htmlPreco}
+                <div class="product-actions">
+                    <div class="qty-control">
+                        <button class="btn-qty" onclick="event.stopPropagation();alterarInputQtd(${p.id},-1)">−</button>
+                        <input class="input-qty" id="qtd-${p.id}" type="number" value="1" min="1" onclick="event.stopPropagation()">
+                        <button class="btn-qty" onclick="event.stopPropagation();alterarInputQtd(${p.id},1)">+</button>
                     </div>
-                    <div class="product-info">
-                        <h3>${p.nome}</h3>
-                        <p>${p.desc}</p>
-                    </div>
-                    <div class="product-footer">
-                        <div class="price">
-                            <span class="price-unit">A partir de</span>
-                            <span class="price-val">${p.preco > 0 ? `R$ ${p.preco.toFixed(2)}` : 'Consulte'}</span>
-                        </div>
-                        <button class="btn-add-cart" onclick="addToCart(${p.id}, event)">
-                            <i class="ph-bold ph-plus"></i>
-                        </button>
-                    </div>
-                `;
-                grid.appendChild(card);
-            });
-        }
+                    <button class="btn-add${noCarrinho?" added":""}" id="btn-add-${p.id}"
+                        onclick="event.stopPropagation();adicionarAoCarrinho(${p.id},document.getElementById('qtd-${p.id}').value)">
+                        <i class="ph-bold ph-shopping-cart"></i> Adicionar
+                    </button>
+                    <button class="btn-info" onclick="abrirModal(listaProdutos.find(x=>x.id===${p.id}))" title="Ver especificações">
+                        <i class="ph-bold ph-info"></i>
+                    </button>
+                </div>
+            </div>`;
 
-        /* FILTROS */
-        function setCategory(cat, btn) {
-            currentCat = cat;
-            document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
-            btn.classList.add('active');
-            
-            const sacolasFilter = document.getElementById('sacolasFilter');
-            sacolasFilter.classList.toggle('active', cat === 'sacolas');
-            
-            renderProducts();
-        }
+        grade.appendChild(card);
+        cardObserver.observe(card);
+    });
 
-        function updateSacolas() {
-            const tipo = document.getElementById('tipoMaterial').value;
-            document.getElementById('pacoteGroup').style.display = tipo === 'preta' ? 'flex' : 'none';
-            renderProducts();
-        }
+    secao.appendChild(grade);
+    container.appendChild(secao);
+}
 
-        /* CARRINHO E ANIMAÇÃO FLY */
-        function toggleCart() {
-            document.getElementById('cartSidebar').classList.toggle('open');
-        }
+function alterarInputQtd(id,delta){
+    const input=document.getElementById(`qtd-${id}`);
+    if(!input)return; input.value=Math.max(1,(parseInt(input.value)||1)+delta);
+}
 
-        function addToCart(id, event) {
-            const product = PRODUTOS.find(p => p.id === id);
-            cart.push({...product, cartId: Date.now()});
-            updateCartUI();
+/* ══════════════════════════════════════════════
+   UTILS
+══════════════════════════════════════════════ */
+function rolarPara(id){const el=document.getElementById(id);if(el)window.scrollTo({top:el.getBoundingClientRect().top+window.scrollY-80,behavior:"smooth"});}
 
-            // Animação Fly
-            const imgWrapper = document.getElementById(`img-${id}`);
-            const rect = imgWrapper.getBoundingClientRect();
-            const flying = document.createElement('div');
-            flying.className = 'flying-item';
-            flying.innerHTML = product.svg;
-            flying.style.left = rect.left + 'px';
-            flying.style.top = rect.top + 'px';
-            document.body.appendChild(flying);
-
-            const cartTrigger = document.querySelector('.btn-cart-trigger').getBoundingClientRect();
-            
-            setTimeout(() => {
-                flying.style.left = (cartTrigger.left + 20) + 'px';
-                flying.style.top = (cartTrigger.top + 20) + 'px';
-                flying.style.transform = 'scale(0.1) rotate(720deg)';
-                flying.style.opacity = '0';
-            }, 50);
-
-            setTimeout(() => {
-                flying.remove();
-                document.querySelector('.btn-cart-trigger').style.animation = 'bounce 0.4s';
-                setTimeout(() => document.querySelector('.btn-cart-trigger').style.animation = '', 400);
-            }, 800);
-        }
-
-        function updateCartUI() {
-            document.getElementById('cartCount').innerText = cart.length;
-            const container = document.getElementById('cartItems');
-            
-            if (cart.length === 0) {
-                container.innerHTML = `<div style="text-align:center; padding: 3rem; color: var(--text-muted);">
-                    <i class="ph-light ph-shopping-cart" style="font-size: 3rem; margin-bottom: 1rem; display:block;"></i>
-                    Seu pedido está vazio.
-                </div>`;
-            } else {
-                container.innerHTML = cart.map((p, idx) => `
-                    <div class="cart-item">
-                        <div class="cart-item-img">${p.svg}</div>
-                        <div style="flex-grow:1">
-                            <h4 style="font-size:0.9rem">${p.nome}</h4>
-                            <span style="font-size:0.8rem; color:var(--text-muted)">${p.preco > 0 ? `R$ ${p.preco.toFixed(2)}` : 'Sob consulta'}</span>
-                        </div>
-                        <button onclick="removeFromCart(${idx})" style="background:none; border:none; color:var(--text-muted); cursor:pointer; padding: 5px;"><i class="ph-bold ph-trash"></i></button>
-                    </div>
-                `).join('');
-            }
-            
-            const total = cart.reduce((sum, p) => sum + p.preco, 0);
-            document.getElementById('cartTotal').innerText = total > 0 ? `R$ ${total.toFixed(2)}` : 'Sob consulta';
-        }
-
-        function removeFromCart(idx) {
-            cart.splice(idx, 1);
-            updateCartUI();
-        }
-
-        function sendWhatsApp() {
-            if (cart.length === 0) {
-                alert("Adicione produtos ao pedido primeiro!");
-                return;
-            }
-            const text = "Olá! Gostaria de fazer um orçamento:\n\n" + cart.map(p => `- ${p.nome}`).join('\n');
-            window.open(`https://wa.me/5511972999835?text=${encodeURIComponent(text)}`);
-        }
-
-        // Init
-        renderProducts();
-    </script>
+window.onload=()=>{ renderizarProdutos(); };
+</script>
 </body>
 </html>
