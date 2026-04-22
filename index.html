@@ -1301,134 +1301,88 @@
          * Propriedades: id, nome, categoria, icone, descricao, preco, unidade, especificacoes
          */
             // CATEGORIA: SEDEX / CORREIOS
- const listaProdutos = [
-            { id: 1, nome: "Caixa Nº0 ", categoria: ["sedex", "caixa"], icone: "ph-package", descricao: "Perfeita para e-commerce de pequenos acessórios, joias e peças eletrônicas.", preco: 3.50, unidade: "/unidade", especificacoes: { "Medidas Externas": "16 x 11 x 07 cm", "Material": "Ondulado" } },
-            { id: 2, nome: "Caixa Nº1 ", categoria: ["sedex", "caixa"], icone: "ph-box-arrow-up", descricao: "O tamanho intermediário ideal para cosméticos, perfumes e miudezas em geral.", preco: 4.60, unidade: "/unidade", especificacoes: {"Medidas Externas": "21 x 15 x 6.5 cm", "Material": "Ondulado" } },
-            { id: 3, nome: "Caixa Nº2 ", categoria: ["sedex", "caixa"], icone: "ph-archive-box", descricao: "Extrema versatilidade para e-commerce de vestuário, livros e kits médios.", preco: 5.60, unidade: "/unidade", especificacoes: { "Medidas Externas": "26 x 17 x 08 cm", "Material": "Ondulado" } },
-            { id: 4, nome: "Caixa Nº3 ", categoria: ["sedex", "caixa"], icone: "ph-cube", descricao: "Acomoda produtos volumosos com segurança. Ideal para calçados e utensílios.", preco: 8.80, unidade: "/unidade", especificacoes: { "Medidas Externas": "30 x 20 x 11 cm", "Material": "Ondulado" } },
-                  { id: 5, nome: "Caixa Nº4 ", categoria: ["sedex","caixa"], icone: "ph-package", descricao: "Perfeita para e-commerce de pequenos acessórios, joias e peças eletrônicas.", preco: 13.00, unidade: "/unidade", especificacoes: { "Medidas Externas": "34x27x11cm", "Material": "Ondulado" } },
-            { id: 6, nome: "Caixa 32x32x22", categoria: ["caixa"], icone: "ph-box-arrow-up", descricao: "O tamanho intermediário ideal para cosméticos, perfumes e miudezas em geral.", preco: 3.50, unidade: "/unidade", especificacoes: { "Medidas Externas": "32 x 32 x 22 cm", "Material": "Ondulado" } },
-             // CATEGORIA: DOCES       
-            { id: 7, nome: "Caixa De Bolo Papelão Nº9" , categoria: ["caixa","confeiteiros"], icone: "ph-archive-box", descricao: "Extrema versatilidade para e-commerce de vestuário, livros e kits médios.", preco: 10.99, unidade: "/unidade", especificacoes: { "Medidas Externas": "40 x 40 x 12 cm", "Material": "Ondulado" } },
-            { id: 8, nome: "Caixa De Bolo Papelão Nº7 Media", categoria: ["caixa", "confeiteiros"], icone: "ph-archive-box", descricao: "Extrema versatilidade para e-commerce de vestuário, livros e kits médios.", preco: 6.20, unidade: "/unidade", especificacoes: { "Medidas Externas": "28 x 28 x 10 cm", "Material": "Ondulado" } },
-            { id: 9, nome: "Caixa De Bolo Papelão Nº7 Com Alça", categoria: ["caixa", "confeiteiros"], icone: "ph-archive-box", descricao: "Extrema versatilidade para e-commerce de vestuário, livros e kits médios.", preco: 6.50, unidade: "/unidade", especificacoes: { "Medidas Externas": "28 x 28 x 10 cm", "Material": "Ondulado" } },
-            { id: 10, nome: "Caixa De Bolo Papelão Nº6", categoria: ["confeiteiros", "caixa"], icone: "ph-archive-box", descricao: "Extrema versatilidade para e-commerce de vestuário, livros e kits médios.", preco: 5.70, unidade: "/unidade", especificacoes: { "Medidas Externas": "26 x 26 x 10 cm", "Material": "Ondulado" } },
-            { id: 12, nome: "Caixa De Bolo Papelão Nº5", categoria: ["confeiteiros", "caixa"], icone: "ph-archive-box", descricao: "Extrema versatilidade para e-commerce de vestuário, livros e kits médios.", preco: 4.50, unidade: "/unidade", especificacoes: { "Medidas Externas": "22 x 22 x 10 cm", "Material": "Ondulado" } },
-             { id: 13, nome: "Caixa De Bolo Papelão Nº3", categoria: ["confeiteiros", "caixa"], icone: "ph-archive-box", descricao: "Extrema versatilidade para e-commerce de vestuário, livros e kits médios.", preco: 5.00, unidade: "/unidade", especificacoes: { "Medidas Externas": "25 x 25 x 5 cm", "Material": "Ondulado" } }, 
-         // Salgado
-            { id: 14, nome: "Caixa De Esfiha Papelão Nº2 ", categoria: ["salgado", "caixa"], icone: "ph-archive-box", descricao: "Extrema versatilidade para e-commerce de vestuário, livros e kits médios.", preco: 3.50, unidade: "/unidade", especificacoes: { "Medidas Externas": "20 x 20 x 5 cm", "Material": "Ondulado" } },
-             { id: 15, nome: "Caixa De Pizza", categoria: ["salgado", "caixa"], icone: "ph-archive-box", descricao: "Extrema versatilidade para e-commerce de vestuário, livros e kits médios.", preco: 3.50, unidade: "/unidade", especificacoes: { "Medidas Externas": " 35 cm x 35 cm", "Material": "Ondulado" } },
-            // CUPCAKES CAIXAS
-            { id: 16, nome: "Caixa Para Copinho Com 50 Divisórias" , categoria: ["confeiteiros"], icone: "ph-archive-box", descricao: "Extrema versatilidade para e-commerce de vestuário, livros e kits médios.", preco: 3.99, unidade: "/unidade", especificacoes: { "Medidas Externas": "40 x 40 x 12 cm", "Material": "Ondulado" } },
-            { id: 17, nome: "Caixa Para Cupcakes", categoria: ["confeiteiros"], icone: "ph-archive-box", descricao: "Guarde seus deliciosos cupcakes dentro de uma caixinha, que cabe até 25 unidades ", preco: 6.55, unidade: "/unidade", especificacoes: { "Medidas Externas": "40 x 40 x 12 cm", "Material": "Ondulado" } },
-            // CATEGORIA: PERSONALIZADOS
-           
+const listaProdutos = [
+    { id: 1, nome: "Caixa Nº0 ", categoria: ["sedex", "caixa"], icone: "ph-package", descricao: "Perfeita para e-commerce de pequenos acessórios.", preco: 3.50, unidade: "/unidade", especificacoes: { "Medidas Externas": "16 x 11 x 07 cm", "Material": "Ondulado" } },
+    { id: 2, nome: "Caixa Nº1 ", categoria: ["sedex", "caixa"], icone: "ph-box-arrow-up", descricao: "Ideal para cosméticos e perfumes.", preco: 4.60, unidade: "/unidade", especificacoes: {"Medidas Externas": "21 x 15 x 6.5 cm", "Material": "Ondulado" } },
+    { id: 3, nome: "Caixa Nº2 ", categoria: ["sedex", "caixa"], icone: "ph-archive-box", descricao: "Versatilidade para vestuário e livros.", preco: 5.60, unidade: "/unidade", especificacoes: { "Medidas Externas": "26 x 17 x 08 cm", "Material": "Ondulado" } },
+    { id: 4, nome: "Caixa Nº3 ", categoria: ["sedex", "caixa"], icone: "ph-cube", descricao: "Acomoda produtos volumosos.", preco: 8.80, unidade: "/unidade", especificacoes: { "Medidas Externas": "30 x 20 x 11 cm", "Material": "Ondulado" } },
+    { id: 5, nome: "Caixa Nº4 ", categoria: ["sedex","caixa"], icone: "ph-package", descricao: "Para itens grandes.", preco: 13.00, unidade: "/unidade", especificacoes: { "Medidas Externas": "34x27x11cm", "Material": "Ondulado" } },
+    { id: 6, nome: "Caixa 32x32x22", categoria: ["caixa"], icone: "ph-box-arrow-up", descricao: "Tamanho intermediário ideal.", preco: 3.50, unidade: "/unidade", especificacoes: { "Medidas Externas": "32 x 32 x 22 cm", "Material": "Ondulado" } },
+    { id: 7, nome: "Caixa De Bolo Papelão Nº9" , categoria: ["caixa","confeiteiros"], icone: "ph-archive-box", descricao: "Transporte seguro de bolos.", preco: 10.99, unidade: "/unidade", especificacoes: { "Medidas Externas": "40 x 40 x 12 cm", "Material": "Ondulado" } },
+    { id: 14, nome: "Caixa De Esfiha Papelão Nº2 ", categoria: ["salgado", "caixa"], icone: "ph-archive-box", descricao: "Ideal para salgados.", preco: 3.50, unidade: "/unidade", especificacoes: { "Medidas Externas": "20 x 20 x 5 cm", "Material": "Ondulado" } },
+    { id: 15, nome: "Caixa De Pizza", categoria: ["salgado", "caixa"], icone: "ph-archive-box", descricao: "Embalagem para pizza.", preco: 3.50, unidade: "/unidade", especificacoes: { "Medidas Externas": " 35 cm x 35 cm", "Material": "Ondulado" } },
+    { id: 16, nome: "Caixa Para Copinho Com 50 Divisórias" , categoria: ["confeiteiros"], icone: "ph-archive-box", descricao: "50 divisórias.", preco: 3.99, unidade: "/unidade", especificacoes: { "Medidas Externas": "40 x 40 x 12 cm", "Material": "Ondulado" } },
+    { id: 17, nome: "Caixa Para Cupcakes", categoria: ["confeiteiros"], icone: "ph-archive-box", descricao: "Cabe até 25 unidades.", preco: 6.55, unidade: "/unidade", especificacoes: { "Medidas Externas": "40 x 40 x 12 cm", "Material": "Ondulado" } }
+];
 
-        // Variáveis de Estado
-        let produtoSelecionado = null;
-        let filtroAtual = "todos";
+// Variáveis de Estado
+let produtoSelecionado = null;
+let filtroAtual = "todos";
 
-        // Mapeamento de Títulos das Categorias
-        const titulosCategorias = {
-            caixa: "Todas as caixas",
-            sedex: "Linha Padrão de Envios",
-            salgado: "Tudo que precisa para salgar a vida",
-            confeiteiros: "Ideal para confeiteiros",
-            personalizados: "Projetos Corporativos e Identidade",
-            insumos: "Insumos e Bobinas Industriais"
-        };
+// Mapeamento de Títulos
+const titulosCategorias = {
+    caixa: "Todas as caixas",
+    sedex: "Linha Padrão de Envios",
+    salgado: "Tudo que precisa para salgar a vida",
+    confeiteiros: "Ideal para confeiteiros",
+    personalizados: "Projetos Corporativos",
+    insumos: "Insumos Industriais"
+};
 
-        // Mapeamento Visual de Ícones para Especificações
-        const iconesEspecificacoes = {
-            "Medidas Externas": "ph-ruler",
-            "Dimensões": "ph-ruler",
-            "Medida Padrão": "ph-ruler",
-            "Tipo de Onda": "ph-waves",
-            "Coluna (ECT)": "ph-barbell",
-            "Resistência": "ph-barbell",
-            "Gramatura": "ph-scales",
-            "Peso Aprox.": "ph-scales",
-            "Venda Mínima": "ph-shopping-cart-simple",
-            "Lote Mínimo": "ph-shopping-cart-simple",
-            "Impressão": "ph-printer",
-            "Revestimento": "ph-paint-roller",
-            "Acabamento": "ph-magic-wand",
-            "Montagem": "ph-puzzle-piece",
-            "Capacidade": "ph-package",
-            "Acessório": "ph-plus-circle",
-            "Uso Indicado": "ph-target"
-        };
+function renderizarProdutos() {
+    const container = document.getElementById("containerProdutos");
+    if (!container) return;
+    container.innerHTML = "";
+    
+    // Filtro inteligente para Array ou String
+    const filtrados = listaProdutos.filter(p => {
+        if (filtroAtual === "todos") return true;
+        return Array.isArray(p.categoria) ? p.categoria.includes(filtroAtual) : p.categoria === filtroAtual;
+    });
+        
+    const produtosAgrupados = {};
+    
+    filtrados.forEach(produto => {
+        let chave = (filtroAtual !== "todos") 
+            ? filtroAtual 
+            : (Array.isArray(produto.categoria) ? produto.categoria[0] : produto.categoria);
 
-        // Função de Formatação de Moeda
-        const formatarMoeda = (valor) => {
-            if (typeof valor === 'string') return valor;
-            return valor.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
-        };
+        if (!produtosAgrupados[chave]) produtosAgrupados[chave] = [];
+        produtosAgrupados[chave].push(produto);
+    });
 
-        /**
-         * Renderiza os produtos na tela com base no filtro atual
-         */
-        function renderizarProdutos() {
-            const container = document.getElementById("containerProdutos");
-            container.innerHTML = "";
-            
-            const filtrados = filtroAtual === "todos" 
-                ? listaProdutos 
-                : listaProdutos.filter(p => Array.isArray(p.categoria) ? p.categoria.includes(filtroAtual) : p.categoria === filtroAtual);
-                
-            const produtosAgrupados = {};
-            
-            filtrados.forEach(produto => {
-                let chave;
-                if (filtroAtual !== "todos") {
-                    chave = filtroAtual;
-                } else {
-                    chave = Array.isArray(produto.categoria) ? produto.categoria[0] : produto.categoria;
-                }
+    Object.entries(produtosAgrupados).forEach(([chaveCategoria, listaDeProdutos]) => {
+        const secao = document.createElement("div");
+        secao.className = "secao-categoria";
+        
+        secao.innerHTML = `
+            <h2 class="titulo-categoria">
+                <i class="ph-fill ph-squares-four"></i> 
+                ${titulosCategorias[chaveCategoria] || "Outros Produtos"}
+            </h2>
+        `;
 
-                if (!produtosAgrupados[chave]) {
-                    produtosAgrupados[chave] = [];
-                }
-                produtosAgrupados[chave].push(produto);
-            });
+        const grade = document.createElement("div");
+        grade.className = "grade-produtos";
 
-            // Constrói o HTML
-            Object.entries(produtosAgrupados).forEach(([chaveCategoria, listaDeProdutos]) => {
-                const secao = document.createElement("div");
-                secao.className = "secao-categoria";
-                
-                secao.innerHTML = `
-                    <h2 class="titulo-categoria">
-                        <i class="ph-fill ph-squares-four"></i> 
-                        ${titulosCategorias[chaveCategoria] || "Outros Produtos"}
-                    </h2>
-                `;
+        listaDeProdutos.forEach((produto) => {
+            const cartao = document.createElement("div");
+            cartao.className = "cartao-produto";
+            cartao.onclick = () => abrirModal(produto);
+            cartao.innerHTML = `
+                <div class="icone-produto"><i class="ph-fill ${produto.icone}"></i></div>
+                <div class="conteudo-produto">
+                    <h3 class="nome-produto">${produto.nome}</h3>
+                    <p class="preco-produto">${formatarMoeda(produto.preco)}<span class="unidade">${produto.unidade || ""}</span></p>
+                    <button class="botao-ver">Ver Detalhes</button>
+                </div>
+            `;
+            grade.appendChild(cartao);
+        });
 
-                const grade = document.createElement("div");
-                grade.className = "grade-produtos";
-
-                listaDeProdutos.forEach((produto) => {
-                    const cartao = document.createElement("div");
-                    cartao.className = "cartao-produto";
-                    cartao.onclick = () => abrirModal(produto);
-                    
-                    cartao.innerHTML = `
-                        <div class="icone-produto">
-                            <i class="ph-fill ${produto.icone}"></i>
-                        </div>
-                        <div class="conteudo-produto">
-                            <h3 class="nome-produto">${produto.nome}</h3>
-                            <p class="preco-produto">${formatarMoeda(produto.preco)}<span class="unidade">${produto.unidade}</span></p>
-                            <button class="botao-ver">Ver Detalhes</button>
-                        </div>
-                    `;
-                    grade.appendChild(cartao);
-                });
-
-                secao.appendChild(grade);
-                container.appendChild(secao);
-            }); // Fim do Object.entries
-        } // Fim da função renderizarProdutos
+        secao.appendChild(grade);
+        container.appendChild(secao);
+    });
 
                     // Lógica para o Preço Corporativo
                     const ehSobConsulta = produto.preco === "Sob consulta";
