@@ -1186,7 +1186,7 @@
                 <button class="btn-filtro ativo" onclick="filtrarProdutos('todos', this)">
                     <i class="ph-bold ph-squares-four"></i> Visão Geral
                 </button>
-                <button class="btn-filtro" onclick="filtrarProdutos('Ideal para confeiteiros', this)">
+                <button class="btn-filtro" onclick="filtrarProdutos('ideal para confeiteiros', this)">
                     <i class="ph-bold ph-shopping-cart"></i> Embalagens para doce
                 <button class="btn-filtro" onclick="filtrarProdutos('sedex', this)">
                     <i class="ph-bold ph-box-arrow-up"></i> Padrão Correios
@@ -1224,9 +1224,7 @@
                 </div>
             
             <div class="botoes-acao">
-                <button class="btn-acao btn-acao-secundario" onclick="acionarVendas('tecnico')">
-                    <i class="ph-bold ph-info"></i> Dados Técnicos
-                </button>
+         
                 <button class="btn-acao btn-acao-primario" onclick="acionarVendas('orcamento')">
                     <i class="ph-fill ph-whatsapp-logo"></i> Solicitar Cotação
                 </button>
@@ -1308,9 +1306,9 @@
             { id: 4, nome: "Caixa Nº3 ", categoria: "sedex", icone: "ph-cube", descricao: "Acomoda produtos volumosos com segurança. Ideal para calçados e utensílios.", preco: 8.80, unidade: "/unidade", especificacoes: { "Medidas Externas": "30 x 20 x 11 cm", "Material": "Ondulado" } },
                   { id: 5, nome: "Caixa Nº4 ", categoria: "sedex", icone: "ph-package", descricao: "Perfeita para e-commerce de pequenos acessórios, joias e peças eletrônicas.", preco: 13.00, unidade: "/unidade", especificacoes: { "Medidas Externas": "34x27x11cm", "Material": "Ondulado" } },
             { id: 6, nome: "Caixa 32x32x22", categoria: "caixa", icone: "ph-box-arrow-up", descricao: "O tamanho intermediário ideal para cosméticos, perfumes e miudezas em geral.", preco: 3.50, unidade: "/unidade", especificacoes: { "Medidas Externas": "32 x 32 x 22 cm", "Material": "Ondulado" } },
-            { id: 7, nome: "Caixa De Bolo Nº9" , categoria: "bolo", icone: "ph-archive-box", descricao: "Extrema versatilidade para e-commerce de vestuário, livros e kits médios.", preco: 10.99, unidade: "/unidade", especificacoes: { "Medidas Externas": "40 x 40 x 12 cm", "Material": "Ondulado" } },
-            { id: 8, nome: "Caixa De Bolo Nº7 Media", categoria: "bolo", icone: "ph-archive-box", descricao: "Extrema versatilidade para e-commerce de vestuário, livros e kits médios.", preco: 6.20, unidade: "/unidade", especificacoes: { "Medidas Externas": "28 x 28 x 10 cm", "Material": "Ondulado" } },
-            { id: 9, nome: "Caixa De Bolo Nº7 Com Alça", categoria: "bolo", icone: "ph-archive-box", descricao: "Extrema versatilidade para e-commerce de vestuário, livros e kits médios.", preco: 6.50, unidade: "/unidade", especificacoes: { "Medidas Externas": "28 x 28 x 10 cm", "Material": "Ondulado" } },
+            { id: 7, nome: "Caixa De Bolo Nº9" , categoria: "ideal para confeiteiros", icone: "ph-archive-box", descricao: "Extrema versatilidade para e-commerce de vestuário, livros e kits médios.", preco: 10.99, unidade: "/unidade", especificacoes: { "Medidas Externas": "40 x 40 x 12 cm", "Material": "Ondulado" } },
+            { id: 8, nome: "Caixa De Bolo Nº7 Media", categoria: "ideal para confeiteiros", icone: "ph-archive-box", descricao: "Extrema versatilidade para e-commerce de vestuário, livros e kits médios.", preco: 6.20, unidade: "/unidade", especificacoes: { "Medidas Externas": "28 x 28 x 10 cm", "Material": "Ondulado" } },
+            { id: 9, nome: "Caixa De Bolo Nº7 Com Alça", categoria: "ideal para confeiteiros", icone: "ph-archive-box", descricao: "Extrema versatilidade para e-commerce de vestuário, livros e kits médios.", preco: 6.50, unidade: "/unidade", especificacoes: { "Medidas Externas": "28 x 28 x 10 cm", "Material": "Ondulado" } },
 
             // CATEGORIA: PERSONALIZADOS
             { id: 11, nome: "Caixa Master com Logotipo", categoria: "personalizados", icone: "ph-paint-brush-broad", descricao: "Impressão flexográfica da sua marca para gerar autoridade no momento da entrega.", preco: "Sob consulta", unidade: "", especificacoes: { "Dimensões": "Desenvolvido sob medida", "Impressão": "Até 3 cores (Flexo)", "Clichê": "Custo único inicial", "Lote Mínimo": "300 unidades" } },
@@ -1329,7 +1327,7 @@
         const titulosCategorias = {
             ecommerce: "Soluções para E-commerce",
             sedex: "Linha Padrão de Envios",
-            bolo: "Ideal para confeiteiros",
+            ideal para confeiteiros: "Ideal para confeiteiros",
             personalizados: "Projetos Corporativos e Identidade",
             insumos: "Insumos e Bobinas Industriais"
         };
