@@ -1182,22 +1182,34 @@
                 <p>Selecione a categoria desejada abaixo para visualizar nossas soluções. Todos os produtos podem ser faturados para CNPJ.</p>
             </div>
 
-            <div class="filtros" id="containerFiltros">
-                <button class="btn-filtro ativo" onclick="filtrarProdutos('todos', this)">
-                    <i class="ph-bold ph-squares-four"></i> Visão Geral
-                </button>
-                <button class="btn-filtro" onclick="filtrarProdutos('confeiteiros', this)">
-                    <i class="ph-bold ph-shopping-cart"></i> Embalagens para doce
-                <button class="btn-filtro" onclick="filtrarProdutos('sedex', this)">
-                    <i class="ph-bold ph-box-arrow-up"></i> Padrão Correios
-                </button>
-                <button class="btn-filtro" onclick="filtrarProdutos('salgado', this)">
-                    <i class="ph-bold ph-paint-brush-broad"></i> Salgados
-                </button>
-                <button class="btn-filtro" onclick="filtrarProdutos('insumos', this)">
-                    <i class="ph-bold ph-scroll"></i> Insumos Industriais
-                </button>
-            </div>
+          <div class="filtros" id="containerFiltros">
+
+    <!-- VISÃO GERAL -->
+    <button class="btn-filtro ativo" onclick="filtrarCategoria('todos', this)">
+        <i class="ph-bold ph-squares-four"></i> Visão Geral
+    </button>
+
+    <!-- CATEGORIA PRINCIPAL -->
+    <button class="btn-filtro" onclick="filtrarCategoria('caixa', this)">
+        <i class="ph-bold ph-package"></i> Caixas
+    </button>
+
+    <!-- SUBCATEGORIAS -->
+    <div class="sub-filtros">
+        <button class="btn-filtro" onclick="filtrarSubcategoria('sedex', this)">
+            <i class="ph-bold ph-box-arrow-up"></i> Padrão Correios
+        </button>
+
+        <button class="btn-filtro" onclick="filtrarSubcategoria('confeiteiros', this)">
+            <i class="ph-bold ph-shopping-cart"></i> Embalagens para doce
+        </button>
+
+        <button class="btn-filtro" onclick="filtrarSubcategoria('salgado', this)">
+            <i class="ph-bold ph-paint-brush-broad"></i> Salgados
+        </button>
+    </div>
+
+</div>
             
             <div id="containerProdutos"></div>
 
@@ -1304,7 +1316,7 @@
             { id: 2, nome: "Caixa Nº1 ", categoria: "sedex", "caixa", icone: "ph-box-arrow-up", descricao: "O tamanho intermediário ideal para cosméticos, perfumes e miudezas em geral.", preco: 4.60, unidade: "/unidade", especificacoes: {"Medidas Externas": "21 x 15 x 6.5 cm", "Material": "Ondulado" } },
             { id: 3, nome: "Caixa Nº2 ", categoria: "sedex", "caixa", icone: "ph-archive-box", descricao: "Extrema versatilidade para e-commerce de vestuário, livros e kits médios.", preco: 5.60, unidade: "/unidade", especificacoes: { "Medidas Externas": "26 x 17 x 08 cm", "Material": "Ondulado" } },
             { id: 4, nome: "Caixa Nº3 ", categoria: "sedex", "caixa", icone: "ph-cube", descricao: "Acomoda produtos volumosos com segurança. Ideal para calçados e utensílios.", preco: 8.80, unidade: "/unidade", especificacoes: { "Medidas Externas": "30 x 20 x 11 cm", "Material": "Ondulado" } },
-                  { id: 5, nome: "Caixa Nº4 ", categoria: "sedex","caixa", icone: "ph-package", descricao: "Perfeita para e-commerce de pequenos acessórios, joias e peças eletrônicas.", preco: 13.00, unidade: "/unidade", especificacoes: { "Medidas Externas": "34x27x11cm", "Material": "Ondulado" } },
+            { id: 5, nome: "Caixa Nº4 ", categoria: "sedex", "caixa", icone: "ph-package", descricao: "Perfeita para e-commerce de pequenos acessórios, joias e peças eletrônicas.", preco: 13.00, unidade: "/unidade", especificacoes: { "Medidas Externas": "34x27x11cm", "Material": "Ondulado" } },
             { id: 6, nome: "Caixa 32x32x22", categoria: "caixa", icone: "ph-box-arrow-up", descricao: "O tamanho intermediário ideal para cosméticos, perfumes e miudezas em geral.", preco: 3.50, unidade: "/unidade", especificacoes: { "Medidas Externas": "32 x 32 x 22 cm", "Material": "Ondulado" } },
              // CATEGORIA: DOCES       
             { id: 7, nome: "Caixa De Bolo Papelão Nº9" , categoria: "caixa","confeiteiros", icone: "ph-archive-box", descricao: "Extrema versatilidade para e-commerce de vestuário, livros e kits médios.", preco: 10.99, unidade: "/unidade", especificacoes: { "Medidas Externas": "40 x 40 x 12 cm", "Material": "Ondulado" } },
