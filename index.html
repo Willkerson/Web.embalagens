@@ -161,12 +161,19 @@
         .btn-marca-marmitex:hover{background:#fff8e1;border-color:#ffb300;transform:translateY(-1px);}
         .btn-marca-marmitex.ativo{background:#f57f17;color:#fff;border-color:#f57f17;box-shadow:0 4px 12px rgba(245,127,23,.3);}
 
+        /* ─── FILTRO MARCA PLÁSTICO ─── */
+        .plastico-marca-bar{display:none;gap:10px;justify-content:center;flex-wrap:wrap;margin-bottom:1rem;padding:1rem 1.5rem;border-radius:14px;animation:fadeIn .3s ease;background:#f0fdf4;border:1px solid #bbf7d0;}
+        .plastico-marca-bar.visivel{display:flex;}
+        .btn-marca-plastico{padding:9px 20px;background:#fff;border:1.5px solid #bbf7d0;color:#15803d;border-radius:99px;font-weight:700;font-size:.88rem;transition:var(--tr);display:flex;align-items:center;gap:8px;}
+        .btn-marca-plastico:hover{background:#f0fdf4;border-color:#4ade80;transform:translateY(-1px);}
+        .btn-marca-plastico.ativo{background:#15803d;color:#fff;border-color:#15803d;box-shadow:0 4px 12px rgba(21,128,61,.3);}
+
         /* Breadcrumb */
         .breadcrumb{display:none;align-items:center;gap:8px;font-size:.9rem;color:var(--texto-mutado);margin-bottom:2rem;font-weight:500;}
         .breadcrumb.visivel{display:flex;}
         .breadcrumb span{color:var(--azul-600);font-weight:700;}
 
-        /* isopor */
+        /* plastico */
         .subcategorias-bar-plastico{background:#f0fdf4;border:1px solid #bbf7d0;}
         .btn-sub-plastico{padding:10px 22px;background:#fff;border:1px solid #bbf7d0;color:#15803d;border-radius:99px;font-weight:600;font-size:.9rem;transition:var(--tr);display:flex;align-items:center;gap:8px;}
         .btn-sub-plastico:hover{background:#f0fdf4;transform:translateY(-1px);}
@@ -574,7 +581,7 @@
             <button class="btn-sub-isopor" onclick="filtrarSub('disco-isopor',this,'isopor')"><i class="ph-bold ph-circle"></i> Disco para Pizza</button>
         </div>
 
-        <!-- ── FILTRO DE MARCA MARMITEX (novo!) ── -->
+        <!-- FILTRO DE MARCA MARMITEX -->
         <div class="marmitex-marca-bar" id="barraMarcaMarmitex">
             <button class="btn-marca-marmitex ativo" onclick="filtrarMarcaMarmitex('todas',this)"><i class="ph-bold ph-squares-four"></i> Todas as Marcas</button>
             <button class="btn-marca-marmitex" onclick="filtrarMarcaMarmitex('Copabras',this)"><i class="ph-bold ph-tag"></i> Copabras</button>
@@ -586,6 +593,19 @@
             <button class="btn-sub-plastico ativo" onclick="filtrarSub('todas',this,'plastico')"><i class="ph-bold ph-squares-four"></i> Todas</button>
             <button class="btn-sub-plastico" onclick="filtrarSub('bolo-plastico',this,'plastico')"><i class="ph-bold ph-cake"></i> Embalagens de Bolo</button>
             <button class="btn-sub-plastico" onclick="filtrarSub('marmita-plastico',this,'plastico')"><i class="ph-bold ph-bowl-food"></i> Marmitas para Congelar</button>
+        </div>
+
+        <!-- FILTRO DE MARCA PLÁSTICO BOLO -->
+        <div class="plastico-marca-bar" id="barraMarcaPlastico">
+            <button class="btn-marca-plastico ativo" onclick="filtrarMarcaPlastico('todas',this)"><i class="ph-bold ph-squares-four"></i> Todas as Marcas</button>
+            <button class="btn-marca-plastico" onclick="filtrarMarcaPlastico('Galvanotek',this)"><i class="ph-bold ph-tag"></i> Galvanotek</button>
+            <button class="btn-marca-plastico" onclick="filtrarMarcaPlastico('Hiverpack',this)"><i class="ph-bold ph-tag"></i> Hiverpack</button>
+        </div>
+
+        <!-- FILTRO DE MARCA MARMITA PLASTICO -->
+        <div class="plastico-marca-bar" id="barraMarcaMarmitaPlastico" style="background:#fff3e0;border-color:#ffcc02;">
+            <button class="btn-marca-plastico ativo" style="border-color:#ffcc02;color:#e65100;" onclick="filtrarMarcaMarmitaPlastico('todas',this)"><i class="ph-bold ph-squares-four"></i> Todas as Marcas</button>
+            <button class="btn-marca-plastico" style="border-color:#ffcc02;color:#e65100;" onclick="filtrarMarcaMarmitaPlastico('Prafesta',this)"><i class="ph-bold ph-tag"></i> Prafesta</button>
         </div>
 
         <div class="breadcrumb" id="breadcrumb">
@@ -721,8 +741,8 @@ const svgProdutos = {
         <line x1="40" y1="100" x2="75" y2="100" stroke="#0284c7" stroke-width="2" stroke-dasharray="5,3"/>
     </svg>`,
 
-    // Sacola plástica preta
-    sacola_preta: `<svg viewBox="0 0 130 130" fill="none" xmlns="http://www.w3.org/2000/svg">
+    // Sacola plástica preta (saco de lixo)
+    saco_lixo: `<svg viewBox="0 0 130 130" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path d="M35 45 Q28 45 26 52 L18 108 Q17 115 25 115 L105 115 Q113 115 112 108 L104 52 Q102 45 95 45 Z" fill="#1e293b" stroke="#64748b" stroke-width="2"/>
         <path d="M48 45 Q48 28 65 28 Q82 28 82 45" stroke="#94a3b8" stroke-width="3" fill="none" stroke-linecap="round"/>
         <line x1="48" y1="65" x2="82" y2="65" stroke="#475569" stroke-width="1.5" stroke-dasharray="4,3"/>
@@ -782,15 +802,6 @@ const svgProdutos = {
         <line x1="46" y1="93" x2="68" y2="93" stroke="#fef08a" stroke-width="1.5"/>
     </svg>`,
 
-    // Saco de lixo preto
-    saco_lixo: `<svg viewBox="0 0 130 130" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M55 20 L75 20 L78 35 Q92 35 92 48 L95 105 Q95 115 65 115 Q35 115 35 105 L38 48 Q38 35 52 35 Z" fill="#1e293b" stroke="#475569" stroke-width="2"/>
-        <path d="M55 20 Q55 14 65 14 Q75 14 75 20" stroke="#64748b" stroke-width="2.5" fill="none" stroke-linecap="round"/>
-        <path d="M45 55 Q55 65 65 55 Q75 65 85 55" stroke="#334155" stroke-width="2" fill="none"/>
-        <path d="M42 75 Q52 85 65 78 Q78 85 88 75" stroke="#334155" stroke-width="2" fill="none"/>
-        <path d="M43 95 Q53 103 65 98 Q77 103 87 95" stroke="#334155" stroke-width="1.5" fill="none"/>
-    </svg>`,
-
     // Marmitex isopor
     marmitex: `<svg viewBox="0 0 130 130" fill="none" xmlns="http://www.w3.org/2000/svg">
         <ellipse cx="65" cy="55" rx="52" ry="18" fill="#e0f7fa" stroke="#00838f" stroke-width="2.5"/>
@@ -838,36 +849,61 @@ const svgProdutos = {
         <text x="65" y="90" text-anchor="middle" font-size="9" fill="#00838f" font-weight="bold" font-family="sans-serif">PIZZA</text>
     </svg>`,
 
-    // Embalagem bolo plástico
+    // ── EMBALAGEM DE BOLO PLÁSTICA (cúpula transparente) ──
     embalagem_bolo: `<svg viewBox="0 0 130 130" fill="none" xmlns="http://www.w3.org/2000/svg">
         <defs>
-            <linearGradient id="pg" x1="0" y1="0" x2="0" y2="1">
-                <stop offset="0%" stop-color="#dcfce7" stop-opacity="0.9"/>
-                <stop offset="100%" stop-color="#bbf7d0" stop-opacity="0.7"/>
+            <linearGradient id="cupula-grad" x1="0" y1="0" x2="0.3" y2="1">
+                <stop offset="0%" stop-color="#e0f2fe" stop-opacity="0.85"/>
+                <stop offset="100%" stop-color="#bae6fd" stop-opacity="0.45"/>
             </linearGradient>
         </defs>
-        <rect x="15" y="35" width="100" height="80" rx="6" fill="url(#pg)" stroke="#16a34a" stroke-width="2"/>
-        <rect x="15" y="35" width="100" height="22" rx="6" fill="rgba(187,247,208,0.5)" stroke="#16a34a" stroke-width="2"/>
-        <rect x="20" y="62" width="90" height="48" rx="4" fill="rgba(255,255,255,0.5)" stroke="#4ade80" stroke-width="1.5" stroke-dasharray="4,2"/>
+        <!-- base branca -->
+        <rect x="18" y="92" width="94" height="16" rx="4" fill="#f1f5f9" stroke="#94a3b8" stroke-width="2"/>
+        <!-- lateral esquerda cúpula -->
+        <path d="M18 92 Q14 60 35 35 Q52 18 65 18 Q78 18 95 35 Q116 60 112 92" fill="url(#cupula-grad)" stroke="#38bdf8" stroke-width="2"/>
+        <!-- topo da cúpula arredondado -->
+        <ellipse cx="65" cy="18" rx="30" ry="8" fill="#e0f2fe" fill-opacity="0.6" stroke="#38bdf8" stroke-width="1.5"/>
+        <!-- reflexo de luz -->
+        <path d="M30 55 Q38 40 50 35" stroke="white" stroke-width="3" stroke-linecap="round" opacity="0.7"/>
         <!-- bolo dentro -->
-        <ellipse cx="65" cy="88" rx="32" ry="10" fill="#fde68a" stroke="#d97706" stroke-width="1.5"/>
-        <rect x="33" y="72" width="64" height="20" rx="2" fill="#fef3c7" stroke="#d97706" stroke-width="1.5"/>
-        <ellipse cx="65" cy="72" rx="32" ry="8" fill="#fde68a" stroke="#d97706" stroke-width="1.5"/>
-        <path d="M33 78 Q65 85 97 78" stroke="#f59e0b" stroke-width="1" fill="none"/>
+        <ellipse cx="65" cy="85" rx="34" ry="9" fill="#fde68a" stroke="#d97706" stroke-width="1.5"/>
+        <rect x="31" y="65" width="68" height="22" rx="3" fill="#fef3c7" stroke="#d97706" stroke-width="1.5"/>
+        <ellipse cx="65" cy="65" rx="34" ry="9" fill="#fde68a" stroke="#d97706" stroke-width="1.5"/>
+        <!-- cobertura bolo -->
+        <path d="M31 72 Q65 80 99 72" stroke="#f59e0b" stroke-width="1.5" fill="none"/>
+        <!-- velas -->
+        <rect x="55" y="52" width="4" height="14" rx="2" fill="#f87171"/>
+        <rect x="65" y="49" width="4" height="17" rx="2" fill="#60a5fa"/>
+        <rect x="75" y="52" width="4" height="14" rx="2" fill="#a78bfa"/>
+        <ellipse cx="57" cy="51" rx="3" ry="4" fill="#fbbf24" opacity="0.9"/>
+        <ellipse cx="67" cy="48" rx="3" ry="4" fill="#fbbf24" opacity="0.9"/>
+        <ellipse cx="77" cy="51" rx="3" ry="4" fill="#fbbf24" opacity="0.9"/>
     </svg>`,
 
-    // Marmita plástica
+    // ── MARMITA PLÁSTICA RETANGULAR (estilo Prafesta) ──
     marmita_plastica: `<svg viewBox="0 0 130 130" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <rect x="12" y="48" width="106" height="65" rx="8" fill="#dcfce7" stroke="#16a34a" stroke-width="2.5"/>
-        <rect x="12" y="35" width="106" height="20" rx="5" fill="#bbf7d0" stroke="#16a34a" stroke-width="2"/>
-        <rect x="35" y="35" width="60" height="20" rx="3" fill="#86efac" stroke="#16a34a" stroke-width="1.5"/>
-        <line x1="65" y1="75" x2="65" y2="108" stroke="#4ade80" stroke-width="1.5" stroke-dasharray="3,2"/>
-        <line x1="22" y1="92" x2="108" y2="92" stroke="#4ade80" stroke-width="1.5" stroke-dasharray="3,2"/>
-        <circle cx="40" cy="80" r="6" fill="#fbbf24" opacity="0.6"/>
-        <circle cx="90" cy="80" r="6" fill="#f87171" opacity="0.6"/>
-        <circle cx="40" cy="105" r="5" fill="#a3e635" opacity="0.6"/>
-        <circle cx="90" cy="105" r="5" fill="#fbbf24" opacity="0.6"/>
-        <circle cx="65" cy="60" r="4" fill="rgba(22,163,74,0.3)"/>
+        <!-- tampa -->
+        <rect x="10" y="28" width="110" height="34" rx="6" fill="#f8fafc" stroke="#cbd5e1" stroke-width="2"/>
+        <!-- aba da tampa -->
+        <path d="M10 56 Q10 62 16 62 L114 62 Q120 62 120 56" fill="#e2e8f0" stroke="#cbd5e1" stroke-width="1.5"/>
+        <!-- corpo branco -->
+        <rect x="14" y="62" width="102" height="50" rx="5" fill="#ffffff" stroke="#cbd5e1" stroke-width="2"/>
+        <!-- borda interna do corpo -->
+        <rect x="20" y="68" width="90" height="38" rx="3" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1"/>
+        <!-- divisória horizontal -->
+        <line x1="20" y1="87" x2="110" y2="87" stroke="#e2e8f0" stroke-width="1.5"/>
+        <!-- divisória vertical -->
+        <line x1="75" y1="87" x2="75" y2="106" stroke="#e2e8f0" stroke-width="1.5"/>
+        <!-- alimentos simulados -->
+        <ellipse cx="47" cy="77" rx="18" ry="8" fill="#fbbf24" opacity="0.55"/>
+        <ellipse cx="90" cy="77" rx="14" ry="7" fill="#86efac" opacity="0.55"/>
+        <ellipse cx="55" cy="97" rx="14" ry="6" fill="#f87171" opacity="0.45"/>
+        <ellipse cx="88" cy="97" rx="9" ry="5" fill="#fde68a" opacity="0.5"/>
+        <!-- reflexo na tampa -->
+        <path d="M22 35 Q50 32 80 35" stroke="white" stroke-width="2.5" stroke-linecap="round" opacity="0.8"/>
+        <!-- etiqueta Prafesta na tampa -->
+        <rect x="38" y="33" width="54" height="18" rx="4" fill="#e65100"/>
+        <text x="65" y="45" text-anchor="middle" font-size="9" fill="white" font-weight="900" font-family="sans-serif" letter-spacing="0.5">PRAFESTA</text>
     </svg>`,
 
     // Default fallback
@@ -886,7 +922,6 @@ function getSvg(produto) {
     const cat = produto.categoria;
     const sub = produto.subcategoria || '';
     const tipo = produto.tipo || '';
-    const nome = produto.nome.toLowerCase();
 
     if (cat === 'sacolas') {
         if (tipo === 'preta') return svgProdutos.saco_lixo;
@@ -978,7 +1013,7 @@ const listaProdutos = [
     {id:94,nome:"Sacola Kraft c/ Alça 40x50",categoria:"sacolas",tipo:"kraft-alca",tamanho:"m",icone:"ph-bag",descricao:"Kraft com alça médio porte. Perfeita para roupas e calçados. Vendida por kg.",preco:"Sob consulta",unidade:"/kg",especificacoes:{"Medidas":"40 x 50 cm","Cor":"Kraft natural","Material":"Papel kraft","Alça":"Retorcida","Venda":"Por kg"}},
     {id:95,nome:"Sacola Kraft c/ Alça 45x60",categoria:"sacolas",tipo:"kraft-alca",tamanho:"m",icone:"ph-bag",descricao:"Kraft com alça 45x60. Para restaurantes e lojas. Vendida por kg.",preco:"Sob consulta",unidade:"/kg",especificacoes:{"Medidas":"45 x 60 cm","Cor":"Kraft natural","Material":"Papel kraft","Alça":"Retorcida","Venda":"Por kg"}},
     {id:96,nome:"Sacola Kraft c/ Alça 60x80",categoria:"sacolas",tipo:"kraft-alca",tamanho:"g",icone:"ph-bag",descricao:"Kraft com alça grande para grandes pedidos. Vendida por kg.",preco:"Sob consulta",unidade:"/kg",especificacoes:{"Medidas":"60 x 80 cm","Cor":"Kraft natural","Material":"Papel kraft","Alça":"Retorcida","Venda":"Por kg"}},
-    // ISOPOR - MARMITEX (com campo "marca")
+    // ISOPOR - MARMITEX
     {id:38,nome:"Marmitex Nº8 — Copabras",categoria:"isopor",subcategoria:"marmitex",marca:"Copabras",icone:"ph-bowl-food",descricao:"Marmitex oval Copabras Nº8 para refeições completas.",preco:"Sob consulta",unidade:"",especificacoes:{"Marca":"Copabras","Número":"Nº8","Formato":"Oval","Material":"Isopor EPS","Uso":"Refeições, marmitas, delivery"}},
     {id:39,nome:"Marmitex Nº9 — Copabras",categoria:"isopor",subcategoria:"marmitex",marca:"Copabras",icone:"ph-bowl-food",descricao:"Marmitex Copabras Nº9 para refeições fartas.",preco:"Sob consulta",unidade:"",especificacoes:{"Marca":"Copabras","Número":"Nº9","Formato":"Oval","Material":"Isopor EPS","Uso":"Refeições, delivery, marmitaria"}},
     {id:40,nome:"Marmitex Nº10 — Copabras",categoria:"isopor",subcategoria:"marmitex",marca:"Copabras",icone:"ph-bowl-food",descricao:"Marmitex Copabras Nº10 para porções generosas.",preco:"Sob consulta",unidade:"",especificacoes:{"Marca":"Copabras","Número":"Nº10","Formato":"Oval","Material":"Isopor EPS","Uso":"Buffet, eventos, delivery especial"}},
@@ -998,25 +1033,26 @@ const listaProdutos = [
     {id:78,nome:"Disco de Isopor para Pizza 25cm",categoria:"isopor",subcategoria:"disco-isopor",icone:"ph-circle",descricao:"Disco redondo de isopor para pizzas pequenas.",preco:"Sob consulta",unidade:"",especificacoes:{"Diâmetro":"25 cm","Formato":"Redondo","Material":"Isopor EPS","Uso":"Pizzas pequenas, tortas individuais"}},
     {id:79,nome:"Disco de Isopor para Pizza 35cm",categoria:"isopor",subcategoria:"disco-isopor",icone:"ph-circle",descricao:"Disco de isopor padrão para pizzas médias.",preco:"Sob consulta",unidade:"",especificacoes:{"Diâmetro":"35 cm","Formato":"Redondo","Material":"Isopor EPS","Uso":"Pizzas médias, pizzarias, delivery"}},
     {id:80,nome:"Disco de Isopor para Pizza 45cm",categoria:"isopor",subcategoria:"disco-isopor",icone:"ph-circle",descricao:"Disco de isopor para pizzas grandes.",preco:"Sob consulta",unidade:"",especificacoes:{"Diâmetro":"45 cm","Formato":"Redondo","Material":"Isopor EPS","Uso":"Pizzas grandes, rodízios, eventos"}},
-    // PLÁSTICO - BOLO
-    {id:81,nome:"Embalagem G60 — Galvanotek",categoria:"plastico",subcategoria:"bolo-plastico",icone:"ph-cake",descricao:"Embalagem plástica G60 Galvanotek para bolos baixos e tortas.",preco:"Sob consulta",unidade:"",especificacoes:{"Modelo":"G60","Marca":"Galvanotek","Altura interna":"6 cm","Material":"PET transparente","Uso":"Bolos baixos, tortas"}},
-    {id:82,nome:"Embalagem G70 — Galvanotek",categoria:"plastico",subcategoria:"bolo-plastico",icone:"ph-cake",descricao:"A clássica G70 Galvanotek para bolos altos.",preco:"Sob consulta",unidade:"",especificacoes:{"Modelo":"G70","Marca":"Galvanotek","Altura interna":"7 cm","Material":"PET transparente","Uso":"Bolos altos, naked cakes"}},
-    {id:97,nome:"Embalagem G80 — Galvanotek",categoria:"plastico",subcategoria:"bolo-plastico",icone:"ph-cake",descricao:"G80 Galvanotek para bolos ainda mais altos e recheados.",preco:"Sob consulta",unidade:"",especificacoes:{"Modelo":"G80","Marca":"Galvanotek","Altura interna":"8 cm","Material":"PET transparente","Uso":"Bolos altos, tortas geladas"}},
-    {id:98,nome:"Embalagem G34P — Galvanotek",categoria:"plastico",subcategoria:"bolo-plastico",icone:"ph-cake",descricao:"G34P Galvanotek para bolo de dois andares ou formato retangular.",preco:"Sob consulta",unidade:"",especificacoes:{"Modelo":"G34P","Marca":"Galvanotek","Formato":"Retangular","Material":"PET transparente","Uso":"Bolos retangulares, tortas"}},
-    {id:99,nome:"Embalagem G680 — Galvanotek",categoria:"plastico",subcategoria:"bolo-plastico",icone:"ph-cake",descricao:"G680 Galvanotek, embalagem grande para bolos especiais.",preco:"Sob consulta",unidade:"",especificacoes:{"Modelo":"G680","Marca":"Galvanotek","Material":"PET transparente","Uso":"Bolos especiais, tortas grandes"}},
-    {id:100,nome:"Embalagem G450 — Galvanotek",categoria:"plastico",subcategoria:"bolo-plastico",icone:"ph-cake",descricao:"G450 Galvanotek para bolos redondos médios.",preco:"Sob consulta",unidade:"",especificacoes:{"Modelo":"G450","Marca":"Galvanotek","Material":"PET transparente","Uso":"Bolos redondos, aniversário"}},
-    {id:101,nome:"Embalagem G350 — Galvanotek",categoria:"plastico",subcategoria:"bolo-plastico",icone:"ph-cake",descricao:"G350 Galvanotek para bolos menores e mini cakes.",preco:"Sob consulta",unidade:"",especificacoes:{"Modelo":"G350","Marca":"Galvanotek","Material":"PET transparente","Uso":"Mini bolo, smash cake"}},
-    {id:102,nome:"Embalagem para Fatia — Galvanotek",categoria:"plastico",subcategoria:"bolo-plastico",icone:"ph-cake",descricao:"Embalagem triangular Galvanotek para fatia de bolo ou torta.",preco:"Sob consulta",unidade:"",especificacoes:{"Formato":"Triangular","Marca":"Galvanotek","Material":"PET transparente","Uso":"Fatias de bolo, torta"}},
-    {id:103,nome:"Embalagem HV60 — Hiverpack",categoria:"plastico",subcategoria:"bolo-plastico",icone:"ph-cake",descricao:"Embalagem Hiverpack HV60 para bolos baixos.",preco:"Sob consulta",unidade:"",especificacoes:{"Modelo":"HV60","Marca":"Hiverpack","Altura interna":"6 cm","Material":"PET premium","Uso":"Bolos baixos, tortas"}},
-    {id:104,nome:"Embalagem HV70 — Hiverpack",categoria:"plastico",subcategoria:"bolo-plastico",icone:"ph-cake",descricao:"Hiverpack HV70 para bolos altos.",preco:"Sob consulta",unidade:"",especificacoes:{"Modelo":"HV70","Marca":"Hiverpack","Altura interna":"7 cm","Material":"PET premium","Uso":"Bolos altos, naked cakes"}},
-    {id:105,nome:"Embalagem HV80 — Hiverpack",categoria:"plastico",subcategoria:"bolo-plastico",icone:"ph-cake",descricao:"HV80 Hiverpack para bolos extra-altos.",preco:"Sob consulta",unidade:"",especificacoes:{"Modelo":"HV80","Marca":"Hiverpack","Altura interna":"8 cm","Material":"PET premium","Uso":"Bolos altos, tortas geladas"}},
-    {id:106,nome:"Embalagem HV100 — Hiverpack",categoria:"plastico",subcategoria:"bolo-plastico",icone:"ph-cake",descricao:"HV100 Hiverpack para bolos de grande porte.",preco:"Sob consulta",unidade:"",especificacoes:{"Modelo":"HV100","Marca":"Hiverpack","Altura interna":"10 cm","Material":"PET premium","Uso":"Bolos grandes, confeitaria premium"}},
-    {id:107,nome:"Embalagem para Fatia — Hiverpack",categoria:"plastico",subcategoria:"bolo-plastico",icone:"ph-cake",descricao:"Embalagem para fatia Hiverpack. Material premium.",preco:"Sob consulta",unidade:"",especificacoes:{"Formato":"Triangular","Marca":"Hiverpack","Material":"PET premium","Uso":"Fatias, tortas, quiche"}},
-    // PLÁSTICO - MARMITA CONGELAR
-    {id:86,nome:"Marmita Plástica 250ml para Congelar",categoria:"plastico",subcategoria:"marmita-plastico",icone:"ph-bowl-food",descricao:"Marmita plástica 250ml com tampa. Própria para congelamento.",preco:"Sob consulta",unidade:"",especificacoes:{"Capacidade":"250 ml","Tampa":"Inclusa","Material":"Polipropileno (PP)","Temperatura":"-20°C a +120°C","Uso":"Congelamento, micro-ondas, delivery"}},
-    {id:87,nome:"Marmita Plástica 500ml para Congelar",categoria:"plastico",subcategoria:"marmita-plastico",icone:"ph-bowl-food",descricao:"Marmita plástica 500ml com tampa. Vai ao congelador e micro-ondas.",preco:"Sob consulta",unidade:"",especificacoes:{"Capacidade":"500 ml","Tampa":"Inclusa","Material":"Polipropileno (PP)","Temperatura":"-20°C a +120°C","Uso":"Congelamento, micro-ondas, delivery"}},
-    {id:88,nome:"Marmita Plástica 750ml para Congelar",categoria:"plastico",subcategoria:"marmita-plastico",icone:"ph-bowl-food",descricao:"Marmita plástica 750ml com tampa. Para refeições completas.",preco:"Sob consulta",unidade:"",especificacoes:{"Capacidade":"750 ml","Tampa":"Inclusa","Material":"Polipropileno (PP)","Temperatura":"-20°C a +120°C","Uso":"Congelamento, micro-ondas, delivery"}},
-    {id:89,nome:"Marmita Plástica 1000ml para Congelar",categoria:"plastico",subcategoria:"marmita-plastico",icone:"ph-bowl-food",descricao:"Marmita plástica 1000ml com tampa. Para refeições fartas.",preco:"Sob consulta",unidade:"",especificacoes:{"Capacidade":"1000 ml","Tampa":"Inclusa","Material":"Polipropileno (PP)","Temperatura":"-20°C a +120°C","Uso":"Congelamento, micro-ondas, delivery"}},
+    // PLÁSTICO - BOLO (Galvanotek)
+    {id:81,nome:"Embalagem G60",categoria:"plastico",subcategoria:"bolo-plastico",marca:"Galvanotek",icone:"ph-cake",descricao:"Embalagem plástica G60 Galvanotek para bolos baixos e tortas.",preco:"Sob consulta",unidade:"",especificacoes:{"Modelo":"G60","Marca":"Galvanotek","Altura interna":"6 cm","Material":"PET transparente","Uso":"Bolos baixos, tortas"}},
+    {id:82,nome:"Embalagem G70",categoria:"plastico",subcategoria:"bolo-plastico",marca:"Galvanotek",icone:"ph-cake",descricao:"A clássica G70 Galvanotek para bolos altos.",preco:"Sob consulta",unidade:"",especificacoes:{"Modelo":"G70","Marca":"Galvanotek","Altura interna":"7 cm","Material":"PET transparente","Uso":"Bolos altos, naked cakes"}},
+    {id:97,nome:"Embalagem G80",categoria:"plastico",subcategoria:"bolo-plastico",marca:"Galvanotek",icone:"ph-cake",descricao:"G80 Galvanotek para bolos ainda mais altos e recheados.",preco:"Sob consulta",unidade:"",especificacoes:{"Modelo":"G80","Marca":"Galvanotek","Altura interna":"8 cm","Material":"PET transparente","Uso":"Bolos altos, tortas geladas"}},
+    {id:98,nome:"Embalagem G34P",categoria:"plastico",subcategoria:"bolo-plastico",marca:"Galvanotek",icone:"ph-cake",descricao:"G34P Galvanotek para bolo de dois andares ou formato retangular.",preco:"Sob consulta",unidade:"",especificacoes:{"Modelo":"G34P","Marca":"Galvanotek","Formato":"Retangular","Material":"PET transparente","Uso":"Bolos retangulares, tortas"}},
+    {id:99,nome:"Embalagem G680",categoria:"plastico",subcategoria:"bolo-plastico",marca:"Galvanotek",icone:"ph-cake",descricao:"G680 Galvanotek, embalagem grande para bolos especiais.",preco:"Sob consulta",unidade:"",especificacoes:{"Modelo":"G680","Marca":"Galvanotek","Material":"PET transparente","Uso":"Bolos especiais, tortas grandes"}},
+    {id:100,nome:"Embalagem G450",categoria:"plastico",subcategoria:"bolo-plastico",marca:"Galvanotek",icone:"ph-cake",descricao:"G450 Galvanotek para bolos redondos médios.",preco:"Sob consulta",unidade:"",especificacoes:{"Modelo":"G450","Marca":"Galvanotek","Material":"PET transparente","Uso":"Bolos redondos, aniversário"}},
+    {id:101,nome:"Embalagem G350",categoria:"plastico",subcategoria:"bolo-plastico",marca:"Galvanotek",icone:"ph-cake",descricao:"G350 Galvanotek para bolos menores e mini cakes.",preco:"Sob consulta",unidade:"",especificacoes:{"Modelo":"G350","Marca":"Galvanotek","Material":"PET transparente","Uso":"Mini bolo, smash cake"}},
+    {id:102,nome:"Embalagem para Fatia",categoria:"plastico",subcategoria:"bolo-plastico",marca:"Galvanotek",icone:"ph-cake",descricao:"Embalagem triangular Galvanotek para fatia de bolo ou torta.",preco:"Sob consulta",unidade:"",especificacoes:{"Formato":"Triangular","Marca":"Galvanotek","Material":"PET transparente","Uso":"Fatias de bolo, torta"}},
+    // PLÁSTICO - BOLO (Hiverpack)
+    {id:103,nome:"Embalagem HV60",categoria:"plastico",subcategoria:"bolo-plastico",marca:"Hiverpack",icone:"ph-cake",descricao:"Embalagem Hiverpack HV60 para bolos baixos.",preco:"Sob consulta",unidade:"",especificacoes:{"Modelo":"HV60","Marca":"Hiverpack","Altura interna":"6 cm","Material":"PET premium","Uso":"Bolos baixos, tortas"}},
+    {id:104,nome:"Embalagem HV70",categoria:"plastico",subcategoria:"bolo-plastico",marca:"Hiverpack",icone:"ph-cake",descricao:"Hiverpack HV70 para bolos altos.",preco:"Sob consulta",unidade:"",especificacoes:{"Modelo":"HV70","Marca":"Hiverpack","Altura interna":"7 cm","Material":"PET premium","Uso":"Bolos altos, naked cakes"}},
+    {id:105,nome:"Embalagem HV80",categoria:"plastico",subcategoria:"bolo-plastico",marca:"Hiverpack",icone:"ph-cake",descricao:"HV80 Hiverpack para bolos extra-altos.",preco:"Sob consulta",unidade:"",especificacoes:{"Modelo":"HV80","Marca":"Hiverpack","Altura interna":"8 cm","Material":"PET premium","Uso":"Bolos altos, tortas geladas"}},
+    {id:106,nome:"Embalagem HV100",categoria:"plastico",subcategoria:"bolo-plastico",marca:"Hiverpack",icone:"ph-cake",descricao:"HV100 Hiverpack para bolos de grande porte.",preco:"Sob consulta",unidade:"",especificacoes:{"Modelo":"HV100","Marca":"Hiverpack","Altura interna":"10 cm","Material":"PET premium","Uso":"Bolos grandes, confeitaria premium"}},
+    {id:107,nome:"Embalagem para Fatia",categoria:"plastico",subcategoria:"bolo-plastico",marca:"Hiverpack",icone:"ph-cake",descricao:"Embalagem para fatia Hiverpack. Material premium.",preco:"Sob consulta",unidade:"",especificacoes:{"Formato":"Triangular","Marca":"Hiverpack","Material":"PET premium","Uso":"Fatias, tortas, quiche"}},
+    // PLÁSTICO - MARMITA CONGELAR (Prafesta)
+    {id:86,nome:"Marmita Prafesta 250ml",categoria:"plastico",subcategoria:"marmita-plastico",marca:"Prafesta",icone:"ph-bowl-food",descricao:"Marmita Prafesta 250ml com tampa. Própria para congelamento.",preco:"Sob consulta",unidade:"",especificacoes:{"Capacidade":"250 ml","Marca":"Prafesta","Tampa":"Inclusa","Material":"Polipropileno (PP)","Temperatura":"-20°C a +120°C","Uso":"Congelamento, micro-ondas, delivery"}},
+    {id:87,nome:"Marmita Prafesta 500ml",categoria:"plastico",subcategoria:"marmita-plastico",marca:"Prafesta",icone:"ph-bowl-food",descricao:"Marmita Prafesta 500ml com tampa. Vai ao congelador e micro-ondas.",preco:"Sob consulta",unidade:"",especificacoes:{"Capacidade":"500 ml","Marca":"Prafesta","Tampa":"Inclusa","Material":"Polipropileno (PP)","Temperatura":"-20°C a +120°C","Uso":"Congelamento, micro-ondas, delivery"}},
+    {id:88,nome:"Marmita Prafesta 750ml",categoria:"plastico",subcategoria:"marmita-plastico",marca:"Prafesta",icone:"ph-bowl-food",descricao:"Marmita Prafesta 750ml com tampa. Para refeições completas.",preco:"Sob consulta",unidade:"",especificacoes:{"Capacidade":"750 ml","Marca":"Prafesta","Tampa":"Inclusa","Material":"Polipropileno (PP)","Temperatura":"-20°C a +120°C","Uso":"Congelamento, micro-ondas, delivery"}},
+    {id:89,nome:"Marmita Prafesta 1000ml",categoria:"plastico",subcategoria:"marmita-plastico",marca:"Prafesta",icone:"ph-bowl-food",descricao:"Marmita Prafesta 1000ml com tampa. Para refeições fartas.",preco:"Sob consulta",unidade:"",especificacoes:{"Capacidade":"1000 ml","Marca":"Prafesta","Tampa":"Inclusa","Material":"Polipropileno (PP)","Temperatura":"-20°C a +120°C","Uso":"Congelamento, micro-ondas, delivery"}},
 ];
 
 const iconesEspec = {
@@ -1038,7 +1074,16 @@ const sacolarConfig = {
 };
 
 /* ─── ESTADO ─── */
-let estado = {categoria:"todos", subcategoria:"todas", tipoSacola:"preta", tamanhoSacola:"todas", pacoteSacola:"todos", marcaMarmitex:"todas"};
+let estado = {
+    categoria:"todos",
+    subcategoria:"todas",
+    tipoSacola:"preta",
+    tamanhoSacola:"todas",
+    pacoteSacola:"todos",
+    marcaMarmitex:"todas",
+    marcaPlastico:"todas",
+    marcaMarmitaPlastico:"todas"
+};
 let produtoModal = null;
 let carrinho = {};
 
@@ -1167,17 +1212,19 @@ function filtrarCategoria(cat,el){
     estado.tamanhoSacola="todas";
     estado.pacoteSacola="todos";
     estado.marcaMarmitex="todas";
+    estado.marcaPlastico="todas";
+    estado.marcaMarmitaPlastico="todas";
 
     document.querySelectorAll(".btn-filtro").forEach(b=>b.classList.remove("ativo"));
     el.classList.add("ativo");
 
-    document.getElementById("barraSubcategorias").classList.remove("visivel");
-    document.getElementById("barraTipoSacolas").classList.remove("visivel");
-    document.getElementById("barraTamanhoSacolas").classList.remove("visivel");
-    document.getElementById("barraPacoteSacolas").classList.remove("visivel");
-    document.getElementById("barraSubcategoriasIsopor").classList.remove("visivel");
-    document.getElementById("barraMarcaMarmitex").classList.remove("visivel");
-    document.getElementById("barraSubcategoriasPlastico").classList.remove("visivel");
+    // hide all sub-bars
+    ["barraSubcategorias","barraTipoSacolas","barraTamanhoSacolas","barraPacoteSacolas",
+     "barraSubcategoriasIsopor","barraMarcaMarmitex","barraSubcategoriasPlastico",
+     "barraMarcaPlastico","barraMarcaMarmitaPlastico","breadcrumb"].forEach(id=>{
+        const el2=document.getElementById(id);
+        if(el2){el2.classList.remove("visivel");if(el2.tagName!=="DIV"||!el2.classList.contains("breadcrumb"))el2.style.display="";}
+    });
     document.getElementById("breadcrumb").classList.remove("visivel");
 
     if(cat==="caixas"){
@@ -1199,16 +1246,20 @@ function filtrarCategoria(cat,el){
         document.getElementById("breadcrumbSub").textContent="Pretas — Todos os Tamanhos — Todos os Pacotes";
     } else if(cat==="isopor"){
         document.getElementById("barraSubcategoriasIsopor").classList.add("visivel");
+        document.getElementById("barraMarcaMarmitex").classList.add("visivel");
         document.getElementById("breadcrumb").classList.add("visivel");
         document.getElementById("breadcrumbCat").textContent="Isopor";
         document.getElementById("breadcrumbSub").textContent="Todos";
         document.querySelectorAll("#barraSubcategoriasIsopor .btn-sub-isopor").forEach((b,i)=>b.classList.toggle("ativo",i===0));
+        document.querySelectorAll(".btn-marca-marmitex").forEach((b,i)=>b.classList.toggle("ativo",i===0));
     } else if(cat==="plastico"){
         document.getElementById("barraSubcategoriasPlastico").classList.add("visivel");
+        document.getElementById("barraMarcaPlastico").classList.add("visivel");
         document.getElementById("breadcrumb").classList.add("visivel");
         document.getElementById("breadcrumbCat").textContent="Embalagens Plásticas";
         document.getElementById("breadcrumbSub").textContent="Todas";
         document.querySelectorAll("#barraSubcategoriasPlastico .btn-sub-plastico").forEach((b,i)=>b.classList.toggle("ativo",i===0));
+        document.querySelectorAll(".btn-marca-plastico").forEach((b,i)=>b.classList.toggle("ativo",i===0));
     }
 
     renderizarProdutos();
@@ -1217,21 +1268,40 @@ function filtrarCategoria(cat,el){
 function filtrarSub(sub,el,cat){
     estado.subcategoria=sub;
     estado.marcaMarmitex="todas";
+    estado.marcaPlastico="todas";
+    estado.marcaMarmitaPlastico="todas";
+
     const sels={caixas:"#barraSubcategorias .btn-subcategoria",isopor:"#barraSubcategoriasIsopor .btn-sub-isopor",plastico:"#barraSubcategoriasPlastico .btn-sub-plastico"};
     document.querySelectorAll(sels[cat]).forEach(b=>b.classList.remove("ativo"));
     el.classList.add("ativo");
 
-    // Mostrar/esconder barra de marca marmitex
     const barraMarca = document.getElementById("barraMarcaMarmitex");
-    if(cat==="isopor" && sub==="marmitex"){
-        barraMarca.classList.add("visivel");
-        document.querySelectorAll(".btn-marca-marmitex").forEach((b,i)=>b.classList.toggle("ativo",i===0));
-    } else if(cat==="isopor" && sub==="todas"){
-        // mostrar também pois marmitex incluso no "todas"
-        barraMarca.classList.add("visivel");
-        document.querySelectorAll(".btn-marca-marmitex").forEach((b,i)=>b.classList.toggle("ativo",i===0));
-    } else {
-        barraMarca.classList.remove("visivel");
+    const barraMarcaP = document.getElementById("barraMarcaPlastico");
+    const barraMarcaMP = document.getElementById("barraMarcaMarmitaPlastico");
+
+    if(cat==="isopor"){
+        const showMarca = (sub==="marmitex"||sub==="todas");
+        barraMarca.classList.toggle("visivel",showMarca);
+        if(showMarca) document.querySelectorAll(".btn-marca-marmitex").forEach((b,i)=>b.classList.toggle("ativo",i===0));
+    }
+
+    if(cat==="plastico"){
+        // show brand bar depending on subcategory
+        if(sub==="bolo-plastico"){
+            barraMarcaP.classList.add("visivel");
+            barraMarcaMP.classList.remove("visivel");
+            document.querySelectorAll(".btn-marca-plastico").forEach((b,i)=>b.classList.toggle("ativo",i===0));
+        } else if(sub==="marmita-plastico"){
+            barraMarcaP.classList.remove("visivel");
+            barraMarcaMP.classList.add("visivel");
+            document.querySelectorAll("#barraMarcaMarmitaPlastico .btn-marca-plastico").forEach((b,i)=>b.classList.toggle("ativo",i===0));
+        } else {
+            // "todas" - show bolo brand filter
+            barraMarcaP.classList.add("visivel");
+            barraMarcaMP.classList.add("visivel");
+            document.querySelectorAll(".btn-marca-plastico").forEach((b,i)=>b.classList.toggle("ativo",i===0));
+            document.querySelectorAll("#barraMarcaMarmitaPlastico .btn-marca-plastico").forEach((b,i)=>b.classList.toggle("ativo",i===0));
+        }
     }
 
     const nomes={
@@ -1247,8 +1317,21 @@ function filtrarMarcaMarmitex(marca, el) {
     estado.marcaMarmitex = marca;
     document.querySelectorAll(".btn-marca-marmitex").forEach(b=>b.classList.remove("ativo"));
     el.classList.add("ativo");
-    const sub = document.getElementById("breadcrumbSub").textContent.split(" — ")[0];
-    document.getElementById("breadcrumbSub").textContent = marca === "todas" ? sub : `${sub} — ${marca}`;
+    renderizarProdutos();
+}
+
+function filtrarMarcaPlastico(marca, el) {
+    estado.marcaPlastico = marca;
+    // only toggle within the correct bar
+    el.closest('.plastico-marca-bar').querySelectorAll('.btn-marca-plastico').forEach(b=>b.classList.remove("ativo"));
+    el.classList.add("ativo");
+    renderizarProdutos();
+}
+
+function filtrarMarcaMarmitaPlastico(marca, el) {
+    estado.marcaMarmitaPlastico = marca;
+    document.querySelectorAll("#barraMarcaMarmitaPlastico .btn-marca-plastico").forEach(b=>b.classList.remove("ativo"));
+    el.classList.add("ativo");
     renderizarProdutos();
 }
 
@@ -1318,11 +1401,8 @@ function renderizarProdutos(){
         listaProdutos.forEach(p=>{
             const key=obterKeyGrupo(p);
             let label;
-            if(p.categoria==="sacolas"){
-                label=sacolarConfig[p.tipo]?.nomeTipo||"Sacolas";
-            } else {
-                label=obterLabelGrupoGeral(p);
-            }
+            if(p.categoria==="sacolas") label=sacolarConfig[p.tipo]?.nomeTipo||"Sacolas";
+            else label=obterLabelGrupoGeral(p);
             if(!grupos[key])grupos[key]={label,cat:p.categoria,tipo:p.tipo,produtos:[]};
             grupos[key].produtos.push(p);
         });
@@ -1347,7 +1427,6 @@ function renderizarProdutos(){
         const filtrados=listaProdutos.filter(p=>{
             if(p.categoria!=="isopor")return false;
             if(estado.subcategoria!=="todas"&&p.subcategoria!==estado.subcategoria)return false;
-            // filtro de marca só se subcategoria é marmitex ou todas
             if(estado.marcaMarmitex!=="todas"&&p.subcategoria==="marmitex"&&p.marca!==estado.marcaMarmitex)return false;
             return true;
         });
@@ -1364,7 +1443,17 @@ function renderizarProdutos(){
     }
 
     if(estado.categoria==="plastico"){
-        const filtrados=listaProdutos.filter(p=>p.categoria==="plastico"&&(estado.subcategoria==="todas"||p.subcategoria===estado.subcategoria));
+        const filtrados=listaProdutos.filter(p=>{
+            if(p.categoria!=="plastico")return false;
+            if(estado.subcategoria!=="todas"&&p.subcategoria!==estado.subcategoria)return false;
+            // brand filter for bolo
+            if((estado.subcategoria==="bolo-plastico"||estado.subcategoria==="todas")&&
+               estado.marcaPlastico!=="todas"&&p.subcategoria==="bolo-plastico"&&p.marca!==estado.marcaPlastico)return false;
+            // brand filter for marmita
+            if((estado.subcategoria==="marmita-plastico"||estado.subcategoria==="todas")&&
+               estado.marcaMarmitaPlastico!=="todas"&&p.subcategoria==="marmita-plastico"&&p.marca!==estado.marcaMarmitaPlastico)return false;
+            return true;
+        });
         if(!filtrados.length){container.innerHTML=`<p style="text-align:center;color:var(--texto-mutado);padding:4rem 0;">Nenhum produto encontrado.</p>`;return;}
         criarSecao("Embalagens Plásticas",filtrados,container,"plastico");
         return;
@@ -1429,10 +1518,16 @@ function criarSecao(titulo,produtos,container,cat,tipo){
             ?`<div class="container-preco"><span class="preco-label">Consulte-nos</span><span class="preco-valor" style="font-size:1.5rem;">Sob consulta</span></div>`
             :`<div class="container-preco"><span class="preco-label">A partir de</span><div class="preco-linha"><span class="preco-valor">${pFmt}</span><span class="preco-unit">${p.unidade}</span></div></div>`;
 
-        // Badge de marca para marmitex
-        const badgeMarca = (p.subcategoria === 'marmitex' && p.marca)
-            ? `<span style="position:absolute;top:12px;left:12px;background:#f57f17;color:#fff;font-size:.7rem;font-weight:800;padding:4px 10px;border-radius:99px;">${p.marca}</span>`
-            : '';
+        // Badge de marca
+        let badgeMarca = '';
+        if(p.subcategoria === 'marmitex' && p.marca){
+            badgeMarca = `<span style="position:absolute;top:12px;left:12px;background:#f57f17;color:#fff;font-size:.7rem;font-weight:800;padding:4px 10px;border-radius:99px;z-index:3;">${p.marca}</span>`;
+        } else if(p.subcategoria === 'bolo-plastico' && p.marca){
+            const cor = p.marca === 'Galvanotek' ? '#15803d' : '#0369a1';
+            badgeMarca = `<span style="position:absolute;top:12px;left:12px;background:${cor};color:#fff;font-size:.7rem;font-weight:800;padding:4px 10px;border-radius:99px;z-index:3;">${p.marca}</span>`;
+        } else if(p.subcategoria === 'marmita-plastico' && p.marca){
+            badgeMarca = `<span style="position:absolute;top:12px;left:12px;background:#e65100;color:#fff;font-size:.7rem;font-weight:800;padding:4px 10px;border-radius:99px;z-index:3;">${p.marca}</span>`;
+        }
 
         card.innerHTML=`
             <div class="imagem-produto">
@@ -1487,10 +1582,7 @@ setInterval(()=>{
     track.style.transform=`translateX(-${slideIdx*(100/vis)}%)`;
 },4000);
 
-// Mostrar barra de marca ao entrar no isopor também
-window.onload=()=>{
-    renderizarProdutos();
-};
+window.onload=()=>{renderizarProdutos();};
 </script>
 </body>
 </html>
