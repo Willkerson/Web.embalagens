@@ -638,7 +638,7 @@ function enviarWhatsApp(){
         return `• ${p.nome} — ${qtd}x ${fmt}${sub?` = ${sub}`:""}`;
     });
     const total=totalValor().toLocaleString("pt-BR",{style:"currency",currency:"BRL"});
-    const msg=`Olá! 👋 Gostaria de fazer um pedido pela Cia Das Embalagens.\n\n 🗒️ *Itens do Pedido:*\n${linhas.join("\n")}\n\n 💰 *Total estimado:* ${total}\n\nPoderia confirmar se há no estoque esses itens? 🙌  Obrigado(a)!`;
+    const msg=`Olá!  Gostaria de fazer um pedido pela Cia Das Embalagens.\n\n  *Itens do Pedido:*\n${linhas.join("\n")}\n\n  *Total estimado:* ${total}\n\nPoderia confirmar se há no estoque esses itens?  Obrigado(a)!`;
     window.open(`https://wa.me/5511972999835?text=${encodeURIComponent(msg)}`,"_blank");
 }
 
