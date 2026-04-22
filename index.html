@@ -121,12 +121,18 @@
         .btn-tipo-sacola.tipo-crystal:hover{background:linear-gradient(135deg,rgba(147,197,253,.25),rgba(196,181,253,.25));border-color:#93c5fd;}
         .btn-tipo-sacola.tipo-crystal.ativo{background:linear-gradient(135deg,#60a5fa,#a78bfa);color:#fff;border-color:transparent;box-shadow:0 4px 18px rgba(96,165,250,.45);}
 
+        /* Kraft */
+        .btn-tipo-sacola.tipo-kraft{background:#78350f;color:#fde68a;border-color:#92400e;}
+        .btn-tipo-sacola.tipo-kraft:hover{background:#92400e;border-color:#fbbf24;}
+        .btn-tipo-sacola.tipo-kraft.ativo{background:#f59e0b;color:#1c1917;border-color:#f59e0b;box-shadow:0 4px 14px rgba(245,158,11,.4);}
+
         /* Dot indicador de cor */
         .cor-dot{width:14px;height:14px;border-radius:50%;flex-shrink:0;border:1.5px solid rgba(255,255,255,.25);}
         .cor-dot-preta{background:#111;}
         .cor-dot-verde{background:#10b981;}
         .cor-dot-branca{background:#fff;border-color:#d1d5db;}
         .cor-dot-crystal{background:linear-gradient(135deg,#60a5fa,#a78bfa);}
+        .cor-dot-kraft{background:#f59e0b;}
 
         /* ─── SACOLAS: NÍVEL 2 - TAMANHOS ─── */
         .sacolas-tamanho-bar{display:none;gap:10px;justify-content:center;flex-wrap:wrap;margin-bottom:3rem;padding:1.25rem 1.5rem;border-radius:18px;animation:fadeIn .3s ease;}
@@ -304,8 +310,59 @@
         .sacola-crystal-card .btn-ver-espec{border-color:rgba(147,197,253,.2)!important;color:rgba(96,165,250,.5)!important;}
         .sacola-crystal-card .btn-ver-espec:hover{border-color:#60a5fa!important;color:#93c5fd!important;}
 
-        /* isopor card */
-        .isopor-card{border-color:#b2ebf2!important;}
+        /* tamanho kraft */
+        .tema-kraft .btn-tamanho-sacola{background:#78350f;border:1.5px solid #92400e;color:#fde68a;}
+        .tema-kraft .btn-tamanho-sacola:hover{background:#92400e;border-color:#fbbf24;}
+        .tema-kraft .btn-tamanho-sacola.ativo{background:#f59e0b;color:#1c1917;border-color:#f59e0b;}
+
+        /* sacola kraft card */
+        .sacola-kraft-card{background:#1c1008!important;border-color:#78350f!important;}
+        .sacola-kraft-card:hover{border-color:#f59e0b!important;box-shadow:0 20px 25px -5px rgba(245,158,11,.2)!important;}
+        .sacola-kraft-card .conteudo-produto{background:#1c1008;}
+        .sacola-kraft-card .nome-produto{color:#fde68a!important;}
+        .sacola-kraft-card .desc-produto{color:#d97706!important;opacity:.8;}
+        .sacola-kraft-card .imagem-produto{background:linear-gradient(135deg,#1c1008 0%,#2d1a08 100%)!important;border-bottom-color:#78350f!important;color:#78350f!important;}
+        .sacola-kraft-card:hover .imagem-produto{color:#f59e0b!important;}
+        .sacola-kraft-card .container-preco{background:#0f0804!important;border-color:#78350f!important;}
+        .sacola-kraft-card .container-preco::before{background:#f59e0b!important;}
+        .sacola-kraft-card .preco-label{color:#d97706!important;}
+        .sacola-kraft-card .preco-valor{color:#fde68a!important;}
+        .sacola-kraft-card .controle-qtd{border-color:#78350f!important;background:#0f0804!important;}
+        .sacola-kraft-card .btn-qtd{color:#d97706!important;}
+        .sacola-kraft-card .btn-qtd:hover{background:#2d1a08!important;}
+        .sacola-kraft-card .input-qtd{color:#fde68a!important;}
+        .sacola-kraft-card .btn-add-carrinho{background:#92400e!important;color:#fde68a!important;}
+        .sacola-kraft-card .btn-add-carrinho:hover{background:#f59e0b!important;color:#1c1917!important;}
+        .sacola-kraft-card .btn-ver-espec{border-color:#78350f!important;color:#78350f!important;}
+        .sacola-kraft-card .btn-ver-espec:hover{border-color:#f59e0b!important;color:#fde68a!important;}
+
+        /* card titulo kraft */
+        .titulo-sacola-kraft i{color:#fde68a;background:#1c1008;}
+
+        /* card sub sacola kraft */
+        .card-sub-sacola-kraft{background:#1c1008;border:1px solid #78350f;}
+        .card-sub-sacola-kraft:hover{transform:translateY(-6px);border-color:#f59e0b;box-shadow:0 20px 25px -5px rgba(245,158,11,.2);}
+        .card-sub-sacola-kraft .icone-sub{font-size:3rem;color:#fde68a;background:#2d1a08;padding:1rem;border-radius:16px;}
+        .card-sub-sacola-kraft h3{font-size:1.1rem;color:#fde68a;}
+        .card-sub-sacola-kraft .badge-qtd{background:#f59e0b;color:#1c1917;font-size:.75rem;font-weight:700;padding:4px 12px;border-radius:99px;}
+
+        /* ─── EMBALAGEM PLÁSTICA ─── */
+        .subcategorias-bar-plastico{background:#f0fdf4;border:1px solid #bbf7d0;}
+        .btn-sub-plastico{padding:10px 22px;background:#fff;border:1px solid #bbf7d0;color:#15803d;border-radius:99px;font-weight:600;font-size:.9rem;transition:var(--tr);display:flex;align-items:center;gap:8px;}
+        .btn-sub-plastico:hover{background:#f0fdf4;transform:translateY(-1px);}
+        .btn-sub-plastico.ativo{background:#15803d;color:#fff;border-color:#15803d;box-shadow:0 4px 12px rgba(21,128,61,.3);}
+
+        .plastico-card{border-color:#bbf7d0!important;}
+        .plastico-card:hover{border-color:#4ade80!important;box-shadow:0 20px 25px -5px rgba(21,128,61,.12)!important;}
+        .plastico-card .imagem-produto{background:linear-gradient(135deg,#f0fdf4 0%,#dcfce7 100%)!important;border-bottom-color:#bbf7d0!important;color:#86efac!important;}
+        .plastico-card:hover .imagem-produto{color:#15803d!important;}
+        .plastico-card .container-preco{background:#f0fdf4!important;border-color:#bbf7d0!important;}
+        .plastico-card .container-preco::before{background:#15803d!important;}
+        .plastico-card .preco-label{color:#15803d!important;}
+        .plastico-card .preco-valor{color:#15803d!important;}
+        .plastico-card .btn-add-carrinho{background:#15803d!important;}
+        .plastico-card .btn-add-carrinho:hover{background:#166534!important;}
+        .titulo-plastico i{color:#15803d;background:#f0fdf4;}
         .isopor-card:hover{border-color:#00acc1!important;box-shadow:0 20px 25px -5px rgba(0,131,143,.15)!important;}
         .isopor-card .imagem-produto{background:linear-gradient(135deg,#e0f7fa 0%,#f0fdff 100%)!important;border-bottom-color:#b2ebf2!important;color:#4dd0e1!important;}
         .isopor-card:hover .imagem-produto{color:#00838f!important;}
@@ -507,6 +564,7 @@
                 <button class="btn-filtro" onclick="filtrarCategoria('sacolas',this)"><i class="ph-bold ph-shopping-bag"></i> Sacolas</button>
                 <button class="btn-filtro" onclick="filtrarCategoria('isopor',this)"><i class="ph-bold ph-snowflake"></i> Isopor</button>
                 <button class="btn-filtro" onclick="filtrarCategoria('insumos',this)"><i class="ph-bold ph-scroll"></i> Insumos Industriais</button>
+                <button class="btn-filtro" onclick="filtrarCategoria('plastico',this)"><i class="ph-bold ph-flask"></i> Embalagens Plásticas</button>
             </div>
         </div>
 
@@ -533,6 +591,9 @@
             <button class="btn-tipo-sacola tipo-crystal" onclick="selecionarTipoSacola('crystal',this)">
                 <span class="cor-dot cor-dot-crystal"></span> Crystal
             </button>
+            <button class="btn-tipo-sacola tipo-kraft" onclick="selecionarTipoSacola('kraft',this)">
+                <span class="cor-dot cor-dot-kraft"></span> Kraft
+            </button>
         </div>
 
         <!-- SACOLAS: Nível 2 - Tamanhos (aparece após escolher tipo) -->
@@ -549,6 +610,14 @@
             <button class="btn-sub-isopor" onclick="filtrarSub('marmitex',this,'isopor')"><i class="ph-bold ph-bowl-food"></i> Marmitex</button>
             <button class="btn-sub-isopor" onclick="filtrarSub('caixa-isopor',this,'isopor')"><i class="ph-bold ph-cube"></i> Caixas de Isopor</button>
             <button class="btn-sub-isopor" onclick="filtrarSub('copo-isopor',this,'isopor')"><i class="ph-bold ph-coffee"></i> Copos de Isopor</button>
+            <button class="btn-sub-isopor" onclick="filtrarSub('disco-isopor',this,'isopor')"><i class="ph-bold ph-circle"></i> Disco para Pizza</button>
+        </div>
+
+        <!-- Subcategorias Embalagens Plásticas -->
+        <div class="sub-bar-base subcategorias-bar-plastico" id="barraSubcategoriasPlastico">
+            <button class="btn-sub-plastico ativo" onclick="filtrarSub('todas',this,'plastico')"><i class="ph-bold ph-squares-four"></i> Todas</button>
+            <button class="btn-sub-plastico" onclick="filtrarSub('bolo-plastico',this,'plastico')"><i class="ph-bold ph-cake"></i> Embalagens de Bolo</button>
+            <button class="btn-sub-plastico" onclick="filtrarSub('marmita-plastico',this,'plastico')"><i class="ph-bold ph-bowl-food"></i> Marmitas para Congelar</button>
         </div>
 
         <div class="breadcrumb" id="breadcrumb">
@@ -658,39 +727,49 @@ const listaProdutos = [
     {id:15, nome:"Caixa De Esfiha Nº2", categoria:"caixas", subcategoria:"salgado", icone:"ph-archive-box", descricao:"Para esfihas, salgadinhos e porções individuais.", preco:3.50, unidade:"/unidade", especificacoes:{"Medidas Externas":"20 x 20 x 5 cm","Material":"Ondulado"}},
     {id:16, nome:"Caixa De Pizza", categoria:"caixas", subcategoria:"salgado", icone:"ph-archive-box", descricao:"Mantém o calor e a crocância da pizza.", preco:3.50, unidade:"/unidade", especificacoes:{"Medidas Externas":"35 x 35 cm","Material":"Ondulado"}},
 
-    // ─── SACOLAS PRETAS ───
-    {id:17, nome:"Sacola Preta 30x40", categoria:"sacolas", tipo:"preta", tamanho:"p", icone:"ph-shopping-bag", descricao:"Sacola preta resistente para pequenas entregas e presentes.", preco:"Sob consulta", unidade:"", especificacoes:{"Medidas":"30 x 40 cm","Cor":"Preto","Material":"Plástico resistente","Uso":"Entregas, presente, delivery"}},
-    {id:18, nome:"Sacola Preta 35x45", categoria:"sacolas", tipo:"preta", tamanho:"p", icone:"ph-shopping-bag", descricao:"Tamanho versátil para pequenos pedidos e presentes.", preco:"Sob consulta", unidade:"", especificacoes:{"Medidas":"35 x 45 cm","Cor":"Preto","Material":"Plástico resistente","Uso":"Delivery, varejo, presentes"}},
-    {id:19, nome:"Sacola Preta 40x50", categoria:"sacolas", tipo:"preta", tamanho:"m", icone:"ph-shopping-bag", descricao:"Ideal para pedidos médios e embalagens de vestuário.", preco:"Sob consulta", unidade:"", especificacoes:{"Medidas":"40 x 50 cm","Cor":"Preto","Material":"Plástico resistente","Uso":"Vestuário, delivery, moda"}},
-    {id:20, nome:"Sacola Preta 45x60", categoria:"sacolas", tipo:"preta", tamanho:"m", icone:"ph-shopping-bag", descricao:"Capacidade média-alta, perfeita para delivery de refeições.", preco:"Sob consulta", unidade:"", especificacoes:{"Medidas":"45 x 60 cm","Cor":"Preto","Material":"Plástico resistente","Uso":"Delivery, restaurantes, moda"}},
-    {id:21, nome:"Sacola Preta 60x80", categoria:"sacolas", tipo:"preta", tamanho:"g", icone:"ph-shopping-bag", descricao:"Grande capacidade para pedidos volumosos e embalagens especiais.", preco:"Sob consulta", unidade:"", especificacoes:{"Medidas":"60 x 80 cm","Cor":"Preto","Material":"Plástico resistente","Uso":"Grandes pedidos, vestuário, atacado"}},
-    {id:22, nome:"Sacola Preta 90x100", categoria:"sacolas", tipo:"preta", tamanho:"g", icone:"ph-shopping-bag", descricao:"Sacola extra grande para volumes maiores. Ideal para logística.", preco:"Sob consulta", unidade:"", especificacoes:{"Medidas":"90 x 100 cm","Cor":"Preto","Material":"Plástico resistente","Uso":"Grandes volumes, armazenagem, logística"}},
+    // ─── SACOLAS PRETAS (vendidas por pacote) ───
+    {id:17, nome:"Sacola Preta 30x40 — 100L", categoria:"sacolas", tipo:"preta", tamanho:"p", icone:"ph-shopping-bag", descricao:"Saco de lixo preto 100L. Pacote com 10 unidades. Resistente para uso doméstico e comercial.", preco:"Sob consulta", unidade:"/pacote", especificacoes:{"Capacidade":"100 litros","Medidas":"30 x 40 cm","Cor":"Preto","Unidades por pacote":"10 un","Uso":"Uso doméstico, coleta de resíduos"}},
+    {id:18, nome:"Sacola Preta 35x45 — 100L", categoria:"sacolas", tipo:"preta", tamanho:"p", icone:"ph-shopping-bag", descricao:"Saco preto 100L em tamanho 35x45. Pacote com 50 unidades.", preco:"Sob consulta", unidade:"/pacote", especificacoes:{"Capacidade":"100 litros","Medidas":"35 x 45 cm","Cor":"Preto","Unidades por pacote":"50 un","Uso":"Coleta, uso comercial"}},
+    {id:19, nome:"Sacola Preta 40x50 — 200L", categoria:"sacolas", tipo:"preta", tamanho:"m", icone:"ph-shopping-bag", descricao:"Saco preto 200L para grandes volumes. Pacote com 10 unidades.", preco:"Sob consulta", unidade:"/pacote", especificacoes:{"Capacidade":"200 litros","Medidas":"40 x 50 cm","Cor":"Preto","Unidades por pacote":"10 un","Uso":"Resíduos industriais, entulho leve"}},
+    {id:20, nome:"Sacola Preta 45x60 — 200L", categoria:"sacolas", tipo:"preta", tamanho:"m", icone:"ph-shopping-bag", descricao:"Saco preto 200L 45x60. Pacote com 50 unidades. Para médios volumes.", preco:"Sob consulta", unidade:"/pacote", especificacoes:{"Capacidade":"200 litros","Medidas":"45 x 60 cm","Cor":"Preto","Unidades por pacote":"50 un","Uso":"Coleta comercial, resíduos"}},
+    {id:21, nome:"Sacola Preta 60x80 — 100L", categoria:"sacolas", tipo:"preta", tamanho:"g", icone:"ph-shopping-bag", descricao:"Saco preto 100L reforçado 60x80. Pacote com 10 unidades.", preco:"Sob consulta", unidade:"/pacote", especificacoes:{"Capacidade":"100 litros","Medidas":"60 x 80 cm","Cor":"Preto","Unidades por pacote":"10 un","Uso":"Resíduos pesados, uso industrial"}},
+    {id:22, nome:"Sacola Preta 90x100", categoria:"sacolas", tipo:"preta", tamanho:"g", icone:"ph-shopping-bag", descricao:"Saco preto extra grande. Pacote com 50 unidades. Para grandes volumes e logística.", preco:"Sob consulta", unidade:"/pacote", especificacoes:{"Medidas":"90 x 100 cm","Cor":"Preto","Unidades por pacote":"50 un","Uso":"Grandes volumes, armazenagem, logística"}},
 
-    // ─── SACOLAS VERDES ───
-    {id:23, nome:"Sacola Verde 30x40", categoria:"sacolas", tipo:"verde", tamanho:"p", icone:"ph-shopping-bag", descricao:"Sacola verde vibrante para pequenas entregas e presentes.", preco:"Sob consulta", unidade:"", especificacoes:{"Medidas":"30 x 40 cm","Cor":"Verde","Material":"Plástico resistente","Uso":"Entregas, presente, delivery"}},
-    {id:24, nome:"Sacola Verde 35x45", categoria:"sacolas", tipo:"verde", tamanho:"p", icone:"ph-shopping-bag", descricao:"Tamanho compacto em verde para pequenas encomendas.", preco:"Sob consulta", unidade:"", especificacoes:{"Medidas":"35 x 45 cm","Cor":"Verde","Material":"Plástico resistente","Uso":"Delivery, varejo, presentes"}},
-    {id:25, nome:"Sacola Verde 40x50", categoria:"sacolas", tipo:"verde", tamanho:"m", icone:"ph-shopping-bag", descricao:"Médio porte em verde para pedidos do dia a dia.", preco:"Sob consulta", unidade:"", especificacoes:{"Medidas":"40 x 50 cm","Cor":"Verde","Material":"Plástico resistente","Uso":"Vestuário, delivery, moda"}},
-    {id:26, nome:"Sacola Verde 45x60", categoria:"sacolas", tipo:"verde", tamanho:"m", icone:"ph-shopping-bag", descricao:"Verde médio-grande para delivery de alimentos e roupas.", preco:"Sob consulta", unidade:"", especificacoes:{"Medidas":"45 x 60 cm","Cor":"Verde","Material":"Plástico resistente","Uso":"Delivery, restaurantes, moda"}},
-    {id:27, nome:"Sacola Verde 60x80", categoria:"sacolas", tipo:"verde", tamanho:"g", icone:"ph-shopping-bag", descricao:"Grande capacidade em verde para pedidos volumosos.", preco:"Sob consulta", unidade:"", especificacoes:{"Medidas":"60 x 80 cm","Cor":"Verde","Material":"Plástico resistente","Uso":"Grandes pedidos, atacado"}},
+    // ─── SACOLAS VERDES (vendidas por kg) ───
+    {id:23, nome:"Sacola Verde 30x40", categoria:"sacolas", tipo:"verde", tamanho:"p", icone:"ph-shopping-bag", descricao:"Sacola verde resistente. Vendida por kg.", preco:"Sob consulta", unidade:"/kg", especificacoes:{"Medidas":"30 x 40 cm","Cor":"Verde","Material":"Plástico resistente","Venda":"Por kg","Uso":"Entregas, presente, delivery"}},
+    {id:24, nome:"Sacola Verde 35x45", categoria:"sacolas", tipo:"verde", tamanho:"p", icone:"ph-shopping-bag", descricao:"Sacola verde 35x45. Vendida por kg.", preco:"Sob consulta", unidade:"/kg", especificacoes:{"Medidas":"35 x 45 cm","Cor":"Verde","Material":"Plástico resistente","Venda":"Por kg","Uso":"Delivery, varejo, presentes"}},
+    {id:25, nome:"Sacola Verde 40x50", categoria:"sacolas", tipo:"verde", tamanho:"m", icone:"ph-shopping-bag", descricao:"Sacola verde médio porte. Vendida por kg.", preco:"Sob consulta", unidade:"/kg", especificacoes:{"Medidas":"40 x 50 cm","Cor":"Verde","Material":"Plástico resistente","Venda":"Por kg","Uso":"Vestuário, delivery, moda"}},
+    {id:26, nome:"Sacola Verde 45x60", categoria:"sacolas", tipo:"verde", tamanho:"m", icone:"ph-shopping-bag", descricao:"Sacola verde 45x60. Vendida por kg.", preco:"Sob consulta", unidade:"/kg", especificacoes:{"Medidas":"45 x 60 cm","Cor":"Verde","Material":"Plástico resistente","Venda":"Por kg","Uso":"Delivery, restaurantes, moda"}},
+    {id:27, nome:"Sacola Verde 60x80", categoria:"sacolas", tipo:"verde", tamanho:"g", icone:"ph-shopping-bag", descricao:"Sacola verde grande. Vendida por kg.", preco:"Sob consulta", unidade:"/kg", especificacoes:{"Medidas":"60 x 80 cm","Cor":"Verde","Material":"Plástico resistente","Venda":"Por kg","Uso":"Grandes pedidos, atacado"}},
 
-    // ─── SACOLAS BRANCAS ───
-    {id:28, nome:"Sacola Branca 30x40", categoria:"sacolas", tipo:"branca", tamanho:"p", icone:"ph-shopping-bag", descricao:"Sacola branca clean para presentear com elegância.", preco:"Sob consulta", unidade:"", especificacoes:{"Medidas":"30 x 40 cm","Cor":"Branco","Material":"Plástico resistente","Uso":"Presentes, farmácias, varejo"}},
-    {id:29, nome:"Sacola Branca 35x45", categoria:"sacolas", tipo:"branca", tamanho:"p", icone:"ph-shopping-bag", descricao:"Pequena em branco para lojas e distribuidoras.", preco:"Sob consulta", unidade:"", especificacoes:{"Medidas":"35 x 45 cm","Cor":"Branco","Material":"Plástico resistente","Uso":"Varejo, farmácia, presentes"}},
-    {id:30, nome:"Sacola Branca 40x50", categoria:"sacolas", tipo:"branca", tamanho:"m", icone:"ph-shopping-bag", descricao:"Branca média, ideal para farmácias e lojas de cosméticos.", preco:"Sob consulta", unidade:"", especificacoes:{"Medidas":"40 x 50 cm","Cor":"Branco","Material":"Plástico resistente","Uso":"Farmácias, cosméticos, moda"}},
-    {id:31, nome:"Sacola Branca 45x60", categoria:"sacolas", tipo:"branca", tamanho:"m", icone:"ph-shopping-bag", descricao:"Médio-grande branca para roupas e itens volumosos.", preco:"Sob consulta", unidade:"", especificacoes:{"Medidas":"45 x 60 cm","Cor":"Branco","Material":"Plástico resistente","Uso":"Vestuário, delivery, varejo"}},
-    {id:32, nome:"Sacola Branca 60x80", categoria:"sacolas", tipo:"branca", tamanho:"g", icone:"ph-shopping-bag", descricao:"Grande branca para atacado e grandes volumes.", preco:"Sob consulta", unidade:"", especificacoes:{"Medidas":"60 x 80 cm","Cor":"Branco","Material":"Plástico resistente","Uso":"Atacado, grandes pedidos"}},
+    // ─── SACOLAS BRANCAS (vendidas por kg) ───
+    {id:28, nome:"Sacola Branca 30x40", categoria:"sacolas", tipo:"branca", tamanho:"p", icone:"ph-shopping-bag", descricao:"Sacola branca clean. Vendida por kg.", preco:"Sob consulta", unidade:"/kg", especificacoes:{"Medidas":"30 x 40 cm","Cor":"Branco","Material":"Plástico resistente","Venda":"Por kg","Uso":"Presentes, farmácias, varejo"}},
+    {id:29, nome:"Sacola Branca 35x45", categoria:"sacolas", tipo:"branca", tamanho:"p", icone:"ph-shopping-bag", descricao:"Sacola branca 35x45. Vendida por kg.", preco:"Sob consulta", unidade:"/kg", especificacoes:{"Medidas":"35 x 45 cm","Cor":"Branco","Material":"Plástico resistente","Venda":"Por kg","Uso":"Varejo, farmácia, presentes"}},
+    {id:30, nome:"Sacola Branca 40x50", categoria:"sacolas", tipo:"branca", tamanho:"m", icone:"ph-shopping-bag", descricao:"Sacola branca média. Vendida por kg.", preco:"Sob consulta", unidade:"/kg", especificacoes:{"Medidas":"40 x 50 cm","Cor":"Branco","Material":"Plástico resistente","Venda":"Por kg","Uso":"Farmácias, cosméticos, moda"}},
+    {id:31, nome:"Sacola Branca 45x60", categoria:"sacolas", tipo:"branca", tamanho:"m", icone:"ph-shopping-bag", descricao:"Sacola branca 45x60. Vendida por kg.", preco:"Sob consulta", unidade:"/kg", especificacoes:{"Medidas":"45 x 60 cm","Cor":"Branco","Material":"Plástico resistente","Venda":"Por kg","Uso":"Vestuário, delivery, varejo"}},
+    {id:32, nome:"Sacola Branca 60x80", categoria:"sacolas", tipo:"branca", tamanho:"g", icone:"ph-shopping-bag", descricao:"Sacola branca grande. Vendida por kg.", preco:"Sob consulta", unidade:"/kg", especificacoes:{"Medidas":"60 x 80 cm","Cor":"Branco","Material":"Plástico resistente","Venda":"Por kg","Uso":"Atacado, grandes pedidos"}},
 
-    // ─── SACOLAS CRYSTAL ───
-    {id:33, nome:"Sacola Crystal 30x40", categoria:"sacolas", tipo:"crystal", tamanho:"p", icone:"ph-shopping-bag", descricao:"Sacola transparente crystal para exposição do produto.", preco:"Sob consulta", unidade:"", especificacoes:{"Medidas":"30 x 40 cm","Cor":"Transparente","Material":"Plástico cristal","Uso":"Exposição de produto, presentes, varejo"}},
-    {id:34, nome:"Sacola Crystal 35x45", categoria:"sacolas", tipo:"crystal", tamanho:"p", icone:"ph-shopping-bag", descricao:"Crystal compacta para produtos que merecem ser vistos.", preco:"Sob consulta", unidade:"", especificacoes:{"Medidas":"35 x 45 cm","Cor":"Transparente","Material":"Plástico cristal","Uso":"Varejo, presentes, exposição"}},
-    {id:35, nome:"Sacola Crystal 40x50", categoria:"sacolas", tipo:"crystal", tamanho:"m", icone:"ph-shopping-bag", descricao:"Tamanho médio crystal, ótima visibilidade do conteúdo.", preco:"Sob consulta", unidade:"", especificacoes:{"Medidas":"40 x 50 cm","Cor":"Transparente","Material":"Plástico cristal","Uso":"Cosméticos, moda, exposição"}},
-    {id:36, nome:"Sacola Crystal 45x60", categoria:"sacolas", tipo:"crystal", tamanho:"m", icone:"ph-shopping-bag", descricao:"Crystal médio-grande, elegante e resistente.", preco:"Sob consulta", unidade:"", especificacoes:{"Medidas":"45 x 60 cm","Cor":"Transparente","Material":"Plástico cristal","Uso":"Moda, delivery premium, varejo"}},
-    {id:37, nome:"Sacola Crystal 60x80", categoria:"sacolas", tipo:"crystal", tamanho:"g", icone:"ph-shopping-bag", descricao:"Crystal grande para itens maiores com total visibilidade.", preco:"Sob consulta", unidade:"", especificacoes:{"Medidas":"60 x 80 cm","Cor":"Transparente","Material":"Plástico cristal","Uso":"Grandes volumes, atacado, exposição"}},
+    // ─── SACOLAS CRYSTAL (vendidas por kg) ───
+    {id:33, nome:"Sacola Crystal 30x40", categoria:"sacolas", tipo:"crystal", tamanho:"p", icone:"ph-shopping-bag", descricao:"Sacola transparente crystal. Vendida por kg.", preco:"Sob consulta", unidade:"/kg", especificacoes:{"Medidas":"30 x 40 cm","Cor":"Transparente","Material":"Plástico cristal","Venda":"Por kg","Uso":"Exposição de produto, presentes, varejo"}},
+    {id:34, nome:"Sacola Crystal 35x45", categoria:"sacolas", tipo:"crystal", tamanho:"p", icone:"ph-shopping-bag", descricao:"Crystal compacta. Vendida por kg.", preco:"Sob consulta", unidade:"/kg", especificacoes:{"Medidas":"35 x 45 cm","Cor":"Transparente","Material":"Plástico cristal","Venda":"Por kg","Uso":"Varejo, presentes, exposição"}},
+    {id:35, nome:"Sacola Crystal 40x50", categoria:"sacolas", tipo:"crystal", tamanho:"m", icone:"ph-shopping-bag", descricao:"Crystal médio porte. Vendida por kg.", preco:"Sob consulta", unidade:"/kg", especificacoes:{"Medidas":"40 x 50 cm","Cor":"Transparente","Material":"Plástico cristal","Venda":"Por kg","Uso":"Cosméticos, moda, exposição"}},
+    {id:36, nome:"Sacola Crystal 45x60", categoria:"sacolas", tipo:"crystal", tamanho:"m", icone:"ph-shopping-bag", descricao:"Crystal 45x60, elegante e resistente. Vendida por kg.", preco:"Sob consulta", unidade:"/kg", especificacoes:{"Medidas":"45 x 60 cm","Cor":"Transparente","Material":"Plástico cristal","Venda":"Por kg","Uso":"Moda, delivery premium, varejo"}},
+    {id:37, nome:"Sacola Crystal 60x80", categoria:"sacolas", tipo:"crystal", tamanho:"g", icone:"ph-shopping-bag", descricao:"Crystal grande. Vendida por kg.", preco:"Sob consulta", unidade:"/kg", especificacoes:{"Medidas":"60 x 80 cm","Cor":"Transparente","Material":"Plástico cristal","Venda":"Por kg","Uso":"Grandes volumes, atacado, exposição"}},
+
+    // ─── SACOLAS KRAFT (vendidas por kg) ───
+    {id:70, nome:"Sacola Kraft 30x40", categoria:"sacolas", tipo:"kraft", tamanho:"p", icone:"ph-shopping-bag", descricao:"Sacola kraft artesanal, sustentável e resistente. Vendida por kg.", preco:"Sob consulta", unidade:"/kg", especificacoes:{"Medidas":"30 x 40 cm","Cor":"Kraft natural","Material":"Papel kraft","Venda":"Por kg","Uso":"Presentes, padarias, lojas sustentáveis"}},
+    {id:71, nome:"Sacola Kraft 35x45", categoria:"sacolas", tipo:"kraft", tamanho:"p", icone:"ph-shopping-bag", descricao:"Kraft pequena 35x45. Vendida por kg.", preco:"Sob consulta", unidade:"/kg", especificacoes:{"Medidas":"35 x 45 cm","Cor":"Kraft natural","Material":"Papel kraft","Venda":"Por kg","Uso":"Varejo, confeitaria, delivery gourmet"}},
+    {id:72, nome:"Sacola Kraft 40x50", categoria:"sacolas", tipo:"kraft", tamanho:"m", icone:"ph-shopping-bag", descricao:"Kraft médio porte. Perfeita para padarias e empórios. Vendida por kg.", preco:"Sob consulta", unidade:"/kg", especificacoes:{"Medidas":"40 x 50 cm","Cor":"Kraft natural","Material":"Papel kraft","Venda":"Por kg","Uso":"Padaria, empório, delivery"}},
+    {id:73, nome:"Sacola Kraft 45x60", categoria:"sacolas", tipo:"kraft", tamanho:"m", icone:"ph-shopping-bag", descricao:"Kraft 45x60 para pedidos médios-grandes. Vendida por kg.", preco:"Sob consulta", unidade:"/kg", especificacoes:{"Medidas":"45 x 60 cm","Cor":"Kraft natural","Material":"Papel kraft","Venda":"Por kg","Uso":"Restaurantes, delivery gourmet"}},
+    {id:74, nome:"Sacola Kraft 60x80", categoria:"sacolas", tipo:"kraft", tamanho:"g", icone:"ph-shopping-bag", descricao:"Kraft grande para grandes volumes. Vendida por kg.", preco:"Sob consulta", unidade:"/kg", especificacoes:{"Medidas":"60 x 80 cm","Cor":"Kraft natural","Material":"Papel kraft","Venda":"Por kg","Uso":"Atacado, grandes pedidos, feiras"}},
 
     // ISOPOR - MARMITEX
-    {id:38, nome:"Marmitex de Isopor Nº8", categoria:"isopor", subcategoria:"marmitex", icone:"ph-bowl-food", descricao:"Marmitex oval para refeições completas. Mantém a temperatura por mais tempo.", preco:"Sob consulta", unidade:"", especificacoes:{"Número":"Nº8","Formato":"Oval","Material":"Isopor EPS","Uso":"Refeições, marmitas, delivery"}},
-    {id:39, nome:"Marmitex de Isopor Nº9", categoria:"isopor", subcategoria:"marmitex", icone:"ph-bowl-food", descricao:"Marmitex maior para refeições fartas. Ideal para restaurantes e lanchonetes.", preco:"Sob consulta", unidade:"", especificacoes:{"Número":"Nº9","Formato":"Oval","Material":"Isopor EPS","Uso":"Refeições, delivery, marmitaria"}},
-    {id:40, nome:"Marmitex de Isopor Nº10", categoria:"isopor", subcategoria:"marmitex", icone:"ph-bowl-food", descricao:"Tamanho extra para porções generosas. Usado em buffets e eventos.", preco:"Sob consulta", unidade:"", especificacoes:{"Número":"Nº10","Formato":"Oval","Material":"Isopor EPS","Uso":"Buffet, eventos, delivery especial"}},
+    {id:38, nome:"Marmitex de Isopor Nº8 — Copabras", categoria:"isopor", subcategoria:"marmitex", icone:"ph-bowl-food", descricao:"Marmitex oval Copabras Nº8 para refeições completas. Mantém a temperatura por mais tempo.", preco:"Sob consulta", unidade:"", especificacoes:{"Marca":"Copabras","Número":"Nº8","Formato":"Oval","Material":"Isopor EPS","Uso":"Refeições, marmitas, delivery"}},
+    {id:39, nome:"Marmitex de Isopor Nº9 — Copabras", categoria:"isopor", subcategoria:"marmitex", icone:"ph-bowl-food", descricao:"Marmitex Copabras Nº9 para refeições fartas. Ideal para restaurantes e lanchonetes.", preco:"Sob consulta", unidade:"", especificacoes:{"Marca":"Copabras","Número":"Nº9","Formato":"Oval","Material":"Isopor EPS","Uso":"Refeições, delivery, marmitaria"}},
+    {id:40, nome:"Marmitex de Isopor Nº10 — Copabras", categoria:"isopor", subcategoria:"marmitex", icone:"ph-bowl-food", descricao:"Marmitex Copabras Nº10 para porções generosas. Buffets e eventos.", preco:"Sob consulta", unidade:"", especificacoes:{"Marca":"Copabras","Número":"Nº10","Formato":"Oval","Material":"Isopor EPS","Uso":"Buffet, eventos, delivery especial"}},
+    {id:75, nome:"Marmitex de Isopor Nº8 — Bom Apetite", categoria:"isopor", subcategoria:"marmitex", icone:"ph-bowl-food", descricao:"Marmitex oval Bom Apetite Nº8. Qualidade superior para restaurantes.", preco:"Sob consulta", unidade:"", especificacoes:{"Marca":"Bom Apetite","Número":"Nº8","Formato":"Oval","Material":"Isopor EPS","Uso":"Refeições, marmitas, delivery"}},
+    {id:76, nome:"Marmitex de Isopor Nº9 — Bom Apetite", categoria:"isopor", subcategoria:"marmitex", icone:"ph-bowl-food", descricao:"Marmitex Bom Apetite Nº9 para refeições fartas.", preco:"Sob consulta", unidade:"", especificacoes:{"Marca":"Bom Apetite","Número":"Nº9","Formato":"Oval","Material":"Isopor EPS","Uso":"Refeições, delivery, marmitaria"}},
+    {id:77, nome:"Marmitex de Isopor Nº10 — Bom Apetite", categoria:"isopor", subcategoria:"marmitex", icone:"ph-bowl-food", descricao:"Marmitex Bom Apetite Nº10 extra-grande.", preco:"Sob consulta", unidade:"", especificacoes:{"Marca":"Bom Apetite","Número":"Nº10","Formato":"Oval","Material":"Isopor EPS","Uso":"Buffet, eventos, delivery especial"}},
     // ISOPOR - CAIXAS
     {id:41, nome:"Caixa de Isopor 5L", categoria:"isopor", subcategoria:"caixa-isopor", icone:"ph-cube", descricao:"Caixa de isopor pequena para transporte de alimentos e medicamentos.", preco:"Sob consulta", unidade:"", especificacoes:{"Capacidade":"5 litros","Material":"Isopor EPS","Uso":"Alimentos, medicamentos, transporte frigorificado"}},
     {id:42, nome:"Caixa de Isopor 12L", categoria:"isopor", subcategoria:"caixa-isopor", icone:"ph-cube", descricao:"Capacidade intermediária para frutos do mar, carnes e bebidas.", preco:"Sob consulta", unidade:"", especificacoes:{"Capacidade":"12 litros","Material":"Isopor EPS","Uso":"Frutos do mar, carnes, bebidas geladas"}},
@@ -700,13 +779,32 @@ const listaProdutos = [
     {id:45, nome:"Copo de Isopor 120ml", categoria:"isopor", subcategoria:"copo-isopor", icone:"ph-coffee", descricao:"Copo para café e chás. Muito utilizado em padarias e lanchonetes.", preco:"Sob consulta", unidade:"", especificacoes:{"Capacidade":"120 ml","Material":"Isopor EPS","Uso":"Café, chá, caldos quentes"}},
     {id:46, nome:"Copo de Isopor 180ml", categoria:"isopor", subcategoria:"copo-isopor", icone:"ph-coffee", descricao:"Copo médio para bebidas quentes e frias. Ideal para eventos.", preco:"Sob consulta", unidade:"", especificacoes:{"Capacidade":"180 ml","Material":"Isopor EPS","Uso":"Bebidas quentes e frias, eventos"}},
     {id:47, nome:"Copo de Isopor 300ml", categoria:"isopor", subcategoria:"copo-isopor", icone:"ph-coffee", descricao:"Copo grande para refrescos, sucos e bebidas geladas.", preco:"Sob consulta", unidade:"", especificacoes:{"Capacidade":"300 ml","Material":"Isopor EPS","Uso":"Sucos, refrescos, bebidas geladas"}},
+    // ISOPOR - DISCO PIZZA
+    {id:78, nome:"Disco de Isopor para Pizza 25cm", categoria:"isopor", subcategoria:"disco-isopor", icone:"ph-circle", descricao:"Disco redondo de isopor para embalar pizzas pequenas. Mantém a forma e o calor.", preco:"Sob consulta", unidade:"", especificacoes:{"Diâmetro":"25 cm","Formato":"Redondo","Material":"Isopor EPS","Uso":"Pizzas pequenas, tortas individuais"}},
+    {id:79, nome:"Disco de Isopor para Pizza 35cm", categoria:"isopor", subcategoria:"disco-isopor", icone:"ph-circle", descricao:"Disco de isopor padrão para pizzas médias. Ideal para pizzarias.", preco:"Sob consulta", unidade:"", especificacoes:{"Diâmetro":"35 cm","Formato":"Redondo","Material":"Isopor EPS","Uso":"Pizzas médias, pizzarias, delivery"}},
+    {id:80, nome:"Disco de Isopor para Pizza 45cm", categoria:"isopor", subcategoria:"disco-isopor", icone:"ph-circle", descricao:"Disco de isopor para pizzas grandes. Usado em pizzarias e rodízios.", preco:"Sob consulta", unidade:"", especificacoes:{"Diâmetro":"45 cm","Formato":"Redondo","Material":"Isopor EPS","Uso":"Pizzas grandes, rodízios, eventos"}},
+
+    // ─── EMBALAGENS PLÁSTICAS — BOLO (tipo H70 Galvanotek) ───
+    {id:81, nome:"Embalagem H70 — Galvanotek", categoria:"plastico", subcategoria:"bolo-plastico", icone:"ph-cake", descricao:"Embalagem plástica H70 da Galvanotek para bolos altos. Transparente, com tampa e base.", preco:"Sob consulta", unidade:"", especificacoes:{"Modelo":"H70","Marca":"Galvanotek","Altura":"7 cm","Material":"PET transparente","Uso":"Bolos altos, naked cakes, cheesecakes"}},
+    {id:82, nome:"Embalagem H80 — Galvanotek", categoria:"plastico", subcategoria:"bolo-plastico", icone:"ph-cake", descricao:"H80 Galvanotek para bolos mais altos e camadas. Transparente com fechamento seguro.", preco:"Sob consulta", unidade:"", especificacoes:{"Modelo":"H80","Marca":"Galvanotek","Altura":"8 cm","Material":"PET transparente","Uso":"Bolos altos, tortas geladas, mousse"}},
+    {id:83, nome:"Embalagem H60 — Galvanotek", categoria:"plastico", subcategoria:"bolo-plastico", icone:"ph-cake", descricao:"H60 Galvanotek ideal para bolos baixos e tortas finas.", preco:"Sob consulta", unidade:"", especificacoes:{"Modelo":"H60","Marca":"Galvanotek","Altura":"6 cm","Material":"PET transparente","Uso":"Bolos baixos, tortas, alfajores"}},
+    {id:84, nome:"Embalagem para Fatia de Bolo", categoria:"plastico", subcategoria:"bolo-plastico", icone:"ph-cake", descricao:"Embalagem transparente individual para fatia de bolo ou torta.", preco:"Sob consulta", unidade:"", especificacoes:{"Formato":"Triangular","Material":"PET transparente","Uso":"Fatias de bolo, torta, quiche"}},
+    {id:85, nome:"Embalagem para Mini Bolo", categoria:"plastico", subcategoria:"bolo-plastico", icone:"ph-cake", descricao:"Caixinha plástica para mini bolos e smash cake individual.", preco:"Sob consulta", unidade:"", especificacoes:{"Formato":"Redondo/Quadrado","Material":"PET transparente","Uso":"Mini bolo, smash cake, sobremesas"}},
+
+    // ─── EMBALAGENS PLÁSTICAS — MARMITA PARA CONGELAR ───
+    {id:86, nome:"Marmita Plástica 250ml para Congelar", categoria:"plastico", subcategoria:"marmita-plastico", icone:"ph-bowl-food", descricao:"Marmita plástica 250ml com tampa. Própria para congelamento. Ideal para porções individuais.", preco:"Sob consulta", unidade:"", especificacoes:{"Capacidade":"250 ml","Tampa":"Inclusa","Material":"Polipropileno (PP)","Temperatura":"-20°C a +120°C","Uso":"Congelamento, micro-ondas, delivery"}},
+    {id:87, nome:"Marmita Plástica 500ml para Congelar", categoria:"plastico", subcategoria:"marmita-plastico", icone:"ph-bowl-food", descricao:"Marmita plástica 500ml com tampa. Vai ao congelador e micro-ondas.", preco:"Sob consulta", unidade:"", especificacoes:{"Capacidade":"500 ml","Tampa":"Inclusa","Material":"Polipropileno (PP)","Temperatura":"-20°C a +120°C","Uso":"Congelamento, micro-ondas, delivery"}},
+    {id:88, nome:"Marmita Plástica 750ml para Congelar", categoria:"plastico", subcategoria:"marmita-plastico", icone:"ph-bowl-food", descricao:"Marmita plástica 750ml com tampa. Para refeições completas. Vai ao freezer.", preco:"Sob consulta", unidade:"", especificacoes:{"Capacidade":"750 ml","Tampa":"Inclusa","Material":"Polipropileno (PP)","Temperatura":"-20°C a +120°C","Uso":"Congelamento, micro-ondas, delivery"}},
+    {id:89, nome:"Marmita Plástica 1000ml para Congelar", categoria:"plastico", subcategoria:"marmita-plastico", icone:"ph-bowl-food", descricao:"Marmita plástica 1000ml com tampa. Para refeições fartas. Própria para congelamento.", preco:"Sob consulta", unidade:"", especificacoes:{"Capacidade":"1000 ml","Tampa":"Inclusa","Material":"Polipropileno (PP)","Temperatura":"-20°C a +120°C","Uso":"Congelamento, micro-ondas, delivery"}},
 ];
 
 const iconesEspec = {
     "Medidas Externas":"ph-ruler","Dimensões":"ph-ruler","Medidas":"ph-ruler",
     "Tipo de Onda":"ph-waves","Gramatura":"ph-scales","Material":"ph-cube",
     "Capacidade":"ph-package","Número":"ph-hash","Formato":"ph-shapes",
-    "Uso":"ph-check-circle","Cor":"ph-palette",
+    "Uso":"ph-check-circle","Cor":"ph-palette","Marca":"ph-tag",
+    "Venda":"ph-storefront","Unidades por pacote":"ph-stack","Temperatura":"ph-thermometer",
+    "Altura":"ph-arrows-vertical","Diâmetro":"ph-circle",
 };
 
 /* Mapeamento visual por tipo de sacola */
@@ -715,6 +813,7 @@ const sacolarConfig = {
     verde:   {cardClass:"sacola-verde-card",   tituloClass:" titulo-sacola-verde",  nomeTipo:"Sacolas Verdes",    tema:"tema-verde"},
     branca:  {cardClass:"sacola-branca-card",  tituloClass:" titulo-sacola-branca", nomeTipo:"Sacolas Brancas",   tema:"tema-branca"},
     crystal: {cardClass:"sacola-crystal-card", tituloClass:" titulo-sacola-crystal",nomeTipo:"Sacolas Crystal",   tema:"tema-crystal"},
+    kraft:   {cardClass:"sacola-kraft-card",   tituloClass:" titulo-sacola-kraft",  nomeTipo:"Sacolas Kraft",     tema:"tema-kraft"},
 };
 
 /* ─── ESTADO ─────────────────────────────────────────────── */
@@ -854,6 +953,7 @@ function filtrarCategoria(cat,el){
     document.getElementById("barraTipoSacolas").classList.remove("visivel");
     document.getElementById("barraTamanhoSacolas").classList.remove("visivel");
     document.getElementById("barraSubcategoriasIsopor").classList.remove("visivel");
+    document.getElementById("barraSubcategoriasPlastico").classList.remove("visivel");
     document.getElementById("breadcrumb").classList.remove("visivel");
 
     if(cat==="caixas"){
@@ -879,6 +979,12 @@ function filtrarCategoria(cat,el){
         document.getElementById("breadcrumbCat").textContent="Isopor";
         document.getElementById("breadcrumbSub").textContent="Todos";
         document.querySelectorAll("#barraSubcategoriasIsopor .btn-sub-isopor").forEach((b,i)=>b.classList.toggle("ativo",i===0));
+    } else if(cat==="plastico"){
+        document.getElementById("barraSubcategoriasPlastico").classList.add("visivel");
+        document.getElementById("breadcrumb").classList.add("visivel");
+        document.getElementById("breadcrumbCat").textContent="Embalagens Plásticas";
+        document.getElementById("breadcrumbSub").textContent="Todas";
+        document.querySelectorAll("#barraSubcategoriasPlastico .btn-sub-plastico").forEach((b,i)=>b.classList.toggle("ativo",i===0));
     }
 
     renderizarProdutos();
@@ -886,12 +992,13 @@ function filtrarCategoria(cat,el){
 
 function filtrarSub(sub,el,cat){
     estado.subcategoria=sub;
-    const sels={caixas:"#barraSubcategorias .btn-subcategoria",isopor:"#barraSubcategoriasIsopor .btn-sub-isopor"};
+    const sels={caixas:"#barraSubcategorias .btn-subcategoria",isopor:"#barraSubcategoriasIsopor .btn-sub-isopor",plastico:"#barraSubcategoriasPlastico .btn-sub-plastico"};
     document.querySelectorAll(sels[cat]).forEach(b=>b.classList.remove("ativo"));
     el.classList.add("ativo");
     const nomes={
         caixas:{todas:"Todas",sedex:"Padrão Correios",confeiteiros:"Para Doces",salgado:"Para Salgados",geral:"Uso Geral"},
-        isopor:{todas:"Todos",marmitex:"Marmitex","caixa-isopor":"Caixas de Isopor","copo-isopor":"Copos de Isopor"},
+        isopor:{todas:"Todos",marmitex:"Marmitex","caixa-isopor":"Caixas de Isopor","copo-isopor":"Copos de Isopor","disco-isopor":"Disco para Pizza"},
+        plastico:{todas:"Todas","bolo-plastico":"Embalagens de Bolo","marmita-plastico":"Marmitas para Congelar"},
     };
     document.getElementById("breadcrumbSub").textContent=(nomes[cat]&&nomes[cat][sub])||sub;
     renderizarProdutos();
@@ -983,13 +1090,21 @@ function renderizarProdutos(){
         return;
     }
 
+    if(estado.categoria==="plastico"){
+        const filtrados=listaProdutos.filter(p=>p.categoria==="plastico"&&(estado.subcategoria==="todas"||p.subcategoria===estado.subcategoria));
+        if(!filtrados.length){container.innerHTML=`<p style="text-align:center;color:var(--texto-mutado);padding:4rem 0;">Nenhum produto encontrado.</p>`;return;}
+        criarSecao("Embalagens Plásticas",filtrados,container,"plastico");
+        return;
+    }
+
     container.innerHTML=`<p style="text-align:center;color:var(--texto-mutado);padding:4rem 0;">Em breve.</p>`;
 }
 
 function obterLabelGrupoGeral(p){
-    const labelSub={sedex:"Padrão Correios",confeiteiros:"Para Doces",salgado:"Para Salgados",geral:"Uso Geral",marmitex:"Marmitex","caixa-isopor":"Caixas de Isopor","copo-isopor":"Copos de Isopor"};
+    const labelSub={sedex:"Padrão Correios",confeiteiros:"Para Doces",salgado:"Para Salgados",geral:"Uso Geral",marmitex:"Marmitex","caixa-isopor":"Caixas de Isopor","copo-isopor":"Copos de Isopor","disco-isopor":"Disco para Pizza","bolo-plastico":"Embalagem de Bolo","marmita-plastico":"Marmita para Congelar"};
     if(p.categoria==="caixas")return `Caixas — ${labelSub[p.subcategoria]||p.subcategoria}`;
     if(p.categoria==="isopor")return `Isopor — ${labelSub[p.subcategoria]||p.subcategoria}`;
+    if(p.categoria==="plastico")return `Plástico — ${labelSub[p.subcategoria]||p.subcategoria}`;
     return p.categoria;
 }
 
@@ -1008,6 +1123,8 @@ function criarSecao(titulo,produtos,container,cat,tipo){
         tituloClass+=" titulo-isopor";icone="ph-snowflake";
     } else if(cat==="caixas"){
         icone="ph-package";
+    } else if(cat==="plastico"){
+        tituloClass+=" titulo-plastico";icone="ph-flask";
     }
 
     secao.innerHTML=`<h2 class="${tituloClass}"><i class="ph-fill ${icone}"></i> ${titulo}</h2>`;
@@ -1023,6 +1140,8 @@ function criarSecao(titulo,produtos,container,cat,tipo){
             extraClass=" "+(sacolarConfig[p.tipo]?.cardClass||"sacola-preta-card");
         } else if(p.categoria==="isopor"){
             extraClass=" isopor-card";
+        } else if(p.categoria==="plastico"){
+            extraClass=" plastico-card";
         }
 
         const card=document.createElement("div");
