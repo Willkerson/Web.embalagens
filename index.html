@@ -96,42 +96,28 @@
         .btn-subcategoria:hover{background:var(--azul-100);transform:translateY(-1px);}
         .btn-subcategoria.ativo{background:var(--azul-700);color:#fff;border-color:var(--azul-700);box-shadow:0 4px 12px rgba(29,78,216,.25);}
 
-        /* ─── SACOLAS: NÍVEL 1 - TIPOS DE SACOLA ─── */
+        /* ─── SACOLAS: NÍVEL 1 ─── */
         .sacolas-tipo-bar{background:#1a1a2e;border:1px solid #333;}
         .btn-tipo-sacola{padding:10px 22px;border-radius:99px;font-weight:700;font-size:.9rem;transition:var(--tr);display:flex;align-items:center;gap:10px;border:2px solid transparent;}
         .btn-tipo-sacola:hover{transform:translateY(-2px);}
-
-        /* Preto */
         .btn-tipo-sacola.tipo-preta{background:#111;color:#e2e8f0;border-color:#444;}
         .btn-tipo-sacola.tipo-preta:hover{border-color:#aaa;background:#222;}
         .btn-tipo-sacola.tipo-preta.ativo{background:#e2e8f0;color:#111;border-color:#e2e8f0;box-shadow:0 4px 14px rgba(255,255,255,.25);}
-
-        /* Verde */
         .btn-tipo-sacola.tipo-verde{background:#064e3b;color:#6ee7b7;border-color:#065f46;}
         .btn-tipo-sacola.tipo-verde:hover{background:#065f46;border-color:#34d399;}
         .btn-tipo-sacola.tipo-verde.ativo{background:#10b981;color:#fff;border-color:#10b981;box-shadow:0 4px 14px rgba(16,185,129,.4);}
-
-        /* Branco */
         .btn-tipo-sacola.tipo-branca{background:#fff;color:#374151;border-color:#d1d5db;}
         .btn-tipo-sacola.tipo-branca:hover{background:#f9fafb;border-color:#9ca3af;}
         .btn-tipo-sacola.tipo-branca.ativo{background:#374151;color:#fff;border-color:#374151;box-shadow:0 4px 14px rgba(55,65,81,.4);}
-
-        /* Crystal */
         .btn-tipo-sacola.tipo-crystal{background:linear-gradient(135deg,rgba(147,197,253,.15),rgba(196,181,253,.15));color:#93c5fd;border-color:rgba(147,197,253,.4);}
         .btn-tipo-sacola.tipo-crystal:hover{background:linear-gradient(135deg,rgba(147,197,253,.25),rgba(196,181,253,.25));border-color:#93c5fd;}
         .btn-tipo-sacola.tipo-crystal.ativo{background:linear-gradient(135deg,#60a5fa,#a78bfa);color:#fff;border-color:transparent;box-shadow:0 4px 18px rgba(96,165,250,.45);}
-
-        /* Kraft */
         .btn-tipo-sacola.tipo-kraft{background:#78350f;color:#fde68a;border-color:#92400e;}
         .btn-tipo-sacola.tipo-kraft:hover{background:#92400e;border-color:#fbbf24;}
         .btn-tipo-sacola.tipo-kraft.ativo{background:#f59e0b;color:#1c1917;border-color:#f59e0b;box-shadow:0 4px 14px rgba(245,158,11,.4);}
-
-        /* Kraft c/ Alça */
         .btn-tipo-sacola.tipo-kraft-alca{background:#2d1a08;color:#fef08a;border-color:#b45309;}
         .btn-tipo-sacola.tipo-kraft-alca:hover{background:#3d2a10;border-color:#fbbf24;}
         .btn-tipo-sacola.tipo-kraft-alca.ativo{background:#fbbf24;color:#1c1917;border-color:#fbbf24;box-shadow:0 4px 14px rgba(251,191,36,.45);}
-
-        /* Dot indicador de cor */
         .cor-dot{width:14px;height:14px;border-radius:50%;flex-shrink:0;border:1.5px solid rgba(255,255,255,.25);}
         .cor-dot-preta{background:#111;}
         .cor-dot-verde{background:#10b981;}
@@ -140,35 +126,24 @@
         .cor-dot-kraft{background:#f59e0b;}
         .cor-dot-kraft-alca{background:linear-gradient(135deg,#fbbf24,#b45309);}
 
-        /* ─── SACOLAS: NÍVEL 2 - TAMANHOS ─── */
+        /* ─── SACOLAS: NÍVEL 2 ─── */
         .sacolas-tamanho-bar{display:none;gap:10px;justify-content:center;flex-wrap:wrap;margin-bottom:3rem;padding:1.25rem 1.5rem;border-radius:18px;animation:fadeIn .3s ease;}
         .sacolas-tamanho-bar.visivel{display:flex;}
-
-        /* Tamanho bar varia conforme o tipo selecionado */
         .sacolas-tamanho-bar.tema-preta{background:#0f0f1a;border:1px solid #2a2a3e;}
         .sacolas-tamanho-bar.tema-verde{background:#022c22;border:1px solid #064e3b;}
         .sacolas-tamanho-bar.tema-branca{background:#f3f4f6;border:1px solid #d1d5db;}
         .sacolas-tamanho-bar.tema-crystal{background:linear-gradient(135deg,rgba(30,58,138,.2),rgba(88,28,135,.2));border:1px solid rgba(147,197,253,.3);}
-
         .btn-tamanho-sacola{padding:9px 20px;border-radius:99px;font-weight:600;font-size:.88rem;transition:var(--tr);display:flex;align-items:center;gap:7px;}
         .btn-tamanho-sacola:hover{transform:translateY(-1px);}
-
-        /* tamanho preta */
         .tema-preta .btn-tamanho-sacola{background:#1a1a2e;border:1.5px solid #333;color:#94a3b8;}
         .tema-preta .btn-tamanho-sacola:hover{background:#2a2a3e;border-color:#64748b;}
         .tema-preta .btn-tamanho-sacola.ativo{background:#e2e8f0;color:#0f0f1a;border-color:#e2e8f0;}
-
-        /* tamanho verde */
         .tema-verde .btn-tamanho-sacola{background:#064e3b;border:1.5px solid #065f46;color:#6ee7b7;}
         .tema-verde .btn-tamanho-sacola:hover{background:#065f46;border-color:#34d399;}
         .tema-verde .btn-tamanho-sacola.ativo{background:#10b981;color:#fff;border-color:#10b981;}
-
-        /* tamanho branca */
         .tema-branca .btn-tamanho-sacola{background:#fff;border:1.5px solid #d1d5db;color:#374151;}
         .tema-branca .btn-tamanho-sacola:hover{background:#f9fafb;border-color:#9ca3af;}
         .tema-branca .btn-tamanho-sacola.ativo{background:#374151;color:#fff;border-color:#374151;}
-
-        /* tamanho crystal */
         .tema-crystal .btn-tamanho-sacola{background:rgba(30,58,138,.25);border:1.5px solid rgba(147,197,253,.3);color:#93c5fd;}
         .tema-crystal .btn-tamanho-sacola:hover{background:rgba(30,58,138,.4);border-color:#60a5fa;}
         .tema-crystal .btn-tamanho-sacola.ativo{background:linear-gradient(135deg,#3b82f6,#8b5cf6);color:#fff;border-color:transparent;}
@@ -179,52 +154,29 @@
         .btn-sub-isopor:hover{background:#e0f7fa;transform:translateY(-1px);}
         .btn-sub-isopor.ativo{background:#00838f;color:#fff;border-color:#00838f;box-shadow:0 4px 12px rgba(0,131,143,.3);}
 
+        /* ─── FILTRO MARCA MARMITEX ─── */
+        .marmitex-marca-bar{display:none;gap:10px;justify-content:center;flex-wrap:wrap;margin-bottom:1rem;padding:1rem 1.5rem;border-radius:14px;animation:fadeIn .3s ease;background:#fff8e1;border:1px solid #ffe082;}
+        .marmitex-marca-bar.visivel{display:flex;}
+        .btn-marca-marmitex{padding:9px 20px;background:#fff;border:1.5px solid #ffe082;color:#f57f17;border-radius:99px;font-weight:700;font-size:.88rem;transition:var(--tr);display:flex;align-items:center;gap:8px;}
+        .btn-marca-marmitex:hover{background:#fff8e1;border-color:#ffb300;transform:translateY(-1px);}
+        .btn-marca-marmitex.ativo{background:#f57f17;color:#fff;border-color:#f57f17;box-shadow:0 4px 12px rgba(245,127,23,.3);}
+
         /* Breadcrumb */
         .breadcrumb{display:none;align-items:center;gap:8px;font-size:.9rem;color:var(--texto-mutado);margin-bottom:2rem;font-weight:500;}
         .breadcrumb.visivel{display:flex;}
         .breadcrumb span{color:var(--azul-600);font-weight:700;}
 
-        /* Grade de subcategorias (visão geral) */
-        .grade-subcategorias{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:1.5rem;margin-bottom:4rem;}
-        .card-sub{border-radius:20px;padding:2rem 1.5rem;display:flex;flex-direction:column;align-items:center;text-align:center;gap:1rem;cursor:pointer;transition:var(--tr);box-shadow:var(--sombra-card);}
-        /* caixas */
-        .card-sub-caixas{background:#fff;border:1px solid var(--bordas);}
-        .card-sub-caixas:hover{transform:translateY(-6px);border-color:var(--azul-100);box-shadow:var(--sombra-hover);}
-        .card-sub-caixas .icone-sub{font-size:3rem;color:var(--azul-600);background:var(--azul-50);padding:1rem;border-radius:16px;}
-        .card-sub-caixas h3{font-size:1.1rem;color:var(--texto-escuro);}
-        .card-sub-caixas .badge-qtd{background:var(--azul-600);color:#fff;font-size:.75rem;font-weight:700;padding:4px 12px;border-radius:99px;}
-
-        /* sacolas - cards de tipo na visão geral */
-        .card-sub-sacola-preta{background:#111;border:1px solid #333;}
-        .card-sub-sacola-preta:hover{transform:translateY(-6px);border-color:#666;box-shadow:0 20px 25px -5px rgba(0,0,0,.5);}
-        .card-sub-sacola-preta .icone-sub{font-size:3rem;color:#e2e8f0;background:#1a1a2e;padding:1rem;border-radius:16px;}
-        .card-sub-sacola-preta h3{font-size:1.1rem;color:#e2e8f0;}
-        .card-sub-sacola-preta .badge-qtd{background:#e2e8f0;color:#111;font-size:.75rem;font-weight:700;padding:4px 12px;border-radius:99px;}
-
-        .card-sub-sacola-verde{background:#022c22;border:1px solid #064e3b;}
-        .card-sub-sacola-verde:hover{transform:translateY(-6px);border-color:#34d399;box-shadow:0 20px 25px -5px rgba(16,185,129,.2);}
-        .card-sub-sacola-verde .icone-sub{font-size:3rem;color:#6ee7b7;background:#064e3b;padding:1rem;border-radius:16px;}
-        .card-sub-sacola-verde h3{font-size:1.1rem;color:#6ee7b7;}
-        .card-sub-sacola-verde .badge-qtd{background:#10b981;color:#fff;font-size:.75rem;font-weight:700;padding:4px 12px;border-radius:99px;}
-
-        .card-sub-sacola-branca{background:#fff;border:1px solid #d1d5db;}
-        .card-sub-sacola-branca:hover{transform:translateY(-6px);border-color:#9ca3af;box-shadow:0 20px 25px -5px rgba(0,0,0,.1);}
-        .card-sub-sacola-branca .icone-sub{font-size:3rem;color:#374151;background:#f3f4f6;padding:1rem;border-radius:16px;}
-        .card-sub-sacola-branca h3{font-size:1.1rem;color:var(--texto-escuro);}
-        .card-sub-sacola-branca .badge-qtd{background:#374151;color:#fff;font-size:.75rem;font-weight:700;padding:4px 12px;border-radius:99px;}
-
-        .card-sub-sacola-crystal{background:linear-gradient(135deg,#0f172a,#1e1b4b);border:1px solid rgba(147,197,253,.3);}
-        .card-sub-sacola-crystal:hover{transform:translateY(-6px);border-color:#60a5fa;box-shadow:0 20px 25px -5px rgba(96,165,250,.25);}
-        .card-sub-sacola-crystal .icone-sub{font-size:3rem;color:#93c5fd;background:rgba(30,58,138,.4);padding:1rem;border-radius:16px;}
-        .card-sub-sacola-crystal h3{font-size:1.1rem;color:#c7d2fe;}
-        .card-sub-sacola-crystal .badge-qtd{background:linear-gradient(135deg,#3b82f6,#8b5cf6);color:#fff;font-size:.75rem;font-weight:700;padding:4px 12px;border-radius:99px;}
-
         /* isopor */
-        .card-sub-isopor{background:#fff;border:1px solid #b2ebf2;}
-        .card-sub-isopor:hover{transform:translateY(-6px);border-color:#00acc1;box-shadow:0 20px 25px -5px rgba(0,131,143,.15);}
-        .card-sub-isopor .icone-sub{font-size:3rem;color:#00838f;background:#e0f7fa;padding:1rem;border-radius:16px;}
-        .card-sub-isopor h3{font-size:1.1rem;color:var(--texto-escuro);}
-        .card-sub-isopor .badge-qtd{background:#00838f;color:#fff;font-size:.75rem;font-weight:700;padding:4px 12px;border-radius:99px;}
+        .subcategorias-bar-plastico{background:#f0fdf4;border:1px solid #bbf7d0;}
+        .btn-sub-plastico{padding:10px 22px;background:#fff;border:1px solid #bbf7d0;color:#15803d;border-radius:99px;font-weight:600;font-size:.9rem;transition:var(--tr);display:flex;align-items:center;gap:8px;}
+        .btn-sub-plastico:hover{background:#f0fdf4;transform:translateY(-1px);}
+        .btn-sub-plastico.ativo{background:#15803d;color:#fff;border-color:#15803d;box-shadow:0 4px 12px rgba(21,128,61,.3);}
+
+        .sacolas-pacote-bar{display:none;gap:10px;justify-content:center;flex-wrap:wrap;margin-bottom:3rem;padding:1rem 1.5rem;border-radius:14px;animation:fadeIn .3s ease;background:#0a0a12;border:1px solid #2a2a3e;}
+        .sacolas-pacote-bar.visivel{display:flex;}
+        .btn-pacote-sacola{padding:8px 20px;border-radius:99px;font-weight:700;font-size:.85rem;transition:var(--tr);display:flex;align-items:center;gap:7px;background:#1a1a2e;border:1.5px solid #333;color:#94a3b8;}
+        .btn-pacote-sacola:hover{background:#2a2a3e;border-color:#64748b;transform:translateY(-1px);}
+        .btn-pacote-sacola.ativo{background:#e2e8f0;color:#0f0f1a;border-color:#e2e8f0;font-weight:800;}
 
         @keyframes fadeIn{from{opacity:0;transform:translateY(10px);}to{opacity:1;transform:translateY(0);}}
 
@@ -236,183 +188,21 @@
         .titulo-sacola-branca i{color:#374151;background:#f3f4f6;}
         .titulo-sacola-crystal i{color:#93c5fd;background:linear-gradient(135deg,#0f172a,#1e1b4b);}
         .titulo-isopor i{color:#00838f;background:#e0f7fa;}
+        .titulo-sacola-kraft i{color:#fde68a;background:#1c1008;}
+        .titulo-sacola-kraft-alca i{color:#fef08a;background:#1c1008;}
         .grade-produtos{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:2.5rem;}
+
+        /* PRODUTO IMAGE AREA */
+        .imagem-produto{width:100%;height:220px;display:flex;align-items:center;justify-content:center;transition:var(--tr);border-bottom:1px solid var(--bordas);position:relative;overflow:hidden;background:linear-gradient(135deg,#f8fafc 0%,#eff6ff 100%);}
+        .imagem-produto svg{width:130px;height:130px;transition:var(--tr);}
+        .cartao-produto:hover .imagem-produto svg{transform:scale(1.08);}
+        .selo-carrinho{position:absolute;top:12px;right:12px;background:var(--verde-wa);color:#fff;font-size:.75rem;font-weight:800;padding:5px 12px;border-radius:99px;display:flex;align-items:center;gap:5px;opacity:0;transform:scale(.8);transition:var(--tr);}
+        .cartao-produto.no-carrinho .selo-carrinho{opacity:1;transform:scale(1);}
 
         /* CARDS DE PRODUTO */
         .cartao-produto{background:var(--fundo-cartao);border-radius:28px;border:1px solid var(--bordas);overflow:hidden;box-shadow:var(--sombra-card);transition:var(--tr);display:flex;flex-direction:column;position:relative;}
         .cartao-produto:hover{transform:translateY(-8px);box-shadow:var(--sombra-hover);border-color:var(--azul-100);}
         .cartao-produto.no-carrinho{border-color:var(--verde-wa);box-shadow:0 0 0 3px rgba(37,211,102,.15);}
-
-        /* sacola preta card */
-        .sacola-preta-card{background:#1a1a2e!important;border-color:#333!important;}
-        .sacola-preta-card:hover{border-color:#666!important;box-shadow:0 20px 25px -5px rgba(0,0,0,.4)!important;}
-        .sacola-preta-card .conteudo-produto{background:#1a1a2e;}
-        .sacola-preta-card .nome-produto{color:#f1f5f9!important;}
-        .sacola-preta-card .desc-produto{color:#94a3b8!important;}
-        .sacola-preta-card .imagem-produto{background:linear-gradient(135deg,#0f0f1a 0%,#1a1a2e 100%)!important;border-bottom-color:#333!important;color:#4b5563!important;}
-        .sacola-preta-card:hover .imagem-produto{color:#cbd5e1!important;}
-        .sacola-preta-card .container-preco{background:#0f0f1a!important;border-color:#333!important;}
-        .sacola-preta-card .container-preco::before{background:#64748b!important;}
-        .sacola-preta-card .preco-label{color:#94a3b8!important;}
-        .sacola-preta-card .preco-valor{color:#e2e8f0!important;}
-        .sacola-preta-card .controle-qtd{border-color:#333!important;background:#0f0f1a!important;}
-        .sacola-preta-card .btn-qtd{color:#94a3b8!important;}
-        .sacola-preta-card .btn-qtd:hover{background:#2a2a3e!important;}
-        .sacola-preta-card .input-qtd{color:#f1f5f9!important;}
-        .sacola-preta-card .btn-add-carrinho{background:#374151!important;color:#f1f5f9!important;}
-        .sacola-preta-card .btn-add-carrinho:hover{background:#4b5563!important;}
-        .sacola-preta-card .btn-ver-espec{border-color:#333!important;color:#64748b!important;}
-        .sacola-preta-card .btn-ver-espec:hover{border-color:#64748b!important;color:#cbd5e1!important;}
-
-        /* sacola verde card */
-        .sacola-verde-card{background:#022c22!important;border-color:#064e3b!important;}
-        .sacola-verde-card:hover{border-color:#34d399!important;box-shadow:0 20px 25px -5px rgba(16,185,129,.2)!important;}
-        .sacola-verde-card .conteudo-produto{background:#022c22;}
-        .sacola-verde-card .nome-produto{color:#6ee7b7!important;}
-        .sacola-verde-card .desc-produto{color:#4ade80!important;opacity:.7;}
-        .sacola-verde-card .imagem-produto{background:linear-gradient(135deg,#022c22 0%,#064e3b 100%)!important;border-bottom-color:#064e3b!important;color:#065f46!important;}
-        .sacola-verde-card:hover .imagem-produto{color:#34d399!important;}
-        .sacola-verde-card .container-preco{background:#011a14!important;border-color:#064e3b!important;}
-        .sacola-verde-card .container-preco::before{background:#10b981!important;}
-        .sacola-verde-card .preco-label{color:#34d399!important;}
-        .sacola-verde-card .preco-valor{color:#6ee7b7!important;}
-        .sacola-verde-card .controle-qtd{border-color:#064e3b!important;background:#011a14!important;}
-        .sacola-verde-card .btn-qtd{color:#34d399!important;}
-        .sacola-verde-card .btn-qtd:hover{background:#064e3b!important;}
-        .sacola-verde-card .input-qtd{color:#6ee7b7!important;}
-        .sacola-verde-card .btn-add-carrinho{background:#065f46!important;color:#6ee7b7!important;}
-        .sacola-verde-card .btn-add-carrinho:hover{background:#10b981!important;color:#fff!important;}
-        .sacola-verde-card .btn-ver-espec{border-color:#064e3b!important;color:#065f46!important;}
-        .sacola-verde-card .btn-ver-espec:hover{border-color:#34d399!important;color:#6ee7b7!important;}
-
-        /* sacola branca card */
-        .sacola-branca-card{background:#fff!important;border-color:#d1d5db!important;}
-        .sacola-branca-card:hover{border-color:#9ca3af!important;box-shadow:0 20px 25px -5px rgba(0,0,0,.1)!important;}
-        .sacola-branca-card .imagem-produto{background:linear-gradient(135deg,#f9fafb 0%,#f3f4f6 100%)!important;border-bottom-color:#d1d5db!important;color:#d1d5db!important;}
-        .sacola-branca-card:hover .imagem-produto{color:#9ca3af!important;}
-        .sacola-branca-card .container-preco{background:#f3f4f6!important;border-color:#d1d5db!important;}
-        .sacola-branca-card .container-preco::before{background:#374151!important;}
-        .sacola-branca-card .btn-add-carrinho{background:#374151!important;}
-        .sacola-branca-card .btn-add-carrinho:hover{background:#1f2937!important;}
-
-        /* sacola crystal card */
-        .sacola-crystal-card{background:linear-gradient(135deg,#0f172a,#1e1b4b)!important;border-color:rgba(147,197,253,.3)!important;}
-        .sacola-crystal-card:hover{border-color:#60a5fa!important;box-shadow:0 20px 25px -5px rgba(96,165,250,.25)!important;}
-        .sacola-crystal-card .conteudo-produto{background:transparent;}
-        .sacola-crystal-card .nome-produto{color:#c7d2fe!important;}
-        .sacola-crystal-card .desc-produto{color:#818cf8!important;}
-        .sacola-crystal-card .imagem-produto{background:linear-gradient(135deg,rgba(30,27,75,.8) 0%,rgba(15,23,42,.8) 100%)!important;border-bottom-color:rgba(147,197,253,.2)!important;color:rgba(96,165,250,.3)!important;}
-        .sacola-crystal-card:hover .imagem-produto{color:#60a5fa!important;}
-        .sacola-crystal-card .container-preco{background:rgba(30,27,75,.5)!important;border-color:rgba(147,197,253,.2)!important;}
-        .sacola-crystal-card .container-preco::before{background:linear-gradient(to bottom,#3b82f6,#8b5cf6)!important;}
-        .sacola-crystal-card .preco-label{color:#818cf8!important;}
-        .sacola-crystal-card .preco-valor{color:#c7d2fe!important;}
-        .sacola-crystal-card .controle-qtd{border-color:rgba(147,197,253,.2)!important;background:rgba(30,27,75,.5)!important;}
-        .sacola-crystal-card .btn-qtd{color:#818cf8!important;}
-        .sacola-crystal-card .btn-qtd:hover{background:rgba(30,27,75,.8)!important;}
-        .sacola-crystal-card .input-qtd{color:#c7d2fe!important;}
-        .sacola-crystal-card .btn-add-carrinho{background:linear-gradient(135deg,#3b82f6,#8b5cf6)!important;color:#fff!important;}
-        .sacola-crystal-card .btn-add-carrinho:hover{background:linear-gradient(135deg,#2563eb,#7c3aed)!important;}
-        .sacola-crystal-card .btn-ver-espec{border-color:rgba(147,197,253,.2)!important;color:rgba(96,165,250,.5)!important;}
-        .sacola-crystal-card .btn-ver-espec:hover{border-color:#60a5fa!important;color:#93c5fd!important;}
-
-        /* tamanho kraft */
-        .tema-kraft .btn-tamanho-sacola{background:#78350f;border:1.5px solid #92400e;color:#fde68a;}
-        .tema-kraft .btn-tamanho-sacola:hover{background:#92400e;border-color:#fbbf24;}
-        .tema-kraft .btn-tamanho-sacola.ativo{background:#f59e0b;color:#1c1917;border-color:#f59e0b;}
-
-        /* sacola kraft card */
-        .sacola-kraft-card{background:#1c1008!important;border-color:#78350f!important;}
-        .sacola-kraft-card:hover{border-color:#f59e0b!important;box-shadow:0 20px 25px -5px rgba(245,158,11,.2)!important;}
-        .sacola-kraft-card .conteudo-produto{background:#1c1008;}
-        .sacola-kraft-card .nome-produto{color:#fde68a!important;}
-        .sacola-kraft-card .desc-produto{color:#d97706!important;opacity:.8;}
-        .sacola-kraft-card .imagem-produto{background:linear-gradient(135deg,#1c1008 0%,#2d1a08 100%)!important;border-bottom-color:#78350f!important;color:#78350f!important;}
-        .sacola-kraft-card:hover .imagem-produto{color:#f59e0b!important;}
-        .sacola-kraft-card .container-preco{background:#0f0804!important;border-color:#78350f!important;}
-        .sacola-kraft-card .container-preco::before{background:#f59e0b!important;}
-        .sacola-kraft-card .preco-label{color:#d97706!important;}
-        .sacola-kraft-card .preco-valor{color:#fde68a!important;}
-        .sacola-kraft-card .controle-qtd{border-color:#78350f!important;background:#0f0804!important;}
-        .sacola-kraft-card .btn-qtd{color:#d97706!important;}
-        .sacola-kraft-card .btn-qtd:hover{background:#2d1a08!important;}
-        .sacola-kraft-card .input-qtd{color:#fde68a!important;}
-        .sacola-kraft-card .btn-add-carrinho{background:#92400e!important;color:#fde68a!important;}
-        .sacola-kraft-card .btn-add-carrinho:hover{background:#f59e0b!important;color:#1c1917!important;}
-        .sacola-kraft-card .btn-ver-espec{border-color:#78350f!important;color:#78350f!important;}
-        .sacola-kraft-card .btn-ver-espec:hover{border-color:#f59e0b!important;color:#fde68a!important;}
-
-        /* card titulo kraft */
-        .titulo-sacola-kraft i{color:#fde68a;background:#1c1008;}
-
-        /* card sub sacola kraft */
-        .card-sub-sacola-kraft{background:#1c1008;border:1px solid #78350f;}
-        .card-sub-sacola-kraft:hover{transform:translateY(-6px);border-color:#f59e0b;box-shadow:0 20px 25px -5px rgba(245,158,11,.2);}
-        .card-sub-sacola-kraft .icone-sub{font-size:3rem;color:#fde68a;background:#2d1a08;padding:1rem;border-radius:16px;}
-        .card-sub-sacola-kraft h3{font-size:1.1rem;color:#fde68a;}
-        .card-sub-sacola-kraft .badge-qtd{background:#f59e0b;color:#1c1917;font-size:.75rem;font-weight:700;padding:4px 12px;border-radius:99px;}
-
-        /* ─── SACOLAS PRETAS: NÍVEL 3 - PACOTE ─── */
-        .sacolas-pacote-bar{display:none;gap:10px;justify-content:center;flex-wrap:wrap;margin-bottom:3rem;padding:1rem 1.5rem;border-radius:14px;animation:fadeIn .3s ease;background:#0a0a12;border:1px solid #2a2a3e;}
-        .sacolas-pacote-bar.visivel{display:flex;}
-        .btn-pacote-sacola{padding:8px 20px;border-radius:99px;font-weight:700;font-size:.85rem;transition:var(--tr);display:flex;align-items:center;gap:7px;background:#1a1a2e;border:1.5px solid #333;color:#94a3b8;}
-        .btn-pacote-sacola:hover{background:#2a2a3e;border-color:#64748b;transform:translateY(-1px);}
-        .btn-pacote-sacola.ativo{background:#e2e8f0;color:#0f0f1a;border-color:#e2e8f0;font-weight:800;}
-
-
-        .subcategorias-bar-plastico{background:#f0fdf4;border:1px solid #bbf7d0;}
-        .btn-sub-plastico{padding:10px 22px;background:#fff;border:1px solid #bbf7d0;color:#15803d;border-radius:99px;font-weight:600;font-size:.9rem;transition:var(--tr);display:flex;align-items:center;gap:8px;}
-        .btn-sub-plastico:hover{background:#f0fdf4;transform:translateY(-1px);}
-        .btn-sub-plastico.ativo{background:#15803d;color:#fff;border-color:#15803d;box-shadow:0 4px 12px rgba(21,128,61,.3);}
-
-        .plastico-card{border-color:#bbf7d0!important;}
-        .plastico-card:hover{border-color:#4ade80!important;box-shadow:0 20px 25px -5px rgba(21,128,61,.12)!important;}
-        .plastico-card .imagem-produto{background:linear-gradient(135deg,#f0fdf4 0%,#dcfce7 100%)!important;border-bottom-color:#bbf7d0!important;color:#86efac!important;}
-        .plastico-card:hover .imagem-produto{color:#15803d!important;}
-        .plastico-card .container-preco{background:#f0fdf4!important;border-color:#bbf7d0!important;}
-        .plastico-card .container-preco::before{background:#15803d!important;}
-        .plastico-card .preco-label{color:#15803d!important;}
-        .plastico-card .preco-valor{color:#15803d!important;}
-        .plastico-card .btn-add-carrinho{background:#15803d!important;}
-        .plastico-card .btn-add-carrinho:hover{background:#166534!important;}
-        .titulo-plastico i{color:#15803d;background:#f0fdf4;}
-
-        /* sacola kraft com alça */
-        .sacola-kraft-alca-card{background:#1c1008!important;border:2px solid #b45309!important;}
-        .sacola-kraft-alca-card:hover{border-color:#fbbf24!important;box-shadow:0 20px 25px -5px rgba(251,191,36,.25)!important;}
-        .sacola-kraft-alca-card .conteudo-produto{background:#1c1008;}
-        .sacola-kraft-alca-card .nome-produto{color:#fef08a!important;}
-        .sacola-kraft-alca-card .desc-produto{color:#fcd34d!important;opacity:.8;}
-        .sacola-kraft-alca-card .imagem-produto{background:linear-gradient(135deg,#1c1008 0%,#2d1a08 100%)!important;border-bottom-color:#b45309!important;color:#b45309!important;}
-        .sacola-kraft-alca-card:hover .imagem-produto{color:#fbbf24!important;}
-        .sacola-kraft-alca-card .container-preco{background:#0f0804!important;border-color:#b45309!important;}
-        .sacola-kraft-alca-card .container-preco::before{background:#fbbf24!important;}
-        .sacola-kraft-alca-card .preco-label{color:#fcd34d!important;}
-        .sacola-kraft-alca-card .preco-valor{color:#fef08a!important;}
-        .sacola-kraft-alca-card .controle-qtd{border-color:#b45309!important;background:#0f0804!important;}
-        .sacola-kraft-alca-card .btn-qtd{color:#fcd34d!important;}
-        .sacola-kraft-alca-card .btn-qtd:hover{background:#2d1a08!important;}
-        .sacola-kraft-alca-card .input-qtd{color:#fef08a!important;}
-        .sacola-kraft-alca-card .btn-add-carrinho{background:#b45309!important;color:#fef08a!important;}
-        .sacola-kraft-alca-card .btn-add-carrinho:hover{background:#fbbf24!important;color:#1c1917!important;}
-        .sacola-kraft-alca-card .btn-ver-espec{border-color:#b45309!important;color:#b45309!important;}
-        .sacola-kraft-alca-card .btn-ver-espec:hover{border-color:#fbbf24!important;color:#fef08a!important;}
-        .titulo-sacola-kraft-alca i{color:#fef08a;background:#1c1008;}
-
-        .isopor-card:hover{border-color:#00acc1!important;box-shadow:0 20px 25px -5px rgba(0,131,143,.15)!important;}
-        .isopor-card .imagem-produto{background:linear-gradient(135deg,#e0f7fa 0%,#f0fdff 100%)!important;border-bottom-color:#b2ebf2!important;color:#4dd0e1!important;}
-        .isopor-card:hover .imagem-produto{color:#00838f!important;}
-        .isopor-card .container-preco{background:#e0f7fa!important;border-color:#b2ebf2!important;}
-        .isopor-card .container-preco::before{background:#00838f!important;}
-        .isopor-card .preco-label{color:#00838f!important;}
-        .isopor-card .preco-valor{color:#00838f!important;}
-        .isopor-card .btn-add-carrinho{background:#00838f!important;}
-        .isopor-card .btn-add-carrinho:hover{background:#005662!important;}
-
-        .imagem-produto{width:100%;height:220px;background:linear-gradient(135deg,#f8fafc 0%,#eff6ff 100%);display:flex;align-items:center;justify-content:center;color:var(--azul-400);font-size:5.5rem;transition:var(--tr);border-bottom:1px solid var(--bordas);position:relative;}
-        .cartao-produto:hover .imagem-produto{color:var(--azul-600);}
-        .selo-carrinho{position:absolute;top:12px;right:12px;background:var(--verde-wa);color:#fff;font-size:.75rem;font-weight:800;padding:5px 12px;border-radius:99px;display:flex;align-items:center;gap:5px;opacity:0;transform:scale(.8);transition:var(--tr);}
-        .cartao-produto.no-carrinho .selo-carrinho{opacity:1;transform:scale(1);}
         .conteudo-produto{padding:2rem 1.75rem;display:flex;flex-direction:column;flex-grow:1;background:#fff;z-index:2;}
         .nome-produto{font-size:1.3rem;font-weight:800;color:var(--texto-escuro);margin-bottom:.4rem;line-height:1.2;letter-spacing:-.02em;}
         .desc-produto{font-size:.95rem;color:var(--texto-mutado);margin-bottom:1.5rem;flex-grow:1;line-height:1.6;}
@@ -434,6 +224,142 @@
         .btn-add-carrinho.adicionado:hover{background:var(--verde-wa-hover)!important;}
         .btn-ver-espec{padding:10px 16px;border:2px solid var(--bordas);border-radius:12px;color:var(--texto-mutado);font-size:.85rem;font-weight:600;transition:var(--tr);}
         .btn-ver-espec:hover{border-color:var(--azul-400);color:var(--azul-600);}
+
+        /* sacola preta card */
+        .sacola-preta-card{background:#1a1a2e!important;border-color:#333!important;}
+        .sacola-preta-card:hover{border-color:#666!important;box-shadow:0 20px 25px -5px rgba(0,0,0,.4)!important;}
+        .sacola-preta-card .conteudo-produto{background:#1a1a2e;}
+        .sacola-preta-card .nome-produto{color:#f1f5f9!important;}
+        .sacola-preta-card .desc-produto{color:#94a3b8!important;}
+        .sacola-preta-card .imagem-produto{background:linear-gradient(135deg,#0f0f1a 0%,#1a1a2e 100%)!important;border-bottom-color:#333!important;}
+        .sacola-preta-card .container-preco{background:#0f0f1a!important;border-color:#333!important;}
+        .sacola-preta-card .container-preco::before{background:#64748b!important;}
+        .sacola-preta-card .preco-label{color:#94a3b8!important;}
+        .sacola-preta-card .preco-valor{color:#e2e8f0!important;}
+        .sacola-preta-card .controle-qtd{border-color:#333!important;background:#0f0f1a!important;}
+        .sacola-preta-card .btn-qtd{color:#94a3b8!important;}
+        .sacola-preta-card .btn-qtd:hover{background:#2a2a3e!important;}
+        .sacola-preta-card .input-qtd{color:#f1f5f9!important;}
+        .sacola-preta-card .btn-add-carrinho{background:#374151!important;color:#f1f5f9!important;}
+        .sacola-preta-card .btn-add-carrinho:hover{background:#4b5563!important;}
+        .sacola-preta-card .btn-ver-espec{border-color:#333!important;color:#64748b!important;}
+        .sacola-preta-card .btn-ver-espec:hover{border-color:#64748b!important;color:#cbd5e1!important;}
+
+        /* sacola verde card */
+        .sacola-verde-card{background:#022c22!important;border-color:#064e3b!important;}
+        .sacola-verde-card:hover{border-color:#34d399!important;box-shadow:0 20px 25px -5px rgba(16,185,129,.2)!important;}
+        .sacola-verde-card .conteudo-produto{background:#022c22;}
+        .sacola-verde-card .nome-produto{color:#6ee7b7!important;}
+        .sacola-verde-card .desc-produto{color:#4ade80!important;opacity:.7;}
+        .sacola-verde-card .imagem-produto{background:linear-gradient(135deg,#022c22 0%,#064e3b 100%)!important;border-bottom-color:#064e3b!important;}
+        .sacola-verde-card .container-preco{background:#011a14!important;border-color:#064e3b!important;}
+        .sacola-verde-card .container-preco::before{background:#10b981!important;}
+        .sacola-verde-card .preco-label{color:#34d399!important;}
+        .sacola-verde-card .preco-valor{color:#6ee7b7!important;}
+        .sacola-verde-card .controle-qtd{border-color:#064e3b!important;background:#011a14!important;}
+        .sacola-verde-card .btn-qtd{color:#34d399!important;}
+        .sacola-verde-card .btn-qtd:hover{background:#064e3b!important;}
+        .sacola-verde-card .input-qtd{color:#6ee7b7!important;}
+        .sacola-verde-card .btn-add-carrinho{background:#065f46!important;color:#6ee7b7!important;}
+        .sacola-verde-card .btn-add-carrinho:hover{background:#10b981!important;color:#fff!important;}
+        .sacola-verde-card .btn-ver-espec{border-color:#064e3b!important;color:#065f46!important;}
+        .sacola-verde-card .btn-ver-espec:hover{border-color:#34d399!important;color:#6ee7b7!important;}
+
+        /* sacola branca card */
+        .sacola-branca-card{background:#fff!important;border-color:#d1d5db!important;}
+        .sacola-branca-card:hover{border-color:#9ca3af!important;box-shadow:0 20px 25px -5px rgba(0,0,0,.1)!important;}
+        .sacola-branca-card .imagem-produto{background:linear-gradient(135deg,#f9fafb 0%,#f3f4f6 100%)!important;border-bottom-color:#d1d5db!important;}
+        .sacola-branca-card .container-preco{background:#f3f4f6!important;border-color:#d1d5db!important;}
+        .sacola-branca-card .container-preco::before{background:#374151!important;}
+        .sacola-branca-card .btn-add-carrinho{background:#374151!important;}
+        .sacola-branca-card .btn-add-carrinho:hover{background:#1f2937!important;}
+
+        /* sacola crystal card */
+        .sacola-crystal-card{background:linear-gradient(135deg,#0f172a,#1e1b4b)!important;border-color:rgba(147,197,253,.3)!important;}
+        .sacola-crystal-card:hover{border-color:#60a5fa!important;box-shadow:0 20px 25px -5px rgba(96,165,250,.25)!important;}
+        .sacola-crystal-card .conteudo-produto{background:transparent;}
+        .sacola-crystal-card .nome-produto{color:#c7d2fe!important;}
+        .sacola-crystal-card .desc-produto{color:#818cf8!important;}
+        .sacola-crystal-card .imagem-produto{background:linear-gradient(135deg,rgba(30,27,75,.8) 0%,rgba(15,23,42,.8) 100%)!important;border-bottom-color:rgba(147,197,253,.2)!important;}
+        .sacola-crystal-card .container-preco{background:rgba(30,27,75,.5)!important;border-color:rgba(147,197,253,.2)!important;}
+        .sacola-crystal-card .container-preco::before{background:linear-gradient(to bottom,#3b82f6,#8b5cf6)!important;}
+        .sacola-crystal-card .preco-label{color:#818cf8!important;}
+        .sacola-crystal-card .preco-valor{color:#c7d2fe!important;}
+        .sacola-crystal-card .controle-qtd{border-color:rgba(147,197,253,.2)!important;background:rgba(30,27,75,.5)!important;}
+        .sacola-crystal-card .btn-qtd{color:#818cf8!important;}
+        .sacola-crystal-card .btn-qtd:hover{background:rgba(30,27,75,.8)!important;}
+        .sacola-crystal-card .input-qtd{color:#c7d2fe!important;}
+        .sacola-crystal-card .btn-add-carrinho{background:linear-gradient(135deg,#3b82f6,#8b5cf6)!important;color:#fff!important;}
+        .sacola-crystal-card .btn-add-carrinho:hover{background:linear-gradient(135deg,#2563eb,#7c3aed)!important;}
+        .sacola-crystal-card .btn-ver-espec{border-color:rgba(147,197,253,.2)!important;color:rgba(96,165,250,.5)!important;}
+        .sacola-crystal-card .btn-ver-espec:hover{border-color:#60a5fa!important;color:#93c5fd!important;}
+
+        /* sacola kraft card */
+        .sacola-kraft-card{background:#1c1008!important;border-color:#78350f!important;}
+        .sacola-kraft-card:hover{border-color:#f59e0b!important;box-shadow:0 20px 25px -5px rgba(245,158,11,.2)!important;}
+        .sacola-kraft-card .conteudo-produto{background:#1c1008;}
+        .sacola-kraft-card .nome-produto{color:#fde68a!important;}
+        .sacola-kraft-card .desc-produto{color:#d97706!important;opacity:.8;}
+        .sacola-kraft-card .imagem-produto{background:linear-gradient(135deg,#1c1008 0%,#2d1a08 100%)!important;border-bottom-color:#78350f!important;}
+        .sacola-kraft-card .container-preco{background:#0f0804!important;border-color:#78350f!important;}
+        .sacola-kraft-card .container-preco::before{background:#f59e0b!important;}
+        .sacola-kraft-card .preco-label{color:#d97706!important;}
+        .sacola-kraft-card .preco-valor{color:#fde68a!important;}
+        .sacola-kraft-card .controle-qtd{border-color:#78350f!important;background:#0f0804!important;}
+        .sacola-kraft-card .btn-qtd{color:#d97706!important;}
+        .sacola-kraft-card .btn-qtd:hover{background:#2d1a08!important;}
+        .sacola-kraft-card .input-qtd{color:#fde68a!important;}
+        .sacola-kraft-card .btn-add-carrinho{background:#92400e!important;color:#fde68a!important;}
+        .sacola-kraft-card .btn-add-carrinho:hover{background:#f59e0b!important;color:#1c1917!important;}
+        .sacola-kraft-card .btn-ver-espec{border-color:#78350f!important;color:#78350f!important;}
+        .sacola-kraft-card .btn-ver-espec:hover{border-color:#f59e0b!important;color:#fde68a!important;}
+
+        /* sacola kraft com alça card */
+        .sacola-kraft-alca-card{background:#1c1008!important;border:2px solid #b45309!important;}
+        .sacola-kraft-alca-card:hover{border-color:#fbbf24!important;box-shadow:0 20px 25px -5px rgba(251,191,36,.25)!important;}
+        .sacola-kraft-alca-card .conteudo-produto{background:#1c1008;}
+        .sacola-kraft-alca-card .nome-produto{color:#fef08a!important;}
+        .sacola-kraft-alca-card .desc-produto{color:#fcd34d!important;opacity:.8;}
+        .sacola-kraft-alca-card .imagem-produto{background:linear-gradient(135deg,#1c1008 0%,#2d1a08 100%)!important;border-bottom-color:#b45309!important;}
+        .sacola-kraft-alca-card .container-preco{background:#0f0804!important;border-color:#b45309!important;}
+        .sacola-kraft-alca-card .container-preco::before{background:#fbbf24!important;}
+        .sacola-kraft-alca-card .preco-label{color:#fcd34d!important;}
+        .sacola-kraft-alca-card .preco-valor{color:#fef08a!important;}
+        .sacola-kraft-alca-card .controle-qtd{border-color:#b45309!important;background:#0f0804!important;}
+        .sacola-kraft-alca-card .btn-qtd{color:#fcd34d!important;}
+        .sacola-kraft-alca-card .btn-qtd:hover{background:#2d1a08!important;}
+        .sacola-kraft-alca-card .input-qtd{color:#fef08a!important;}
+        .sacola-kraft-alca-card .btn-add-carrinho{background:#b45309!important;color:#fef08a!important;}
+        .sacola-kraft-alca-card .btn-add-carrinho:hover{background:#fbbf24!important;color:#1c1917!important;}
+        .sacola-kraft-alca-card .btn-ver-espec{border-color:#b45309!important;color:#b45309!important;}
+        .sacola-kraft-alca-card .btn-ver-espec:hover{border-color:#fbbf24!important;color:#fef08a!important;}
+
+        /* tema kraft tamanho bar */
+        .tema-kraft .btn-tamanho-sacola{background:#78350f;border:1.5px solid #92400e;color:#fde68a;}
+        .tema-kraft .btn-tamanho-sacola:hover{background:#92400e;border-color:#fbbf24;}
+        .tema-kraft .btn-tamanho-sacola.ativo{background:#f59e0b;color:#1c1917;border-color:#f59e0b;}
+
+        /* plastico */
+        .plastico-card{border-color:#bbf7d0!important;}
+        .plastico-card:hover{border-color:#4ade80!important;box-shadow:0 20px 25px -5px rgba(21,128,61,.12)!important;}
+        .plastico-card .imagem-produto{background:linear-gradient(135deg,#f0fdf4 0%,#dcfce7 100%)!important;border-bottom-color:#bbf7d0!important;}
+        .plastico-card .container-preco{background:#f0fdf4!important;border-color:#bbf7d0!important;}
+        .plastico-card .container-preco::before{background:#15803d!important;}
+        .plastico-card .preco-label{color:#15803d!important;}
+        .plastico-card .preco-valor{color:#15803d!important;}
+        .plastico-card .btn-add-carrinho{background:#15803d!important;}
+        .plastico-card .btn-add-carrinho:hover{background:#166534!important;}
+        .titulo-plastico i{color:#15803d;background:#f0fdf4;}
+
+        /* isopor card */
+        .isopor-card:hover{border-color:#00acc1!important;box-shadow:0 20px 25px -5px rgba(0,131,143,.15)!important;}
+        .isopor-card .imagem-produto{background:linear-gradient(135deg,#e0f7fa 0%,#f0fdff 100%)!important;border-bottom-color:#b2ebf2!important;}
+        .isopor-card .container-preco{background:#e0f7fa!important;border-color:#b2ebf2!important;}
+        .isopor-card .container-preco::before{background:#00838f!important;}
+        .isopor-card .preco-label{color:#00838f!important;}
+        .isopor-card .preco-valor{color:#00838f!important;}
+        .isopor-card .btn-add-carrinho{background:#00838f!important;}
+        .isopor-card .btn-add-carrinho:hover{background:#005662!important;}
 
         /* SIDEBAR CARRINHO */
         .overlay-carrinho{position:fixed;inset:0;background:rgba(15,23,42,.6);backdrop-filter:blur(6px);z-index:1500;opacity:0;pointer-events:none;transition:opacity .3s ease;}
@@ -481,7 +407,8 @@
         .btn-fechar{position:absolute;top:1.5rem;right:1.5rem;background:var(--fundo-pagina);width:44px;height:44px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.3rem;color:var(--texto-mutado);transition:var(--tr);}
         .btn-fechar:hover{background:var(--bordas);color:var(--texto-escuro);transform:rotate(90deg);}
         .modal-cabecalho{text-align:center;margin-bottom:2rem;display:flex;flex-direction:column;align-items:center;}
-        .modal-icone{font-size:4.5rem;color:var(--azul-600);margin-bottom:1.2rem;background:var(--azul-50);padding:18px;border-radius:22px;}
+        .modal-icone{font-size:4.5rem;color:var(--azul-600);margin-bottom:1.2rem;background:var(--azul-50);padding:18px;border-radius:22px;display:flex;align-items:center;justify-content:center;}
+        .modal-icone svg{width:70px;height:70px;}
         .modal-titulo{font-size:2rem;font-weight:800;color:var(--texto-escuro);line-height:1.2;letter-spacing:-.03em;margin-bottom:.75rem;}
         .modal-container-preco{background:var(--azul-600);padding:10px 22px;border-radius:99px;color:#fff;display:inline-flex;align-items:baseline;gap:5px;}
         .modal-preco-valor{font-size:2.2rem;font-weight:900;letter-spacing:-.04em;}
@@ -613,36 +540,24 @@
             <button class="btn-subcategoria" onclick="filtrarSub('geral',this,'caixas')"><i class="ph-bold ph-cube"></i> Uso Geral</button>
         </div>
 
-        <!-- SACOLAS: Nível 1 - Tipo de sacola (cor/material) -->
+        <!-- SACOLAS: Tipo -->
         <div class="sub-bar-base sacolas-tipo-bar" id="barraTipoSacolas">
-            <button class="btn-tipo-sacola tipo-preta ativo" onclick="selecionarTipoSacola('preta',this)">
-                <span class="cor-dot cor-dot-preta"></span> Preta
-            </button>
-            <button class="btn-tipo-sacola tipo-verde" onclick="selecionarTipoSacola('verde',this)">
-                <span class="cor-dot cor-dot-verde"></span> Verde
-            </button>
-            <button class="btn-tipo-sacola tipo-branca" onclick="selecionarTipoSacola('branca',this)">
-                <span class="cor-dot cor-dot-branca"></span> Branca
-            </button>
-            <button class="btn-tipo-sacola tipo-crystal" onclick="selecionarTipoSacola('crystal',this)">
-                <span class="cor-dot cor-dot-crystal"></span> Crystal
-            </button>
-            <button class="btn-tipo-sacola tipo-kraft" onclick="selecionarTipoSacola('kraft',this)">
-                <span class="cor-dot cor-dot-kraft"></span> Kraft
-            </button>
-            <button class="btn-tipo-sacola tipo-kraft-alca" onclick="selecionarTipoSacola('kraft-alca',this)">
-                <span class="cor-dot cor-dot-kraft-alca"></span> Kraft c/ Alça
-            </button>
+            <button class="btn-tipo-sacola tipo-preta ativo" onclick="selecionarTipoSacola('preta',this)"><span class="cor-dot cor-dot-preta"></span> Preta</button>
+            <button class="btn-tipo-sacola tipo-verde" onclick="selecionarTipoSacola('verde',this)"><span class="cor-dot cor-dot-verde"></span> Verde</button>
+            <button class="btn-tipo-sacola tipo-branca" onclick="selecionarTipoSacola('branca',this)"><span class="cor-dot cor-dot-branca"></span> Branca</button>
+            <button class="btn-tipo-sacola tipo-crystal" onclick="selecionarTipoSacola('crystal',this)"><span class="cor-dot cor-dot-crystal"></span> Crystal</button>
+            <button class="btn-tipo-sacola tipo-kraft" onclick="selecionarTipoSacola('kraft',this)"><span class="cor-dot cor-dot-kraft"></span> Kraft</button>
+            <button class="btn-tipo-sacola tipo-kraft-alca" onclick="selecionarTipoSacola('kraft-alca',this)"><span class="cor-dot cor-dot-kraft-alca"></span> Kraft c/ Alça</button>
         </div>
 
-        <!-- SACOLAS PRETAS: Nível 3 - Pacote -->
+        <!-- SACOLAS PRETAS: Pacote -->
         <div class="sacolas-pacote-bar" id="barraPacoteSacolas">
             <button class="btn-pacote-sacola ativo" onclick="filtrarPacoteSacola('todos',this)"><i class="ph-bold ph-squares-four"></i> Todos os Pacotes</button>
             <button class="btn-pacote-sacola" onclick="filtrarPacoteSacola('10un',this)"><i class="ph-bold ph-stack"></i> Pacote c/ 10 un</button>
             <button class="btn-pacote-sacola" onclick="filtrarPacoteSacola('50un',this)"><i class="ph-bold ph-stack"></i> Pacote c/ 50 un</button>
         </div>
 
-        <!-- SACOLAS: Nível 2 - Tamanhos (aparece após escolher tipo) -->
+        <!-- SACOLAS: Tamanhos -->
         <div class="sacolas-tamanho-bar tema-preta" id="barraTamanhoSacolas">
             <button class="btn-tamanho-sacola ativo" onclick="filtrarTamanhoSacola('todas',this)"><i class="ph-bold ph-squares-four"></i> Todos os Tamanhos</button>
             <button class="btn-tamanho-sacola" onclick="filtrarTamanhoSacola('p',this)"><i class="ph-bold ph-shopping-bag"></i> Pequenas</button>
@@ -657,6 +572,13 @@
             <button class="btn-sub-isopor" onclick="filtrarSub('caixa-isopor',this,'isopor')"><i class="ph-bold ph-cube"></i> Caixas de Isopor</button>
             <button class="btn-sub-isopor" onclick="filtrarSub('copo-isopor',this,'isopor')"><i class="ph-bold ph-coffee"></i> Copos de Isopor</button>
             <button class="btn-sub-isopor" onclick="filtrarSub('disco-isopor',this,'isopor')"><i class="ph-bold ph-circle"></i> Disco para Pizza</button>
+        </div>
+
+        <!-- ── FILTRO DE MARCA MARMITEX (novo!) ── -->
+        <div class="marmitex-marca-bar" id="barraMarcaMarmitex">
+            <button class="btn-marca-marmitex ativo" onclick="filtrarMarcaMarmitex('todas',this)"><i class="ph-bold ph-squares-four"></i> Todas as Marcas</button>
+            <button class="btn-marca-marmitex" onclick="filtrarMarcaMarmitex('Copabras',this)"><i class="ph-bold ph-tag"></i> Copabras</button>
+            <button class="btn-marca-marmitex" onclick="filtrarMarcaMarmitex('Bom Apetite',this)"><i class="ph-bold ph-tag"></i> Bom Apetite</button>
         </div>
 
         <!-- Subcategorias Embalagens Plásticas -->
@@ -750,116 +672,351 @@
 </footer>
 
 <script>
-/* ─── DADOS ─────────────────────────────────────────────── */
+/* ══════════════════════════════════════════════════
+   SVGs ILUSTRATIVOS POR TIPO DE PRODUTO
+══════════════════════════════════════════════════ */
+const svgProdutos = {
+    // Caixas correios/padrão
+    caixa_correio: `<svg viewBox="0 0 130 130" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect x="15" y="45" width="100" height="70" rx="4" fill="#dbeafe" stroke="#2563eb" stroke-width="2.5"/>
+        <path d="M15 55 L65 80 L115 55" stroke="#2563eb" stroke-width="2.5" fill="none"/>
+        <rect x="52" y="45" width="26" height="18" rx="2" fill="#bfdbfe" stroke="#2563eb" stroke-width="2"/>
+        <path d="M30 25 L65 10 L100 25 L115 45 L15 45 Z" fill="#bfdbfe" stroke="#2563eb" stroke-width="2"/>
+        <circle cx="65" cy="82" r="4" fill="#2563eb"/>
+    </svg>`,
+
+    // Caixa bolo/confeitaria
+    caixa_bolo: `<svg viewBox="0 0 130 130" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect x="10" y="50" width="110" height="65" rx="5" fill="#fce7f3" stroke="#db2777" stroke-width="2.5"/>
+        <rect x="10" y="38" width="110" height="18" rx="4" fill="#fbcfe8" stroke="#db2777" stroke-width="2"/>
+        <rect x="50" y="16" width="30" height="28" rx="3" fill="#fce7f3" stroke="#db2777" stroke-width="2"/>
+        <circle cx="65" cy="12" r="5" fill="#f472b6"/>
+        <path d="M30 68 Q40 58 50 68 Q60 58 70 68 Q80 58 90 68 Q100 58 110 68" stroke="#db2777" stroke-width="2" fill="none"/>
+        <path d="M20 85 Q35 75 50 85 Q65 75 80 85 Q95 75 110 85" stroke="#f9a8d4" stroke-width="1.5" fill="none"/>
+        <circle cx="40" cy="95" r="4" fill="#f472b6"/>
+        <circle cx="65" cy="100" r="4" fill="#ec4899"/>
+        <circle cx="90" cy="95" r="4" fill="#f472b6"/>
+    </svg>`,
+
+    // Caixa pizza/salgado
+    caixa_pizza: `<svg viewBox="0 0 130 130" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect x="8" y="50" width="114" height="65" rx="5" fill="#fef3c7" stroke="#d97706" stroke-width="2.5"/>
+        <rect x="8" y="38" width="114" height="18" rx="4" fill="#fde68a" stroke="#d97706" stroke-width="2"/>
+        <circle cx="65" cy="82" r="30" fill="#fed7aa" stroke="#d97706" stroke-width="2"/>
+        <path d="M65 52 L95 100 L35 100 Z" fill="#fbbf24" opacity="0.4"/>
+        <circle cx="50" cy="78" r="4" fill="#ef4444"/>
+        <circle cx="72" cy="70" r="4" fill="#ef4444"/>
+        <circle cx="65" cy="88" r="3" fill="#ef4444"/>
+        <circle cx="80" cy="85" r="3" fill="#16a34a"/>
+        <circle cx="52" cy="90" r="3" fill="#16a34a"/>
+    </svg>`,
+
+    // Caixa uso geral
+    caixa_geral: `<svg viewBox="0 0 130 130" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect x="15" y="35" width="100" height="80" rx="4" fill="#e0f2fe" stroke="#0284c7" stroke-width="2.5"/>
+        <rect x="15" y="35" width="100" height="22" rx="4" fill="#bae6fd" stroke="#0284c7" stroke-width="2"/>
+        <rect x="48" y="35" width="34" height="22" rx="2" fill="#7dd3fc" stroke="#0284c7" stroke-width="2"/>
+        <line x1="40" y1="70" x2="90" y2="70" stroke="#0284c7" stroke-width="2" stroke-dasharray="5,3"/>
+        <line x1="40" y1="85" x2="90" y2="85" stroke="#0284c7" stroke-width="2" stroke-dasharray="5,3"/>
+        <line x1="40" y1="100" x2="75" y2="100" stroke="#0284c7" stroke-width="2" stroke-dasharray="5,3"/>
+    </svg>`,
+
+    // Sacola plástica preta
+    sacola_preta: `<svg viewBox="0 0 130 130" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M35 45 Q28 45 26 52 L18 108 Q17 115 25 115 L105 115 Q113 115 112 108 L104 52 Q102 45 95 45 Z" fill="#1e293b" stroke="#64748b" stroke-width="2"/>
+        <path d="M48 45 Q48 28 65 28 Q82 28 82 45" stroke="#94a3b8" stroke-width="3" fill="none" stroke-linecap="round"/>
+        <line x1="48" y1="65" x2="82" y2="65" stroke="#475569" stroke-width="1.5" stroke-dasharray="4,3"/>
+        <line x1="42" y1="80" x2="88" y2="80" stroke="#475569" stroke-width="1.5" stroke-dasharray="4,3"/>
+    </svg>`,
+
+    // Sacola verde
+    sacola_verde: `<svg viewBox="0 0 130 130" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M35 45 Q28 45 26 52 L18 108 Q17 115 25 115 L105 115 Q113 115 112 108 L104 52 Q102 45 95 45 Z" fill="#064e3b" stroke="#34d399" stroke-width="2"/>
+        <path d="M48 45 Q48 28 65 28 Q82 28 82 45" stroke="#6ee7b7" stroke-width="3" fill="none" stroke-linecap="round"/>
+        <circle cx="65" cy="80" r="14" fill="#065f46" stroke="#10b981" stroke-width="1.5"/>
+        <path d="M57 80 L62 85 L73 74" stroke="#6ee7b7" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+    </svg>`,
+
+    // Sacola branca
+    sacola_branca: `<svg viewBox="0 0 130 130" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M35 45 Q28 45 26 52 L18 108 Q17 115 25 115 L105 115 Q113 115 112 108 L104 52 Q102 45 95 45 Z" fill="#f9fafb" stroke="#9ca3af" stroke-width="2"/>
+        <path d="M48 45 Q48 28 65 28 Q82 28 82 45" stroke="#6b7280" stroke-width="3" fill="none" stroke-linecap="round"/>
+        <line x1="45" y1="65" x2="85" y2="65" stroke="#d1d5db" stroke-width="1.5"/>
+        <line x1="40" y1="78" x2="90" y2="78" stroke="#d1d5db" stroke-width="1.5"/>
+        <line x1="42" y1="91" x2="88" y2="91" stroke="#d1d5db" stroke-width="1.5"/>
+    </svg>`,
+
+    // Sacola crystal
+    sacola_crystal: `<svg viewBox="0 0 130 130" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+            <linearGradient id="cg" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0%" stop-color="#bfdbfe" stop-opacity="0.5"/>
+                <stop offset="100%" stop-color="#c4b5fd" stop-opacity="0.3"/>
+            </linearGradient>
+        </defs>
+        <path d="M35 45 Q28 45 26 52 L18 108 Q17 115 25 115 L105 115 Q113 115 112 108 L104 52 Q102 45 95 45 Z" fill="url(#cg)" stroke="#60a5fa" stroke-width="2"/>
+        <path d="M48 45 Q48 28 65 28 Q82 28 82 45" stroke="#a78bfa" stroke-width="3" fill="none" stroke-linecap="round"/>
+        <path d="M30 55 L100 55 L108 108 L22 108 Z" fill="rgba(148,163,184,0.08)"/>
+        <ellipse cx="65" cy="85" rx="22" ry="18" fill="rgba(96,165,250,0.1)" stroke="#60a5fa" stroke-width="1" stroke-dasharray="3,2"/>
+    </svg>`,
+
+    // Sacola kraft
+    sacola_kraft: `<svg viewBox="0 0 130 130" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M35 45 Q28 45 26 52 L18 108 Q17 115 25 115 L105 115 Q113 115 112 108 L104 52 Q102 45 95 45 Z" fill="#78350f" stroke="#f59e0b" stroke-width="2"/>
+        <path d="M48 45 Q48 28 65 28 Q82 28 82 45" stroke="#fde68a" stroke-width="3" fill="none" stroke-linecap="round"/>
+        <rect x="38" y="62" width="54" height="38" rx="3" fill="#92400e" stroke="#d97706" stroke-width="1.5"/>
+        <line x1="47" y1="72" x2="83" y2="72" stroke="#fbbf24" stroke-width="1.5"/>
+        <line x1="47" y1="80" x2="83" y2="80" stroke="#fbbf24" stroke-width="1.5"/>
+        <line x1="47" y1="88" x2="70" y2="88" stroke="#fbbf24" stroke-width="1.5"/>
+    </svg>`,
+
+    // Sacola kraft com alça
+    sacola_kraft_alca: `<svg viewBox="0 0 130 130" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M35 50 Q28 50 26 57 L18 108 Q17 115 25 115 L105 115 Q113 115 112 108 L104 57 Q102 50 95 50 Z" fill="#1c1008" stroke="#b45309" stroke-width="2"/>
+        <path d="M48 50 Q44 32 55 22 Q65 15 75 22 Q86 32 82 50" stroke="#fbbf24" stroke-width="3" fill="none" stroke-linecap="round"/>
+        <circle cx="48" cy="50" r="5" fill="#fbbf24"/>
+        <circle cx="82" cy="50" r="5" fill="#fbbf24"/>
+        <rect x="36" y="65" width="58" height="36" rx="3" fill="#2d1a08" stroke="#b45309" stroke-width="1.5"/>
+        <line x1="46" y1="75" x2="84" y2="75" stroke="#fef08a" stroke-width="1.5"/>
+        <line x1="46" y1="84" x2="84" y2="84" stroke="#fef08a" stroke-width="1.5"/>
+        <line x1="46" y1="93" x2="68" y2="93" stroke="#fef08a" stroke-width="1.5"/>
+    </svg>`,
+
+    // Saco de lixo preto
+    saco_lixo: `<svg viewBox="0 0 130 130" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M55 20 L75 20 L78 35 Q92 35 92 48 L95 105 Q95 115 65 115 Q35 115 35 105 L38 48 Q38 35 52 35 Z" fill="#1e293b" stroke="#475569" stroke-width="2"/>
+        <path d="M55 20 Q55 14 65 14 Q75 14 75 20" stroke="#64748b" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+        <path d="M45 55 Q55 65 65 55 Q75 65 85 55" stroke="#334155" stroke-width="2" fill="none"/>
+        <path d="M42 75 Q52 85 65 78 Q78 85 88 75" stroke="#334155" stroke-width="2" fill="none"/>
+        <path d="M43 95 Q53 103 65 98 Q77 103 87 95" stroke="#334155" stroke-width="1.5" fill="none"/>
+    </svg>`,
+
+    // Marmitex isopor
+    marmitex: `<svg viewBox="0 0 130 130" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <ellipse cx="65" cy="55" rx="52" ry="18" fill="#e0f7fa" stroke="#00838f" stroke-width="2.5"/>
+        <path d="M13 55 Q13 95 65 95 Q117 95 117 55" fill="#f0fdff" stroke="#00838f" stroke-width="2.5"/>
+        <ellipse cx="65" cy="55" rx="52" ry="18" fill="none" stroke="#00838f" stroke-width="2.5"/>
+        <ellipse cx="65" cy="55" rx="38" ry="12" fill="#ccf2f5" stroke="#00acc1" stroke-width="1.5"/>
+        <ellipse cx="65" cy="55" rx="24" ry="7" fill="#b2ebf2"/>
+        <path d="M30 75 Q65 85 100 75" stroke="#00acc1" stroke-width="1.5" fill="none"/>
+        <text x="65" y="112" text-anchor="middle" font-size="10" fill="#00838f" font-weight="bold" font-family="sans-serif">ISOPOR</text>
+    </svg>`,
+
+    // Caixa de isopor
+    caixa_isopor: `<svg viewBox="0 0 130 130" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect x="15" y="55" width="100" height="62" rx="5" fill="#e0f7fa" stroke="#00838f" stroke-width="2.5"/>
+        <rect x="12" y="42" width="106" height="18" rx="4" fill="#b2ebf2" stroke="#00838f" stroke-width="2"/>
+        <rect x="42" y="42" width="46" height="18" rx="2" fill="#80deea" stroke="#00838f" stroke-width="1.5"/>
+        <path d="M22 68 L108 68" stroke="#00acc1" stroke-width="1.5" stroke-dasharray="5,3"/>
+        <path d="M22 82 L108 82" stroke="#00acc1" stroke-width="1.5" stroke-dasharray="5,3"/>
+        <path d="M22 96 L108 96" stroke="#00acc1" stroke-width="1.5" stroke-dasharray="5,3"/>
+        <path d="M20 22 L35 14 L110 14 L110 42 L15 42 Z" fill="#cff3f7" stroke="#00838f" stroke-width="2"/>
+        <path d="M15 42 L20 22" stroke="#00838f" stroke-width="2"/>
+        <text x="65" y="112" text-anchor="middle" font-size="9" fill="#00838f" font-weight="bold" font-family="sans-serif">ISOPOR</text>
+    </svg>`,
+
+    // Copo de isopor
+    copo_isopor: `<svg viewBox="0 0 130 130" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M35 30 L42 105 Q42 112 65 112 Q88 112 88 105 L95 30 Z" fill="#e0f7fa" stroke="#00838f" stroke-width="2.5"/>
+        <path d="M35 30 L95 30" stroke="#00838f" stroke-width="2.5"/>
+        <path d="M37 48 L93 48" stroke="#b2ebf2" stroke-width="1.5"/>
+        <path d="M39 64 L91 64" stroke="#b2ebf2" stroke-width="1.5"/>
+        <path d="M41 80 L89 80" stroke="#b2ebf2" stroke-width="1.5"/>
+        <path d="M43 96 L87 96" stroke="#b2ebf2" stroke-width="1.5"/>
+        <ellipse cx="65" cy="30" rx="30" ry="6" fill="#cff3f7" stroke="#00838f" stroke-width="2"/>
+        <path d="M50 18 Q65 8 80 18" stroke="#00acc1" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+    </svg>`,
+
+    // Disco pizza isopor
+    disco_pizza: `<svg viewBox="0 0 130 130" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <ellipse cx="65" cy="65" rx="55" ry="12" fill="#e0f7fa" stroke="#00838f" stroke-width="2.5"/>
+        <ellipse cx="65" cy="60" rx="55" ry="12" fill="#f0fdff" stroke="#00838f" stroke-width="2.5"/>
+        <ellipse cx="65" cy="60" rx="42" ry="8" fill="#e0f7fa" stroke="#00acc1" stroke-width="1.5" stroke-dasharray="6,3"/>
+        <ellipse cx="65" cy="60" rx="28" ry="5" fill="#b2ebf2"/>
+        <ellipse cx="65" cy="55" rx="55" ry="12" fill="#f0fdff" stroke="#00838f" stroke-width="2" fill-opacity="0.5"/>
+        <path d="M25 60 Q65 52 105 60" stroke="#00acc1" stroke-width="1" fill="none"/>
+        <text x="65" y="90" text-anchor="middle" font-size="9" fill="#00838f" font-weight="bold" font-family="sans-serif">PIZZA</text>
+    </svg>`,
+
+    // Embalagem bolo plástico
+    embalagem_bolo: `<svg viewBox="0 0 130 130" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+            <linearGradient id="pg" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stop-color="#dcfce7" stop-opacity="0.9"/>
+                <stop offset="100%" stop-color="#bbf7d0" stop-opacity="0.7"/>
+            </linearGradient>
+        </defs>
+        <rect x="15" y="35" width="100" height="80" rx="6" fill="url(#pg)" stroke="#16a34a" stroke-width="2"/>
+        <rect x="15" y="35" width="100" height="22" rx="6" fill="rgba(187,247,208,0.5)" stroke="#16a34a" stroke-width="2"/>
+        <rect x="20" y="62" width="90" height="48" rx="4" fill="rgba(255,255,255,0.5)" stroke="#4ade80" stroke-width="1.5" stroke-dasharray="4,2"/>
+        <!-- bolo dentro -->
+        <ellipse cx="65" cy="88" rx="32" ry="10" fill="#fde68a" stroke="#d97706" stroke-width="1.5"/>
+        <rect x="33" y="72" width="64" height="20" rx="2" fill="#fef3c7" stroke="#d97706" stroke-width="1.5"/>
+        <ellipse cx="65" cy="72" rx="32" ry="8" fill="#fde68a" stroke="#d97706" stroke-width="1.5"/>
+        <path d="M33 78 Q65 85 97 78" stroke="#f59e0b" stroke-width="1" fill="none"/>
+    </svg>`,
+
+    // Marmita plástica
+    marmita_plastica: `<svg viewBox="0 0 130 130" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect x="12" y="48" width="106" height="65" rx="8" fill="#dcfce7" stroke="#16a34a" stroke-width="2.5"/>
+        <rect x="12" y="35" width="106" height="20" rx="5" fill="#bbf7d0" stroke="#16a34a" stroke-width="2"/>
+        <rect x="35" y="35" width="60" height="20" rx="3" fill="#86efac" stroke="#16a34a" stroke-width="1.5"/>
+        <line x1="65" y1="75" x2="65" y2="108" stroke="#4ade80" stroke-width="1.5" stroke-dasharray="3,2"/>
+        <line x1="22" y1="92" x2="108" y2="92" stroke="#4ade80" stroke-width="1.5" stroke-dasharray="3,2"/>
+        <circle cx="40" cy="80" r="6" fill="#fbbf24" opacity="0.6"/>
+        <circle cx="90" cy="80" r="6" fill="#f87171" opacity="0.6"/>
+        <circle cx="40" cy="105" r="5" fill="#a3e635" opacity="0.6"/>
+        <circle cx="90" cy="105" r="5" fill="#fbbf24" opacity="0.6"/>
+        <circle cx="65" cy="60" r="4" fill="rgba(22,163,74,0.3)"/>
+    </svg>`,
+
+    // Default fallback
+    default: `<svg viewBox="0 0 130 130" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect x="20" y="30" width="90" height="80" rx="6" fill="#dbeafe" stroke="#2563eb" stroke-width="2.5"/>
+        <rect x="20" y="30" width="90" height="24" rx="6" fill="#bfdbfe" stroke="#2563eb" stroke-width="2"/>
+        <rect x="46" y="30" width="38" height="24" rx="3" fill="#93c5fd" stroke="#2563eb" stroke-width="2"/>
+        <line x1="35" y1="72" x2="95" y2="72" stroke="#3b82f6" stroke-width="2" stroke-dasharray="5,3"/>
+        <line x1="35" y1="86" x2="95" y2="86" stroke="#3b82f6" stroke-width="2" stroke-dasharray="5,3"/>
+        <line x1="35" y1="100" x2="75" y2="100" stroke="#3b82f6" stroke-width="2" stroke-dasharray="5,3"/>
+    </svg>`
+};
+
+/* ─── Função que decide qual SVG usar por produto ─── */
+function getSvg(produto) {
+    const cat = produto.categoria;
+    const sub = produto.subcategoria || '';
+    const tipo = produto.tipo || '';
+    const nome = produto.nome.toLowerCase();
+
+    if (cat === 'sacolas') {
+        if (tipo === 'preta') return svgProdutos.saco_lixo;
+        if (tipo === 'verde') return svgProdutos.sacola_verde;
+        if (tipo === 'branca') return svgProdutos.sacola_branca;
+        if (tipo === 'crystal') return svgProdutos.sacola_crystal;
+        if (tipo === 'kraft-alca') return svgProdutos.sacola_kraft_alca;
+        if (tipo === 'kraft') return svgProdutos.sacola_kraft;
+    }
+    if (cat === 'isopor') {
+        if (sub === 'marmitex') return svgProdutos.marmitex;
+        if (sub === 'caixa-isopor') return svgProdutos.caixa_isopor;
+        if (sub === 'copo-isopor') return svgProdutos.copo_isopor;
+        if (sub === 'disco-isopor') return svgProdutos.disco_pizza;
+    }
+    if (cat === 'plastico') {
+        if (sub === 'marmita-plastico') return svgProdutos.marmita_plastica;
+        if (sub === 'bolo-plastico') return svgProdutos.embalagem_bolo;
+    }
+    if (cat === 'caixas') {
+        if (sub === 'confeiteiros') return svgProdutos.caixa_bolo;
+        if (sub === 'salgado') return svgProdutos.caixa_pizza;
+        if (sub === 'sedex') return svgProdutos.caixa_correio;
+        if (sub === 'geral') return svgProdutos.caixa_geral;
+    }
+    return svgProdutos.default;
+}
+
+/* ══════════════════════════════════════════════════
+   DADOS
+══════════════════════════════════════════════════ */
 const listaProdutos = [
     // CAIXAS CORREIOS
-    {id:1, nome:"Caixa Nº0", categoria:"caixas", subcategoria:"sedex", icone:"ph-package", descricao:"Para pequenos acessórios, joias e eletrônicos.", preco:3.50, unidade:"/unidade", especificacoes:{"Medidas Externas":"16 x 11 x 07 cm","Material":"Ondulado"}},
-    {id:2, nome:"Caixa Nº1", categoria:"caixas", subcategoria:"sedex", icone:"ph-box-arrow-up", descricao:"Ideal para cosméticos, perfumes e miudezas.", preco:4.60, unidade:"/unidade", especificacoes:{"Medidas Externas":"21 x 15 x 6.5 cm","Material":"Ondulado"}},
-    {id:3, nome:"Caixa Nº2", categoria:"caixas", subcategoria:"sedex", icone:"ph-archive-box", descricao:"Vestuário, livros e kits médios.", preco:5.60, unidade:"/unidade", especificacoes:{"Medidas Externas":"26 x 17 x 08 cm","Material":"Ondulado"}},
-    {id:4, nome:"Caixa Nº3", categoria:"caixas", subcategoria:"sedex", icone:"ph-cube", descricao:"Calçados e utensílios com segurança.", preco:8.80, unidade:"/unidade", especificacoes:{"Medidas Externas":"30 x 20 x 11 cm","Material":"Ondulado"}},
-    {id:5, nome:"Caixa Nº4", categoria:"caixas", subcategoria:"sedex", icone:"ph-package", descricao:"Para volumes maiores no e-commerce.", preco:13.00, unidade:"/unidade", especificacoes:{"Medidas Externas":"34 x 27 x 11 cm","Material":"Ondulado"}},
+    {id:1,nome:"Caixa Nº0",categoria:"caixas",subcategoria:"sedex",icone:"ph-package",descricao:"Para pequenos acessórios, joias e eletrônicos.",preco:3.50,unidade:"/unidade",especificacoes:{"Medidas Externas":"16 x 11 x 07 cm","Material":"Ondulado"}},
+    {id:2,nome:"Caixa Nº1",categoria:"caixas",subcategoria:"sedex",icone:"ph-box-arrow-up",descricao:"Ideal para cosméticos, perfumes e miudezas.",preco:4.60,unidade:"/unidade",especificacoes:{"Medidas Externas":"21 x 15 x 6.5 cm","Material":"Ondulado"}},
+    {id:3,nome:"Caixa Nº2",categoria:"caixas",subcategoria:"sedex",icone:"ph-archive-box",descricao:"Vestuário, livros e kits médios.",preco:5.60,unidade:"/unidade",especificacoes:{"Medidas Externas":"26 x 17 x 08 cm","Material":"Ondulado"}},
+    {id:4,nome:"Caixa Nº3",categoria:"caixas",subcategoria:"sedex",icone:"ph-cube",descricao:"Calçados e utensílios com segurança.",preco:8.80,unidade:"/unidade",especificacoes:{"Medidas Externas":"30 x 20 x 11 cm","Material":"Ondulado"}},
+    {id:5,nome:"Caixa Nº4",categoria:"caixas",subcategoria:"sedex",icone:"ph-package",descricao:"Para volumes maiores no e-commerce.",preco:13.00,unidade:"/unidade",especificacoes:{"Medidas Externas":"34 x 27 x 11 cm","Material":"Ondulado"}},
     // CAIXAS GERAL
-    {id:6, nome:"Caixa 32x32x22", categoria:"caixas", subcategoria:"geral", icone:"ph-archive-box", descricao:"Multiuso de médio porte para armazenagem e transporte.", preco:13.80, unidade:"/unidade", especificacoes:{"Medidas Externas":"32 x 32 x 22 cm","Material":"Ondulado"}},
+    {id:6,nome:"Caixa 32x32x22",categoria:"caixas",subcategoria:"geral",icone:"ph-archive-box",descricao:"Multiuso de médio porte para armazenagem e transporte.",preco:13.80,unidade:"/unidade",especificacoes:{"Medidas Externas":"32 x 32 x 22 cm","Material":"Ondulado"}},
     // CAIXAS CONFEITEIROS
-    {id:7, nome:"Caixa De Bolo Nº9", categoria:"caixas", subcategoria:"confeiteiros", icone:"ph-archive-box", descricao:"Para bolos grandes de festa e comemorações.", preco:10.99, unidade:"/unidade", especificacoes:{"Medidas Externas":"40 x 40 x 12 cm","Material":"Ondulado"}},
-    {id:8, nome:"Caixa De Bolo Nº7 Média", categoria:"caixas", subcategoria:"confeiteiros", icone:"ph-archive-box", descricao:"Bolos de tamanho médio para aniversários.", preco:6.20, unidade:"/unidade", especificacoes:{"Medidas Externas":"28 x 28 x 10 cm","Material":"Ondulado"}},
-    {id:9, nome:"Caixa De Bolo Nº7 Com Alça", categoria:"caixas", subcategoria:"confeiteiros", icone:"ph-archive-box", descricao:"Igual ao Nº7 com alça integrada para transporte.", preco:6.50, unidade:"/unidade", especificacoes:{"Medidas Externas":"28 x 28 x 10 cm","Material":"Ondulado"}},
-    {id:10, nome:"Caixa De Bolo Nº6", categoria:"caixas", subcategoria:"confeiteiros", icone:"ph-archive-box", descricao:"Perfeita para bolos individuais e mini cakes.", preco:5.70, unidade:"/unidade", especificacoes:{"Medidas Externas":"26 x 26 x 10 cm","Material":"Ondulado"}},
-    {id:11, nome:"Caixa De Bolo Nº5", categoria:"caixas", subcategoria:"confeiteiros", icone:"ph-archive-box", descricao:"Naked cakes e bolos de pote.", preco:4.50, unidade:"/unidade", especificacoes:{"Medidas Externas":"22 x 22 x 10 cm","Material":"Ondulado"}},
-    {id:12, nome:"Caixa De Bolo Nº3", categoria:"caixas", subcategoria:"confeiteiros", icone:"ph-archive-box", descricao:"Bolos baixos, alfajores e tortas rasas.", preco:5.00, unidade:"/unidade", especificacoes:{"Medidas Externas":"25 x 25 x 5 cm","Material":"Ondulado"}},
-    {id:13, nome:"Caixa Para Copinho (50 Divisórias)", categoria:"caixas", subcategoria:"confeiteiros", icone:"ph-archive-box", descricao:"Transporte seguro de copinhos de mousse e brigadeiro.", preco:3.99, unidade:"/unidade", especificacoes:{"Medidas Externas":"40 x 40 x 12 cm","Material":"Ondulado"}},
-    {id:14, nome:"Caixa Para Cupcakes (até 25 un.)", categoria:"caixas", subcategoria:"confeiteiros", icone:"ph-archive-box", descricao:"Comporta até 25 cupcakes com segurança.", preco:6.55, unidade:"/unidade", especificacoes:{"Medidas Externas":"40 x 40 x 12 cm","Material":"Ondulado"}},
+    {id:7,nome:"Caixa De Bolo Nº9",categoria:"caixas",subcategoria:"confeiteiros",icone:"ph-archive-box",descricao:"Para bolos grandes de festa e comemorações.",preco:10.99,unidade:"/unidade",especificacoes:{"Medidas Externas":"40 x 40 x 12 cm","Material":"Ondulado"}},
+    {id:8,nome:"Caixa De Bolo Nº7 Média",categoria:"caixas",subcategoria:"confeiteiros",icone:"ph-archive-box",descricao:"Bolos de tamanho médio para aniversários.",preco:6.20,unidade:"/unidade",especificacoes:{"Medidas Externas":"28 x 28 x 10 cm","Material":"Ondulado"}},
+    {id:9,nome:"Caixa De Bolo Nº7 Com Alça",categoria:"caixas",subcategoria:"confeiteiros",icone:"ph-archive-box",descricao:"Igual ao Nº7 com alça integrada para transporte.",preco:6.50,unidade:"/unidade",especificacoes:{"Medidas Externas":"28 x 28 x 10 cm","Material":"Ondulado"}},
+    {id:10,nome:"Caixa De Bolo Nº6",categoria:"caixas",subcategoria:"confeiteiros",icone:"ph-archive-box",descricao:"Perfeita para bolos individuais e mini cakes.",preco:5.70,unidade:"/unidade",especificacoes:{"Medidas Externas":"26 x 26 x 10 cm","Material":"Ondulado"}},
+    {id:11,nome:"Caixa De Bolo Nº5",categoria:"caixas",subcategoria:"confeiteiros",icone:"ph-archive-box",descricao:"Naked cakes e bolos de pote.",preco:4.50,unidade:"/unidade",especificacoes:{"Medidas Externas":"22 x 22 x 10 cm","Material":"Ondulado"}},
+    {id:12,nome:"Caixa De Bolo Nº3",categoria:"caixas",subcategoria:"confeiteiros",icone:"ph-archive-box",descricao:"Bolos baixos, alfajores e tortas rasas.",preco:5.00,unidade:"/unidade",especificacoes:{"Medidas Externas":"25 x 25 x 5 cm","Material":"Ondulado"}},
+    {id:13,nome:"Caixa Para Copinho (50 Divisórias)",categoria:"caixas",subcategoria:"confeiteiros",icone:"ph-archive-box",descricao:"Transporte seguro de copinhos de mousse e brigadeiro.",preco:3.99,unidade:"/unidade",especificacoes:{"Medidas Externas":"40 x 40 x 12 cm","Material":"Ondulado"}},
+    {id:14,nome:"Caixa Para Cupcakes (até 25 un.)",categoria:"caixas",subcategoria:"confeiteiros",icone:"ph-archive-box",descricao:"Comporta até 25 cupcakes com segurança.",preco:6.55,unidade:"/unidade",especificacoes:{"Medidas Externas":"40 x 40 x 12 cm","Material":"Ondulado"}},
     // CAIXAS SALGADOS
-    {id:15, nome:"Caixa De Esfiha Nº2", categoria:"caixas", subcategoria:"salgado", icone:"ph-archive-box", descricao:"Para esfihas, salgadinhos e porções individuais.", preco:3.50, unidade:"/unidade", especificacoes:{"Medidas Externas":"20 x 20 x 5 cm","Material":"Ondulado"}},
-    {id:16, nome:"Caixa De Pizza", categoria:"caixas", subcategoria:"salgado", icone:"ph-archive-box", descricao:"Mantém o calor e a crocância da pizza.", preco:3.50, unidade:"/unidade", especificacoes:{"Medidas Externas":"35 x 35 cm","Material":"Ondulado"}},
-
-    // ─── SACOLAS PRETAS (por pacote — campo "pacote": "10un" ou "50un") ───
-    {id:17, nome:"Saco Preto 100L — Pct 10un", categoria:"sacolas", tipo:"preta", tamanho:"p", pacote:"10un", icone:"ph-trash", descricao:"Saco de lixo preto 100L. Pacote com 10 unidades. Resistente para uso doméstico e comercial.", preco:"Sob consulta", unidade:"/pacote", especificacoes:{"Capacidade":"100 litros","Cor":"Preto","Embalagem":"Pacote c/ 10 unidades","Uso":"Uso doméstico, coleta de resíduos"}},
-    {id:90, nome:"Saco Preto 100L — Pct 50un", categoria:"sacolas", tipo:"preta", tamanho:"p", pacote:"50un", icone:"ph-trash", descricao:"Saco de lixo preto 100L. Pacote econômico com 50 unidades.", preco:"Sob consulta", unidade:"/pacote", especificacoes:{"Capacidade":"100 litros","Cor":"Preto","Embalagem":"Pacote c/ 50 unidades","Uso":"Uso comercial, coleta de resíduos"}},
-    {id:19, nome:"Saco Preto 200L — Pct 10un", categoria:"sacolas", tipo:"preta", tamanho:"m", pacote:"10un", icone:"ph-trash", descricao:"Saco preto 200L para grandes volumes. Pacote com 10 unidades.", preco:"Sob consulta", unidade:"/pacote", especificacoes:{"Capacidade":"200 litros","Cor":"Preto","Embalagem":"Pacote c/ 10 unidades","Uso":"Resíduos industriais, entulho leve"}},
-    {id:20, nome:"Saco Preto 200L — Pct 50un", categoria:"sacolas", tipo:"preta", tamanho:"m", pacote:"50un", icone:"ph-trash", descricao:"Saco preto 200L. Pacote econômico com 50 unidades.", preco:"Sob consulta", unidade:"/pacote", especificacoes:{"Capacidade":"200 litros","Cor":"Preto","Embalagem":"Pacote c/ 50 unidades","Uso":"Coleta comercial, resíduos"}},
-    {id:18, nome:"Saco Preto 40L — Pct 10un", categoria:"sacolas", tipo:"preta", tamanho:"p", pacote:"10un", icone:"ph-trash", descricao:"Saco preto 40L compacto. Pacote com 10 unidades. Para lixeiras pequenas.", preco:"Sob consulta", unidade:"/pacote", especificacoes:{"Capacidade":"40 litros","Cor":"Preto","Embalagem":"Pacote c/ 10 unidades","Uso":"Lixeiras domésticas, banheiro, cozinha"}},
-    {id:21, nome:"Saco Preto 100L Reforçado — Pct 10un", categoria:"sacolas", tipo:"preta", tamanho:"g", pacote:"10un", icone:"ph-trash", descricao:"Saco preto 100L reforçado para resíduos pesados. Pacote com 10 unidades.", preco:"Sob consulta", unidade:"/pacote", especificacoes:{"Capacidade":"100 litros","Cor":"Preto","Embalagem":"Pacote c/ 10 unidades","Uso":"Resíduos pesados, uso industrial"}},
-    {id:22, nome:"Saco Preto Extra Grande — Pct 50un", categoria:"sacolas", tipo:"preta", tamanho:"g", pacote:"50un", icone:"ph-trash", descricao:"Saco preto extra grande. Pacote econômico com 50 unidades.", preco:"Sob consulta", unidade:"/pacote", especificacoes:{"Cor":"Preto","Embalagem":"Pacote c/ 50 unidades","Uso":"Grandes volumes, armazenagem, logística"}},
-
-    // ─── SACOLAS VERDES (por kg) ───
-    {id:23, nome:"Sacola Verde 30x40", categoria:"sacolas", tipo:"verde", tamanho:"p", icone:"ph-shopping-bag", descricao:"Sacola verde resistente. Vendida por kg.", preco:"Sob consulta", unidade:"/kg", especificacoes:{"Medidas":"30 x 40 cm","Cor":"Verde","Material":"Plástico resistente","Venda":"Por kg","Uso":"Entregas, presente, delivery"}},
-    {id:24, nome:"Sacola Verde 35x45", categoria:"sacolas", tipo:"verde", tamanho:"p", icone:"ph-shopping-bag", descricao:"Sacola verde 35x45. Vendida por kg.", preco:"Sob consulta", unidade:"/kg", especificacoes:{"Medidas":"35 x 45 cm","Cor":"Verde","Material":"Plástico resistente","Venda":"Por kg","Uso":"Delivery, varejo, presentes"}},
-    {id:25, nome:"Sacola Verde 40x50", categoria:"sacolas", tipo:"verde", tamanho:"m", icone:"ph-shopping-bag", descricao:"Sacola verde médio porte. Vendida por kg.", preco:"Sob consulta", unidade:"/kg", especificacoes:{"Medidas":"40 x 50 cm","Cor":"Verde","Material":"Plástico resistente","Venda":"Por kg","Uso":"Vestuário, delivery, moda"}},
-    {id:26, nome:"Sacola Verde 45x60", categoria:"sacolas", tipo:"verde", tamanho:"m", icone:"ph-shopping-bag", descricao:"Sacola verde 45x60. Vendida por kg.", preco:"Sob consulta", unidade:"/kg", especificacoes:{"Medidas":"45 x 60 cm","Cor":"Verde","Material":"Plástico resistente","Venda":"Por kg","Uso":"Delivery, restaurantes, moda"}},
-    {id:27, nome:"Sacola Verde 60x80", categoria:"sacolas", tipo:"verde", tamanho:"g", icone:"ph-shopping-bag", descricao:"Sacola verde grande. Vendida por kg.", preco:"Sob consulta", unidade:"/kg", especificacoes:{"Medidas":"60 x 80 cm","Cor":"Verde","Material":"Plástico resistente","Venda":"Por kg","Uso":"Grandes pedidos, atacado"}},
-
-    // ─── SACOLAS BRANCAS (vendidas por kg) ───
-    {id:28, nome:"Sacola Branca 30x40", categoria:"sacolas", tipo:"branca", tamanho:"p", icone:"ph-shopping-bag", descricao:"Sacola branca clean. Vendida por kg.", preco:"Sob consulta", unidade:"/kg", especificacoes:{"Medidas":"30 x 40 cm","Cor":"Branco","Material":"Plástico resistente","Venda":"Por kg","Uso":"Presentes, farmácias, varejo"}},
-    {id:29, nome:"Sacola Branca 35x45", categoria:"sacolas", tipo:"branca", tamanho:"p", icone:"ph-shopping-bag", descricao:"Sacola branca 35x45. Vendida por kg.", preco:"Sob consulta", unidade:"/kg", especificacoes:{"Medidas":"35 x 45 cm","Cor":"Branco","Material":"Plástico resistente","Venda":"Por kg","Uso":"Varejo, farmácia, presentes"}},
-    {id:30, nome:"Sacola Branca 40x50", categoria:"sacolas", tipo:"branca", tamanho:"m", icone:"ph-shopping-bag", descricao:"Sacola branca média. Vendida por kg.", preco:"Sob consulta", unidade:"/kg", especificacoes:{"Medidas":"40 x 50 cm","Cor":"Branco","Material":"Plástico resistente","Venda":"Por kg","Uso":"Farmácias, cosméticos, moda"}},
-    {id:31, nome:"Sacola Branca 45x60", categoria:"sacolas", tipo:"branca", tamanho:"m", icone:"ph-shopping-bag", descricao:"Sacola branca 45x60. Vendida por kg.", preco:"Sob consulta", unidade:"/kg", especificacoes:{"Medidas":"45 x 60 cm","Cor":"Branco","Material":"Plástico resistente","Venda":"Por kg","Uso":"Vestuário, delivery, varejo"}},
-    {id:32, nome:"Sacola Branca 60x80", categoria:"sacolas", tipo:"branca", tamanho:"g", icone:"ph-shopping-bag", descricao:"Sacola branca grande. Vendida por kg.", preco:"Sob consulta", unidade:"/kg", especificacoes:{"Medidas":"60 x 80 cm","Cor":"Branco","Material":"Plástico resistente","Venda":"Por kg","Uso":"Atacado, grandes pedidos"}},
-
-    // ─── SACOLAS CRYSTAL (vendidas por kg) ───
-    {id:33, nome:"Sacola Crystal 30x40", categoria:"sacolas", tipo:"crystal", tamanho:"p", icone:"ph-shopping-bag", descricao:"Sacola transparente crystal. Vendida por kg.", preco:"Sob consulta", unidade:"/kg", especificacoes:{"Medidas":"30 x 40 cm","Cor":"Transparente","Material":"Plástico cristal","Venda":"Por kg","Uso":"Exposição de produto, presentes, varejo"}},
-    {id:34, nome:"Sacola Crystal 35x45", categoria:"sacolas", tipo:"crystal", tamanho:"p", icone:"ph-shopping-bag", descricao:"Crystal compacta. Vendida por kg.", preco:"Sob consulta", unidade:"/kg", especificacoes:{"Medidas":"35 x 45 cm","Cor":"Transparente","Material":"Plástico cristal","Venda":"Por kg","Uso":"Varejo, presentes, exposição"}},
-    {id:35, nome:"Sacola Crystal 40x50", categoria:"sacolas", tipo:"crystal", tamanho:"m", icone:"ph-shopping-bag", descricao:"Crystal médio porte. Vendida por kg.", preco:"Sob consulta", unidade:"/kg", especificacoes:{"Medidas":"40 x 50 cm","Cor":"Transparente","Material":"Plástico cristal","Venda":"Por kg","Uso":"Cosméticos, moda, exposição"}},
-    {id:36, nome:"Sacola Crystal 45x60", categoria:"sacolas", tipo:"crystal", tamanho:"m", icone:"ph-shopping-bag", descricao:"Crystal 45x60, elegante e resistente. Vendida por kg.", preco:"Sob consulta", unidade:"/kg", especificacoes:{"Medidas":"45 x 60 cm","Cor":"Transparente","Material":"Plástico cristal","Venda":"Por kg","Uso":"Moda, delivery premium, varejo"}},
-    {id:37, nome:"Sacola Crystal 60x80", categoria:"sacolas", tipo:"crystal", tamanho:"g", icone:"ph-shopping-bag", descricao:"Crystal grande. Vendida por kg.", preco:"Sob consulta", unidade:"/kg", especificacoes:{"Medidas":"60 x 80 cm","Cor":"Transparente","Material":"Plástico cristal","Venda":"Por kg","Uso":"Grandes volumes, atacado, exposição"}},
-
-    // ─── SACOLAS KRAFT (vendidas por kg) ───
-    {id:70, nome:"Sacola Kraft 30x40", categoria:"sacolas", tipo:"kraft", tamanho:"p", icone:"ph-shopping-bag", descricao:"Sacola kraft artesanal, sustentável e resistente. Vendida por kg.", preco:"Sob consulta", unidade:"/kg", especificacoes:{"Medidas":"30 x 40 cm","Cor":"Kraft natural","Material":"Papel kraft","Venda":"Por kg","Uso":"Presentes, padarias, lojas sustentáveis"}},
-    {id:71, nome:"Sacola Kraft 35x45", categoria:"sacolas", tipo:"kraft", tamanho:"p", icone:"ph-shopping-bag", descricao:"Kraft pequena 35x45. Vendida por kg.", preco:"Sob consulta", unidade:"/kg", especificacoes:{"Medidas":"35 x 45 cm","Cor":"Kraft natural","Material":"Papel kraft","Venda":"Por kg","Uso":"Varejo, confeitaria, delivery gourmet"}},
-    {id:72, nome:"Sacola Kraft 40x50", categoria:"sacolas", tipo:"kraft", tamanho:"m", icone:"ph-shopping-bag", descricao:"Kraft médio porte. Perfeita para padarias e empórios. Vendida por kg.", preco:"Sob consulta", unidade:"/kg", especificacoes:{"Medidas":"40 x 50 cm","Cor":"Kraft natural","Material":"Papel kraft","Venda":"Por kg","Uso":"Padaria, empório, delivery"}},
-    {id:73, nome:"Sacola Kraft 45x60", categoria:"sacolas", tipo:"kraft", tamanho:"m", icone:"ph-shopping-bag", descricao:"Kraft 45x60 para pedidos médios-grandes. Vendida por kg.", preco:"Sob consulta", unidade:"/kg", especificacoes:{"Medidas":"45 x 60 cm","Cor":"Kraft natural","Material":"Papel kraft","Venda":"Por kg","Uso":"Restaurantes, delivery gourmet"}},
-    {id:74, nome:"Sacola Kraft 60x80", categoria:"sacolas", tipo:"kraft", tamanho:"g", icone:"ph-shopping-bag", descricao:"Kraft grande para grandes volumes. Vendida por kg.", preco:"Sob consulta", unidade:"/kg", especificacoes:{"Medidas":"60 x 80 cm","Cor":"Kraft natural","Material":"Papel kraft","Venda":"Por kg","Uso":"Atacado, grandes pedidos, feiras"}},
-
-    // ─── SACOLAS KRAFT COM ALÇA (vendidas por kg) ───
-    {id:91, nome:"Sacola Kraft c/ Alça 25x35", categoria:"sacolas", tipo:"kraft-alca", tamanho:"p", icone:"ph-bag", descricao:"Sacola kraft com alça retorcida. Ideal para presentes, padarias e lojas gourmet. Vendida por kg.", preco:"Sob consulta", unidade:"/kg", especificacoes:{"Medidas":"25 x 35 cm","Cor":"Kraft natural","Material":"Papel kraft","Alça":"Retorcida","Venda":"Por kg","Uso":"Presentes, padaria, loja gourmet"}},
-    {id:92, nome:"Sacola Kraft c/ Alça 30x40", categoria:"sacolas", tipo:"kraft-alca", tamanho:"p", icone:"ph-bag", descricao:"Kraft com alça 30x40 para presentear com estilo. Vendida por kg.", preco:"Sob consulta", unidade:"/kg", especificacoes:{"Medidas":"30 x 40 cm","Cor":"Kraft natural","Material":"Papel kraft","Alça":"Retorcida","Venda":"Por kg","Uso":"Varejo, confeitaria, delivery premium"}},
-    {id:93, nome:"Sacola Kraft c/ Alça 35x45", categoria:"sacolas", tipo:"kraft-alca", tamanho:"p", icone:"ph-bag", descricao:"Kraft com alça 35x45 para lojas e empórios. Vendida por kg.", preco:"Sob consulta", unidade:"/kg", especificacoes:{"Medidas":"35 x 45 cm","Cor":"Kraft natural","Material":"Papel kraft","Alça":"Retorcida","Venda":"Por kg","Uso":"Lojas, empório, presente"}},
-    {id:94, nome:"Sacola Kraft c/ Alça 40x50", categoria:"sacolas", tipo:"kraft-alca", tamanho:"m", icone:"ph-bag", descricao:"Kraft com alça médio porte. Perfeita para roupas e calçados. Vendida por kg.", preco:"Sob consulta", unidade:"/kg", especificacoes:{"Medidas":"40 x 50 cm","Cor":"Kraft natural","Material":"Papel kraft","Alça":"Retorcida","Venda":"Por kg","Uso":"Moda, calçados, delivery gourmet"}},
-    {id:95, nome:"Sacola Kraft c/ Alça 45x60", categoria:"sacolas", tipo:"kraft-alca", tamanho:"m", icone:"ph-bag", descricao:"Kraft com alça 45x60. Para restaurantes e lojas de médio volume. Vendida por kg.", preco:"Sob consulta", unidade:"/kg", especificacoes:{"Medidas":"45 x 60 cm","Cor":"Kraft natural","Material":"Papel kraft","Alça":"Retorcida","Venda":"Por kg","Uso":"Restaurante, moda, delivery"}},
-    {id:96, nome:"Sacola Kraft c/ Alça 60x80", categoria:"sacolas", tipo:"kraft-alca", tamanho:"g", icone:"ph-bag", descricao:"Kraft com alça grande para grandes pedidos. Vendida por kg.", preco:"Sob consulta", unidade:"/kg", especificacoes:{"Medidas":"60 x 80 cm","Cor":"Kraft natural","Material":"Papel kraft","Alça":"Retorcida","Venda":"Por kg","Uso":"Atacado, feiras, grandes pedidos"}},
-
-    // ISOPOR - MARMITEX
-    {id:38, nome:"Marmitex de Isopor Nº8 — Copabras", categoria:"isopor", subcategoria:"marmitex", icone:"ph-bowl-food", descricao:"Marmitex oval Copabras Nº8 para refeições completas. Mantém a temperatura por mais tempo.", preco:"Sob consulta", unidade:"", especificacoes:{"Marca":"Copabras","Número":"Nº8","Formato":"Oval","Material":"Isopor EPS","Uso":"Refeições, marmitas, delivery"}},
-    {id:39, nome:"Marmitex de Isopor Nº9 — Copabras", categoria:"isopor", subcategoria:"marmitex", icone:"ph-bowl-food", descricao:"Marmitex Copabras Nº9 para refeições fartas. Ideal para restaurantes e lanchonetes.", preco:"Sob consulta", unidade:"", especificacoes:{"Marca":"Copabras","Número":"Nº9","Formato":"Oval","Material":"Isopor EPS","Uso":"Refeições, delivery, marmitaria"}},
-    {id:40, nome:"Marmitex de Isopor Nº10 — Copabras", categoria:"isopor", subcategoria:"marmitex", icone:"ph-bowl-food", descricao:"Marmitex Copabras Nº10 para porções generosas. Buffets e eventos.", preco:"Sob consulta", unidade:"", especificacoes:{"Marca":"Copabras","Número":"Nº10","Formato":"Oval","Material":"Isopor EPS","Uso":"Buffet, eventos, delivery especial"}},
-    {id:75, nome:"Marmitex de Isopor Nº8 — Bom Apetite", categoria:"isopor", subcategoria:"marmitex", icone:"ph-bowl-food", descricao:"Marmitex oval Bom Apetite Nº8. Qualidade superior para restaurantes.", preco:"Sob consulta", unidade:"", especificacoes:{"Marca":"Bom Apetite","Número":"Nº8","Formato":"Oval","Material":"Isopor EPS","Uso":"Refeições, marmitas, delivery"}},
-    {id:76, nome:"Marmitex de Isopor Nº9 — Bom Apetite", categoria:"isopor", subcategoria:"marmitex", icone:"ph-bowl-food", descricao:"Marmitex Bom Apetite Nº9 para refeições fartas.", preco:"Sob consulta", unidade:"", especificacoes:{"Marca":"Bom Apetite","Número":"Nº9","Formato":"Oval","Material":"Isopor EPS","Uso":"Refeições, delivery, marmitaria"}},
-    {id:77, nome:"Marmitex de Isopor Nº10 — Bom Apetite", categoria:"isopor", subcategoria:"marmitex", icone:"ph-bowl-food", descricao:"Marmitex Bom Apetite Nº10 extra-grande.", preco:"Sob consulta", unidade:"", especificacoes:{"Marca":"Bom Apetite","Número":"Nº10","Formato":"Oval","Material":"Isopor EPS","Uso":"Buffet, eventos, delivery especial"}},
+    {id:15,nome:"Caixa De Esfiha Nº2",categoria:"caixas",subcategoria:"salgado",icone:"ph-archive-box",descricao:"Para esfihas, salgadinhos e porções individuais.",preco:3.50,unidade:"/unidade",especificacoes:{"Medidas Externas":"20 x 20 x 5 cm","Material":"Ondulado"}},
+    {id:16,nome:"Caixa De Pizza",categoria:"caixas",subcategoria:"salgado",icone:"ph-archive-box",descricao:"Mantém o calor e a crocância da pizza.",preco:3.50,unidade:"/unidade",especificacoes:{"Medidas Externas":"35 x 35 cm","Material":"Ondulado"}},
+    // SACOLAS PRETAS
+    {id:17,nome:"Saco Preto 100L — Pct 10un",categoria:"sacolas",tipo:"preta",tamanho:"p",pacote:"10un",icone:"ph-trash",descricao:"Saco de lixo preto 100L. Pacote com 10 unidades.",preco:"Sob consulta",unidade:"/pacote",especificacoes:{"Capacidade":"100 litros","Cor":"Preto","Embalagem":"Pacote c/ 10 unidades","Uso":"Uso doméstico, coleta de resíduos"}},
+    {id:90,nome:"Saco Preto 100L — Pct 50un",categoria:"sacolas",tipo:"preta",tamanho:"p",pacote:"50un",icone:"ph-trash",descricao:"Saco de lixo preto 100L. Pacote econômico com 50 unidades.",preco:"Sob consulta",unidade:"/pacote",especificacoes:{"Capacidade":"100 litros","Cor":"Preto","Embalagem":"Pacote c/ 50 unidades","Uso":"Uso comercial, coleta de resíduos"}},
+    {id:19,nome:"Saco Preto 200L — Pct 10un",categoria:"sacolas",tipo:"preta",tamanho:"m",pacote:"10un",icone:"ph-trash",descricao:"Saco preto 200L para grandes volumes. Pacote com 10 unidades.",preco:"Sob consulta",unidade:"/pacote",especificacoes:{"Capacidade":"200 litros","Cor":"Preto","Embalagem":"Pacote c/ 10 unidades","Uso":"Resíduos industriais, entulho leve"}},
+    {id:20,nome:"Saco Preto 200L — Pct 50un",categoria:"sacolas",tipo:"preta",tamanho:"m",pacote:"50un",icone:"ph-trash",descricao:"Saco preto 200L. Pacote econômico com 50 unidades.",preco:"Sob consulta",unidade:"/pacote",especificacoes:{"Capacidade":"200 litros","Cor":"Preto","Embalagem":"Pacote c/ 50 unidades","Uso":"Coleta comercial, resíduos"}},
+    {id:18,nome:"Saco Preto 40L — Pct 10un",categoria:"sacolas",tipo:"preta",tamanho:"p",pacote:"10un",icone:"ph-trash",descricao:"Saco preto 40L compacto. Pacote com 10 unidades.",preco:"Sob consulta",unidade:"/pacote",especificacoes:{"Capacidade":"40 litros","Cor":"Preto","Embalagem":"Pacote c/ 10 unidades","Uso":"Lixeiras domésticas, banheiro, cozinha"}},
+    {id:21,nome:"Saco Preto 100L Reforçado — Pct 10un",categoria:"sacolas",tipo:"preta",tamanho:"g",pacote:"10un",icone:"ph-trash",descricao:"Saco preto 100L reforçado para resíduos pesados. Pacote com 10 unidades.",preco:"Sob consulta",unidade:"/pacote",especificacoes:{"Capacidade":"100 litros","Cor":"Preto","Embalagem":"Pacote c/ 10 unidades","Uso":"Resíduos pesados, uso industrial"}},
+    {id:22,nome:"Saco Preto Extra Grande — Pct 50un",categoria:"sacolas",tipo:"preta",tamanho:"g",pacote:"50un",icone:"ph-trash",descricao:"Saco preto extra grande. Pacote econômico com 50 unidades.",preco:"Sob consulta",unidade:"/pacote",especificacoes:{"Cor":"Preto","Embalagem":"Pacote c/ 50 unidades","Uso":"Grandes volumes, armazenagem, logística"}},
+    // SACOLAS VERDES
+    {id:23,nome:"Sacola Verde 30x40",categoria:"sacolas",tipo:"verde",tamanho:"p",icone:"ph-shopping-bag",descricao:"Sacola verde resistente. Vendida por kg.",preco:"Sob consulta",unidade:"/kg",especificacoes:{"Medidas":"30 x 40 cm","Cor":"Verde","Material":"Plástico resistente","Venda":"Por kg"}},
+    {id:24,nome:"Sacola Verde 35x45",categoria:"sacolas",tipo:"verde",tamanho:"p",icone:"ph-shopping-bag",descricao:"Sacola verde 35x45. Vendida por kg.",preco:"Sob consulta",unidade:"/kg",especificacoes:{"Medidas":"35 x 45 cm","Cor":"Verde","Material":"Plástico resistente","Venda":"Por kg"}},
+    {id:25,nome:"Sacola Verde 40x50",categoria:"sacolas",tipo:"verde",tamanho:"m",icone:"ph-shopping-bag",descricao:"Sacola verde médio porte. Vendida por kg.",preco:"Sob consulta",unidade:"/kg",especificacoes:{"Medidas":"40 x 50 cm","Cor":"Verde","Material":"Plástico resistente","Venda":"Por kg"}},
+    {id:26,nome:"Sacola Verde 45x60",categoria:"sacolas",tipo:"verde",tamanho:"m",icone:"ph-shopping-bag",descricao:"Sacola verde 45x60. Vendida por kg.",preco:"Sob consulta",unidade:"/kg",especificacoes:{"Medidas":"45 x 60 cm","Cor":"Verde","Material":"Plástico resistente","Venda":"Por kg"}},
+    {id:27,nome:"Sacola Verde 60x80",categoria:"sacolas",tipo:"verde",tamanho:"g",icone:"ph-shopping-bag",descricao:"Sacola verde grande. Vendida por kg.",preco:"Sob consulta",unidade:"/kg",especificacoes:{"Medidas":"60 x 80 cm","Cor":"Verde","Material":"Plástico resistente","Venda":"Por kg"}},
+    // SACOLAS BRANCAS
+    {id:28,nome:"Sacola Branca 30x40",categoria:"sacolas",tipo:"branca",tamanho:"p",icone:"ph-shopping-bag",descricao:"Sacola branca clean. Vendida por kg.",preco:"Sob consulta",unidade:"/kg",especificacoes:{"Medidas":"30 x 40 cm","Cor":"Branco","Material":"Plástico resistente","Venda":"Por kg"}},
+    {id:29,nome:"Sacola Branca 35x45",categoria:"sacolas",tipo:"branca",tamanho:"p",icone:"ph-shopping-bag",descricao:"Sacola branca 35x45. Vendida por kg.",preco:"Sob consulta",unidade:"/kg",especificacoes:{"Medidas":"35 x 45 cm","Cor":"Branco","Material":"Plástico resistente","Venda":"Por kg"}},
+    {id:30,nome:"Sacola Branca 40x50",categoria:"sacolas",tipo:"branca",tamanho:"m",icone:"ph-shopping-bag",descricao:"Sacola branca média. Vendida por kg.",preco:"Sob consulta",unidade:"/kg",especificacoes:{"Medidas":"40 x 50 cm","Cor":"Branco","Material":"Plástico resistente","Venda":"Por kg"}},
+    {id:31,nome:"Sacola Branca 45x60",categoria:"sacolas",tipo:"branca",tamanho:"m",icone:"ph-shopping-bag",descricao:"Sacola branca 45x60. Vendida por kg.",preco:"Sob consulta",unidade:"/kg",especificacoes:{"Medidas":"45 x 60 cm","Cor":"Branco","Material":"Plástico resistente","Venda":"Por kg"}},
+    {id:32,nome:"Sacola Branca 60x80",categoria:"sacolas",tipo:"branca",tamanho:"g",icone:"ph-shopping-bag",descricao:"Sacola branca grande. Vendida por kg.",preco:"Sob consulta",unidade:"/kg",especificacoes:{"Medidas":"60 x 80 cm","Cor":"Branco","Material":"Plástico resistente","Venda":"Por kg"}},
+    // SACOLAS CRYSTAL
+    {id:33,nome:"Sacola Crystal 30x40",categoria:"sacolas",tipo:"crystal",tamanho:"p",icone:"ph-shopping-bag",descricao:"Sacola transparente crystal. Vendida por kg.",preco:"Sob consulta",unidade:"/kg",especificacoes:{"Medidas":"30 x 40 cm","Cor":"Transparente","Material":"Plástico cristal","Venda":"Por kg"}},
+    {id:34,nome:"Sacola Crystal 35x45",categoria:"sacolas",tipo:"crystal",tamanho:"p",icone:"ph-shopping-bag",descricao:"Crystal compacta. Vendida por kg.",preco:"Sob consulta",unidade:"/kg",especificacoes:{"Medidas":"35 x 45 cm","Cor":"Transparente","Material":"Plástico cristal","Venda":"Por kg"}},
+    {id:35,nome:"Sacola Crystal 40x50",categoria:"sacolas",tipo:"crystal",tamanho:"m",icone:"ph-shopping-bag",descricao:"Crystal médio porte. Vendida por kg.",preco:"Sob consulta",unidade:"/kg",especificacoes:{"Medidas":"40 x 50 cm","Cor":"Transparente","Material":"Plástico cristal","Venda":"Por kg"}},
+    {id:36,nome:"Sacola Crystal 45x60",categoria:"sacolas",tipo:"crystal",tamanho:"m",icone:"ph-shopping-bag",descricao:"Crystal 45x60, elegante e resistente. Vendida por kg.",preco:"Sob consulta",unidade:"/kg",especificacoes:{"Medidas":"45 x 60 cm","Cor":"Transparente","Material":"Plástico cristal","Venda":"Por kg"}},
+    {id:37,nome:"Sacola Crystal 60x80",categoria:"sacolas",tipo:"crystal",tamanho:"g",icone:"ph-shopping-bag",descricao:"Crystal grande. Vendida por kg.",preco:"Sob consulta",unidade:"/kg",especificacoes:{"Medidas":"60 x 80 cm","Cor":"Transparente","Material":"Plástico cristal","Venda":"Por kg"}},
+    // SACOLAS KRAFT
+    {id:70,nome:"Sacola Kraft 30x40",categoria:"sacolas",tipo:"kraft",tamanho:"p",icone:"ph-shopping-bag",descricao:"Sacola kraft artesanal, sustentável e resistente. Vendida por kg.",preco:"Sob consulta",unidade:"/kg",especificacoes:{"Medidas":"30 x 40 cm","Cor":"Kraft natural","Material":"Papel kraft","Venda":"Por kg"}},
+    {id:71,nome:"Sacola Kraft 35x45",categoria:"sacolas",tipo:"kraft",tamanho:"p",icone:"ph-shopping-bag",descricao:"Kraft pequena 35x45. Vendida por kg.",preco:"Sob consulta",unidade:"/kg",especificacoes:{"Medidas":"35 x 45 cm","Cor":"Kraft natural","Material":"Papel kraft","Venda":"Por kg"}},
+    {id:72,nome:"Sacola Kraft 40x50",categoria:"sacolas",tipo:"kraft",tamanho:"m",icone:"ph-shopping-bag",descricao:"Kraft médio porte. Perfeita para padarias e empórios. Vendida por kg.",preco:"Sob consulta",unidade:"/kg",especificacoes:{"Medidas":"40 x 50 cm","Cor":"Kraft natural","Material":"Papel kraft","Venda":"Por kg"}},
+    {id:73,nome:"Sacola Kraft 45x60",categoria:"sacolas",tipo:"kraft",tamanho:"m",icone:"ph-shopping-bag",descricao:"Kraft 45x60 para pedidos médios-grandes. Vendida por kg.",preco:"Sob consulta",unidade:"/kg",especificacoes:{"Medidas":"45 x 60 cm","Cor":"Kraft natural","Material":"Papel kraft","Venda":"Por kg"}},
+    {id:74,nome:"Sacola Kraft 60x80",categoria:"sacolas",tipo:"kraft",tamanho:"g",icone:"ph-shopping-bag",descricao:"Kraft grande para grandes volumes. Vendida por kg.",preco:"Sob consulta",unidade:"/kg",especificacoes:{"Medidas":"60 x 80 cm","Cor":"Kraft natural","Material":"Papel kraft","Venda":"Por kg"}},
+    // SACOLAS KRAFT COM ALÇA
+    {id:91,nome:"Sacola Kraft c/ Alça 25x35",categoria:"sacolas",tipo:"kraft-alca",tamanho:"p",icone:"ph-bag",descricao:"Sacola kraft com alça retorcida. Ideal para presentes, padarias e lojas gourmet. Vendida por kg.",preco:"Sob consulta",unidade:"/kg",especificacoes:{"Medidas":"25 x 35 cm","Cor":"Kraft natural","Material":"Papel kraft","Alça":"Retorcida","Venda":"Por kg"}},
+    {id:92,nome:"Sacola Kraft c/ Alça 30x40",categoria:"sacolas",tipo:"kraft-alca",tamanho:"p",icone:"ph-bag",descricao:"Kraft com alça 30x40 para presentear com estilo. Vendida por kg.",preco:"Sob consulta",unidade:"/kg",especificacoes:{"Medidas":"30 x 40 cm","Cor":"Kraft natural","Material":"Papel kraft","Alça":"Retorcida","Venda":"Por kg"}},
+    {id:93,nome:"Sacola Kraft c/ Alça 35x45",categoria:"sacolas",tipo:"kraft-alca",tamanho:"p",icone:"ph-bag",descricao:"Kraft com alça 35x45 para lojas e empórios. Vendida por kg.",preco:"Sob consulta",unidade:"/kg",especificacoes:{"Medidas":"35 x 45 cm","Cor":"Kraft natural","Material":"Papel kraft","Alça":"Retorcida","Venda":"Por kg"}},
+    {id:94,nome:"Sacola Kraft c/ Alça 40x50",categoria:"sacolas",tipo:"kraft-alca",tamanho:"m",icone:"ph-bag",descricao:"Kraft com alça médio porte. Perfeita para roupas e calçados. Vendida por kg.",preco:"Sob consulta",unidade:"/kg",especificacoes:{"Medidas":"40 x 50 cm","Cor":"Kraft natural","Material":"Papel kraft","Alça":"Retorcida","Venda":"Por kg"}},
+    {id:95,nome:"Sacola Kraft c/ Alça 45x60",categoria:"sacolas",tipo:"kraft-alca",tamanho:"m",icone:"ph-bag",descricao:"Kraft com alça 45x60. Para restaurantes e lojas. Vendida por kg.",preco:"Sob consulta",unidade:"/kg",especificacoes:{"Medidas":"45 x 60 cm","Cor":"Kraft natural","Material":"Papel kraft","Alça":"Retorcida","Venda":"Por kg"}},
+    {id:96,nome:"Sacola Kraft c/ Alça 60x80",categoria:"sacolas",tipo:"kraft-alca",tamanho:"g",icone:"ph-bag",descricao:"Kraft com alça grande para grandes pedidos. Vendida por kg.",preco:"Sob consulta",unidade:"/kg",especificacoes:{"Medidas":"60 x 80 cm","Cor":"Kraft natural","Material":"Papel kraft","Alça":"Retorcida","Venda":"Por kg"}},
+    // ISOPOR - MARMITEX (com campo "marca")
+    {id:38,nome:"Marmitex Nº8 — Copabras",categoria:"isopor",subcategoria:"marmitex",marca:"Copabras",icone:"ph-bowl-food",descricao:"Marmitex oval Copabras Nº8 para refeições completas.",preco:"Sob consulta",unidade:"",especificacoes:{"Marca":"Copabras","Número":"Nº8","Formato":"Oval","Material":"Isopor EPS","Uso":"Refeições, marmitas, delivery"}},
+    {id:39,nome:"Marmitex Nº9 — Copabras",categoria:"isopor",subcategoria:"marmitex",marca:"Copabras",icone:"ph-bowl-food",descricao:"Marmitex Copabras Nº9 para refeições fartas.",preco:"Sob consulta",unidade:"",especificacoes:{"Marca":"Copabras","Número":"Nº9","Formato":"Oval","Material":"Isopor EPS","Uso":"Refeições, delivery, marmitaria"}},
+    {id:40,nome:"Marmitex Nº10 — Copabras",categoria:"isopor",subcategoria:"marmitex",marca:"Copabras",icone:"ph-bowl-food",descricao:"Marmitex Copabras Nº10 para porções generosas.",preco:"Sob consulta",unidade:"",especificacoes:{"Marca":"Copabras","Número":"Nº10","Formato":"Oval","Material":"Isopor EPS","Uso":"Buffet, eventos, delivery especial"}},
+    {id:75,nome:"Marmitex Nº8 — Bom Apetite",categoria:"isopor",subcategoria:"marmitex",marca:"Bom Apetite",icone:"ph-bowl-food",descricao:"Marmitex oval Bom Apetite Nº8. Qualidade superior.",preco:"Sob consulta",unidade:"",especificacoes:{"Marca":"Bom Apetite","Número":"Nº8","Formato":"Oval","Material":"Isopor EPS","Uso":"Refeições, marmitas, delivery"}},
+    {id:76,nome:"Marmitex Nº9 — Bom Apetite",categoria:"isopor",subcategoria:"marmitex",marca:"Bom Apetite",icone:"ph-bowl-food",descricao:"Marmitex Bom Apetite Nº9 para refeições fartas.",preco:"Sob consulta",unidade:"",especificacoes:{"Marca":"Bom Apetite","Número":"Nº9","Formato":"Oval","Material":"Isopor EPS","Uso":"Refeições, delivery, marmitaria"}},
+    {id:77,nome:"Marmitex Nº10 — Bom Apetite",categoria:"isopor",subcategoria:"marmitex",marca:"Bom Apetite",icone:"ph-bowl-food",descricao:"Marmitex Bom Apetite Nº10 extra-grande.",preco:"Sob consulta",unidade:"",especificacoes:{"Marca":"Bom Apetite","Número":"Nº10","Formato":"Oval","Material":"Isopor EPS","Uso":"Buffet, eventos, delivery especial"}},
     // ISOPOR - CAIXAS
-    {id:41, nome:"Caixa de Isopor 5L", categoria:"isopor", subcategoria:"caixa-isopor", icone:"ph-cube", descricao:"Caixa de isopor pequena para transporte de alimentos e medicamentos.", preco:"Sob consulta", unidade:"", especificacoes:{"Capacidade":"5 litros","Material":"Isopor EPS","Uso":"Alimentos, medicamentos, transporte frigorificado"}},
-    {id:42, nome:"Caixa de Isopor 12L", categoria:"isopor", subcategoria:"caixa-isopor", icone:"ph-cube", descricao:"Capacidade intermediária para frutos do mar, carnes e bebidas.", preco:"Sob consulta", unidade:"", especificacoes:{"Capacidade":"12 litros","Material":"Isopor EPS","Uso":"Frutos do mar, carnes, bebidas geladas"}},
-    {id:43, nome:"Caixa de Isopor 20L", categoria:"isopor", subcategoria:"caixa-isopor", icone:"ph-cube", descricao:"Grande capacidade para transporte de volumes refrigerados a granel.", preco:"Sob consulta", unidade:"", especificacoes:{"Capacidade":"20 litros","Material":"Isopor EPS","Uso":"Eventos, pesca, transporte em quantidade"}},
+    {id:41,nome:"Caixa de Isopor 5L",categoria:"isopor",subcategoria:"caixa-isopor",icone:"ph-cube",descricao:"Caixa de isopor pequena para transporte de alimentos e medicamentos.",preco:"Sob consulta",unidade:"",especificacoes:{"Capacidade":"5 litros","Material":"Isopor EPS","Uso":"Alimentos, medicamentos, transporte frigorificado"}},
+    {id:42,nome:"Caixa de Isopor 12L",categoria:"isopor",subcategoria:"caixa-isopor",icone:"ph-cube",descricao:"Capacidade intermediária para frutos do mar, carnes e bebidas.",preco:"Sob consulta",unidade:"",especificacoes:{"Capacidade":"12 litros","Material":"Isopor EPS","Uso":"Frutos do mar, carnes, bebidas geladas"}},
+    {id:43,nome:"Caixa de Isopor 20L",categoria:"isopor",subcategoria:"caixa-isopor",icone:"ph-cube",descricao:"Grande capacidade para transporte de volumes refrigerados.",preco:"Sob consulta",unidade:"",especificacoes:{"Capacidade":"20 litros","Material":"Isopor EPS","Uso":"Eventos, pesca, transporte em quantidade"}},
     // ISOPOR - COPOS
-    {id:44, nome:"Copo de Isopor 50ml", categoria:"isopor", subcategoria:"copo-isopor", icone:"ph-coffee", descricao:"Copo pequeno para cafezinho e amostras. Mantém a temperatura do líquido.", preco:"Sob consulta", unidade:"", especificacoes:{"Capacidade":"50 ml","Material":"Isopor EPS","Uso":"Café, shots, amostras"}},
-    {id:45, nome:"Copo de Isopor 120ml", categoria:"isopor", subcategoria:"copo-isopor", icone:"ph-coffee", descricao:"Copo para café e chás. Muito utilizado em padarias e lanchonetes.", preco:"Sob consulta", unidade:"", especificacoes:{"Capacidade":"120 ml","Material":"Isopor EPS","Uso":"Café, chá, caldos quentes"}},
-    {id:46, nome:"Copo de Isopor 180ml", categoria:"isopor", subcategoria:"copo-isopor", icone:"ph-coffee", descricao:"Copo médio para bebidas quentes e frias. Ideal para eventos.", preco:"Sob consulta", unidade:"", especificacoes:{"Capacidade":"180 ml","Material":"Isopor EPS","Uso":"Bebidas quentes e frias, eventos"}},
-    {id:47, nome:"Copo de Isopor 300ml", categoria:"isopor", subcategoria:"copo-isopor", icone:"ph-coffee", descricao:"Copo grande para refrescos, sucos e bebidas geladas.", preco:"Sob consulta", unidade:"", especificacoes:{"Capacidade":"300 ml","Material":"Isopor EPS","Uso":"Sucos, refrescos, bebidas geladas"}},
+    {id:44,nome:"Copo de Isopor 50ml",categoria:"isopor",subcategoria:"copo-isopor",icone:"ph-coffee",descricao:"Copo pequeno para cafezinho e amostras.",preco:"Sob consulta",unidade:"",especificacoes:{"Capacidade":"50 ml","Material":"Isopor EPS","Uso":"Café, shots, amostras"}},
+    {id:45,nome:"Copo de Isopor 120ml",categoria:"isopor",subcategoria:"copo-isopor",icone:"ph-coffee",descricao:"Copo para café e chás.",preco:"Sob consulta",unidade:"",especificacoes:{"Capacidade":"120 ml","Material":"Isopor EPS","Uso":"Café, chá, caldos quentes"}},
+    {id:46,nome:"Copo de Isopor 180ml",categoria:"isopor",subcategoria:"copo-isopor",icone:"ph-coffee",descricao:"Copo médio para bebidas quentes e frias.",preco:"Sob consulta",unidade:"",especificacoes:{"Capacidade":"180 ml","Material":"Isopor EPS","Uso":"Bebidas quentes e frias, eventos"}},
+    {id:47,nome:"Copo de Isopor 300ml",categoria:"isopor",subcategoria:"copo-isopor",icone:"ph-coffee",descricao:"Copo grande para refrescos, sucos e bebidas geladas.",preco:"Sob consulta",unidade:"",especificacoes:{"Capacidade":"300 ml","Material":"Isopor EPS","Uso":"Sucos, refrescos, bebidas geladas"}},
     // ISOPOR - DISCO PIZZA
-    {id:78, nome:"Disco de Isopor para Pizza 25cm", categoria:"isopor", subcategoria:"disco-isopor", icone:"ph-circle", descricao:"Disco redondo de isopor para embalar pizzas pequenas. Mantém a forma e o calor.", preco:"Sob consulta", unidade:"", especificacoes:{"Diâmetro":"25 cm","Formato":"Redondo","Material":"Isopor EPS","Uso":"Pizzas pequenas, tortas individuais"}},
-    {id:79, nome:"Disco de Isopor para Pizza 35cm", categoria:"isopor", subcategoria:"disco-isopor", icone:"ph-circle", descricao:"Disco de isopor padrão para pizzas médias. Ideal para pizzarias.", preco:"Sob consulta", unidade:"", especificacoes:{"Diâmetro":"35 cm","Formato":"Redondo","Material":"Isopor EPS","Uso":"Pizzas médias, pizzarias, delivery"}},
-    {id:80, nome:"Disco de Isopor para Pizza 45cm", categoria:"isopor", subcategoria:"disco-isopor", icone:"ph-circle", descricao:"Disco de isopor para pizzas grandes. Usado em pizzarias e rodízios.", preco:"Sob consulta", unidade:"", especificacoes:{"Diâmetro":"45 cm","Formato":"Redondo","Material":"Isopor EPS","Uso":"Pizzas grandes, rodízios, eventos"}},
-
-    // ─── EMBALAGENS PLÁSTICAS — BOLO GALVANOTEK + HIVERPACK ───
-    {id:81, nome:"Embalagem G60 — Galvanotek", categoria:"plastico", subcategoria:"bolo-plastico", icone:"ph-cake", descricao:"Embalagem plástica G60 Galvanotek para bolos baixos e tortas. Transparente com tampa.", preco:"Sob consulta", unidade:"", especificacoes:{"Modelo":"G60","Marca":"Galvanotek","Altura interna":"6 cm","Material":"PET transparente","Uso":"Bolos baixos, tortas, cheesecake raso"}},
-    {id:82, nome:"Embalagem G70 — Galvanotek", categoria:"plastico", subcategoria:"bolo-plastico", icone:"ph-cake", descricao:"A clássica G70 Galvanotek para bolos altos. Transparente, tampa e base encaixáveis.", preco:"Sob consulta", unidade:"", especificacoes:{"Modelo":"G70","Marca":"Galvanotek","Altura interna":"7 cm","Material":"PET transparente","Uso":"Bolos altos, naked cakes, cheesecakes"}},
-    {id:97, nome:"Embalagem G80 — Galvanotek", categoria:"plastico", subcategoria:"bolo-plastico", icone:"ph-cake", descricao:"G80 Galvanotek para bolos ainda mais altos e recheados. Tampa e base robustas.", preco:"Sob consulta", unidade:"", especificacoes:{"Modelo":"G80","Marca":"Galvanotek","Altura interna":"8 cm","Material":"PET transparente","Uso":"Bolos altos, tortas geladas, mousse"}},
-    {id:98, nome:"Embalagem G34P — Galvanotek", categoria:"plastico", subcategoria:"bolo-plastico", icone:"ph-cake", descricao:"G34P Galvanotek para bolo de dois andares ou formato retangular. Alta resistência.", preco:"Sob consulta", unidade:"", especificacoes:{"Modelo":"G34P","Marca":"Galvanotek","Formato":"Retangular","Material":"PET transparente","Uso":"Bolos retangulares, bolo de pote grande, torta"}},
-    {id:99, nome:"Embalagem G680 — Galvanotek", categoria:"plastico", subcategoria:"bolo-plastico", icone:"ph-cake", descricao:"G680 Galvanotek, embalagem grande para bolos especiais e tortas de confeitaria.", preco:"Sob consulta", unidade:"", especificacoes:{"Modelo":"G680","Marca":"Galvanotek","Material":"PET transparente","Uso":"Bolos especiais, tortas grandes, confeitaria premium"}},
-    {id:100, nome:"Embalagem G450 — Galvanotek", categoria:"plastico", subcategoria:"bolo-plastico", icone:"ph-cake", descricao:"G450 Galvanotek para bolos redondos médios. Ideal para bolos de aniversário.", preco:"Sob consulta", unidade:"", especificacoes:{"Modelo":"G450","Marca":"Galvanotek","Material":"PET transparente","Uso":"Bolos redondos, aniversário, festas"}},
-    {id:101, nome:"Embalagem G350 — Galvanotek", categoria:"plastico", subcategoria:"bolo-plastico", icone:"ph-cake", descricao:"G350 Galvanotek para bolos menores e mini cakes individuais.", preco:"Sob consulta", unidade:"", especificacoes:{"Modelo":"G350","Marca":"Galvanotek","Material":"PET transparente","Uso":"Mini bolo, smash cake, bolos individuais"}},
-    {id:102, nome:"Embalagem para Fatia — Galvanotek", categoria:"plastico", subcategoria:"bolo-plastico", icone:"ph-cake", descricao:"Embalagem triangular Galvanotek para fatia de bolo ou torta. Transparente.", preco:"Sob consulta", unidade:"", especificacoes:{"Formato":"Triangular","Marca":"Galvanotek","Material":"PET transparente","Uso":"Fatias de bolo, torta, quiche"}},
-    // HIVERPACK
-    {id:103, nome:"Embalagem HV60 — Hiverpack", categoria:"plastico", subcategoria:"bolo-plastico", icone:"ph-cake", descricao:"Embalagem Hiverpack HV60 para bolos baixos. Resistência e clareza óptica superior.", preco:"Sob consulta", unidade:"", especificacoes:{"Modelo":"HV60","Marca":"Hiverpack","Altura interna":"6 cm","Material":"PET premium","Uso":"Bolos baixos, tortas, confeitaria"}},
-    {id:104, nome:"Embalagem HV70 — Hiverpack", categoria:"plastico", subcategoria:"bolo-plastico", icone:"ph-cake", descricao:"Hiverpack HV70 para bolos altos. Material premium com maior clareza e resistência.", preco:"Sob consulta", unidade:"", especificacoes:{"Modelo":"HV70","Marca":"Hiverpack","Altura interna":"7 cm","Material":"PET premium","Uso":"Bolos altos, naked cakes, cheesecake"}},
-    {id:105, nome:"Embalagem HV80 — Hiverpack", categoria:"plastico", subcategoria:"bolo-plastico", icone:"ph-cake", descricao:"HV80 Hiverpack para bolos extra-altos e tortas especiais.", preco:"Sob consulta", unidade:"", especificacoes:{"Modelo":"HV80","Marca":"Hiverpack","Altura interna":"8 cm","Material":"PET premium","Uso":"Bolos altos, tortas geladas, doces especiais"}},
-    {id:106, nome:"Embalagem HV100 — Hiverpack", categoria:"plastico", subcategoria:"bolo-plastico", icone:"ph-cake", descricao:"HV100 Hiverpack para bolos de grande porte e confeitaria premium.", preco:"Sob consulta", unidade:"", especificacoes:{"Modelo":"HV100","Marca":"Hiverpack","Altura interna":"10 cm","Material":"PET premium","Uso":"Bolos grandes, confeitaria premium, tortas altas"}},
-    {id:107, nome:"Embalagem para Fatia — Hiverpack", categoria:"plastico", subcategoria:"bolo-plastico", icone:"ph-cake", descricao:"Embalagem para fatia Hiverpack. Material premium, visual impecável para ponto de venda.", preco:"Sob consulta", unidade:"", especificacoes:{"Formato":"Triangular","Marca":"Hiverpack","Material":"PET premium","Uso":"Fatias, tortas, quiche, pontos de venda"}},
-
-    // ─── EMBALAGENS PLÁSTICAS — MARMITA PARA CONGELAR ───
-    {id:86, nome:"Marmita Plástica 250ml para Congelar", categoria:"plastico", subcategoria:"marmita-plastico", icone:"ph-bowl-food", descricao:"Marmita plástica 250ml com tampa. Própria para congelamento. Ideal para porções individuais.", preco:"Sob consulta", unidade:"", especificacoes:{"Capacidade":"250 ml","Tampa":"Inclusa","Material":"Polipropileno (PP)","Temperatura":"-20°C a +120°C","Uso":"Congelamento, micro-ondas, delivery"}},
-    {id:87, nome:"Marmita Plástica 500ml para Congelar", categoria:"plastico", subcategoria:"marmita-plastico", icone:"ph-bowl-food", descricao:"Marmita plástica 500ml com tampa. Vai ao congelador e micro-ondas.", preco:"Sob consulta", unidade:"", especificacoes:{"Capacidade":"500 ml","Tampa":"Inclusa","Material":"Polipropileno (PP)","Temperatura":"-20°C a +120°C","Uso":"Congelamento, micro-ondas, delivery"}},
-    {id:88, nome:"Marmita Plástica 750ml para Congelar", categoria:"plastico", subcategoria:"marmita-plastico", icone:"ph-bowl-food", descricao:"Marmita plástica 750ml com tampa. Para refeições completas. Vai ao freezer.", preco:"Sob consulta", unidade:"", especificacoes:{"Capacidade":"750 ml","Tampa":"Inclusa","Material":"Polipropileno (PP)","Temperatura":"-20°C a +120°C","Uso":"Congelamento, micro-ondas, delivery"}},
-    {id:89, nome:"Marmita Plástica 1000ml para Congelar", categoria:"plastico", subcategoria:"marmita-plastico", icone:"ph-bowl-food", descricao:"Marmita plástica 1000ml com tampa. Para refeições fartas. Própria para congelamento.", preco:"Sob consulta", unidade:"", especificacoes:{"Capacidade":"1000 ml","Tampa":"Inclusa","Material":"Polipropileno (PP)","Temperatura":"-20°C a +120°C","Uso":"Congelamento, micro-ondas, delivery"}},
+    {id:78,nome:"Disco de Isopor para Pizza 25cm",categoria:"isopor",subcategoria:"disco-isopor",icone:"ph-circle",descricao:"Disco redondo de isopor para pizzas pequenas.",preco:"Sob consulta",unidade:"",especificacoes:{"Diâmetro":"25 cm","Formato":"Redondo","Material":"Isopor EPS","Uso":"Pizzas pequenas, tortas individuais"}},
+    {id:79,nome:"Disco de Isopor para Pizza 35cm",categoria:"isopor",subcategoria:"disco-isopor",icone:"ph-circle",descricao:"Disco de isopor padrão para pizzas médias.",preco:"Sob consulta",unidade:"",especificacoes:{"Diâmetro":"35 cm","Formato":"Redondo","Material":"Isopor EPS","Uso":"Pizzas médias, pizzarias, delivery"}},
+    {id:80,nome:"Disco de Isopor para Pizza 45cm",categoria:"isopor",subcategoria:"disco-isopor",icone:"ph-circle",descricao:"Disco de isopor para pizzas grandes.",preco:"Sob consulta",unidade:"",especificacoes:{"Diâmetro":"45 cm","Formato":"Redondo","Material":"Isopor EPS","Uso":"Pizzas grandes, rodízios, eventos"}},
+    // PLÁSTICO - BOLO
+    {id:81,nome:"Embalagem G60 — Galvanotek",categoria:"plastico",subcategoria:"bolo-plastico",icone:"ph-cake",descricao:"Embalagem plástica G60 Galvanotek para bolos baixos e tortas.",preco:"Sob consulta",unidade:"",especificacoes:{"Modelo":"G60","Marca":"Galvanotek","Altura interna":"6 cm","Material":"PET transparente","Uso":"Bolos baixos, tortas"}},
+    {id:82,nome:"Embalagem G70 — Galvanotek",categoria:"plastico",subcategoria:"bolo-plastico",icone:"ph-cake",descricao:"A clássica G70 Galvanotek para bolos altos.",preco:"Sob consulta",unidade:"",especificacoes:{"Modelo":"G70","Marca":"Galvanotek","Altura interna":"7 cm","Material":"PET transparente","Uso":"Bolos altos, naked cakes"}},
+    {id:97,nome:"Embalagem G80 — Galvanotek",categoria:"plastico",subcategoria:"bolo-plastico",icone:"ph-cake",descricao:"G80 Galvanotek para bolos ainda mais altos e recheados.",preco:"Sob consulta",unidade:"",especificacoes:{"Modelo":"G80","Marca":"Galvanotek","Altura interna":"8 cm","Material":"PET transparente","Uso":"Bolos altos, tortas geladas"}},
+    {id:98,nome:"Embalagem G34P — Galvanotek",categoria:"plastico",subcategoria:"bolo-plastico",icone:"ph-cake",descricao:"G34P Galvanotek para bolo de dois andares ou formato retangular.",preco:"Sob consulta",unidade:"",especificacoes:{"Modelo":"G34P","Marca":"Galvanotek","Formato":"Retangular","Material":"PET transparente","Uso":"Bolos retangulares, tortas"}},
+    {id:99,nome:"Embalagem G680 — Galvanotek",categoria:"plastico",subcategoria:"bolo-plastico",icone:"ph-cake",descricao:"G680 Galvanotek, embalagem grande para bolos especiais.",preco:"Sob consulta",unidade:"",especificacoes:{"Modelo":"G680","Marca":"Galvanotek","Material":"PET transparente","Uso":"Bolos especiais, tortas grandes"}},
+    {id:100,nome:"Embalagem G450 — Galvanotek",categoria:"plastico",subcategoria:"bolo-plastico",icone:"ph-cake",descricao:"G450 Galvanotek para bolos redondos médios.",preco:"Sob consulta",unidade:"",especificacoes:{"Modelo":"G450","Marca":"Galvanotek","Material":"PET transparente","Uso":"Bolos redondos, aniversário"}},
+    {id:101,nome:"Embalagem G350 — Galvanotek",categoria:"plastico",subcategoria:"bolo-plastico",icone:"ph-cake",descricao:"G350 Galvanotek para bolos menores e mini cakes.",preco:"Sob consulta",unidade:"",especificacoes:{"Modelo":"G350","Marca":"Galvanotek","Material":"PET transparente","Uso":"Mini bolo, smash cake"}},
+    {id:102,nome:"Embalagem para Fatia — Galvanotek",categoria:"plastico",subcategoria:"bolo-plastico",icone:"ph-cake",descricao:"Embalagem triangular Galvanotek para fatia de bolo ou torta.",preco:"Sob consulta",unidade:"",especificacoes:{"Formato":"Triangular","Marca":"Galvanotek","Material":"PET transparente","Uso":"Fatias de bolo, torta"}},
+    {id:103,nome:"Embalagem HV60 — Hiverpack",categoria:"plastico",subcategoria:"bolo-plastico",icone:"ph-cake",descricao:"Embalagem Hiverpack HV60 para bolos baixos.",preco:"Sob consulta",unidade:"",especificacoes:{"Modelo":"HV60","Marca":"Hiverpack","Altura interna":"6 cm","Material":"PET premium","Uso":"Bolos baixos, tortas"}},
+    {id:104,nome:"Embalagem HV70 — Hiverpack",categoria:"plastico",subcategoria:"bolo-plastico",icone:"ph-cake",descricao:"Hiverpack HV70 para bolos altos.",preco:"Sob consulta",unidade:"",especificacoes:{"Modelo":"HV70","Marca":"Hiverpack","Altura interna":"7 cm","Material":"PET premium","Uso":"Bolos altos, naked cakes"}},
+    {id:105,nome:"Embalagem HV80 — Hiverpack",categoria:"plastico",subcategoria:"bolo-plastico",icone:"ph-cake",descricao:"HV80 Hiverpack para bolos extra-altos.",preco:"Sob consulta",unidade:"",especificacoes:{"Modelo":"HV80","Marca":"Hiverpack","Altura interna":"8 cm","Material":"PET premium","Uso":"Bolos altos, tortas geladas"}},
+    {id:106,nome:"Embalagem HV100 — Hiverpack",categoria:"plastico",subcategoria:"bolo-plastico",icone:"ph-cake",descricao:"HV100 Hiverpack para bolos de grande porte.",preco:"Sob consulta",unidade:"",especificacoes:{"Modelo":"HV100","Marca":"Hiverpack","Altura interna":"10 cm","Material":"PET premium","Uso":"Bolos grandes, confeitaria premium"}},
+    {id:107,nome:"Embalagem para Fatia — Hiverpack",categoria:"plastico",subcategoria:"bolo-plastico",icone:"ph-cake",descricao:"Embalagem para fatia Hiverpack. Material premium.",preco:"Sob consulta",unidade:"",especificacoes:{"Formato":"Triangular","Marca":"Hiverpack","Material":"PET premium","Uso":"Fatias, tortas, quiche"}},
+    // PLÁSTICO - MARMITA CONGELAR
+    {id:86,nome:"Marmita Plástica 250ml para Congelar",categoria:"plastico",subcategoria:"marmita-plastico",icone:"ph-bowl-food",descricao:"Marmita plástica 250ml com tampa. Própria para congelamento.",preco:"Sob consulta",unidade:"",especificacoes:{"Capacidade":"250 ml","Tampa":"Inclusa","Material":"Polipropileno (PP)","Temperatura":"-20°C a +120°C","Uso":"Congelamento, micro-ondas, delivery"}},
+    {id:87,nome:"Marmita Plástica 500ml para Congelar",categoria:"plastico",subcategoria:"marmita-plastico",icone:"ph-bowl-food",descricao:"Marmita plástica 500ml com tampa. Vai ao congelador e micro-ondas.",preco:"Sob consulta",unidade:"",especificacoes:{"Capacidade":"500 ml","Tampa":"Inclusa","Material":"Polipropileno (PP)","Temperatura":"-20°C a +120°C","Uso":"Congelamento, micro-ondas, delivery"}},
+    {id:88,nome:"Marmita Plástica 750ml para Congelar",categoria:"plastico",subcategoria:"marmita-plastico",icone:"ph-bowl-food",descricao:"Marmita plástica 750ml com tampa. Para refeições completas.",preco:"Sob consulta",unidade:"",especificacoes:{"Capacidade":"750 ml","Tampa":"Inclusa","Material":"Polipropileno (PP)","Temperatura":"-20°C a +120°C","Uso":"Congelamento, micro-ondas, delivery"}},
+    {id:89,nome:"Marmita Plástica 1000ml para Congelar",categoria:"plastico",subcategoria:"marmita-plastico",icone:"ph-bowl-food",descricao:"Marmita plástica 1000ml com tampa. Para refeições fartas.",preco:"Sob consulta",unidade:"",especificacoes:{"Capacidade":"1000 ml","Tampa":"Inclusa","Material":"Polipropileno (PP)","Temperatura":"-20°C a +120°C","Uso":"Congelamento, micro-ondas, delivery"}},
 ];
 
 const iconesEspec = {
@@ -871,7 +1028,6 @@ const iconesEspec = {
     "Altura":"ph-arrows-vertical","Diâmetro":"ph-circle",
 };
 
-/* Mapeamento visual por tipo de sacola */
 const sacolarConfig = {
     preta:   {cardClass:"sacola-preta-card",   tituloClass:" titulo-sacola",        nomeTipo:"Sacolas Pretas",    tema:"tema-preta"},
     verde:   {cardClass:"sacola-verde-card",   tituloClass:" titulo-sacola-verde",  nomeTipo:"Sacolas Verdes",    tema:"tema-verde"},
@@ -881,12 +1037,12 @@ const sacolarConfig = {
     "kraft-alca":{cardClass:"sacola-kraft-alca-card", tituloClass:" titulo-sacola-kraft-alca", nomeTipo:"Sacolas Kraft c/ Alça",   tema:"tema-kraft"},
 };
 
-/* ─── ESTADO ─────────────────────────────────────────────── */
-let estado = {categoria:"todos", subcategoria:"todas", tipoSacola:"preta", tamanhoSacola:"todas", pacoteSacola:"todos"};
+/* ─── ESTADO ─── */
+let estado = {categoria:"todos", subcategoria:"todas", tipoSacola:"preta", tamanhoSacola:"todas", pacoteSacola:"todos", marcaMarmitex:"todas"};
 let produtoModal = null;
 let carrinho = {};
 
-/* ─── CARRINHO ──────────────────────────────────────────── */
+/* ─── CARRINHO ─── */
 function totalItens(){return Object.values(carrinho).reduce((s,i)=>s+i.qtd,0);}
 function totalValor(){return Object.values(carrinho).reduce((s,i)=>{const p=typeof i.produto.preco==="number"?i.produto.preco:0;return s+p*i.qtd;},0);}
 
@@ -975,10 +1131,10 @@ function enviarWhatsApp(){
     window.open(`https://wa.me/5511972999835?text=${encodeURIComponent(msg)}`,"_blank");
 }
 
-/* ─── MODAL ─────────────────────────────────────────────── */
+/* ─── MODAL ─── */
 function abrirModal(produto){
     produtoModal=produto;
-    document.getElementById("modalIcone").innerHTML=`<i class="ph-duotone ${produto.icone}"></i>`;
+    document.getElementById("modalIcone").innerHTML=getSvg(produto);
     document.getElementById("modalTitulo").textContent=produto.nome;
     const cp=document.getElementById("modalContainerPreco");
     if(produto.preco==="Sob consulta"){
@@ -1003,23 +1159,24 @@ function fecharModal(){document.getElementById("modalProduto").classList.remove(
 function adicionarDoModal(){if(produtoModal){adicionarAoCarrinho(produtoModal.id,1);fecharModal();setTimeout(abrirCarrinho,200);}}
 document.getElementById("modalProduto").addEventListener("click",e=>{if(e.target===document.getElementById("modalProduto"))fecharModal();});
 
-/* ─── FILTROS ───────────────────────────────────────────── */
+/* ─── FILTROS ─── */
 function filtrarCategoria(cat,el){
     estado.categoria=cat;
     estado.subcategoria="todas";
     estado.tipoSacola="preta";
     estado.tamanhoSacola="todas";
     estado.pacoteSacola="todos";
+    estado.marcaMarmitex="todas";
 
     document.querySelectorAll(".btn-filtro").forEach(b=>b.classList.remove("ativo"));
     el.classList.add("ativo");
 
-    // Ocultar todas as barras
     document.getElementById("barraSubcategorias").classList.remove("visivel");
     document.getElementById("barraTipoSacolas").classList.remove("visivel");
     document.getElementById("barraTamanhoSacolas").classList.remove("visivel");
     document.getElementById("barraPacoteSacolas").classList.remove("visivel");
     document.getElementById("barraSubcategoriasIsopor").classList.remove("visivel");
+    document.getElementById("barraMarcaMarmitex").classList.remove("visivel");
     document.getElementById("barraSubcategoriasPlastico").classList.remove("visivel");
     document.getElementById("breadcrumb").classList.remove("visivel");
 
@@ -1035,7 +1192,6 @@ function filtrarCategoria(cat,el){
         const barraT=document.getElementById("barraTamanhoSacolas");
         barraT.className="sacolas-tamanho-bar visivel tema-preta";
         document.querySelectorAll(".btn-tamanho-sacola").forEach((b,i)=>b.classList.toggle("ativo",i===0));
-        // Mostrar pacote bar pois tipo inicial é preta
         document.getElementById("barraPacoteSacolas").classList.add("visivel");
         document.querySelectorAll(".btn-pacote-sacola").forEach((b,i)=>b.classList.toggle("ativo",i===0));
         document.getElementById("breadcrumb").classList.add("visivel");
@@ -1060,15 +1216,39 @@ function filtrarCategoria(cat,el){
 
 function filtrarSub(sub,el,cat){
     estado.subcategoria=sub;
+    estado.marcaMarmitex="todas";
     const sels={caixas:"#barraSubcategorias .btn-subcategoria",isopor:"#barraSubcategoriasIsopor .btn-sub-isopor",plastico:"#barraSubcategoriasPlastico .btn-sub-plastico"};
     document.querySelectorAll(sels[cat]).forEach(b=>b.classList.remove("ativo"));
     el.classList.add("ativo");
+
+    // Mostrar/esconder barra de marca marmitex
+    const barraMarca = document.getElementById("barraMarcaMarmitex");
+    if(cat==="isopor" && sub==="marmitex"){
+        barraMarca.classList.add("visivel");
+        document.querySelectorAll(".btn-marca-marmitex").forEach((b,i)=>b.classList.toggle("ativo",i===0));
+    } else if(cat==="isopor" && sub==="todas"){
+        // mostrar também pois marmitex incluso no "todas"
+        barraMarca.classList.add("visivel");
+        document.querySelectorAll(".btn-marca-marmitex").forEach((b,i)=>b.classList.toggle("ativo",i===0));
+    } else {
+        barraMarca.classList.remove("visivel");
+    }
+
     const nomes={
         caixas:{todas:"Todas",sedex:"Padrão Correios",confeiteiros:"Para Doces",salgado:"Para Salgados",geral:"Uso Geral"},
         isopor:{todas:"Todos",marmitex:"Marmitex","caixa-isopor":"Caixas de Isopor","copo-isopor":"Copos de Isopor","disco-isopor":"Disco para Pizza"},
         plastico:{todas:"Todas","bolo-plastico":"Embalagens de Bolo","marmita-plastico":"Marmitas para Congelar"},
     };
     document.getElementById("breadcrumbSub").textContent=(nomes[cat]&&nomes[cat][sub])||sub;
+    renderizarProdutos();
+}
+
+function filtrarMarcaMarmitex(marca, el) {
+    estado.marcaMarmitex = marca;
+    document.querySelectorAll(".btn-marca-marmitex").forEach(b=>b.classList.remove("ativo"));
+    el.classList.add("ativo");
+    const sub = document.getElementById("breadcrumbSub").textContent.split(" — ")[0];
+    document.getElementById("breadcrumbSub").textContent = marca === "todas" ? sub : `${sub} — ${marca}`;
     renderizarProdutos();
 }
 
@@ -1080,11 +1260,10 @@ function selecionarTipoSacola(tipo,el){
     el.classList.add("ativo");
 
     const barraT=document.getElementById("barraTamanhoSacolas");
-    const barraTema = (tipo==="kraft-alca") ? "tema-kraft" : `tema-${tipo}`;
+    const barraTema=(tipo==="kraft-alca")?"tema-kraft":`tema-${tipo}`;
     barraT.className=`sacolas-tamanho-bar visivel ${barraTema}`;
     document.querySelectorAll(".btn-tamanho-sacola").forEach((b,i)=>b.classList.toggle("ativo",i===0));
 
-    // Mostrar barra de pacote SOMENTE para tipo preta
     const barraPacote=document.getElementById("barraPacoteSacolas");
     if(tipo==="preta"){
         barraPacote.classList.add("visivel");
@@ -1095,8 +1274,8 @@ function selecionarTipoSacola(tipo,el){
 
     const nomes={preta:"Pretas",verde:"Verdes",branca:"Brancas",crystal:"Crystal",kraft:"Kraft","kraft-alca":"Kraft c/ Alça"};
     document.getElementById("breadcrumbSub").textContent=tipo==="preta"
-        ? `${nomes[tipo]} — Todos os Tamanhos — Todos os Pacotes`
-        : `${nomes[tipo]} — Todos os Tamanhos`;
+        ?`${nomes[tipo]} — Todos os Tamanhos — Todos os Pacotes`
+        :`${nomes[tipo]} — Todos os Tamanhos`;
 
     renderizarProdutos();
 }
@@ -1129,7 +1308,7 @@ function filtrarPacoteSacola(pacote,el){
     renderizarProdutos();
 }
 
-/* ─── RENDERIZAÇÃO ──────────────────────────────────────── */
+/* ─── RENDERIZAÇÃO ─── */
 function renderizarProdutos(){
     const container=document.getElementById("containerProdutos");
     container.innerHTML="";
@@ -1156,21 +1335,22 @@ function renderizarProdutos(){
             if(p.categoria!=="sacolas")return false;
             if(p.tipo!==estado.tipoSacola)return false;
             if(estado.tamanhoSacola!=="todas"&&p.tamanho!==estado.tamanhoSacola)return false;
-            // filtro de pacote apenas para sacolas pretas
             if(estado.tipoSacola==="preta"&&estado.pacoteSacola!=="todos"&&p.pacote!==estado.pacoteSacola)return false;
             return true;
         });
-        if(!filtrados.length){
-            container.innerHTML=`<p style="text-align:center;color:var(--texto-mutado);padding:4rem 0;">Nenhum produto encontrado.</p>`;
-            return;
-        }
-        const cfg=sacolarConfig[estado.tipoSacola];
-        criarSecao(cfg.nomeTipo,filtrados,container,"sacolas",estado.tipoSacola);
+        if(!filtrados.length){container.innerHTML=`<p style="text-align:center;color:var(--texto-mutado);padding:4rem 0;">Nenhum produto encontrado.</p>`;return;}
+        criarSecao(sacolarConfig[estado.tipoSacola].nomeTipo,filtrados,container,"sacolas",estado.tipoSacola);
         return;
     }
 
     if(estado.categoria==="isopor"){
-        const filtrados=listaProdutos.filter(p=>p.categoria==="isopor"&&(estado.subcategoria==="todas"||p.subcategoria===estado.subcategoria));
+        const filtrados=listaProdutos.filter(p=>{
+            if(p.categoria!=="isopor")return false;
+            if(estado.subcategoria!=="todas"&&p.subcategoria!==estado.subcategoria)return false;
+            // filtro de marca só se subcategoria é marmitex ou todas
+            if(estado.marcaMarmitex!=="todas"&&p.subcategoria==="marmitex"&&p.marca!==estado.marcaMarmitex)return false;
+            return true;
+        });
         if(!filtrados.length){container.innerHTML=`<p style="text-align:center;color:var(--texto-mutado);padding:4rem 0;">Nenhum produto encontrado.</p>`;return;}
         criarSecao("Isopor",filtrados,container,"isopor");
         return;
@@ -1201,7 +1381,6 @@ function obterLabelGrupoGeral(p){
     return p.categoria;
 }
 
-// Key para agrupamento no visão geral
 function obterKeyGrupo(p){
     if(p.categoria==="sacolas") return "sacolas_"+p.tipo;
     return p.categoria+"_"+(p.subcategoria||"");
@@ -1211,7 +1390,6 @@ function criarSecao(titulo,produtos,container,cat,tipo){
     const secao=document.createElement("div");
     secao.className="secao-categoria";
 
-    // Título com estilo correto
     let tituloClass="titulo-categoria";
     let icone="ph-squares-four";
     if(cat==="sacolas"&&tipo){
@@ -1232,8 +1410,6 @@ function criarSecao(titulo,produtos,container,cat,tipo){
 
     produtos.forEach(p=>{
         const noCarrinho=!!carrinho[p.id];
-
-        // Card class
         let extraClass="";
         if(p.categoria==="sacolas"&&p.tipo){
             extraClass=" "+(sacolarConfig[p.tipo]?.cardClass||"sacola-preta-card");
@@ -1253,10 +1429,16 @@ function criarSecao(titulo,produtos,container,cat,tipo){
             ?`<div class="container-preco"><span class="preco-label">Consulte-nos</span><span class="preco-valor" style="font-size:1.5rem;">Sob consulta</span></div>`
             :`<div class="container-preco"><span class="preco-label">A partir de</span><div class="preco-linha"><span class="preco-valor">${pFmt}</span><span class="preco-unit">${p.unidade}</span></div></div>`;
 
+        // Badge de marca para marmitex
+        const badgeMarca = (p.subcategoria === 'marmitex' && p.marca)
+            ? `<span style="position:absolute;top:12px;left:12px;background:#f57f17;color:#fff;font-size:.7rem;font-weight:800;padding:4px 10px;border-radius:99px;">${p.marca}</span>`
+            : '';
+
         card.innerHTML=`
             <div class="imagem-produto">
                 <div class="selo-carrinho"><i class="ph-fill ph-check"></i> No carrinho</div>
-                <i class="ph-light ${p.icone}"></i>
+                ${badgeMarca}
+                ${getSvg(p)}
             </div>
             <div class="conteudo-produto">
                 <h3 class="nome-produto">${p.nome}</h3>
@@ -1289,7 +1471,7 @@ function alterarInputQtd(id,delta){
     if(!input)return;input.value=Math.max(1,(parseInt(input.value)||1)+delta);
 }
 
-/* ─── UTILS ─────────────────────────────────────────────── */
+/* ─── UTILS ─── */
 function rolarPara(id){const el=document.getElementById(id);if(el)window.scrollTo({top:el.getBoundingClientRect().top+window.scrollY-80,behavior:"smooth"});}
 window.addEventListener("scroll",()=>{
     const h=document.getElementById("main-header"),ir=document.querySelector(".indicador-rolagem");
@@ -1305,7 +1487,10 @@ setInterval(()=>{
     track.style.transform=`translateX(-${slideIdx*(100/vis)}%)`;
 },4000);
 
-window.onload=()=>renderizarProdutos();
+// Mostrar barra de marca ao entrar no isopor também
+window.onload=()=>{
+    renderizarProdutos();
+};
 </script>
 </body>
 </html>
