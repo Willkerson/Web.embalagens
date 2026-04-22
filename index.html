@@ -87,24 +87,87 @@
         .btn-filtro.ativo{background:var(--azul-600)!important;color:#fff!important;border-color:var(--azul-600)!important;box-shadow:0 8px 20px rgba(37,99,235,.25);}
 
         /* Barras de subcategorias */
-        .sub-bar-base{display:none;gap:10px;justify-content:center;flex-wrap:wrap;margin-bottom:3rem;padding:1.25rem 1.5rem;border-radius:18px;animation:fadeIn .3s ease;}
+        .sub-bar-base{display:none;gap:10px;justify-content:center;flex-wrap:wrap;margin-bottom:1rem;padding:1.25rem 1.5rem;border-radius:18px;animation:fadeIn .3s ease;}
         .sub-bar-base.visivel{display:flex;}
+
         /* caixas */
         .subcategorias-bar{background:var(--azul-50);border:1px solid var(--azul-100);}
         .btn-subcategoria{padding:10px 22px;background:#fff;border:1px solid var(--azul-100);color:var(--azul-700);border-radius:99px;font-weight:600;font-size:.9rem;transition:var(--tr);display:flex;align-items:center;gap:8px;}
         .btn-subcategoria:hover{background:var(--azul-100);transform:translateY(-1px);}
         .btn-subcategoria.ativo{background:var(--azul-700);color:#fff;border-color:var(--azul-700);box-shadow:0 4px 12px rgba(29,78,216,.25);}
-        /* sacolas */
-        .subcategorias-bar-sacolas{background:#1a1a2e;border:1px solid #333;}
-        .btn-sub-sacola{padding:10px 22px;background:#2a2a3e;border:1px solid #444;color:#e2e8f0;border-radius:99px;font-weight:600;font-size:.9rem;transition:var(--tr);display:flex;align-items:center;gap:8px;}
-        .btn-sub-sacola:hover{background:#3a3a4e;transform:translateY(-1px);}
-        .btn-sub-sacola.ativo{background:#e2e8f0;color:#1a1a2e;border-color:#e2e8f0;box-shadow:0 4px 12px rgba(0,0,0,.4);}
+
+        /* ─── SACOLAS: NÍVEL 1 - TIPOS DE SACOLA ─── */
+        .sacolas-tipo-bar{background:#1a1a2e;border:1px solid #333;}
+        .btn-tipo-sacola{padding:10px 22px;border-radius:99px;font-weight:700;font-size:.9rem;transition:var(--tr);display:flex;align-items:center;gap:10px;border:2px solid transparent;}
+        .btn-tipo-sacola:hover{transform:translateY(-2px);}
+
+        /* Preto */
+        .btn-tipo-sacola.tipo-preta{background:#111;color:#e2e8f0;border-color:#444;}
+        .btn-tipo-sacola.tipo-preta:hover{border-color:#aaa;background:#222;}
+        .btn-tipo-sacola.tipo-preta.ativo{background:#e2e8f0;color:#111;border-color:#e2e8f0;box-shadow:0 4px 14px rgba(255,255,255,.25);}
+
+        /* Verde */
+        .btn-tipo-sacola.tipo-verde{background:#064e3b;color:#6ee7b7;border-color:#065f46;}
+        .btn-tipo-sacola.tipo-verde:hover{background:#065f46;border-color:#34d399;}
+        .btn-tipo-sacola.tipo-verde.ativo{background:#10b981;color:#fff;border-color:#10b981;box-shadow:0 4px 14px rgba(16,185,129,.4);}
+
+        /* Branco */
+        .btn-tipo-sacola.tipo-branca{background:#fff;color:#374151;border-color:#d1d5db;}
+        .btn-tipo-sacola.tipo-branca:hover{background:#f9fafb;border-color:#9ca3af;}
+        .btn-tipo-sacola.tipo-branca.ativo{background:#374151;color:#fff;border-color:#374151;box-shadow:0 4px 14px rgba(55,65,81,.4);}
+
+        /* Crystal */
+        .btn-tipo-sacola.tipo-crystal{background:linear-gradient(135deg,rgba(147,197,253,.15),rgba(196,181,253,.15));color:#93c5fd;border-color:rgba(147,197,253,.4);}
+        .btn-tipo-sacola.tipo-crystal:hover{background:linear-gradient(135deg,rgba(147,197,253,.25),rgba(196,181,253,.25));border-color:#93c5fd;}
+        .btn-tipo-sacola.tipo-crystal.ativo{background:linear-gradient(135deg,#60a5fa,#a78bfa);color:#fff;border-color:transparent;box-shadow:0 4px 18px rgba(96,165,250,.45);}
+
+        /* Dot indicador de cor */
+        .cor-dot{width:14px;height:14px;border-radius:50%;flex-shrink:0;border:1.5px solid rgba(255,255,255,.25);}
+        .cor-dot-preta{background:#111;}
+        .cor-dot-verde{background:#10b981;}
+        .cor-dot-branca{background:#fff;border-color:#d1d5db;}
+        .cor-dot-crystal{background:linear-gradient(135deg,#60a5fa,#a78bfa);}
+
+        /* ─── SACOLAS: NÍVEL 2 - TAMANHOS ─── */
+        .sacolas-tamanho-bar{display:none;gap:10px;justify-content:center;flex-wrap:wrap;margin-bottom:3rem;padding:1.25rem 1.5rem;border-radius:18px;animation:fadeIn .3s ease;}
+        .sacolas-tamanho-bar.visivel{display:flex;}
+
+        /* Tamanho bar varia conforme o tipo selecionado */
+        .sacolas-tamanho-bar.tema-preta{background:#0f0f1a;border:1px solid #2a2a3e;}
+        .sacolas-tamanho-bar.tema-verde{background:#022c22;border:1px solid #064e3b;}
+        .sacolas-tamanho-bar.tema-branca{background:#f3f4f6;border:1px solid #d1d5db;}
+        .sacolas-tamanho-bar.tema-crystal{background:linear-gradient(135deg,rgba(30,58,138,.2),rgba(88,28,135,.2));border:1px solid rgba(147,197,253,.3);}
+
+        .btn-tamanho-sacola{padding:9px 20px;border-radius:99px;font-weight:600;font-size:.88rem;transition:var(--tr);display:flex;align-items:center;gap:7px;}
+        .btn-tamanho-sacola:hover{transform:translateY(-1px);}
+
+        /* tamanho preta */
+        .tema-preta .btn-tamanho-sacola{background:#1a1a2e;border:1.5px solid #333;color:#94a3b8;}
+        .tema-preta .btn-tamanho-sacola:hover{background:#2a2a3e;border-color:#64748b;}
+        .tema-preta .btn-tamanho-sacola.ativo{background:#e2e8f0;color:#0f0f1a;border-color:#e2e8f0;}
+
+        /* tamanho verde */
+        .tema-verde .btn-tamanho-sacola{background:#064e3b;border:1.5px solid #065f46;color:#6ee7b7;}
+        .tema-verde .btn-tamanho-sacola:hover{background:#065f46;border-color:#34d399;}
+        .tema-verde .btn-tamanho-sacola.ativo{background:#10b981;color:#fff;border-color:#10b981;}
+
+        /* tamanho branca */
+        .tema-branca .btn-tamanho-sacola{background:#fff;border:1.5px solid #d1d5db;color:#374151;}
+        .tema-branca .btn-tamanho-sacola:hover{background:#f9fafb;border-color:#9ca3af;}
+        .tema-branca .btn-tamanho-sacola.ativo{background:#374151;color:#fff;border-color:#374151;}
+
+        /* tamanho crystal */
+        .tema-crystal .btn-tamanho-sacola{background:rgba(30,58,138,.25);border:1.5px solid rgba(147,197,253,.3);color:#93c5fd;}
+        .tema-crystal .btn-tamanho-sacola:hover{background:rgba(30,58,138,.4);border-color:#60a5fa;}
+        .tema-crystal .btn-tamanho-sacola.ativo{background:linear-gradient(135deg,#3b82f6,#8b5cf6);color:#fff;border-color:transparent;}
+
         /* isopor */
         .subcategorias-bar-isopor{background:#e0f7fa;border:1px solid #b2ebf2;}
         .btn-sub-isopor{padding:10px 22px;background:#fff;border:1px solid #b2ebf2;color:#00838f;border-radius:99px;font-weight:600;font-size:.9rem;transition:var(--tr);display:flex;align-items:center;gap:8px;}
         .btn-sub-isopor:hover{background:#e0f7fa;transform:translateY(-1px);}
         .btn-sub-isopor.ativo{background:#00838f;color:#fff;border-color:#00838f;box-shadow:0 4px 12px rgba(0,131,143,.3);}
 
+        /* Breadcrumb */
         .breadcrumb{display:none;align-items:center;gap:8px;font-size:.9rem;color:var(--texto-mutado);margin-bottom:2rem;font-weight:500;}
         .breadcrumb.visivel{display:flex;}
         .breadcrumb span{color:var(--azul-600);font-weight:700;}
@@ -118,12 +181,32 @@
         .card-sub-caixas .icone-sub{font-size:3rem;color:var(--azul-600);background:var(--azul-50);padding:1rem;border-radius:16px;}
         .card-sub-caixas h3{font-size:1.1rem;color:var(--texto-escuro);}
         .card-sub-caixas .badge-qtd{background:var(--azul-600);color:#fff;font-size:.75rem;font-weight:700;padding:4px 12px;border-radius:99px;}
-        /* sacolas */
-        .card-sub-sacolas{background:#1a1a2e;border:1px solid #333;}
-        .card-sub-sacolas:hover{transform:translateY(-6px);border-color:#666;box-shadow:0 20px 25px -5px rgba(0,0,0,.4);}
-        .card-sub-sacolas .icone-sub{font-size:3rem;color:#e2e8f0;background:#2a2a3e;padding:1rem;border-radius:16px;}
-        .card-sub-sacolas h3{font-size:1.1rem;color:#e2e8f0;}
-        .card-sub-sacolas .badge-qtd{background:#e2e8f0;color:#1a1a2e;font-size:.75rem;font-weight:700;padding:4px 12px;border-radius:99px;}
+
+        /* sacolas - cards de tipo na visão geral */
+        .card-sub-sacola-preta{background:#111;border:1px solid #333;}
+        .card-sub-sacola-preta:hover{transform:translateY(-6px);border-color:#666;box-shadow:0 20px 25px -5px rgba(0,0,0,.5);}
+        .card-sub-sacola-preta .icone-sub{font-size:3rem;color:#e2e8f0;background:#1a1a2e;padding:1rem;border-radius:16px;}
+        .card-sub-sacola-preta h3{font-size:1.1rem;color:#e2e8f0;}
+        .card-sub-sacola-preta .badge-qtd{background:#e2e8f0;color:#111;font-size:.75rem;font-weight:700;padding:4px 12px;border-radius:99px;}
+
+        .card-sub-sacola-verde{background:#022c22;border:1px solid #064e3b;}
+        .card-sub-sacola-verde:hover{transform:translateY(-6px);border-color:#34d399;box-shadow:0 20px 25px -5px rgba(16,185,129,.2);}
+        .card-sub-sacola-verde .icone-sub{font-size:3rem;color:#6ee7b7;background:#064e3b;padding:1rem;border-radius:16px;}
+        .card-sub-sacola-verde h3{font-size:1.1rem;color:#6ee7b7;}
+        .card-sub-sacola-verde .badge-qtd{background:#10b981;color:#fff;font-size:.75rem;font-weight:700;padding:4px 12px;border-radius:99px;}
+
+        .card-sub-sacola-branca{background:#fff;border:1px solid #d1d5db;}
+        .card-sub-sacola-branca:hover{transform:translateY(-6px);border-color:#9ca3af;box-shadow:0 20px 25px -5px rgba(0,0,0,.1);}
+        .card-sub-sacola-branca .icone-sub{font-size:3rem;color:#374151;background:#f3f4f6;padding:1rem;border-radius:16px;}
+        .card-sub-sacola-branca h3{font-size:1.1rem;color:var(--texto-escuro);}
+        .card-sub-sacola-branca .badge-qtd{background:#374151;color:#fff;font-size:.75rem;font-weight:700;padding:4px 12px;border-radius:99px;}
+
+        .card-sub-sacola-crystal{background:linear-gradient(135deg,#0f172a,#1e1b4b);border:1px solid rgba(147,197,253,.3);}
+        .card-sub-sacola-crystal:hover{transform:translateY(-6px);border-color:#60a5fa;box-shadow:0 20px 25px -5px rgba(96,165,250,.25);}
+        .card-sub-sacola-crystal .icone-sub{font-size:3rem;color:#93c5fd;background:rgba(30,58,138,.4);padding:1rem;border-radius:16px;}
+        .card-sub-sacola-crystal h3{font-size:1.1rem;color:#c7d2fe;}
+        .card-sub-sacola-crystal .badge-qtd{background:linear-gradient(135deg,#3b82f6,#8b5cf6);color:#fff;font-size:.75rem;font-weight:700;padding:4px 12px;border-radius:99px;}
+
         /* isopor */
         .card-sub-isopor{background:#fff;border:1px solid #b2ebf2;}
         .card-sub-isopor:hover{transform:translateY(-6px);border-color:#00acc1;box-shadow:0 20px 25px -5px rgba(0,131,143,.15);}
@@ -137,6 +220,9 @@
         .titulo-categoria{color:var(--texto-escuro);font-size:2.2rem;font-weight:800;margin-bottom:3rem;display:flex;align-items:center;gap:16px;letter-spacing:-.03em;}
         .titulo-categoria i{color:var(--azul-600);background:var(--azul-50);padding:12px;border-radius:16px;}
         .titulo-sacola i{color:#e2e8f0;background:#1a1a2e;}
+        .titulo-sacola-verde i{color:#6ee7b7;background:#022c22;}
+        .titulo-sacola-branca i{color:#374151;background:#f3f4f6;}
+        .titulo-sacola-crystal i{color:#93c5fd;background:linear-gradient(135deg,#0f172a,#1e1b4b);}
         .titulo-isopor i{color:#00838f;background:#e0f7fa;}
         .grade-produtos{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:2.5rem;}
 
@@ -145,26 +231,78 @@
         .cartao-produto:hover{transform:translateY(-8px);box-shadow:var(--sombra-hover);border-color:var(--azul-100);}
         .cartao-produto.no-carrinho{border-color:var(--verde-wa);box-shadow:0 0 0 3px rgba(37,211,102,.15);}
 
-        /* sacola card */
-        .sacola-card{background:#1a1a2e!important;border-color:#333!important;}
-        .sacola-card:hover{border-color:#666!important;box-shadow:0 20px 25px -5px rgba(0,0,0,.4)!important;}
-        .sacola-card .conteudo-produto{background:#1a1a2e;}
-        .sacola-card .nome-produto{color:#f1f5f9!important;}
-        .sacola-card .desc-produto{color:#94a3b8!important;}
-        .sacola-card .imagem-produto{background:linear-gradient(135deg,#0f0f1a 0%,#1a1a2e 100%)!important;border-bottom-color:#333!important;color:#4b5563!important;}
-        .sacola-card:hover .imagem-produto{color:#cbd5e1!important;}
-        .sacola-card .container-preco{background:#0f0f1a!important;border-color:#333!important;}
-        .sacola-card .container-preco::before{background:#64748b!important;}
-        .sacola-card .preco-label{color:#94a3b8!important;}
-        .sacola-card .preco-valor{color:#e2e8f0!important;}
-        .sacola-card .controle-qtd{border-color:#333!important;background:#0f0f1a!important;}
-        .sacola-card .btn-qtd{color:#94a3b8!important;}
-        .sacola-card .btn-qtd:hover{background:#2a2a3e!important;}
-        .sacola-card .input-qtd{color:#f1f5f9!important;}
-        .sacola-card .btn-add-carrinho{background:#374151!important;color:#f1f5f9!important;}
-        .sacola-card .btn-add-carrinho:hover{background:#4b5563!important;}
-        .sacola-card .btn-ver-espec{border-color:#333!important;color:#64748b!important;}
-        .sacola-card .btn-ver-espec:hover{border-color:#64748b!important;color:#cbd5e1!important;}
+        /* sacola preta card */
+        .sacola-preta-card{background:#1a1a2e!important;border-color:#333!important;}
+        .sacola-preta-card:hover{border-color:#666!important;box-shadow:0 20px 25px -5px rgba(0,0,0,.4)!important;}
+        .sacola-preta-card .conteudo-produto{background:#1a1a2e;}
+        .sacola-preta-card .nome-produto{color:#f1f5f9!important;}
+        .sacola-preta-card .desc-produto{color:#94a3b8!important;}
+        .sacola-preta-card .imagem-produto{background:linear-gradient(135deg,#0f0f1a 0%,#1a1a2e 100%)!important;border-bottom-color:#333!important;color:#4b5563!important;}
+        .sacola-preta-card:hover .imagem-produto{color:#cbd5e1!important;}
+        .sacola-preta-card .container-preco{background:#0f0f1a!important;border-color:#333!important;}
+        .sacola-preta-card .container-preco::before{background:#64748b!important;}
+        .sacola-preta-card .preco-label{color:#94a3b8!important;}
+        .sacola-preta-card .preco-valor{color:#e2e8f0!important;}
+        .sacola-preta-card .controle-qtd{border-color:#333!important;background:#0f0f1a!important;}
+        .sacola-preta-card .btn-qtd{color:#94a3b8!important;}
+        .sacola-preta-card .btn-qtd:hover{background:#2a2a3e!important;}
+        .sacola-preta-card .input-qtd{color:#f1f5f9!important;}
+        .sacola-preta-card .btn-add-carrinho{background:#374151!important;color:#f1f5f9!important;}
+        .sacola-preta-card .btn-add-carrinho:hover{background:#4b5563!important;}
+        .sacola-preta-card .btn-ver-espec{border-color:#333!important;color:#64748b!important;}
+        .sacola-preta-card .btn-ver-espec:hover{border-color:#64748b!important;color:#cbd5e1!important;}
+
+        /* sacola verde card */
+        .sacola-verde-card{background:#022c22!important;border-color:#064e3b!important;}
+        .sacola-verde-card:hover{border-color:#34d399!important;box-shadow:0 20px 25px -5px rgba(16,185,129,.2)!important;}
+        .sacola-verde-card .conteudo-produto{background:#022c22;}
+        .sacola-verde-card .nome-produto{color:#6ee7b7!important;}
+        .sacola-verde-card .desc-produto{color:#4ade80!important;opacity:.7;}
+        .sacola-verde-card .imagem-produto{background:linear-gradient(135deg,#022c22 0%,#064e3b 100%)!important;border-bottom-color:#064e3b!important;color:#065f46!important;}
+        .sacola-verde-card:hover .imagem-produto{color:#34d399!important;}
+        .sacola-verde-card .container-preco{background:#011a14!important;border-color:#064e3b!important;}
+        .sacola-verde-card .container-preco::before{background:#10b981!important;}
+        .sacola-verde-card .preco-label{color:#34d399!important;}
+        .sacola-verde-card .preco-valor{color:#6ee7b7!important;}
+        .sacola-verde-card .controle-qtd{border-color:#064e3b!important;background:#011a14!important;}
+        .sacola-verde-card .btn-qtd{color:#34d399!important;}
+        .sacola-verde-card .btn-qtd:hover{background:#064e3b!important;}
+        .sacola-verde-card .input-qtd{color:#6ee7b7!important;}
+        .sacola-verde-card .btn-add-carrinho{background:#065f46!important;color:#6ee7b7!important;}
+        .sacola-verde-card .btn-add-carrinho:hover{background:#10b981!important;color:#fff!important;}
+        .sacola-verde-card .btn-ver-espec{border-color:#064e3b!important;color:#065f46!important;}
+        .sacola-verde-card .btn-ver-espec:hover{border-color:#34d399!important;color:#6ee7b7!important;}
+
+        /* sacola branca card */
+        .sacola-branca-card{background:#fff!important;border-color:#d1d5db!important;}
+        .sacola-branca-card:hover{border-color:#9ca3af!important;box-shadow:0 20px 25px -5px rgba(0,0,0,.1)!important;}
+        .sacola-branca-card .imagem-produto{background:linear-gradient(135deg,#f9fafb 0%,#f3f4f6 100%)!important;border-bottom-color:#d1d5db!important;color:#d1d5db!important;}
+        .sacola-branca-card:hover .imagem-produto{color:#9ca3af!important;}
+        .sacola-branca-card .container-preco{background:#f3f4f6!important;border-color:#d1d5db!important;}
+        .sacola-branca-card .container-preco::before{background:#374151!important;}
+        .sacola-branca-card .btn-add-carrinho{background:#374151!important;}
+        .sacola-branca-card .btn-add-carrinho:hover{background:#1f2937!important;}
+
+        /* sacola crystal card */
+        .sacola-crystal-card{background:linear-gradient(135deg,#0f172a,#1e1b4b)!important;border-color:rgba(147,197,253,.3)!important;}
+        .sacola-crystal-card:hover{border-color:#60a5fa!important;box-shadow:0 20px 25px -5px rgba(96,165,250,.25)!important;}
+        .sacola-crystal-card .conteudo-produto{background:transparent;}
+        .sacola-crystal-card .nome-produto{color:#c7d2fe!important;}
+        .sacola-crystal-card .desc-produto{color:#818cf8!important;}
+        .sacola-crystal-card .imagem-produto{background:linear-gradient(135deg,rgba(30,27,75,.8) 0%,rgba(15,23,42,.8) 100%)!important;border-bottom-color:rgba(147,197,253,.2)!important;color:rgba(96,165,250,.3)!important;}
+        .sacola-crystal-card:hover .imagem-produto{color:#60a5fa!important;}
+        .sacola-crystal-card .container-preco{background:rgba(30,27,75,.5)!important;border-color:rgba(147,197,253,.2)!important;}
+        .sacola-crystal-card .container-preco::before{background:linear-gradient(to bottom,#3b82f6,#8b5cf6)!important;}
+        .sacola-crystal-card .preco-label{color:#818cf8!important;}
+        .sacola-crystal-card .preco-valor{color:#c7d2fe!important;}
+        .sacola-crystal-card .controle-qtd{border-color:rgba(147,197,253,.2)!important;background:rgba(30,27,75,.5)!important;}
+        .sacola-crystal-card .btn-qtd{color:#818cf8!important;}
+        .sacola-crystal-card .btn-qtd:hover{background:rgba(30,27,75,.8)!important;}
+        .sacola-crystal-card .input-qtd{color:#c7d2fe!important;}
+        .sacola-crystal-card .btn-add-carrinho{background:linear-gradient(135deg,#3b82f6,#8b5cf6)!important;color:#fff!important;}
+        .sacola-crystal-card .btn-add-carrinho:hover{background:linear-gradient(135deg,#2563eb,#7c3aed)!important;}
+        .sacola-crystal-card .btn-ver-espec{border-color:rgba(147,197,253,.2)!important;color:rgba(96,165,250,.5)!important;}
+        .sacola-crystal-card .btn-ver-espec:hover{border-color:#60a5fa!important;color:#93c5fd!important;}
 
         /* isopor card */
         .isopor-card{border-color:#b2ebf2!important;}
@@ -366,7 +504,7 @@
             <div class="filtros" id="containerFiltros">
                 <button class="btn-filtro ativo" onclick="filtrarCategoria('todos',this)"><i class="ph-bold ph-squares-four"></i> Visão Geral</button>
                 <button class="btn-filtro" onclick="filtrarCategoria('caixas',this)"><i class="ph-bold ph-package"></i> Caixas</button>
-                <button class="btn-filtro" onclick="filtrarCategoria('sacolas',this)"><i class="ph-bold ph-shopping-bag"></i> Sacolas </button>
+                <button class="btn-filtro" onclick="filtrarCategoria('sacolas',this)"><i class="ph-bold ph-shopping-bag"></i> Sacolas</button>
                 <button class="btn-filtro" onclick="filtrarCategoria('isopor',this)"><i class="ph-bold ph-snowflake"></i> Isopor</button>
                 <button class="btn-filtro" onclick="filtrarCategoria('insumos',this)"><i class="ph-bold ph-scroll"></i> Insumos Industriais</button>
             </div>
@@ -381,12 +519,28 @@
             <button class="btn-subcategoria" onclick="filtrarSub('geral',this,'caixas')"><i class="ph-bold ph-cube"></i> Uso Geral</button>
         </div>
 
-        <!-- Subcategorias Sacolas -->
-        <div class="sub-bar-base subcategorias-bar-sacolas" id="barraSubcategoriasSacolas">
-            <button class="btn-sub-sacola ativo" onclick="filtrarSub('todas',this,'sacolas')"><i class="ph-bold ph-squares-four"></i> Todos os Tamanhos</button>
-            <button class="btn-sub-sacola" onclick="filtrarSub('sacola-p',this,'sacolas')"><i class="ph-bold ph-shopping-bag"></i> Pequenas</button>
-            <button class="btn-sub-sacola" onclick="filtrarSub('sacola-m',this,'sacolas')"><i class="ph-bold ph-shopping-bag"></i> Médias</button>
-            <button class="btn-sub-sacola" onclick="filtrarSub('sacola-g',this,'sacolas')"><i class="ph-bold ph-shopping-bag"></i> Grandes</button>
+        <!-- SACOLAS: Nível 1 - Tipo de sacola (cor/material) -->
+        <div class="sub-bar-base sacolas-tipo-bar" id="barraTipoSacolas">
+            <button class="btn-tipo-sacola tipo-preta ativo" onclick="selecionarTipoSacola('preta',this)">
+                <span class="cor-dot cor-dot-preta"></span> Preta
+            </button>
+            <button class="btn-tipo-sacola tipo-verde" onclick="selecionarTipoSacola('verde',this)">
+                <span class="cor-dot cor-dot-verde"></span> Verde
+            </button>
+            <button class="btn-tipo-sacola tipo-branca" onclick="selecionarTipoSacola('branca',this)">
+                <span class="cor-dot cor-dot-branca"></span> Branca
+            </button>
+            <button class="btn-tipo-sacola tipo-crystal" onclick="selecionarTipoSacola('crystal',this)">
+                <span class="cor-dot cor-dot-crystal"></span> Crystal
+            </button>
+        </div>
+
+        <!-- SACOLAS: Nível 2 - Tamanhos (aparece após escolher tipo) -->
+        <div class="sacolas-tamanho-bar tema-preta" id="barraTamanhoSacolas">
+            <button class="btn-tamanho-sacola ativo" onclick="filtrarTamanhoSacola('todas',this)"><i class="ph-bold ph-squares-four"></i> Todos os Tamanhos</button>
+            <button class="btn-tamanho-sacola" onclick="filtrarTamanhoSacola('p',this)"><i class="ph-bold ph-shopping-bag"></i> Pequenas</button>
+            <button class="btn-tamanho-sacola" onclick="filtrarTamanhoSacola('m',this)"><i class="ph-bold ph-shopping-bag"></i> Médias</button>
+            <button class="btn-tamanho-sacola" onclick="filtrarTamanhoSacola('g',this)"><i class="ph-bold ph-shopping-bag"></i> Grandes</button>
         </div>
 
         <!-- Subcategorias Isopor -->
@@ -504,43 +658,49 @@ const listaProdutos = [
     {id:15, nome:"Caixa De Esfiha Nº2", categoria:"caixas", subcategoria:"salgado", icone:"ph-archive-box", descricao:"Para esfihas, salgadinhos e porções individuais.", preco:3.50, unidade:"/unidade", especificacoes:{"Medidas Externas":"20 x 20 x 5 cm","Material":"Ondulado"}},
     {id:16, nome:"Caixa De Pizza", categoria:"caixas", subcategoria:"salgado", icone:"ph-archive-box", descricao:"Mantém o calor e a crocância da pizza.", preco:3.50, unidade:"/unidade", especificacoes:{"Medidas Externas":"35 x 35 cm","Material":"Ondulado"}},
 
-    // SACOLAS PRETAS - PEQUENAS
-    {id:17, nome:"Sacola Preta 30x40", categoria:"sacolas", subcategoria:"sacola-p", icone:"ph-shopping-bag", descricao:"Sacola preta resistente para pequenas entregas e presentes.", preco:"Sob consulta", unidade:"", especificacoes:{"Medidas":"30 x 40 cm","Cor":"Preto","Material":"Plástico resistente","Uso":"Entregas, presente, delivery"}},
-    {id:18, nome:"Sacola Preta 35x45", categoria:"sacolas", subcategoria:"sacola-p", icone:"ph-shopping-bag", descricao:"Tamanho versátil para pequenos pedidos e presentes.", preco:"Sob consulta", unidade:"", especificacoes:{"Medidas":"35 x 45 cm","Cor":"Preto","Material":"Plástico resistente","Uso":"Delivery, varejo, presentes"}},
-    // SACOLAS PRETAS - MÉDIAS
-    {id:19, nome:"Sacola Preta 40x50", categoria:"sacolas", subcategoria:"sacola-m", icone:"ph-shopping-bag", descricao:"Ideal para pedidos médios e embalagens de vestuário.", preco:"Sob consulta", unidade:"", especificacoes:{"Medidas":"40 x 50 cm","Cor":"Preto","Material":"Plástico resistente","Uso":"Vestuário, delivery, moda"}},
-    {id:20, nome:"Sacola Preta 45x60", categoria:"sacolas", subcategoria:"sacola-m", icone:"ph-shopping-bag", descricao:"Capacidade média-alta, perfeita para delivery de refeições.", preco:"Sob consulta", unidade:"", especificacoes:{"Medidas":"45 x 60 cm","Cor":"Preto","Material":"Plástico resistente","Uso":"Delivery, restaurantes, moda"}},
-    // SACOLAS PRETAS - GRANDES
-    {id:21, nome:"Sacola Preta 60x80", categoria:"sacolas", subcategoria:"sacola-g", icone:"ph-shopping-bag", descricao:"Grande capacidade para pedidos volumosos e embalagens especiais.", preco:"Sob consulta", unidade:"", especificacoes:{"Medidas":"60 x 80 cm","Cor":"Preto","Material":"Plástico resistente","Uso":"Grandes pedidos, vestuário, atacado"}},
-    {id:22, nome:"Sacola Preta 90x100", categoria:"sacolas", subcategoria:"sacola-g", icone:"ph-shopping-bag", descricao:"Sacola extra grande para volumes maiores. Ideal para logística e armazenamento.", preco:"Sob consulta", unidade:"", especificacoes:{"Medidas":"90 x 100 cm","Cor":"Preto","Material":"Plástico resistente","Uso":"Grandes volumes, armazenagem, logística"}},
+    // ─── SACOLAS PRETAS ───
+    {id:17, nome:"Sacola Preta 30x40", categoria:"sacolas", tipo:"preta", tamanho:"p", icone:"ph-shopping-bag", descricao:"Sacola preta resistente para pequenas entregas e presentes.", preco:"Sob consulta", unidade:"", especificacoes:{"Medidas":"30 x 40 cm","Cor":"Preto","Material":"Plástico resistente","Uso":"Entregas, presente, delivery"}},
+    {id:18, nome:"Sacola Preta 35x45", categoria:"sacolas", tipo:"preta", tamanho:"p", icone:"ph-shopping-bag", descricao:"Tamanho versátil para pequenos pedidos e presentes.", preco:"Sob consulta", unidade:"", especificacoes:{"Medidas":"35 x 45 cm","Cor":"Preto","Material":"Plástico resistente","Uso":"Delivery, varejo, presentes"}},
+    {id:19, nome:"Sacola Preta 40x50", categoria:"sacolas", tipo:"preta", tamanho:"m", icone:"ph-shopping-bag", descricao:"Ideal para pedidos médios e embalagens de vestuário.", preco:"Sob consulta", unidade:"", especificacoes:{"Medidas":"40 x 50 cm","Cor":"Preto","Material":"Plástico resistente","Uso":"Vestuário, delivery, moda"}},
+    {id:20, nome:"Sacola Preta 45x60", categoria:"sacolas", tipo:"preta", tamanho:"m", icone:"ph-shopping-bag", descricao:"Capacidade média-alta, perfeita para delivery de refeições.", preco:"Sob consulta", unidade:"", especificacoes:{"Medidas":"45 x 60 cm","Cor":"Preto","Material":"Plástico resistente","Uso":"Delivery, restaurantes, moda"}},
+    {id:21, nome:"Sacola Preta 60x80", categoria:"sacolas", tipo:"preta", tamanho:"g", icone:"ph-shopping-bag", descricao:"Grande capacidade para pedidos volumosos e embalagens especiais.", preco:"Sob consulta", unidade:"", especificacoes:{"Medidas":"60 x 80 cm","Cor":"Preto","Material":"Plástico resistente","Uso":"Grandes pedidos, vestuário, atacado"}},
+    {id:22, nome:"Sacola Preta 90x100", categoria:"sacolas", tipo:"preta", tamanho:"g", icone:"ph-shopping-bag", descricao:"Sacola extra grande para volumes maiores. Ideal para logística.", preco:"Sob consulta", unidade:"", especificacoes:{"Medidas":"90 x 100 cm","Cor":"Preto","Material":"Plástico resistente","Uso":"Grandes volumes, armazenagem, logística"}},
+
+    // ─── SACOLAS VERDES ───
+    {id:23, nome:"Sacola Verde 30x40", categoria:"sacolas", tipo:"verde", tamanho:"p", icone:"ph-shopping-bag", descricao:"Sacola verde vibrante para pequenas entregas e presentes.", preco:"Sob consulta", unidade:"", especificacoes:{"Medidas":"30 x 40 cm","Cor":"Verde","Material":"Plástico resistente","Uso":"Entregas, presente, delivery"}},
+    {id:24, nome:"Sacola Verde 35x45", categoria:"sacolas", tipo:"verde", tamanho:"p", icone:"ph-shopping-bag", descricao:"Tamanho compacto em verde para pequenas encomendas.", preco:"Sob consulta", unidade:"", especificacoes:{"Medidas":"35 x 45 cm","Cor":"Verde","Material":"Plástico resistente","Uso":"Delivery, varejo, presentes"}},
+    {id:25, nome:"Sacola Verde 40x50", categoria:"sacolas", tipo:"verde", tamanho:"m", icone:"ph-shopping-bag", descricao:"Médio porte em verde para pedidos do dia a dia.", preco:"Sob consulta", unidade:"", especificacoes:{"Medidas":"40 x 50 cm","Cor":"Verde","Material":"Plástico resistente","Uso":"Vestuário, delivery, moda"}},
+    {id:26, nome:"Sacola Verde 45x60", categoria:"sacolas", tipo:"verde", tamanho:"m", icone:"ph-shopping-bag", descricao:"Verde médio-grande para delivery de alimentos e roupas.", preco:"Sob consulta", unidade:"", especificacoes:{"Medidas":"45 x 60 cm","Cor":"Verde","Material":"Plástico resistente","Uso":"Delivery, restaurantes, moda"}},
+    {id:27, nome:"Sacola Verde 60x80", categoria:"sacolas", tipo:"verde", tamanho:"g", icone:"ph-shopping-bag", descricao:"Grande capacidade em verde para pedidos volumosos.", preco:"Sob consulta", unidade:"", especificacoes:{"Medidas":"60 x 80 cm","Cor":"Verde","Material":"Plástico resistente","Uso":"Grandes pedidos, atacado"}},
+
+    // ─── SACOLAS BRANCAS ───
+    {id:28, nome:"Sacola Branca 30x40", categoria:"sacolas", tipo:"branca", tamanho:"p", icone:"ph-shopping-bag", descricao:"Sacola branca clean para presentear com elegância.", preco:"Sob consulta", unidade:"", especificacoes:{"Medidas":"30 x 40 cm","Cor":"Branco","Material":"Plástico resistente","Uso":"Presentes, farmácias, varejo"}},
+    {id:29, nome:"Sacola Branca 35x45", categoria:"sacolas", tipo:"branca", tamanho:"p", icone:"ph-shopping-bag", descricao:"Pequena em branco para lojas e distribuidoras.", preco:"Sob consulta", unidade:"", especificacoes:{"Medidas":"35 x 45 cm","Cor":"Branco","Material":"Plástico resistente","Uso":"Varejo, farmácia, presentes"}},
+    {id:30, nome:"Sacola Branca 40x50", categoria:"sacolas", tipo:"branca", tamanho:"m", icone:"ph-shopping-bag", descricao:"Branca média, ideal para farmácias e lojas de cosméticos.", preco:"Sob consulta", unidade:"", especificacoes:{"Medidas":"40 x 50 cm","Cor":"Branco","Material":"Plástico resistente","Uso":"Farmácias, cosméticos, moda"}},
+    {id:31, nome:"Sacola Branca 45x60", categoria:"sacolas", tipo:"branca", tamanho:"m", icone:"ph-shopping-bag", descricao:"Médio-grande branca para roupas e itens volumosos.", preco:"Sob consulta", unidade:"", especificacoes:{"Medidas":"45 x 60 cm","Cor":"Branco","Material":"Plástico resistente","Uso":"Vestuário, delivery, varejo"}},
+    {id:32, nome:"Sacola Branca 60x80", categoria:"sacolas", tipo:"branca", tamanho:"g", icone:"ph-shopping-bag", descricao:"Grande branca para atacado e grandes volumes.", preco:"Sob consulta", unidade:"", especificacoes:{"Medidas":"60 x 80 cm","Cor":"Branco","Material":"Plástico resistente","Uso":"Atacado, grandes pedidos"}},
+
+    // ─── SACOLAS CRYSTAL ───
+    {id:33, nome:"Sacola Crystal 30x40", categoria:"sacolas", tipo:"crystal", tamanho:"p", icone:"ph-shopping-bag", descricao:"Sacola transparente crystal para exposição do produto.", preco:"Sob consulta", unidade:"", especificacoes:{"Medidas":"30 x 40 cm","Cor":"Transparente","Material":"Plástico cristal","Uso":"Exposição de produto, presentes, varejo"}},
+    {id:34, nome:"Sacola Crystal 35x45", categoria:"sacolas", tipo:"crystal", tamanho:"p", icone:"ph-shopping-bag", descricao:"Crystal compacta para produtos que merecem ser vistos.", preco:"Sob consulta", unidade:"", especificacoes:{"Medidas":"35 x 45 cm","Cor":"Transparente","Material":"Plástico cristal","Uso":"Varejo, presentes, exposição"}},
+    {id:35, nome:"Sacola Crystal 40x50", categoria:"sacolas", tipo:"crystal", tamanho:"m", icone:"ph-shopping-bag", descricao:"Tamanho médio crystal, ótima visibilidade do conteúdo.", preco:"Sob consulta", unidade:"", especificacoes:{"Medidas":"40 x 50 cm","Cor":"Transparente","Material":"Plástico cristal","Uso":"Cosméticos, moda, exposição"}},
+    {id:36, nome:"Sacola Crystal 45x60", categoria:"sacolas", tipo:"crystal", tamanho:"m", icone:"ph-shopping-bag", descricao:"Crystal médio-grande, elegante e resistente.", preco:"Sob consulta", unidade:"", especificacoes:{"Medidas":"45 x 60 cm","Cor":"Transparente","Material":"Plástico cristal","Uso":"Moda, delivery premium, varejo"}},
+    {id:37, nome:"Sacola Crystal 60x80", categoria:"sacolas", tipo:"crystal", tamanho:"g", icone:"ph-shopping-bag", descricao:"Crystal grande para itens maiores com total visibilidade.", preco:"Sob consulta", unidade:"", especificacoes:{"Medidas":"60 x 80 cm","Cor":"Transparente","Material":"Plástico cristal","Uso":"Grandes volumes, atacado, exposição"}},
 
     // ISOPOR - MARMITEX
-    {id:23, nome:"Marmitex de Isopor Nº8", categoria:"isopor", subcategoria:"marmitex", icone:"ph-bowl-food", descricao:"Marmitex oval para refeições completas. Mantém a temperatura por mais tempo.", preco:"Sob consulta", unidade:"", especificacoes:{"Número":"Nº8","Formato":"Oval","Material":"Isopor EPS","Uso":"Refeições, marmitas, delivery"}},
-    {id:24, nome:"Marmitex de Isopor Nº9", categoria:"isopor", subcategoria:"marmitex", icone:"ph-bowl-food", descricao:"Marmitex maior para refeições fartas. Ideal para restaurantes e lanchonetes.", preco:"Sob consulta", unidade:"", especificacoes:{"Número":"Nº9","Formato":"Oval","Material":"Isopor EPS","Uso":"Refeições, delivery, marmitaria"}},
-    {id:25, nome:"Marmitex de Isopor Nº10", categoria:"isopor", subcategoria:"marmitex", icone:"ph-bowl-food", descricao:"Tamanho extra para porções generosas. Usado em buffets e eventos.", preco:"Sob consulta", unidade:"", especificacoes:{"Número":"Nº10","Formato":"Oval","Material":"Isopor EPS","Uso":"Buffet, eventos, delivery especial"}},
+    {id:38, nome:"Marmitex de Isopor Nº8", categoria:"isopor", subcategoria:"marmitex", icone:"ph-bowl-food", descricao:"Marmitex oval para refeições completas. Mantém a temperatura por mais tempo.", preco:"Sob consulta", unidade:"", especificacoes:{"Número":"Nº8","Formato":"Oval","Material":"Isopor EPS","Uso":"Refeições, marmitas, delivery"}},
+    {id:39, nome:"Marmitex de Isopor Nº9", categoria:"isopor", subcategoria:"marmitex", icone:"ph-bowl-food", descricao:"Marmitex maior para refeições fartas. Ideal para restaurantes e lanchonetes.", preco:"Sob consulta", unidade:"", especificacoes:{"Número":"Nº9","Formato":"Oval","Material":"Isopor EPS","Uso":"Refeições, delivery, marmitaria"}},
+    {id:40, nome:"Marmitex de Isopor Nº10", categoria:"isopor", subcategoria:"marmitex", icone:"ph-bowl-food", descricao:"Tamanho extra para porções generosas. Usado em buffets e eventos.", preco:"Sob consulta", unidade:"", especificacoes:{"Número":"Nº10","Formato":"Oval","Material":"Isopor EPS","Uso":"Buffet, eventos, delivery especial"}},
     // ISOPOR - CAIXAS
-    {id:26, nome:"Caixa de Isopor 5L", categoria:"isopor", subcategoria:"caixa-isopor", icone:"ph-cube", descricao:"Caixa de isopor pequena para transporte de alimentos e medicamentos.", preco:"Sob consulta", unidade:"", especificacoes:{"Capacidade":"5 litros","Material":"Isopor EPS","Uso":"Alimentos, medicamentos, transporte frigorificado"}},
-    {id:27, nome:"Caixa de Isopor 12L", categoria:"isopor", subcategoria:"caixa-isopor", icone:"ph-cube", descricao:"Capacidade intermediária para frutos do mar, carnes e bebidas.", preco:"Sob consulta", unidade:"", especificacoes:{"Capacidade":"12 litros","Material":"Isopor EPS","Uso":"Frutos do mar, carnes, bebidas geladas"}},
-    {id:28, nome:"Caixa de Isopor 20L", categoria:"isopor", subcategoria:"caixa-isopor", icone:"ph-cube", descricao:"Grande capacidade para transporte de volumes refrigerados a granel.", preco:"Sob consulta", unidade:"", especificacoes:{"Capacidade":"20 litros","Material":"Isopor EPS","Uso":"Eventos, pesca, transporte em quantidade"}},
+    {id:41, nome:"Caixa de Isopor 5L", categoria:"isopor", subcategoria:"caixa-isopor", icone:"ph-cube", descricao:"Caixa de isopor pequena para transporte de alimentos e medicamentos.", preco:"Sob consulta", unidade:"", especificacoes:{"Capacidade":"5 litros","Material":"Isopor EPS","Uso":"Alimentos, medicamentos, transporte frigorificado"}},
+    {id:42, nome:"Caixa de Isopor 12L", categoria:"isopor", subcategoria:"caixa-isopor", icone:"ph-cube", descricao:"Capacidade intermediária para frutos do mar, carnes e bebidas.", preco:"Sob consulta", unidade:"", especificacoes:{"Capacidade":"12 litros","Material":"Isopor EPS","Uso":"Frutos do mar, carnes, bebidas geladas"}},
+    {id:43, nome:"Caixa de Isopor 20L", categoria:"isopor", subcategoria:"caixa-isopor", icone:"ph-cube", descricao:"Grande capacidade para transporte de volumes refrigerados a granel.", preco:"Sob consulta", unidade:"", especificacoes:{"Capacidade":"20 litros","Material":"Isopor EPS","Uso":"Eventos, pesca, transporte em quantidade"}},
     // ISOPOR - COPOS
-    {id:29, nome:"Copo de Isopor 50ml", categoria:"isopor", subcategoria:"copo-isopor", icone:"ph-coffee", descricao:"Copo pequeno para cafezinho e amostras. Mantém a temperatura do líquido.", preco:"Sob consulta", unidade:"", especificacoes:{"Capacidade":"50 ml","Material":"Isopor EPS","Uso":"Café, shots, amostras"}},
-    {id:30, nome:"Copo de Isopor 120ml", categoria:"isopor", subcategoria:"copo-isopor", icone:"ph-coffee", descricao:"Copo para café e chás. Muito utilizado em padarias e lanchonetes.", preco:"Sob consulta", unidade:"", especificacoes:{"Capacidade":"120 ml","Material":"Isopor EPS","Uso":"Café, chá, caldos quentes"}},
-    {id:31, nome:"Copo de Isopor 180ml", categoria:"isopor", subcategoria:"copo-isopor", icone:"ph-coffee", descricao:"Copo médio para bebidas quentes e frias. Ideal para eventos.", preco:"Sob consulta", unidade:"", especificacoes:{"Capacidade":"180 ml","Material":"Isopor EPS","Uso":"Bebidas quentes e frias, eventos"}},
-    {id:32, nome:"Copo de Isopor 300ml", categoria:"isopor", subcategoria:"copo-isopor", icone:"ph-coffee", descricao:"Copo grande para refrescos, sucos e bebidas geladas.", preco:"Sob consulta", unidade:"", especificacoes:{"Capacidade":"300 ml","Material":"Isopor EPS","Uso":"Sucos, refrescos, bebidas geladas"}},
+    {id:44, nome:"Copo de Isopor 50ml", categoria:"isopor", subcategoria:"copo-isopor", icone:"ph-coffee", descricao:"Copo pequeno para cafezinho e amostras. Mantém a temperatura do líquido.", preco:"Sob consulta", unidade:"", especificacoes:{"Capacidade":"50 ml","Material":"Isopor EPS","Uso":"Café, shots, amostras"}},
+    {id:45, nome:"Copo de Isopor 120ml", categoria:"isopor", subcategoria:"copo-isopor", icone:"ph-coffee", descricao:"Copo para café e chás. Muito utilizado em padarias e lanchonetes.", preco:"Sob consulta", unidade:"", especificacoes:{"Capacidade":"120 ml","Material":"Isopor EPS","Uso":"Café, chá, caldos quentes"}},
+    {id:46, nome:"Copo de Isopor 180ml", categoria:"isopor", subcategoria:"copo-isopor", icone:"ph-coffee", descricao:"Copo médio para bebidas quentes e frias. Ideal para eventos.", preco:"Sob consulta", unidade:"", especificacoes:{"Capacidade":"180 ml","Material":"Isopor EPS","Uso":"Bebidas quentes e frias, eventos"}},
+    {id:47, nome:"Copo de Isopor 300ml", categoria:"isopor", subcategoria:"copo-isopor", icone:"ph-coffee", descricao:"Copo grande para refrescos, sucos e bebidas geladas.", preco:"Sob consulta", unidade:"", especificacoes:{"Capacidade":"300 ml","Material":"Isopor EPS","Uso":"Sucos, refrescos, bebidas geladas"}},
 ];
-
-const labelSub = {
-    sedex:         {label:"Padrão Correios",   icone:"ph-box-arrow-up"},
-    confeiteiros:  {label:"Para Doces",        icone:"ph-cake"},
-    salgado:       {label:"Para Salgados",     icone:"ph-fork-knife"},
-    geral:         {label:"Uso Geral",         icone:"ph-cube"},
-    "sacola-p":    {label:"Sacolas Pequenas",  icone:"ph-shopping-bag"},
-    "sacola-m":    {label:"Sacolas Médias",    icone:"ph-shopping-bag"},
-    "sacola-g":    {label:"Sacolas Grandes",   icone:"ph-shopping-bag"},
-    marmitex:      {label:"Marmitex",          icone:"ph-bowl-food"},
-    "caixa-isopor":{label:"Caixas de Isopor",  icone:"ph-cube"},
-    "copo-isopor": {label:"Copos de Isopor",   icone:"ph-coffee"},
-};
 
 const iconesEspec = {
     "Medidas Externas":"ph-ruler","Dimensões":"ph-ruler","Medidas":"ph-ruler",
@@ -549,11 +709,20 @@ const iconesEspec = {
     "Uso":"ph-check-circle","Cor":"ph-palette",
 };
 
-/* ─── ESTADO + CARRINHO ─────────────────────────────────── */
-let estado = {categoria:"todos", subcategoria:"todas"};
+/* Mapeamento visual por tipo de sacola */
+const sacolarConfig = {
+    preta:   {cardClass:"sacola-preta-card",   tituloClass:" titulo-sacola",        nomeTipo:"Sacolas Pretas",    tema:"tema-preta"},
+    verde:   {cardClass:"sacola-verde-card",   tituloClass:" titulo-sacola-verde",  nomeTipo:"Sacolas Verdes",    tema:"tema-verde"},
+    branca:  {cardClass:"sacola-branca-card",  tituloClass:" titulo-sacola-branca", nomeTipo:"Sacolas Brancas",   tema:"tema-branca"},
+    crystal: {cardClass:"sacola-crystal-card", tituloClass:" titulo-sacola-crystal",nomeTipo:"Sacolas Crystal",   tema:"tema-crystal"},
+};
+
+/* ─── ESTADO ─────────────────────────────────────────────── */
+let estado = {categoria:"todos", subcategoria:"todas", tipoSacola:"preta", tamanhoSacola:"todas"};
 let produtoModal = null;
 let carrinho = {};
 
+/* ─── CARRINHO ──────────────────────────────────────────── */
 function totalItens(){return Object.values(carrinho).reduce((s,i)=>s+i.qtd,0);}
 function totalValor(){return Object.values(carrinho).reduce((s,i)=>{const p=typeof i.produto.preco==="number"?i.produto.preco:0;return s+p*i.qtd;},0);}
 
@@ -671,112 +840,201 @@ function adicionarDoModal(){if(produtoModal){adicionarAoCarrinho(produtoModal.id
 document.getElementById("modalProduto").addEventListener("click",e=>{if(e.target===document.getElementById("modalProduto"))fecharModal();});
 
 /* ─── FILTROS ───────────────────────────────────────────── */
-const infoCat = {
-    todos:   {nome:"",           icone:"ph-squares-four"},
-    caixas:  {nome:"Caixas",     icone:"ph-package"},
-    sacolas: {nome:"Sacolas Pretas", icone:"ph-shopping-bag"},
-    isopor:  {nome:"Isopor",     icone:"ph-snowflake"},
-    insumos: {nome:"Insumos",    icone:"ph-scroll"},
-};
-
 function filtrarCategoria(cat,el){
-    estado.categoria=cat;estado.subcategoria="todas";
-    document.querySelectorAll(".btn-filtro").forEach(b=>b.classList.remove("ativo"));el.classList.add("ativo");
-    ["barraSubcategorias","barraSubcategoriasSacolas","barraSubcategoriasIsopor"].forEach(id=>document.getElementById(id).classList.remove("visivel"));
-    const bc=document.getElementById("breadcrumb");bc.classList.remove("visivel");
+    estado.categoria=cat;
+    estado.subcategoria="todas";
+    estado.tipoSacola="preta";
+    estado.tamanhoSacola="todas";
+
+    document.querySelectorAll(".btn-filtro").forEach(b=>b.classList.remove("ativo"));
+    el.classList.add("ativo");
+
+    // Ocultar todas as barras
+    document.getElementById("barraSubcategorias").classList.remove("visivel");
+    document.getElementById("barraTipoSacolas").classList.remove("visivel");
+    document.getElementById("barraTamanhoSacolas").classList.remove("visivel");
+    document.getElementById("barraSubcategoriasIsopor").classList.remove("visivel");
+    document.getElementById("breadcrumb").classList.remove("visivel");
+
     if(cat==="caixas"){
-        document.getElementById("barraSubcategorias").classList.add("visivel");bc.classList.add("visivel");
-        document.getElementById("breadcrumbCat").textContent="Caixas";document.getElementById("breadcrumbSub").textContent="Todas";
+        document.getElementById("barraSubcategorias").classList.add("visivel");
+        document.getElementById("breadcrumb").classList.add("visivel");
+        document.getElementById("breadcrumbCat").textContent="Caixas";
+        document.getElementById("breadcrumbSub").textContent="Todas";
         document.querySelectorAll("#barraSubcategorias .btn-subcategoria").forEach((b,i)=>b.classList.toggle("ativo",i===0));
-    }else if(cat==="sacolas"){
-        document.getElementById("barraSubcategoriasSacolas").classList.add("visivel");bc.classList.add("visivel");
-        document.getElementById("breadcrumbCat").textContent="Sacolas Pretas";document.getElementById("breadcrumbSub").textContent="Todos os Tamanhos";
-        document.querySelectorAll("#barraSubcategoriasSacolas .btn-sub-sacola").forEach((b,i)=>b.classList.toggle("ativo",i===0));
-    }else if(cat==="isopor"){
-        document.getElementById("barraSubcategoriasIsopor").classList.add("visivel");bc.classList.add("visivel");
-        document.getElementById("breadcrumbCat").textContent="Isopor";document.getElementById("breadcrumbSub").textContent="Todos";
+    } else if(cat==="sacolas"){
+        document.getElementById("barraTipoSacolas").classList.add("visivel");
+        // Resetar tipo para preta
+        document.querySelectorAll(".btn-tipo-sacola").forEach((b,i)=>b.classList.toggle("ativo",i===0));
+        // Mostrar barra de tamanhos com tema preta
+        const barraT=document.getElementById("barraTamanhoSacolas");
+        barraT.className="sacolas-tamanho-bar visivel tema-preta";
+        document.querySelectorAll(".btn-tamanho-sacola").forEach((b,i)=>b.classList.toggle("ativo",i===0));
+        document.getElementById("breadcrumb").classList.add("visivel");
+        document.getElementById("breadcrumbCat").textContent="Sacolas";
+        document.getElementById("breadcrumbSub").textContent="Pretas — Todos os Tamanhos";
+    } else if(cat==="isopor"){
+        document.getElementById("barraSubcategoriasIsopor").classList.add("visivel");
+        document.getElementById("breadcrumb").classList.add("visivel");
+        document.getElementById("breadcrumbCat").textContent="Isopor";
+        document.getElementById("breadcrumbSub").textContent="Todos";
         document.querySelectorAll("#barraSubcategoriasIsopor .btn-sub-isopor").forEach((b,i)=>b.classList.toggle("ativo",i===0));
     }
+
     renderizarProdutos();
 }
 
 function filtrarSub(sub,el,cat){
     estado.subcategoria=sub;
-    const sels={caixas:"#barraSubcategorias .btn-subcategoria",sacolas:"#barraSubcategoriasSacolas .btn-sub-sacola",isopor:"#barraSubcategoriasIsopor .btn-sub-isopor"};
-    document.querySelectorAll(sels[cat]).forEach(b=>b.classList.remove("ativo"));el.classList.add("ativo");
+    const sels={caixas:"#barraSubcategorias .btn-subcategoria",isopor:"#barraSubcategoriasIsopor .btn-sub-isopor"};
+    document.querySelectorAll(sels[cat]).forEach(b=>b.classList.remove("ativo"));
+    el.classList.add("ativo");
     const nomes={
         caixas:{todas:"Todas",sedex:"Padrão Correios",confeiteiros:"Para Doces",salgado:"Para Salgados",geral:"Uso Geral"},
-        sacolas:{todas:"Todos os Tamanhos","sacola-p":"Pequenas","sacola-m":"Médias","sacola-g":"Grandes"},
         isopor:{todas:"Todos",marmitex:"Marmitex","caixa-isopor":"Caixas de Isopor","copo-isopor":"Copos de Isopor"},
     };
     document.getElementById("breadcrumbSub").textContent=(nomes[cat]&&nomes[cat][sub])||sub;
     renderizarProdutos();
 }
 
+function selecionarTipoSacola(tipo,el){
+    estado.tipoSacola=tipo;
+    estado.tamanhoSacola="todas";
+    document.querySelectorAll(".btn-tipo-sacola").forEach(b=>b.classList.remove("ativo"));
+    el.classList.add("ativo");
+
+    // Atualizar tema da barra de tamanhos
+    const barraT=document.getElementById("barraTamanhoSacolas");
+    barraT.className=`sacolas-tamanho-bar visivel tema-${tipo}`;
+    // Resetar botões de tamanho
+    document.querySelectorAll(".btn-tamanho-sacola").forEach((b,i)=>b.classList.toggle("ativo",i===0));
+
+    // Atualizar breadcrumb
+    const nomes={preta:"Pretas",verde:"Verdes",branca:"Brancas",crystal:"Crystal"};
+    document.getElementById("breadcrumbSub").textContent=`${nomes[tipo]} — Todos os Tamanhos`;
+
+    renderizarProdutos();
+}
+
+function filtrarTamanhoSacola(tamanho,el){
+    estado.tamanhoSacola=tamanho;
+    document.querySelectorAll(".btn-tamanho-sacola").forEach(b=>b.classList.remove("ativo"));
+    el.classList.add("ativo");
+
+    const nomeTamanho={todas:"Todos os Tamanhos",p:"Pequenas",m:"Médias",g:"Grandes"};
+    const nomeTipo={preta:"Pretas",verde:"Verdes",branca:"Brancas",crystal:"Crystal"};
+    document.getElementById("breadcrumbSub").textContent=
+        `${nomeTipo[estado.tipoSacola]} — ${nomeTamanho[tamanho]}`;
+
+    renderizarProdutos();
+}
+
 /* ─── RENDERIZAÇÃO ──────────────────────────────────────── */
 function renderizarProdutos(){
-    const container=document.getElementById("containerProdutos");container.innerHTML="";
-    let filtrados=listaProdutos;
-    if(estado.categoria!=="todos")filtrados=filtrados.filter(p=>p.categoria===estado.categoria);
-    const temSub=["caixas","sacolas","isopor"].includes(estado.categoria);
-    if(temSub&&estado.subcategoria!=="todas")filtrados=filtrados.filter(p=>p.subcategoria===estado.subcategoria);
-    if(!filtrados.length){container.innerHTML=`<p style="text-align:center;color:var(--texto-mutado);padding:4rem 0;">Nenhum produto encontrado.</p>`;return;}
+    const container=document.getElementById("containerProdutos");
+    container.innerHTML="";
 
     if(estado.categoria==="todos"){
+        // Visão geral: mostra grupos
         const grupos={};
-        filtrados.forEach(p=>{
-            const k=p.categoria+"_"+p.subcategoria;
-            if(!grupos[k])grupos[k]={label:obterLabelGrupo(p),cat:p.categoria,produtos:[]};
-            grupos[k].produtos.push(p);
+        listaProdutos.forEach(p=>{
+            let key,label;
+            if(p.categoria==="sacolas"){
+                key="sacolas_"+p.tipo;
+                label=sacolarConfig[p.tipo]?.nomeTipo||"Sacolas";
+            } else {
+                key=p.categoria+"_"+(p.subcategoria||"");
+                label=obterLabelGrupoGeral(p);
+            }
+            if(!grupos[key])grupos[key]={label,cat:p.categoria,tipo:p.tipo,produtos:[]};
+            grupos[key].produtos.push(p);
         });
-        Object.values(grupos).forEach(g=>criarSecao(g.label,g.produtos,container,g.cat));
-    }else if(temSub&&estado.subcategoria==="todas"){
-        renderizarVisaoSubs(filtrados,container,estado.categoria);
-    }else{
-        const tit=labelSub[estado.subcategoria]?.label||(estado.categoria==="sacolas"?"Sacolas Pretas":estado.categoria==="isopor"?"Isopor":"Caixas");
-        criarSecao(tit,filtrados,container,estado.categoria);
+        Object.values(grupos).forEach(g=>criarSecao(g.label,g.produtos,container,g.cat,g.tipo));
+        return;
     }
+
+    if(estado.categoria==="sacolas"){
+        const filtrados=listaProdutos.filter(p=>{
+            if(p.categoria!=="sacolas")return false;
+            if(p.tipo!==estado.tipoSacola)return false;
+            if(estado.tamanhoSacola!=="todas"&&p.tamanho!==estado.tamanhoSacola)return false;
+            return true;
+        });
+        if(!filtrados.length){
+            container.innerHTML=`<p style="text-align:center;color:var(--texto-mutado);padding:4rem 0;">Nenhum produto encontrado.</p>`;
+            return;
+        }
+        const cfg=sacolarConfig[estado.tipoSacola];
+        criarSecao(cfg.nomeTipo,filtrados,container,"sacolas",estado.tipoSacola);
+        return;
+    }
+
+    if(estado.categoria==="isopor"){
+        const filtrados=listaProdutos.filter(p=>p.categoria==="isopor"&&(estado.subcategoria==="todas"||p.subcategoria===estado.subcategoria));
+        if(!filtrados.length){container.innerHTML=`<p style="text-align:center;color:var(--texto-mutado);padding:4rem 0;">Nenhum produto encontrado.</p>`;return;}
+        criarSecao("Isopor",filtrados,container,"isopor");
+        return;
+    }
+
+    if(estado.categoria==="caixas"){
+        const filtrados=listaProdutos.filter(p=>p.categoria==="caixas"&&(estado.subcategoria==="todas"||p.subcategoria===estado.subcategoria));
+        if(!filtrados.length){container.innerHTML=`<p style="text-align:center;color:var(--texto-mutado);padding:4rem 0;">Nenhum produto encontrado.</p>`;return;}
+        criarSecao("Caixas",filtrados,container,"caixas");
+        return;
+    }
+
+    container.innerHTML=`<p style="text-align:center;color:var(--texto-mutado);padding:4rem 0;">Em breve.</p>`;
 }
 
-function obterLabelGrupo(p){return labelSub[p.subcategoria]?.label||({caixas:"Caixas",sacolas:"Sacolas Pretas",isopor:"Isopor"}[p.categoria])||"Insumos";}
-
-function renderizarVisaoSubs(produtos,container,cat){
-    const subcats=[...new Set(produtos.map(p=>p.subcategoria))];
-    const grade=document.createElement("div");grade.className="grade-subcategorias";
-    const cardClass={caixas:"card-sub card-sub-caixas",sacolas:"card-sub card-sub-sacolas",isopor:"card-sub card-sub-isopor"}[cat]||"card-sub card-sub-caixas";
-    subcats.forEach(sub=>{
-        const info=labelSub[sub]||{label:sub,icone:"ph-cube"};
-        const count=produtos.filter(p=>p.subcategoria===sub).length;
-        const card=document.createElement("div");card.className=cardClass;
-        card.innerHTML=`<div class="icone-sub"><i class="ph-duotone ${info.icone}"></i></div><h3>${info.label}</h3><span class="badge-qtd">${count} ${count===1?"produto":"produtos"}</span>`;
-        card.onclick=()=>{
-            const selMap={caixas:"#barraSubcategorias .btn-subcategoria",sacolas:"#barraSubcategoriasSacolas .btn-sub-sacola",isopor:"#barraSubcategoriasIsopor .btn-sub-isopor"};
-            document.querySelectorAll(selMap[cat]).forEach(b=>{if(b.textContent.trim().includes(info.label))filtrarSub(sub,b,cat);});
-        };
-        grade.appendChild(card);
-    });
-    container.appendChild(grade);
-    const titAll={caixas:"Todas as Caixas",sacolas:"Todas as Sacolas Pretas",isopor:"Todos os Produtos de Isopor"}[cat]||"Todos";
-    criarSecao(titAll,produtos,container,cat);
+function obterLabelGrupoGeral(p){
+    const labelSub={sedex:"Padrão Correios",confeiteiros:"Para Doces",salgado:"Para Salgados",geral:"Uso Geral",marmitex:"Marmitex","caixa-isopor":"Caixas de Isopor","copo-isopor":"Copos de Isopor"};
+    if(p.categoria==="caixas")return `Caixas — ${labelSub[p.subcategoria]||p.subcategoria}`;
+    if(p.categoria==="isopor")return `Isopor — ${labelSub[p.subcategoria]||p.subcategoria}`;
+    return p.categoria;
 }
 
-function criarSecao(titulo,produtos,container,cat){
-    const secao=document.createElement("div");secao.className="secao-categoria";
-    const titClass={sacolas:" titulo-sacola",isopor:" titulo-isopor"}[cat]||"";
-    const ic={sacolas:"ph-shopping-bag",isopor:"ph-snowflake"}[cat]||"ph-squares-four";
-    secao.innerHTML=`<h2 class="titulo-categoria${titClass}"><i class="ph-fill ${ic}"></i> ${titulo}</h2>`;
-    const grade=document.createElement("div");grade.className="grade-produtos";
+function criarSecao(titulo,produtos,container,cat,tipo){
+    const secao=document.createElement("div");
+    secao.className="secao-categoria";
+
+    // Título com estilo correto
+    let tituloClass="titulo-categoria";
+    let icone="ph-squares-four";
+    if(cat==="sacolas"&&tipo){
+        const cfg=sacolarConfig[tipo];
+        tituloClass+=(cfg?.tituloClass||" titulo-sacola");
+        icone="ph-shopping-bag";
+    } else if(cat==="isopor"){
+        tituloClass+=" titulo-isopor";icone="ph-snowflake";
+    } else if(cat==="caixas"){
+        icone="ph-package";
+    }
+
+    secao.innerHTML=`<h2 class="${tituloClass}"><i class="ph-fill ${icone}"></i> ${titulo}</h2>`;
+    const grade=document.createElement("div");
+    grade.className="grade-produtos";
+
     produtos.forEach(p=>{
         const noCarrinho=!!carrinho[p.id];
-        const extraClass={sacolas:" sacola-card",isopor:" isopor-card"}[p.categoria]||"";
+
+        // Card class
+        let extraClass="";
+        if(p.categoria==="sacolas"&&p.tipo){
+            extraClass=" "+(sacolarConfig[p.tipo]?.cardClass||"sacola-preta-card");
+        } else if(p.categoria==="isopor"){
+            extraClass=" isopor-card";
+        }
+
         const card=document.createElement("div");
         card.className=`cartao-produto${extraClass}${noCarrinho?" no-carrinho":""}`;
         card.id=`card-${p.id}`;
+
         const ehC=p.preco==="Sob consulta";
         const pFmt=!ehC?p.preco.toLocaleString("pt-BR",{style:"currency",currency:"BRL"}):"";
         const htmlPreco=ehC
             ?`<div class="container-preco"><span class="preco-label">Consulte-nos</span><span class="preco-valor" style="font-size:1.5rem;">Sob consulta</span></div>`
             :`<div class="container-preco"><span class="preco-label">A partir de</span><div class="preco-linha"><span class="preco-valor">${pFmt}</span><span class="preco-unit">${p.unidade}</span></div></div>`;
+
         card.innerHTML=`
             <div class="imagem-produto">
                 <div class="selo-carrinho"><i class="ph-fill ph-check"></i> No carrinho</div>
@@ -803,7 +1061,9 @@ function criarSecao(titulo,produtos,container,cat){
             </div>`;
         grade.appendChild(card);
     });
-    secao.appendChild(grade);container.appendChild(secao);
+
+    secao.appendChild(grade);
+    container.appendChild(secao);
 }
 
 function alterarInputQtd(id,delta){
