@@ -1369,35 +1369,34 @@
          * Renderiza os produtos na tela com base no filtro atual
          */
         function renderizarProdutos() {
-    const container = document.getElementById("containerProdutos");
-    container.innerHTML = "";
-    
-    const filtrados = filtroAtual === "todos" 
-        ? listaProdutos 
-        : listaProdutos.filter(p => Array.isArray(p.categoria) ? p.categoria.includes(filtroAtual) : p.categoria === filtroAtual);
-        
-    const produtosAgrupados = {};
-    
-    filtrados.forEach(produto => {
-        // Escolhe qual chave usar: se estiver filtrando, usa o filtro. Se for "todos", usa a primeira categoria da lista.
-        let chave;
-        if (filtroAtual !== "todos") {
-            chave = filtroAtual;
-        } else {
-            chave = Array.isArray(produto.categoria) ? produto.categoria[0] : produto.categoria;
-        }
+            const container = document.getElementById("containerProdutos");
+            container.innerHTML = "";
+            
+            const filtrados = filtroAtual === "todos" 
+                ? listaProdutos 
+                : listaProdutos.filter(p => Array.isArray(p.categoria) ? p.categoria.includes(filtroAtual) : p.categoria === filtroAtual);
+                
+            const produtosAgrupados = {};
+            
+            filtrados.forEach(produto => {
+                let chave;
+                if (filtroAtual !== "todos") {
+                    chave = filtroAtual;
+                } else {
+                    chave = Array.isArray(produto.categoria) ? produto.categoria[0] : produto.categoria;
+                }
 
-        if (!produtosAgrupados[chave]) {
-            produtosAgrupados[chave] = [];
-        }
-        produtosAgrupados[chave].push(produto);
-    });
+                if (!produtosAgrupados[chave]) {
+                    produtosAgrupados[chave] = [];
+                }
+                produtosAgrupados[chave].push(produto);
+            });
+
             // Constrói o HTML
             Object.entries(produtosAgrupados).forEach(([chaveCategoria, listaDeProdutos]) => {
                 const secao = document.createElement("div");
                 secao.className = "secao-categoria";
                 
-                // Cabeçalho da Categoria
                 secao.innerHTML = `
                     <h2 class="titulo-categoria">
                         <i class="ph-fill ph-squares-four"></i> 
@@ -1408,11 +1407,28 @@
                 const grade = document.createElement("div");
                 grade.className = "grade-produtos";
 
-                // Cartões de Produto
                 listaDeProdutos.forEach((produto) => {
                     const cartao = document.createElement("div");
                     cartao.className = "cartao-produto";
                     cartao.onclick = () => abrirModal(produto);
+                    
+                    cartao.innerHTML = `
+                        <div class="icone-produto">
+                            <i class="ph-fill ${produto.icone}"></i>
+                        </div>
+                        <div class="conteudo-produto">
+                            <h3 class="nome-produto">${produto.nome}</h3>
+                            <p class="preco-produto">${formatarMoeda(produto.preco)}<span class="unidade">${produto.unidade}</span></p>
+                            <button class="botao-ver">Ver Detalhes</button>
+                        </div>
+                    `;
+                    grade.appendChild(cartao);
+                });
+
+                secao.appendChild(grade);
+                container.appendChild(secao);
+            }); // Fim do Object.entries
+        } // Fim da função renderizarProdutos
 
                     // Lógica para o Preço Corporativo
                     const ehSobConsulta = produto.preco === "Sob consulta";
