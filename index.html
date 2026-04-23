@@ -3,25 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <meta name="description" content="Cat�logo completo de embalagens corporativas e caixas de papel�o.">
+    <meta name="description" content="Catálogo completo de embalagens corporativas e caixas de papelão.">
     <meta name="theme-color" content="#0a0f1e">
-    <title>Cia Das Embalagens | Solu��es 3D</title>
+    <title>Cia Das Embalagens | Soluções 3D</title>
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     
     <style>
-/* \u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550
-   DESIGN SYSTEM \u2014 V5 (3D, Imersivo & Dark Mode)
-\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550 */
 :root {
     --blue-950: #0a0f1e; --blue-900: #0f172a; --blue-800: #1e3a8a;
     --blue-700: #1d4ed8; --blue-600: #2563eb; --blue-500: #3b82f6;
     --blue-400: #60a5fa; --blue-300: #93c5fd; --blue-100: #dbeafe; --blue-50: #eff6ff;
     --green-wa: #25d366; 
     
-    /* Vari�veis Tema Claro */
     --bg-page: #f4f7fb; --bg-card: #ffffff; --bg-glass: rgba(255, 255, 255, 0.7); --bg-glass-solid: rgba(255, 255, 255, 0.95);
     --text-dark: #0f172a; --text-body: #475569; --text-muted: #94a3b8; --border: #e2e8f0;
     --btn-sub-bg: #fff; --btn-sub-border: #e2e8f0; --btn-sub-hover: #f8fafc;
@@ -37,7 +33,6 @@
     --radius-card: 28px; --radius-btn: 99px;
 }
 
-/* Tema Escuro Ativado por Padr�o */
 [data-theme="dark"] {
     --bg-page: #080c17; --bg-card: #111827; --bg-glass: rgba(15, 23, 42, 0.75); --bg-glass-solid: rgba(15, 23, 42, 0.95);
     --text-dark: #f8fafc; --text-body: #cbd5e1; --text-muted: #64748b; --border: #1e293b;
@@ -58,22 +53,12 @@ a { text-decoration:none; color:inherit; }
 button { cursor:pointer; border:none; background:none; outline:none; font-family:inherit; }
 h1,h2,h3,h4,h5,h6 { color:var(--text-dark); font-weight:800; letter-spacing:-.025em; transition: color 0.4s ease;}
 
-/* \u2500\u2500 �CONES EM PNG (SOLU��O DEFINITIVA) \u2500\u2500 */
-.ui-icon {
-    width: 18px; height: 18px; object-fit: contain; flex-shrink: 0;
-    vertical-align: middle; transition: var(--tr);
-    filter: invert(var(--icon-invert)); opacity: 0.85;
-}
-.btn-hero-primary .ui-icon, .btn-header-cta .ui-icon, .btn-add .ui-icon, .modal-price-pill .ui-icon, .ui-icon.no-invert {
-    filter: invert(1) !important; opacity: 1;
-}
+.ui-icon { width: 18px; height: 18px; object-fit: contain; flex-shrink: 0; vertical-align: middle; transition: var(--tr); filter: invert(var(--icon-invert)); opacity: 0.85; }
+.btn-hero-primary .ui-icon, .btn-header-cta .ui-icon, .btn-add .ui-icon, .modal-price-pill .ui-icon, .ui-icon.no-invert { filter: invert(1) !important; opacity: 1; }
 .whatsapp-float .ui-icon { width: 34px; height: 34px; filter: none !important; opacity: 1; }
 
 .container { width:100%; max-width:1200px; margin:0 auto; padding:0 1.5rem; perspective: 1200px; }
 
-/* \u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550
-   HEADER & HERO
-\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550 */
 header { position:fixed; top:0; left:0; width:100%; background:var(--bg-glass); backdrop-filter:blur(24px) saturate(200%); -webkit-backdrop-filter:blur(24px) saturate(200%); z-index:1000; border-bottom:1px solid rgba(255,255,255,.05); padding:1rem 0; transition:var(--tr); }
 header.scrolled { padding:.6rem 0; background:var(--bg-glass-solid); box-shadow:var(--shadow-card); }
 .header-inner { display:flex; justify-content:space-between; align-items:center; width:100%; max-width:1200px; margin:0 auto; padding:0 1.5rem; gap:1rem; }
@@ -103,9 +88,6 @@ header.scrolled { padding:.6rem 0; background:var(--bg-glass-solid); box-shadow:
 .btn-hero-secondary { background:rgba(255,255,255,.1); color:#fff; padding:18px 36px; border-radius:var(--radius-btn); font-weight:700; font-size:1.05rem; display:inline-flex; align-items:center; gap:10px; transition:var(--tr-spring); border:1px solid rgba(255,255,255,.2); backdrop-filter:blur(12px); }
 .btn-hero-secondary:hover { background:rgba(255,255,255,.2); transform:translateY(-6px) scale(1.02); border-color:rgba(255,255,255,.5); box-shadow:0 16px 32px rgba(0,0,0,.3); }
 
-/* \u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550
-   FILTROS & CAT�LOGO
-\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550 */
 .section-catalog { padding:5rem 0 7rem; }
 .catalog-header { text-align:center; margin-bottom:3.5rem; max-width:680px; margin-inline:auto; }
 .catalog-header h2 { font-size:2.6rem; margin-bottom:.75rem; }
@@ -135,9 +117,6 @@ header.scrolled { padding:.6rem 0; background:var(--bg-glass-solid); box-shadow:
 .breadcrumb { display:none; align-items:center; gap:8px; font-size:.88rem; color:var(--text-muted); margin-bottom:1rem; font-weight:500; justify-content:center; }
 .breadcrumb.visible { display:flex; }
 
-/* \u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550
-   GRADE DE PRODUTOS 3D
-\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550 */
 .product-section { margin-bottom:6rem; }
 .section-title { color:var(--text-dark); font-size:2rem; font-weight:800; margin-bottom:2.5rem; display:flex; align-items:center; gap:14px; padding-bottom:1.25rem; border-bottom:2px solid var(--border); }
 .section-title .ui-icon { background:var(--blue-50); padding:10px; border-radius:14px; width:46px; height:46px; box-shadow:var(--shadow-soft); }
@@ -183,7 +162,6 @@ header.scrolled { padding:.6rem 0; background:var(--bg-glass-solid); box-shadow:
 .btn-info { padding:10px 16px; border:1px solid var(--border); border-radius:14px; transition:var(--tr); background:var(--bg-card); box-shadow:var(--shadow-soft); display:flex; align-items:center; justify-content:center; }
 .btn-info:hover { border-color:var(--blue-400); background:var(--bg-page); transform:translateY(-2px); }
 
-/* CARDS ESPECIAIS */
 .sacola-preta-card { background:linear-gradient(180deg, #1e293b 0%, #0f172a 100%) !important; border-color:#334155 !important; }
 .sacola-preta-card:hover { border-color:#64748b !important; box-shadow:0 32px 64px -12px rgba(0,0,0,.6) !important; }
 .sacola-preta-card .product-body { background:transparent; }
@@ -199,9 +177,6 @@ header.scrolled { padding:.6rem 0; background:var(--bg-glass-solid); box-shadow:
 .sacola-preta-card .btn-info { border-color:#334155 !important; background:#1e293b !important; }
 .sacola-preta-card .btn-info .ui-icon { filter: invert(1) !important; opacity:0.8;}
 
-/* \u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550
-   MODAL & CARRINHO SIDEBAR
-\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550 */
 .cart-overlay { position:fixed; inset:0; background:rgba(0,0,0,.7); backdrop-filter:blur(16px); z-index:1500; opacity:0; pointer-events:none; transition:opacity .4s ease; }
 .cart-overlay.open { opacity:1; pointer-events:all; }
 .cart-sidebar { position:fixed; top:0; right:0; height:100%; width:460px; max-width:95vw; background:var(--bg-glass-solid); backdrop-filter:blur(32px); z-index:1600; display:flex; flex-direction:column; box-shadow:-32px 0 80px rgba(0,0,0,.3); transform:translateX(100%); transition:transform .5s cubic-bezier(.4,0,.2,1); border-left:1px solid rgba(255,255,255,.1); }
@@ -254,9 +229,6 @@ header.scrolled { padding:.6rem 0; background:var(--bg-glass-solid); box-shadow:
 .spec-label { font-size:.95rem; color:var(--text-muted); font-weight:600; display:flex; align-items:center; gap:10px; }
 .spec-value { font-size:1rem; font-weight:800; color:var(--text-dark); }
 
-/* \u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550
-   WHATSAPP & FOOTER
-\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550 */
 .whatsapp-float { position:fixed; bottom:32px; right:32px; background:linear-gradient(135deg,var(--green-wa),#1aab52); color:#fff; width:68px; height:68px; border-radius:50%; display:flex; align-items:center; justify-content:center; box-shadow:0 16px 40px rgba(37,211,102,.5); z-index:999; transition:var(--tr-spring); border:1px solid rgba(255,255,255,.2); text-decoration:none; }
 .whatsapp-float:hover { transform:scale(1.15) translateY(-6px); box-shadow:0 24px 56px rgba(37,211,102,.6); }
 
@@ -272,9 +244,6 @@ footer { background:var(--blue-950); color:#fff; padding:6rem 0 3rem; margin-top
 .footer-divider { border:none; border-top:1px solid rgba(255,255,255,.06); margin:4rem 0 2.5rem; }
 .footer-copy { text-align:center; color:rgba(255,255,255,.3); font-size:.9rem; font-weight:500; }
 
-/* \u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550
-   RESPONSIVO
-\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550 */
 @media(max-width:1024px) { .footer-grid { grid-template-columns:1fr 1fr; } }
 @media(max-width:768px) {
     .hero { padding-top:9rem; min-height:85vh; background-attachment: scroll; }
@@ -284,7 +253,7 @@ footer { background:var(--blue-950); color:#fff; padding:6rem 0 3rem; margin-top
     .about-visual { display:none; }
     .filters, .sub-bar-base { justify-content:flex-start; overflow-x:auto; flex-wrap:nowrap; padding-bottom:12px; scrollbar-width: none; width: 100%; }
     .products-grid { grid-template-columns:1fr; perspective: none; }
-    .product-card { transform-style: flat; } /* Remove 3D no mobile p/ n bugar scroll */
+    .product-card { transform-style: flat; } 
     .product-card:hover { transform: translateY(-4px) scale(1); }
     .modal-box { padding:2rem 1.5rem; border-radius:24px; width:calc(100% - 2rem); margin:1rem; }
     .footer-grid { grid-template-columns:1fr; gap:3rem; text-align:center; }
@@ -302,9 +271,6 @@ footer { background:var(--blue-950); color:#fff; padding:6rem 0 3rem; margin-top
     </style>
 </head>
 <body>
-
-<div class="cursor" id="cursor"></div>
-<div class="cursor-ring" id="cursorRing"></div>
 
 <header id="main-header">
     <div class="header-inner">
@@ -340,74 +306,19 @@ footer { background:var(--blue-950); color:#fff; padding:6rem 0 3rem; margin-top
     <div class="hero-content">
         <div class="hero-tag">
             <span class="hero-tag-dot"></span>
-            <span data-i18n="hero_tag">Direto da F�brica � S�o Paulo</span>
+            <span data-i18n="hero_tag">Direto da Fábrica — São Paulo</span>
         </div>
-        <h1 data-i18n="hero_title">Solu��es completas em<br><span class="highlight">Embalagens.</span></h1>
-        <p class="hero-desc" data-i18n="hero_desc">Do papel�o ao pl�stico, do isopor �s sacolas \u2014 tudo para o seu neg�cio em um s� lugar, com qualidade industrial e pre�o de f�brica.</p>
+        <h1 data-i18n="hero_title">Soluções completas em<br><span class="highlight">Embalagens.</span></h1>
+        <p class="hero-desc" data-i18n="hero_desc">Do papelão ao plástico, do isopor às sacolas — tudo para o seu negócio em um só lugar, com qualidade industrial e preço de fábrica.</p>
         <div class="hero-actions">
             <button class="btn-hero-primary" onclick="rolarPara('produtos')">
                 <img src="https://cdn-icons-png.flaticon.com/512/776/776623.png" class="ui-icon no-invert" alt="Catalog">
-                <span data-i18n="hero_btn1">Explorar Cat�logo</span>
+                <span data-i18n="hero_btn1">Explorar Catálogo</span>
             </button>
             <a class="btn-hero-secondary" href="https://wa.me/5511972999835" target="_blank">
                 <img src="https://cdn-icons-png.flaticon.com/512/3670/3670051.png" class="ui-icon no-invert" alt="WhatsApp">
                 <span data-i18n="hero_btn2">Falar no WhatsApp</span>
             </a>
-        </div>
-        <div class="hero-stats">
-            <div class="hero-stat"><div class="hero-stat-val" data-count="100">0+</div><div class="hero-stat-label" data-i18n="stat_products">Produtos</div></div>
-            <div class="hero-stat-divider"></div>
-            <div class="hero-stat"><div class="hero-stat-val" data-count="15">0+</div><div class="hero-stat-label" data-i18n="stat_years">Anos no Mercado</div></div>
-            <div class="hero-stat-divider"></div>
-            <div class="hero-stat"><div class="hero-stat-val" data-count="5000">0+</div><div class="hero-stat-label" data-i18n="stat_clients">Clientes Atendidos</div></div>
-        </div>
-    </div>
-</section>
-
-<section class="section-trust">
-    <div class="container">
-        <div class="trust-card">
-            <p class="trust-title" data-i18n="trust_title">\u2b50 O que nossos clientes dizem</p>
-            <div class="slider-wrap">
-                <div class="slider-track" id="feedbackSlider">
-                    <div class="feedback-card">
-                        <div class="stars">\u2605\u2605\u2605\u2605\u2605</div>
-                        <p class="feedback-text" data-i18n="feedback1">"Muitooo bom, recomendo o atendimento � 10... pessoal da uma aten��o boa \U0001f44c comprei umas marmitas � top."</p>
-                        <div class="feedback-author"><img src="https://cdn-icons-png.flaticon.com/512/1077/1077114.png" class="ui-icon" alt="User"> Shirley Cristina</div>
-                    </div>
-                    <div class="feedback-card">
-                        <div class="stars">\u2605\u2605\u2605\u2605\u2605</div>
-                        <p class="feedback-text" data-i18n="feedback2">"Tem muita coisa boa e o pre�o �timo; os Atendentes s�o muito simp�ticos."</p>
-                        <div class="feedback-author"><img src="https://cdn-icons-png.flaticon.com/512/1077/1077114.png" class="ui-icon" alt="User"> Francis Luci</div>
-                    </div>
-                    <div class="feedback-card">
-                        <div class="stars">\u2605\u2605\u2605\u2605\u2605</div>
-                        <p class="feedback-text" data-i18n="feedback3">"A empresa tem tudo em descart�veis, o atendimento � �timo, tem estacionamento e um ponto de �nibus em frente. Facinho de chegar."</p>
-                        <div class="feedback-author"><img src="https://cdn-icons-png.flaticon.com/512/1077/1077114.png" class="ui-icon" alt="User"> Adelaide Rocha</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<section class="section-about reveal" id="sobre">
-    <div class="container">
-        <div class="about-grid">
-            <div class="about-content">
-                <div class="section-label"><img src="https://cdn-icons-png.flaticon.com/512/3039/3039395.png" class="ui-icon" alt="Factory"> <span data-i18n="about_label">Nossa Estrutura</span></div>
-                <h2 data-i18n="about_title">Estrutura industrial preparada para <span>sua demanda.</span></h2>
-                <p data-i18n="about_desc">Somos uma empresa especializada em embalagens corporativas com estrutura fabril pr�pria. Atendemos desde pequenos empreendedores at� grandes ind�strias com agilidade, qualidade e os melhores pre�os do mercado.</p>
-                <div class="about-stats">
-                    <div class="about-stat-card reveal"><div class="about-stat-num" data-count="100">0</div><div class="about-stat-label" data-i18n="stat_stock">Produtos em estoque</div></div>
-                    <div class="about-stat-card reveal"><div class="about-stat-num" data-count="15">0</div><div class="about-stat-label" data-i18n="stat_exp">Anos de experi�ncia</div></div>
-                    <div class="about-stat-card reveal"><div class="about-stat-num" data-count="5000">0</div><div class="about-stat-label" data-i18n="stat_clients_served">Clientes atendidos</div></div>
-                    <div class="about-stat-card reveal"><div class="about-stat-num" data-count="6">0</div><div class="about-stat-label" data-i18n="stat_categories">Categorias de produtos</div></div>
-                </div>
-            </div>
-            <div class="about-visual">
-                <img src="https://cdn-icons-png.flaticon.com/512/2515/2515150.png" style="width:120px;height:120px;filter:invert(var(--icon-invert));opacity:0.85" alt="Building">
-            </div>
         </div>
     </div>
 </section>
@@ -415,26 +326,26 @@ footer { background:var(--blue-950); color:#fff; padding:6rem 0 3rem; margin-top
 <main class="section-catalog" id="produtos">
     <div class="container">
         <div class="catalog-header reveal">
-            <div class="section-label"><img src="https://cdn-icons-png.flaticon.com/512/679/679821.png" class="ui-icon" alt="Package"> <span data-i18n="catalog_label">Cat�logo Completo</span></div>
+            <div class="section-label"><img src="https://cdn-icons-png.flaticon.com/512/679/679821.png" class="ui-icon" alt="Package"> <span data-i18n="catalog_label">Catálogo Completo</span></div>
             <h2 data-i18n="catalog_title">Nossos Produtos</h2>
             <p data-i18n="catalog_desc">Selecione os produtos desejados, ajuste as quantidades e envie seu pedido direto pelo WhatsApp.</p>
         </div>
 
         <div class="filters-wrapper">
             <div class="filters" id="containerFiltros">
-                <button class="btn-filter active" onclick="filtrarCategoria('todos',this)"><img src="https://cdn-icons-png.flaticon.com/512/776/776623.png" class="ui-icon" alt="All"> <span data-i18n="filter_all">Vis�o Geral</span></button>
+                <button class="btn-filter active" onclick="filtrarCategoria('todos',this)"><img src="https://cdn-icons-png.flaticon.com/512/776/776623.png" class="ui-icon" alt="All"> <span data-i18n="filter_all">Visão Geral</span></button>
                 <button class="btn-filter" onclick="filtrarCategoria('caixas',this)"><img src="https://cdn-icons-png.flaticon.com/512/679/679821.png" class="ui-icon" alt="Boxes"> <span data-i18n="filter_boxes">Caixas</span></button>
                 <button class="btn-filter" onclick="filtrarCategoria('sacolas',this)"><img src="https://cdn-icons-png.flaticon.com/512/2910/2910763.png" class="ui-icon" alt="Bags"> <span data-i18n="filter_bags">Sacolas & Lixo</span></button>
                 <button class="btn-filter" onclick="filtrarCategoria('isopor',this)"><img src="https://cdn-icons-png.flaticon.com/512/2336/2336319.png" class="ui-icon" alt="Styrofoam"> <span data-i18n="filter_styro">Isopor</span></button>
-                <button class="btn-filter" onclick="filtrarCategoria('plastico',this)"><img src="https://cdn-icons-png.flaticon.com/512/865/865766.png" class="ui-icon" alt="Plastics"> <span data-i18n="filter_plastic">Pl�sticos</span></button>
-                <button class="btn-filter" onclick="filtrarCategoria('festa',this)"><img src="https://cdn-icons-png.flaticon.com/512/6557/6557682.png" class="ui-icon" alt="Party"> <span data-i18n="filter_party">Festa & Descart�veis</span></button>
+                <button class="btn-filter" onclick="filtrarCategoria('plastico',this)"><img src="https://cdn-icons-png.flaticon.com/512/865/865766.png" class="ui-icon" alt="Plastics"> <span data-i18n="filter_plastic">Plásticos</span></button>
+                <button class="btn-filter" onclick="filtrarCategoria('festa',this)"><img src="https://cdn-icons-png.flaticon.com/512/6557/6557682.png" class="ui-icon" alt="Party"> <span data-i18n="filter_party">Festa & Descartáveis</span></button>
             </div>
         </div>
 
         <div class="sub-bar-container">
             <div class="sub-bar-base" id="barraSubcategorias">
                 <button class="btn-sub active" onclick="filtrarSub('todas',this,'caixas')"><img src="https://cdn-icons-png.flaticon.com/512/776/776623.png" class="ui-icon" alt=""> <span data-i18n="sub_all_boxes">Todas as Caixas</span></button>
-                <button class="btn-sub" onclick="filtrarSub('sedex',this,'caixas')"><img src="https://cdn-icons-png.flaticon.com/512/679/679821.png" class="ui-icon" alt=""> <span data-i18n="sub_post">Padr�o Correios</span></button>
+                <button class="btn-sub" onclick="filtrarSub('sedex',this,'caixas')"><img src="https://cdn-icons-png.flaticon.com/512/679/679821.png" class="ui-icon" alt=""> <span data-i18n="sub_post">Padrão Correios</span></button>
                 <button class="btn-sub" onclick="filtrarSub('confeiteiros',this,'caixas')"><img src="https://cdn-icons-png.flaticon.com/512/3143/3143644.png" class="ui-icon" alt=""> <span data-i18n="sub_sweets">Para Doces</span></button>
                 <button class="btn-sub" onclick="filtrarSub('salgado',this,'caixas')"><img src="https://cdn-icons-png.flaticon.com/512/3014/3014458.png" class="ui-icon" alt=""> <span data-i18n="sub_savory">Para Salgados</span></button>
                 <button class="btn-sub" onclick="filtrarSub('geral',this,'caixas')"><img src="https://cdn-icons-png.flaticon.com/512/679/679821.png" class="ui-icon" alt=""> <span data-i18n="sub_general">Uso Geral</span></button>
@@ -446,7 +357,7 @@ footer { background:var(--blue-950); color:#fff; padding:6rem 0 3rem; margin-top
                 <button class="btn-sub" onclick="selecionarTipoSacola('branca',this)"><span class="cor-dot cor-dot-branca"></span> <span data-i18n="sub_white">Branca</span></button>
                 <button class="btn-sub" onclick="selecionarTipoSacola('crystal',this)"><span class="cor-dot cor-dot-crystal"></span> <span data-i18n="sub_crystal">Crystal</span></button>
                 <button class="btn-sub" onclick="selecionarTipoSacola('kraft',this)"><span class="cor-dot cor-dot-kraft"></span> <span data-i18n="sub_kraft">Kraft</span></button>
-                <button class="btn-sub" onclick="selecionarTipoSacola('kraft-alca',this)"><span class="cor-dot cor-dot-kraft-alca"></span> <span data-i18n="sub_kraft_h">Kraft c/ Al�a</span></button>
+                <button class="btn-sub" onclick="selecionarTipoSacola('kraft-alca',this)"><span class="cor-dot cor-dot-kraft-alca"></span> <span data-i18n="sub_kraft_h">Kraft c/ Alça</span></button>
                 <button class="btn-sub" onclick="selecionarTipoSacola('lixo-banheiro',this)"><span class="cor-dot cor-dot-banheiro"></span> <span data-i18n="sub_bathroom">Banheiro</span></button>
             </div>
 
@@ -466,7 +377,7 @@ footer { background:var(--blue-950); color:#fff; padding:6rem 0 3rem; margin-top
             <div class="sub-bar-base" id="barraTamanhoSacolas">
                 <button class="btn-sub active" onclick="filtrarTamanhoSacola('todas',this)"><img src="https://cdn-icons-png.flaticon.com/512/776/776623.png" class="ui-icon" alt=""> <span data-i18n="sub_all_sizes">Todos os Tamanhos</span></button>
                 <button class="btn-sub" onclick="filtrarTamanhoSacola('p',this)"><img src="https://cdn-icons-png.flaticon.com/512/2910/2910763.png" class="ui-icon" alt=""> <span data-i18n="sub_small">Pequenas</span></button>
-                <button class="btn-sub" onclick="filtrarTamanhoSacola('m',this)"><img src="https://cdn-icons-png.flaticon.com/512/2910/2910763.png" class="ui-icon" alt=""> <span data-i18n="sub_medium">M�dias</span></button>
+                <button class="btn-sub" onclick="filtrarTamanhoSacola('m',this)"><img src="https://cdn-icons-png.flaticon.com/512/2910/2910763.png" class="ui-icon" alt=""> <span data-i18n="sub_medium">Médias</span></button>
                 <button class="btn-sub" onclick="filtrarTamanhoSacola('g',this)"><img src="https://cdn-icons-png.flaticon.com/512/2910/2910763.png" class="ui-icon" alt=""> <span data-i18n="sub_large">Grandes</span></button>
             </div>
 
@@ -554,7 +465,7 @@ footer { background:var(--blue-950); color:#fff; padding:6rem 0 3rem; margin-top
             <img src="https://cdn-icons-png.flaticon.com/512/3670/3670051.png" class="ui-icon no-invert" alt="WhatsApp"> <span data-i18n="send_wpp">Enviar Pedido pelo WhatsApp</span>
         </button>
         <button class="btn-clear" onclick="limparCarrinho()"><img src="https://cdn-icons-png.flaticon.com/512/3096/3096673.png" class="ui-icon" alt="Trash"> <span data-i18n="clear_cart">Limpar carrinho</span></button>
-        <p class="wpp-notice"><img src="https://cdn-icons-png.flaticon.com/512/3064/3064155.png" class="ui-icon" style="filter: none; opacity:1;" alt="Lock"> <span data-i18n="privacy_note">Seus dados s� v�o para o WhatsApp da loja</span></p>
+        <p class="wpp-notice"><img src="https://cdn-icons-png.flaticon.com/512/3064/3064155.png" class="ui-icon" style="filter: none; opacity:1;" alt="Lock"> <span data-i18n="privacy_note">Seus dados só vão para o WhatsApp da loja</span></p>
     </div>
 </aside>
 
@@ -569,7 +480,7 @@ footer { background:var(--blue-950); color:#fff; padding:6rem 0 3rem; margin-top
                 <div class="logo-icon"><img src="https://cdn-icons-png.flaticon.com/512/679/679821.png" class="ui-icon no-invert" alt="Logo"></div>
                 <span data-i18n="logo_name">Cia Das Embalagens</span>
             </div>
-            <p class="footer-desc" data-i18n="footer_desc">Sua estrutura log�stica merece a melhor prote��o. Qualidade premium em papel�o ondulado para o mercado empresarial.</p>
+            <p class="footer-desc" data-i18n="footer_desc">Sua estrutura logística merece a melhor proteção. Qualidade premium em papelão ondulado para o mercado empresarial.</p>
         </div>
         <div class="footer-col">
             <h4 data-i18n="footer_contact">Atendimento Comercial</h4>
@@ -578,181 +489,212 @@ footer { background:var(--blue-950); color:#fff; padding:6rem 0 3rem; margin-top
                 <li><a href="mailto:contato@ciaembalagens.com.br"><img src="https://cdn-icons-png.flaticon.com/512/732/732200.png" class="ui-icon" alt="Email"> contato@ciaembalagens.com.br</a></li>
                 <li><a href="https://www.instagram.com/ciadasembalagens_/" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/174/174855.png" class="ui-icon" alt="Instagram"> @ciadasembalagens_</a></li>
             </ul>
-            <div style="margin-top:1.25rem;font-weight:700;color:rgba(255,255,255,.7);font-size:.9rem;" data-i18n="footer_address_title">\U0001f4cd Nossa Loja</div>
-            <p class="footer-address">Av. Paula Ferreira, 2871 - Vila Pereira Barreto<br>S�o Paulo - SP, 02915-100</p>
+            <div style="margin-top:1.25rem;font-weight:700;color:rgba(255,255,255,.7);font-size:.9rem;" data-i18n="footer_address_title">📍 Nossa Loja</div>
+            <p class="footer-address">Av. Paula Ferreira, 2871 - Vila Pereira Barreto<br>São Paulo - SP, 02915-100</p>
         </div>
         <div class="footer-col">
-            <h4 data-i18n="footer_links">Acesso R�pido</h4>
+            <h4 data-i18n="footer_links">Acesso Rápido</h4>
             <ul class="footer-links">
-                <li><a href="#inicio"><img src="https://cdn-icons-png.flaticon.com/512/271/271228.png" class="ui-icon" alt=">"> <span data-i18n="footer_home">In�cio</span></a></li>
-                <li><a href="#sobre"><img src="https://cdn-icons-png.flaticon.com/512/271/271228.png" class="ui-icon" alt=">"> <span data-i18n="footer_about">Nossa F�brica</span></a></li>
-                <li><a href="#produtos"><img src="https://cdn-icons-png.flaticon.com/512/271/271228.png" class="ui-icon" alt=">"> <span data-i18n="footer_catalog">Cat�logo</span></a></li>
+                <li><a href="#inicio"><img src="https://cdn-icons-png.flaticon.com/512/271/271228.png" class="ui-icon" alt=">"> <span data-i18n="footer_home">Início</span></a></li>
+                <li><a href="#sobre"><img src="https://cdn-icons-png.flaticon.com/512/271/271228.png" class="ui-icon" alt=">"> <span data-i18n="footer_about">Nossa Fábrica</span></a></li>
+                <li><a href="#produtos"><img src="https://cdn-icons-png.flaticon.com/512/271/271228.png" class="ui-icon" alt=">"> <span data-i18n="footer_catalog">Catálogo</span></a></li>
             </ul>
         </div>
     </div>
     <hr class="footer-divider">
-    <div class="footer-copy">� 2026 Cia Das Embalagens. <span data-i18n="footer_copy">Todos os direitos reservados. � Desenvolvido para alta performance corporativa.</span></div>
+    <div class="footer-copy">© 2026 Cia Das Embalagens. <span data-i18n="footer_copy">Todos os direitos reservados. · Desenvolvido para alta performance corporativa.</span></div>
 </footer>
 
 <script>
-/* \u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550
-   DADOS COMPACTADOS
-\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550 */
 const listaProdutos = [
-{id:1,nome:"Caixa N�0",categoria:"caixas",subcategoria:"sedex",descricao:"Para pequenos acess�rios, joias e eletr�nicos.",preco:3.50,unidade:"/unidade",especificacoes:{"Medidas Externas":"16 x 11 x 07 cm","Material":"Ondulado"}},
-{id:2,nome:"Caixa N�1",categoria:"caixas",subcategoria:"sedex",descricao:"Ideal para cosm�ticos, perfumes e miudezas.",preco:4.60,unidade:"/unidade",especificacoes:{"Medidas Externas":"21 x 15 x 6.5 cm","Material":"Ondulado"}},
-{id:3,nome:"Caixa N�2",categoria:"caixas",subcategoria:"sedex",descricao:"Vestu�rio, livros e kits m�dios.",preco:5.60,unidade:"/unidade",especificacoes:{"Medidas Externas":"26 x 17 x 08 cm","Material":"Ondulado"}},
-{id:4,nome:"Caixa N�3",categoria:"caixas",subcategoria:"sedex",descricao:"Cal�ados e utens�lios com seguran�a.",preco:8.80,unidade:"/unidade",especificacoes:{"Medidas Externas":"30 x 20 x 11 cm","Material":"Ondulado"}},
-{id:5,nome:"Caixa N�4",categoria:"caixas",subcategoria:"sedex",descricao:"Para volumes maiores no e-commerce.",preco:13.00,unidade:"/unidade",especificacoes:{"Medidas Externas":"34 x 27 x 11 cm","Material":"Ondulado"}},
-{id:6,nome:"Caixa 32x32x22",categoria:"caixas",subcategoria:"geral",descricao:"Multiuso de m�dio porte para armazenagem e transporte.",preco:13.80,unidade:"/unidade",especificacoes:{"Medidas Externas":"32 x 32 x 22 cm","Material":"Ondulado"}},
-{id:310,nome:"Caixa N05",categoria:"caixas",subcategoria:"geral",descricao:"Caixa N05 para grandes volumes.",preco:22.00,unidade:"/unidade",especificacoes:{"Medidas Externas":"70 x 50 x 40 cm","Material":"Ondulado"}},
-{id:311,nome:"Caixa N04",categoria:"caixas",subcategoria:"geral",descricao:"Caixa N04 para volumes m�dios.",preco:14.50,unidade:"/unidade",especificacoes:{"Medidas Externas":"50 x 40 x 35 cm","Material":"Ondulado"}},
-{id:312,nome:"Caixa N03",categoria:"caixas",subcategoria:"geral",descricao:"Caixa N03 de uso geral.",preco:10.00,unidade:"/unidade",especificacoes:{"Medidas Externas":"40 x 30 x 30 cm","Material":"Ondulado"}},
-{id:7,nome:"Caixa De Bolo N�9",categoria:"caixas",subcategoria:"confeiteiros",descricao:"Para bolos grandes de festa e comemora��es.",preco:10.99,unidade:"/unidade",especificacoes:{"Medidas Externas":"40 x 40 x 12 cm","Material":"Ondulado"}},
-{id:8,nome:"Caixa De Bolo N�7 M�dia",categoria:"caixas",subcategoria:"confeiteiros",descricao:"Bolos de tamanho m�dio para anivers�rios.",preco:6.20,unidade:"/unidade",especificacoes:{"Medidas Externas":"28 x 28 x 10 cm","Material":"Ondulado"}},
-{id:9,nome:"Caixa De Bolo N�7 Com Al�a",categoria:"caixas",subcategoria:"confeiteiros",descricao:"Igual ao N�7 com al�a integrada para transporte.",preco:6.50,unidade:"/unidade",especificacoes:{"Medidas Externas":"28 x 28 x 10 cm","Material":"Ondulado"}},
-{id:10,nome:"Caixa De Bolo N�6",categoria:"caixas",subcategoria:"confeiteiros",descricao:"Perfeita para bolos individuais e mini cakes.",preco:5.70,unidade:"/unidade",especificacoes:{"Medidas Externas":"26 x 26 x 10 cm","Material":"Ondulado"}},
-{id:11,nome:"Caixa De Bolo N�5",categoria:"caixas",subcategoria:"confeiteiros",descricao:"Naked cakes e bolos de pote.",preco:4.50,unidade:"/unidade",especificacoes:{"Medidas Externas":"22 x 22 x 10 cm","Material":"Ondulado"}},
-{id:12,nome:"Caixa De Bolo N�3",categoria:"caixas",subcategoria:"confeiteiros",descricao:"Bolos baixos, alfajores e tortas rasas.",preco:5.00,unidade:"/unidade",especificacoes:{"Medidas Externas":"25 x 25 x 5 cm","Material":"Ondulado"}},
-{id:13,nome:"Caixa Para Copinho",categoria:"caixas",subcategoria:"confeiteiros",descricao:"Transporte seguro de copinhos de mousse e brigadeiro.",preco:3.99,unidade:"/unidade",especificacoes:{"Medidas Externas":"40 x 40 x 12 cm","Material":"Ondulado"}},
-{id:14,nome:"Caixa Para Cupcakes",categoria:"caixas",subcategoria:"confeiteiros",descricao:"Comporta at� 25 cupcakes com seguran�a.",preco:6.55,unidade:"/unidade",especificacoes:{"Medidas Externas":"40 x 40 x 12 cm","Material":"Ondulado"}},
-{id:15,nome:"Caixa De Esfiha N�2",categoria:"caixas",subcategoria:"salgado",descricao:"Para esfihas, salgadinhos e por��es individuais.",preco:3.50,unidade:"/unidade",especificacoes:{"Medidas Externas":"20 x 20 x 5 cm","Material":"Ondulado"}},
-{id:16,nome:"Caixa De Pizza",categoria:"caixas",subcategoria:"salgado",descricao:"Mant�m o calor e a croc�ncia da pizza.",preco:3.50,unidade:"/unidade",especificacoes:{"Medidas Externas":"35 x 35 cm","Material":"Ondulado"}},
-{id:300,nome:"Saco Preto 60L",categoria:"sacolas",tipo:"preta",tamanho:"m",pacote:"10un",descricao:"Saco de lixo preto 60L.",preco:8.50,unidade:"/pacote",especificacoes:{"Capacidade":"60 litros","Cor":"Preta","Quantidade":"Pacote c/ 10 un"}},
-{id:301,nome:"Saco Preto 100L",categoria:"sacolas",tipo:"preta",tamanho:"g",pacote:"10un",descricao:"Saco de lixo preto 100L.",preco:12.50,unidade:"/pacote",especificacoes:{"Capacidade":"100 litros","Cor":"Preta","Quantidade":"Pacote c/ 10 un"}},
-{id:302,nome:"Saco Preto 40L",categoria:"sacolas",tipo:"preta",tamanho:"p",pacote:"10un",descricao:"Saco de lixo preto 40L.",preco:5.50,unidade:"/pacote",especificacoes:{"Capacidade":"40 litros","Cor":"Preta","Quantidade":"Pacote c/ 10 un"}},
-{id:303,nome:"Saco Preto 200L",categoria:"sacolas",tipo:"preta",tamanho:"g",pacote:"10un",descricao:"Saco de lixo preto 200L.",preco:21.00,unidade:"/pacote",especificacoes:{"Capacidade":"200 litros","Cor":"Preta","Quantidade":"Pacote c/ 10 un"}},
-{id:304,nome:"Saco Preto 200L Econ�mico",categoria:"sacolas",tipo:"preta",tamanho:"g",pacote:"50un",descricao:"Saco de lixo preto 200L (Econ�mico).",preco:100.00,unidade:"/pacote",especificacoes:{"Capacidade":"200 litros","Cor":"Preta","Quantidade":"Pacote c/ 50 un"}},
-{id:305,nome:"Saco Preto 100L Econ�mico",categoria:"sacolas",tipo:"preta",tamanho:"g",pacote:"50un",descricao:"Saco de lixo preto 100L (Econ�mico).",preco:53.50,unidade:"/pacote",especificacoes:{"Capacidade":"100 litros","Cor":"Preta","Quantidade":"Pacote c/ 50 un"}},
-{id:306,nome:"Saco Preto 60L Econ�mico",categoria:"sacolas",tipo:"preta",tamanho:"m",pacote:"50un",descricao:"Saco de lixo preto 60L (Econ�mico).",preco:36.00,unidade:"/pacote",especificacoes:{"Capacidade":"60 litros","Cor":"Preta","Quantidade":"Pacote c/ 50 un"}},
-{id:307,nome:"Saco Preto 40L Econ�mico",categoria:"sacolas",tipo:"preta",tamanho:"p",pacote:"50un",descricao:"Saco de lixo preto 40L (Econ�mico).",preco:25.00,unidade:"/pacote",especificacoes:{"Capacidade":"40 litros","Cor":"Preta","Quantidade":"Pacote c/ 50 un"}},
-{id:308,nome:"Saco Preto 20L P5",categoria:"sacolas",tipo:"preta",tamanho:"p",pacote:"10un",descricao:"Saco de lixo preto 20L P5.",preco:4.00,unidade:"/pacote",especificacoes:{"Capacidade":"20 litros","Cor":"Preta","Quantidade":"Pacote c/ 10 un"}},
-{id:309,nome:"Saco Preto 20L P5 Econ�mico",categoria:"sacolas",tipo:"preta",tamanho:"p",pacote:"50un",descricao:"Saco de lixo preto 20L P5 (Econ�mico).",preco:17.00,unidade:"/pacote",especificacoes:{"Capacidade":"20 litros","Cor":"Preta","Quantidade":"Pacote c/ 50 un"}},
-{id:330,nome:"Sacola Verde 1kg 30x40",categoria:"sacolas",tipo:"verde",tamanho:"p",descricao:"Sacola verde resistente. Vendida por kg.",preco:15.50,unidade:"/kg",especificacoes:{"Medidas":"30 x 40 cm","Cor":"Verde","Material":"Pl�stico","Venda":"Por kg"}},
-{id:331,nome:"Sacola Verde 1kg 45x60",categoria:"sacolas",tipo:"verde",tamanho:"m",descricao:"Sacola verde resistente. Vendida por kg.",preco:15.50,unidade:"/kg",especificacoes:{"Medidas":"45 x 60 cm","Cor":"Verde","Material":"Pl�stico","Venda":"Por kg"}},
-{id:332,nome:"Sacola Verde 1kg 50x70",categoria:"sacolas",tipo:"verde",tamanho:"g",descricao:"Sacola verde resistente. Vendida por kg.",preco:15.50,unidade:"/kg",especificacoes:{"Medidas":"50 x 70 cm","Cor":"Verde","Material":"Pl�stico","Venda":"Por kg"}},
-{id:333,nome:"Sacola Verde 1kg 60x80",categoria:"sacolas",tipo:"verde",tamanho:"g",descricao:"Sacola verde resistente. Vendida por kg.",preco:15.50,unidade:"/kg",especificacoes:{"Medidas":"60 x 80 cm","Cor":"Verde","Material":"Pl�stico","Venda":"Por kg"}},
-{id:334,nome:"Sacola Verde 1kg 90x100",categoria:"sacolas",tipo:"verde",tamanho:"g",descricao:"Sacola verde resistente. Vendida por kg.",preco:15.50,unidade:"/kg",especificacoes:{"Medidas":"90 x 100 cm","Cor":"Verde","Material":"Pl�stico","Venda":"Por kg"}},
-{id:320,nome:"Pack Lixo Diva Pia/Banheiro",categoria:"sacolas",tipo:"lixo-banheiro",tamanho:"p",descricao:"Saco de lixo para pia e banheiro com 80 unidades.",preco:12.50,unidade:"/pct",especificacoes:{"Quantidade":"80 unidades","Uso":"Banheiro"}},
-{id:321,nome:"Top Lixo Branco Pia/Banheiro",categoria:"sacolas",tipo:"lixo-banheiro",tamanho:"p",descricao:"Saco de lixo branco para pia e banheiro com 40 unidades.",preco:10.00,unidade:"/pct",especificacoes:{"Quantidade":"40 unidades","Cor":"Branca","Uso":"Banheiro"}},
-{id:322,nome:"Top Lixo Lavanda Pia/Banheiro",categoria:"sacolas",tipo:"lixo-banheiro",tamanho:"p",descricao:"Saco de lixo cor lavanda com 40 unidades.",preco:10.00,unidade:"/pct",especificacoes:{"Quantidade":"40 unidades","Uso":"Banheiro"}},
-{id:323,nome:"Top Lixo Branco 15L",categoria:"sacolas",tipo:"lixo-banheiro",tamanho:"m",descricao:"Saco de lixo branco 15L com 60 unidades.",preco:19.00,unidade:"/pct",especificacoes:{"Capacidade":"15 litros","Quantidade":"60 unidades","Cor":"Branca"}},
-{id:324,nome:"Top Lixo Preto 15L",categoria:"sacolas",tipo:"lixo-banheiro",tamanho:"m",descricao:"Saco de lixo preto 15L com 60 unidades.",preco:19.00,unidade:"/pct",especificacoes:{"Capacidade":"15 litros","Quantidade":"60 unidades","Cor":"Preta"}},
-{id:325,nome:"Top Lixo Preto 30L",categoria:"sacolas",tipo:"lixo-banheiro",tamanho:"g",descricao:"Saco de lixo preto 30L com 30 unidades.",preco:19.00,unidade:"/pct",especificacoes:{"Capacidade":"30 litros","Quantidade":"30 unidades","Cor":"Preta"}},
-{id:326,nome:"Top Lixo Branco 30L",categoria:"sacolas",tipo:"lixo-banheiro",tamanho:"g",descricao:"Saco de lixo branco 30L com 30 unidades.",preco:19.00,unidade:"/pct",especificacoes:{"Capacidade":"30 litros","Quantidade":"30 unidades","Cor":"Branca"}},
-{id:340,nome:"Sacola Crystal 8x40 (200g)",categoria:"sacolas",tipo:"crystal",peso:"200g",tamanho:"p",descricao:"Sacola crystal 8x40.",preco:7.00,unidade:"/pct (200g)",especificacoes:{"Medidas":"8 x 40 cm","Cor":"Transparente","Peso":"200g"}},
-{id:341,nome:"Sacola Crystal 10x15 (200g)",categoria:"sacolas",tipo:"crystal",peso:"200g",tamanho:"p",descricao:"Sacola crystal 10x15.",preco:7.00,unidade:"/pct (200g)",especificacoes:{"Medidas":"10 x 15 cm","Cor":"Transparente","Peso":"200g"}},
-{id:342,nome:"Sacola Crystal 10x20 (200g)",categoria:"sacolas",tipo:"crystal",peso:"200g",tamanho:"p",descricao:"Sacola crystal 10x20.",preco:7.00,unidade:"/pct (200g)",especificacoes:{"Medidas":"10 x 20 cm","Cor":"Transparente","Peso":"200g"}},
-{id:343,nome:"Sacola Crystal 15x20 (200g)",categoria:"sacolas",tipo:"crystal",peso:"200g",tamanho:"p",descricao:"Sacola crystal 15x20.",preco:7.00,unidade:"/pct (200g)",especificacoes:{"Medidas":"15 x 20 cm","Cor":"Transparente","Peso":"200g"}},
-{id:344,nome:"Sacola Crystal 15x30 (200g)",categoria:"sacolas",tipo:"crystal",peso:"200g",tamanho:"p",descricao:"Sacola crystal 15x30.",preco:7.00,unidade:"/pct (200g)",especificacoes:{"Medidas":"15 x 30 cm","Cor":"Transparente","Peso":"200g"}},
-{id:345,nome:"Sacola Crystal 20x30 (200g)",categoria:"sacolas",tipo:"crystal",peso:"200g",tamanho:"p",descricao:"Sacola crystal 20x30.",preco:7.00,unidade:"/pct (200g)",especificacoes:{"Medidas":"20 x 30 cm","Cor":"Transparente","Peso":"200g"}},
-{id:346,nome:"Sacola Crystal 25x35 (200g)",categoria:"sacolas",tipo:"crystal",peso:"200g",tamanho:"m",descricao:"Sacola crystal 25x35.",preco:7.00,unidade:"/pct (200g)",especificacoes:{"Medidas":"25 x 35 cm","Cor":"Transparente","Peso":"200g"}},
-{id:347,nome:"Sacola Crystal 35x45 (200g)",categoria:"sacolas",tipo:"crystal",peso:"200g",tamanho:"m",descricao:"Sacola crystal 35x45.",preco:7.00,unidade:"/pct (200g)",especificacoes:{"Medidas":"35 x 45 cm","Cor":"Transparente","Peso":"200g"}},
-{id:350,nome:"Sacola Crystal 10x15x0.6",categoria:"sacolas",tipo:"crystal",peso:"1kg",tamanho:"p",descricao:"Crystal grossa (0.6). Vendida por kg.",preco:32.00,unidade:"/kg",especificacoes:{"Medidas":"10 x 15 cm","Espessura":"0.6","Peso":"1kg"}},
-{id:351,nome:"Sacola Crystal 10x20x0.6",categoria:"sacolas",tipo:"crystal",peso:"1kg",tamanho:"p",descricao:"Crystal grossa (0.6). Vendida por kg.",preco:32.00,unidade:"/kg",especificacoes:{"Medidas":"10 x 20 cm","Espessura":"0.6","Peso":"1kg"}},
-{id:352,nome:"Sacola Crystal 15x20x0.6",categoria:"sacolas",tipo:"crystal",peso:"1kg",tamanho:"p",descricao:"Crystal grossa (0.6). Vendida por kg.",preco:32.00,unidade:"/kg",especificacoes:{"Medidas":"15 x 20 cm","Espessura":"0.6","Peso":"1kg"}},
-{id:353,nome:"Sacola Crystal 15x30x0.6",categoria:"sacolas",tipo:"crystal",peso:"1kg",tamanho:"p",descricao:"Crystal grossa (0.6). Vendida por kg.",preco:32.00,unidade:"/kg",especificacoes:{"Medidas":"15 x 30 cm","Espessura":"0.6","Peso":"1kg"}},
-{id:354,nome:"Sacola Crystal 20x30x0.6",categoria:"sacolas",tipo:"crystal",peso:"1kg",tamanho:"p",descricao:"Crystal grossa (0.6). Vendida por kg.",preco:32.00,unidade:"/kg",especificacoes:{"Medidas":"20 x 30 cm","Espessura":"0.6","Peso":"1kg"}},
-{id:355,nome:"Sacola Crystal 25x35x0.6",categoria:"sacolas",tipo:"crystal",peso:"1kg",tamanho:"m",descricao:"Crystal grossa (0.6). Vendida por kg.",preco:32.00,unidade:"/kg",especificacoes:{"Medidas":"25 x 35 cm","Espessura":"0.6","Peso":"1kg"}},
-{id:356,nome:"Sacola Crystal 35x45x0.6",categoria:"sacolas",tipo:"crystal",peso:"1kg",tamanho:"m",descricao:"Crystal grossa (0.6). Vendida por kg.",preco:32.00,unidade:"/kg",especificacoes:{"Medidas":"35 x 45 cm","Espessura":"0.6","Peso":"1kg"}},
-{id:357,nome:"Sacola Crystal 40x60x0.6",categoria:"sacolas",tipo:"crystal",peso:"1kg",tamanho:"g",descricao:"Crystal grossa (0.6). Vendida por kg.",preco:32.00,unidade:"/kg",especificacoes:{"Medidas":"40 x 60 cm","Espessura":"0.6","Peso":"1kg"}},
-{id:358,nome:"Sacola Crystal 50x70x0.6",categoria:"sacolas",tipo:"crystal",peso:"1kg",tamanho:"g",descricao:"Crystal grossa (0.6). Vendida por kg.",preco:33.50,unidade:"/kg",especificacoes:{"Medidas":"50 x 70 cm","Espessura":"0.6","Peso":"1kg"}},
-{id:359,nome:"Sacola Crystal 60x80x0.6",categoria:"sacolas",tipo:"crystal",peso:"1kg",tamanho:"g",descricao:"Crystal grossa (0.6). Vendida por kg.",preco:33.50,unidade:"/kg",especificacoes:{"Medidas":"60 x 80 cm","Espessura":"0.6","Peso":"1kg"}},
-{id:360,nome:"Saco Pl�stico Geladinho",categoria:"sacolas",tipo:"crystal",peso:"cento",tamanho:"p",descricao:"Saco crystal para geladinho c/ 100un.",preco:3.50,unidade:"/pct",especificacoes:{"Medidas":"4 x 24 cm","Quantidade":"100 unidades","Peso":"Cento"}},
-{id:361,nome:"Saco Pl�stico Gel�o",categoria:"sacolas",tipo:"crystal",peso:"cento",tamanho:"p",descricao:"Saco crystal para gel�o c/ 100un.",preco:3.50,unidade:"/pct",especificacoes:{"Medidas":"5 x 24 cm","Quantidade":"100 unidades","Peso":"Cento"}},
-{id:70,nome:"Sacola Kraft 30x40",categoria:"sacolas",tipo:"kraft",tamanho:"p",descricao:"Sacola kraft artesanal. Vendida por kg.",preco:"Sob consulta",unidade:"/kg",especificacoes:{"Medidas":"30 x 40 cm","Cor":"Natural","Material":"Papel kraft"}},
-{id:71,nome:"Sacola Kraft 35x45",categoria:"sacolas",tipo:"kraft",tamanho:"p",descricao:"Kraft pequena 35x45. Vendida por kg.",preco:"Sob consulta",unidade:"/kg",especificacoes:{"Medidas":"35 x 45 cm","Cor":"Natural","Material":"Papel kraft"}},
-{id:72,nome:"Sacola Kraft 40x50",categoria:"sacolas",tipo:"kraft",tamanho:"m",descricao:"Kraft m�dio porte. Vendida por kg.",preco:"Sob consulta",unidade:"/kg",especificacoes:{"Medidas":"40 x 50 cm","Cor":"Natural","Material":"Papel kraft"}},
-{id:73,nome:"Sacola Kraft 45x60",categoria:"sacolas",tipo:"kraft",tamanho:"m",descricao:"Kraft 45x60. Vendida por kg.",preco:"Sob consulta",unidade:"/kg",especificacoes:{"Medidas":"45 x 60 cm","Cor":"Natural","Material":"Papel kraft"}},
-{id:74,nome:"Sacola Kraft 60x80",categoria:"sacolas",tipo:"kraft",tamanho:"g",descricao:"Kraft grande. Vendida por kg.",preco:"Sob consulta",unidade:"/kg",especificacoes:{"Medidas":"60 x 80 cm","Cor":"Natural","Material":"Papel kraft"}},
-{id:91,nome:"Sacola Kraft c/ Al�a 25x35",categoria:"sacolas",tipo:"kraft-alca",tamanho:"p",descricao:"Sacola kraft com al�a retorcida. Vendida por kg.",preco:"Sob consulta",unidade:"/kg",especificacoes:{"Medidas":"25 x 35 cm","Cor":"Natural","Al�a":"Retorcida"}},
-{id:92,nome:"Sacola Kraft c/ Al�a 30x40",categoria:"sacolas",tipo:"kraft-alca",tamanho:"p",descricao:"Kraft com al�a 30x40. Vendida por kg.",preco:"Sob consulta",unidade:"/kg",especificacoes:{"Medidas":"30 x 40 cm","Cor":"Natural","Al�a":"Retorcida"}},
-{id:93,nome:"Sacola Kraft c/ Al�a 35x45",categoria:"sacolas",tipo:"kraft-alca",tamanho:"p",descricao:"Kraft com al�a 35x45. Vendida por kg.",preco:"Sob consulta",unidade:"/kg",especificacoes:{"Medidas":"35 x 45 cm","Cor":"Natural","Al�a":"Retorcida"}},
-{id:94,nome:"Sacola Kraft c/ Al�a 40x50",categoria:"sacolas",tipo:"kraft-alca",tamanho:"m",descricao:"Kraft com al�a m�dio porte. Vendida por kg.",preco:"Sob consulta",unidade:"/kg",especificacoes:{"Medidas":"40 x 50 cm","Cor":"Natural","Al�a":"Retorcida"}},
-{id:95,nome:"Sacola Kraft c/ Al�a 45x60",categoria:"sacolas",tipo:"kraft-alca",tamanho:"m",descricao:"Kraft com al�a 45x60. Vendida por kg.",preco:"Sob consulta",unidade:"/kg",especificacoes:{"Medidas":"45 x 60 cm","Cor":"Natural","Al�a":"Retorcida"}},
-{id:96,nome:"Sacola Kraft c/ Al�a 60x80",categoria:"sacolas",tipo:"kraft-alca",tamanho:"g",descricao:"Kraft com al�a grande. Vendida por kg.",preco:"Sob consulta",unidade:"/kg",especificacoes:{"Medidas":"60 x 80 cm","Cor":"Natural","Al�a":"Retorcida"}},
-{id:38,nome:"Marmitex N�8 Copabras",categoria:"isopor",subcategoria:"marmitex",marca:"Copabras",descricao:"Marmitex oval Copabras N�8 para refei��es completas.",preco:"Sob consulta",unidade:"",especificacoes:{"Marca":"Copabras","N�mero":"N�8","Formato":"Oval"}},
-{id:39,nome:"Marmitex N�9 Copabras",categoria:"isopor",subcategoria:"marmitex",marca:"Copabras",descricao:"Marmitex Copabras N�9 para refei��es fartas.",preco:"Sob consulta",unidade:"",especificacoes:{"Marca":"Copabras","N�mero":"N�9","Formato":"Oval"}},
-{id:40,nome:"Marmitex N�10 Copabras",categoria:"isopor",subcategoria:"marmitex",marca:"Copabras",descricao:"Marmitex Copabras N�10 para por��es generosas.",preco:"Sob consulta",unidade:"",especificacoes:{"Marca":"Copabras","N�mero":"N�10","Formato":"Oval"}},
-{id:75,nome:"Marmitex N�8 Bom Apetite",categoria:"isopor",subcategoria:"marmitex",marca:"Bom Apetite",descricao:"Marmitex oval Bom Apetite N�8. Qualidade superior.",preco:"Sob consulta",unidade:"",especificacoes:{"Marca":"Bom Apetite","N�mero":"N�8","Formato":"Oval"}},
-{id:76,nome:"Marmitex N�9 Bom Apetite",categoria:"isopor",subcategoria:"marmitex",marca:"Bom Apetite",descricao:"Marmitex Bom Apetite N�9 para refei��es fartas.",preco:"Sob consulta",unidade:"",especificacoes:{"Marca":"Bom Apetite","N�mero":"N�9","Formato":"Oval"}},
-{id:77,nome:"Marmitex N�10 Bom Apetite",categoria:"isopor",subcategoria:"marmitex",marca:"Bom Apetite",descricao:"Marmitex Bom Apetite N�10 extra-grande.",preco:"Sob consulta",unidade:"",especificacoes:{"Marca":"Bom Apetite","N�mero":"N�10","Formato":"Oval"}},
-{id:41,nome:"Caixa de Isopor 5L",categoria:"isopor",subcategoria:"caixa-isopor",descricao:"Caixa de isopor pequena para transporte.",preco:"Sob consulta",unidade:"",especificacoes:{"Capacidade":"5 litros","Material":"Isopor EPS"}},
-{id:42,nome:"Caixa de Isopor 12L",categoria:"isopor",subcategoria:"caixa-isopor",descricao:"Capacidade intermedi�ria para refrigerados.",preco:"Sob consulta",unidade:"",especificacoes:{"Capacidade":"12 litros","Material":"Isopor EPS"}},
-{id:43,nome:"Caixa de Isopor 20L",categoria:"isopor",subcategoria:"caixa-isopor",descricao:"Grande capacidade para transporte.",preco:"Sob consulta",unidade:"",especificacoes:{"Capacidade":"20 litros","Material":"Isopor EPS"}},
-{id:44,nome:"Copo de Isopor 50ml",categoria:"isopor",subcategoria:"copo-isopor",descricao:"Copo pequeno para cafezinho.",preco:"Sob consulta",unidade:"",especificacoes:{"Capacidade":"50 ml","Material":"Isopor EPS"}},
-{id:45,nome:"Copo de Isopor 120ml",categoria:"isopor",subcategoria:"copo-isopor",descricao:"Copo para caf� e ch�s.",preco:"Sob consulta",unidade:"",especificacoes:{"Capacidade":"120 ml","Material":"Isopor EPS"}},
-{id:46,nome:"Copo de Isopor 180ml",categoria:"isopor",subcategoria:"copo-isopor",descricao:"Copo m�dio para bebidas.",preco:"Sob consulta",unidade:"",especificacoes:{"Capacidade":"180 ml","Material":"Isopor EPS"}},
-{id:47,nome:"Copo de Isopor 300ml",categoria:"isopor",subcategoria:"copo-isopor",descricao:"Copo grande para sucos e refrigerantes.",preco:"Sob consulta",unidade:"",especificacoes:{"Capacidade":"300 ml","Material":"Isopor EPS"}},
-{id:78,nome:"Disco de Isopor Pizza 25cm",categoria:"isopor",subcategoria:"disco-isopor",descricao:"Disco para pizzas pequenas.",preco:"Sob consulta",unidade:"",especificacoes:{"Di�metro":"25 cm","Material":"Isopor EPS"}},
-{id:79,nome:"Disco de Isopor Pizza 35cm",categoria:"isopor",subcategoria:"disco-isopor",descricao:"Disco padr�o para pizzas m�dias.",preco:"Sob consulta",unidade:"",especificacoes:{"Di�metro":"35 cm","Material":"Isopor EPS"}},
-{id:80,nome:"Disco de Isopor Pizza 45cm",categoria:"isopor",subcategoria:"disco-isopor",descricao:"Disco para pizzas grandes.",preco:"Sob consulta",unidade:"",especificacoes:{"Di�metro":"45 cm","Material":"Isopor EPS"}},
-{id:81,nome:"Embalagem G60",categoria:"plastico",subcategoria:"bolo-plastico",marca:"Galvanotek",descricao:"Embalagem pl�stica G60 Galvanotek.",preco:"Sob consulta",unidade:"",especificacoes:{"Modelo":"G60","Marca":"Galvanotek"}},
-{id:82,nome:"Embalagem G70",categoria:"plastico",subcategoria:"bolo-plastico",marca:"Galvanotek",descricao:"A cl�ssica G70 Galvanotek.",preco:"Sob consulta",unidade:"",especificacoes:{"Modelo":"G70","Marca":"Galvanotek"}},
-{id:97,nome:"Embalagem G80",categoria:"plastico",subcategoria:"bolo-plastico",marca:"Galvanotek",descricao:"G80 Galvanotek.",preco:"Sob consulta",unidade:"",especificacoes:{"Modelo":"G80","Marca":"Galvanotek"}},
-{id:98,nome:"Embalagem G34P",categoria:"plastico",subcategoria:"bolo-plastico",marca:"Galvanotek",descricao:"G34P Galvanotek.",preco:"Sob consulta",unidade:"",especificacoes:{"Modelo":"G34P","Marca":"Galvanotek"}},
-{id:99,nome:"Embalagem G680",categoria:"plastico",subcategoria:"bolo-plastico",marca:"Galvanotek",descricao:"G680 Galvanotek.",preco:"Sob consulta",unidade:"",especificacoes:{"Modelo":"G680","Marca":"Galvanotek"}},
-{id:100,nome:"Embalagem G360",categoria:"plastico",subcategoria:"bolo-plastico",marca:"Galvanotek",descricao:"G360 Galvanotek.",preco:"Sob consulta",unidade:"",especificacoes:{"Modelo":"G360","Marca":"Galvanotek"}},
-{id:101,nome:"Embalagem G350",categoria:"plastico",subcategoria:"bolo-plastico",marca:"Galvanotek",descricao:"G350 Galvanotek.",preco:"Sob consulta",unidade:"",especificacoes:{"Modelo":"G350","Marca":"Galvanotek"}},
-{id:102,nome:"Embalagem para Fatia",categoria:"plastico",subcategoria:"bolo-plastico",marca:"Galvanotek",descricao:"Embalagem triangular Galvanotek.",preco:"Sob consulta",unidade:"",especificacoes:{"Formato":"Triangular","Marca":"Galvanotek"}},
-{id:103,nome:"Embalagem HV60",categoria:"plastico",subcategoria:"bolo-plastico",marca:"Hiverpack",descricao:"Embalagem Hiverpack HV60.",preco:"Sob consulta",unidade:"",especificacoes:{"Modelo":"HV60","Marca":"Hiverpack"}},
-{id:104,nome:"Embalagem HV70",categoria:"plastico",subcategoria:"bolo-plastico",marca:"Hiverpack",descricao:"Hiverpack HV70.",preco:"Sob consulta",unidade:"",especificacoes:{"Modelo":"HV70","Marca":"Hiverpack"}},
-{id:105,nome:"Embalagem HV80",categoria:"plastico",subcategoria:"bolo-plastico",marca:"Hiverpack",descricao:"HV80 Hiverpack.",preco:"Sob consulta",unidade:"",especificacoes:{"Modelo":"HV80","Marca":"Hiverpack"}},
-{id:106,nome:"Embalagem HV100",categoria:"plastico",subcategoria:"bolo-plastico",marca:"Hiverpack",descricao:"HV100 Hiverpack.",preco:"Sob consulta",unidade:"",especificacoes:{"Modelo":"HV100","Marca":"Hiverpack"}},
-{id:107,nome:"Embalagem para Fatia",categoria:"plastico",subcategoria:"bolo-plastico",marca:"Hiverpack",descricao:"Embalagem para fatia Hiverpack.",preco:"Sob consulta",unidade:"",especificacoes:{"Formato":"Triangular","Marca":"Hiverpack"}},
-{id:211,nome:"Marmita Preta 850ml 3 Divis�rias",categoria:"plastico",subcategoria:"marmita-plastico",marca:"",descricao:"Marmita preta com 3 divis�rias.",preco:16.50,unidade:"/pct (10un)",especificacoes:{"Capacidade":"850 ml","Quantidade":"10 unidades","Formato":"3 Divis�rias"}},
-{id:212,nome:"Kit Pote Retangular 750ml Gourmax",categoria:"plastico",subcategoria:"marmita-plastico",marca:"Gourmax",descricao:"Kit com tampa incluso.",preco:22.50,unidade:"/pct (12un)",especificacoes:{"Capacidade":"750 ml","Marca":"Gourmax","Quantidade":"12 unidades"}},
-{id:213,nome:"Kit Pote Retangular 500ml Gourmax",categoria:"plastico",subcategoria:"marmita-plastico",marca:"Gourmax",descricao:"Kit com tampa incluso.",preco:16.00,unidade:"/pct (12un)",especificacoes:{"Capacidade":"500 ml","Marca":"Gourmax","Quantidade":"12 unidades"}},
-{id:214,nome:"Kit Pote Retangular 350ml Gourmax",categoria:"plastico",subcategoria:"marmita-plastico",marca:"Gourmax",descricao:"Kit com tampa incluso.",preco:12.00,unidade:"/pct (12un)",especificacoes:{"Capacidade":"350 ml","Marca":"Gourmax","Quantidade":"12 unidades"}},
-{id:86,nome:"Marmita Prafesta 250ml",categoria:"plastico",subcategoria:"marmita-plastico",marca:"Prafesta",descricao:"Marmita Prafesta com tampa.",preco:"Sob consulta",unidade:"",especificacoes:{"Capacidade":"250 ml","Marca":"Prafesta"}},
-{id:87,nome:"Marmita Prafesta 500ml",categoria:"plastico",subcategoria:"marmita-plastico",marca:"Prafesta",descricao:"Marmita Prafesta com tampa.",preco:"Sob consulta",unidade:"",especificacoes:{"Capacidade":"500 ml","Marca":"Prafesta"}},
-{id:88,nome:"Marmita Prafesta 750ml",categoria:"plastico",subcategoria:"marmita-plastico",marca:"Prafesta",descricao:"Marmita Prafesta com tampa.",preco:"Sob consulta",unidade:"",especificacoes:{"Capacidade":"750 ml","Marca":"Prafesta"}},
-{id:89,nome:"Marmita Prafesta 1000ml",categoria:"plastico",subcategoria:"marmita-plastico",marca:"Prafesta",descricao:"Marmita Prafesta com tampa.",preco:"Sob consulta",unidade:"",especificacoes:{"Capacidade":"1000 ml","Marca":"Prafesta"}},
-{id:200,nome:"Kit Garfo e Faca Elite",categoria:"festa",descricao:"Kit talheres descart�veis.",preco:19.00,unidade:"/pct",especificacoes:{"Marca":"Elite","Quantidade":"50 unidades","Tipo":"Kit Garfo + Faca"}},
-{id:201,nome:"Garfo para Refei��o Elite",categoria:"festa",descricao:"Garfos resistentes.",preco:32.00,unidade:"/pct",especificacoes:{"Marca":"Elite","Quantidade":"200 unidades","Tipo":"Garfo"}},
-{id:202,nome:"Faca para Refei��o Elite",categoria:"festa",descricao:"Facas resistentes.",preco:30.00,unidade:"/pct",especificacoes:{"Marca":"Elite","Quantidade":"200 unidades","Tipo":"Faca"}},
-{id:203,nome:"Pote Quadrado 250ml Prafesta",categoria:"festa",descricao:"Pote descart�vel quadrado.",preco:16.50,unidade:"/pct (20un)",especificacoes:{"Marca":"Prafesta","Quantidade":"20 unidades","Capacidade":"250 ml","Formato":"Quadrado"}},
-{id:204,nome:"Pote Redondo 200ml Prafesta",categoria:"festa",descricao:"Pote descart�vel redondo.",preco:15.50,unidade:"/pct (24un)",especificacoes:{"Marca":"Prafesta","Quantidade":"24 unidades","Capacidade":"200 ml","Formato":"Redondo"}},
-{id:205,nome:"Pote Redondo 250ml Prafesta",categoria:"festa",descricao:"Pote descart�vel redondo.",preco:18.50,unidade:"/pct (24un)",especificacoes:{"Marca":"Prafesta","Quantidade":"24 unidades","Capacidade":"250 ml","Formato":"Redondo"}},
-{id:206,nome:"Pote Redondo 350ml Prafesta",categoria:"festa",descricao:"Pote descart�vel redondo.",preco:22.50,unidade:"/pct (24un)",especificacoes:{"Marca":"Prafesta","Quantidade":"24 unidades","Capacidade":"350 ml","Formato":"Redondo"}},
-{id:207,nome:"Pote Redondo 200ml Danubio",categoria:"festa",descricao:"Pote descart�vel redondo.",preco:11.50,unidade:"/pct (24un)",especificacoes:{"Marca":"Danubio","Quantidade":"24 unidades","Capacidade":"200 ml","Formato":"Redondo"}},
-{id:208,nome:"Pote Redondo 500ml Danubio",categoria:"festa",descricao:"Pote descart�vel redondo.",preco:17.00,unidade:"/pct (24un)",especificacoes:{"Marca":"Danubio","Quantidade":"24 unidades","Capacidade":"500 ml","Formato":"Redondo"}},
-{id:209,nome:"Pote Redondo 700ml Danubio",categoria:"festa",descricao:"Pote descart�vel redondo.",preco:21.50,unidade:"/pct (24un)",especificacoes:{"Marca":"Danubio","Quantidade":"24 unidades","Capacidade":"700 ml","Formato":"Redondo"}},
-{id:210,nome:"Pote Redondo 1000ml Danubio",categoria:"festa",descricao:"Pote descart�vel redondo.",preco:26.50,unidade:"/pct (24un)",especificacoes:{"Marca":"Danubio","Quantidade":"24 unidades","Capacidade":"1000 ml","Formato":"Redondo"}}
+
+    // ⚠️⚠️ COLE A SUA LISTA DE PRODUTOS AQUI ⚠️⚠️
+    // Substitua este comentário copiando desde {id:1, nome:"Caixa Nº0"...
+    // Até o último {id:210, nome:"Pote Redondo 1000ml Danubio"... da sua lista original.
+{id:1,nome:"Caixa Nº0",categoria:"caixas",subcategoria:"sedex",icone:"ph-package",descricao:"Para pequenos acessórios, joias e eletrônicos.",preco:3.50,unidade:"/unidade",especificacoes:{"Medidas Externas":"16 x 11 x 07 cm","Material":"Ondulado"}},
+    {id:2,nome:"Caixa Nº1",categoria:"caixas",subcategoria:"sedex",icone:"ph-box-arrow-up",descricao:"Ideal para cosméticos, perfumes e miudezas.",preco:4.60,unidade:"/unidade",especificacoes:{"Medidas Externas":"21 x 15 x 6.5 cm","Material":"Ondulado"}},
+    {id:3,nome:"Caixa Nº2",categoria:"caixas",subcategoria:"sedex",icone:"ph-archive-box",descricao:"Vestuário, livros e kits médios.",preco:5.60,unidade:"/unidade",especificacoes:{"Medidas Externas":"26 x 17 x 08 cm","Material":"Ondulado"}},
+    {id:4,nome:"Caixa Nº3",categoria:"caixas",subcategoria:"sedex",icone:"ph-cube",descricao:"Calçados e utensílios com segurança.",preco:8.80,unidade:"/unidade",especificacoes:{"Medidas Externas":"30 x 20 x 11 cm","Material":"Ondulado"}},
+    {id:5,nome:"Caixa Nº4",categoria:"caixas",subcategoria:"sedex",icone:"ph-package",descricao:"Para volumes maiores no e-commerce.",preco:13.00,unidade:"/unidade",especificacoes:{"Medidas Externas":"34 x 27 x 11 cm","Material":"Ondulado"}},
+    {id:6,nome:"Caixa 32x32x22",categoria:"caixas",subcategoria:"geral",icone:"ph-archive-box",descricao:"Multiuso de médio porte para armazenagem e transporte.",preco:13.80,unidade:"/unidade",especificacoes:{"Medidas Externas":"32 x 32 x 22 cm","Material":"Ondulado"}},
+    {id:310,nome:"Caixa N05",categoria:"caixas",subcategoria:"geral",icone:"ph-archive-box",descricao:"Caixa N05 para grandes volumes.",preco:22.00,unidade:"/unidade",especificacoes:{"Medidas Externas":"70 x 50 x 40 cm","Material":"Ondulado"}},
+    {id:311,nome:"Caixa N04",categoria:"caixas",subcategoria:"geral",icone:"ph-archive-box",descricao:"Caixa N04 para volumes médios.",preco:14.50,unidade:"/unidade",especificacoes:{"Medidas Externas":"50 x 40 x 35 cm","Material":"Ondulado"}},
+    {id:312,nome:"Caixa N03",categoria:"caixas",subcategoria:"geral",icone:"ph-archive-box",descricao:"Caixa N03 de uso geral.",preco:10.00,unidade:"/unidade",especificacoes:{"Medidas Externas":"40 x 30 x 30 cm","Material":"Ondulado"}},
+    {id:7,nome:"Caixa De Bolo Nº9",categoria:"caixas",subcategoria:"confeiteiros",icone:"ph-archive-box",descricao:"Para bolos grandes de festa e comemorações.",preco:10.99,unidade:"/unidade",especificacoes:{"Medidas Externas":"40 x 40 x 12 cm","Material":"Ondulado"}},
+    {id:8,nome:"Caixa De Bolo Nº7 Média",categoria:"caixas",subcategoria:"confeiteiros",icone:"ph-archive-box",descricao:"Bolos de tamanho médio para aniversários.",preco:6.20,unidade:"/unidade",especificacoes:{"Medidas Externas":"28 x 28 x 10 cm","Material":"Ondulado"}},
+    {id:9,nome:"Caixa De Bolo Nº7 Com Alça",categoria:"caixas",subcategoria:"confeiteiros",icone:"ph-archive-box",descricao:"Igual ao Nº7 com alça integrada para transporte.",preco:6.50,unidade:"/unidade",especificacoes:{"Medidas Externas":"28 x 28 x 10 cm","Material":"Ondulado"}},
+    {id:10,nome:"Caixa De Bolo Nº6",categoria:"caixas",subcategoria:"confeiteiros",icone:"ph-archive-box",descricao:"Perfeita para bolos individuais e mini cakes.",preco:5.70,unidade:"/unidade",especificacoes:{"Medidas Externas":"26 x 26 x 10 cm","Material":"Ondulado"}},
+    {id:11,nome:"Caixa De Bolo Nº5",categoria:"caixas",subcategoria:"confeiteiros",icone:"ph-archive-box",descricao:"Naked cakes e bolos de pote.",preco:4.50,unidade:"/unidade",especificacoes:{"Medidas Externas":"22 x 22 x 10 cm","Material":"Ondulado"}},
+    {id:12,nome:"Caixa De Bolo Nº3",categoria:"caixas",subcategoria:"confeiteiros",icone:"ph-archive-box",descricao:"Bolos baixos, alfajores e tortas rasas.",preco:5.00,unidade:"/unidade",especificacoes:{"Medidas Externas":"25 x 25 x 5 cm","Material":"Ondulado"}},
+    {id:13,nome:"Caixa Para Copinho (50 Divisórias)",categoria:"caixas",subcategoria:"confeiteiros",icone:"ph-archive-box",descricao:"Transporte seguro de copinhos de mousse e brigadeiro.",preco:3.99,unidade:"/unidade",especificacoes:{"Medidas Externas":"40 x 40 x 12 cm","Material":"Ondulado"}},
+    {id:14,nome:"Caixa Para Cupcakes (até 25 un.)",categoria:"caixas",subcategoria:"confeiteiros",icone:"ph-archive-box",descricao:"Comporta até 25 cupcakes com segurança.",preco:6.55,unidade:"/unidade",especificacoes:{"Medidas Externas":"40 x 40 x 12 cm","Material":"Ondulado"}},
+    {id:15,nome:"Caixa De Esfiha Nº2",categoria:"caixas",subcategoria:"salgado",icone:"ph-archive-box",descricao:"Para esfihas, salgadinhos e porções individuais.",preco:3.50,unidade:"/unidade",especificacoes:{"Medidas Externas":"20 x 20 x 5 cm","Material":"Ondulado"}},
+    {id:16,nome:"Caixa De Pizza",categoria:"caixas",subcategoria:"salgado",icone:"ph-archive-box",descricao:"Mantém o calor e a crocância da pizza.",preco:3.50,unidade:"/unidade",especificacoes:{"Medidas Externas":"35 x 35 cm","Material":"Ondulado"}},
+    
+    // Sacos Pretos
+    {id:300,nome:"Saco Preto 60L — Pct 10un",categoria:"sacolas",tipo:"preta",tamanho:"m",pacote:"10un",icone:"ph-trash",descricao:"Saco de lixo preto 60L.",preco:8.50,unidade:"/pacote",especificacoes:{"Capacidade":"60 litros","Cor":"Preto","Embalagem":"Pacote c/ 10 unidades"}},
+    {id:301,nome:"Saco Preto 100L — Pct 10un",categoria:"sacolas",tipo:"preta",tamanho:"g",pacote:"10un",icone:"ph-trash",descricao:"Saco de lixo preto 100L.",preco:12.50,unidade:"/pacote",especificacoes:{"Capacidade":"100 litros","Cor":"Preto","Embalagem":"Pacote c/ 10 unidades"}},
+    {id:302,nome:"Saco Preto 40L — Pct 10un",categoria:"sacolas",tipo:"preta",tamanho:"p",pacote:"10un",icone:"ph-trash",descricao:"Saco de lixo preto 40L.",preco:5.50,unidade:"/pacote",especificacoes:{"Capacidade":"40 litros","Cor":"Preto","Embalagem":"Pacote c/ 10 unidades"}},
+    {id:303,nome:"Saco Preto 200L — Pct 10un",categoria:"sacolas",tipo:"preta",tamanho:"g",pacote:"10un",icone:"ph-trash",descricao:"Saco de lixo preto 200L.",preco:21.00,unidade:"/pacote",especificacoes:{"Capacidade":"200 litros","Cor":"Preto","Embalagem":"Pacote c/ 10 unidades"}},
+    {id:304,nome:"Saco Preto 200L — Pct 50un",categoria:"sacolas",tipo:"preta",tamanho:"g",pacote:"50un",icone:"ph-trash",descricao:"Saco de lixo preto 200L (Econômico).",preco:100.00,unidade:"/pacote",especificacoes:{"Capacidade":"200 litros","Cor":"Preto","Embalagem":"Pacote c/ 50 unidades"}},
+    {id:305,nome:"Saco Preto 100L — Pct 50un",categoria:"sacolas",tipo:"preta",tamanho:"g",pacote:"50un",icone:"ph-trash",descricao:"Saco de lixo preto 100L (Econômico).",preco:53.50,unidade:"/pacote",especificacoes:{"Capacidade":"100 litros","Cor":"Preto","Embalagem":"Pacote c/ 50 unidades"}},
+    {id:306,nome:"Saco Preto 60L — Pct 50un",categoria:"sacolas",tipo:"preta",tamanho:"m",pacote:"50un",icone:"ph-trash",descricao:"Saco de lixo preto 60L (Econômico).",preco:36.00,unidade:"/pacote",especificacoes:{"Capacidade":"60 litros","Cor":"Preto","Embalagem":"Pacote c/ 50 unidades"}},
+    {id:307,nome:"Saco Preto 40L — Pct 50un",categoria:"sacolas",tipo:"preta",tamanho:"p",pacote:"50un",icone:"ph-trash",descricao:"Saco de lixo preto 40L (Econômico).",preco:25.00,unidade:"/pacote",especificacoes:{"Capacidade":"40 litros","Cor":"Preto","Embalagem":"Pacote c/ 50 unidades"}},
+    {id:308,nome:"Saco Preto 20L P5 — Pct 10un",categoria:"sacolas",tipo:"preta",tamanho:"p",pacote:"10un",icone:"ph-trash",descricao:"Saco de lixo preto 20L P5.",preco:4.00,unidade:"/pacote",especificacoes:{"Capacidade":"20 litros","Cor":"Preto","Embalagem":"Pacote c/ 10 unidades"}},
+    {id:309,nome:"Saco Preto 20L P5 — Pct 50un",categoria:"sacolas",tipo:"preta",tamanho:"p",pacote:"50un",icone:"ph-trash",descricao:"Saco de lixo preto 20L P5 (Econômico).",preco:17.00,unidade:"/pacote",especificacoes:{"Capacidade":"20 litros","Cor":"Preto","Embalagem":"Pacote c/ 50 unidades"}},
+
+    // Sacolas Verdes
+    {id:330,nome:"Sacola Verde 1kg 30x40",categoria:"sacolas",tipo:"verde",tamanho:"p",icone:"ph-shopping-bag",descricao:"Sacola verde resistente. Vendida por kg.",preco:15.50,unidade:"/kg",especificacoes:{"Medidas":"30 x 40 cm","Cor":"Verde","Material":"Plástico","Venda":"Por kg"}},
+    {id:331,nome:"Sacola Verde 1kg 45x60",categoria:"sacolas",tipo:"verde",tamanho:"m",icone:"ph-shopping-bag",descricao:"Sacola verde resistente. Vendida por kg.",preco:15.50,unidade:"/kg",especificacoes:{"Medidas":"45 x 60 cm","Cor":"Verde","Material":"Plástico","Venda":"Por kg"}},
+    {id:332,nome:"Sacola Verde 1kg 50x70",categoria:"sacolas",tipo:"verde",tamanho:"g",icone:"ph-shopping-bag",descricao:"Sacola verde resistente. Vendida por kg.",preco:15.50,unidade:"/kg",especificacoes:{"Medidas":"50 x 70 cm","Cor":"Verde","Material":"Plástico","Venda":"Por kg"}},
+    {id:333,nome:"Sacola Verde 1kg 60x80",categoria:"sacolas",tipo:"verde",tamanho:"g",icone:"ph-shopping-bag",descricao:"Sacola verde resistente. Vendida por kg.",preco:15.50,unidade:"/kg",especificacoes:{"Medidas":"60 x 80 cm","Cor":"Verde","Material":"Plástico","Venda":"Por kg"}},
+    {id:334,nome:"Sacola Verde 1kg 90x100",categoria:"sacolas",tipo:"verde",tamanho:"g",icone:"ph-shopping-bag",descricao:"Sacola verde resistente. Vendida por kg.",preco:15.50,unidade:"/kg",especificacoes:{"Medidas":"90 x 100 cm","Cor":"Verde","Material":"Plástico","Venda":"Por kg"}},
+
+    // Lixo de Banheiro / Pia
+    {id:320,nome:"Pack Lixo Diva Pia/Banheiro",categoria:"sacolas",tipo:"lixo-banheiro",tamanho:"p",icone:"ph-trash",descricao:"Saco de lixo para pia e banheiro com 80 unidades.",preco:12.50,unidade:"/pct",especificacoes:{"Quantidade":"80 unidades","Cor":"Variada","Uso":"Pia e Banheiro"}},
+    {id:321,nome:"Top Lixo Branco Pia/Banheiro",categoria:"sacolas",tipo:"lixo-banheiro",tamanho:"p",icone:"ph-trash",descricao:"Saco de lixo branco para pia e banheiro com 40 unidades.",preco:10.00,unidade:"/pct",especificacoes:{"Quantidade":"40 unidades","Cor":"Branco","Uso":"Pia e Banheiro"}},
+    {id:322,nome:"Top Lixo Lavanda Pia/Banheiro",categoria:"sacolas",tipo:"lixo-banheiro",tamanho:"p",icone:"ph-trash",descricao:"Saco de lixo cor lavanda com 40 unidades.",preco:10.00,unidade:"/pct",especificacoes:{"Quantidade":"40 unidades","Cor":"Lavanda","Uso":"Pia e Banheiro"}},
+    {id:323,nome:"Top Lixo Branco 15L",categoria:"sacolas",tipo:"lixo-banheiro",tamanho:"m",icone:"ph-trash",descricao:"Saco de lixo branco 15L com 60 unidades.",preco:19.00,unidade:"/pct",especificacoes:{"Capacidade":"15 litros","Quantidade":"60 unidades","Cor":"Branco"}},
+    {id:324,nome:"Top Lixo Preto 15L",categoria:"sacolas",tipo:"lixo-banheiro",tamanho:"m",icone:"ph-trash",descricao:"Saco de lixo preto 15L com 60 unidades.",preco:19.00,unidade:"/pct",especificacoes:{"Capacidade":"15 litros","Quantidade":"60 unidades","Cor":"Preto"}},
+    {id:325,nome:"Top Lixo Preto 30L",categoria:"sacolas",tipo:"lixo-banheiro",tamanho:"g",icone:"ph-trash",descricao:"Saco de lixo preto 30L com 30 unidades.",preco:19.00,unidade:"/pct",especificacoes:{"Capacidade":"30 litros","Quantidade":"30 unidades","Cor":"Preto"}},
+    {id:326,nome:"Top Lixo Branco 30L",categoria:"sacolas",tipo:"lixo-banheiro",tamanho:"g",icone:"ph-trash",descricao:"Saco de lixo branco 30L com 30 unidades.",preco:19.00,unidade:"/pct",especificacoes:{"Capacidade":"30 litros","Quantidade":"30 unidades","Cor":"Branco"}},
+
+    // Sacolas Crystal (Pacotes 200g)
+    {id:340,nome:"Sacola Crystal 8x40 (200g)",categoria:"sacolas",tipo:"crystal",peso:"200g",tamanho:"p",icone:"ph-shopping-bag",descricao:"Sacola crystal 8x40.",preco:7.00,unidade:"/pct (200g)",especificacoes:{"Medidas":"8 x 40 cm","Cor":"Transparente","Peso":"200g"}},
+    {id:341,nome:"Sacola Crystal 10x15 (200g)",categoria:"sacolas",tipo:"crystal",peso:"200g",tamanho:"p",icone:"ph-shopping-bag",descricao:"Sacola crystal 10x15.",preco:7.00,unidade:"/pct (200g)",especificacoes:{"Medidas":"10 x 15 cm","Cor":"Transparente","Peso":"200g"}},
+    {id:342,nome:"Sacola Crystal 10x20 (200g)",categoria:"sacolas",tipo:"crystal",peso:"200g",tamanho:"p",icone:"ph-shopping-bag",descricao:"Sacola crystal 10x20.",preco:7.00,unidade:"/pct (200g)",especificacoes:{"Medidas":"10 x 20 cm","Cor":"Transparente","Peso":"200g"}},
+    {id:343,nome:"Sacola Crystal 15x20 (200g)",categoria:"sacolas",tipo:"crystal",peso:"200g",tamanho:"p",icone:"ph-shopping-bag",descricao:"Sacola crystal 15x20.",preco:7.00,unidade:"/pct (200g)",especificacoes:{"Medidas":"15 x 20 cm","Cor":"Transparente","Peso":"200g"}},
+    {id:344,nome:"Sacola Crystal 15x30 (200g)",categoria:"sacolas",tipo:"crystal",peso:"200g",tamanho:"p",icone:"ph-shopping-bag",descricao:"Sacola crystal 15x30.",preco:7.00,unidade:"/pct (200g)",especificacoes:{"Medidas":"15 x 30 cm","Cor":"Transparente","Peso":"200g"}},
+    {id:345,nome:"Sacola Crystal 20x30 (200g)",categoria:"sacolas",tipo:"crystal",peso:"200g",tamanho:"p",icone:"ph-shopping-bag",descricao:"Sacola crystal 20x30.",preco:7.00,unidade:"/pct (200g)",especificacoes:{"Medidas":"20 x 30 cm","Cor":"Transparente","Peso":"200g"}},
+    {id:346,nome:"Sacola Crystal 25x35 (200g)",categoria:"sacolas",tipo:"crystal",peso:"200g",tamanho:"m",icone:"ph-shopping-bag",descricao:"Sacola crystal 25x35.",preco:7.00,unidade:"/pct (200g)",especificacoes:{"Medidas":"25 x 35 cm","Cor":"Transparente","Peso":"200g"}},
+    {id:347,nome:"Sacola Crystal 35x45 (200g)",categoria:"sacolas",tipo:"crystal",peso:"200g",tamanho:"m",icone:"ph-shopping-bag",descricao:"Sacola crystal 35x45.",preco:7.00,unidade:"/pct (200g)",especificacoes:{"Medidas":"35 x 45 cm","Cor":"Transparente","Peso":"200g"}},
+
+    // Sacolas Crystal Fardos 1kg
+    {id:350,nome:"Sacola Crystal 10x15x0.6",categoria:"sacolas",tipo:"crystal",peso:"1kg",tamanho:"p",icone:"ph-shopping-bag",descricao:"Crystal grossa (0.6). Vendida por kg.",preco:32.00,unidade:"/kg",especificacoes:{"Medidas":"10 x 15 cm","Espessura":"0.6","Peso":"1kg"}},
+    {id:351,nome:"Sacola Crystal 10x20x0.6",categoria:"sacolas",tipo:"crystal",peso:"1kg",tamanho:"p",icone:"ph-shopping-bag",descricao:"Crystal grossa (0.6). Vendida por kg.",preco:32.00,unidade:"/kg",especificacoes:{"Medidas":"10 x 20 cm","Espessura":"0.6","Peso":"1kg"}},
+    {id:352,nome:"Sacola Crystal 15x20x0.6",categoria:"sacolas",tipo:"crystal",peso:"1kg",tamanho:"p",icone:"ph-shopping-bag",descricao:"Crystal grossa (0.6). Vendida por kg.",preco:32.00,unidade:"/kg",especificacoes:{"Medidas":"15 x 20 cm","Espessura":"0.6","Peso":"1kg"}},
+    {id:353,nome:"Sacola Crystal 15x30x0.6",categoria:"sacolas",tipo:"crystal",peso:"1kg",tamanho:"p",icone:"ph-shopping-bag",descricao:"Crystal grossa (0.6). Vendida por kg.",preco:32.00,unidade:"/kg",especificacoes:{"Medidas":"15 x 30 cm","Espessura":"0.6","Peso":"1kg"}},
+    {id:354,nome:"Sacola Crystal 20x30x0.6",categoria:"sacolas",tipo:"crystal",peso:"1kg",tamanho:"p",icone:"ph-shopping-bag",descricao:"Crystal grossa (0.6). Vendida por kg.",preco:32.00,unidade:"/kg",especificacoes:{"Medidas":"20 x 30 cm","Espessura":"0.6","Peso":"1kg"}},
+    {id:355,nome:"Sacola Crystal 25x35x0.6",categoria:"sacolas",tipo:"crystal",peso:"1kg",tamanho:"m",icone:"ph-shopping-bag",descricao:"Crystal grossa (0.6). Vendida por kg.",preco:32.00,unidade:"/kg",especificacoes:{"Medidas":"25 x 35 cm","Espessura":"0.6","Peso":"1kg"}},
+    {id:356,nome:"Sacola Crystal 35x45x0.6",categoria:"sacolas",tipo:"crystal",peso:"1kg",tamanho:"m",icone:"ph-shopping-bag",descricao:"Crystal grossa (0.6). Vendida por kg.",preco:32.00,unidade:"/kg",especificacoes:{"Medidas":"35 x 45 cm","Espessura":"0.6","Peso":"1kg"}},
+    {id:357,nome:"Sacola Crystal 40x60x0.6",categoria:"sacolas",tipo:"crystal",peso:"1kg",tamanho:"g",icone:"ph-shopping-bag",descricao:"Crystal grossa (0.6). Vendida por kg.",preco:32.00,unidade:"/kg",especificacoes:{"Medidas":"40 x 60 cm","Espessura":"0.6","Peso":"1kg"}},
+    {id:358,nome:"Sacola Crystal 50x70x0.6",categoria:"sacolas",tipo:"crystal",peso:"1kg",tamanho:"g",icone:"ph-shopping-bag",descricao:"Crystal grossa (0.6). Vendida por kg.",preco:33.50,unidade:"/kg",especificacoes:{"Medidas":"50 x 70 cm","Espessura":"0.6","Peso":"1kg"}},
+    {id:359,nome:"Sacola Crystal 60x80x0.6",categoria:"sacolas",tipo:"crystal",peso:"1kg",tamanho:"g",icone:"ph-shopping-bag",descricao:"Crystal grossa (0.6). Vendida por kg.",preco:33.50,unidade:"/kg",especificacoes:{"Medidas":"60 x 80 cm","Espessura":"0.6","Peso":"1kg"}},
+    {id:360,nome:"Saco Plástico Geladinho 04x24x0.2",categoria:"sacolas",tipo:"crystal",peso:"cento",tamanho:"p",icone:"ph-drop",descricao:"Saco crystal para geladinho c/ 100un.",preco:3.50,unidade:"/pct",especificacoes:{"Medidas":"4 x 24 cm","Quantidade":"100 unidades","Peso":"cento"}},
+    {id:361,nome:"Saco Plástico Gelão 05x24x0.2",categoria:"sacolas",tipo:"crystal",peso:"cento",tamanho:"p",icone:"ph-drop",descricao:"Saco crystal para gelão c/ 100un.",preco:3.50,unidade:"/pct",especificacoes:{"Medidas":"5 x 24 cm","Quantidade":"100 unidades","Peso":"cento"}},
+
+    // Sacolas Kraft
+    {id:70,nome:"Sacola Kraft 30x40",categoria:"sacolas",tipo:"kraft",tamanho:"p",icone:"ph-shopping-bag",descricao:"Sacola kraft artesanal. Vendida por kg.",preco:"Sob consulta",unidade:"/kg",especificacoes:{"Medidas":"30 x 40 cm","Cor":"Kraft natural","Material":"Papel kraft"}},
+    {id:71,nome:"Sacola Kraft 35x45",categoria:"sacolas",tipo:"kraft",tamanho:"p",icone:"ph-shopping-bag",descricao:"Kraft pequena 35x45. Vendida por kg.",preco:"Sob consulta",unidade:"/kg",especificacoes:{"Medidas":"35 x 45 cm","Cor":"Kraft natural","Material":"Papel kraft"}},
+    {id:72,nome:"Sacola Kraft 40x50",categoria:"sacolas",tipo:"kraft",tamanho:"m",icone:"ph-shopping-bag",descricao:"Kraft médio porte. Vendida por kg.",preco:"Sob consulta",unidade:"/kg",especificacoes:{"Medidas":"40 x 50 cm","Cor":"Kraft natural","Material":"Papel kraft"}},
+    {id:73,nome:"Sacola Kraft 45x60",categoria:"sacolas",tipo:"kraft",tamanho:"m",icone:"ph-shopping-bag",descricao:"Kraft 45x60. Vendida por kg.",preco:"Sob consulta",unidade:"/kg",especificacoes:{"Medidas":"45 x 60 cm","Cor":"Kraft natural","Material":"Papel kraft"}},
+    {id:74,nome:"Sacola Kraft 60x80",categoria:"sacolas",tipo:"kraft",tamanho:"g",icone:"ph-shopping-bag",descricao:"Kraft grande. Vendida por kg.",preco:"Sob consulta",unidade:"/kg",especificacoes:{"Medidas":"60 x 80 cm","Cor":"Kraft natural","Material":"Papel kraft"}},
+    {id:91,nome:"Sacola Kraft c/ Alça 25x35",categoria:"sacolas",tipo:"kraft-alca",tamanho:"p",icone:"ph-bag",descricao:"Sacola kraft com alça retorcida. Vendida por kg.",preco:"Sob consulta",unidade:"/kg",especificacoes:{"Medidas":"25 x 35 cm","Cor":"Kraft natural","Alça":"Retorcida"}},
+    {id:92,nome:"Sacola Kraft c/ Alça 30x40",categoria:"sacolas",tipo:"kraft-alca",tamanho:"p",icone:"ph-bag",descricao:"Kraft com alça 30x40. Vendida por kg.",preco:"Sob consulta",unidade:"/kg",especificacoes:{"Medidas":"30 x 40 cm","Cor":"Kraft natural","Alça":"Retorcida"}},
+    {id:93,nome:"Sacola Kraft c/ Alça 35x45",categoria:"sacolas",tipo:"kraft-alca",tamanho:"p",icone:"ph-bag",descricao:"Kraft com alça 35x45. Vendida por kg.",preco:"Sob consulta",unidade:"/kg",especificacoes:{"Medidas":"35 x 45 cm","Cor":"Kraft natural","Alça":"Retorcida"}},
+    {id:94,nome:"Sacola Kraft c/ Alça 40x50",categoria:"sacolas",tipo:"kraft-alca",tamanho:"m",icone:"ph-bag",descricao:"Kraft com alça médio porte. Vendida por kg.",preco:"Sob consulta",unidade:"/kg",especificacoes:{"Medidas":"40 x 50 cm","Cor":"Kraft natural","Alça":"Retorcida"}},
+    {id:95,nome:"Sacola Kraft c/ Alça 45x60",categoria:"sacolas",tipo:"kraft-alca",tamanho:"m",icone:"ph-bag",descricao:"Kraft com alça 45x60. Vendida por kg.",preco:"Sob consulta",unidade:"/kg",especificacoes:{"Medidas":"45 x 60 cm","Cor":"Kraft natural","Alça":"Retorcida"}},
+    {id:96,nome:"Sacola Kraft c/ Alça 60x80",categoria:"sacolas",tipo:"kraft-alca",tamanho:"g",icone:"ph-bag",descricao:"Kraft com alça grande. Vendida por kg.",preco:"Sob consulta",unidade:"/kg",especificacoes:{"Medidas":"60 x 80 cm","Cor":"Kraft natural","Alça":"Retorcida"}},
+
+    // Isopor
+    {id:38,nome:"Marmitex Nº8 — Copabras",categoria:"isopor",subcategoria:"marmitex",marca:"Copabras",icone:"ph-bowl-food",descricao:"Marmitex oval Copabras Nº8 para refeições completas.",preco:"Sob consulta",unidade:"",especificacoes:{"Marca":"Copabras","Número":"Nº8","Formato":"Oval","Material":"Isopor EPS"}},
+    {id:39,nome:"Marmitex Nº9 — Copabras",categoria:"isopor",subcategoria:"marmitex",marca:"Copabras",icone:"ph-bowl-food",descricao:"Marmitex Copabras Nº9 para refeições fartas.",preco:"Sob consulta",unidade:"",especificacoes:{"Marca":"Copabras","Número":"Nº9","Formato":"Oval","Material":"Isopor EPS"}},
+    {id:40,nome:"Marmitex Nº10 — Copabras",categoria:"isopor",subcategoria:"marmitex",marca:"Copabras",icone:"ph-bowl-food",descricao:"Marmitex Copabras Nº10 para porções generosas.",preco:"Sob consulta",unidade:"",especificacoes:{"Marca":"Copabras","Número":"Nº10","Formato":"Oval","Material":"Isopor EPS"}},
+    {id:75,nome:"Marmitex Nº8 — Bom Apetite",categoria:"isopor",subcategoria:"marmitex",marca:"Bom Apetite",icone:"ph-bowl-food",descricao:"Marmitex oval Bom Apetite Nº8. Qualidade superior.",preco:"Sob consulta",unidade:"",especificacoes:{"Marca":"Bom Apetite","Número":"Nº8","Formato":"Oval","Material":"Isopor EPS"}},
+    {id:76,nome:"Marmitex Nº9 — Bom Apetite",categoria:"isopor",subcategoria:"marmitex",marca:"Bom Apetite",icone:"ph-bowl-food",descricao:"Marmitex Bom Apetite Nº9 para refeições fartas.",preco:"Sob consulta",unidade:"",especificacoes:{"Marca":"Bom Apetite","Número":"Nº9","Formato":"Oval","Material":"Isopor EPS"}},
+    {id:77,nome:"Marmitex Nº10 — Bom Apetite",categoria:"isopor",subcategoria:"marmitex",marca:"Bom Apetite",icone:"ph-bowl-food",descricao:"Marmitex Bom Apetite Nº10 extra-grande.",preco:"Sob consulta",unidade:"",especificacoes:{"Marca":"Bom Apetite","Número":"Nº10","Formato":"Oval","Material":"Isopor EPS"}},
+    {id:41,nome:"Caixa de Isopor 5L",categoria:"isopor",subcategoria:"caixa-isopor",icone:"ph-cube",descricao:"Caixa de isopor pequena para transporte.",preco:"Sob consulta",unidade:"",especificacoes:{"Capacidade":"5 litros","Material":"Isopor EPS"}},
+    {id:42,nome:"Caixa de Isopor 12L",categoria:"isopor",subcategoria:"caixa-isopor",icone:"ph-cube",descricao:"Capacidade intermediária para refrigerados.",preco:"Sob consulta",unidade:"",especificacoes:{"Capacidade":"12 litros","Material":"Isopor EPS"}},
+    {id:43,nome:"Caixa de Isopor 20L",categoria:"isopor",subcategoria:"caixa-isopor",icone:"ph-cube",descricao:"Grande capacidade para transporte.",preco:"Sob consulta",unidade:"",especificacoes:{"Capacidade":"20 litros","Material":"Isopor EPS"}},
+    {id:44,nome:"Copo de Isopor 50ml",categoria:"isopor",subcategoria:"copo-isopor",icone:"ph-coffee",descricao:"Copo pequeno para cafezinho.",preco:"Sob consulta",unidade:"",especificacoes:{"Capacidade":"50 ml","Material":"Isopor EPS"}},
+    {id:45,nome:"Copo de Isopor 120ml",categoria:"isopor",subcategoria:"copo-isopor",icone:"ph-coffee",descricao:"Copo para café e chás.",preco:"Sob consulta",unidade:"",especificacoes:{"Capacidade":"120 ml","Material":"Isopor EPS"}},
+    {id:46,nome:"Copo de Isopor 180ml",categoria:"isopor",subcategoria:"copo-isopor",icone:"ph-coffee",descricao:"Copo médio para bebidas.",preco:"Sob consulta",unidade:"",especificacoes:{"Capacidade":"180 ml","Material":"Isopor EPS"}},
+    {id:47,nome:"Copo de Isopor 300ml",categoria:"isopor",subcategoria:"copo-isopor",icone:"ph-coffee",descricao:"Copo grande para sucos e refrigerantes.",preco:"Sob consulta",unidade:"",especificacoes:{"Capacidade":"300 ml","Material":"Isopor EPS"}},
+    {id:78,nome:"Disco de Isopor Pizza 25cm",categoria:"isopor",subcategoria:"disco-isopor",icone:"ph-circle",descricao:"Disco para pizzas pequenas.",preco:"Sob consulta",unidade:"",especificacoes:{"Diâmetro":"25 cm","Material":"Isopor EPS"}},
+    {id:79,nome:"Disco de Isopor Pizza 35cm",categoria:"isopor",subcategoria:"disco-isopor",icone:"ph-circle",descricao:"Disco padrão para pizzas médias.",preco:"Sob consulta",unidade:"",especificacoes:{"Diâmetro":"35 cm","Material":"Isopor EPS"}},
+    {id:80,nome:"Disco de Isopor Pizza 45cm",categoria:"isopor",subcategoria:"disco-isopor",icone:"ph-circle",descricao:"Disco para pizzas grandes.",preco:"Sob consulta",unidade:"",especificacoes:{"Diâmetro":"45 cm","Material":"Isopor EPS"}},
+
+    // Plásticos - Bolos
+    {id:81,nome:"Embalagem G60",categoria:"plastico",subcategoria:"bolo-plastico",marca:"Galvanotek",icone:"ph-cake",descricao:"Embalagem plástica G60 Galvanotek.",preco:"Sob consulta",unidade:"",especificacoes:{"Modelo":"G60","Marca":"Galvanotek","Material":"PET transparente"}},
+    {id:82,nome:"Embalagem G70",categoria:"plastico",subcategoria:"bolo-plastico",marca:"Galvanotek",icone:"ph-cake",descricao:"A clássica G70 Galvanotek.",preco:"Sob consulta",unidade:"",especificacoes:{"Modelo":"G70","Marca":"Galvanotek","Material":"PET transparente"}},
+    {id:97,nome:"Embalagem G80",categoria:"plastico",subcategoria:"bolo-plastico",marca:"Galvanotek",icone:"ph-cake",descricao:"G80 Galvanotek.",preco:"Sob consulta",unidade:"",especificacoes:{"Modelo":"G80","Marca":"Galvanotek","Material":"PET transparente"}},
+    {id:98,nome:"Embalagem G34P",categoria:"plastico",subcategoria:"bolo-plastico",marca:"Galvanotek",icone:"ph-cake",descricao:"G34P Galvanotek.",preco:"Sob consulta",unidade:"",especificacoes:{"Modelo":"G34P","Marca":"Galvanotek","Material":"PET transparente"}},
+    {id:99,nome:"Embalagem G680",categoria:"plastico",subcategoria:"bolo-plastico",marca:"Galvanotek",icone:"ph-cake",descricao:"G680 Galvanotek.",preco:"Sob consulta",unidade:"",especificacoes:{"Modelo":"G680","Marca":"Galvanotek","Material":"PET transparente"}},
+    {id:100,nome:"Embalagem G360",categoria:"plastico",subcategoria:"bolo-plastico",marca:"Galvanotek",icone:"ph-cake",descricao:"G360 Galvanotek.",preco:"Sob consulta",unidade:"",especificacoes:{"Modelo":"G360","Marca":"Galvanotek","Material":"PET transparente"}},
+    {id:101,nome:"Embalagem G350",categoria:"plastico",subcategoria:"bolo-plastico",marca:"Galvanotek",icone:"ph-cake",descricao:"G350 Galvanotek.",preco:"Sob consulta",unidade:"",especificacoes:{"Modelo":"G350","Marca":"Galvanotek","Material":"PET transparente"}},
+    {id:102,nome:"Embalagem para Fatia",categoria:"plastico",subcategoria:"bolo-plastico",marca:"Galvanotek",icone:"ph-cake",descricao:"Embalagem triangular Galvanotek.",preco:"Sob consulta",unidade:"",especificacoes:{"Formato":"Triangular","Marca":"Galvanotek","Material":"PET transparente"}},
+    {id:103,nome:"Embalagem HV60",categoria:"plastico",subcategoria:"bolo-plastico",marca:"Hiverpack",icone:"ph-cake",descricao:"Embalagem Hiverpack HV60.",preco:"Sob consulta",unidade:"",especificacoes:{"Modelo":"HV60","Marca":"Hiverpack","Material":"PET premium"}},
+    {id:104,nome:"Embalagem HV70",categoria:"plastico",subcategoria:"bolo-plastico",marca:"Hiverpack",icone:"ph-cake",descricao:"Hiverpack HV70.",preco:"Sob consulta",unidade:"",especificacoes:{"Modelo":"HV70","Marca":"Hiverpack","Material":"PET premium"}},
+    {id:105,nome:"Embalagem HV80",categoria:"plastico",subcategoria:"bolo-plastico",marca:"Hiverpack",icone:"ph-cake",descricao:"HV80 Hiverpack.",preco:"Sob consulta",unidade:"",especificacoes:{"Modelo":"HV80","Marca":"Hiverpack","Material":"PET premium"}},
+    {id:106,nome:"Embalagem HV100",categoria:"plastico",subcategoria:"bolo-plastico",marca:"Hiverpack",icone:"ph-cake",descricao:"HV100 Hiverpack.",preco:"Sob consulta",unidade:"",especificacoes:{"Modelo":"HV100","Marca":"Hiverpack","Material":"PET premium"}},
+    {id:107,nome:"Embalagem para Fatia",categoria:"plastico",subcategoria:"bolo-plastico",marca:"Hiverpack",icone:"ph-cake",descricao:"Embalagem para fatia Hiverpack.",preco:"Sob consulta",unidade:"",especificacoes:{"Formato":"Triangular","Marca":"Hiverpack","Material":"PET premium"}},
+
+    // Plásticos - Marmitas
+    {id:211,nome:"Marmita Preta 850ml 3 Divisórias",categoria:"plastico",subcategoria:"marmita-plastico",marca:"",icone:"ph-bowl-food",descricao:"Marmita preta com 3 divisórias para delivery.",preco:16.50,unidade:"/pct (10un)",especificacoes:{"Capacidade":"850 ml","Quantidade":"10 unidades","Formato":"3 Divisórias"}},
+    {id:212,nome:"Kit Pote Retangular 750ml Gourmax",categoria:"plastico",subcategoria:"marmita-plastico",marca:"Gourmax",icone:"ph-bowl-food",descricao:"Kit com tampa incluso.",preco:22.50,unidade:"/pct (12un)",especificacoes:{"Capacidade":"750 ml","Marca":"Gourmax","Quantidade":"12 unidades"}},
+    {id:213,nome:"Kit Pote Retangular 500ml Gourmax",categoria:"plastico",subcategoria:"marmita-plastico",marca:"Gourmax",icone:"ph-bowl-food",descricao:"Kit com tampa incluso.",preco:16.00,unidade:"/pct (12un)",especificacoes:{"Capacidade":"500 ml","Marca":"Gourmax","Quantidade":"12 unidades"}},
+    {id:214,nome:"Kit Pote Retangular 350ml Gourmax",categoria:"plastico",subcategoria:"marmita-plastico",marca:"Gourmax",icone:"ph-bowl-food",descricao:"Kit com tampa incluso.",preco:12.00,unidade:"/pct (12un)",especificacoes:{"Capacidade":"350 ml","Marca":"Gourmax","Quantidade":"12 unidades"}},
+    {id:86,nome:"Marmita Prafesta 250ml",categoria:"plastico",subcategoria:"marmita-plastico",marca:"Prafesta",icone:"ph-bowl-food",descricao:"Marmita Prafesta com tampa.",preco:"Sob consulta",unidade:"",especificacoes:{"Capacidade":"250 ml","Marca":"Prafesta"}},
+    {id:87,nome:"Marmita Prafesta 500ml",categoria:"plastico",subcategoria:"marmita-plastico",marca:"Prafesta",icone:"ph-bowl-food",descricao:"Marmita Prafesta com tampa.",preco:"Sob consulta",unidade:"",especificacoes:{"Capacidade":"500 ml","Marca":"Prafesta"}},
+    {id:88,nome:"Marmita Prafesta 750ml",categoria:"plastico",subcategoria:"marmita-plastico",marca:"Prafesta",icone:"ph-bowl-food",descricao:"Marmita Prafesta com tampa.",preco:"Sob consulta",unidade:"",especificacoes:{"Capacidade":"750 ml","Marca":"Prafesta"}},
+    {id:89,nome:"Marmita Prafesta 1000ml",categoria:"plastico",subcategoria:"marmita-plastico",marca:"Prafesta",icone:"ph-bowl-food",descricao:"Marmita Prafesta com tampa.",preco:"Sob consulta",unidade:"",especificacoes:{"Capacidade":"1000 ml","Marca":"Prafesta"}},
+
+    // Festa & Descartáveis
+    {id:200,nome:"Kit Garfo e Faca Elite c/ 50un",categoria:"festa",icone:"ph-fork-knife",descricao:"Kit talheres descartáveis.",preco:19.00,unidade:"/pct",especificacoes:{"Marca":"Elite","Quantidade":"50 unidades","Tipo":"Kit Garfo + Faca"}},
+    {id:201,nome:"Garfo para Refeição Elite c/ 200un",categoria:"festa",icone:"ph-fork-knife",descricao:"Garfos resistentes.",preco:32.00,unidade:"/pct",especificacoes:{"Marca":"Elite","Quantidade":"200 unidades","Tipo":"Garfo"}},
+    {id:202,nome:"Faca para Refeição Elite c/ 200un",categoria:"festa",icone:"ph-fork-knife",descricao:"Facas resistentes.",preco:30.00,unidade:"/pct",especificacoes:{"Marca":"Elite","Quantidade":"200 unidades","Tipo":"Faca"}},
+    {id:203,nome:"Pote Quadrado 250ml Prafesta c/ Tampa",categoria:"festa",icone:"ph-package",descricao:"Pote descartável quadrado.",preco:16.50,unidade:"/pct (20un)",especificacoes:{"Marca":"Prafesta","Quantidade":"20 unidades","Capacidade":"250 ml","Formato":"Quadrado"}},
+    {id:204,nome:"Pote Redondo 200ml Prafesta c/ Tampa",categoria:"festa",icone:"ph-package",descricao:"Pote descartável redondo.",preco:15.50,unidade:"/pct (24un)",especificacoes:{"Marca":"Prafesta","Quantidade":"24 unidades","Capacidade":"200 ml","Formato":"Redondo"}},
+    {id:205,nome:"Pote Redondo 250ml Prafesta c/ Tampa",categoria:"festa",icone:"ph-package",descricao:"Pote descartável redondo.",preco:18.50,unidade:"/pct (24un)",especificacoes:{"Marca":"Prafesta","Quantidade":"24 unidades","Capacidade":"250 ml","Formato":"Redondo"}},
+    {id:206,nome:"Pote Redondo 350ml Prafesta c/ Tampa",categoria:"festa",icone:"ph-package",descricao:"Pote descartável redondo.",preco:22.50,unidade:"/pct (24un)",especificacoes:{"Marca":"Prafesta","Quantidade":"24 unidades","Capacidade":"350 ml","Formato":"Redondo"}},
+    {id:207,nome:"Pote Redondo 200ml Danubio c/ Tampa",categoria:"festa",icone:"ph-package",descricao:"Pote descartável redondo.",preco:11.50,unidade:"/pct (24un)",especificacoes:{"Marca":"Danubio","Quantidade":"24 unidades","Capacidade":"200 ml","Formato":"Redondo"}},
+    {id:208,nome:"Pote Redondo 500ml Danubio c/ Tampa",categoria:"festa",icone:"ph-package",descricao:"Pote descartável redondo.",preco:17.00,unidade:"/pct (24un)",especificacoes:{"Marca":"Danubio","Quantidade":"24 unidades","Capacidade":"500 ml","Formato":"Redondo"}},
+    {id:209,nome:"Pote Redondo 700ml Danubio c/ Tampa",categoria:"festa",icone:"ph-package",descricao:"Pote descartável redondo.",preco:21.50,unidade:"/pct (24un)",especificacoes:{"Marca":"Danubio","Quantidade":"24 unidades","Capacidade":"700 ml","Formato":"Redondo"}},
+    {id:210,nome:"Pote Redondo 1000ml Danubio c/ Tampa",categoria:"festa",icone:"ph-package",descricao:"Pote descartável redondo.",preco:26.50,unidade:"/pct (24un)",especificacoes:{"Marca":"Danubio","Quantidade":"24 unidades","Capacidade":"1000 ml","Formato":"Redondo"}},
 ];
 
-/* Tradutor I18N */
+const iconesEspec = {
+    "Medidas Externas":"fas fa-ruler","Dimensões":"fas fa-ruler","Medidas":"fas fa-ruler",
+    "Tipo de Onda":"fas fa-water","Gramatura":"fas fa-weight-hanging","Material":"fas fa-cube",
+    "Capacidade":"fas fa-box","Número":"fas fa-hashtag","Formato":"fas fa-shapes",
+    "Uso":"fas fa-check-circle","Cor":"fas fa-palette","Marca":"fas fa-tag",
+    "Venda":"fas fa-store","Quantidade":"fas fa-layer-group","Temperatura":"fas fa-thermometer-half",
+    "Altura":"fas fa-arrows-alt-v","Diâmetro":"fas fa-circle-notch","Modelo":"fas fa-tag",
+    "Alça":"fas fa-link","Tampa":"fas fa-check-circle","Espessura":"fas fa-expand-alt",
+    "Tipo":"fas fa-tag", "Peso":"fas fa-weight"
+];
+
 const dict = {
     pt: {
-        logo_name: "Cia Das Embalagens", cart: "Carrinho", support: "Atendimento", hero_tag: "Direto da F�brica � S�o Paulo",
-        hero_title: "Solu��es completas em<br><span class='highlight'>Embalagens.</span>",
-        hero_desc: "Do papel�o ao pl�stico, do isopor �s sacolas \u2014 tudo para o seu neg�cio em um s� lugar, com qualidade industrial e pre�o de f�brica.",
-        hero_btn1: "Explorar Cat�logo", hero_btn2: "Falar no WhatsApp", stat_products: "Produtos", stat_years: "Anos no Mercado", stat_clients: "Clientes Atendidos", scroll_hint: "Role para explorar",
-        trust_title: "\u2b50 O que nossos clientes dizem",
-        feedback1: `"Muitooo bom, recomendo o atendimento � 10... pessoal da uma aten��o boa \U0001f44c comprei umas marmitas � top."`,
-        feedback2: `"Tem muita coisa boa e o pre�o �timo; os Atendentes s�o muito simp�ticos."`,
-        feedback3: `"A empresa tem tudo em descart�veis, o atendimento � �timo, tem estacionamento e um ponto de �nibus em frente. Facinho de chegar."`,
+        logo_name: "Cia Das Embalagens", cart: "Carrinho", support: "Atendimento", hero_tag: "Direto da Fábrica — São Paulo",
+        hero_title: "Soluções completas em<br><span class='highlight'>Embalagens.</span>",
+        hero_desc: "Do papelão ao plástico, do isopor às sacolas — tudo para o seu negócio em um só lugar, com qualidade industrial e preço de fábrica.",
+        hero_btn1: "Explorar Catálogo", hero_btn2: "Falar no WhatsApp", stat_products: "Produtos", stat_years: "Anos no Mercado", stat_clients: "Clientes Atendidos", scroll_hint: "Role para explorar",
+        trust_title: "⭐ O que nossos clientes dizem",
+        feedback1: `"Muitooo bom, recomendo o atendimento é 10... pessoal da uma atenção boa 👌 comprei umas marmitas é top."`,
+        feedback2: `"Tem muita coisa boa e o preço ótimo; os Atendentes são muito simpáticos."`,
+        feedback3: `"A empresa tem tudo em descartáveis, o atendimento é ótimo, tem estacionamento e um ponto de ônibus em frente. Facinho de chegar."`,
         about_label: "Nossa Estrutura", about_title: "Estrutura industrial preparada para <span>sua demanda.</span>",
-        about_desc: "Somos uma empresa especializada em embalagens corporativas com estrutura fabril pr�pria. Atendemos desde pequenos empreendedores at� grandes ind�strias com agilidade, qualidade e os melhores pre�os do mercado.",
-        stat_stock: "Produtos em estoque", stat_exp: "Anos de experi�ncia", stat_clients_served: "Clientes atendidos", stat_categories: "Categorias de produtos",
-        catalog_label: "Cat�logo Completo", catalog_title: "Nossos Produtos", catalog_desc: "Selecione os produtos desejados, ajuste as quantidades e envie seu pedido direto pelo WhatsApp.",
-        filter_all: "Vis�o Geral", filter_boxes: "Caixas", filter_bags: "Sacolas & Lixo", filter_styro: "Isopor", filter_plastic: "Pl�sticos", filter_party: "Festa & Descart�veis",
-        sub_all_boxes: "Todas as Caixas", sub_post: "Padr�o Correios", sub_sweets: "Para Doces", sub_savory: "Para Salgados", sub_general: "Uso Geral",
-        sub_black: "Preta", sub_green: "Verde", sub_white: "Branca", sub_crystal: "Crystal", sub_kraft: "Kraft", sub_kraft_h: "Kraft c/ Al�a", sub_bathroom: "Banheiro",
+        about_desc: "Somos uma empresa especializada em embalagens corporativas com estrutura fabril própria. Atendemos desde pequenos empreendedores até grandes indústrias com agilidade, qualidade e os melhores preços do mercado.",
+        stat_stock: "Produtos em estoque", stat_exp: "Anos de experiência", stat_clients_served: "Clientes atendidos", stat_categories: "Categorias de produtos",
+        catalog_label: "Catálogo Completo", catalog_title: "Nossos Produtos", catalog_desc: "Selecione os produtos desejados, ajuste as quantidades e envie seu pedido direto pelo WhatsApp.",
+        filter_all: "Visão Geral", filter_boxes: "Caixas", filter_bags: "Sacolas & Lixo", filter_styro: "Isopor", filter_plastic: "Plásticos", filter_party: "Festa & Descartáveis",
+        sub_all_boxes: "Todas as Caixas", sub_post: "Padrão Correios", sub_sweets: "Para Doces", sub_savory: "Para Salgados", sub_general: "Uso Geral",
+        sub_black: "Preta", sub_green: "Verde", sub_white: "Branca", sub_crystal: "Crystal", sub_kraft: "Kraft", sub_kraft_h: "Kraft c/ Alça", sub_bathroom: "Banheiro",
         sub_all_packs: "Todos os Pacotes", sub_pack_10: "Pacote c/ 10 un", sub_pack_50: "Pacote c/ 50 un", sub_all: "Todos", sub_pack_200g: "Pacotes 200g", sub_bundle_1kg: "Fardos 1kg", sub_hundreds: "Centos",
-        sub_all_sizes: "Todos os Tamanhos", sub_small: "Pequenas", sub_medium: "M�dias", sub_large: "Grandes",
+        sub_all_sizes: "Todos os Tamanhos", sub_small: "Pequenas", sub_medium: "Médias", sub_large: "Grandes",
         sub_styro_box: "Caixas de Isopor", sub_styro_cup: "Copos de Isopor", sub_pizza_disc: "Disco p/ Pizza", sub_all_brands: "Todas as Marcas",
         sub_cake_pack: "Embalagens de Bolo", sub_freezer_box: "Marmitas para Congelar", sub_cutlery: "Elite (Talheres)",
-        add_cart: "Adicionar ao Carrinho", my_order: "Meu Pedido", estimated_total: "Total estimado", send_wpp: "Enviar Pedido pelo WhatsApp", clear_cart: "Limpar carrinho", privacy_note: "Seus dados s� v�o para o WhatsApp da loja",
-        footer_desc: "Sua estrutura log�stica merece a melhor prote��o. Qualidade premium em papel�o ondulado para o mercado empresarial.", footer_contact: "Atendimento Comercial", footer_address_title: "\U0001f4cd Nossa Loja", footer_links: "Acesso R�pido", footer_home: "In�cio", footer_about: "Nossa F�brica", footer_catalog: "Cat�logo", footer_copy: "Todos os direitos reservados. � Desenvolvido para alta performance corporativa."
+        add_cart: "Adicionar ao Carrinho", my_order: "Meu Pedido", estimated_total: "Total estimado", send_wpp: "Enviar Pedido pelo WhatsApp", clear_cart: "Limpar carrinho", privacy_note: "Seus dados só vão para o WhatsApp da loja",
+        footer_desc: "Sua estrutura logística merece a melhor proteção. Qualidade premium em papelão ondulado para o mercado empresarial.", footer_contact: "Atendimento Comercial", footer_address_title: "📍 Nossa Loja", footer_links: "Acesso Rápido", footer_home: "Início", footer_about: "Nossa Fábrica", footer_catalog: "Catálogo", footer_copy: "Todos os direitos reservados. · Desenvolvido para alta performance corporativa."
     },
     en: {
-        logo_name: "Cia Packaging", cart: "Cart", support: "Support", hero_tag: "Factory Direct � S�o Paulo",
+        logo_name: "Cia Packaging", cart: "Cart", support: "Support", hero_tag: "Factory Direct — São Paulo",
         hero_title: "Complete solutions in<br><span class='highlight'>Packaging.</span>",
-        hero_desc: "From cardboard to plastic, styrofoam to bags \u2014 everything for your business in one place, with industrial quality and factory prices.",
+        hero_desc: "From cardboard to plastic, styrofoam to bags — everything for your business in one place, with industrial quality and factory prices.",
         hero_btn1: "Explore Catalog", hero_btn2: "Chat on WhatsApp", stat_products: "Products", stat_years: "Years in Market", stat_clients: "Clients Served", scroll_hint: "Scroll to explore",
-        trust_title: "\u2b50 What our clients say",
-        feedback1: `"Veeery good, I recommend the service is a 10... the staff gives good attention \U0001f44c I bought some lunch boxes, they are top notch."`,
+        trust_title: "⭐ What our clients say",
+        feedback1: `"Veeery good, I recommend the service is a 10... the staff gives good attention 👌 I bought some lunch boxes, they are top notch."`,
         feedback2: `"Lots of good stuff and great prices; the attendants are very friendly."`,
         feedback3: `"The company has everything in disposables, great service, parking and a bus stop right in front. Easy to get to."`,
         about_label: "Our Structure", about_title: "Industrial structure ready for <span>your demand.</span>",
@@ -767,7 +709,7 @@ const dict = {
         sub_styro_box: "Styro Boxes", sub_styro_cup: "Styro Cups", sub_pizza_disc: "Pizza Discs", sub_all_brands: "All Brands",
         sub_cake_pack: "Cake Packaging", sub_freezer_box: "Freezer Containers", sub_cutlery: "Elite (Cutlery)",
         add_cart: "Add to Cart", my_order: "My Order", estimated_total: "Estimated Total", send_wpp: "Send Order via WhatsApp", clear_cart: "Clear Cart", privacy_note: "Your data goes straight to the store's WhatsApp",
-        footer_desc: "Your logistics structure deserves the best protection. Premium corrugated cardboard quality for the corporate market.", footer_contact: "Commercial Support", footer_address_title: "\U0001f4cd Our Store", footer_links: "Quick Access", footer_home: "Home", footer_about: "Our Factory", footer_catalog: "Catalog", footer_copy: "All rights reserved. � Developed for high corporate performance."
+        footer_desc: "Your logistics structure deserves the best protection. Premium corrugated cardboard quality for the corporate market.", footer_contact: "Commercial Support", footer_address_title: "📍 Our Store", footer_links: "Quick Access", footer_home: "Home", footer_about: "Our Factory", footer_catalog: "Catalog", footer_copy: "All rights reserved. · Developed for high corporate performance."
     }
 };
 
@@ -790,13 +732,13 @@ function tStr(ptStr) {
         ["Bolo", "Cake"], ["Fatia", "Slice"], ["Marmita", "Lunch Box"], ["Marmitex", "Styro Box"], ["Copo", "Cup"], ["Copinho", "Mini Cup"], ["Disco", "Disc"], ["Pizza", "Pizza"],
         ["Garfo", "Fork"], ["Faca", "Knife"], ["Pote", "Container"], ["Redondo", "Round"], ["Quadrado", "Square"], ["Retangular", "Rectangular"],
         ["Com tampa", "With lid"], ["c/ Tampa", "w/ Lid"], ["c/", "w/"], ["Para", "For"], ["Doces", "Sweets"], ["Salgado", "Savory"], ["Salgados", "Savory Snacks"],
-        ["Pequenas", "Small"], ["M�dias", "Medium"], ["Grandes", "Large"], ["Todos os Tamanhos", "All Sizes"], ["Todos os Pacotes", "All Packs"], ["Pacote", "Pack"],
-        ["Fardos", "Bundles"], ["Cento", "Hundred"], ["Geral", "General"], ["Uso", "Use"], ["Incluso", "Included"], ["Descart�veis", "Disposables"],
-        ["Festa", "Party"], ["Pl�sticos", "Plastics"], ["Pl�stico", "Plastic"], ["Isopor", "Styrofoam"], ["Banheiro", "Bathroom"], ["Lixo", "Trash"],
-        ["Padr�o Correios", "Standard Post"], ["Al�a", "Handle"], ["Retorcida", "Twisted"], ["Natural", "Natural"], ["Transparente", "Clear"],
-        ["Todas as Marcas", "All Brands"], ["Todas", "All"], ["Todos", "All"], ["Vis�o Geral", "Overview"], ["Sob consulta", "On request"], ["A partir de", "Starts at"],
+        ["Pequenas", "Small"], ["Médias", "Medium"], ["Grandes", "Large"], ["Todos os Tamanhos", "All Sizes"], ["Todos os Pacotes", "All Packs"], ["Pacote", "Pack"],
+        ["Fardos", "Bundles"], ["Cento", "Hundred"], ["Geral", "General"], ["Uso", "Use"], ["Incluso", "Included"], ["Descartáveis", "Disposables"],
+        ["Festa", "Party"], ["Plásticos", "Plastics"], ["Plástico", "Plastic"], ["Isopor", "Styrofoam"], ["Banheiro", "Bathroom"], ["Lixo", "Trash"],
+        ["Padrão Correios", "Standard Post"], ["Alça", "Handle"], ["Retorcida", "Twisted"], ["Natural", "Natural"], ["Transparente", "Clear"],
+        ["Todas as Marcas", "All Brands"], ["Todas", "All"], ["Todos", "All"], ["Visão Geral", "Overview"], ["Sob consulta", "On request"], ["A partir de", "Starts at"],
         ["Medidas Externas", "Outer Dims"], ["Material", "Material"], ["Capacidade", "Capacity"], ["Quantidade", "Quantity"], ["Ondulado", "Corrugated"], ["Cor", "Color"],
-        ["Venda", "Sold by"], ["Por kg", "Per kg"], ["Espessura", "Thickness"], ["N�mero", "Number"], ["Formato", "Shape"]
+        ["Venda", "Sold by"], ["Por kg", "Per kg"], ["Espessura", "Thickness"], ["Número", "Number"], ["Formato", "Shape"]
     ];
     for(let [pt, en] of dictMap) {
         const regex = new RegExp(`\\b${pt}\\b`, 'gi');
@@ -814,10 +756,10 @@ function toggleTheme() {
     const icon = document.getElementById('icon-theme');
     if (html.getAttribute('data-theme') === 'dark') {
         html.setAttribute('data-theme', 'light');
-        icon.src = "https://cdn-icons-png.flaticon.com/512/3222/3222800.png";
+        icon.src = "https://cdn-icons-png.flaticon.com/512/3222/3222800.png"; // Sun
     } else {
         html.setAttribute('data-theme', 'dark');
-        icon.src = "https://cdn-icons-png.flaticon.com/512/702/702471.png";
+        icon.src = "https://cdn-icons-png.flaticon.com/512/702/702471.png"; // Moon
     }
 }
 
@@ -830,7 +772,7 @@ function getSvg(p) {
     }
     else if(c==='sacolas') {
         if(t==='preta' || t==='lixo-banheiro') src = "https://cdn-icons-png.flaticon.com/512/3096/3096673.png"; // Trash bag
-        else if(n.includes('geladinho')||n.includes('gel�o')) src = "https://cdn-icons-png.flaticon.com/512/4064/4064096.png"; // Drop
+        else if(n.includes('geladinho')||n.includes('gelão')) src = "https://cdn-icons-png.flaticon.com/512/4064/4064096.png"; // Drop
         else src = "https://cdn-icons-png.flaticon.com/512/2910/2910763.png"; // Shopping bag
     }
     else if(c==='isopor') {
@@ -842,11 +784,11 @@ function getSvg(p) {
         if(s==='bolo-plastico') src = "https://cdn-icons-png.flaticon.com/512/3143/3143644.png"; // Cake
         else src = "https://cdn-icons-png.flaticon.com/512/865/865766.png"; // Flask/Plastic
     }
-    return `<img src="${src}" class="prod-img-png" style="width:130px;height:130px;object-fit:contain;filter:drop-shadow(0 8px 16px rgba(0,0,0,0.15));">`;
+    return `<img src="${src}" class="prod-img-png" style="width:130px;height:130px;object-fit:contain;filter:drop-shadow(0 8px 16px rgba(0,0,0,0.15));" alt="">`;
 }
 
 function applyTilt() {
-    if(window.innerWidth <= 768) return; // Desativa tilt 3D no mobile para performance
+    if(window.innerWidth <= 768) return; 
     document.querySelectorAll('.product-card').forEach(card => {
         card.addEventListener('mousemove', e => {
             const rect = card.getBoundingClientRect();
@@ -861,6 +803,15 @@ function applyTilt() {
         });
     });
 }
+
+const cardObserver = new IntersectionObserver((entries) => {
+    entries.forEach((entry, i) => {
+        if(entry.isIntersecting){
+            setTimeout(() => entry.target.classList.add('revealed'), i * 50);
+            cardObserver.unobserve(entry.target);
+        }
+    });
+}, { threshold: 0.08 });
 
 function criarSecao(titulo,produtos,container,cat,tipo){
     const secao=document.createElement("div"); secao.className="product-section";
@@ -909,14 +860,14 @@ function criarSecao(titulo,produtos,container,cat,tipo){
                 ${htmlPreco}
                 <div class="product-actions">
                     <div class="qty-control">
-                        <button class="btn-qty" onclick="event.stopPropagation();alterarInputQtd(${p.id},-1)">\u2212</button>
+                        <button class="btn-qty" onclick="event.stopPropagation();alterarInputQtd(${p.id},-1)">−</button>
                         <input class="input-qty" id="qtd-${p.id}" type="number" value="1" min="1" onclick="event.stopPropagation()">
                         <button class="btn-qty" onclick="event.stopPropagation();alterarInputQtd(${p.id},1)">+</button>
                     </div>
                     <button class="btn-add${noCarrinho?" added":""}" id="btn-add-${p.id}" onclick="event.stopPropagation();adicionarAoCarrinho(${p.id},document.getElementById('qtd-${p.id}').value)">
                         ${iconCartBtn} ${txtCartBtn}
                     </button>
-                    <button class="btn-info" onclick="abrirModal(listaProdutos.find(x=>x.id===${p.id}))" title="Ver especifica��es">
+                    <button class="btn-info" onclick="abrirModal(listaProdutos.find(x=>x.id===${p.id}))" title="Ver especificações">
                         <img src="https://cdn-icons-png.flaticon.com/512/189/189664.png" class="ui-icon" alt="Info">
                     </button>
                 </div>
@@ -928,11 +879,144 @@ function criarSecao(titulo,produtos,container,cat,tipo){
     secao.appendChild(grade); container.appendChild(secao);
 }
 
-/* O restante das fun��es de Filtro s�o id�nticas, apenas garantindo o uso de tStr() no Breadcrumb */
-</script>
+let estado = {categoria:"todos", subcategoria:"todas", tipoSacola:"preta", tamanhoSacola:"todas", pacoteSacola:"todos", pesoCrystal:"todos", marcaMarmitex:"todas", marcaPlastico:"todas", marcaMarmitaPlastico:"todas", marcaFesta:"todas"};
+let produtoModal = null;
+let carrinho = {};
 
-<script>
-// Mantendo a l�gica de filtros intacta e adicionando suporte ao tStr()
+function totalItens(){return Object.values(carrinho).reduce((s,i)=>s+i.qtd,0);}
+function totalValor(){return Object.values(carrinho).reduce((s,i)=>{const p=typeof i.produto.preco==="number"?i.produto.preco:0;return s+p*i.qtd;},0);}
+
+function atualizarBadge(){
+    const b=document.getElementById("badgeCarrinho"), n=totalItens();
+    b.textContent=n; b.classList.toggle("visible",n>0);
+}
+
+function adicionarAoCarrinho(id,qtd){
+    const produto=listaProdutos.find(p=>p.id===id); if(!produto)return;
+    qtd=Math.max(1,parseInt(qtd)||1);
+    if(carrinho[id]) carrinho[id].qtd+=qtd;
+    else carrinho[id]={produto,qtd};
+    atualizarBadge();
+    const c=document.getElementById(`card-${id}`); if(c) c.classList.add("in-cart");
+    const btn=document.getElementById(`btn-add-${id}`);
+    if(btn){
+        btn.classList.add("added");
+        btn.innerHTML=`<img src="https://cdn-icons-png.flaticon.com/512/190/190411.png" class="ui-icon no-invert"> ${currentLang === 'en' ? 'Added!' : 'Adicionado!'}`;
+        setTimeout(()=>{
+            btn.classList.remove("added");
+            btn.innerHTML=`<img src="https://cdn-icons-png.flaticon.com/512/1170/1170627.png" class="ui-icon no-invert"> ${currentLang === 'en' ? 'Add' : 'Adicionar'}`;
+        },1800);
+    }
+}
+
+function alterarInputQtd(id,delta){
+    const input=document.getElementById(`qtd-${id}`);
+    if(!input)return; input.value=Math.max(1,(parseInt(input.value)||1)+delta);
+}
+
+function alterarQtdCarrinho(id,delta){
+    if(!carrinho[id])return;
+    carrinho[id].qtd=Math.max(1,carrinho[id].qtd+delta);
+    renderizarSidebar(); atualizarBadge();
+}
+
+function removerDoCarrinho(id){
+    delete carrinho[id]; renderizarSidebar(); atualizarBadge(); 
+    const c=document.getElementById(`card-${id}`); if(c) c.classList.remove("in-cart");
+}
+
+function limparCarrinho(){
+    if(!Object.keys(carrinho).length)return;
+    const msg = currentLang === 'en' ? "Clear all items from cart?" : "Deseja limpar todos os itens do carrinho?";
+    if(!confirm(msg))return;
+    carrinho={};
+    document.querySelectorAll(".product-card.in-cart").forEach(c=>c.classList.remove("in-cart"));
+    renderizarSidebar(); atualizarBadge();
+}
+
+function renderizarSidebar(){
+    const container=document.getElementById("sidebarItens"),totalEl=document.getElementById("totalCarrinho");
+    const itens=Object.values(carrinho);
+    if(!itens.length){
+        const emptyTitle = currentLang === 'en' ? "Your cart is empty" : "Seu carrinho está vazio";
+        const emptySub = currentLang === 'en' ? "Add products from the catalog" : "Adicione produtos do catálogo";
+        container.innerHTML=`<div class="cart-empty"><img src="https://cdn-icons-png.flaticon.com/512/1170/1170627.png" style="width:60px;opacity:0.3;" alt=""><p>${emptyTitle}</p><span style="font-size:.88rem;color:var(--text-muted);">${emptySub}</span></div>`;
+        totalEl.textContent="R$ 0,00"; return;
+    }
+    const consText = currentLang === 'en' ? "On request" : "Sob consulta";
+    container.innerHTML=itens.map(({produto:p,qtd})=>{
+        const sub=typeof p.preco==="number"?(p.preco*qtd).toLocaleString("pt-BR",{style:"currency",currency:"BRL"}):"—";
+        const uf=typeof p.preco==="number"?p.preco.toLocaleString("pt-BR",{style:"currency",currency:"BRL"}):consText;
+        return `<div class="cart-item">
+            <div class="cart-item-icon">${getSvg(p)}</div>
+            <div class="cart-item-info"><div class="cart-item-name">${tStr(p.nome)}</div><div class="cart-item-price">${uf} ${tStr(p.unidade)}</div></div>
+            <div class="cart-item-controls">
+                <div class="cart-qty-ctrl">
+                    <button class="cart-qty-btn" onclick="alterarQtdCarrinho(${p.id},-1)">−</button>
+                    <span class="cart-qty-val">${qtd}</span>
+                    <button class="cart-qty-btn" onclick="alterarQtdCarrinho(${p.id},1)">+</button>
+                </div>
+                <span class="cart-subtotal">${sub}</span>
+                <button class="btn-remove-item" onclick="removerDoCarrinho(${p.id})"><img src="https://cdn-icons-png.flaticon.com/512/3096/3096673.png" class="ui-icon" style="filter:invert(0)" alt=""></button>
+            </div>
+        </div>`;
+    }).join("");
+    totalEl.textContent=totalValor().toLocaleString("pt-BR",{style:"currency",currency:"BRL"});
+}
+
+function abrirCarrinho(){renderizarSidebar();document.getElementById("sidebarCarrinho").classList.add("open");document.getElementById("overlayCarrinho").classList.add("open");document.body.style.overflow="hidden";}
+function fecharCarrinho(){document.getElementById("sidebarCarrinho").classList.remove("open");document.getElementById("overlayCarrinho").classList.remove("open");document.body.style.overflow="";}
+
+function enviarWhatsApp(){
+    const itens=Object.values(carrinho);
+    if(!itens.length){
+        alert(currentLang === 'en' ? "Add at least one product before sending." : "Adicione pelo menos um produto ao carrinho antes de enviar.");
+        return;
+    }
+    const consText = currentLang === 'en' ? "On request" : "Sob consulta";
+    const linhas=itens.map(({produto:p,qtd})=>{
+        const fmt=typeof p.preco==="number"?p.preco.toLocaleString("pt-BR",{style:"currency",currency:"BRL"}):consText;
+        const sub=typeof p.preco==="number"?(p.preco*qtd).toLocaleString("pt-BR",{style:"currency",currency:"BRL"}):"";
+        return `• ${tStr(p.nome)} — ${qtd}x ${fmt}${sub?` = ${sub}`:""}`;
+    });
+    const total=totalValor().toLocaleString("pt-BR",{style:"currency",currency:"BRL"});
+    
+    let msg = `Olá! Gostaria de fazer um pedido pela Cia Das Embalagens.\n\n*Itens do Pedido:*\n${linhas.join("\n")}\n\n*Total estimado:* ${total}\n\nPoderia confirmar se há no estoque esses itens? Obrigado(a)!`;
+    if(currentLang === 'en') {
+        msg = `Hello! I would like to place an order via Cia Das Embalagens.\n\n*Order Items:*\n${linhas.join("\n")}\n\n*Estimated Total:* ${total}\n\nCould you please confirm if these items are in stock? Thank you!`;
+    }
+    window.open(`https://wa.me/5511972999835?text=${encodeURIComponent(msg)}`,"_blank");
+}
+
+function abrirModal(produto){
+    produtoModal=produto;
+    document.getElementById("modalIcone").innerHTML=getSvg(produto);
+    document.getElementById("modalTitulo").textContent=tStr(produto.nome);
+    const cp=document.getElementById("modalContainerPreco");
+    if(produto.preco==="Sob consulta"){
+        document.getElementById("modalPrecoValor").textContent=currentLang === 'en' ? 'On Request' : 'Sob Consulta';
+        document.getElementById("modalPrecoUnit").textContent="";
+        cp.style.background="var(--text-dark)";
+    } else {
+        document.getElementById("modalPrecoValor").textContent=produto.preco.toLocaleString("pt-BR",{style:"currency",currency:"BRL"});
+        document.getElementById("modalPrecoUnit").textContent=tStr(produto.unidade);
+        cp.style.background="var(--blue-600)";
+    }
+    let html="";
+    Object.entries(produto.especificacoes).forEach(([k,v])=>{
+        html+=`<div class="spec-row"><span class="spec-label">${tStr(k)}</span><span class="spec-value">${tStr(v)}</span></div>`;
+    });
+    document.getElementById("modalEspecificacoes").innerHTML=html;
+    document.getElementById("modalProduto").classList.add("active");
+    document.body.style.overflow="hidden";
+}
+
+function fecharModal(){document.getElementById("modalProduto").classList.remove("active");document.body.style.overflow="";}
+function adicionarDoModal(){if(produtoModal){adicionarAoCarrinho(produtoModal.id,1);fecharModal();setTimeout(abrirCarrinho,200);}}
+document.getElementById("modalProduto").addEventListener("click",e=>{if(e.target===document.getElementById("modalProduto"))fecharModal();});
+
+function rolarPara(id){const el=document.getElementById(id);if(el)window.scrollTo({top:el.getBoundingClientRect().top+window.scrollY-80,behavior:"smooth"});}
+
 function filtrarCategoria(cat,el){
     estado.categoria=cat; estado.subcategoria="todas"; estado.tipoSacola="preta"; estado.tamanhoSacola="todas"; estado.pacoteSacola="todos"; estado.pesoCrystal="todos"; estado.marcaMarmitex="todas"; estado.marcaPlastico="todas"; estado.marcaMarmitaPlastico="todas"; estado.marcaFesta="todas";
     document.querySelectorAll(".btn-filter").forEach(b=>b.classList.remove("active")); el.classList.add("active");
@@ -955,7 +1039,7 @@ function filtrarCategoria(cat,el){
         document.querySelectorAll(".btn-pacote-sacola").forEach((b,i)=>b.classList.toggle("active",i===0));
         document.getElementById("breadcrumb").classList.add("visible");
         document.getElementById("breadcrumbCat").textContent=tStr("Sacolas");
-        document.getElementById("breadcrumbSub").textContent=tStr("Pretas") + " \u2014 " + tStr("Todos os Tamanhos") + " \u2014 " + tStr("Todos os Pacotes");
+        document.getElementById("breadcrumbSub").textContent=tStr("Preta") + " — " + tStr("Todos os Tamanhos") + " — " + tStr("Todos os Pacotes");
     } else if(cat==="isopor"){
         document.getElementById("barraSubcategoriasIsopor").classList.add("visible");
         document.getElementById("barraMarcaMarmitex").classList.add("visible");
@@ -967,14 +1051,14 @@ function filtrarCategoria(cat,el){
         document.getElementById("barraSubcategoriasPlastico").classList.add("visible");
         document.getElementById("barraMarcaPlastico").classList.add("visible");
         document.getElementById("breadcrumb").classList.add("visible");
-        document.getElementById("breadcrumbCat").textContent=tStr("Embalagens Pl�sticas"); document.getElementById("breadcrumbSub").textContent=tStr("Todas");
+        document.getElementById("breadcrumbCat").textContent=tStr("Embalagens Plásticas"); document.getElementById("breadcrumbSub").textContent=tStr("Todas");
         document.querySelectorAll("#barraSubcategoriasPlastico .btn-sub").forEach((b,i)=>b.classList.toggle("active",i===0));
         document.querySelectorAll("#barraMarcaPlastico .btn-sub").forEach((b,i)=>b.classList.toggle("active",i===0));
     } else if(cat==="festa"){
         document.getElementById("barraMarcaFesta").classList.add("visible");
         document.querySelectorAll("#barraMarcaFesta .btn-sub").forEach((b,i)=>b.classList.toggle("active",i===0));
         document.getElementById("breadcrumb").classList.add("visible");
-        document.getElementById("breadcrumbCat").textContent=tStr("Festa & Descart�veis"); document.getElementById("breadcrumbSub").textContent=tStr("Todas as Marcas");
+        document.getElementById("breadcrumbCat").textContent=tStr("Festa & Descartáveis"); document.getElementById("breadcrumbSub").textContent=tStr("Todas as Marcas");
     }
     renderizarProdutos();
 }
@@ -995,7 +1079,7 @@ function filtrarSub(sub,el,cat){
         else{barraMarcaP.classList.add("visible");barraMarcaMP.classList.add("visible");document.querySelectorAll("#barraMarcaPlastico .btn-sub").forEach((b,i)=>b.classList.toggle("active",i===0));document.querySelectorAll("#barraMarcaMarmitaPlastico .btn-sub").forEach((b,i)=>b.classList.toggle("active",i===0));}
     }
 
-    const nomes={caixas:{todas:"Todas",sedex:"Padr�o Correios",confeiteiros:"Para Doces",salgado:"Para Salgados",geral:"Uso Geral"},isopor:{todas:"Todos",marmitex:"Marmitex","caixa-isopor":"Caixas de Isopor","copo-isopor":"Copos de Isopor","disco-isopor":"Disco para Pizza"},plastico:{todas:"Todas","bolo-plastico":"Embalagens de Bolo","marmita-plastico":"Marmitas para Congelar"}};
+    const nomes={caixas:{todas:"Todas",sedex:"Padrão Correios",confeiteiros:"Para Doces",salgado:"Para Salgados",geral:"Uso Geral"},isopor:{todas:"Todos",marmitex:"Marmitex","caixa-isopor":"Caixas de Isopor","copo-isopor":"Copos de Isopor","disco-isopor":"Disco para Pizza"},plastico:{todas:"Todas","bolo-plastico":"Embalagens de Bolo","marmita-plastico":"Marmitas para Congelar"}};
     document.getElementById("breadcrumbSub").textContent=tStr((nomes[cat]&&nomes[cat][sub])||sub);
     renderizarProdutos();
 }
@@ -1019,11 +1103,11 @@ function selecionarTipoSacola(tipo,el){
     else if (tipo==="lixo-banheiro") { barraPesoC.classList.remove("visible"); barraTam.classList.remove("visible"); } 
     else { barraPesoC.classList.remove("visible"); barraTam.classList.add("visible"); }
 
-    const nomes={preta:"Preta",verde:"Verde",branca:"Branca",crystal:"Crystal",kraft:"Kraft","kraft-alca":"Kraft c/ Al�a","lixo-banheiro":"Banheiro"};
+    const nomes={preta:"Preta",verde:"Verde",branca:"Branca",crystal:"Crystal",kraft:"Kraft","kraft-alca":"Kraft c/ Alça","lixo-banheiro":"Banheiro"};
     let sub = tStr(nomes[tipo]);
-    if(tipo==="preta") sub += " \u2014 " + tStr("Todos os Tamanhos") + " \u2014 " + tStr("Todos os Pacotes");
-    else if(tipo==="crystal") sub += " \u2014 " + tStr("Todos") + " \u2014 " + tStr("Todos os Tamanhos");
-    else if(tipo!=="lixo-banheiro") sub += " \u2014 " + tStr("Todos os Tamanhos");
+    if(tipo==="preta") sub += " — " + tStr("Todos os Tamanhos") + " — " + tStr("Todos os Pacotes");
+    else if(tipo==="crystal") sub += " — " + tStr("Todos") + " — " + tStr("Todos os Tamanhos");
+    else if(tipo!=="lixo-banheiro") sub += " — " + tStr("Todos os Tamanhos");
     document.getElementById("breadcrumbSub").textContent=sub;
     renderizarProdutos();
 }
@@ -1039,17 +1123,61 @@ function filtrarPesoCrystal(peso,el){
 }
 
 function atualizarBreadcrumbSacolas() {
-    const nomeTamanho={todas:"Todos os Tamanhos",p:"Pequenas",m:"M�dias",g:"Grandes"};
-    const nomeTipo={preta:"Preta",verde:"Verde",branca:"Branca",crystal:"Crystal",kraft:"Kraft","kraft-alca":"Kraft c/ Al�a","lixo-banheiro":"Banheiro"};
+    const nomeTamanho={todas:"Todos os Tamanhos",p:"Pequenas",m:"Médias",g:"Grandes"};
+    const nomeTipo={preta:"Preta",verde:"Verde",branca:"Branca",crystal:"Crystal",kraft:"Kraft","kraft-alca":"Kraft c/ Alça","lixo-banheiro":"Banheiro"};
     const nomePacote={todos:"Todos os Pacotes","10un":"Pacote c/ 10 un","50un":"Pacote c/ 50 un"};
     const nomePeso={todos:"Todos", "200g":"Pacotes 200g", "1kg":"Fardos 1kg", "cento":"Centos"};
     
     const t=tStr(nomeTipo[estado.tipoSacola]||estado.tipoSacola), tam=tStr(nomeTamanho[estado.tamanhoSacola]);
     let sub = t;
-    if(estado.tipoSacola==="preta") sub += ` \u2014 ${tam} \u2014 ${tStr(nomePacote[estado.pacoteSacola])}`;
-    else if(estado.tipoSacola==="crystal") { sub += ` \u2014 ${tStr(nomePeso[estado.pesoCrystal])}`; if(estado.pesoCrystal !== 'cento') sub += ` \u2014 ${tam}`; }
-    else if(estado.tipoSacola!=="lixo-banheiro") sub += ` \u2014 ${tam}`;
+    if(estado.tipoSacola==="preta") sub += ` — ${tam} — ${tStr(nomePacote[estado.pacoteSacola])}`;
+    else if(estado.tipoSacola==="crystal") { sub += ` — ${tStr(nomePeso[estado.pesoCrystal])}`; if(estado.pesoCrystal !== 'cento') sub += ` — ${tam}`; }
+    else if(estado.tipoSacola!=="lixo-banheiro") sub += ` — ${tam}`;
     document.getElementById("breadcrumbSub").textContent=sub;
+}
+
+function renderizarProdutos(){
+    const container=document.getElementById("containerProdutos"); container.innerHTML="";
+    if(estado.categoria==="todos"){
+        const grupos={};
+        listaProdutos.forEach(p=>{
+            const key=p.categoria==="sacolas"? "sacolas_"+p.tipo : p.categoria+"_"+(p.subcategoria||"");
+            let label;
+            if(p.categoria==="sacolas") label = p.tipo.charAt(0).toUpperCase() + p.tipo.slice(1);
+            else label = p.subcategoria || p.categoria;
+            if(!grupos[key]) grupos[key]={label,produtos:[],cat:p.categoria,tipo:p.tipo};
+            grupos[key].produtos.push(p);
+        });
+        Object.values(grupos).forEach(g=>criarSecao(g.label,g.produtos,container,g.cat,g.tipo));
+    } else {
+        const filtrados=listaProdutos.filter(p=>{
+            if(p.categoria!==estado.categoria) return false;
+            if(estado.categoria==="sacolas"){
+                if(p.tipo!==estado.tipoSacola) return false;
+                if(estado.tipoSacola!=="lixo-banheiro" && estado.tipoSacola!=="crystal" && estado.tamanhoSacola!=="todas" && p.tamanho!==estado.tamanhoSacola) return false;
+                if(estado.tipoSacola==="preta" && estado.pacoteSacola!=="todos" && p.pacote!==estado.pacoteSacola) return false;
+                if(estado.tipoSacola==="crystal"){
+                    if(estado.pesoCrystal!=="todos" && p.peso!==estado.pesoCrystal) return false;
+                    if(estado.pesoCrystal!=="cento" && estado.tamanhoSacola!=="todas" && p.tamanho!==estado.tamanhoSacola) return false;
+                }
+            } else if(estado.categoria==="isopor"){
+                if(estado.subcategoria!=="todas" && p.subcategoria!==estado.subcategoria) return false;
+                if(estado.marcaMarmitex!=="todas" && p.subcategoria==="marmitex" && p.marca!==estado.marcaMarmitex) return false;
+            } else if(estado.categoria==="caixas"){
+                if(estado.subcategoria!=="todas" && p.subcategoria!==estado.subcategoria) return false;
+            } else if(estado.categoria==="plastico"){
+                if(estado.subcategoria!=="todas" && p.subcategoria!==estado.subcategoria) return false;
+                if((estado.subcategoria==="bolo-plastico"||estado.subcategoria==="todas") && estado.marcaPlastico!=="todas" && p.subcategoria==="bolo-plastico" && p.marca!==estado.marcaPlastico) return false;
+                if((estado.subcategoria==="marmita-plastico"||estado.subcategoria==="todas") && estado.marcaMarmitaPlastico!=="todas" && p.subcategoria==="marmita-plastico" && p.marca!==estado.marcaMarmitaPlastico) return false;
+            } else if(estado.categoria==="festa"){
+                if(estado.marcaFesta!=="todas" && p.especificacoes?.Marca !== estado.marcaFesta) return false;
+            }
+            return true;
+        });
+        if(!filtrados.length){container.innerHTML=`<p style="text-align:center;color:var(--text-muted);padding:4rem 0;">Nenhum produto encontrado.</p>`;return;}
+        criarSecao(estado.categoria.toUpperCase(), filtrados, container, estado.categoria, estado.tipoSacola);
+    }
+    setTimeout(applyTilt, 100);
 }
 
 window.onload=()=>{ renderizarProdutos(); };
