@@ -860,9 +860,9 @@ function toggleLanguage() {
     // Troca a bandeira do bot�o
     const iconLang = document.getElementById('icon-lang');
     if (currentLang === 'en') {
-        iconLang.src = 'https://img.icons8.com/fluency/48/brazil-flag.png';
+        iconLang.src = 'https://img.icons8.com/fluency/48/brazil.png';
     } else {
-        iconLang.src = 'https://img.icons8.com/fluency/48/usa-flag.png';
+        iconLang.src = 'https://img.icons8.com/fluency/48/usa.png';
     }
 
     // Traduz os textos
@@ -871,7 +871,6 @@ function toggleLanguage() {
         if(dict[currentLang][key]) el.innerHTML = dict[currentLang][key];
     });
 }
-
 /* ══════════════════════════════════════════════
    DARK MODE TOGGLE
 ══════════════════════════════════════════════ */
