@@ -45,7 +45,34 @@
     --shadow-hover: 0 32px 64px -12px rgba(37,99,235,.25);
     --shadow-glow: 0 8px 24px rgba(37,99,235,.4);
 }
+/* \u2500\u2500 CURSOR CUSTOMIZADO \u2500\u2500 */
+.cursor {
+    position: fixed;
+    width: 12px;
+    height: 12px;
+    background: var(--blue-600);
+    border-radius: 50%;
+    pointer-events: none; /* ESSENCIAL: Permite clicar atrav�s do elemento */
+    transform: translate(-50%, -50%);
+    z-index: 9999;
+    transition: transform 0.2s ease, background 0.2s ease;
+}
 
+.cursor-ring {
+    position: fixed;
+    width: 36px;
+    height: 36px;
+    border: 2px solid rgba(37, 99, 235, 0.5);
+    border-radius: 50%;
+    pointer-events: none; /* ESSENCIAL */
+    transform: translate(-50%, -50%);
+    z-index: 9998;
+    transition: transform 0.1s ease-out, border-color 0.2s ease;
+}
+
+/* Efeito de Hover que j� estava no seu JS */
+.cursor.hover { transform: translate(-50%, -50%) scale(0.5); background: var(--green-wa); }
+.cursor-ring.hover { transform: translate(-50%, -50%) scale(1.4); border-color: var(--green-wa); }
 *, *::before, *::after { margin:0; padding:0; box-sizing:border-box; font-family:'Inter',sans-serif; -webkit-font-smoothing:antialiased; }
 html { scroll-behavior:smooth; }
 body { background:var(--bg-page); color:var(--text-body); line-height:1.6; overflow-x:hidden; display:flex; flex-direction:column; min-height:100vh; transition: background 0.4s ease, color 0.4s ease; }
@@ -1180,7 +1207,10 @@ function renderizarProdutos(){
     setTimeout(applyTilt, 100);
 }
 
-window.onload=()=>{ renderizarProdutos(); };
+// Substitua o window.onload antigo por isto:
+document.addEventListener("DOMContentLoaded", () => {
+    renderizarProdutos();
+});
 </script>
 </body>
 </html>
