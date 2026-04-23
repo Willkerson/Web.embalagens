@@ -585,9 +585,14 @@ footer::before { content:''; position:absolute; top:-50%; left:-10%; width:60vw;
 <main class="section-catalog" id="produtos">
     <div class="container">
         <div class="catalog-header reveal">
-            <div class="section-label"><i class="fas fa-box"></i> <span data-i18n="catalog_label">Catálogo Completo</span></div>
+            <div class="section-label"><img src="https://img.icons8.com/fluency/48/box.png" class="icon-png"> <span data-i18n="catalog_label">Cat�logo Completo</span></div>
             <h2 data-i18n="catalog_title">Nossos Produtos</h2>
-            <p data-i18n="catalog_desc">Selecione os produtos desejados, ajuste as quantidades e envie seu pedido direto pelo WhatsApp.</p>
+            <p data-i18n="catalog_desc">Selecione os produtos ou use nossa ferramenta de medidas.</p>
+            
+            <button class="btn-hero-secondary" onclick="abrirCalculadora()" style="margin-top: 1.5rem; background: var(--bg-card); color: var(--text-dark);">
+                <img src="https://img.icons8.com/fluency/48/ruler.png" class="icon-png">
+                <span style="margin-left: 8px; font-weight: 800;">Calculadora de Medidas 3D</span>
+            </button>
         </div>
 
        <div class="filters-wrapper">
@@ -1900,8 +1905,153 @@ function ativarEfeito3DCards() {
    UTILS
 ══════════════════════════════════════════════ */
 function rolarPara(id){const el=document.getElementById(id);if(el)window.scrollTo({top:el.getBoundingClientRect().top+window.scrollY-80,behavior:"smooth"});}
+/* \u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550
+   L�GICA DA CALCULADORA 3D
+\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550 */
+function abrirCalculadora() {
+    document.getElementById('modalCalc').classList.add('active');
+    document.body.style.overflow = 'hidden';
+    atualizarCubo(); // Desenha o cubo logo que abre
+}
 
+function fecharCalculadora() {
+    document.getElementById('modalCalc').classList.remove('active');
+    document.body.style.overflow = '';
+    document.getElementById('visualCube').classList.remove('searching');
+}
+
+// 1. Atualiza as medidas do Cubo 3D em tempo real
+function atualizarCubo() {
+    const l = Math.max(1, parseFloat(document.getElementById('objL').value) || 10);
+    const a = Math.max(1, parseFloat(document.getElementById('objA').value) || 10);
+    const p = Math.max(1, parseFloat(document.getElementById('objP').value) || 10);
+
+    // Encontra a maior medida para escalar o cubo na tela sem quebrar o layout
+    const max = Math.max(l, a, p);
+    const scale = 120 / max;
+
+    const w = l * scale;
+    const h = a * scale;
+    const d = p * scale;
+
+    const cube = document.getElementById('visualCube');
+    cube.style.width = `${w}px`;
+    cube.style.height = `${h}px`;
+
+    // Redimensiona e posiciona cada face do "papel�o"
+    const faces = cube.querySelectorAll('.face');
+    if (faces.length === 6) {
+        // Frente e Tr�s
+        faces[0].style.width = `${w}px`; faces[0].style.height = `${h}px`; faces[0].style.transform = `translateZ(${d/2}px)`;
+        faces[1].style.width = `${w}px`; faces[1].style.height = `${h}px`; faces[1].style.transform = `rotateY(180deg) translateZ(${d/2}px)`;
+        // Direita e Esquerda
+        faces[2].style.width = `${d}px`; faces[2].style.height = `${h}px`; faces[2].style.transform = `rotateY(90deg) translateZ(${w/2}px)`;
+        faces[3].style.width = `${d}px`; faces[3].style.height = `${h}px`; faces[3].style.transform = `rotateY(-90deg) translateZ(${w/2}px)`;
+        // Cima e Baixo
+        faces[4].style.width = `${w}px`; faces[4].style.height = `${d}px`; faces[4].style.transform = `rotateX(90deg) translateZ(${h/2}px)`;
+        faces[5].style.width = `${w}px`; faces[5].style.height = `${d}px`; faces[5].style.transform = `rotateX(-90deg) translateZ(${h/2}px)`;
+    }
+}
+
+// 2. Anima o cubo e filtra o cat�logo pela caixa ideal
+function buscarCaixaIdeal() {
+    const l = parseFloat(document.getElementById('objL').value) || 0;
+    const a = parseFloat(document.getElementById('objA').value) || 0;
+    const p = parseFloat(document.getElementById('objP').value) || 0;
+
+    // Ordena as medidas do objeto do maior para o menor
+    const objDims = [l, a, p].sort((x, y) => y - x); 
+
+    const cube = document.getElementById('visualCube');
+    cube.classList.add('searching'); // Dispara a anima��o de girar e "voar"
+
+    setTimeout(() => {
+        // Pega s� os produtos que s�o caixas e t�m a medida cadastrada
+        const caixas = listaProdutos.filter(prod => prod.categoria === 'caixas' && prod.especificacoes && prod.especificacoes['Medidas Externas']);
+        
+        let caixaIdeal = null;
+        let menorVolume = Infinity;
+
+        caixas.forEach(caixa => {
+            const medidasStr = caixa.especificacoes['Medidas Externas'];
+            const m = medidasStr.match(/(\d+(?:\.\d+)?)/g); // Extrai s� os n�meros do texto
+            if (m && m.length >= 3) {
+                // Ordena as medidas da caixa
+                const boxDims = m.map(Number).sort((x, y) => y - x);
+                
+                // Checa se o objeto cabe dentro da caixa
+                if (boxDims[0] >= objDims[0] && boxDims[1] >= objDims[1] && boxDims[2] >= objDims[2]) {
+                    const volume = boxDims[0] * boxDims[1] * boxDims[2];
+                    // Guarda sempre a caixa que cabe sobrando menos espa�o vazio
+                    if (volume < menorVolume) {
+                        menorVolume = volume;
+                        caixaIdeal = caixa;
+                    }
+                }
+            }
+        });
+
+        fecharCalculadora();
+        
+        setTimeout(() => {
+            if (caixaIdeal) {
+                // For�a o clique no filtro de Caixas para a tela de fundo mudar
+                const btnCaixas = Array.from(document.querySelectorAll('.btn-filter')).find(b => b.textContent.includes('Caixas') || b.textContent.includes('Boxes'));
+                if(btnCaixas) btnCaixas.click();
+                
+                // Abre o modal de compra com a caixa perfeita
+                abrirModal(caixaIdeal);
+            } else {
+                const msg = currentLang === 'en' 
+                    ? 'No standard box found for these dimensions. Contact us for custom projects!' 
+                    : 'N�o encontramos uma caixa padr�o para essas medidas. Chame no WhatsApp para projetos sob medida!';
+                alert(msg);
+            }
+            cube.classList.remove('searching'); // Reseta a anima��o pro pr�ximo uso
+        }, 400);
+
+    }, 1200); // Espera exatamente o tempo da anima��o do CSS acabar
+}
 window.onload=()=>{ renderizarProdutos(); };
 </script>
+    <div class="modal-backdrop" id="modalCalc">
+    <div class="modal-box calc-box">
+        <button class="btn-close-modal" onclick="fecharCalculadora()"><i class="fas fa-times"></i></button>
+        
+        <div class="calc-layout">
+            <div class="calc-inputs">
+                <h3 style="color: var(--text-dark); margin-bottom: 1.5rem;">O que voc� vai embalar?</h3>
+                <div class="input-group-3d">
+                    <label>Largura (cm)</label>
+                    <input type="number" id="objL" value="10" oninput="atualizarCubo()">
+                </div>
+                <div class="input-group-3d">
+                    <label>Altura (cm)</label>
+                    <input type="number" id="objA" value="10" oninput="atualizarCubo()">
+                </div>
+                <div class="input-group-3d">
+                    <label>Profundidade (cm)</label>
+                    <input type="number" id="objP" value="10" oninput="atualizarCubo()">
+                </div>
+                <button class="btn-send-wpp" onclick="buscarCaixaIdeal()" style="margin-top: 1.5rem;">
+                    <span>Buscar Caixa Ideal</span>
+                </button>
+            </div>
+
+            <div class="calc-visual">
+                <div class="scene3d">
+                    <div class="cube" id="visualCube">
+                        <div class="face front"></div>
+                        <div class="face back"></div>
+                        <div class="face right"></div>
+                        <div class="face left"></div>
+                        <div class="face top"></div>
+                        <div class="face bottom"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 </body>
 </html>
