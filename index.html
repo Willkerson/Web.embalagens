@@ -12,7 +12,7 @@
     <script src="https://unpkg.com/@phosphor-icons/web"></script>
     <style>
 /* ═══════════════════════════════════════════════
-   DESIGN SYSTEM — CIA DAS EMBALAGENS v2
+   DESIGN SYSTEM — CIA DAS EMBALAGENS v3 (Premium)
 ═══════════════════════════════════════════════ */
 :root {
     --blue-950: #0a0f1e;
@@ -35,7 +35,7 @@
     --border: #e2e8f0;
     --shadow-card: 0 4px 24px -4px rgba(15,23,42,.06), 0 1px 4px rgba(15,23,42,.04);
     --shadow-hover: 0 24px 48px -8px rgba(37,99,235,.18), 0 8px 16px -4px rgba(37,99,235,.08);
-    --tr: all .35s cubic-bezier(.4,0,.2,1);
+    --tr: all .3s cubic-bezier(.4,0,.2,1);
     --tr-spring: all .5s cubic-bezier(.175,.885,.32,1.275);
     --radius-card: 24px;
     --radius-btn: 99px;
@@ -45,7 +45,7 @@
 html { scroll-behavior:smooth; }
 body { background:var(--bg-page); color:var(--text-body); line-height:1.6; overflow-x:hidden; display:flex; flex-direction:column; min-height:100vh; }
 a { text-decoration:none; color:inherit; }
-button { cursor:pointer; border:none; background:none; outline:none; }
+button { cursor:pointer; border:none; background:none; outline:none; font-family:inherit; }
 h1,h2,h3,h4,h5,h6 { color:var(--text-dark); font-weight:800; letter-spacing:-.025em; }
 
 /* FIX GLOBAL DE ÍCONES PARA FIREFOX/MOBILE */
@@ -169,81 +169,8 @@ header.scrolled { padding:.65rem 0; box-shadow:0 8px 32px -8px rgba(15,23,42,.08
 }
 .btn-hero-secondary:hover { background:rgba(255,255,255,.2); transform:translateY(-4px); border-color:rgba(255,255,255,.5); }
 
-/* Stats hero */
-.hero-stats { display:flex; gap:2.5rem; animation:fadeSlideUp .9s ease .45s both; flex-wrap:wrap; justify-content:center; }
-.hero-stat { text-align:center; }
-.hero-stat-val { font-size:2rem; font-weight:900; color:#fff; letter-spacing:-.04em; line-height:1; }
-.hero-stat-label { font-size:.78rem; color:rgba(255,255,255,.6); font-weight:500; text-transform:uppercase; letter-spacing:.06em; margin-top:4px; }
-.hero-stat-divider { width:1px; background:rgba(255,255,255,.2); align-self:stretch; }
-
-/* Scroll indicator */
-.scroll-hint { position:absolute; bottom:36px; left:50%; transform:translateX(-50%); z-index:5; display:flex; flex-direction:column; align-items:center; gap:10px; cursor:pointer; transition:var(--tr); animation:fadeSlideUp .9s ease .6s both; }
-.scroll-hint:hover { transform:translateX(-50%) translateY(-4px); }
-.scroll-hint-text { color:rgba(255,255,255,.6); font-size:.75rem; font-weight:600; text-transform:uppercase; letter-spacing:.12em; }
-.scroll-hint-mouse { width:24px; height:38px; border:2px solid rgba(255,255,255,.4); border-radius:12px; display:flex; justify-content:center; padding-top:6px; }
-.scroll-hint-dot { width:4px; height:8px; background:rgba(255,255,255,.7); border-radius:2px; animation:scrollDot 2s ease-in-out infinite; }
-@keyframes scrollDot { 0%,100%{transform:translateY(0);opacity:1;} 60%{transform:translateY(10px);opacity:0;} }
-
-/* ── Animações de entrada ── */
-@keyframes fadeSlideDown { from{opacity:0;transform:translateY(-20px);} to{opacity:1;transform:translateY(0);} }
-@keyframes fadeSlideUp   { from{opacity:0;transform:translateY(24px);}  to{opacity:1;transform:translateY(0);} }
-@keyframes fadeIn        { from{opacity:0;transform:translateY(12px);}  to{opacity:1;transform:translateY(0);} }
-@keyframes scaleIn       { from{opacity:0;transform:scale(.92);}        to{opacity:1;transform:scale(1);} }
-
 /* ══════════════════════════════════════════════
-   SEÇÃO DEPOIMENTOS
-══════════════════════════════════════════════ */
-.section-trust { width:100%; background:transparent; position:relative; z-index:10; }
-.trust-card {
-    max-width:1100px; margin:-64px auto 5rem;
-    background:#fff; border-radius:28px;
-    box-shadow:0 32px 64px -16px rgba(15,23,42,.1);
-    padding:3rem; border:1px solid var(--border);
-    animation:scaleIn .7s ease .2s both;
-}
-.trust-title { text-align:center; margin-bottom:2rem; font-size:1.1rem; color:var(--blue-800); font-weight:700; letter-spacing:.02em; }
-.stars { color:#f59e0b; font-size:.9rem; margin-bottom:.5rem; }
-.slider-wrap { overflow:hidden; position:relative; width:100%; }
-.slider-track { display:flex; transition:transform .6s cubic-bezier(.4,0,.2,1); gap:20px; }
-.feedback-card {
-    min-width:calc(33.333% - 14px); background:var(--bg-page);
-    padding:1.75rem; border-radius:18px; border:1px solid var(--border);
-    transition:var(--tr);
-}
-.feedback-card:hover { transform:translateY(-4px); box-shadow:var(--shadow-card); border-color:var(--blue-100); }
-.feedback-text { font-style:italic; font-size:.93rem; margin-bottom:1rem; color:var(--text-body); line-height:1.65; }
-.feedback-author { font-weight:700; color:var(--blue-600); display:flex; align-items:center; gap:8px; font-size:.9rem; }
-
-/* ══════════════════════════════════════════════
-   SEÇÃO SOBRE
-══════════════════════════════════════════════ */
-.section-about { padding:5rem 0; background:#fff; border-top:1px solid var(--border); border-bottom:1px solid var(--border); margin-bottom:5rem; }
-.about-grid { display:grid; grid-template-columns:1fr 1fr; gap:5rem; align-items:center; }
-.about-content h2 { font-size:2.4rem; line-height:1.15; margin-bottom:1.25rem; }
-.about-content h2 span { color:var(--blue-600); }
-.about-content p { color:var(--text-body); font-size:1.05rem; line-height:1.8; margin-bottom:2rem; }
-.about-stats { display:grid; grid-template-columns:1fr 1fr; gap:1.25rem; }
-.about-stat-card {
-    background:var(--bg-page); border-radius:16px; padding:1.5rem;
-    border:1px solid var(--border); text-align:center; transition:var(--tr);
-}
-.about-stat-card:hover { border-color:var(--blue-200,#bfdbfe); transform:translateY(-3px); box-shadow:var(--shadow-card); }
-.about-stat-num { font-size:2.2rem; font-weight:900; color:var(--blue-600); letter-spacing:-.04em; line-height:1; }
-.about-stat-label { font-size:.8rem; color:var(--text-muted); font-weight:600; text-transform:uppercase; letter-spacing:.06em; margin-top:5px; }
-.about-visual {
-    background:linear-gradient(135deg,var(--blue-50),#ede9fe);
-    border-radius:28px; padding:3.5rem; text-align:center;
-    border:1px solid var(--blue-100); position:relative; overflow:hidden;
-}
-.about-visual::before {
-    content:''; position:absolute; top:-30%; right:-20%;
-    width:60%; height:60%; background:radial-gradient(circle,rgba(37,99,235,.12),transparent 70%);
-    border-radius:50%;
-}
-.about-visual i { font-size:7rem; color:var(--blue-600); opacity:.85; position:relative; z-index:1; }
-
-/* ══════════════════════════════════════════════
-   CATÁLOGO — CABEÇALHO E FILTROS CLEAN
+   CATÁLOGO E FILTROS (CLEAN & PREMIUM)
 ══════════════════════════════════════════════ */
 .section-catalog { padding:2rem 0 7rem; }
 .catalog-header { text-align:center; margin-bottom:3.5rem; max-width:680px; margin-inline:auto; }
@@ -257,47 +184,46 @@ header.scrolled { padding:.65rem 0; box-shadow:0 8px 32px -8px rgba(15,23,42,.08
     text-transform:uppercase; letter-spacing:.06em; margin-bottom:1rem;
 }
 
-/* ── FILTROS CLEAN & PRD ── */
-.filters-wrapper { margin-bottom:1.5rem; }
+/* ── FILTROS PRINCIPAIS ── */
+.filters-wrapper { margin-bottom:1rem; }
 .filters {
-    display:flex; gap:12px; justify-content:center; flex-wrap:wrap;
-    background: transparent; padding: 0.5rem; border: none;
+    display:flex; gap:10px; justify-content:center; flex-wrap:wrap;
+    background: #f8fafc; padding: 6px; border-radius: 100px;
+    border: 1px solid #e2e8f0; width: fit-content; margin: 0 auto;
 }
 .btn-filter {
-    padding:10px 22px; background:#fff; border:1px solid #e2e8f0;
-    color:#475569; border-radius:99px;
-    font-weight:600; font-size:.9rem; transition:all .2s ease;
+    padding:10px 20px; background:transparent; border:none;
+    color:#64748b; border-radius:99px;
+    font-weight:600; font-size:.9rem; transition:all .3s ease;
     display:flex; align-items:center; gap:8px;
-    box-shadow: 0 1px 2px rgba(0,0,0,0.03);
 }
-.btn-filter:hover { border-color:#cbd5e1; color:#0f172a; background:#f8fafc; transform:translateY(-1px); }
-.btn-filter.active { background:#0f172a !important; color:#fff !important; border-color:#0f172a !important; box-shadow:0 4px 12px rgba(15,23,42,.2) !important; transform:translateY(-1px); }
+.btn-filter:hover { color:#0f172a; background:#e2e8f0; }
+.btn-filter.active { background:#0f172a !important; color:#fff !important; box-shadow:0 4px 12px rgba(15,23,42,.15) !important; }
 .btn-filter.active i { color:#fff !important; }
 
-/* Sub-bars Base Uniforme */
-.sub-bar-base, .sacolas-tipo-bar, .sacolas-tamanho-bar, .sacolas-pacote-bar, .marmitex-marca-bar, .plastico-marca-bar {
-    display:none; gap:10px; justify-content:center; flex-wrap:wrap;
-    margin-bottom:1.5rem; padding:0; background:transparent !important; border:none !important;
-    animation:fadeIn .35s ease;
-}
-.sub-bar-base.visible, .sacolas-tipo-bar.visible, .sacolas-tamanho-bar.visible, .sacolas-pacote-bar.visible, .marmitex-marca-bar.visible, .plastico-marca-bar.visible { display:flex; }
+/* ── SUB-BARS (Elegantes) ── */
+.sub-bar-container { display:flex; flex-direction:column; gap:8px; align-items:center; margin-bottom:2.5rem; }
 
-/* Botões das subcategorias (unificados) */
-.btn-sub, .btn-tipo-sacola, .btn-tamanho-sacola, .btn-pacote-sacola, .btn-sub-isopor, .btn-marca-marmitex, .btn-sub-plastico, .btn-marca-plastico {
-    padding:8px 18px; background:#f1f5f9; border:1px solid transparent;
+.sub-bar-base {
+    display:none; gap:8px; justify-content:center; flex-wrap:wrap;
+    animation:fadeIn .3s ease;
+}
+.sub-bar-base.visible { display:flex; }
+
+/* Botões de subcategorias */
+.btn-sub {
+    padding:8px 16px; background:#fff; border:1px solid #e2e8f0;
     color:#475569; border-radius:99px;
     font-weight:600; font-size:.85rem; transition:all .2s ease;
-    display:flex; align-items:center; gap:6px;
+    display:flex; align-items:center; gap:6px; box-shadow: 0 1px 2px rgba(0,0,0,0.02);
 }
-.btn-sub:hover, .btn-tipo-sacola:hover, .btn-tamanho-sacola:hover, .btn-pacote-sacola:hover, .btn-sub-isopor:hover, .btn-marca-marmitex:hover, .btn-sub-plastico:hover, .btn-marca-plastico:hover {
-    background:#e2e8f0; color:#0f172a;
-}
-/* Estilo Active Unificado e Clean */
-.btn-sub.active, .btn-tipo-sacola.active, .btn-tamanho-sacola.active, .btn-pacote-sacola.active, .btn-sub-isopor.active, .btn-marca-marmitex.active, .btn-sub-plastico.active, .btn-marca-plastico.active {
-    background:#e2e8f0 !important; color:#0f172a !important; border-color:#cbd5e1 !important; box-shadow:none !important; font-weight:700;
+.btn-sub:hover { border-color:#cbd5e1; color:#0f172a; transform:translateY(-1px); box-shadow: 0 2px 4px rgba(0,0,0,0.04); }
+/* Estilo "Pílula Ativa" nos subs */
+.btn-sub.active {
+    background:#eff6ff !important; color:#1d4ed8 !important; border-color:#bfdbfe !important; font-weight:700;
 }
 
-/* Dots indicadores de cor (usados nas sacolas) */
+/* Dots de cor */
 .cor-dot { width:12px; height:12px; border-radius:50%; flex-shrink:0; border:1px solid rgba(0,0,0,.1); }
 .cor-dot-preta { background:#1e293b; }
 .cor-dot-verde { background:#10b981; }
@@ -308,7 +234,7 @@ header.scrolled { padding:.65rem 0; box-shadow:0 8px 32px -8px rgba(15,23,42,.08
 .cor-dot-banheiro { background:#d946ef; }
 
 /* Breadcrumb */
-.breadcrumb { display:none; align-items:center; gap:8px; font-size:.88rem; color:var(--text-muted); margin-bottom:2rem; font-weight:500; }
+.breadcrumb { display:none; align-items:center; gap:8px; font-size:.88rem; color:var(--text-muted); margin-bottom:1rem; font-weight:500; justify-content:center; }
 .breadcrumb.visible { display:flex; }
 .breadcrumb span { color:var(--blue-600); font-weight:700; }
 
@@ -323,15 +249,8 @@ header.scrolled { padding:.65rem 0; box-shadow:0 8px 32px -8px rgba(15,23,42,.08
     border-bottom:2px solid var(--border);
 }
 .section-title i { color:var(--blue-600); background:var(--blue-50); padding:10px; border-radius:14px; font-size:1.4rem; }
-.titulo-sacola i { color:#e2e8f0; background:#1a1a2e; }
-.titulo-sacola-verde i { color:#6ee7b7; background:#022c22; }
-.titulo-sacola-branca i { color:#374151; background:#f3f4f6; }
-.titulo-sacola-crystal i { color:#93c5fd; background:linear-gradient(135deg,#0f172a,#1e1b4b); }
-.titulo-isopor i { color:#00838f; background:#e0f7fa; }
-.titulo-sacola-kraft i, .titulo-sacola-kraft-alca i { color:#fde68a; background:#1c1008; }
-.titulo-plastico i { color:#15803d; background:#f0fdf4; }
 
-/* AJUSTE PARA NÃO CORTAR NO MOBILE */
+/* Configuração da Grade */
 .products-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(280px,1fr)); gap:2rem; }
 
 /* ── CARD DE PRODUTO ── */
@@ -353,8 +272,8 @@ header.scrolled { padding:.65rem 0; box-shadow:0 8px 32px -8px rgba(15,23,42,.08
     position:relative; overflow:hidden;
     background:linear-gradient(135deg,#f8fafc 0%,var(--blue-50) 100%);
 }
-.product-img svg { width:125px; height:125px; transition:var(--tr); filter:drop-shadow(0 4px 12px rgba(37,99,235,.12)); }
-.product-card:hover .product-img svg { transform:scale(1.1) rotate(-2deg); }
+.product-img svg { width:130px; height:130px; transition:var(--tr); filter:drop-shadow(0 4px 12px rgba(37,99,235,.08)); }
+.product-card:hover .product-img svg { transform:scale(1.08) translateY(-4px); }
 .product-img::after {
     content:''; position:absolute; inset:0;
     background:linear-gradient(105deg,transparent 40%,rgba(255,255,255,.4) 50%,transparent 60%);
@@ -370,6 +289,7 @@ header.scrolled { padding:.65rem 0; box-shadow:0 8px 32px -8px rgba(15,23,42,.08
     opacity:0; transform:scale(.75) translateY(-4px); transition:var(--tr-spring);
 }
 .product-card.in-cart .cart-seal { opacity:1; transform:scale(1) translateY(0); }
+.brand-badge { position:absolute; top:12px; left:12px; font-size:.68rem; font-weight:800; padding:4px 10px; border-radius:var(--radius-btn); z-index:3; letter-spacing:.02em; }
 
 /* Conteúdo do card */
 .product-body { padding:1.75rem; display:flex; flex-direction:column; flex-grow:1; }
@@ -408,132 +328,8 @@ header.scrolled { padding:.65rem 0; box-shadow:0 8px 32px -8px rgba(15,23,42,.08
 .btn-info { padding:9px 14px; border:1.5px solid var(--border); border-radius:12px; color:var(--text-muted); font-size:.82rem; font-weight:600; transition:var(--tr); }
 .btn-info:hover { border-color:var(--blue-300); color:var(--blue-600); background:var(--blue-50); }
 
-/* Ripple effect */
-.ripple { position:absolute; border-radius:50%; background:rgba(255,255,255,.4); transform:scale(0); animation:rippleAnim .6s linear; pointer-events:none; }
-@keyframes rippleAnim { to { transform:scale(4); opacity:0; } }
-
-/* ── CARDS ESPECIAIS ── */
-.sacola-preta-card { background:#1a1a2e !important; border-color:#2a2a3e !important; }
-.sacola-preta-card:hover { border-color:#555 !important; box-shadow:0 24px 48px -8px rgba(0,0,0,.5) !important; }
-.sacola-preta-card .product-body { background:#1a1a2e; }
-.sacola-preta-card .product-name { color:#f1f5f9 !important; }
-.sacola-preta-card .product-desc { color:#64748b !important; }
-.sacola-preta-card .product-img { background:linear-gradient(135deg,#0f0f1a,#1a1a2e) !important; border-bottom-color:#2a2a3e !important; }
-.sacola-preta-card .price-box { background:#0f0f1a !important; border-color:#2a2a3e !important; }
-.sacola-preta-card .price-box::before { background:linear-gradient(to bottom,#64748b,#475569) !important; }
-.sacola-preta-card .price-label { color:#64748b !important; }
-.sacola-preta-card .price-value { color:#e2e8f0 !important; }
-.sacola-preta-card .qty-control { border-color:#2a2a3e !important; background:#0f0f1a !important; }
-.sacola-preta-card .btn-qty { color:#94a3b8 !important; }
-.sacola-preta-card .btn-qty:hover { background:#1a1a2e !important; }
-.sacola-preta-card .input-qty { color:#f1f5f9 !important; }
-.sacola-preta-card .btn-add { background:linear-gradient(135deg,#374151,#4b5563) !important; }
-.sacola-preta-card .btn-add:hover { box-shadow:0 6px 16px rgba(0,0,0,.4) !important; }
-.sacola-preta-card .btn-info { border-color:#2a2a3e !important; color:#475569 !important; }
-.sacola-preta-card .btn-info:hover { border-color:#64748b !important; color:#cbd5e1 !important; }
-
-.sacola-verde-card { background:#022c22 !important; border-color:#064e3b !important; }
-.sacola-verde-card:hover { border-color:#34d399 !important; box-shadow:0 24px 48px -8px rgba(16,185,129,.2) !important; }
-.sacola-verde-card .product-body { background:#022c22; }
-.sacola-verde-card .product-name { color:#6ee7b7 !important; }
-.sacola-verde-card .product-desc { color:#34d399 !important; opacity:.7; }
-.sacola-verde-card .product-img { background:linear-gradient(135deg,#022c22,#064e3b) !important; border-bottom-color:#064e3b !important; }
-.sacola-verde-card .price-box { background:#011a14 !important; border-color:#064e3b !important; }
-.sacola-verde-card .price-box::before { background:linear-gradient(to bottom,#10b981,#059669) !important; }
-.sacola-verde-card .price-label { color:#34d399 !important; }
-.sacola-verde-card .price-value { color:#6ee7b7 !important; }
-.sacola-verde-card .qty-control { border-color:#064e3b !important; background:#011a14 !important; }
-.sacola-verde-card .btn-qty { color:#34d399 !important; }
-.sacola-verde-card .btn-qty:hover { background:#064e3b !important; }
-.sacola-verde-card .input-qty { color:#6ee7b7 !important; }
-.sacola-verde-card .btn-add { background:linear-gradient(135deg,#065f46,#10b981) !important; color:#fff !important; }
-.sacola-verde-card .btn-info { border-color:#064e3b !important; color:#065f46 !important; }
-.sacola-verde-card .btn-info:hover { border-color:#34d399 !important; color:#6ee7b7 !important; }
-
-.sacola-branca-card { background:#fff !important; border-color:#d1d5db !important; }
-.sacola-branca-card:hover { border-color:#9ca3af !important; box-shadow:0 24px 48px -8px rgba(0,0,0,.1) !important; }
-.sacola-branca-card .product-img { background:linear-gradient(135deg,#f9fafb,#f3f4f6) !important; border-bottom-color:#d1d5db !important; }
-.sacola-branca-card .price-box { background:#f3f4f6 !important; border-color:#d1d5db !important; }
-.sacola-branca-card .price-box::before { background:linear-gradient(to bottom,#374151,#1f2937) !important; }
-.sacola-branca-card .btn-add { background:linear-gradient(135deg,#374151,#1f2937) !important; }
-
-.sacola-crystal-card { background:linear-gradient(135deg,#0f172a,#1e1b4b) !important; border-color:rgba(147,197,253,.25) !important; }
-.sacola-crystal-card:hover { border-color:#60a5fa !important; box-shadow:0 24px 48px -8px rgba(96,165,250,.25) !important; }
-.sacola-crystal-card .product-body { background:transparent; }
-.sacola-crystal-card .product-name { color:#c7d2fe !important; }
-.sacola-crystal-card .product-desc { color:#818cf8 !important; }
-.sacola-crystal-card .product-img { background:linear-gradient(135deg,rgba(30,27,75,.8),rgba(15,23,42,.8)) !important; border-bottom-color:rgba(147,197,253,.15) !important; }
-.sacola-crystal-card .price-box { background:rgba(30,27,75,.5) !important; border-color:rgba(147,197,253,.2) !important; }
-.sacola-crystal-card .price-box::before { background:linear-gradient(to bottom,#3b82f6,#8b5cf6) !important; }
-.sacola-crystal-card .price-label { color:#818cf8 !important; }
-.sacola-crystal-card .price-value { color:#c7d2fe !important; }
-.sacola-crystal-card .qty-control { border-color:rgba(147,197,253,.2) !important; background:rgba(30,27,75,.5) !important; }
-.sacola-crystal-card .btn-qty { color:#818cf8 !important; }
-.sacola-crystal-card .btn-qty:hover { background:rgba(30,27,75,.8) !important; }
-.sacola-crystal-card .input-qty { color:#c7d2fe !important; }
-.sacola-crystal-card .btn-add { background:linear-gradient(135deg,#3b82f6,#8b5cf6) !important; }
-.sacola-crystal-card .btn-info { border-color:rgba(147,197,253,.2) !important; color:rgba(96,165,250,.5) !important; }
-.sacola-crystal-card .btn-info:hover { border-color:#60a5fa !important; color:#93c5fd !important; }
-
-.sacola-kraft-card { background:#1c1008 !important; border-color:#78350f !important; }
-.sacola-kraft-card:hover { border-color:#f59e0b !important; box-shadow:0 24px 48px -8px rgba(245,158,11,.2) !important; }
-.sacola-kraft-card .product-body { background:#1c1008; }
-.sacola-kraft-card .product-name { color:#fde68a !important; }
-.sacola-kraft-card .product-desc { color:#d97706 !important; opacity:.8; }
-.sacola-kraft-card .product-img { background:linear-gradient(135deg,#1c1008,#2d1a08) !important; border-bottom-color:#78350f !important; }
-.sacola-kraft-card .price-box { background:#0f0804 !important; border-color:#78350f !important; }
-.sacola-kraft-card .price-box::before { background:linear-gradient(to bottom,#f59e0b,#d97706) !important; }
-.sacola-kraft-card .price-label { color:#d97706 !important; }
-.sacola-kraft-card .price-value { color:#fde68a !important; }
-.sacola-kraft-card .qty-control { border-color:#78350f !important; background:#0f0804 !important; }
-.sacola-kraft-card .btn-qty { color:#d97706 !important; }
-.sacola-kraft-card .btn-qty:hover { background:#2d1a08 !important; }
-.sacola-kraft-card .input-qty { color:#fde68a !important; }
-.sacola-kraft-card .btn-add { background:linear-gradient(135deg,#92400e,#f59e0b) !important; color:#1c1917 !important; }
-.sacola-kraft-card .btn-info { border-color:#78350f !important; color:#78350f !important; }
-.sacola-kraft-card .btn-info:hover { border-color:#f59e0b !important; color:#fde68a !important; }
-
-.sacola-kraft-alca-card { background:#1c1008 !important; border:2px solid #b45309 !important; }
-.sacola-kraft-alca-card:hover { border-color:#fbbf24 !important; box-shadow:0 24px 48px -8px rgba(251,191,36,.25) !important; }
-.sacola-kraft-alca-card .product-body { background:#1c1008; }
-.sacola-kraft-alca-card .product-name { color:#fef08a !important; }
-.sacola-kraft-alca-card .product-desc { color:#fcd34d !important; opacity:.8; }
-.sacola-kraft-alca-card .product-img { background:linear-gradient(135deg,#1c1008,#2d1a08) !important; border-bottom-color:#b45309 !important; }
-.sacola-kraft-alca-card .price-box { background:#0f0804 !important; border-color:#b45309 !important; }
-.sacola-kraft-alca-card .price-box::before { background:linear-gradient(to bottom,#fbbf24,#b45309) !important; }
-.sacola-kraft-alca-card .price-label { color:#fcd34d !important; }
-.sacola-kraft-alca-card .price-value { color:#fef08a !important; }
-.sacola-kraft-alca-card .qty-control { border-color:#b45309 !important; background:#0f0804 !important; }
-.sacola-kraft-alca-card .btn-qty { color:#fcd34d !important; }
-.sacola-kraft-alca-card .btn-qty:hover { background:#2d1a08 !important; }
-.sacola-kraft-alca-card .input-qty { color:#fef08a !important; }
-.sacola-kraft-alca-card .btn-add { background:linear-gradient(135deg,#b45309,#fbbf24) !important; color:#1c1917 !important; }
-.sacola-kraft-alca-card .btn-info { border-color:#b45309 !important; color:#b45309 !important; }
-.sacola-kraft-alca-card .btn-info:hover { border-color:#fbbf24 !important; color:#fef08a !important; }
-
-.isopor-card:hover { border-color:#00acc1 !important; box-shadow:0 24px 48px -8px rgba(0,131,143,.15) !important; }
-.isopor-card .product-img { background:linear-gradient(135deg,#e0f7fa,#f0fdff) !important; border-bottom-color:#b2ebf2 !important; }
-.isopor-card .price-box { background:#e0f7fa !important; border-color:#b2ebf2 !important; }
-.isopor-card .price-box::before { background:linear-gradient(to bottom,#00838f,#005662) !important; }
-.isopor-card .price-label { color:#00838f !important; }
-.isopor-card .price-value { color:#00838f !important; }
-.isopor-card .btn-add { background:linear-gradient(135deg,#00838f,#005662) !important; }
-.isopor-card .btn-add:hover { box-shadow:0 6px 16px rgba(0,131,143,.3) !important; }
-
-.plastico-card { border-color:#bbf7d0 !important; }
-.plastico-card:hover { border-color:#4ade80 !important; box-shadow:0 24px 48px -8px rgba(21,128,61,.12) !important; }
-.plastico-card .product-img { background:linear-gradient(135deg,#f0fdf4,#dcfce7) !important; border-bottom-color:#bbf7d0 !important; }
-.plastico-card .price-box { background:#f0fdf4 !important; border-color:#bbf7d0 !important; }
-.plastico-card .price-box::before { background:linear-gradient(to bottom,#15803d,#166534) !important; }
-.plastico-card .price-label { color:#15803d !important; }
-.plastico-card .price-value { color:#15803d !important; }
-.plastico-card .btn-add { background:linear-gradient(135deg,#15803d,#166534) !important; }
-.plastico-card .btn-add:hover { box-shadow:0 6px 16px rgba(21,128,61,.3) !important; }
-
-.brand-badge { position:absolute; top:12px; left:12px; font-size:.68rem; font-weight:800; padding:4px 10px; border-radius:var(--radius-btn); z-index:3; letter-spacing:.02em; }
-
 /* ══════════════════════════════════════════════
-   SIDEBAR CARRINHO
+   SIDEBAR CARRINHO E WHATSAPP
 ══════════════════════════════════════════════ */
 .cart-overlay { position:fixed; inset:0; background:rgba(10,15,30,.65); backdrop-filter:blur(8px); z-index:1500; opacity:0; pointer-events:none; transition:opacity .35s ease; }
 .cart-overlay.open { opacity:1; pointer-events:all; }
@@ -562,7 +358,6 @@ header.scrolled { padding:.65rem 0; box-shadow:0 8px 32px -8px rgba(15,23,42,.08
 .cart-item-controls { display:flex; align-items:center; gap:7px; flex-shrink:0; }
 .cart-qty-ctrl { display:flex; align-items:center; border:1.5px solid var(--border); border-radius:8px; overflow:hidden; }
 .cart-qty-btn { width:26px; height:28px; display:flex; align-items:center; justify-content:center; font-size:.95rem; font-weight:800; color:var(--blue-600); transition:var(--tr); }
-.cart-qty-btn:hover { background:var(--blue-50); }
 .cart-qty-val { width:30px; text-align:center; font-size:.85rem; font-weight:700; color:var(--text-dark); }
 .cart-subtotal { font-size:.9rem; font-weight:800; color:var(--blue-600); min-width:60px; text-align:right; }
 .btn-remove-item { color:var(--text-muted); font-size:.95rem; transition:var(--tr); padding:4px; }
@@ -571,34 +366,26 @@ header.scrolled { padding:.65rem 0; box-shadow:0 8px 32px -8px rgba(15,23,42,.08
 .cart-total-row { display:flex; justify-content:space-between; align-items:center; margin-bottom:1.25rem; }
 .cart-total-label { font-size:.95rem; font-weight:600; color:var(--text-muted); }
 .cart-total-val { font-size:1.7rem; font-weight:900; color:var(--blue-600); letter-spacing:-.03em; }
-.btn-send-wpp {
-    width:100%; padding:16px; background:linear-gradient(135deg,var(--green-wa),#1aab52);
-    color:#fff; border-radius:14px; font-weight:800; font-size:1.05rem;
-    display:flex; align-items:center; justify-content:center; gap:10px;
-    transition:var(--tr); box-shadow:0 8px 24px rgba(37,211,102,.3);
-}
+.btn-send-wpp { width:100%; padding:16px; background:linear-gradient(135deg,var(--green-wa),#1aab52); color:#fff; border-radius:14px; font-weight:800; font-size:1.05rem; display:flex; align-items:center; justify-content:center; gap:10px; transition:var(--tr); box-shadow:0 8px 24px rgba(37,211,102,.3); }
 .btn-send-wpp:hover { transform:translateY(-2px); box-shadow:0 14px 36px rgba(37,211,102,.45); }
 .btn-clear { width:100%; padding:11px; color:var(--text-muted); font-size:.88rem; font-weight:600; margin-top:.6rem; transition:var(--tr); border-radius:10px; }
 .btn-clear:hover { background:var(--bg-page); color:#ef4444; }
-.wpp-notice { font-size:.76rem; color:var(--text-muted); text-align:center; margin-top:.6rem; display:flex; align-items:center; justify-content:center; gap:5px; }
+
+.whatsapp-float {
+    position:fixed; bottom:28px; right:28px; background:linear-gradient(135deg,var(--green-wa),#1aab52);
+    color:#fff; width:62px; height:62px; border-radius:50%; display:flex; align-items:center; justify-content:center;
+    box-shadow:0 12px 32px rgba(37,211,102,.45); z-index:999; transition:var(--tr); font-size:2.2rem;
+}
+.whatsapp-float:hover { transform:scale(1.12) translateY(-4px); box-shadow:0 20px 48px rgba(37,211,102,.55); }
+.whatsapp-float::before { content:''; position:absolute; inset:-4px; border-radius:50%; border:2px solid rgba(37,211,102,.4); animation:waPulse 2.5s ease-in-out infinite; }
+@keyframes waPulse { 0%,100%{transform:scale(1);opacity:.6;} 50%{transform:scale(1.15);opacity:0;} }
 
 /* ══════════════════════════════════════════════
-   MODAL
+   MODAL E FOOTER
 ══════════════════════════════════════════════ */
-.modal-backdrop {
-    display:none; position:fixed; inset:0;
-    background:rgba(10,15,30,.88); backdrop-filter:blur(14px);
-    z-index:2000; align-items:center; justify-content:center; padding:1.5rem;
-    opacity:0; transition:opacity .3s ease;
-}
+.modal-backdrop { display:none; position:fixed; inset:0; background:rgba(10,15,30,.88); backdrop-filter:blur(14px); z-index:2000; align-items:center; justify-content:center; padding:1.5rem; opacity:0; transition:opacity .3s ease; }
 .modal-backdrop.active { display:flex; opacity:1; }
-.modal-box {
-    background:#fff; width:100%; max-width:600px; border-radius:28px;
-    padding:2.75rem; transform:scale(.88) translateY(32px);
-    transition:all .45s cubic-bezier(.175,.885,.32,1.275);
-    position:relative; box-shadow:0 40px 80px -20px rgba(0,0,0,.45);
-    max-height:90vh; overflow-y:auto;
-}
+.modal-box { background:#fff; width:100%; max-width:550px; border-radius:28px; padding:2.75rem; transform:scale(.88) translateY(32px); transition:all .45s cubic-bezier(.175,.885,.32,1.275); position:relative; box-shadow:0 40px 80px -20px rgba(0,0,0,.45); max-height:90vh; overflow-y:auto; }
 .modal-backdrop.active .modal-box { transform:scale(1) translateY(0); }
 .btn-close-modal { position:absolute; top:1.4rem; right:1.4rem; background:var(--bg-page); width:42px; height:42px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:1.2rem; color:var(--text-muted); transition:var(--tr); }
 .btn-close-modal:hover { background:var(--border); color:var(--text-dark); transform:rotate(90deg); }
@@ -615,28 +402,6 @@ header.scrolled { padding:.65rem 0; box-shadow:0 8px 32px -8px rgba(15,23,42,.08
 .spec-label { font-size:.9rem; color:var(--text-muted); font-weight:600; display:flex; align-items:center; gap:9px; }
 .spec-value { font-size:.95rem; font-weight:700; color:var(--text-dark); }
 
-/* ══════════════════════════════════════════════
-   WHATSAPP FLUTUANTE
-══════════════════════════════════════════════ */
-.whatsapp-float {
-    position:fixed; bottom:28px; right:28px;
-    background:linear-gradient(135deg,var(--green-wa),#1aab52);
-    color:#fff; width:62px; height:62px; border-radius:50%;
-    display:flex; align-items:center; justify-content:center;
-    box-shadow:0 12px 32px rgba(37,211,102,.45); z-index:999;
-    transition:var(--tr); font-size:2rem;
-}
-.whatsapp-float:hover { transform:scale(1.12) translateY(-4px); box-shadow:0 20px 48px rgba(37,211,102,.55); }
-.whatsapp-float::before {
-    content:''; position:absolute; inset:-4px; border-radius:50%;
-    border:2px solid rgba(37,211,102,.4);
-    animation:waPulse 2.5s ease-in-out infinite;
-}
-@keyframes waPulse { 0%,100%{transform:scale(1);opacity:.6;} 50%{transform:scale(1.15);opacity:0;} }
-
-/* ══════════════════════════════════════════════
-   FOOTER
-══════════════════════════════════════════════ */
 footer { background:var(--blue-950); color:#fff; padding:5.5rem 0 3rem; margin-top:auto; }
 .footer-grid { max-width:1200px; margin:0 auto; padding:0 1.5rem; display:grid; grid-template-columns:1.6fr 1fr 1fr; gap:4rem; }
 .footer-col h4 { color:rgba(255,255,255,.5); font-size:.78rem; font-weight:700; margin-bottom:1.5rem; text-transform:uppercase; letter-spacing:.1em; }
@@ -651,9 +416,6 @@ footer { background:var(--blue-950); color:#fff; padding:5.5rem 0 3rem; margin-t
 .footer-divider { border:none; border-top:1px solid rgba(255,255,255,.08); margin:4rem 0 2.5rem; }
 .footer-copy { max-width:1200px; margin:0 auto; padding:0 1.5rem; color:rgba(255,255,255,.3); font-size:.85rem; text-align:center; }
 
-/* ══════════════════════════════════════════════
-   SCROLL REVEAL
-══════════════════════════════════════════════ */
 .reveal { opacity:0; transform:translateY(28px); transition:opacity .65s ease, transform .65s ease; }
 .reveal.revealed { opacity:1; transform:translateY(0); }
 
@@ -676,11 +438,12 @@ footer { background:var(--blue-950); color:#fff; padding:5.5rem 0 3rem; margin-t
     .about-visual { display:none; }
     
     /* Scroll Horizontal elegante para filtros no mobile */
-    .filters, .sub-bar-base, .sacolas-tipo-bar, .sacolas-tamanho-bar, .sacolas-pacote-bar, .marmitex-marca-bar, .plastico-marca-bar { 
+    .filters, .sub-bar-base { 
         justify-content:flex-start; overflow-x:auto; flex-wrap:nowrap; padding-bottom:10px; 
-        -webkit-overflow-scrolling:touch; scrollbar-width: none; 
+        -webkit-overflow-scrolling:touch; scrollbar-width: none; width: 100%;
     }
-    .filters::-webkit-scrollbar, .sub-bar-base::-webkit-scrollbar, .sacolas-tipo-bar::-webkit-scrollbar, .sacolas-tamanho-bar::-webkit-scrollbar, .sacolas-pacote-bar::-webkit-scrollbar, .marmitex-marca-bar::-webkit-scrollbar, .plastico-marca-bar::-webkit-scrollbar { display: none; }
+    .filters::-webkit-scrollbar, .sub-bar-base::-webkit-scrollbar { display: none; }
+    .sub-bar-container { align-items:flex-start; width:100%; }
     
     .products-grid { grid-template-columns:1fr; }
     
@@ -853,81 +616,91 @@ footer { background:var(--blue-950); color:#fff; padding:5.5rem 0 3rem; margin-t
             </div>
         </div>
 
-        <div class="sub-bar-base" id="barraSubcategorias">
-            <button class="btn-sub active" onclick="filtrarSub('todas',this,'caixas')"><i class="ph-bold ph-squares-four"></i> Todas as Caixas</button>
-            <button class="btn-sub" onclick="filtrarSub('sedex',this,'caixas')"><i class="ph-bold ph-box-arrow-up"></i> Padrão Correios</button>
-            <button class="btn-sub" onclick="filtrarSub('confeiteiros',this,'caixas')"><i class="ph-bold ph-cake"></i> Para Doces</button>
-            <button class="btn-sub" onclick="filtrarSub('salgado',this,'caixas')"><i class="ph-bold ph-fork-knife"></i> Para Salgados</button>
-            <button class="btn-sub" onclick="filtrarSub('geral',this,'caixas')"><i class="ph-bold ph-cube"></i> Uso Geral</button>
-        </div>
+        <div class="sub-bar-container">
+            
+            <div class="sub-bar-base" id="barraSubcategorias">
+                <button class="btn-sub active" onclick="filtrarSub('todas',this,'caixas')"><i class="ph-bold ph-squares-four"></i> Todas as Caixas</button>
+                <button class="btn-sub" onclick="filtrarSub('sedex',this,'caixas')"><i class="ph-bold ph-box-arrow-up"></i> Padrão Correios</button>
+                <button class="btn-sub" onclick="filtrarSub('confeiteiros',this,'caixas')"><i class="ph-bold ph-cake"></i> Para Doces</button>
+                <button class="btn-sub" onclick="filtrarSub('salgado',this,'caixas')"><i class="ph-bold ph-fork-knife"></i> Para Salgados</button>
+                <button class="btn-sub" onclick="filtrarSub('geral',this,'caixas')"><i class="ph-bold ph-cube"></i> Uso Geral</button>
+            </div>
 
-        <div class="sacolas-tipo-bar" id="barraTipoSacolas">
-            <button class="btn-tipo-sacola active" onclick="selecionarTipoSacola('preta',this)"><span class="cor-dot cor-dot-preta"></span> Preta</button>
-            <button class="btn-tipo-sacola" onclick="selecionarTipoSacola('verde',this)"><span class="cor-dot cor-dot-verde"></span> Verde</button>
-            <button class="btn-tipo-sacola" onclick="selecionarTipoSacola('branca',this)"><span class="cor-dot cor-dot-branca"></span> Branca</button>
-            <button class="btn-tipo-sacola" onclick="selecionarTipoSacola('crystal',this)"><span class="cor-dot cor-dot-crystal"></span> Crystal</button>
-            <button class="btn-tipo-sacola" onclick="selecionarTipoSacola('kraft',this)"><span class="cor-dot cor-dot-kraft"></span> Kraft</button>
-            <button class="btn-tipo-sacola" onclick="selecionarTipoSacola('kraft-alca',this)"><span class="cor-dot cor-dot-kraft-alca"></span> Kraft c/ Alça</button>
-            <button class="btn-tipo-sacola" onclick="selecionarTipoSacola('lixo-banheiro',this)"><span class="cor-dot cor-dot-banheiro"></span> Banheiro</button>
-        </div>
+            <div class="sub-bar-base" id="barraTipoSacolas">
+                <button class="btn-sub active" onclick="selecionarTipoSacola('preta',this)"><span class="cor-dot cor-dot-preta"></span> Preta</button>
+                <button class="btn-sub" onclick="selecionarTipoSacola('verde',this)"><span class="cor-dot cor-dot-verde"></span> Verde</button>
+                <button class="btn-sub" onclick="selecionarTipoSacola('branca',this)"><span class="cor-dot cor-dot-branca"></span> Branca</button>
+                <button class="btn-sub" onclick="selecionarTipoSacola('crystal',this)"><span class="cor-dot cor-dot-crystal"></span> Crystal</button>
+                <button class="btn-sub" onclick="selecionarTipoSacola('kraft',this)"><span class="cor-dot cor-dot-kraft"></span> Kraft</button>
+                <button class="btn-sub" onclick="selecionarTipoSacola('kraft-alca',this)"><span class="cor-dot cor-dot-kraft-alca"></span> Kraft c/ Alça</button>
+                <button class="btn-sub" onclick="selecionarTipoSacola('lixo-banheiro',this)"><span class="cor-dot cor-dot-banheiro"></span> Banheiro</button>
+            </div>
 
-        <div class="sacolas-pacote-bar" id="barraPacoteSacolas">
-            <button class="btn-pacote-sacola active" onclick="filtrarPacoteSacola('todos',this)"><i class="ph-bold ph-squares-four"></i> Todos os Pacotes</button>
-            <button class="btn-pacote-sacola" onclick="filtrarPacoteSacola('10un',this)"><i class="ph-bold ph-stack"></i> Pacote c/ 10 un</button>
-            <button class="btn-pacote-sacola" onclick="filtrarPacoteSacola('50un',this)"><i class="ph-bold ph-stack"></i> Pacote c/ 50 un</button>
-        </div>
+            <div class="sub-bar-base" id="barraPacoteSacolas">
+                <button class="btn-sub active" onclick="filtrarPacoteSacola('todos',this)"><i class="ph-bold ph-squares-four"></i> Todos os Pacotes</button>
+                <button class="btn-sub" onclick="filtrarPacoteSacola('10un',this)"><i class="ph-bold ph-stack"></i> Pacote c/ 10 un</button>
+                <button class="btn-sub" onclick="filtrarPacoteSacola('50un',this)"><i class="ph-bold ph-stack"></i> Pacote c/ 50 un</button>
+            </div>
 
-        <div class="sacolas-tamanho-bar" id="barraTamanhoSacolas">
-            <button class="btn-tamanho-sacola active" onclick="filtrarTamanhoSacola('todas',this)"><i class="ph-bold ph-squares-four"></i> Todos os Tamanhos</button>
-            <button class="btn-tamanho-sacola" onclick="filtrarTamanhoSacola('p',this)"><i class="ph-bold ph-shopping-bag"></i> Pequenas</button>
-            <button class="btn-tamanho-sacola" onclick="filtrarTamanhoSacola('m',this)"><i class="ph-bold ph-shopping-bag"></i> Médias</button>
-            <button class="btn-tamanho-sacola" onclick="filtrarTamanhoSacola('g',this)"><i class="ph-bold ph-shopping-bag"></i> Grandes</button>
-        </div>
+            <div class="sub-bar-base" id="barraPesoCrystal">
+                <button class="btn-sub active" onclick="filtrarPesoCrystal('todos',this)"><i class="ph-bold ph-squares-four"></i> Todos</button>
+                <button class="btn-sub" onclick="filtrarPesoCrystal('200g',this)"><i class="ph-bold ph-package"></i> Pacotes 200g</button>
+                <button class="btn-sub" onclick="filtrarPesoCrystal('1kg',this)"><i class="ph-bold ph-archive"></i> Fardos 1kg</button>
+                <button class="btn-sub" onclick="filtrarPesoCrystal('cento',this)"><i class="ph-bold ph-drop"></i> Centos (Geladinho/Gelão)</button>
+            </div>
 
-        <div class="sub-bar-base" id="barraSubcategoriasIsopor">
-            <button class="btn-sub-isopor active" onclick="filtrarSub('todas',this,'isopor')"><i class="ph-bold ph-squares-four"></i> Todos</button>
-            <button class="btn-sub-isopor" onclick="filtrarSub('marmitex',this,'isopor')"><i class="ph-bold ph-bowl-food"></i> Marmitex</button>
-            <button class="btn-sub-isopor" onclick="filtrarSub('caixa-isopor',this,'isopor')"><i class="ph-bold ph-cube"></i> Caixas de Isopor</button>
-            <button class="btn-sub-isopor" onclick="filtrarSub('copo-isopor',this,'isopor')"><i class="ph-bold ph-coffee"></i> Copos de Isopor</button>
-            <button class="btn-sub-isopor" onclick="filtrarSub('disco-isopor',this,'isopor')"><i class="ph-bold ph-circle"></i> Disco para Pizza</button>
-        </div>
+            <div class="sub-bar-base" id="barraTamanhoSacolas">
+                <button class="btn-sub active" onclick="filtrarTamanhoSacola('todas',this)"><i class="ph-bold ph-squares-four"></i> Todos os Tamanhos</button>
+                <button class="btn-sub" onclick="filtrarTamanhoSacola('p',this)"><i class="ph-bold ph-shopping-bag"></i> Pequenas</button>
+                <button class="btn-sub" onclick="filtrarTamanhoSacola('m',this)"><i class="ph-bold ph-shopping-bag"></i> Médias</button>
+                <button class="btn-sub" onclick="filtrarTamanhoSacola('g',this)"><i class="ph-bold ph-shopping-bag"></i> Grandes</button>
+            </div>
 
-        <div class="marmitex-marca-bar" id="barraMarcaMarmitex">
-            <button class="btn-marca-marmitex active" onclick="filtrarMarcaMarmitex('todas',this)"><i class="ph-bold ph-squares-four"></i> Todas as Marcas</button>
-            <button class="btn-marca-marmitex" onclick="filtrarMarcaMarmitex('Copabras',this)"><i class="ph-bold ph-tag"></i> Copabras</button>
-            <button class="btn-marca-marmitex" onclick="filtrarMarcaMarmitex('Bom Apetite',this)"><i class="ph-bold ph-tag"></i> Bom Apetite</button>
-        </div>
+            <div class="sub-bar-base" id="barraSubcategoriasIsopor">
+                <button class="btn-sub active" onclick="filtrarSub('todas',this,'isopor')"><i class="ph-bold ph-squares-four"></i> Todos</button>
+                <button class="btn-sub" onclick="filtrarSub('marmitex',this,'isopor')"><i class="ph-bold ph-bowl-food"></i> Marmitex</button>
+                <button class="btn-sub" onclick="filtrarSub('caixa-isopor',this,'isopor')"><i class="ph-bold ph-cube"></i> Caixas de Isopor</button>
+                <button class="btn-sub" onclick="filtrarSub('copo-isopor',this,'isopor')"><i class="ph-bold ph-coffee"></i> Copos de Isopor</button>
+                <button class="btn-sub" onclick="filtrarSub('disco-isopor',this,'isopor')"><i class="ph-bold ph-circle"></i> Disco para Pizza</button>
+            </div>
 
-        <div class="sub-bar-base" id="barraSubcategoriasPlastico">
-            <button class="btn-sub-plastico active" onclick="filtrarSub('todas',this,'plastico')"><i class="ph-bold ph-squares-four"></i> Todas</button>
-            <button class="btn-sub-plastico" onclick="filtrarSub('bolo-plastico',this,'plastico')"><i class="ph-bold ph-cake"></i> Embalagens de Bolo</button>
-            <button class="btn-sub-plastico" onclick="filtrarSub('marmita-plastico',this,'plastico')"><i class="ph-bold ph-bowl-food"></i> Marmitas para Congelar</button>
-        </div>
+            <div class="sub-bar-base" id="barraMarcaMarmitex">
+                <button class="btn-sub active" onclick="filtrarMarcaMarmitex('todas',this)"><i class="ph-bold ph-squares-four"></i> Todas as Marcas</button>
+                <button class="btn-sub" onclick="filtrarMarcaMarmitex('Copabras',this)"><i class="ph-bold ph-tag"></i> Copabras</button>
+                <button class="btn-sub" onclick="filtrarMarcaMarmitex('Bom Apetite',this)"><i class="ph-bold ph-tag"></i> Bom Apetite</button>
+            </div>
 
-        <div class="plastico-marca-bar" id="barraMarcaPlastico">
-            <button class="btn-marca-plastico active" onclick="filtrarMarcaPlastico('todas',this)"><i class="ph-bold ph-squares-four"></i> Todas as Marcas</button>
-            <button class="btn-marca-plastico" onclick="filtrarMarcaPlastico('Galvanotek',this)"><i class="ph-bold ph-tag"></i> Galvanotek</button>
-            <button class="btn-marca-plastico" onclick="filtrarMarcaPlastico('Hiverpack',this)"><i class="ph-bold ph-tag"></i> Hiverpack</button>
-        </div>
+            <div class="sub-bar-base" id="barraSubcategoriasPlastico">
+                <button class="btn-sub active" onclick="filtrarSub('todas',this,'plastico')"><i class="ph-bold ph-squares-four"></i> Todas</button>
+                <button class="btn-sub" onclick="filtrarSub('bolo-plastico',this,'plastico')"><i class="ph-bold ph-cake"></i> Embalagens de Bolo</button>
+                <button class="btn-sub" onclick="filtrarSub('marmita-plastico',this,'plastico')"><i class="ph-bold ph-bowl-food"></i> Marmitas para Congelar</button>
+            </div>
 
-        <div class="plastico-marca-bar" id="barraMarcaMarmitaPlastico">
-            <button class="btn-marca-plastico active" onclick="filtrarMarcaMarmitaPlastico('todas',this)"><i class="ph-bold ph-squares-four"></i> Todas as Marcas</button>
-            <button class="btn-marca-plastico" onclick="filtrarMarcaMarmitaPlastico('Prafesta',this)"><i class="ph-bold ph-tag"></i> Prafesta</button>
-            <button class="btn-marca-plastico" onclick="filtrarMarcaMarmitaPlastico('Gourmax',this)"><i class="ph-bold ph-tag"></i> Gourmax</button>
-        </div>
+            <div class="sub-bar-base" id="barraMarcaPlastico">
+                <button class="btn-sub active" onclick="filtrarMarcaPlastico('todas',this)"><i class="ph-bold ph-squares-four"></i> Todas as Marcas</button>
+                <button class="btn-sub" onclick="filtrarMarcaPlastico('Galvanotek',this)"><i class="ph-bold ph-tag"></i> Galvanotek</button>
+                <button class="btn-sub" onclick="filtrarMarcaPlastico('Hiverpack',this)"><i class="ph-bold ph-tag"></i> Hiverpack</button>
+            </div>
 
-        <div class="sub-bar-base" id="barraMarcaFesta">
-            <button class="btn-sub active" onclick="filtrarMarcaFesta('todas',this)"><i class="ph-bold ph-squares-four"></i> Todas as Marcas</button>
-            <button class="btn-sub" onclick="filtrarMarcaFesta('Elite',this)"><i class="ph-bold ph-fork-knife"></i> Elite (Talheres)</button>
-            <button class="btn-sub" onclick="filtrarMarcaFesta('Prafesta',this)"><i class="ph-bold ph-tag"></i> Prafesta</button>
-            <button class="btn-sub" onclick="filtrarMarcaFesta('Danubio',this)"><i class="ph-bold ph-tag"></i> Danubio</button>
-        </div>
+            <div class="sub-bar-base" id="barraMarcaMarmitaPlastico">
+                <button class="btn-sub active" onclick="filtrarMarcaMarmitaPlastico('todas',this)"><i class="ph-bold ph-squares-four"></i> Todas as Marcas</button>
+                <button class="btn-sub" onclick="filtrarMarcaMarmitaPlastico('Prafesta',this)"><i class="ph-bold ph-tag"></i> Prafesta</button>
+                <button class="btn-sub" onclick="filtrarMarcaMarmitaPlastico('Gourmax',this)"><i class="ph-bold ph-tag"></i> Gourmax</button>
+            </div>
 
-        <div class="breadcrumb" id="breadcrumb">
-            <i class="ph-bold ph-package" id="breadcrumbIcon"></i>
-            <span id="breadcrumbCat">Caixas</span>
-            <i class="ph-bold ph-caret-right"></i>
-            <span id="breadcrumbSub">Todas</span>
+            <div class="sub-bar-base" id="barraMarcaFesta">
+                <button class="btn-sub active" onclick="filtrarMarcaFesta('todas',this)"><i class="ph-bold ph-squares-four"></i> Todas as Marcas</button>
+                <button class="btn-sub" onclick="filtrarMarcaFesta('Elite',this)"><i class="ph-bold ph-fork-knife"></i> Elite (Talheres)</button>
+                <button class="btn-sub" onclick="filtrarMarcaFesta('Prafesta',this)"><i class="ph-bold ph-tag"></i> Prafesta</button>
+                <button class="btn-sub" onclick="filtrarMarcaFesta('Danubio',this)"><i class="ph-bold ph-tag"></i> Danubio</button>
+            </div>
+            
+            <div class="breadcrumb" id="breadcrumb">
+                <i class="ph-bold ph-package" id="breadcrumbIcon"></i>
+                <span id="breadcrumbCat">Caixas</span>
+                <i class="ph-bold ph-caret-right"></i>
+                <span id="breadcrumbSub">Todas</span>
+            </div>
         </div>
 
         <div id="containerProdutos"></div>
@@ -1137,29 +910,32 @@ document.addEventListener('click', e => {
 });
 
 /* ══════════════════════════════════════════════
-   SVGs
+   SVGs CUSTOMIZADOS & REALISTAS
 ══════════════════════════════════════════════ */
 const svgProdutos = {
-    caixa_correio:`<svg viewBox="0 0 130 130" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="15" y="45" width="100" height="70" rx="4" fill="#dbeafe" stroke="#2563eb" stroke-width="2.5"/><path d="M15 55 L65 80 L115 55" stroke="#2563eb" stroke-width="2.5" fill="none"/><rect x="52" y="45" width="26" height="18" rx="2" fill="#bfdbfe" stroke="#2563eb" stroke-width="2"/><path d="M30 25 L65 10 L100 25 L115 45 L15 45 Z" fill="#bfdbfe" stroke="#2563eb" stroke-width="2"/><circle cx="65" cy="82" r="4" fill="#2563eb"/></svg>`,
-    caixa_bolo:`<svg viewBox="0 0 130 130" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="10" y="50" width="110" height="65" rx="5" fill="#fce7f3" stroke="#db2777" stroke-width="2.5"/><rect x="10" y="38" width="110" height="18" rx="4" fill="#fbcfe8" stroke="#db2777" stroke-width="2"/><rect x="50" y="16" width="30" height="28" rx="3" fill="#fce7f3" stroke="#db2777" stroke-width="2"/><circle cx="65" cy="12" r="5" fill="#f472b6"/><path d="M30 68 Q40 58 50 68 Q60 58 70 68 Q80 58 90 68 Q100 58 110 68" stroke="#db2777" stroke-width="2" fill="none"/><circle cx="40" cy="95" r="4" fill="#f472b6"/><circle cx="65" cy="100" r="4" fill="#ec4899"/><circle cx="90" cy="95" r="4" fill="#f472b6"/></svg>`,
-    caixa_pizza:`<svg viewBox="0 0 130 130" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="8" y="50" width="114" height="65" rx="5" fill="#fef3c7" stroke="#d97706" stroke-width="2.5"/><rect x="8" y="38" width="114" height="18" rx="4" fill="#fde68a" stroke="#d97706" stroke-width="2"/><circle cx="65" cy="82" r="30" fill="#fed7aa" stroke="#d97706" stroke-width="2"/><path d="M65 52 L95 100 L35 100 Z" fill="#fbbf24" opacity="0.4"/><circle cx="50" cy="78" r="4" fill="#ef4444"/><circle cx="72" cy="70" r="4" fill="#ef4444"/><circle cx="65" cy="88" r="3" fill="#ef4444"/><circle cx="80" cy="85" r="3" fill="#16a34a"/><circle cx="52" cy="90" r="3" fill="#16a34a"/></svg>`,
-    caixa_geral:`<svg viewBox="0 0 130 130" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="15" y="35" width="100" height="80" rx="4" fill="#e0f2fe" stroke="#0284c7" stroke-width="2.5"/><rect x="15" y="35" width="100" height="22" rx="4" fill="#bae6fd" stroke="#0284c7" stroke-width="2"/><rect x="48" y="35" width="34" height="22" rx="2" fill="#7dd3fc" stroke="#0284c7" stroke-width="2"/><line x1="40" y1="70" x2="90" y2="70" stroke="#0284c7" stroke-width="2" stroke-dasharray="5,3"/><line x1="40" y1="85" x2="90" y2="85" stroke="#0284c7" stroke-width="2" stroke-dasharray="5,3"/><line x1="40" y1="100" x2="75" y2="100" stroke="#0284c7" stroke-width="2" stroke-dasharray="5,3"/></svg>`,
-    saco_lixo:`<svg viewBox="0 0 130 130" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M35 45 Q28 45 26 52 L18 108 Q17 115 25 115 L105 115 Q113 115 112 108 L104 52 Q102 45 95 45 Z" fill="#1e293b" stroke="#64748b" stroke-width="2"/><path d="M48 45 Q48 28 65 28 Q82 28 82 45" stroke="#94a3b8" stroke-width="3" fill="none" stroke-linecap="round"/><line x1="48" y1="65" x2="82" y2="65" stroke="#475569" stroke-width="1.5" stroke-dasharray="4,3"/><line x1="42" y1="80" x2="88" y2="80" stroke="#475569" stroke-width="1.5" stroke-dasharray="4,3"/></svg>`,
-    sacola_verde:`<svg viewBox="0 0 130 130" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M35 45 Q28 45 26 52 L18 108 Q17 115 25 115 L105 115 Q113 115 112 108 L104 52 Q102 45 95 45 Z" fill="#064e3b" stroke="#34d399" stroke-width="2"/><path d="M48 45 Q48 28 65 28 Q82 28 82 45" stroke="#6ee7b7" stroke-width="3" fill="none" stroke-linecap="round"/><circle cx="65" cy="80" r="14" fill="#065f46" stroke="#10b981" stroke-width="1.5"/><path d="M57" y="80" L62 85 L73 74" stroke="#6ee7b7" stroke-width="2.5" stroke-linecap="round" fill="none"/></svg>`,
-    sacola_branca:`<svg viewBox="0 0 130 130" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M35 45 Q28 45 26 52 L18 108 Q17 115 25 115 L105 115 Q113 115 112 108 L104 52 Q102 45 95 45 Z" fill="#f9fafb" stroke="#9ca3af" stroke-width="2"/><path d="M48 45 Q48 28 65 28 Q82 28 82 45" stroke="#6b7280" stroke-width="3" fill="none" stroke-linecap="round"/><line x1="45" y1="65" x2="85" y2="65" stroke="#d1d5db" stroke-width="1.5"/><line x1="40" y1="78" x2="90" y2="78" stroke="#d1d5db" stroke-width="1.5"/><line x1="42" y1="91" x2="88" y2="91" stroke="#d1d5db" stroke-width="1.5"/></svg>`,
-    sacola_crystal:`<svg viewBox="0 0 130 130" fill="none" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="cg" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#bfdbfe" stop-opacity="0.5"/><stop offset="100%" stop-color="#c4b5fd" stop-opacity="0.3"/></linearGradient></defs><path d="M35 45 Q28 45 26 52 L18 108 Q17 115 25 115 L105 115 Q113 115 112 108 L104 52 Q102 45 95 45 Z" fill="url(#cg)" stroke="#60a5fa" stroke-width="2"/><path d="M48 45 Q48 28 65 28 Q82 28 82 45" stroke="#a78bfa" stroke-width="3" fill="none" stroke-linecap="round"/><ellipse cx="65" cy="85" rx="22" ry="18" fill="rgba(96,165,250,0.1)" stroke="#60a5fa" stroke-width="1" stroke-dasharray="3,2"/></svg>`,
-    sacola_kraft:`<svg viewBox="0 0 130 130" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M35 45 Q28 45 26 52 L18 108 Q17 115 25 115 L105 115 Q113 115 112 108 L104 52 Q102 45 95 45 Z" fill="#78350f" stroke="#f59e0b" stroke-width="2"/><path d="M48 45 Q48 28 65 28 Q82 28 82 45" stroke="#fde68a" stroke-width="3" fill="none" stroke-linecap="round"/><rect x="38" y="62" width="54" height="38" rx="3" fill="#92400e" stroke="#d97706" stroke-width="1.5"/><line x1="47" y1="72" x2="83" y2="72" stroke="#fbbf24" stroke-width="1.5"/><line x1="47" y1="80" x2="83" y2="80" stroke="#fbbf24" stroke-width="1.5"/></svg>`,
-    sacola_kraft_alca:`<svg viewBox="0 0 130 130" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M35 50 Q28 50 26 57 L18 108 Q17 115 25 115 L105 115 Q113 115 112 108 L104 57 Q102 50 95 50 Z" fill="#1c1008" stroke="#b45309" stroke-width="2"/><path d="M48 50 Q44 32 55 22 Q65 15 75 22 Q86 32 82 50" stroke="#fbbf24" stroke-width="3" fill="none" stroke-linecap="round"/><circle cx="48" cy="50" r="5" fill="#fbbf24"/><circle cx="82" cy="50" r="5" fill="#fbbf24"/><rect x="36" y="65" width="58" height="36" rx="3" fill="#2d1a08" stroke="#b45309" stroke-width="1.5"/><line x1="46" y1="75" x2="84" y2="75" stroke="#fef08a" stroke-width="1.5"/><line x1="46" y1="84" x2="84" y2="84" stroke="#fef08a" stroke-width="1.5"/></svg>`,
-    marmitex:`<svg viewBox="0 0 130 130" fill="none" xmlns="http://www.w3.org/2000/svg"><ellipse cx="65" cy="55" rx="52" ry="18" fill="#e0f7fa" stroke="#00838f" stroke-width="2.5"/><path d="M13 55 Q13 95 65 95 Q117 95 117 55" fill="#f0fdff" stroke="#00838f" stroke-width="2.5"/><ellipse cx="65" cy="55" rx="38" ry="12" fill="#ccf2f5" stroke="#00acc1" stroke-width="1.5"/><ellipse cx="65" cy="55" rx="24" ry="7" fill="#b2ebf2"/><text x="65" y="112" text-anchor="middle" font-size="10" fill="#00838f" font-weight="bold" font-family="sans-serif">ISOPOR</text></svg>`,
-    caixa_isopor:`<svg viewBox="0 0 130 130" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="15" y="55" width="100" height="62" rx="5" fill="#e0f7fa" stroke="#00838f" stroke-width="2.5"/><rect x="12" y="42" width="106" height="18" rx="4" fill="#b2ebf2" stroke="#00838f" stroke-width="2"/><rect x="42" y="42" width="46" height="18" rx="2" fill="#80deea" stroke="#00838f" stroke-width="1.5"/><path d="M22 68 L108 68" stroke="#00acc1" stroke-width="1.5" stroke-dasharray="5,3"/><path d="M22 82 L108 82" stroke="#00acc1" stroke-width="1.5" stroke-dasharray="5,3"/><path d="M20 22 L35 14 L110 14 L110 42 L15 42 Z" fill="#cff3f7" stroke="#00838f" stroke-width="2"/><text x="65" y="112" text-anchor="middle" font-size="9" fill="#00838f" font-weight="bold" font-family="sans-serif">ISOPOR</text></svg>`,
-    copo_isopor:`<svg viewBox="0 0 130 130" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M35 30 L42 105 Q42 112 65 112 Q88 112 88 105 L95 30 Z" fill="#e0f7fa" stroke="#00838f" stroke-width="2.5"/><path d="M35 30 L95 30" stroke="#00838f" stroke-width="2.5"/><path d="M37 48 L93 48" stroke="#b2ebf2" stroke-width="1.5"/><path d="M39 64 L91 64" stroke="#b2ebf2" stroke-width="1.5"/><path d="M41 80 L89 80" stroke="#b2ebf2" stroke-width="1.5"/><ellipse cx="65" cy="30" rx="30" ry="6" fill="#cff3f7" stroke="#00838f" stroke-width="2"/><path d="M50 18 Q65 8 80 18" stroke="#00acc1" stroke-width="2.5" fill="none" stroke-linecap="round"/></svg>`,
-    disco_pizza:`<svg viewBox="0 0 130 130" fill="none" xmlns="http://www.w3.org/2000/svg"><ellipse cx="65" cy="65" rx="55" ry="12" fill="#e0f7fa" stroke="#00838f" stroke-width="2.5"/><ellipse cx="65" cy="60" rx="55" ry="12" fill="#f0fdff" stroke="#00838f" stroke-width="2.5"/><ellipse cx="65" cy="60" rx="42" ry="8" fill="#e0f7fa" stroke="#00acc1" stroke-width="1.5" stroke-dasharray="6,3"/><ellipse cx="65" cy="60" rx="28" ry="5" fill="#b2ebf2"/><text x="65" y="90" text-anchor="middle" font-size="9" fill="#00838f" font-weight="bold" font-family="sans-serif">PIZZA</text></svg>`,
-    embalagem_bolo:`<svg viewBox="0 0 130 130" fill="none" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="cupula-grad" x1="0" y1="0" x2="0.3" y2="1"><stop offset="0%" stop-color="#e0f2fe" stop-opacity="0.85"/><stop offset="100%" stop-color="#bae6fd" stop-opacity="0.45"/></linearGradient></defs><rect x="18" y="92" width="94" height="16" rx="4" fill="#f1f5f9" stroke="#94a3b8" stroke-width="2"/><path d="M18 92 Q14 60 35 35 Q52 18 65 18 Q78 18 95 35 Q116 60 112 92" fill="url(#cupula-grad)" stroke="#38bdf8" stroke-width="2"/><ellipse cx="65" cy="18" rx="30" ry="8" fill="#e0f2fe" fill-opacity="0.6" stroke="#38bdf8" stroke-width="1.5"/><path d="M30 55 Q38 40 50 35" stroke="white" stroke-width="3" stroke-linecap="round" opacity="0.7"/><ellipse cx="65" cy="85" rx="34" ry="9" fill="#fde68a" stroke="#d97706" stroke-width="1.5"/><rect x="31" y="65" width="68" height="22" rx="3" fill="#fef3c7" stroke="#d97706" stroke-width="1.5"/><ellipse cx="65" cy="65" rx="34" ry="9" fill="#fde68a" stroke="#d97706" stroke-width="1.5"/><rect x="55" y="52" width="4" height="14" rx="2" fill="#f87171"/><rect x="65" y="49" width="4" height="17" rx="2" fill="#60a5fa"/><rect x="75" y="52" width="4" height="14" rx="2" fill="#a78bfa"/><ellipse cx="57" cy="51" rx="3" ry="4" fill="#fbbf24" opacity="0.9"/><ellipse cx="67" cy="48" rx="3" ry="4" fill="#fbbf24" opacity="0.9"/><ellipse cx="77" cy="51" rx="3" ry="4" fill="#fbbf24" opacity="0.9"/></svg>`,
-    marmita_plastica:`<svg viewBox="0 0 130 130" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="10" y="28" width="110" height="34" rx="6" fill="#f8fafc" stroke="#cbd5e1" stroke-width="2"/><path d="M10 56 Q10 62 16 62 L114 62 Q120 62 120 56" fill="#e2e8f0" stroke="#cbd5e1" stroke-width="1.5"/><rect x="14" y="62" width="102" height="50" rx="5" fill="#ffffff" stroke="#cbd5e1" stroke-width="2"/><rect x="20" y="68" width="90" height="38" rx="3" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1"/><line x1="20" y1="87" x2="110" y2="87" stroke="#e2e8f0" stroke-width="1.5"/><line x1="75" y1="87" x2="75" y2="106" stroke="#e2e8f0" stroke-width="1.5"/><ellipse cx="47" cy="77" rx="18" ry="8" fill="#fbbf24" opacity="0.55"/><ellipse cx="90" cy="77" rx="14" ry="7" fill="#86efac" opacity="0.55"/><ellipse cx="55" cy="97" rx="14" ry="6" fill="#f87171" opacity="0.45"/><ellipse cx="88" cy="97" rx="9" ry="5" fill="#fde68a" opacity="0.5"/><path d="M22 35 Q50 32 80 35" stroke="white" stroke-width="2.5" stroke-linecap="round" opacity="0.8"/><rect x="38" y="33" width="54" height="18" rx="4" fill="#e65100"/><text x="65" y="45" text-anchor="middle" font-size="9" fill="white" font-weight="900" font-family="sans-serif" letter-spacing="0.5">MARMITA</text></svg>`,
-    talheres:`<svg viewBox="0 0 130 130" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="25" y="25" width="80" height="80" rx="40" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="2"/><path d="M50 35 L50 60 C50 68 55 70 55 75 L55 100 M42 35 L42 50 M58 35 L58 50" stroke="#94a3b8" stroke-width="3.5" stroke-linecap="round" fill="none"/><path d="M80 35 C68 35 68 65 73 75 L73 100 M80 35 L80 100" stroke="#94a3b8" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>`,
-    pote_quadrado:`<svg viewBox="0 0 130 130" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="25" y="50" width="80" height="60" rx="8" fill="#f8fafc" stroke="#94a3b8" stroke-width="2"/><path d="M25 55 L105 55" stroke="#e2e8f0" stroke-width="2"/><rect x="20" y="38" width="90" height="12" rx="4" fill="#e2e8f0" stroke="#94a3b8" stroke-width="2"/></svg>`,
-    pote_redondo:`<svg viewBox="0 0 130 130" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M30 50 L35 100 Q40 105 65 105 Q90 105 95 100 L100 50 Z" fill="#f8fafc" stroke="#94a3b8" stroke-width="2"/><ellipse cx="65" cy="50" rx="35" ry="12" fill="#e2e8f0" stroke="#94a3b8" stroke-width="2"/><ellipse cx="65" cy="42" rx="37" ry="13" fill="#f1f5f9" stroke="#94a3b8" stroke-width="2"/></svg>`,
-    pote_retangular:`<svg viewBox="0 0 130 130" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M20 50 L25 95 Q28 100 65 100 Q102 100 105 95 L110 50 Z" fill="#f8fafc" stroke="#94a3b8" stroke-width="2"/><rect x="15" y="38" width="100" height="14" rx="4" fill="#e2e8f0" stroke="#94a3b8" stroke-width="2"/><ellipse cx="65" cy="45" rx="45" ry="6" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1"/></svg>`,
+    caixa_correio:`<svg viewBox="0 0 130 130" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="15" y="45" width="100" height="70" rx="4" fill="#e2e8f0" stroke="#64748b" stroke-width="2.5"/><path d="M15 55 L65 75 L115 55" stroke="#64748b" stroke-width="2.5" fill="none"/><path d="M65 75 L65 115" stroke="#64748b" stroke-width="2.5" fill="none"/><rect x="55" y="45" width="20" height="30" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1.5"/><path d="M30 25 L65 10 L100 25 L115 45 L15 45 Z" fill="#f8fafc" stroke="#64748b" stroke-width="2.5"/><path d="M35 55 L55 63 M75 63 L95 55" stroke="#cbd5e1" stroke-width="6" stroke-linecap="square"/><rect x="40" y="30" width="30" height="10" fill="#fff" stroke="#cbd5e1" stroke-width="1"/><path d="M42 33 L68 33 M42 37 L58 37" stroke="#1e293b" stroke-width="1.5"/></svg>`,
+    caixa_bolo:`<svg viewBox="0 0 130 130" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="10" y="50" width="110" height="65" rx="5" fill="#fef3c7" stroke="#d97706" stroke-width="2.5"/><rect x="10" y="38" width="110" height="18" rx="4" fill="#fde68a" stroke="#d97706" stroke-width="2.5"/><rect x="50" y="16" width="30" height="28" rx="3" fill="#fef3c7" stroke="#d97706" stroke-width="2.5"/><ellipse cx="65" cy="85" rx="25" ry="18" fill="#fff" stroke="#fcd34d" stroke-width="2"/><path d="M50 90 L80 90 L80 80 C80 75 75 75 75 75 C70 75 70 80 65 80 C60 80 60 75 55 75 C50 75 50 80 50 80 Z" fill="#fbbf24"/><circle cx="65" cy="73" r="3" fill="#ef4444"/><path d="M30 68 Q40 58 50 68 Q60 58 70 68 Q80 58 90 68 Q100 58 110 68" stroke="#d97706" stroke-width="2" fill="none"/></svg>`,
+    caixa_pizza:`<svg viewBox="0 0 130 130" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="8" y="50" width="114" height="65" rx="5" fill="#ffedd5" stroke="#ea580c" stroke-width="2.5"/><rect x="8" y="38" width="114" height="18" rx="4" fill="#fed7aa" stroke="#ea580c" stroke-width="2.5"/><circle cx="65" cy="82" r="30" fill="#fed7aa" stroke="#ea580c" stroke-width="2"/><path d="M65 52 L95 100 L35 100 Z" fill="#fb923c" opacity="0.4"/><circle cx="50" cy="78" r="4" fill="#dc2626"/><circle cx="72" cy="70" r="4" fill="#dc2626"/><circle cx="65" cy="88" r="3" fill="#dc2626"/><circle cx="80" cy="85" r="3" fill="#16a34a"/><circle cx="52" cy="90" r="3" fill="#16a34a"/></svg>`,
+    caixa_geral:`<svg viewBox="0 0 130 130" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="15" y="35" width="100" height="80" rx="4" fill="#e0f2fe" stroke="#0284c7" stroke-width="2.5"/><rect x="15" y="35" width="100" height="22" rx="4" fill="#bae6fd" stroke="#0284c7" stroke-width="2.5"/><rect x="48" y="35" width="34" height="22" rx="2" fill="#7dd3fc" stroke="#0284c7" stroke-width="2.5"/><line x1="40" y1="70" x2="90" y2="70" stroke="#0284c7" stroke-width="2" stroke-dasharray="5,3"/><line x1="40" y1="85" x2="90" y2="85" stroke="#0284c7" stroke-width="2" stroke-dasharray="5,3"/><line x1="40" y1="100" x2="75" y2="100" stroke="#0284c7" stroke-width="2" stroke-dasharray="5,3"/></svg>`,
+    saco_lixo:`<svg viewBox="0 0 130 130" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M35 45 C35 30 45 25 65 25 C85 25 95 30 95 45 L108 112 C109 118 100 120 95 120 L35 120 C30 120 21 118 22 112 Z" fill="#0f172a" stroke="#334155" stroke-width="2"/><path d="M40 45 C50 60 80 60 90 45" stroke="#1e293b" stroke-width="3" fill="none"/><path d="M60 25 C55 15 75 15 70 25" stroke="#334155" stroke-width="2.5" fill="none"/><path d="M45 55 L40 110 M65 60 L65 115 M85 55 L90 110" stroke="#1e293b" stroke-width="2" fill="none" stroke-linecap="round"/></svg>`,
+    lixo_banheiro:`<svg viewBox="0 0 130 130" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M40 50 C40 35 50 30 65 30 C80 30 90 35 90 50 L100 105 C102 110 95 115 90 115 L40 115 C35 115 28 110 30 105 Z" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="2.5"/><path d="M60 30 C55 20 75 20 70 30" stroke="#cbd5e1" stroke-width="2.5" fill="none"/><path d="M50 60 L45 105 M65 65 L65 110 M80 60 L85 105" stroke="#e2e8f0" stroke-width="2" fill="none" stroke-linecap="round"/></svg>`,
+    sacola_verde:`<svg viewBox="0 0 130 130" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M25 40 L18 112 C17 118 25 120 30 120 L100 120 C105 120 113 118 112 112 L105 40 C104 35 100 30 95 30 L35 30 C30 30 26 35 25 40 Z" fill="#064e3b" stroke="#10b981" stroke-width="2"/><ellipse cx="65" cy="45" rx="15" ry="5" fill="#022c22" stroke="#34d399" stroke-width="1.5"/><path d="M40 60 L35 110 M65 65 L65 115 M90 60 L95 110" stroke="#065f46" stroke-width="2" fill="none"/></svg>`,
+    sacola_branca:`<svg viewBox="0 0 130 130" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M25 40 L18 112 C17 118 25 120 30 120 L100 120 C105 120 113 118 112 112 L105 40 C104 35 100 30 95 30 L35 30 C30 30 26 35 25 40 Z" fill="#f8fafc" stroke="#cbd5e1" stroke-width="2.5"/><ellipse cx="65" cy="45" rx="15" ry="5" fill="#e2e8f0" stroke="#94a3b8" stroke-width="1.5"/><path d="M40 60 L35 110 M65 65 L65 115 M90 60 L95 110" stroke="#f1f5f9" stroke-width="2" fill="none"/></svg>`,
+    sacola_crystal:`<svg viewBox="0 0 130 130" fill="none" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="cg" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#e0f2fe" stop-opacity="0.8"/><stop offset="100%" stop-color="#bae6fd" stop-opacity="0.4"/></linearGradient></defs><path d="M25 40 L18 112 C17 118 25 120 30 120 L100 120 C105 120 113 118 112 112 L105 40 C104 35 100 30 95 30 L35 30 C30 30 26 35 25 40 Z" fill="url(#cg)" stroke="#38bdf8" stroke-width="2"/><ellipse cx="65" cy="45" rx="15" ry="5" fill="rgba(255,255,255,0.5)" stroke="#7dd3fc" stroke-width="1.5"/><path d="M40 60 L35 110 M65 65 L65 115 M90 60 L95 110" stroke="#e0f2fe" stroke-width="2" fill="none"/><path d="M40 80 L45 85 M45 80 L40 85" stroke="#fff" stroke-width="2" stroke-linecap="round"/><path d="M85 70 L90 75 M90 70 L85 75" stroke="#fff" stroke-width="2" stroke-linecap="round"/></svg>`,
+    geladinho:`<svg viewBox="0 0 130 130" fill="none" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="gel" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#e0f2fe" stop-opacity="0.7"/><stop offset="100%" stop-color="#bae6fd" stop-opacity="0.3"/></linearGradient></defs><rect x="45" y="15" width="40" height="100" rx="20" fill="url(#gel)" stroke="#38bdf8" stroke-width="2"/><path d="M50 25 L80 25 M50 105 L80 105" stroke="#7dd3fc" stroke-width="1.5"/><path d="M55 40 L55 90 M75 40 L75 90" stroke="#fff" stroke-width="2" stroke-linecap="round" opacity="0.6"/></svg>`,
+    sacola_kraft:`<svg viewBox="0 0 130 130" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M30 45 L20 112 C19 118 25 120 30 120 L100 120 C105 120 111 118 110 112 L100 45 C99 40 95 35 90 35 L40 35 C35 35 31 40 30 45 Z" fill="#92400e" stroke="#d97706" stroke-width="2.5"/><path d="M25 45 L105 45 M40 35 L90 35" stroke="#d97706" stroke-width="2"/><line x1="45" y1="35" x2="45" y2="120" stroke="#78350f" stroke-width="1.5" opacity="0.5"/><line x1="85" y1="35" x2="85" y2="120" stroke="#78350f" stroke-width="1.5" opacity="0.5"/><path d="M65 50 L65 110" stroke="#78350f" stroke-width="1.5" stroke-dasharray="8,4" opacity="0.4"/></svg>`,
+    sacola_kraft_alca:`<svg viewBox="0 0 130 130" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M30 55 L20 115 C19 120 25 122 30 122 L100 122 C105 122 111 120 110 115 L100 55 Z" fill="#92400e" stroke="#d97706" stroke-width="2.5"/><path d="M45 55 C45 30 85 30 85 55" stroke="#f59e0b" stroke-width="4" fill="none" stroke-linecap="round"/><path d="M45 55 C45 30 85 30 85 55" stroke="#78350f" stroke-width="1" fill="none" stroke-dasharray="2,2"/><circle cx="45" cy="55" r="4" fill="#b45309"/><circle cx="85" cy="55" r="4" fill="#b45309"/><line x1="45" y1="55" x2="45" y2="122" stroke="#78350f" stroke-width="1.5" opacity="0.5"/><line x1="85" y1="55" x2="85" y2="122" stroke="#78350f" stroke-width="1.5" opacity="0.5"/></svg>`,
+    marmitex:`<svg viewBox="0 0 130 130" fill="none" xmlns="http://www.w3.org/2000/svg"><ellipse cx="65" cy="50" rx="50" ry="18" fill="#f8fafc" stroke="#94a3b8" stroke-width="2.5"/><path d="M15 50 Q15 90 65 90 Q115 90 115 50" fill="#fff" stroke="#94a3b8" stroke-width="2.5"/><ellipse cx="65" cy="50" rx="40" ry="12" fill="#e2e8f0" stroke="#cbd5e1" stroke-width="1.5"/><path d="M35 50 C35 75 95 75 95 50" stroke="#e2e8f0" stroke-width="3" fill="none"/><path d="M45 50 L45 80 M85 50 L85 80" stroke="#f1f5f9" stroke-width="2" fill="none"/></svg>`,
+    caixa_isopor:`<svg viewBox="0 0 130 130" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="15" y="55" width="100" height="60" rx="5" fill="#f8fafc" stroke="#94a3b8" stroke-width="3"/><rect x="12" y="42" width="106" height="18" rx="4" fill="#f1f5f9" stroke="#94a3b8" stroke-width="3"/><rect x="25" y="42" width="80" height="18" rx="2" fill="#e2e8f0" stroke="#cbd5e1" stroke-width="1.5"/><path d="M22 70 L108 70 M22 85 L108 85 M22 100 L108 100" stroke="#cbd5e1" stroke-width="1.5" stroke-dasharray="4,4"/><path d="M20 22 L35 14 L110 14 L110 42 L15 42 Z" fill="#fff" stroke="#94a3b8" stroke-width="2.5"/><circle cx="50" cy="28" r="2" fill="#cbd5e1"/><circle cx="65" cy="30" r="3" fill="#cbd5e1"/><circle cx="80" cy="25" r="2" fill="#cbd5e1"/></svg>`,
+    copo_isopor:`<svg viewBox="0 0 130 130" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M35 30 L45 105 Q45 110 65 110 Q85 110 85 105 L95 30 Z" fill="#f8fafc" stroke="#94a3b8" stroke-width="3"/><path d="M35 30 L95 30" stroke="#94a3b8" stroke-width="3"/><path d="M38 50 L92 50 M41 70 L89 70 M43 90 L87 90" stroke="#cbd5e1" stroke-width="2" stroke-dasharray="4,4"/><ellipse cx="65" cy="30" rx="30" ry="6" fill="#fff" stroke="#94a3b8" stroke-width="2.5"/></svg>`,
+    disco_pizza:`<svg viewBox="0 0 130 130" fill="none" xmlns="http://www.w3.org/2000/svg"><ellipse cx="65" cy="70" rx="55" ry="12" fill="#e2e8f0" stroke="#94a3b8" stroke-width="2.5"/><ellipse cx="65" cy="65" rx="55" ry="12" fill="#f8fafc" stroke="#94a3b8" stroke-width="2.5"/><ellipse cx="65" cy="65" rx="45" ry="8" fill="#fff" stroke="#cbd5e1" stroke-width="1.5" stroke-dasharray="6,3"/></svg>`,
+    embalagem_bolo:`<svg viewBox="0 0 130 130" fill="none" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="cupula-grad" x1="0" y1="0" x2="0.3" y2="1"><stop offset="0%" stop-color="#e0f2fe" stop-opacity="0.85"/><stop offset="100%" stop-color="#bae6fd" stop-opacity="0.45"/></linearGradient></defs><rect x="18" y="92" width="94" height="16" rx="4" fill="#1e293b" stroke="#0f172a" stroke-width="2"/><path d="M18 92 Q14 60 35 35 Q52 18 65 18 Q78 18 95 35 Q116 60 112 92" fill="url(#cupula-grad)" stroke="#38bdf8" stroke-width="2"/><ellipse cx="65" cy="18" rx="30" ry="8" fill="#e0f2fe" fill-opacity="0.6" stroke="#38bdf8" stroke-width="1.5"/><path d="M30 55 Q38 40 50 35" stroke="white" stroke-width="3" stroke-linecap="round" opacity="0.7"/><ellipse cx="65" cy="85" rx="34" ry="9" fill="#fde68a" stroke="#d97706" stroke-width="1.5"/><rect x="31" y="65" width="68" height="22" rx="3" fill="#fef3c7" stroke="#d97706" stroke-width="1.5"/><ellipse cx="65" cy="65" rx="34" ry="9" fill="#fde68a" stroke="#d97706" stroke-width="1.5"/><rect x="55" y="52" width="4" height="14" rx="2" fill="#f87171"/><rect x="65" y="49" width="4" height="17" rx="2" fill="#60a5fa"/><rect x="75" y="52" width="4" height="14" rx="2" fill="#a78bfa"/></svg>`,
+    marmita_plastica:`<svg viewBox="0 0 130 130" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="10" y="28" width="110" height="34" rx="6" fill="#f8fafc" stroke="#cbd5e1" stroke-width="2"/><path d="M10 56 Q10 62 16 62 L114 62 Q120 62 120 56" fill="#e2e8f0" stroke="#cbd5e1" stroke-width="1.5"/><rect x="14" y="62" width="102" height="50" rx="5" fill="#ffffff" stroke="#cbd5e1" stroke-width="2"/><line x1="20" y1="87" x2="110" y2="87" stroke="#e2e8f0" stroke-width="1.5"/><line x1="65" y1="62" x2="65" y2="112" stroke="#e2e8f0" stroke-width="2"/><path d="M22 35 Q50 32 80 35" stroke="white" stroke-width="2.5" stroke-linecap="round" opacity="0.8"/></svg>`,
+    marmita_plastica_3_div:`<svg viewBox="0 0 130 130" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="10" y="28" width="110" height="34" rx="6" fill="#f8fafc" stroke="#cbd5e1" stroke-width="2"/><path d="M10 56 Q10 62 16 62 L114 62 Q120 62 120 56" fill="#1e293b" stroke="#0f172a" stroke-width="1.5"/><rect x="14" y="62" width="102" height="50" rx="5" fill="#1e293b" stroke="#0f172a" stroke-width="2"/><line x1="20" y1="87" x2="110" y2="87" stroke="#334155" stroke-width="2"/><line x1="65" y1="87" x2="65" y2="112" stroke="#334155" stroke-width="2"/></svg>`,
+    talheres:`<svg viewBox="0 0 130 130" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="25" y="25" width="80" height="80" rx="40" fill="#f8fafc" stroke="#cbd5e1" stroke-width="2"/><path d="M50 35 L50 60 C50 68 55 70 55 75 L55 100 M42 35 L42 50 M58 35 L58 50" stroke="#64748b" stroke-width="3.5" stroke-linecap="round" fill="none"/><path d="M80 35 C68 35 68 65 73 75 L73 100 M80 35 L80 100" stroke="#64748b" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>`,
+    pote_quadrado:`<svg viewBox="0 0 130 130" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="25" y="50" width="80" height="60" rx="8" fill="#f8fafc" stroke="#94a3b8" stroke-width="2.5"/><path d="M25 55 L105 55" stroke="#e2e8f0" stroke-width="2"/><rect x="20" y="38" width="90" height="12" rx="4" fill="#fff" stroke="#94a3b8" stroke-width="2.5"/><path d="M35 50 L35 110 M95 50 L95 110" stroke="#e2e8f0" stroke-width="1.5"/></svg>`,
+    pote_redondo:`<svg viewBox="0 0 130 130" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M30 50 L35 100 Q40 105 65 105 Q90 105 95 100 L100 50 Z" fill="#f8fafc" stroke="#94a3b8" stroke-width="2.5"/><ellipse cx="65" cy="50" rx="35" ry="12" fill="#fff" stroke="#94a3b8" stroke-width="2.5"/><ellipse cx="65" cy="42" rx="37" ry="13" fill="#fff" stroke="#94a3b8" stroke-width="2.5"/></svg>`,
+    pote_retangular:`<svg viewBox="0 0 130 130" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M20 50 L25 95 Q28 100 65 100 Q102 100 105 95 L110 50 Z" fill="#f8fafc" stroke="#94a3b8" stroke-width="2.5"/><rect x="15" y="38" width="100" height="14" rx="4" fill="#fff" stroke="#94a3b8" stroke-width="2.5"/><ellipse cx="65" cy="45" rx="45" ry="6" fill="#fff" stroke="#cbd5e1" stroke-width="1"/></svg>`,
     default:`<svg viewBox="0 0 130 130" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="20" y="30" width="90" height="80" rx="6" fill="#dbeafe" stroke="#2563eb" stroke-width="2.5"/><rect x="20" y="30" width="90" height="24" rx="6" fill="#bfdbfe" stroke="#2563eb" stroke-width="2"/><rect x="46" y="30" width="38" height="24" rx="3" fill="#93c5fd" stroke="#2563eb" stroke-width="2"/><line x1="35" y1="72" x2="95" y2="72" stroke="#3b82f6" stroke-width="2" stroke-dasharray="5,3"/><line x1="35" y1="86" x2="95" y2="86" stroke="#3b82f6" stroke-width="2" stroke-dasharray="5,3"/><line x1="35" y1="100" x2="75" y2="100" stroke="#3b82f6" stroke-width="2" stroke-dasharray="5,3"/></svg>`
 };
 
@@ -1176,8 +952,12 @@ function getSvg(produto) {
     if(cat==='sacolas'){
         if(tipo==='preta') return svgProdutos.saco_lixo;
         if(tipo==='verde') return svgProdutos.sacola_verde;
-        if(tipo==='branca' || tipo==='lixo-banheiro') return svgProdutos.sacola_branca;
-        if(tipo==='crystal') return svgProdutos.sacola_crystal;
+        if(tipo==='branca') return svgProdutos.sacola_branca;
+        if(tipo==='lixo-banheiro') return svgProdutos.lixo_banheiro;
+        if(tipo==='crystal'){
+            if(nome.includes('geladinho') || nome.includes('gelão')) return svgProdutos.geladinho;
+            return svgProdutos.sacola_crystal;
+        }
         if(tipo==='kraft-alca') return svgProdutos.sacola_kraft_alca;
         if(tipo==='kraft') return svgProdutos.sacola_kraft;
     }
@@ -1190,6 +970,7 @@ function getSvg(produto) {
     if(cat==='plastico'){
         if(sub==='marmita-plastico'){
             if(nome.includes('retangular')) return svgProdutos.pote_retangular;
+            if(nome.includes('preta') || nome.includes('divisória')) return svgProdutos.marmita_plastica_3_div;
             return svgProdutos.marmita_plastica;
         }
         if(sub==='bolo-plastico') return svgProdutos.embalagem_bolo;
@@ -1255,29 +1036,29 @@ const listaProdutos = [
     {id:325,nome:"Top Lixo Preto 30L",categoria:"sacolas",tipo:"lixo-banheiro",tamanho:"g",icone:"ph-trash",descricao:"Saco de lixo preto 30L com 30 unidades.",preco:19.00,unidade:"/pct",especificacoes:{"Capacidade":"30 litros","Quantidade":"30 unidades","Cor":"Preto"}},
     {id:326,nome:"Top Lixo Branco 30L",categoria:"sacolas",tipo:"lixo-banheiro",tamanho:"g",icone:"ph-trash",descricao:"Saco de lixo branco 30L com 30 unidades.",preco:19.00,unidade:"/pct",especificacoes:{"Capacidade":"30 litros","Quantidade":"30 unidades","Cor":"Branco"}},
 
-    // Sacolas Crystal (Pequenas)
-    {id:340,nome:"Sacola Crystal 8x40",categoria:"sacolas",tipo:"crystal",tamanho:"p",icone:"ph-shopping-bag",descricao:"Sacola crystal 8x40.",preco:7.00,unidade:"/pct",especificacoes:{"Medidas":"8 x 40 cm","Cor":"Transparente"}},
-    {id:341,nome:"Sacola Crystal 10x15",categoria:"sacolas",tipo:"crystal",tamanho:"p",icone:"ph-shopping-bag",descricao:"Sacola crystal 10x15.",preco:7.00,unidade:"/pct",especificacoes:{"Medidas":"10 x 15 cm","Cor":"Transparente"}},
-    {id:342,nome:"Sacola Crystal 10x20",categoria:"sacolas",tipo:"crystal",tamanho:"p",icone:"ph-shopping-bag",descricao:"Sacola crystal 10x20.",preco:7.00,unidade:"/pct",especificacoes:{"Medidas":"10 x 20 cm","Cor":"Transparente"}},
-    {id:343,nome:"Sacola Crystal 15x20",categoria:"sacolas",tipo:"crystal",tamanho:"p",icone:"ph-shopping-bag",descricao:"Sacola crystal 15x20.",preco:7.00,unidade:"/pct",especificacoes:{"Medidas":"15 x 20 cm","Cor":"Transparente"}},
-    {id:344,nome:"Sacola Crystal 15x30",categoria:"sacolas",tipo:"crystal",tamanho:"p",icone:"ph-shopping-bag",descricao:"Sacola crystal 15x30.",preco:7.00,unidade:"/pct",especificacoes:{"Medidas":"15 x 30 cm","Cor":"Transparente"}},
-    {id:345,nome:"Sacola Crystal 20x30",categoria:"sacolas",tipo:"crystal",tamanho:"p",icone:"ph-shopping-bag",descricao:"Sacola crystal 20x30.",preco:7.00,unidade:"/pct",especificacoes:{"Medidas":"20 x 30 cm","Cor":"Transparente"}},
-    {id:346,nome:"Sacola Crystal 25x35",categoria:"sacolas",tipo:"crystal",tamanho:"m",icone:"ph-shopping-bag",descricao:"Sacola crystal 25x35.",preco:7.00,unidade:"/pct",especificacoes:{"Medidas":"25 x 35 cm","Cor":"Transparente"}},
-    {id:347,nome:"Sacola Crystal 35x45",categoria:"sacolas",tipo:"crystal",tamanho:"m",icone:"ph-shopping-bag",descricao:"Sacola crystal 35x45.",preco:7.00,unidade:"/pct",especificacoes:{"Medidas":"35 x 45 cm","Cor":"Transparente"}},
+    // Sacolas Crystal (Pacotes 200g)
+    {id:340,nome:"Sacola Crystal 8x40 (200g)",categoria:"sacolas",tipo:"crystal",peso:"200g",tamanho:"p",icone:"ph-shopping-bag",descricao:"Sacola crystal 8x40.",preco:7.00,unidade:"/pct (200g)",especificacoes:{"Medidas":"8 x 40 cm","Cor":"Transparente","Peso":"200g"}},
+    {id:341,nome:"Sacola Crystal 10x15 (200g)",categoria:"sacolas",tipo:"crystal",peso:"200g",tamanho:"p",icone:"ph-shopping-bag",descricao:"Sacola crystal 10x15.",preco:7.00,unidade:"/pct (200g)",especificacoes:{"Medidas":"10 x 15 cm","Cor":"Transparente","Peso":"200g"}},
+    {id:342,nome:"Sacola Crystal 10x20 (200g)",categoria:"sacolas",tipo:"crystal",peso:"200g",tamanho:"p",icone:"ph-shopping-bag",descricao:"Sacola crystal 10x20.",preco:7.00,unidade:"/pct (200g)",especificacoes:{"Medidas":"10 x 20 cm","Cor":"Transparente","Peso":"200g"}},
+    {id:343,nome:"Sacola Crystal 15x20 (200g)",categoria:"sacolas",tipo:"crystal",peso:"200g",tamanho:"p",icone:"ph-shopping-bag",descricao:"Sacola crystal 15x20.",preco:7.00,unidade:"/pct (200g)",especificacoes:{"Medidas":"15 x 20 cm","Cor":"Transparente","Peso":"200g"}},
+    {id:344,nome:"Sacola Crystal 15x30 (200g)",categoria:"sacolas",tipo:"crystal",peso:"200g",tamanho:"p",icone:"ph-shopping-bag",descricao:"Sacola crystal 15x30.",preco:7.00,unidade:"/pct (200g)",especificacoes:{"Medidas":"15 x 30 cm","Cor":"Transparente","Peso":"200g"}},
+    {id:345,nome:"Sacola Crystal 20x30 (200g)",categoria:"sacolas",tipo:"crystal",peso:"200g",tamanho:"p",icone:"ph-shopping-bag",descricao:"Sacola crystal 20x30.",preco:7.00,unidade:"/pct (200g)",especificacoes:{"Medidas":"20 x 30 cm","Cor":"Transparente","Peso":"200g"}},
+    {id:346,nome:"Sacola Crystal 25x35 (200g)",categoria:"sacolas",tipo:"crystal",peso:"200g",tamanho:"m",icone:"ph-shopping-bag",descricao:"Sacola crystal 25x35.",preco:7.00,unidade:"/pct (200g)",especificacoes:{"Medidas":"25 x 35 cm","Cor":"Transparente","Peso":"200g"}},
+    {id:347,nome:"Sacola Crystal 35x45 (200g)",categoria:"sacolas",tipo:"crystal",peso:"200g",tamanho:"m",icone:"ph-shopping-bag",descricao:"Sacola crystal 35x45.",preco:7.00,unidade:"/pct (200g)",especificacoes:{"Medidas":"35 x 45 cm","Cor":"Transparente","Peso":"200g"}},
 
-    // Sacolas Crystal Kg
-    {id:350,nome:"Sacola Crystal 10x15x0.6",categoria:"sacolas",tipo:"crystal",tamanho:"p",icone:"ph-shopping-bag",descricao:"Crystal grossa (0.6). Vendida por kg.",preco:32.00,unidade:"/kg",especificacoes:{"Medidas":"10 x 15 cm","Espessura":"0.6","Venda":"Por kg"}},
-    {id:351,nome:"Sacola Crystal 10x20x0.6",categoria:"sacolas",tipo:"crystal",tamanho:"p",icone:"ph-shopping-bag",descricao:"Crystal grossa (0.6). Vendida por kg.",preco:32.00,unidade:"/kg",especificacoes:{"Medidas":"10 x 20 cm","Espessura":"0.6","Venda":"Por kg"}},
-    {id:352,nome:"Sacola Crystal 15x20x0.6",categoria:"sacolas",tipo:"crystal",tamanho:"p",icone:"ph-shopping-bag",descricao:"Crystal grossa (0.6). Vendida por kg.",preco:32.00,unidade:"/kg",especificacoes:{"Medidas":"15 x 20 cm","Espessura":"0.6","Venda":"Por kg"}},
-    {id:353,nome:"Sacola Crystal 15x30x0.6",categoria:"sacolas",tipo:"crystal",tamanho:"p",icone:"ph-shopping-bag",descricao:"Crystal grossa (0.6). Vendida por kg.",preco:32.00,unidade:"/kg",especificacoes:{"Medidas":"15 x 30 cm","Espessura":"0.6","Venda":"Por kg"}},
-    {id:354,nome:"Sacola Crystal 20x30x0.6",categoria:"sacolas",tipo:"crystal",tamanho:"p",icone:"ph-shopping-bag",descricao:"Crystal grossa (0.6). Vendida por kg.",preco:32.00,unidade:"/kg",especificacoes:{"Medidas":"20 x 30 cm","Espessura":"0.6","Venda":"Por kg"}},
-    {id:355,nome:"Sacola Crystal 25x35x0.6",categoria:"sacolas",tipo:"crystal",tamanho:"m",icone:"ph-shopping-bag",descricao:"Crystal grossa (0.6). Vendida por kg.",preco:32.00,unidade:"/kg",especificacoes:{"Medidas":"25 x 35 cm","Espessura":"0.6","Venda":"Por kg"}},
-    {id:356,nome:"Sacola Crystal 35x45x0.6",categoria:"sacolas",tipo:"crystal",tamanho:"m",icone:"ph-shopping-bag",descricao:"Crystal grossa (0.6). Vendida por kg.",preco:32.00,unidade:"/kg",especificacoes:{"Medidas":"35 x 45 cm","Espessura":"0.6","Venda":"Por kg"}},
-    {id:357,nome:"Sacola Crystal 40x60x0.6",categoria:"sacolas",tipo:"crystal",tamanho:"g",icone:"ph-shopping-bag",descricao:"Crystal grossa (0.6). Vendida por kg.",preco:32.00,unidade:"/kg",especificacoes:{"Medidas":"40 x 60 cm","Espessura":"0.6","Venda":"Por kg"}},
-    {id:358,nome:"Sacola Crystal 50x70x0.6",categoria:"sacolas",tipo:"crystal",tamanho:"g",icone:"ph-shopping-bag",descricao:"Crystal grossa (0.6). Vendida por kg.",preco:33.50,unidade:"/kg",especificacoes:{"Medidas":"50 x 70 cm","Espessura":"0.6","Venda":"Por kg"}},
-    {id:359,nome:"Sacola Crystal 60x80x0.6",categoria:"sacolas",tipo:"crystal",tamanho:"g",icone:"ph-shopping-bag",descricao:"Crystal grossa (0.6). Vendida por kg.",preco:33.50,unidade:"/kg",especificacoes:{"Medidas":"60 x 80 cm","Espessura":"0.6","Venda":"Por kg"}},
-    {id:360,nome:"Saco Plástico Geladinho 04x24x0.2",categoria:"sacolas",tipo:"crystal",tamanho:"p",icone:"ph-drop",descricao:"Saco crystal para geladinho c/ 100un.",preco:3.50,unidade:"/pct",especificacoes:{"Medidas":"4 x 24 cm","Quantidade":"100 unidades"}},
-    {id:361,nome:"Saco Plástico Gelão 05x24x0.2",categoria:"sacolas",tipo:"crystal",tamanho:"p",icone:"ph-drop",descricao:"Saco crystal para gelão c/ 100un.",preco:3.50,unidade:"/pct",especificacoes:{"Medidas":"5 x 24 cm","Quantidade":"100 unidades"}},
+    // Sacolas Crystal Fardos 1kg
+    {id:350,nome:"Sacola Crystal 10x15x0.6",categoria:"sacolas",tipo:"crystal",peso:"1kg",tamanho:"p",icone:"ph-shopping-bag",descricao:"Crystal grossa (0.6). Vendida por kg.",preco:32.00,unidade:"/kg",especificacoes:{"Medidas":"10 x 15 cm","Espessura":"0.6","Peso":"1kg"}},
+    {id:351,nome:"Sacola Crystal 10x20x0.6",categoria:"sacolas",tipo:"crystal",peso:"1kg",tamanho:"p",icone:"ph-shopping-bag",descricao:"Crystal grossa (0.6). Vendida por kg.",preco:32.00,unidade:"/kg",especificacoes:{"Medidas":"10 x 20 cm","Espessura":"0.6","Peso":"1kg"}},
+    {id:352,nome:"Sacola Crystal 15x20x0.6",categoria:"sacolas",tipo:"crystal",peso:"1kg",tamanho:"p",icone:"ph-shopping-bag",descricao:"Crystal grossa (0.6). Vendida por kg.",preco:32.00,unidade:"/kg",especificacoes:{"Medidas":"15 x 20 cm","Espessura":"0.6","Peso":"1kg"}},
+    {id:353,nome:"Sacola Crystal 15x30x0.6",categoria:"sacolas",tipo:"crystal",peso:"1kg",tamanho:"p",icone:"ph-shopping-bag",descricao:"Crystal grossa (0.6). Vendida por kg.",preco:32.00,unidade:"/kg",especificacoes:{"Medidas":"15 x 30 cm","Espessura":"0.6","Peso":"1kg"}},
+    {id:354,nome:"Sacola Crystal 20x30x0.6",categoria:"sacolas",tipo:"crystal",peso:"1kg",tamanho:"p",icone:"ph-shopping-bag",descricao:"Crystal grossa (0.6). Vendida por kg.",preco:32.00,unidade:"/kg",especificacoes:{"Medidas":"20 x 30 cm","Espessura":"0.6","Peso":"1kg"}},
+    {id:355,nome:"Sacola Crystal 25x35x0.6",categoria:"sacolas",tipo:"crystal",peso:"1kg",tamanho:"m",icone:"ph-shopping-bag",descricao:"Crystal grossa (0.6). Vendida por kg.",preco:32.00,unidade:"/kg",especificacoes:{"Medidas":"25 x 35 cm","Espessura":"0.6","Peso":"1kg"}},
+    {id:356,nome:"Sacola Crystal 35x45x0.6",categoria:"sacolas",tipo:"crystal",peso:"1kg",tamanho:"m",icone:"ph-shopping-bag",descricao:"Crystal grossa (0.6). Vendida por kg.",preco:32.00,unidade:"/kg",especificacoes:{"Medidas":"35 x 45 cm","Espessura":"0.6","Peso":"1kg"}},
+    {id:357,nome:"Sacola Crystal 40x60x0.6",categoria:"sacolas",tipo:"crystal",peso:"1kg",tamanho:"g",icone:"ph-shopping-bag",descricao:"Crystal grossa (0.6). Vendida por kg.",preco:32.00,unidade:"/kg",especificacoes:{"Medidas":"40 x 60 cm","Espessura":"0.6","Peso":"1kg"}},
+    {id:358,nome:"Sacola Crystal 50x70x0.6",categoria:"sacolas",tipo:"crystal",peso:"1kg",tamanho:"g",icone:"ph-shopping-bag",descricao:"Crystal grossa (0.6). Vendida por kg.",preco:33.50,unidade:"/kg",especificacoes:{"Medidas":"50 x 70 cm","Espessura":"0.6","Peso":"1kg"}},
+    {id:359,nome:"Sacola Crystal 60x80x0.6",categoria:"sacolas",tipo:"crystal",peso:"1kg",tamanho:"g",icone:"ph-shopping-bag",descricao:"Crystal grossa (0.6). Vendida por kg.",preco:33.50,unidade:"/kg",especificacoes:{"Medidas":"60 x 80 cm","Espessura":"0.6","Peso":"1kg"}},
+    {id:360,nome:"Saco Plástico Geladinho 04x24x0.2",categoria:"sacolas",tipo:"crystal",peso:"cento",tamanho:"p",icone:"ph-drop",descricao:"Saco crystal para geladinho c/ 100un.",preco:3.50,unidade:"/pct",especificacoes:{"Medidas":"4 x 24 cm","Quantidade":"100 unidades"}},
+    {id:361,nome:"Saco Plástico Gelão 05x24x0.2",categoria:"sacolas",tipo:"crystal",peso:"cento",tamanho:"p",icone:"ph-drop",descricao:"Saco crystal para gelão c/ 100un.",preco:3.50,unidade:"/pct",especificacoes:{"Medidas":"5 x 24 cm","Quantidade":"100 unidades"}},
 
     // Sacolas Kraft
     {id:70,nome:"Sacola Kraft 30x40",categoria:"sacolas",tipo:"kraft",tamanho:"p",icone:"ph-shopping-bag",descricao:"Sacola kraft artesanal. Vendida por kg.",preco:"Sob consulta",unidade:"/kg",especificacoes:{"Medidas":"30 x 40 cm","Cor":"Kraft natural","Material":"Papel kraft"}},
@@ -1357,7 +1138,7 @@ const iconesEspec = {
     "Venda":"ph-storefront","Quantidade":"ph-stack","Temperatura":"ph-thermometer",
     "Altura":"ph-arrows-vertical","Diâmetro":"ph-circle","Modelo":"ph-tag",
     "Alça":"ph-link","Tampa":"ph-check-circle","Espessura":"ph-arrows-out-line",
-    "Tipo":"ph-tag"
+    "Tipo":"ph-tag", "Peso":"ph-scales"
 };
 
 const sacolarConfig = {
@@ -1373,7 +1154,7 @@ const sacolarConfig = {
 /* ── ESTADO ── */
 let estado = {
     categoria:"todos", subcategoria:"todas", tipoSacola:"preta",
-    tamanhoSacola:"todas", pacoteSacola:"todos",
+    tamanhoSacola:"todas", pacoteSacola:"todos", pesoCrystal:"todos",
     marcaMarmitex:"todas", marcaPlastico:"todas", marcaMarmitaPlastico:"todas",
     marcaFesta:"todas"
 };
@@ -1506,14 +1287,14 @@ document.getElementById("modalProduto").addEventListener("click",e=>{if(e.target
 ══════════════════════════════════════════════ */
 function filtrarCategoria(cat,el){
     estado.categoria=cat; estado.subcategoria="todas"; estado.tipoSacola="preta";
-    estado.tamanhoSacola="todas"; estado.pacoteSacola="todos";
+    estado.tamanhoSacola="todas"; estado.pacoteSacola="todos"; estado.pesoCrystal="todos";
     estado.marcaMarmitex="todas"; estado.marcaPlastico="todas"; estado.marcaMarmitaPlastico="todas";
     estado.marcaFesta="todas";
 
     document.querySelectorAll(".btn-filter").forEach(b=>b.classList.remove("active"));
     el.classList.add("active");
 
-    ["barraSubcategorias","barraTipoSacolas","barraTamanhoSacolas","barraPacoteSacolas",
+    ["barraSubcategorias","barraTipoSacolas","barraTamanhoSacolas","barraPacoteSacolas","barraPesoCrystal",
      "barraSubcategoriasIsopor","barraMarcaMarmitex","barraSubcategoriasPlastico",
      "barraMarcaPlastico","barraMarcaMarmitaPlastico","barraMarcaFesta","breadcrumb"].forEach(id=>{
         const el2=document.getElementById(id);
@@ -1530,7 +1311,7 @@ function filtrarCategoria(cat,el){
         document.getElementById("barraTipoSacolas").classList.add("visible");
         document.querySelectorAll(".btn-tipo-sacola").forEach((b,i)=>b.classList.toggle("active",i===0));
         const barraT=document.getElementById("barraTamanhoSacolas");
-        barraT.className="sacolas-tamanho-bar visible tema-preta";
+        barraT.className="sub-bar-base visible";
         document.querySelectorAll(".btn-tamanho-sacola").forEach((b,i)=>b.classList.toggle("active",i===0));
         document.getElementById("barraPacoteSacolas").classList.add("visible");
         document.querySelectorAll(".btn-pacote-sacola").forEach((b,i)=>b.classList.toggle("active",i===0));
@@ -1590,8 +1371,8 @@ function filtrarSub(sub,el,cat){
 }
 
 function filtrarMarcaMarmitex(marca,el){estado.marcaMarmitex=marca;document.querySelectorAll(".btn-marca-marmitex").forEach(b=>b.classList.remove("active"));el.classList.add("active");renderizarProdutos();}
-function filtrarMarcaPlastico(marca,el){estado.marcaPlastico=marca;el.closest('.plastico-marca-bar').querySelectorAll('.btn-marca-plastico').forEach(b=>b.classList.remove("active"));el.classList.add("active");renderizarProdutos();}
-function filtrarMarcaMarmitaPlastico(marca,el){estado.marcaMarmitaPlastico=marca;document.querySelectorAll("#barraMarcaMarmitaPlastico .btn-marca-plastico").forEach(b=>b.classList.remove("active"));el.classList.add("active");renderizarProdutos();}
+function filtrarMarcaPlastico(marca,el){estado.marcaPlastico=marca;el.closest('.sub-bar-base').querySelectorAll('.btn-sub').forEach(b=>b.classList.remove("active"));el.classList.add("active");renderizarProdutos();}
+function filtrarMarcaMarmitaPlastico(marca,el){estado.marcaMarmitaPlastico=marca;document.querySelectorAll("#barraMarcaMarmitaPlastico .btn-sub").forEach(b=>b.classList.remove("active"));el.classList.add("active");renderizarProdutos();}
 
 function filtrarMarcaFesta(marca, el) {
     estado.marcaFesta = marca;
@@ -1602,18 +1383,42 @@ function filtrarMarcaFesta(marca, el) {
 }
 
 function selecionarTipoSacola(tipo,el){
-    estado.tipoSacola=tipo; estado.tamanhoSacola="todas"; estado.pacoteSacola="todos";
-    document.querySelectorAll(".btn-tipo-sacola").forEach(b=>b.classList.remove("active"));
+    estado.tipoSacola=tipo; estado.tamanhoSacola="todas"; estado.pacoteSacola="todos"; estado.pesoCrystal="todos";
+    document.querySelectorAll("#barraTipoSacolas .btn-sub").forEach(b=>b.classList.remove("active"));
     el.classList.add("active");
-    const barraT=document.getElementById("barraTamanhoSacolas");
-    const barraTema=(tipo==="kraft-alca")?"tema-kraft":(tipo==="lixo-banheiro"?"tema-banheiro":`tema-${tipo}`);
-    barraT.className=`sacolas-tamanho-bar visible ${barraTema}`;
+    
     document.querySelectorAll(".btn-tamanho-sacola").forEach((b,i)=>b.classList.toggle("active",i===0));
+    
     const barraPacote=document.getElementById("barraPacoteSacolas");
-    if(tipo==="preta"){barraPacote.classList.add("visible");document.querySelectorAll(".btn-pacote-sacola").forEach((b,i)=>b.classList.toggle("active",i===0));}
-    else barraPacote.classList.remove("visible");
+    const barraPesoC=document.getElementById("barraPesoCrystal");
+    const barraTam=document.getElementById("barraTamanhoSacolas");
+    
+    if(tipo==="preta"){
+        barraPacote.classList.add("visible");
+        document.querySelectorAll(".btn-pacote-sacola").forEach((b,i)=>b.classList.toggle("active",i===0));
+    } else {
+        barraPacote.classList.remove("visible");
+    }
+
+    if(tipo==="crystal"){
+        barraPesoC.classList.add("visible");
+        document.querySelectorAll("#barraPesoCrystal .btn-sub").forEach((b,i)=>b.classList.toggle("active",i===0));
+        barraTam.classList.add("visible");
+    } else if (tipo==="lixo-banheiro") {
+        barraPesoC.classList.remove("visible");
+        barraTam.classList.remove("visible"); // Banheiro não precisa do filtro de tamanho clássico (p/m/g não aplicam perfeitamente lá)
+    } else {
+        barraPesoC.classList.remove("visible");
+        barraTam.classList.add("visible");
+    }
+
     const nomes={preta:"Pretas",verde:"Verdes",branca:"Brancas",crystal:"Crystal",kraft:"Kraft","kraft-alca":"Kraft c/ Alça","lixo-banheiro":"Banheiro"};
-    document.getElementById("breadcrumbSub").textContent=tipo==="preta"?`${nomes[tipo]} — Todos os Tamanhos — Todos os Pacotes`:`${nomes[tipo]} — Todos os Tamanhos`;
+    let sub = nomes[tipo];
+    if(tipo==="preta") sub += " — Todos os Tamanhos — Todos os Pacotes";
+    else if(tipo==="crystal") sub += " — Todos — Todos os Tamanhos";
+    else if(tipo!=="lixo-banheiro") sub += " — Todos os Tamanhos";
+    document.getElementById("breadcrumbSub").textContent=sub;
+    
     renderizarProdutos();
 }
 
@@ -1621,11 +1426,7 @@ function filtrarTamanhoSacola(tamanho,el){
     estado.tamanhoSacola=tamanho;
     document.querySelectorAll(".btn-tamanho-sacola").forEach(b=>b.classList.remove("active"));
     el.classList.add("active");
-    const nomeTamanho={todas:"Todos os Tamanhos",p:"Pequenas",m:"Médias",g:"Grandes"};
-    const nomeTipo={preta:"Pretas",verde:"Verdes",branca:"Brancas",crystal:"Crystal",kraft:"Kraft","kraft-alca":"Kraft c/ Alça","lixo-banheiro":"Banheiro"};
-    const t=nomeTipo[estado.tipoSacola]||estado.tipoSacola, tam=nomeTamanho[tamanho];
-    if(estado.tipoSacola==="preta"){const nomePacote={todos:"Todos os Pacotes","10un":"Pacote 10un","50un":"Pacote 50un"};document.getElementById("breadcrumbSub").textContent=`${t} — ${tam} — ${nomePacote[estado.pacoteSacola]}`;}
-    else document.getElementById("breadcrumbSub").textContent=`${t} — ${tam}`;
+    atualizarBreadcrumbSacolas();
     renderizarProdutos();
 }
 
@@ -1633,10 +1434,44 @@ function filtrarPacoteSacola(pacote,el){
     estado.pacoteSacola=pacote;
     document.querySelectorAll(".btn-pacote-sacola").forEach(b=>b.classList.remove("active"));
     el.classList.add("active");
-    const nomeTamanho={todas:"Todos os Tamanhos",p:"Pequenas",m:"Médias",g:"Grandes"};
-    const nomePacote={todos:"Todos os Pacotes","10un":"Pacote 10un","50un":"Pacote 50un"};
-    document.getElementById("breadcrumbSub").textContent=`Pretas — ${nomeTamanho[estado.tamanhoSacola]} — ${nomePacote[pacote]}`;
+    atualizarBreadcrumbSacolas();
     renderizarProdutos();
+}
+
+function filtrarPesoCrystal(peso,el){
+    estado.pesoCrystal=peso;
+    document.querySelectorAll("#barraPesoCrystal .btn-sub").forEach(b=>b.classList.remove("active"));
+    el.classList.add("active");
+    
+    const barraTam=document.getElementById("barraTamanhoSacolas");
+    if(peso === 'cento') {
+        estado.tamanhoSacola = 'todas';
+        barraTam.classList.remove("visible");
+    } else {
+        barraTam.classList.add("visible");
+    }
+    
+    atualizarBreadcrumbSacolas();
+    renderizarProdutos();
+}
+
+function atualizarBreadcrumbSacolas() {
+    const nomeTamanho={todas:"Todos os Tamanhos",p:"Pequenas",m:"Médias",g:"Grandes"};
+    const nomeTipo={preta:"Pretas",verde:"Verdes",branca:"Brancas",crystal:"Crystal",kraft:"Kraft","kraft-alca":"Kraft c/ Alça","lixo-banheiro":"Banheiro"};
+    const nomePacote={todos:"Todos os Pacotes","10un":"Pacote 10un","50un":"Pacote 50un"};
+    const nomePeso={todos:"Todos", "200g":"Pacotes 200g", "1kg":"Fardos 1kg", "cento":"Centos (100un)"};
+    
+    const t=nomeTipo[estado.tipoSacola]||estado.tipoSacola, tam=nomeTamanho[estado.tamanhoSacola];
+    let sub = t;
+    
+    if(estado.tipoSacola==="preta") sub += ` — ${tam} — ${nomePacote[estado.pacoteSacola]}`;
+    else if(estado.tipoSacola==="crystal") {
+        sub += ` — ${nomePeso[estado.pesoCrystal]}`;
+        if(estado.pesoCrystal !== 'cento') sub += ` — ${tam}`;
+    }
+    else if(estado.tipoSacola!=="lixo-banheiro") sub += ` — ${tam}`;
+    
+    document.getElementById("breadcrumbSub").textContent=sub;
 }
 
 /* ══════════════════════════════════════════════
@@ -1664,8 +1499,12 @@ function renderizarProdutos(){
         const filtrados=listaProdutos.filter(p=>{
             if(p.categoria!=="sacolas")return false;
             if(p.tipo!==estado.tipoSacola)return false;
-            if(estado.tamanhoSacola!=="todas"&&p.tamanho!==estado.tamanhoSacola)return false;
+            if(estado.tipoSacola!=="lixo-banheiro" && estado.tipoSacola!=="crystal" && estado.tamanhoSacola!=="todas"&&p.tamanho!==estado.tamanhoSacola)return false;
             if(estado.tipoSacola==="preta"&&estado.pacoteSacola!=="todos"&&p.pacote!==estado.pacoteSacola)return false;
+            if(estado.tipoSacola==="crystal") {
+                if(estado.pesoCrystal!=="todos"&&p.peso!==estado.pesoCrystal) return false;
+                if(estado.pesoCrystal!=="cento" && estado.tamanhoSacola!=="todas" && p.tamanho!==estado.tamanhoSacola) return false;
+            }
             return true;
         });
         if(!filtrados.length){container.innerHTML=`<p style="text-align:center;color:var(--text-muted);padding:4rem 0;">Nenhum produto encontrado.</p>`;return;}
