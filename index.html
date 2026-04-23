@@ -892,6 +892,13 @@ footer { background:var(--blue-950); color:#fff; padding:5.5rem 0 3rem; margin-t
             <button class="btn-marca-plastico" onclick="filtrarMarcaMarmitaPlastico('Gourmax',this)"><i class="ph-bold ph-tag"></i> Gourmax</button>
         </div>
 
+        <div class="sub-bar-base" id="barraMarcaFesta">
+            <button class="btn-sub active" onclick="filtrarMarcaFesta('todas',this)"><i class="ph-bold ph-squares-four"></i> Todas as Marcas</button>
+            <button class="btn-sub" onclick="filtrarMarcaFesta('Elite',this)"><i class="ph-bold ph-fork-knife"></i> Elite (Talheres)</button>
+            <button class="btn-sub" onclick="filtrarMarcaFesta('Prafesta',this)"><i class="ph-bold ph-tag"></i> Prafesta</button>
+            <button class="btn-sub" onclick="filtrarMarcaFesta('Danubio',this)"><i class="ph-bold ph-tag"></i> Danubio</button>
+        </div>
+
         <div class="breadcrumb" id="breadcrumb">
             <i class="ph-bold ph-package" id="breadcrumbIcon"></i>
             <span id="breadcrumbCat">Caixas</span>
@@ -1125,11 +1132,26 @@ const svgProdutos = {
     disco_pizza:`<svg viewBox="0 0 130 130" fill="none" xmlns="http://www.w3.org/2000/svg"><ellipse cx="65" cy="65" rx="55" ry="12" fill="#e0f7fa" stroke="#00838f" stroke-width="2.5"/><ellipse cx="65" cy="60" rx="55" ry="12" fill="#f0fdff" stroke="#00838f" stroke-width="2.5"/><ellipse cx="65" cy="60" rx="42" ry="8" fill="#e0f7fa" stroke="#00acc1" stroke-width="1.5" stroke-dasharray="6,3"/><ellipse cx="65" cy="60" rx="28" ry="5" fill="#b2ebf2"/><text x="65" y="90" text-anchor="middle" font-size="9" fill="#00838f" font-weight="bold" font-family="sans-serif">PIZZA</text></svg>`,
     embalagem_bolo:`<svg viewBox="0 0 130 130" fill="none" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="cupula-grad" x1="0" y1="0" x2="0.3" y2="1"><stop offset="0%" stop-color="#e0f2fe" stop-opacity="0.85"/><stop offset="100%" stop-color="#bae6fd" stop-opacity="0.45"/></linearGradient></defs><rect x="18" y="92" width="94" height="16" rx="4" fill="#f1f5f9" stroke="#94a3b8" stroke-width="2"/><path d="M18 92 Q14 60 35 35 Q52 18 65 18 Q78 18 95 35 Q116 60 112 92" fill="url(#cupula-grad)" stroke="#38bdf8" stroke-width="2"/><ellipse cx="65" cy="18" rx="30" ry="8" fill="#e0f2fe" fill-opacity="0.6" stroke="#38bdf8" stroke-width="1.5"/><path d="M30 55 Q38 40 50 35" stroke="white" stroke-width="3" stroke-linecap="round" opacity="0.7"/><ellipse cx="65" cy="85" rx="34" ry="9" fill="#fde68a" stroke="#d97706" stroke-width="1.5"/><rect x="31" y="65" width="68" height="22" rx="3" fill="#fef3c7" stroke="#d97706" stroke-width="1.5"/><ellipse cx="65" cy="65" rx="34" ry="9" fill="#fde68a" stroke="#d97706" stroke-width="1.5"/><rect x="55" y="52" width="4" height="14" rx="2" fill="#f87171"/><rect x="65" y="49" width="4" height="17" rx="2" fill="#60a5fa"/><rect x="75" y="52" width="4" height="14" rx="2" fill="#a78bfa"/><ellipse cx="57" cy="51" rx="3" ry="4" fill="#fbbf24" opacity="0.9"/><ellipse cx="67" cy="48" rx="3" ry="4" fill="#fbbf24" opacity="0.9"/><ellipse cx="77" cy="51" rx="3" ry="4" fill="#fbbf24" opacity="0.9"/></svg>`,
     marmita_plastica:`<svg viewBox="0 0 130 130" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="10" y="28" width="110" height="34" rx="6" fill="#f8fafc" stroke="#cbd5e1" stroke-width="2"/><path d="M10 56 Q10 62 16 62 L114 62 Q120 62 120 56" fill="#e2e8f0" stroke="#cbd5e1" stroke-width="1.5"/><rect x="14" y="62" width="102" height="50" rx="5" fill="#ffffff" stroke="#cbd5e1" stroke-width="2"/><rect x="20" y="68" width="90" height="38" rx="3" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1"/><line x1="20" y1="87" x2="110" y2="87" stroke="#e2e8f0" stroke-width="1.5"/><line x1="75" y1="87" x2="75" y2="106" stroke="#e2e8f0" stroke-width="1.5"/><ellipse cx="47" cy="77" rx="18" ry="8" fill="#fbbf24" opacity="0.55"/><ellipse cx="90" cy="77" rx="14" ry="7" fill="#86efac" opacity="0.55"/><ellipse cx="55" cy="97" rx="14" ry="6" fill="#f87171" opacity="0.45"/><ellipse cx="88" cy="97" rx="9" ry="5" fill="#fde68a" opacity="0.5"/><path d="M22 35 Q50 32 80 35" stroke="white" stroke-width="2.5" stroke-linecap="round" opacity="0.8"/><rect x="38" y="33" width="54" height="18" rx="4" fill="#e65100"/><text x="65" y="45" text-anchor="middle" font-size="9" fill="white" font-weight="900" font-family="sans-serif" letter-spacing="0.5">MARMITA</text></svg>`,
+    
+    // Novos SVGs (Talheres e Potes Compatíveis)
+    talheres:`<svg viewBox="0 0 130 130" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="25" y="25" width="80" height="80" rx="40" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="2"/><path d="M50 35 L50 60 C50 68 55 70 55 75 L55 100 M42 35 L42 50 M58 35 L58 50" stroke="#94a3b8" stroke-width="3.5" stroke-linecap="round" fill="none"/><path d="M80 35 C68 35 68 65 73 75 L73 100 M80 35 L80 100" stroke="#94a3b8" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>`,
+    pote_quadrado:`<svg viewBox="0 0 130 130" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="25" y="50" width="80" height="60" rx="8" fill="#f8fafc" stroke="#94a3b8" stroke-width="2"/><path d="M25 55 L105 55" stroke="#e2e8f0" stroke-width="2"/><rect x="20" y="38" width="90" height="12" rx="4" fill="#e2e8f0" stroke="#94a3b8" stroke-width="2"/></svg>`,
+    pote_redondo:`<svg viewBox="0 0 130 130" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M30 50 L35 100 Q40 105 65 105 Q90 105 95 100 L100 50 Z" fill="#f8fafc" stroke="#94a3b8" stroke-width="2"/><ellipse cx="65" cy="50" rx="35" ry="12" fill="#e2e8f0" stroke="#94a3b8" stroke-width="2"/><ellipse cx="65" cy="42" rx="37" ry="13" fill="#f1f5f9" stroke="#94a3b8" stroke-width="2"/></svg>`,
+    pote_retangular:`<svg viewBox="0 0 130 130" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M20 50 L25 95 Q28 100 65 100 Q102 100 105 95 L110 50 Z" fill="#f8fafc" stroke="#94a3b8" stroke-width="2"/><rect x="15" y="38" width="100" height="14" rx="4" fill="#e2e8f0" stroke="#94a3b8" stroke-width="2"/><ellipse cx="65" cy="45" rx="45" ry="6" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1"/></svg>`,
+    
     default:`<svg viewBox="0 0 130 130" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="20" y="30" width="90" height="80" rx="6" fill="#dbeafe" stroke="#2563eb" stroke-width="2.5"/><rect x="20" y="30" width="90" height="24" rx="6" fill="#bfdbfe" stroke="#2563eb" stroke-width="2"/><rect x="46" y="30" width="38" height="24" rx="3" fill="#93c5fd" stroke="#2563eb" stroke-width="2"/><line x1="35" y1="72" x2="95" y2="72" stroke="#3b82f6" stroke-width="2" stroke-dasharray="5,3"/><line x1="35" y1="86" x2="95" y2="86" stroke="#3b82f6" stroke-width="2" stroke-dasharray="5,3"/><line x1="35" y1="100" x2="75" y2="100" stroke="#3b82f6" stroke-width="2" stroke-dasharray="5,3"/></svg>`
 };
 
 function getSvg(produto) {
     const cat=produto.categoria, sub=produto.subcategoria||'', tipo=produto.tipo||'';
+    const nome = produto.nome.toLowerCase();
+
+    if(cat==='festa'){
+        if(nome.includes('garfo') || nome.includes('faca')) return svgProdutos.talheres;
+        if(nome.includes('quadrado')) return svgProdutos.pote_quadrado;
+        if(nome.includes('redondo')) return svgProdutos.pote_redondo;
+        return svgProdutos.default;
+    }
     if(cat==='sacolas'){
         if(tipo==='preta') return svgProdutos.saco_lixo;
         if(tipo==='verde') return svgProdutos.sacola_verde;
@@ -1145,7 +1167,10 @@ function getSvg(produto) {
         if(sub==='disco-isopor') return svgProdutos.disco_pizza;
     }
     if(cat==='plastico'){
-        if(sub==='marmita-plastico') return svgProdutos.marmita_plastica;
+        if(sub==='marmita-plastico'){
+            if(nome.includes('retangular')) return svgProdutos.pote_retangular;
+            return svgProdutos.marmita_plastica;
+        }
         if(sub==='bolo-plastico') return svgProdutos.embalagem_bolo;
     }
     if(cat==='caixas'){
@@ -1310,7 +1335,8 @@ const iconesEspec = {
     "Uso":"ph-check-circle","Cor":"ph-palette","Marca":"ph-tag",
     "Venda":"ph-storefront","Quantidade":"ph-stack","Temperatura":"ph-thermometer",
     "Altura":"ph-arrows-vertical","Diâmetro":"ph-circle","Modelo":"ph-tag",
-    "Alça":"ph-link","Tampa":"ph-check-circle","Espessura":"ph-arrows-out-line"
+    "Alça":"ph-link","Tampa":"ph-check-circle","Espessura":"ph-arrows-out-line",
+    "Tipo":"ph-tag"
 };
 
 const sacolarConfig = {
@@ -1327,7 +1353,8 @@ const sacolarConfig = {
 let estado = {
     categoria:"todos", subcategoria:"todas", tipoSacola:"preta",
     tamanhoSacola:"todas", pacoteSacola:"todos",
-    marcaMarmitex:"todas", marcaPlastico:"todas", marcaMarmitaPlastico:"todas"
+    marcaMarmitex:"todas", marcaPlastico:"todas", marcaMarmitaPlastico:"todas",
+    marcaFesta:"todas"
 };
 let produtoModal = null;
 let carrinho = {};
@@ -1460,13 +1487,14 @@ function filtrarCategoria(cat,el){
     estado.categoria=cat; estado.subcategoria="todas"; estado.tipoSacola="preta";
     estado.tamanhoSacola="todas"; estado.pacoteSacola="todos";
     estado.marcaMarmitex="todas"; estado.marcaPlastico="todas"; estado.marcaMarmitaPlastico="todas";
+    estado.marcaFesta="todas";
 
     document.querySelectorAll(".btn-filter").forEach(b=>b.classList.remove("active"));
     el.classList.add("active");
 
     ["barraSubcategorias","barraTipoSacolas","barraTamanhoSacolas","barraPacoteSacolas",
      "barraSubcategoriasIsopor","barraMarcaMarmitex","barraSubcategoriasPlastico",
-     "barraMarcaPlastico","barraMarcaMarmitaPlastico","breadcrumb"].forEach(id=>{
+     "barraMarcaPlastico","barraMarcaMarmitaPlastico","barraMarcaFesta","breadcrumb"].forEach(id=>{
         const el2=document.getElementById(id);
         if(el2){el2.classList.remove("visible");el2.classList.remove("visivel");}
     });
@@ -1505,9 +1533,11 @@ function filtrarCategoria(cat,el){
         document.querySelectorAll("#barraSubcategoriasPlastico .btn-sub-plastico").forEach((b,i)=>b.classList.toggle("active",i===0));
         document.querySelectorAll(".btn-marca-plastico").forEach((b,i)=>b.classList.toggle("active",i===0));
     } else if(cat==="festa"){
+        document.getElementById("barraMarcaFesta").classList.add("visible");
+        document.querySelectorAll("#barraMarcaFesta .btn-sub").forEach((b,i)=>b.classList.toggle("active",i===0));
         document.getElementById("breadcrumb").classList.add("visible");
         document.getElementById("breadcrumbCat").textContent="Festa & Descartáveis";
-        document.getElementById("breadcrumbSub").textContent="Todos os Itens";
+        document.getElementById("breadcrumbSub").textContent="Todas as Marcas";
     }
     renderizarProdutos();
 }
@@ -1541,6 +1571,14 @@ function filtrarSub(sub,el,cat){
 function filtrarMarcaMarmitex(marca,el){estado.marcaMarmitex=marca;document.querySelectorAll(".btn-marca-marmitex").forEach(b=>b.classList.remove("active"));el.classList.add("active");renderizarProdutos();}
 function filtrarMarcaPlastico(marca,el){estado.marcaPlastico=marca;el.closest('.plastico-marca-bar').querySelectorAll('.btn-marca-plastico').forEach(b=>b.classList.remove("active"));el.classList.add("active");renderizarProdutos();}
 function filtrarMarcaMarmitaPlastico(marca,el){estado.marcaMarmitaPlastico=marca;document.querySelectorAll("#barraMarcaMarmitaPlastico .btn-marca-plastico").forEach(b=>b.classList.remove("active"));el.classList.add("active");renderizarProdutos();}
+
+function filtrarMarcaFesta(marca, el) {
+    estado.marcaFesta = marca;
+    document.querySelectorAll("#barraMarcaFesta .btn-sub").forEach(b => b.classList.remove("active"));
+    el.classList.add("active");
+    document.getElementById("breadcrumbSub").textContent = marca === 'todas' ? 'Todas as Marcas' : marca;
+    renderizarProdutos();
+}
 
 function selecionarTipoSacola(tipo,el){
     estado.tipoSacola=tipo; estado.tamanhoSacola="todas"; estado.pacoteSacola="todos";
@@ -1647,7 +1685,11 @@ function renderizarProdutos(){
     }
 
     if(estado.categoria==="festa"){
-        const filtrados=listaProdutos.filter(p=>p.categoria==="festa");
+        const filtrados=listaProdutos.filter(p=>{
+            if(p.categoria!=="festa") return false;
+            if(estado.marcaFesta!=="todas" && p.especificacoes?.Marca !== estado.marcaFesta) return false;
+            return true;
+        });
         if(!filtrados.length){container.innerHTML=`<p style="text-align:center;color:var(--text-muted);padding:4rem 0;">Nenhum produto encontrado.</p>`;return;}
         criarSecao("Festa & Descartáveis",filtrados,container,"festa");
         return;
@@ -1720,7 +1762,10 @@ function criarSecao(titulo,produtos,container,cat,tipo){
         if(p.subcategoria==='marmitex'&&p.marca) badgeMarca=`<span class="brand-badge" style="background:#f57f17;color:#fff;">${p.marca}</span>`;
         else if(p.subcategoria==='bolo-plastico'&&p.marca){const cor=p.marca==='Galvanotek'?'#15803d':'#0369a1';badgeMarca=`<span class="brand-badge" style="background:${cor};color:#fff;">${p.marca}</span>`;}
         else if(p.subcategoria==='marmita-plastico'&&p.marca) badgeMarca=`<span class="brand-badge" style="background:#e65100;color:#fff;">${p.marca}</span>`;
-        else if(p.categoria==='festa'&&p.especificacoes?.Marca) badgeMarca=`<span class="brand-badge" style="background:#15803d;color:#fff;">${p.especificacoes.Marca}</span>`;
+        else if(p.categoria==='festa'&&p.especificacoes?.Marca){
+            const corM = p.especificacoes.Marca === 'Elite' ? '#1e3a8a' : (p.especificacoes.Marca === 'Danubio' ? '#0284c7' : '#e65100');
+            badgeMarca=`<span class="brand-badge" style="background:${corM};color:#fff;">${p.especificacoes.Marca}</span>`;
+        }
 
         card.innerHTML=`
             <div class="product-img">
