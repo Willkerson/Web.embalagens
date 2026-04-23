@@ -856,6 +856,16 @@ const dict = {
 let currentLang = 'pt';
 function toggleLanguage() {
     currentLang = currentLang === 'pt' ? 'en' : 'pt';
+    
+    // Troca a bandeira do bot�o
+    const iconLang = document.getElementById('icon-lang');
+    if (currentLang === 'en') {
+        iconLang.src = 'https://img.icons8.com/fluency/48/brazil-flag.png';
+    } else {
+        iconLang.src = 'https://img.icons8.com/fluency/48/usa-flag.png';
+    }
+
+    // Traduz os textos
     document.querySelectorAll('[data-i18n]').forEach(el => {
         const key = el.getAttribute('data-i18n');
         if(dict[currentLang][key]) el.innerHTML = dict[currentLang][key];
