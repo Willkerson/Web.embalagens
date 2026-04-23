@@ -48,8 +48,8 @@ a { text-decoration:none; color:inherit; }
 button { cursor:pointer; border:none; background:none; outline:none; font-family:inherit; }
 h1,h2,h3,h4,h5,h6 { color:var(--text-dark); font-weight:800; letter-spacing:-.025em; }
 
-/* FIX GLOBAL DE ÍCONES PARA FIREFOX/MOBILE */
-i[class^="ph"], i[class*=" ph"] {
+/* FIX SEGURO DE ÍCONES (Restrito para não quebrar a seção Sobre/Depoimentos) */
+button i, .whatsapp-float i, .cart-item-icon i, .breadcrumb i, .section-title i, .section-label i {
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -169,8 +169,82 @@ header.scrolled { padding:.65rem 0; box-shadow:0 8px 32px -8px rgba(15,23,42,.08
 }
 .btn-hero-secondary:hover { background:rgba(255,255,255,.2); transform:translateY(-4px); border-color:rgba(255,255,255,.5); }
 
+/* Stats hero */
+.hero-stats { display:flex; gap:2.5rem; animation:fadeSlideUp .9s ease .45s both; flex-wrap:wrap; justify-content:center; }
+.hero-stat { text-align:center; }
+.hero-stat-val { font-size:2rem; font-weight:900; color:#fff; letter-spacing:-.04em; line-height:1; }
+.hero-stat-label { font-size:.78rem; color:rgba(255,255,255,.6); font-weight:500; text-transform:uppercase; letter-spacing:.06em; margin-top:4px; }
+.hero-stat-divider { width:1px; background:rgba(255,255,255,.2); align-self:stretch; }
+
+/* Scroll indicator */
+.scroll-hint { position:absolute; bottom:36px; left:50%; transform:translateX(-50%); z-index:5; display:flex; flex-direction:column; align-items:center; gap:10px; cursor:pointer; transition:var(--tr); animation:fadeSlideUp .9s ease .6s both; }
+.scroll-hint:hover { transform:translateX(-50%) translateY(-4px); }
+.scroll-hint-text { color:rgba(255,255,255,.6); font-size:.75rem; font-weight:600; text-transform:uppercase; letter-spacing:.12em; }
+.scroll-hint-mouse { width:24px; height:38px; border:2px solid rgba(255,255,255,.4); border-radius:12px; display:flex; justify-content:center; padding-top:6px; }
+.scroll-hint-dot { width:4px; height:8px; background:rgba(255,255,255,.7); border-radius:2px; animation:scrollDot 2s ease-in-out infinite; }
+@keyframes scrollDot { 0%,100%{transform:translateY(0);opacity:1;} 60%{transform:translateY(10px);opacity:0;} }
+
+/* ── Animações de entrada ── */
+@keyframes fadeSlideDown { from{opacity:0;transform:translateY(-20px);} to{opacity:1;transform:translateY(0);} }
+@keyframes fadeSlideUp   { from{opacity:0;transform:translateY(24px);}  to{opacity:1;transform:translateY(0);} }
+@keyframes fadeIn        { from{opacity:0;transform:translateY(12px);}  to{opacity:1;transform:translateY(0);} }
+@keyframes scaleIn       { from{opacity:0;transform:scale(.92);}        to{opacity:1;transform:scale(1);} }
+
 /* ══════════════════════════════════════════════
-   CATÁLOGO E FILTROS (CLEAN & PREMIUM)
+   SEÇÃO DEPOIMENTOS
+══════════════════════════════════════════════ */
+.section-trust { width:100%; background:transparent; position:relative; z-index:10; }
+.trust-card {
+    max-width:1100px; margin:-64px auto 5rem;
+    background:#fff; border-radius:28px;
+    box-shadow:0 32px 64px -16px rgba(15,23,42,.1);
+    padding:3rem; border:1px solid var(--border);
+    animation:scaleIn .7s ease .2s both;
+}
+.trust-title { text-align:center; margin-bottom:2rem; font-size:1.1rem; color:var(--blue-800); font-weight:700; letter-spacing:.02em; }
+.stars { color:#f59e0b; font-size:.9rem; margin-bottom:.5rem; }
+.slider-wrap { overflow:hidden; position:relative; width:100%; }
+.slider-track { display:flex; transition:transform .6s cubic-bezier(.4,0,.2,1); gap:20px; }
+.feedback-card {
+    min-width:calc(33.333% - 14px); background:var(--bg-page);
+    padding:1.75rem; border-radius:18px; border:1px solid var(--border);
+    transition:var(--tr);
+}
+.feedback-card:hover { transform:translateY(-4px); box-shadow:var(--shadow-card); border-color:var(--blue-100); }
+.feedback-text { font-style:italic; font-size:.93rem; margin-bottom:1rem; color:var(--text-body); line-height:1.65; }
+.feedback-author { font-weight:700; color:var(--blue-600); display:flex; align-items:center; gap:8px; font-size:.9rem; }
+.feedback-author i { font-size:1.3rem; }
+
+/* ══════════════════════════════════════════════
+   SEÇÃO SOBRE
+══════════════════════════════════════════════ */
+.section-about { padding:5rem 0; background:#fff; border-top:1px solid var(--border); border-bottom:1px solid var(--border); margin-bottom:5rem; }
+.about-grid { display:grid; grid-template-columns:1fr 1fr; gap:5rem; align-items:center; }
+.about-content h2 { font-size:2.4rem; line-height:1.15; margin-bottom:1.25rem; }
+.about-content h2 span { color:var(--blue-600); }
+.about-content p { color:var(--text-body); font-size:1.05rem; line-height:1.8; margin-bottom:2rem; }
+.about-stats { display:grid; grid-template-columns:1fr 1fr; gap:1.25rem; }
+.about-stat-card {
+    background:var(--bg-page); border-radius:16px; padding:1.5rem;
+    border:1px solid var(--border); text-align:center; transition:var(--tr);
+}
+.about-stat-card:hover { border-color:var(--blue-200,#bfdbfe); transform:translateY(-3px); box-shadow:var(--shadow-card); }
+.about-stat-num { font-size:2.2rem; font-weight:900; color:var(--blue-600); letter-spacing:-.04em; line-height:1; }
+.about-stat-label { font-size:.8rem; color:var(--text-muted); font-weight:600; text-transform:uppercase; letter-spacing:.06em; margin-top:5px; }
+.about-visual {
+    background:linear-gradient(135deg,var(--blue-50),#ede9fe);
+    border-radius:28px; padding:3.5rem; text-align:center;
+    border:1px solid var(--blue-100); position:relative; overflow:hidden;
+}
+.about-visual::before {
+    content:''; position:absolute; top:-30%; right:-20%;
+    width:60%; height:60%; background:radial-gradient(circle,rgba(37,99,235,.12),transparent 70%);
+    border-radius:50%;
+}
+.about-visual i { font-size:7rem; color:var(--blue-600); opacity:.85; position:relative; z-index:1; }
+
+/* ══════════════════════════════════════════════
+   CATÁLOGO — CABEÇALHO E FILTROS CLEAN
 ══════════════════════════════════════════════ */
 .section-catalog { padding:2rem 0 7rem; }
 .catalog-header { text-align:center; margin-bottom:3.5rem; max-width:680px; margin-inline:auto; }
@@ -184,24 +258,24 @@ header.scrolled { padding:.65rem 0; box-shadow:0 8px 32px -8px rgba(15,23,42,.08
     text-transform:uppercase; letter-spacing:.06em; margin-bottom:1rem;
 }
 
-/* ── FILTROS PRINCIPAIS ── */
-.filters-wrapper { margin-bottom:1rem; }
+/* ── FILTROS CLEAN & PRD ── */
+.filters-wrapper { margin-bottom:1.5rem; }
 .filters {
-    display:flex; gap:10px; justify-content:center; flex-wrap:wrap;
-    background: #f8fafc; padding: 6px; border-radius: 100px;
-    border: 1px solid #e2e8f0; width: fit-content; margin: 0 auto;
+    display:flex; gap:12px; justify-content:center; flex-wrap:wrap;
+    background: transparent; padding: 0.5rem; border: none;
 }
 .btn-filter {
-    padding:10px 20px; background:transparent; border:none;
-    color:#64748b; border-radius:99px;
-    font-weight:600; font-size:.9rem; transition:all .3s ease;
+    padding:10px 22px; background:#fff; border:1px solid #e2e8f0;
+    color:#475569; border-radius:99px;
+    font-weight:600; font-size:.9rem; transition:all .2s ease;
     display:flex; align-items:center; gap:8px;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.03);
 }
-.btn-filter:hover { color:#0f172a; background:#e2e8f0; }
-.btn-filter.active { background:#0f172a !important; color:#fff !important; box-shadow:0 4px 12px rgba(15,23,42,.15) !important; }
+.btn-filter:hover { border-color:#cbd5e1; color:#0f172a; background:#f8fafc; transform:translateY(-1px); }
+.btn-filter.active { background:#0f172a !important; color:#fff !important; border-color:#0f172a !important; box-shadow:0 4px 12px rgba(15,23,42,.2) !important; transform:translateY(-1px); }
 .btn-filter.active i { color:#fff !important; }
 
-/* ── SUB-BARS (Elegantes) ── */
+/* Sub-bars Base Uniforme */
 .sub-bar-container { display:flex; flex-direction:column; gap:8px; align-items:center; margin-bottom:2.5rem; }
 
 .sub-bar-base {
@@ -210,20 +284,22 @@ header.scrolled { padding:.65rem 0; box-shadow:0 8px 32px -8px rgba(15,23,42,.08
 }
 .sub-bar-base.visible { display:flex; }
 
-/* Botões de subcategorias */
-.btn-sub {
+/* Botões das subcategorias (unificados) */
+.btn-sub, .btn-tipo-sacola, .btn-tamanho-sacola, .btn-pacote-sacola, .btn-sub-isopor, .btn-marca-marmitex, .btn-sub-plastico, .btn-marca-plastico {
     padding:8px 16px; background:#fff; border:1px solid #e2e8f0;
     color:#475569; border-radius:99px;
     font-weight:600; font-size:.85rem; transition:all .2s ease;
     display:flex; align-items:center; gap:6px; box-shadow: 0 1px 2px rgba(0,0,0,0.02);
 }
-.btn-sub:hover { border-color:#cbd5e1; color:#0f172a; transform:translateY(-1px); box-shadow: 0 2px 4px rgba(0,0,0,0.04); }
-/* Estilo "Pílula Ativa" nos subs */
-.btn-sub.active {
-    background:#eff6ff !important; color:#1d4ed8 !important; border-color:#bfdbfe !important; font-weight:700;
+.btn-sub:hover, .btn-tipo-sacola:hover, .btn-tamanho-sacola:hover, .btn-pacote-sacola:hover, .btn-sub-isopor:hover, .btn-marca-marmitex:hover, .btn-sub-plastico:hover, .btn-marca-plastico:hover {
+    border-color:#cbd5e1; color:#0f172a; transform:translateY(-1px); box-shadow: 0 2px 4px rgba(0,0,0,0.04);
+}
+/* Estilo Active Unificado e Clean */
+.btn-sub.active, .btn-tipo-sacola.active, .btn-tamanho-sacola.active, .btn-pacote-sacola.active, .btn-sub-isopor.active, .btn-marca-marmitex.active, .btn-sub-plastico.active, .btn-marca-plastico.active {
+    background:#eff6ff !important; color:#1d4ed8 !important; border-color:#bfdbfe !important; box-shadow:none !important; font-weight:700;
 }
 
-/* Dots de cor */
+/* Dots indicadores de cor (usados nas sacolas) */
 .cor-dot { width:12px; height:12px; border-radius:50%; flex-shrink:0; border:1px solid rgba(0,0,0,.1); }
 .cor-dot-preta { background:#1e293b; }
 .cor-dot-verde { background:#10b981; }
@@ -249,8 +325,15 @@ header.scrolled { padding:.65rem 0; box-shadow:0 8px 32px -8px rgba(15,23,42,.08
     border-bottom:2px solid var(--border);
 }
 .section-title i { color:var(--blue-600); background:var(--blue-50); padding:10px; border-radius:14px; font-size:1.4rem; }
+.titulo-sacola i { color:#e2e8f0; background:#1a1a2e; }
+.titulo-sacola-verde i { color:#6ee7b7; background:#022c22; }
+.titulo-sacola-branca i { color:#374151; background:#f3f4f6; }
+.titulo-sacola-crystal i { color:#93c5fd; background:linear-gradient(135deg,#0f172a,#1e1b4b); }
+.titulo-isopor i { color:#00838f; background:#e0f7fa; }
+.titulo-sacola-kraft i, .titulo-sacola-kraft-alca i { color:#fde68a; background:#1c1008; }
+.titulo-plastico i { color:#15803d; background:#f0fdf4; }
 
-/* Configuração da Grade */
+/* AJUSTE PARA NÃO CORTAR NO MOBILE */
 .products-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(280px,1fr)); gap:2rem; }
 
 /* ── CARD DE PRODUTO ── */
@@ -328,8 +411,132 @@ header.scrolled { padding:.65rem 0; box-shadow:0 8px 32px -8px rgba(15,23,42,.08
 .btn-info { padding:9px 14px; border:1.5px solid var(--border); border-radius:12px; color:var(--text-muted); font-size:.82rem; font-weight:600; transition:var(--tr); }
 .btn-info:hover { border-color:var(--blue-300); color:var(--blue-600); background:var(--blue-50); }
 
+/* Ripple effect */
+.ripple { position:absolute; border-radius:50%; background:rgba(255,255,255,.4); transform:scale(0); animation:rippleAnim .6s linear; pointer-events:none; }
+@keyframes rippleAnim { to { transform:scale(4); opacity:0; } }
+
+/* ── CARDS ESPECIAIS ── */
+.sacola-preta-card { background:#1a1a2e !important; border-color:#2a2a3e !important; }
+.sacola-preta-card:hover { border-color:#555 !important; box-shadow:0 24px 48px -8px rgba(0,0,0,.5) !important; }
+.sacola-preta-card .product-body { background:#1a1a2e; }
+.sacola-preta-card .product-name { color:#f1f5f9 !important; }
+.sacola-preta-card .product-desc { color:#64748b !important; }
+.sacola-preta-card .product-img { background:linear-gradient(135deg,#0f0f1a,#1a1a2e) !important; border-bottom-color:#2a2a3e !important; }
+.sacola-preta-card .price-box { background:#0f0f1a !important; border-color:#2a2a3e !important; }
+.sacola-preta-card .price-box::before { background:linear-gradient(to bottom,#64748b,#475569) !important; }
+.sacola-preta-card .price-label { color:#64748b !important; }
+.sacola-preta-card .price-value { color:#e2e8f0 !important; }
+.sacola-preta-card .qty-control { border-color:#2a2a3e !important; background:#0f0f1a !important; }
+.sacola-preta-card .btn-qty { color:#94a3b8 !important; }
+.sacola-preta-card .btn-qty:hover { background:#1a1a2e !important; }
+.sacola-preta-card .input-qty { color:#f1f5f9 !important; }
+.sacola-preta-card .btn-add { background:linear-gradient(135deg,#374151,#4b5563) !important; }
+.sacola-preta-card .btn-add:hover { box-shadow:0 6px 16px rgba(0,0,0,.4) !important; }
+.sacola-preta-card .btn-info { border-color:#2a2a3e !important; color:#475569 !important; }
+.sacola-preta-card .btn-info:hover { border-color:#64748b !important; color:#cbd5e1 !important; }
+
+.sacola-verde-card { background:#022c22 !important; border-color:#064e3b !important; }
+.sacola-verde-card:hover { border-color:#34d399 !important; box-shadow:0 24px 48px -8px rgba(16,185,129,.2) !important; }
+.sacola-verde-card .product-body { background:#022c22; }
+.sacola-verde-card .product-name { color:#6ee7b7 !important; }
+.sacola-verde-card .product-desc { color:#34d399 !important; opacity:.7; }
+.sacola-verde-card .product-img { background:linear-gradient(135deg,#022c22,#064e3b) !important; border-bottom-color:#064e3b !important; }
+.sacola-verde-card .price-box { background:#011a14 !important; border-color:#064e3b !important; }
+.sacola-verde-card .price-box::before { background:linear-gradient(to bottom,#10b981,#059669) !important; }
+.sacola-verde-card .price-label { color:#34d399 !important; }
+.sacola-verde-card .price-value { color:#6ee7b7 !important; }
+.sacola-verde-card .qty-control { border-color:#064e3b !important; background:#011a14 !important; }
+.sacola-verde-card .btn-qty { color:#34d399 !important; }
+.sacola-verde-card .btn-qty:hover { background:#064e3b !important; }
+.sacola-verde-card .input-qty { color:#6ee7b7 !important; }
+.sacola-verde-card .btn-add { background:linear-gradient(135deg,#065f46,#10b981) !important; color:#fff !important; }
+.sacola-verde-card .btn-info { border-color:#064e3b !important; color:#065f46 !important; }
+.sacola-verde-card .btn-info:hover { border-color:#34d399 !important; color:#6ee7b7 !important; }
+
+.sacola-branca-card { background:#fff !important; border-color:#d1d5db !important; }
+.sacola-branca-card:hover { border-color:#9ca3af !important; box-shadow:0 24px 48px -8px rgba(0,0,0,.1) !important; }
+.sacola-branca-card .product-img { background:linear-gradient(135deg,#f9fafb,#f3f4f6) !important; border-bottom-color:#d1d5db !important; }
+.sacola-branca-card .price-box { background:#f3f4f6 !important; border-color:#d1d5db !important; }
+.sacola-branca-card .price-box::before { background:linear-gradient(to bottom,#374151,#1f2937) !important; }
+.sacola-branca-card .btn-add { background:linear-gradient(135deg,#374151,#1f2937) !important; }
+
+.sacola-crystal-card { background:linear-gradient(135deg,#0f172a,#1e1b4b) !important; border-color:rgba(147,197,253,.25) !important; }
+.sacola-crystal-card:hover { border-color:#60a5fa !important; box-shadow:0 24px 48px -8px rgba(96,165,250,.25) !important; }
+.sacola-crystal-card .product-body { background:transparent; }
+.sacola-crystal-card .product-name { color:#c7d2fe !important; }
+.sacola-crystal-card .product-desc { color:#818cf8 !important; }
+.sacola-crystal-card .product-img { background:linear-gradient(135deg,rgba(30,27,75,.8),rgba(15,23,42,.8)) !important; border-bottom-color:rgba(147,197,253,.15) !important; }
+.sacola-crystal-card .price-box { background:rgba(30,27,75,.5) !important; border-color:rgba(147,197,253,.2) !important; }
+.sacola-crystal-card .price-box::before { background:linear-gradient(to bottom,#3b82f6,#8b5cf6) !important; }
+.sacola-crystal-card .price-label { color:#818cf8 !important; }
+.sacola-crystal-card .price-value { color:#c7d2fe !important; }
+.sacola-crystal-card .qty-control { border-color:rgba(147,197,253,.2) !important; background:rgba(30,27,75,.5) !important; }
+.sacola-crystal-card .btn-qty { color:#818cf8 !important; }
+.sacola-crystal-card .btn-qty:hover { background:rgba(30,27,75,.8) !important; }
+.sacola-crystal-card .input-qty { color:#c7d2fe !important; }
+.sacola-crystal-card .btn-add { background:linear-gradient(135deg,#3b82f6,#8b5cf6) !important; }
+.sacola-crystal-card .btn-info { border-color:rgba(147,197,253,.2) !important; color:rgba(96,165,250,.5) !important; }
+.sacola-crystal-card .btn-info:hover { border-color:#60a5fa !important; color:#93c5fd !important; }
+
+.sacola-kraft-card { background:#1c1008 !important; border-color:#78350f !important; }
+.sacola-kraft-card:hover { border-color:#f59e0b !important; box-shadow:0 24px 48px -8px rgba(245,158,11,.2) !important; }
+.sacola-kraft-card .product-body { background:#1c1008; }
+.sacola-kraft-card .product-name { color:#fde68a !important; }
+.sacola-kraft-card .product-desc { color:#d97706 !important; opacity:.8; }
+.sacola-kraft-card .product-img { background:linear-gradient(135deg,#1c1008,#2d1a08) !important; border-bottom-color:#78350f !important; }
+.sacola-kraft-card .price-box { background:#0f0804 !important; border-color:#78350f !important; }
+.sacola-kraft-card .price-box::before { background:linear-gradient(to bottom,#f59e0b,#d97706) !important; }
+.sacola-kraft-card .price-label { color:#d97706 !important; }
+.sacola-kraft-card .price-value { color:#fde68a !important; }
+.sacola-kraft-card .qty-control { border-color:#78350f !important; background:#0f0804 !important; }
+.sacola-kraft-card .btn-qty { color:#d97706 !important; }
+.sacola-kraft-card .btn-qty:hover { background:#2d1a08 !important; }
+.sacola-kraft-card .input-qty { color:#fde68a !important; }
+.sacola-kraft-card .btn-add { background:linear-gradient(135deg,#92400e,#f59e0b) !important; color:#1c1917 !important; }
+.sacola-kraft-card .btn-info { border-color:#78350f !important; color:#78350f !important; }
+.sacola-kraft-card .btn-info:hover { border-color:#f59e0b !important; color:#fde68a !important; }
+
+.sacola-kraft-alca-card { background:#1c1008 !important; border:2px solid #b45309 !important; }
+.sacola-kraft-alca-card:hover { border-color:#fbbf24 !important; box-shadow:0 24px 48px -8px rgba(251,191,36,.25) !important; }
+.sacola-kraft-alca-card .product-body { background:#1c1008; }
+.sacola-kraft-alca-card .product-name { color:#fef08a !important; }
+.sacola-kraft-alca-card .product-desc { color:#fcd34d !important; opacity:.8; }
+.sacola-kraft-alca-card .product-img { background:linear-gradient(135deg,#1c1008,#2d1a08) !important; border-bottom-color:#b45309 !important; }
+.sacola-kraft-alca-card .price-box { background:#0f0804 !important; border-color:#b45309 !important; }
+.sacola-kraft-alca-card .price-box::before { background:linear-gradient(to bottom,#fbbf24,#b45309) !important; }
+.sacola-kraft-alca-card .price-label { color:#fcd34d !important; }
+.sacola-kraft-alca-card .price-value { color:#fef08a !important; }
+.sacola-kraft-alca-card .qty-control { border-color:#b45309 !important; background:#0f0804 !important; }
+.sacola-kraft-alca-card .btn-qty { color:#fcd34d !important; }
+.sacola-kraft-alca-card .btn-qty:hover { background:#2d1a08 !important; }
+.sacola-kraft-alca-card .input-qty { color:#fef08a !important; }
+.sacola-kraft-alca-card .btn-add { background:linear-gradient(135deg,#b45309,#fbbf24) !important; color:#1c1917 !important; }
+.sacola-kraft-alca-card .btn-info { border-color:#b45309 !important; color:#b45309 !important; }
+.sacola-kraft-alca-card .btn-info:hover { border-color:#fbbf24 !important; color:#fef08a !important; }
+
+.isopor-card:hover { border-color:#00acc1 !important; box-shadow:0 24px 48px -8px rgba(0,131,143,.15) !important; }
+.isopor-card .product-img { background:linear-gradient(135deg,#e0f7fa,#f0fdff) !important; border-bottom-color:#b2ebf2 !important; }
+.isopor-card .price-box { background:#e0f7fa !important; border-color:#b2ebf2 !important; }
+.isopor-card .price-box::before { background:linear-gradient(to bottom,#00838f,#005662) !important; }
+.isopor-card .price-label { color:#00838f !important; }
+.isopor-card .price-value { color:#00838f !important; }
+.isopor-card .btn-add { background:linear-gradient(135deg,#00838f,#005662) !important; }
+.isopor-card .btn-add:hover { box-shadow:0 6px 16px rgba(0,131,143,.3) !important; }
+
+.plastico-card { border-color:#bbf7d0 !important; }
+.plastico-card:hover { border-color:#4ade80 !important; box-shadow:0 24px 48px -8px rgba(21,128,61,.12) !important; }
+.plastico-card .product-img { background:linear-gradient(135deg,#f0fdf4,#dcfce7) !important; border-bottom-color:#bbf7d0 !important; }
+.plastico-card .price-box { background:#f0fdf4 !important; border-color:#bbf7d0 !important; }
+.plastico-card .price-box::before { background:linear-gradient(to bottom,#15803d,#166534) !important; }
+.plastico-card .price-label { color:#15803d !important; }
+.plastico-card .price-value { color:#15803d !important; }
+.plastico-card .btn-add { background:linear-gradient(135deg,#15803d,#166534) !important; }
+.plastico-card .btn-add:hover { box-shadow:0 6px 16px rgba(21,128,61,.3) !important; }
+
+.brand-badge { position:absolute; top:12px; left:12px; font-size:.68rem; font-weight:800; padding:4px 10px; border-radius:var(--radius-btn); z-index:3; letter-spacing:.02em; }
+
 /* ══════════════════════════════════════════════
-   SIDEBAR CARRINHO E WHATSAPP
+   SIDEBAR CARRINHO
 ══════════════════════════════════════════════ */
 .cart-overlay { position:fixed; inset:0; background:rgba(10,15,30,.65); backdrop-filter:blur(8px); z-index:1500; opacity:0; pointer-events:none; transition:opacity .35s ease; }
 .cart-overlay.open { opacity:1; pointer-events:all; }
@@ -358,6 +565,7 @@ header.scrolled { padding:.65rem 0; box-shadow:0 8px 32px -8px rgba(15,23,42,.08
 .cart-item-controls { display:flex; align-items:center; gap:7px; flex-shrink:0; }
 .cart-qty-ctrl { display:flex; align-items:center; border:1.5px solid var(--border); border-radius:8px; overflow:hidden; }
 .cart-qty-btn { width:26px; height:28px; display:flex; align-items:center; justify-content:center; font-size:.95rem; font-weight:800; color:var(--blue-600); transition:var(--tr); }
+.cart-qty-btn:hover { background:var(--blue-50); }
 .cart-qty-val { width:30px; text-align:center; font-size:.85rem; font-weight:700; color:var(--text-dark); }
 .cart-subtotal { font-size:.9rem; font-weight:800; color:var(--blue-600); min-width:60px; text-align:right; }
 .btn-remove-item { color:var(--text-muted); font-size:.95rem; transition:var(--tr); padding:4px; }
@@ -370,18 +578,10 @@ header.scrolled { padding:.65rem 0; box-shadow:0 8px 32px -8px rgba(15,23,42,.08
 .btn-send-wpp:hover { transform:translateY(-2px); box-shadow:0 14px 36px rgba(37,211,102,.45); }
 .btn-clear { width:100%; padding:11px; color:var(--text-muted); font-size:.88rem; font-weight:600; margin-top:.6rem; transition:var(--tr); border-radius:10px; }
 .btn-clear:hover { background:var(--bg-page); color:#ef4444; }
-
-.whatsapp-float {
-    position:fixed; bottom:28px; right:28px; background:linear-gradient(135deg,var(--green-wa),#1aab52);
-    color:#fff; width:62px; height:62px; border-radius:50%; display:flex; align-items:center; justify-content:center;
-    box-shadow:0 12px 32px rgba(37,211,102,.45); z-index:999; transition:var(--tr); font-size:2.2rem;
-}
-.whatsapp-float:hover { transform:scale(1.12) translateY(-4px); box-shadow:0 20px 48px rgba(37,211,102,.55); }
-.whatsapp-float::before { content:''; position:absolute; inset:-4px; border-radius:50%; border:2px solid rgba(37,211,102,.4); animation:waPulse 2.5s ease-in-out infinite; }
-@keyframes waPulse { 0%,100%{transform:scale(1);opacity:.6;} 50%{transform:scale(1.15);opacity:0;} }
+.wpp-notice { font-size:.76rem; color:var(--text-muted); text-align:center; margin-top:.6rem; display:flex; align-items:center; justify-content:center; gap:5px; }
 
 /* ══════════════════════════════════════════════
-   MODAL E FOOTER
+   MODAL
 ══════════════════════════════════════════════ */
 .modal-backdrop { display:none; position:fixed; inset:0; background:rgba(10,15,30,.88); backdrop-filter:blur(14px); z-index:2000; align-items:center; justify-content:center; padding:1.5rem; opacity:0; transition:opacity .3s ease; }
 .modal-backdrop.active { display:flex; opacity:1; }
@@ -402,6 +602,21 @@ header.scrolled { padding:.65rem 0; box-shadow:0 8px 32px -8px rgba(15,23,42,.08
 .spec-label { font-size:.9rem; color:var(--text-muted); font-weight:600; display:flex; align-items:center; gap:9px; }
 .spec-value { font-size:.95rem; font-weight:700; color:var(--text-dark); }
 
+/* ══════════════════════════════════════════════
+   WHATSAPP FLUTUANTE
+══════════════════════════════════════════════ */
+.whatsapp-float {
+    position:fixed; bottom:28px; right:28px; background:linear-gradient(135deg,var(--green-wa),#1aab52);
+    color:#fff; width:62px; height:62px; border-radius:50%; display:flex; align-items:center; justify-content:center;
+    box-shadow:0 12px 32px rgba(37,211,102,.45); z-index:999; transition:var(--tr); font-size:2.2rem;
+}
+.whatsapp-float:hover { transform:scale(1.12) translateY(-4px); box-shadow:0 20px 48px rgba(37,211,102,.55); }
+.whatsapp-float::before { content:''; position:absolute; inset:-4px; border-radius:50%; border:2px solid rgba(37,211,102,.4); animation:waPulse 2.5s ease-in-out infinite; }
+@keyframes waPulse { 0%,100%{transform:scale(1);opacity:.6;} 50%{transform:scale(1.15);opacity:0;} }
+
+/* ══════════════════════════════════════════════
+   FOOTER
+══════════════════════════════════════════════ */
 footer { background:var(--blue-950); color:#fff; padding:5.5rem 0 3rem; margin-top:auto; }
 .footer-grid { max-width:1200px; margin:0 auto; padding:0 1.5rem; display:grid; grid-template-columns:1.6fr 1fr 1fr; gap:4rem; }
 .footer-col h4 { color:rgba(255,255,255,.5); font-size:.78rem; font-weight:700; margin-bottom:1.5rem; text-transform:uppercase; letter-spacing:.1em; }
@@ -1057,8 +1272,8 @@ const listaProdutos = [
     {id:357,nome:"Sacola Crystal 40x60x0.6",categoria:"sacolas",tipo:"crystal",peso:"1kg",tamanho:"g",icone:"ph-shopping-bag",descricao:"Crystal grossa (0.6). Vendida por kg.",preco:32.00,unidade:"/kg",especificacoes:{"Medidas":"40 x 60 cm","Espessura":"0.6","Peso":"1kg"}},
     {id:358,nome:"Sacola Crystal 50x70x0.6",categoria:"sacolas",tipo:"crystal",peso:"1kg",tamanho:"g",icone:"ph-shopping-bag",descricao:"Crystal grossa (0.6). Vendida por kg.",preco:33.50,unidade:"/kg",especificacoes:{"Medidas":"50 x 70 cm","Espessura":"0.6","Peso":"1kg"}},
     {id:359,nome:"Sacola Crystal 60x80x0.6",categoria:"sacolas",tipo:"crystal",peso:"1kg",tamanho:"g",icone:"ph-shopping-bag",descricao:"Crystal grossa (0.6). Vendida por kg.",preco:33.50,unidade:"/kg",especificacoes:{"Medidas":"60 x 80 cm","Espessura":"0.6","Peso":"1kg"}},
-    {id:360,nome:"Saco Plástico Geladinho 04x24x0.2",categoria:"sacolas",tipo:"crystal",peso:"cento",tamanho:"p",icone:"ph-drop",descricao:"Saco crystal para geladinho c/ 100un.",preco:3.50,unidade:"/pct",especificacoes:{"Medidas":"4 x 24 cm","Quantidade":"100 unidades"}},
-    {id:361,nome:"Saco Plástico Gelão 05x24x0.2",categoria:"sacolas",tipo:"crystal",peso:"cento",tamanho:"p",icone:"ph-drop",descricao:"Saco crystal para gelão c/ 100un.",preco:3.50,unidade:"/pct",especificacoes:{"Medidas":"5 x 24 cm","Quantidade":"100 unidades"}},
+    {id:360,nome:"Saco Plástico Geladinho 04x24x0.2",categoria:"sacolas",tipo:"crystal",peso:"cento",tamanho:"p",icone:"ph-drop",descricao:"Saco crystal para geladinho c/ 100un.",preco:3.50,unidade:"/pct",especificacoes:{"Medidas":"4 x 24 cm","Quantidade":"100 unidades","Peso":"cento"}},
+    {id:361,nome:"Saco Plástico Gelão 05x24x0.2",categoria:"sacolas",tipo:"crystal",peso:"cento",tamanho:"p",icone:"ph-drop",descricao:"Saco crystal para gelão c/ 100un.",preco:3.50,unidade:"/pct",especificacoes:{"Medidas":"5 x 24 cm","Quantidade":"100 unidades","Peso":"cento"}},
 
     // Sacolas Kraft
     {id:70,nome:"Sacola Kraft 30x40",categoria:"sacolas",tipo:"kraft",tamanho:"p",icone:"ph-shopping-bag",descricao:"Sacola kraft artesanal. Vendida por kg.",preco:"Sob consulta",unidade:"/kg",especificacoes:{"Medidas":"30 x 40 cm","Cor":"Kraft natural","Material":"Papel kraft"}},
@@ -1406,7 +1621,7 @@ function selecionarTipoSacola(tipo,el){
         barraTam.classList.add("visible");
     } else if (tipo==="lixo-banheiro") {
         barraPesoC.classList.remove("visible");
-        barraTam.classList.remove("visible"); // Banheiro não precisa do filtro de tamanho clássico (p/m/g não aplicam perfeitamente lá)
+        barraTam.classList.remove("visible");
     } else {
         barraPesoC.classList.remove("visible");
         barraTam.classList.add("visible");
