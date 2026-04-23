@@ -268,7 +268,23 @@ header.scrolled { padding:.6rem 0; background:var(--bg-glass-solid); box-shadow:
 .product-card.revealed { opacity:1; transform:translateY(0); }
 .product-card:hover { transform: translateY(-12px) rotateX(4deg) rotateY(-2deg) scale3d(1.02, 1.02, 1.02); box-shadow:var(--shadow-hover); border-color:var(--blue-400); z-index: 5; }
 .product-card.in-cart { border-color:var(--green-wa) !important; box-shadow:0 0 0 3px rgba(37,211,102,.2), var(--shadow-hover) !important; transform:translateY(-4px); }
-
+/* \u2500\u2500 EFEITO DE LUZ (GLARE) \u2500\u2500 */
+.product-card .glare {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.15), transparent 60%);
+    mix-blend-mode: overlay; /* Mistura a luz com a cor de fundo do card */
+    opacity: 0;
+    pointer-events: none; /* Deixa o clique passar por ele */
+    transition: opacity 0.3s ease;
+    z-index: 10;
+}
+.product-card:hover .glare {
+    opacity: 1;
+}
 /* Imagem produto - TranslateZ para efeito 3D */
 .product-img { width:100%; height:220px; display:flex; align-items:center; justify-content:center; transition:var(--tr); border-bottom:1px solid var(--border); position:relative; overflow:hidden; background:linear-gradient(135deg,var(--bg-page) 0%,var(--blue-50) 100%); transform-style: preserve-3d; }
 .product-img svg { width:135px; height:135px; transition:transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275); filter:drop-shadow(0 8px 16px rgba(15,23,42,.15)); transform: translateZ(20px); }
@@ -1796,8 +1812,49 @@ function criarSecao(titulo,produtos,container,cat,tipo){
  secao.appendChild(grade);
     container.appendChild(secao);
     
-    // Ativa o tracking do mouse nos cards que acabaram de ser criados
-    ativarEfeito3DCards();
+/* \u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550
+   EFEITO 3D INTERATIVO NOS CARDS (TILT + GLARE)
+\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550 */
+function ativarEfeito3DCards() {
+    const cards = document.querySelectorAll('.product-card');
+    
+    cards.forEach(card => {
+        // Cria a camada de luz (glare) dentro de cada card, caso n�o exista
+        if (!card.querySelector('.glare')) {
+            const glare = document.createElement('div');
+            glare.className = 'glare';
+            card.appendChild(glare);
+        }
+
+        const glareEl = card.querySelector('.glare');
+
+        card.addEventListener('mousemove', (e) => {
+            const rect = card.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+            
+            const centerX = rect.width / 2;
+            const centerY = rect.height / 2;
+            
+            // Rota��o do card
+            const rotateX = ((y - centerY) / centerY) * -8;
+            const rotateY = ((x - centerX) / centerX) * 8;
+            
+            card.style.transform = `translateY(-12px) perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.02, 1.02, 1.02)`;
+            card.style.transition = 'transform 0.1s ease-out';
+            
+            // Move a luz (gradiente) exatamente para onde o mouse est�
+            glareEl.style.background = `radial-gradient(circle at ${x}px ${y}px, rgba(255, 255, 255, 0.25), transparent 60%)`;
+        });
+
+        card.addEventListener('mouseleave', () => {
+            card.style.transform = ''; 
+            card.style.transition = 'transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275)';
+            // Reseta a luz para o centro
+            glareEl.style.background = `radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.15), transparent 60%)`;
+        });
+    });
+}
 }
 
 function alterarInputQtd(id,delta){
