@@ -1,137 +1,143 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-BR" data-theme="light">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <meta name="description" content="Catálogo completo de embalagens corporativas e caixas de papelão direto da fábrica.">
     <meta name="theme-color" content="#0a0f1e">
     <title>Cia Das Embalagens | Soluções em Papelão</title>
+    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
     <style>
 /* ═══════════════════════════════════════════════
-   DESIGN SYSTEM — CIA DAS EMBALAGENS v4 (Imersivo)
+   DESIGN SYSTEM — V5 (3D, Imersivo & Dark Mode)
 ═══════════════════════════════════════════════ */
 :root {
-    --blue-950: #0a0f1e;
-    --blue-900: #0f172a;
-    --blue-800: #1e3a8a;
-    --blue-700: #1d4ed8;
-    --blue-600: #2563eb;
-    --blue-500: #3b82f6;
-    --blue-400: #60a5fa;
-    --blue-300: #93c5fd;
-    --blue-100: #dbeafe;
-    --blue-50:  #eff6ff;
+    /* Paleta Fixa Azul */
+    --blue-950: #0a0f1e; --blue-900: #0f172a; --blue-800: #1e3a8a;
+    --blue-700: #1d4ed8; --blue-600: #2563eb; --blue-500: #3b82f6;
+    --blue-400: #60a5fa; --blue-300: #93c5fd; --blue-100: #dbeafe; --blue-50: #eff6ff;
     --green-wa: #25d366;
-    --green-wa-h: #128c7e;
+    
+    /* Variáveis Tema Claro (Light) */
+    --bg-page: #f4f7fb;
+    --bg-card: #ffffff;
+    --bg-glass: rgba(255, 255, 255, 0.7);
+    --bg-glass-solid: rgba(255, 255, 255, 0.95);
     --text-dark: #0f172a;
     --text-body: #475569;
     --text-muted: #94a3b8;
-    --bg-page: #f4f7fb; 
-    --bg-card: #ffffff;
     --border: #e2e8f0;
+    --btn-sub-bg: #fff;
+    --btn-sub-border: #e2e8f0;
+    --btn-sub-hover: #f8fafc;
     
-    /* Sombras Premium & Imersivas */
+    /* Sombras Light */
     --shadow-soft: 0 4px 20px -2px rgba(15,23,42,.05);
-    --shadow-card: 0 12px 32px -8px rgba(15,23,42,.08), 0 2px 6px -1px rgba(15,23,42,.04);
-    --shadow-hover: 0 32px 64px -12px rgba(37,99,235,.15), 0 16px 24px -8px rgba(15,23,42,.06);
+    --shadow-card: 0 12px 32px -8px rgba(15,23,42,.08);
+    --shadow-hover: 0 32px 64px -12px rgba(37,99,235,.15);
     --shadow-glow: 0 8px 24px rgba(37,99,235,.25);
-    
+
     --tr: all .35s cubic-bezier(.4,0,.2,1);
     --tr-spring: all .6s cubic-bezier(.175,.885,.32,1.275);
     --radius-card: 28px;
     --radius-btn: 99px;
 }
 
-*, *::before, *::after { margin:0; padding:0; box-sizing:border-box; font-family:'Inter',sans-serif; -webkit-font-smoothing:antialiased; }
-html { scroll-behavior:smooth; }
-body { background:var(--bg-page); color:var(--text-body); line-height:1.6; overflow-x:hidden; display:flex; flex-direction:column; min-height:100vh; }
-a { text-decoration:none; color:inherit; }
-button { cursor:pointer; border:none; background:none; outline:none; font-family:inherit; }
-h1,h2,h3,h4,h5,h6 { color:var(--text-dark); font-weight:800; letter-spacing:-.025em; }
+/* Variáveis Tema Escuro (Dark) */
+[data-theme="dark"] {
+    --bg-page: #080c17;
+    --bg-card: #111827;
+    --bg-glass: rgba(15, 23, 42, 0.75);
+    --bg-glass-solid: rgba(15, 23, 42, 0.95);
+    --text-dark: #f8fafc;
+    --text-body: #cbd5e1;
+    --text-muted: #64748b;
+    --border: #1e293b;
+    --blue-50: #1e293b; 
+    --blue-100: #334155;
+    --btn-sub-bg: #1e293b;
+    --btn-sub-border: #334155;
+    --btn-sub-hover: #0f172a;
 
-/* ── FIX DEFINITIVO DE ÍCONES (FIREFOX/MOBILE) ── */
-i[class^="ph"], i[class*=" ph"] {
-    flex-shrink: 0 !important;
-    display: inline-block;
-    line-height: 1;
-    vertical-align: middle;
+    --shadow-soft: 0 4px 20px -2px rgba(0,0,0,.5);
+    --shadow-card: 0 12px 32px -8px rgba(0,0,0,.6);
+    --shadow-hover: 0 32px 64px -12px rgba(37,99,235,.25);
+    --shadow-glow: 0 8px 24px rgba(37,99,235,.4);
 }
 
-/* ── CURSOR PERSONALIZADO ── */
-.cursor { position:fixed; width:12px; height:12px; background:var(--blue-500); border-radius:50%; pointer-events:none; z-index:9999; transform:translate(-50%,-50%); transition:transform .1s ease, width .3s ease, height .3s ease, opacity .3s ease; mix-blend-mode:multiply; }
-.cursor-ring { position:fixed; width:40px; height:40px; border:2px solid rgba(37,99,235,.4); border-radius:50%; pointer-events:none; z-index:9998; transform:translate(-50%,-50%); transition:transform .15s ease, width .3s ease, height .3s ease, opacity .3s ease; }
-body:hover .cursor { opacity:1; }
-.cursor.hover { width:20px; height:20px; }
-.cursor-ring.hover { width:56px; height:56px; border-color:rgba(37,99,235,.6); }
+*, *::before, *::after { margin:0; padding:0; box-sizing:border-box; font-family:'Inter',sans-serif; -webkit-font-smoothing:antialiased; }
+html { scroll-behavior:smooth; }
+body { background:var(--bg-page); color:var(--text-body); line-height:1.6; overflow-x:hidden; display:flex; flex-direction:column; min-height:100vh; transition: background 0.4s ease, color 0.4s ease; }
+a { text-decoration:none; color:inherit; }
+button { cursor:pointer; border:none; background:none; outline:none; font-family:inherit; }
+h1,h2,h3,h4,h5,h6 { color:var(--text-dark); font-weight:800; letter-spacing:-.025em; transition: color 0.4s ease;}
+
+/* Correção FontAwesome em flexbox */
+i.fa, i.fas, i.fab, i.fa-solid, i.fa-brands {
+    flex-shrink: 0 !important; display: inline-block; text-align: center;
+}
 
 /* ── CONTAINER ── */
-.container { width:100%; max-width:1200px; margin:0 auto; padding:0 1.5rem; }
+.container { width:100%; max-width:1200px; margin:0 auto; padding:0 1.5rem; perspective: 1200px; }
 
 /* ══════════════════════════════════════════════
-   HEADER (GLASSMORPHISM)
+   HEADER & CONTROLES
 ══════════════════════════════════════════════ */
 header {
     position:fixed; top:0; left:0; width:100%;
-    background:rgba(255,255,255,.65);
-    backdrop-filter:blur(24px) saturate(200%);
-    -webkit-backdrop-filter:blur(24px) saturate(200%);
-    z-index:1000; border-bottom:1px solid rgba(255,255,255,.8);
-    padding:1.1rem 0; transition:var(--tr);
+    background:var(--bg-glass); backdrop-filter:blur(24px) saturate(200%); -webkit-backdrop-filter:blur(24px) saturate(200%);
+    z-index:1000; border-bottom:1px solid rgba(255,255,255,.1);
+    padding:1rem 0; transition:var(--tr);
 }
-header.scrolled { padding:.65rem 0; background:rgba(255,255,255,.85); box-shadow:0 12px 40px -12px rgba(15,23,42,.08); }
+header.scrolled { padding:.6rem 0; background:var(--bg-glass-solid); box-shadow:0 12px 40px -12px rgba(0,0,0,.15); }
 .header-inner { display:flex; justify-content:space-between; align-items:center; width:100%; max-width:1200px; margin:0 auto; padding:0 1.5rem; gap:1rem; }
-.logo { font-size:1.45rem; font-weight:900; color:var(--blue-900); display:flex; align-items:center; gap:10px; letter-spacing:-.04em; transition:var(--tr); }
+.logo { font-size:1.45rem; font-weight:900; color:var(--text-dark); display:flex; align-items:center; gap:10px; letter-spacing:-.04em; transition:var(--tr); }
 .logo:hover { opacity:.75; transform:translateY(-1px); }
-.logo-icon { width:38px; height:38px; background:linear-gradient(135deg,var(--blue-600),var(--blue-800)); border-radius:12px; display:flex; align-items:center; justify-content:center; color:#fff; font-size:1.2rem; box-shadow:var(--shadow-glow); flex-shrink:0; }
-.header-actions { display:flex; align-items:center; gap:10px; }
+.logo-icon { width:38px; height:38px; background:linear-gradient(135deg,var(--blue-600),var(--blue-800)); border-radius:12px; display:flex; align-items:center; justify-content:center; color:#fff; font-size:1.2rem; box-shadow:var(--shadow-glow); }
+.header-actions { display:flex; align-items:center; gap:8px; }
 
-.btn-header-cart, .btn-header-cta {
-    position:relative; display:flex; align-items:center; justify-content:center; gap:8px;
-    border-radius:var(--radius-btn); font-weight:700; font-size:.88rem;
-    transition:var(--tr); white-space: nowrap; /* Evita quebra de texto */
+/* Botões do Topo */
+.btn-header-tool {
+    width:40px; height:40px; border-radius:50%; background:var(--bg-card); color:var(--text-dark);
+    display:flex; align-items:center; justify-content:center; font-size:1.1rem; border:1px solid var(--border);
+    transition:var(--tr); box-shadow:var(--shadow-soft);
 }
+.btn-header-tool:hover { transform:translateY(-3px); box-shadow:var(--shadow-glow); border-color:var(--blue-400); color:var(--blue-600); }
+
 .btn-header-cart {
-    background:#fff; border:1px solid var(--border); color:var(--text-dark);
-    padding:10px 20px; box-shadow:var(--shadow-soft);
+    position:relative; background:var(--bg-card); border:1px solid var(--border); color:var(--text-dark);
+    padding:10px 20px; border-radius:var(--radius-btn); font-weight:700; font-size:.88rem;
+    display:flex; align-items:center; gap:8px; transition:var(--tr); box-shadow:var(--shadow-soft); white-space:nowrap;
 }
-.btn-header-cart:hover { border-color:var(--blue-400); color:var(--blue-600); background:var(--blue-50); transform:translateY(-2px); box-shadow:var(--shadow-glow); }
+.btn-header-cart:hover { border-color:var(--blue-400); color:var(--blue-600); transform:translateY(-2px); box-shadow:var(--shadow-glow); }
 .btn-header-cta {
     background:linear-gradient(135deg,var(--blue-600),var(--blue-700)); color:#fff;
-    padding:10px 22px; box-shadow:var(--shadow-glow); border:1px solid rgba(255,255,255,.2);
+    padding:10px 22px; border-radius:var(--radius-btn); font-weight:700; font-size:.88rem;
+    display:flex; align-items:center; gap:8px; transition:var(--tr); box-shadow:var(--shadow-glow); border:1px solid rgba(255,255,255,.2); white-space:nowrap;
 }
 .btn-header-cta:hover { background:linear-gradient(135deg,var(--blue-700),var(--blue-800)); transform:translateY(-2px); box-shadow:0 12px 28px rgba(37,99,235,.4); }
 
-.cart-badge { position:absolute; top:-7px; right:-7px; background:var(--green-wa); color:#fff; font-size:.65rem; font-weight:900; width:20px; height:20px; border-radius:50%; display:flex; align-items:center; justify-content:center; border:2px solid #fff; transition:var(--tr-spring); transform:scale(0); }
+.cart-badge { position:absolute; top:-6px; right:-6px; background:var(--green-wa); color:#fff; font-size:.65rem; font-weight:900; width:22px; height:22px; border-radius:50%; display:flex; align-items:center; justify-content:center; border:2px solid var(--bg-card); transition:var(--tr-spring); transform:scale(0); }
 .cart-badge.visible { transform:scale(1); }
 
 /* ══════════════════════════════════════════════
    HERO (PARALLAX & IMERSÃO)
 ══════════════════════════════════════════════ */
 .hero {
-    position:relative; min-height:100vh;
-    display:flex; align-items:center; justify-content:center;
-    background:linear-gradient(160deg, rgba(10,15,30,.88) 0%, rgba(30,58,138,.75) 60%, rgba(37,99,235,.6) 100%),
-               url('https://willkerson.github.io/Web.embalagens/lojafundo.png');
-    background-size:cover; background-position:center;
-    background-attachment: fixed; /* Efeito Parallax */
+    position:relative; min-height:100vh; display:flex; align-items:center; justify-content:center;
+    background:linear-gradient(160deg, rgba(10,15,30,.88) 0%, rgba(30,58,138,.75) 60%, rgba(37,99,235,.6) 100%), url('https://willkerson.github.io/Web.embalagens/lojafundo.png');
+    background-size:cover; background-position:center; background-attachment: fixed;
     overflow:hidden; padding:8rem 1.5rem 6rem; text-align:center;
 }
 .hero-particles { position:absolute; inset:0; z-index:1; pointer-events:none; overflow:hidden; }
-.particle {
-    position:absolute; border-radius:50%;
-    background:rgba(255,255,255,.12);
-    animation:floatParticle linear infinite;
-}
-@keyframes floatParticle {
-    0%   { transform:translateY(100vh) scale(0); opacity:0; }
-    10%  { opacity:1; }
-    90%  { opacity:.6; }
-    100% { transform:translateY(-10vh) scale(1.2); opacity:0; }
-}
+.particle { position:absolute; border-radius:50%; background:rgba(255,255,255,.12); animation:floatParticle linear infinite; }
+@keyframes floatParticle { 0% { transform:translateY(100vh) scale(0); opacity:0; } 10% { opacity:1; } 90% { opacity:.6; } 100% { transform:translateY(-10vh) scale(1.2); opacity:0; } }
 .hero-orb { position:absolute; border-radius:50%; filter:blur(80px); z-index:1; pointer-events:none; animation:orbFloat 8s ease-in-out infinite; mix-blend-mode: screen; }
 .hero-orb-1 { width:50vw; height:50vw; background:radial-gradient(circle,rgba(96,165,250,.25),transparent 60%); top:-15%; left:-10%; animation-delay:0s; }
 .hero-orb-2 { width:40vw; height:40vw; background:radial-gradient(circle,rgba(139,92,246,.2),transparent 60%); bottom:-10%; right:-5%; animation-delay:-4s; }
@@ -142,55 +148,26 @@ header.scrolled { padding:.65rem 0; background:rgba(255,255,255,.85); box-shadow
     display:inline-flex; align-items:center; gap:8px;
     background:rgba(255,255,255,.12); backdrop-filter:blur(12px); -webkit-backdrop-filter:blur(12px);
     border:1px solid rgba(255,255,255,.2); border-radius:var(--radius-btn);
-    color:rgba(255,255,255,.9); font-size:.82rem; font-weight:600;
-    padding:8px 18px; letter-spacing:.04em; text-transform:uppercase;
-    animation:fadeSlideDown .8s ease both; box-shadow: 0 4px 12px rgba(0,0,0,.1);
+    color:rgba(255,255,255,.9); font-size:.82rem; font-weight:600; padding:8px 18px; letter-spacing:.04em; text-transform:uppercase; animation:fadeSlideDown .8s ease both; box-shadow: 0 4px 12px rgba(0,0,0,.1);
 }
 .hero-tag-dot { width:8px; height:8px; background:var(--green-wa); border-radius:50%; animation:pulse 2s infinite; }
 @keyframes pulse { 0%,100%{box-shadow:0 0 0 0 rgba(37,211,102,.4);} 50%{box-shadow:0 0 0 6px rgba(37,211,102,0);} }
 
-.hero h1 {
-    color:#fff; font-size:clamp(2.8rem,6.5vw,5.2rem);
-    font-weight:900; line-height:1.04; letter-spacing:-.05em;
-    animation:fadeSlideUp .9s ease .1s both; text-shadow: 0 12px 32px rgba(0,0,0,.3);
-}
-.hero h1 .highlight {
-    background:linear-gradient(135deg,#93c5fd,#c4b5fd);
-    -webkit-background-clip:text; -webkit-text-fill-color:transparent;
-    background-clip:text; position:relative;
-}
+.hero h1 { color:#fff; font-size:clamp(2.8rem,6.5vw,5.2rem); font-weight:900; line-height:1.04; letter-spacing:-.05em; animation:fadeSlideUp .9s ease .1s both; text-shadow: 0 12px 32px rgba(0,0,0,.3); }
+.hero h1 .highlight { background:linear-gradient(135deg,#93c5fd,#c4b5fd); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; position:relative; }
 .hero-desc { color:rgba(255,255,255,.8); font-size:1.15rem; max-width:560px; line-height:1.7; animation:fadeSlideUp .9s ease .2s both; text-shadow: 0 4px 12px rgba(0,0,0,.2); }
 .hero-actions { display:flex; gap:14px; flex-wrap:wrap; justify-content:center; animation:fadeSlideUp .9s ease .3s both; }
-.btn-hero-primary {
-    background:#fff; color:var(--blue-900); padding:18px 44px;
-    border-radius:var(--radius-btn); font-weight:800; font-size:1.05rem;
-    display:inline-flex; align-items:center; gap:10px; transition:var(--tr-spring);
-    box-shadow:0 12px 32px rgba(0,0,0,.25); border: 1px solid rgba(255,255,255,.5);
-}
-.btn-hero-primary:hover { transform:translateY(-6px) scale(1.02); box-shadow:0 24px 48px rgba(0,0,0,.35); background:var(--blue-50); }
-.btn-hero-primary i { color:var(--blue-600); font-size:1.3rem; }
-.btn-hero-secondary {
-    background:rgba(255,255,255,.1); color:#fff; padding:18px 36px;
-    border-radius:var(--radius-btn); font-weight:700; font-size:1.05rem;
-    display:inline-flex; align-items:center; gap:10px; transition:var(--tr-spring);
-    border:1px solid rgba(255,255,255,.2); backdrop-filter:blur(12px); -webkit-backdrop-filter:blur(12px);
-}
+
+.btn-hero-primary { background:#fff; color:#0f172a; padding:18px 44px; border-radius:var(--radius-btn); font-weight:800; font-size:1.05rem; display:inline-flex; align-items:center; gap:10px; transition:var(--tr-spring); box-shadow:0 12px 32px rgba(0,0,0,.25); border: 1px solid rgba(255,255,255,.5); }
+.btn-hero-primary:hover { transform:translateY(-6px) scale(1.02); box-shadow:0 24px 48px rgba(0,0,0,.35); background:var(--blue-100); }
+.btn-hero-secondary { background:rgba(255,255,255,.1); color:#fff; padding:18px 36px; border-radius:var(--radius-btn); font-weight:700; font-size:1.05rem; display:inline-flex; align-items:center; gap:10px; transition:var(--tr-spring); border:1px solid rgba(255,255,255,.2); backdrop-filter:blur(12px); -webkit-backdrop-filter:blur(12px); }
 .btn-hero-secondary:hover { background:rgba(255,255,255,.2); transform:translateY(-6px) scale(1.02); border-color:rgba(255,255,255,.5); box-shadow:0 16px 32px rgba(0,0,0,.2); }
 
-/* Stats hero */
 .hero-stats { display:flex; gap:2.5rem; animation:fadeSlideUp .9s ease .45s both; flex-wrap:wrap; justify-content:center; }
 .hero-stat { text-align:center; }
 .hero-stat-val { font-size:2rem; font-weight:900; color:#fff; letter-spacing:-.04em; line-height:1; text-shadow: 0 4px 12px rgba(0,0,0,.2); }
 .hero-stat-label { font-size:.78rem; color:rgba(255,255,255,.7); font-weight:500; text-transform:uppercase; letter-spacing:.06em; margin-top:4px; }
 .hero-stat-divider { width:1px; background:rgba(255,255,255,.2); align-self:stretch; }
-
-/* Scroll indicator */
-.scroll-hint { position:absolute; bottom:36px; left:50%; transform:translateX(-50%); z-index:5; display:flex; flex-direction:column; align-items:center; gap:10px; cursor:pointer; transition:var(--tr); animation:fadeSlideUp .9s ease .6s both; }
-.scroll-hint:hover { transform:translateX(-50%) translateY(-4px); }
-.scroll-hint-text { color:rgba(255,255,255,.6); font-size:.75rem; font-weight:600; text-transform:uppercase; letter-spacing:.12em; }
-.scroll-hint-mouse { width:24px; height:38px; border:2px solid rgba(255,255,255,.4); border-radius:12px; display:flex; justify-content:center; padding-top:6px; }
-.scroll-hint-dot { width:4px; height:8px; background:rgba(255,255,255,.7); border-radius:2px; animation:scrollDot 2s ease-in-out infinite; }
-@keyframes scrollDot { 0%,100%{transform:translateY(0);opacity:1;} 60%{transform:translateY(10px);opacity:0;} }
 
 /* ── Animações de entrada ── */
 @keyframes fadeSlideDown { from{opacity:0;transform:translateY(-20px);} to{opacity:1;transform:translateY(0);} }
@@ -199,231 +176,140 @@ header.scrolled { padding:.65rem 0; background:rgba(255,255,255,.85); box-shadow
 @keyframes scaleIn       { from{opacity:0;transform:scale(.92);}        to{opacity:1;transform:scale(1);} }
 
 /* ══════════════════════════════════════════════
-   SEÇÃO DEPOIMENTOS
+   SEÇÃO DEPOIMENTOS E SOBRE
 ══════════════════════════════════════════════ */
 .section-trust { width:100%; background:transparent; position:relative; z-index:10; }
 .trust-card {
     max-width:1100px; margin:-64px auto 5rem;
-    background:rgba(255,255,255,.9); backdrop-filter:blur(24px); -webkit-backdrop-filter:blur(24px);
+    background:var(--bg-glass-solid); backdrop-filter:blur(24px); -webkit-backdrop-filter:blur(24px);
     border-radius:28px; box-shadow:var(--shadow-card);
-    padding:3rem; border:1px solid rgba(255,255,255,.8);
+    padding:3rem; border:1px solid var(--border);
     animation:scaleIn .7s ease .2s both;
 }
-.trust-title { text-align:center; margin-bottom:2rem; font-size:1.1rem; color:var(--blue-800); font-weight:700; letter-spacing:.02em; }
+.trust-title { text-align:center; margin-bottom:2rem; font-size:1.1rem; color:var(--blue-600); font-weight:700; letter-spacing:.02em; }
 .stars { color:#f59e0b; font-size:.9rem; margin-bottom:.5rem; }
 .slider-wrap { overflow:hidden; position:relative; width:100%; }
 .slider-track { display:flex; transition:transform .6s cubic-bezier(.4,0,.2,1); gap:20px; }
 .feedback-card {
-    min-width:calc(33.333% - 14px); background:var(--bg-page);
+    min-width:calc(33.333% - 14px); background:var(--bg-card);
     padding:1.75rem; border-radius:20px; border:1px solid var(--border);
     transition:var(--tr); box-shadow:var(--shadow-soft);
 }
-.feedback-card:hover { transform:translateY(-6px); box-shadow:var(--shadow-hover); border-color:var(--blue-100); }
+.feedback-card:hover { transform:translateY(-6px); box-shadow:var(--shadow-hover); border-color:var(--blue-400); }
 .feedback-text { font-style:italic; font-size:.93rem; margin-bottom:1rem; color:var(--text-body); line-height:1.65; }
 .feedback-author { font-weight:700; color:var(--blue-600); display:flex; align-items:center; gap:8px; font-size:.9rem; }
 
-/* ══════════════════════════════════════════════
-   SEÇÃO SOBRE
-══════════════════════════════════════════════ */
-.section-about { padding:5rem 0; background:#fff; border-top:1px solid var(--border); border-bottom:1px solid var(--border); margin-bottom:5rem; position:relative; overflow:hidden; }
-.section-about::before { content:''; position:absolute; top:-50%; right:-10%; width:80vw; height:80vw; background:radial-gradient(circle,rgba(37,99,235,.03),transparent 70%); border-radius:50%; z-index:0; pointer-events:none; }
+.section-about { padding:5rem 0; background:var(--bg-card); border-top:1px solid var(--border); border-bottom:1px solid var(--border); margin-bottom:5rem; position:relative; overflow:hidden; transition:var(--tr); }
 .about-grid { display:grid; grid-template-columns:1fr 1fr; gap:5rem; align-items:center; position:relative; z-index:1; }
 .about-content h2 { font-size:2.4rem; line-height:1.15; margin-bottom:1.25rem; }
 .about-content h2 span { color:var(--blue-600); }
 .about-content p { color:var(--text-body); font-size:1.05rem; line-height:1.8; margin-bottom:2rem; }
 .about-stats { display:grid; grid-template-columns:1fr 1fr; gap:1.25rem; }
-.about-stat-card {
-    background:var(--bg-page); border-radius:20px; padding:1.5rem;
-    border:1px solid var(--border); text-align:center; transition:var(--tr); box-shadow:var(--shadow-soft);
-}
-.about-stat-card:hover { border-color:var(--blue-200,#bfdbfe); transform:translateY(-4px); box-shadow:var(--shadow-card); background:#fff; }
+.about-stat-card { background:var(--bg-page); border-radius:20px; padding:1.5rem; border:1px solid var(--border); text-align:center; transition:var(--tr); box-shadow:var(--shadow-soft); }
+.about-stat-card:hover { border-color:var(--blue-400); transform:translateY(-4px); box-shadow:var(--shadow-card); background:var(--bg-card); }
 .about-stat-num { font-size:2.2rem; font-weight:900; color:var(--blue-600); letter-spacing:-.04em; line-height:1; }
 .about-stat-label { font-size:.8rem; color:var(--text-muted); font-weight:600; text-transform:uppercase; letter-spacing:.06em; margin-top:5px; }
-.about-visual {
-    background:linear-gradient(135deg,var(--blue-50),#ede9fe);
-    border-radius:32px; padding:3.5rem; text-align:center;
-    border:1px solid var(--blue-100); position:relative; overflow:hidden; box-shadow:var(--shadow-card);
-}
-.about-visual::before {
-    content:''; position:absolute; top:-30%; right:-20%;
-    width:60%; height:60%; background:radial-gradient(circle,rgba(37,99,235,.12),transparent 70%);
-    border-radius:50%;
-}
+.about-visual { background:linear-gradient(135deg,var(--blue-50),var(--border)); border-radius:32px; padding:3.5rem; text-align:center; border:1px solid var(--blue-100); position:relative; overflow:hidden; box-shadow:var(--shadow-card); }
 .about-visual i { font-size:7rem; color:var(--blue-600); opacity:.85; position:relative; z-index:1; filter:drop-shadow(0 12px 24px rgba(37,99,235,.2)); }
 
 /* ══════════════════════════════════════════════
-   CATÁLOGO — CABEÇALHO E FILTROS PREMIUM
+   CATÁLOGO E FILTROS PREMIUM
 ══════════════════════════════════════════════ */
 .section-catalog { padding:2rem 0 7rem; }
 .catalog-header { text-align:center; margin-bottom:3.5rem; max-width:680px; margin-inline:auto; }
 .catalog-header h2 { font-size:2.6rem; margin-bottom:.75rem; }
 .catalog-header p { font-size:1.05rem; color:var(--text-muted); }
-.section-label {
-    display:inline-flex; align-items:center; gap:8px;
-    background:var(--blue-50); color:var(--blue-700);
-    border:1px solid var(--blue-100); border-radius:var(--radius-btn);
-    font-size:.78rem; font-weight:700; padding:6px 16px;
-    text-transform:uppercase; letter-spacing:.06em; margin-bottom:1rem; box-shadow:0 2px 8px rgba(37,99,235,.08);
-}
+.section-label { display:inline-flex; align-items:center; gap:8px; background:var(--blue-50); color:var(--blue-700); border:1px solid var(--blue-100); border-radius:var(--radius-btn); font-size:.78rem; font-weight:700; padding:6px 16px; text-transform:uppercase; letter-spacing:.06em; margin-bottom:1rem; box-shadow:0 2px 8px rgba(37,99,235,.08); }
 
-/* ── FILTROS FLUTUANTES (GLASS) ── */
 .filters-wrapper { margin-bottom:1.5rem; position:relative; z-index:10; }
-.filters {
-    display:flex; gap:8px; justify-content:center; flex-wrap:wrap;
-    background:rgba(255,255,255,.8); backdrop-filter:blur(16px); -webkit-backdrop-filter:blur(16px);
-    padding:8px; border-radius:100px; border:1px solid rgba(226,232,240,.8);
-    width:fit-content; margin:0 auto; box-shadow:var(--shadow-card);
-}
-.btn-filter {
-    padding:10px 22px; background:transparent; border:none;
-    color:#475569; border-radius:99px;
-    font-weight:600; font-size:.9rem; transition:var(--tr);
-    display:flex; align-items:center; gap:8px; white-space: nowrap;
-}
-.btn-filter:hover { color:#0f172a; background:rgba(241,245,249,.8); }
-.btn-filter.active { background:#0f172a !important; color:#fff !important; box-shadow:0 8px 20px rgba(15,23,42,.2) !important; transform:translateY(-1px); }
-.btn-filter.active i { color:#fff !important; }
+.filters { display:flex; gap:8px; justify-content:center; flex-wrap:wrap; background:var(--bg-glass-solid); backdrop-filter:blur(16px); padding:8px; border-radius:100px; border:1px solid var(--border); width:fit-content; margin:0 auto; box-shadow:var(--shadow-card); }
+.btn-filter { padding:10px 22px; background:transparent; border:none; color:var(--text-body); border-radius:99px; font-weight:600; font-size:.9rem; transition:var(--tr); display:flex; align-items:center; gap:8px; white-space:nowrap; }
+.btn-filter:hover { color:var(--text-dark); background:var(--bg-page); }
+.btn-filter.active { background:var(--text-dark) !important; color:var(--bg-card) !important; box-shadow:0 8px 20px rgba(0,0,0,.2) !important; transform:translateY(-1px); }
+.btn-filter.active i { color:var(--bg-card) !important; }
 
-/* Sub-bars Base Uniforme */
 .sub-bar-container { display:flex; flex-direction:column; gap:8px; align-items:center; margin-bottom:2.5rem; }
-
-.sub-bar-base {
-    display:none; gap:8px; justify-content:center; flex-wrap:wrap;
-    animation:fadeIn .3s ease;
-}
+.sub-bar-base { display:none; gap:8px; justify-content:center; flex-wrap:wrap; animation:fadeIn .3s ease; }
 .sub-bar-base.visible { display:flex; }
-
-/* Botões das subcategorias (unificados) */
-.btn-sub, .btn-tipo-sacola, .btn-tamanho-sacola, .btn-pacote-sacola, .btn-sub-isopor, .btn-marca-marmitex, .btn-sub-plastico, .btn-marca-plastico {
-    padding:8px 18px; background:#fff; border:1px solid #e2e8f0;
-    color:#475569; border-radius:99px;
-    font-weight:600; font-size:.85rem; transition:var(--tr);
-    display:flex; align-items:center; gap:6px; box-shadow:var(--shadow-soft); white-space: nowrap;
-}
-.btn-sub:hover, .btn-tipo-sacola:hover, .btn-tamanho-sacola:hover, .btn-pacote-sacola:hover, .btn-sub-isopor:hover, .btn-marca-marmitex:hover, .btn-sub-plastico:hover, .btn-marca-plastico:hover {
-    border-color:#cbd5e1; color:#0f172a; transform:translateY(-2px); box-shadow: 0 6px 12px rgba(15,23,42,0.06); background:#f8fafc;
-}
-/* Estilo Active Premium nos subs */
-.btn-sub.active, .btn-tipo-sacola.active, .btn-tamanho-sacola.active, .btn-pacote-sacola.active, .btn-sub-isopor.active, .btn-marca-marmitex.active, .btn-sub-plastico.active, .btn-marca-plastico.active {
-    background:linear-gradient(135deg,var(--blue-50),#e0f2fe) !important; color:var(--blue-700) !important; border-color:var(--blue-200) !important; box-shadow:0 4px 12px rgba(37,99,235,.1) !important; font-weight:700; transform:translateY(-1px);
-}
+.btn-sub { padding:8px 18px; background:var(--btn-sub-bg); border:1px solid var(--btn-sub-border); color:var(--text-body); border-radius:99px; font-weight:600; font-size:.85rem; transition:var(--tr); display:flex; align-items:center; gap:6px; box-shadow:var(--shadow-soft); white-space:nowrap; }
+.btn-sub:hover { border-color:var(--blue-400); color:var(--text-dark); transform:translateY(-2px); box-shadow:var(--shadow-card); background:var(--btn-sub-hover); }
+.btn-sub.active { background:linear-gradient(135deg,var(--blue-500),var(--blue-700)) !important; color:#fff !important; border-color:var(--blue-600) !important; box-shadow:0 4px 12px rgba(37,99,235,.3) !important; font-weight:700; transform:translateY(-1px); }
 
 /* Dots indicadores de cor */
-.cor-dot { width:12px; height:12px; border-radius:50%; flex-shrink:0; border:1px solid rgba(0,0,0,.1); }
+.cor-dot { width:12px; height:12px; border-radius:50%; flex-shrink:0; border:1px solid rgba(0,0,0,.3); }
 .cor-dot-preta { background:#1e293b; }
 .cor-dot-verde { background:#10b981; }
-.cor-dot-branca { background:#fff; border-color:#cbd5e1; }
+.cor-dot-branca { background:#f8fafc; border-color:#cbd5e1; }
 .cor-dot-crystal { background:linear-gradient(135deg,#e0f2fe,#bae6fd); border-color:#7dd3fc; }
 .cor-dot-kraft { background:#d97706; }
 .cor-dot-kraft-alca { background:linear-gradient(135deg,#f59e0b,#b45309); }
 .cor-dot-banheiro { background:#d946ef; }
 
-/* Breadcrumb */
 .breadcrumb { display:none; align-items:center; gap:8px; font-size:.88rem; color:var(--text-muted); margin-bottom:1rem; font-weight:500; justify-content:center; }
 .breadcrumb.visible { display:flex; }
 .breadcrumb span { color:var(--blue-600); font-weight:700; }
 
 /* ══════════════════════════════════════════════
-   GRADE DE PRODUTOS E CARDS
+   GRADE DE PRODUTOS 3D
 ══════════════════════════════════════════════ */
 .product-section { margin-bottom:6rem; animation:fadeIn .5s ease-out; }
-.section-title {
-    color:var(--text-dark); font-size:2rem; font-weight:800;
-    margin-bottom:2.5rem; display:flex; align-items:center; gap:14px;
-    letter-spacing:-.03em; padding-bottom:1.25rem;
-    border-bottom:2px solid var(--border);
-}
+.section-title { color:var(--text-dark); font-size:2rem; font-weight:800; margin-bottom:2.5rem; display:flex; align-items:center; gap:14px; letter-spacing:-.03em; padding-bottom:1.25rem; border-bottom:2px solid var(--border); }
 .section-title i { color:var(--blue-600); background:var(--blue-50); padding:10px; border-radius:14px; font-size:1.4rem; box-shadow:var(--shadow-soft); }
 
-.products-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(280px,1fr)); gap:2.5rem; }
+.products-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(280px,1fr)); gap:2.5rem; perspective: 1000px; }
 
-/* ── CARD DE PRODUTO IMERSIVO ── */
+/* CARD 3D EFFECT */
 .product-card {
-    background:linear-gradient(180deg, #fff 0%, #f8fafc 100%); border-radius:var(--radius-card);
-    border:1px solid rgba(226,232,240,.8); overflow:hidden;
-    box-shadow:var(--shadow-card); transition:var(--tr-spring);
-    display:flex; flex-direction:column; position:relative;
-    opacity:0; transform:translateY(32px);
+    background:var(--bg-card); border-radius:var(--radius-card); border:1px solid var(--border);
+    overflow:hidden; box-shadow:var(--shadow-card); transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.4s ease, border-color 0.3s ease;
+    display:flex; flex-direction:column; position:relative; opacity:0; transform:translateY(32px);
+    transform-style: preserve-3d;
 }
 .product-card.revealed { opacity:1; transform:translateY(0); }
-.product-card:hover { transform:translateY(-8px) scale(1.01); box-shadow:var(--shadow-hover); border-color:var(--blue-200,#bfdbfe); }
-.product-card.in-cart { border-color:var(--green-wa) !important; box-shadow:0 0 0 3px rgba(37,211,102,.12), var(--shadow-hover) !important; transform:translateY(-4px); }
+.product-card:hover { transform: translateY(-12px) rotateX(4deg) rotateY(-2deg) scale3d(1.02, 1.02, 1.02); box-shadow:var(--shadow-hover); border-color:var(--blue-400); z-index: 5; }
+.product-card.in-cart { border-color:var(--green-wa) !important; box-shadow:0 0 0 3px rgba(37,211,102,.2), var(--shadow-hover) !important; transform:translateY(-4px); }
 
-/* Imagem produto */
-.product-img {
-    width:100%; height:220px; display:flex; align-items:center; justify-content:center;
-    transition:var(--tr); border-bottom:1px solid rgba(226,232,240,.6);
-    position:relative; overflow:hidden;
-    background:linear-gradient(135deg,#f1f5f9 0%,var(--blue-50) 100%);
-}
-.product-img svg { width:135px; height:135px; transition:var(--tr-spring); filter:drop-shadow(0 8px 16px rgba(15,23,42,.08)); }
-.product-card:hover .product-img svg { transform:scale(1.08) translateY(-4px) rotate(-1deg); filter:drop-shadow(0 16px 24px rgba(37,99,235,.15)); }
-.product-img::after {
-    content:''; position:absolute; inset:0;
-    background:linear-gradient(105deg,transparent 40%,rgba(255,255,255,.6) 50%,transparent 60%);
-    transform:translateX(-100%); transition:transform .7s cubic-bezier(.4,0,.2,1);
-}
-.product-card:hover .product-img::after { transform:translateX(100%); }
+/* Imagem produto - TranslateZ para efeito 3D */
+.product-img { width:100%; height:220px; display:flex; align-items:center; justify-content:center; transition:var(--tr); border-bottom:1px solid var(--border); position:relative; overflow:hidden; background:linear-gradient(135deg,var(--bg-page) 0%,var(--blue-50) 100%); transform-style: preserve-3d; }
+.product-img svg { width:135px; height:135px; transition:transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275); filter:drop-shadow(0 8px 16px rgba(15,23,42,.15)); transform: translateZ(20px); }
+.product-card:hover .product-img svg { transform: translateZ(50px) scale(1.15) rotate(-2deg); filter:drop-shadow(0 20px 30px rgba(37,99,235,.25)); }
 
-.cart-seal {
-    position:absolute; top:12px; right:12px;
-    background:var(--green-wa); color:#fff; font-size:.72rem; font-weight:800;
-    padding:6px 14px; border-radius:var(--radius-btn);
-    display:flex; align-items:center; gap:5px; box-shadow: 0 4px 12px rgba(37,211,102,.3);
-    opacity:0; transform:scale(.75) translateY(-4px); transition:var(--tr-spring); z-index:5;
-}
+.cart-seal { position:absolute; top:12px; right:12px; background:var(--green-wa); color:#fff; font-size:.72rem; font-weight:800; padding:6px 14px; border-radius:var(--radius-btn); display:flex; align-items:center; gap:5px; box-shadow: 0 4px 12px rgba(37,211,102,.3); opacity:0; transform:scale(.75) translateY(-4px); transition:var(--tr-spring); z-index:5; }
 .product-card.in-cart .cart-seal { opacity:1; transform:scale(1) translateY(0); }
 .brand-badge { position:absolute; top:12px; left:12px; font-size:.68rem; font-weight:800; padding:6px 14px; border-radius:var(--radius-btn); z-index:3; letter-spacing:.02em; box-shadow:var(--shadow-soft); }
 
-/* Conteúdo do card */
-.product-body { padding:1.75rem; display:flex; flex-direction:column; flex-grow:1; background:#fff; }
-.product-name { font-size:1.25rem; font-weight:800; color:var(--text-dark); margin-bottom:.4rem; line-height:1.25; letter-spacing:-.025em; }
-.product-desc { font-size:.9rem; color:var(--text-muted); margin-bottom:1.5rem; flex-grow:1; line-height:1.65; }
-.price-box {
-    background:var(--blue-50); border:1px solid var(--blue-100);
-    border-radius:16px; padding:14px 18px; margin-bottom:1.5rem;
-    display:flex; flex-direction:column; align-items:flex-start;
-    position:relative; overflow:hidden; box-shadow:inset 0 2px 4px rgba(255,255,255,.5);
-}
+.product-body { padding:1.75rem; display:flex; flex-direction:column; flex-grow:1; background:var(--bg-card); transform-style: preserve-3d; }
+.product-name { font-size:1.25rem; font-weight:800; color:var(--text-dark); margin-bottom:.4rem; line-height:1.25; letter-spacing:-.025em; transform: translateZ(15px); transition: transform 0.4s ease; }
+.product-card:hover .product-name { transform: translateZ(25px); color:var(--blue-600); }
+.product-desc { font-size:.9rem; color:var(--text-muted); margin-bottom:1.5rem; flex-grow:1; line-height:1.65; transform: translateZ(10px); }
+.price-box { background:var(--bg-page); border:1px solid var(--border); border-radius:16px; padding:14px 18px; margin-bottom:1.5rem; display:flex; flex-direction:column; align-items:flex-start; position:relative; overflow:hidden; transform: translateZ(15px); transition: box-shadow 0.4s ease; }
+.product-card:hover .price-box { box-shadow: 0 8px 20px rgba(0,0,0,0.05); }
 .price-box::before { content:''; position:absolute; left:0; top:0; height:100%; width:4px; background:linear-gradient(to bottom,var(--blue-500),var(--blue-700)); border-radius:16px 0 0 16px; }
-.price-label { font-size:.7rem; color:var(--blue-800); font-weight:700; text-transform:uppercase; letter-spacing:.08em; margin-bottom:2px; }
+.price-label { font-size:.7rem; color:var(--blue-600); font-weight:700; text-transform:uppercase; letter-spacing:.08em; margin-bottom:2px; }
 .price-row { display:flex; align-items:baseline; gap:4px; }
-.price-value { font-size:2rem; font-weight:900; color:var(--blue-600); letter-spacing:-.04em; line-height:1; }
+.price-value { font-size:2rem; font-weight:900; color:var(--text-dark); letter-spacing:-.04em; line-height:1; }
 .price-unit { font-size:.85rem; color:var(--text-muted); font-weight:600; }
 
-/* Ações */
-.product-actions { display:flex; gap:10px; align-items:center; }
-.qty-control { display:flex; align-items:center; border:1px solid var(--border); border-radius:14px; overflow:hidden; background:#f8fafc; box-shadow:inset 0 1px 3px rgba(0,0,0,.02); }
+.product-actions { display:flex; gap:10px; align-items:center; transform: translateZ(20px); }
+.qty-control { display:flex; align-items:center; border:1px solid var(--border); border-radius:14px; overflow:hidden; background:var(--bg-page); }
 .btn-qty { width:38px; height:44px; display:flex; align-items:center; justify-content:center; font-size:1.2rem; font-weight:800; color:var(--blue-600); transition:var(--tr); flex-shrink:0; }
-.btn-qty:hover { background:var(--blue-100); }
+.btn-qty:hover { background:var(--border); }
 .input-qty { width:42px; height:44px; border:none; text-align:center; font-size:1rem; font-weight:700; color:var(--text-dark); background:transparent; -moz-appearance:textfield; }
-.input-qty::-webkit-outer-spin-button, .input-qty::-webkit-inner-spin-button { -webkit-appearance:none; }
-.btn-add {
-    flex:1; padding:12px; background:linear-gradient(135deg,var(--blue-600),var(--blue-700));
-    color:#fff; border-radius:14px; font-weight:700; font-size:.95rem;
-    transition:var(--tr-spring); display:flex; align-items:center; justify-content:center; gap:8px;
-    position:relative; overflow:hidden; box-shadow:var(--shadow-glow); border:1px solid rgba(255,255,255,.1);
-}
-.btn-add::before { content:''; position:absolute; inset:0; background:rgba(255,255,255,0); transition:background .2s ease; }
-.btn-add:hover::before { background:rgba(255,255,255,.15); }
+.btn-add { flex:1; padding:12px; background:linear-gradient(135deg,var(--blue-600),var(--blue-700)); color:#fff; border-radius:14px; font-weight:700; font-size:.95rem; transition:var(--tr-spring); display:flex; align-items:center; justify-content:center; gap:8px; box-shadow:var(--shadow-glow); border:1px solid rgba(255,255,255,.1); }
 .btn-add:hover { transform:translateY(-2px); box-shadow:0 12px 28px rgba(37,99,235,.4); }
-.btn-add:active { transform:scale(.97); }
+.btn-add:active { transform:scale(.95); }
 .btn-add.added { background:linear-gradient(135deg,var(--green-wa),#1aab52) !important; box-shadow: 0 8px 24px rgba(37,211,102,.4) !important;}
-.btn-info { padding:10px 16px; border:1px solid var(--border); border-radius:14px; color:var(--text-muted); font-size:.9rem; font-weight:600; transition:var(--tr); background:#fff; box-shadow:var(--shadow-soft); }
-.btn-info:hover { border-color:var(--blue-300); color:var(--blue-600); background:var(--blue-50); transform:translateY(-2px); box-shadow:0 6px 12px rgba(37,99,235,.1); }
+.btn-info { padding:10px 16px; border:1px solid var(--border); border-radius:14px; color:var(--text-muted); font-size:.9rem; font-weight:600; transition:var(--tr); background:var(--bg-card); box-shadow:var(--shadow-soft); }
+.btn-info:hover { border-color:var(--blue-400); color:var(--blue-600); background:var(--bg-page); transform:translateY(-2px); }
 
-/* Ripple effect */
-.ripple { position:absolute; border-radius:50%; background:rgba(255,255,255,.4); transform:scale(0); animation:rippleAnim .6s linear; pointer-events:none; }
-@keyframes rippleAnim { to { transform:scale(4); opacity:0; } }
-
-/* ── CARDS ESPECIAIS (Cores Imersivas) ── */
+/* CARDS ESPECIAIS (Dark Mode natural para saco de lixo) */
 .sacola-preta-card { background:linear-gradient(180deg, #1e293b 0%, #0f172a 100%) !important; border-color:#334155 !important; }
-.sacola-preta-card:hover { border-color:#64748b !important; box-shadow:0 32px 64px -12px rgba(0,0,0,.6) !important; }
+.sacola-preta-card:hover { border-color:#64748b !important; box-shadow:0 32px 64px -12px rgba(0,0,0,.8) !important; }
 .sacola-preta-card .product-body { background:transparent; }
 .sacola-preta-card .product-name { color:#f8fafc !important; }
 .sacola-preta-card .product-desc { color:#94a3b8 !important; }
 .sacola-preta-card .product-img { background:linear-gradient(135deg,#0f172a,#020617) !important; border-bottom-color:#334155 !important; }
-.sacola-preta-card .price-box { background:#1e293b !important; border-color:#334155 !important; box-shadow:inset 0 2px 4px rgba(255,255,255,.05); }
+.sacola-preta-card .price-box { background:#1e293b !important; border-color:#334155 !important; }
 .sacola-preta-card .price-box::before { background:linear-gradient(to bottom,#64748b,#475569) !important; }
 .sacola-preta-card .price-label { color:#94a3b8 !important; }
 .sacola-preta-card .price-value { color:#f8fafc !important; }
@@ -431,156 +317,113 @@ header.scrolled { padding:.65rem 0; background:rgba(255,255,255,.85); box-shadow
 .sacola-preta-card .btn-qty { color:#cbd5e1 !important; }
 .sacola-preta-card .btn-qty:hover { background:#1e293b !important; }
 .sacola-preta-card .input-qty { color:#f8fafc !important; }
-.sacola-preta-card .btn-add { background:linear-gradient(135deg,#475569,#334155) !important; box-shadow: 0 8px 24px rgba(0,0,0,.3) !important; border-color:rgba(255,255,255,.1) !important;}
-.sacola-preta-card .btn-add:hover { box-shadow:0 12px 32px rgba(0,0,0,.5) !important; }
+.sacola-preta-card .btn-add { background:linear-gradient(135deg,#475569,#334155) !important; box-shadow: 0 8px 24px rgba(0,0,0,.3) !important;}
 .sacola-preta-card .btn-info { border-color:#334155 !important; color:#94a3b8 !important; background:#1e293b !important; }
-.sacola-preta-card .btn-info:hover { border-color:#64748b !important; color:#f1f5f9 !important; background:#334155 !important; }
 
 /* ══════════════════════════════════════════════
-   SIDEBAR CARRINHO (GLASSMORPHISM)
+   MODAIS E CARRINHO (GLASS)
 ══════════════════════════════════════════════ */
-.cart-overlay { position:fixed; inset:0; background:rgba(10,15,30,.7); backdrop-filter:blur(12px); -webkit-backdrop-filter:blur(12px); z-index:1500; opacity:0; pointer-events:none; transition:opacity .4s ease; }
+.cart-overlay { position:fixed; inset:0; background:rgba(0,0,0,.6); backdrop-filter:blur(16px); -webkit-backdrop-filter:blur(16px); z-index:1500; opacity:0; pointer-events:none; transition:opacity .4s ease; }
 .cart-overlay.open { opacity:1; pointer-events:all; }
-.cart-sidebar {
-    position:fixed; top:0; right:0; height:100%; width:460px; max-width:95vw;
-    background:rgba(255,255,255,.95); backdrop-filter:blur(32px); -webkit-backdrop-filter:blur(32px);
-    z-index:1600; display:flex; flex-direction:column;
-    box-shadow:-32px 0 80px rgba(0,0,0,.15); transform:translateX(100%);
-    transition:transform .5s cubic-bezier(.4,0,.2,1); border-left:1px solid rgba(255,255,255,.5);
-}
+.cart-sidebar { position:fixed; top:0; right:0; height:100%; width:460px; max-width:95vw; background:var(--bg-glass-solid); backdrop-filter:blur(32px); -webkit-backdrop-filter:blur(32px); z-index:1600; display:flex; flex-direction:column; box-shadow:-32px 0 80px rgba(0,0,0,.3); transform:translateX(100%); transition:transform .5s cubic-bezier(.4,0,.2,1); border-left:1px solid rgba(255,255,255,.1); }
 .cart-sidebar.open { transform:translateX(0); }
 .cart-header { padding:2rem 2.5rem 1.5rem; border-bottom:1px solid var(--border); display:flex; justify-content:space-between; align-items:center; flex-shrink:0; }
-.cart-header h3 { font-size:1.5rem; display:flex; align-items:center; gap:12px; font-weight:900; }
+.cart-header h3 { font-size:1.5rem; display:flex; align-items:center; gap:12px; font-weight:900; color:var(--text-dark); }
 .cart-header h3 i { color:var(--blue-600); font-size:1.8rem; }
-.btn-close-cart { background:var(--bg-page); width:42px; height:42px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:1.2rem; color:var(--text-muted); transition:var(--tr); box-shadow:var(--shadow-soft); }
-.btn-close-cart:hover { background:var(--border); color:var(--text-dark); transform:rotate(90deg); }
+.btn-close-cart { background:var(--bg-page); width:42px; height:42px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:1.2rem; color:var(--text-muted); transition:var(--tr); border:1px solid var(--border); }
+.btn-close-cart:hover { background:var(--blue-600); color:#fff; transform:rotate(90deg); }
 .cart-items { flex:1; overflow-y:auto; padding:1.5rem 2.5rem; }
 .cart-empty { display:flex; flex-direction:column; align-items:center; justify-content:center; height:100%; gap:1.25rem; color:var(--text-muted); text-align:center; }
-.cart-empty i { font-size:5rem; opacity:.2; }
+.cart-empty i { font-size:5rem; opacity:.3; }
 .cart-empty p { font-size:1.1rem; font-weight:600; }
 .cart-item { display:flex; align-items:center; gap:1.25rem; padding:1.25rem 0; border-bottom:1px solid var(--border); animation:fadeIn .3s ease; }
 .cart-item:last-child { border-bottom:none; }
-.cart-item-icon { font-size:2rem; color:var(--blue-600); background:var(--blue-50); padding:1rem; border-radius:16px; flex-shrink:0; box-shadow:inset 0 2px 4px rgba(255,255,255,.5); }
+.cart-item-icon { font-size:2rem; color:var(--blue-500); background:var(--bg-page); padding:1rem; border-radius:16px; flex-shrink:0; border:1px solid var(--border); }
 .cart-item-info { flex:1; min-width:0; }
 .cart-item-name { font-size:.95rem; font-weight:800; color:var(--text-dark); white-space:nowrap; overflow:hidden; text-overflow:ellipsis; margin-bottom:4px; }
 .cart-item-price { font-size:.85rem; color:var(--text-muted); font-weight:500; }
 .cart-item-controls { display:flex; align-items:center; gap:10px; flex-shrink:0; }
-.cart-qty-ctrl { display:flex; align-items:center; border:1px solid var(--border); border-radius:10px; overflow:hidden; background:#f8fafc; }
+.cart-qty-ctrl { display:flex; align-items:center; border:1px solid var(--border); border-radius:10px; overflow:hidden; background:var(--bg-page); }
 .cart-qty-btn { width:30px; height:32px; display:flex; align-items:center; justify-content:center; font-size:1rem; font-weight:800; color:var(--blue-600); transition:var(--tr); }
-.cart-qty-btn:hover { background:var(--blue-100); }
+.cart-qty-btn:hover { background:var(--border); }
 .cart-qty-val { width:34px; text-align:center; font-size:.9rem; font-weight:800; color:var(--text-dark); }
 .cart-subtotal { font-size:1rem; font-weight:900; color:var(--blue-600); min-width:70px; text-align:right; }
 .btn-remove-item { color:var(--text-muted); font-size:1.1rem; transition:var(--tr-spring); padding:6px; border-radius:8px; }
-.btn-remove-item:hover { color:#ef4444; background:#fee2e2; transform:scale(1.1); }
-.cart-footer { padding:1.5rem 2.5rem 2.5rem; border-top:1px solid var(--border); flex-shrink:0; background:rgba(255,255,255,.9); }
+.btn-remove-item:hover { color:#ef4444; background:rgba(239,68,68,.1); transform:scale(1.1); }
+.cart-footer { padding:1.5rem 2.5rem 2.5rem; border-top:1px solid var(--border); flex-shrink:0; background:var(--bg-card); }
 .cart-total-row { display:flex; justify-content:space-between; align-items:center; margin-bottom:1.5rem; }
 .cart-total-label { font-size:1.05rem; font-weight:700; color:var(--text-muted); }
 .cart-total-val { font-size:2rem; font-weight:900; color:var(--blue-600); letter-spacing:-.03em; }
-.btn-send-wpp { width:100%; padding:18px; background:linear-gradient(135deg,var(--green-wa),#1aab52); color:#fff; border-radius:16px; font-weight:800; font-size:1.1rem; display:flex; align-items:center; justify-content:center; gap:10px; transition:var(--tr-spring); box-shadow:0 12px 32px rgba(37,211,102,.35); border:1px solid rgba(255,255,255,.2); }
+.btn-send-wpp { width:100%; padding:18px; background:linear-gradient(135deg,var(--green-wa),#1aab52); color:#fff; border-radius:16px; font-weight:800; font-size:1.1rem; display:flex; align-items:center; justify-content:center; gap:10px; transition:var(--tr-spring); box-shadow:0 12px 32px rgba(37,211,102,.35); }
 .btn-send-wpp:hover { transform:translateY(-4px); box-shadow:0 20px 40px rgba(37,211,102,.5); }
 .btn-clear { width:100%; padding:12px; color:var(--text-muted); font-size:.95rem; font-weight:700; margin-top:1rem; transition:var(--tr); border-radius:12px; }
-.btn-clear:hover { background:#fee2e2; color:#ef4444; }
-.wpp-notice { font-size:.8rem; color:var(--text-muted); text-align:center; margin-top:1rem; display:flex; align-items:center; justify-content:center; gap:6px; font-weight:500; }
+.btn-clear:hover { background:rgba(239,68,68,.1); color:#ef4444; }
 
-/* ══════════════════════════════════════════════
-   MODAL (GLASSMORPHISM)
-══════════════════════════════════════════════ */
-.modal-backdrop { display:none; position:fixed; inset:0; background:rgba(10,15,30,.8); backdrop-filter:blur(16px); -webkit-backdrop-filter:blur(16px); z-index:2000; align-items:center; justify-content:center; padding:1.5rem; opacity:0; transition:opacity .4s ease; }
+.modal-backdrop { display:none; position:fixed; inset:0; background:rgba(0,0,0,.7); backdrop-filter:blur(16px); -webkit-backdrop-filter:blur(16px); z-index:2000; align-items:center; justify-content:center; padding:1.5rem; opacity:0; transition:opacity .4s ease; perspective: 1000px;}
 .modal-backdrop.active { display:flex; opacity:1; }
-.modal-box { background:rgba(255,255,255,.95); backdrop-filter:blur(32px); -webkit-backdrop-filter:blur(32px); border:1px solid rgba(255,255,255,.8); width:100%; max-width:580px; border-radius:32px; padding:3rem; transform:scale(.9) translateY(40px); transition:all .5s cubic-bezier(.175,.885,.32,1.275); position:relative; box-shadow:0 40px 100px -20px rgba(0,0,0,.5); max-height:90vh; overflow-y:auto; }
-.modal-backdrop.active .modal-box { transform:scale(1) translateY(0); }
-.btn-close-modal { position:absolute; top:1.5rem; right:1.5rem; background:var(--bg-page); width:46px; height:46px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:1.3rem; color:var(--text-muted); transition:var(--tr); box-shadow:var(--shadow-soft); }
-.btn-close-modal:hover { background:var(--border); color:var(--text-dark); transform:rotate(90deg); }
+.modal-box { background:var(--bg-card); border:1px solid var(--border); width:100%; max-width:580px; border-radius:32px; padding:3rem; transform:scale(.9) rotateX(10deg) translateY(40px); transition:all .5s cubic-bezier(.175,.885,.32,1.275); position:relative; box-shadow:0 40px 100px -20px rgba(0,0,0,.7); max-height:90vh; overflow-y:auto; }
+.modal-backdrop.active .modal-box { transform:scale(1) rotateX(0deg) translateY(0); }
+.btn-close-modal { position:absolute; top:1.5rem; right:1.5rem; background:var(--bg-page); width:46px; height:46px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:1.3rem; color:var(--text-muted); transition:var(--tr); border:1px solid var(--border); }
+.btn-close-modal:hover { background:var(--blue-600); color:#fff; transform:rotate(90deg); }
 .modal-head { text-align:center; margin-bottom:2.5rem; display:flex; flex-direction:column; align-items:center; }
-.modal-icon { font-size:4rem; color:var(--blue-600); margin-bottom:1.5rem; background:linear-gradient(135deg,var(--blue-50),#fff); padding:20px; border-radius:24px; display:flex; align-items:center; justify-content:center; box-shadow:var(--shadow-card); border:1px solid var(--blue-100); }
+.modal-icon { font-size:4rem; color:var(--blue-600); margin-bottom:1.5rem; background:var(--bg-page); padding:20px; border-radius:24px; display:flex; align-items:center; justify-content:center; box-shadow:var(--shadow-card); border:1px solid var(--border); }
 .modal-icon svg { width:80px; height:80px; filter:drop-shadow(0 8px 16px rgba(37,99,235,.15)); }
 .modal-title { font-size:2rem; font-weight:900; color:var(--text-dark); line-height:1.2; letter-spacing:-.04em; margin-bottom:1rem; }
 .modal-price-pill { background:linear-gradient(135deg,var(--blue-600),var(--blue-800)); padding:10px 24px; border-radius:var(--radius-btn); color:#fff; display:inline-flex; align-items:baseline; gap:6px; box-shadow:var(--shadow-glow); }
 .modal-price-val { font-size:2.2rem; font-weight:900; letter-spacing:-.04em; }
 .modal-price-unit { font-size:1rem; opacity:.9; font-weight:600; }
-.modal-specs { background:#f8fafc; border-radius:20px; padding:1.75rem; margin-bottom:2rem; border:1px solid var(--border); box-shadow:inset 0 2px 4px rgba(0,0,0,.02); }
+.modal-specs { background:var(--bg-page); border-radius:20px; padding:1.75rem; margin-bottom:2rem; border:1px solid var(--border); }
 .spec-row { display:flex; justify-content:space-between; align-items:center; padding:14px 0; border-bottom:1px solid var(--border); }
 .spec-row:last-child { border-bottom:none; padding-bottom:0; }
 .spec-label { font-size:.95rem; color:var(--text-muted); font-weight:600; display:flex; align-items:center; gap:10px; }
 .spec-value { font-size:1rem; font-weight:800; color:var(--text-dark); }
 
 /* ══════════════════════════════════════════════
-   WHATSAPP FLUTUANTE
+   WHATSAPP E FOOTER
 ══════════════════════════════════════════════ */
-.whatsapp-float {
-    position:fixed; bottom:32px; right:32px; background:linear-gradient(135deg,var(--green-wa),#1aab52);
-    color:#fff; width:68px; height:68px; border-radius:50%; display:flex; align-items:center; justify-content:center;
-    box-shadow:0 16px 40px rgba(37,211,102,.5); z-index:999; transition:var(--tr-spring); border:1px solid rgba(255,255,255,.2); text-decoration:none;
-}
-.whatsapp-float i { font-size: 2.4rem; }
+.whatsapp-float { position:fixed; bottom:32px; right:32px; background:linear-gradient(135deg,var(--green-wa),#1aab52); color:#fff; width:68px; height:68px; border-radius:50%; display:flex; align-items:center; justify-content:center; box-shadow:0 16px 40px rgba(37,211,102,.5); z-index:999; transition:var(--tr-spring); }
+.whatsapp-float i { font-size: 2.5rem; }
 .whatsapp-float:hover { transform:scale(1.15) translateY(-6px); box-shadow:0 24px 56px rgba(37,211,102,.6); }
 .whatsapp-float::before { content:''; position:absolute; inset:-6px; border-radius:50%; border:2px solid rgba(37,211,102,.4); animation:waPulse 2.5s ease-in-out infinite; }
-@keyframes waPulse { 0%,100%{transform:scale(1);opacity:.6;} 50%{transform:scale(1.2);opacity:0;} }
 
-/* ══════════════════════════════════════════════
-   FOOTER
-══════════════════════════════════════════════ */
 footer { background:var(--blue-950); color:#fff; padding:6rem 0 3rem; margin-top:auto; position:relative; overflow:hidden; }
 footer::before { content:''; position:absolute; top:-50%; left:-10%; width:60vw; height:60vw; background:radial-gradient(circle,rgba(37,99,235,.1),transparent 70%); border-radius:50%; pointer-events:none; }
 .footer-grid { max-width:1200px; margin:0 auto; padding:0 1.5rem; display:grid; grid-template-columns:1.6fr 1fr 1fr; gap:4rem; position:relative; z-index:1; }
 .footer-col h4 { color:rgba(255,255,255,.5); font-size:.85rem; font-weight:800; margin-bottom:1.75rem; text-transform:uppercase; letter-spacing:.12em; }
 .footer-logo { font-size:1.8rem; font-weight:900; margin-bottom:1.5rem; display:flex; align-items:center; gap:12px; color:#fff; letter-spacing:-.04em; }
-.footer-logo .logo-icon { background:linear-gradient(135deg,var(--blue-600),var(--blue-700)); box-shadow:var(--shadow-glow); }
-.footer-desc { color:rgba(255,255,255,.5); font-size:1rem; line-height:1.8; margin-bottom:2rem; max-width:380px; }
-.footer-links { list-style:none; }
-.footer-links li { margin-bottom:1rem; }
-.footer-links a { color:rgba(255,255,255,.6); transition:var(--tr); display:flex; align-items:center; gap:10px; font-size:1rem; font-weight:500; }
+.footer-links a { color:rgba(255,255,255,.6); transition:var(--tr); display:flex; align-items:center; gap:10px; font-size:1rem; font-weight:500; margin-bottom:1rem; }
 .footer-links a:hover { color:var(--green-wa); transform:translateX(6px); }
 .footer-address { color:rgba(255,255,255,.45); font-size:.95rem; line-height:1.8; margin-top:.5rem; }
 .footer-divider { border:none; border-top:1px solid rgba(255,255,255,.06); margin:4rem 0 2.5rem; }
-.footer-copy { max-width:1200px; margin:0 auto; padding:0 1.5rem; color:rgba(255,255,255,.3); font-size:.9rem; text-align:center; font-weight:500; }
+.footer-copy { text-align:center; color:rgba(255,255,255,.3); font-size:.9rem; font-weight:500; }
 
 .reveal { opacity:0; transform:translateY(32px); transition:opacity .7s cubic-bezier(.4,0,.2,1), transform .7s cubic-bezier(.4,0,.2,1); }
 .reveal.revealed { opacity:1; transform:translateY(0); }
 
 /* ══════════════════════════════════════════════
-   RESPONSIVO E SCROLL NOS FILTROS (MOBILE)
+   RESPONSIVO
 ══════════════════════════════════════════════ */
-@media(max-width:1024px) {
-    .footer-grid { grid-template-columns:1fr 1fr; }
-    .about-grid { gap:3rem; }
-}
-
+@media(max-width:1024px) { .footer-grid { grid-template-columns:1fr 1fr; } .about-grid { gap:3rem; } }
 @media(max-width:768px) {
     .hero { padding-top:9rem; min-height:85vh; background-attachment: scroll; }
     .hero h1 { font-size:2.8rem; }
-    .hero-stats { gap:1.5rem; }
-    .hero-stat-divider { display:none; }
     .trust-card { margin:-32px 1.25rem 4rem; padding:2rem; border-radius:24px; }
     .feedback-card { min-width:100%; }
     .about-grid { grid-template-columns:1fr; }
     .about-visual { display:none; }
-    
-    .filters, .sub-bar-base { 
-        justify-content:flex-start; overflow-x:auto; flex-wrap:nowrap; padding-bottom:12px; 
-        -webkit-overflow-scrolling:touch; scrollbar-width: none; width: 100%;
-    }
-    .filters::-webkit-scrollbar, .sub-bar-base::-webkit-scrollbar { display: none; }
-    .sub-bar-container { align-items:flex-start; width:100%; }
-    
+    .filters, .sub-bar-base { justify-content:flex-start; overflow-x:auto; flex-wrap:nowrap; padding-bottom:12px; -webkit-overflow-scrolling:touch; scrollbar-width: none; width: 100%; }
     .products-grid { grid-template-columns:1fr; }
-    
     .modal-box { padding:2rem 1.5rem; border-radius:24px; width:calc(100% - 2rem); margin:1rem; }
-    .modal-title { font-size:1.8rem; }
-    
     .footer-grid { grid-template-columns:1fr; gap:3rem; text-align:center; }
     .footer-logo { justify-content:center; }
-    .footer-desc { margin:0 auto 2rem; }
     .footer-links a { justify-content:center; }
     .cart-sidebar { width:100%; max-width:100%; }
     .cursor, .cursor-ring { display:none; }
-    .hero-actions { flex-direction:column; align-items:center; }
 }
-
 @media(max-width: 480px) {
     .btn-header-cart span.txt, .btn-header-cta span.txt { display: none; }
-    .btn-header-cart, .btn-header-cta { padding: 12px; justify-content: center; }
-    .btn-header-cart i, .btn-header-cta i { font-size: 1.3rem; }
+    .btn-header-cart, .btn-header-cta, .btn-header-tool { padding: 12px; justify-content: center; width:auto; height:auto; border-radius:12px;}
+    .btn-header-cart i, .btn-header-cta i, .btn-header-tool i { font-size: 1.3rem; }
     .header-inner { gap: 0.5rem; padding: 0 1rem; }
     .logo { font-size: 1.2rem; }
     .logo-icon { width: 34px; height: 34px; font-size: 1.1rem; }
@@ -595,18 +438,25 @@ footer::before { content:''; position:absolute; top:-50%; left:-10%; width:60vw;
 <header id="main-header">
     <div class="header-inner">
         <a href="#" class="logo">
-            <div class="logo-icon"><i class="ph-fill ph-package"></i></div>
-            Cia Das Embalagens
+            <div class="logo-icon"><i class="fas fa-box"></i></div>
+            <span data-i18n="logo_name">Cia Das Embalagens</span>
         </a>
         <div class="header-actions">
+            <button class="btn-header-tool" onclick="toggleLanguage()" title="Change Language / Mudar Idioma">
+                <i class="fas fa-globe" id="icon-lang"></i>
+            </button>
+            <button class="btn-header-tool" onclick="toggleTheme()" title="Dark Mode / Light Mode">
+                <i class="fas fa-moon" id="icon-theme"></i>
+            </button>
+
             <button class="btn-header-cart" onclick="abrirCarrinho()">
-                <i class="ph-bold ph-shopping-cart"></i> 
-                <span class="txt">Carrinho</span>
+                <i class="fas fa-shopping-cart"></i> 
+                <span class="txt" data-i18n="cart">Carrinho</span>
                 <span class="cart-badge" id="badgeCarrinho">0</span>
             </button>
             <button class="btn-header-cta" onclick="rolarPara('contato')">
-                <i class="ph ph-headset"></i> 
-                <span class="txt">Atendimento</span>
+                <i class="fas fa-headset"></i> 
+                <span class="txt" data-i18n="support">Atendimento</span>
             </button>
         </div>
     </div>
@@ -619,61 +469,61 @@ footer::before { content:''; position:absolute; top:-50%; left:-10%; width:60vw;
     <div class="hero-content">
         <div class="hero-tag">
             <span class="hero-tag-dot"></span>
-            Direto da Fábrica · São Paulo
+            <span data-i18n="hero_tag">Direto da Fábrica · São Paulo</span>
         </div>
-        <h1>Soluções completas em<br><span class="highlight">Embalagens.</span></h1>
-        <p class="hero-desc">Do papelão ao plástico, do isopor às sacolas — tudo para o seu negócio em um só lugar, com qualidade industrial e preço de fábrica.</p>
+        <h1 data-i18n="hero_title">Soluções completas em<br><span class="highlight">Embalagens.</span></h1>
+        <p class="hero-desc" data-i18n="hero_desc">Do papelão ao plástico, do isopor às sacolas — tudo para o seu negócio em um só lugar, com qualidade industrial e preço de fábrica.</p>
         <div class="hero-actions">
             <button class="btn-hero-primary" onclick="rolarPara('produtos')">
-                <i class="ph-bold ph-squares-four"></i> Explorar Catálogo
+                <i class="fas fa-th-large"></i> <span data-i18n="hero_btn1">Explorar Catálogo</span>
             </button>
             <a class="btn-hero-secondary" href="https://wa.me/5511972999835" target="_blank">
-                <i class="ph-fill ph-whatsapp-logo"></i> Falar no WhatsApp
+                <i class="fab fa-whatsapp"></i> <span data-i18n="hero_btn2">Falar no WhatsApp</span>
             </a>
         </div>
         <div class="hero-stats">
             <div class="hero-stat">
                 <div class="hero-stat-val" data-count="100">0+</div>
-                <div class="hero-stat-label">Produtos</div>
+                <div class="hero-stat-label" data-i18n="stat_products">Produtos</div>
             </div>
             <div class="hero-stat-divider"></div>
             <div class="hero-stat">
                 <div class="hero-stat-val" data-count="15">0+</div>
-                <div class="hero-stat-label">Anos no Mercado</div>
+                <div class="hero-stat-label" data-i18n="stat_years">Anos no Mercado</div>
             </div>
             <div class="hero-stat-divider"></div>
             <div class="hero-stat">
                 <div class="hero-stat-val" data-count="5000">0+</div>
-                <div class="hero-stat-label">Clientes Atendidos</div>
+                <div class="hero-stat-label" data-i18n="stat_clients">Clientes Atendidos</div>
             </div>
         </div>
     </div>
     <div class="scroll-hint" onclick="rolarPara('sobre')">
         <div class="scroll-hint-mouse"><div class="scroll-hint-dot"></div></div>
-        <span class="scroll-hint-text">Role para explorar</span>
+        <span class="scroll-hint-text" data-i18n="scroll_hint">Role para explorar</span>
     </div>
 </section>
 
 <section class="section-trust">
     <div class="container">
         <div class="trust-card">
-            <p class="trust-title">⭐ O que nossos clientes dizem</p>
+            <p class="trust-title" data-i18n="trust_title">⭐ O que nossos clientes dizem</p>
             <div class="slider-wrap">
                 <div class="slider-track" id="feedbackSlider">
                     <div class="feedback-card">
                         <div class="stars">★★★★★</div>
-                        <p class="feedback-text">"Muitooo bom, recomendo o atendimento é 10... pessoal da uma atenção boa 👌 comprei umas marmitas é top."</p>
-                        <div class="feedback-author"><i class="ph-fill ph-user-circle"></i> Shirley Cristina</div>
+                        <p class="feedback-text" data-i18n="feedback1">"Muitooo bom, recomendo o atendimento é 10... pessoal da uma atenção boa 👌 comprei umas marmitas é top."</p>
+                        <div class="feedback-author"><i class="fas fa-user-circle"></i> Shirley Cristina</div>
                     </div>
                     <div class="feedback-card">
                         <div class="stars">★★★★★</div>
-                        <p class="feedback-text">"Tem muita coisa boa e o preço ótimo; os Atendentes são muito simpáticos."</p>
-                        <div class="feedback-author"><i class="ph-fill ph-user-circle"></i> Francis Luci</div>
+                        <p class="feedback-text" data-i18n="feedback2">"Tem muita coisa boa e o preço ótimo; os Atendentes são muito simpáticos."</p>
+                        <div class="feedback-author"><i class="fas fa-user-circle"></i> Francis Luci</div>
                     </div>
                     <div class="feedback-card">
                         <div class="stars">★★★★★</div>
-                        <p class="feedback-text">"A empresa tem tudo em descartáveis, o atendimento é ótimo, tem estacionamento e um ponto de ônibus em frente. Facinho de chegar."</p>
-                        <div class="feedback-author"><i class="ph-fill ph-user-circle"></i> Adelaide Rocha</div>
+                        <p class="feedback-text" data-i18n="feedback3">"A empresa tem tudo em descartáveis, o atendimento é ótimo, tem estacionamento e um ponto de ônibus em frente. Facinho de chegar."</p>
+                        <div class="feedback-author"><i class="fas fa-user-circle"></i> Adelaide Rocha</div>
                     </div>
                 </div>
             </div>
@@ -685,30 +535,30 @@ footer::before { content:''; position:absolute; top:-50%; left:-10%; width:60vw;
     <div class="container">
         <div class="about-grid">
             <div class="about-content">
-                <div class="section-label"><i class="ph-bold ph-factory"></i> Nossa Estrutura</div>
-                <h2>Estrutura industrial preparada para <span>sua demanda.</span></h2>
-                <p>Somos uma empresa especializada em embalagens corporativas com estrutura fabril própria. Atendemos desde pequenos empreendedores até grandes indústrias com agilidade, qualidade e os melhores preços do mercado.</p>
+                <div class="section-label"><i class="fas fa-industry"></i> <span data-i18n="about_label">Nossa Estrutura</span></div>
+                <h2 data-i18n="about_title">Estrutura industrial preparada para <span>sua demanda.</span></h2>
+                <p data-i18n="about_desc">Somos uma empresa especializada em embalagens corporativas com estrutura fabril própria. Atendemos desde pequenos empreendedores até grandes indústrias com agilidade, qualidade e os melhores preços do mercado.</p>
                 <div class="about-stats">
                     <div class="about-stat-card reveal">
                         <div class="about-stat-num" data-count="100">0</div>
-                        <div class="about-stat-label">Produtos em estoque</div>
+                        <div class="about-stat-label" data-i18n="stat_stock">Produtos em estoque</div>
                     </div>
                     <div class="about-stat-card reveal">
                         <div class="about-stat-num" data-count="15">0</div>
-                        <div class="about-stat-label">Anos de experiência</div>
+                        <div class="about-stat-label" data-i18n="stat_exp">Anos de experiência</div>
                     </div>
                     <div class="about-stat-card reveal">
                         <div class="about-stat-num" data-count="5000">0</div>
-                        <div class="about-stat-label">Clientes atendidos</div>
+                        <div class="about-stat-label" data-i18n="stat_clients_served">Clientes atendidos</div>
                     </div>
                     <div class="about-stat-card reveal">
                         <div class="about-stat-num" data-count="6">0</div>
-                        <div class="about-stat-label">Categorias de produtos</div>
+                        <div class="about-stat-label" data-i18n="stat_categories">Categorias de produtos</div>
                     </div>
                 </div>
             </div>
             <div class="about-visual">
-                <i class="ph-duotone ph-buildings"></i>
+                <i class="fas fa-building"></i>
             </div>
         </div>
     </div>
@@ -717,30 +567,30 @@ footer::before { content:''; position:absolute; top:-50%; left:-10%; width:60vw;
 <main class="section-catalog" id="produtos">
     <div class="container">
         <div class="catalog-header reveal">
-            <div class="section-label"><i class="ph-bold ph-package"></i> Catálogo Completo</div>
-            <h2>Nossos Produtos</h2>
-            <p>Selecione os produtos desejados, ajuste as quantidades e envie seu pedido direto pelo WhatsApp.</p>
+            <div class="section-label"><i class="fas fa-box"></i> <span data-i18n="catalog_label">Catálogo Completo</span></div>
+            <h2 data-i18n="catalog_title">Nossos Produtos</h2>
+            <p data-i18n="catalog_desc">Selecione os produtos desejados, ajuste as quantidades e envie seu pedido direto pelo WhatsApp.</p>
         </div>
 
         <div class="filters-wrapper">
             <div class="filters" id="containerFiltros">
-                <button class="btn-filter active" onclick="filtrarCategoria('todos',this)"><i class="ph-bold ph-squares-four"></i> Visão Geral</button>
-                <button class="btn-filter" onclick="filtrarCategoria('caixas',this)"><i class="ph-bold ph-package"></i> Caixas</button>
-                <button class="btn-filter" onclick="filtrarCategoria('sacolas',this)"><i class="ph-bold ph-shopping-bag"></i> Sacolas & Lixo</button>
-                <button class="btn-filter" onclick="filtrarCategoria('isopor',this)"><i class="ph-bold ph-snowflake"></i> Isopor</button>
-                <button class="btn-filter" onclick="filtrarCategoria('plastico',this)"><i class="ph-bold ph-flask"></i> Plásticos</button>
-                <button class="btn-filter" onclick="filtrarCategoria('festa',this)"><i class="ph-bold ph-confetti"></i> Festa & Descartáveis</button>
+                <button class="btn-filter active" onclick="filtrarCategoria('todos',this)"><i class="fas fa-th-large"></i> <span data-i18n="filter_all">Visão Geral</span></button>
+                <button class="btn-filter" onclick="filtrarCategoria('caixas',this)"><i class="fas fa-box"></i> <span data-i18n="filter_boxes">Caixas</span></button>
+                <button class="btn-filter" onclick="filtrarCategoria('sacolas',this)"><i class="fas fa-shopping-bag"></i> <span data-i18n="filter_bags">Sacolas & Lixo</span></button>
+                <button class="btn-filter" onclick="filtrarCategoria('isopor',this)"><i class="fas fa-snowflake"></i> <span data-i18n="filter_styro">Isopor</span></button>
+                <button class="btn-filter" onclick="filtrarCategoria('plastico',this)"><i class="fas fa-vial"></i> <span data-i18n="filter_plastic">Plásticos</span></button>
+                <button class="btn-filter" onclick="filtrarCategoria('festa',this)"><i class="fas fa-glass-cheers"></i> <span data-i18n="filter_party">Festa & Descartáveis</span></button>
             </div>
         </div>
 
         <div class="sub-bar-container">
             
             <div class="sub-bar-base" id="barraSubcategorias">
-                <button class="btn-sub active" onclick="filtrarSub('todas',this,'caixas')"><i class="ph-bold ph-squares-four"></i> Todas as Caixas</button>
-                <button class="btn-sub" onclick="filtrarSub('sedex',this,'caixas')"><i class="ph-bold ph-box-arrow-up"></i> Padrão Correios</button>
-                <button class="btn-sub" onclick="filtrarSub('confeiteiros',this,'caixas')"><i class="ph-bold ph-cake"></i> Para Doces</button>
-                <button class="btn-sub" onclick="filtrarSub('salgado',this,'caixas')"><i class="ph-bold ph-fork-knife"></i> Para Salgados</button>
-                <button class="btn-sub" onclick="filtrarSub('geral',this,'caixas')"><i class="ph-bold ph-cube"></i> Uso Geral</button>
+                <button class="btn-sub active" onclick="filtrarSub('todas',this,'caixas')"><i class="fas fa-th-large"></i> Todas as Caixas</button>
+                <button class="btn-sub" onclick="filtrarSub('sedex',this,'caixas')"><i class="fas fa-box-open"></i> Padrão Correios</button>
+                <button class="btn-sub" onclick="filtrarSub('confeiteiros',this,'caixas')"><i class="fas fa-birthday-cake"></i> Para Doces</button>
+                <button class="btn-sub" onclick="filtrarSub('salgado',this,'caixas')"><i class="fas fa-utensils"></i> Para Salgados</button>
+                <button class="btn-sub" onclick="filtrarSub('geral',this,'caixas')"><i class="fas fa-cube"></i> Uso Geral</button>
             </div>
 
             <div class="sub-bar-base" id="barraTipoSacolas">
@@ -754,68 +604,68 @@ footer::before { content:''; position:absolute; top:-50%; left:-10%; width:60vw;
             </div>
 
             <div class="sub-bar-base" id="barraPacoteSacolas">
-                <button class="btn-sub active" onclick="filtrarPacoteSacola('todos',this)"><i class="ph-bold ph-squares-four"></i> Todos os Pacotes</button>
-                <button class="btn-sub" onclick="filtrarPacoteSacola('10un',this)"><i class="ph-bold ph-stack"></i> Pacote c/ 10 un</button>
-                <button class="btn-sub" onclick="filtrarPacoteSacola('50un',this)"><i class="ph-bold ph-stack"></i> Pacote c/ 50 un</button>
+                <button class="btn-sub active" onclick="filtrarPacoteSacola('todos',this)"><i class="fas fa-th-large"></i> Todos os Pacotes</button>
+                <button class="btn-sub" onclick="filtrarPacoteSacola('10un',this)"><i class="fas fa-layer-group"></i> Pacote c/ 10 un</button>
+                <button class="btn-sub" onclick="filtrarPacoteSacola('50un',this)"><i class="fas fa-layer-group"></i> Pacote c/ 50 un</button>
             </div>
 
             <div class="sub-bar-base" id="barraPesoCrystal">
-                <button class="btn-sub active" onclick="filtrarPesoCrystal('todos',this)"><i class="ph-bold ph-squares-four"></i> Todos</button>
-                <button class="btn-sub" onclick="filtrarPesoCrystal('200g',this)"><i class="ph-bold ph-package"></i> Pacotes 200g</button>
-                <button class="btn-sub" onclick="filtrarPesoCrystal('1kg',this)"><i class="ph-bold ph-archive"></i> Fardos 1kg</button>
-                <button class="btn-sub" onclick="filtrarPesoCrystal('cento',this)"><i class="ph-bold ph-drop"></i> Centos (Geladinho/Gelão)</button>
+                <button class="btn-sub active" onclick="filtrarPesoCrystal('todos',this)"><i class="fas fa-th-large"></i> Todos</button>
+                <button class="btn-sub" onclick="filtrarPesoCrystal('200g',this)"><i class="fas fa-box"></i> Pacotes 200g</button>
+                <button class="btn-sub" onclick="filtrarPesoCrystal('1kg',this)"><i class="fas fa-box-archive"></i> Fardos 1kg</button>
+                <button class="btn-sub" onclick="filtrarPesoCrystal('cento',this)"><i class="fas fa-tint"></i> Centos (Geladinho/Gelão)</button>
             </div>
 
             <div class="sub-bar-base" id="barraTamanhoSacolas">
-                <button class="btn-sub active" onclick="filtrarTamanhoSacola('todas',this)"><i class="ph-bold ph-squares-four"></i> Todos os Tamanhos</button>
-                <button class="btn-sub" onclick="filtrarTamanhoSacola('p',this)"><i class="ph-bold ph-shopping-bag"></i> Pequenas</button>
-                <button class="btn-sub" onclick="filtrarTamanhoSacola('m',this)"><i class="ph-bold ph-shopping-bag"></i> Médias</button>
-                <button class="btn-sub" onclick="filtrarTamanhoSacola('g',this)"><i class="ph-bold ph-shopping-bag"></i> Grandes</button>
+                <button class="btn-sub active" onclick="filtrarTamanhoSacola('todas',this)"><i class="fas fa-th-large"></i> Todos os Tamanhos</button>
+                <button class="btn-sub" onclick="filtrarTamanhoSacola('p',this)"><i class="fas fa-shopping-bag"></i> Pequenas</button>
+                <button class="btn-sub" onclick="filtrarTamanhoSacola('m',this)"><i class="fas fa-shopping-bag"></i> Médias</button>
+                <button class="btn-sub" onclick="filtrarTamanhoSacola('g',this)"><i class="fas fa-shopping-bag"></i> Grandes</button>
             </div>
 
             <div class="sub-bar-base" id="barraSubcategoriasIsopor">
-                <button class="btn-sub active" onclick="filtrarSub('todas',this,'isopor')"><i class="ph-bold ph-squares-four"></i> Todos</button>
-                <button class="btn-sub" onclick="filtrarSub('marmitex',this,'isopor')"><i class="ph-bold ph-bowl-food"></i> Marmitex</button>
-                <button class="btn-sub" onclick="filtrarSub('caixa-isopor',this,'isopor')"><i class="ph-bold ph-cube"></i> Caixas de Isopor</button>
-                <button class="btn-sub" onclick="filtrarSub('copo-isopor',this,'isopor')"><i class="ph-bold ph-coffee"></i> Copos de Isopor</button>
-                <button class="btn-sub" onclick="filtrarSub('disco-isopor',this,'isopor')"><i class="ph-bold ph-circle"></i> Disco para Pizza</button>
+                <button class="btn-sub active" onclick="filtrarSub('todas',this,'isopor')"><i class="fas fa-th-large"></i> Todos</button>
+                <button class="btn-sub" onclick="filtrarSub('marmitex',this,'isopor')"><i class="fas fa-bowl-food"></i> Marmitex</button>
+                <button class="btn-sub" onclick="filtrarSub('caixa-isopor',this,'isopor')"><i class="fas fa-cube"></i> Caixas de Isopor</button>
+                <button class="btn-sub" onclick="filtrarSub('copo-isopor',this,'isopor')"><i class="fas fa-mug-hot"></i> Copos de Isopor</button>
+                <button class="btn-sub" onclick="filtrarSub('disco-isopor',this,'isopor')"><i class="fas fa-circle-dot"></i> Disco para Pizza</button>
             </div>
 
             <div class="sub-bar-base" id="barraMarcaMarmitex">
-                <button class="btn-sub active" onclick="filtrarMarcaMarmitex('todas',this)"><i class="ph-bold ph-squares-four"></i> Todas as Marcas</button>
-                <button class="btn-sub" onclick="filtrarMarcaMarmitex('Copabras',this)"><i class="ph-bold ph-tag"></i> Copabras</button>
-                <button class="btn-sub" onclick="filtrarMarcaMarmitex('Bom Apetite',this)"><i class="ph-bold ph-tag"></i> Bom Apetite</button>
+                <button class="btn-sub active" onclick="filtrarMarcaMarmitex('todas',this)"><i class="fas fa-th-large"></i> Todas as Marcas</button>
+                <button class="btn-sub" onclick="filtrarMarcaMarmitex('Copabras',this)"><i class="fas fa-tag"></i> Copabras</button>
+                <button class="btn-sub" onclick="filtrarMarcaMarmitex('Bom Apetite',this)"><i class="fas fa-tag"></i> Bom Apetite</button>
             </div>
 
             <div class="sub-bar-base" id="barraSubcategoriasPlastico">
-                <button class="btn-sub active" onclick="filtrarSub('todas',this,'plastico')"><i class="ph-bold ph-squares-four"></i> Todas</button>
-                <button class="btn-sub" onclick="filtrarSub('bolo-plastico',this,'plastico')"><i class="ph-bold ph-cake"></i> Embalagens de Bolo</button>
-                <button class="btn-sub" onclick="filtrarSub('marmita-plastico',this,'plastico')"><i class="ph-bold ph-bowl-food"></i> Marmitas para Congelar</button>
+                <button class="btn-sub active" onclick="filtrarSub('todas',this,'plastico')"><i class="fas fa-th-large"></i> Todas</button>
+                <button class="btn-sub" onclick="filtrarSub('bolo-plastico',this,'plastico')"><i class="fas fa-birthday-cake"></i> Embalagens de Bolo</button>
+                <button class="btn-sub" onclick="filtrarSub('marmita-plastico',this,'plastico')"><i class="fas fa-bowl-food"></i> Marmitas para Congelar</button>
             </div>
 
             <div class="sub-bar-base" id="barraMarcaPlastico">
-                <button class="btn-sub active" onclick="filtrarMarcaPlastico('todas',this)"><i class="ph-bold ph-squares-four"></i> Todas as Marcas</button>
-                <button class="btn-sub" onclick="filtrarMarcaPlastico('Galvanotek',this)"><i class="ph-bold ph-tag"></i> Galvanotek</button>
-                <button class="btn-sub" onclick="filtrarMarcaPlastico('Hiverpack',this)"><i class="ph-bold ph-tag"></i> Hiverpack</button>
+                <button class="btn-sub active" onclick="filtrarMarcaPlastico('todas',this)"><i class="fas fa-th-large"></i> Todas as Marcas</button>
+                <button class="btn-sub" onclick="filtrarMarcaPlastico('Galvanotek',this)"><i class="fas fa-tag"></i> Galvanotek</button>
+                <button class="btn-sub" onclick="filtrarMarcaPlastico('Hiverpack',this)"><i class="fas fa-tag"></i> Hiverpack</button>
             </div>
 
             <div class="sub-bar-base" id="barraMarcaMarmitaPlastico">
-                <button class="btn-sub active" onclick="filtrarMarcaMarmitaPlastico('todas',this)"><i class="ph-bold ph-squares-four"></i> Todas as Marcas</button>
-                <button class="btn-sub" onclick="filtrarMarcaMarmitaPlastico('Prafesta',this)"><i class="ph-bold ph-tag"></i> Prafesta</button>
-                <button class="btn-sub" onclick="filtrarMarcaMarmitaPlastico('Gourmax',this)"><i class="ph-bold ph-tag"></i> Gourmax</button>
+                <button class="btn-sub active" onclick="filtrarMarcaMarmitaPlastico('todas',this)"><i class="fas fa-th-large"></i> Todas as Marcas</button>
+                <button class="btn-sub" onclick="filtrarMarcaMarmitaPlastico('Prafesta',this)"><i class="fas fa-tag"></i> Prafesta</button>
+                <button class="btn-sub" onclick="filtrarMarcaMarmitaPlastico('Gourmax',this)"><i class="fas fa-tag"></i> Gourmax</button>
             </div>
 
             <div class="sub-bar-base" id="barraMarcaFesta">
-                <button class="btn-sub active" onclick="filtrarMarcaFesta('todas',this)"><i class="ph-bold ph-squares-four"></i> Todas as Marcas</button>
-                <button class="btn-sub" onclick="filtrarMarcaFesta('Elite',this)"><i class="ph-bold ph-fork-knife"></i> Elite (Talheres)</button>
-                <button class="btn-sub" onclick="filtrarMarcaFesta('Prafesta',this)"><i class="ph-bold ph-tag"></i> Prafesta</button>
-                <button class="btn-sub" onclick="filtrarMarcaFesta('Danubio',this)"><i class="ph-bold ph-tag"></i> Danubio</button>
+                <button class="btn-sub active" onclick="filtrarMarcaFesta('todas',this)"><i class="fas fa-th-large"></i> Todas as Marcas</button>
+                <button class="btn-sub" onclick="filtrarMarcaFesta('Elite',this)"><i class="fas fa-utensils"></i> Elite (Talheres)</button>
+                <button class="btn-sub" onclick="filtrarMarcaFesta('Prafesta',this)"><i class="fas fa-tag"></i> Prafesta</button>
+                <button class="btn-sub" onclick="filtrarMarcaFesta('Danubio',this)"><i class="fas fa-tag"></i> Danubio</button>
             </div>
             
             <div class="breadcrumb" id="breadcrumb">
-                <i class="ph-bold ph-package" id="breadcrumbIcon"></i>
+                <i class="fas fa-box" id="breadcrumbIcon"></i>
                 <span id="breadcrumbCat">Caixas</span>
-                <i class="ph-bold ph-caret-right"></i>
+                <i class="fas fa-chevron-right"></i>
                 <span id="breadcrumbSub">Todas</span>
             </div>
         </div>
@@ -826,7 +676,7 @@ footer::before { content:''; position:absolute; top:-50%; left:-10%; width:60vw;
 
 <div class="modal-backdrop" id="modalProduto">
     <div class="modal-box">
-        <button class="btn-close-modal" onclick="fecharModal()"><i class="ph-bold ph-x"></i></button>
+        <button class="btn-close-modal" onclick="fecharModal()"><i class="fas fa-times"></i></button>
         <div class="modal-head">
             <div class="modal-icon" id="modalIcone"></div>
             <h2 class="modal-title" id="modalTitulo"></h2>
@@ -837,7 +687,7 @@ footer::before { content:''; position:absolute; top:-50%; left:-10%; width:60vw;
         </div>
         <div class="modal-specs" id="modalEspecificacoes"></div>
         <button class="btn-send-wpp" style="width:100%;" onclick="adicionarDoModal()">
-            <i class="ph-fill ph-shopping-cart"></i> Adicionar ao Carrinho
+            <i class="fas fa-shopping-cart"></i> <span data-i18n="add_cart">Adicionar ao Carrinho</span>
         </button>
     </div>
 </div>
@@ -845,60 +695,186 @@ footer::before { content:''; position:absolute; top:-50%; left:-10%; width:60vw;
 <div class="cart-overlay" id="overlayCarrinho" onclick="fecharCarrinho()"></div>
 <aside class="cart-sidebar" id="sidebarCarrinho">
     <div class="cart-header">
-        <h3><i class="ph-fill ph-shopping-cart"></i> Meu Pedido</h3>
-        <button class="btn-close-cart" onclick="fecharCarrinho()"><i class="ph-bold ph-x"></i></button>
+        <h3><i class="fas fa-shopping-cart"></i> <span data-i18n="my_order">Meu Pedido</span></h3>
+        <button class="btn-close-cart" onclick="fecharCarrinho()"><i class="fas fa-times"></i></button>
     </div>
     <div class="cart-items" id="sidebarItens"></div>
     <div class="cart-footer">
         <div class="cart-total-row">
-            <span class="cart-total-label">Total estimado</span>
+            <span class="cart-total-label" data-i18n="estimated_total">Total estimado</span>
             <span class="cart-total-val" id="totalCarrinho">R$ 0,00</span>
         </div>
         <button class="btn-send-wpp" onclick="enviarWhatsApp()">
-            <i class="ph-fill ph-whatsapp-logo"></i> Enviar Pedido pelo WhatsApp
+            <i class="fab fa-whatsapp"></i> <span data-i18n="send_wpp">Enviar Pedido pelo WhatsApp</span>
         </button>
-        <button class="btn-clear" onclick="limparCarrinho()"><i class="ph-bold ph-trash"></i> Limpar carrinho</button>
-        <p class="wpp-notice"><i class="ph-fill ph-lock-simple" style="color:var(--green-wa);"></i> Seus dados só vão para o WhatsApp da loja</p>
+        <button class="btn-clear" onclick="limparCarrinho()"><i class="fas fa-trash-alt"></i> <span data-i18n="clear_cart">Limpar carrinho</span></button>
+        <p class="wpp-notice"><i class="fas fa-lock" style="color:var(--green-wa);"></i> <span data-i18n="privacy_note">Seus dados só vão para o WhatsApp da loja</span></p>
     </div>
 </aside>
 
 <a href="https://wa.me/5511972999835?text=Ol%C3%A1%2C+visitei+o+site+e+gostaria+de+atendimento" target="_blank" class="whatsapp-float">
-    <i class="ph-fill ph-whatsapp-logo"></i>
+    <i class="fab fa-whatsapp"></i>
 </a>
 
 <footer id="contato">
     <div class="footer-grid">
         <div class="footer-col">
             <div class="footer-logo">
-                <div class="logo-icon"><i class="ph-fill ph-package"></i></div>
-                Cia Das Embalagens
+                <div class="logo-icon"><i class="fas fa-box"></i></div>
+                <span data-i18n="logo_name">Cia Das Embalagens</span>
             </div>
-            <p class="footer-desc">Sua estrutura logística merece a melhor proteção. Qualidade premium em papelão ondulado para o mercado empresarial.</p>
+            <p class="footer-desc" data-i18n="footer_desc">Sua estrutura logística merece a melhor proteção. Qualidade premium em papelão ondulado para o mercado empresarial.</p>
         </div>
         <div class="footer-col">
-            <h4>Atendimento Comercial</h4>
+            <h4 data-i18n="footer_contact">Atendimento Comercial</h4>
             <ul class="footer-links">
-                <li><a href="https://wa.me/5511972999835" target="_blank"><i class="ph-fill ph-whatsapp-logo" style="font-size:1.3rem;color:var(--green-wa);"></i> (11) 97299-9835</a></li>
-                <li><a href="mailto:contato@ciaembalagens.com.br"><i class="ph-fill ph-envelope-simple" style="font-size:1.3rem;"></i> contato@ciaembalagens.com.br</a></li>
-                <li><a href="https://www.instagram.com/ciadasembalagens_/" target="_blank"><i class="ph-fill ph-instagram-logo" style="font-size:1.3rem;"></i> @ciadasembalagens_</a></li>
+                <li><a href="https://wa.me/5511972999835" target="_blank"><i class="fab fa-whatsapp" style="font-size:1.3rem;color:var(--green-wa);"></i> (11) 97299-9835</a></li>
+                <li><a href="mailto:contato@ciaembalagens.com.br"><i class="fas fa-envelope" style="font-size:1.3rem;"></i> contato@ciaembalagens.com.br</a></li>
+                <li><a href="https://www.instagram.com/ciadasembalagens_/" target="_blank"><i class="fab fa-instagram" style="font-size:1.3rem;"></i> @ciadasembalagens_</a></li>
             </ul>
-            <div style="margin-top:1.25rem;font-weight:700;color:rgba(255,255,255,.7);font-size:.9rem;">📍 Nossa Loja</div>
+            <div style="margin-top:1.25rem;font-weight:700;color:rgba(255,255,255,.7);font-size:.9rem;" data-i18n="footer_address_title">📍 Nossa Loja</div>
             <p class="footer-address">Av. Paula Ferreira, 2871 - Vila Pereira Barreto<br>São Paulo - SP, 02915-100</p>
         </div>
         <div class="footer-col">
-            <h4>Acesso Rápido</h4>
+            <h4 data-i18n="footer_links">Acesso Rápido</h4>
             <ul class="footer-links">
-                <li><a href="#inicio"><i class="ph-bold ph-caret-right"></i> Início</a></li>
-                <li><a href="#sobre"><i class="ph-bold ph-caret-right"></i> Nossa Fábrica</a></li>
-                <li><a href="#produtos"><i class="ph-bold ph-caret-right"></i> Catálogo</a></li>
+                <li><a href="#inicio"><i class="fas fa-chevron-right"></i> <span data-i18n="footer_home">Início</span></a></li>
+                <li><a href="#sobre"><i class="fas fa-chevron-right"></i> <span data-i18n="footer_about">Nossa Fábrica</span></a></li>
+                <li><a href="#produtos"><i class="fas fa-chevron-right"></i> <span data-i18n="footer_catalog">Catálogo</span></a></li>
             </ul>
         </div>
     </div>
     <hr class="footer-divider">
-    <div class="footer-copy">© 2026 Cia Das Embalagens. Todos os direitos reservados. · Desenvolvido para alta performance corporativa.</div>
+    <div class="footer-copy">© 2026 Cia Das Embalagens. <span data-i18n="footer_copy">Todos os direitos reservados. · Desenvolvido para alta performance corporativa.</span></div>
 </footer>
 
 <script>
+/* ══════════════════════════════════════════════
+   I18N (TRADUÇÃO PT-BR <-> EN)
+══════════════════════════════════════════════ */
+const dict = {
+    pt: {
+        logo_name: "Cia Das Embalagens",
+        cart: "Carrinho",
+        support: "Atendimento",
+        hero_tag: "Direto da Fábrica · São Paulo",
+        hero_title: "Soluções completas em<br><span class='highlight'>Embalagens.</span>",
+        hero_desc: "Do papelão ao plástico, do isopor às sacolas — tudo para o seu negócio em um só lugar, com qualidade industrial e preço de fábrica.",
+        hero_btn1: "Explorar Catálogo",
+        hero_btn2: "Falar no WhatsApp",
+        stat_products: "Produtos",
+        stat_years: "Anos no Mercado",
+        stat_clients: "Clientes Atendidos",
+        scroll_hint: "Role para explorar",
+        trust_title: "⭐ O que nossos clientes dizem",
+        feedback1: `"Muitooo bom, recomendo o atendimento é 10... pessoal da uma atenção boa 👌 comprei umas marmitas é top."`,
+        feedback2: `"Tem muita coisa boa e o preço ótimo; os Atendentes são muito simpáticos."`,
+        feedback3: `"A empresa tem tudo em descartáveis, o atendimento é ótimo, tem estacionamento e um ponto de ônibus em frente. Facinho de chegar."`,
+        about_label: "Nossa Estrutura",
+        about_title: "Estrutura industrial preparada para <span>sua demanda.</span>",
+        about_desc: "Somos uma empresa especializada em embalagens corporativas com estrutura fabril própria. Atendemos desde pequenos empreendedores até grandes indústrias com agilidade, qualidade e os melhores preços do mercado.",
+        stat_stock: "Produtos em estoque",
+        stat_exp: "Anos de experiência",
+        stat_clients_served: "Clientes atendidos",
+        stat_categories: "Categorias de produtos",
+        catalog_label: "Catálogo Completo",
+        catalog_title: "Nossos Produtos",
+        catalog_desc: "Selecione os produtos desejados, ajuste as quantidades e envie seu pedido direto pelo WhatsApp.",
+        filter_all: "Visão Geral",
+        filter_boxes: "Caixas",
+        filter_bags: "Sacolas & Lixo",
+        filter_styro: "Isopor",
+        filter_plastic: "Plásticos",
+        filter_party: "Festa & Descartáveis",
+        add_cart: "Adicionar ao Carrinho",
+        my_order: "Meu Pedido",
+        estimated_total: "Total estimado",
+        send_wpp: "Enviar Pedido pelo WhatsApp",
+        clear_cart: "Limpar carrinho",
+        privacy_note: "Seus dados só vão para o WhatsApp da loja",
+        footer_desc: "Sua estrutura logística merece a melhor proteção. Qualidade premium em papelão ondulado para o mercado empresarial.",
+        footer_contact: "Atendimento Comercial",
+        footer_address_title: "📍 Nossa Loja",
+        footer_links: "Acesso Rápido",
+        footer_home: "Início",
+        footer_about: "Nossa Fábrica",
+        footer_catalog: "Catálogo",
+        footer_copy: "Todos os direitos reservados. · Desenvolvido para alta performance corporativa."
+    },
+    en: {
+        logo_name: "Cia Packaging",
+        cart: "Cart",
+        support: "Support",
+        hero_tag: "Factory Direct · São Paulo",
+        hero_title: "Complete solutions in<br><span class='highlight'>Packaging.</span>",
+        hero_desc: "From cardboard to plastic, styrofoam to bags — everything for your business in one place, with industrial quality and factory prices.",
+        hero_btn1: "Explore Catalog",
+        hero_btn2: "Chat on WhatsApp",
+        stat_products: "Products",
+        stat_years: "Years in Market",
+        stat_clients: "Clients Served",
+        scroll_hint: "Scroll to explore",
+        trust_title: "⭐ What our clients say",
+        feedback1: `"Veeery good, I recommend the service is a 10... the staff gives good attention 👌 I bought some lunch boxes, they are top notch."`,
+        feedback2: `"Lots of good stuff and great prices; the attendants are very friendly."`,
+        feedback3: `"The company has everything in disposables, great service, parking and a bus stop right in front. Easy to get to."`,
+        about_label: "Our Structure",
+        about_title: "Industrial structure ready for <span>your demand.</span>",
+        about_desc: "We are a company specialized in corporate packaging with our own manufacturing structure. We serve everyone from small entrepreneurs to large industries with agility, quality, and the best prices on the market.",
+        stat_stock: "Products in stock",
+        stat_exp: "Years of experience",
+        stat_clients_served: "Clients served",
+        stat_categories: "Product categories",
+        catalog_label: "Complete Catalog",
+        catalog_title: "Our Products",
+        catalog_desc: "Select your desired products, adjust the quantities, and send your order directly via WhatsApp.",
+        filter_all: "Overview",
+        filter_boxes: "Boxes",
+        filter_bags: "Bags & Trash",
+        filter_styro: "Styrofoam",
+        filter_plastic: "Plastics",
+        filter_party: "Party & Disposables",
+        add_cart: "Add to Cart",
+        my_order: "My Order",
+        estimated_total: "Estimated Total",
+        send_wpp: "Send Order via WhatsApp",
+        clear_cart: "Clear Cart",
+        privacy_note: "Your data goes straight to the store's WhatsApp",
+        footer_desc: "Your logistics structure deserves the best protection. Premium corrugated cardboard quality for the corporate market.",
+        footer_contact: "Commercial Support",
+        footer_address_title: "📍 Our Store",
+        footer_links: "Quick Access",
+        footer_home: "Home",
+        footer_about: "Our Factory",
+        footer_catalog: "Catalog",
+        footer_copy: "All rights reserved. · Developed for high corporate performance."
+    }
+};
+
+let currentLang = 'pt';
+function toggleLanguage() {
+    currentLang = currentLang === 'pt' ? 'en' : 'pt';
+    document.querySelectorAll('[data-i18n]').forEach(el => {
+        const key = el.getAttribute('data-i18n');
+        if(dict[currentLang][key]) el.innerHTML = dict[currentLang][key];
+    });
+}
+
+/* ══════════════════════════════════════════════
+   DARK MODE TOGGLE
+══════════════════════════════════════════════ */
+function toggleTheme() {
+    const html = document.documentElement;
+    const icon = document.getElementById('icon-theme');
+    if (html.getAttribute('data-theme') === 'dark') {
+        html.setAttribute('data-theme', 'light');
+        icon.className = 'fas fa-moon';
+    } else {
+        html.setAttribute('data-theme', 'dark');
+        icon.className = 'fas fa-sun';
+    }
+}
+
 /* ══════════════════════════════════════════════
    CURSOR PERSONALIZADO
 ══════════════════════════════════════════════ */
@@ -1027,7 +1003,7 @@ document.addEventListener('click', e => {
 });
 
 /* ══════════════════════════════════════════════
-   SVGs CUSTOMIZADOS & REALISTAS
+   SVGs CUSTOMIZADOS & REALISTAS (3D VIBE)
 ══════════════════════════════════════════════ */
 const svgProdutos = {
     caixa_correio:`<svg viewBox="0 0 130 130" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="15" y="45" width="100" height="70" rx="4" fill="#e2e8f0" stroke="#64748b" stroke-width="2.5"/><path d="M15 55 L65 75 L115 55" stroke="#64748b" stroke-width="2.5" fill="none"/><path d="M65 75 L65 115" stroke="#64748b" stroke-width="2.5" fill="none"/><rect x="55" y="45" width="20" height="30" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1.5"/><path d="M30 25 L65 10 L100 25 L115 45 L15 45 Z" fill="#f8fafc" stroke="#64748b" stroke-width="2.5"/><path d="M35 55 L55 63 M75 63 L95 55" stroke="#cbd5e1" stroke-width="6" stroke-linecap="square"/><rect x="40" y="30" width="30" height="10" fill="#fff" stroke="#cbd5e1" stroke-width="1"/><path d="M42 33 L68 33 M42 37 L58 37" stroke="#1e293b" stroke-width="1.5"/></svg>`,
@@ -1248,14 +1224,14 @@ const listaProdutos = [
 ];
 
 const iconesEspec = {
-    "Medidas Externas":"ph-ruler","Dimensões":"ph-ruler","Medidas":"ph-ruler",
-    "Tipo de Onda":"ph-waves","Gramatura":"ph-scales","Material":"ph-cube",
-    "Capacidade":"ph-package","Número":"ph-hash","Formato":"ph-shapes",
-    "Uso":"ph-check-circle","Cor":"ph-palette","Marca":"ph-tag",
-    "Venda":"ph-storefront","Quantidade":"ph-stack","Temperatura":"ph-thermometer",
-    "Altura":"ph-arrows-vertical","Diâmetro":"ph-circle","Modelo":"ph-tag",
-    "Alça":"ph-link","Tampa":"ph-check-circle","Espessura":"ph-arrows-out-line",
-    "Tipo":"ph-tag", "Peso":"ph-scales"
+    "Medidas Externas":"fas fa-ruler","Dimensões":"fas fa-ruler","Medidas":"fas fa-ruler",
+    "Tipo de Onda":"fas fa-water","Gramatura":"fas fa-weight-hanging","Material":"fas fa-cube",
+    "Capacidade":"fas fa-box","Número":"fas fa-hashtag","Formato":"fas fa-shapes",
+    "Uso":"fas fa-check-circle","Cor":"fas fa-palette","Marca":"fas fa-tag",
+    "Venda":"fas fa-store","Quantidade":"fas fa-layer-group","Temperatura":"fas fa-thermometer-half",
+    "Altura":"fas fa-arrows-alt-v","Diâmetro":"fas fa-circle-notch","Modelo":"fas fa-tag",
+    "Alça":"fas fa-link","Tampa":"fas fa-check-circle","Espessura":"fas fa-expand-alt",
+    "Tipo":"fas fa-tag", "Peso":"fas fa-weight"
 };
 
 const sacolarConfig = {
@@ -1298,8 +1274,13 @@ function adicionarAoCarrinho(id,qtd){
     const btn=document.getElementById(`btn-add-${id}`);
     if(btn){
         btn.classList.add("added");
-        btn.innerHTML=`<i class="ph-fill ph-check"></i> Adicionado!`;
-        setTimeout(()=>{btn.classList.remove("added");btn.innerHTML=`<i class="ph-bold ph-shopping-cart"></i> Adicionar`;},1800);
+        const addedText = currentLang === 'en' ? 'Added!' : 'Adicionado!';
+        btn.innerHTML=`<i class="fas fa-check"></i> ${addedText}`;
+        setTimeout(()=>{
+            btn.classList.remove("added");
+            const btnText = currentLang === 'en' ? 'Add' : 'Adicionar';
+            btn.innerHTML=`<i class="fas fa-shopping-cart"></i> ${btnText}`;
+        },1800);
     }
 }
 
@@ -1320,7 +1301,8 @@ function removerDoCarrinho(id){
 
 function limparCarrinho(){
     if(!Object.keys(carrinho).length)return;
-    if(!confirm("Deseja limpar todos os itens do carrinho?"))return;
+    const msg = currentLang === 'en' ? "Clear all items from cart?" : "Deseja limpar todos os itens do carrinho?";
+    if(!confirm(msg))return;
     carrinho={};
     document.querySelectorAll(".product-card.in-cart").forEach(c=>c.classList.remove("in-cart"));
     renderizarSidebar(); atualizarBadge();
@@ -1330,14 +1312,19 @@ function renderizarSidebar(){
     const container=document.getElementById("sidebarItens"),totalEl=document.getElementById("totalCarrinho");
     const itens=Object.values(carrinho);
     if(!itens.length){
-        container.innerHTML=`<div class="cart-empty"><i class="ph-light ph-shopping-cart"></i><p>Seu carrinho está vazio</p><span style="font-size:.88rem;color:var(--text-muted);">Adicione produtos do catálogo</span></div>`;
+        const emptyTitle = currentLang === 'en' ? "Your cart is empty" : "Seu carrinho está vazio";
+        const emptySub = currentLang === 'en' ? "Add products from the catalog" : "Adicione produtos do catálogo";
+        container.innerHTML=`<div class="cart-empty"><i class="fas fa-cart-arrow-down"></i><p>${emptyTitle}</p><span style="font-size:.88rem;color:var(--text-muted);">${emptySub}</span></div>`;
         totalEl.textContent="R$ 0,00"; return;
     }
+    
+    const consText = currentLang === 'en' ? "On request" : "Sob consulta";
+    
     container.innerHTML=itens.map(({produto:p,qtd})=>{
         const sub=typeof p.preco==="number"?(p.preco*qtd).toLocaleString("pt-BR",{style:"currency",currency:"BRL"}):"—";
-        const uf=typeof p.preco==="number"?p.preco.toLocaleString("pt-BR",{style:"currency",currency:"BRL"}):"Sob consulta";
+        const uf=typeof p.preco==="number"?p.preco.toLocaleString("pt-BR",{style:"currency",currency:"BRL"}):consText;
         return `<div class="cart-item">
-            <div class="cart-item-icon"><i class="ph-duotone ${p.icone}"></i></div>
+            <div class="cart-item-icon">${getSvg(p)}</div>
             <div class="cart-item-info"><div class="cart-item-name">${p.nome}</div><div class="cart-item-price">${uf}${p.unidade}</div></div>
             <div class="cart-item-controls">
                 <div class="cart-qty-ctrl">
@@ -1346,7 +1333,7 @@ function renderizarSidebar(){
                     <button class="cart-qty-btn" onclick="alterarQtdCarrinho(${p.id},1)">+</button>
                 </div>
                 <span class="cart-subtotal">${sub}</span>
-                <button class="btn-remove-item" onclick="removerDoCarrinho(${p.id})"><i class="ph-bold ph-trash"></i></button>
+                <button class="btn-remove-item" onclick="removerDoCarrinho(${p.id})"><i class="fas fa-trash-alt"></i></button>
             </div>
         </div>`;
     }).join("");
@@ -1358,14 +1345,24 @@ function fecharCarrinho(){document.getElementById("sidebarCarrinho").classList.r
 
 function enviarWhatsApp(){
     const itens=Object.values(carrinho);
-    if(!itens.length){alert("Adicione pelo menos um produto ao carrinho antes de enviar.");return;}
+    if(!itens.length){
+        const msg = currentLang === 'en' ? "Add at least one product before sending." : "Adicione pelo menos um produto ao carrinho antes de enviar.";
+        alert(msg);
+        return;
+    }
+    const consText = currentLang === 'en' ? "On request" : "Sob consulta";
     const linhas=itens.map(({produto:p,qtd})=>{
-        const fmt=typeof p.preco==="number"?p.preco.toLocaleString("pt-BR",{style:"currency",currency:"BRL"}):"Sob consulta";
+        const fmt=typeof p.preco==="number"?p.preco.toLocaleString("pt-BR",{style:"currency",currency:"BRL"}):consText;
         const sub=typeof p.preco==="number"?(p.preco*qtd).toLocaleString("pt-BR",{style:"currency",currency:"BRL"}):"";
         return `• ${p.nome} — ${qtd}x ${fmt}${sub?` = ${sub}`:""}`;
     });
     const total=totalValor().toLocaleString("pt-BR",{style:"currency",currency:"BRL"});
-    const msg=`Olá! Gostaria de fazer um pedido pela Cia Das Embalagens.\n\n*Itens do Pedido:*\n${linhas.join("\n")}\n\n*Total estimado:* ${total}\n\nPoderia confirmar se há no estoque esses itens? Obrigado(a)!`;
+    
+    let msg = `Olá! Gostaria de fazer um pedido pela Cia Das Embalagens.\n\n*Itens do Pedido:*\n${linhas.join("\n")}\n\n*Total estimado:* ${total}\n\nPoderia confirmar se há no estoque esses itens? Obrigado(a)!`;
+    if(currentLang === 'en') {
+        msg = `Hello! I would like to place an order via Cia Das Embalagens.\n\n*Order Items:*\n${linhas.join("\n")}\n\n*Estimated Total:* ${total}\n\nCould you please confirm if these items are in stock? Thank you!`;
+    }
+    
     window.open(`https://wa.me/5511972999835?text=${encodeURIComponent(msg)}`,"_blank");
 }
 
@@ -1378,7 +1375,8 @@ function abrirModal(produto){
     document.getElementById("modalTitulo").textContent=produto.nome;
     const cp=document.getElementById("modalContainerPreco");
     if(produto.preco==="Sob consulta"){
-        document.getElementById("modalPrecoValor").textContent="Sob Consulta";
+        const txt = currentLang === 'en' ? 'On Request' : 'Sob Consulta';
+        document.getElementById("modalPrecoValor").textContent=txt;
         document.getElementById("modalPrecoUnit").textContent="";
         cp.style.background="var(--text-dark)";
     } else {
@@ -1388,8 +1386,8 @@ function abrirModal(produto){
     }
     let html="";
     Object.entries(produto.especificacoes).forEach(([k,v])=>{
-        const ic=iconesEspec[k]||"ph-check-circle";
-        html+=`<div class="spec-row"><span class="spec-label"><i class="ph-bold ${ic}" style="color:var(--blue-600);"></i> ${k}</span><span class="spec-value">${v}</span></div>`;
+        const ic=iconesEspec[k]||"fas fa-check-circle";
+        html+=`<div class="spec-row"><span class="spec-label"><i class="${ic}" style="color:var(--blue-600);"></i> ${k}</span><span class="spec-value">${v}</span></div>`;
     });
     document.getElementById("modalEspecificacoes").innerHTML=html;
     document.getElementById("modalProduto").classList.add("active");
@@ -1704,17 +1702,17 @@ function criarSecao(titulo,produtos,container,cat,tipo){
     secao.className="product-section";
 
     let tituloClass="section-title";
-    let icone="ph-squares-four";
+    let icone="fas fa-th-large";
     if(cat==="sacolas"&&tipo){
         const cfg=sacolarConfig[tipo];
         tituloClass+=(cfg?.tituloClass||" titulo-sacola");
-        icone="ph-shopping-bag";
-    } else if(cat==="isopor"){tituloClass+=" titulo-isopor";icone="ph-snowflake";}
-    else if(cat==="caixas"){icone="ph-package";}
-    else if(cat==="plastico"){tituloClass+=" titulo-plastico";icone="ph-flask";}
-    else if(cat==="festa"){tituloClass+=" titulo-plastico";icone="ph-confetti";}
+        icone="fas fa-shopping-bag";
+    } else if(cat==="isopor"){tituloClass+=" titulo-isopor";icone="fas fa-snowflake";}
+    else if(cat==="caixas"){icone="fas fa-box";}
+    else if(cat==="plastico"){tituloClass+=" titulo-plastico";icone="fas fa-vial";}
+    else if(cat==="festa"){tituloClass+=" titulo-plastico";icone="fas fa-glass-cheers";}
 
-    secao.innerHTML=`<h2 class="${tituloClass}"><i class="ph-fill ${icone}"></i> ${titulo}</h2>`;
+    secao.innerHTML=`<h2 class="${tituloClass}"><i class="${icone}"></i> ${titulo}</h2>`;
     const grade=document.createElement("div");
     grade.className="products-grid";
 
@@ -1730,10 +1728,17 @@ function criarSecao(titulo,produtos,container,cat,tipo){
         card.id=`card-${p.id}`;
 
         const ehC=p.preco==="Sob consulta";
-        const pFmt=!ehC?p.preco.toLocaleString("pt-BR",{style:"currency",currency:"BRL"}):"";
+        let pFmt = "";
+        let txtCons = currentLang === 'en' ? "On Request" : "Sob consulta";
+        let txtConsMin = currentLang === 'en' ? "Contact us" : "Consulte-nos";
+        let txtPart = currentLang === 'en' ? "Starts at" : "A partir de";
+        let btnAdd = currentLang === 'en' ? "Add" : "Adicionar";
+
+        if(!ehC) pFmt=p.preco.toLocaleString("pt-BR",{style:"currency",currency:"BRL"});
+
         const htmlPreco=ehC
-            ?`<div class="price-box"><span class="price-label">Consulte-nos</span><span class="price-value" style="font-size:1.4rem;">Sob consulta</span></div>`
-            :`<div class="price-box"><span class="price-label">A partir de</span><div class="price-row"><span class="price-value">${pFmt}</span><span class="price-unit">${p.unidade}</span></div></div>`;
+            ?`<div class="price-box"><span class="price-label">${txtConsMin}</span><span class="price-value" style="font-size:1.4rem;">${txtCons}</span></div>`
+            :`<div class="price-box"><span class="price-label">${txtPart}</span><div class="price-row"><span class="price-value">${pFmt}</span><span class="price-unit">${p.unidade}</span></div></div>`;
 
         let badgeMarca='';
         if(p.subcategoria==='marmitex'&&p.marca) badgeMarca=`<span class="brand-badge" style="background:#f57f17;color:#fff;">${p.marca}</span>`;
@@ -1744,9 +1749,12 @@ function criarSecao(titulo,produtos,container,cat,tipo){
             badgeMarca=`<span class="brand-badge" style="background:${corM};color:#fff;">${p.especificacoes.Marca}</span>`;
         }
 
+        const iconCartBtn = noCarrinho ? '<i class="fas fa-check"></i>' : '<i class="fas fa-shopping-cart"></i>';
+        const txtCartBtn = noCarrinho ? (currentLang === 'en' ? 'Added!' : 'Adicionado!') : btnAdd;
+
         card.innerHTML=`
             <div class="product-img">
-                <div class="cart-seal"><i class="ph-fill ph-check"></i> No carrinho</div>
+                <div class="cart-seal"><i class="fas fa-check"></i></div>
                 ${badgeMarca}
                 ${getSvg(p)}
             </div>
@@ -1762,10 +1770,10 @@ function criarSecao(titulo,produtos,container,cat,tipo){
                     </div>
                     <button class="btn-add${noCarrinho?" added":""}" id="btn-add-${p.id}"
                         onclick="event.stopPropagation();adicionarAoCarrinho(${p.id},document.getElementById('qtd-${p.id}').value)">
-                        <i class="ph-bold ph-shopping-cart"></i> Adicionar
+                        ${iconCartBtn} ${txtCartBtn}
                     </button>
                     <button class="btn-info" onclick="abrirModal(listaProdutos.find(x=>x.id===${p.id}))" title="Ver especificações">
-                        <i class="ph-bold ph-info"></i>
+                        <i class="fas fa-info-circle"></i>
                     </button>
                 </div>
             </div>`;
