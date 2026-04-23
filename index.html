@@ -48,6 +48,16 @@ a { text-decoration:none; color:inherit; }
 button { cursor:pointer; border:none; background:none; outline:none; }
 h1,h2,h3,h4,h5,h6 { color:var(--text-dark); font-weight:800; letter-spacing:-.025em; }
 
+/* FIX GLOBAL DE ÍCONES PARA FIREFOX/MOBILE */
+i[class^="ph"], i[class*=" ph"] {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    line-height: 1;
+    vertical-align: middle;
+}
+
 /* ── CURSOR PERSONALIZADO ── */
 .cursor { position:fixed; width:12px; height:12px; background:var(--blue-500); border-radius:50%; pointer-events:none; z-index:9999; transform:translate(-50%,-50%); transition:transform .1s ease, width .3s ease, height .3s ease, opacity .3s ease; mix-blend-mode:multiply; }
 .cursor-ring { position:fixed; width:40px; height:40px; border:2px solid rgba(37,99,235,.4); border-radius:50%; pointer-events:none; z-index:9998; transform:translate(-50%,-50%); transition:transform .15s ease, width .3s ease, height .3s ease, opacity .3s ease; }
@@ -151,7 +161,6 @@ header.scrolled { padding:.65rem 0; box-shadow:0 8px 32px -8px rgba(15,23,42,.08
     box-shadow:0 12px 32px rgba(0,0,0,.25);
 }
 .btn-hero-primary:hover { transform:translateY(-4px); box-shadow:0 20px 48px rgba(0,0,0,.35); background:var(--blue-50); }
-.btn-hero-primary i { color:var(--blue-600); font-size:1.3rem; }
 .btn-hero-secondary {
     background:rgba(255,255,255,.1); color:#fff; padding:18px 36px;
     border-radius:var(--radius-btn); font-weight:700; font-size:1.05rem;
@@ -204,7 +213,6 @@ header.scrolled { padding:.65rem 0; box-shadow:0 8px 32px -8px rgba(15,23,42,.08
 .feedback-card:hover { transform:translateY(-4px); box-shadow:var(--shadow-card); border-color:var(--blue-100); }
 .feedback-text { font-style:italic; font-size:.93rem; margin-bottom:1rem; color:var(--text-body); line-height:1.65; }
 .feedback-author { font-weight:700; color:var(--blue-600); display:flex; align-items:center; gap:8px; font-size:.9rem; }
-.feedback-author i { font-size:1.3rem; }
 
 /* ══════════════════════════════════════════════
    SEÇÃO SOBRE
@@ -323,7 +331,8 @@ header.scrolled { padding:.65rem 0; box-shadow:0 8px 32px -8px rgba(15,23,42,.08
 .titulo-sacola-kraft i, .titulo-sacola-kraft-alca i { color:#fde68a; background:#1c1008; }
 .titulo-plastico i { color:#15803d; background:#f0fdf4; }
 
-.products-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(310px,1fr)); gap:2rem; }
+/* AJUSTE PARA NÃO CORTAR NO MOBILE */
+.products-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(280px,1fr)); gap:2rem; }
 
 /* ── CARD DE PRODUTO ── */
 .product-card {
@@ -655,6 +664,7 @@ footer { background:var(--blue-950); color:#fff; padding:5.5rem 0 3rem; margin-t
     .footer-grid { grid-template-columns:1fr 1fr; }
     .about-grid { gap:2.5rem; }
 }
+
 @media(max-width:768px) {
     .hero { padding-top:9rem; min-height:85vh; }
     .hero h1 { font-size:2.5rem; }
@@ -673,8 +683,11 @@ footer { background:var(--blue-950); color:#fff; padding:5.5rem 0 3rem; margin-t
     .filters::-webkit-scrollbar, .sub-bar-base::-webkit-scrollbar, .sacolas-tipo-bar::-webkit-scrollbar, .sacolas-tamanho-bar::-webkit-scrollbar, .sacolas-pacote-bar::-webkit-scrollbar, .marmitex-marca-bar::-webkit-scrollbar, .plastico-marca-bar::-webkit-scrollbar { display: none; }
     
     .products-grid { grid-template-columns:1fr; }
-    .modal-box { padding:1.75rem 1.25rem; border-radius:20px; }
+    
+    /* Modal ajustes mobile - não cortar bordas */
+    .modal-box { padding:1.75rem 1.25rem; border-radius:20px; width:calc(100% - 2rem); margin:1rem; }
     .modal-title { font-size:1.6rem; }
+    
     .footer-grid { grid-template-columns:1fr; gap:2.5rem; text-align:center; }
     .footer-logo { justify-content:center; }
     .footer-desc { margin:0 auto 2rem; }
@@ -682,6 +695,15 @@ footer { background:var(--blue-950); color:#fff; padding:5.5rem 0 3rem; margin-t
     .cart-sidebar { width:100%; max-width:100%; }
     .cursor, .cursor-ring { display:none; }
     .hero-actions { flex-direction:column; align-items:center; }
+}
+
+/* Esconder textos dos botões do Header no mobile para não amassar o Layout */
+@media(max-width: 480px) {
+    .btn-header-cart span.txt, .btn-header-cta span.txt { display: none; }
+    .btn-header-cart, .btn-header-cta { padding: 10px; justify-content: center; }
+    .header-inner { gap: 0.5rem; }
+    .logo { font-size: 1.1rem; }
+    .logo-icon { width: 32px; height: 32px; font-size: 1rem; }
 }
     </style>
 </head>
@@ -698,11 +720,13 @@ footer { background:var(--blue-950); color:#fff; padding:5.5rem 0 3rem; margin-t
         </a>
         <div class="header-actions">
             <button class="btn-header-cart" onclick="abrirCarrinho()">
-                <i class="ph-bold ph-shopping-cart"></i> Carrinho
+                <i class="ph-bold ph-shopping-cart"></i> 
+                <span class="txt">Carrinho</span>
                 <span class="cart-badge" id="badgeCarrinho">0</span>
             </button>
             <button class="btn-header-cta" onclick="rolarPara('contato')">
-                <i class="ph ph-headset"></i> Atendimento
+                <i class="ph ph-headset"></i> 
+                <span class="txt">Atendimento</span>
             </button>
         </div>
     </div>
@@ -1132,13 +1156,10 @@ const svgProdutos = {
     disco_pizza:`<svg viewBox="0 0 130 130" fill="none" xmlns="http://www.w3.org/2000/svg"><ellipse cx="65" cy="65" rx="55" ry="12" fill="#e0f7fa" stroke="#00838f" stroke-width="2.5"/><ellipse cx="65" cy="60" rx="55" ry="12" fill="#f0fdff" stroke="#00838f" stroke-width="2.5"/><ellipse cx="65" cy="60" rx="42" ry="8" fill="#e0f7fa" stroke="#00acc1" stroke-width="1.5" stroke-dasharray="6,3"/><ellipse cx="65" cy="60" rx="28" ry="5" fill="#b2ebf2"/><text x="65" y="90" text-anchor="middle" font-size="9" fill="#00838f" font-weight="bold" font-family="sans-serif">PIZZA</text></svg>`,
     embalagem_bolo:`<svg viewBox="0 0 130 130" fill="none" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="cupula-grad" x1="0" y1="0" x2="0.3" y2="1"><stop offset="0%" stop-color="#e0f2fe" stop-opacity="0.85"/><stop offset="100%" stop-color="#bae6fd" stop-opacity="0.45"/></linearGradient></defs><rect x="18" y="92" width="94" height="16" rx="4" fill="#f1f5f9" stroke="#94a3b8" stroke-width="2"/><path d="M18 92 Q14 60 35 35 Q52 18 65 18 Q78 18 95 35 Q116 60 112 92" fill="url(#cupula-grad)" stroke="#38bdf8" stroke-width="2"/><ellipse cx="65" cy="18" rx="30" ry="8" fill="#e0f2fe" fill-opacity="0.6" stroke="#38bdf8" stroke-width="1.5"/><path d="M30 55 Q38 40 50 35" stroke="white" stroke-width="3" stroke-linecap="round" opacity="0.7"/><ellipse cx="65" cy="85" rx="34" ry="9" fill="#fde68a" stroke="#d97706" stroke-width="1.5"/><rect x="31" y="65" width="68" height="22" rx="3" fill="#fef3c7" stroke="#d97706" stroke-width="1.5"/><ellipse cx="65" cy="65" rx="34" ry="9" fill="#fde68a" stroke="#d97706" stroke-width="1.5"/><rect x="55" y="52" width="4" height="14" rx="2" fill="#f87171"/><rect x="65" y="49" width="4" height="17" rx="2" fill="#60a5fa"/><rect x="75" y="52" width="4" height="14" rx="2" fill="#a78bfa"/><ellipse cx="57" cy="51" rx="3" ry="4" fill="#fbbf24" opacity="0.9"/><ellipse cx="67" cy="48" rx="3" ry="4" fill="#fbbf24" opacity="0.9"/><ellipse cx="77" cy="51" rx="3" ry="4" fill="#fbbf24" opacity="0.9"/></svg>`,
     marmita_plastica:`<svg viewBox="0 0 130 130" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="10" y="28" width="110" height="34" rx="6" fill="#f8fafc" stroke="#cbd5e1" stroke-width="2"/><path d="M10 56 Q10 62 16 62 L114 62 Q120 62 120 56" fill="#e2e8f0" stroke="#cbd5e1" stroke-width="1.5"/><rect x="14" y="62" width="102" height="50" rx="5" fill="#ffffff" stroke="#cbd5e1" stroke-width="2"/><rect x="20" y="68" width="90" height="38" rx="3" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1"/><line x1="20" y1="87" x2="110" y2="87" stroke="#e2e8f0" stroke-width="1.5"/><line x1="75" y1="87" x2="75" y2="106" stroke="#e2e8f0" stroke-width="1.5"/><ellipse cx="47" cy="77" rx="18" ry="8" fill="#fbbf24" opacity="0.55"/><ellipse cx="90" cy="77" rx="14" ry="7" fill="#86efac" opacity="0.55"/><ellipse cx="55" cy="97" rx="14" ry="6" fill="#f87171" opacity="0.45"/><ellipse cx="88" cy="97" rx="9" ry="5" fill="#fde68a" opacity="0.5"/><path d="M22 35 Q50 32 80 35" stroke="white" stroke-width="2.5" stroke-linecap="round" opacity="0.8"/><rect x="38" y="33" width="54" height="18" rx="4" fill="#e65100"/><text x="65" y="45" text-anchor="middle" font-size="9" fill="white" font-weight="900" font-family="sans-serif" letter-spacing="0.5">MARMITA</text></svg>`,
-    
-    // Novos SVGs (Talheres e Potes Compatíveis)
     talheres:`<svg viewBox="0 0 130 130" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="25" y="25" width="80" height="80" rx="40" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="2"/><path d="M50 35 L50 60 C50 68 55 70 55 75 L55 100 M42 35 L42 50 M58 35 L58 50" stroke="#94a3b8" stroke-width="3.5" stroke-linecap="round" fill="none"/><path d="M80 35 C68 35 68 65 73 75 L73 100 M80 35 L80 100" stroke="#94a3b8" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>`,
     pote_quadrado:`<svg viewBox="0 0 130 130" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="25" y="50" width="80" height="60" rx="8" fill="#f8fafc" stroke="#94a3b8" stroke-width="2"/><path d="M25 55 L105 55" stroke="#e2e8f0" stroke-width="2"/><rect x="20" y="38" width="90" height="12" rx="4" fill="#e2e8f0" stroke="#94a3b8" stroke-width="2"/></svg>`,
     pote_redondo:`<svg viewBox="0 0 130 130" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M30 50 L35 100 Q40 105 65 105 Q90 105 95 100 L100 50 Z" fill="#f8fafc" stroke="#94a3b8" stroke-width="2"/><ellipse cx="65" cy="50" rx="35" ry="12" fill="#e2e8f0" stroke="#94a3b8" stroke-width="2"/><ellipse cx="65" cy="42" rx="37" ry="13" fill="#f1f5f9" stroke="#94a3b8" stroke-width="2"/></svg>`,
     pote_retangular:`<svg viewBox="0 0 130 130" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M20 50 L25 95 Q28 100 65 100 Q102 100 105 95 L110 50 Z" fill="#f8fafc" stroke="#94a3b8" stroke-width="2"/><rect x="15" y="38" width="100" height="14" rx="4" fill="#e2e8f0" stroke="#94a3b8" stroke-width="2"/><ellipse cx="65" cy="45" rx="45" ry="6" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1"/></svg>`,
-    
     default:`<svg viewBox="0 0 130 130" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="20" y="30" width="90" height="80" rx="6" fill="#dbeafe" stroke="#2563eb" stroke-width="2.5"/><rect x="20" y="30" width="90" height="24" rx="6" fill="#bfdbfe" stroke="#2563eb" stroke-width="2"/><rect x="46" y="30" width="38" height="24" rx="3" fill="#93c5fd" stroke="#2563eb" stroke-width="2"/><line x1="35" y1="72" x2="95" y2="72" stroke="#3b82f6" stroke-width="2" stroke-dasharray="5,3"/><line x1="35" y1="86" x2="95" y2="86" stroke="#3b82f6" stroke-width="2" stroke-dasharray="5,3"/><line x1="35" y1="100" x2="75" y2="100" stroke="#3b82f6" stroke-width="2" stroke-dasharray="5,3"/></svg>`
 };
 
