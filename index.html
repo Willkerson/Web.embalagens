@@ -1793,13 +1793,49 @@ function criarSecao(titulo,produtos,container,cat,tipo){
         cardObserver.observe(card);
     });
 
-    secao.appendChild(grade);
+ secao.appendChild(grade);
     container.appendChild(secao);
+    
+    // Ativa o tracking do mouse nos cards que acabaram de ser criados
+    ativarEfeito3DCards();
 }
 
 function alterarInputQtd(id,delta){
     const input=document.getElementById(`qtd-${id}`);
     if(!input)return; input.value=Math.max(1,(parseInt(input.value)||1)+delta);
+}
+    /* \u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550
+   EFEITO 3D INTERATIVO NOS CARDS (MOUSE TILT)
+\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550 */
+function ativarEfeito3DCards() {
+    const cards = document.querySelectorAll('.product-card');
+    
+    cards.forEach(card => {
+        card.addEventListener('mousemove', (e) => {
+            const rect = card.getBoundingClientRect();
+            // Posi��o do mouse dentro do card
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+            
+            // Centro do card
+            const centerX = rect.width / 2;
+            const centerY = rect.height / 2;
+            
+            // Calcula a inclina��o (multiplicador 8 = �ngulo m�ximo)
+            const rotateX = ((y - centerY) / centerY) * -8;
+            const rotateY = ((x - centerX) / centerX) * 8;
+            
+            // Aplica a transforma��o inline seguindo o mouse
+            card.style.transform = `translateY(-12px) perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.02, 1.02, 1.02)`;
+            card.style.transition = 'transform 0.1s ease-out'; // R�pido para n�o ter lag
+        });
+
+        card.addEventListener('mouseleave', () => {
+            // Remove o estilo inline para o CSS original voltar a assumir
+            card.style.transform = ''; 
+            card.style.transition = 'transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275)'; // Volta com efeito mola
+        });
+    });
 }
 
 /* ══════════════════════════════════════════════
