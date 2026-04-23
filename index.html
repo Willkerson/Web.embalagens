@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-BR" data-theme="light">
+<html lang="pt-BR" data-theme="dark">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
@@ -420,14 +420,16 @@ footer::before { content:''; position:absolute; top:-50%; left:-10%; width:60vw;
     .cart-sidebar { width:100%; max-width:100%; }
     .cursor, .cursor-ring { display:none; }
 }
-@media(max-width: 480px) {
-    .btn-header-cart span.txt, .btn-header-cta span.txt { display: none; }
-    .btn-header-cart, .btn-header-cta, .btn-header-tool { padding: 12px; justify-content: center; width:auto; height:auto; border-radius:12px;}
-    .btn-header-cart i, .btn-header-cta i, .btn-header-tool i { font-size: 1.3rem; }
-    .header-inner { gap: 0.5rem; padding: 0 1rem; }
-    .logo { font-size: 1.2rem; }
-    .logo-icon { width: 34px; height: 34px; font-size: 1.1rem; }
+/* \u2500\u2500 AJUSTE PARA �CONES VIA URL \u2500\u2500 */
+.icon-png {
+    width: 1.35em; height: 1.35em; object-fit: contain; vertical-align: middle;
+    display: inline-block; flex-shrink: 0; transition: transform 0.3s ease;
 }
+.logo-icon .icon-png { width: 24px; height: 24px; }
+.btn-header-tool .icon-png, .btn-header-cart .icon-png, .btn-header-cta .icon-png { width: 20px; height: 20px; }
+.whatsapp-float .icon-png { width: 34px; height: 34px; }
+.modal-icon .icon-png { width: 64px; height: 64px; }
+.logo-icon .icon-png, .btn-header-cta .icon-png { filter: brightness(0) invert(1); }
     </style>
 </head>
 <body>
@@ -438,24 +440,24 @@ footer::before { content:''; position:absolute; top:-50%; left:-10%; width:60vw;
 <header id="main-header">
     <div class="header-inner">
         <a href="#" class="logo">
-            <div class="logo-icon"><i class="fas fa-box"></i></div>
+            <div class="logo-icon"><img src="https://img.icons8.com/fluency/48/box.png" class="icon-png" alt="Logo"></div>
             <span data-i18n="logo_name">Cia Das Embalagens</span>
         </a>
         <div class="header-actions">
             <button class="btn-header-tool" onclick="toggleLanguage()" title="Change Language / Mudar Idioma">
-                <i class="fas fa-globe" id="icon-lang"></i>
+                <img src="https://img.icons8.com/fluency/48/globe.png" class="icon-png" id="icon-lang" alt="Idioma">
             </button>
             <button class="btn-header-tool" onclick="toggleTheme()" title="Dark Mode / Light Mode">
-                <i class="fas fa-moon" id="icon-theme"></i>
+                <img src="https://img.icons8.com/fluency/48/sun.png" class="icon-png" id="icon-theme" alt="Tema">
             </button>
 
             <button class="btn-header-cart" onclick="abrirCarrinho()">
-                <i class="fas fa-shopping-cart"></i> 
+                <img src="https://img.icons8.com/fluency/48/shopping-cart.png" class="icon-png" alt="Carrinho"> 
                 <span class="txt" data-i18n="cart">Carrinho</span>
                 <span class="cart-badge" id="badgeCarrinho">0</span>
             </button>
             <button class="btn-header-cta" onclick="rolarPara('contato')">
-                <i class="fas fa-headset"></i> 
+                <img src="https://img.icons8.com/fluency/48/headset.png" class="icon-png" alt="Atendimento"> 
                 <span class="txt" data-i18n="support">Atendimento</span>
             </button>
         </div>
