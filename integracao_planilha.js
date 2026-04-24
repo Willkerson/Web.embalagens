@@ -1,10 +1,9 @@
 /* ══════════════════════════════════════════════
-   INTEGRAÇÃO PLANILHA — COLE ESTE BLOCO INTEIRO
-   antes do </body> no seu index.html
-   Requer: precos.csv na raiz do repositório
+   INTEGRAÇÃO PLANILHA — CÓDIGO COMPLETO
+   Substitua todo o conteúdo do seu integracao_planilha.js por este.
 ══════════════════════════════════════════════ */
 
-/* ── 1. MAPA DE CORRESPONDÊNCIA: id do produto → nome exato no CSV ── */
+/* ── 1. MAPA DE CORRESPONDÊNCIA: id do produto no HTML -> nome no CSV ── */
 const mapaPrecosPlanilha = {
   1:   "CAIXA P/CORREIO N0016X11X07 1UN NIAGRA",
   2:   "CAIXA P/CORREIO N01 21X15X6,5 NIAGRA",
@@ -59,7 +58,7 @@ const mapaPrecosPlanilha = {
   326: "TOP LIXO BRANCO 30L C/30UN PACK LIXO",
 };
 
-/* ── 2. CATEGORIAS NOVAS DA PLANILHA ── */
+/* ── 2. CATEGORIAS NOVAS ── */
 const categoriasNovas = [
   { id: 'limpeza',              label: 'Limpeza',             icon: 'fas fa-spray-can'    },
   { id: 'higiene',              label: 'Higiene & Papel',     icon: 'fas fa-toilet-paper' },
@@ -69,14 +68,14 @@ const categoriasNovas = [
 ];
 
 const subCategoriasNovas = {
-  limpeza:              [
+  limpeza: [
     { id: 'todas',              label: 'Todas'              },
     { id: 'produtos-limpeza',   label: 'Produtos de Limpeza'},
     { id: 'utensilios-limpeza', label: 'Utensílios'         },
     { id: 'epi',                label: 'EPI & Proteção'     },
   ],
   higiene:              [{ id: 'todas', label: 'Todas' }, { id: 'papel-higiene', label: 'Papel & Higiene' }],
-  utilidades:           [
+  utilidades: [
     { id: 'todas',              label: 'Todas'              },
     { id: 'organiz-limpeza',    label: 'Organização'        },
     { id: 'ganchos',            label: 'Ganchos'            },
@@ -90,11 +89,7 @@ const subCategoriasNovas = {
   'embalagens-diversas':  [{ id: 'todas', label: 'Todas' }, { id: 'emb-diversas',  label: 'Embalagens Diversas'  }],
 };
 
-/* ── 3. PRODUTOS DA PLANILHA (gerado automaticamente) ── */
-/* COLE O CONTEÚDO DO ARQUIVO produtos_planilha.js AQUI */
-/* OU carregue via fetch — veja opção abaixo            */
-
-/* ── 4. CARREGA CSV E ATUALIZA PREÇOS DOS PRODUTOS EXISTENTES ── */
+/* ── 3. LÊ CSV, ATUALIZA PREÇOS E CRIA PRODUTOS NOVOS AUTOMATICAMENTE ── */
 async function carregarEAtualizarPrecos() {
   try {
     const resp = await fetch('precos.csv');
@@ -102,10 +97,9 @@ async function carregarEAtualizarPrecos() {
     const texto = await resp.text();
     const linhas = texto.trim().split('\n').slice(1); // pula cabeçalho
 
-    // Constrói dicionário nome -> preco
+    // 3.1. Constrói dicionário nome -> preco a partir do CSV
     const precosCSV = {};
     linhas.forEach(linha => {
-      // Remove aspas e separa
       const partes = linha.match(/"([^"]+)"/g);
       if (!partes || partes.length < 2) return;
       const nome  = partes[0].replace(/"/g, '').trim().toUpperCase();
@@ -113,35 +107,61 @@ async function carregarEAtualizarPrecos() {
       precosCSV[nome] = parseFloat(valor) || 0;
     });
 
-    // Atualiza preços dos produtos existentes no site
-    listaProdutos.forEach(p => {
-      const nomeCSV = mapaPrecosPlanilha[p.id];
-      if (nomeCSV && precosCSV[nomeCSV.toUpperCase()] !== undefined) {
-        p.preco = precosCSV[nomeCSV.toUpperCase()];
-      }
-    });
-
-    // Atualiza preços dos produtos novos (listaProdutosPlanilha)
-    if (typeof listaProdutosPlanilha !== 'undefined') {
-      listaProdutosPlanilha.forEach(p => {
-        const nomeUpper = p.nome.toUpperCase();
-        if (precosCSV[nomeUpper] !== undefined) {
-          p.preco = precosCSV[nomeUpper];
-        }
-      });
+    // 3.2. Atualiza os preços dos produtos que já existem no site (index.html)
+    if (typeof listaProdutos !== 'undefined') {
+        listaProdutos.forEach(p => {
+          const nomeCSV = mapaPrecosPlanilha[p.id];
+          if (nomeCSV && precosCSV[nomeCSV.toUpperCase()] !== undefined) {
+            p.preco = precosCSV[nomeCSV.toUpperCase()];
+          }
+        });
     }
 
-    console.log(`✓ Preços atualizados do CSV (${Object.keys(precosCSV).length} itens)`);
+    // 3.3. AUTO-CRIAÇÃO: Verifica o que tem no CSV que NÃO está no HTML
+    const todosOsProdutosPlanilha = [];
+    let novoId = 1000; // IDs novos começam de 1000 para não conflitar com os antigos
+
+    Object.keys(precosCSV).forEach(nomeNoCSV => {
+        // Verifica se este produto do CSV já está mapeado no HTML
+        let existeNaFixa = false;
+        if (typeof listaProdutos !== 'undefined') {
+            existeNaFixa = listaProdutos.some(p => {
+                const nomeMapeado = mapaPrecosPlanilha[p.id];
+                return nomeMapeado && nomeMapeado.toUpperCase() === nomeNoCSV;
+            });
+        }
+        
+        if (!existeNaFixa) {
+            // Se não existe, cria ele como um produto da aba "Utilidades"
+            todosOsProdutosPlanilha.push({
+                id: novoId++,
+                nome: nomeNoCSV,
+                preco: precosCSV[nomeNoCSV],
+                categoria: "utilidades", 
+                subcategoria: "outros",
+                unidade: "/un",
+                especificacoes: { "Fonte": "Catálogo Importado", "Categoria": "Utilidades" }
+            });
+        }
+    });
+
+    // 3.4. Salva os produtos novos na memória global
+    window.listaProdutosPlanilha = todosOsProdutosPlanilha;
+
+    console.log(`✓ Leitura completa: ${Object.keys(precosCSV).length} itens processados do CSV. Produtos novos criados: ${todosOsProdutosPlanilha.length}`);
   } catch (e) {
     console.warn('Não foi possível carregar precos.csv — usando preços padrão.', e.message);
+    window.listaProdutosPlanilha = [];
   }
 
-  // Adiciona filtros novos e re-renderiza
+  // 3.5. Adiciona os filtros novos (botões) e recarrega os produtos na tela
   adicionarFiltrosNovos();
-  renderizarProdutos();
+  if (typeof renderizarProdutos === 'function') {
+      renderizarProdutos();
+  }
 }
 
-/* ── 5. INJETA BOTÕES DE FILTRO DAS NOVAS CATEGORIAS ── */
+/* ── 4. INJETA BOTÕES DE FILTRO DAS NOVAS CATEGORIAS ── */
 function adicionarFiltrosNovos() {
   const containerFiltros = document.getElementById('containerFiltros');
   if (!containerFiltros) return;
@@ -167,7 +187,7 @@ function adicionarFiltrosNovos() {
   });
 }
 
-/* ── 6. FILTRO PARA CATEGORIAS NOVAS ── */
+/* ── 5. FILTRO PARA CATEGORIAS NOVAS ── */
 let subBarraNovaAtiva = null;
 
 function filtrarCategoriaNova(cat, el) {
@@ -175,7 +195,7 @@ function filtrarCategoriaNova(cat, el) {
   document.querySelectorAll('.btn-filter').forEach(b => b.classList.remove('active'));
   el.classList.add('active');
 
-  // Esconde todas as barras de sub
+  // Esconde todas as barras de subcategorias originais
   document.querySelectorAll('.sub-bar-base').forEach(b => {
     b.classList.remove('visible');
   });
@@ -186,7 +206,7 @@ function filtrarCategoriaNova(cat, el) {
 
   subBarraNovaAtiva = cat;
 
-  // Cria barra de subcategorias se houver
+  // Cria barra de subcategorias para as novas
   const subs = subCategoriasNovas[cat];
   if (subs && subs.length > 1) {
     const barra = document.createElement('div');
@@ -215,19 +235,19 @@ function filtrarSubCategoriaNova(cat, sub) {
   const container = document.getElementById('containerProdutos');
   container.innerHTML = '';
 
-  if (typeof listaProdutosPlanilha === 'undefined') {
-    container.innerHTML = '<p style="text-align:center;color:var(--text-muted);padding:4rem 0;">⚠️ Arquivo produtos_planilha.js não carregado.<br>Adicione o arquivo ao repositório.</p>';
+  if (typeof window.listaProdutosPlanilha === 'undefined') {
+    container.innerHTML = '<p style="text-align:center;color:var(--text-muted);padding:4rem 0;">Nenhum produto extra carregado da planilha.</p>';
     return;
   }
 
-  const filtrados = listaProdutosPlanilha.filter(p => {
+  const filtrados = window.listaProdutosPlanilha.filter(p => {
     if (p.categoria !== cat) return false;
     if (sub !== 'todas' && p.subcategoria !== sub) return false;
     return true;
   });
 
   if (!filtrados.length) {
-    container.innerHTML = '<p style="text-align:center;color:var(--text-muted);padding:4rem 0;">Nenhum produto encontrado.</p>';
+    container.innerHTML = '<p style="text-align:center;color:var(--text-muted);padding:4rem 0;">Nenhum produto encontrado nesta categoria.</p>';
     return;
   }
 
@@ -235,7 +255,7 @@ function filtrarSubCategoriaNova(cat, sub) {
   const grupos = {};
   filtrados.forEach(p => {
     const key = p.subcategoria;
-    if (!grupos[key]) grupos[key] = { label: p.especificacoes?.Subcategoria || key, produtos: [] };
+    if (!grupos[key]) grupos[key] = { label: p.especificacoes?.Subcategoria || "Outros", produtos: [] };
     grupos[key].produtos.push(p);
   });
 
@@ -244,7 +264,7 @@ function filtrarSubCategoriaNova(cat, sub) {
   });
 }
 
-/* ── 7. RENDERIZA UMA SEÇÃO DE PRODUTOS NOVOS ── */
+/* ── 6. RENDERIZA UMA SEÇÃO DE PRODUTOS NOVOS ── */
 function criarSecaoNova(titulo, produtos, container) {
   const secao = document.createElement('div');
   secao.className = 'product-section';
@@ -254,7 +274,8 @@ function criarSecaoNova(titulo, produtos, container) {
   grade.className = 'products-grid';
 
   produtos.forEach(p => {
-    const noCarrinho = !!carrinho[p.id];
+    // carrinho vem do HTML principal
+    const noCarrinho = typeof carrinho !== 'undefined' ? !!carrinho[p.id] : false;
     const ehConsulta = p.preco === 'Sob consulta' || p.preco === 0;
     const pFmt = !ehConsulta ? p.preco.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' }) : '';
 
@@ -266,21 +287,11 @@ function criarSecaoNova(titulo, produtos, container) {
     card.className = `product-card${noCarrinho ? ' in-cart' : ''}`;
     card.id = `card-${p.id}`;
 
-    // SVG genérico baseado na categoria
-    const svgCat = {
-      limpeza:              svgProdutos.default,
-      higiene:              svgProdutos.default,
-      utilidades:           svgProdutos.default,
-      caixas:               svgProdutos.caixa_geral,
-      sacolas:              svgProdutos.sacola_branca,
-      isopor:               svgProdutos.marmitex,
-      plastico:             svgProdutos.marmita_plastica,
-      festa:                svgProdutos.talheres,
-      'embalagens-flexiveis': svgProdutos.default,
-      'embalagens-diversas':  svgProdutos.default,
-      outros:               svgProdutos.default,
-    };
-    const svgIcon = svgCat[p.categoria] || svgProdutos.default;
+    // Tenta usar a função de SVG do HTML principal, senão usa um ícone fixo
+    let svgIcon = `<svg viewBox="0 0 130 130" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="20" y="30" width="90" height="80" rx="6" fill="#dbeafe" stroke="#2563eb" stroke-width="2.5"/><rect x="20" y="30" width="90" height="24" rx="6" fill="#bfdbfe" stroke="#2563eb" stroke-width="2"/><rect x="46" y="30" width="38" height="24" rx="3" fill="#93c5fd" stroke="#2563eb" stroke-width="2"/><line x1="35" y1="72" x2="95" y2="72" stroke="#3b82f6" stroke-width="2" stroke-dasharray="5,3"/><line x1="35" y1="86" x2="95" y2="86" stroke="#3b82f6" stroke-width="2" stroke-dasharray="5,3"/><line x1="35" y1="100" x2="75" y2="100" stroke="#3b82f6" stroke-width="2" stroke-dasharray="5,3"/></svg>`;
+    if (typeof svgProdutos !== 'undefined' && svgProdutos.default) {
+        svgIcon = svgProdutos.default;
+    }
 
     card.innerHTML = `
       <div class="product-img">
@@ -308,54 +319,50 @@ function criarSecaoNova(titulo, produtos, container) {
       </div>`;
 
     grade.appendChild(card);
-    cardObserver.observe(card);
+    if (typeof cardObserver !== 'undefined') cardObserver.observe(card);
   });
 
   secao.appendChild(grade);
   container.appendChild(secao);
 }
 
-/* ── 8. CARRINHO PARA PRODUTOS DA PLANILHA ── */
+/* ── 7. CARRINHO PARA PRODUTOS DA PLANILHA ── */
 function adicionarAoCarrinhoPlanilha(id, qtd) {
-  if (typeof listaProdutosPlanilha === 'undefined') return;
-  const produto = listaProdutosPlanilha.find(p => p.id === id);
+  if (typeof window.listaProdutosPlanilha === 'undefined') return;
+  const produto = window.listaProdutosPlanilha.find(p => p.id === id);
   if (!produto) return;
-  qtd = Math.max(1, parseInt(qtd) || 1);
-  if (carrinho[id]) carrinho[id].qtd += qtd;
-  else carrinho[id] = { produto, qtd };
-  atualizarBadge();
-  const card = document.getElementById(`card-${id}`);
-  if (card) card.classList.toggle('in-cart', !!carrinho[id]);
-  const btn = document.getElementById(`btn-add-${id}`);
-  if (btn) {
-    btn.classList.add('added');
-    btn.innerHTML = '<i class="fas fa-check"></i> Adicionado!';
-    setTimeout(() => {
-      btn.classList.remove('added');
-      btn.innerHTML = '<i class="fas fa-shopping-cart"></i> Adicionar';
-    }, 1800);
+  
+  // Repassa para a função adicionarAoCarrinho principal que você já tem no HTML
+  if (typeof adicionarAoCarrinho === 'function') {
+      // Temporariamente joga o produto na lista principal para o carrinho reconhecer
+      if (!listaProdutos.find(p => p.id === id)) {
+          listaProdutos.push(produto);
+      }
+      adicionarAoCarrinho(id, qtd);
   }
 }
 
 function abrirModalPlanilha(id) {
-  if (typeof listaProdutosPlanilha === 'undefined') return;
-  const p = listaProdutosPlanilha.find(x => x.id === id);
+  if (typeof window.listaProdutosPlanilha === 'undefined') return;
+  const p = window.listaProdutosPlanilha.find(x => x.id === id);
   if (!p) return;
-  // Usa o modal existente do site
+  
   const obj = {
     ...p,
     icone: 'fas fa-box',
-    descricao: p.especificacoes?.Subcategoria || '',
+    descricao: p.especificacoes?.Subcategoria || 'Importado da planilha',
     especificacoes: {
-      'Categoria': p.especificacoes?.Categoria || '',
-      'Subcategoria': p.especificacoes?.Subcategoria || '',
+      'Categoria': p.especificacoes?.Categoria || 'Utilidades',
+      'Fonte': p.especificacoes?.Fonte || 'Planilha CSV',
     }
   };
-  abrirModal(obj);
+  
+  if (typeof abrirModal === 'function') {
+      abrirModal(obj);
+  }
 }
 
-/* ── 9. INICIALIZAÇÃO ── */
-// Aguarda o site carregar e então executa
+/* ── 8. INICIALIZAÇÃO ── */
 if (document.readyState === 'loading') {
   document.addEventListener('DOMContentLoaded', carregarEAtualizarPrecos);
 } else {
