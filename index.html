@@ -325,12 +325,16 @@ footer { background:var(--blue-950); color:#fff; padding:6rem 0 3rem; margin-top
 
 <script src="produtos_planilha.js"></script>
 
-<script>
 let carrinho = {};
 let estado = { categoria: "todos", subcategoria: "todas" };
 
-// Garantir que não crasha se a planilha não for lida
-const obterProdutos = () => typeof listaProdutosPlanilha !== 'undefined' ? listaProdutosPlanilha : [];
+// ── A FUNÇÃO QUE RESOLVE O BUG DA TELA BRANCA ──
+const obterProdutos = () => {
+    if (typeof listaProdutosPlanilha !== 'undefined' && listaProdutosPlanilha.length > 0) return listaProdutosPlanilha;
+    if (typeof listaProdutos !== 'undefined' && listaProdutos.length > 0) return listaProdutos;
+    console.error("ERRO: Nenhuma lista de produtos encontrada!");
+    return [];
+};
 
 function rolarPara(id){const el=document.getElementById(id);if(el)window.scrollTo({top:el.getBoundingClientRect().top-80,behavior:"smooth"});}
 
@@ -393,7 +397,7 @@ function renderizarProdutos() {
     
     let produtos = obterProdutos();
     if(produtos.length === 0) {
-        container.innerHTML = "<p style='text-align:center;padding:4rem;'>⚠️ Nenhum produto carregado. Verifique o arquivo produtos_planilha.js</p>";
+        container.innerHTML = "<p style='text-align:center;padding:4rem;'>⚠️ Nenhum produto foi encontrado no arquivo produtos_planilha.js</p>";
         return;
     }
 
@@ -427,7 +431,6 @@ function renderizarProdutos() {
     const grupos = {};
     produtos.forEach(p => {
         const key = p.subcategoria || p.categoria;
-        // Trata o nome da seção
         let nomeSessao = p.especificacoes?.Subcategoria || key.replace('-', ' ').toUpperCase();
         if(!grupos[key]) grupos[key] = { label: nomeSessao, itens: [], catBase: p.categoria };
         grupos[key].itens.push(p);
@@ -571,8 +574,6 @@ function enviarWhatsApp() {
 }
 
 window.onload = () => { renderizarProdutos(); };
-
-</script>
 
 <script src="integracao_planilha.js"></script>
 
