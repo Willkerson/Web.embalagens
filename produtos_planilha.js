@@ -1,4 +1,4 @@
-const marcasFamosas = ['AZULIM', 'START', 'SUPREMA', 'ISAPEL', 'WYDA', 'GALVONOTEK', 'BETTANIN', 'ALKLIN', 'SANREMO', 'PRAFESTA', 'SANOL', 'COALA', 'TALGE', 'BOM APETITE', 'TOTALPLAST', 'ULTRA', 'PLUMA'];
+
 window.listaProdutosPlanilha = [
   // --- CATEGORIA: OUTROS (Utilidades Dom�sticas e Diversos) ---
   {id:1000,nome:'ABRIDIR DE LATAS',categoria:'utilidades',subcategoria:'utensilios-cozinha',preco:3.5,unidade:'/unidade'},
