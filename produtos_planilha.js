@@ -90,7 +90,7 @@ var listaProdutosPlanilha = [
   {id:2088,nome:'CABO DE MADEIRA 1,50CM  LISO SANCHES',categoria:'limpeza',subcategoria:'utensilios-limpeza',preco:7.5,unidade:'/unidade'},
   {id:2089,nome:'CABO EXTENSOR 3MT SANCHES',categoria:'diversos',subcategoria:'outros',preco:73.0,unidade:'/unidade'},
   {id:2090,nome:'CAIXA COPO 180ML TOTALPLAST C/2500UN',categoria:'diversos',subcategoria:'outros',preco:135.0,unidade:'/unidade'},
-  {id:2091,nome:'CAIXA DE BOLO N09 40X40X12 1 UN NIAGRA',categoria:'caixas',subcategoria:'caixas-alimentos',preco:10.0,unidade:'/unidade'},
+  {id:2091,nome:'CAIXA DE BOLO N09 40X40X12 1 UN NIAGRA',categoria:'caixas',subcategoria:'caixas-alimentos',preco:90.0,unidade:'/unidade'},
   {id:2092,nome:'CAIXA DE CELULAR 22X11X05 1 UN',categoria:'diversos',subcategoria:'outros',preco:2.5,unidade:'/unidade'},
   {id:2093,nome:'CAIXA DE PAP. ONDULADO N02 35X25X25 NIAGRA',categoria:'diversos',subcategoria:'outros',preco:7.0,unidade:'/unidade'},
   {id:2094,nome:'CAIXA ONDULADA N04',categoria:'caixas',subcategoria:'caixas-correio',preco:14.5,unidade:'/unidade'},
