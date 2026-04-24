@@ -1,4 +1,3 @@
-// integracao_planilha.js
 async function carregarEAtualizarPrecos() {
   try {
     const resp = await fetch('precos.csv');
@@ -8,28 +7,36 @@ async function carregarEAtualizarPrecos() {
 
     const precosCSV = {};
     linhas.forEach(linha => {
-      const partes = linha.match(/"([^"]+)"/g);
+      const partes = linha.match(/"([^"]+)"/g) || linha.split(',');
       if (!partes || partes.length < 2) return;
       const nome  = partes[0].replace(/"/g, '').trim().toUpperCase();
       const valor = partes[1].replace(/"/g, '').replace(',', '.').trim();
       precosCSV[nome] = parseFloat(valor) || 0;
     });
 
+    // Procura na variável 1
     if (typeof listaProdutosPlanilha !== 'undefined') {
         listaProdutosPlanilha.forEach(p => {
           const nomeUpper = p.nome.toUpperCase();
-          if (precosCSV[nomeUpper] !== undefined) {
-            p.preco = precosCSV[nomeUpper];
-          }
+          if (precosCSV[nomeUpper] !== undefined) p.preco = precosCSV[nomeUpper];
         });
     }
     
-    // Atualiza a tela com os preços novos
-    if (typeof renderizarProdutos === 'function') renderizarProdutos();
+    // Procura na variável 2 (Garante que acha de qualquer jeito)
+    if (typeof listaProdutos !== 'undefined') {
+        listaProdutos.forEach(p => {
+          const nomeUpper = p.nome.toUpperCase();
+          if (precosCSV[nomeUpper] !== undefined) p.preco = precosCSV[nomeUpper];
+        });
+    }
+    
     console.log("✓ Preços atualizados via CSV!");
 
   } catch (e) {
-    console.warn('Erro ao ler CSV, usando preços base da planilha.', e);
+    console.warn('CSV não lido. Usando os preços originais do arquivo.', e);
+  } finally {
+    // Atualiza a tela independentemente de ter achado o CSV ou não
+    if (typeof renderizarProdutos === 'function') renderizarProdutos();
   }
 }
 
