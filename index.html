@@ -1132,11 +1132,9 @@ function obterListaCompleta() {
     const original = (typeof listaProdutos !== 'undefined') ? listaProdutos : [];
     const planilha = (typeof window.listaProdutosPlanilha !== 'undefined') ? window.listaProdutosPlanilha : [];
     
-    // Se o JS com a lista nova não foi lido ou tá vazio, usa só a planilha ou a original
-    if (original.length > 0) return original;
-    return planilha;
+    // Agora sim, ele JUNTA a lista fixa com o que o robô do CSV achou!
+    return [...original, ...planilha];
 }
-
 /* ══════════════════════════════════════════════
    CARRINHO
 ══════════════════════════════════════════════ */
