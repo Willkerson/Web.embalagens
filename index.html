@@ -656,7 +656,7 @@ function enviarWhatsApp() {
     window.open(`https://wa.me/5511972999835?text=${encodeURIComponent(msg)}`);
 }
 
-window.onload = renderizarProdutos;
+window.onload = function() {}; // a integracao_planilha.js cuida disso
 </script>
 
 <script src="integracao_planilha.js"></script>
