@@ -985,14 +985,14 @@ footer { background:var(--blue-950); color:#fff; padding:6rem 0 3rem; margin-top
 
 <script src="produtos_planilha.js"></script>
 
+<script>
 let carrinho = {};
 let estado = { categoria: "todos", subcategoria: "todas" };
 
-// ── A FUNÇÃO QUE RESOLVE O BUG DA TELA BRANCA ──
+// Blinda o carregamento dos produtos
 const obterProdutos = () => {
     if (typeof listaProdutosPlanilha !== 'undefined' && listaProdutosPlanilha.length > 0) return listaProdutosPlanilha;
     if (typeof listaProdutos !== 'undefined' && listaProdutos.length > 0) return listaProdutos;
-    console.error("ERRO: Nenhuma lista de produtos encontrada!");
     return [];
 };
 
@@ -1003,7 +1003,6 @@ function toggleTheme() {
     html.setAttribute('data-theme', html.getAttribute('data-theme') === 'dark' ? 'light' : 'dark');
 }
 
-/* ── FUNÇÕES DE SVGs CUSTOMIZADOS (3D) ── */
 const svgs = {
     caixa: `<svg viewBox="0 0 130 130" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="15" y="35" width="100" height="80" rx="4" fill="#e0f2fe" stroke="#0284c7" stroke-width="2.5"/><rect x="15" y="35" width="100" height="22" rx="4" fill="#bae6fd" stroke="#0284c7" stroke-width="2.5"/><line x1="40" y1="70" x2="90" y2="70" stroke="#0284c7" stroke-width="2" stroke-dasharray="5,3"/></svg>`,
     lixo: `<svg viewBox="0 0 130 130" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M35 45 C35 30 45 25 65 25 C85 25 95 30 95 45 L108 112 C109 118 100 120 95 120 L35 120 C30 120 21 118 22 112 Z" fill="#0f172a" stroke="#334155" stroke-width="2"/><path d="M40 45 C50 60 80 60 90 45" stroke="#1e293b" stroke-width="3" fill="none"/></svg>`,
@@ -1020,24 +1019,17 @@ function getSvgParaCategoria(cat) {
     return svgs.default;
 }
 
-/* ── LÓGICA DOS FILTROS ADAPTADA A NOVA PLANILHA ── */
 function filtrarCategoria(cat, btn) {
     estado.categoria = cat;
     estado.subcategoria = "todas";
-
     document.querySelectorAll(".btn-filter").forEach(b => b.classList.remove("active"));
     btn.classList.add("active");
-
-    // Esconde os submenus
     document.querySelectorAll(".sub-bar-base").forEach(b => b.classList.remove("visible"));
-
-    // Mostra o submenu específico
     const barra = document.getElementById(`barra-${cat}`);
     if (barra) {
         barra.classList.add("visible");
         barra.querySelectorAll(".btn-sub").forEach((b, i) => b.classList.toggle("active", i === 0));
     }
-
     renderizarProdutos();
 }
 
@@ -1051,6 +1043,16 @@ function filtrarSub(sub, btn, cat) {
     renderizarProdutos();
 }
 
+/* ── O OBSERVADOR QUE TIRA A INVISIBILIDADE DOS CARDS ── */
+const cardObserver = new IntersectionObserver((entries) => {
+    entries.forEach((entry, i) => {
+        if(entry.isIntersecting){
+            setTimeout(() => entry.target.classList.add('revealed'), i * 40);
+            cardObserver.unobserve(entry.target);
+        }
+    });
+}, { threshold: 0.05 });
+
 function renderizarProdutos() {
     const container = document.getElementById("containerProdutos");
     container.innerHTML = "";
@@ -1061,20 +1063,14 @@ function renderizarProdutos() {
         return;
     }
 
-    // Filtrar por categoria
     if (estado.categoria !== "todos") {
         produtos = produtos.filter(p => {
-            // Agrupar categorias menores na aba "Diversos"
             let catOriginal = p.categoria;
             if (['isopor', 'embalagens-flexiveis', 'embalagens-diversas', 'outros'].includes(catOriginal)) {
                 catOriginal = 'diversos';
             }
-            
             if (estado.categoria !== catOriginal) return false;
-            
-            // Filtro por subcategoria
             if (estado.subcategoria !== "todas") {
-                // A aba Diversos pesquisa pelas categorias antigas pra servir como subcategoria
                 if (estado.categoria === 'diversos' && p.categoria !== estado.subcategoria && p.subcategoria !== estado.subcategoria) return false;
                 else if (estado.categoria !== 'diversos' && p.subcategoria !== estado.subcategoria) return false;
             }
@@ -1087,7 +1083,6 @@ function renderizarProdutos() {
         return;
     }
 
-    // Agrupar produtos pelas subcategorias da planilha para ficar lindo na tela
     const grupos = {};
     produtos.forEach(p => {
         const key = p.subcategoria || p.categoria;
@@ -1096,12 +1091,10 @@ function renderizarProdutos() {
         grupos[key].itens.push(p);
     });
 
-    // Renderizar
     Object.values(grupos).forEach(grupo => {
         const secao = document.createElement("div");
         secao.className = "product-section";
         secao.innerHTML = `<h2 class="section-title"><i class="fas fa-tag"></i> ${grupo.label}</h2>`;
-        
         const grade = document.createElement("div");
         grade.className = "products-grid";
 
@@ -1138,13 +1131,15 @@ function renderizarProdutos() {
                     </div>
                 </div>`;
             grade.appendChild(card);
+
+            /* ── A LINHA QUE FALTAVA PRA TIRAR A INVISIBILIDADE ── */
+            cardObserver.observe(card); 
         });
         secao.appendChild(grade);
         container.appendChild(secao);
     });
 }
 
-/* ── CARRINHO (Simplificado) ── */
 function alterarInputQtd(id, delta) {
     const input = document.getElementById(`qtd-${id}`);
     if (input) input.value = Math.max(1, parseInt(input.value || 1) + delta);
@@ -1233,7 +1228,19 @@ function enviarWhatsApp() {
     window.open(`https://wa.me/5511972999835?text=${encodeURIComponent(msg)}`,"_blank");
 }
 
+/* ── RODA O CARROSSEL DOS FEEDBACKS ── */
+let slideIdx = 0;
+setInterval(() => {
+    const track = document.getElementById('feedbackSlider');
+    if (!track) return;
+    const cards = document.querySelectorAll('.feedback-card');
+    const vis = window.innerWidth > 768 ? 3 : 1;
+    slideIdx = slideIdx + 1 > cards.length - vis ? 0 : slideIdx + 1;
+    track.style.transform = `translateX(-${slideIdx * (100 / vis)}%)`;
+}, 4200);
+
 window.onload = () => { renderizarProdutos(); };
+</script>
 
 <script src="integracao_planilha.js"></script>
 
