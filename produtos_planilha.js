@@ -1,4 +1,4 @@
-const listaProdutosPlanilha = [
+var listaProdutosPlanilha = [
   {id:1000,nome:'ABRIDIR DE LATAS',categoria:'outros',subcategoria:'outros',preco:3.5,unidade:'/unidade',especificacoes:{'Categoria':'Outros','Subcategoria':'Outros'}},
   {id:1001,nome:'ABRIDOR DE GARRAFAS INTER',categoria:'outros',subcategoria:'outros',preco:6.0,unidade:'/unidade',especificacoes:{'Categoria':'Outros','Subcategoria':'Outros'}},
   {id:1003,nome:'ACCESSORIOS P/CORTINAS SANTONE',categoria:'outros',subcategoria:'outros',preco:35.0,unidade:'/unidade',especificacoes:{'Categoria':'Outros','Subcategoria':'Outros'}},
