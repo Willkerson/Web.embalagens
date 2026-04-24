@@ -1,4 +1,4 @@
-window.listaProdutosPlanilha = [
+var listaProdutosPlanilha = [
   {id:2000,nome:'ABRIDIR DE LATAS',categoria:'diversos',subcategoria:'outros',preco:3.5,unidade:'/unidade'},
   {id:2001,nome:'ABRIDOR DE GARRAFAS INTER',categoria:'diversos',subcategoria:'outros',preco:6.0,unidade:'/unidade'},
   {id:2002,nome:'ABRIDOR MULTIUSO',categoria:'limpeza',subcategoria:'produtos-limpeza',preco:11.99,unidade:'/unidade'},
