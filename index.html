@@ -1,17 +1,16 @@
 <!DOCTYPE html>
 <html lang="pt-BR" data-theme="dark">
 <head>
-    
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <meta name="description" content="Catálogo completo de embalagens corporativas e caixas de papelão direto da fábrica.">
     <meta name="theme-color" content="#0a0f1e">
     <title>Cia Das Embalagens | Soluções em Papelão</title>
+    
     <link rel="icon" type="image/png" href="https://img.icons8.com/fluency/48/box.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-    
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <style>
@@ -269,7 +268,7 @@ header.scrolled { padding:.6rem 0; background:var(--bg-glass-solid); box-shadow:
 .product-card.revealed { opacity:1; transform:translateY(0); }
 .product-card:hover { transform: translateY(-12px) rotateX(4deg) rotateY(-2deg) scale3d(1.02, 1.02, 1.02); box-shadow:var(--shadow-hover); border-color:var(--blue-400); z-index: 5; }
 .product-card.in-cart { border-color:var(--green-wa) !important; box-shadow:0 0 0 3px rgba(37,211,102,.2), var(--shadow-hover) !important; transform:translateY(-4px); }
-/* \u2500\u2500 EFEITO DE LUZ (GLARE) \u2500\u2500 */
+/* EFEITO DE LUZ (GLARE) */
 .product-card .glare {
     position: absolute;
     top: 0;
@@ -277,16 +276,15 @@ header.scrolled { padding:.6rem 0; background:var(--bg-glass-solid); box-shadow:
     width: 100%;
     height: 100%;
     background: radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.15), transparent 60%);
-    mix-blend-mode: overlay; /* Mistura a luz com a cor de fundo do card */
+    mix-blend-mode: overlay;
     opacity: 0;
-    pointer-events: none; /* Deixa o clique passar por ele */
+    pointer-events: none;
     transition: opacity 0.3s ease;
     z-index: 10;
 }
 .product-card:hover .glare {
     opacity: 1;
 }
-/* Imagem produto - TranslateZ para efeito 3D */
 .product-img { width:100%; height:220px; display:flex; align-items:center; justify-content:center; transition:var(--tr); border-bottom:1px solid var(--border); position:relative; overflow:hidden; background:linear-gradient(135deg,var(--bg-page) 0%,var(--blue-50) 100%); transform-style: preserve-3d; }
 .product-img svg { width:135px; height:135px; transition:transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275); filter:drop-shadow(0 8px 16px rgba(15,23,42,.15)); transform: translateZ(20px); }
 .product-card:hover .product-img svg { transform: translateZ(50px) scale(1.15) rotate(-2deg); filter:drop-shadow(0 20px 30px rgba(37,99,235,.25)); }
@@ -437,7 +435,7 @@ footer::before { content:''; position:absolute; top:-50%; left:-10%; width:60vw;
     .cart-sidebar { width:100%; max-width:100%; }
     .cursor, .cursor-ring { display:none; }
 }
-/* \u2500\u2500 AJUSTE PARA �CONES VIA URL \u2500\u2500 */
+/* AJUSTE PARA ÍCONES VIA URL */
 .icon-png {
     width: 1.35em; height: 1.35em; object-fit: contain; vertical-align: middle;
     display: inline-block; flex-shrink: 0; transition: transform 0.3s ease;
@@ -602,7 +600,7 @@ footer::before { content:''; position:absolute; top:-50%; left:-10%; width:60vw;
             </div>
         </div>
 
-        <div class="sub-bar-container">
+        <div class="sub-bar-container" id="sub-bar-container">
             
             <div class="sub-bar-base" id="barraSubcategorias">
                 <button class="btn-sub active" onclick="filtrarSub('todas',this,'caixas')"><i class="fas fa-th-large"></i> Todas as Caixas</button>
@@ -724,7 +722,7 @@ footer::before { content:''; position:absolute; top:-50%; left:-10%; width:60vw;
             <span class="cart-total-val" id="totalCarrinho">R$ 0,00</span>
         </div>
         <button class="btn-send-wpp" onclick="enviarWhatsApp()">
-            <i src="https://img.icons8.com/color/48/whatsapp.png" class="icon-png"></i> <span data-i18n="send_wpp">Enviar Pedido pelo WhatsApp</span>
+            <img src="https://img.icons8.com/color/48/whatsapp.png" class="icon-png"> <span data-i18n="send_wpp">Enviar Pedido pelo WhatsApp</span>
         </button>
         <button class="btn-clear" onclick="limparCarrinho()"><i class="fas fa-trash-alt"></i> <span data-i18n="clear_cart">Limpar carrinho</span></button>
         <p class="wpp-notice"><i class="fas fa-lock" style="color:var(--green-wa);"></i> <span data-i18n="privacy_note">Seus dados só vão para o WhatsApp da loja</span></p>
@@ -766,6 +764,8 @@ footer::before { content:''; position:absolute; top:-50%; left:-10%; width:60vw;
     <hr class="footer-divider">
     <div class="footer-copy">© 2026 Cia Das Embalagens. <span data-i18n="footer_copy">Todos os direitos reservados. · Desenvolvido para alta performance corporativa.</span></div>
 </footer>
+
+<script src="produtos_planilha.js"></script>
 
 <script>
 /* ══════════════════════════════════════════════
@@ -874,7 +874,7 @@ let currentLang = 'pt';
 function toggleLanguage() {
     currentLang = currentLang === 'pt' ? 'en' : 'pt';
     
-    // Troca a bandeira do bot�o
+    // Troca a bandeira do botão
     const iconLang = document.getElementById('icon-lang');
     if (currentLang === 'en') {
         iconLang.src = 'https://img.icons8.com/fluency/48/brazil.png';
@@ -976,15 +976,6 @@ const revealObserver = new IntersectionObserver((entries) => {
 }, { threshold: 0.12 });
 
 document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
-
-window.addEventListener('load', () => {
-    setTimeout(() => {
-        document.querySelectorAll('.hero-stat-val[data-count]').forEach(el => {
-            const target = parseInt(el.dataset.count);
-            animateCount(el, target);
-        });
-    }, 900);
-});
 
 /* ══════════════════════════════════════════════
    HEADER SCROLL
@@ -1105,89 +1096,6 @@ function getSvg(produto) {
     return svgProdutos.default;
 }
 
-/* ══════════════════════════════════════════════
-   DADOS DE PRODUTOS
-══════════════════════════════════════════════ */
-let listaProdutos = [
-    // ════ CAIXAS DE PAPELÃO ════
-    {id:310, nome:"Caixa de Papelão N05", categoria:"caixas", subcategoria:"geral", icone:"ph-archive-box", descricao:"Caixa ondulada para grandes volumes.", preco:22.00, unidade:"/unidade", especificacoes:{"Medidas Externas":"70 x 50 x 40 cm", "Material":"Ondulado"}},
-    {id:311, nome:"Caixa de Papelão N04", categoria:"caixas", subcategoria:"geral", icone:"ph-archive-box", descricao:"Caixa ondulada para volumes médios.", preco:14.50, unidade:"/unidade", especificacoes:{"Medidas Externas":"50 x 40 x 35 cm", "Material":"Ondulado"}},
-    {id:312, nome:"Caixa de Papelão N03", categoria:"caixas", subcategoria:"geral", icone:"ph-archive-box", descricao:"Caixa ondulada de uso geral.", preco:10.00, unidade:"/unidade", especificacoes:{"Medidas Externas":"40 x 30 x 30 cm", "Material":"Ondulado"}},
-
-    // ════ EMBALAGENS PARA MARMITA (PLÁSTICO) ════
-    {id:211, nome:"Marmita Preta 850ml 3 Divisórias", categoria:"plastico", subcategoria:"marmita-plastico", marca:"", icone:"ph-bowl-food", descricao:"Marmita preta com 3 divisórias para delivery.", preco:16.50, unidade:"/pct (10un)", especificacoes:{"Capacidade":"850 ml", "Quantidade":"10 unidades", "Formato":"3 Divisórias"}},
-    {id:212, nome:"Kit Pote Retangular 750ml Gourmax", categoria:"plastico", subcategoria:"marmita-plastico", marca:"Gourmax", icone:"ph-bowl-food", descricao:"Kit pote e tampa retangular.", preco:22.50, unidade:"/pct (12un)", especificacoes:{"Capacidade":"750 ml", "Marca":"Gourmax", "Quantidade":"12 unidades"}},
-    {id:213, nome:"Kit Pote Retangular 500ml Gourmax", categoria:"plastico", subcategoria:"marmita-plastico", marca:"Gourmax", icone:"ph-bowl-food", descricao:"Kit pote e tampa retangular.", preco:16.00, unidade:"/pct (12un)", especificacoes:{"Capacidade":"500 ml", "Marca":"Gourmax", "Quantidade":"12 unidades"}},
-    {id:214, nome:"Kit Pote Retangular 350ml Gourmax", categoria:"plastico", subcategoria:"marmita-plastico", marca:"Gourmax", icone:"ph-bowl-food", descricao:"Kit pote e tampa retangular.", preco:12.00, unidade:"/pct (12un)", especificacoes:{"Capacidade":"350 ml", "Marca":"Gourmax", "Quantidade":"12 unidades"}},
-
-    // ════ FESTA E DESCARTÁVEIS ════
-    {id:200, nome:"Kit Garfo e Faca Elite c/ 50un", categoria:"festa", icone:"ph-fork-knife", descricao:"Kit talheres descartáveis.", preco:19.00, unidade:"/pct", especificacoes:{"Marca":"Elite", "Quantidade":"50 unidades", "Tipo":"Kit Garfo + Faca"}},
-    {id:201, nome:"Garfo para Refeição Elite c/ 200un", categoria:"festa", icone:"ph-fork-knife", descricao:"Garfos resistentes.", preco:32.00, unidade:"/pct", especificacoes:{"Marca":"Elite", "Quantidade":"200 unidades", "Tipo":"Garfo"}},
-    {id:202, nome:"Faca para Refeição Elite c/ 200un", categoria:"festa", icone:"ph-fork-knife", descricao:"Facas resistentes.", preco:30.00, unidade:"/pct", especificacoes:{"Marca":"Elite", "Quantidade":"200 unidades", "Tipo":"Faca"}},
-    {id:203, nome:"Pote Quadrado 250ml Prafesta", categoria:"festa", icone:"ph-package", descricao:"Pote quadrado c/ tampa.", preco:16.50, unidade:"/pct (20un)", especificacoes:{"Marca":"Prafesta", "Quantidade":"20 unidades", "Capacidade":"250 ml", "Formato":"Quadrado"}},
-    {id:204, nome:"Pote Redondo 200ml Prafesta", categoria:"festa", icone:"ph-package", descricao:"Pote redondo c/ tampa.", preco:15.50, unidade:"/pct (24un)", especificacoes:{"Marca":"Prafesta", "Quantidade":"24 unidades", "Capacidade":"200 ml", "Formato":"Redondo"}},
-    {id:205, nome:"Pote Redondo 250ml Prafesta", categoria:"festa", icone:"ph-package", descricao:"Pote redondo c/ tampa.", preco:18.50, unidade:"/pct (24un)", especificacoes:{"Marca":"Prafesta", "Quantidade":"24 unidades", "Capacidade":"250 ml", "Formato":"Redondo"}},
-    {id:206, nome:"Pote Redondo 350ml Prafesta", categoria:"festa", icone:"ph-package", descricao:"Pote redondo c/ tampa.", preco:22.50, unidade:"/pct (24un)", especificacoes:{"Marca":"Prafesta", "Quantidade":"24 unidades", "Capacidade":"350 ml", "Formato":"Redondo"}},
-    {id:207, nome:"Pote Redondo 200ml Danubio", categoria:"festa", icone:"ph-package", descricao:"Pote redondo c/ tampa.", preco:11.50, unidade:"/pct (24un)", especificacoes:{"Marca":"Danubio", "Quantidade":"24 unidades", "Capacidade":"200 ml", "Formato":"Redondo"}},
-    {id:208, nome:"Pote Redondo 500ml Danubio", categoria:"festa", icone:"ph-package", descricao:"Pote redondo c/ tampa.", preco:17.00, unidade:"/pct (24un)", especificacoes:{"Marca":"Danubio", "Quantidade":"24 unidades", "Capacidade":"500 ml", "Formato":"Redondo"}},
-    {id:209, nome:"Pote Redondo 700ml Danubio", categoria:"festa", icone:"ph-package", descricao:"Pote redondo c/ tampa.", preco:21.50, unidade:"/pct (24un)", especificacoes:{"Marca":"Danubio", "Quantidade":"24 unidades", "Capacidade":"700 ml", "Formato":"Redondo"}},
-    {id:210, nome:"Pote Redondo 1000ml Danubio", categoria:"festa", icone:"ph-package", descricao:"Pote redondo c/ tampa.", preco:26.50, unidade:"/pct (24un)", especificacoes:{"Marca":"Danubio", "Quantidade":"24 unidades", "Capacidade":"1000 ml", "Formato":"Redondo"}},
-
-    // ════ SACOS DE LIXO PRETO ════
-    {id:300, nome:"Saco Preto 60L", categoria:"sacolas", tipo:"preta", tamanho:"m", pacote:"10un", icone:"ph-trash", descricao:"Saco de lixo preto.", preco:8.50, unidade:"/pacote", especificacoes:{"Capacidade":"60 litros", "Cor":"Preto", "Quantidade":"10 unidades"}},
-    {id:301, nome:"Saco Preto 100L", categoria:"sacolas", tipo:"preta", tamanho:"g", pacote:"10un", icone:"ph-trash", descricao:"Saco de lixo preto.", preco:12.50, unidade:"/pacote", especificacoes:{"Capacidade":"100 litros", "Cor":"Preto", "Quantidade":"10 unidades"}},
-    {id:302, nome:"Saco Preto 40L", categoria:"sacolas", tipo:"preta", tamanho:"p", pacote:"10un", icone:"ph-trash", descricao:"Saco de lixo preto.", preco:5.50, unidade:"/pacote", especificacoes:{"Capacidade":"40 litros", "Cor":"Preto", "Quantidade":"10 unidades"}},
-    {id:303, nome:"Saco Preto 200L", categoria:"sacolas", tipo:"preta", tamanho:"g", pacote:"10un", icone:"ph-trash", descricao:"Saco de lixo preto.", preco:21.00, unidade:"/pacote", especificacoes:{"Capacidade":"200 litros", "Cor":"Preto", "Quantidade":"10 unidades"}},
-    {id:304, nome:"Saco Preto 200L (Econômico)", categoria:"sacolas", tipo:"preta", tamanho:"g", pacote:"50un", icone:"ph-trash", descricao:"Saco de lixo preto.", preco:100.00, unidade:"/pacote", especificacoes:{"Capacidade":"200 litros", "Cor":"Preto", "Quantidade":"50 unidades"}},
-    {id:305, nome:"Saco Preto 100L (Econômico)", categoria:"sacolas", tipo:"preta", tamanho:"g", pacote:"50un", icone:"ph-trash", descricao:"Saco de lixo preto.", preco:53.50, unidade:"/pacote", especificacoes:{"Capacidade":"100 litros", "Cor":"Preto", "Quantidade":"50 unidades"}},
-    {id:306, nome:"Saco Preto 60L (Econômico)", categoria:"sacolas", tipo:"preta", tamanho:"m", pacote:"50un", icone:"ph-trash", descricao:"Saco de lixo preto.", preco:36.00, unidade:"/pacote", especificacoes:{"Capacidade":"60 litros", "Cor":"Preto", "Quantidade":"50 unidades"}},
-    {id:307, nome:"Saco Preto 40L (Econômico)", categoria:"sacolas", tipo:"preta", tamanho:"p", pacote:"50un", icone:"ph-trash", descricao:"Saco de lixo preto.", preco:25.00, unidade:"/pacote", especificacoes:{"Capacidade":"40 litros", "Cor":"Preto", "Quantidade":"50 unidades"}},
-    {id:308, nome:"Saco Preto 20L P5", categoria:"sacolas", tipo:"preta", tamanho:"p", pacote:"10un", icone:"ph-trash", descricao:"Saco de lixo preto P5.", preco:4.00, unidade:"/pacote", especificacoes:{"Capacidade":"20 litros", "Cor":"Preto", "Quantidade":"10 unidades"}},
-    {id:309, nome:"Saco Preto 20L P5 (Econômico)", categoria:"sacolas", tipo:"preta", tamanho:"p", pacote:"50un", icone:"ph-trash", descricao:"Saco de lixo preto P5.", preco:17.00, unidade:"/pacote", especificacoes:{"Capacidade":"20 litros", "Cor":"Preto", "Quantidade":"50 unidades"}},
-
-    // ════ LIXO DE BANHEIRO / PIA ════
-    {id:320, nome:"Pack Lixo Diva Pia/Banheiro", categoria:"sacolas", tipo:"lixo-banheiro", tamanho:"p", icone:"ph-trash", descricao:"Pack Lixo Diva 80un.", preco:12.50, unidade:"/pct", especificacoes:{"Quantidade":"80 unidades", "Uso":"Pia e Banheiro"}},
-    {id:321, nome:"Top Lixo Branco Pia/Banheiro", categoria:"sacolas", tipo:"lixo-banheiro", tamanho:"p", icone:"ph-trash", descricao:"Top Lixo Branco 40un.", preco:10.00, unidade:"/pct", especificacoes:{"Quantidade":"40 unidades", "Cor":"Branco", "Uso":"Pia e Banheiro"}},
-    {id:322, nome:"Top Lixo Lavanda Pia/Banheiro", categoria:"sacolas", tipo:"lixo-banheiro", tamanho:"p", icone:"ph-trash", descricao:"Top Lixo Lavanda 40un.", preco:10.00, unidade:"/pct", especificacoes:{"Quantidade":"40 unidades", "Cor":"Lavanda", "Uso":"Pia e Banheiro"}},
-    {id:323, nome:"Top Lixo Branco 15L", categoria:"sacolas", tipo:"lixo-banheiro", tamanho:"m", icone:"ph-trash", descricao:"Top lixo c/ 60un.", preco:19.00, unidade:"/pct", especificacoes:{"Capacidade":"15 litros", "Quantidade":"60 unidades", "Cor":"Branco"}},
-    {id:324, nome:"Top Lixo Preto 15L", categoria:"sacolas", tipo:"lixo-banheiro", tamanho:"m", icone:"ph-trash", descricao:"Top lixo c/ 60un.", preco:19.00, unidade:"/pct", especificacoes:{"Capacidade":"15 litros", "Quantidade":"60 unidades", "Cor":"Preto"}},
-    {id:325, nome:"Top Lixo Preto 30L", categoria:"sacolas", tipo:"lixo-banheiro", tamanho:"g", icone:"ph-trash", descricao:"Top lixo c/ 30un.", preco:19.00, unidade:"/pct", especificacoes:{"Capacidade":"30 litros", "Quantidade":"30 unidades", "Cor":"Preto"}},
-    {id:326, nome:"Top Lixo Branco 30L", categoria:"sacolas", tipo:"lixo-banheiro", tamanho:"g", icone:"ph-trash", descricao:"Top lixo c/ 30un.", preco:19.00, unidade:"/pct", especificacoes:{"Capacidade":"30 litros", "Quantidade":"30 unidades", "Cor":"Branco"}},
-
-    // ════ SACOLAS VERDES ════
-    {id:330, nome:"Sacola Verde 30x40", categoria:"sacolas", tipo:"verde", tamanho:"p", icone:"ph-shopping-bag", descricao:"Sacola verde resistente 1kg.", preco:15.50, unidade:"/kg", especificacoes:{"Medidas":"30 x 40 cm", "Cor":"Verde", "Venda":"Por kg"}},
-    {id:331, nome:"Sacola Verde 45x60", categoria:"sacolas", tipo:"verde", tamanho:"m", icone:"ph-shopping-bag", descricao:"Sacola verde resistente 1kg.", preco:15.50, unidade:"/kg", especificacoes:{"Medidas":"45 x 60 cm", "Cor":"Verde", "Venda":"Por kg"}},
-    {id:332, nome:"Sacola Verde 50x70", categoria:"sacolas", tipo:"verde", tamanho:"g", icone:"ph-shopping-bag", descricao:"Sacola verde resistente 1kg.", preco:15.50, unidade:"/kg", especificacoes:{"Medidas":"50 x 70 cm", "Cor":"Verde", "Venda":"Por kg"}},
-    {id:333, nome:"Sacola Verde 60x80", categoria:"sacolas", tipo:"verde", tamanho:"g", icone:"ph-shopping-bag", descricao:"Sacola verde resistente 1kg.", preco:15.50, unidade:"/kg", especificacoes:{"Medidas":"60 x 80 cm", "Cor":"Verde", "Venda":"Por kg"}},
-    {id:334, nome:"Sacola Verde 90x100", categoria:"sacolas", tipo:"verde", tamanho:"g", icone:"ph-shopping-bag", descricao:"Sacola verde gigante 1kg.", preco:15.50, unidade:"/kg", especificacoes:{"Medidas":"90 x 100 cm", "Cor":"Verde", "Venda":"Por kg"}},
-
-    // ════ SACOLAS CRYSTAL (PCT 7 REAIS) ════
-    {id:340, nome:"Sacola Crystal 8x40", categoria:"sacolas", tipo:"crystal", peso:"200g", tamanho:"p", icone:"ph-shopping-bag", descricao:"Sacola crystal leve.", preco:7.00, unidade:"/pct", especificacoes:{"Medidas":"8 x 40 cm", "Cor":"Transparente"}},
-    {id:341, nome:"Sacola Crystal 10x15", categoria:"sacolas", tipo:"crystal", peso:"200g", tamanho:"p", icone:"ph-shopping-bag", descricao:"Sacola crystal leve.", preco:7.00, unidade:"/pct", especificacoes:{"Medidas":"10 x 15 cm", "Cor":"Transparente"}},
-    {id:342, nome:"Sacola Crystal 10x20", categoria:"sacolas", tipo:"crystal", peso:"200g", tamanho:"p", icone:"ph-shopping-bag", descricao:"Sacola crystal leve.", preco:7.00, unidade:"/pct", especificacoes:{"Medidas":"10 x 20 cm", "Cor":"Transparente"}},
-    {id:343, nome:"Sacola Crystal 15x30", categoria:"sacolas", tipo:"crystal", peso:"200g", tamanho:"p", icone:"ph-shopping-bag", descricao:"Sacola crystal leve.", preco:7.00, unidade:"/pct", especificacoes:{"Medidas":"15 x 30 cm", "Cor":"Transparente"}},
-    {id:344, nome:"Sacola Crystal 25x35", categoria:"sacolas", tipo:"crystal", peso:"200g", tamanho:"m", icone:"ph-shopping-bag", descricao:"Sacola crystal leve.", preco:7.00, unidade:"/pct", especificacoes:{"Medidas":"25 x 35 cm", "Cor":"Transparente"}},
-    {id:345, nome:"Sacola Crystal 15x20", categoria:"sacolas", tipo:"crystal", peso:"200g", tamanho:"p", icone:"ph-shopping-bag", descricao:"Sacola crystal leve.", preco:7.00, unidade:"/pct", especificacoes:{"Medidas":"15 x 20 cm", "Cor":"Transparente"}},
-    {id:346, nome:"Sacola Crystal 20x30", categoria:"sacolas", tipo:"crystal", peso:"200g", tamanho:"m", icone:"ph-shopping-bag", descricao:"Sacola crystal leve.", preco:7.00, unidade:"/pct", especificacoes:{"Medidas":"20 x 30 cm", "Cor":"Transparente"}},
-    {id:347, nome:"Sacola Crystal 35x45", categoria:"sacolas", tipo:"crystal", peso:"200g", tamanho:"g", icone:"ph-shopping-bag", descricao:"Sacola crystal leve.", preco:7.00, unidade:"/pct", especificacoes:{"Medidas":"35 x 45 cm", "Cor":"Transparente"}},
-
-    // ════ SACOLAS CRYSTAL 1KG (ESPESSURA 0.6) ════
-    {id:350, nome:"Sacola Crystal 50x70x0.6", categoria:"sacolas", tipo:"crystal", peso:"1kg", tamanho:"g", icone:"ph-shopping-bag", descricao:"Fardo Crystal grossa 1kg.", preco:33.50, unidade:"/kg", especificacoes:{"Medidas":"50 x 70 cm", "Espessura":"0.6", "Peso":"1kg"}},
-    {id:351, nome:"Sacola Crystal 60x80x0.6", categoria:"sacolas", tipo:"crystal", peso:"1kg", tamanho:"g", icone:"ph-shopping-bag", descricao:"Fardo Crystal grossa 1kg.", preco:33.50, unidade:"/kg", especificacoes:{"Medidas":"60 x 80 cm", "Espessura":"0.6", "Peso":"1kg"}},
-    {id:352, nome:"Sacola Crystal 40x60x0.6", categoria:"sacolas", tipo:"crystal", peso:"1kg", tamanho:"g", icone:"ph-shopping-bag", descricao:"Fardo Crystal grossa 1kg.", preco:32.00, unidade:"/kg", especificacoes:{"Medidas":"40 x 60 cm", "Espessura":"0.6", "Peso":"1kg"}},
-    {id:353, nome:"Sacola Crystal 35x45x0.6", categoria:"sacolas", tipo:"crystal", peso:"1kg", tamanho:"m", icone:"ph-shopping-bag", descricao:"Fardo Crystal grossa 1kg.", preco:32.00, unidade:"/kg", especificacoes:{"Medidas":"35 x 45 cm", "Espessura":"0.6", "Peso":"1kg"}},
-    {id:354, nome:"Sacola Crystal 25x35x0.6", categoria:"sacolas", tipo:"crystal", peso:"1kg", tamanho:"m", icone:"ph-shopping-bag", descricao:"Fardo Crystal grossa 1kg.", preco:32.00, unidade:"/kg", especificacoes:{"Medidas":"25 x 35 cm", "Espessura":"0.6", "Peso":"1kg"}},
-    {id:355, nome:"Sacola Crystal 20x30x0.6", categoria:"sacolas", tipo:"crystal", peso:"1kg", tamanho:"p", icone:"ph-shopping-bag", descricao:"Fardo Crystal grossa 1kg.", preco:32.00, unidade:"/kg", especificacoes:{"Medidas":"20 x 30 cm", "Espessura":"0.6", "Peso":"1kg"}},
-    {id:356, nome:"Sacola Crystal 15x30x0.6", categoria:"sacolas", tipo:"crystal", peso:"1kg", tamanho:"p", icone:"ph-shopping-bag", descricao:"Fardo Crystal grossa 1kg.", preco:32.00, unidade:"/kg", especificacoes:{"Medidas":"15 x 30 cm", "Espessura":"0.6", "Peso":"1kg"}},
-    {id:357, nome:"Sacola Crystal 15x20x0.6", categoria:"sacolas", tipo:"crystal", peso:"1kg", tamanho:"p", icone:"ph-shopping-bag", descricao:"Fardo Crystal grossa 1kg.", preco:32.00, unidade:"/kg", especificacoes:{"Medidas":"15 x 20 cm", "Espessura":"0.6", "Peso":"1kg"}},
-    {id:358, nome:"Sacola Crystal 10x20x0.6", categoria:"sacolas", tipo:"crystal", peso:"1kg", tamanho:"p", icone:"ph-shopping-bag", descricao:"Fardo Crystal grossa 1kg.", preco:32.00, unidade:"/kg", especificacoes:{"Medidas":"10 x 20 cm", "Espessura":"0.6", "Peso":"1kg"}},
-    {id:359, nome:"Sacola Crystal 10x15x0.6", categoria:"sacolas", tipo:"crystal", peso:"1kg", tamanho:"p", icone:"ph-shopping-bag", descricao:"Fardo Crystal grossa 1kg.", preco:32.00, unidade:"/kg", especificacoes:{"Medidas":"10 x 15 cm", "Espessura":"0.6", "Peso":"1kg"}},
-
-    // ════ GELADINHO E GELÃO ════
-    {id:360, nome:"Saco Crystal p/ Gelão 05x24", categoria:"sacolas", tipo:"crystal", peso:"cento", tamanho:"p", icone:"ph-drop", descricao:"Cento para gelão.", preco:3.50, unidade:"/pct (100un)", especificacoes:{"Medidas":"5 x 24 cm", "Quantidade":"100 unidades"}},
-    {id:361, nome:"Saco Crystal p/ Geladinho 04x24", categoria:"sacolas", tipo:"crystal", peso:"cento", tamanho:"p", icone:"ph-drop", descricao:"Cento para geladinho.", preco:3.50, unidade:"/pct (100un)", especificacoes:{"Medidas":"4 x 24 cm", "Quantidade":"100 unidades"}}
-];
-
 const iconesEspec = {
     "Medidas Externas":"fas fa-ruler","Dimensões":"fas fa-ruler","Medidas":"fas fa-ruler",
     "Tipo de Onda":"fas fa-water","Gramatura":"fas fa-weight-hanging","Material":"fas fa-cube",
@@ -1200,11 +1108,11 @@ const iconesEspec = {
 };
 
 const sacolarConfig = {
-    preta:      {cardClass:"sacola-preta-card",    tituloClass:" titulo-sacola",           nomeTipo:"Sacolas Pretas",       tema:"tema-preta"},
-    verde:      {cardClass:"sacola-verde-card",    tituloClass:" titulo-sacola-verde",     nomeTipo:"Sacolas Verdes",       tema:"tema-verde"},
-    branca:     {cardClass:"sacola-branca-card",   tituloClass:" titulo-sacola-branca",    nomeTipo:"Sacolas Brancas",      tema:"tema-branca"},
+    preta:      {cardClass:"sacola-preta-card",    tituloClass:" titulo-sacola",            nomeTipo:"Sacolas Pretas",       tema:"tema-preta"},
+    verde:      {cardClass:"sacola-verde-card",    tituloClass:" titulo-sacola-verde",      nomeTipo:"Sacolas Verdes",       tema:"tema-verde"},
+    branca:     {cardClass:"sacola-branca-card",   tituloClass:" titulo-sacola-branca",     nomeTipo:"Sacolas Brancas",      tema:"tema-branca"},
     crystal:    {cardClass:"sacola-crystal-card",  tituloClass:" titulo-sacola-crystal",   nomeTipo:"Sacolas Crystal",      tema:"tema-crystal"},
-    kraft:      {cardClass:"sacola-kraft-card",    tituloClass:" titulo-sacola-kraft",     nomeTipo:"Sacolas Kraft",        tema:"tema-kraft"},
+    kraft:      {cardClass:"sacola-kraft-card",    tituloClass:" titulo-sacola-kraft",      nomeTipo:"Sacolas Kraft",        tema:"tema-kraft"},
     "kraft-alca":{cardClass:"sacola-kraft-alca-card",tituloClass:" titulo-sacola-kraft-alca",nomeTipo:"Sacolas Kraft c/ Alça",tema:"tema-kraft"},
     "lixo-banheiro":{cardClass:"sacola-branca-card", tituloClass:" titulo-sacola-branca",  nomeTipo:"Sacos de Banheiro",    tema:"tema-banheiro"}
 };
@@ -1219,6 +1127,16 @@ let estado = {
 let produtoModal = null;
 let carrinho = {};
 
+// Função auxiliar para juntar a lista do arquivo produtos_planilha.js (se existir) com a lista fixada
+function obterListaCompleta() {
+    const original = (typeof listaProdutos !== 'undefined') ? listaProdutos : [];
+    const planilha = (typeof window.listaProdutosPlanilha !== 'undefined') ? window.listaProdutosPlanilha : [];
+    
+    // Se o JS com a lista nova não foi lido ou tá vazio, usa só a planilha ou a original
+    if (original.length > 0) return original;
+    return planilha;
+}
+
 /* ══════════════════════════════════════════════
    CARRINHO
 ══════════════════════════════════════════════ */
@@ -1231,7 +1149,8 @@ function atualizarBadge(){
 }
 
 function adicionarAoCarrinho(id,qtd){
-    const produto=listaProdutos.find(p=>p.id===id); if(!produto)return;
+    const todosProdutos = obterListaCompleta();
+    const produto=todosProdutos.find(p=>p.id===id); if(!produto)return;
     qtd=Math.max(1,parseInt(qtd)||1);
     if(carrinho[id]) carrinho[id].qtd+=qtd;
     else carrinho[id]={produto,qtd};
@@ -1359,7 +1278,13 @@ function abrirModal(produto){
     document.body.style.overflow="hidden";
 }
 function fecharModal(){document.getElementById("modalProduto").classList.remove("active");document.body.style.overflow="";}
-function adicionarDoModal(){if(produtoModal){adicionarAoCarrinho(produtoModal.id,1);fecharModal();setTimeout(abrirCarrinho,200);}}
+function adicionarDoModal(){
+    if(produtoModal){
+        adicionarAoCarrinho(produtoModal.id,1);
+        fecharModal();
+        setTimeout(abrirCarrinho,200);
+    }
+}
 document.getElementById("modalProduto").addEventListener("click",e=>{if(e.target===document.getElementById("modalProduto"))fecharModal();});
 
 /* ══════════════════════════════════════════════
@@ -1561,9 +1486,11 @@ function renderizarProdutos(){
     const container=document.getElementById("containerProdutos");
     container.innerHTML="";
 
+    const todosProdutos = obterListaCompleta(); // Usa a lista unida (Arquivo .js + Planilha)
+
     if(estado.categoria==="todos"){
         const grupos={};
-        listaProdutos.forEach(p=>{
+        todosProdutos.forEach(p=>{
             const key=obterKeyGrupo(p);
             let label;
             if(p.categoria==="sacolas") label=sacolarConfig[p.tipo]?.nomeTipo||"Sacolas";
@@ -1576,7 +1503,7 @@ function renderizarProdutos(){
     }
 
     if(estado.categoria==="sacolas"){
-        const filtrados=listaProdutos.filter(p=>{
+        const filtrados=todosProdutos.filter(p=>{
             if(p.categoria!=="sacolas")return false;
             if(p.tipo!==estado.tipoSacola)return false;
             if(estado.tipoSacola!=="lixo-banheiro" && estado.tipoSacola!=="crystal" && estado.tamanhoSacola!=="todas"&&p.tamanho!==estado.tamanhoSacola)return false;
@@ -1593,7 +1520,7 @@ function renderizarProdutos(){
     }
 
     if(estado.categoria==="isopor"){
-        const filtrados=listaProdutos.filter(p=>{
+        const filtrados=todosProdutos.filter(p=>{
             if(p.categoria!=="isopor")return false;
             if(estado.subcategoria!=="todas"&&p.subcategoria!==estado.subcategoria)return false;
             if(estado.marcaMarmitex!=="todas"&&p.subcategoria==="marmitex"&&p.marca!==estado.marcaMarmitex)return false;
@@ -1605,14 +1532,14 @@ function renderizarProdutos(){
     }
 
     if(estado.categoria==="caixas"){
-        const filtrados=listaProdutos.filter(p=>p.categoria==="caixas"&&(estado.subcategoria==="todas"||p.subcategoria===estado.subcategoria));
+        const filtrados=todosProdutos.filter(p=>p.categoria==="caixas"&&(estado.subcategoria==="todas"||p.subcategoria===estado.subcategoria));
         if(!filtrados.length){container.innerHTML=`<p style="text-align:center;color:var(--text-muted);padding:4rem 0;">Nenhum produto encontrado.</p>`;return;}
         criarSecao("Caixas",filtrados,container,"caixas");
         return;
     }
 
     if(estado.categoria==="plastico"){
-        const filtrados=listaProdutos.filter(p=>{
+        const filtrados=todosProdutos.filter(p=>{
             if(p.categoria!=="plastico")return false;
             if(estado.subcategoria!=="todas"&&p.subcategoria!==estado.subcategoria)return false;
             if((estado.subcategoria==="bolo-plastico"||estado.subcategoria==="todas")&&estado.marcaPlastico!=="todas"&&p.subcategoria==="bolo-plastico"&&p.marca!==estado.marcaPlastico)return false;
@@ -1625,7 +1552,7 @@ function renderizarProdutos(){
     }
 
     if(estado.categoria==="festa"){
-        const filtrados=listaProdutos.filter(p=>{
+        const filtrados=todosProdutos.filter(p=>{
             if(p.categoria!=="festa") return false;
             if(estado.marcaFesta!=="todas" && p.especificacoes?.Marca !== estado.marcaFesta) return false;
             return true;
@@ -1644,6 +1571,7 @@ function obterLabelGrupoGeral(p){
     if(p.categoria==="isopor") return `Isopor — ${labelSub[p.subcategoria]||p.subcategoria}`;
     if(p.categoria==="plastico") return `Plástico — ${labelSub[p.subcategoria]||p.subcategoria}`;
     if(p.categoria==="festa") return `Festa & Descartáveis`;
+    if(p.especificacoes?.Categoria) return p.especificacoes.Categoria;
     return p.categoria;
 }
 
@@ -1737,7 +1665,7 @@ function criarSecao(titulo,produtos,container,cat,tipo){
                         onclick="event.stopPropagation();adicionarAoCarrinho(${p.id},document.getElementById('qtd-${p.id}').value)">
                         ${iconCartBtn} ${txtCartBtn}
                     </button>
-                    <button class="btn-info" onclick="abrirModal(listaProdutos.find(x=>x.id===${p.id}))" title="Ver especificações">
+                    <button class="btn-info" onclick="abrirModal(obterListaCompleta().find(x=>x.id===${p.id}))" title="Ver especificações">
                         <i class="fas fa-info-circle"></i>
                     </button>
                 </div>
@@ -1750,14 +1678,10 @@ function criarSecao(titulo,produtos,container,cat,tipo){
  secao.appendChild(grade);
     container.appendChild(secao);
     
-/* \u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550
-   EFEITO 3D INTERATIVO NOS CARDS (TILT + GLARE)
-\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550 */
 function ativarEfeito3DCards() {
     const cards = document.querySelectorAll('.product-card');
     
     cards.forEach(card => {
-        // Cria a camada de luz (glare) dentro de cada card dinamicamente
         if (!card.querySelector('.glare')) {
             const glare = document.createElement('div');
             glare.className = 'glare';
@@ -1768,28 +1692,24 @@ function ativarEfeito3DCards() {
 
         card.addEventListener('mousemove', (e) => {
             const rect = card.getBoundingClientRect();
-            // Pega as coordenadas X e Y exatas do mouse dentro do card
             const x = e.clientX - rect.left;
             const y = e.clientY - rect.top;
             
             const centerX = rect.width / 2;
             const centerY = rect.height / 2;
             
-            // Calcula a rota��o
             const rotateX = ((y - centerY) / centerY) * -8;
             const rotateY = ((x - centerX) / centerX) * 8;
             
             card.style.transform = `translateY(-12px) perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.02, 1.02, 1.02)`;
             card.style.transition = 'transform 0.1s ease-out';
             
-            // Move a luz radial para acompanhar a coordenada do mouse
             glareEl.style.background = `radial-gradient(circle at ${x}px ${y}px, rgba(255, 255, 255, 0.25), transparent 60%)`;
         });
 
         card.addEventListener('mouseleave', () => {
             card.style.transform = ''; 
             card.style.transition = 'transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275)';
-            // Volta a luz pro meio quando o mouse sai
             glareEl.style.background = `radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.15), transparent 60%)`;
         });
     });
@@ -1800,36 +1720,29 @@ function alterarInputQtd(id,delta){
     const input=document.getElementById(`qtd-${id}`);
     if(!input)return; input.value=Math.max(1,(parseInt(input.value)||1)+delta);
 }
-    /* \u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550
-   EFEITO 3D INTERATIVO NOS CARDS (MOUSE TILT)
-\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550 */
+    
 function ativarEfeito3DCards() {
     const cards = document.querySelectorAll('.product-card');
     
     cards.forEach(card => {
         card.addEventListener('mousemove', (e) => {
             const rect = card.getBoundingClientRect();
-            // Posi��o do mouse dentro do card
             const x = e.clientX - rect.left;
             const y = e.clientY - rect.top;
             
-            // Centro do card
             const centerX = rect.width / 2;
             const centerY = rect.height / 2;
             
-            // Calcula a inclina��o (multiplicador 8 = �ngulo m�ximo)
             const rotateX = ((y - centerY) / centerY) * -8;
             const rotateY = ((x - centerX) / centerX) * 8;
             
-            // Aplica a transforma��o inline seguindo o mouse
             card.style.transform = `translateY(-12px) perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.02, 1.02, 1.02)`;
-            card.style.transition = 'transform 0.1s ease-out'; // R�pido para n�o ter lag
+            card.style.transition = 'transform 0.1s ease-out';
         });
 
         card.addEventListener('mouseleave', () => {
-            // Remove o estilo inline para o CSS original voltar a assumir
             card.style.transform = ''; 
-            card.style.transition = 'transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275)'; // Volta com efeito mola
+            card.style.transition = 'transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275)'; 
         });
     });
 }
@@ -1840,7 +1753,9 @@ function ativarEfeito3DCards() {
 function rolarPara(id){const el=document.getElementById(id);if(el)window.scrollTo({top:el.getBoundingClientRect().top+window.scrollY-80,behavior:"smooth"});}
 
 window.onload=()=>{ renderizarProdutos(); };
-</script> <script src="produtos_planilha.js"></script>
+
+</script>
+
 <script src="integracao_planilha.js"></script>
 
 </body>
