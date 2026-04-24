@@ -1,9 +1,8 @@
 /* ══════════════════════════════════════════════
-   INTEGRAÇÃO PLANILHA — CÓDIGO COMPLETO
-   Substitua todo o conteúdo do seu integracao_planilha.js por este.
+   INTEGRAÇÃO PLANILHA — COM CLASSIFICAÇÃO INTELIGENTE
 ══════════════════════════════════════════════ */
 
-/* ── 1. MAPA DE CORRESPONDÊNCIA: id do produto no HTML -> nome no CSV ── */
+/* ── 1. MAPA DE CORRESPONDÊNCIA (Os que já existem no HTML) ── */
 const mapaPrecosPlanilha = {
   1:   "CAIXA P/CORREIO N0016X11X07 1UN NIAGRA",
   2:   "CAIXA P/CORREIO N01 21X15X6,5 NIAGRA",
@@ -58,46 +57,60 @@ const mapaPrecosPlanilha = {
   326: "TOP LIXO BRANCO 30L C/30UN PACK LIXO",
 };
 
-/* ── 2. CATEGORIAS NOVAS ── */
-const categoriasNovas = [
-  { id: 'limpeza',              label: 'Limpeza',             icon: 'fas fa-spray-can'    },
-  { id: 'higiene',              label: 'Higiene & Papel',     icon: 'fas fa-toilet-paper' },
-  { id: 'utilidades',           label: 'Utilidades',          icon: 'fas fa-toolbox'       },
-  { id: 'embalagens-flexiveis', label: 'Emb. Flexíveis',      icon: 'fas fa-film'          },
-  { id: 'embalagens-diversas',  label: 'Emb. Diversas',       icon: 'fas fa-shapes'        },
-];
+/* ── 2. O ROBÔ CLASSIFICADOR (A inteligência que você pediu) ── */
+function classificarProduto(nome) {
+    const n = nome.toUpperCase();
+    
+    // Regras para CAIXAS DE PAPELÃO
+    if (n.includes("CAIXA") || n.includes("PAPELAO") || n.includes("ONDULADA")) {
+        return { cat: "caixas", sub: "geral", tipo: null };
+    }
+    // Regras para ISOPOR
+    if (n.includes("ISOPOR") || n.includes("MARMITEX") || n.includes("DISCO")) {
+        return { cat: "isopor", sub: "todas", tipo: null };
+    }
+    // Regras para SACOLAS E SACOS DE LIXO
+    if (n.includes("SACO") || n.includes("SACOLA") || n.includes("LIXO") || n.includes("BOBINA")) {
+        let tipoSacola = "preta"; // Padrão
+        if (n.includes("BRANC")) tipoSacola = "branca";
+        else if (n.includes("VERDE")) tipoSacola = "verde";
+        else if (n.includes("CRYSTAL") || n.includes("CRISTAL") || n.includes("TRANSPARENTE")) tipoSacola = "crystal";
+        else if (n.includes("KRAFT") || n.includes("PAPEL")) tipoSacola = "kraft";
+        else if (n.includes("BANHEIRO") || n.includes("PIA")) tipoSacola = "lixo-banheiro";
+        return { cat: "sacolas", sub: "todas", tipo: tipoSacola };
+    }
+    // Regras para FESTA E DESCARTÁVEIS
+    if (n.includes("GARFO") || n.includes("FACA") || n.includes("COLHER") || n.includes("COPO") || n.includes("PRATO") || n.includes("GUARDANAPO") || n.includes("MEXEDOR")) {
+        return { cat: "festa", sub: "todas", tipo: null };
+    }
+    // Regras para PLÁSTICOS (Potes e Marmitas)
+    if (n.includes("POTE") || n.includes("MARMITA") || n.includes("GALVANOTEK") || n.includes("HIVERPACK") || n.includes("PRA FESTA") || n.includes("PRAFESTA")) {
+        let subP = "todas";
+        if (n.includes("BOLO") || n.includes("TORTA")) subP = "bolo-plastico";
+        else if (n.includes("MARMITA") || n.includes("RETANGULAR")) subP = "marmita-plastico";
+        return { cat: "plastico", sub: subP, tipo: null };
+    }
+    // Regras para PRODUTOS DE LIMPEZA (Aba nova)
+    if (n.includes("LIMPEZA") || n.includes("DETERGENTE") || n.includes("SABAO") || n.includes("DESINFETANTE") || n.includes("VASSOURA") || n.includes("RODO") || n.includes("ALVEJANTE") || n.includes("CLORO")) {
+        return { cat: "limpeza", sub: "produtos-limpeza", tipo: null };
+    }
+    // Regras para HIGIENE E PAPEL (Aba nova)
+    if (n.includes("PAPEL HIGIENICO") || n.includes("TOALHA") || n.includes("INTERFOLHA") || n.includes("SABONETE")) {
+        return { cat: "higiene", sub: "papel-higiene", tipo: null };
+    }
+    
+    // SE NÃO ENCAIXAR EM NADA: Joga numa categoria genérica "Diversos"
+    return { cat: "diversos", sub: "outros", tipo: null };
+}
 
-const subCategoriasNovas = {
-  limpeza: [
-    { id: 'todas',              label: 'Todas'              },
-    { id: 'produtos-limpeza',   label: 'Produtos de Limpeza'},
-    { id: 'utensilios-limpeza', label: 'Utensílios'         },
-    { id: 'epi',                label: 'EPI & Proteção'     },
-  ],
-  higiene:              [{ id: 'todas', label: 'Todas' }, { id: 'papel-higiene', label: 'Papel & Higiene' }],
-  utilidades: [
-    { id: 'todas',              label: 'Todas'              },
-    { id: 'organiz-limpeza',    label: 'Organização'        },
-    { id: 'ganchos',            label: 'Ganchos'            },
-    { id: 'aromas-inseticidas', label: 'Aromas & Inseticidas'},
-    { id: 'ferramentas',        label: 'Ferramentas'        },
-    { id: 'pilhas-baterias',    label: 'Pilhas & Baterias'  },
-    { id: 'escritorio',         label: 'Escritório'         },
-    { id: 'outros',             label: 'Outros'             },
-  ],
-  'embalagens-flexiveis': [{ id: 'todas', label: 'Todas' }, { id: 'emb-flexiveis', label: 'Embalagens Flexíveis' }],
-  'embalagens-diversas':  [{ id: 'todas', label: 'Todas' }, { id: 'emb-diversas',  label: 'Embalagens Diversas'  }],
-};
-
-/* ── 3. LÊ CSV, ATUALIZA PREÇOS E CRIA PRODUTOS NOVOS AUTOMATICAMENTE ── */
+/* ── 3. LÊ CSV E JOGA CADA UM NO SEU LUGAR ── */
 async function carregarEAtualizarPrecos() {
   try {
     const resp = await fetch('precos.csv');
     if (!resp.ok) throw new Error('CSV não encontrado');
     const texto = await resp.text();
-    const linhas = texto.trim().split('\n').slice(1); // pula cabeçalho
+    const linhas = texto.trim().split('\n').slice(1);
 
-    // 3.1. Constrói dicionário nome -> preco a partir do CSV
     const precosCSV = {};
     linhas.forEach(linha => {
       const partes = linha.match(/"([^"]+)"/g);
@@ -107,7 +120,6 @@ async function carregarEAtualizarPrecos() {
       precosCSV[nome] = parseFloat(valor) || 0;
     });
 
-    // 3.2. Atualiza os preços dos produtos que já existem no site (index.html)
     if (typeof listaProdutos !== 'undefined') {
         listaProdutos.forEach(p => {
           const nomeCSV = mapaPrecosPlanilha[p.id];
@@ -117,12 +129,11 @@ async function carregarEAtualizarPrecos() {
         });
     }
 
-    // 3.3. AUTO-CRIAÇÃO: Verifica o que tem no CSV que NÃO está no HTML
+    // ── MAGIA ACONTECENDO AQUI ──
     const todosOsProdutosPlanilha = [];
-    let novoId = 1000; // IDs novos começam de 1000 para não conflitar com os antigos
+    let novoId = 1000; 
 
     Object.keys(precosCSV).forEach(nomeNoCSV => {
-        // Verifica se este produto do CSV já está mapeado no HTML
         let existeNaFixa = false;
         if (typeof listaProdutos !== 'undefined') {
             existeNaFixa = listaProdutos.some(p => {
@@ -132,237 +143,92 @@ async function carregarEAtualizarPrecos() {
         }
         
         if (!existeNaFixa) {
-            // Se não existe, cria ele como um produto da aba "Utilidades"
+            // Chama a função robô que criamos pra descobrir a categoria certa
+            const classificacao = classificarProduto(nomeNoCSV);
+
             todosOsProdutosPlanilha.push({
                 id: novoId++,
                 nome: nomeNoCSV,
                 preco: precosCSV[nomeNoCSV],
-                categoria: "utilidades", 
-                subcategoria: "outros",
+                categoria: classificacao.cat, 
+                subcategoria: classificacao.sub,
+                tipo: classificacao.tipo,
                 unidade: "/un",
-                especificacoes: { "Fonte": "Catálogo Importado", "Categoria": "Utilidades" }
+                especificacoes: { "Categoria Identificada": classificacao.cat.toUpperCase(), "Fonte": "Importado do CSV" }
             });
         }
     });
 
-    // 3.4. Salva os produtos novos na memória global
     window.listaProdutosPlanilha = todosOsProdutosPlanilha;
+    console.log(`✓ Leitura completa! ${todosOsProdutosPlanilha.length} itens novos categorizados automaticamente.`);
 
-    console.log(`✓ Leitura completa: ${Object.keys(precosCSV).length} itens processados do CSV. Produtos novos criados: ${todosOsProdutosPlanilha.length}`);
   } catch (e) {
-    console.warn('Não foi possível carregar precos.csv — usando preços padrão.', e.message);
+    console.warn('Erro ao ler CSV:', e.message);
     window.listaProdutosPlanilha = [];
   }
 
-  // 3.5. Adiciona os filtros novos (botões) e recarrega os produtos na tela
+  // Gera os botões extras e atualiza a tela
   adicionarFiltrosNovos();
-  if (typeof renderizarProdutos === 'function') {
-      renderizarProdutos();
-  }
+  if (typeof renderizarProdutos === 'function') renderizarProdutos();
 }
 
-/* ── 4. INJETA BOTÕES DE FILTRO DAS NOVAS CATEGORIAS ── */
+/* ── 4. CATEGORIAS EXTRAS (Se o robô achar produto de Limpeza, Higiene ou Diversos) ── */
 function adicionarFiltrosNovos() {
   const containerFiltros = document.getElementById('containerFiltros');
   if (!containerFiltros) return;
 
-  // Evita duplicar se já foi adicionado
-  if (document.getElementById('btn-filtro-limpeza')) return;
+  const categoriasExtras = [
+    { id: 'limpeza',  label: 'Limpeza',  icon: 'https://img.icons8.com/fluency/48/broom.png' },
+    { id: 'higiene',  label: 'Higiene',  icon: 'https://img.icons8.com/fluency/48/toilet-paper.png' },
+    { id: 'diversos', label: 'Diversos', icon: 'https://img.icons8.com/fluency/48/open-box.png' }
+  ];
 
-  const iconMap = {
-    limpeza:              'https://img.icons8.com/fluency/48/broom.png',
-    higiene:              'https://img.icons8.com/fluency/48/toilet-paper.png',
-    utilidades:           'https://img.icons8.com/fluency/48/toolbox.png',
-    'embalagens-flexiveis': 'https://img.icons8.com/fluency/48/film-roll.png',
-    'embalagens-diversas':  'https://img.icons8.com/fluency/48/open-box.png',
-  };
-
-  categoriasNovas.forEach(cat => {
-    const btn = document.createElement('button');
-    btn.className = 'btn-filter';
-    btn.id = `btn-filtro-${cat.id}`;
-    btn.onclick = () => filtrarCategoriaNova(cat.id, btn);
-    btn.innerHTML = `<img src="${iconMap[cat.id]||''}" class="icon-png"> <span>${cat.label}</span>`;
-    containerFiltros.appendChild(btn);
-  });
-}
-
-/* ── 5. FILTRO PARA CATEGORIAS NOVAS ── */
-let subBarraNovaAtiva = null;
-
-function filtrarCategoriaNova(cat, el) {
-  // Desativa todos os filtros
-  document.querySelectorAll('.btn-filter').forEach(b => b.classList.remove('active'));
-  el.classList.add('active');
-
-  // Esconde todas as barras de subcategorias originais
-  document.querySelectorAll('.sub-bar-base').forEach(b => {
-    b.classList.remove('visible');
-  });
-
-  // Remove barra nova anterior se existir
-  const barraAntiga = document.getElementById('barra-nova-sub');
-  if (barraAntiga) barraAntiga.remove();
-
-  subBarraNovaAtiva = cat;
-
-  // Cria barra de subcategorias para as novas
-  const subs = subCategoriasNovas[cat];
-  if (subs && subs.length > 1) {
-    const barra = document.createElement('div');
-    barra.className = 'sub-bar-base visible';
-    barra.id = 'barra-nova-sub';
-    subs.forEach((s, i) => {
-      const btn = document.createElement('button');
-      btn.className = 'btn-sub' + (i === 0 ? ' active' : '');
-      btn.innerHTML = `<i class="fas fa-tag"></i> ${s.label}`;
-      btn.onclick = () => {
-        barra.querySelectorAll('.btn-sub').forEach(b => b.classList.remove('active'));
-        btn.classList.add('active');
-        filtrarSubCategoriaNova(cat, s.id);
-      };
-      barra.appendChild(btn);
-    });
-    document.getElementById('sub-bar-container') 
-      ? document.querySelector('.sub-bar-container').appendChild(barra)
-      : document.querySelector('.filters-wrapper').after(barra);
-  }
-
-  filtrarSubCategoriaNova(cat, 'todas');
-}
-
-function filtrarSubCategoriaNova(cat, sub) {
-  const container = document.getElementById('containerProdutos');
-  container.innerHTML = '';
-
-  if (typeof window.listaProdutosPlanilha === 'undefined') {
-    container.innerHTML = '<p style="text-align:center;color:var(--text-muted);padding:4rem 0;">Nenhum produto extra carregado da planilha.</p>';
-    return;
-  }
-
-  const filtrados = window.listaProdutosPlanilha.filter(p => {
-    if (p.categoria !== cat) return false;
-    if (sub !== 'todas' && p.subcategoria !== sub) return false;
-    return true;
-  });
-
-  if (!filtrados.length) {
-    container.innerHTML = '<p style="text-align:center;color:var(--text-muted);padding:4rem 0;">Nenhum produto encontrado nesta categoria.</p>';
-    return;
-  }
-
-  // Agrupa por subcategoria para exibição
-  const grupos = {};
-  filtrados.forEach(p => {
-    const key = p.subcategoria;
-    if (!grupos[key]) grupos[key] = { label: p.especificacoes?.Subcategoria || "Outros", produtos: [] };
-    grupos[key].produtos.push(p);
-  });
-
-  Object.values(grupos).forEach(g => {
-    criarSecaoNova(g.label, g.produtos, container);
-  });
-}
-
-/* ── 6. RENDERIZA UMA SEÇÃO DE PRODUTOS NOVOS ── */
-function criarSecaoNova(titulo, produtos, container) {
-  const secao = document.createElement('div');
-  secao.className = 'product-section';
-  secao.innerHTML = `<h2 class="section-title"><i class="fas fa-tag" style="color:var(--blue-600);background:var(--blue-50);padding:10px;border-radius:14px;font-size:1.4rem;"></i> ${titulo}</h2>`;
-
-  const grade = document.createElement('div');
-  grade.className = 'products-grid';
-
-  produtos.forEach(p => {
-    // carrinho vem do HTML principal
-    const noCarrinho = typeof carrinho !== 'undefined' ? !!carrinho[p.id] : false;
-    const ehConsulta = p.preco === 'Sob consulta' || p.preco === 0;
-    const pFmt = !ehConsulta ? p.preco.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' }) : '';
-
-    const htmlPreco = ehConsulta
-      ? `<div class="price-box"><span class="price-label">Consulte-nos</span><span class="price-value" style="font-size:1.4rem;">Sob consulta</span></div>`
-      : `<div class="price-box"><span class="price-label">A partir de</span><div class="price-row"><span class="price-value">${pFmt}</span><span class="price-unit">${p.unidade}</span></div></div>`;
-
-    const card = document.createElement('div');
-    card.className = `product-card${noCarrinho ? ' in-cart' : ''}`;
-    card.id = `card-${p.id}`;
-
-    // Tenta usar a função de SVG do HTML principal, senão usa um ícone fixo
-    let svgIcon = `<svg viewBox="0 0 130 130" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="20" y="30" width="90" height="80" rx="6" fill="#dbeafe" stroke="#2563eb" stroke-width="2.5"/><rect x="20" y="30" width="90" height="24" rx="6" fill="#bfdbfe" stroke="#2563eb" stroke-width="2"/><rect x="46" y="30" width="38" height="24" rx="3" fill="#93c5fd" stroke="#2563eb" stroke-width="2"/><line x1="35" y1="72" x2="95" y2="72" stroke="#3b82f6" stroke-width="2" stroke-dasharray="5,3"/><line x1="35" y1="86" x2="95" y2="86" stroke="#3b82f6" stroke-width="2" stroke-dasharray="5,3"/><line x1="35" y1="100" x2="75" y2="100" stroke="#3b82f6" stroke-width="2" stroke-dasharray="5,3"/></svg>`;
-    if (typeof svgProdutos !== 'undefined' && svgProdutos.default) {
-        svgIcon = svgProdutos.default;
+  // Adiciona o botão no menu do site SOMENTE SE a planilha tiver produtos dessas categorias
+  categoriasExtras.forEach(cat => {
+    const temProdutoDessaCat = window.listaProdutosPlanilha && window.listaProdutosPlanilha.some(p => p.categoria === cat.id);
+    
+    if (temProdutoDessaCat && !document.getElementById(`btn-filtro-${cat.id}`)) {
+        const btn = document.createElement('button');
+        btn.className = 'btn-filter';
+        btn.id = `btn-filtro-${cat.id}`;
+        // Usa a lógica padrão do site para o clique, mas se for menu extra aciona o filtro extra
+        btn.onclick = () => {
+            if (typeof filtrarCategoria === 'function' && ['caixas','sacolas','isopor','plastico','festa'].includes(cat.id)) {
+                filtrarCategoria(cat.id, btn);
+            } else {
+                filtrarCategoriaExtra(cat.id, btn);
+            }
+        };
+        btn.innerHTML = `<img src="${cat.icon}" class="icon-png"> <span>${cat.label}</span>`;
+        containerFiltros.appendChild(btn);
     }
-
-    card.innerHTML = `
-      <div class="product-img">
-        <div class="cart-seal"><i class="fas fa-check"></i></div>
-        ${svgIcon}
-      </div>
-      <div class="product-body">
-        <h3 class="product-name" title="${p.nome}">${p.nome.length > 50 ? p.nome.substring(0,48)+'…' : p.nome}</h3>
-        <p class="product-desc">${p.especificacoes?.Subcategoria || p.categoria}</p>
-        ${htmlPreco}
-        <div class="product-actions">
-          <div class="qty-control">
-            <button class="btn-qty" onclick="event.stopPropagation();alterarInputQtd(${p.id},-1)">−</button>
-            <input class="input-qty" id="qtd-${p.id}" type="number" value="1" min="1" onclick="event.stopPropagation()">
-            <button class="btn-qty" onclick="event.stopPropagation();alterarInputQtd(${p.id},1)">+</button>
-          </div>
-          <button class="btn-add${noCarrinho ? ' added' : ''}" id="btn-add-${p.id}"
-            onclick="event.stopPropagation();adicionarAoCarrinhoPlanilha(${p.id},document.getElementById('qtd-${p.id}').value)">
-            <i class="fas fa-shopping-cart"></i> Adicionar
-          </button>
-          <button class="btn-info" onclick="abrirModalPlanilha(${p.id})" title="Ver detalhes">
-            <i class="fas fa-info-circle"></i>
-          </button>
-        </div>
-      </div>`;
-
-    grade.appendChild(card);
-    if (typeof cardObserver !== 'undefined') cardObserver.observe(card);
   });
-
-  secao.appendChild(grade);
-  container.appendChild(secao);
 }
 
-/* ── 7. CARRINHO PARA PRODUTOS DA PLANILHA ── */
-function adicionarAoCarrinhoPlanilha(id, qtd) {
-  if (typeof window.listaProdutosPlanilha === 'undefined') return;
-  const produto = window.listaProdutosPlanilha.find(p => p.id === id);
-  if (!produto) return;
-  
-  // Repassa para a função adicionarAoCarrinho principal que você já tem no HTML
-  if (typeof adicionarAoCarrinho === 'function') {
-      // Temporariamente joga o produto na lista principal para o carrinho reconhecer
-      if (!listaProdutos.find(p => p.id === id)) {
-          listaProdutos.push(produto);
-      }
-      adicionarAoCarrinho(id, qtd);
-  }
-}
+function filtrarCategoriaExtra(catId, btnEl) {
+    // Desativa os outros botões do menu
+    document.querySelectorAll('.btn-filter').forEach(b => b.classList.remove('active'));
+    btnEl.classList.add('active');
+    
+    // Some com as sub-barras (porque essas abas extras não precisam de submenu)
+    document.querySelectorAll('.sub-bar-base').forEach(b => b.classList.remove('visible'));
+    const breadcrumb = document.getElementById("breadcrumb");
+    if(breadcrumb) breadcrumb.classList.remove("visible");
 
-function abrirModalPlanilha(id) {
-  if (typeof window.listaProdutosPlanilha === 'undefined') return;
-  const p = window.listaProdutosPlanilha.find(x => x.id === id);
-  if (!p) return;
-  
-  const obj = {
-    ...p,
-    icone: 'fas fa-box',
-    descricao: p.especificacoes?.Subcategoria || 'Importado da planilha',
-    especificacoes: {
-      'Categoria': p.especificacoes?.Categoria || 'Utilidades',
-      'Fonte': p.especificacoes?.Fonte || 'Planilha CSV',
+    // Limpa e injeta os produtos dessa categoria extra
+    const container = document.getElementById('containerProdutos');
+    container.innerHTML = '';
+    
+    const produtosDessaCat = window.listaProdutosPlanilha.filter(p => p.categoria === catId);
+    
+    // Reutiliza a função nativa do seu index.html para criar a sessão (fica bonito no layout!)
+    if (typeof criarSecao === 'function') {
+        const nomes = { limpeza: "Produtos de Limpeza", higiene: "Higiene & Papel", diversos: "Diversos e Utilidades" };
+        criarSecao(nomes[catId] || "Produtos", produtosDessaCat, container, catId, null);
     }
-  };
-  
-  if (typeof abrirModal === 'function') {
-      abrirModal(obj);
-  }
 }
 
-/* ── 8. INICIALIZAÇÃO ── */
+// Inicia assim que o script é carregado
 if (document.readyState === 'loading') {
   document.addEventListener('DOMContentLoaded', carregarEAtualizarPrecos);
 } else {
