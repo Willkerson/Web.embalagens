@@ -1,57 +1,42 @@
-/*
-  integracao_planilha.js â€” versÃ£o corrigida
-  Carrega o precos.csv, atualiza os preÃ§os e garante que
-  renderizarProdutos() seja chamado DEPOIS que tudo estÃ¡ pronto.
-*/
-
 async function carregarEAtualizarPrecos() {
   try {
-    const resp = await fetch('precos.csv');
+    // O ?v= com timestamp força o browser a sempre buscar o CSV mais recente
+    // sem isso, o browser usa o cache e ignora mudanças no arquivo
+    const url = 'precos.csv?v=' + Date.now();
+    const resp = await fetch(url, { cache: 'no-store' });
     if (!resp.ok) throw new Error('CSV nao encontrado');
     const texto = await resp.text();
 
-    // O CSV tem separador TAB (nao virgula)
     const linhas = texto.trim().split('\n').slice(1);
     const precosCSV = {};
 
     linhas.forEach(linha => {
-      // Tenta separar por TAB primeiro, depois por virgula
       let partes = linha.split('\t');
       if (partes.length < 2) partes = linha.split(',');
       if (partes.length < 2) return;
-
       const nome  = partes[0].replace(/"/g, '').trim().toUpperCase();
       const valor = partes[1].replace(/"/g, '').replace(',', '.').trim();
       const preco = parseFloat(valor);
       if (nome && !isNaN(preco)) precosCSV[nome] = preco;
     });
 
-    console.log('CSV carregado:', Object.keys(precosCSV).length, 'precos');
+    console.log('CSV:', Object.keys(precosCSV).length, 'precos carregados');
 
-    // Atualiza precos da listaProdutosPlanilha
-    if (typeof window.listaProdutosPlanilha !== 'undefined') {
-      let atualizados = 0;
-      window.listaProdutosPlanilha.forEach(p => {
+    if (typeof listaProdutosPlanilha !== 'undefined') {
+      let n = 0;
+      listaProdutosPlanilha.forEach(p => {
         const chave = p.nome.toUpperCase();
-        if (precosCSV[chave] !== undefined) {
-          p.preco = precosCSV[chave];
-          atualizados++;
-        }
+        if (precosCSV[chave] !== undefined) { p.preco = precosCSV[chave]; n++; }
       });
-      console.log(atualizados, 'precos atualizados');
+      console.log(n, 'precos atualizados do CSV');
     }
-
   } catch (e) {
-    console.warn('CSV nao lido, usando precos do JS:', e.message);
+    console.warn('CSV nao lido:', e.message);
   }
 
-  // Sempre renderiza
-  if (typeof renderizarProdutos === 'function') {
-    renderizarProdutos();
-  }
+  if (typeof renderizarProdutos === 'function') renderizarProdutos();
 }
 
-// Aguarda DOM + scripts prontos
 if (document.readyState === 'loading') {
   document.addEventListener('DOMContentLoaded', carregarEAtualizarPrecos);
 } else {
