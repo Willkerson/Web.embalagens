@@ -441,19 +441,66 @@ footer { background:var(--blue-950); color:#fff; padding:6rem 0 3rem; margin-top
     <div class="footer-copy">© 2026 Cia Das Embalagens. Todos os direitos reservados.</div>
 </footer>
 
+<div class="modal-backdrop" id="modalInfo" onclick="fecharModal(event)">
+    <div class="modal-box">
+        <button class="btn-close-modal" onclick="fecharModal(force=true)">&times;</button>
+        <div id="modalContent"></div>
+    </div>
+</div>
+
+<style>
+    /* CSS DA ANIMAÇÃO SUAVE E TAGS */
+    .product-card {
+        transition: transform 0.1s ease-out, box-shadow 0.3s ease, border-color 0.3s ease, opacity 0.6s ease;
+        transform-style: preserve-3d;
+        will-change: transform;
+        opacity: 0;
+    }
+    .product-card.revealed { opacity: 1; }
+    
+    .brand-badge {
+        position: absolute; top: 12px; left: 12px;
+        background: var(--blue-600); color: white;
+        padding: 4px 10px; border-radius: 8px;
+        font-size: 0.65rem; font-weight: 800; text-transform: uppercase;
+        z-index: 5; box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    }
+
+    .btn-info-circle {
+        background: var(--bg-page); color: var(--blue-600);
+        width: 32px; height: 32px; border-radius: 50%;
+        display: flex; align-items: center; justify-content: center;
+        border: 1px solid var(--border); transition: 0.3s;
+    }
+    .btn-info-circle:hover { background: var(--blue-600); color: white; }
+
+    /* MODAL STYLE */
+    .modal-backdrop {
+        position: fixed; inset: 0; background: rgba(0,0,0,0.8);
+        backdrop-filter: blur(10px); z-index: 3000;
+        display: none; align-items: center; justify-content: center;
+    }
+    .modal-box {
+        background: var(--bg-card); width: 90%; max-width: 500px;
+        border-radius: 24px; padding: 2rem; position: relative;
+        border: 1px solid var(--border); color: var(--text-dark);
+    }
+    .spec-item {
+        display: flex; justify-content: space-between;
+        padding: 10px 0; border-bottom: 1px solid var(--border);
+    }
+</style>
+
 <script src="produtos_planilha.js"></script>
 
 <script>
-// Variáveis Globais (Declaradas APENAS uma vez para evitar erro de Syntax)
-if (typeof carrinho === 'undefined') { var carrinho = {}; }
-var estado = { categoria: "todos", subcategoria: "todas" };
+let carrinho = {};
+let estado = { categoria: "todos", subcategoria: "todas" };
 
-const obterProdutos = () => {
-    return window.listaProdutosPlanilha || listaProdutosPlanilha || [];
-};
+const obterProdutos = () => window.listaProdutosPlanilha || [];
 
-/* ── MAPEAMENTO DE SETORES (Planilha -> Menu) ── */
-const mapaSetores = {
+/* ── ORGANIZAÇÃO PROFISSIONAL DO MENU ── */
+const dePara = {
     'caixas': ['caixas', 'caixas-correio', 'caixas-alimentos'],
     'sacolas': ['sacolas', 'sacos-lixo', 'sacolas-papel', 'sacolas-plasticas', 'embalagens-flexiveis'],
     'plastico': ['plastico', 'potes-tampas', 'embalagens-bolo'],
@@ -464,41 +511,18 @@ const mapaSetores = {
     'diversos': ['diversos', 'isopor-geral', 'emb-flexiveis', 'emb-diversas', 'outros']
 };
 
-/* ── SVGs 3D MELHORADOS ── */
-const svgs = {
-    caixa: `<svg viewBox="0 0 130 130" fill="none"><rect x="15" y="35" width="100" height="80" rx="4" fill="#e0f2fe" stroke="#0284c7" stroke-width="2.5"/><path d="M15 57 L115 57" stroke="#0284c7" stroke-width="2"/></svg>`,
-    lixo: `<svg viewBox="0 0 130 130" fill="none"><path d="M35 45 C45 25 85 25 95 45 L105 110 L25 110 Z" fill="#1e293b" stroke="#334155" stroke-width="2"/></svg>`,
-    crystal: `<svg viewBox="0 0 130 130" fill="none"><rect x="30" y="30" width="70" height="90" rx="5" fill="rgba(186,230,253,0.3)" stroke="#38bdf8" stroke-width="2"/><path d="M40 45 L50 55" stroke="#fff" stroke-width="3" stroke-linecap="round"/></svg>`,
-    default: `<svg viewBox="0 0 130 130" fill="none"><rect x="20" y="30" width="90" height="80" rx="6" fill="#dbeafe" stroke="#2563eb" stroke-width="2.5"/></svg>`
-};
-
-function resolverIcone(p) {
-    const n = p.nome.toUpperCase();
-    if (n.includes("CAIXA")) return svgs.caixa;
-    if (n.includes("CRYSTAL") || p.categoria === 'embalagens-flexiveis') return svgs.crystal;
-    if (n.includes("LIXO") || n.includes("SACO")) return svgs.lixo;
-    return svgs.default;
-}
-
 /* ── MOTOR DE RENDERIZAÇÃO ── */
-const cardObserver = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if(entry.isIntersecting) {
-            entry.target.classList.add('revealed');
-            cardObserver.unobserve(entry.target);
-        }
-    });
-}, { threshold: 0.1 });
-
 function renderizarProdutos() {
     const container = document.getElementById("containerProdutos");
     if (!container) return;
     container.innerHTML = "";
     
     let lista = obterProdutos();
+
     if (estado.categoria !== "todos") {
         lista = lista.filter(p => {
-            const matchCat = (mapaSetores[estado.categoria] || [estado.categoria]).includes(p.categoria);
+            const permitido = dePara[estado.categoria] || [estado.categoria];
+            const matchCat = permitido.includes(p.categoria) || permitido.includes(p.subcategoria);
             const matchSub = estado.subcategoria === "todas" || p.subcategoria === estado.subcategoria;
             return matchCat && matchSub;
         });
@@ -514,64 +538,93 @@ function renderizarProdutos() {
     Object.values(grupos).forEach(grupo => {
         const secao = document.createElement("div");
         secao.className = "product-section";
-        secao.innerHTML = `<h2 class="section-title"><i class="fas fa-tag"></i> ${grupo.label}</h2>`;
+        secao.innerHTML = `<h2 class="section-title"><i class="fas fa-layer-group"></i> ${grupo.label}</h2>`;
+        
         const grade = document.createElement("div");
         grade.className = "products-grid";
 
         grupo.itens.forEach(p => {
+            const noCart = !!carrinho[p.id];
+            const marca = p.especificacoes?.Marca || p.marca || "";
+            const preco = parseFloat(p.preco) > 0 ? `R$ ${parseFloat(p.preco).toFixed(2)}` : "Sob consulta";
+
             const card = document.createElement("div");
-            card.className = "product-card";
+            card.className = `product-card ${noCart ? 'in-cart' : ''}`;
             card.id = `card-${p.id}`;
             card.innerHTML = `
-                <div class="glare"></div>
-                <div class="product-img">${resolverIcone(p)}</div>
+                <div class="product-img">
+                    ${marca ? `<span class="brand-badge">${marca}</span>` : ''}
+                    <div class="cart-seal"><i class="fas fa-check"></i></div>
+                    <i class="fas fa-box-open" style="font-size:3rem; color:var(--blue-600); opacity:0.3;"></i>
+                </div>
                 <div class="product-body">
                     <h3 class="product-name">${p.nome}</h3>
-                    <div class="price-box"><span class="price-value">R$ ${parseFloat(p.preco).toFixed(2)}</span></div>
+                    <div class="price-box">
+                        <span class="price-value">${preco}</span>
+                        <span class="price-unit">${p.unidade || '/un'}</span>
+                    </div>
                     <div class="product-actions">
-                        <input type="number" id="qtd-${p.id}" value="1" min="1" class="input-qty" style="width:50px; border:1px solid #ddd; border-radius:8px; padding:5px;">
+                        <button class="btn-info-circle" onclick="abrirInfo(${p.id})"><i class="fas fa-info"></i></button>
+                        <div class="qty-control" style="display:flex; align-items:center; gap:5px;">
+                            <input type="number" id="qtd-${p.id}" value="1" min="1" style="width:40px; text-align:center; border:1px solid var(--border); border-radius:8px;">
+                        </div>
                         <button class="btn-add" onclick="adicionarAoCarrinho(${p.id})">Adicionar</button>
                     </div>
-                </div>`;
+                </div>
+            `;
             grade.appendChild(card);
-            cardObserver.observe(card);
-            aplicarEfeito3D(card);
+            setTimeout(() => card.classList.add('revealed'), 50);
+            vincular3D(card);
         });
         secao.appendChild(grade);
         container.appendChild(secao);
     });
 }
 
-/* ── CORE DA ANIMAÇÃO 3D (SEM BUG) ── */
-function aplicarEfeito3D(card) {
+/* ── ANIMAÇÃO 3D ULTRA SUAVE (LERP) ── */
+function vincular3D(card) {
     card.addEventListener('mousemove', (e) => {
         const rect = card.getBoundingClientRect();
         const x = e.clientX - rect.left;
         const y = e.clientY - rect.top;
-        const xc = rect.width / 2;
-        const yc = rect.height / 2;
-        const dx = x - xc;
-        const dy = y - yc;
-        
-        // Remove a transição durante o movimento para não dar lag
-        card.style.transition = "none";
-        card.style.transform = `perspective(1000px) rotateX(${(dy / yc) * -10}deg) rotateY(${(dx / xc) * 10}deg) scale3d(1.05, 1.05, 1.05)`;
-        
-        const glare = card.querySelector('.glare');
-        if(glare) glare.style.background = `radial-gradient(circle at ${x}px ${y}px, rgba(255,255,255,0.15), transparent 80%)`;
+        const rotateX = ((y - rect.height/2) / (rect.height/2)) * -10;
+        const rotateY = ((x - rect.width/2) / (rect.width/2)) * 10;
+        card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.05, 1.05, 1.05)`;
     });
-
     card.addEventListener('mouseleave', () => {
-        // Devolve a transição suave ao sair
-        card.style.transition = "all 0.5s ease";
-        card.style.transform = "perspective(1000px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)";
+        card.style.transform = `perspective(1000px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)`;
     });
 }
 
-/* ── FILTROS ── */
+/* ── MODAL DE SPECS (TAGS QUE APARECIAM) ── */
+function abrirInfo(id) {
+    const p = obterProdutos().find(prod => prod.id === id);
+    if (!p) return;
+    
+    let specsHtml = "";
+    if (p.especificacoes) {
+        Object.entries(p.especificacoes).forEach(([key, val]) => {
+            specsHtml += `<div class="spec-item"><b>${key}:</b> <span>${val}</span></div>`;
+        });
+    }
+
+    document.getElementById("modalContent").innerHTML = `
+        <h2 style="margin-bottom:1rem; color:var(--blue-600);">${p.nome}</h2>
+        <div style="margin-bottom:1.5rem;">${specsHtml || "Sem especificações adicionais."}</div>
+        <p style="font-size:1.2rem; font-weight:800;">Preço: R$ ${parseFloat(p.preco).toFixed(2)} ${p.unidade}</p>
+    `;
+    document.getElementById("modalInfo").style.display = "flex";
+}
+
+function fecharModal(e, force=false) {
+    if (force || e.target.id === "modalInfo") {
+        document.getElementById("modalInfo").style.display = "none";
+    }
+}
+
+/* ── FILTROS E CARRINHO ── */
 function filtrarCategoria(cat, btn) {
-    estado.categoria = cat;
-    estado.subcategoria = "todas";
+    estado.categoria = cat; estado.subcategoria = "todas";
     document.querySelectorAll(".btn-filter").forEach(b => b.classList.remove("active"));
     btn.classList.add("active");
     document.querySelectorAll(".sub-bar-base").forEach(b => b.classList.remove("visible"));
@@ -583,59 +636,27 @@ function filtrarCategoria(cat, btn) {
 function filtrarSub(sub, btn, cat) {
     estado.subcategoria = sub;
     const barra = document.getElementById(`barra-${cat}`);
-    if (barra) {
-        barra.querySelectorAll(".btn-sub").forEach(b => b.classList.remove("active"));
-        btn.classList.add("active");
-    }
+    barra.querySelectorAll(".btn-sub").forEach(b => b.classList.remove("active"));
+    btn.classList.add("active");
     renderizarProdutos();
 }
 
-/* ── CARRINHO ── */
 function adicionarAoCarrinho(id) {
     const qtd = parseInt(document.getElementById(`qtd-${id}`).value) || 1;
-    const p = obterProdutos().find(prod => prod.id === id);
-    if (!p) return;
-    carrinho[id] = { p, qtd };
+    const prod = obterProdutos().find(p => p.id === id);
+    carrinho[id] = { prod, qtd };
     document.getElementById("badgeCarrinho").textContent = Object.keys(carrinho).length;
     document.getElementById("badgeCarrinho").classList.add("visible");
-}
-
-function abrirCarrinho() {
-    const sidebar = document.getElementById("sidebarCarrinho");
-    const itensCont = document.getElementById("sidebarItens");
-    itensCont.innerHTML = Object.values(carrinho).map(item => `
-        <div style="padding:10px; border-bottom:1px solid #eee;">
-            <b>${item.p.nome}</b><br>${item.qtd}x - R$ ${(item.p.preco * item.qtd).toFixed(2)}
-        </div>
-    `).join("") || "Carrinho vazio";
-    sidebar.classList.add("open");
-    document.getElementById("overlayCarrinho").classList.add("open");
-}
-
-function fecharCarrinho() {
-    document.getElementById("sidebarCarrinho").classList.remove("open");
-    document.getElementById("overlayCarrinho").classList.remove("open");
+    document.getElementById(`card-${id}`).classList.add("in-cart");
 }
 
 function enviarWhatsApp() {
     let msg = "Pedido Cia das Embalagens:\n";
-    Object.values(carrinho).forEach(i => msg += `- ${i.p.nome} (Qtd: ${i.qtd})\n`);
+    Object.values(carrinho).forEach(i => msg += `- ${i.prod.nome} (Qtd: ${i.qtd})\n`);
     window.open(`https://wa.me/5511972999835?text=${encodeURIComponent(msg)}`);
 }
 
-// Inicialização
-window.onload = () => {
-    renderizarProdutos();
-    // Feedback Slider
-    let slideIdx = 0;
-    setInterval(() => {
-        const track = document.getElementById('feedbackSlider');
-        if (track) {
-            slideIdx = (slideIdx + 1) % 3;
-            track.style.transform = `translateX(-${slideIdx * 33.33}%)`;
-        }
-    }, 4000);
-};
+window.onload = renderizarProdutos;
 </script>
 
 <script src="integracao_planilha.js"></script>
