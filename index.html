@@ -408,68 +408,58 @@ footer { background:var(--blue-950); color:#fff; padding:6rem 0 3rem; margin-top
     <div class="footer-copy">© 2026 Cia Das Embalagens. Todos os direitos reservados.</div>
 </footer><script src="produtos_planilha.js"></script>
 
+<script src="produtos_planilha.js"></script>
+
 <script>
 let carrinho = {};
-let estado = { categoria: "todos", subcategoria: "todas" };
+let estado = { categoria: "todos" };
 
-const obterProdutos = () => {
-    if (typeof window.listaProdutosPlanilha !== 'undefined' && window.listaProdutosPlanilha.length > 0) return window.listaProdutosPlanilha;
-    if (typeof listaProdutosPlanilha !== 'undefined' && listaProdutosPlanilha.length > 0) return listaProdutosPlanilha;
-    if (typeof listaProdutos !== 'undefined' && listaProdutos.length > 0) return listaProdutos;
+// Garante que pega a lista correta
+const obterProdutosRaw = () => {
+    if (typeof window.listaProdutosPlanilha !== 'undefined') return window.listaProdutosPlanilha;
+    if (typeof listaProdutosPlanilha !== 'undefined') return listaProdutosPlanilha;
+    if (typeof listaProdutos !== 'undefined') return listaProdutos;
     return [];
 };
 
+/* ── O TRATOR CLASSIFICADOR (Organiza a zona por nome) ── */
+function organizarProduto(p) {
+    const n = p.nome.toUpperCase();
+    
+    if (n.includes("CAIXA") || n.includes("PAPELAO")) 
+        return { cat: "caixas", label: "Caixas de Papelão", icone: "fas fa-box" };
+    
+    if (n.includes("SACO") || n.includes("SACOLA") || n.includes("LIXO") || n.includes("CRYSTAL") || n.includes("KRAFT")) 
+        return { cat: "sacos", label: "Sacos e Sacolas", icone: "fas fa-trash" };
+    
+    if (n.includes("POTE") || n.includes("MARMITA") || n.includes("G60") || n.includes("G70") || n.includes("HV")) 
+        return { cat: "potes", label: "Potes e Marmitas", icone: "fas fa-utensils" };
+    
+    if (n.includes("GARFO") || n.includes("FACA") || n.includes("COLHER") || n.includes("COPO") || n.includes("PRATO") || n.includes("GUARDANAPO")) 
+        return { cat: "festa", label: "Descartáveis e Festa", icone: "fas fa-glass-cheers" };
+    
+    if (n.includes("DETERGENTE") || n.includes("LIMPEZA") || n.includes("SABAO") || n.includes("DESINFETANTE") || n.includes("ALCOOL")) 
+        return { cat: "limpeza", label: "Produtos de Limpeza", icone: "fas fa-spray-can" };
+    
+    if (n.includes("PAPEL") || n.includes("TOALHA") || n.includes("HIGIENICO") || n.includes("SABONETE")) 
+        return { cat: "higiene", label: "Higiene e Papel", icone: "fas fa-toilet-paper" };
+
+    return { cat: "diversos", label: "Diversos e Utilidades", icone: "fas fa-toolbox" };
+}
+
 function rolarPara(id){const el=document.getElementById(id);if(el)window.scrollTo({top:el.getBoundingClientRect().top-80,behavior:"smooth"});}
 
-function toggleTheme() {
-    const html = document.documentElement;
-    html.setAttribute('data-theme', html.getAttribute('data-theme') === 'dark' ? 'light' : 'dark');
-}
-
-/* ── SVGs CORRIGIDOS (3D VIBE) ── */
-const svgs = {
-    caixa: `<svg viewBox="0 0 130 130" fill="none"><rect x="15" y="35" width="100" height="80" rx="4" fill="#e0f2fe" stroke="#0284c7" stroke-width="2.5"/><rect x="15" y="35" width="100" height="22" rx="4" fill="#bae6fd" stroke="#0284c7" stroke-width="2.5"/><line x1="40" y1="70" x2="90" y2="70" stroke="#0284c7" stroke-width="2" stroke-dasharray="5,3"/></svg>`,
-    lixo: `<svg viewBox="0 0 130 130" fill="none"><path d="M35 45 C35 30 45 25 65 25 C85 25 95 30 95 45 L108 112 C109 118 100 120 95 120 L35 120 C30 120 21 118 22 112 Z" fill="#0f172a" stroke="#334155" stroke-width="2"/><path d="M40 45 C50 60 80 60 90 45" stroke="#1e293b" stroke-width="3" fill="none"/></svg>`,
-    sacola: `<svg viewBox="0 0 130 130" fill="none"><path d="M25 40 L105 40 C100 30 30 30 25 40 Z" fill="#f8fafc" stroke="#cbd5e1" stroke-width="2"/><rect x="25" y="40" width="80" height="80" rx="2" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="2"/></svg>`,
-    crystal: `<svg viewBox="0 0 130 130" fill="none"><rect x="30" y="30" width="70" height="90" rx="5" fill="rgba(186,230,253,0.3)" stroke="#38bdf8" stroke-width="2" stroke-dasharray="4 2"/><path d="M40 50 L50 60 M80 40 L90 50" stroke="#fff" stroke-width="3" stroke-linecap="round"/></svg>`,
-    plastico: `<svg viewBox="0 0 130 130" fill="none"><rect x="10" y="28" width="110" height="34" rx="6" fill="#f8fafc" stroke="#cbd5e1" stroke-width="2"/><rect x="14" y="62" width="102" height="50" rx="5" fill="#ffffff" stroke="#cbd5e1" stroke-width="2"/></svg>`,
-    limpeza: `<svg viewBox="0 0 130 130" fill="none"><rect x="40" y="30" width="50" height="70" rx="10" fill="#fce7f3" stroke="#e11d48" stroke-width="2"/><rect x="55" y="10" width="20" height="20" rx="4" fill="#fbcfe8" stroke="#e11d48" stroke-width="2"/></svg>`,
-    default: `<svg viewBox="0 0 130 130" fill="none"><rect x="20" y="30" width="90" height="80" rx="6" fill="#dbeafe" stroke="#2563eb" stroke-width="2.5"/><rect x="20" y="30" width="90" height="24" rx="6" fill="#bfdbfe" stroke="#2563eb" stroke-width="2"/></svg>`
-};
-
-function resolverIcone(p) {
-    const n = p.nome.toUpperCase();
-    if (n.includes("CAIXA")) return svgs.caixa;
-    if (n.includes("CRYSTAL") || n.includes("CRISTAL")) return svgs.crystal;
-    if (n.includes("LIXO")) return svgs.lixo;
-    if (n.includes("SACOLA")) return svgs.sacola;
-    if (p.categoria === 'plastico') return svgs.plastico;
-    if (p.categoria === 'limpeza' || p.categoria === 'higiene') return svgs.limpeza;
-    return svgs.default;
-}
-
-/* ── FILTROS ── */
-function filtrarCategoria(cat, btn) {
-    estado.categoria = cat;
-    estado.subcategoria = "todas";
+/* ── FILTROS DO MENU ── */
+function filtrarCategoria(catId, btn) {
+    estado.categoria = catId;
     document.querySelectorAll(".btn-filter").forEach(b => b.classList.remove("active"));
     btn.classList.add("active");
+    // Esconde submenus antigos (aquela zona de sub-barras)
     document.querySelectorAll(".sub-bar-base").forEach(b => b.classList.remove("visible"));
-    const barra = document.getElementById(`barra-${cat}`);
-    if (barra) barra.classList.add("visible");
     renderizarProdutos();
 }
 
-function filtrarSub(sub, btn, cat) {
-    estado.subcategoria = sub;
-    const barra = document.getElementById(`barra-${cat}`);
-    if (barra) {
-        barra.querySelectorAll(".btn-sub").forEach(b => b.classList.remove("active"));
-        btn.classList.add("active");
-    }
-    renderizarProdutos();
-}
-
+/* ── RENDERIZAÇÃO SEM ERRO ── */
 const cardObserver = new IntersectionObserver((entries) => {
     entries.forEach((entry, i) => {
         if(entry.isIntersecting){
@@ -482,57 +472,50 @@ const cardObserver = new IntersectionObserver((entries) => {
 function renderizarProdutos() {
     const container = document.getElementById("containerProdutos");
     container.innerHTML = "";
-    let produtos = obterProdutos();
+    
+    const raw = obterProdutosRaw();
+    if(raw.length === 0) return;
 
-    if (estado.categoria !== "todos") {
-        produtos = produtos.filter(p => {
-            let catCheck = p.categoria;
-            // Agrupador para a aba "Diversos" no menu
-            if (['isopor', 'embalagens-diversas', 'outros'].includes(catCheck)) catCheck = 'diversos';
-            
-            // Especial: Sacola Crystal está em embalagens-flexiveis na sua planilha
-            if (catCheck === 'embalagens-flexiveis') catCheck = 'sacolas';
-
-            if (estado.categoria !== catCheck) return false;
-            if (estado.subcategoria !== "todas") {
-                return (p.subcategoria === estado.subcategoria || p.categoria === estado.subcategoria);
-            }
-            return true;
-        });
-    }
-
+    // Processa a lista inteira e joga cada um no seu balde
     const grupos = {};
-    produtos.forEach(p => {
-        const key = p.subcategoria || p.categoria;
-        let label = p.especificacoes?.Subcategoria || key.replace('-', ' ').toUpperCase();
-        if (!grupos[key]) grupos[key] = { label, itens: [] };
-        grupos[key].itens.push(p);
+    raw.forEach(p => {
+        const info = organizarProduto(p);
+        
+        // Se estiver filtrando e não for a categoria certa, pula
+        if (estado.categoria !== "todos" && estado.categoria !== info.cat) return;
+
+        if (!grupos[info.cat]) grupos[info.cat] = { label: info.label, icone: info.icone, itens: [] };
+        grupos[info.cat].itens.push(p);
     });
 
-    Object.values(grupos).forEach(grupo => {
+    // Desenha na tela
+    Object.keys(grupos).sort().forEach(key => {
+        const g = grupos[key];
         const secao = document.createElement("div");
         secao.className = "product-section";
-        secao.innerHTML = `<h2 class="section-title"><i class="fas fa-tag"></i> ${grupo.label}</h2>`;
+        secao.innerHTML = `<h2 class="section-title"><i class="${g.icone}"></i> ${g.label}</h2>`;
+        
         const grade = document.createElement("div");
         grade.className = "products-grid";
 
-        grupo.itens.forEach(p => {
+        g.itens.forEach(p => {
             const noCart = !!carrinho[p.id];
             const pr = parseFloat(p.preco) || 0;
             const pFmt = pr > 0 ? pr.toLocaleString("pt-BR",{style:"currency",currency:"BRL"}) : "Sob consulta";
+            
             const card = document.createElement("div");
             card.className = `product-card${noCart?" in-cart":""}`;
             card.id = `card-${p.id}`;
             card.innerHTML = `
                 <div class="product-img">
                     <div class="cart-seal"><i class="fas fa-check"></i></div>
-                    ${resolverIcone(p)}
+                    <i class="${g.icone}" style="font-size:4rem; color:var(--blue-600); opacity:0.8;"></i>
                 </div>
                 <div class="product-body">
-                    <h3 class="product-name">${p.nome}</h3>
-                    <p class="product-desc">${p.especificacoes?.Categoria || p.categoria}</p>
+                    <h3 class="product-name" title="${p.nome}">${p.nome}</h3>
                     <div class="price-box">
-                        <div class="price-row"><span class="price-value">${pFmt}</span><span class="price-unit">${p.unidade}</span></div>
+                        <span class="price-value">${pFmt}</span>
+                        <span class="price-unit">${p.unidade || '/un'}</span>
                     </div>
                     <div class="product-actions">
                         <div class="qty-control">
@@ -540,17 +523,20 @@ function renderizarProdutos() {
                             <input class="input-qty" id="qtd-${p.id}" type="number" value="1" min="1">
                             <button class="btn-qty" onclick="alterarInputQtd(${p.id},1)">+</button>
                         </div>
-                        <button class="btn-add${noCart?" added":""}" id="btn-add-${p.id}" onclick="adicionarAoCarrinho(${p.id})">Adicionar</button>
+                        <button class="btn-add${noCart?" added":""}" id="btn-add-${p.id}" onclick="adicionarAoCarrinho(${p.id})">
+                            ${noCart ? 'Adicionado' : 'Adicionar'}
+                        </button>
                     </div>
                 </div>`;
             grade.appendChild(card);
-            cardObserver.observe(card); 
+            cardObserver.observe(card);
         });
         secao.appendChild(grade);
         container.appendChild(secao);
     });
 }
 
+/* ── LÓGICA DE CARRINHO ── */
 function alterarInputQtd(id, delta) {
     const input = document.getElementById(`qtd-${id}`);
     if (input) input.value = Math.max(1, parseInt(input.value || 1) + delta);
@@ -558,23 +544,30 @@ function alterarInputQtd(id, delta) {
 
 function adicionarAoCarrinho(id) {
     const qtd = parseInt(document.getElementById(`qtd-${id}`).value) || 1;
-    const produto = obterProdutos().find(p => p.id === id);
+    const produto = obterProdutosRaw().find(p => p.id === id);
     if (!produto) return;
+    
     carrinho[id] = { produto, qtd };
     document.getElementById("badgeCarrinho").textContent = Object.keys(carrinho).length;
     document.getElementById("badgeCarrinho").classList.add("visible");
     document.getElementById(`card-${id}`).classList.add("in-cart");
+    
+    const btn = document.getElementById(`btn-add-${id}`);
+    btn.innerHTML = "Adicionado!";
+    btn.classList.add("added");
 }
 
 function abrirCarrinho() {
     const cont = document.getElementById("sidebarItens");
     const vals = Object.values(carrinho);
     let html = "", total = 0;
+    
     vals.forEach(i => {
         const pr = parseFloat(i.produto.preco) || 0;
         total += pr * i.qtd;
         html += `<div class="cart-item"><div><b>${i.produto.nome}</b><br>${i.qtd}x</div><button onclick="removerDoCarrinho(${i.produto.id})">x</button></div>`;
     });
+    
     document.getElementById("totalCarrinho").textContent = total.toLocaleString("pt-BR",{style:"currency",currency:"BRL"});
     document.getElementById("sidebarCarrinho").classList.add("open");
     document.getElementById("overlayCarrinho").classList.add("open");
@@ -593,25 +586,26 @@ function removerDoCarrinho(id) {
 }
 
 function enviarWhatsApp() {
-    let msg = "Meu Pedido:\n";
+    let msg = "Olá, gostaria de fazer um pedido:\n";
     Object.values(carrinho).forEach(i => msg += `- ${i.produto.nome} (${i.qtd}x)\n`);
     window.open(`https://wa.me/5511972999835?text=${encodeURIComponent(msg)}`);
 }
 
-/* ── CARROSSEL DE FEEDBACK ── */
-let slideIdx = 0;
+/* ── CARROSSEL FEEDBACK ── */
 setInterval(() => {
     const track = document.getElementById('feedbackSlider');
     if (!track) return;
     const cards = document.querySelectorAll('.feedback-card');
-    slideIdx = (slideIdx + 1) % cards.length;
-    track.style.transform = `translateX(-${slideIdx * 100}%)`;
+    if(!window.slideIdx) window.slideIdx = 0;
+    window.slideIdx = (window.slideIdx + 1) % (cards.length - 1);
+    track.style.transform = `translateX(-${window.slideIdx * 33}%)`;
 }, 4000);
 
 window.onload = () => { renderizarProdutos(); };
 </script>
 
 <script src="integracao_planilha.js"></script>
+
 
 </body>
 </html>
