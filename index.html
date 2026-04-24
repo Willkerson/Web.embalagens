@@ -141,10 +141,43 @@ header.scrolled { padding:.6rem 0; background:var(--bg-glass-solid); box-shadow:
 .section-title i { color:var(--blue-600); background:var(--blue-50); padding:10px; border-radius:14px; font-size:1.4rem; box-shadow:var(--shadow-soft); }
 
 .products-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(280px,1fr)); gap:2.5rem; perspective: 1000px; }
-.product-card { background:var(--bg-card); border-radius:var(--radius-card); border:1px solid var(--border); overflow:hidden; box-shadow:var(--shadow-card); transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.4s ease, border-color 0.3s ease; display:flex; flex-direction:column; position:relative; opacity:0; transform:translateY(32px); transform-style: preserve-3d; }
-.product-card.revealed { opacity:1; transform:translateY(0); }
-.product-card:hover { transform: translateY(-12px) rotateX(4deg) rotateY(-2deg) scale3d(1.02, 1.02, 1.02); box-shadow:var(--shadow-hover); border-color:var(--blue-400); z-index: 5; }
-.product-card.in-cart { border-color:var(--green-wa) !important; box-shadow:0 0 0 3px rgba(37,211,102,.2), var(--shadow-hover) !important; transform:translateY(-4px); }
+.product-card {
+    background: var(--bg-card);
+    border-radius: var(--radius-card);
+    border: 1px solid var(--border);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    opacity: 0;
+    transform: translateY(30px);
+    /* Remova o transition global para não bugar o mousemove */
+    transition: opacity 0.6s ease, transform 0.6s ease, border-color 0.3s ease;
+    transform-style: preserve-3d;
+    will-change: transform;
+}
+
+.product-card.revealed {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Efeito de brilho que segue o mouse */
+.glare {
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at 50% 50%, rgba(255,255,255,0.1), transparent 60%);
+    mix-blend-mode: overlay;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 10;
+}
+
+.product-card:hover .glare {
+    opacity: 1;
+}    
+        .product-card.in-cart { border-color:var(--green-wa) !important; box-shadow:0 0 0 3px rgba(37,211,102,.2), var(--shadow-hover) !important; transform:translateY(-4px); }
 
 .product-img { width:100%; height:220px; display:flex; align-items:center; justify-content:center; transition:var(--tr); border-bottom:1px solid var(--border); position:relative; overflow:hidden; background:linear-gradient(135deg,var(--bg-page) 0%,var(--blue-50) 100%); transform-style: preserve-3d; }
 .product-img svg { width:135px; height:135px; transition:transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275); filter:drop-shadow(0 8px 16px rgba(15,23,42,.15)); transform: translateZ(20px); }
@@ -406,50 +439,136 @@ footer { background:var(--blue-950); color:#fff; padding:6rem 0 3rem; margin-top
 
 <footer>
     <div class="footer-copy">© 2026 Cia Das Embalagens. Todos os direitos reservados.</div>
-</footer><script src="produtos_planilha.js"></script>
+</footer>
 
 <script src="produtos_planilha.js"></script>
 
 <script>
-let carrinho = {};
-let estado = { categoria: "todos", subcategoria: "todas" };
+// Variáveis Globais (Declaradas APENAS uma vez para evitar erro de Syntax)
+if (typeof carrinho === 'undefined') { var carrinho = {}; }
+var estado = { categoria: "todos", subcategoria: "todas" };
 
-// Função "Pega-Tudo": Não importa o nome da variável no outro arquivo, ele acha.
 const obterProdutos = () => {
-    if (typeof window.listaProdutosPlanilha !== 'undefined' && window.listaProdutosPlanilha.length > 0) return window.listaProdutosPlanilha;
-    if (typeof listaProdutosPlanilha !== 'undefined' && listaProdutosPlanilha.length > 0) return listaProdutosPlanilha;
-    if (typeof listaProdutos !== 'undefined' && listaProdutos.length > 0) return listaProdutos;
-    return [];
+    return window.listaProdutosPlanilha || listaProdutosPlanilha || [];
 };
 
-function rolarPara(id){const el=document.getElementById(id);if(el)window.scrollTo({top:el.getBoundingClientRect().top-80,behavior:"smooth"});}
+/* ── MAPEAMENTO DE SETORES (Planilha -> Menu) ── */
+const mapaSetores = {
+    'caixas': ['caixas', 'caixas-correio', 'caixas-alimentos'],
+    'sacolas': ['sacolas', 'sacos-lixo', 'sacolas-papel', 'sacolas-plasticas', 'embalagens-flexiveis'],
+    'plastico': ['plastico', 'potes-tampas', 'embalagens-bolo'],
+    'festa': ['festa', 'copos-pratos', 'talheres'],
+    'limpeza': ['limpeza', 'produtos-limpeza', 'utensilios-limpeza', 'epi'],
+    'higiene': ['higiene', 'papel-higiene'],
+    'utilidades': ['utilidades', 'pilhas-baterias', 'aromas-inseticidas', 'organiz-limpeza', 'ferramentas', 'escritorio', 'ganchos'],
+    'diversos': ['diversos', 'isopor-geral', 'emb-flexiveis', 'emb-diversas', 'outros']
+};
 
-function toggleTheme() {
-    const html = document.documentElement;
-    html.setAttribute('data-theme', html.getAttribute('data-theme') === 'dark' ? 'light' : 'dark');
-}
-
-/* ── SEUS SVGs ORIGINAIS 3D ── */
+/* ── SVGs 3D MELHORADOS ── */
 const svgs = {
-    caixa: `<svg viewBox="0 0 130 130" fill="none"><rect x="15" y="35" width="100" height="80" rx="4" fill="#e0f2fe" stroke="#0284c7" stroke-width="2.5"/><rect x="15" y="35" width="100" height="22" rx="4" fill="#bae6fd" stroke="#0284c7" stroke-width="2.5"/><line x1="40" y1="70" x2="90" y2="70" stroke="#0284c7" stroke-width="2" stroke-dasharray="5,3"/></svg>`,
-    lixo: `<svg viewBox="0 0 130 130" fill="none"><path d="M35 45 C35 30 45 25 65 25 C85 25 95 30 95 45 L108 112 C109 118 100 120 95 120 L35 120 C30 120 21 118 22 112 Z" fill="#0f172a" stroke="#334155" stroke-width="2"/><path d="M40 45 C50 60 80 60 90 45" stroke="#1e293b" stroke-width="3" fill="none"/></svg>`,
-    crystal: `<svg viewBox="0 0 130 130" fill="none"><rect x="30" y="30" width="70" height="90" rx="5" fill="rgba(186,230,253,0.3)" stroke="#38bdf8" stroke-width="2" stroke-dasharray="4 2"/><path d="M45 45 L55 55 M75 35 L85 45" stroke="#fff" stroke-width="3" stroke-linecap="round"/></svg>`,
-    plastico: `<svg viewBox="0 0 130 130" fill="none"><rect x="10" y="28" width="110" height="34" rx="6" fill="#f8fafc" stroke="#cbd5e1" stroke-width="2"/><rect x="14" y="62" width="102" height="50" rx="5" fill="#ffffff" stroke="#cbd5e1" stroke-width="2"/></svg>`,
-    limpeza: `<svg viewBox="0 0 130 130" fill="none"><rect x="40" y="30" width="50" height="70" rx="10" fill="#fce7f3" stroke="#e11d48" stroke-width="2"/><rect x="55" y="10" width="20" height="20" rx="4" fill="#fbcfe8" stroke="#e11d48" stroke-width="2"/></svg>`,
-    default: `<svg viewBox="0 0 130 130" fill="none"><rect x="20" y="30" width="90" height="80" rx="6" fill="#dbeafe" stroke="#2563eb" stroke-width="2.5"/><rect x="20" y="30" width="90" height="24" rx="6" fill="#bfdbfe" stroke="#2563eb" stroke-width="2"/></svg>`
+    caixa: `<svg viewBox="0 0 130 130" fill="none"><rect x="15" y="35" width="100" height="80" rx="4" fill="#e0f2fe" stroke="#0284c7" stroke-width="2.5"/><path d="M15 57 L115 57" stroke="#0284c7" stroke-width="2"/></svg>`,
+    lixo: `<svg viewBox="0 0 130 130" fill="none"><path d="M35 45 C45 25 85 25 95 45 L105 110 L25 110 Z" fill="#1e293b" stroke="#334155" stroke-width="2"/></svg>`,
+    crystal: `<svg viewBox="0 0 130 130" fill="none"><rect x="30" y="30" width="70" height="90" rx="5" fill="rgba(186,230,253,0.3)" stroke="#38bdf8" stroke-width="2"/><path d="M40 45 L50 55" stroke="#fff" stroke-width="3" stroke-linecap="round"/></svg>`,
+    default: `<svg viewBox="0 0 130 130" fill="none"><rect x="20" y="30" width="90" height="80" rx="6" fill="#dbeafe" stroke="#2563eb" stroke-width="2.5"/></svg>`
 };
 
 function resolverIcone(p) {
     const n = p.nome.toUpperCase();
     if (n.includes("CAIXA")) return svgs.caixa;
-    if (n.includes("CRYSTAL")) return svgs.crystal;
+    if (n.includes("CRYSTAL") || p.categoria === 'embalagens-flexiveis') return svgs.crystal;
     if (n.includes("LIXO") || n.includes("SACO")) return svgs.lixo;
-    if (p.categoria === 'plastico') return svgs.plastico;
-    if (p.categoria === 'limpeza') return svgs.limpeza;
     return svgs.default;
 }
 
-/* ── FILTROS (RESTAURADOS) ── */
+/* ── MOTOR DE RENDERIZAÇÃO ── */
+const cardObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if(entry.isIntersecting) {
+            entry.target.classList.add('revealed');
+            cardObserver.unobserve(entry.target);
+        }
+    });
+}, { threshold: 0.1 });
+
+function renderizarProdutos() {
+    const container = document.getElementById("containerProdutos");
+    if (!container) return;
+    container.innerHTML = "";
+    
+    let lista = obterProdutos();
+    if (estado.categoria !== "todos") {
+        lista = lista.filter(p => {
+            const matchCat = (mapaSetores[estado.categoria] || [estado.categoria]).includes(p.categoria);
+            const matchSub = estado.subcategoria === "todas" || p.subcategoria === estado.subcategoria;
+            return matchCat && matchSub;
+        });
+    }
+
+    const grupos = {};
+    lista.forEach(p => {
+        const key = p.subcategoria || p.categoria;
+        if (!grupos[key]) grupos[key] = { label: key.replace('-', ' ').toUpperCase(), itens: [] };
+        grupos[key].itens.push(p);
+    });
+
+    Object.values(grupos).forEach(grupo => {
+        const secao = document.createElement("div");
+        secao.className = "product-section";
+        secao.innerHTML = `<h2 class="section-title"><i class="fas fa-tag"></i> ${grupo.label}</h2>`;
+        const grade = document.createElement("div");
+        grade.className = "products-grid";
+
+        grupo.itens.forEach(p => {
+            const card = document.createElement("div");
+            card.className = "product-card";
+            card.id = `card-${p.id}`;
+            card.innerHTML = `
+                <div class="glare"></div>
+                <div class="product-img">${resolverIcone(p)}</div>
+                <div class="product-body">
+                    <h3 class="product-name">${p.nome}</h3>
+                    <div class="price-box"><span class="price-value">R$ ${parseFloat(p.preco).toFixed(2)}</span></div>
+                    <div class="product-actions">
+                        <input type="number" id="qtd-${p.id}" value="1" min="1" class="input-qty" style="width:50px; border:1px solid #ddd; border-radius:8px; padding:5px;">
+                        <button class="btn-add" onclick="adicionarAoCarrinho(${p.id})">Adicionar</button>
+                    </div>
+                </div>`;
+            grade.appendChild(card);
+            cardObserver.observe(card);
+            aplicarEfeito3D(card);
+        });
+        secao.appendChild(grade);
+        container.appendChild(secao);
+    });
+}
+
+/* ── CORE DA ANIMAÇÃO 3D (SEM BUG) ── */
+function aplicarEfeito3D(card) {
+    card.addEventListener('mousemove', (e) => {
+        const rect = card.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+        const xc = rect.width / 2;
+        const yc = rect.height / 2;
+        const dx = x - xc;
+        const dy = y - yc;
+        
+        // Remove a transição durante o movimento para não dar lag
+        card.style.transition = "none";
+        card.style.transform = `perspective(1000px) rotateX(${(dy / yc) * -10}deg) rotateY(${(dx / xc) * 10}deg) scale3d(1.05, 1.05, 1.05)`;
+        
+        const glare = card.querySelector('.glare');
+        if(glare) glare.style.background = `radial-gradient(circle at ${x}px ${y}px, rgba(255,255,255,0.15), transparent 80%)`;
+    });
+
+    card.addEventListener('mouseleave', () => {
+        // Devolve a transição suave ao sair
+        card.style.transition = "all 0.5s ease";
+        card.style.transform = "perspective(1000px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)";
+    });
+}
+
+/* ── FILTROS ── */
 function filtrarCategoria(cat, btn) {
     estado.categoria = cat;
     estado.subcategoria = "todas";
@@ -471,118 +590,26 @@ function filtrarSub(sub, btn, cat) {
     renderizarProdutos();
 }
 
-/* ── RENDERIZAÇÃO INTELIGENTE ── */
-const cardObserver = new IntersectionObserver((entries) => {
-    entries.forEach((entry, i) => {
-        if(entry.isIntersecting){
-            setTimeout(() => entry.target.classList.add('revealed'), i * 30);
-            cardObserver.unobserve(entry.target);
-        }
-    });
-}, { threshold: 0.01 });
-
-function renderizarProdutos() {
-    const container = document.getElementById("containerProdutos");
-    container.innerHTML = "";
-    let produtos = obterProdutos();
-
-    if (estado.categoria !== "todos") {
-        produtos = produtos.filter(p => {
-            let catCheck = p.categoria;
-            // Mapeamento de ALIAS (Nomes da planilha -> Botões do site)
-            if (estado.categoria === 'sacolas') {
-                if (['sacolas', 'embalagens-flexiveis', 'sacolas-plasticas', 'sacolas-papel', 'sacos-lixo'].includes(p.categoria)) catCheck = 'sacolas';
-            }
-            if (estado.categoria === 'diversos') {
-                if (['isopor', 'embalagens-diversas', 'outros', 'utilidades'].includes(p.categoria)) catCheck = 'diversos';
-            }
-
-            if (estado.categoria !== catCheck) return false;
-            
-            // Subcategoria
-            if (estado.subcategoria !== "todas") {
-                return (p.subcategoria === estado.subcategoria || p.categoria === estado.subcategoria);
-            }
-            return true;
-        });
-    }
-
-    const grupos = {};
-    produtos.forEach(p => {
-        const key = p.subcategoria || p.categoria;
-        let label = p.especificacoes?.Subcategoria || key.replace('-', ' ').toUpperCase();
-        if (!grupos[key]) grupos[key] = { label, itens: [] };
-        grupos[key].itens.push(p);
-    });
-
-    Object.values(grupos).forEach(grupo => {
-        const secao = document.createElement("div");
-        secao.className = "product-section";
-        secao.innerHTML = `<h2 class="section-title"><i class="fas fa-tag"></i> ${grupo.label}</h2>`;
-        const grade = document.createElement("div");
-        grade.className = "products-grid";
-
-        grupo.itens.forEach(p => {
-            const noCart = !!carrinho[p.id];
-            const pFmt = p.preco > 0 ? p.preco.toLocaleString("pt-BR",{style:"currency",currency:"BRL"}) : "Sob consulta";
-            const card = document.createElement("div");
-            card.className = `product-card${noCart?" in-cart":""}`;
-            card.id = `card-${p.id}`;
-            card.innerHTML = `
-                <div class="product-img">
-                    <div class="cart-seal"><i class="fas fa-check"></i></div>
-                    ${resolverIcone(p)}
-                </div>
-                <div class="product-body">
-                    <h3 class="product-name" title="${p.nome}">${p.nome}</h3>
-                    <p class="product-desc">${p.especificacoes?.Categoria || p.categoria}</p>
-                    <div class="price-box">
-                        <div class="price-row"><span class="price-value">${pFmt}</span><span class="price-unit">${p.unidade || '/un'}</span></div>
-                    </div>
-                    <div class="product-actions">
-                        <div class="qty-control">
-                            <button class="btn-qty" onclick="alterarInputQtd(${p.id},-1)">−</button>
-                            <input class="input-qty" id="qtd-${p.id}" type="number" value="1" min="1">
-                            <button class="btn-qty" onclick="alterarInputQtd(${p.id},1)">+</button>
-                        </div>
-                        <button class="btn-add${noCart?" added":""}" id="btn-add-${p.id}" onclick="adicionarAoCarrinho(${p.id})">Adicionar</button>
-                    </div>
-                </div>`;
-            grade.appendChild(card);
-            cardObserver.observe(card); 
-        });
-        secao.appendChild(grade);
-        container.appendChild(secao);
-    });
-}
-
-function alterarInputQtd(id, delta) {
-    const input = document.getElementById(`qtd-${id}`);
-    if (input) input.value = Math.max(1, parseInt(input.value || 1) + delta);
-}
-
+/* ── CARRINHO ── */
 function adicionarAoCarrinho(id) {
     const qtd = parseInt(document.getElementById(`qtd-${id}`).value) || 1;
-    const produto = obterProdutos().find(p => p.id === id);
-    if (!produto) return;
-    carrinho[id] = { produto, qtd };
+    const p = obterProdutos().find(prod => prod.id === id);
+    if (!p) return;
+    carrinho[id] = { p, qtd };
     document.getElementById("badgeCarrinho").textContent = Object.keys(carrinho).length;
     document.getElementById("badgeCarrinho").classList.add("visible");
 }
 
 function abrirCarrinho() {
-    const cont = document.getElementById("sidebarItens");
-    const vals = Object.values(carrinho);
-    let html = "", total = 0;
-    vals.forEach(i => {
-        const pr = parseFloat(i.produto.preco) || 0;
-        total += pr * i.qtd;
-        html += `<div class="cart-item"><div><b>${i.produto.nome}</b><br>${i.qtd}x</div><button onclick="removerDoCarrinho(${i.produto.id})">x</button></div>`;
-    });
-    document.getElementById("totalCarrinho").textContent = total.toLocaleString("pt-BR",{style:"currency",currency:"BRL"});
-    document.getElementById("sidebarCarrinho").classList.add("open");
+    const sidebar = document.getElementById("sidebarCarrinho");
+    const itensCont = document.getElementById("sidebarItens");
+    itensCont.innerHTML = Object.values(carrinho).map(item => `
+        <div style="padding:10px; border-bottom:1px solid #eee;">
+            <b>${item.p.nome}</b><br>${item.qtd}x - R$ ${(item.p.preco * item.qtd).toFixed(2)}
+        </div>
+    `).join("") || "Carrinho vazio";
+    sidebar.classList.add("open");
     document.getElementById("overlayCarrinho").classList.add("open");
-    cont.innerHTML = html || "Carrinho vazio";
 }
 
 function fecharCarrinho() {
@@ -590,29 +617,25 @@ function fecharCarrinho() {
     document.getElementById("overlayCarrinho").classList.remove("open");
 }
 
-function removerDoCarrinho(id) {
-    delete carrinho[id];
-    renderizarProdutos();
-    abrirCarrinho();
-}
-
 function enviarWhatsApp() {
-    let msg = "Meu Pedido:\n";
-    Object.values(carrinho).forEach(i => msg += `- ${i.produto.nome} (${i.qtd}x)\n`);
+    let msg = "Pedido Cia das Embalagens:\n";
+    Object.values(carrinho).forEach(i => msg += `- ${i.p.nome} (Qtd: ${i.qtd})\n`);
     window.open(`https://wa.me/5511972999835?text=${encodeURIComponent(msg)}`);
 }
 
-/* ── CARROSSEL DE FEEDBACK (RESTAURADO) ── */
-let slideIdx = 0;
-setInterval(() => {
-    const track = document.getElementById('feedbackSlider');
-    if (!track) return;
-    const cards = document.querySelectorAll('.feedback-card');
-    slideIdx = (slideIdx + 1) % 3; // Mantém no grid original
-    track.style.transform = `translateX(-${slideIdx * 33.33}%)`;
-}, 4000);
-
-window.onload = () => { renderizarProdutos(); };
+// Inicialização
+window.onload = () => {
+    renderizarProdutos();
+    // Feedback Slider
+    let slideIdx = 0;
+    setInterval(() => {
+        const track = document.getElementById('feedbackSlider');
+        if (track) {
+            slideIdx = (slideIdx + 1) % 3;
+            track.style.transform = `translateX(-${slideIdx * 33.33}%)`;
+        }
+    }, 4000);
+};
 </script>
 
 <script src="integracao_planilha.js"></script>
