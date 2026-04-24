@@ -426,22 +426,29 @@ function toggleTheme() {
     html.setAttribute('data-theme', html.getAttribute('data-theme') === 'dark' ? 'light' : 'dark');
 }
 
+/* ── SVGs CORRIGIDOS (3D VIBE) ── */
 const svgs = {
-    caixa: `<svg viewBox="0 0 130 130" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="15" y="35" width="100" height="80" rx="4" fill="#e0f2fe" stroke="#0284c7" stroke-width="2.5"/><rect x="15" y="35" width="100" height="22" rx="4" fill="#bae6fd" stroke="#0284c7" stroke-width="2.5"/><line x1="40" y1="70" x2="90" y2="70" stroke="#0284c7" stroke-width="2" stroke-dasharray="5,3"/></svg>`,
-    lixo: `<svg viewBox="0 0 130 130" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M35 45 C35 30 45 25 65 25 C85 25 95 30 95 45 L108 112 C109 118 100 120 95 120 L35 120 C30 120 21 118 22 112 Z" fill="#0f172a" stroke="#334155" stroke-width="2"/><path d="M40 45 C50 60 80 60 90 45" stroke="#1e293b" stroke-width="3" fill="none"/></svg>`,
-    plastico: `<svg viewBox="0 0 130 130" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="10" y="28" width="110" height="34" rx="6" fill="#f8fafc" stroke="#cbd5e1" stroke-width="2"/><rect x="14" y="62" width="102" height="50" rx="5" fill="#ffffff" stroke="#cbd5e1" stroke-width="2"/></svg>`,
-    limpeza: `<svg viewBox="0 0 130 130" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="40" y="30" width="50" height="70" rx="10" fill="#fce7f3" stroke="#e11d48" stroke-width="2"/><rect x="55" y="10" width="20" height="20" rx="4" fill="#fbcfe8" stroke="#e11d48" stroke-width="2"/></svg>`,
-    default: `<svg viewBox="0 0 130 130" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="20" y="30" width="90" height="80" rx="6" fill="#dbeafe" stroke="#2563eb" stroke-width="2.5"/><rect x="20" y="30" width="90" height="24" rx="6" fill="#bfdbfe" stroke="#2563eb" stroke-width="2"/></svg>`
+    caixa: `<svg viewBox="0 0 130 130" fill="none"><rect x="15" y="35" width="100" height="80" rx="4" fill="#e0f2fe" stroke="#0284c7" stroke-width="2.5"/><rect x="15" y="35" width="100" height="22" rx="4" fill="#bae6fd" stroke="#0284c7" stroke-width="2.5"/><line x1="40" y1="70" x2="90" y2="70" stroke="#0284c7" stroke-width="2" stroke-dasharray="5,3"/></svg>`,
+    lixo: `<svg viewBox="0 0 130 130" fill="none"><path d="M35 45 C35 30 45 25 65 25 C85 25 95 30 95 45 L108 112 C109 118 100 120 95 120 L35 120 C30 120 21 118 22 112 Z" fill="#0f172a" stroke="#334155" stroke-width="2"/><path d="M40 45 C50 60 80 60 90 45" stroke="#1e293b" stroke-width="3" fill="none"/></svg>`,
+    sacola: `<svg viewBox="0 0 130 130" fill="none"><path d="M25 40 L105 40 C100 30 30 30 25 40 Z" fill="#f8fafc" stroke="#cbd5e1" stroke-width="2"/><rect x="25" y="40" width="80" height="80" rx="2" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="2"/></svg>`,
+    crystal: `<svg viewBox="0 0 130 130" fill="none"><rect x="30" y="30" width="70" height="90" rx="5" fill="rgba(186,230,253,0.3)" stroke="#38bdf8" stroke-width="2" stroke-dasharray="4 2"/><path d="M40 50 L50 60 M80 40 L90 50" stroke="#fff" stroke-width="3" stroke-linecap="round"/></svg>`,
+    plastico: `<svg viewBox="0 0 130 130" fill="none"><rect x="10" y="28" width="110" height="34" rx="6" fill="#f8fafc" stroke="#cbd5e1" stroke-width="2"/><rect x="14" y="62" width="102" height="50" rx="5" fill="#ffffff" stroke="#cbd5e1" stroke-width="2"/></svg>`,
+    limpeza: `<svg viewBox="0 0 130 130" fill="none"><rect x="40" y="30" width="50" height="70" rx="10" fill="#fce7f3" stroke="#e11d48" stroke-width="2"/><rect x="55" y="10" width="20" height="20" rx="4" fill="#fbcfe8" stroke="#e11d48" stroke-width="2"/></svg>`,
+    default: `<svg viewBox="0 0 130 130" fill="none"><rect x="20" y="30" width="90" height="80" rx="6" fill="#dbeafe" stroke="#2563eb" stroke-width="2.5"/><rect x="20" y="30" width="90" height="24" rx="6" fill="#bfdbfe" stroke="#2563eb" stroke-width="2"/></svg>`
 };
 
-function getSvgParaCategoria(cat) {
-    if(cat === 'caixas' || cat === 'caixas-correio') return svgs.caixa;
-    if(cat === 'sacolas' || cat === 'sacos-lixo') return svgs.lixo;
-    if(cat === 'plastico' || cat === 'potes-tampas') return svgs.plastico;
-    if(cat === 'limpeza' || cat === 'higiene') return svgs.limpeza;
+function resolverIcone(p) {
+    const n = p.nome.toUpperCase();
+    if (n.includes("CAIXA")) return svgs.caixa;
+    if (n.includes("CRYSTAL") || n.includes("CRISTAL")) return svgs.crystal;
+    if (n.includes("LIXO")) return svgs.lixo;
+    if (n.includes("SACOLA")) return svgs.sacola;
+    if (p.categoria === 'plastico') return svgs.plastico;
+    if (p.categoria === 'limpeza' || p.categoria === 'higiene') return svgs.limpeza;
     return svgs.default;
 }
 
+/* ── FILTROS ── */
 function filtrarCategoria(cat, btn) {
     estado.categoria = cat;
     estado.subcategoria = "todas";
@@ -449,10 +456,7 @@ function filtrarCategoria(cat, btn) {
     btn.classList.add("active");
     document.querySelectorAll(".sub-bar-base").forEach(b => b.classList.remove("visible"));
     const barra = document.getElementById(`barra-${cat}`);
-    if (barra) {
-        barra.classList.add("visible");
-        barra.querySelectorAll(".btn-sub").forEach((b, i) => b.classList.toggle("active", i === 0));
-    }
+    if (barra) barra.classList.add("visible");
     renderizarProdutos();
 }
 
@@ -469,44 +473,39 @@ function filtrarSub(sub, btn, cat) {
 const cardObserver = new IntersectionObserver((entries) => {
     entries.forEach((entry, i) => {
         if(entry.isIntersecting){
-            setTimeout(() => entry.target.classList.add('revealed'), i * 40);
+            setTimeout(() => entry.target.classList.add('revealed'), i * 30);
             cardObserver.unobserve(entry.target);
         }
     });
-}, { threshold: 0.05 });
+}, { threshold: 0.01 });
 
 function renderizarProdutos() {
     const container = document.getElementById("containerProdutos");
     container.innerHTML = "";
-    
     let produtos = obterProdutos();
-    if(produtos.length === 0) return;
 
     if (estado.categoria !== "todos") {
         produtos = produtos.filter(p => {
-            let catOriginal = p.categoria;
-            if (['isopor', 'embalagens-flexiveis', 'embalagens-diversas', 'outros'].includes(catOriginal)) {
-                catOriginal = 'diversos';
-            }
-            if (estado.categoria !== catOriginal) return false;
+            let catCheck = p.categoria;
+            // Agrupador para a aba "Diversos" no menu
+            if (['isopor', 'embalagens-diversas', 'outros'].includes(catCheck)) catCheck = 'diversos';
+            
+            // Especial: Sacola Crystal está em embalagens-flexiveis na sua planilha
+            if (catCheck === 'embalagens-flexiveis') catCheck = 'sacolas';
+
+            if (estado.categoria !== catCheck) return false;
             if (estado.subcategoria !== "todas") {
-                if (estado.categoria === 'diversos' && p.categoria !== estado.subcategoria && p.subcategoria !== estado.subcategoria) return false;
-                else if (estado.categoria !== 'diversos' && p.subcategoria !== estado.subcategoria) return false;
+                return (p.subcategoria === estado.subcategoria || p.categoria === estado.subcategoria);
             }
             return true;
         });
     }
 
-    if(!produtos.length){
-        container.innerHTML=`<p style="text-align:center;color:var(--text-muted);padding:4rem 0;">Nenhum produto encontrado nesta categoria.</p>`;
-        return;
-    }
-
     const grupos = {};
     produtos.forEach(p => {
         const key = p.subcategoria || p.categoria;
-        let nomeSessao = p.especificacoes?.Subcategoria || key.replace('-', ' ').toUpperCase();
-        if(!grupos[key]) grupos[key] = { label: nomeSessao, itens: [], catBase: p.categoria };
+        let label = p.especificacoes?.Subcategoria || key.replace('-', ' ').toUpperCase();
+        if (!grupos[key]) grupos[key] = { label, itens: [] };
         grupos[key].itens.push(p);
     });
 
@@ -521,21 +520,18 @@ function renderizarProdutos() {
             const noCart = !!carrinho[p.id];
             const pr = parseFloat(p.preco) || 0;
             const pFmt = pr > 0 ? pr.toLocaleString("pt-BR",{style:"currency",currency:"BRL"}) : "Sob consulta";
-
             const card = document.createElement("div");
             card.className = `product-card${noCart?" in-cart":""}`;
             card.id = `card-${p.id}`;
-            
             card.innerHTML = `
                 <div class="product-img">
                     <div class="cart-seal"><i class="fas fa-check"></i></div>
-                    ${getSvgParaCategoria(grupo.catBase)}
+                    ${resolverIcone(p)}
                 </div>
                 <div class="product-body">
-                    <h3 class="product-name" title="${p.nome}">${p.nome.length > 40 ? p.nome.substring(0, 38) + '...' : p.nome}</h3>
+                    <h3 class="product-name">${p.nome}</h3>
                     <p class="product-desc">${p.especificacoes?.Categoria || p.categoria}</p>
                     <div class="price-box">
-                        <span class="price-label">Preço</span>
                         <div class="price-row"><span class="price-value">${pFmt}</span><span class="price-unit">${p.unidade}</span></div>
                     </div>
                     <div class="product-actions">
@@ -544,9 +540,7 @@ function renderizarProdutos() {
                             <input class="input-qty" id="qtd-${p.id}" type="number" value="1" min="1">
                             <button class="btn-qty" onclick="alterarInputQtd(${p.id},1)">+</button>
                         </div>
-                        <button class="btn-add${noCart?" added":""}" id="btn-add-${p.id}" onclick="adicionarAoCarrinho(${p.id})">
-                            <i class="fas fa-shopping-cart"></i> Adicionar
-                        </button>
+                        <button class="btn-add${noCart?" added":""}" id="btn-add-${p.id}" onclick="adicionarAoCarrinho(${p.id})">Adicionar</button>
                     </div>
                 </div>`;
             grade.appendChild(card);
@@ -566,49 +560,25 @@ function adicionarAoCarrinho(id) {
     const qtd = parseInt(document.getElementById(`qtd-${id}`).value) || 1;
     const produto = obterProdutos().find(p => p.id === id);
     if (!produto) return;
-    
-    if(carrinho[id]) carrinho[id].qtd += qtd;
-    else carrinho[id] = { produto, qtd };
-    
+    carrinho[id] = { produto, qtd };
     document.getElementById("badgeCarrinho").textContent = Object.keys(carrinho).length;
     document.getElementById("badgeCarrinho").classList.add("visible");
-    
-    const card = document.getElementById(`card-${id}`);
-    if(card) card.classList.add("in-cart");
-    
-    const btn = document.getElementById(`btn-add-${id}`);
-    if(btn){
-        btn.classList.add("added");
-        btn.innerHTML = `<i class="fas fa-check"></i> Adicionado!`;
-        setTimeout(() => { btn.classList.remove("added"); btn.innerHTML = `<i class="fas fa-shopping-cart"></i> Adicionar`; }, 1500);
-    }
+    document.getElementById(`card-${id}`).classList.add("in-cart");
 }
 
 function abrirCarrinho() {
     const cont = document.getElementById("sidebarItens");
     const vals = Object.values(carrinho);
     let html = "", total = 0;
-    
-    if (!vals.length) {
-        cont.innerHTML = `<p style="text-align:center;margin-top:2rem;">Carrinho vazio</p>`;
-    } else {
-        vals.forEach(i => {
-            const pr = parseFloat(i.produto.preco) || 0;
-            total += pr * i.qtd;
-            html += `
-            <div class="cart-item">
-                <div class="cart-item-info">
-                    <div style="font-weight:bold;">${i.produto.nome}</div>
-                    <div style="font-size:0.85rem;color:gray;">${i.qtd}x ${pr > 0 ? pr.toLocaleString("pt-BR",{style:"currency",currency:"BRL"}) : "Sob consulta"}</div>
-                </div>
-                <button class="btn-remove-item" onclick="removerDoCarrinho(${i.produto.id})"><i class="fas fa-trash"></i></button>
-            </div>`;
-        });
-        cont.innerHTML = html;
-    }
+    vals.forEach(i => {
+        const pr = parseFloat(i.produto.preco) || 0;
+        total += pr * i.qtd;
+        html += `<div class="cart-item"><div><b>${i.produto.nome}</b><br>${i.qtd}x</div><button onclick="removerDoCarrinho(${i.produto.id})">x</button></div>`;
+    });
     document.getElementById("totalCarrinho").textContent = total.toLocaleString("pt-BR",{style:"currency",currency:"BRL"});
     document.getElementById("sidebarCarrinho").classList.add("open");
     document.getElementById("overlayCarrinho").classList.add("open");
+    cont.innerHTML = html || "Carrinho vazio";
 }
 
 function fecharCarrinho() {
@@ -618,32 +588,25 @@ function fecharCarrinho() {
 
 function removerDoCarrinho(id) {
     delete carrinho[id];
-    const card = document.getElementById(`card-${id}`);
-    if(card) card.classList.remove("in-cart");
-    document.getElementById("badgeCarrinho").textContent = Object.keys(carrinho).length;
-    abrirCarrinho();
-}
-
-function limparCarrinho() {
-    carrinho = {};
-    document.querySelectorAll(".product-card").forEach(c => c.classList.remove("in-cart"));
-    document.getElementById("badgeCarrinho").textContent = 0;
+    renderizarProdutos();
     abrirCarrinho();
 }
 
 function enviarWhatsApp() {
-    const vals = Object.values(carrinho);
-    if (!vals.length) return alert("Adicione produtos antes de enviar!");
-    
-    const linhas = vals.map(i => {
-        const pr = parseFloat(i.produto.preco) || 0;
-        const pFmt = pr > 0 ? pr.toLocaleString("pt-BR",{style:"currency",currency:"BRL"}) : "Sob consulta";
-        return `• ${i.produto.nome} — ${i.qtd}x ${pFmt}`;
-    });
-    
-    const msg = `Olá! Gostaria de fazer um pedido pela Cia Das Embalagens.\n\n*Itens do Pedido:*\n${linhas.join("\n")}\n\n*Total estimado:* ${document.getElementById("totalCarrinho").textContent}\n\nPoderia confirmar?`;
-    window.open(`https://wa.me/5511972999835?text=${encodeURIComponent(msg)}`,"_blank");
+    let msg = "Meu Pedido:\n";
+    Object.values(carrinho).forEach(i => msg += `- ${i.produto.nome} (${i.qtd}x)\n`);
+    window.open(`https://wa.me/5511972999835?text=${encodeURIComponent(msg)}`);
 }
+
+/* ── CARROSSEL DE FEEDBACK ── */
+let slideIdx = 0;
+setInterval(() => {
+    const track = document.getElementById('feedbackSlider');
+    if (!track) return;
+    const cards = document.querySelectorAll('.feedback-card');
+    slideIdx = (slideIdx + 1) % cards.length;
+    track.style.transform = `translateX(-${slideIdx * 100}%)`;
+}, 4000);
 
 window.onload = () => { renderizarProdutos(); };
 </script>
