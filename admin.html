@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Admin — Cia Das Embalagens</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #080b12;
+  --bg1: #0d1220;
+  --bg2: #131926;
+  --bg3: #1a2235;
+  --card: #0f1622;
+  --t1: #eef2ff;
+  --t2: #7a8aaa;
+  --t3: #3a4560;
+  --acc: #3b7fff;
+  --acc-g: rgba(59,127,255,.18);
+  --grn: #00c875;
+  --grn-g: rgba(0,200,117,.15);
+  --red: #ff4d6a;
+  --red-g: rgba(255,77,106,.15);
+  --bdr: rgba(255,255,255,.06);
+  --bdr2: rgba(255,255,255,.11);
+  --ease: cubic-bezier(.22,1,.36,1);
+  --font: 'DM Sans', sans-serif;
+  --mono: 'DM Mono', monospace;
+}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;-webkit-font-smoothing:antialiased}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--t2);font-family:var(--font);line-height:1.6;min-height:100vh}
+body::before{content:'';position:fixed;inset:0;background:radial-gradient(ellipse 70% 50% at 15% 0%,rgba(59,127,255,.07) 0%,transparent 60%),radial-gradient(ellipse 50% 40% at 85% 100%,rgba(0,200,117,.05) 0%,transparent 60%);pointer-events:none;z-index:0}
+
+/* ── HEADER ── */
+.hdr{position:sticky;top:0;z-index:100;background:rgba(8,11,18,.88);backdrop-filter:blur(20px);border-bottom:1px solid var(--bdr2);padding:0 2rem}
+.hdr-in{max-width:1400px;margin:0 auto;height:64px;display:flex;align-items:center;justify-content:space-between;gap:1.5rem}
+.logo{display:flex;align-items:center;gap:10px;color:var(--t1);font-size:.95rem;font-weight:600}
+.logo-dot{width:8px;height:8px;background:var(--grn);border-radius:50%;animation:blink 2s ease-in-out infinite;box-shadow:0 0 8px var(--grn)}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:.3}}
+.admin-badge{font-size:.7rem;font-weight:600;background:rgba(59,127,255,.15);color:#7eb8ff;border:1px solid rgba(59,127,255,.25);border-radius:99px;padding:3px 10px;letter-spacing:.06em;text-transform:uppercase}
+.hdr-actions{display:flex;align-items:center;gap:8px}
+.btn{display:flex;align-items:center;gap:7px;padding:9px 18px;border-radius:10px;font-size:.83rem;font-weight:600;cursor:pointer;transition:all .22s var(--ease);border:none;font-family:var(--font)}
+.btn-ghost{background:var(--bg2);color:var(--t2);border:1px solid var(--bdr2)}
+.btn-ghost:hover{background:var(--bg3);color:var(--t1)}
+.btn-primary{background:var(--acc);color:#fff;box-shadow:0 4px 16px rgba(59,127,255,.3)}
+.btn-primary:hover{filter:brightness(1.1);transform:translateY(-1px);box-shadow:0 8px 24px rgba(59,127,255,.4)}
+.btn-danger{background:rgba(255,77,106,.12);color:var(--red);border:1px solid rgba(255,77,106,.2)}
+.btn-danger:hover{background:rgba(255,77,106,.2)}
+.btn-success{background:var(--grn);color:#fff;box-shadow:0 4px 16px var(--grn-g)}
+.btn-success:hover{filter:brightness(1.08);transform:translateY(-1px)}
+
+/* ── STATS BAR ── */
+.stats-bar{background:var(--bg1);border-bottom:1px solid var(--bdr);padding:.9rem 2rem}
+.stats-in{max-width:1400px;margin:0 auto;display:flex;align-items:center;gap:2rem;flex-wrap:wrap}
+.stat{display:flex;align-items:center;gap:8px;font-size:.82rem}
+.stat-dot{width:8px;height:8px;border-radius:50%;flex-shrink:0}
+.stat-dot.green{background:var(--grn);box-shadow:0 0 6px var(--grn)}
+.stat-dot.red{background:var(--red);box-shadow:0 0 6px var(--red)}
+.stat-dot.blue{background:var(--acc);box-shadow:0 0 6px var(--acc)}
+.stat strong{color:var(--t1);font-variant-numeric:tabular-nums;font-family:var(--mono);font-size:.88rem}
+.stat-sep{width:1px;height:20px;background:var(--bdr2)}
+
+/* ── MAIN ── */
+.main{max-width:1400px;margin:0 auto;padding:2rem;position:relative;z-index:1}
+
+/* ── TOOLBAR ── */
+.toolbar{display:flex;align-items:center;gap:10px;margin-bottom:1.5rem;flex-wrap:wrap}
+.search-box{position:relative;flex:1;min-width:220px;max-width:380px}
+.search-ico{position:absolute;left:14px;top:50%;transform:translateY(-50%);opacity:.4;font-size:.9rem;pointer-events:none}
+.search-inp{width:100%;padding:10px 14px 10px 38px;background:var(--bg2);border:1px solid var(--bdr2);border-radius:10px;color:var(--t1);font-family:var(--font);font-size:.88rem;outline:none;transition:all .2s}
+.search-inp::placeholder{color:var(--t3)}
+.search-inp:focus{border-color:rgba(59,127,255,.4);background:var(--bg3);box-shadow:0 0 0 3px rgba(59,127,255,.08)}
+.sel{padding:10px 14px;background:var(--bg2);border:1px solid var(--bdr2);border-radius:10px;color:var(--t2);font-family:var(--font);font-size:.83rem;outline:none;cursor:pointer;transition:all .2s}
+.sel:focus{border-color:rgba(59,127,255,.4)}
+.sel option{background:var(--bg2)}
+.toggle-group{display:flex;background:var(--bg2);border:1px solid var(--bdr2);border-radius:10px;overflow:hidden;flex-shrink:0}
+.tgl{padding:9px 16px;font-size:.8rem;font-weight:600;color:var(--t3);cursor:pointer;transition:all .2s;border:none;font-family:var(--font)}
+.tgl:hover{color:var(--t2)}
+.tgl.on{background:var(--bg3);color:var(--t1)}
+.toolbar-r{display:flex;align-items:center;gap:8px;margin-left:auto}
+.quick-btn{padding:7px 14px;border-radius:8px;font-size:.78rem;font-weight:600;cursor:pointer;transition:all .18s;border:none;font-family:var(--font)}
+.qb-show{background:var(--grn-g);color:var(--grn);border:1px solid rgba(0,200,117,.2)}
+.qb-show:hover{background:rgba(0,200,117,.25)}
+.qb-hide{background:var(--red-g);color:var(--red);border:1px solid rgba(255,77,106,.2)}
+.qb-hide:hover{background:rgba(255,77,106,.25)}
+
+/* ── CATEGORY GROUPS ── */
+.cat-group{margin-bottom:2.5rem}
+.cat-header{display:flex;align-items:center;gap:10px;margin-bottom:1rem;padding-bottom:.75rem;border-bottom:1px solid var(--bdr)}
+.cat-emoji{width:34px;height:34px;background:var(--acc-g);border:1px solid rgba(59,127,255,.18);border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:.9rem;flex-shrink:0}
+.cat-title{font-size:1rem;font-weight:600;color:var(--t1)}
+.cat-sub{font-size:.75rem;color:var(--t3);margin-left:4px}
+.cat-count{margin-left:auto;display:flex;align-items:center;gap:6px}
+.pill{font-size:.7rem;font-weight:600;padding:3px 9px;border-radius:99px}
+.pill-vis{background:var(--grn-g);color:var(--grn);border:1px solid rgba(0,200,117,.2)}
+.pill-hid{background:var(--red-g);color:var(--red);border:1px solid rgba(255,77,106,.2)}
+.cat-toggle-all{padding:5px 12px;border-radius:7px;font-size:.75rem;font-weight:600;cursor:pointer;border:1px solid var(--bdr2);background:var(--bg2);color:var(--t3);transition:all .18s;font-family:var(--font)}
+.cat-toggle-all:hover{color:var(--t1);border-color:var(--bdr2);background:var(--bg3)}
+
+/* ── PRODUCT GRID ── */
+.pgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:10px}
+
+/* ── PRODUCT CARD ── */
+.pcard{background:var(--card);border:1px solid var(--bdr);border-radius:14px;padding:1rem;display:flex;align-items:flex-start;gap:10px;cursor:pointer;transition:all .22s var(--ease);user-select:none;position:relative;overflow:hidden}
+.pcard::before{content:'';position:absolute;inset:0;opacity:0;transition:opacity .22s;border-radius:14px}
+.pcard.visible{border-color:rgba(0,200,117,.2)}
+.pcard.visible::before{background:rgba(0,200,117,.04);opacity:1}
+.pcard.hidden-p{opacity:.45;border-color:rgba(255,77,106,.18)}
+.pcard.hidden-p::before{background:rgba(255,77,106,.04);opacity:1}
+.pcard:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(0,0,0,.2)}
+.pcard.visible:hover{border-color:rgba(0,200,117,.35)}
+.pcard.hidden-p:hover{opacity:.6;border-color:rgba(255,77,106,.3)}
+
+/* toggle switch */
+.ptoggle{width:36px;height:20px;border-radius:99px;position:relative;flex-shrink:0;margin-top:2px;transition:background .25s var(--ease)}
+.ptoggle.on{background:var(--grn);box-shadow:0 0 8px var(--grn-g)}
+.ptoggle.off{background:var(--bg3);border:1px solid var(--bdr2)}
+.ptoggle::after{content:'';position:absolute;top:2px;width:16px;height:16px;border-radius:50%;background:#fff;transition:transform .25s var(--ease),box-shadow .25s}
+.ptoggle.on::after{transform:translateX(18px);box-shadow:0 2px 6px rgba(0,0,0,.2)}
+.ptoggle.off::after{transform:translateX(2px)}
+
+.pinfo{flex:1;min-width:0}
+.pname{font-size:.8rem;font-weight:500;color:var(--t1);line-height:1.35;margin-bottom:4px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.pname.dim{color:var(--t3)}
+.pmeta{display:flex;align-items:center;gap:6px;flex-wrap:wrap}
+.preco{font-size:.78rem;font-weight:600;color:var(--acc);font-family:var(--mono)}
+.pcat-tag{font-size:.65rem;font-weight:600;background:var(--bg3);border:1px solid var(--bdr);border-radius:5px;padding:2px 6px;color:var(--t3);white-space:nowrap}
+
+/* ── EMPTY / NO RESULTS ── */
+.empty{text-align:center;padding:4rem;color:var(--t3)}
+.empty-ico{font-size:2.5rem;opacity:.3;margin-bottom:1rem}
+
+/* ── TOAST ── */
+.toast{position:fixed;bottom:2rem;left:50%;transform:translateX(-50%) translateY(10px);background:var(--bg2);border:1px solid var(--bdr2);border-radius:12px;padding:.85rem 1.5rem;font-size:.85rem;font-weight:500;color:var(--t1);backdrop-filter:blur(20px);z-index:999;opacity:0;transition:all .3s var(--ease);pointer-events:none;white-space:nowrap;box-shadow:0 12px 40px rgba(0,0,0,.3)}
+.toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
+.toast.green{border-color:rgba(0,200,117,.3);color:var(--grn)}
+.toast.red{border-color:rgba(255,77,106,.3);color:var(--red)}
+
+/* ── FOOTER ── */
+.foot{margin-top:4rem;padding:2rem;text-align:center;color:var(--t3);font-size:.78rem;border-top:1px solid var(--bdr)}
+
+/* ── EXPORT MODAL ── */
+.overlay{position:fixed;inset:0;background:rgba(0,0,0,.7);backdrop-filter:blur(12px);z-index:500;opacity:0;pointer-events:none;transition:opacity .3s}
+.overlay.on{opacity:1;pointer-events:all}
+.modal{position:fixed;top:50%;left:50%;transform:translate(-50%,-48%);width:min(640px,92vw);background:var(--bg1);border:1px solid var(--bdr2);border-radius:20px;z-index:501;padding:2rem;opacity:0;pointer-events:none;transition:all .35s var(--ease)}
+.overlay.on ~ .modal,.modal.on{opacity:1;pointer-events:all;transform:translate(-50%,-50%)}
+.modal-title{font-size:1rem;font-weight:600;color:var(--t1);margin-bottom:1rem;display:flex;align-items:center;justify-content:space-between}
+.modal-close{width:30px;height:30px;border-radius:50%;background:var(--bg2);border:1px solid var(--bdr);color:var(--t2);cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:.85rem;transition:all .2s}
+.modal-close:hover{color:var(--t1);background:var(--bg3)}
+.code-area{background:var(--bg);border:1px solid var(--bdr2);border-radius:10px;padding:1rem;font-family:var(--mono);font-size:.75rem;color:#7eb8ff;max-height:280px;overflow-y:auto;white-space:pre;line-height:1.7;margin-bottom:1rem}
+.code-area::-webkit-scrollbar{width:4px}
+.code-area::-webkit-scrollbar-thumb{background:var(--bg3);border-radius:99px}
+.modal-info{font-size:.8rem;color:var(--t3);line-height:1.7;margin-bottom:1.25rem}
+.modal-actions{display:flex;gap:8px}
+
+@media(max-width:640px){
+  .pgrid{grid-template-columns:1fr 1fr}
+  .hdr-in{padding:0}
+  .stats-in{gap:1rem}
+  .toolbar{gap:7px}
+}
+@media(max-width:420px){
+  .pgrid{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+
+<header class="hdr">
+  <div class="hdr-in">
+    <div class="logo">
+      <span class="logo-dot"></span>
+      Cia Das Embalagens
+      <span class="admin-badge">Admin</span>
+    </div>
+    <div class="hdr-actions">
+      <a href="index.html" target="_blank" class="btn btn-ghost">🌐 Ver loja</a>
+      <button class="btn btn-success" onclick="exportarConfig()">⬇ Exportar JS</button>
+    </div>
+  </div>
+</header>
+
+<div class="stats-bar">
+  <div class="stats-in">
+    <div class="stat"><span class="stat-dot blue"></span>Total <strong id="st-total">0</strong></div>
+    <div class="stat-sep"></div>
+    <div class="stat"><span class="stat-dot green"></span>Visíveis <strong id="st-vis">0</strong></div>
+    <div class="stat-sep"></div>
+    <div class="stat"><span class="stat-dot red"></span>Ocultos <strong id="st-hid">0</strong></div>
+    <div class="stat-sep"></div>
+    <div class="stat"><span class="stat-dot blue"></span>Filtrados <strong id="st-filt">0</strong></div>
+  </div>
+</div>
+
+<main class="main">
+  <div class="toolbar">
+    <div class="search-box">
+      <span class="search-ico">🔍</span>
+      <input class="search-inp" type="text" id="busca" placeholder="Buscar produto..." oninput="renderizar()">
+    </div>
+    <select class="sel" id="filtroCat" onchange="renderizar()">
+      <option value="">Todas as categorias</option>
+    </select>
+    <select class="sel" id="filtroSub" onchange="renderizar()">
+      <option value="">Todas as subcategorias</option>
+    </select>
+    <div class="toggle-group">
+      <button class="tgl on" id="tgl-todos" onclick="setFiltroVis('todos',this)">Todos</button>
+      <button class="tgl" id="tgl-vis"   onclick="setFiltroVis('vis',this)">✓ Visíveis</button>
+      <button class="tgl" id="tgl-hid"   onclick="setFiltroVis('hid',this)">✕ Ocultos</button>
+    </div>
+    <div class="toolbar-r">
+      <button class="quick-btn qb-show" onclick="toggleFiltrados(true)">Mostrar filtrados</button>
+      <button class="quick-btn qb-hide" onclick="toggleFiltrados(false)">Ocultar filtrados</button>
+    </div>
+  </div>
+
+  <div id="container"></div>
+</main>
+
+<div class="foot">Alterações salvas automaticamente no navegador · Use "Exportar JS" para aplicar na loja</div>
+
+<!-- TOAST -->
+<div class="toast" id="toast"></div>
+
+<!-- MODAL EXPORT -->
+<div class="overlay" id="overlay" onclick="fecharModal()"></div>
+<div class="modal" id="modal">
+  <div class="modal-title">
+    Exportar configuração
+    <button class="modal-close" onclick="fecharModal()">✕</button>
+  </div>
+  <div class="modal-info">
+    Copie o código abaixo e <strong style="color:var(--t1)">substitua o conteúdo do arquivo <code style="color:#7eb8ff">produtos_planilha.js</code></strong> na sua pasta do GitHub Pages. Os produtos ocultos ficarão comentados com <code style="color:#7eb8ff">//</code> e não aparecerão na loja.
+  </div>
+  <div class="code-area" id="codeArea"></div>
+  <div class="modal-actions">
+    <button class="btn btn-primary" onclick="copiarCodigo()">📋 Copiar código</button>
+    <button class="btn btn-ghost" onclick="fecharModal()">Fechar</button>
+  </div>
+</div>
+
+<script src="produtos_planilha.js"></script>
+<script src="integracao_planilha.js"></script>
+<script>
+/* ═══════ STATE ═══════ */
+var STORAGE_KEY = 'cia_ocultos_v1';
+var ocultos = new Set(JSON.parse(localStorage.getItem(STORAGE_KEY) || '[]'));
+var filtroVis = 'todos';
+var prodsFiltrados = []; // lista atual na tela
+
+var CAT_LABELS = {
+  caixas:'📦 Caixas', sacolas:'🛍️ Sacolas & Lixo',
+  plastico:'🧪 Plásticos', festa:'🥂 Festa',
+  limpeza:'🧹 Limpeza', higiene:'🧻 Higiene',
+  utilidades:'🔧 Utilidades', diversos:'🔓 Diversos'
+};
+var SUB_LABELS = {
+  'caixas-correio':'Correios','caixas-alimentos':'Alimentos',
+  'sacos-lixo':'Sacos de Lixo','sacolas-papel':'Papel',
+  'sacolas-plasticas':'Plásticas','potes-tampas':'Potes & Tampas',
+  'embalagens-bolo':'Emb. Bolo','copos-pratos':'Copos & Pratos',
+  'talheres':'Talheres','produtos-limpeza':'Produtos Químicos',
+  'utensilios-limpeza':'Utensílios','epi':'EPI & Proteção',
+  'papel-higiene':'Papel & Sabonetes','pilhas-baterias':'Pilhas',
+  'aromas-inseticidas':'Aromas & Inset.','organiz-limpeza':'Organização',
+  'ferramentas':'Ferramentas','escritorio':'Escritório','ganchos':'Ganchos',
+  'isopor-geral':'Isopor','emb-flexiveis':'Emb. Flexíveis',
+  'emb-diversas':'Emb. Diversas','outros':'Outros'
+};
+
+function prods(){ return window.listaProdutosPlanilha || []; }
+
+function salvar(){
+  localStorage.setItem(STORAGE_KEY, JSON.stringify([...ocultos]));
+}
+
+function toggle(id){
+  if(ocultos.has(id)) ocultos.delete(id);
+  else ocultos.add(id);
+  salvar();
+  atualizarCard(id);
+  atualizarStats();
+}
+
+function atualizarCard(id){
+  var card = document.getElementById('pc-'+id);
+  if(!card) return;
+  var vis = !ocultos.has(id);
+  card.className = 'pcard ' + (vis ? 'visible' : 'hidden-p');
+  var tog = card.querySelector('.ptoggle');
+  if(tog){ tog.className = 'ptoggle ' + (vis ? 'on' : 'off'); }
+  var nm = card.querySelector('.pname');
+  if(nm){ nm.className = 'pname' + (vis ? '' : ' dim'); }
+}
+
+/* ═══════ STATS ═══════ */
+function atualizarStats(){
+  var total = prods().length;
+  var hid   = ocultos.size;
+  document.getElementById('st-total').textContent = total;
+  document.getElementById('st-vis').textContent   = total - hid;
+  document.getElementById('st-hid').textContent   = hid;
+  document.getElementById('st-filt').textContent  = prodsFiltrados.length;
+}
+
+/* ═══════ FILTROS ═══════ */
+function setFiltroVis(v, btn){
+  filtroVis = v;
+  document.querySelectorAll('.tgl').forEach(function(b){ b.classList.remove('on'); });
+  btn.classList.add('on');
+  renderizar();
+}
+
+function toggleFiltrados(mostrar){
+  prodsFiltrados.forEach(function(p){
+    if(mostrar) ocultos.delete(p.id);
+    else ocultos.add(p.id);
+    atualizarCard(p.id);
+  });
+  salvar();
+  atualizarStats();
+  showToast(mostrar
+    ? '✓ ' + prodsFiltrados.length + ' produtos tornados visíveis'
+    : '✕ ' + prodsFiltrados.length + ' produtos ocultados', mostrar ? 'green' : 'red');
+}
+
+/* ═══════ POPULAR SELECTS ═══════ */
+function popularSelects(){
+  var cats = {}, subs = {};
+  prods().forEach(function(p){
+    cats[p.categoria] = true;
+    if(p.subcategoria) subs[p.subcategoria] = p.categoria;
+  });
+  var sc = document.getElementById('filtroCat');
+  Object.keys(cats).sort().forEach(function(c){
+    var o = document.createElement('option');
+    o.value = c;
+    o.textContent = (CAT_LABELS[c]||c).replace(/^\S+\s/,'');
+    sc.appendChild(o);
+  });
+  sc.onchange = function(){ popularSubSelect(this.value); renderizar(); };
+}
+
+function popularSubSelect(cat){
+  var ss = document.getElementById('filtroSub');
+  ss.innerHTML = '<option value="">Todas as subcategorias</option>';
+  var subs = {};
+  prods().forEach(function(p){
+    if(!cat || p.categoria === cat) subs[p.subcategoria||''] = true;
+  });
+  Object.keys(subs).filter(Boolean).sort().forEach(function(s){
+    var o = document.createElement('option');
+    o.value = s;
+    o.textContent = SUB_LABELS[s]||s;
+    ss.appendChild(o);
+  });
+}
+
+/* ═══════ RENDER ═══════ */
+function renderizar(){
+  var busca   = document.getElementById('busca').value.toLowerCase();
+  var cat     = document.getElementById('filtroCat').value;
+  var sub     = document.getElementById('filtroSub').value;
+
+  var lista = prods().filter(function(p){
+    if(busca && !(p.nome||'').toLowerCase().includes(busca)) return false;
+    if(cat && p.categoria !== cat) return false;
+    if(sub && p.subcategoria !== sub) return false;
+    if(filtroVis === 'vis' && ocultos.has(p.id)) return false;
+    if(filtroVis === 'hid' && !ocultos.has(p.id)) return false;
+    return true;
+  });
+
+  prodsFiltrados = lista;
+  atualizarStats();
+
+  var c = document.getElementById('container');
+  c.innerHTML = '';
+
+  if(!lista.length){
+    c.innerHTML = '<div class="empty"><div class="empty-ico">🔍</div>Nenhum produto encontrado</div>';
+    return;
+  }
+
+  /* agrupa por categoria → subcategoria */
+  var grupos = {};
+  lista.forEach(function(p){
+    var k = (p.categoria||'diversos') + '||' + (p.subcategoria||'outros');
+    if(!grupos[k]) grupos[k] = { cat: p.categoria, sub: p.subcategoria, itens: [] };
+    grupos[k].itens.push(p);
+  });
+
+  Object.keys(grupos).sort().forEach(function(k){
+    var g = grupos[k];
+    var catLabel = CAT_LABELS[g.cat] || g.cat;
+    var subLabel = SUB_LABELS[g.sub] || g.sub || '';
+    var visCount = g.itens.filter(function(p){ return !ocultos.has(p.id); }).length;
+    var hidCount = g.itens.length - visCount;
+
+    var sec = document.createElement('div');
+    sec.className = 'cat-group';
+    sec.innerHTML =
+      '<div class="cat-header">' +
+        '<div class="cat-emoji">' + catLabel.split(' ')[0] + '</div>' +
+        '<div>' +
+          '<div class="cat-title">' + catLabel.replace(/^\S+\s/,'') + '</div>' +
+          (subLabel ? '<div class="cat-sub">→ ' + subLabel + '</div>' : '') +
+        '</div>' +
+        '<div class="cat-count">' +
+          (visCount ? '<span class="pill pill-vis">'+visCount+' visíveis</span>' : '') +
+          (hidCount ? '<span class="pill pill-hid">'+hidCount+' ocultos</span>' : '') +
+          '<button class="cat-toggle-all" onclick="toggleGrupo(\''+k+'\',this)">Alternar todos</button>' +
+        '</div>' +
+      '</div>' +
+      '<div class="pgrid" id="grid-'+k.replace(/[^a-z0-9]/gi,'_')+'"></div>';
+
+    c.appendChild(sec);
+    var grid = sec.querySelector('.pgrid');
+
+    g.itens.forEach(function(p, i){
+      var vis = !ocultos.has(p.id);
+      var preco = parseFloat(p.preco);
+      var precoStr = preco > 0 ? 'R$\u00a0' + preco.toFixed(2).replace('.',',') : 'consulta';
+
+      var card = document.createElement('div');
+      card.className = 'pcard ' + (vis ? 'visible' : 'hidden-p');
+      card.id = 'pc-' + p.id;
+      card.onclick = function(){ toggle(p.id); };
+      card.innerHTML =
+        '<div class="ptoggle ' + (vis ? 'on' : 'off') + '"></div>' +
+        '<div class="pinfo">' +
+          '<div class="pname' + (vis ? '' : ' dim') + '">' + p.nome + '</div>' +
+          '<div class="pmeta">' +
+            '<span class="preco">' + precoStr + '</span>' +
+            (p.unidade ? '<span class="pcat-tag">' + p.unidade + '</span>' : '') +
+          '</div>' +
+        '</div>';
+
+      grid.appendChild(card);
+      /* stagger entrada */
+      card.style.opacity = '0';
+      card.style.transform = 'translateY(10px)';
+      setTimeout(function(){
+        card.style.transition = 'opacity .3s, transform .3s, border-color .22s, background .22s, box-shadow .22s, opacity .22s';
+        card.style.opacity = '';
+        card.style.transform = '';
+      }, i * 12);
+    });
+  });
+}
+
+/* ═══════ TOGGLE GRUPO ═══════ */
+var gruposMap = {};
+function toggleGrupo(k, btn){
+  /* recalcula lista do grupo a partir do estado atual */
+  var lista = prods().filter(function(p){
+    return (p.categoria+'||'+(p.subcategoria||'outros')) === k;
+  });
+  var todosVisiveis = lista.every(function(p){ return !ocultos.has(p.id); });
+  lista.forEach(function(p){
+    if(todosVisiveis) ocultos.add(p.id);
+    else ocultos.delete(p.id);
+    atualizarCard(p.id);
+  });
+  salvar();
+  atualizarStats();
+  /* atualiza pills no header */
+  var hdr = btn.closest('.cat-header');
+  if(hdr){
+    var visC = lista.filter(function(p){ return !ocultos.has(p.id); }).length;
+    var hidC = lista.length - visC;
+    var cnt = hdr.querySelector('.cat-count');
+    if(cnt){
+      var pills = '';
+      if(visC) pills += '<span class="pill pill-vis">'+visC+' visíveis</span>';
+      if(hidC) pills += '<span class="pill pill-hid">'+hidC+' ocultos</span>';
+      cnt.innerHTML = pills + '<button class="cat-toggle-all" onclick="toggleGrupo(\''+k+'\',this)">Alternar todos</button>';
+    }
+  }
+}
+
+/* ═══════ EXPORT ═══════ */
+function exportarConfig(){
+  var linhas = ['var listaProdutosPlanilha = ['];
+  var todos = prods();
+  todos.forEach(function(p, i){
+    var oculto = ocultos.has(p.id);
+    var virgula = i < todos.length-1 ? ',' : '';
+    var linha = '  {id:'+p.id+',nome:'+JSON.stringify(p.nome)+
+      ',categoria:'+JSON.stringify(p.categoria||'diversos')+
+      ',subcategoria:'+JSON.stringify(p.subcategoria||'outros')+
+      ',preco:'+p.preco+
+      ',unidade:'+JSON.stringify(p.unidade||'/unidade')+'}'+virgula;
+    if(oculto) linha = '  //' + linha.trimStart();
+    linhas.push(linha);
+  });
+  linhas.push('];');
+  document.getElementById('codeArea').textContent = linhas.join('\n');
+  document.getElementById('overlay').classList.add('on');
+  document.getElementById('modal').classList.add('on');
+}
+
+function fecharModal(){
+  document.getElementById('overlay').classList.remove('on');
+  document.getElementById('modal').classList.remove('on');
+}
+
+function copiarCodigo(){
+  var txt = document.getElementById('codeArea').textContent;
+  navigator.clipboard.writeText(txt).then(function(){
+    showToast('📋 Código copiado!', 'green');
+  });
+}
+
+/* ═══════ TOAST ═══════ */
+var toastTimer;
+function showToast(msg, type){
+  var t = document.getElementById('toast');
+  t.textContent = msg;
+  t.className = 'toast show ' + (type||'');
+  clearTimeout(toastTimer);
+  toastTimer = setTimeout(function(){ t.className = 'toast'; }, 2800);
+}
+
+/* ═══════ INIT ═══════ */
+window.addEventListener('load', function(){
+  /* espera integracao_planilha terminar (pode ser async) */
+  setTimeout(function(){
+    popularSelects();
+    popularSubSelect('');
+    renderizar();
+  }, 600);
+});
+</script>
+</body>
+</html>
