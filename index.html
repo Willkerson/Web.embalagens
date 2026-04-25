@@ -36,14 +36,6 @@ img{display:block}
 ::-webkit-scrollbar-track{background:var(--bg1)}
 ::-webkit-scrollbar-thumb{background:var(--bg3);border-radius:99px}
 
-/* ═══════════════ CURSOR PERSONALIZADO ═══════════════ */
-/* Correção da posição inicial off-screen */
-#cursor-dot{position:fixed;width:10px;height:10px;border-radius:50%;background:var(--acc);pointer-events:none;z-index:9999;transform:translate(-50%,-50%);transition:transform .1s,background .3s,width .3s,height .3s;left:-100px;top:-100px;opacity:0;}
-#cursor-ring{position:fixed;width:36px;height:36px;border-radius:50%;border:2px solid rgba(42,111,255,.5);pointer-events:none;z-index:9998;transform:translate(-50%,-50%);transition:left .12s var(--ease),top .12s var(--ease),width .3s,height .3s,border-color .3s,opacity .3s;left:-100px;top:-100px;opacity:0;}
-body.cursor-active #cursor-dot, body.cursor-active #cursor-ring {opacity: 1;}
-body:not(:hover) #cursor-ring{opacity:0}
-@media(pointer:coarse){#cursor-dot,#cursor-ring{display:none}}
-
 /* ═══════════════ HEADER ═══════════════ */
 .hdr{position:fixed;top:0;left:0;right:0;z-index:800;height:66px;display:flex;align-items:center;justify-content:space-between;padding:0 2rem;background:rgba(5,8,16,.82);backdrop-filter:blur(20px) saturate(180%);border-bottom:1px solid var(--bdr);transition:all .3s var(--ease)}
 .hdr.sc{height:58px;background:rgba(5,8,16,.97)}
@@ -267,9 +259,6 @@ footer strong{color:var(--t2)}
 </head>
 <body>
 
-<div id="cursor-dot"></div>
-<div id="cursor-ring"></div>
-
 <header class="hdr" id="hdr">
   <a href="#" class="logo">
     <div class="logo-box"><img src="https://img.icons8.com/fluency/48/box.png" alt=""></div>
@@ -448,41 +437,7 @@ footer strong{color:var(--t2)}
 <script src="produtos_planilha.js"></script>
 <script>
 /* ════════════════════════════════════════
-   CURSOR PERSONALIZADO
-════════════════════════════════════════ */
-var dot = document.getElementById('cursor-dot');
-var ring = document.getElementById('cursor-ring');
-var mx = 0, my = 0, rx = 0, ry = 0;
-var cursorInit = false;
-
-document.addEventListener('mousemove', function(e) {
-  if (!cursorInit) {
-    document.body.classList.add('cursor-active');
-    cursorInit = true;
-  }
-  mx = e.clientX; my = e.clientY;
-  dot.style.left = mx + 'px'; dot.style.top = my + 'px';
-});
-(function animRing() {
-  rx += (mx - rx) * 0.12; ry += (my - ry) * 0.12;
-  ring.style.left = rx + 'px'; ring.style.top = ry + 'px';
-  requestAnimationFrame(animRing);
-})();
-document.querySelectorAll('a,button,.pcard,.dep-card, .search-inp').forEach(function(el) {
-  el.addEventListener('mouseenter', function() {
-    dot.style.width = '14px'; dot.style.height = '14px';
-    ring.style.width = '52px'; ring.style.height = '52px';
-    ring.style.borderColor = 'rgba(42,111,255,.7)';
-  });
-  el.addEventListener('mouseleave', function() {
-    dot.style.width = '10px'; dot.style.height = '10px';
-    ring.style.width = '36px'; ring.style.height = '36px';
-    ring.style.borderColor = 'rgba(42,111,255,.5)';
-  });
-});
-
-/* ════════════════════════════════════════
-   HERO CANVAS — PARTÍCULAS QUE SEGUEM O CURSOR
+   HERO CANVAS — PARTÍCULAS (MANTIDO)
 ════════════════════════════════════════ */
 (function() {
   var canvas = document.getElementById('hero-canvas');
@@ -696,7 +651,6 @@ function renderizar() {
 
   var lista = prods();
   
-  // 1. Filtrar por Categoria e Subcategoria
   if (estado.cat !== 'todos') {
     var allowed = catMap[estado.cat] || [estado.cat];
     lista = lista.filter(function(p) {
@@ -707,7 +661,6 @@ function renderizar() {
     });
   }
 
-  // 2. Filtrar por Busca de Texto
   if (estado.busca) {
     lista = lista.filter(function(p) {
       var n = p.nome ? p.nome.toLowerCase() : '';
@@ -716,7 +669,6 @@ function renderizar() {
     });
   }
 
-  // Tratamento para quando a busca não retorna nada
   if (lista.length === 0) {
     c.innerHTML = '<div class="no-results">Nenhum produto encontrado. Tente buscar por outro termo ou limpe os filtros.</div>';
     return;
@@ -773,13 +725,6 @@ function renderizar() {
 
       grid.appendChild(card);
       setTimeout(function() { card.classList.add('in'); }, i * 22);
-
-      card.addEventListener('mouseenter', function() {
-        dot.style.background = 'var(--acc)';
-      });
-      card.addEventListener('mouseleave', function() {
-        dot.style.background = 'var(--acc)';
-      });
     });
 
     sec.appendChild(grid);
