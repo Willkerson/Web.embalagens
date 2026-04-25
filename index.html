@@ -405,22 +405,22 @@ footer strong{color:var(--t2);font-weight:500}
           <div class="mega-grid" style="grid-template-columns:repeat(2,1fr)">
             <div class="mega-col">
               <div class="mega-col-title">Festa & Eventos</div>
-              <div class="mega-link" onclick="filterCat('festa');filtrarSub('copos-pratos');fecharNav()">
+              <div class="mega-link" onclick="filtrarSub('copos-pratos',null,'festa');fecharNav()">
                 <div class="mega-link-ico">🥤</div>
                 <div class="mega-link-info"><div class="mega-link-name">Copos e Pratos</div><div class="mega-link-desc">PS, PP, Biodegradável</div></div>
               </div>
-              <div class="mega-link" onclick="filterCat('festa');filtrarSub('talheres');fecharNav()">
+              <div class="mega-link" onclick="filtrarSub('talheres',null,'festa');fecharNav()">
                 <div class="mega-link-ico">🍴</div>
                 <div class="mega-link-info"><div class="mega-link-name">Talheres</div><div class="mega-link-desc">Garfo, faca, colher, kit</div></div>
               </div>
             </div>
             <div class="mega-col">
               <div class="mega-col-title">Higiene</div>
-              <div class="mega-link" onclick="filterCat('higiene');filtrarSub('papel-higiene');fecharNav()">
+              <div class="mega-link" onclick="filtrarSub('papel-higiene',null,'higiene');fecharNav()">
                 <div class="mega-link-ico">🧻</div>
                 <div class="mega-link-info"><div class="mega-link-name">Papel & Sabonetes</div><div class="mega-link-desc">Papel toalha, higiênico, sabão</div></div>
               </div>
-              <div class="mega-link" onclick="filterCat('higiene');fecharNav()">
+              <div class="mega-link" onclick="buscarPorTermo('alcool')">
                 <div class="mega-link-ico">🧴</div>
                 <div class="mega-link-info"><div class="mega-link-name">Álcool & Desinfetante</div><div class="mega-link-desc">70°, gel, spray</div></div>
               </div>
@@ -439,33 +439,33 @@ footer strong{color:var(--t2);font-weight:500}
           <div class="mega-grid" style="grid-template-columns:repeat(3,1fr)">
             <div class="mega-col">
               <div class="mega-col-title">Produtos Químicos</div>
-              <div class="mega-link" onclick="filterCat('limpeza');filtrarSub('produtos-limpeza');fecharNav()">
+              <div class="mega-link" onclick="filtrarSub('produtos-limpeza',null,'limpeza');fecharNav()">
                 <div class="mega-link-ico">🧴</div>
                 <div class="mega-link-info"><div class="mega-link-name">Detergente & Deseng.</div><div class="mega-link-desc">Multi-uso, desincrustante</div></div>
               </div>
-              <div class="mega-link" onclick="filterCat('utilidades');filtrarSub('aromas-inseticidas');fecharNav()">
+              <div class="mega-link" onclick="filtrarSub('aromas-inseticidas',null,'utilidades');fecharNav()">
                 <div class="mega-link-ico">🌿</div>
                 <div class="mega-link-info"><div class="mega-link-name">Aromas & Inseticidas</div><div class="mega-link-desc">Ambientadores, repelentes</div></div>
               </div>
             </div>
             <div class="mega-col">
               <div class="mega-col-title">Utensílios</div>
-              <div class="mega-link" onclick="filterCat('limpeza');filtrarSub('utensilios-limpeza');fecharNav()">
+              <div class="mega-link" onclick="filtrarSub('utensilios-limpeza',null,'limpeza');fecharNav()">
                 <div class="mega-link-ico">🧽</div>
                 <div class="mega-link-info"><div class="mega-link-name">Esponjas & Panos</div><div class="mega-link-desc">Fibra, microfibra, luva</div></div>
               </div>
-              <div class="mega-link" onclick="filterCat('utilidades');filtrarSub('organiz-limpeza');fecharNav()">
+              <div class="mega-link" onclick="filtrarSub('organiz-limpeza',null,'utilidades');fecharNav()">
                 <div class="mega-link-ico">🪣</div>
                 <div class="mega-link-info"><div class="mega-link-name">Baldes & Cestos</div><div class="mega-link-desc">Coleta seletiva, cozinha</div></div>
               </div>
             </div>
             <div class="mega-col">
               <div class="mega-col-title">EPI & Proteção</div>
-              <div class="mega-link" onclick="filterCat('limpeza');filtrarSub('epi');fecharNav()">
+              <div class="mega-link" onclick="filtrarSub('epi',null,'limpeza');fecharNav()">
                 <div class="mega-link-ico">🧤</div>
                 <div class="mega-link-info"><div class="mega-link-name">Luvas & Aventais</div><div class="mega-link-desc">Látex, nitrílica, PVC</div></div>
               </div>
-              <div class="mega-link" onclick="filterCat('limpeza');filtrarSub('epi');fecharNav()">
+              <div class="mega-link" onclick="buscarPorTermo('touca')">
                 <div class="mega-link-ico">😷</div>
                 <div class="mega-link-info"><div class="mega-link-name">Máscaras & Toucas</div><div class="mega-link-desc">Cirúrgica, TNT, descartável</div></div>
               </div>
@@ -755,20 +755,28 @@ function limparBusca(){
 }
 
 function scrollParaSec(sub){
-  // após render, faz scroll suave até a seção com essa subcategoria
   setTimeout(function(){
-    var secs=document.querySelectorAll('.psec');
-    if(!secs.length) return;
-    // tenta achar a seção cujo título bate com o subLabel
-    var alvo=subLabels[sub]||'';
-    var sec=null;
-    secs.forEach(function(s){
-      var t=s.querySelector('.psec-title');
-      if(t&&alvo&&t.textContent.trim()===alvo) sec=s;
-    });
-    if(!sec) sec=secs[0]; // fallback: primeira seção
+    var sec=document.querySelector('.psec[data-sub="'+sub+'"]');
+    if(!sec){var secs=document.querySelectorAll('.psec');if(secs.length)sec=secs[0];}
     if(sec) sec.scrollIntoView({behavior:'smooth',block:'start'});
-  },120);
+  },150);
+}
+
+/* busca por termo de texto via mega menu (ex: "alcool", "desinfetante") */
+function buscarPorTermo(termo){
+  limparBusca();
+  estado.cat='todos'; estado.sub='todas';
+  estado.busca=termo.toLowerCase();
+  document.getElementById('searchInput').value=termo;
+  document.querySelectorAll('.ftab').forEach(function(b){b.classList.remove('on')});
+  var all=document.querySelector('.ftab[data-cat="todos"]');if(all)all.classList.add('on');
+  document.querySelectorAll('.subtabs').forEach(function(b){b.classList.remove('on')});
+  fecharNav();
+  renderizar();
+  setTimeout(function(){
+    var c=document.getElementById('containerProdutos');
+    if(c) c.scrollIntoView({behavior:'smooth',block:'start'});
+  },150);
 }
 
 function filterCat(cat,btn){
@@ -820,7 +828,17 @@ function filtrarSub(sub,btn,cat){
 function setCat(cat,btn){filterCat(cat,btn)}
 function setSub(sub,btn,cat){filtrarSub(sub,btn,cat)}
 
-function handleSearch(e){estado.busca=e.target.value.toLowerCase();renderizar()}
+function handleSearch(e){
+  // busca é SEMPRE global — reseta categoria e sub
+  estado.busca=e.target.value.toLowerCase();
+  if(estado.busca){
+    estado.cat='todos';estado.sub='todas';
+    document.querySelectorAll('.ftab').forEach(function(b){b.classList.remove('on')});
+    var all=document.querySelector('.ftab[data-cat="todos"]');if(all)all.classList.add('on');
+    document.querySelectorAll('.subtabs').forEach(function(b){b.classList.remove('on')});
+  }
+  renderizar();
+}
 
 /* ═══════════ RENDER ═══════════ */
 function renderizar(){
@@ -828,7 +846,14 @@ function renderizar(){
   if(!c) return;
   c.innerHTML='';
   var lista=prods();
-  if(estado.cat!=='todos'){
+  // se há busca de texto, ignora completamente cat/sub — busca global
+  if(estado.busca){
+    lista=lista.filter(function(p){
+      var n=(p.nome||'').toLowerCase();
+      var m=(p.marca||'').toLowerCase();
+      return n.includes(estado.busca)||m.includes(estado.busca);
+    });
+  } else if(estado.cat!=='todos'){
     var allowed=catMap[estado.cat]||[estado.cat];
     lista=lista.filter(function(p){
       var mc=allowed.indexOf(p.categoria)>=0||allowed.indexOf(p.subcategoria)>=0;
@@ -837,9 +862,6 @@ function renderizar(){
       return p.subcategoria===estado.sub;
     });
   }
-  if(estado.busca) lista=lista.filter(function(p){
-    return (p.nome||'').toLowerCase().includes(estado.busca)||(p.marca||'').toLowerCase().includes(estado.busca);
-  });
   if(!lista.length){
     c.innerHTML='<div class="no-results"><span>🔍</span>Nenhum produto encontrado.<br>Tente outro termo ou limpe os filtros.</div>';
     return;
@@ -848,7 +870,7 @@ function renderizar(){
   lista.forEach(function(p){var k=p.subcategoria||p.categoria;if(!grupos[k])grupos[k]={label:subLabels[k]||k.replace(/-/g,' '),itens:[]};grupos[k].itens.push(p)});
   Object.keys(grupos).forEach(function(k){
     var g=grupos[k];
-    var sec=document.createElement('div');sec.className='psec';
+    var sec=document.createElement('div');sec.className='psec';sec.setAttribute('data-sub',k);
     var emoji=catEmojis[k]||'📦';
     sec.innerHTML='<div class="psec-hdr"><div class="psec-icon">'+emoji+'</div><div class="psec-title">'+g.label+'</div><div class="psec-count">'+g.itens.length+' item'+(g.itens.length!==1?'s':'')+'</div></div>';
     var grid=document.createElement('div');grid.className='pgrid';
