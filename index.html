@@ -656,6 +656,84 @@ function enviarWhatsApp() {
     window.open(`https://wa.me/5511972999835?text=${encodeURIComponent(msg)}`);
 }
 
+    function abrirCarrinho() {
+    const sidebar = document.getElementById('sidebarCarrinho');
+    const overlay = document.getElementById('overlayCarrinho');
+    // Atualiza o conteúdo antes de abrir
+    const itens = Object.values(carrinho);
+    const container = document.getElementById('sidebarItens');
+    const totalEl = document.getElementById('totalCarrinho');
+    if (!itens.length) {
+        container.innerHTML = '<div class="cart-empty"><i class="fas fa-cart-arrow-down" style="font-size:3rem;opacity:.3;"></i><p style="font-weight:700;">Carrinho vazio</p></div>';
+        totalEl.textContent = 'R$ 0,00';
+    } else {
+        container.innerHTML = itens.map(({prod:p, qtd}) => {
+            const preco = parseFloat(p.preco) > 0 ? (p.preco * qtd).toLocaleString('pt-BR',{style:'currency',currency:'BRL'}) : '—';
+            const unit  = parseFloat(p.preco) > 0 ? p.preco.toLocaleString('pt-BR',{style:'currency',currency:'BRL'}) : 'Sob consulta';
+            return `<div class="cart-item">
+                <div class="cart-item-icon"><i class="fas fa-box"></i></div>
+                <div class="cart-item-info">
+                    <div class="cart-item-name">${p.nome}</div>
+                    <div class="cart-item-price">${unit} ${p.unidade||''}</div>
+                </div>
+                <div class="cart-item-controls">
+                    <span class="cart-subtotal">${qtd}x = ${preco}</span>
+                    <button class="btn-remove-item" onclick="removerDoCarrinho(${p.id})"><i class="fas fa-trash-alt"></i></button>
+                </div>
+            </div>`;
+        }).join('');
+        const total = Object.values(carrinho).reduce((s,{prod:p,qtd}) => s + (parseFloat(p.preco)||0)*qtd, 0);
+        totalEl.textContent = total.toLocaleString('pt-BR',{style:'currency',currency:'BRL'});
+    }
+    sidebar.classList.add('open');
+    overlay.classList.add('open');
+    document.body.style.overflow = 'hidden';
+}
+
+function fecharCarrinho() {
+    document.getElementById('sidebarCarrinho').classList.remove('open');
+    document.getElementById('overlayCarrinho').classList.remove('open');
+    document.body.style.overflow = '';
+}
+
+function removerDoCarrinho(id) {
+    delete carrinho[id];
+    const card = document.getElementById('card-' + id);
+    if (card) card.classList.remove('in-cart');
+    const n = Object.keys(carrinho).length;
+    const badge = document.getElementById('badgeCarrinho');
+    badge.textContent = n;
+    badge.classList.toggle('visible', n > 0);
+    abrirCarrinho(); // atualiza o sidebar
+}
+
+function limparCarrinho() {
+    if (!confirm('Limpar carrinho?')) return;
+    carrinho = {};
+    document.querySelectorAll('.product-card.in-cart').forEach(c => c.classList.remove('in-cart'));
+    const badge = document.getElementById('badgeCarrinho');
+    badge.textContent = '0';
+    badge.classList.remove('visible');
+    abrirCarrinho();
+}
+
+function toggleTheme() {
+    const html = document.documentElement;
+    const icon = document.getElementById('icon-theme');
+    if (html.getAttribute('data-theme') === 'dark') {
+        html.setAttribute('data-theme', 'light');
+        icon.className = 'fas fa-sun';
+    } else {
+        html.setAttribute('data-theme', 'dark');
+        icon.className = 'fas fa-moon';
+    }
+}
+
+function rolarPara(id) {
+    const el = document.getElementById(id);
+    if (el) window.scrollTo({top: el.getBoundingClientRect().top + window.scrollY - 80, behavior: 'smooth'});
+}
+    
 window.onload = function() {}; // a integracao_planilha.js cuida disso
 </script>
 
