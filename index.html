@@ -4,48 +4,75 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <title>Cia Das Embalagens</title>
+<link rel="icon" type="image/png" href="https://img.icons8.com/fluency/48/box.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600&family=DM+Serif+Display&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
 <style>
-/* \u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550 TOKENS E RESET \u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550 */
+/* ══════════════ TOKENS ══════════════ */
 :root {
-  --ink: #0a0c10; --ink1: #12161e; --ink2: #1a2030; --ink3: #232c3e;
-  --surface: rgba(18,22,30,.72); --surface2: rgba(26,32,48,.6);
-  --glass: rgba(255,255,255,.04); --glass2: rgba(255,255,255,.08); --glass3: rgba(255,255,255,.13);
-  --t1: #f2f4f9; --t2: #8c9ab8; --t3: #4a5570;
-  --bdr: rgba(255,255,255,.07); --bdr2: rgba(255,255,255,.13); --bdr3: rgba(255,255,255,.2);
-  --acc: #3b7fff; --acc-glow: rgba(59,127,255,.22); --acc2: #1a54cc;
-  --grn: #00c875; --grn-glow: rgba(0,200,117,.2);
-  --ease: cubic-bezier(.22,1,.36,1); --ease2: cubic-bezier(.4,0,.2,1);
-  --font: 'DM Sans', system-ui, sans-serif; --font-display: 'DM Serif Display', Georgia, serif;
-  --blur: blur(24px) saturate(180%); --blur-sm: blur(12px) saturate(160%);
+  --ink: #0a0c10;
+  --ink1: #12161e;
+  --ink2: #1a2030;
+  --ink3: #232c3e;
+  --surface: rgba(18,22,30,.72);
+  --surface2: rgba(26,32,48,.6);
+  --glass: rgba(255,255,255,.04);
+  --glass2: rgba(255,255,255,.08);
+  --glass3: rgba(255,255,255,.13);
+  --t1: #f2f4f9;
+  --t2: #8c9ab8;
+  --t3: #4a5570;
+  --bdr: rgba(255,255,255,.07);
+  --bdr2: rgba(255,255,255,.13);
+  --bdr3: rgba(255,255,255,.2);
+  --acc: #3b7fff;
+  --acc-glow: rgba(59,127,255,.22);
+  --acc2: #1a54cc;
+  --grn: #00c875;
+  --grn-glow: rgba(0,200,117,.2);
+  --ease: cubic-bezier(.22,1,.36,1);
+  --ease2: cubic-bezier(.4,0,.2,1);
+  --font: 'DM Sans', system-ui, sans-serif;
+  --font-display: 'DM Serif Display', Georgia, serif;
+  --blur: blur(24px) saturate(180%);
+  --blur-sm: blur(12px) saturate(160%);
   --nav-h: 70px;
 }
 [data-theme="light"] {
-  --ink: #f0f2f8; --ink1: #e4e8f4; --ink2: #d6dcee; --ink3: #c8d0e4;
-  --surface: rgba(240,242,248,.8); --surface2: rgba(228,232,244,.7);
-  --glass: rgba(0,0,0,.03); --glass2: rgba(0,0,0,.05); --glass3: rgba(0,0,0,.08);
-  --t1: #0d1320; --t2: #3e4d6a; --t3: #7a89a8;
-  --bdr: rgba(0,0,0,.07); --bdr2: rgba(0,0,0,.12); --bdr3: rgba(0,0,0,.2);
+  --ink: #f0f2f8;
+  --ink1: #e4e8f4;
+  --ink2: #d6dcee;
+  --ink3: #c8d0e4;
+  --surface: rgba(240,242,248,.8);
+  --surface2: rgba(228,232,244,.7);
+  --glass: rgba(0,0,0,.03);
+  --glass2: rgba(0,0,0,.05);
+  --glass3: rgba(0,0,0,.08);
+  --t1: #0d1320;
+  --t2: #3e4d6a;
+  --t3: #7a89a8;
+  --bdr: rgba(0,0,0,.07);
+  --bdr2: rgba(0,0,0,.12);
+  --bdr3: rgba(0,0,0,.2);
 }
-*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;-webkit-font-smoothing:antialiased}
+
+/* ══════════════ RESET ══════════════ */
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
 html{scroll-behavior:smooth;scroll-padding-top:var(--nav-h)}
 body{background:var(--ink);color:var(--t2);font-family:var(--font);line-height:1.65;overflow-x:hidden;transition:background .4s,color .4s}
 h1,h2,h3,h4{color:var(--t1);font-family:var(--font-display);letter-spacing:-.02em;line-height:1.12;font-weight:400}
 a{text-decoration:none;color:inherit}
 button{cursor:pointer;border:none;background:none;font-family:var(--font)}
+img{display:block}
 ::-webkit-scrollbar{width:4px}
 ::-webkit-scrollbar-track{background:transparent}
 ::-webkit-scrollbar-thumb{background:var(--ink3);border-radius:99px}
 
-/* ICONES SVG BASE */
-.ico { width: 1.2rem; height: 1.2rem; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; flex-shrink: 0; }
-.ico-fill { fill: currentColor; stroke: none; }
-
-/* \u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550 NOISE & HEADER \u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550 */
+/* ══════════════ NOISE OVERLAY ══════════════ */
 body::before{content:'';position:fixed;inset:0;z-index:0;pointer-events:none;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.025'/%3E%3C/svg%3E");opacity:.4}
 body::after{content:'';position:fixed;inset:0;z-index:0;pointer-events:none;background:radial-gradient(ellipse 80% 60% at 20% 10%,rgba(59,127,255,.09) 0%,transparent 60%),radial-gradient(ellipse 60% 50% at 80% 80%,rgba(0,200,117,.06) 0%,transparent 60%)}
 
+/* ══════════════ MEGA HEADER ══════════════ */
 .hdr{position:fixed;top:0;left:0;right:0;z-index:900;transition:all .4s var(--ease)}
 .hdr-inner{height:var(--nav-h);display:flex;align-items:center;justify-content:space-between;padding:0 2.5rem;background:var(--surface);backdrop-filter:var(--blur);-webkit-backdrop-filter:var(--blur);border-bottom:1px solid var(--bdr);transition:all .4s var(--ease)}
 .hdr.sc .hdr-inner{height:60px;background:rgba(10,12,16,.9)}
@@ -54,10 +81,44 @@ body::after{content:'';position:fixed;inset:0;z-index:0;pointer-events:none;back
 
 .logo{display:flex;align-items:center;gap:12px;color:var(--t1);flex-shrink:0}
 .logo-mark{width:36px;height:36px;background:linear-gradient(135deg,var(--acc),var(--acc2));border-radius:10px;display:flex;align-items:center;justify-content:center;box-shadow:0 0 20px var(--acc-glow)}
-.logo-mark .ico { color: #fff; width: 20px; height: 20px; }
+.logo-mark img{width:20px;height:20px}
 .logo-name{font-family:var(--font);font-size:.98rem;font-weight:600;letter-spacing:-.01em;color:var(--t1)}
 .logo-name span{color:var(--t3);font-weight:400}
 
+/* MEGA NAV */
+.nav-center{display:flex;align-items:center;gap:2px}
+.nav-item{position:relative}
+.nav-link{display:flex;align-items:center;gap:5px;padding:8px 14px;border-radius:8px;font-size:.875rem;font-weight:500;color:var(--t2);transition:all .2s var(--ease2);cursor:pointer;white-space:nowrap}
+.nav-link:hover,.nav-item.open .nav-link{color:var(--t1);background:var(--glass2)}
+.nav-link svg{width:12px;height:12px;opacity:.6;transition:transform .3s var(--ease)}
+.nav-item.open .nav-link svg{transform:rotate(180deg)}
+.nav-dot{width:5px;height:5px;background:var(--acc);border-radius:50%;margin-right:-2px;opacity:0;transition:opacity .2s}
+.nav-link:hover .nav-dot{opacity:1}
+
+/* MEGA DROPDOWN */
+.mega{position:absolute;top:calc(100% + 12px);left:50%;transform:translateX(-50%) translateY(8px);min-width:680px;background:var(--surface);backdrop-filter:var(--blur);-webkit-backdrop-filter:var(--blur);border:1px solid var(--bdr2);border-radius:20px;padding:1.5rem;box-shadow:0 32px 80px rgba(0,0,0,.4),0 0 0 1px rgba(255,255,255,.03);opacity:0;pointer-events:none;transition:opacity .25s var(--ease),transform .25s var(--ease);z-index:100}
+[data-theme="light"] .mega{box-shadow:0 20px 60px rgba(0,0,0,.15),0 0 0 1px rgba(0,0,0,.05)}
+.nav-item.open .mega{opacity:1;pointer-events:all;transform:translateX(-50%) translateY(0)}
+.mega-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem}
+.mega-col{}
+.mega-col-title{font-size:.7rem;font-weight:600;text-transform:uppercase;letter-spacing:.1em;color:var(--t3);margin-bottom:.75rem;padding-bottom:.5rem;border-bottom:1px solid var(--bdr)}
+.mega-link{display:flex;align-items:center;gap:9px;padding:7px 9px;border-radius:9px;font-size:.84rem;color:var(--t2);transition:all .18s var(--ease2);cursor:pointer}
+.mega-link:hover{color:var(--t1);background:var(--glass2)}
+.mega-link-ico{width:28px;height:28px;border-radius:7px;background:var(--glass);border:1px solid var(--bdr);display:flex;align-items:center;justify-content:center;font-size:.85rem;flex-shrink:0;transition:all .2s}
+.mega-link:hover .mega-link-ico{background:var(--acc-glow);border-color:rgba(59,127,255,.3)}
+.mega-link-info{min-width:0}
+.mega-link-name{font-weight:500;color:var(--t1);font-size:.84rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.mega-link-desc{font-size:.73rem;color:var(--t3);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.mega-featured{grid-column:1/-1;background:linear-gradient(135deg,rgba(59,127,255,.1),rgba(0,200,117,.06));border:1px solid rgba(59,127,255,.2);border-radius:12px;padding:1rem;display:flex;align-items:center;justify-content:space-between;margin-top:.5rem;cursor:pointer;transition:all .2s var(--ease2)}
+.mega-featured:hover{background:linear-gradient(135deg,rgba(59,127,255,.16),rgba(0,200,117,.1))}
+.mega-featured-l{display:flex;align-items:center;gap:10px}
+.mega-feat-ico{font-size:1.4rem}
+.mega-feat-text strong{display:block;font-size:.88rem;color:var(--t1);font-weight:600;margin-bottom:2px}
+.mega-feat-text span{font-size:.76rem;color:var(--t3)}
+.mega-feat-cta{font-size:.78rem;font-weight:600;color:var(--acc);background:var(--acc-glow);padding:6px 14px;border-radius:99px;border:1px solid rgba(59,127,255,.3);transition:all .2s}
+.mega-featured:hover .mega-feat-cta{background:rgba(59,127,255,.25)}
+
+/* RIGHT ACTIONS */
 .hdr-r{display:flex;align-items:center;gap:8px}
 .btn-ico{width:38px;height:38px;border-radius:50%;background:var(--glass);border:1px solid var(--bdr);color:var(--t2);display:flex;align-items:center;justify-content:center;font-size:.9rem;transition:all .22s var(--ease2)}
 .btn-ico:hover{background:var(--glass2);color:var(--t1);border-color:var(--bdr2)}
@@ -67,9 +128,11 @@ body::after{content:'';position:fixed;inset:0;z-index:0;pointer-events:none;back
 .cbadge.on{opacity:1;transform:scale(1)}
 .btn-wpp{display:flex;align-items:center;gap:7px;padding:9px 18px;background:var(--grn);border-radius:99px;color:#fff;font-weight:600;font-size:.84rem;box-shadow:0 4px 18px var(--grn-glow);transition:all .25s var(--ease2)}
 .btn-wpp:hover{transform:translateY(-2px);box-shadow:0 8px 28px var(--grn-glow)}
+.btn-wpp img{width:16px;height:16px}
 
-/* \u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550 HERO \u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550 */
+/* ══════════════ HERO ══════════════ */
 .hero{min-height:100vh;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;padding:calc(var(--nav-h) + 4rem) 2rem 5rem;text-align:center}
+#hero-canvas{display:none}
 .hero-bg-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.15;z-index:0;transition:opacity .5s;filter:saturate(.6)}
 [data-theme="light"] .hero-bg-img{opacity:.1}
 .hero-gradient{position:absolute;inset:0;z-index:2;background:radial-gradient(ellipse 100% 80% at 50% 0%,rgba(10,12,16,0) 0%,var(--ink) 70%);transition:background .5s}
@@ -85,26 +148,51 @@ body::after{content:'';position:fixed;inset:0;z-index:0;pointer-events:none;back
 .hero-btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;animation:fadeUp .8s var(--ease) .3s both}
 .btn-pri{display:flex;align-items:center;gap:9px;padding:14px 32px;background:var(--acc);color:#fff;border-radius:99px;font-weight:600;font-size:.92rem;box-shadow:0 0 30px var(--acc-glow);transition:all .3s var(--ease)}
 .btn-pri:hover{transform:translateY(-3px);box-shadow:0 12px 40px var(--acc-glow);background:var(--acc2)}
+.btn-pri img{width:16px;height:16px}
 .btn-ghost{display:flex;align-items:center;gap:9px;padding:14px 32px;background:var(--glass2);color:var(--t1);border-radius:99px;font-weight:500;font-size:.92rem;border:1px solid var(--bdr2);backdrop-filter:var(--blur-sm);transition:all .3s var(--ease)}
 .btn-ghost:hover{background:var(--glass3);border-color:var(--bdr3);transform:translateY(-3px)}
+.btn-ghost img{width:16px;height:16px}
+.hero-scroll{position:absolute;bottom:2.5rem;left:50%;transform:translateX(-50%);z-index:3;display:flex;flex-direction:column;align-items:center;gap:6px;color:var(--t3);font-size:.72rem;letter-spacing:.05em;animation:fadeUp 1s var(--ease) .7s both}
+.scroll-track{width:1px;height:44px;background:linear-gradient(to bottom,var(--bdr3),transparent);overflow:hidden;position:relative}
+.scroll-track::after{content:'';position:absolute;top:0;left:0;width:100%;height:50%;background:var(--t3);animation:scrollDrop 2.2s ease-in-out infinite}
+@keyframes scrollDrop{0%{transform:translateY(-100%);opacity:0}30%{opacity:1}100%{transform:translateY(200%);opacity:0}}
 
-/* \u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550 TRUST BAR \u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550 */
+/* ══════════════ TRUST BAR ══════════════ */
 .trust-bar{background:var(--surface2);backdrop-filter:var(--blur-sm);-webkit-backdrop-filter:var(--blur-sm);border-bottom:1px solid var(--bdr);display:flex;justify-content:center;flex-wrap:wrap;gap:0}
 .trust-item{display:flex;align-items:center;gap:14px;padding:1.75rem 3rem;border-right:1px solid var(--bdr)}
 .trust-item:last-child{border-right:none}
-.trust-ico{color:var(--t2)}
+.trust-ico{font-size:1.4rem;opacity:.7}
+.trust-texts{}
 .trust-n{font-size:1.6rem;font-weight:300;color:var(--t1);font-family:var(--font-display);line-height:1}
 .trust-l{font-size:.72rem;color:var(--t3);text-transform:uppercase;letter-spacing:.07em;font-weight:500;margin-top:2px}
 
-/* \u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550 CATALOG \u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550 */
-.sec-catalog{padding:5rem 2rem 8rem;max-width:1280px;margin:0 auto}
-.cat-head{text-align:center;margin-bottom:3rem}
+/* ══════════════ SECTIONS ══════════════ */
 .sec-label{font-size:.7rem;font-weight:600;text-transform:uppercase;letter-spacing:.12em;color:var(--acc);font-family:var(--font);margin-bottom:.6rem}
 .sec-title{font-size:clamp(1.8rem,3.5vw,2.8rem);color:var(--t1);margin-bottom:.6rem}
-.sec-sub{font-size:.95rem;color:var(--t3);max-width:480px;margin:0 auto;}
+.sec-sub{font-size:.95rem;color:var(--t3);max-width:480px}
 
+/* ══════════════ REVIEWS ══════════════ */
+.sec-reviews{padding:6rem 2rem;background:var(--surface2);backdrop-filter:var(--blur-sm)}
+.reviews-wrap{max-width:1100px;margin:0 auto}
+.reviews-head{margin-bottom:3rem}
+.reviews-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:1.25rem}
+.review-card{background:var(--glass);border:1px solid var(--bdr);border-radius:20px;padding:1.75rem;transition:all .3s var(--ease2);position:relative;overflow:hidden}
+.review-card::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,var(--glass),transparent);border-radius:20px;opacity:0;transition:opacity .3s}
+.review-card:hover{border-color:var(--bdr2);transform:translateY(-6px);box-shadow:0 20px 50px rgba(0,0,0,.2)}
+.review-card:hover::before{opacity:1}
+.review-stars{color:#f59e0b;font-size:.85rem;margin-bottom:1rem;letter-spacing:2px}
+.review-quote{font-size:.88rem;line-height:1.75;color:var(--t2);margin-bottom:1.25rem;font-style:italic}
+.review-author{display:flex;align-items:center;gap:10px}
+.review-av{width:34px;height:34px;border-radius:50%;background:linear-gradient(135deg,var(--acc),#7c3aed);display:flex;align-items:center;justify-content:center;color:#fff;font-size:.7rem;font-weight:600;flex-shrink:0;border:1px solid rgba(255,255,255,.15)}
+.review-name{font-size:.84rem;font-weight:600;color:var(--t1)}
+
+/* ══════════════ CATALOG ══════════════ */
+.sec-catalog{padding:5rem 2rem 8rem;max-width:1280px;margin:0 auto}
+.cat-head{text-align:center;margin-bottom:3rem}
+
+/* SEARCH */
 .search-wrap{max-width:580px;margin:0 auto 2.5rem;position:relative}
-.search-icon{position:absolute;left:20px;top:50%;transform:translateY(-50%);opacity:.4;pointer-events:none}
+.search-icon{position:absolute;left:20px;top:50%;transform:translateY(-50%);font-size:1rem;opacity:.4;pointer-events:none}
 .search-inp{width:100%;padding:14px 20px 14px 50px;background:var(--glass2);border:1px solid var(--bdr2);border-radius:14px;color:var(--t1);font-family:var(--font);font-size:.95rem;outline:none;transition:all .3s var(--ease2);backdrop-filter:var(--blur-sm)}
 .search-inp::placeholder{color:var(--t3)}
 .search-inp:focus{border-color:rgba(59,127,255,.5);background:var(--glass3);box-shadow:0 0 0 4px rgba(59,127,255,.1)}
@@ -112,11 +200,11 @@ body::after{content:'';position:fixed;inset:0;z-index:0;pointer-events:none;back
 /* FILTER TABS */
 .filter-tabs{display:flex;gap:4px;justify-content:center;flex-wrap:wrap;margin-bottom:.75rem}
 .ftab{display:flex;align-items:center;gap:6px;padding:9px 16px;border-radius:10px;font-size:.82rem;font-weight:500;color:var(--t3);background:var(--glass);border:1px solid var(--bdr);transition:all .2s var(--ease2);cursor:pointer;white-space:nowrap}
-.ftab .ico{width:16px;height:16px;opacity:.5;transition:opacity .2s}
+.ftab img{width:14px;height:14px;opacity:.5;transition:opacity .2s}
 .ftab:hover{color:var(--t1);border-color:var(--bdr2);background:var(--glass2)}
 .ftab.on{background:var(--t1);color:var(--ink);border-color:transparent;font-weight:600}
-.ftab.on .ico{opacity:1;stroke:var(--ink)}
-[data-theme="light"] .ftab.on .ico{stroke:var(--ink)}
+.ftab.on img{opacity:1;filter:invert(1)}
+[data-theme="light"] .ftab.on img{filter:none}
 
 /* SUB FILTERS */
 .subtabs-wrap{display:flex;justify-content:center;margin-bottom:2.5rem;min-height:36px;align-items:center}
@@ -126,12 +214,14 @@ body::after{content:'';position:fixed;inset:0;z-index:0;pointer-events:none;back
 .stab:hover{color:var(--t1);border-color:var(--bdr2)}
 .stab.on{background:var(--acc);color:#fff;border-color:var(--acc);box-shadow:0 4px 14px var(--acc-glow)}
 
+/* NO RESULTS */
 .no-results{text-align:center;padding:4rem;color:var(--t3);font-size:1rem;width:100%;grid-column:1/-1}
+.no-results span{display:block;font-size:2.5rem;margin-bottom:1rem;opacity:.4}
 
 /* PRODUCT SECTION */
 .psec{margin-bottom:4rem}
 .psec-hdr{display:flex;align-items:center;gap:10px;margin-bottom:1.5rem;padding-bottom:1rem;border-bottom:1px solid var(--bdr)}
-.psec-icon{width:32px;height:32px;background:rgba(59,127,255,.1);border:1px solid rgba(59,127,255,.18);border-radius:8px;display:flex;align-items:center;justify-content:center;color:var(--acc);flex-shrink:0}
+.psec-icon{width:32px;height:32px;background:rgba(59,127,255,.1);border:1px solid rgba(59,127,255,.18);border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:.8rem;flex-shrink:0}
 .psec-title{font-size:1.05rem;font-weight:600;color:var(--t1);font-family:var(--font)}
 .psec-count{font-size:.78rem;color:var(--t3);margin-left:auto;background:var(--glass2);border:1px solid var(--bdr);border-radius:99px;padding:3px 10px}
 
@@ -142,8 +232,8 @@ body::after{content:'';position:fixed;inset:0;z-index:0;pointer-events:none;back
 .pcard:hover{border-color:var(--bdr2);background:var(--glass2);transform:translateY(-6px);box-shadow:0 20px 50px rgba(0,0,0,.2)}
 .pcard.incart{border-color:rgba(0,200,117,.35);box-shadow:0 0 0 1px rgba(0,200,117,.12)}
 .pimg{height:150px;display:flex;align-items:center;justify-content:center;border-bottom:1px solid var(--bdr);position:relative;overflow:hidden;background:linear-gradient(135deg,var(--glass),var(--glass2))}
-.pimg .ico{width:48px;height:48px;opacity:.2;transition:all .4s var(--ease);stroke-width:1.5;}
-.pcard:hover .pimg .ico{opacity:.4;transform:scale(1.1) rotate(-5deg)}
+.pimg-emoji{font-size:3rem;opacity:.15;transition:all .4s var(--ease);user-select:none}
+.pcard:hover .pimg-emoji{opacity:.22;transform:scale(1.1) rotate(-5deg)}
 .incart-badge{position:absolute;top:10px;right:10px;background:var(--grn);color:#fff;font-size:.64rem;font-weight:700;padding:4px 10px;border-radius:99px;opacity:0;transform:scale(.5) translateY(-4px);transition:all .3s var(--ease)}
 .pcard.incart .incart-badge{opacity:1;transform:scale(1) translateY(0)}
 .pbody{padding:1.1rem;display:flex;flex-direction:column;flex-grow:1;gap:.65rem}
@@ -163,7 +253,7 @@ body::after{content:'';position:fixed;inset:0;z-index:0;pointer-events:none;back
 .badd.done{background:rgba(0,200,117,.12);color:var(--grn);border-color:rgba(0,200,117,.2)}
 .badd.done:hover{background:var(--grn);color:#fff;box-shadow:0 4px 14px var(--grn-glow)}
 
-/* \u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550 CART PANEL \u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550 */
+/* ══════════════ CART PANEL ══════════════ */
 .backdrop{position:fixed;inset:0;background:rgba(0,0,0,.7);backdrop-filter:blur(12px);z-index:950;opacity:0;pointer-events:none;transition:opacity .35s}
 .backdrop.on{opacity:1;pointer-events:all}
 .cart-panel{position:fixed;top:0;right:0;bottom:0;width:440px;max-width:100vw;background:var(--surface);backdrop-filter:var(--blur);-webkit-backdrop-filter:var(--blur);border-left:1px solid var(--bdr2);z-index:960;display:flex;flex-direction:column;transform:translateX(100%);transition:transform .45s var(--ease)}
@@ -174,10 +264,10 @@ body::after{content:'';position:fixed;inset:0;z-index:0;pointer-events:none;back
 .btn-close:hover{background:var(--glass3);color:var(--t1)}
 .cart-list{flex:1;overflow-y:auto;padding:.75rem 1.75rem}
 .cart-empty{height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1rem;color:var(--t3)}
-.cart-empty .ico{width:48px;height:48px;opacity:.25}
+.cart-empty-ico{font-size:3rem;opacity:.25}
 .cart-empty p{font-size:.88rem;font-weight:500}
 .cart-item{display:flex;align-items:center;gap:.9rem;padding:.9rem 0;border-bottom:1px solid var(--bdr)}
-.ci-ico{width:42px;height:42px;background:var(--glass2);border:1px solid var(--bdr);border-radius:10px;display:flex;align-items:center;justify-content:center;flex-shrink:0;color:var(--t2)}
+.ci-ico{width:42px;height:42px;background:var(--glass2);border:1px solid var(--bdr);border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:1.1rem;flex-shrink:0}
 .ci-info{flex:1;min-width:0}
 .ci-name{font-weight:500;font-size:.84rem;color:var(--t1);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;margin-bottom:2px}
 .ci-meta{font-size:.73rem;color:var(--t3)}
@@ -191,26 +281,31 @@ body::after{content:'';position:fixed;inset:0;z-index:0;pointer-events:none;back
 .cart-total-val{font-size:1.8rem;font-weight:300;font-family:var(--font-display);color:var(--t1)}
 .btn-send-wpp{width:100%;padding:14px;background:var(--grn);color:#fff;border-radius:12px;font-weight:600;font-size:.92rem;display:flex;align-items:center;justify-content:center;gap:9px;transition:all .3s var(--ease);box-shadow:0 6px 22px var(--grn-glow);margin-bottom:.75rem}
 .btn-send-wpp:hover{filter:brightness(1.08);transform:translateY(-2px);box-shadow:0 12px 34px var(--grn-glow)}
+.btn-send-wpp img{width:18px;height:18px}
 .btn-clear{width:100%;padding:9px;color:var(--t3);font-size:.8rem;font-weight:500;display:flex;align-items:center;justify-content:center;gap:6px;border-radius:8px;transition:all .2s}
 .btn-clear:hover{color:#ef4444;background:rgba(239,68,68,.07)}
 
-/* \u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550 WPP FLOAT \u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550 */
+/* ══════════════ WPP FLOAT ══════════════ */
 .wpp-float{position:fixed;bottom:28px;right:28px;z-index:800;display:flex;flex-direction:column;align-items:flex-end;gap:10px}
 .wpp-tip{background:var(--grn);color:#fff;font-size:.76rem;font-weight:600;padding:5px 13px;border-radius:99px;white-space:nowrap;opacity:0;transform:translateX(8px) scale(.95);transition:all .25s var(--ease);pointer-events:none}
 .wpp-float:hover .wpp-tip{opacity:1;transform:translateX(0) scale(1)}
 .wpp-btn{width:58px;height:58px;background:var(--grn);border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 8px 26px var(--grn-glow);transition:all .3s var(--ease);position:relative}
 .wpp-btn:hover{transform:scale(1.08);box-shadow:0 14px 36px rgba(0,200,117,.4)}
+.wpp-btn img{width:28px;height:28px}
 .wpp-ring{position:absolute;inset:-5px;border-radius:50%;border:2px solid var(--grn);opacity:.6;animation:ring 2.6s ease-in-out infinite}
 .wpp-ring2{animation-delay:.8s}
 @keyframes ring{0%{opacity:.6;transform:scale(1)}100%{opacity:0;transform:scale(1.6)}}
 
-/* \u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550 FOOTER \u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550 */
+/* ══════════════ FOOTER ══════════════ */
 footer{background:var(--surface2);border-top:1px solid var(--bdr);padding:2.5rem;text-align:center;color:var(--t3);font-size:.82rem}
 footer strong{color:var(--t2);font-weight:500}
 
-/* \u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550 ANIMATIONS & RESPONSIVE \u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550 */
+/* ══════════════ ANIMATIONS ══════════════ */
 @keyframes fadeUp{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:translateY(0)}}
+
+/* ══════════════ MOBILE ══════════════ */
 @media(max-width:900px){
+  .nav-center{display:none}
   .hdr-inner{padding:0 1.25rem}
   .trust-item{padding:1.25rem 1.5rem}
 }
@@ -223,165 +318,353 @@ footer strong{color:var(--t2);font-weight:500}
   .btn-wpp span,.btn-cart-hdr span{display:none}
   .hero h1{font-size:2.6rem}
 }
-@media(max-width:400px){.pgrid{grid-template-columns:1fr}}
+@media(max-width:400px){
+  .pgrid{grid-template-columns:1fr}
+}
 </style>
 </head>
 <body>
 
-<svg style="display:none" xmlns="http://www.w3.org/2000/svg">
-  <symbol id="icon-box" viewBox="0 0 24 24"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></symbol>
-  <symbol id="icon-wpp" viewBox="0 0 24 24"><path class="ico-fill" d="M17.47 14.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.16-.17.2-.35.22-.64.08-.3-.15-1.26-.46-2.39-1.3-.89-.65-1.48-1.46-1.65-1.76-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.03-.52-.07-.15-.67-1.61-.92-2.21-.24-.58-.49-.5-.67-.51-.17-.01-.37-.01-.57-.01-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.48 0 1.46 1.07 2.88 1.21 3.07.15.2 2.1 3.2 5.08 4.49.71.31 1.26.49 1.69.63.71.23 1.36.19 1.87.12.57-.09 1.76-.72 2.01-1.41.25-.69.25-1.29.17-1.41-.07-.12-.27-.2-.57-.35m-5.42 7.4h0a9.87 9.87 0 01-5.03-1.38l-.36-.21-3.74.98 1-3.65-.24-.37a9.86 9.86 0 01-1.51-5.26c0-5.45 4.44-9.88 9.89-9.88 2.64 0 5.12 1.03 6.99 2.9a9.82 9.82 0 012.89 6.99c0 5.45-4.44 9.88-9.89 9.88m8.41-18.3A11.81 11.81 0 0012.05 0C5.5 0 .16 5.34.16 11.89c0 2.1.55 4.14 1.59 5.95L.06 24l6.3-1.65a11.88 11.88 0 005.69 1.45h.01c6.55 0 11.89-5.34 11.89-11.89a11.82 11.82 0 00-3.48-8.41z"/></symbol>
-  <symbol id="icon-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></symbol>
-  <symbol id="icon-layers" viewBox="0 0 24 24"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></symbol>
-  <symbol id="icon-bag" viewBox="0 0 24 24"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></symbol>
-  <symbol id="icon-flask" viewBox="0 0 24 24"><path d="M10 2v7.31"/><path d="M14 9.3V1.99"/><path d="M8.5 2h7"/><path d="M14 9.3a6.5 6.5 0 1 1-4 0"/><path d="M5.52 16h12.96"/></symbol>
-  <symbol id="icon-cup" viewBox="0 0 24 24"><path d="M5 2h14l-1.5 16A3 3 0 0 1 14.5 21h-5A3 3 0 0 1 6.5 18L5 2z"/><line x1="8" y1="2" x2="16" y2="2"/></symbol>
-  <symbol id="icon-broom" viewBox="0 0 24 24"><path d="M2.5 21h19"/><path d="M12 21V3"/><path d="M5 8.5c0-.83.67-1.5 1.5-1.5h11c.83 0 1.5.67 1.5 1.5v3c0 .83-.67 1.5-1.5 1.5h-11c-.83 0-1.5-.67-1.5-1.5v-3z"/><path d="M8 7v6"/><path d="M16 7v6"/></symbol>
-  <symbol id="icon-paper" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M12 5v14"/><path d="M8 12h8"/></symbol>
-  <symbol id="icon-tools" viewBox="0 0 24 24"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></symbol>
-  <symbol id="icon-more" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M8 12h8"/><path d="M12 8v8"/></symbol>
-</svg>
-
+<!-- ══════════ HEADER ══════════ -->
 <header class="hdr" id="hdr">
   <div class="hdr-inner">
     <a href="#" class="logo">
-      <div class="logo-mark"><svg class="ico"><use href="#icon-box"></use></svg></div>
+      <div class="logo-mark"><img src="https://img.icons8.com/fluency/48/box.png" alt=""></div>
       <div class="logo-name">Cia das<span> Embalagens</span></div>
     </a>
+
+    <!-- MEGA NAV -->
+    <nav class="nav-center">
+
+      <!-- Embalagens -->
+      <div class="nav-item" id="nav-emb">
+        <div class="nav-link" onclick="toggleNav('nav-emb')">
+          <span class="nav-dot"></span>Embalagens
+          <svg viewBox="0 0 10 6" fill="none"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        </div>
+        <div class="mega">
+          <div class="mega-grid">
+            <div class="mega-col">
+              <div class="mega-col-title">Caixas & Papelão</div>
+              <div class="mega-link" onclick="filterCat('caixas');filtrarSub('caixas-correio');fecharNav()">
+                <div class="mega-link-ico">📬</div>
+                <div class="mega-link-info"><div class="mega-link-name">Padrão Correios</div><div class="mega-link-desc">Sedex, PAC, e-commerce</div></div>
+              </div>
+              <div class="mega-link" onclick="filterCat('caixas');filtrarSub('caixas-alimentos');fecharNav()">
+                <div class="mega-link-ico">🍕</div>
+                <div class="mega-link-info"><div class="mega-link-name">Para Alimentos</div><div class="mega-link-desc">Pizza, hambúrguer, marmita</div></div>
+              </div>
+            </div>
+            <div class="mega-col">
+              <div class="mega-col-title">Plásticos & Potes</div>
+              <div class="mega-link" onclick="filterCat('plastico');filtrarSub('potes-tampas');fecharNav()">
+                <div class="mega-link-ico">🫙</div>
+                <div class="mega-link-info"><div class="mega-link-name">Potes e Tampas</div><div class="mega-link-desc">PP, PET, diversas capacidades</div></div>
+              </div>
+              <div class="mega-link" onclick="filterCat('plastico');filtrarSub('embalagens-bolo');fecharNav()">
+                <div class="mega-link-ico">🎂</div>
+                <div class="mega-link-info"><div class="mega-link-name">Embalagens p/ Bolo</div><div class="mega-link-desc">Acetato, forminhas, bases</div></div>
+              </div>
+            </div>
+            <div class="mega-col">
+              <div class="mega-col-title">Sacolas & Sacos</div>
+              <div class="mega-link" onclick="filterCat('sacolas');filtrarSub('sacolas-papel');fecharNav()">
+                <div class="mega-link-ico">🧻</div>
+                <div class="mega-link-info"><div class="mega-link-name">Sacolas de Papel</div><div class="mega-link-desc">Kraft, branco, personalizado</div></div>
+              </div>
+              <div class="mega-link" onclick="filterCat('sacolas');filtrarSub('sacolas-plasticas');fecharNav()">
+                <div class="mega-link-ico">🛒</div>
+                <div class="mega-link-info"><div class="mega-link-name">Sacolas Plásticas</div><div class="mega-link-desc">Alça, camiseta, biodegradável</div></div>
+              </div>
+              <div class="mega-link" onclick="filterCat('sacolas');filtrarSub('sacos-lixo');fecharNav()">
+                <div class="mega-link-ico">🗑️</div>
+                <div class="mega-link-info"><div class="mega-link-name">Sacos de Lixo</div><div class="mega-link-desc">10L a 200L, todas cores</div></div>
+              </div>
+            </div>
+            <div class="mega-featured" onclick="filterCat('diversos');fecharNav()">
+              <div class="mega-featured-l">
+                <div class="mega-feat-ico">❄️</div>
+                <div class="mega-feat-text">
+                  <strong>Embalagens de Isopor</strong>
+                  <span>Peixaria, delivery, transporte de frios</span>
+                </div>
+              </div>
+              <div class="mega-feat-cta">Ver tudo →</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Descartáveis -->
+      <div class="nav-item" id="nav-desc">
+        <div class="nav-link" onclick="toggleNav('nav-desc')">
+          <span class="nav-dot"></span>Descartáveis
+          <svg viewBox="0 0 10 6" fill="none"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        </div>
+        <div class="mega">
+          <div class="mega-grid" style="grid-template-columns:repeat(2,1fr)">
+            <div class="mega-col">
+              <div class="mega-col-title">Festa & Eventos</div>
+              <div class="mega-link" onclick="filtrarSub('copos-pratos',null,'festa');fecharNav()">
+                <div class="mega-link-ico">🥤</div>
+                <div class="mega-link-info"><div class="mega-link-name">Copos e Pratos</div><div class="mega-link-desc">PS, PP, Biodegradável</div></div>
+              </div>
+              <div class="mega-link" onclick="filtrarSub('talheres',null,'festa');fecharNav()">
+                <div class="mega-link-ico">🍴</div>
+                <div class="mega-link-info"><div class="mega-link-name">Talheres</div><div class="mega-link-desc">Garfo, faca, colher, kit</div></div>
+              </div>
+            </div>
+            <div class="mega-col">
+              <div class="mega-col-title">Higiene</div>
+              <div class="mega-link" onclick="filtrarSub('papel-higiene',null,'higiene');fecharNav()">
+                <div class="mega-link-ico">🧻</div>
+                <div class="mega-link-info"><div class="mega-link-name">Papel & Sabonetes</div><div class="mega-link-desc">Papel toalha, higiênico, sabão</div></div>
+              </div>
+              <div class="mega-link" onclick="buscarPorTermo('alcool')">
+                <div class="mega-link-ico">🧴</div>
+                <div class="mega-link-info"><div class="mega-link-name">Álcool & Desinfetante</div><div class="mega-link-desc">70°, gel, spray</div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Limpeza -->
+      <div class="nav-item" id="nav-limp">
+        <div class="nav-link" onclick="toggleNav('nav-limp')">
+          <span class="nav-dot"></span>Limpeza & EPI
+          <svg viewBox="0 0 10 6" fill="none"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        </div>
+        <div class="mega">
+          <div class="mega-grid" style="grid-template-columns:repeat(3,1fr)">
+            <div class="mega-col">
+              <div class="mega-col-title">Produtos Químicos</div>
+              <div class="mega-link" onclick="filtrarSub('produtos-limpeza',null,'limpeza');fecharNav()">
+                <div class="mega-link-ico">🧴</div>
+                <div class="mega-link-info"><div class="mega-link-name">Detergente & Deseng.</div><div class="mega-link-desc">Multi-uso, desincrustante</div></div>
+              </div>
+              <div class="mega-link" onclick="filtrarSub('aromas-inseticidas',null,'utilidades');fecharNav()">
+                <div class="mega-link-ico">🌿</div>
+                <div class="mega-link-info"><div class="mega-link-name">Aromas & Inseticidas</div><div class="mega-link-desc">Ambientadores, repelentes</div></div>
+              </div>
+            </div>
+            <div class="mega-col">
+              <div class="mega-col-title">Utensílios</div>
+              <div class="mega-link" onclick="filtrarSub('utensilios-limpeza',null,'limpeza');fecharNav()">
+                <div class="mega-link-ico">🧽</div>
+                <div class="mega-link-info"><div class="mega-link-name">Esponjas & Panos</div><div class="mega-link-desc">Fibra, microfibra, luva</div></div>
+              </div>
+              <div class="mega-link" onclick="filtrarSub('organiz-limpeza',null,'utilidades');fecharNav()">
+                <div class="mega-link-ico">🪣</div>
+                <div class="mega-link-info"><div class="mega-link-name">Baldes & Cestos</div><div class="mega-link-desc">Coleta seletiva, cozinha</div></div>
+              </div>
+            </div>
+            <div class="mega-col">
+              <div class="mega-col-title">EPI & Proteção</div>
+              <div class="mega-link" onclick="filtrarSub('epi',null,'limpeza');fecharNav()">
+                <div class="mega-link-ico">🧤</div>
+                <div class="mega-link-info"><div class="mega-link-name">Luvas & Aventais</div><div class="mega-link-desc">Látex, nitrílica, PVC</div></div>
+              </div>
+              <div class="mega-link" onclick="buscarPorTermo('touca')">
+                <div class="mega-link-ico">😷</div>
+                <div class="mega-link-info"><div class="mega-link-name">Máscaras & Toucas</div><div class="mega-link-desc">Cirúrgica, TNT, descartável</div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Utilidades -->
+      <div class="nav-item" id="nav-util">
+        <div class="nav-link" onclick="toggleNav('nav-util')">
+          <span class="nav-dot"></span>Utilidades
+          <svg viewBox="0 0 10 6" fill="none"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        </div>
+        <div class="mega" style="min-width:520px">
+          <div class="mega-grid" style="grid-template-columns:repeat(2,1fr)">
+            <div class="mega-col">
+              <div class="mega-col-title">Casa & Escritório</div>
+              <div class="mega-link" onclick="filterCat('utilidades');filtrarSub('escritorio');fecharNav()">
+                <div class="mega-link-ico">✏️</div>
+                <div class="mega-link-info"><div class="mega-link-name">Escritório</div><div class="mega-link-desc">Papelaria, canetas, clipes</div></div>
+              </div>
+              <div class="mega-link" onclick="filterCat('utilidades');filtrarSub('ganchos');fecharNav()">
+                <div class="mega-link-ico">🪝</div>
+                <div class="mega-link-info"><div class="mega-link-name">Ganchos & Fixadores</div><div class="mega-link-desc">3M, ventosa, parede</div></div>
+              </div>
+              <div class="mega-link" onclick="filterCat('utilidades');filtrarSub('pilhas-baterias');fecharNav()">
+                <div class="mega-link-ico">🔋</div>
+                <div class="mega-link-info"><div class="mega-link-name">Pilhas & Baterias</div><div class="mega-link-desc">AA, AAA, 9V, recarregáveis</div></div>
+              </div>
+            </div>
+            <div class="mega-col">
+              <div class="mega-col-title">Ferramentas</div>
+              <div class="mega-link" onclick="filterCat('utilidades');filtrarSub('ferramentas');fecharNav()">
+                <div class="mega-link-ico">🔨</div>
+                <div class="mega-link-info"><div class="mega-link-name">Ferramentas Manuais</div><div class="mega-link-desc">Chave, alicate, fita</div></div>
+              </div>
+              <div class="mega-link" onclick="filterCat('utilidades');filtrarSub('organiz-limpeza');fecharNav()">
+                <div class="mega-link-ico">📦</div>
+                <div class="mega-link-info"><div class="mega-link-name">Organização</div><div class="mega-link-desc">Caixas, gavetas, prateleiras</div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <a class="nav-link" href="https://wa.me/5511972999835" target="_blank" style="color:var(--grn);font-weight:500">
+        <span style="width:7px;height:7px;background:var(--grn);border-radius:50%;display:inline-block;margin-right:-2px;animation:blink 2s infinite"></span>
+        Contato
+      </a>
+    </nav>
+
     <div class="hdr-r">
-      <button class="btn-ico" onclick="toggleTheme()" id="themeBtn" title="Tema">\U0001f319</button>
+      <button class="btn-ico" onclick="toggleTheme()" id="themeBtn" title="Tema">🌙</button>
       <button class="btn-cart-hdr" onclick="abrirCart()">
-        <svg class="ico"><use href="#icon-bag"></use></svg> <span>Carrinho</span>
+        🛒 <span>Carrinho</span>
         <span class="cbadge" id="cbadge">0</span>
       </button>
       <a href="https://wa.me/5511972999835" target="_blank" class="btn-wpp">
-        <svg class="ico"><use href="#icon-wpp"></use></svg><span>WhatsApp</span>
+        <img src="https://img.icons8.com/color/48/whatsapp.png" alt=""><span>WhatsApp</span>
       </a>
     </div>
   </div>
 </header>
 
+<!-- ══════════ HERO ══════════ -->
 <section class="hero" id="inicio">
+  <canvas id="hero-canvas"></canvas>
   <img class="hero-bg-img" src="https://willkerson.github.io/Web.embalagens/lojafundo.png" alt="Loja">
   <div class="hero-gradient"></div>
   <div class="hero-content">
-    <div class="hero-eyebrow"><span class="pulse"></span> Direto da F�brica � S�o Paulo</div>
-    <h1>Solu��es completas em<br><em>Embalagens.</em></h1>
-    <p class="hero-sub">Do papel�o ao pl�stico, do isopor �s sacolas \u2014 tudo para o seu neg�cio em um s� lugar, com qualidade e pre�o de f�brica.</p>
+    <div class="hero-eyebrow"><span class="pulse"></span> Direto da Fábrica · São Paulo</div>
+    <h1>Soluções completas em<br><em>Embalagens.</em></h1>
+    <p class="hero-sub">Do papelão ao plástico, do isopor às sacolas — tudo para o seu negócio em um só lugar, com qualidade e preço de fábrica.</p>
     <div class="hero-btns">
       <button class="btn-pri" onclick="document.getElementById('produtos').scrollIntoView({behavior:'smooth'})">
-        <svg class="ico"><use href="#icon-layers"></use></svg> Ver Cat�logo
+        <img src="https://img.icons8.com/fluency/48/layers.png" alt=""> Ver Catálogo
       </button>
       <a href="https://wa.me/5511972999835" target="_blank" class="btn-ghost">
-        <svg class="ico"><use href="#icon-wpp"></use></svg> Falar no WhatsApp
+        <img src="https://img.icons8.com/color/48/whatsapp.png" alt=""> Falar no WhatsApp
       </a>
     </div>
   </div>
   <div class="hero-scroll">role<div class="scroll-track"></div></div>
 </section>
 
+<!-- ══════════ TRUST ══════════ -->
 <div class="trust-bar">
-  <div class="trust-item"><div class="trust-ico"><svg class="ico" style="width:2rem;height:2rem"><use href="#icon-box"></use></svg></div><div class="trust-texts"><div class="trust-n">800+</div><div class="trust-l">Produtos em estoque</div></div></div>
-  <div class="trust-item"><div class="trust-ico"><svg class="ico" style="width:2rem;height:2rem"><use href="#icon-tools"></use></svg></div><div class="trust-texts"><div class="trust-n">15</div><div class="trust-l">Anos de experi�ncia</div></div></div>
-  <div class="trust-item"><div class="trust-ico"><svg class="ico" style="width:2rem;height:2rem"><use href="#icon-bag"></use></svg></div><div class="trust-texts"><div class="trust-n">5.000+</div><div class="trust-l">Clientes atendidos</div></div></div>
-  <div class="trust-item"><div class="trust-ico"><svg class="ico" style="width:2rem;height:2rem"><use href="#icon-layers"></use></svg></div><div class="trust-texts"><div class="trust-n">8</div><div class="trust-l">Categorias</div></div></div>
+  <div class="trust-item"><div class="trust-ico">📦</div><div class="trust-texts"><div class="trust-n">800+</div><div class="trust-l">Produtos em estoque</div></div></div>
+  <div class="trust-item"><div class="trust-ico">🏆</div><div class="trust-texts"><div class="trust-n">15</div><div class="trust-l">Anos de experiência</div></div></div>
+  <div class="trust-item"><div class="trust-ico">🤝</div><div class="trust-texts"><div class="trust-n">5.000+</div><div class="trust-l">Clientes atendidos</div></div></div>
+  <div class="trust-item"><div class="trust-ico">🗂️</div><div class="trust-texts"><div class="trust-n">8</div><div class="trust-l">Categorias</div></div></div>
 </div>
 
+<!-- ══════════ REVIEWS ══════════ -->
 <section class="sec-reviews">
   <div class="reviews-wrap">
     <div class="reviews-head">
-      <div class="sec-label">\u2b50 Depoimentos</div>
+      <div class="sec-label">⭐ Depoimentos</div>
       <h2 class="sec-title">O que nossos clientes dizem</h2>
     </div>
     <div class="reviews-grid">
       <div class="review-card">
-        <div class="review-stars">\u2605\u2605\u2605\u2605\u2605</div>
-        <p class="review-quote">"Muitooo bom, recomendo \u2014 o atendimento � 10! Pessoal d� uma aten��o boa \U0001f44c Comprei umas marmitas e top demais."</p>
+        <div class="review-stars">★★★★★</div>
+        <p class="review-quote">"Muitooo bom, recomendo — o atendimento é 10! Pessoal dá uma atenção boa 👌 Comprei umas marmitas e top demais."</p>
         <div class="review-author"><div class="review-av">SC</div><div class="review-name">Shirley Cristina</div></div>
       </div>
       <div class="review-card">
-        <div class="review-stars">\u2605\u2605\u2605\u2605\u2605</div>
-        <p class="review-quote">"Tem muita coisa boa e o pre�o �timo. Os atendentes s�o muito simp�ticos e sempre prontos para ajudar em tudo."</p>
+        <div class="review-stars">★★★★★</div>
+        <p class="review-quote">"Tem muita coisa boa e o preço ótimo. Os atendentes são muito simpáticos e sempre prontos para ajudar em tudo."</p>
         <div class="review-author"><div class="review-av">FL</div><div class="review-name">Francis Luci</div></div>
       </div>
       <div class="review-card">
-        <div class="review-stars">\u2605\u2605\u2605\u2605\u2605</div>
-        <p class="review-quote">"A empresa tem tudo em descart�veis, o atendimento � �timo, tem estacionamento e ponto de �nibus em frente. Facinho de chegar."</p>
+        <div class="review-stars">★★★★★</div>
+        <p class="review-quote">"A empresa tem tudo em descartáveis, o atendimento é ótimo, tem estacionamento e ponto de ônibus em frente. Facinho de chegar."</p>
         <div class="review-author"><div class="review-av">AR</div><div class="review-name">Adelaide Rocha</div></div>
       </div>
     </div>
   </div>
 </section>
 
+<!-- ══════════ CATALOG ══════════ -->
 <section class="sec-catalog" id="produtos">
   <div class="cat-head">
-    <div class="sec-label">\U0001f5c2 Cat�logo</div>
+    <div class="sec-label">🗂 Catálogo</div>
     <h2 class="sec-title">Todos os Produtos</h2>
     <p class="sec-sub">Explore por categoria ou busque diretamente pelo nome</p>
   </div>
 
   <div class="search-wrap">
-    <span class="search-icon"><svg class="ico"><use href="#icon-search"></use></svg></span>
+    <span class="search-icon">🔍</span>
     <input type="text" id="searchInput" class="search-inp" placeholder="Buscar produto, marca, tipo..." oninput="handleSearch(event)">
   </div>
 
   <div class="filter-tabs" id="fbar">
-    <button class="ftab on" data-cat="todos" onclick="filterCat('todos',this)"><svg class="ico"><use href="#icon-layers"></use></svg>Todos</button>
-    <button class="ftab" data-cat="caixas" onclick="filterCat('caixas',this)"><svg class="ico"><use href="#icon-box"></use></svg>Caixas</button>
-    <button class="ftab" data-cat="sacolas" onclick="filterCat('sacolas',this)"><svg class="ico"><use href="#icon-bag"></use></svg>Sacolas & Lixo</button>
-    <button class="ftab" data-cat="plastico" onclick="filterCat('plastico',this)"><svg class="ico"><use href="#icon-flask"></use></svg>Pl�sticos</button>
-    <button class="ftab" data-cat="festa" onclick="filterCat('festa',this)"><svg class="ico"><use href="#icon-cup"></use></svg>Festa</button>
-    <button class="ftab" data-cat="limpeza" onclick="filterCat('limpeza',this)"><svg class="ico"><use href="#icon-broom"></use></svg>Limpeza</button>
-    <button class="ftab" data-cat="higiene" onclick="filterCat('higiene',this)"><svg class="ico"><use href="#icon-paper"></use></svg>Higiene</button>
-    <button class="ftab" data-cat="utilidades" onclick="filterCat('utilidades',this)"><svg class="ico"><use href="#icon-tools"></use></svg>Utilidades</button>
-    <button class="ftab" data-cat="diversos" onclick="filterCat('diversos',this)"><svg class="ico"><use href="#icon-more"></use></svg>Diversos</button>
+    <button class="ftab on" data-cat="todos" onclick="filterCat('todos',this)"><img src="https://img.icons8.com/fluency/48/layers.png" alt="">Todos</button>
+    <button class="ftab" data-cat="caixas" onclick="filterCat('caixas',this)"><img src="https://img.icons8.com/fluency/48/box.png" alt="">Caixas</button>
+    <button class="ftab" data-cat="sacolas" onclick="filterCat('sacolas',this)"><img src="https://img.icons8.com/fluency/48/trash.png" alt="">Sacolas & Lixo</button>
+    <button class="ftab" data-cat="plastico" onclick="filterCat('plastico',this)"><img src="https://img.icons8.com/fluency/48/test-tube.png" alt="">Plásticos</button>
+    <button class="ftab" data-cat="festa" onclick="filterCat('festa',this)"><img src="https://img.icons8.com/fluency/48/wine-glass.png" alt="">Festa</button>
+    <button class="ftab" data-cat="limpeza" onclick="filterCat('limpeza',this)"><img src="https://img.icons8.com/fluency/48/broom.png" alt="">Limpeza</button>
+    <button class="ftab" data-cat="higiene" onclick="filterCat('higiene',this)"><img src="https://img.icons8.com/fluency/48/toilet-paper.png" alt="">Higiene</button>
+    <button class="ftab" data-cat="utilidades" onclick="filterCat('utilidades',this)"><img src="https://img.icons8.com/fluency/48/toolbox.png" alt="">Utilidades</button>
+    <button class="ftab" data-cat="diversos" onclick="filterCat('diversos',this)"><img src="https://img.icons8.com/fluency/48/open-box.png" alt="">Diversos</button>
   </div>
 
   <div class="subtabs-wrap">
+    <!-- caixas -->
     <div class="subtabs" id="sub-caixas">
       <button class="stab on" onclick="filtrarSub('todas',this,'caixas')">Todas</button>
-      <button class="stab" onclick="filtrarSub('caixas-correio',this,'caixas')">Padr�o Correios</button>
+      <button class="stab" onclick="filtrarSub('caixas-correio',this,'caixas')">Padrão Correios</button>
       <button class="stab" onclick="filtrarSub('caixas-alimentos',this,'caixas')">Para Alimentos</button>
     </div>
+    <!-- sacolas -->
     <div class="subtabs" id="sub-sacolas">
       <button class="stab on" onclick="filtrarSub('todas',this,'sacolas')">Todas</button>
       <button class="stab" onclick="filtrarSub('sacos-lixo',this,'sacolas')">Sacos de Lixo</button>
       <button class="stab" onclick="filtrarSub('sacolas-papel',this,'sacolas')">Papel</button>
-      <button class="stab" onclick="filtrarSub('sacolas-plasticas',this,'sacolas')">Pl�sticas</button>
+      <button class="stab" onclick="filtrarSub('sacolas-plasticas',this,'sacolas')">Plásticas</button>
     </div>
+    <!-- plastico -->
     <div class="subtabs" id="sub-plastico">
       <button class="stab on" onclick="filtrarSub('todas',this,'plastico')">Todos</button>
       <button class="stab" onclick="filtrarSub('potes-tampas',this,'plastico')">Potes e Tampas</button>
       <button class="stab" onclick="filtrarSub('embalagens-bolo',this,'plastico')">Emb. p/ Bolo</button>
     </div>
+    <!-- festa -->
     <div class="subtabs" id="sub-festa">
       <button class="stab on" onclick="filtrarSub('todas',this,'festa')">Tudo</button>
       <button class="stab" onclick="filtrarSub('copos-pratos',this,'festa')">Copos e Pratos</button>
       <button class="stab" onclick="filtrarSub('talheres',this,'festa')">Talheres</button>
     </div>
+    <!-- limpeza -->
     <div class="subtabs" id="sub-limpeza">
       <button class="stab on" onclick="filtrarSub('todas',this,'limpeza')">Tudo</button>
-      <button class="stab" onclick="filtrarSub('produtos-limpeza',this,'limpeza')">Produtos Qu�micos</button>
-      <button class="stab" onclick="filtrarSub('utensilios-limpeza',this,'limpeza')">Utens�lios</button>
-      <button class="stab" onclick="filtrarSub('epi',this,'limpeza')">EPI & Prote��o</button>
+      <button class="stab" onclick="filtrarSub('produtos-limpeza',this,'limpeza')">Produtos Químicos</button>
+      <button class="stab" onclick="filtrarSub('utensilios-limpeza',this,'limpeza')">Utensílios</button>
+      <button class="stab" onclick="filtrarSub('epi',this,'limpeza')">EPI & Proteção</button>
     </div>
+    <!-- higiene -->
     <div class="subtabs" id="sub-higiene">
       <button class="stab on" onclick="filtrarSub('todas',this,'higiene')">Tudo</button>
       <button class="stab" onclick="filtrarSub('papel-higiene',this,'higiene')">Papel & Sabonetes</button>
     </div>
+    <!-- utilidades -->
     <div class="subtabs" id="sub-utilidades">
       <button class="stab on" onclick="filtrarSub('todas',this,'utilidades')">Tudo</button>
       <button class="stab" onclick="filtrarSub('pilhas-baterias',this,'utilidades')">Pilhas & Baterias</button>
       <button class="stab" onclick="filtrarSub('aromas-inseticidas',this,'utilidades')">Aromas & Inset.</button>
-      <button class="stab" onclick="filtrarSub('organiz-limpeza',this,'utilidades')">Organiza��o</button>
+      <button class="stab" onclick="filtrarSub('organiz-limpeza',this,'utilidades')">Organização</button>
       <button class="stab" onclick="filtrarSub('ferramentas',this,'utilidades')">Ferramentas</button>
-      <button class="stab" onclick="filtrarSub('escritorio',this,'utilidades')">Escrit�rio</button>
+      <button class="stab" onclick="filtrarSub('escritorio',this,'utilidades')">Escritório</button>
       <button class="stab" onclick="filtrarSub('ganchos',this,'utilidades')">Ganchos</button>
     </div>
+    <!-- diversos -->
     <div class="subtabs" id="sub-diversos">
       <button class="stab on" onclick="filtrarSub('todas',this,'diversos')">Tudo</button>
       <button class="stab" onclick="filtrarSub('isopor-geral',this,'diversos')">Isopor Geral</button>
-      <button class="stab" onclick="filtrarSub('emb-flexiveis',this,'diversos')">Emb. Flex�veis</button>
+      <button class="stab" onclick="filtrarSub('emb-flexiveis',this,'diversos')">Emb. Flexíveis</button>
       <button class="stab" onclick="filtrarSub('emb-diversas',this,'diversos')">Emb. Diversas</button>
       <button class="stab" onclick="filtrarSub('outros',this,'diversos')">Outros</button>
     </div>
@@ -390,11 +673,12 @@ footer strong{color:var(--t2);font-weight:500}
   <div id="containerProdutos"></div>
 </section>
 
+<!-- ══════════ CART ══════════ -->
 <div class="backdrop" id="backdrop" onclick="fecharCart()"></div>
 <aside class="cart-panel" id="cartPanel">
   <div class="cart-head">
-    <h3>\U0001f6cd\ufe0f Meu Pedido</h3>
-    <button class="btn-close" onclick="fecharCart()">\u2715</button>
+    <h3>🛍️ Meu Pedido</h3>
+    <button class="btn-close" onclick="fecharCart()">✕</button>
   </div>
   <div class="cart-list" id="clist"></div>
   <div class="cart-foot">
@@ -403,38 +687,50 @@ footer strong{color:var(--t2);font-weight:500}
       <span class="cart-total-val" id="ctotal">R$ 0,00</span>
     </div>
     <button class="btn-send-wpp" onclick="enviarWpp()">
-      <svg class="ico"><use href="#icon-wpp"></use></svg> Enviar Pedido pelo WhatsApp
+      <img src="https://img.icons8.com/color/48/whatsapp.png" alt=""> Enviar Pedido pelo WhatsApp
     </button>
-    <button class="btn-clear" onclick="limparCart()">\U0001f5d1 Limpar carrinho</button>
+    <button class="btn-clear" onclick="limparCart()">🗑 Limpar carrinho</button>
   </div>
 </aside>
 
+<!-- ══════════ WPP FLOAT ══════════ -->
 <div class="wpp-float">
   <div class="wpp-tip">Fale conosco!</div>
   <a href="https://wa.me/5511972999835?text=Ol%C3%A1%2C+gostaria+de+atendimento" target="_blank" class="wpp-btn">
     <div class="wpp-ring"></div>
     <div class="wpp-ring wpp-ring2"></div>
-    <svg class="ico"><use href="#icon-wpp"></use></svg>
+    <img src="https://img.icons8.com/color/48/whatsapp.png" alt="WhatsApp">
   </a>
 </div>
 
 <footer>
-  <p>� 2026 <strong>Cia Das Embalagens</strong> \u2014 Todos os direitos reservados � S�o Paulo, SP</p>
+  <p>© 2026 <strong>Cia Das Embalagens</strong> — Todos os direitos reservados · São Paulo, SP</p>
 </footer>
 
 <script src="produtos_planilha.js"></script>
 <script>
-/* \u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550 SCROLL HEADER \u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550 */
+/* hero canvas desativado */
+
+/* ═══════════ SCROLL HEADER ═══════════ */
 window.addEventListener('scroll',function(){document.getElementById('hdr').classList.toggle('sc',scrollY>50)},{passive:true});
 
-/* \u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550 THEME \u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550 */
+/* ═══════════ MEGA NAV ═══════════ */
+function toggleNav(id){
+  var items=document.querySelectorAll('.nav-item');
+  items.forEach(function(el){if(el.id!==id)el.classList.remove('open')});
+  document.getElementById(id).classList.toggle('open');
+}
+function fecharNav(){document.querySelectorAll('.nav-item').forEach(function(el){el.classList.remove('open')})}
+document.addEventListener('click',function(e){if(!e.target.closest('.nav-item'))fecharNav()});
+
+/* ═══════════ THEME ═══════════ */
 function toggleTheme(){
   var html=document.documentElement,btn=document.getElementById('themeBtn'),dark=html.getAttribute('data-theme')==='dark';
   html.setAttribute('data-theme',dark?'light':'dark');
-  btn.textContent=dark?'\U0001f319':'\u2600\ufe0f';
+  btn.textContent=dark?'🌙':'☀️';
 }
 
-/* \u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550 STATE \u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550 */
+/* ═══════════ STATE ═══════════ */
 var carrinho={};
 var estado={cat:'todos',sub:'todas',busca:''};
 var catMap={
@@ -447,22 +743,40 @@ var catMap={
   utilidades:['utilidades','pilhas-baterias','aromas-inseticidas','organiz-limpeza','ferramentas','escritorio','ganchos'],
   diversos:['diversos','isopor-geral','emb-flexiveis','emb-diversas','outros']
 };
-
-var subLabels={'caixas-correio':'Caixas Correios','caixas-alimentos':'Caixas p/ Alimentos','sacos-lixo':'Sacos de Lixo','sacolas-papel':'Sacolas de Papel','sacolas-plasticas':'Sacolas Pl�sticas','potes-tampas':'Potes e Tampas','embalagens-bolo':'Embalagens p/ Bolo','copos-pratos':'Copos e Pratos','talheres':'Talheres','produtos-limpeza':'Produtos Qu�micos','utensilios-limpeza':'Utens�lios','epi':'EPI & Prote��o','papel-higiene':'Papel & Sabonetes','pilhas-baterias':'Pilhas & Baterias','aromas-inseticidas':'Aromas & Inseticidas','organiz-limpeza':'Organiza��o','ferramentas':'Ferramentas','escritorio':'Escrit�rio','ganchos':'Ganchos','isopor-geral':'Isopor Geral','emb-flexiveis':'Emb. Flex�veis','emb-diversas':'Emb. Diversas','outros':'Outros'};
-
-/* MAPEAMENTO DE ICONES SVG POR CATEGORIA */
-var catSVGs = {
-  caixas: '#icon-box', sacolas: '#icon-bag', plastico: '#icon-flask',
-  festa: '#icon-cup', limpeza: '#icon-broom', higiene: '#icon-paper',
-  utilidades: '#icon-tools', diversos: '#icon-more'
-};
-
+var subLabels={'caixas-correio':'Caixas Correios','caixas-alimentos':'Caixas p/ Alimentos','sacos-lixo':'Sacos de Lixo','sacolas-papel':'Sacolas de Papel','sacolas-plasticas':'Sacolas Plásticas','potes-tampas':'Potes e Tampas','embalagens-bolo':'Embalagens p/ Bolo','copos-pratos':'Copos e Pratos','talheres':'Talheres','produtos-limpeza':'Produtos Químicos','utensilios-limpeza':'Utensílios','epi':'EPI & Proteção','papel-higiene':'Papel & Sabonetes','pilhas-baterias':'Pilhas & Baterias','aromas-inseticidas':'Aromas & Inseticidas','organiz-limpeza':'Organização','ferramentas':'Ferramentas','escritorio':'Escritório','ganchos':'Ganchos','isopor-geral':'Isopor Geral','emb-flexiveis':'Emb. Flexíveis','emb-diversas':'Emb. Diversas','outros':'Outros'};
+var catEmojis={caixas:'📦',sacolas:'🛍️',plastico:'🧪',festa:'🥂',limpeza:'🧹',higiene:'🧻',utilidades:'🔧',diversos:'🔓','caixas-correio':'📬','caixas-alimentos':'🍕','sacos-lixo':'🗑️','sacolas-papel':'🧻','sacolas-plasticas':'🛒','potes-tampas':'🫙','embalagens-bolo':'🎂','copos-pratos':'🥤','talheres':'🍴','produtos-limpeza':'🧴','utensilios-limpeza':'🧽','epi':'🧤','papel-higiene':'🧻','pilhas-baterias':'🔋','aromas-inseticidas':'🌿','organiz-limpeza':'🪣','ferramentas':'🔨','escritorio':'✏️','ganchos':'🪝','isopor-geral':'❄️','emb-flexiveis':'📜','emb-diversas':'🎁','outros':'📎'};
 function prods(){return window.listaProdutosPlanilha||[]}
 
+/* FILTER NAV SHORTCUT */
 function limparBusca(){
   estado.busca='';
   var inp=document.getElementById('searchInput');
   if(inp) inp.value='';
+}
+
+function scrollParaSec(sub){
+  setTimeout(function(){
+    var sec=document.querySelector('.psec[data-sub="'+sub+'"]');
+    if(!sec){var secs=document.querySelectorAll('.psec');if(secs.length)sec=secs[0];}
+    if(sec) sec.scrollIntoView({behavior:'smooth',block:'start'});
+  },150);
+}
+
+/* busca por termo de texto via mega menu (ex: "alcool", "desinfetante") */
+function buscarPorTermo(termo){
+  limparBusca();
+  estado.cat='todos'; estado.sub='todas';
+  estado.busca=termo.toLowerCase();
+  document.getElementById('searchInput').value=termo;
+  document.querySelectorAll('.ftab').forEach(function(b){b.classList.remove('on')});
+  var all=document.querySelector('.ftab[data-cat="todos"]');if(all)all.classList.add('on');
+  document.querySelectorAll('.subtabs').forEach(function(b){b.classList.remove('on')});
+  fecharNav();
+  renderizar();
+  setTimeout(function(){
+    var c=document.getElementById('containerProdutos');
+    if(c) c.scrollIntoView({behavior:'smooth',block:'start'});
+  },150);
 }
 
 function filterCat(cat,btn){
@@ -505,9 +819,17 @@ function filtrarSub(sub,btn,cat){
     btn.classList.add('on');
   }
   renderizar();
+  // scroll direto para a seção filtrada
+  if(sub!=='todas') scrollParaSec(sub);
+  else document.getElementById('produtos').scrollIntoView({behavior:'smooth'});
 }
 
+/* legacy compat */
+function setCat(cat,btn){filterCat(cat,btn)}
+function setSub(sub,btn,cat){filtrarSub(sub,btn,cat)}
+
 function handleSearch(e){
+  // busca é SEMPRE global — reseta categoria e sub
   estado.busca=e.target.value.toLowerCase();
   if(estado.busca){
     estado.cat='todos';estado.sub='todas';
@@ -518,12 +840,13 @@ function handleSearch(e){
   renderizar();
 }
 
-/* \u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550 RENDER \u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550 */
+/* ═══════════ RENDER ═══════════ */
 function renderizar(){
   var c=document.getElementById('containerProdutos');
   if(!c) return;
   c.innerHTML='';
   var lista=prods();
+  // se há busca de texto, ignora completamente cat/sub — busca global
   if(estado.busca){
     lista=lista.filter(function(p){
       var n=(p.nome||'').toLowerCase();
@@ -540,7 +863,7 @@ function renderizar(){
     });
   }
   if(!lista.length){
-    c.innerHTML='<div class="no-results"><span><svg class="ico" style="width:3rem;height:3rem"><use href="#icon-search"></use></svg></span>Nenhum produto encontrado.<br>Tente outro termo ou limpe os filtros.</div>';
+    c.innerHTML='<div class="no-results"><span>🔍</span>Nenhum produto encontrado.<br>Tente outro termo ou limpe os filtros.</div>';
     return;
   }
   var grupos={};
@@ -548,22 +871,16 @@ function renderizar(){
   Object.keys(grupos).forEach(function(k){
     var g=grupos[k];
     var sec=document.createElement('div');sec.className='psec';sec.setAttribute('data-sub',k);
-    
-    // Pega o �cone SVG correspondente � categoria pai do primeiro item do grupo
-    var catPai = g.itens[0].categoria;
-    var iconRef = catSVGs[catPai] || '#icon-box';
-
-    sec.innerHTML='<div class="psec-hdr"><div class="psec-icon"><svg class="ico"><use href="'+iconRef+'"></use></svg></div><div class="psec-title">'+g.label+'</div><div class="psec-count">'+g.itens.length+' item'+(g.itens.length!==1?'s':'')+'</div></div>';
+    var emoji=catEmojis[k]||'📦';
+    sec.innerHTML='<div class="psec-hdr"><div class="psec-icon">'+emoji+'</div><div class="psec-title">'+g.label+'</div><div class="psec-count">'+g.itens.length+' item'+(g.itens.length!==1?'s':'')+'</div></div>';
     var grid=document.createElement('div');grid.className='pgrid';
     g.itens.forEach(function(p,i){
       var inCart=!!carrinho[p.id];
       var preco=parseFloat(p.preco);
       var precoStr=preco>0?'R$ '+preco.toFixed(2).replace('.',','):'Sob consulta';
-      var pIconRef = catSVGs[p.categoria] || '#icon-box';
-
       var card=document.createElement('div');
       card.className='pcard'+(inCart?' incart':'');card.id='card-'+p.id;
-      card.innerHTML='<div class="pimg"><span class="incart-badge">\u2713 No carrinho</span><svg class="ico pimg-emoji" style="width:3.5rem;height:3.5rem"><use href="'+pIconRef+'"></use></svg></div><div class="pbody"><div class="pname">'+p.nome+'</div><div class="pprice-box"><span class="pprice">'+precoStr+'</span>'+(p.unidade?'<span class="punit">'+p.unidade+'</span>':'')+'</div><div class="pspacer"></div><div class="pactions"><div class="qty-ctrl"><button class="bq" onclick="mudaQtd('+p.id+',-1)">\u2212</button><input class="iq" type="number" id="qtd-'+p.id+'" value="1" min="1"><button class="bq" onclick="mudaQtd('+p.id+',1)">+</button></div><button class="badd'+(inCart?' done':'')+'" id="badd-'+p.id+'" onclick="addCart('+p.id+')">'+(inCart?'\u2713 Adicionado':'+ Adicionar')+'</button></div></div>';
+      card.innerHTML='<div class="pimg"><span class="incart-badge">✓ No carrinho</span><span class="pimg-emoji">📦</span></div><div class="pbody"><div class="pname">'+p.nome+'</div><div class="pprice-box"><span class="pprice">'+precoStr+'</span>'+(p.unidade?'<span class="punit">'+p.unidade+'</span>':'')+'</div><div class="pspacer"></div><div class="pactions"><div class="qty-ctrl"><button class="bq" onclick="mudaQtd('+p.id+',-1)">−</button><input class="iq" type="number" id="qtd-'+p.id+'" value="1" min="1"><button class="bq" onclick="mudaQtd('+p.id+',1)">+</button></div><button class="badd'+(inCart?' done':'')+'" id="badd-'+p.id+'" onclick="addCart('+p.id+')">'+(inCart?'✓ Adicionado':'+ Adicionar')+'</button></div></div>';
       grid.appendChild(card);
       setTimeout(function(){card.classList.add('in')},i*18);
     });
@@ -571,17 +888,17 @@ function renderizar(){
   });
 }
 
-/* \u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550 QTD \u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550 */
+/* ═══════════ QTD ═══════════ */
 function mudaQtd(id,d){var i=document.getElementById('qtd-'+id);if(i){i.value=Math.max(1,(parseInt(i.value)||1)+d);if(carrinho[id])carrinho[id].qtd=parseInt(i.value)}}
 
-/* \u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550 CART \u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550 */
+/* ═══════════ CART ═══════════ */
 function addCart(id){
   var prod=prods().find(function(p){return p.id===id});if(!prod)return;
   var qtd=parseInt(document.getElementById('qtd-'+id).value)||1;
   carrinho[id]={prod:prod,qtd:qtd};
   var card=document.getElementById('card-'+id);var btn=document.getElementById('badd-'+id);
   if(card)card.classList.add('incart');
-  if(btn){btn.textContent='\u2713 Adicionado';btn.classList.add('done')}
+  if(btn){btn.textContent='✓ Adicionado';btn.classList.add('done')}
   updateBadge();
 }
 function removerItem(id){
@@ -603,13 +920,12 @@ function limparCart(){
 function updateBadge(){var n=Object.keys(carrinho).length;var b=document.getElementById('cbadge');b.textContent=n;b.classList.toggle('on',n>0)}
 function renderCartList(){
   var list=document.getElementById('clist');var totalEl=document.getElementById('ctotal');var itens=Object.values(carrinho);
-  if(!itens.length){list.innerHTML='<div class="cart-empty"><svg class="ico cart-empty-ico"><use href="#icon-bag"></use></svg><p>Carrinho vazio</p></div>';totalEl.textContent='R$ 0,00';return}
+  if(!itens.length){list.innerHTML='<div class="cart-empty"><div class="cart-empty-ico">🛒</div><p>Carrinho vazio</p></div>';totalEl.textContent='R$ 0,00';return}
   list.innerHTML=itens.map(function(item){
     var p=item.prod,preco=parseFloat(p.preco)||0,sub=preco*item.qtd;
     var ps=preco>0?'R$ '+preco.toFixed(2).replace('.',',')+(p.unidade?' '+p.unidade:''):'Sob consulta';
-    var ss=preco>0?'R$ '+sub.toFixed(2).replace('.',','):'\u2014';
-    var pIconRef = catSVGs[p.categoria] || '#icon-box';
-    return '<div class="cart-item"><div class="ci-ico"><svg class="ico"><use href="'+pIconRef+'"></use></svg></div><div class="ci-info"><div class="ci-name">'+p.nome+'</div><div class="ci-meta">'+ps+' � '+item.qtd+'</div></div><div class="ci-right"><span class="ci-total">'+ss+'</span><span class="ci-remove" onclick="removerItem('+p.id+')">\U0001f5d1 remover</span></div></div>';
+    var ss=preco>0?'R$ '+sub.toFixed(2).replace('.',','):'—';
+    return '<div class="cart-item"><div class="ci-ico">📦</div><div class="ci-info"><div class="ci-name">'+p.nome+'</div><div class="ci-meta">'+ps+' × '+item.qtd+'</div></div><div class="ci-right"><span class="ci-total">'+ss+'</span><span class="ci-remove" onclick="removerItem('+p.id+')">🗑 remover</span></div></div>';
   }).join('');
   var total=itens.reduce(function(s,i){return s+(parseFloat(i.prod.preco)||0)*i.qtd},0);
   totalEl.textContent='R$ '+total.toFixed(2).replace('.',',');
@@ -617,15 +933,15 @@ function renderCartList(){
 function abrirCart(){renderCartList();document.getElementById('cartPanel').classList.add('on');document.getElementById('backdrop').classList.add('on');document.body.style.overflow='hidden'}
 function fecharCart(){document.getElementById('cartPanel').classList.remove('on');document.getElementById('backdrop').classList.remove('on');document.body.style.overflow=''}
 function enviarWpp(){
-  var itens=Object.values(carrinho);if(!itens.length){alert('Seu carrinho est� vazio!');return}
-  var msg='\U0001f6cd\ufe0f *Pedido - Cia Das Embalagens*\n\n';
-  itens.forEach(function(i){msg+='\u2022 '+i.prod.nome+' \u2014 Qtd: '+i.qtd+'\n'});
+  var itens=Object.values(carrinho);if(!itens.length){alert('Seu carrinho está vazio!');return}
+  var msg='🛍️ *Pedido - Cia Das Embalagens*\n\n';
+  itens.forEach(function(i){msg+='• '+i.prod.nome+' — Qtd: '+i.qtd+'\n'});
   var total=itens.reduce(function(s,i){return s+(parseFloat(i.prod.preco)||0)*i.qtd},0);
-  msg+='\n\U0001f4b0 *Total estimado: R$ '+total.toFixed(2).replace('.',',')+' *';
+  msg+='\n💰 *Total estimado: R$ '+total.toFixed(2).replace('.',',')+' *';
   window.open('https://wa.me/5511972999835?text='+encodeURIComponent(msg),'_blank');
 }
 
-/* \u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550 INIT \u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550 */
+/* ═══════════ INIT ═══════════ */
 window.renderizarProdutos=renderizar;
 </script>
 <script src="integracao_planilha.js"></script>
