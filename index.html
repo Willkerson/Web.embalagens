@@ -5,888 +5,923 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <title>Cia Das Embalagens</title>
 <link rel="icon" type="image/png" href="https://img.icons8.com/fluency/48/box.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
 <style>
-/* \u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550 TOKENS - THEME MODERN GLASS \u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550 */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
-
+/* ══════════════ TOKENS ══════════════ */
 :root {
-  /* DARK THEME (Moderno com toques de azul meia-noite) */
-  --bg: #090e17; 
-  --bg-gradient: radial-gradient(circle at top right, #111a2e, #090e17 50%, #05080c);
-  --bg1: rgba(17, 26, 46, 0.4);
-  --bg2: rgba(26, 38, 64, 0.5);
-  --bg3: rgba(38, 55, 92, 0.6);
-  
-  --card: rgba(17, 26, 46, 0.6);
-  --card-h: rgba(26, 38, 64, 0.8);
-  
-  --t1: #ffffff;
-  --t2: #a0aec0;
-  --t3: #718096;
-  
-  --bdr: rgba(255, 255, 255, 0.08);
-  --bdr2: rgba(255, 255, 255, 0.15);
-  --bdr-glass: inset 0 1px 0 rgba(255, 255, 255, 0.1);
-  
-  --acc: #3b82f6; 
-  --acc2: #2563eb;
-  --acc-glow: rgba(59, 130, 246, 0.3);
-  
-  --grn: #10b981; 
-  --grn-g: rgba(16, 185, 129, 0.25);
-  
-  --ease: cubic-bezier(0.25, 1, 0.5, 1);
-  --font: 'Inter', system-ui, -apple-system, sans-serif;
-  --shadow-glass: 0 8px 32px rgba(0, 0, 0, 0.3);
+  --ink: #0a0c10;
+  --ink1: #12161e;
+  --ink2: #1a2030;
+  --ink3: #232c3e;
+  --surface: rgba(18,22,30,.72);
+  --surface2: rgba(26,32,48,.6);
+  --glass: rgba(255,255,255,.04);
+  --glass2: rgba(255,255,255,.08);
+  --glass3: rgba(255,255,255,.13);
+  --t1: #f2f4f9;
+  --t2: #8c9ab8;
+  --t3: #4a5570;
+  --bdr: rgba(255,255,255,.07);
+  --bdr2: rgba(255,255,255,.13);
+  --bdr3: rgba(255,255,255,.2);
+  --acc: #3b7fff;
+  --acc-glow: rgba(59,127,255,.22);
+  --acc2: #1a54cc;
+  --grn: #00c875;
+  --grn-glow: rgba(0,200,117,.2);
+  --ease: cubic-bezier(.22,1,.36,1);
+  --ease2: cubic-bezier(.4,0,.2,1);
+  --font: 'DM Sans', system-ui, sans-serif;
+  --font-display: 'DM Serif Display', Georgia, serif;
+  --blur: blur(24px) saturate(180%);
+  --blur-sm: blur(12px) saturate(160%);
+  --nav-h: 70px;
 }
-
 [data-theme="light"] {
-  /* LIGHT THEME (Fresco e limpo) */
-  --bg: #f8fafc;
-  --bg-gradient: radial-gradient(circle at top left, #ffffff, #f1f5f9 60%, #e2e8f0);
-  --bg1: rgba(255, 255, 255, 0.7);
-  --bg2: rgba(241, 245, 249, 0.8);
-  --bg3: rgba(226, 232, 240, 0.9);
-  
-  --card: rgba(255, 255, 255, 0.8);
-  --card-h: #ffffff;
-  
-  --t1: #0f172a;
-  --t2: #475569;
-  --t3: #64748b;
-  
-  --bdr: rgba(0, 0, 0, 0.06);
-  --bdr2: rgba(0, 0, 0, 0.12);
-  --bdr-glass: inset 0 1px 0 rgba(255, 255, 255, 0.8);
-  
-  --acc: #2563eb; 
-  --acc2: #1d4ed8;
-  --acc-glow: rgba(37, 99, 235, 0.2);
-  
-  --shadow-glass: 0 8px 30px rgba(0, 0, 0, 0.05);
+  --ink: #f0f2f8;
+  --ink1: #e4e8f4;
+  --ink2: #d6dcee;
+  --ink3: #c8d0e4;
+  --surface: rgba(240,242,248,.8);
+  --surface2: rgba(228,232,244,.7);
+  --glass: rgba(0,0,0,.03);
+  --glass2: rgba(0,0,0,.05);
+  --glass3: rgba(0,0,0,.08);
+  --t1: #0d1320;
+  --t2: #3e4d6a;
+  --t3: #7a89a8;
+  --bdr: rgba(0,0,0,.07);
+  --bdr2: rgba(0,0,0,.12);
+  --bdr3: rgba(0,0,0,.2);
 }
 
-/* \u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550 RESET \u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550 */
-*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;-webkit-font-smoothing:antialiased}
-html{scroll-behavior:smooth}
-body{
-  background: var(--bg);
-  background-image: var(--bg-gradient);
-  background-attachment: fixed;
-  color:var(--t2);
-  font-family:var(--font);
-  line-height:1.6;
-  overflow-x:hidden;
-  transition: background .4s ease, color .4s ease;
-}
-h1,h2,h3,h4{color:var(--t1);letter-spacing:-.02em;font-weight:700}
+/* ══════════════ RESET ══════════════ */
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
+html{scroll-behavior:smooth;scroll-padding-top:var(--nav-h)}
+body{background:var(--ink);color:var(--t2);font-family:var(--font);line-height:1.65;overflow-x:hidden;transition:background .4s,color .4s}
+h1,h2,h3,h4{color:var(--t1);font-family:var(--font-display);letter-spacing:-.02em;line-height:1.12;font-weight:400}
 a{text-decoration:none;color:inherit}
 button{cursor:pointer;border:none;background:none;font-family:var(--font)}
-img{display:block; max-width: 100%;}
-::-webkit-scrollbar{width:8px}
+img{display:block}
+::-webkit-scrollbar{width:4px}
 ::-webkit-scrollbar-track{background:transparent}
-::-webkit-scrollbar-thumb{background:var(--bg3);border-radius:99px; border: 2px solid var(--bg)}
-::-webkit-scrollbar-thumb:hover{background:var(--t3)}
+::-webkit-scrollbar-thumb{background:var(--ink3);border-radius:99px}
 
-/* \u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550 HEADER \u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550 */
-.hdr{position:fixed;top:0;left:0;right:0;z-index:800;height:72px;display:flex;align-items:center;justify-content:space-between;padding:0 2rem;background:transparent;transition:all .4s var(--ease)}
-.hdr.sc{
-  height:64px;
-  background: rgba(9, 14, 23, 0.7);
-  backdrop-filter: blur(16px) saturate(180%);
-  -webkit-backdrop-filter: blur(16px);
-  border-bottom: 1px solid var(--bdr);
-  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
-}
-[data-theme="light"] .hdr.sc{background: rgba(255, 255, 255, 0.8);}
+/* ══════════════ NOISE OVERLAY ══════════════ */
+body::before{content:'';position:fixed;inset:0;z-index:0;pointer-events:none;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.025'/%3E%3C/svg%3E");opacity:.4}
+body::after{content:'';position:fixed;inset:0;z-index:0;pointer-events:none;background:radial-gradient(ellipse 80% 60% at 20% 10%,rgba(59,127,255,.09) 0%,transparent 60%),radial-gradient(ellipse 60% 50% at 80% 80%,rgba(0,200,117,.06) 0%,transparent 60%)}
 
-.logo{display:flex;align-items:center;gap:12px;font-size:1.15rem;font-weight:800;color:var(--t1); letter-spacing: -0.5px;}
-.logo-box{width:36px;height:36px;background:linear-gradient(135deg,var(--acc),var(--acc2));border-radius:10px;display:flex;align-items:center;justify-content:center;flex-shrink:0; box-shadow: var(--acc-glow)}
-.logo-box img{width:20px;height:20px; filter: brightness(0) invert(1);} /* �cone sempre branco */
+/* ══════════════ MEGA HEADER ══════════════ */
+.hdr{position:fixed;top:0;left:0;right:0;z-index:900;transition:all .4s var(--ease)}
+.hdr-inner{height:var(--nav-h);display:flex;align-items:center;justify-content:space-between;padding:0 2.5rem;background:var(--surface);backdrop-filter:var(--blur);-webkit-backdrop-filter:var(--blur);border-bottom:1px solid var(--bdr);transition:all .4s var(--ease)}
+.hdr.sc .hdr-inner{height:60px;background:rgba(10,12,16,.9)}
+[data-theme="light"] .hdr-inner{background:rgba(240,242,248,.85)}
+[data-theme="light"] .hdr.sc .hdr-inner{background:rgba(240,242,248,.97)}
 
-.hdr-r{display:flex;align-items:center;gap:12px}
-.btn-ico{width:40px;height:40px;border-radius:50%;background:var(--bg1);border:1px solid var(--bdr);backdrop-filter: blur(8px); color:var(--t2);display:flex;align-items:center;justify-content:center;font-size:1.1rem;transition:all .3s var(--ease)}
-.btn-ico:hover{background:var(--bg2);color:var(--t1); transform: translateY(-2px);}
+.logo{display:flex;align-items:center;gap:12px;color:var(--t1);flex-shrink:0}
+.logo-mark{width:36px;height:36px;background:linear-gradient(135deg,var(--acc),var(--acc2));border-radius:10px;display:flex;align-items:center;justify-content:center;box-shadow:0 0 20px var(--acc-glow)}
+.logo-mark img{width:20px;height:20px}
+.logo-name{font-family:var(--font);font-size:.98rem;font-weight:600;letter-spacing:-.01em;color:var(--t1)}
+.logo-name span{color:var(--t3);font-weight:400}
 
-.btn-cart{display:flex;align-items:center;gap:8px;padding:8px 20px;background:var(--bg1);backdrop-filter: blur(8px);border:1px solid var(--bdr);border-radius:99px;color:var(--t1);font-weight:600;font-size:.9rem;position:relative;transition:all .3s var(--ease)}
-.btn-cart:hover{border-color:var(--acc);background:var(--bg2); transform: translateY(-2px); box-shadow: 0 4px 15px rgba(0,0,0,0.1)}
-.cbadge{position:absolute;top:-6px;right:-6px;background:var(--acc);color:#fff;font-size:.65rem;font-weight:800;width:22px;height:22px;border-radius:50%;display:flex;align-items:center;justify-content:center;border:2px solid var(--bg);opacity:0;transform:scale(.4);transition:all .4s cubic-bezier(0.34, 1.56, 0.64, 1)}
+/* MEGA NAV */
+.nav-center{display:flex;align-items:center;gap:2px}
+.nav-item{position:relative}
+.nav-link{display:flex;align-items:center;gap:5px;padding:8px 14px;border-radius:8px;font-size:.875rem;font-weight:500;color:var(--t2);transition:all .2s var(--ease2);cursor:pointer;white-space:nowrap}
+.nav-link:hover,.nav-item.open .nav-link{color:var(--t1);background:var(--glass2)}
+.nav-link svg{width:12px;height:12px;opacity:.6;transition:transform .3s var(--ease)}
+.nav-item.open .nav-link svg{transform:rotate(180deg)}
+.nav-dot{width:5px;height:5px;background:var(--acc);border-radius:50%;margin-right:-2px;opacity:0;transition:opacity .2s}
+.nav-link:hover .nav-dot{opacity:1}
+
+/* MEGA DROPDOWN */
+.mega{position:absolute;top:calc(100% + 12px);left:50%;transform:translateX(-50%) translateY(8px);min-width:680px;background:var(--surface);backdrop-filter:var(--blur);-webkit-backdrop-filter:var(--blur);border:1px solid var(--bdr2);border-radius:20px;padding:1.5rem;box-shadow:0 32px 80px rgba(0,0,0,.4),0 0 0 1px rgba(255,255,255,.03);opacity:0;pointer-events:none;transition:opacity .25s var(--ease),transform .25s var(--ease);z-index:100}
+[data-theme="light"] .mega{box-shadow:0 20px 60px rgba(0,0,0,.15),0 0 0 1px rgba(0,0,0,.05)}
+.nav-item.open .mega{opacity:1;pointer-events:all;transform:translateX(-50%) translateY(0)}
+.mega-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem}
+.mega-col{}
+.mega-col-title{font-size:.7rem;font-weight:600;text-transform:uppercase;letter-spacing:.1em;color:var(--t3);margin-bottom:.75rem;padding-bottom:.5rem;border-bottom:1px solid var(--bdr)}
+.mega-link{display:flex;align-items:center;gap:9px;padding:7px 9px;border-radius:9px;font-size:.84rem;color:var(--t2);transition:all .18s var(--ease2);cursor:pointer}
+.mega-link:hover{color:var(--t1);background:var(--glass2)}
+.mega-link-ico{width:28px;height:28px;border-radius:7px;background:var(--glass);border:1px solid var(--bdr);display:flex;align-items:center;justify-content:center;font-size:.85rem;flex-shrink:0;transition:all .2s}
+.mega-link:hover .mega-link-ico{background:var(--acc-glow);border-color:rgba(59,127,255,.3)}
+.mega-link-info{min-width:0}
+.mega-link-name{font-weight:500;color:var(--t1);font-size:.84rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.mega-link-desc{font-size:.73rem;color:var(--t3);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.mega-featured{grid-column:1/-1;background:linear-gradient(135deg,rgba(59,127,255,.1),rgba(0,200,117,.06));border:1px solid rgba(59,127,255,.2);border-radius:12px;padding:1rem;display:flex;align-items:center;justify-content:space-between;margin-top:.5rem;cursor:pointer;transition:all .2s var(--ease2)}
+.mega-featured:hover{background:linear-gradient(135deg,rgba(59,127,255,.16),rgba(0,200,117,.1))}
+.mega-featured-l{display:flex;align-items:center;gap:10px}
+.mega-feat-ico{font-size:1.4rem}
+.mega-feat-text strong{display:block;font-size:.88rem;color:var(--t1);font-weight:600;margin-bottom:2px}
+.mega-feat-text span{font-size:.76rem;color:var(--t3)}
+.mega-feat-cta{font-size:.78rem;font-weight:600;color:var(--acc);background:var(--acc-glow);padding:6px 14px;border-radius:99px;border:1px solid rgba(59,127,255,.3);transition:all .2s}
+.mega-featured:hover .mega-feat-cta{background:rgba(59,127,255,.25)}
+
+/* RIGHT ACTIONS */
+.hdr-r{display:flex;align-items:center;gap:8px}
+.btn-ico{width:38px;height:38px;border-radius:50%;background:var(--glass);border:1px solid var(--bdr);color:var(--t2);display:flex;align-items:center;justify-content:center;font-size:.9rem;transition:all .22s var(--ease2)}
+.btn-ico:hover{background:var(--glass2);color:var(--t1);border-color:var(--bdr2)}
+.btn-cart-hdr{display:flex;align-items:center;gap:8px;padding:8px 18px;background:var(--glass2);border:1px solid var(--bdr2);border-radius:99px;color:var(--t1);font-size:.85rem;font-weight:500;position:relative;transition:all .22s var(--ease2)}
+.btn-cart-hdr:hover{background:var(--glass3);border-color:var(--bdr3)}
+.cbadge{position:absolute;top:-4px;right:-4px;background:var(--grn);color:#fff;font-size:.6rem;font-weight:700;min-width:17px;height:17px;border-radius:99px;display:flex;align-items:center;justify-content:center;border:2px solid var(--ink);opacity:0;transform:scale(.3);transition:all .3s var(--ease);padding:0 3px}
 .cbadge.on{opacity:1;transform:scale(1)}
+.btn-wpp{display:flex;align-items:center;gap:7px;padding:9px 18px;background:var(--grn);border-radius:99px;color:#fff;font-weight:600;font-size:.84rem;box-shadow:0 4px 18px var(--grn-glow);transition:all .25s var(--ease2)}
+.btn-wpp:hover{transform:translateY(-2px);box-shadow:0 8px 28px var(--grn-glow)}
+.btn-wpp img{width:16px;height:16px}
 
-.btn-wpp-h{display:flex;align-items:center;gap:8px;padding:9px 20px;background:var(--grn);border-radius:99px;color:#fff;font-weight:700;font-size:.9rem;transition:all .3s var(--ease); box-shadow: 0 4px 15px var(--grn-g)}
-.btn-wpp-h:hover{filter:brightness(1.05);transform:translateY(-2px); box-shadow: 0 6px 20px var(--grn-g)}
-.btn-wpp-h img{width:18px;height:18px; filter: brightness(0) invert(1);}
+/* ══════════════ HERO ══════════════ */
+.hero{min-height:100vh;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;padding:calc(var(--nav-h) + 4rem) 2rem 5rem;text-align:center}
+#hero-canvas{position:absolute;inset:0;z-index:1;pointer-events:none;opacity:.6}
+.hero-bg-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.15;z-index:0;transition:opacity .5s;filter:saturate(.6)}
+[data-theme="light"] .hero-bg-img{opacity:.1}
+.hero-gradient{position:absolute;inset:0;z-index:2;background:radial-gradient(ellipse 100% 80% at 50% 0%,rgba(10,12,16,0) 0%,var(--ink) 70%);transition:background .5s}
+[data-theme="light"] .hero-gradient{background:radial-gradient(ellipse 100% 80% at 50% 0%,rgba(240,242,248,0) 0%,var(--ink) 70%)}
+.hero-content{position:relative;z-index:3;max-width:820px}
+.hero-eyebrow{display:inline-flex;align-items:center;gap:8px;background:rgba(59,127,255,.1);border:1px solid rgba(59,127,255,.25);border-radius:99px;color:#6aa8ff;font-size:.73rem;font-weight:600;padding:7px 18px;letter-spacing:.08em;text-transform:uppercase;margin-bottom:2rem;animation:fadeUp .8s var(--ease) both}
+.pulse{width:6px;height:6px;background:var(--acc);border-radius:50%;animation:blink 2s ease-in-out infinite;flex-shrink:0}
+@keyframes blink{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.3;transform:scale(.7)}}
+.hero h1{font-size:clamp(3rem,6.5vw,5.5rem);color:var(--t1);margin-bottom:1.4rem;animation:fadeUp .8s var(--ease) .1s both;line-height:1.04}
+.hero h1 em{font-style:italic;background:linear-gradient(135deg,#60a5fa 0%,#a78bfa 40%,#34d399 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;background-size:200%;animation:gradFlow 5s ease infinite}
+@keyframes gradFlow{0%{background-position:0% 50%}50%{background-position:100% 50%}100%{background-position:0% 50%}}
+.hero-sub{font-size:1.1rem;color:var(--t2);max-width:560px;margin:0 auto 3rem;line-height:1.8;animation:fadeUp .8s var(--ease) .2s both;font-weight:300}
+.hero-btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;animation:fadeUp .8s var(--ease) .3s both}
+.btn-pri{display:flex;align-items:center;gap:9px;padding:14px 32px;background:var(--acc);color:#fff;border-radius:99px;font-weight:600;font-size:.92rem;box-shadow:0 0 30px var(--acc-glow);transition:all .3s var(--ease)}
+.btn-pri:hover{transform:translateY(-3px);box-shadow:0 12px 40px var(--acc-glow);background:var(--acc2)}
+.btn-pri img{width:16px;height:16px}
+.btn-ghost{display:flex;align-items:center;gap:9px;padding:14px 32px;background:var(--glass2);color:var(--t1);border-radius:99px;font-weight:500;font-size:.92rem;border:1px solid var(--bdr2);backdrop-filter:var(--blur-sm);transition:all .3s var(--ease)}
+.btn-ghost:hover{background:var(--glass3);border-color:var(--bdr3);transform:translateY(-3px)}
+.btn-ghost img{width:16px;height:16px}
+.hero-scroll{position:absolute;bottom:2.5rem;left:50%;transform:translateX(-50%);z-index:3;display:flex;flex-direction:column;align-items:center;gap:6px;color:var(--t3);font-size:.72rem;letter-spacing:.05em;animation:fadeUp 1s var(--ease) .7s both}
+.scroll-track{width:1px;height:44px;background:linear-gradient(to bottom,var(--bdr3),transparent);overflow:hidden;position:relative}
+.scroll-track::after{content:'';position:absolute;top:0;left:0;width:100%;height:50%;background:var(--t3);animation:scrollDrop 2.2s ease-in-out infinite}
+@keyframes scrollDrop{0%{transform:translateY(-100%);opacity:0}30%{opacity:1}100%{transform:translateY(200%);opacity:0}}
 
-/* \u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550 HERO \u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550 */
-.hero{min-height:90vh;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;padding:8rem 2rem 5rem;text-align:center}
-#hero-canvas{position:absolute;inset:0;z-index:1;pointer-events:none}
+/* ══════════════ TRUST BAR ══════════════ */
+.trust-bar{background:var(--surface2);backdrop-filter:var(--blur-sm);-webkit-backdrop-filter:var(--blur-sm);border-bottom:1px solid var(--bdr);display:flex;justify-content:center;flex-wrap:wrap;gap:0}
+.trust-item{display:flex;align-items:center;gap:14px;padding:1.75rem 3rem;border-right:1px solid var(--bdr)}
+.trust-item:last-child{border-right:none}
+.trust-ico{font-size:1.4rem;opacity:.7}
+.trust-texts{}
+.trust-n{font-size:1.6rem;font-weight:300;color:var(--t1);font-family:var(--font-display);line-height:1}
+.trust-l{font-size:.72rem;color:var(--t3);text-transform:uppercase;letter-spacing:.07em;font-weight:500;margin-top:2px}
 
-.hero-content{position:relative;z-index:3;max-width:850px}
-.hero-pill{display:inline-flex;align-items:center;gap:8px;background:var(--bg1); backdrop-filter: blur(10px); border:1px solid var(--bdr2);border-radius:99px;color:var(--t2);font-size:.8rem;font-weight:600;padding:6px 18px;margin-bottom:2rem;animation:fuA .8s var(--ease) both; box-shadow: var(--bdr-glass)}
-.pdot{width:8px;height:8px;background:var(--acc);border-radius:50%;animation:pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite; box-shadow: 0 0 10px var(--acc)}
-@keyframes pulse{0%, 100%{opacity:1} 50%{opacity:.4}}
+/* ══════════════ SECTIONS ══════════════ */
+.sec-label{font-size:.7rem;font-weight:600;text-transform:uppercase;letter-spacing:.12em;color:var(--acc);font-family:var(--font);margin-bottom:.6rem}
+.sec-title{font-size:clamp(1.8rem,3.5vw,2.8rem);color:var(--t1);margin-bottom:.6rem}
+.sec-sub{font-size:.95rem;color:var(--t3);max-width:480px}
 
-.hero h1{font-size:clamp(2.8rem,7vw,5.5rem);font-weight:800;line-height:1.1;color:var(--t1);margin-bottom:1.5rem;animation:fuA .8s var(--ease) .1s both; letter-spacing: -2px;}
-.hero h1 em{font-style:normal;background:linear-gradient(to right, var(--acc), #a855f7);-webkit-background-clip:text;-webkit-text-fill-color:transparent;}
+/* ══════════════ REVIEWS ══════════════ */
+.sec-reviews{padding:6rem 2rem;background:var(--surface2);backdrop-filter:var(--blur-sm)}
+.reviews-wrap{max-width:1100px;margin:0 auto}
+.reviews-head{margin-bottom:3rem}
+.reviews-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:1.25rem}
+.review-card{background:var(--glass);border:1px solid var(--bdr);border-radius:20px;padding:1.75rem;transition:all .3s var(--ease2);position:relative;overflow:hidden}
+.review-card::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,var(--glass),transparent);border-radius:20px;opacity:0;transition:opacity .3s}
+.review-card:hover{border-color:var(--bdr2);transform:translateY(-6px);box-shadow:0 20px 50px rgba(0,0,0,.2)}
+.review-card:hover::before{opacity:1}
+.review-stars{color:#f59e0b;font-size:.85rem;margin-bottom:1rem;letter-spacing:2px}
+.review-quote{font-size:.88rem;line-height:1.75;color:var(--t2);margin-bottom:1.25rem;font-style:italic}
+.review-author{display:flex;align-items:center;gap:10px}
+.review-av{width:34px;height:34px;border-radius:50%;background:linear-gradient(135deg,var(--acc),#7c3aed);display:flex;align-items:center;justify-content:center;color:#fff;font-size:.7rem;font-weight:600;flex-shrink:0;border:1px solid rgba(255,255,255,.15)}
+.review-name{font-size:.84rem;font-weight:600;color:var(--t1)}
 
-.hero-sub{font-size:1.1rem;color:var(--t2);max-width:600px;margin:0 auto 3rem;line-height:1.6;animation:fuA .8s var(--ease) .2s both}
+/* ══════════════ CATALOG ══════════════ */
+.sec-catalog{padding:5rem 2rem 8rem;max-width:1280px;margin:0 auto}
+.cat-head{text-align:center;margin-bottom:3rem}
 
-.hero-btns{display:flex;gap:16px;justify-content:center;flex-wrap:wrap;animation:fuA .8s var(--ease) .3s both}
-.btn-pri{padding:14px 32px;background:var(--acc);color:#fff;border-radius:99px;font-weight:700;font-size:1rem;display:flex;align-items:center;gap:10px;transition:all .3s var(--ease);box-shadow: 0 10px 25px var(--acc-glow)}
-.btn-pri:hover{background:var(--acc2); transform:translateY(-3px);box-shadow: 0 15px 35px var(--acc-glow)}
-.btn-pri img{width:20px;height:20px; filter: brightness(0) invert(1);}
+/* SEARCH */
+.search-wrap{max-width:580px;margin:0 auto 2.5rem;position:relative}
+.search-icon{position:absolute;left:20px;top:50%;transform:translateY(-50%);font-size:1rem;opacity:.4;pointer-events:none}
+.search-inp{width:100%;padding:14px 20px 14px 50px;background:var(--glass2);border:1px solid var(--bdr2);border-radius:14px;color:var(--t1);font-family:var(--font);font-size:.95rem;outline:none;transition:all .3s var(--ease2);backdrop-filter:var(--blur-sm)}
+.search-inp::placeholder{color:var(--t3)}
+.search-inp:focus{border-color:rgba(59,127,255,.5);background:var(--glass3);box-shadow:0 0 0 4px rgba(59,127,255,.1)}
 
-.btn-sec{padding:14px 32px;background:var(--bg1); backdrop-filter: blur(10px); color:var(--t1);border-radius:99px;font-weight:600;font-size:1rem;display:flex;align-items:center;gap:10px;border:1px solid var(--bdr2);transition:all .3s var(--ease)}
-.btn-sec:hover{background:var(--bg2);transform:translateY(-3px); border-color: var(--t3)}
-.btn-sec img{width:20px;height:20px; filter: opacity(0.8);}
+/* FILTER TABS */
+.filter-tabs{display:flex;gap:4px;justify-content:center;flex-wrap:wrap;margin-bottom:.75rem}
+.ftab{display:flex;align-items:center;gap:6px;padding:9px 16px;border-radius:10px;font-size:.82rem;font-weight:500;color:var(--t3);background:var(--glass);border:1px solid var(--bdr);transition:all .2s var(--ease2);cursor:pointer;white-space:nowrap}
+.ftab img{width:14px;height:14px;opacity:.5;transition:opacity .2s}
+.ftab:hover{color:var(--t1);border-color:var(--bdr2);background:var(--glass2)}
+.ftab.on{background:var(--t1);color:var(--ink);border-color:transparent;font-weight:600}
+.ftab.on img{opacity:1;filter:invert(1)}
+[data-theme="light"] .ftab.on img{filter:none}
 
-.scroll-hint{position:absolute;bottom:2rem;left:50%;transform:translateX(-50%);z-index:3;display:flex;flex-direction:column;align-items:center;gap:8px;color:var(--t3);font-size:.75rem;font-weight: 600; text-transform: uppercase; letter-spacing: 2px; animation:fuA 1s var(--ease) .8s both}
-.scroll-line{width:2px;height:50px;background:linear-gradient(to bottom,var(--acc),transparent);border-radius: 2px; animation:scrollPulse 2s ease-in-out infinite}
-@keyframes scrollPulse{0%{transform:scaleY(0); transform-origin: top;} 50%{transform:scaleY(1); transform-origin: top;} 50.1%{transform:scaleY(1); transform-origin: bottom;} 100%{transform:scaleY(0); transform-origin: bottom;}}
+/* SUB FILTERS */
+.subtabs-wrap{display:flex;justify-content:center;margin-bottom:2.5rem;min-height:36px;align-items:center}
+.subtabs{display:none;gap:5px;flex-wrap:wrap;justify-content:center}
+.subtabs.on{display:flex;animation:fadeUp .2s var(--ease)}
+.stab{padding:6px 14px;border-radius:8px;font-size:.78rem;font-weight:500;color:var(--t3);border:1px solid var(--bdr);background:var(--glass);cursor:pointer;transition:all .18s var(--ease2);white-space:nowrap}
+.stab:hover{color:var(--t1);border-color:var(--bdr2)}
+.stab.on{background:var(--acc);color:#fff;border-color:var(--acc);box-shadow:0 4px 14px var(--acc-glow)}
 
-/* \u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550 TRUST STRIP \u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550 */
-.trust{display:flex;justify-content:center;flex-wrap:wrap;gap:4rem;padding:3rem 2rem;background:var(--bg1);backdrop-filter: blur(10px);border-top:1px solid var(--bdr); border-bottom:1px solid var(--bdr)}
-.trust-item{text-align:center}
-.trust-n{font-size:2.5rem;font-weight:800;color:var(--t1);letter-spacing:-1px;line-height:1}
-.trust-l{font-size:.8rem;color:var(--acc);text-transform:uppercase;letter-spacing:1px;font-weight:700;margin-top:8px}
+/* NO RESULTS */
+.no-results{text-align:center;padding:4rem;color:var(--t3);font-size:1rem;width:100%;grid-column:1/-1}
+.no-results span{display:block;font-size:2.5rem;margin-bottom:1rem;opacity:.4}
 
-/* \u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550 CATALOG & SEARCH \u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550 */
-.sec-cat{padding:5rem 2rem 8rem;max-width:1200px;margin:0 auto; position: relative;}
+/* PRODUCT SECTION */
+.psec{margin-bottom:4rem}
+.psec-hdr{display:flex;align-items:center;gap:10px;margin-bottom:1.5rem;padding-bottom:1rem;border-bottom:1px solid var(--bdr)}
+.psec-icon{width:32px;height:32px;background:rgba(59,127,255,.1);border:1px solid rgba(59,127,255,.18);border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:.8rem;flex-shrink:0}
+.psec-title{font-size:1.05rem;font-weight:600;color:var(--t1);font-family:var(--font)}
+.psec-count{font-size:.78rem;color:var(--t3);margin-left:auto;background:var(--glass2);border:1px solid var(--bdr);border-radius:99px;padding:3px 10px}
 
-/* Elementos decorativos (Globs) de fundo */
-.sec-cat::before {content:''; position:absolute; top:-10%; left:-10%; width:400px; height:400px; background:var(--acc); border-radius:50%; filter:blur(150px); opacity:0.1; z-index:-1;}
-.sec-cat::after {content:''; position:absolute; bottom:20%; right:-10%; width:300px; height:300px; background:#8b5cf6; border-radius:50%; filter:blur(150px); opacity:0.1; z-index:-1;}
-
-.cat-top{text-align:center;margin-bottom:3rem}
-.cat-top h2{font-size:clamp(2rem,4vw,3rem);font-weight:800;margin-bottom:1rem; letter-spacing: -1px;}
-.cat-top p{color:var(--t2);font-size:1.1rem; max-width: 600px; margin: 0 auto;}
-
-/* \u2500\u2500 SEARCH BAR (Modern Glass) \u2500\u2500 */
-.search-wrap {
-  max-width: 650px;
-  margin: 0 auto 3rem auto;
-  position: relative;
-}
-.search-inp {
-  width: 100%;
-  padding: 20px 24px 20px 56px;
-  background: var(--bg1);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border: 1px solid var(--bdr2);
-  border-radius: 16px;
-  color: var(--t1);
-  font-family: var(--font);
-  font-size: 1.05rem;
-  font-weight: 500;
-  transition: all .3s var(--ease);
-  outline: none;
-  box-shadow: var(--shadow-glass), var(--bdr-glass);
-}
-.search-inp::placeholder {color: var(--t3);}
-.search-inp:focus {
-  border-color: var(--acc);
-  box-shadow: 0 0 0 4px var(--acc-glow), var(--shadow-glass);
-  background: var(--card);
-  transform: translateY(-2px);
-}
-.search-ico {
-  position: absolute;
-  left: 20px;
-  top: 50%;
-  transform: translateY(-50%);
-  font-size: 1.4rem;
-  opacity: 0.5;
-  transition: opacity .3s;
-}
-.search-inp:focus + .search-ico, .search-inp:focus ~ .search-ico { opacity: 1; color: var(--acc); }
-
-/* \u2500\u2500 FILTER BARS (Pills) \u2500\u2500 */
-.fbar-wrap{margin-bottom:2rem}
-.fbar{display:flex;gap:8px;justify-content:center;flex-wrap:wrap; margin:0 auto}
-.fbtn{padding:10px 20px;background:var(--bg1);backdrop-filter:blur(8px);border:1px solid var(--bdr);border-radius:99px;font-size:.9rem;font-weight:600;color:var(--t2);display:flex;align-items:center;gap:8px;transition:all .3s var(--ease);white-space:nowrap;}
-.fbtn img{width:16px;height:16px;opacity:.7; filter: grayscale(1);}
-.fbtn:hover{color:var(--t1);background:var(--bg2); border-color:var(--bdr2); transform: translateY(-2px);}
-.fbtn.on{background:var(--t1);color:var(--bg);border-color:transparent; box-shadow: 0 4px 15px rgba(0,0,0,0.1)}
-.fbtn.on img{opacity:1;filter:invert(1) grayscale(0);}
-[data-theme="light"] .fbtn.on img{filter:none}
-
-.sbar{display:none;gap:8px;justify-content:center;flex-wrap:wrap;margin-top:16px;animation:fuA .3s var(--ease)}
-.sbar.on{display:flex}
-.sbtn{padding:8px 16px;border-radius:99px;font-size:.85rem;font-weight:600;color:var(--t3);border:1px solid transparent;background:transparent;transition:all .2s var(--ease);white-space:nowrap}
-.sbtn:hover{color:var(--t1);background:var(--bg1)}
-.sbtn.on{background:var(--bg2);color:var(--t1);border-color:var(--bdr2);}
-
-/* \u2500\u2500 PRODUCT GRID (Glass Cards) \u2500\u2500 */
-.psec{margin-bottom:5rem}
-.psec-title{font-size:1.5rem;font-weight:800;color:var(--t1);margin-bottom:2rem;display:flex;align-items:center;gap:12px; letter-spacing: -0.5px;}
-.psec-icon{width:40px;height:40px;background:var(--acc-glow);border:1px solid rgba(42,111,255,.3);border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:1.2rem;flex-shrink:0; color: var(--acc)}
-
-.pgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1.5rem}
-
-.pcard{background:var(--card);backdrop-filter: blur(12px);-webkit-backdrop-filter: blur(12px);border:1px solid var(--bdr);border-radius:24px;overflow:hidden;display:flex;flex-direction:column;opacity:0;transform:translateY(20px);transition:all .4s var(--ease); box-shadow: var(--shadow-glass), var(--bdr-glass);}
+/* PRODUCT GRID */
+.pgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:1.25rem}
+.pcard{background:var(--glass);border:1px solid var(--bdr);border-radius:18px;overflow:hidden;display:flex;flex-direction:column;opacity:0;transform:translateY(20px);transition:opacity .45s,transform .45s var(--ease),border-color .25s,background .25s,box-shadow .25s}
 .pcard.in{opacity:1;transform:translateY(0)}
-.pcard:hover{border-color:var(--acc);background:var(--card-h);transform:translateY(-8px);box-shadow: 0 20px 40px rgba(0,0,0,0.2), 0 0 0 1px var(--acc-glow);}
-[data-theme="light"] .pcard:hover{box-shadow: 0 20px 40px rgba(0,0,0,0.08), 0 0 0 1px var(--acc-glow);}
+.pcard:hover{border-color:var(--bdr2);background:var(--glass2);transform:translateY(-6px);box-shadow:0 20px 50px rgba(0,0,0,.2)}
+.pcard.incart{border-color:rgba(0,200,117,.35);box-shadow:0 0 0 1px rgba(0,200,117,.12)}
+.pimg{height:150px;display:flex;align-items:center;justify-content:center;border-bottom:1px solid var(--bdr);position:relative;overflow:hidden;background:linear-gradient(135deg,var(--glass),var(--glass2))}
+.pimg-emoji{font-size:3rem;opacity:.15;transition:all .4s var(--ease);user-select:none}
+.pcard:hover .pimg-emoji{opacity:.22;transform:scale(1.1) rotate(-5deg)}
+.incart-badge{position:absolute;top:10px;right:10px;background:var(--grn);color:#fff;font-size:.64rem;font-weight:700;padding:4px 10px;border-radius:99px;opacity:0;transform:scale(.5) translateY(-4px);transition:all .3s var(--ease)}
+.pcard.incart .incart-badge{opacity:1;transform:scale(1) translateY(0)}
+.pbody{padding:1.1rem;display:flex;flex-direction:column;flex-grow:1;gap:.65rem}
+.pname{font-size:.9rem;font-weight:500;color:var(--t1);line-height:1.3;font-family:var(--font)}
+.pprice-box{background:var(--glass2);border:1px solid var(--bdr);border-radius:8px;padding:.65rem .9rem;display:flex;align-items:baseline;gap:4px}
+.pprice{font-size:1.35rem;font-weight:300;color:var(--t1);font-family:var(--font-display);letter-spacing:-.02em;line-height:1}
+.punit{font-size:.72rem;color:var(--t3)}
+.pspacer{flex:1}
+.pactions{display:flex;align-items:center;gap:7px}
+.qty-ctrl{display:flex;align-items:center;border:1px solid var(--bdr2);border-radius:8px;overflow:hidden;background:var(--glass)}
+.bq{width:30px;height:34px;display:flex;align-items:center;justify-content:center;color:var(--acc);font-size:.95rem;font-weight:600;transition:background .2s}
+.bq:hover{background:var(--glass2)}
+.iq{width:32px;height:34px;border:none;background:transparent;text-align:center;font-size:.85rem;font-weight:600;color:var(--t1);font-family:var(--font);outline:none;-moz-appearance:textfield}
+.iq::-webkit-outer-spin-button,.iq::-webkit-inner-spin-button{-webkit-appearance:none}
+.badd{flex:1;height:34px;background:rgba(59,127,255,.12);color:var(--acc);border-radius:8px;font-weight:600;font-size:.8rem;display:flex;align-items:center;justify-content:center;gap:5px;transition:all .22s var(--ease2);border:1px solid rgba(59,127,255,.2)}
+.badd:hover{background:var(--acc);color:#fff;box-shadow:0 4px 14px var(--acc-glow)}
+.badd.done{background:rgba(0,200,117,.12);color:var(--grn);border-color:rgba(0,200,117,.2)}
+.badd.done:hover{background:var(--grn);color:#fff;box-shadow:0 4px 14px var(--grn-glow)}
 
-.pcard.incart{border-color:var(--grn);box-shadow:0 0 0 2px var(--grn-g), var(--shadow-glass);}
-
-.pimg{height:180px;background:var(--bg1);display:flex;align-items:center;justify-content:center;border-bottom:1px solid var(--bdr);position:relative;overflow:hidden;}
-.pimg-icon{font-size:4rem;opacity:.15;user-select:none;transition:all .5s cubic-bezier(0.34, 1.56, 0.64, 1); filter: grayscale(1);}
-.pcard:hover .pimg-icon{opacity:.4;transform:scale(1.15); filter: grayscale(0);}
-
-.cbadge-card{position:absolute;top:12px;right:12px;background:var(--grn);color:#fff;font-size:.7rem;font-weight:800;padding:4px 12px;border-radius:99px;opacity:0;transform:scale(.6);transition:all .4s cubic-bezier(0.34, 1.56, 0.64, 1); box-shadow: 0 4px 10px var(--grn-g);}
-.pcard.incart .cbadge-card{opacity:1;transform:scale(1)}
-
-/* Badge de marca */
-.pmarca{position: absolute; top: 12px; left: 12px; background: var(--bg2); backdrop-filter: blur(4px); color: var(--t2); font-size: 0.65rem; font-weight: 700; padding: 4px 10px; border-radius: 6px; text-transform: uppercase; border: 1px solid var(--bdr);}
-
-.pbody{padding:1.5rem;display:flex;flex-direction:column;flex-grow:1}
-.pname{font-size:1.05rem;font-weight:700;color:var(--t1);line-height:1.4;margin-bottom:1rem; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;}
-.pprice-wrap{background:transparent; padding:0; margin-bottom:1.5rem;display:flex;align-items:baseline;gap:6px}
-.pprice{font-size:1.8rem;font-weight:800;color:var(--acc);letter-spacing:-1px;line-height:1}
-.punit{font-size:.8rem;color:var(--t3); font-weight: 500;}
-.pspacer{flex-grow:1}
-
-.pactions{display:flex;align-items:center;gap:10px}
-.qty-wrap{display:flex;align-items:center;border:1px solid var(--bdr2);border-radius:12px;overflow:hidden;background:var(--bg1)}
-.bqty{width:36px;height:42px;display:flex;align-items:center;justify-content:center;color:var(--t2);font-size:1.2rem;transition:all .2s; background:transparent}
-.bqty:hover{background:var(--bg2); color:var(--t1)}
-.iqty{width:40px;height:42px;border:none;background:transparent;text-align:center;font-size:1rem;font-weight:700;color:var(--t1);font-family:var(--font);-moz-appearance:textfield;outline:none}
-.iqty::-webkit-outer-spin-button,.iqty::-webkit-inner-spin-button{-webkit-appearance:none}
-
-.badd{flex:1;height:42px;background:var(--acc);color:#fff;border-radius:12px;font-weight:700;font-size:.9rem;display:flex;align-items:center;justify-content:center;gap:6px;transition:all .3s var(--ease); box-shadow: 0 4px 12px var(--acc-glow)}
-.badd:hover{background:var(--acc2);transform:translateY(-2px); box-shadow: 0 6px 16px var(--acc-glow)}
-.badd.done{background:var(--grn); box-shadow: 0 4px 12px var(--grn-g)}
-
-.no-results {text-align:center; padding: 4rem 2rem; background: var(--card); border: 1px dashed var(--bdr); border-radius: 24px; color:var(--t3); font-size:1.1rem; width:100%; grid-column: 1 / -1; backdrop-filter: blur(10px);}
-
-/* \u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550 CART PANEL \u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550 */
-.backdrop{position:fixed;inset:0;background:rgba(0,0,0,.4);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);z-index:900;opacity:0;pointer-events:none;transition:opacity .4s var(--ease)}
+/* ══════════════ CART PANEL ══════════════ */
+.backdrop{position:fixed;inset:0;background:rgba(0,0,0,.7);backdrop-filter:blur(12px);z-index:950;opacity:0;pointer-events:none;transition:opacity .35s}
 .backdrop.on{opacity:1;pointer-events:all}
-
-.cart-panel{position:fixed;top:0;right:0;bottom:0;width:450px;max-width:100vw;background:rgba(17, 26, 46, 0.85);backdrop-filter: blur(24px) saturate(180%);-webkit-backdrop-filter: blur(24px);border-left:1px solid var(--bdr2);z-index:901;display:flex;flex-direction:column;transform:translateX(100%);transition:transform .5s cubic-bezier(0.22, 1, 0.36, 1); box-shadow: -10px 0 40px rgba(0,0,0,0.2);}
-[data-theme="light"] .cart-panel {background:rgba(255, 255, 255, 0.9);}
-
+.cart-panel{position:fixed;top:0;right:0;bottom:0;width:440px;max-width:100vw;background:var(--surface);backdrop-filter:var(--blur);-webkit-backdrop-filter:var(--blur);border-left:1px solid var(--bdr2);z-index:960;display:flex;flex-direction:column;transform:translateX(100%);transition:transform .45s var(--ease)}
 .cart-panel.on{transform:translateX(0)}
-.chead{padding:2rem;border-bottom:1px solid var(--bdr);display:flex;align-items:center;justify-content:space-between;flex-shrink:0}
-.chead h3{font-size:1.3rem;font-weight:800;color:var(--t1);display:flex;align-items:center;gap:12px; letter-spacing: -0.5px;}
-.bclose{width:36px;height:36px;border-radius:50%;background:var(--bg2);border:1px solid var(--bdr);color:var(--t2);display:flex;align-items:center;justify-content:center;font-size:1rem;transition:all .3s}
-.bclose:hover{background:var(--bg3);color:var(--t1); transform: rotate(90deg);}
+.cart-head{padding:1.5rem 1.75rem;border-bottom:1px solid var(--bdr);display:flex;align-items:center;justify-content:space-between;flex-shrink:0}
+.cart-head h3{font-size:1rem;font-weight:600;color:var(--t1);font-family:var(--font);display:flex;align-items:center;gap:9px}
+.btn-close{width:34px;height:34px;border-radius:50%;background:var(--glass2);border:1px solid var(--bdr);color:var(--t2);display:flex;align-items:center;justify-content:center;font-size:.9rem;transition:all .2s}
+.btn-close:hover{background:var(--glass3);color:var(--t1)}
+.cart-list{flex:1;overflow-y:auto;padding:.75rem 1.75rem}
+.cart-empty{height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1rem;color:var(--t3)}
+.cart-empty-ico{font-size:3rem;opacity:.25}
+.cart-empty p{font-size:.88rem;font-weight:500}
+.cart-item{display:flex;align-items:center;gap:.9rem;padding:.9rem 0;border-bottom:1px solid var(--bdr)}
+.ci-ico{width:42px;height:42px;background:var(--glass2);border:1px solid var(--bdr);border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:1.1rem;flex-shrink:0}
+.ci-info{flex:1;min-width:0}
+.ci-name{font-weight:500;font-size:.84rem;color:var(--t1);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;margin-bottom:2px}
+.ci-meta{font-size:.73rem;color:var(--t3)}
+.ci-right{display:flex;flex-direction:column;align-items:flex-end;gap:5px;flex-shrink:0}
+.ci-total{font-weight:600;font-size:.88rem;color:var(--t1)}
+.ci-remove{font-size:.73rem;color:var(--t3);cursor:pointer;transition:color .2s}
+.ci-remove:hover{color:#ef4444}
+.cart-foot{padding:1.25rem 1.75rem 1.75rem;border-top:1px solid var(--bdr);flex-shrink:0}
+.cart-total-row{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:1.25rem}
+.cart-total-lbl{font-size:.82rem;color:var(--t3)}
+.cart-total-val{font-size:1.8rem;font-weight:300;font-family:var(--font-display);color:var(--t1)}
+.btn-send-wpp{width:100%;padding:14px;background:var(--grn);color:#fff;border-radius:12px;font-weight:600;font-size:.92rem;display:flex;align-items:center;justify-content:center;gap:9px;transition:all .3s var(--ease);box-shadow:0 6px 22px var(--grn-glow);margin-bottom:.75rem}
+.btn-send-wpp:hover{filter:brightness(1.08);transform:translateY(-2px);box-shadow:0 12px 34px var(--grn-glow)}
+.btn-send-wpp img{width:18px;height:18px}
+.btn-clear{width:100%;padding:9px;color:var(--t3);font-size:.8rem;font-weight:500;display:flex;align-items:center;justify-content:center;gap:6px;border-radius:8px;transition:all .2s}
+.btn-clear:hover{color:#ef4444;background:rgba(239,68,68,.07)}
 
-.clist{flex:1;overflow-y:auto;padding:1rem 2rem}
-.cempty{height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1rem;color:var(--t3);font-size:3rem}
-.cempty p{font-size:1rem;font-weight:600;color:var(--t3)}
+/* ══════════════ WPP FLOAT ══════════════ */
+.wpp-float{position:fixed;bottom:28px;right:28px;z-index:800;display:flex;flex-direction:column;align-items:flex-end;gap:10px}
+.wpp-tip{background:var(--grn);color:#fff;font-size:.76rem;font-weight:600;padding:5px 13px;border-radius:99px;white-space:nowrap;opacity:0;transform:translateX(8px) scale(.95);transition:all .25s var(--ease);pointer-events:none}
+.wpp-float:hover .wpp-tip{opacity:1;transform:translateX(0) scale(1)}
+.wpp-btn{width:58px;height:58px;background:var(--grn);border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 8px 26px var(--grn-glow);transition:all .3s var(--ease);position:relative}
+.wpp-btn:hover{transform:scale(1.08);box-shadow:0 14px 36px rgba(0,200,117,.4)}
+.wpp-btn img{width:28px;height:28px}
+.wpp-ring{position:absolute;inset:-5px;border-radius:50%;border:2px solid var(--grn);opacity:.6;animation:ring 2.6s ease-in-out infinite}
+.wpp-ring2{animation-delay:.8s}
+@keyframes ring{0%{opacity:.6;transform:scale(1)}100%{opacity:0;transform:scale(1.6)}}
 
-.citem{display:flex;align-items:center;gap:1rem;padding:1.2rem 0;border-bottom:1px solid var(--bdr)}
-.citem-ico{width:50px;height:50px;background:var(--bg2);border:1px solid var(--bdr2);border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:1.5rem;flex-shrink:0}
-.citem-info{flex:1;min-width:0}
-.citem-name{font-weight:700;font-size:.95rem;color:var(--t1);overflow:hidden;text-overflow:ellipsis;white-space:nowrap;margin-bottom:4px}
-.citem-meta{font-size:.8rem;color:var(--t3); font-weight: 500;}
-.citem-r{display:flex;flex-direction:column;align-items:flex-end;gap:8px;flex-shrink:0}
-.citem-tot{font-weight:800;font-size:1rem;color:var(--acc)}
-.brem{color:var(--t3);font-size:.8rem;font-weight: 600;transition:color .2s; background: var(--bg2); padding: 4px 10px; border-radius: 6px;}
-.brem:hover{color:#ef4444; background: rgba(239,68,68,.1);}
+/* ══════════════ FOOTER ══════════════ */
+footer{background:var(--surface2);border-top:1px solid var(--bdr);padding:2.5rem;text-align:center;color:var(--t3);font-size:.82rem}
+footer strong{color:var(--t2);font-weight:500}
 
-.cfoot{padding:2rem;border-top:1px solid var(--bdr);background:var(--card);flex-shrink:0}
-.ctotal-row{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:1.5rem}
-.ctotal-lbl{font-size:.9rem;color:var(--t2); font-weight: 600;}
-.ctotal-val{font-size:2.2rem;font-weight:800;color:var(--t1);letter-spacing:-1px}
-.bwpp-send{width:100%;padding:16px;background:var(--grn);color:#fff;border-radius:14px;font-weight:700;font-size:1rem;display:flex;align-items:center;justify-content:center;gap:10px;transition:all .3s var(--ease);box-shadow:0 8px 25px var(--grn-g);margin-bottom:.8rem}
-.bwpp-send:hover{filter:brightness(1.05);transform:translateY(-3px);box-shadow:0 12px 30px var(--grn-g)}
-.bwpp-send img{width:22px;height:22px; filter: brightness(0) invert(1);}
-.bclr{width:100%;padding:12px;color:var(--t3);font-size:.9rem;font-weight:600;border-radius:12px;display:flex;align-items:center;justify-content:center;gap:8px;transition:all .2s; border: 1px solid transparent;}
-.bclr:hover{color:#ef4444;background:rgba(239,68,68,.08); border-color: rgba(239,68,68,.2);}
+/* ══════════════ ANIMATIONS ══════════════ */
+@keyframes fadeUp{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:translateY(0)}}
 
-/* \u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550 WPP FLOAT \u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550 */
-.wfloat{position:fixed;bottom:30px;right:30px;z-index:700;display:flex;flex-direction:column;align-items:flex-end;gap:10px}
-.wtooltip{background:var(--card);backdrop-filter: blur(8px);border:1px solid var(--bdr2); color:var(--t1);font-size:.85rem;font-weight:700;padding:8px 16px;border-radius:99px;white-space:nowrap;opacity:0;transform:translateX(10px);transition:all .3s var(--ease);pointer-events:none; box-shadow: var(--shadow-glass)}
-.wfloat:hover .wtooltip{opacity:1;transform:translateX(0)}
-.wbtn{width:60px;height:60px;background:var(--grn);border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 8px 30px var(--grn-g);transition:all .3s var(--ease);position:relative}
-.wbtn:hover{transform:scale(1.1) translateY(-5px);box-shadow:0 15px 40px rgba(29,185,84,.4)}
-.wbtn img{width:30px;height:30px; filter: brightness(0) invert(1);}
-.wpulse{position:absolute;inset:-4px;border-radius:50%;border:2px solid var(--grn);animation:wpulse 2.4s ease-in-out infinite}
-@keyframes wpulse{0%{opacity:.8;transform:scale(1)}100%{opacity:0;transform:scale(1.6)}}
-
-/* \u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550 FOOTER \u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550 */
-footer{background:var(--card);border-top:1px solid var(--bdr);padding:3rem 2rem;text-align:center;color:var(--t3);font-size:.9rem}
-footer strong{color:var(--t1)}
-
-/* \u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550 ANIMS \u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550 */
-@keyframes fuA{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
-
-/* \u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550 MOBILE \u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550 */
-@media(max-width:768px){
-  .fbar{justify-content:flex-start;overflow-x:auto;flex-wrap:nowrap;width:100%;border-radius:0;scrollbar-width:none; padding: 4px 0;}
-  .fbar::-webkit-scrollbar{display:none}
-  .sbar{justify-content:flex-start;overflow-x:auto;flex-wrap:nowrap;scrollbar-width:none; padding: 4px 0;}
-  .sbar::-webkit-scrollbar{display:none}
-  .pgrid{grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:1rem}
-  .btn-wpp-h span{display:none}
-  .trust{gap:2rem; padding: 2rem 1rem;}
-  .trust-item{width: 40%;}
-  .hdr{padding: 0 1rem;}
-  .cart-panel{width: 100%;}
+/* ══════════════ MOBILE ══════════════ */
+@media(max-width:900px){
+  .nav-center{display:none}
+  .hdr-inner{padding:0 1.25rem}
+  .trust-item{padding:1.25rem 1.5rem}
 }
-@media(max-width:480px){
+@media(max-width:640px){
+  .pgrid{grid-template-columns:1fr 1fr;gap:.85rem}
+  .trust-bar{flex-direction:column;gap:0}
+  .trust-item{border-right:none;border-bottom:1px solid var(--bdr)}
+  .filter-tabs{justify-content:flex-start;overflow-x:auto;flex-wrap:nowrap;padding-bottom:4px;scrollbar-width:none}
+  .filter-tabs::-webkit-scrollbar{display:none}
+  .btn-wpp span,.btn-cart-hdr span{display:none}
+  .hero h1{font-size:2.6rem}
+}
+@media(max-width:400px){
   .pgrid{grid-template-columns:1fr}
-  .hero h1{font-size:2.5rem; letter-spacing: -1px;}
-  .search-inp{padding-left: 40px;}
-  .search-ico{left: 14px;}
 }
 </style>
 </head>
 <body>
 
+<!-- ══════════ HEADER ══════════ -->
 <header class="hdr" id="hdr">
-  <a href="#" class="logo">
-    <div class="logo-box"><img src="https://img.icons8.com/fluency/48/box.png" alt=""></div>
-    <span>Cia Das Embalagens</span>
-  </a>
-  <div class="hdr-r">
-    <button class="btn-ico" onclick="toggleTheme()" title="Alternar tema" id="themeBtn">\U0001f319</button>
-    <button class="btn-cart" onclick="abrirCart()">
-      \U0001f6d2 <span class="txt-cart">Carrinho</span>
-      <span class="cbadge" id="cbadge">0</span>
-    </button>
-  </div>
-</header>
+  <div class="hdr-inner">
+    <a href="#" class="logo">
+      <div class="logo-mark"><img src="https://img.icons8.com/fluency/48/box.png" alt=""></div>
+      <div class="logo-name">Cia das<span> Embalagens</span></div>
+    </a>
 
-<section class="hero" id="inicio">
-  <canvas id="hero-canvas"></canvas>
-  <div class="hero-overlay" id="heroOverlay"></div>
-  <div class="hero-content">
-    <div class="hero-pill"><span class="pdot"></span> Direto da F�brica � S�o Paulo</div>
-    <h1>O cat�logo completo em<br><em>Embalagens Premium.</em></h1>
-    <p class="hero-sub">Solu��es em papel�o, pl�stico, isopor e sacolas para elevar o n�vel do seu neg�cio. Qualidade garantida com pre�o de atacado.</p>
-    <div class="hero-btns">
-      <button class="btn-pri" onclick="document.getElementById('produtos').scrollIntoView({behavior:'smooth'})">
-        Ver Cat�logo <img src="https://img.icons8.com/fluency/48/forward.png" alt="" style="width:16px;height:16px;">
+    <!-- MEGA NAV -->
+    <nav class="nav-center">
+
+      <!-- Embalagens -->
+      <div class="nav-item" id="nav-emb">
+        <div class="nav-link" onclick="toggleNav('nav-emb')">
+          <span class="nav-dot"></span>Embalagens
+          <svg viewBox="0 0 10 6" fill="none"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        </div>
+        <div class="mega">
+          <div class="mega-grid">
+            <div class="mega-col">
+              <div class="mega-col-title">Caixas & Papelão</div>
+              <div class="mega-link" onclick="filterCat('caixas');filtrarSub('caixas-correio');fecharNav()">
+                <div class="mega-link-ico">📬</div>
+                <div class="mega-link-info"><div class="mega-link-name">Padrão Correios</div><div class="mega-link-desc">Sedex, PAC, e-commerce</div></div>
+              </div>
+              <div class="mega-link" onclick="filterCat('caixas');filtrarSub('caixas-alimentos');fecharNav()">
+                <div class="mega-link-ico">🍕</div>
+                <div class="mega-link-info"><div class="mega-link-name">Para Alimentos</div><div class="mega-link-desc">Pizza, hambúrguer, marmita</div></div>
+              </div>
+            </div>
+            <div class="mega-col">
+              <div class="mega-col-title">Plásticos & Potes</div>
+              <div class="mega-link" onclick="filterCat('plastico');filtrarSub('potes-tampas');fecharNav()">
+                <div class="mega-link-ico">🫙</div>
+                <div class="mega-link-info"><div class="mega-link-name">Potes e Tampas</div><div class="mega-link-desc">PP, PET, diversas capacidades</div></div>
+              </div>
+              <div class="mega-link" onclick="filterCat('plastico');filtrarSub('embalagens-bolo');fecharNav()">
+                <div class="mega-link-ico">🎂</div>
+                <div class="mega-link-info"><div class="mega-link-name">Embalagens p/ Bolo</div><div class="mega-link-desc">Acetato, forminhas, bases</div></div>
+              </div>
+            </div>
+            <div class="mega-col">
+              <div class="mega-col-title">Sacolas & Sacos</div>
+              <div class="mega-link" onclick="filterCat('sacolas');filtrarSub('sacolas-papel');fecharNav()">
+                <div class="mega-link-ico">🧻</div>
+                <div class="mega-link-info"><div class="mega-link-name">Sacolas de Papel</div><div class="mega-link-desc">Kraft, branco, personalizado</div></div>
+              </div>
+              <div class="mega-link" onclick="filterCat('sacolas');filtrarSub('sacolas-plasticas');fecharNav()">
+                <div class="mega-link-ico">🛒</div>
+                <div class="mega-link-info"><div class="mega-link-name">Sacolas Plásticas</div><div class="mega-link-desc">Alça, camiseta, biodegradável</div></div>
+              </div>
+              <div class="mega-link" onclick="filterCat('sacolas');filtrarSub('sacos-lixo');fecharNav()">
+                <div class="mega-link-ico">🗑️</div>
+                <div class="mega-link-info"><div class="mega-link-name">Sacos de Lixo</div><div class="mega-link-desc">10L a 200L, todas cores</div></div>
+              </div>
+            </div>
+            <div class="mega-featured" onclick="filterCat('diversos');fecharNav()">
+              <div class="mega-featured-l">
+                <div class="mega-feat-ico">❄️</div>
+                <div class="mega-feat-text">
+                  <strong>Embalagens de Isopor</strong>
+                  <span>Peixaria, delivery, transporte de frios</span>
+                </div>
+              </div>
+              <div class="mega-feat-cta">Ver tudo →</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Descartáveis -->
+      <div class="nav-item" id="nav-desc">
+        <div class="nav-link" onclick="toggleNav('nav-desc')">
+          <span class="nav-dot"></span>Descartáveis
+          <svg viewBox="0 0 10 6" fill="none"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        </div>
+        <div class="mega">
+          <div class="mega-grid" style="grid-template-columns:repeat(2,1fr)">
+            <div class="mega-col">
+              <div class="mega-col-title">Festa & Eventos</div>
+              <div class="mega-link" onclick="filterCat('festa');filtrarSub('copos-pratos');fecharNav()">
+                <div class="mega-link-ico">🥤</div>
+                <div class="mega-link-info"><div class="mega-link-name">Copos e Pratos</div><div class="mega-link-desc">PS, PP, Biodegradável</div></div>
+              </div>
+              <div class="mega-link" onclick="filterCat('festa');filtrarSub('talheres');fecharNav()">
+                <div class="mega-link-ico">🍴</div>
+                <div class="mega-link-info"><div class="mega-link-name">Talheres</div><div class="mega-link-desc">Garfo, faca, colher, kit</div></div>
+              </div>
+            </div>
+            <div class="mega-col">
+              <div class="mega-col-title">Higiene</div>
+              <div class="mega-link" onclick="filterCat('higiene');filtrarSub('papel-higiene');fecharNav()">
+                <div class="mega-link-ico">🧻</div>
+                <div class="mega-link-info"><div class="mega-link-name">Papel & Sabonetes</div><div class="mega-link-desc">Papel toalha, higiênico, sabão</div></div>
+              </div>
+              <div class="mega-link" onclick="filterCat('higiene');fecharNav()">
+                <div class="mega-link-ico">🧴</div>
+                <div class="mega-link-info"><div class="mega-link-name">Álcool & Desinfetante</div><div class="mega-link-desc">70°, gel, spray</div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Limpeza -->
+      <div class="nav-item" id="nav-limp">
+        <div class="nav-link" onclick="toggleNav('nav-limp')">
+          <span class="nav-dot"></span>Limpeza & EPI
+          <svg viewBox="0 0 10 6" fill="none"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        </div>
+        <div class="mega">
+          <div class="mega-grid" style="grid-template-columns:repeat(3,1fr)">
+            <div class="mega-col">
+              <div class="mega-col-title">Produtos Químicos</div>
+              <div class="mega-link" onclick="filterCat('limpeza');filtrarSub('produtos-limpeza');fecharNav()">
+                <div class="mega-link-ico">🧴</div>
+                <div class="mega-link-info"><div class="mega-link-name">Detergente & Deseng.</div><div class="mega-link-desc">Multi-uso, desincrustante</div></div>
+              </div>
+              <div class="mega-link" onclick="filterCat('utilidades');filtrarSub('aromas-inseticidas');fecharNav()">
+                <div class="mega-link-ico">🌿</div>
+                <div class="mega-link-info"><div class="mega-link-name">Aromas & Inseticidas</div><div class="mega-link-desc">Ambientadores, repelentes</div></div>
+              </div>
+            </div>
+            <div class="mega-col">
+              <div class="mega-col-title">Utensílios</div>
+              <div class="mega-link" onclick="filterCat('limpeza');filtrarSub('utensilios-limpeza');fecharNav()">
+                <div class="mega-link-ico">🧽</div>
+                <div class="mega-link-info"><div class="mega-link-name">Esponjas & Panos</div><div class="mega-link-desc">Fibra, microfibra, luva</div></div>
+              </div>
+              <div class="mega-link" onclick="filterCat('utilidades');filtrarSub('organiz-limpeza');fecharNav()">
+                <div class="mega-link-ico">🪣</div>
+                <div class="mega-link-info"><div class="mega-link-name">Baldes & Cestos</div><div class="mega-link-desc">Coleta seletiva, cozinha</div></div>
+              </div>
+            </div>
+            <div class="mega-col">
+              <div class="mega-col-title">EPI & Proteção</div>
+              <div class="mega-link" onclick="filterCat('limpeza');filtrarSub('epi');fecharNav()">
+                <div class="mega-link-ico">🧤</div>
+                <div class="mega-link-info"><div class="mega-link-name">Luvas & Aventais</div><div class="mega-link-desc">Látex, nitrílica, PVC</div></div>
+              </div>
+              <div class="mega-link" onclick="filterCat('limpeza');filtrarSub('epi');fecharNav()">
+                <div class="mega-link-ico">😷</div>
+                <div class="mega-link-info"><div class="mega-link-name">Máscaras & Toucas</div><div class="mega-link-desc">Cirúrgica, TNT, descartável</div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Utilidades -->
+      <div class="nav-item" id="nav-util">
+        <div class="nav-link" onclick="toggleNav('nav-util')">
+          <span class="nav-dot"></span>Utilidades
+          <svg viewBox="0 0 10 6" fill="none"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        </div>
+        <div class="mega" style="min-width:520px">
+          <div class="mega-grid" style="grid-template-columns:repeat(2,1fr)">
+            <div class="mega-col">
+              <div class="mega-col-title">Casa & Escritório</div>
+              <div class="mega-link" onclick="filterCat('utilidades');filtrarSub('escritorio');fecharNav()">
+                <div class="mega-link-ico">✏️</div>
+                <div class="mega-link-info"><div class="mega-link-name">Escritório</div><div class="mega-link-desc">Papelaria, canetas, clipes</div></div>
+              </div>
+              <div class="mega-link" onclick="filterCat('utilidades');filtrarSub('ganchos');fecharNav()">
+                <div class="mega-link-ico">🪝</div>
+                <div class="mega-link-info"><div class="mega-link-name">Ganchos & Fixadores</div><div class="mega-link-desc">3M, ventosa, parede</div></div>
+              </div>
+              <div class="mega-link" onclick="filterCat('utilidades');filtrarSub('pilhas-baterias');fecharNav()">
+                <div class="mega-link-ico">🔋</div>
+                <div class="mega-link-info"><div class="mega-link-name">Pilhas & Baterias</div><div class="mega-link-desc">AA, AAA, 9V, recarregáveis</div></div>
+              </div>
+            </div>
+            <div class="mega-col">
+              <div class="mega-col-title">Ferramentas</div>
+              <div class="mega-link" onclick="filterCat('utilidades');filtrarSub('ferramentas');fecharNav()">
+                <div class="mega-link-ico">🔨</div>
+                <div class="mega-link-info"><div class="mega-link-name">Ferramentas Manuais</div><div class="mega-link-desc">Chave, alicate, fita</div></div>
+              </div>
+              <div class="mega-link" onclick="filterCat('utilidades');filtrarSub('organiz-limpeza');fecharNav()">
+                <div class="mega-link-ico">📦</div>
+                <div class="mega-link-info"><div class="mega-link-name">Organização</div><div class="mega-link-desc">Caixas, gavetas, prateleiras</div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <a class="nav-link" href="https://wa.me/5511972999835" target="_blank" style="color:var(--grn);font-weight:500">
+        <span style="width:7px;height:7px;background:var(--grn);border-radius:50%;display:inline-block;margin-right:-2px;animation:blink 2s infinite"></span>
+        Contato
+      </a>
+    </nav>
+
+    <div class="hdr-r">
+      <button class="btn-ico" onclick="toggleTheme()" id="themeBtn" title="Tema">🌙</button>
+      <button class="btn-cart-hdr" onclick="abrirCart()">
+        🛒 <span>Carrinho</span>
+        <span class="cbadge" id="cbadge">0</span>
       </button>
-      <a href="https://wa.me/5511972999835" target="_blank" class="btn-sec">
-        <img src="https://img.icons8.com/color/48/whatsapp.png" alt=""> Falar com Vendedor
+      <a href="https://wa.me/5511972999835" target="_blank" class="btn-wpp">
+        <img src="https://img.icons8.com/color/48/whatsapp.png" alt=""><span>WhatsApp</span>
       </a>
     </div>
   </div>
-  <div class="scroll-hint"><span>Explorar</span><div class="scroll-line"></div></div>
+</header>
+
+<!-- ══════════ HERO ══════════ -->
+<section class="hero" id="inicio">
+  <canvas id="hero-canvas"></canvas>
+  <img class="hero-bg-img" src="https://willkerson.github.io/Web.embalagens/lojafundo.png" alt="Loja">
+  <div class="hero-gradient"></div>
+  <div class="hero-content">
+    <div class="hero-eyebrow"><span class="pulse"></span> Direto da Fábrica · São Paulo</div>
+    <h1>Soluções completas em<br><em>Embalagens.</em></h1>
+    <p class="hero-sub">Do papelão ao plástico, do isopor às sacolas — tudo para o seu negócio em um só lugar, com qualidade e preço de fábrica.</p>
+    <div class="hero-btns">
+      <button class="btn-pri" onclick="document.getElementById('produtos').scrollIntoView({behavior:'smooth'})">
+        <img src="https://img.icons8.com/fluency/48/layers.png" alt=""> Ver Catálogo
+      </button>
+      <a href="https://wa.me/5511972999835" target="_blank" class="btn-ghost">
+        <img src="https://img.icons8.com/color/48/whatsapp.png" alt=""> Falar no WhatsApp
+      </a>
+    </div>
+  </div>
+  <div class="hero-scroll">role<div class="scroll-track"></div></div>
 </section>
 
-<div class="trust">
-  <div class="trust-item"><div class="trust-n">800+</div><div class="trust-l">Produtos</div></div>
-  <div class="trust-item"><div class="trust-n">15</div><div class="trust-l">Anos de Mercado</div></div>
-  <div class="trust-item"><div class="trust-n">5k+</div><div class="trust-l">Clientes Ativos</div></div>
-  <div class="trust-item"><div class="trust-n">24h</div><div class="trust-l">Envio R�pido</div></div>
+<!-- ══════════ TRUST ══════════ -->
+<div class="trust-bar">
+  <div class="trust-item"><div class="trust-ico">📦</div><div class="trust-texts"><div class="trust-n">800+</div><div class="trust-l">Produtos em estoque</div></div></div>
+  <div class="trust-item"><div class="trust-ico">🏆</div><div class="trust-texts"><div class="trust-n">15</div><div class="trust-l">Anos de experiência</div></div></div>
+  <div class="trust-item"><div class="trust-ico">🤝</div><div class="trust-texts"><div class="trust-n">5.000+</div><div class="trust-l">Clientes atendidos</div></div></div>
+  <div class="trust-item"><div class="trust-ico">🗂️</div><div class="trust-texts"><div class="trust-n">8</div><div class="trust-l">Categorias</div></div></div>
 </div>
 
-<section class="sec-cat" id="produtos">
-  <div class="cat-top">
-    <h2>Cat�logo de Produtos</h2>
-    <p>Encontre exatamente o que voc� precisa utilizando a busca ou os filtros abaixo.</p>
+<!-- ══════════ REVIEWS ══════════ -->
+<section class="sec-reviews">
+  <div class="reviews-wrap">
+    <div class="reviews-head">
+      <div class="sec-label">⭐ Depoimentos</div>
+      <h2 class="sec-title">O que nossos clientes dizem</h2>
+    </div>
+    <div class="reviews-grid">
+      <div class="review-card">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-quote">"Muitooo bom, recomendo — o atendimento é 10! Pessoal dá uma atenção boa 👌 Comprei umas marmitas e top demais."</p>
+        <div class="review-author"><div class="review-av">SC</div><div class="review-name">Shirley Cristina</div></div>
+      </div>
+      <div class="review-card">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-quote">"Tem muita coisa boa e o preço ótimo. Os atendentes são muito simpáticos e sempre prontos para ajudar em tudo."</p>
+        <div class="review-author"><div class="review-av">FL</div><div class="review-name">Francis Luci</div></div>
+      </div>
+      <div class="review-card">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-quote">"A empresa tem tudo em descartáveis, o atendimento é ótimo, tem estacionamento e ponto de ônibus em frente. Facinho de chegar."</p>
+        <div class="review-author"><div class="review-av">AR</div><div class="review-name">Adelaide Rocha</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ CATALOG ══════════ -->
+<section class="sec-catalog" id="produtos">
+  <div class="cat-head">
+    <div class="sec-label">🗂 Catálogo</div>
+    <h2 class="sec-title">Todos os Produtos</h2>
+    <p class="sec-sub">Explore por categoria ou busque diretamente pelo nome</p>
   </div>
 
   <div class="search-wrap">
-    <span class="search-ico">\U0001f50d</span>
-    <input type="text" id="searchInput" class="search-inp" placeholder="Buscar por produtos, categorias ou marcas..." oninput="handleSearch(event)">
+    <span class="search-icon">🔍</span>
+    <input type="text" id="searchInput" class="search-inp" placeholder="Buscar produto, marca, tipo..." oninput="handleSearch(event)">
   </div>
 
-  <div class="fbar-wrap">
-    <div class="fbar" id="fbar">
-      <button class="fbtn on" data-cat="todos" onclick="setCat('todos',this)"><img src="https://img.icons8.com/fluency/48/layers.png" alt="">Todos</button>
-      <button class="fbtn" data-cat="caixas" onclick="setCat('caixas',this)"><img src="https://img.icons8.com/fluency/48/box.png" alt="">Caixas</button>
-      <button class="fbtn" data-cat="sacolas" onclick="setCat('sacolas',this)"><img src="https://img.icons8.com/fluency/48/shopping-bag.png" alt="">Sacolas</button>
-      <button class="fbtn" data-cat="plastico" onclick="setCat('plastico',this)"><img src="https://img.icons8.com/fluency/48/take-away-food.png" alt="">Pl�sticos</button>
-      <button class="fbtn" data-cat="festa" onclick="setCat('festa',this)"><img src="https://img.icons8.com/fluency/48/party-baloons.png" alt="">Festa</button>
-      <button class="fbtn" data-cat="limpeza" onclick="setCat('limpeza',this)"><img src="https://img.icons8.com/fluency/48/broom.png" alt="">Limpeza</button>
-      <button class="fbtn" data-cat="higiene" onclick="setCat('higiene',this)"><img src="https://img.icons8.com/fluency/48/toilet-paper.png" alt="">Higiene</button>
-      <button class="fbtn" data-cat="utilidades" onclick="setCat('utilidades',this)"><img src="https://img.icons8.com/fluency/48/toolbox.png" alt="">Utilidades</button>
-      <button class="fbtn" data-cat="diversos" onclick="setCat('diversos',this)"><img src="https://img.icons8.com/fluency/48/add.png" alt="">Outros</button>
-    </div>
+  <div class="filter-tabs" id="fbar">
+    <button class="ftab on" data-cat="todos" onclick="filterCat('todos',this)"><img src="https://img.icons8.com/fluency/48/layers.png" alt="">Todos</button>
+    <button class="ftab" data-cat="caixas" onclick="filterCat('caixas',this)"><img src="https://img.icons8.com/fluency/48/box.png" alt="">Caixas</button>
+    <button class="ftab" data-cat="sacolas" onclick="filterCat('sacolas',this)"><img src="https://img.icons8.com/fluency/48/trash.png" alt="">Sacolas & Lixo</button>
+    <button class="ftab" data-cat="plastico" onclick="filterCat('plastico',this)"><img src="https://img.icons8.com/fluency/48/test-tube.png" alt="">Plásticos</button>
+    <button class="ftab" data-cat="festa" onclick="filterCat('festa',this)"><img src="https://img.icons8.com/fluency/48/wine-glass.png" alt="">Festa</button>
+    <button class="ftab" data-cat="limpeza" onclick="filterCat('limpeza',this)"><img src="https://img.icons8.com/fluency/48/broom.png" alt="">Limpeza</button>
+    <button class="ftab" data-cat="higiene" onclick="filterCat('higiene',this)"><img src="https://img.icons8.com/fluency/48/toilet-paper.png" alt="">Higiene</button>
+    <button class="ftab" data-cat="utilidades" onclick="filterCat('utilidades',this)"><img src="https://img.icons8.com/fluency/48/toolbox.png" alt="">Utilidades</button>
+    <button class="ftab" data-cat="diversos" onclick="filterCat('diversos',this)"><img src="https://img.icons8.com/fluency/48/open-box.png" alt="">Diversos</button>
+  </div>
 
-    <div class="sbar" id="sub-caixas">
-      <button class="sbtn on" onclick="setSub('todas',this,'caixas')">Todas</button>
-      <button class="sbtn" onclick="setSub('caixas-correio',this,'caixas')">Padr�o Correios</button>
-      <button class="sbtn" onclick="setSub('caixas-alimentos',this,'caixas')">Para Alimentos</button>
+  <div class="subtabs-wrap">
+    <!-- caixas -->
+    <div class="subtabs" id="sub-caixas">
+      <button class="stab on" onclick="filtrarSub('todas',this,'caixas')">Todas</button>
+      <button class="stab" onclick="filtrarSub('caixas-correio',this,'caixas')">Padrão Correios</button>
+      <button class="stab" onclick="filtrarSub('caixas-alimentos',this,'caixas')">Para Alimentos</button>
     </div>
-    <div class="sbar" id="sub-sacolas">
-      <button class="sbtn on" onclick="setSub('todas',this,'sacolas')">Todas</button>
-      <button class="sbtn" onclick="setSub('sacos-lixo',this,'sacolas')">Sacos de Lixo</button>
-      <button class="sbtn" onclick="setSub('sacolas-papel',this,'sacolas')">Sacolas de Papel</button>
-      <button class="sbtn" onclick="setSub('sacolas-plasticas',this,'sacolas')">Sacolas Pl�sticas</button>
+    <!-- sacolas -->
+    <div class="subtabs" id="sub-sacolas">
+      <button class="stab on" onclick="filtrarSub('todas',this,'sacolas')">Todas</button>
+      <button class="stab" onclick="filtrarSub('sacos-lixo',this,'sacolas')">Sacos de Lixo</button>
+      <button class="stab" onclick="filtrarSub('sacolas-papel',this,'sacolas')">Papel</button>
+      <button class="stab" onclick="filtrarSub('sacolas-plasticas',this,'sacolas')">Plásticas</button>
     </div>
-    <div class="sbar" id="sub-plastico">
-      <button class="sbtn on" onclick="setSub('todas',this,'plastico')">Todos</button>
-      <button class="sbtn" onclick="setSub('potes-tampas',this,'plastico')">Potes e Tampas</button>
-      <button class="sbtn" onclick="setSub('embalagens-bolo',this,'plastico')">Embalagens p/ Bolo</button>
+    <!-- plastico -->
+    <div class="subtabs" id="sub-plastico">
+      <button class="stab on" onclick="filtrarSub('todas',this,'plastico')">Todos</button>
+      <button class="stab" onclick="filtrarSub('potes-tampas',this,'plastico')">Potes e Tampas</button>
+      <button class="stab" onclick="filtrarSub('embalagens-bolo',this,'plastico')">Emb. p/ Bolo</button>
     </div>
-    <div class="sbar" id="sub-festa">
-      <button class="sbtn on" onclick="setSub('todas',this,'festa')">Tudo</button>
-      <button class="sbtn" onclick="setSub('copos-pratos',this,'festa')">Copos e Pratos</button>
-      <button class="sbtn" onclick="setSub('talheres',this,'festa')">Talheres</button>
+    <!-- festa -->
+    <div class="subtabs" id="sub-festa">
+      <button class="stab on" onclick="filtrarSub('todas',this,'festa')">Tudo</button>
+      <button class="stab" onclick="filtrarSub('copos-pratos',this,'festa')">Copos e Pratos</button>
+      <button class="stab" onclick="filtrarSub('talheres',this,'festa')">Talheres</button>
     </div>
-    <div class="sbar" id="sub-limpeza">
-      <button class="sbtn on" onclick="setSub('todas',this,'limpeza')">Tudo</button>
-      <button class="sbtn" onclick="setSub('produtos-limpeza',this,'limpeza')">Produtos Qu�micos</button>
-      <button class="sbtn" onclick="setSub('utensilios-limpeza',this,'limpeza')">Utens�lios</button>
-      <button class="sbtn" onclick="setSub('epi',this,'limpeza')">EPI & Prote��o</button>
+    <!-- limpeza -->
+    <div class="subtabs" id="sub-limpeza">
+      <button class="stab on" onclick="filtrarSub('todas',this,'limpeza')">Tudo</button>
+      <button class="stab" onclick="filtrarSub('produtos-limpeza',this,'limpeza')">Produtos Químicos</button>
+      <button class="stab" onclick="filtrarSub('utensilios-limpeza',this,'limpeza')">Utensílios</button>
+      <button class="stab" onclick="filtrarSub('epi',this,'limpeza')">EPI & Proteção</button>
     </div>
-    <div class="sbar" id="sub-higiene">
-      <button class="sbtn on" onclick="setSub('todas',this,'higiene')">Tudo</button>
-      <button class="sbtn" onclick="setSub('papel-higiene',this,'higiene')">Papel & Sabonetes</button>
+    <!-- higiene -->
+    <div class="subtabs" id="sub-higiene">
+      <button class="stab on" onclick="filtrarSub('todas',this,'higiene')">Tudo</button>
+      <button class="stab" onclick="filtrarSub('papel-higiene',this,'higiene')">Papel & Sabonetes</button>
     </div>
-    <div class="sbar" id="sub-utilidades">
-      <button class="sbtn on" onclick="setSub('todas',this,'utilidades')">Tudo</button>
-      <button class="sbtn" onclick="setSub('pilhas-baterias',this,'utilidades')">Pilhas & Baterias</button>
-      <button class="sbtn" onclick="setSub('aromas-inseticidas',this,'utilidades')">Aromas & Inset.</button>
-      <button class="sbtn" onclick="setSub('organiz-limpeza',this,'utilidades')">Organiza��o</button>
-      <button class="sbtn" onclick="setSub('ferramentas',this,'utilidades')">Ferramentas</button>
-      <button class="sbtn" onclick="setSub('escritorio',this,'utilidades')">Escrit�rio</button>
-      <button class="sbtn" onclick="setSub('ganchos',this,'utilidades')">Ganchos</button>
+    <!-- utilidades -->
+    <div class="subtabs" id="sub-utilidades">
+      <button class="stab on" onclick="filtrarSub('todas',this,'utilidades')">Tudo</button>
+      <button class="stab" onclick="filtrarSub('pilhas-baterias',this,'utilidades')">Pilhas & Baterias</button>
+      <button class="stab" onclick="filtrarSub('aromas-inseticidas',this,'utilidades')">Aromas & Inset.</button>
+      <button class="stab" onclick="filtrarSub('organiz-limpeza',this,'utilidades')">Organização</button>
+      <button class="stab" onclick="filtrarSub('ferramentas',this,'utilidades')">Ferramentas</button>
+      <button class="stab" onclick="filtrarSub('escritorio',this,'utilidades')">Escritório</button>
+      <button class="stab" onclick="filtrarSub('ganchos',this,'utilidades')">Ganchos</button>
     </div>
-    <div class="sbar" id="sub-diversos">
-      <button class="sbtn on" onclick="setSub('todas',this,'diversos')">Tudo</button>
-      <button class="sbtn" onclick="setSub('isopor-geral',this,'diversos')">Isopor Geral</button>
-      <button class="sbtn" onclick="setSub('emb-flexiveis',this,'diversos')">Emb. Flex�veis</button>
-      <button class="sbtn" onclick="setSub('emb-diversas',this,'diversos')">Emb. Diversas</button>
-      <button class="sbtn" onclick="setSub('outros',this,'diversos')">Outros</button>
+    <!-- diversos -->
+    <div class="subtabs" id="sub-diversos">
+      <button class="stab on" onclick="filtrarSub('todas',this,'diversos')">Tudo</button>
+      <button class="stab" onclick="filtrarSub('isopor-geral',this,'diversos')">Isopor Geral</button>
+      <button class="stab" onclick="filtrarSub('emb-flexiveis',this,'diversos')">Emb. Flexíveis</button>
+      <button class="stab" onclick="filtrarSub('emb-diversas',this,'diversos')">Emb. Diversas</button>
+      <button class="stab" onclick="filtrarSub('outros',this,'diversos')">Outros</button>
     </div>
   </div>
 
   <div id="containerProdutos"></div>
 </section>
 
+<!-- ══════════ CART ══════════ -->
 <div class="backdrop" id="backdrop" onclick="fecharCart()"></div>
 <aside class="cart-panel" id="cartPanel">
-  <div class="chead">
-    <h3>\U0001f6cd\ufe0f Resumo do Pedido</h3>
-    <button class="bclose" onclick="fecharCart()">\u2715</button>
+  <div class="cart-head">
+    <h3>🛍️ Meu Pedido</h3>
+    <button class="btn-close" onclick="fecharCart()">✕</button>
   </div>
-  <div class="clist" id="clist"></div>
-  <div class="cfoot">
-    <div class="ctotal-row">
-      <span class="ctotal-lbl">Total estimado</span>
-      <span class="ctotal-val" id="ctotal">R$ 0,00</span>
+  <div class="cart-list" id="clist"></div>
+  <div class="cart-foot">
+    <div class="cart-total-row">
+      <span class="cart-total-lbl">Total estimado</span>
+      <span class="cart-total-val" id="ctotal">R$ 0,00</span>
     </div>
-    <button class="bwpp-send" onclick="enviarWpp()">
-      <img src="https://img.icons8.com/color/48/whatsapp.png" alt=""> Enviar via WhatsApp
+    <button class="btn-send-wpp" onclick="enviarWpp()">
+      <img src="https://img.icons8.com/color/48/whatsapp.png" alt=""> Enviar Pedido pelo WhatsApp
     </button>
-    <button class="bclr" onclick="limparCart()">\U0001f5d1 Limpar carrinho</button>
+    <button class="btn-clear" onclick="limparCart()">🗑 Limpar carrinho</button>
   </div>
 </aside>
 
-<div class="wfloat">
-  <div class="wtooltip">D�vidas? Fale conosco!</div>
-  <a href="https://wa.me/5511972999835?text=Ol%C3%A1%2C+gostaria+de+atendimento" target="_blank" class="wbtn">
-    <div class="wpulse"></div>
+<!-- ══════════ WPP FLOAT ══════════ -->
+<div class="wpp-float">
+  <div class="wpp-tip">Fale conosco!</div>
+  <a href="https://wa.me/5511972999835?text=Ol%C3%A1%2C+gostaria+de+atendimento" target="_blank" class="wpp-btn">
+    <div class="wpp-ring"></div>
+    <div class="wpp-ring wpp-ring2"></div>
     <img src="https://img.icons8.com/color/48/whatsapp.png" alt="WhatsApp">
   </a>
 </div>
 
 <footer>
-  <p>� 2026 <strong>Cia Das Embalagens</strong>. Desenvolvido para alta performance.</p>
+  <p>© 2026 <strong>Cia Das Embalagens</strong> — Todos os direitos reservados · São Paulo, SP</p>
 </footer>
 
 <script src="produtos_planilha.js"></script>
 <script>
-/* \u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550
-   HERO CANVAS \u2014 PART�CULAS INTERATIVAS
-\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550 */
-(function() {
-  var canvas = document.getElementById('hero-canvas');
-  var ctx = canvas.getContext('2d');
-  var W, H, particles = [], mouseX = -1000, mouseY = -1000;
-  
-  function resize() {
-    W = canvas.width = canvas.offsetWidth;
-    H = canvas.height = canvas.offsetHeight;
-  }
+/* ═══════════ HERO CANVAS ═══════════ */
+(function(){
+  var canvas=document.getElementById('hero-canvas');
+  var ctx=canvas.getContext('2d');
+  var W,H,pts=[],mx=-9999,my=-9999;
+  function resize(){W=canvas.width=canvas.offsetWidth;H=canvas.height=canvas.offsetHeight}
   resize();
-  window.addEventListener('resize', resize);
-
-  var hero = document.getElementById('inicio');
-  hero.addEventListener('mousemove', function(e) {
-    var r = hero.getBoundingClientRect();
-    mouseX = e.clientX - r.left;
-    mouseY = e.clientY - r.top;
-  });
-  hero.addEventListener('mouseleave', function() { mouseX = -1000; mouseY = -1000; });
-
-  for (var i = 0; i < 70; i++) {
-    particles.push({
-      x: Math.random() * 2000,
-      y: Math.random() * 1000,
-      vx: (Math.random() - .5) * .4,
-      vy: (Math.random() - .5) * .4,
-      r: Math.random() * 2.5 + 0.5,
-      hue: Math.random() * 40 + 210, // Tons de azul
-      alpha: Math.random() * .4 + .1
+  window.addEventListener('resize',resize);
+  var hero=document.getElementById('inicio');
+  hero.addEventListener('mousemove',function(e){var r=hero.getBoundingClientRect();mx=e.clientX-r.left;my=e.clientY-r.top});
+  hero.addEventListener('mouseleave',function(){mx=-9999;my=-9999});
+  for(var i=0;i<70;i++) pts.push({x:Math.random()*1200,y:Math.random()*900,vx:(Math.random()-.5)*.28,vy:(Math.random()-.5)*.28,r:Math.random()*1.8+.4,h:Math.random()*80+190,a:Math.random()*.4+.08});
+  function draw(){
+    ctx.clearRect(0,0,W,H);
+    pts.forEach(function(p){
+      p.h+=.2;p.x+=p.vx;p.y+=p.vy;
+      if(p.x<0)p.x=W;if(p.x>W)p.x=0;if(p.y<0)p.y=H;if(p.y>H)p.y=0;
+      var dx=mx-p.x,dy=my-p.y,d=Math.sqrt(dx*dx+dy*dy);
+      if(d<180){var f=(180-d)/180;p.x-=dx*f*.016;p.y-=dy*f*.016}
+      ctx.beginPath();ctx.arc(p.x,p.y,p.r,0,Math.PI*2);
+      ctx.fillStyle='hsla('+p.h+',75%,68%,'+p.a+')';ctx.fill();
     });
-  }
-
-  function draw() {
-    ctx.clearRect(0, 0, W, H);
-    
-    particles.forEach(function(p) {
-      p.x += p.vx;
-      p.y += p.vy;
-      if (p.x < 0) p.x = W; if (p.x > W) p.x = 0;
-      if (p.y < 0) p.y = H; if (p.y > H) p.y = 0;
-
-      var dx = mouseX - p.x, dy = mouseY - p.y;
-      var dist = Math.sqrt(dx * dx + dy * dy);
-      if (dist < 200) {
-        var force = (200 - dist) / 200;
-        p.x -= dx * force * 0.02;
-        p.y -= dy * force * 0.02;
-      }
-
-      ctx.beginPath();
-      ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
-      ctx.fillStyle = 'hsla(' + p.hue + ', 90%, 65%, ' + p.alpha + ')';
-      ctx.fill();
-    });
-
-    for (var i = 0; i < particles.length; i++) {
-      for (var j = i + 1; j < particles.length; j++) {
-        var a = particles[i], b = particles[j];
-        var d = Math.sqrt((a.x-b.x)**2 + (a.y-b.y)**2);
-        if (d < 100) {
-          ctx.beginPath();
-          ctx.moveTo(a.x, a.y);
-          ctx.lineTo(b.x, b.y);
-          var alpha = (1 - d/100) * .15;
-          ctx.strokeStyle = 'rgba(59, 130, 246,' + alpha + ')';
-          ctx.lineWidth = 1;
-          ctx.stroke();
-        }
-      }
+    for(var i=0;i<pts.length;i++) for(var j=i+1;j<pts.length;j++){
+      var a=pts[i],b=pts[j],d=Math.sqrt((a.x-b.x)**2+(a.y-b.y)**2);
+      if(d<100){ctx.beginPath();ctx.moveTo(a.x,a.y);ctx.lineTo(b.x,b.y);ctx.strokeStyle='rgba(120,170,255,'+(1-d/100)*.09+')';ctx.lineWidth=.7;ctx.stroke()}
     }
     requestAnimationFrame(draw);
   }
   draw();
 })();
 
-/* \u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550
-   SCROLL HEADER & TEMA
-\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550 */
-window.addEventListener('scroll', function() {
-  document.getElementById('hdr').classList.toggle('sc', window.scrollY > 20);
-}, { passive: true });
+/* ═══════════ SCROLL HEADER ═══════════ */
+window.addEventListener('scroll',function(){document.getElementById('hdr').classList.toggle('sc',scrollY>50)},{passive:true});
 
-function toggleTheme() {
-  var html = document.documentElement;
-  var btn = document.getElementById('themeBtn');
-  var isDark = html.getAttribute('data-theme') === 'dark';
-  if (isDark) {
-    html.setAttribute('data-theme', 'light');
-    btn.innerHTML = '\U0001f319'; 
-  } else {
-    html.setAttribute('data-theme', 'dark');
-    btn.innerHTML = '\u2600\ufe0f'; 
+/* ═══════════ MEGA NAV ═══════════ */
+function toggleNav(id){
+  var items=document.querySelectorAll('.nav-item');
+  items.forEach(function(el){if(el.id!==id)el.classList.remove('open')});
+  document.getElementById(id).classList.toggle('open');
+}
+function fecharNav(){document.querySelectorAll('.nav-item').forEach(function(el){el.classList.remove('open')})}
+document.addEventListener('click',function(e){if(!e.target.closest('.nav-item'))fecharNav()});
+
+/* ═══════════ THEME ═══════════ */
+function toggleTheme(){
+  var html=document.documentElement,btn=document.getElementById('themeBtn'),dark=html.getAttribute('data-theme')==='dark';
+  html.setAttribute('data-theme',dark?'light':'dark');
+  btn.textContent=dark?'🌙':'☀️';
+}
+
+/* ═══════════ STATE ═══════════ */
+var carrinho={};
+var estado={cat:'todos',sub:'todas',busca:''};
+var catMap={
+  caixas:['caixas','caixas-correio','caixas-alimentos'],
+  sacolas:['sacolas','sacos-lixo','sacolas-papel','sacolas-plasticas'],
+  plastico:['plastico','potes-tampas','embalagens-bolo'],
+  festa:['festa','copos-pratos','talheres'],
+  limpeza:['limpeza','produtos-limpeza','utensilios-limpeza','epi','sacos-lixo'],
+  higiene:['higiene','papel-higiene'],
+  utilidades:['utilidades','pilhas-baterias','aromas-inseticidas','organiz-limpeza','ferramentas','escritorio','ganchos'],
+  diversos:['diversos','isopor-geral','emb-flexiveis','emb-diversas','outros']
+};
+var subLabels={'caixas-correio':'Caixas Correios','caixas-alimentos':'Caixas p/ Alimentos','sacos-lixo':'Sacos de Lixo','sacolas-papel':'Sacolas de Papel','sacolas-plasticas':'Sacolas Plásticas','potes-tampas':'Potes e Tampas','embalagens-bolo':'Embalagens p/ Bolo','copos-pratos':'Copos e Pratos','talheres':'Talheres','produtos-limpeza':'Produtos Químicos','utensilios-limpeza':'Utensílios','epi':'EPI & Proteção','papel-higiene':'Papel & Sabonetes','pilhas-baterias':'Pilhas & Baterias','aromas-inseticidas':'Aromas & Inseticidas','organiz-limpeza':'Organização','ferramentas':'Ferramentas','escritorio':'Escritório','ganchos':'Ganchos','isopor-geral':'Isopor Geral','emb-flexiveis':'Emb. Flexíveis','emb-diversas':'Emb. Diversas','outros':'Outros'};
+var catEmojis={caixas:'📦',sacolas:'🛍️',plastico:'🧪',festa:'🥂',limpeza:'🧹',higiene:'🧻',utilidades:'🔧',diversos:'🔓','caixas-correio':'📬','caixas-alimentos':'🍕','sacos-lixo':'🗑️','sacolas-papel':'🧻','sacolas-plasticas':'🛒','potes-tampas':'🫙','embalagens-bolo':'🎂','copos-pratos':'🥤','talheres':'🍴','produtos-limpeza':'🧴','utensilios-limpeza':'🧽','epi':'🧤','papel-higiene':'🧻','pilhas-baterias':'🔋','aromas-inseticidas':'🌿','organiz-limpeza':'🪣','ferramentas':'🔨','escritorio':'✏️','ganchos':'🪝','isopor-geral':'❄️','emb-flexiveis':'📜','emb-diversas':'🎁','outros':'📎'};
+function prods(){return window.listaProdutosPlanilha||[]}
+
+/* FILTER NAV SHORTCUT */
+function filterCat(cat,btn){
+  estado.cat=cat; estado.sub='todas';
+  document.querySelectorAll('.ftab').forEach(function(b){b.classList.remove('on')});
+  if(btn) btn.classList.add('on');
+  else {
+    var fb=document.querySelector('.ftab[data-cat="'+cat+'"]');
+    if(fb) fb.classList.add('on');
   }
-}
-
-/* \u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550
-   STATE, MAPAS E EMOJIS
-\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550 */
-var carrinho = {};
-var estado = { cat: 'todos', sub: 'todas', busca: '' };
-
-var catMap = {
-  caixas:     ['caixas','caixas-correio','caixas-alimentos'],
-  sacolas:    ['sacolas','sacos-lixo','sacolas-papel','sacolas-plasticas'],
-  plastico:   ['plastico','potes-tampas','embalagens-bolo'],
-  festa:      ['festa','copos-pratos','talheres'],
-  limpeza:    ['limpeza','produtos-limpeza','utensilios-limpeza','epi','sacos-lixo'],
-  higiene:    ['higiene','papel-higiene'],
-  utilidades: ['utilidades','pilhas-baterias','aromas-inseticidas','organiz-limpeza','ferramentas','escritorio','ganchos'],
-  diversos:   ['diversos','isopor-geral','emb-flexiveis','emb-diversas','outros']
-};
-
-var subLabels = {
-  'caixas-correio':'Caixas Correios','caixas-alimentos':'Caixas p/ Alimentos',
-  'sacos-lixo':'Sacos de Lixo','sacolas-papel':'Sacolas de Papel','sacolas-plasticas':'Sacolas Pl�sticas',
-  'potes-tampas':'Potes e Tampas','embalagens-bolo':'Embalagens p/ Bolo',
-  'copos-pratos':'Copos e Pratos','talheres':'Talheres',
-  'produtos-limpeza':'Produtos Qu�micos','utensilios-limpeza':'Utens�lios','epi':'EPI & Prote��o',
-  'papel-higiene':'Papel & Sabonetes',
-  'pilhas-baterias':'Pilhas & Baterias','aromas-inseticidas':'Aromas & Inseticidas',
-  'organiz-limpeza':'Organiza��o','ferramentas':'Ferramentas','escritorio':'Escrit�rio','ganchos':'Ganchos',
-  'isopor-geral':'Isopor Geral','emb-flexiveis':'Emb. Flex�veis','emb-diversas':'Emb. Diversas','outros':'Outros'
-};
-
-var catEmojis = {
-  caixas:'\U0001f4e6',sacolas:'\U0001f6cd\ufe0f',plastico:'\U0001f961',festa:'\U0001f388',limpeza:'\u2728',
-  higiene:'\U0001fae7',utilidades:'\U0001f6e0\ufe0f',diversos:'\U0001f4cc',
-  'caixas-correio':'\U0001f4e6','caixas-alimentos':'\U0001f355','sacos-lixo':'\U0001f5d1\ufe0f',
-  'sacolas-papel':'\U0001f6cd\ufe0f','sacolas-plasticas':'\U0001f6d2','potes-tampas':'\U0001f963',
-  'embalagens-bolo':'\U0001f382','copos-pratos':'\U0001f964','talheres':'\U0001f374',
-  'produtos-limpeza':'\U0001f9f4','utensilios-limpeza':'\U0001f9fd','epi':'\U0001f9e4',
-  'papel-higiene':'\U0001f9fb','pilhas-baterias':'\U0001f50b','aromas-inseticidas':'\U0001f33f',
-  'organiz-limpeza':'\U0001f5c4\ufe0f','ferramentas':'\U0001f528','escritorio':'\U0001f4ce','ganchos':'\U0001fa9d',
-  'isopor-geral':'\U0001f9ca','emb-flexiveis':'\U0001f4dc','emb-diversas':'\U0001f381','outros':'\U0001f9e9'
-};
-
-function prods() { return window.listaProdutosPlanilha || []; }
-
-/* \u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550
-   FILTROS & BUSCA
-\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550 */
-function handleSearch(e) {
-  estado.busca = e.target.value.toLowerCase();
-  renderizar();
-}
-
-function setCat(cat, btn) {
-  estado.cat = cat; estado.sub = 'todas';
-  document.querySelectorAll('.fbtn').forEach(function(b) { b.classList.remove('on'); });
-  btn.classList.add('on');
-  document.querySelectorAll('.sbar').forEach(function(b) { b.classList.remove('on'); });
-  if (cat !== 'todos') {
-    var sub = document.getElementById('sub-' + cat);
-    if (sub) {
+  document.querySelectorAll('.subtabs').forEach(function(b){b.classList.remove('on')});
+  if(cat!=='todos'){
+    var sub=document.getElementById('sub-'+cat);
+    if(sub){
       sub.classList.add('on');
-      sub.querySelectorAll('.sbtn').forEach(function(b) { b.classList.remove('on'); });
-      sub.querySelector('.sbtn').classList.add('on');
+      sub.querySelectorAll('.stab').forEach(function(b){b.classList.remove('on')});
+      sub.querySelector('.stab').classList.add('on');
     }
   }
+  document.getElementById('produtos').scrollIntoView({behavior:'smooth'});
   renderizar();
 }
 
-function setSub(sub, btn, cat) {
-  estado.sub = sub;
-  document.getElementById('sub-' + cat).querySelectorAll('.sbtn').forEach(function(b) { b.classList.remove('on'); });
-  btn.classList.add('on');
+function filtrarSub(sub,btn,cat){
+  if(cat) estado.cat=cat;
+  estado.sub=sub;
+  if(cat){
+    document.querySelectorAll('.ftab').forEach(function(b){b.classList.remove('on')});
+    var fb=document.querySelector('.ftab[data-cat="'+cat+'"]');
+    if(fb) fb.classList.add('on');
+    document.querySelectorAll('.subtabs').forEach(function(b){b.classList.remove('on')});
+    var subEl=document.getElementById('sub-'+cat);
+    if(subEl) subEl.classList.add('on');
+  }
+  if(btn){
+    var parentSub=btn.closest('.subtabs');
+    if(parentSub) parentSub.querySelectorAll('.stab').forEach(function(b){b.classList.remove('on')});
+    btn.classList.add('on');
+  }
   renderizar();
 }
 
-/* \u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550
-   RENDER
-\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550 */
-function renderizar() {
-  var c = document.getElementById('containerProdutos');
-  if (!c) return;
-  c.innerHTML = '';
+/* legacy compat */
+function setCat(cat,btn){filterCat(cat,btn)}
+function setSub(sub,btn,cat){filtrarSub(sub,btn,cat)}
 
-  var lista = prods();
-  
-  // 1. Filtro Categoria/Subcategoria
-  if (estado.cat !== 'todos') {
-    var allowed = catMap[estado.cat] || [estado.cat];
-    lista = lista.filter(function(p) {
-      var matchCat = allowed.indexOf(p.categoria) >= 0 || allowed.indexOf(p.subcategoria) >= 0;
-      if (!matchCat) return false;
-      if (estado.sub === 'todas') return true;
-      return p.subcategoria === estado.sub;
+function handleSearch(e){estado.busca=e.target.value.toLowerCase();renderizar()}
+
+/* ═══════════ RENDER ═══════════ */
+function renderizar(){
+  var c=document.getElementById('containerProdutos');
+  if(!c) return;
+  c.innerHTML='';
+  var lista=prods();
+  if(estado.cat!=='todos'){
+    var allowed=catMap[estado.cat]||[estado.cat];
+    lista=lista.filter(function(p){
+      var mc=allowed.indexOf(p.categoria)>=0||allowed.indexOf(p.subcategoria)>=0;
+      if(!mc) return false;
+      if(estado.sub==='todas') return true;
+      return p.subcategoria===estado.sub;
     });
   }
-
-  // 2. Filtro Busca (Nome e Marca)
-  if (estado.busca) {
-    lista = lista.filter(function(p) {
-      var n = p.nome ? p.nome.toLowerCase() : '';
-      var m = p.marca ? p.marca.toLowerCase() : '';
-      return n.includes(estado.busca) || m.includes(estado.busca);
-    });
-  }
-
-  if (lista.length === 0) {
-    c.innerHTML = '<div class="no-results">\U0001f615<br><br>Nenhum produto encontrado para sua busca.<br>Tente buscar por outro termo ou limpar os filtros.</div>';
+  if(estado.busca) lista=lista.filter(function(p){
+    return (p.nome||'').toLowerCase().includes(estado.busca)||(p.marca||'').toLowerCase().includes(estado.busca);
+  });
+  if(!lista.length){
+    c.innerHTML='<div class="no-results"><span>🔍</span>Nenhum produto encontrado.<br>Tente outro termo ou limpe os filtros.</div>';
     return;
   }
-
-  var grupos = {};
-  lista.forEach(function(p) {
-    var k = p.subcategoria || p.categoria;
-    if (!grupos[k]) grupos[k] = { label: subLabels[k] || k.replace(/-/g,' '), itens: [] };
-    grupos[k].itens.push(p);
-  });
-
-  Object.keys(grupos).forEach(function(k) {
-    var g = grupos[k];
-    var sec = document.createElement('div');
-    sec.className = 'psec';
-    var emoji = catEmojis[k] || '\U0001f4e6';
-    sec.innerHTML = '<h3 class="psec-title"><span class="psec-icon">' + emoji + '</span>' + g.label + '</h3>';
-
-    var grid = document.createElement('div');
-    grid.className = 'pgrid';
-
-    g.itens.forEach(function(p, i) {
-      var inCart = !!carrinho[p.id];
-      var preco = parseFloat(p.preco);
-      var precoStr = preco > 0 ? 'R$ ' + preco.toFixed(2).replace('.', ',') : 'Sob consulta';
-      
-      // Cria a badge de marca se a marca existir e n�o for "OUTRAS"
-      var marcaBadge = (p.marca && p.marca !== 'OUTRAS') ? '<span class="pmarca">' + p.marca + '</span>' : '';
-
-      var card = document.createElement('div');
-      card.className = 'pcard' + (inCart ? ' incart' : '');
-      card.id = 'card-' + p.id;
-      card.innerHTML =
-        '<div class="pimg">' +
-          marcaBadge +
-          '<span class="cbadge-card">\u2713 Add</span>' +
-          '<span class="pimg-icon">' + (catEmojis[p.subcategoria] || catEmojis[p.categoria] || '\U0001f4e6') + '</span>' +
-        '</div>' +
-        '<div class="pbody">' +
-          '<div class="pname" title="'+ p.nome +'">' + p.nome + '</div>' +
-          '<div class="pprice-wrap">' +
-            '<span class="pprice">' + precoStr + '</span>' +
-            (p.unidade ? '<span class="punit">' + p.unidade + '</span>' : '') +
-          '</div>' +
-          '<div class="pspacer"></div>' +
-          '<div class="pactions">' +
-            '<div class="qty-wrap">' +
-              '<button class="bqty" onclick="mudaQtd(' + p.id + ',-1)">\u2212</button>' +
-              '<input class="iqty" type="number" id="qtd-' + p.id + '" value="1" min="1">' +
-              '<button class="bqty" onclick="mudaQtd(' + p.id + ',1)">+</button>' +
-            '</div>' +
-            '<button class="badd' + (inCart ? ' done' : '') + '" id="badd-' + p.id + '" onclick="addCart(' + p.id + ')">' +
-              (inCart ? '\u2713' : 'Adicionar') +
-            '</button>' +
-          '</div>' +
-        '</div>';
-
+  var grupos={};
+  lista.forEach(function(p){var k=p.subcategoria||p.categoria;if(!grupos[k])grupos[k]={label:subLabels[k]||k.replace(/-/g,' '),itens:[]};grupos[k].itens.push(p)});
+  Object.keys(grupos).forEach(function(k){
+    var g=grupos[k];
+    var sec=document.createElement('div');sec.className='psec';
+    var emoji=catEmojis[k]||'📦';
+    sec.innerHTML='<div class="psec-hdr"><div class="psec-icon">'+emoji+'</div><div class="psec-title">'+g.label+'</div><div class="psec-count">'+g.itens.length+' item'+(g.itens.length!==1?'s':'')+'</div></div>';
+    var grid=document.createElement('div');grid.className='pgrid';
+    g.itens.forEach(function(p,i){
+      var inCart=!!carrinho[p.id];
+      var preco=parseFloat(p.preco);
+      var precoStr=preco>0?'R$ '+preco.toFixed(2).replace('.',','):'Sob consulta';
+      var card=document.createElement('div');
+      card.className='pcard'+(inCart?' incart':'');card.id='card-'+p.id;
+      card.innerHTML='<div class="pimg"><span class="incart-badge">✓ No carrinho</span><span class="pimg-emoji">📦</span></div><div class="pbody"><div class="pname">'+p.nome+'</div><div class="pprice-box"><span class="pprice">'+precoStr+'</span>'+(p.unidade?'<span class="punit">'+p.unidade+'</span>':'')+'</div><div class="pspacer"></div><div class="pactions"><div class="qty-ctrl"><button class="bq" onclick="mudaQtd('+p.id+',-1)">−</button><input class="iq" type="number" id="qtd-'+p.id+'" value="1" min="1"><button class="bq" onclick="mudaQtd('+p.id+',1)">+</button></div><button class="badd'+(inCart?' done':'')+'" id="badd-'+p.id+'" onclick="addCart('+p.id+')">'+(inCart?'✓ Adicionado':'+ Adicionar')+'</button></div></div>';
       grid.appendChild(card);
-      // Cascata de fade in suave
-      setTimeout(function() { card.classList.add('in'); }, (i % 15) * 30);
+      setTimeout(function(){card.classList.add('in')},i*18);
     });
-
-    sec.appendChild(grid);
-    c.appendChild(sec);
+    sec.appendChild(grid);c.appendChild(sec);
   });
 }
 
-/* \u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550
-   CARRINHO E L�GICA DE QTD
-\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550 */
-function mudaQtd(id, delta) {
-  var inp = document.getElementById('qtd-' + id);
-  if (!inp) return;
-  inp.value = Math.max(1, (parseInt(inp.value) || 1) + delta);
-  if (carrinho[id]) carrinho[id].qtd = parseInt(inp.value);
-}
+/* ═══════════ QTD ═══════════ */
+function mudaQtd(id,d){var i=document.getElementById('qtd-'+id);if(i){i.value=Math.max(1,(parseInt(i.value)||1)+d);if(carrinho[id])carrinho[id].qtd=parseInt(i.value)}}
 
-function addCart(id) {
-  var prod = prods().find(function(p) { return p.id === id; });
-  if (!prod) return;
-  var qtd = parseInt(document.getElementById('qtd-' + id).value) || 1;
-  carrinho[id] = { prod: prod, qtd: qtd };
-  
-  var card = document.getElementById('card-' + id);
-  var btn = document.getElementById('badd-' + id);
-  if (card) card.classList.add('incart');
-  if (btn) { btn.textContent = '\u2713'; btn.classList.add('done'); }
-  
+/* ═══════════ CART ═══════════ */
+function addCart(id){
+  var prod=prods().find(function(p){return p.id===id});if(!prod)return;
+  var qtd=parseInt(document.getElementById('qtd-'+id).value)||1;
+  carrinho[id]={prod:prod,qtd:qtd};
+  var card=document.getElementById('card-'+id);var btn=document.getElementById('badd-'+id);
+  if(card)card.classList.add('incart');
+  if(btn){btn.textContent='✓ Adicionado';btn.classList.add('done')}
   updateBadge();
 }
-
-function removerItem(id) {
+function removerItem(id){
   delete carrinho[id];
-  var card = document.getElementById('card-' + id);
-  if (card) card.classList.remove('incart');
-  var btn = document.getElementById('badd-' + id);
-  if (btn) { btn.textContent = 'Adicionar'; btn.classList.remove('done'); }
-  updateBadge();
-  renderCartList();
+  var card=document.getElementById('card-'+id);var btn=document.getElementById('badd-'+id);
+  if(card)card.classList.remove('incart');
+  if(btn){btn.textContent='+ Adicionar';btn.classList.remove('done')}
+  updateBadge();renderCartList();
 }
-
-function limparCart() {
-  if (!Object.keys(carrinho).length) return;
-  if (!confirm('Deseja realmente limpar seu carrinho?')) return;
-  
-  Object.keys(carrinho).forEach(function(id) {
-    var card = document.getElementById('card-' + id);
-    if (card) card.classList.remove('incart');
-    var btn = document.getElementById('badd-' + id);
-    if (btn) { btn.textContent = 'Adicionar'; btn.classList.remove('done'); }
+function limparCart(){
+  if(!Object.keys(carrinho).length)return;
+  if(!confirm('Limpar o carrinho?'))return;
+  Object.keys(carrinho).forEach(function(id){
+    var card=document.getElementById('card-'+id);var btn=document.getElementById('badd-'+id);
+    if(card)card.classList.remove('incart');if(btn){btn.textContent='+ Adicionar';btn.classList.remove('done')}
   });
-  
-  carrinho = {};
-  updateBadge();
-  renderCartList();
+  carrinho={};updateBadge();renderCartList();
 }
-
-function updateBadge() {
-  var n = Object.keys(carrinho).length;
-  var b = document.getElementById('cbadge');
-  b.textContent = n;
-  b.classList.toggle('on', n > 0);
-  
-  // Efeito de pulso no carrinho ao adicionar
-  if(n > 0) {
-    b.style.transform = 'scale(1.2)';
-    setTimeout(() => b.style.transform = 'scale(1)', 200);
-  }
-}
-
-function renderCartList() {
-  var list = document.getElementById('clist');
-  var totalEl = document.getElementById('ctotal');
-  var itens = Object.values(carrinho);
-
-  if (!itens.length) {
-    list.innerHTML = '<div class="cempty"><span>\U0001f6d2</span><p>Seu carrinho est� vazio</p></div>';
-    totalEl.textContent = 'R$ 0,00';
-    return;
-  }
-
-  list.innerHTML = itens.map(function(item) {
-    var p = item.prod;
-    var preco = parseFloat(p.preco) || 0;
-    var sub = preco * item.qtd;
-    var precoStr = preco > 0 ? 'R$ ' + preco.toFixed(2).replace('.',',') + ' ' + (p.unidade||'') : 'Sob consulta';
-    var subStr = preco > 0 ? 'R$ ' + sub.toFixed(2).replace('.',',') : '\u2014';
-    return '<div class="citem">' +
-      '<div class="citem-ico">' + (catEmojis[p.subcategoria] || catEmojis[p.categoria] || '\U0001f4e6') + '</div>' +
-      '<div class="citem-info">' +
-        '<div class="citem-name">' + p.nome + '</div>' +
-        '<div class="citem-meta">' + precoStr + ' � ' + item.qtd + '</div>' +
-      '</div>' +
-      '<div class="citem-r">' +
-        '<span class="citem-tot">' + subStr + '</span>' +
-        '<button class="brem" onclick="removerItem(' + p.id + ')">Remover</button>' +
-      '</div>' +
-    '</div>';
+function updateBadge(){var n=Object.keys(carrinho).length;var b=document.getElementById('cbadge');b.textContent=n;b.classList.toggle('on',n>0)}
+function renderCartList(){
+  var list=document.getElementById('clist');var totalEl=document.getElementById('ctotal');var itens=Object.values(carrinho);
+  if(!itens.length){list.innerHTML='<div class="cart-empty"><div class="cart-empty-ico">🛒</div><p>Carrinho vazio</p></div>';totalEl.textContent='R$ 0,00';return}
+  list.innerHTML=itens.map(function(item){
+    var p=item.prod,preco=parseFloat(p.preco)||0,sub=preco*item.qtd;
+    var ps=preco>0?'R$ '+preco.toFixed(2).replace('.',',')+(p.unidade?' '+p.unidade:''):'Sob consulta';
+    var ss=preco>0?'R$ '+sub.toFixed(2).replace('.',','):'—';
+    return '<div class="cart-item"><div class="ci-ico">📦</div><div class="ci-info"><div class="ci-name">'+p.nome+'</div><div class="ci-meta">'+ps+' × '+item.qtd+'</div></div><div class="ci-right"><span class="ci-total">'+ss+'</span><span class="ci-remove" onclick="removerItem('+p.id+')">🗑 remover</span></div></div>';
   }).join('');
-
-  var total = itens.reduce(function(s, i) { return s + (parseFloat(i.prod.preco)||0) * i.qtd; }, 0);
-  totalEl.textContent = 'R$ ' + total.toFixed(2).replace('.', ',');
+  var total=itens.reduce(function(s,i){return s+(parseFloat(i.prod.preco)||0)*i.qtd},0);
+  totalEl.textContent='R$ '+total.toFixed(2).replace('.',',');
+}
+function abrirCart(){renderCartList();document.getElementById('cartPanel').classList.add('on');document.getElementById('backdrop').classList.add('on');document.body.style.overflow='hidden'}
+function fecharCart(){document.getElementById('cartPanel').classList.remove('on');document.getElementById('backdrop').classList.remove('on');document.body.style.overflow=''}
+function enviarWpp(){
+  var itens=Object.values(carrinho);if(!itens.length){alert('Seu carrinho está vazio!');return}
+  var msg='🛍️ *Pedido - Cia Das Embalagens*\n\n';
+  itens.forEach(function(i){msg+='• '+i.prod.nome+' — Qtd: '+i.qtd+'\n'});
+  var total=itens.reduce(function(s,i){return s+(parseFloat(i.prod.preco)||0)*i.qtd},0);
+  msg+='\n💰 *Total estimado: R$ '+total.toFixed(2).replace('.',',')+' *';
+  window.open('https://wa.me/5511972999835?text='+encodeURIComponent(msg),'_blank');
 }
 
-function abrirCart() {
-  renderCartList();
-  document.getElementById('cartPanel').classList.add('on');
-  document.getElementById('backdrop').classList.add('on');
-  document.body.style.overflow = 'hidden';
-}
-
-function fecharCart() {
-  document.getElementById('cartPanel').classList.remove('on');
-  document.getElementById('backdrop').classList.remove('on');
-  document.body.style.overflow = '';
-}
-
-function enviarWpp() {
-  var itens = Object.values(carrinho);
-  if (!itens.length) { alert('Seu carrinho est� vazio!'); return; }
-  
-  var msg = '\U0001f6cd\ufe0f *Pedido - Cia Das Embalagens*\n\n';
-  itens.forEach(function(i) { 
-    msg += '\u2022 ' + i.prod.nome + ' \u2014 Qtd: ' + i.qtd + '\n'; 
-  });
-  
-  var total = itens.reduce(function(s,i){ return s+(parseFloat(i.prod.preco)||0)*i.qtd; }, 0);
-  msg += '\n\U0001f4b0 *Total estimado: R$ ' + total.toFixed(2).replace('.',',') + '*';
-  
-  window.open('https://wa.me/5511972999835?text=' + encodeURIComponent(msg), '_blank');
-}
-
-/* \u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550
-   INIT
-\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550 */
-// Define o renderizador globalmente para ser chamado pela integracao_planilha.js
-window.renderizarProdutos = renderizar;
+/* ═══════════ INIT ═══════════ */
+window.renderizarProdutos=renderizar;
 </script>
 <script src="integracao_planilha.js"></script>
 </body>
