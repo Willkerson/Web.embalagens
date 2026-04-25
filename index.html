@@ -132,7 +132,7 @@ body::after{content:'';position:fixed;inset:0;z-index:0;pointer-events:none;back
 
 /* ══════════════ HERO ══════════════ */
 .hero{min-height:100vh;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;padding:calc(var(--nav-h) + 4rem) 2rem 5rem;text-align:center}
-#hero-canvas{position:absolute;inset:0;z-index:1;pointer-events:none;opacity:.6}
+#hero-canvas{display:none}
 .hero-bg-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.15;z-index:0;transition:opacity .5s;filter:saturate(.6)}
 [data-theme="light"] .hero-bg-img{opacity:.1}
 .hero-gradient{position:absolute;inset:0;z-index:2;background:radial-gradient(ellipse 100% 80% at 50% 0%,rgba(10,12,16,0) 0%,var(--ink) 70%);transition:background .5s}
@@ -709,36 +709,7 @@ footer strong{color:var(--t2);font-weight:500}
 
 <script src="produtos_planilha.js"></script>
 <script>
-/* ═══════════ HERO CANVAS ═══════════ */
-(function(){
-  var canvas=document.getElementById('hero-canvas');
-  var ctx=canvas.getContext('2d');
-  var W,H,pts=[],mx=-9999,my=-9999;
-  function resize(){W=canvas.width=canvas.offsetWidth;H=canvas.height=canvas.offsetHeight}
-  resize();
-  window.addEventListener('resize',resize);
-  var hero=document.getElementById('inicio');
-  hero.addEventListener('mousemove',function(e){var r=hero.getBoundingClientRect();mx=e.clientX-r.left;my=e.clientY-r.top});
-  hero.addEventListener('mouseleave',function(){mx=-9999;my=-9999});
-  for(var i=0;i<70;i++) pts.push({x:Math.random()*1200,y:Math.random()*900,vx:(Math.random()-.5)*.28,vy:(Math.random()-.5)*.28,r:Math.random()*1.8+.4,h:Math.random()*80+190,a:Math.random()*.4+.08});
-  function draw(){
-    ctx.clearRect(0,0,W,H);
-    pts.forEach(function(p){
-      p.h+=.2;p.x+=p.vx;p.y+=p.vy;
-      if(p.x<0)p.x=W;if(p.x>W)p.x=0;if(p.y<0)p.y=H;if(p.y>H)p.y=0;
-      var dx=mx-p.x,dy=my-p.y,d=Math.sqrt(dx*dx+dy*dy);
-      if(d<180){var f=(180-d)/180;p.x-=dx*f*.016;p.y-=dy*f*.016}
-      ctx.beginPath();ctx.arc(p.x,p.y,p.r,0,Math.PI*2);
-      ctx.fillStyle='hsla('+p.h+',75%,68%,'+p.a+')';ctx.fill();
-    });
-    for(var i=0;i<pts.length;i++) for(var j=i+1;j<pts.length;j++){
-      var a=pts[i],b=pts[j],d=Math.sqrt((a.x-b.x)**2+(a.y-b.y)**2);
-      if(d<100){ctx.beginPath();ctx.moveTo(a.x,a.y);ctx.lineTo(b.x,b.y);ctx.strokeStyle='rgba(120,170,255,'+(1-d/100)*.09+')';ctx.lineWidth=.7;ctx.stroke()}
-    }
-    requestAnimationFrame(draw);
-  }
-  draw();
-})();
+/* hero canvas desativado */
 
 /* ═══════════ SCROLL HEADER ═══════════ */
 window.addEventListener('scroll',function(){document.getElementById('hdr').classList.toggle('sc',scrollY>50)},{passive:true});
@@ -777,7 +748,31 @@ var catEmojis={caixas:'📦',sacolas:'🛍️',plastico:'🧪',festa:'🥂',limp
 function prods(){return window.listaProdutosPlanilha||[]}
 
 /* FILTER NAV SHORTCUT */
+function limparBusca(){
+  estado.busca='';
+  var inp=document.getElementById('searchInput');
+  if(inp) inp.value='';
+}
+
+function scrollParaSec(sub){
+  // após render, faz scroll suave até a seção com essa subcategoria
+  setTimeout(function(){
+    var secs=document.querySelectorAll('.psec');
+    if(!secs.length) return;
+    // tenta achar a seção cujo título bate com o subLabel
+    var alvo=subLabels[sub]||'';
+    var sec=null;
+    secs.forEach(function(s){
+      var t=s.querySelector('.psec-title');
+      if(t&&alvo&&t.textContent.trim()===alvo) sec=s;
+    });
+    if(!sec) sec=secs[0]; // fallback: primeira seção
+    if(sec) sec.scrollIntoView({behavior:'smooth',block:'start'});
+  },120);
+}
+
 function filterCat(cat,btn){
+  limparBusca();
   estado.cat=cat; estado.sub='todas';
   document.querySelectorAll('.ftab').forEach(function(b){b.classList.remove('on')});
   if(btn) btn.classList.add('on');
@@ -794,11 +789,12 @@ function filterCat(cat,btn){
       sub.querySelector('.stab').classList.add('on');
     }
   }
-  document.getElementById('produtos').scrollIntoView({behavior:'smooth'});
   renderizar();
+  document.getElementById('produtos').scrollIntoView({behavior:'smooth'});
 }
 
 function filtrarSub(sub,btn,cat){
+  limparBusca();
   if(cat) estado.cat=cat;
   estado.sub=sub;
   if(cat){
@@ -815,6 +811,9 @@ function filtrarSub(sub,btn,cat){
     btn.classList.add('on');
   }
   renderizar();
+  // scroll direto para a seção filtrada
+  if(sub!=='todas') scrollParaSec(sub);
+  else document.getElementById('produtos').scrollIntoView({behavior:'smooth'});
 }
 
 /* legacy compat */
