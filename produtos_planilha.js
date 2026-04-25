@@ -709,8 +709,7 @@ var listaProdutosPlanilha = [
   {id:2707,nome:'SACOLA  SOS LISA GG C/ALÇA C/20UN 30X20X36 PLUMA',categoria:'diversos',subcategoria:'outros',preco:39.0,unidade:'/pct (20un)'},
   {id:2708,nome:'SACOLA SOS P LISO C/ALÇA C/20UN 17X10X27 PLUMA',categoria:'caixas',subcategoria:'sacolas-papel',preco:27.0,unidade:'/pct (20un)'},
   {id:2709,nome:'SACOLA UNIDADE GRANDE',categoria:'caixas',subcategoria:'sacolas-plasticas',preco:0.5,unidade:'/unidade'},
-  {id:2710,nome:'SACOLA VERDE LISA 30X40 1KG+/-270UN',categoria:'caixas',subcategoria:'sacolas-plasticas',preco:26.0,unidade:'/kg'},
-  {id:2711,nome:'SACOLA VERDE LISA 38X48 1KG+/-165UN',categoria:'caixas',subcategoria:'sacolas-plasticas',preco:26.0,unidade:'/kg'},
+ 
   {id:2712,nome:'SACOLA VERDE RECICLAVEL 1KG TAMANHOS VARIADOS',categoria:'caixas',subcategoria:'sacolas-plasticas',preco:15.5,unidade:'/kg'},
   {id:2713,nome:'SACO PARA GELADINHO PEQ. C/100UN 4X24X0,02',categoria:'diversos',subcategoria:'emb-flexiveis',preco:3.5,unidade:'/pct (100un)'},
   {id:2714,nome:'SACO PARA LAVADORA DE ROUPAS MAX CLEAN',categoria:'diversos',subcategoria:'outros',preco:7.0,unidade:'/unidade'},
