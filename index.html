@@ -1284,7 +1284,7 @@ function enviarWpp(){
   var msg='🛍️ *Pedido - Cia Das Embalagens*\n\n';
   itens.forEach(function(i){msg+='• '+i.prod.nome+' — Qtd: '+i.qtd+'\n';});
   var total=itens.reduce(function(s,i){return s+(parseFloat(i.prod.preco)||0)*i.qtd;},0);
-  msg+='\n💰 *Total estimado: R$ '+total.toFixed(2).replace('.',',')+' *';
+  msg+='\n *Total estimado: R$ '+total.toFixed(2).replace('.',',')+' *';
   window.open('https://wa.me/5511972999835?text='+encodeURIComponent(msg),'_blank');
 }
 
