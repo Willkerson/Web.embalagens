@@ -1,5 +1,5 @@
 window.listaProdutosPlanilha = [
-  {id:2000,nome:"ABRIDOR DE LATAS (validado",categoria:"diversos",subcategoria:"outros",preco:3,unidade:"/unidade"},
+  {id:2000,nome:"ABRIDOR DE LATAS",categoria:"diversos",subcategoria:"outros",preco:3,unidade:"/unidade"},
   {id:2001,nome:"ABRIDOR DE GARRAFAS INTER",categoria:"diversos",subcategoria:"outros",preco:6,unidade:"/unidade"},
   {id:2002,nome:"ABRIDOR MULTIUSO",categoria:"limpeza",subcategoria:"produtos-limpeza",preco:11,unidade:"/unidade"},
   {id:2003,nome:"ACCESSORIOS P/CORTINAS SANTONE",categoria:"diversos",subcategoria:"outros",preco:35,unidade:"/unidade"},
