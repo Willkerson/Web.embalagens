@@ -974,32 +974,7 @@ function renderMais() {
     if (anchor) anchor.remove();
   }
 }
-  }};
-  if(!lista.length){
-    c.innerHTML='<div class="no-results"><span>🔍</span>Nenhum produto encontrado.<br>Tente outro termo ou limpe os filtros.</div>';
-    return;
-  }
-  var grupos={};
-  lista.forEach(function(p){var k=p.subcategoria||p.categoria;if(!grupos[k])grupos[k]={label:subLabels[k]||k.replace(/-/g,' '),itens:[]};grupos[k].itens.push(p)});
-  Object.keys(grupos).forEach(function(k){
-    var g=grupos[k];
-    var sec=document.createElement('div');sec.className='psec';sec.setAttribute('data-sub',k);
-    var emoji=catEmojis[k]||'📦';
-    sec.innerHTML='<div class="psec-hdr"><div class="psec-icon">'+emoji+'</div><div class="psec-title">'+g.label+'</div><div class="psec-count">'+g.itens.length+' item'+(g.itens.length!==1?'s':'')+'</div></div>';
-    var grid=document.createElement('div');grid.className='pgrid';
-    g.itens.forEach(function(p,i){
-      var inCart=!!carrinho[p.id];
-      var preco=parseFloat(p.preco);
-      var precoStr=preco>0?'R$ '+preco.toFixed(2).replace('.',','):'Sob consulta';
-      var card=document.createElement('div');
-      card.className='pcard'+(inCart?' incart':'');card.id='card-'+p.id;
-      card.innerHTML='<div class="pimg"><span class="incart-badge">✓ No carrinho</span><span class="pimg-emoji">📦</span></div><div class="pbody"><div class="pname">'+p.nome+'</div><div class="pprice-box"><span class="pprice">'+precoStr+'</span>'+(p.unidade?'<span class="punit">'+p.unidade+'</span>':'')+'</div><div class="pspacer"></div><div class="pactions"><div class="qty-ctrl"><button class="bq" onclick="mudaQtd('+p.id+',-1)">−</button><input class="iq" type="number" id="qtd-'+p.id+'" value="1" min="1"><button class="bq" onclick="mudaQtd('+p.id+',1)">+</button></div><button class="badd'+(inCart?' done':'')+'" id="badd-'+p.id+'" onclick="addCart('+p.id+')">'+(inCart?'✓ Adicionado':'+ Adicionar')+'</button></div></div>';
-      grid.appendChild(card);
-      setTimeout(function(){card.classList.add('in')},i*18);
-    });
-    sec.appendChild(grid);c.appendChild(sec);
-  });
-}
+ 
 
 /* ═══════════ QTD ═══════════ */
 function mudaQtd(id,d){var i=document.getElementById('qtd-'+id);if(i){i.value=Math.max(1,(parseInt(i.value)||1)+d);if(carrinho[id])carrinho[id].qtd=parseInt(i.value)}}
