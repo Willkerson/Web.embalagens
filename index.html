@@ -8,55 +8,8 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
 <style>
-/* ══════════════ TOKENS ══════════════ */
-:root {
-  --ink: #0a0c10;
-  --ink1: #12161e;
-  --ink2: #1a2030;
-  --ink3: #232c3e;
-  --surface: rgba(18,22,30,.72);
-  --surface2: rgba(26,32,48,.6);
-  --glass: rgba(255,255,255,.04);
-  --glass2: rgba(255,255,255,.08);
-  --glass3: rgba(255,255,255,.13);
-  --t1: #f2f4f9;
-  --t2: #8c9ab8;
-  --t3: #4a5570;
-  --bdr: rgba(255,255,255,.07);
-  --bdr2: rgba(255,255,255,.13);
-  --bdr3: rgba(255,255,255,.2);
-  --acc: #3b7fff;
-  --acc-glow: rgba(59,127,255,.22);
-  --acc2: #1a54cc;
-  --grn: #00c875;
-  --grn-glow: rgba(0,200,117,.2);
-  --ease: cubic-bezier(.22,1,.36,1);
-  --ease2: cubic-bezier(.4,0,.2,1);
-  --font: 'DM Sans', system-ui, sans-serif;
-  --font-display: 'DM Serif Display', Georgia, serif;
-  --blur: blur(24px) saturate(180%);
-  --blur-sm: blur(12px) saturate(160%);
-  --nav-h: 70px;
-}
-[data-theme="light"] {
-  --ink: #f0f2f8;
-  --ink1: #e4e8f4;
-  --ink2: #d6dcee;
-  --ink3: #c8d0e4;
-  --surface: rgba(240,242,248,.8);
-  --surface2: rgba(228,232,244,.7);
-  --glass: rgba(0,0,0,.03);
-  --glass2: rgba(0,0,0,.05);
-  --glass3: rgba(0,0,0,.08);
-  --t1: #0d1320;
-  --t2: #3e4d6a;
-  --t3: #7a89a8;
-  --bdr: rgba(0,0,0,.07);
-  --bdr2: rgba(0,0,0,.12);
-  --bdr3: rgba(0,0,0,.2);
-}
-
-/* ══════════════ RESET ══════════════ */
+:root{--ink:#0a0c10;--ink1:#12161e;--ink2:#1a2030;--ink3:#232c3e;--surface:rgba(18,22,30,.72);--surface2:rgba(26,32,48,.6);--glass:rgba(255,255,255,.04);--glass2:rgba(255,255,255,.08);--glass3:rgba(255,255,255,.13);--t1:#f2f4f9;--t2:#8c9ab8;--t3:#4a5570;--bdr:rgba(255,255,255,.07);--bdr2:rgba(255,255,255,.13);--bdr3:rgba(255,255,255,.2);--acc:#3b7fff;--acc-glow:rgba(59,127,255,.22);--acc2:#1a54cc;--grn:#00c875;--grn-glow:rgba(0,200,117,.2);--ease:cubic-bezier(.22,1,.36,1);--ease2:cubic-bezier(.4,0,.2,1);--font:'DM Sans',system-ui,sans-serif;--font-display:'DM Serif Display',Georgia,serif;--blur:blur(24px) saturate(180%);--blur-sm:blur(12px) saturate(160%);--nav-h:70px}
+[data-theme="light"]{--ink:#f0f2f8;--ink1:#e4e8f4;--ink2:#d6dcee;--ink3:#c8d0e4;--surface:rgba(240,242,248,.8);--surface2:rgba(228,232,244,.7);--glass:rgba(0,0,0,.03);--glass2:rgba(0,0,0,.05);--glass3:rgba(0,0,0,.08);--t1:#0d1320;--t2:#3e4d6a;--t3:#7a89a8;--bdr:rgba(0,0,0,.07);--bdr2:rgba(0,0,0,.12);--bdr3:rgba(0,0,0,.2)}
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
 html{scroll-behavior:smooth;scroll-padding-top:var(--nav-h)}
 body{background:var(--ink);color:var(--t2);font-family:var(--font);line-height:1.65;overflow-x:hidden;transition:background .4s,color .4s}
@@ -67,25 +20,18 @@ img{display:block}
 ::-webkit-scrollbar{width:4px}
 ::-webkit-scrollbar-track{background:transparent}
 ::-webkit-scrollbar-thumb{background:var(--ink3);border-radius:99px}
-
-/* ══════════════ NOISE OVERLAY ══════════════ */
 body::before{content:'';position:fixed;inset:0;z-index:0;pointer-events:none;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.025'/%3E%3C/svg%3E");opacity:.4}
 body::after{content:'';position:fixed;inset:0;z-index:0;pointer-events:none;background:radial-gradient(ellipse 80% 60% at 20% 10%,rgba(59,127,255,.09) 0%,transparent 60%),radial-gradient(ellipse 60% 50% at 80% 80%,rgba(0,200,117,.06) 0%,transparent 60%)}
-
-/* ══════════════ MEGA HEADER ══════════════ */
 .hdr{position:fixed;top:0;left:0;right:0;z-index:900;transition:all .4s var(--ease)}
 .hdr-inner{height:var(--nav-h);display:flex;align-items:center;justify-content:space-between;padding:0 2.5rem;background:var(--surface);backdrop-filter:var(--blur);-webkit-backdrop-filter:var(--blur);border-bottom:1px solid var(--bdr);transition:all .4s var(--ease)}
 .hdr.sc .hdr-inner{height:60px;background:rgba(10,12,16,.9)}
 [data-theme="light"] .hdr-inner{background:rgba(240,242,248,.85)}
 [data-theme="light"] .hdr.sc .hdr-inner{background:rgba(240,242,248,.97)}
-
 .logo{display:flex;align-items:center;gap:12px;color:var(--t1);flex-shrink:0}
 .logo-mark{width:36px;height:36px;background:linear-gradient(135deg,var(--acc),var(--acc2));border-radius:10px;display:flex;align-items:center;justify-content:center;box-shadow:0 0 20px var(--acc-glow)}
 .logo-mark img{width:20px;height:20px}
 .logo-name{font-family:var(--font);font-size:.98rem;font-weight:600;letter-spacing:-.01em;color:var(--t1)}
 .logo-name span{color:var(--t3);font-weight:400}
-
-/* MEGA NAV */
 .nav-center{display:flex;align-items:center;gap:2px}
 .nav-item{position:relative}
 .nav-link{display:flex;align-items:center;gap:5px;padding:8px 14px;border-radius:8px;font-size:.875rem;font-weight:500;color:var(--t2);transition:all .2s var(--ease2);cursor:pointer;white-space:nowrap}
@@ -94,19 +40,15 @@ body::after{content:'';position:fixed;inset:0;z-index:0;pointer-events:none;back
 .nav-item.open .nav-link svg{transform:rotate(180deg)}
 .nav-dot{width:5px;height:5px;background:var(--acc);border-radius:50%;margin-right:-2px;opacity:0;transition:opacity .2s}
 .nav-link:hover .nav-dot{opacity:1}
-
-/* MEGA DROPDOWN */
 .mega{position:absolute;top:calc(100% + 12px);left:50%;transform:translateX(-50%) translateY(8px);min-width:680px;background:var(--surface);backdrop-filter:var(--blur);-webkit-backdrop-filter:var(--blur);border:1px solid var(--bdr2);border-radius:20px;padding:1.5rem;box-shadow:0 32px 80px rgba(0,0,0,.4),0 0 0 1px rgba(255,255,255,.03);opacity:0;pointer-events:none;transition:opacity .25s var(--ease),transform .25s var(--ease);z-index:100}
 [data-theme="light"] .mega{box-shadow:0 20px 60px rgba(0,0,0,.15),0 0 0 1px rgba(0,0,0,.05)}
 .nav-item.open .mega{opacity:1;pointer-events:all;transform:translateX(-50%) translateY(0)}
 .mega-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem}
-.mega-col{}
 .mega-col-title{font-size:.7rem;font-weight:600;text-transform:uppercase;letter-spacing:.1em;color:var(--t3);margin-bottom:.75rem;padding-bottom:.5rem;border-bottom:1px solid var(--bdr)}
 .mega-link{display:flex;align-items:center;gap:9px;padding:7px 9px;border-radius:9px;font-size:.84rem;color:var(--t2);transition:all .18s var(--ease2);cursor:pointer}
 .mega-link:hover{color:var(--t1);background:var(--glass2)}
 .mega-link-ico{width:28px;height:28px;border-radius:7px;background:var(--glass);border:1px solid var(--bdr);display:flex;align-items:center;justify-content:center;font-size:.85rem;flex-shrink:0;transition:all .2s}
 .mega-link:hover .mega-link-ico{background:var(--acc-glow);border-color:rgba(59,127,255,.3)}
-.mega-link-info{min-width:0}
 .mega-link-name{font-weight:500;color:var(--t1);font-size:.84rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .mega-link-desc{font-size:.73rem;color:var(--t3);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .mega-featured{grid-column:1/-1;background:linear-gradient(135deg,rgba(59,127,255,.1),rgba(0,200,117,.06));border:1px solid rgba(59,127,255,.2);border-radius:12px;padding:1rem;display:flex;align-items:center;justify-content:space-between;margin-top:.5rem;cursor:pointer;transition:all .2s var(--ease2)}
@@ -117,8 +59,6 @@ body::after{content:'';position:fixed;inset:0;z-index:0;pointer-events:none;back
 .mega-feat-text span{font-size:.76rem;color:var(--t3)}
 .mega-feat-cta{font-size:.78rem;font-weight:600;color:var(--acc);background:var(--acc-glow);padding:6px 14px;border-radius:99px;border:1px solid rgba(59,127,255,.3);transition:all .2s}
 .mega-featured:hover .mega-feat-cta{background:rgba(59,127,255,.25)}
-
-/* RIGHT ACTIONS */
 .hdr-r{display:flex;align-items:center;gap:8px}
 .btn-ico{width:38px;height:38px;border-radius:50%;background:var(--glass);border:1px solid var(--bdr);color:var(--t2);display:flex;align-items:center;justify-content:center;font-size:.9rem;transition:all .22s var(--ease2)}
 .btn-ico:hover{background:var(--glass2);color:var(--t1);border-color:var(--bdr2)}
@@ -129,10 +69,7 @@ body::after{content:'';position:fixed;inset:0;z-index:0;pointer-events:none;back
 .btn-wpp{display:flex;align-items:center;gap:7px;padding:9px 18px;background:var(--grn);border-radius:99px;color:#fff;font-weight:600;font-size:.84rem;box-shadow:0 4px 18px var(--grn-glow);transition:all .25s var(--ease2)}
 .btn-wpp:hover{transform:translateY(-2px);box-shadow:0 8px 28px var(--grn-glow)}
 .btn-wpp img{width:16px;height:16px}
-
-/* ══════════════ HERO ══════════════ */
 .hero{min-height:100vh;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;padding:calc(var(--nav-h) + 4rem) 2rem 5rem;text-align:center}
-#hero-canvas{display:none}
 .hero-bg-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.15;z-index:0;transition:opacity .5s;filter:saturate(.6)}
 [data-theme="light"] .hero-bg-img{opacity:.1}
 .hero-gradient{position:absolute;inset:0;z-index:2;background:radial-gradient(ellipse 100% 80% at 50% 0%,rgba(10,12,16,0) 0%,var(--ink) 70%);transition:background .5s}
@@ -156,22 +93,15 @@ body::after{content:'';position:fixed;inset:0;z-index:0;pointer-events:none;back
 .scroll-track{width:1px;height:44px;background:linear-gradient(to bottom,var(--bdr3),transparent);overflow:hidden;position:relative}
 .scroll-track::after{content:'';position:absolute;top:0;left:0;width:100%;height:50%;background:var(--t3);animation:scrollDrop 2.2s ease-in-out infinite}
 @keyframes scrollDrop{0%{transform:translateY(-100%);opacity:0}30%{opacity:1}100%{transform:translateY(200%);opacity:0}}
-
-/* ══════════════ TRUST BAR ══════════════ */
 .trust-bar{background:var(--surface2);backdrop-filter:var(--blur-sm);-webkit-backdrop-filter:var(--blur-sm);border-bottom:1px solid var(--bdr);display:flex;justify-content:center;flex-wrap:wrap;gap:0}
 .trust-item{display:flex;align-items:center;gap:14px;padding:1.75rem 3rem;border-right:1px solid var(--bdr)}
 .trust-item:last-child{border-right:none}
 .trust-ico{font-size:1.4rem;opacity:.7}
-.trust-texts{}
 .trust-n{font-size:1.6rem;font-weight:300;color:var(--t1);font-family:var(--font-display);line-height:1}
 .trust-l{font-size:.72rem;color:var(--t3);text-transform:uppercase;letter-spacing:.07em;font-weight:500;margin-top:2px}
-
-/* ══════════════ SECTIONS ══════════════ */
 .sec-label{font-size:.7rem;font-weight:600;text-transform:uppercase;letter-spacing:.12em;color:var(--acc);font-family:var(--font);margin-bottom:.6rem}
 .sec-title{font-size:clamp(1.8rem,3.5vw,2.8rem);color:var(--t1);margin-bottom:.6rem}
 .sec-sub{font-size:.95rem;color:var(--t3);max-width:480px}
-
-/* ══════════════ REVIEWS ══════════════ */
 .sec-reviews{padding:6rem 2rem;background:var(--surface2);backdrop-filter:var(--blur-sm)}
 .reviews-wrap{max-width:1100px;margin:0 auto}
 .reviews-head{margin-bottom:3rem}
@@ -185,19 +115,13 @@ body::after{content:'';position:fixed;inset:0;z-index:0;pointer-events:none;back
 .review-author{display:flex;align-items:center;gap:10px}
 .review-av{width:34px;height:34px;border-radius:50%;background:linear-gradient(135deg,var(--acc),#7c3aed);display:flex;align-items:center;justify-content:center;color:#fff;font-size:.7rem;font-weight:600;flex-shrink:0;border:1px solid rgba(255,255,255,.15)}
 .review-name{font-size:.84rem;font-weight:600;color:var(--t1)}
-
-/* ══════════════ CATALOG ══════════════ */
 .sec-catalog{padding:5rem 2rem 8rem;max-width:1280px;margin:0 auto}
 .cat-head{text-align:center;margin-bottom:3rem}
-
-/* SEARCH */
 .search-wrap{max-width:580px;margin:0 auto 2.5rem;position:relative}
 .search-icon{position:absolute;left:20px;top:50%;transform:translateY(-50%);font-size:1rem;opacity:.4;pointer-events:none}
 .search-inp{width:100%;padding:14px 20px 14px 50px;background:var(--glass2);border:1px solid var(--bdr2);border-radius:14px;color:var(--t1);font-family:var(--font);font-size:.95rem;outline:none;transition:all .3s var(--ease2);backdrop-filter:var(--blur-sm)}
 .search-inp::placeholder{color:var(--t3)}
 .search-inp:focus{border-color:rgba(59,127,255,.5);background:var(--glass3);box-shadow:0 0 0 4px rgba(59,127,255,.1)}
-
-/* FILTER TABS */
 .filter-tabs{display:flex;gap:4px;justify-content:center;flex-wrap:wrap;margin-bottom:.75rem}
 .ftab{display:flex;align-items:center;gap:6px;padding:9px 16px;border-radius:10px;font-size:.82rem;font-weight:500;color:var(--t3);background:var(--glass);border:1px solid var(--bdr);transition:all .2s var(--ease2);cursor:pointer;white-space:nowrap}
 .ftab img{width:14px;height:14px;opacity:.5;transition:opacity .2s}
@@ -205,93 +129,45 @@ body::after{content:'';position:fixed;inset:0;z-index:0;pointer-events:none;back
 .ftab.on{background:var(--t1);color:var(--ink);border-color:transparent;font-weight:600}
 .ftab.on img{opacity:1;filter:invert(1)}
 [data-theme="light"] .ftab.on img{filter:none}
-
-/* SUB FILTERS */
 .subtabs-wrap{display:flex;justify-content:center;margin-bottom:.75rem;min-height:36px;align-items:center}
 .subtabs{display:none;gap:5px;flex-wrap:wrap;justify-content:center}
 .subtabs.on{display:flex;animation:fadeUp .2s var(--ease)}
 .stab{padding:6px 14px;border-radius:8px;font-size:.78rem;font-weight:500;color:var(--t3);border:1px solid var(--bdr);background:var(--glass);cursor:pointer;transition:all .18s var(--ease2);white-space:nowrap}
 .stab:hover{color:var(--t1);border-color:var(--bdr2)}
 .stab.on{background:var(--acc);color:#fff;border-color:var(--acc);box-shadow:0 4px 14px var(--acc-glow)}
-
-/* BRAND FILTER — novo nível */
-.brand-filter-wrap{
-  min-height:0;
-  max-height:0;
-  overflow:hidden;
-  transition:max-height .35s var(--ease), opacity .3s var(--ease), margin-bottom .3s var(--ease);
-  opacity:0;
-  margin-bottom:0;
-  display:flex;
-  justify-content:center;
-}
-.brand-filter-wrap.on{
-  max-height:200px;
-  opacity:1;
-  margin-bottom:2rem;
-}
-.brand-filter-inner{
-  display:flex;
-  align-items:center;
-  gap:6px;
-  flex-wrap:wrap;
-  justify-content:center;
-  padding:.6rem 0 .2rem;
-}
-.brand-filter-label{
-  font-size:.7rem;
-  font-weight:600;
-  color:var(--t3);
-  text-transform:uppercase;
-  letter-spacing:.08em;
-  margin-right:4px;
-  white-space:nowrap;
-  flex-shrink:0;
-}
-.btab{
-  padding:5px 13px;
-  border-radius:99px;
-  font-size:.75rem;
-  font-weight:500;
-  color:var(--t3);
-  border:1px solid var(--bdr);
-  background:var(--glass);
-  cursor:pointer;
-  transition:all .18s var(--ease2);
-  white-space:nowrap;
-}
+.brand-filter-wrap{min-height:0;max-height:0;overflow:hidden;transition:max-height .35s var(--ease),opacity .3s var(--ease),margin-bottom .3s var(--ease);opacity:0;margin-bottom:0;display:flex;justify-content:center}
+.brand-filter-wrap.on{max-height:200px;opacity:1;margin-bottom:2rem}
+.brand-filter-inner{display:flex;align-items:center;gap:6px;flex-wrap:wrap;justify-content:center;padding:.6rem 0 .2rem}
+.brand-filter-label{font-size:.7rem;font-weight:600;color:var(--t3);text-transform:uppercase;letter-spacing:.08em;margin-right:4px;white-space:nowrap;flex-shrink:0}
+.btab{padding:5px 13px;border-radius:99px;font-size:.75rem;font-weight:500;color:var(--t3);border:1px solid var(--bdr);background:var(--glass);cursor:pointer;transition:all .18s var(--ease2);white-space:nowrap}
 .btab:hover{color:var(--t1);border-color:var(--bdr2);background:var(--glass2)}
-.btab.on{
-  background:rgba(0,200,117,.12);
-  color:var(--grn);
-  border-color:rgba(0,200,117,.35);
-  box-shadow:0 2px 10px rgba(0,200,117,.1);
-}
-
-/* NO RESULTS */
+.btab.on{background:rgba(0,200,117,.12);color:var(--grn);border-color:rgba(0,200,117,.35);box-shadow:0 2px 10px rgba(0,200,117,.1)}
 .no-results{text-align:center;padding:4rem;color:var(--t3);font-size:1rem;width:100%;grid-column:1/-1}
 .no-results span{display:block;font-size:2.5rem;margin-bottom:1rem;opacity:.4}
-
-/* PRODUCT SECTION */
 .psec{margin-bottom:4rem}
 .psec-hdr{display:flex;align-items:center;gap:10px;margin-bottom:1.5rem;padding-bottom:1rem;border-bottom:1px solid var(--bdr)}
 .psec-icon{width:32px;height:32px;background:rgba(59,127,255,.1);border:1px solid rgba(59,127,255,.18);border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:.8rem;flex-shrink:0}
 .psec-title{font-size:1.05rem;font-weight:600;color:var(--t1);font-family:var(--font)}
 .psec-count{font-size:.78rem;color:var(--t3);margin-left:auto;background:var(--glass2);border:1px solid var(--bdr);border-radius:99px;padding:3px 10px}
-
-/* BRAND PILL na seção */
 .psec-brand{font-size:.7rem;font-weight:600;color:var(--grn);background:rgba(0,200,117,.1);border:1px solid rgba(0,200,117,.2);border-radius:99px;padding:2px 9px;margin-left:4px;vertical-align:middle}
-
-/* PRODUCT GRID */
 .pgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:1.25rem}
 .pcard{background:var(--glass);border:1px solid var(--bdr);border-radius:18px;overflow:hidden;display:flex;flex-direction:column;opacity:0;transform:translateY(20px);transition:opacity .45s,transform .45s var(--ease),border-color .25s,background .25s,box-shadow .25s}
 .pcard.in{opacity:1;transform:translateY(0)}
 .pcard:hover{border-color:var(--bdr2);background:var(--glass2);transform:translateY(-6px);box-shadow:0 20px 50px rgba(0,0,0,.2)}
 .pcard.incart{border-color:rgba(0,200,117,.35);box-shadow:0 0 0 1px rgba(0,200,117,.12)}
+/* Área de imagem */
 .pimg{height:150px;display:flex;align-items:center;justify-content:center;border-bottom:1px solid var(--bdr);position:relative;overflow:hidden;background:linear-gradient(135deg,var(--glass),var(--glass2))}
 .pimg-emoji{font-size:3rem;opacity:.15;transition:all .4s var(--ease);user-select:none}
 .pcard:hover .pimg-emoji{opacity:.22;transform:scale(1.1) rotate(-5deg)}
-.incart-badge{position:absolute;top:10px;right:10px;background:var(--grn);color:#fff;font-size:.64rem;font-weight:700;padding:4px 10px;border-radius:99px;opacity:0;transform:scale(.5) translateY(-4px);transition:all .3s var(--ease)}
+/* thumbnail: a imagem preenche toda a área */
+.pimg-thumb{height:150px;display:block;position:relative;overflow:hidden;border-bottom:1px solid var(--bdr);background:var(--ink2)}
+.pimg-thumb img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .4s var(--ease)}
+.pcard:hover .pimg-thumb img{transform:scale(1.05)}
+/* replace: imagem centralizada no lugar do emoji */
+.pimg-replace{height:150px;display:flex;align-items:center;justify-content:center;border-bottom:1px solid var(--bdr);position:relative;overflow:hidden;background:linear-gradient(135deg,var(--glass),var(--glass2))}
+.pimg-replace img{max-width:78%;max-height:78%;object-fit:contain;transition:transform .4s var(--ease)}
+.pcard:hover .pimg-replace img{transform:scale(1.08)}
+.incart-badge{position:absolute;top:10px;right:10px;background:var(--grn);color:#fff;font-size:.64rem;font-weight:700;padding:4px 10px;border-radius:99px;opacity:0;transform:scale(.5) translateY(-4px);transition:all .3s var(--ease);z-index:2}
 .pcard.incart .incart-badge{opacity:1;transform:scale(1) translateY(0)}
 .pbody{padding:1.1rem;display:flex;flex-direction:column;flex-grow:1;gap:.65rem}
 .pname{font-size:.9rem;font-weight:500;color:var(--t1);line-height:1.3;font-family:var(--font)}
@@ -310,8 +186,6 @@ body::after{content:'';position:fixed;inset:0;z-index:0;pointer-events:none;back
 .badd:hover{background:var(--acc);color:#fff;box-shadow:0 4px 14px var(--acc-glow)}
 .badd.done{background:rgba(0,200,117,.12);color:var(--grn);border-color:rgba(0,200,117,.2)}
 .badd.done:hover{background:var(--grn);color:#fff;box-shadow:0 4px 14px var(--grn-glow)}
-
-/* ══════════════ CART PANEL ══════════════ */
 .backdrop{position:fixed;inset:0;background:rgba(0,0,0,.7);backdrop-filter:blur(12px);z-index:950;opacity:0;pointer-events:none;transition:opacity .35s}
 .backdrop.on{opacity:1;pointer-events:all}
 .cart-panel{position:fixed;top:0;right:0;bottom:0;width:440px;max-width:100vw;background:var(--surface);backdrop-filter:var(--blur);-webkit-backdrop-filter:var(--blur);border-left:1px solid var(--bdr2);z-index:960;display:flex;flex-direction:column;transform:translateX(100%);transition:transform .45s var(--ease)}
@@ -325,7 +199,8 @@ body::after{content:'';position:fixed;inset:0;z-index:0;pointer-events:none;back
 .cart-empty-ico{font-size:3rem;opacity:.25}
 .cart-empty p{font-size:.88rem;font-weight:500}
 .cart-item{display:flex;align-items:center;gap:.9rem;padding:.9rem 0;border-bottom:1px solid var(--bdr)}
-.ci-ico{width:42px;height:42px;background:var(--glass2);border:1px solid var(--bdr);border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:1.1rem;flex-shrink:0}
+.ci-ico{width:42px;height:42px;background:var(--glass2);border:1px solid var(--bdr);border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:1.1rem;flex-shrink:0;overflow:hidden}
+.ci-ico img{width:100%;height:100%;object-fit:cover}
 .ci-info{flex:1;min-width:0}
 .ci-name{font-weight:500;font-size:.84rem;color:var(--t1);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;margin-bottom:2px}
 .ci-meta{font-size:.73rem;color:var(--t3)}
@@ -342,8 +217,6 @@ body::after{content:'';position:fixed;inset:0;z-index:0;pointer-events:none;back
 .btn-send-wpp img{width:18px;height:18px}
 .btn-clear{width:100%;padding:9px;color:var(--t3);font-size:.8rem;font-weight:500;display:flex;align-items:center;justify-content:center;gap:6px;border-radius:8px;transition:all .2s}
 .btn-clear:hover{color:#ef4444;background:rgba(239,68,68,.07)}
-
-/* ══════════════ WPP FLOAT ══════════════ */
 .wpp-float{position:fixed;bottom:28px;right:28px;z-index:800;display:flex;flex-direction:column;align-items:flex-end;gap:10px}
 .wpp-tip{background:var(--grn);color:#fff;font-size:.76rem;font-weight:600;padding:5px 13px;border-radius:99px;white-space:nowrap;opacity:0;transform:translateX(8px) scale(.95);transition:all .25s var(--ease);pointer-events:none}
 .wpp-float:hover .wpp-tip{opacity:1;transform:translateX(0) scale(1)}
@@ -353,245 +226,118 @@ body::after{content:'';position:fixed;inset:0;z-index:0;pointer-events:none;back
 .wpp-ring{position:absolute;inset:-5px;border-radius:50%;border:2px solid var(--grn);opacity:.6;animation:ring 2.6s ease-in-out infinite}
 .wpp-ring2{animation-delay:.8s}
 @keyframes ring{0%{opacity:.6;transform:scale(1)}100%{opacity:0;transform:scale(1.6)}}
-
-/* ══════════════ FOOTER ══════════════ */
 footer{background:var(--surface2);border-top:1px solid var(--bdr);padding:2.5rem;text-align:center;color:var(--t3);font-size:.82rem}
 footer strong{color:var(--t2);font-weight:500}
-
-/* ══════════════ ANIMATIONS ══════════════ */
 @keyframes fadeUp{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:translateY(0)}}
-
-/* ══════════════ MOBILE ══════════════ */
-@media(max-width:900px){
-  .nav-center{display:none}
-  .hdr-inner{padding:0 1.25rem}
-  .trust-item{padding:1.25rem 1.5rem}
-}
-@media(max-width:640px){
-  .pgrid{grid-template-columns:1fr 1fr;gap:.85rem}
-  .trust-bar{flex-direction:column;gap:0}
-  .trust-item{border-right:none;border-bottom:1px solid var(--bdr)}
-  .filter-tabs{justify-content:flex-start;overflow-x:auto;flex-wrap:nowrap;padding-bottom:4px;scrollbar-width:none}
-  .filter-tabs::-webkit-scrollbar{display:none}
-  .btn-wpp span,.btn-cart-hdr span{display:none}
-  .hero h1{font-size:2.6rem}
-}
-@media(max-width:400px){
-  .pgrid{grid-template-columns:1fr}
-}
+@media(max-width:900px){.nav-center{display:none}.hdr-inner{padding:0 1.25rem}.trust-item{padding:1.25rem 1.5rem}}
+@media(max-width:640px){.pgrid{grid-template-columns:1fr 1fr;gap:.85rem}.trust-bar{flex-direction:column;gap:0}.trust-item{border-right:none;border-bottom:1px solid var(--bdr)}.filter-tabs{justify-content:flex-start;overflow-x:auto;flex-wrap:nowrap;padding-bottom:4px;scrollbar-width:none}.filter-tabs::-webkit-scrollbar{display:none}.btn-wpp span,.btn-cart-hdr span{display:none}.hero h1{font-size:2.6rem}}
+@media(max-width:400px){.pgrid{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
 
-<!-- ══════════ HEADER ══════════ -->
 <header class="hdr" id="hdr">
   <div class="hdr-inner">
     <a href="#" class="logo">
       <div class="logo-mark"><img src="https://img.icons8.com/fluency/48/box.png" alt=""></div>
       <div class="logo-name">Cia das<span> Embalagens</span></div>
     </a>
-
-    <!-- MEGA NAV -->
     <nav class="nav-center">
-
-      <!-- Embalagens -->
       <div class="nav-item" id="nav-emb">
-        <div class="nav-link" onclick="toggleNav('nav-emb')">
-          <span class="nav-dot"></span>Embalagens
-          <svg viewBox="0 0 10 6" fill="none"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
-        </div>
+        <div class="nav-link" onclick="toggleNav('nav-emb')"><span class="nav-dot"></span>Embalagens<svg viewBox="0 0 10 6" fill="none"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></div>
         <div class="mega">
           <div class="mega-grid">
             <div class="mega-col">
               <div class="mega-col-title">Caixas & Papelão</div>
-              <div class="mega-link" onclick="filterCat('caixas');filtrarSub('caixas-correio');fecharNav()">
-                <div class="mega-link-ico">📬</div>
-                <div class="mega-link-info"><div class="mega-link-name">Padrão Correios</div><div class="mega-link-desc">Sedex, PAC, e-commerce</div></div>
-              </div>
-              <div class="mega-link" onclick="filterCat('caixas');filtrarSub('caixas-alimentos');fecharNav()">
-                <div class="mega-link-ico">🍕</div>
-                <div class="mega-link-info"><div class="mega-link-name">Para Alimentos</div><div class="mega-link-desc">Pizza, hambúrguer, marmita</div></div>
-              </div>
+              <div class="mega-link" onclick="filterCat('caixas');filtrarSub('caixas-correio');fecharNav()"><div class="mega-link-ico">📬</div><div class="mega-link-info"><div class="mega-link-name">Padrão Correios</div><div class="mega-link-desc">Sedex, PAC, e-commerce</div></div></div>
+              <div class="mega-link" onclick="filterCat('caixas');filtrarSub('caixas-alimentos');fecharNav()"><div class="mega-link-ico">🍕</div><div class="mega-link-info"><div class="mega-link-name">Para Alimentos</div><div class="mega-link-desc">Pizza, hambúrguer, marmita</div></div></div>
             </div>
             <div class="mega-col">
               <div class="mega-col-title">Plásticos & Potes</div>
-              <div class="mega-link" onclick="filterCat('plastico');filtrarSub('potes-tampas');fecharNav()">
-                <div class="mega-link-ico">🫙</div>
-                <div class="mega-link-info"><div class="mega-link-name">Potes e Tampas</div><div class="mega-link-desc">PP, PET, diversas capacidades</div></div>
-              </div>
-              <div class="mega-link" onclick="filterCat('plastico');filtrarSub('embalagens-bolo');fecharNav()">
-                <div class="mega-link-ico">🎂</div>
-                <div class="mega-link-info"><div class="mega-link-name">Embalagens p/ Bolo</div><div class="mega-link-desc">Acetato, forminhas, bases</div></div>
-              </div>
+              <div class="mega-link" onclick="filterCat('plastico');filtrarSub('potes-tampas');fecharNav()"><div class="mega-link-ico">🫙</div><div class="mega-link-info"><div class="mega-link-name">Potes e Tampas</div><div class="mega-link-desc">PP, PET, diversas capacidades</div></div></div>
+              <div class="mega-link" onclick="filterCat('plastico');filtrarSub('embalagens-bolo');fecharNav()"><div class="mega-link-ico">🎂</div><div class="mega-link-info"><div class="mega-link-name">Embalagens p/ Bolo</div><div class="mega-link-desc">Acetato, forminhas, bases</div></div></div>
             </div>
             <div class="mega-col">
               <div class="mega-col-title">Sacolas & Sacos</div>
-              <div class="mega-link" onclick="filterCat('sacolas');filtrarSub('sacolas-papel');fecharNav()">
-                <div class="mega-link-ico">🧻</div>
-                <div class="mega-link-info"><div class="mega-link-name">Sacolas de Papel</div><div class="mega-link-desc">Kraft, branco, personalizado</div></div>
-              </div>
-              <div class="mega-link" onclick="filterCat('sacolas');filtrarSub('sacolas-plasticas');fecharNav()">
-                <div class="mega-link-ico">🛒</div>
-                <div class="mega-link-info"><div class="mega-link-name">Sacolas Plásticas</div><div class="mega-link-desc">Alça, camiseta, biodegradável</div></div>
-              </div>
-              <div class="mega-link" onclick="filterCat('sacolas');filtrarSub('sacos-lixo');fecharNav()">
-                <div class="mega-link-ico">🗑️</div>
-                <div class="mega-link-info"><div class="mega-link-name">Sacos de Lixo</div><div class="mega-link-desc">10L a 200L, todas cores</div></div>
-              </div>
+              <div class="mega-link" onclick="filterCat('sacolas');filtrarSub('sacolas-papel');fecharNav()"><div class="mega-link-ico">🧻</div><div class="mega-link-info"><div class="mega-link-name">Sacolas de Papel</div><div class="mega-link-desc">Kraft, branco, personalizado</div></div></div>
+              <div class="mega-link" onclick="filterCat('sacolas');filtrarSub('sacolas-plasticas');fecharNav()"><div class="mega-link-ico">🛒</div><div class="mega-link-info"><div class="mega-link-name">Sacolas Plásticas</div><div class="mega-link-desc">Alça, camiseta, biodegradável</div></div></div>
+              <div class="mega-link" onclick="filterCat('sacolas');filtrarSub('sacos-lixo');fecharNav()"><div class="mega-link-ico">🗑️</div><div class="mega-link-info"><div class="mega-link-name">Sacos de Lixo</div><div class="mega-link-desc">10L a 200L, todas cores</div></div></div>
             </div>
             <div class="mega-featured" onclick="filterCat('diversos');fecharNav()">
-              <div class="mega-featured-l">
-                <div class="mega-feat-ico">❄️</div>
-                <div class="mega-feat-text">
-                  <strong>Embalagens de Isopor</strong>
-                  <span>Peixaria, delivery, transporte de frios</span>
-                </div>
-              </div>
+              <div class="mega-featured-l"><div class="mega-feat-ico">❄️</div><div class="mega-feat-text"><strong>Embalagens de Isopor</strong><span>Peixaria, delivery, transporte de frios</span></div></div>
               <div class="mega-feat-cta">Ver tudo →</div>
             </div>
           </div>
         </div>
       </div>
-
-      <!-- Descartáveis -->
       <div class="nav-item" id="nav-desc">
-        <div class="nav-link" onclick="toggleNav('nav-desc')">
-          <span class="nav-dot"></span>Descartáveis
-          <svg viewBox="0 0 10 6" fill="none"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
-        </div>
+        <div class="nav-link" onclick="toggleNav('nav-desc')"><span class="nav-dot"></span>Descartáveis<svg viewBox="0 0 10 6" fill="none"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></div>
         <div class="mega">
           <div class="mega-grid" style="grid-template-columns:repeat(2,1fr)">
             <div class="mega-col">
               <div class="mega-col-title">Festa & Eventos</div>
-              <div class="mega-link" onclick="filtrarSub('copos-pratos',null,'festa');fecharNav()">
-                <div class="mega-link-ico">🥤</div>
-                <div class="mega-link-info"><div class="mega-link-name">Copos e Pratos</div><div class="mega-link-desc">PS, PP, Biodegradável</div></div>
-              </div>
-              <div class="mega-link" onclick="filtrarSub('talheres',null,'festa');fecharNav()">
-                <div class="mega-link-ico">🍴</div>
-                <div class="mega-link-info"><div class="mega-link-name">Talheres</div><div class="mega-link-desc">Garfo, faca, colher, kit</div></div>
-              </div>
+              <div class="mega-link" onclick="filtrarSub('copos-pratos',null,'festa');fecharNav()"><div class="mega-link-ico">🥤</div><div class="mega-link-info"><div class="mega-link-name">Copos e Pratos</div><div class="mega-link-desc">PS, PP, Biodegradável</div></div></div>
+              <div class="mega-link" onclick="filtrarSub('talheres',null,'festa');fecharNav()"><div class="mega-link-ico">🍴</div><div class="mega-link-info"><div class="mega-link-name">Talheres</div><div class="mega-link-desc">Garfo, faca, colher, kit</div></div></div>
             </div>
             <div class="mega-col">
               <div class="mega-col-title">Higiene</div>
-              <div class="mega-link" onclick="filtrarSub('papel-higiene',null,'higiene');fecharNav()">
-                <div class="mega-link-ico">🧻</div>
-                <div class="mega-link-info"><div class="mega-link-name">Papel & Sabonetes</div><div class="mega-link-desc">Papel toalha, higiênico, sabão</div></div>
-              </div>
-              <div class="mega-link" onclick="buscarPorTermo('alcool')">
-                <div class="mega-link-ico">🧴</div>
-                <div class="mega-link-info"><div class="mega-link-name">Álcool & Desinfetante</div><div class="mega-link-desc">70°, gel, spray</div></div>
-              </div>
+              <div class="mega-link" onclick="filtrarSub('papel-higiene',null,'higiene');fecharNav()"><div class="mega-link-ico">🧻</div><div class="mega-link-info"><div class="mega-link-name">Papel & Sabonetes</div><div class="mega-link-desc">Papel toalha, higiênico, sabão</div></div></div>
+              <div class="mega-link" onclick="buscarPorTermo('alcool')"><div class="mega-link-ico">🧴</div><div class="mega-link-info"><div class="mega-link-name">Álcool & Desinfetante</div><div class="mega-link-desc">70°, gel, spray</div></div></div>
             </div>
           </div>
         </div>
       </div>
-
-      <!-- Limpeza -->
       <div class="nav-item" id="nav-limp">
-        <div class="nav-link" onclick="toggleNav('nav-limp')">
-          <span class="nav-dot"></span>Limpeza & EPI
-          <svg viewBox="0 0 10 6" fill="none"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
-        </div>
+        <div class="nav-link" onclick="toggleNav('nav-limp')"><span class="nav-dot"></span>Limpeza & EPI<svg viewBox="0 0 10 6" fill="none"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></div>
         <div class="mega">
           <div class="mega-grid" style="grid-template-columns:repeat(3,1fr)">
             <div class="mega-col">
               <div class="mega-col-title">Produtos Químicos</div>
-              <div class="mega-link" onclick="filtrarSub('produtos-limpeza',null,'limpeza');fecharNav()">
-                <div class="mega-link-ico">🧴</div>
-                <div class="mega-link-info"><div class="mega-link-name">Detergente & Deseng.</div><div class="mega-link-desc">Multi-uso, desincrustante</div></div>
-              </div>
-              <div class="mega-link" onclick="filtrarSub('aromas-inseticidas',null,'utilidades');fecharNav()">
-                <div class="mega-link-ico">🌿</div>
-                <div class="mega-link-info"><div class="mega-link-name">Aromas & Inseticidas</div><div class="mega-link-desc">Ambientadores, repelentes</div></div>
-              </div>
+              <div class="mega-link" onclick="filtrarSub('produtos-limpeza',null,'limpeza');fecharNav()"><div class="mega-link-ico">🧴</div><div class="mega-link-info"><div class="mega-link-name">Detergente & Deseng.</div><div class="mega-link-desc">Multi-uso, desincrustante</div></div></div>
+              <div class="mega-link" onclick="filtrarSub('aromas-inseticidas',null,'utilidades');fecharNav()"><div class="mega-link-ico">🌿</div><div class="mega-link-info"><div class="mega-link-name">Aromas & Inseticidas</div><div class="mega-link-desc">Ambientadores, repelentes</div></div></div>
             </div>
             <div class="mega-col">
               <div class="mega-col-title">Utensílios</div>
-              <div class="mega-link" onclick="filtrarSub('utensilios-limpeza',null,'limpeza');fecharNav()">
-                <div class="mega-link-ico">🧽</div>
-                <div class="mega-link-info"><div class="mega-link-name">Esponjas & Panos</div><div class="mega-link-desc">Fibra, microfibra, luva</div></div>
-              </div>
-              <div class="mega-link" onclick="filtrarSub('organiz-limpeza',null,'utilidades');fecharNav()">
-                <div class="mega-link-ico">🪣</div>
-                <div class="mega-link-info"><div class="mega-link-name">Baldes & Cestos</div><div class="mega-link-desc">Coleta seletiva, cozinha</div></div>
-              </div>
+              <div class="mega-link" onclick="filtrarSub('utensilios-limpeza',null,'limpeza');fecharNav()"><div class="mega-link-ico">🧽</div><div class="mega-link-info"><div class="mega-link-name">Esponjas & Panos</div><div class="mega-link-desc">Fibra, microfibra, luva</div></div></div>
+              <div class="mega-link" onclick="filtrarSub('organiz-limpeza',null,'utilidades');fecharNav()"><div class="mega-link-ico">🪣</div><div class="mega-link-info"><div class="mega-link-name">Baldes & Cestos</div><div class="mega-link-desc">Coleta seletiva, cozinha</div></div></div>
             </div>
             <div class="mega-col">
               <div class="mega-col-title">EPI & Proteção</div>
-              <div class="mega-link" onclick="filtrarSub('epi',null,'limpeza');fecharNav()">
-                <div class="mega-link-ico">🧤</div>
-                <div class="mega-link-info"><div class="mega-link-name">Luvas & Aventais</div><div class="mega-link-desc">Látex, nitrílica, PVC</div></div>
-              </div>
-              <div class="mega-link" onclick="buscarPorTermo('touca')">
-                <div class="mega-link-ico">😷</div>
-                <div class="mega-link-info"><div class="mega-link-name">Máscaras & Toucas</div><div class="mega-link-desc">Cirúrgica, TNT, descartável</div></div>
-              </div>
+              <div class="mega-link" onclick="filtrarSub('epi',null,'limpeza');fecharNav()"><div class="mega-link-ico">🧤</div><div class="mega-link-info"><div class="mega-link-name">Luvas & Aventais</div><div class="mega-link-desc">Látex, nitrílica, PVC</div></div></div>
+              <div class="mega-link" onclick="buscarPorTermo('touca')"><div class="mega-link-ico">😷</div><div class="mega-link-info"><div class="mega-link-name">Máscaras & Toucas</div><div class="mega-link-desc">Cirúrgica, TNT, descartável</div></div></div>
             </div>
           </div>
         </div>
       </div>
-
-      <!-- Utilidades -->
       <div class="nav-item" id="nav-util">
-        <div class="nav-link" onclick="toggleNav('nav-util')">
-          <span class="nav-dot"></span>Utilidades
-          <svg viewBox="0 0 10 6" fill="none"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
-        </div>
+        <div class="nav-link" onclick="toggleNav('nav-util')"><span class="nav-dot"></span>Utilidades<svg viewBox="0 0 10 6" fill="none"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></div>
         <div class="mega" style="min-width:520px">
           <div class="mega-grid" style="grid-template-columns:repeat(2,1fr)">
             <div class="mega-col">
               <div class="mega-col-title">Casa & Escritório</div>
-              <div class="mega-link" onclick="filterCat('utilidades');filtrarSub('escritorio');fecharNav()">
-                <div class="mega-link-ico">✏️</div>
-                <div class="mega-link-info"><div class="mega-link-name">Escritório</div><div class="mega-link-desc">Papelaria, canetas, clipes</div></div>
-              </div>
-              <div class="mega-link" onclick="filterCat('utilidades');filtrarSub('ganchos');fecharNav()">
-                <div class="mega-link-ico">🪝</div>
-                <div class="mega-link-info"><div class="mega-link-name">Ganchos & Fixadores</div><div class="mega-link-desc">3M, ventosa, parede</div></div>
-              </div>
-              <div class="mega-link" onclick="filterCat('utilidades');filtrarSub('pilhas-baterias');fecharNav()">
-                <div class="mega-link-ico">🔋</div>
-                <div class="mega-link-info"><div class="mega-link-name">Pilhas & Baterias</div><div class="mega-link-desc">AA, AAA, 9V, recarregáveis</div></div>
-              </div>
+              <div class="mega-link" onclick="filterCat('utilidades');filtrarSub('escritorio');fecharNav()"><div class="mega-link-ico">✏️</div><div class="mega-link-info"><div class="mega-link-name">Escritório</div><div class="mega-link-desc">Papelaria, canetas, clipes</div></div></div>
+              <div class="mega-link" onclick="filterCat('utilidades');filtrarSub('ganchos');fecharNav()"><div class="mega-link-ico">🪝</div><div class="mega-link-info"><div class="mega-link-name">Ganchos & Fixadores</div><div class="mega-link-desc">3M, ventosa, parede</div></div></div>
+              <div class="mega-link" onclick="filterCat('utilidades');filtrarSub('pilhas-baterias');fecharNav()"><div class="mega-link-ico">🔋</div><div class="mega-link-info"><div class="mega-link-name">Pilhas & Baterias</div><div class="mega-link-desc">AA, AAA, 9V, recarregáveis</div></div></div>
             </div>
             <div class="mega-col">
               <div class="mega-col-title">Ferramentas</div>
-              <div class="mega-link" onclick="filterCat('utilidades');filtrarSub('ferramentas');fecharNav()">
-                <div class="mega-link-ico">🔨</div>
-                <div class="mega-link-info"><div class="mega-link-name">Ferramentas Manuais</div><div class="mega-link-desc">Chave, alicate, fita</div></div>
-              </div>
-              <div class="mega-link" onclick="filterCat('utilidades');filtrarSub('organiz-limpeza');fecharNav()">
-                <div class="mega-link-ico">📦</div>
-                <div class="mega-link-info"><div class="mega-link-name">Organização</div><div class="mega-link-desc">Caixas, gavetas, prateleiras</div></div>
-              </div>
+              <div class="mega-link" onclick="filterCat('utilidades');filtrarSub('ferramentas');fecharNav()"><div class="mega-link-ico">🔨</div><div class="mega-link-info"><div class="mega-link-name">Ferramentas Manuais</div><div class="mega-link-desc">Chave, alicate, fita</div></div></div>
+              <div class="mega-link" onclick="filterCat('utilidades');filtrarSub('organiz-limpeza');fecharNav()"><div class="mega-link-ico">📦</div><div class="mega-link-info"><div class="mega-link-name">Organização</div><div class="mega-link-desc">Caixas, gavetas, prateleiras</div></div></div>
             </div>
           </div>
         </div>
       </div>
-
-      <a class="nav-link" href="https://wa.me/5511972999835" target="_blank" style="color:var(--grn);font-weight:500">
-        <span style="width:7px;height:7px;background:var(--grn);border-radius:50%;display:inline-block;margin-right:-2px;animation:blink 2s infinite"></span>
-        Contato
-      </a>
+      <a class="nav-link" href="https://wa.me/5511972999835" target="_blank" style="color:var(--grn);font-weight:500"><span style="width:7px;height:7px;background:var(--grn);border-radius:50%;display:inline-block;margin-right:-2px;animation:blink 2s infinite"></span>Contato</a>
     </nav>
-
     <div class="hdr-r">
       <button class="btn-ico" onclick="toggleTheme()" id="themeBtn" title="Tema">🌙</button>
-      <button class="btn-cart-hdr" onclick="abrirCart()">
-        🛒 <span>Carrinho</span>
-        <span class="cbadge" id="cbadge">0</span>
-      </button>
-      <a href="https://wa.me/5511972999835" target="_blank" class="btn-wpp">
-        <img src="https://img.icons8.com/color/48/whatsapp.png" alt=""><span>WhatsApp</span>
-      </a>
+      <button class="btn-cart-hdr" onclick="abrirCart()">🛒 <span>Carrinho</span><span class="cbadge" id="cbadge">0</span></button>
+      <a href="https://wa.me/5511972999835" target="_blank" class="btn-wpp"><img src="https://img.icons8.com/color/48/whatsapp.png" alt=""><span>WhatsApp</span></a>
     </div>
   </div>
 </header>
 
-<!-- ══════════ HERO ══════════ -->
 <section class="hero" id="inicio">
-  <canvas id="hero-canvas"></canvas>
   <img class="hero-bg-img" src="https://willkerson.github.io/Web.embalagens/lojafundo.png" alt="Loja">
   <div class="hero-gradient"></div>
   <div class="hero-content">
@@ -599,18 +345,13 @@ footer strong{color:var(--t2);font-weight:500}
     <h1>Soluções completas em<br><em>Embalagens.</em></h1>
     <p class="hero-sub">Do papelão ao plástico, do isopor às sacolas — tudo para o seu negócio em um só lugar, com qualidade e preço de fábrica.</p>
     <div class="hero-btns">
-      <button class="btn-pri" onclick="document.getElementById('produtos').scrollIntoView({behavior:'smooth'})">
-        <img src="https://img.icons8.com/fluency/48/layers.png" alt=""> Ver Catálogo
-      </button>
-      <a href="https://wa.me/5511972999835" target="_blank" class="btn-ghost">
-        <img src="https://img.icons8.com/color/48/whatsapp.png" alt=""> Falar no WhatsApp
-      </a>
+      <button class="btn-pri" onclick="document.getElementById('produtos').scrollIntoView({behavior:'smooth'})"><img src="https://img.icons8.com/fluency/48/layers.png" alt=""> Ver Catálogo</button>
+      <a href="https://wa.me/5511972999835" target="_blank" class="btn-ghost"><img src="https://img.icons8.com/color/48/whatsapp.png" alt=""> Falar no WhatsApp</a>
     </div>
   </div>
   <div class="hero-scroll">role<div class="scroll-track"></div></div>
 </section>
 
-<!-- ══════════ TRUST ══════════ -->
 <div class="trust-bar">
   <div class="trust-item"><div class="trust-ico">📦</div><div class="trust-texts"><div class="trust-n">800+</div><div class="trust-l">Produtos em estoque</div></div></div>
   <div class="trust-item"><div class="trust-ico">🏆</div><div class="trust-texts"><div class="trust-n">15</div><div class="trust-l">Anos de experiência</div></div></div>
@@ -618,46 +359,24 @@ footer strong{color:var(--t2);font-weight:500}
   <div class="trust-item"><div class="trust-ico">🗂️</div><div class="trust-texts"><div class="trust-n">8</div><div class="trust-l">Categorias</div></div></div>
 </div>
 
-<!-- ══════════ REVIEWS ══════════ -->
 <section class="sec-reviews">
   <div class="reviews-wrap">
-    <div class="reviews-head">
-      <div class="sec-label">⭐ Depoimentos</div>
-      <h2 class="sec-title">O que nossos clientes dizem</h2>
-    </div>
+    <div class="reviews-head"><div class="sec-label">⭐ Depoimentos</div><h2 class="sec-title">O que nossos clientes dizem</h2></div>
     <div class="reviews-grid">
-      <div class="review-card">
-        <div class="review-stars">★★★★★</div>
-        <p class="review-quote">"Muitooo bom, recomendo — o atendimento é 10! Pessoal dá uma atenção boa 👌 Comprei umas marmitas e top demais."</p>
-        <div class="review-author"><div class="review-av">SC</div><div class="review-name">Shirley Cristina</div></div>
-      </div>
-      <div class="review-card">
-        <div class="review-stars">★★★★★</div>
-        <p class="review-quote">"Tem muita coisa boa e o preço ótimo. Os atendentes são muito simpáticos e sempre prontos para ajudar em tudo."</p>
-        <div class="review-author"><div class="review-av">FL</div><div class="review-name">Francis Luci</div></div>
-      </div>
-      <div class="review-card">
-        <div class="review-stars">★★★★★</div>
-        <p class="review-quote">"A empresa tem tudo em descartáveis, o atendimento é ótimo, tem estacionamento e ponto de ônibus em frente. Facinho de chegar."</p>
-        <div class="review-author"><div class="review-av">AR</div><div class="review-name">Adelaide Rocha</div></div>
-      </div>
+      <div class="review-card"><div class="review-stars">★★★★★</div><p class="review-quote">"Muitooo bom, recomendo — o atendimento é 10! Pessoal dá uma atenção boa 👌 Comprei umas marmitas e top demais."</p><div class="review-author"><div class="review-av">SC</div><div class="review-name">Shirley Cristina</div></div></div>
+      <div class="review-card"><div class="review-stars">★★★★★</div><p class="review-quote">"Tem muita coisa boa e o preço ótimo. Os atendentes são muito simpáticos e sempre prontos para ajudar em tudo."</p><div class="review-author"><div class="review-av">FL</div><div class="review-name">Francis Luci</div></div></div>
+      <div class="review-card"><div class="review-stars">★★★★★</div><p class="review-quote">"A empresa tem tudo em descartáveis, o atendimento é ótimo, tem estacionamento e ponto de ônibus em frente. Facinho de chegar."</p><div class="review-author"><div class="review-av">AR</div><div class="review-name">Adelaide Rocha</div></div></div>
     </div>
   </div>
 </section>
 
-<!-- ══════════ CATALOG ══════════ -->
 <section class="sec-catalog" id="produtos">
   <div class="cat-head">
     <div class="sec-label">🗂 Catálogo</div>
     <h2 class="sec-title">Todos os Produtos</h2>
     <p class="sec-sub">Explore por categoria ou busque diretamente pelo nome</p>
   </div>
-
-  <div class="search-wrap">
-    <span class="search-icon">🔍</span>
-    <input type="text" id="searchInput" class="search-inp" placeholder="Buscar produto, marca, tipo..." oninput="handleSearch(event)">
-  </div>
-
+  <div class="search-wrap"><span class="search-icon">🔍</span><input type="text" id="searchInput" class="search-inp" placeholder="Buscar produto, marca, tipo..." oninput="handleSearch(event)"></div>
   <div class="filter-tabs" id="fbar">
     <button class="ftab on" data-cat="todos" onclick="filterCat('todos',this)"><img src="https://img.icons8.com/fluency/48/layers.png" alt="">Todos</button>
     <button class="ftab" data-cat="caixas" onclick="filterCat('caixas',this)"><img src="https://img.icons8.com/fluency/48/box.png" alt="">Caixas</button>
@@ -669,464 +388,157 @@ footer strong{color:var(--t2);font-weight:500}
     <button class="ftab" data-cat="utilidades" onclick="filterCat('utilidades',this)"><img src="https://img.icons8.com/fluency/48/toolbox.png" alt="">Utilidades</button>
     <button class="ftab" data-cat="diversos" onclick="filterCat('diversos',this)"><img src="https://img.icons8.com/fluency/48/open-box.png" alt="">Diversos</button>
   </div>
-
-  <!-- SUBCATEGORIAS -->
   <div class="subtabs-wrap">
-    <div class="subtabs" id="sub-caixas">
-      <button class="stab on" onclick="filtrarSub('todas',this,'caixas')">Todas</button>
-      <button class="stab" onclick="filtrarSub('caixas-correio',this,'caixas')">Padrão Correios</button>
-      <button class="stab" onclick="filtrarSub('caixas-alimentos',this,'caixas')">Para Alimentos</button>
-    </div>
-    <div class="subtabs" id="sub-sacolas">
-      <button class="stab on" onclick="filtrarSub('todas',this,'sacolas')">Todas</button>
-      <button class="stab" onclick="filtrarSub('sacos-lixo',this,'sacolas')">Sacos de Lixo</button>
-      <button class="stab" onclick="filtrarSub('sacolas-papel',this,'sacolas')">Papel</button>
-      <button class="stab" onclick="filtrarSub('sacolas-plasticas',this,'sacolas')">Plásticas</button>
-    </div>
-    <div class="subtabs" id="sub-plastico">
-      <button class="stab on" onclick="filtrarSub('todas',this,'plastico')">Todos</button>
-      <button class="stab" onclick="filtrarSub('potes-tampas',this,'plastico')">Potes e Tampas</button>
-      <button class="stab" onclick="filtrarSub('embalagens-bolo',this,'plastico')">Emb. p/ Bolo</button>
-    </div>
-    <div class="subtabs" id="sub-festa">
-      <button class="stab on" onclick="filtrarSub('todas',this,'festa')">Tudo</button>
-      <button class="stab" onclick="filtrarSub('copos-pratos',this,'festa')">Copos e Pratos</button>
-      <button class="stab" onclick="filtrarSub('talheres',this,'festa')">Talheres</button>
-    </div>
-    <div class="subtabs" id="sub-limpeza">
-      <button class="stab on" onclick="filtrarSub('todas',this,'limpeza')">Tudo</button>
-      <button class="stab" onclick="filtrarSub('produtos-limpeza',this,'limpeza')">Produtos Químicos</button>
-      <button class="stab" onclick="filtrarSub('utensilios-limpeza',this,'limpeza')">Utensílios</button>
-      <button class="stab" onclick="filtrarSub('epi',this,'limpeza')">EPI & Proteção</button>
-    </div>
-    <div class="subtabs" id="sub-higiene">
-      <button class="stab on" onclick="filtrarSub('todas',this,'higiene')">Tudo</button>
-      <button class="stab" onclick="filtrarSub('papel-higiene',this,'higiene')">Papel & Sabonetes</button>
-    </div>
-    <div class="subtabs" id="sub-utilidades">
-      <button class="stab on" onclick="filtrarSub('todas',this,'utilidades')">Tudo</button>
-      <button class="stab" onclick="filtrarSub('pilhas-baterias',this,'utilidades')">Pilhas & Baterias</button>
-      <button class="stab" onclick="filtrarSub('aromas-inseticidas',this,'utilidades')">Aromas & Inset.</button>
-      <button class="stab" onclick="filtrarSub('organiz-limpeza',this,'utilidades')">Organização</button>
-      <button class="stab" onclick="filtrarSub('ferramentas',this,'utilidades')">Ferramentas</button>
-      <button class="stab" onclick="filtrarSub('escritorio',this,'utilidades')">Escritório</button>
-      <button class="stab" onclick="filtrarSub('ganchos',this,'utilidades')">Ganchos</button>
-    </div>
-    <div class="subtabs" id="sub-diversos">
-      <button class="stab on" onclick="filtrarSub('todas',this,'diversos')">Tudo</button>
-      <button class="stab" onclick="filtrarSub('isopor-geral',this,'diversos')">Isopor Geral</button>
-      <button class="stab" onclick="filtrarSub('emb-flexiveis',this,'diversos')">Emb. Flexíveis</button>
-      <button class="stab" onclick="filtrarSub('emb-diversas',this,'diversos')">Emb. Diversas</button>
-      <button class="stab" onclick="filtrarSub('outros',this,'diversos')">Outros</button>
-    </div>
+    <div class="subtabs" id="sub-caixas"><button class="stab on" onclick="filtrarSub('todas',this,'caixas')">Todas</button><button class="stab" onclick="filtrarSub('caixas-correio',this,'caixas')">Padrão Correios</button><button class="stab" onclick="filtrarSub('caixas-alimentos',this,'caixas')">Para Alimentos</button></div>
+    <div class="subtabs" id="sub-sacolas"><button class="stab on" onclick="filtrarSub('todas',this,'sacolas')">Todas</button><button class="stab" onclick="filtrarSub('sacos-lixo',this,'sacolas')">Sacos de Lixo</button><button class="stab" onclick="filtrarSub('sacolas-papel',this,'sacolas')">Papel</button><button class="stab" onclick="filtrarSub('sacolas-plasticas',this,'sacolas')">Plásticas</button></div>
+    <div class="subtabs" id="sub-plastico"><button class="stab on" onclick="filtrarSub('todas',this,'plastico')">Todos</button><button class="stab" onclick="filtrarSub('potes-tampas',this,'plastico')">Potes e Tampas</button><button class="stab" onclick="filtrarSub('embalagens-bolo',this,'plastico')">Emb. p/ Bolo</button></div>
+    <div class="subtabs" id="sub-festa"><button class="stab on" onclick="filtrarSub('todas',this,'festa')">Tudo</button><button class="stab" onclick="filtrarSub('copos-pratos',this,'festa')">Copos e Pratos</button><button class="stab" onclick="filtrarSub('talheres',this,'festa')">Talheres</button></div>
+    <div class="subtabs" id="sub-limpeza"><button class="stab on" onclick="filtrarSub('todas',this,'limpeza')">Tudo</button><button class="stab" onclick="filtrarSub('produtos-limpeza',this,'limpeza')">Produtos Químicos</button><button class="stab" onclick="filtrarSub('utensilios-limpeza',this,'limpeza')">Utensílios</button><button class="stab" onclick="filtrarSub('epi',this,'limpeza')">EPI & Proteção</button></div>
+    <div class="subtabs" id="sub-higiene"><button class="stab on" onclick="filtrarSub('todas',this,'higiene')">Tudo</button><button class="stab" onclick="filtrarSub('papel-higiene',this,'higiene')">Papel & Sabonetes</button></div>
+    <div class="subtabs" id="sub-utilidades"><button class="stab on" onclick="filtrarSub('todas',this,'utilidades')">Tudo</button><button class="stab" onclick="filtrarSub('pilhas-baterias',this,'utilidades')">Pilhas & Baterias</button><button class="stab" onclick="filtrarSub('aromas-inseticidas',this,'utilidades')">Aromas & Inset.</button><button class="stab" onclick="filtrarSub('organiz-limpeza',this,'utilidades')">Organização</button><button class="stab" onclick="filtrarSub('ferramentas',this,'utilidades')">Ferramentas</button><button class="stab" onclick="filtrarSub('escritorio',this,'utilidades')">Escritório</button><button class="stab" onclick="filtrarSub('ganchos',this,'utilidades')">Ganchos</button></div>
+    <div class="subtabs" id="sub-diversos"><button class="stab on" onclick="filtrarSub('todas',this,'diversos')">Tudo</button><button class="stab" onclick="filtrarSub('isopor-geral',this,'diversos')">Isopor Geral</button><button class="stab" onclick="filtrarSub('emb-flexiveis',this,'diversos')">Emb. Flexíveis</button><button class="stab" onclick="filtrarSub('emb-diversas',this,'diversos')">Emb. Diversas</button><button class="stab" onclick="filtrarSub('outros',this,'diversos')">Outros</button></div>
   </div>
-
-  <!-- FILTRO POR MARCA — aparece após selecionar subcategoria -->
-  <div class="brand-filter-wrap" id="brandFilterWrap">
-    <div class="brand-filter-inner" id="brandFilterInner">
-      <span class="brand-filter-label">🏷️ Marca:</span>
-    </div>
-  </div>
-
+  <div class="brand-filter-wrap" id="brandFilterWrap"><div class="brand-filter-inner" id="brandFilterInner"><span class="brand-filter-label">🏷️ Marca:</span></div></div>
   <div id="containerProdutos"></div>
 </section>
 
-<!-- ══════════ CART ══════════ -->
 <div class="backdrop" id="backdrop" onclick="fecharCart()"></div>
 <aside class="cart-panel" id="cartPanel">
-  <div class="cart-head">
-    <h3>🛍️ Meu Pedido</h3>
-    <button class="btn-close" onclick="fecharCart()">✕</button>
-  </div>
+  <div class="cart-head"><h3>🛍️ Meu Pedido</h3><button class="btn-close" onclick="fecharCart()">✕</button></div>
   <div class="cart-list" id="clist"></div>
   <div class="cart-foot">
-    <div class="cart-total-row">
-      <span class="cart-total-lbl">Total estimado</span>
-      <span class="cart-total-val" id="ctotal">R$ 0,00</span>
-    </div>
-    <button class="btn-send-wpp" onclick="enviarWpp()">
-      <img src="https://img.icons8.com/color/48/whatsapp.png" alt=""> Enviar Pedido pelo WhatsApp
-    </button>
+    <div class="cart-total-row"><span class="cart-total-lbl">Total estimado</span><span class="cart-total-val" id="ctotal">R$ 0,00</span></div>
+    <button class="btn-send-wpp" onclick="enviarWpp()"><img src="https://img.icons8.com/color/48/whatsapp.png" alt=""> Enviar Pedido pelo WhatsApp</button>
     <button class="btn-clear" onclick="limparCart()">🗑 Limpar carrinho</button>
   </div>
 </aside>
 
-<!-- ══════════ WPP FLOAT ══════════ -->
 <div class="wpp-float">
   <div class="wpp-tip">Fale conosco!</div>
   <a href="https://wa.me/5511972999835?text=Ol%C3%A1%2C+gostaria+de+atendimento" target="_blank" class="wpp-btn">
-    <div class="wpp-ring"></div>
-    <div class="wpp-ring wpp-ring2"></div>
+    <div class="wpp-ring"></div><div class="wpp-ring wpp-ring2"></div>
     <img src="https://img.icons8.com/color/48/whatsapp.png" alt="WhatsApp">
   </a>
 </div>
 
-<footer>
-  <p>© 2026 <strong>Cia Das Embalagens</strong> — Todos os direitos reservados · São Paulo, SP</p>
-</footer>
+<footer><p>© 2026 <strong>Cia Das Embalagens</strong> — Todos os direitos reservados · São Paulo, SP</p></footer>
 
 <script src="produtos_planilha.js"></script>
 <script>
-/* ═══════════ SCROLL HEADER ═══════════ */
-window.addEventListener('scroll',function(){
-  document.getElementById('hdr').classList.toggle('sc',scrollY>50);
-},{passive:true});
+window.addEventListener('scroll',function(){document.getElementById('hdr').classList.toggle('sc',scrollY>50);},{passive:true});
+function toggleNav(id){document.querySelectorAll('.nav-item').forEach(function(el){if(el.id!==id)el.classList.remove('open')});document.getElementById(id).classList.toggle('open');}
+function fecharNav(){document.querySelectorAll('.nav-item').forEach(function(el){el.classList.remove('open')});}
+document.addEventListener('click',function(e){if(!e.target.closest('.nav-item'))fecharNav();});
+function toggleTheme(){var html=document.documentElement,btn=document.getElementById('themeBtn');var dark=html.getAttribute('data-theme')==='dark';html.setAttribute('data-theme',dark?'light':'dark');btn.textContent=dark?'🌙':'☀️';}
 
-/* ═══════════ MEGA NAV ═══════════ */
-function toggleNav(id){
-  var items=document.querySelectorAll('.nav-item');
-  items.forEach(function(el){if(el.id!==id)el.classList.remove('open')});
-  document.getElementById(id).classList.toggle('open');
-}
-function fecharNav(){
-  document.querySelectorAll('.nav-item').forEach(function(el){el.classList.remove('open')});
-}
-document.addEventListener('click',function(e){
-  if(!e.target.closest('.nav-item'))fecharNav();
-});
-
-/* ═══════════ THEME ═══════════ */
-function toggleTheme(){
-  var html=document.documentElement,btn=document.getElementById('themeBtn');
-  var dark=html.getAttribute('data-theme')==='dark';
-  html.setAttribute('data-theme',dark?'light':'dark');
-  btn.textContent=dark?'🌙':'☀️';
-}
-
-/* ═══════════ STATE ═══════════ */
 var carrinho={};
 var estado={cat:'todos',sub:'todas',busca:'',marca:'todas'};
-
-var catMap={
-  caixas:['caixas','caixas-correio','caixas-alimentos'],
-  sacolas:['sacolas','sacos-lixo','sacolas-papel','sacolas-plasticas'],
-  plastico:['plastico','potes-tampas','embalagens-bolo'],
-  festa:['festa','copos-pratos','talheres'],
-  limpeza:['limpeza','produtos-limpeza','utensilios-limpeza','epi','sacos-lixo'],
-  higiene:['higiene','papel-higiene'],
-  utilidades:['utilidades','pilhas-baterias','aromas-inseticidas','organiz-limpeza','ferramentas','escritorio','ganchos'],
-  diversos:['diversos','isopor-geral','emb-flexiveis','emb-diversas','outros']
-};
-
-var subLabels={
-  'caixas-correio':'Caixas Correios','caixas-alimentos':'Caixas p/ Alimentos',
-  'sacos-lixo':'Sacos de Lixo','sacolas-papel':'Sacolas de Papel','sacolas-plasticas':'Sacolas Plásticas',
-  'potes-tampas':'Potes e Tampas','embalagens-bolo':'Embalagens p/ Bolo',
-  'copos-pratos':'Copos e Pratos','talheres':'Talheres',
-  'produtos-limpeza':'Produtos Químicos','utensilios-limpeza':'Utensílios','epi':'EPI & Proteção',
-  'papel-higiene':'Papel & Sabonetes',
-  'pilhas-baterias':'Pilhas & Baterias','aromas-inseticidas':'Aromas & Inseticidas',
-  'organiz-limpeza':'Organização','ferramentas':'Ferramentas','escritorio':'Escritório','ganchos':'Ganchos',
-  'isopor-geral':'Isopor Geral','emb-flexiveis':'Emb. Flexíveis','emb-diversas':'Emb. Diversas','outros':'Outros'
-};
-
-var catEmojis={
-  caixas:'📦',sacolas:'🛍️',plastico:'🧪',festa:'🥂',limpeza:'🧹',higiene:'🧻',utilidades:'🔧',diversos:'🔓',
-  'caixas-correio':'📬','caixas-alimentos':'🍕','sacos-lixo':'🗑️','sacolas-papel':'🧻','sacolas-plasticas':'🛒',
-  'potes-tampas':'🫙','embalagens-bolo':'🎂','copos-pratos':'🥤','talheres':'🍴',
-  'produtos-limpeza':'🧴','utensilios-limpeza':'🧽','epi':'🧤','papel-higiene':'🧻',
-  'pilhas-baterias':'🔋','aromas-inseticidas':'🌿','organiz-limpeza':'🪣','ferramentas':'🔨',
-  'escritorio':'✏️','ganchos':'🪝','isopor-geral':'❄️','emb-flexiveis':'📜','emb-diversas':'🎁','outros':'📎'
-};
-
+var catMap={caixas:['caixas','caixas-correio','caixas-alimentos'],sacolas:['sacolas','sacos-lixo','sacolas-papel','sacolas-plasticas'],plastico:['plastico','potes-tampas','embalagens-bolo'],festa:['festa','copos-pratos','talheres'],limpeza:['limpeza','produtos-limpeza','utensilios-limpeza','epi','sacos-lixo'],higiene:['higiene','papel-higiene'],utilidades:['utilidades','pilhas-baterias','aromas-inseticidas','organiz-limpeza','ferramentas','escritorio','ganchos'],diversos:['diversos','isopor-geral','emb-flexiveis','emb-diversas','outros']};
+var subLabels={'caixas-correio':'Caixas Correios','caixas-alimentos':'Caixas p/ Alimentos','sacos-lixo':'Sacos de Lixo','sacolas-papel':'Sacolas de Papel','sacolas-plasticas':'Sacolas Plásticas','potes-tampas':'Potes e Tampas','embalagens-bolo':'Embalagens p/ Bolo','copos-pratos':'Copos e Pratos','talheres':'Talheres','produtos-limpeza':'Produtos Químicos','utensilios-limpeza':'Utensílios','epi':'EPI & Proteção','papel-higiene':'Papel & Sabonetes','pilhas-baterias':'Pilhas & Baterias','aromas-inseticidas':'Aromas & Inseticidas','organiz-limpeza':'Organização','ferramentas':'Ferramentas','escritorio':'Escritório','ganchos':'Ganchos','isopor-geral':'Isopor Geral','emb-flexiveis':'Emb. Flexíveis','emb-diversas':'Emb. Diversas','outros':'Outros'};
+var catEmojis={caixas:'📦',sacolas:'🛍️',plastico:'🧪',festa:'🥂',limpeza:'🧹',higiene:'🧻',utilidades:'🔧',diversos:'🔓','caixas-correio':'📬','caixas-alimentos':'🍕','sacos-lixo':'🗑️','sacolas-papel':'🧻','sacolas-plasticas':'🛒','potes-tampas':'🫙','embalagens-bolo':'🎂','copos-pratos':'🥤','talheres':'🍴','produtos-limpeza':'🧴','utensilios-limpeza':'🧽','epi':'🧤','papel-higiene':'🧻','pilhas-baterias':'🔋','aromas-inseticidas':'🌿','organiz-limpeza':'🪣','ferramentas':'🔨','escritorio':'✏️','ganchos':'🪝','isopor-geral':'❄️','emb-flexiveis':'📜','emb-diversas':'🎁','outros':'📎'};
 function prods(){return window.listaProdutosPlanilha||[];}
-
-/* ═══════════ DEBOUNCE ═══════════ */
-function debounce(fn,ms){
-  var t;
-  return function(){
-    clearTimeout(t);
-    t=setTimeout(fn.apply.bind(fn,this,arguments),ms);
-  };
-}
-
-/* ═══════════ SESSION STORAGE ═══════════ */
-function salvarCarrinho(){
-  try{sessionStorage.setItem('cia_cart',JSON.stringify(carrinho));}catch(e){}
-}
-function restaurarCarrinho(){
-  try{
-    var s=sessionStorage.getItem('cia_cart');
-    if(s) carrinho=JSON.parse(s);
-  }catch(e){carrinho={};}
-}
-
-/* ═══════════ URL HASH ═══════════ */
-function salvarHash(){
-  var h=estado.cat!=='todos'?estado.cat:'';
-  if(h) history.replaceState(null,'','#'+h);
-  else history.replaceState(null,'',location.pathname+location.search);
-}
-function lerHash(){
-  var h=(location.hash||'').replace('#','');
-  if(h && catMap[h]){estado.cat=h;estado.sub='todas';}
-}
-
-/* ═══════════ BRAND FILTER ═══════════ */
-function getMarcasDisponiveis(lista){
-  var marcas={};
-  lista.forEach(function(p){
-    var m=(p.marca||'').trim();
-    if(m) marcas[m]=true;
-  });
-  return Object.keys(marcas).sort();
-}
-
-function renderBrandFilter(listaBase){
-  var wrap=document.getElementById('brandFilterWrap');
-  var inner=document.getElementById('brandFilterInner');
-
-  /* Só mostra filtro de marca quando há subcategoria específica selecionada E marcas disponíveis */
-  var temSub = estado.sub && estado.sub !== 'todas';
-  var marcas = temSub ? getMarcasDisponiveis(listaBase) : [];
-
-  if(!temSub || marcas.length < 2){
-    wrap.classList.remove('on');
-    estado.marca='todas';
-    return;
-  }
-
-  /* Constrói os botões */
-  inner.innerHTML='<span class="brand-filter-label">🏷️ Marca:</span>';
-
-  var btnTodas=document.createElement('button');
-  btnTodas.className='btab'+(estado.marca==='todas'?' on':'');
-  btnTodas.textContent='Todas';
-  btnTodas.onclick=function(){filtrarMarca('todas',this);};
-  inner.appendChild(btnTodas);
-
-  marcas.forEach(function(m){
-    var btn=document.createElement('button');
-    btn.className='btab'+(estado.marca===m?' on':'');
-    btn.textContent=m;
-    btn.onclick=function(){filtrarMarca(m,this);};
-    inner.appendChild(btn);
-  });
-
-  wrap.classList.add('on');
-}
-
-function filtrarMarca(marca,btn){
-  estado.marca=marca;
-  document.querySelectorAll('.btab').forEach(function(b){b.classList.remove('on');});
-  btn.classList.add('on');
-  renderizar();
-}
-
-/* ═══════════ FILTER SHORTCUTS ═══════════ */
-function limparBusca(){
-  estado.busca='';
-  var inp=document.getElementById('searchInput');
-  if(inp) inp.value='';
-}
-
-function scrollParaSec(sub){
-  setTimeout(function(){
-    var sec=document.querySelector('.psec[data-sub="'+sub+'"]');
-    if(!sec){var secs=document.querySelectorAll('.psec');if(secs.length)sec=secs[0];}
-    if(sec) sec.scrollIntoView({behavior:'smooth',block:'start'});
-  },150);
-}
-
-function buscarPorTermo(termo){
-  limparBusca();
-  estado.cat='todos'; estado.sub='todas'; estado.marca='todas';
-  estado.busca=termo.toLowerCase();
-  document.getElementById('searchInput').value=termo;
-  document.querySelectorAll('.ftab').forEach(function(b){b.classList.remove('on')});
-  var all=document.querySelector('.ftab[data-cat="todos"]');
-  if(all)all.classList.add('on');
-  document.querySelectorAll('.subtabs').forEach(function(b){b.classList.remove('on')});
-  document.getElementById('brandFilterWrap').classList.remove('on');
-  fecharNav();
-  renderizar();
-  setTimeout(function(){
-    var c=document.getElementById('containerProdutos');
-    if(c) c.scrollIntoView({behavior:'smooth',block:'start'});
-  },150);
-}
-
-function filterCat(cat,btn){
-  limparBusca();
-  estado.cat=cat; estado.sub='todas'; estado.marca='todas';
-  document.querySelectorAll('.ftab').forEach(function(b){b.classList.remove('on')});
-  if(btn) btn.classList.add('on');
-  else{
-    var fb=document.querySelector('.ftab[data-cat="'+cat+'"]');
-    if(fb) fb.classList.add('on');
-  }
-  document.querySelectorAll('.subtabs').forEach(function(b){b.classList.remove('on')});
-  document.getElementById('brandFilterWrap').classList.remove('on');
-  if(cat!=='todos'){
-    var sub=document.getElementById('sub-'+cat);
-    if(sub){
-      sub.classList.add('on');
-      sub.querySelectorAll('.stab').forEach(function(b){b.classList.remove('on')});
-      sub.querySelector('.stab').classList.add('on');
-    }
-  }
-  salvarHash();
-  renderizar();
-  document.getElementById('produtos').scrollIntoView({behavior:'smooth'});
-}
-
-function filtrarSub(sub,btn,cat){
-  limparBusca();
-  if(cat) estado.cat=cat;
-  estado.sub=sub;
-  estado.marca='todas'; /* reseta marca ao mudar sub */
-  if(cat){
-    document.querySelectorAll('.ftab').forEach(function(b){b.classList.remove('on')});
-    var fb=document.querySelector('.ftab[data-cat="'+cat+'"]');
-    if(fb) fb.classList.add('on');
-    document.querySelectorAll('.subtabs').forEach(function(b){b.classList.remove('on')});
-    var subEl=document.getElementById('sub-'+cat);
-    if(subEl) subEl.classList.add('on');
-  }
-  if(btn){
-    var parentSub=btn.closest('.subtabs');
-    if(parentSub) parentSub.querySelectorAll('.stab').forEach(function(b){b.classList.remove('on')});
-    btn.classList.add('on');
-  }
-  salvarHash();
-  renderizar();
-  if(sub!=='todas') scrollParaSec(sub);
-  else document.getElementById('produtos').scrollIntoView({behavior:'smooth'});
-}
-
-/* ═══════════ BUSCA COM DEBOUNCE ═══════════ */
+function debounce(fn,ms){var t;return function(){clearTimeout(t);t=setTimeout(fn.apply.bind(fn,this,arguments),ms);};}
+function salvarCarrinho(){try{sessionStorage.setItem('cia_cart',JSON.stringify(carrinho));}catch(e){}}
+function restaurarCarrinho(){try{var s=sessionStorage.getItem('cia_cart');if(s)carrinho=JSON.parse(s);}catch(e){carrinho={};}}
+function salvarHash(){var h=estado.cat!=='todos'?estado.cat:'';if(h)history.replaceState(null,'','#'+h);else history.replaceState(null,'',location.pathname+location.search);}
+function lerHash(){var h=(location.hash||'').replace('#','');if(h&&catMap[h]){estado.cat=h;estado.sub='todas';}}
+function getMarcasDisponiveis(lista){var marcas={};lista.forEach(function(p){var m=(p.marca||'').trim();if(m)marcas[m]=true;});return Object.keys(marcas).sort();}
+function renderBrandFilter(listaBase){var wrap=document.getElementById('brandFilterWrap');var inner=document.getElementById('brandFilterInner');var temSub=estado.sub&&estado.sub!=='todas';var marcas=temSub?getMarcasDisponiveis(listaBase):[];if(!temSub||marcas.length<2){wrap.classList.remove('on');estado.marca='todas';return;}inner.innerHTML='<span class="brand-filter-label">🏷️ Marca:</span>';var btnTodas=document.createElement('button');btnTodas.className='btab'+(estado.marca==='todas'?' on':'');btnTodas.textContent='Todas';btnTodas.onclick=function(){filtrarMarca('todas',this);};inner.appendChild(btnTodas);marcas.forEach(function(m){var btn=document.createElement('button');btn.className='btab'+(estado.marca===m?' on':'');btn.textContent=m;btn.onclick=function(){filtrarMarca(m,this);};inner.appendChild(btn);});wrap.classList.add('on');}
+function filtrarMarca(marca,btn){estado.marca=marca;document.querySelectorAll('.btab').forEach(function(b){b.classList.remove('on');});btn.classList.add('on');renderizar();}
+function limparBusca(){estado.busca='';var inp=document.getElementById('searchInput');if(inp)inp.value='';}
+function scrollParaSec(sub){setTimeout(function(){var sec=document.querySelector('.psec[data-sub="'+sub+'"]');if(!sec){var secs=document.querySelectorAll('.psec');if(secs.length)sec=secs[0];}if(sec)sec.scrollIntoView({behavior:'smooth',block:'start'});},150);}
+function buscarPorTermo(termo){limparBusca();estado.cat='todos';estado.sub='todas';estado.marca='todas';estado.busca=termo.toLowerCase();document.getElementById('searchInput').value=termo;document.querySelectorAll('.ftab').forEach(function(b){b.classList.remove('on')});var all=document.querySelector('.ftab[data-cat="todos"]');if(all)all.classList.add('on');document.querySelectorAll('.subtabs').forEach(function(b){b.classList.remove('on')});document.getElementById('brandFilterWrap').classList.remove('on');fecharNav();renderizar();setTimeout(function(){var c=document.getElementById('containerProdutos');if(c)c.scrollIntoView({behavior:'smooth',block:'start'});},150);}
+function filterCat(cat,btn){limparBusca();estado.cat=cat;estado.sub='todas';estado.marca='todas';document.querySelectorAll('.ftab').forEach(function(b){b.classList.remove('on')});if(btn)btn.classList.add('on');else{var fb=document.querySelector('.ftab[data-cat="'+cat+'"]');if(fb)fb.classList.add('on');}document.querySelectorAll('.subtabs').forEach(function(b){b.classList.remove('on')});document.getElementById('brandFilterWrap').classList.remove('on');if(cat!=='todos'){var sub=document.getElementById('sub-'+cat);if(sub){sub.classList.add('on');sub.querySelectorAll('.stab').forEach(function(b){b.classList.remove('on')});sub.querySelector('.stab').classList.add('on');}}salvarHash();renderizar();document.getElementById('produtos').scrollIntoView({behavior:'smooth'});}
+function filtrarSub(sub,btn,cat){limparBusca();if(cat)estado.cat=cat;estado.sub=sub;estado.marca='todas';if(cat){document.querySelectorAll('.ftab').forEach(function(b){b.classList.remove('on')});var fb=document.querySelector('.ftab[data-cat="'+cat+'"]');if(fb)fb.classList.add('on');document.querySelectorAll('.subtabs').forEach(function(b){b.classList.remove('on')});var subEl=document.getElementById('sub-'+cat);if(subEl)subEl.classList.add('on');}if(btn){var parentSub=btn.closest('.subtabs');if(parentSub)parentSub.querySelectorAll('.stab').forEach(function(b){b.classList.remove('on')});btn.classList.add('on');}salvarHash();renderizar();if(sub!=='todas')scrollParaSec(sub);else document.getElementById('produtos').scrollIntoView({behavior:'smooth'});}
 var _debouncedRender=debounce(renderizar,200);
+function handleSearch(e){estado.busca=e.target.value.toLowerCase();if(estado.busca){estado.cat='todos';estado.sub='todas';estado.marca='todas';document.querySelectorAll('.ftab').forEach(function(b){b.classList.remove('on')});var all=document.querySelector('.ftab[data-cat="todos"]');if(all)all.classList.add('on');document.querySelectorAll('.subtabs').forEach(function(b){b.classList.remove('on')});document.getElementById('brandFilterWrap').classList.remove('on');}_debouncedRender();}
 
-function handleSearch(e){
-  estado.busca=e.target.value.toLowerCase();
-  if(estado.busca){
-    estado.cat='todos';estado.sub='todas';estado.marca='todas';
-    document.querySelectorAll('.ftab').forEach(function(b){b.classList.remove('on')});
-    var all=document.querySelector('.ftab[data-cat="todos"]');
-    if(all)all.classList.add('on');
-    document.querySelectorAll('.subtabs').forEach(function(b){b.classList.remove('on')});
-    document.getElementById('brandFilterWrap').classList.remove('on');
-  }
-  _debouncedRender();
-}
-
-/* ═══════════ RENDER COM LAZY LOADING ═══════════ */
 var gruposRender=[];
 var maxPorRender=30;
 var loadObserver=null;
 
 function getListaFiltrada(){
   var lista=prods().filter(function(p){return !p.oculto;});
-
-  if(estado.busca){
-    lista=lista.filter(function(p){
-      var n=(p.nome||'').toLowerCase();
-      var m=(p.marca||'').toLowerCase();
-      return n.includes(estado.busca)||m.includes(estado.busca);
-    });
-    return lista;
-  }
-
-  if(estado.cat!=='todos'){
-    var allowed=catMap[estado.cat]||[estado.cat];
-    lista=lista.filter(function(p){
-      var mc=allowed.indexOf(p.categoria)>=0||allowed.indexOf(p.subcategoria)>=0;
-      if(!mc) return false;
-      if(estado.sub==='todas') return true;
-      return p.subcategoria===estado.sub;
-    });
-  }
-
-  /* Filtro de marca */
-  if(estado.marca && estado.marca!=='todas'){
-    lista=lista.filter(function(p){
-      return (p.marca||'').trim()===estado.marca;
-    });
-  }
-
+  if(estado.busca){return lista.filter(function(p){var n=(p.nome||'').toLowerCase();var m=(p.marca||'').toLowerCase();return n.includes(estado.busca)||m.includes(estado.busca);});}
+  if(estado.cat!=='todos'){var allowed=catMap[estado.cat]||[estado.cat];lista=lista.filter(function(p){var mc=allowed.indexOf(p.categoria)>=0||allowed.indexOf(p.subcategoria)>=0;if(!mc)return false;if(estado.sub==='todas')return true;return p.subcategoria===estado.sub;});}
+  if(estado.marca&&estado.marca!=='todas'){lista=lista.filter(function(p){return(p.marca||'').trim()===estado.marca;});}
   return lista;
 }
 
 function renderizar(){
   var c=document.getElementById('containerProdutos');
-  if(!c) return;
-
+  if(!c)return;
   if(loadObserver){loadObserver.disconnect();loadObserver=null;}
-
   var lista=getListaFiltrada();
-
-  /* Calcula lista base (sem filtro de marca) para o brand filter */
   var listaBase=prods().filter(function(p){return !p.oculto;});
-  if(!estado.busca && estado.cat!=='todos'){
-    var allowed=catMap[estado.cat]||[estado.cat];
-    listaBase=listaBase.filter(function(p){
-      var mc=allowed.indexOf(p.categoria)>=0||allowed.indexOf(p.subcategoria)>=0;
-      if(!mc) return false;
-      if(estado.sub==='todas') return true;
-      return p.subcategoria===estado.sub;
-    });
-  }
-
-  /* Atualiza filtro de marcas */
+  if(!estado.busca&&estado.cat!=='todos'){var allowed=catMap[estado.cat]||[estado.cat];listaBase=listaBase.filter(function(p){var mc=allowed.indexOf(p.categoria)>=0||allowed.indexOf(p.subcategoria)>=0;if(!mc)return false;if(estado.sub==='todas')return true;return p.subcategoria===estado.sub;});}
   renderBrandFilter(listaBase);
-
   c.innerHTML='';
-
-  if(!lista.length){
-    c.innerHTML='<div class="no-results"><span>🔍</span>Nenhum produto encontrado.<br>Tente outro termo ou limpe os filtros.</div>';
-    return;
-  }
-
-  /* Agrupa por subcategoria */
+  if(!lista.length){c.innerHTML='<div class="no-results"><span>🔍</span>Nenhum produto encontrado.<br>Tente outro termo ou limpe os filtros.</div>';return;}
   var grupos={};
-  lista.forEach(function(p){
-    var k=p.subcategoria||p.categoria;
-    if(!grupos[k]) grupos[k]={id:k,label:subLabels[k]||k.replace(/-/g,' '),itens:[]};
-    grupos[k].itens.push(p);
-  });
-
-  gruposRender=Object.keys(grupos).map(function(k){
-    return{id:grupos[k].id,label:grupos[k].label,itens:grupos[k].itens,count:0};
-  });
-
+  lista.forEach(function(p){var k=p.subcategoria||p.categoria;if(!grupos[k])grupos[k]={id:k,label:subLabels[k]||k.replace(/-/g,' '),itens:[]};grupos[k].itens.push(p);});
+  gruposRender=Object.keys(grupos).map(function(k){return{id:grupos[k].id,label:grupos[k].label,itens:grupos[k].itens,count:0};});
   renderMais();
+}
+
+/* ═══ FUNÇÃO CORRIGIDA: renderiza imagem conforme imgmode ═══ */
+function buildCardImg(p, inCart) {
+  var badge = '<span class="incart-badge">✓ No carrinho</span>';
+  if (p.imagem && p.imgmode === 'thumbnail') {
+    /* Foto ocupa toda a área do card */
+    var d = document.createElement('div');
+    d.className = 'pimg-thumb';
+    d.innerHTML = badge;
+    var img = document.createElement('img');
+    img.alt = p.nome;
+    img.src = p.imagem;
+    img.onerror = function() { this.style.display = 'none'; };
+    d.appendChild(img);
+    return d;
+  } else if (p.imagem && p.imgmode === 'replace') {
+    /* Imagem centralizada no lugar do emoji */
+    var d = document.createElement('div');
+    d.className = 'pimg-replace';
+    d.innerHTML = badge;
+    var img = document.createElement('img');
+    img.alt = p.nome;
+    img.src = p.imagem;
+    img.onerror = function() { this.style.display = 'none'; };
+    d.appendChild(img);
+    return d;
+  } else {
+    /* Sem imagem: emoji padrão */
+    var d = document.createElement('div');
+    d.className = 'pimg';
+    d.innerHTML = badge + '<span class="pimg-emoji">📦</span>';
+    return d;
+  }
 }
 
 function renderMais(){
   var c=document.getElementById('containerProdutos');
   var addCount=0;
-
   for(var i=0;i<gruposRender.length;i++){
     var g=gruposRender[i];
-    if(g.count>=g.itens.length) continue;
-
+    if(g.count>=g.itens.length)continue;
     var safeId=g.id.replace(/[^a-zA-Z0-9]/g,'_');
     var secId='sec-'+safeId;
     var sec=document.getElementById(secId);
     var grid;
-
     if(!sec){
       sec=document.createElement('div');
       sec.className='psec';
       sec.id=secId;
       sec.setAttribute('data-sub',g.id);
       var emoji=catEmojis[g.id]||'📦';
-
-      /* Badge de marca ativa */
-      var marcaBadge='';
-      if(estado.marca && estado.marca!=='todas'){
-        marcaBadge='<span class="psec-brand">'+estado.marca+'</span>';
-      }
-
+      var marcaBadge=estado.marca&&estado.marca!=='todas'?'<span class="psec-brand">'+estado.marca+'</span>':'';
       sec.innerHTML='<div class="psec-hdr"><div class="psec-icon">'+emoji+'</div><div class="psec-title">'+g.label+marcaBadge+'</div><div class="psec-count">'+g.itens.length+' item'+(g.itens.length!==1?'s':'')+'</div></div>';
       grid=document.createElement('div');
       grid.className='pgrid';
       grid.id='grid-'+safeId;
       sec.appendChild(grid);
       c.appendChild(sec);
-    } else {
-      grid=document.getElementById('grid-'+safeId);
-    }
+    }else{grid=document.getElementById('grid-'+safeId);}
 
     while(g.count<g.itens.length&&addCount<maxPorRender){
       var p=g.itens[g.count];
@@ -1138,8 +550,14 @@ function renderMais(){
       var card=document.createElement('div');
       card.className='pcard'+(inCart?' incart':'');
       card.id='card-'+p.id;
-      card.innerHTML='<div class="pimg"><span class="incart-badge">✓ No carrinho</span><span class="pimg-emoji">📦</span></div>'
-        +'<div class="pbody"><div class="pname">'+p.nome+'</div>'
+
+      /* ─ Imagem correta conforme imgmode ─ */
+      card.appendChild(buildCardImg(p, inCart));
+
+      /* ─ Corpo do card ─ */
+      var body=document.createElement('div');
+      body.className='pbody';
+      body.innerHTML='<div class="pname">'+p.nome+'</div>'
         +marcaTag
         +'<div class="pprice-box"><span class="pprice">'+precoStr+'</span>'+(p.unidade?'<span class="punit">'+p.unidade+'</span>':'')+'</div>'
         +'<div class="pspacer"></div>'
@@ -1149,163 +567,59 @@ function renderMais(){
         +'<button class="bq" onclick="mudaQtd('+p.id+',1)">+</button>'
         +'</div>'
         +'<button class="badd'+(inCart?' done':'')+'" id="badd-'+p.id+'" onclick="addCart('+p.id+')">'+(inCart?'✓ Adicionado':'+ Adicionar')+'</button>'
-        +'</div></div>';
+        +'</div>';
+      card.appendChild(body);
 
       grid.appendChild(card);
-
-      (function(el,delay){
-        setTimeout(function(){el.classList.add('in');},delay*12);
-      })(card,addCount);
-
-      g.count++;
-      addCount++;
+      (function(el,delay){setTimeout(function(){el.classList.add('in');},delay*12);})(card,addCount);
+      g.count++;addCount++;
     }
-
-    if(addCount>=maxPorRender) break;
+    if(addCount>=maxPorRender)break;
   }
-
   var pendentes=gruposRender.some(function(g){return g.count<g.itens.length;});
   var anchor=document.getElementById('scroll-anchor');
-
   if(pendentes){
-    if(!anchor){
-      anchor=document.createElement('div');
-      anchor.id='scroll-anchor';
-      anchor.style.height='1px';
-      anchor.style.marginTop='2rem';
-    }
+    if(!anchor){anchor=document.createElement('div');anchor.id='scroll-anchor';anchor.style.height='1px';anchor.style.marginTop='2rem';}
     c.appendChild(anchor);
-
-    loadObserver=new IntersectionObserver(function(entries){
-      if(entries[0].isIntersecting) renderMais();
-    },{rootMargin:'400px'});
+    loadObserver=new IntersectionObserver(function(entries){if(entries[0].isIntersecting)renderMais();},{rootMargin:'400px'});
     loadObserver.observe(anchor);
-  } else {
-    if(anchor) anchor.remove();
-  }
+  }else{if(anchor)anchor.remove();}
 }
 
-/* ═══════════ QTD ═══════════ */
-function mudaQtd(id,d){
-  var i=document.getElementById('qtd-'+id);
-  if(i){
-    i.value=Math.max(1,(parseInt(i.value)||1)+d);
-    if(carrinho[id]){carrinho[id].qtd=parseInt(i.value);salvarCarrinho();}
-  }
-}
-
-/* ═══════════ CART ═══════════ */
-function addCart(id){
-  var prod=prods().find(function(p){return p.id===id});
-  if(!prod) return;
-  var qtd=parseInt(document.getElementById('qtd-'+id).value)||1;
-  carrinho[id]={prod:prod,qtd:qtd};
-  salvarCarrinho();
-  var card=document.getElementById('card-'+id);
-  var btn=document.getElementById('badd-'+id);
-  if(card) card.classList.add('incart');
-  if(btn){btn.textContent='✓ Adicionado';btn.classList.add('done');}
-  updateBadge();
-  renderizar();
-}
-
-function removerItem(id){
-  delete carrinho[id];
-  salvarCarrinho();
-  var card=document.getElementById('card-'+id);
-  var btn=document.getElementById('badd-'+id);
-  if(card) card.classList.remove('incart');
-  if(btn){btn.textContent='+ Adicionar';btn.classList.remove('done');}
-  updateBadge();
-  renderCartList();
-}
-
-function limparCart(){
-  if(!Object.keys(carrinho).length) return;
-  if(!confirm('Limpar o carrinho?')) return;
-  Object.keys(carrinho).forEach(function(id){
-    var card=document.getElementById('card-'+id);
-    var btn=document.getElementById('badd-'+id);
-    if(card) card.classList.remove('incart');
-    if(btn){btn.textContent='+ Adicionar';btn.classList.remove('done');}
-  });
-  carrinho={};
-  salvarCarrinho();
-  updateBadge();
-  renderCartList();
-}
-
-function updateBadge(){
-  var n=Object.keys(carrinho).length;
-  var b=document.getElementById('cbadge');
-  b.textContent=n;
-  b.classList.toggle('on',n>0);
-}
-
+function mudaQtd(id,d){var i=document.getElementById('qtd-'+id);if(i){i.value=Math.max(1,(parseInt(i.value)||1)+d);if(carrinho[id]){carrinho[id].qtd=parseInt(i.value);salvarCarrinho();}}}
+function addCart(id){var prod=prods().find(function(p){return p.id===id});if(!prod)return;var qtd=parseInt(document.getElementById('qtd-'+id).value)||1;carrinho[id]={prod:prod,qtd:qtd};salvarCarrinho();var card=document.getElementById('card-'+id);var btn=document.getElementById('badd-'+id);if(card)card.classList.add('incart');if(btn){btn.textContent='✓ Adicionado';btn.classList.add('done');}updateBadge();}
+function removerItem(id){delete carrinho[id];salvarCarrinho();var card=document.getElementById('card-'+id);var btn=document.getElementById('badd-'+id);if(card)card.classList.remove('incart');if(btn){btn.textContent='+ Adicionar';btn.classList.remove('done');}updateBadge();renderCartList();}
+function limparCart(){if(!Object.keys(carrinho).length)return;if(!confirm('Limpar o carrinho?'))return;Object.keys(carrinho).forEach(function(id){var card=document.getElementById('card-'+id);var btn=document.getElementById('badd-'+id);if(card)card.classList.remove('incart');if(btn){btn.textContent='+ Adicionar';btn.classList.remove('done');}});carrinho={};salvarCarrinho();updateBadge();renderCartList();}
+function updateBadge(){var n=Object.keys(carrinho).length;var b=document.getElementById('cbadge');b.textContent=n;b.classList.toggle('on',n>0);}
 function renderCartList(){
-  var list=document.getElementById('clist');
-  var totalEl=document.getElementById('ctotal');
-  var itens=Object.values(carrinho);
-  if(!itens.length){
-    list.innerHTML='<div class="cart-empty"><div class="cart-empty-ico">🛒</div><p>Carrinho vazio</p></div>';
-    totalEl.textContent='R$ 0,00';
-    return;
-  }
-  list.innerHTML=itens.map(function(item){
+  var list=document.getElementById('clist');var totalEl=document.getElementById('ctotal');var itens=Object.values(carrinho);
+  if(!itens.length){list.innerHTML='<div class="cart-empty"><div class="cart-empty-ico">🛒</div><p>Carrinho vazio</p></div>';totalEl.textContent='R$ 0,00';return;}
+  list.innerHTML='';
+  itens.forEach(function(item){
     var p=item.prod,preco=parseFloat(p.preco)||0,sub=preco*item.qtd;
     var ps=preco>0?'R$ '+preco.toFixed(2).replace('.',',')+(p.unidade?' '+p.unidade:''):'Sob consulta';
     var ss=preco>0?'R$ '+sub.toFixed(2).replace('.',','):'—';
-    return '<div class="cart-item">'
-      +'<div class="ci-ico">📦</div>'
-      +'<div class="ci-info"><div class="ci-name">'+p.nome+'</div><div class="ci-meta">'+ps+' × '+item.qtd+'</div></div>'
-      +'<div class="ci-right"><span class="ci-total">'+ss+'</span><span class="ci-remove" onclick="removerItem('+p.id+')">🗑 remover</span></div>'
-      +'</div>';
-  }).join('');
+    var div=document.createElement('div');
+    div.className='cart-item';
+    /* ícone do carrinho com imagem se disponível */
+    var icoHtml;
+    if(p.imagem){icoHtml='<div class="ci-ico"><img src="'+p.imagem+'" alt="" onerror="this.style.display=\'none\'"></div>';}
+    else{icoHtml='<div class="ci-ico">📦</div>';}
+    div.innerHTML=icoHtml+'<div class="ci-info"><div class="ci-name">'+p.nome+'</div><div class="ci-meta">'+ps+' × '+item.qtd+'</div></div><div class="ci-right"><span class="ci-total">'+ss+'</span><span class="ci-remove" onclick="removerItem('+p.id+')">🗑 remover</span></div>';
+    list.appendChild(div);
+  });
   var total=itens.reduce(function(s,i){return s+(parseFloat(i.prod.preco)||0)*i.qtd;},0);
   totalEl.textContent='R$ '+total.toFixed(2).replace('.',',');
 }
-
-function abrirCart(){
-  renderCartList();
-  document.getElementById('cartPanel').classList.add('on');
-  document.getElementById('backdrop').classList.add('on');
-  document.body.style.overflow='hidden';
-}
-
-function fecharCart(){
-  document.getElementById('cartPanel').classList.remove('on');
-  document.getElementById('backdrop').classList.remove('on');
-  document.body.style.overflow='';
-}
-
-function enviarWpp(){
-  var itens=Object.values(carrinho);
-  if(!itens.length){alert('Seu carrinho está vazio!');return;}
-  var msg='🛍️ *Pedido - Cia Das Embalagens*\n\n';
-  itens.forEach(function(i){msg+='• '+i.prod.nome+' — Qtd: '+i.qtd+'\n';});
-  var total=itens.reduce(function(s,i){return s+(parseFloat(i.prod.preco)||0)*i.qtd;},0);
-  msg+='\n *Total estimado: R$ '+total.toFixed(2).replace('.',',')+' *';
-  window.open('https://wa.me/5511972999835?text='+encodeURIComponent(msg),'_blank');
-}
-
-/* ═══════════ INIT ═══════════ */
-window.renderizarProdutos=renderizar;
+function abrirCart(){renderCartList();document.getElementById('cartPanel').classList.add('on');document.getElementById('backdrop').classList.add('on');document.body.style.overflow='hidden';}
+function fecharCart(){document.getElementById('cartPanel').classList.remove('on');document.getElementById('backdrop').classList.remove('on');document.body.style.overflow='';}
+function enviarWpp(){var itens=Object.values(carrinho);if(!itens.length){alert('Seu carrinho está vazio!');return;}var msg='🛍️ *Pedido - Cia Das Embalagens*\n\n';itens.forEach(function(i){msg+='• '+i.prod.nome+' — Qtd: '+i.qtd+'\n';});var total=itens.reduce(function(s,i){return s+(parseFloat(i.prod.preco)||0)*i.qtd;},0);msg+='\n *Total estimado: R$ '+total.toFixed(2).replace('.',',')+' *';window.open('https://wa.me/5511972999835?text='+encodeURIComponent(msg),'_blank');}
 
 restaurarCarrinho();
 lerHash();
-if(estado.cat!=='todos'){
-  var fb=document.querySelector('.ftab[data-cat="'+estado.cat+'"]');
-  if(fb){
-    document.querySelectorAll('.ftab').forEach(function(b){b.classList.remove('on');});
-    fb.classList.add('on');
-    var subEl=document.getElementById('sub-'+estado.cat);
-    if(subEl){
-      document.querySelectorAll('.subtabs').forEach(function(b){b.classList.remove('on');});
-      subEl.classList.add('on');
-    }
-  }
-}
+if(estado.cat!=='todos'){var fb=document.querySelector('.ftab[data-cat="'+estado.cat+'"]');if(fb){document.querySelectorAll('.ftab').forEach(function(b){b.classList.remove('on');});fb.classList.add('on');var subEl=document.getElementById('sub-'+estado.cat);if(subEl){document.querySelectorAll('.subtabs').forEach(function(b){b.classList.remove('on');});subEl.classList.add('on');}}}
 updateBadge();
+if(document.readyState==='loading'){document.addEventListener('DOMContentLoaded',renderizar);}else{renderizar();}
 </script>
 </body>
 </html>
