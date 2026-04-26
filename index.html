@@ -1059,6 +1059,8 @@ function addCart(id){
   if(card) card.classList.add('incart');
   if(btn){btn.textContent='✓ Adicionado';btn.classList.add('done');}
   updateBadge();
+  renderizar();
+
 }
 
 function removerItem(id){
