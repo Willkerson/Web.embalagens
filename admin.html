@@ -145,7 +145,8 @@ body::before{content:'';position:fixed;inset:0;background:radial-gradient(ellips
 .overlay{position:fixed;inset:0;background:rgba(0,0,0,.7);backdrop-filter:blur(12px);z-index:500;opacity:0;pointer-events:none;transition:opacity .3s}
 .overlay.on{opacity:1;pointer-events:all}
 .modal{position:fixed;top:50%;left:50%;transform:translate(-50%,-48%);width:min(640px,92vw);background:var(--bg1);border:1px solid var(--bdr2);border-radius:20px;z-index:501;padding:2rem;opacity:0;pointer-events:none;transition:all .35s var(--ease)}
-.overlay.on ~ .modal,.modal.on{opacity:1;pointer-events:all;transform:translate(-50%,-50%)}
+/* CORREÇÃO DO CSS DO MODAL AQUI */
+.modal.on{opacity:1;pointer-events:all;transform:translate(-50%,-50%)}
 .modal-title{font-size:1rem;font-weight:600;color:var(--t1);margin-bottom:1rem;display:flex;align-items:center;justify-content:space-between}
 .modal-close{width:30px;height:30px;border-radius:50%;background:var(--bg2);border:1px solid var(--bdr);color:var(--t2);cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:.85rem;transition:all .2s}
 .modal-close:hover{color:var(--t1);background:var(--bg3)}
@@ -243,13 +244,10 @@ body::before{content:'';position:fixed;inset:0;background:radial-gradient(ellips
 
 <div class="foot">Alterações salvas no navegador · Clique em <strong style="color:var(--grn)">Publicar agora</strong> para atualizar a loja automaticamente</div>
 
-<!-- TOAST -->
 <div class="toast" id="toast"></div>
 
-<!-- OVERLAY GERAL -->
 <div class="overlay" id="overlay" onclick="fecharTodosModais()"></div>
 
-<!-- MODAL CONFIG GITHUB -->
 <div class="modal" id="modalConfig">
   <div class="modal-title">
     ⚙ Configurar GitHub
@@ -284,7 +282,6 @@ body::before{content:'';position:fixed;inset:0;background:radial-gradient(ellips
   </div>
 </div>
 
-<!-- MODAL PUBLICANDO -->
 <div class="modal modal-sm" id="modalPublicando">
   <div style="text-align:center;padding:1rem 0">
     <div class="pub-spinner"></div>
@@ -293,7 +290,6 @@ body::before{content:'';position:fixed;inset:0;background:radial-gradient(ellips
   </div>
 </div>
 
-<!-- MODAL FALLBACK EXPORT -->
 <div class="modal" id="modalExport">
   <div class="modal-title">
     ⬇ Exportar manualmente
@@ -305,6 +301,7 @@ body::before{content:'';position:fixed;inset:0;background:radial-gradient(ellips
   <div class="code-area" id="codeArea"></div>
   <div class="modal-actions">
     <button class="btn btn-primary" onclick="copiarCodigo()">📋 Copiar código</button>
+    <button class="btn btn-ghost" onclick="abrirConfig()">⚙ Configurar Token</button>
     <button class="btn btn-ghost" onclick="fecharTodosModais()">Fechar</button>
   </div>
 </div>
