@@ -82,7 +82,7 @@ window.listaProdutosPlanilha = [
   {"id":2080,"nome":"BOBINA PICOTADA 35X45CM +/- 410UN NAO APROPRIADA P/ ALIMENTOS STAR PRINT","categoria":"diversos","subcategoria":"emb-flexiveis","preco":52,"unidade":"/unidade"},
   {"id":2081,"nome":"BOBINA PICOTADA  3KG 30X40 0,015 C/500UN P/ ALIMENTOS ROLLBAG","categoria":"diversos","subcategoria":"emb-flexiveis","preco":40,"unidade":"/pct (500un)"},
   {"id":2082,"nome":"BOBINA PICOTADA 40X60CM +/- 285UN NAO APROPRIADA P/ ALIMENTOS STAR PRINT","categoria":"diversos","subcategoria":"emb-flexiveis","preco":56,"unidade":"/unidade"},
-  {"id":2083,"nome":"BPR-23 PRATO ISOPOR 23CM C/250UN BOM APETITE","categoria":"festa","subcategoria":"copos-pratos","preco":110,"unidade":"/unidade","marca":"BOM APETITE","imagem":"https://http2.mlstatic.com/D_NQ_NP_2X_752597-MLA100080533553_122025-F.webp","imgmode":"thumbnail"},
+  {"id":2083,"nome":"BPR-23 PRATO ISOPOR 23CM C/250UN BOM APETITE","categoria":"festa","subcategoria":"copos-pratos","preco":110,"unidade":"/unidade","marca":"BOM APETITE","imagem":"https://http2.mlstatic.com/D_NQ_NP_2X_752597-MLA100080533553_122025-F.webp","imgmode":"replace"},
   {"id":2084,"nome":"BQALDE DE 7,4 LTS PLASNEW","categoria":"diversos","subcategoria":"outros","preco":13,"unidade":"/unidade"},
   {"id":2085,"nome":"BRANQUINHO 5L MAPELL CLEAN","categoria":"diversos","subcategoria":"outros","preco":18,"unidade":"/unidade"},
   {"id":2086,"nome":"BRILHO INOX RESTAURADOR DE BRILHO AZULIM 500ML","categoria":"limpeza","subcategoria":"produtos-limpeza","preco":34,"unidade":"/unidade"},
