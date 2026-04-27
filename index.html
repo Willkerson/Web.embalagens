@@ -586,17 +586,24 @@ function addSugestao(id){
 function limparCart(){if(!Object.keys(carrinho).length)return;if(!confirm('Limpar o carrinho?'))return;Object.keys(carrinho).forEach(function(id){var card=document.getElementById('card-'+id);var btn=document.getElementById('badd-'+id);if(card)card.classList.remove('incart');if(btn){btn.textContent='+ Adicionar';btn.classList.remove('done');}});carrinho={};salvarCarrinho();updateBadge();renderCartList();}
 function updateBadge(){var n=Object.keys(carrinho).length;var b=document.getElementById('cbadge');b.textContent=n;b.classList.toggle('on',n>0);}
 function getRelacionados(prod) {
-  var nome = (prod.nome || "").toLowerCase();
+  var lista = prods().filter(p => p.id !== prod.id);
 
-  return prods().filter(p => {
-    var n = (p.nome || "").toLowerCase();
+  // 1. tenta mesma subcategoria
+  var relacionados = lista.filter(p =>
+    p.subcategoria === prod.subcategoria
+  );
 
-    if (nome.includes("marm")) return n.includes("tampa") || n.includes("garfo") || n.includes("sacola");
-    if (nome.includes("copo")) return n.includes("tampa") || n.includes("canudo");
-    if (nome.includes("bolo")) return n.includes("bandeja") || n.includes("embalagem");
+  // 2. fallback: mesma categoria (se vier poucos)
+  if (relacionados.length < 4) {
+    var complemento = lista.filter(p =>
+      p.categoria === prod.categoria &&
+      p.subcategoria !== prod.subcategoria
+    );
 
-    return false;
-  }).slice(0,4);
+    relacionados = relacionados.concat(complemento);
+  }
+
+  return relacionados.slice(0, 4);
 }
 function renderCartList(){
   var list=document.getElementById('clist');var totalEl=document.getElementById('ctotal');var itens=Object.values(carrinho);
