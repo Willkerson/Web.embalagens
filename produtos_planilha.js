@@ -858,6 +858,5 @@ window.listaProdutosPlanilha = [
   {"id":9069,"nome":"Tesoura multifuncional 8","categoria":"diversos","subcategoria":"outros","preco":5,"unidade":"/unidade"},
   {"id":9070,"nome":"Tesouro prof. multi. 8","categoria":"diversos","subcategoria":"outros","preco":5,"unidade":"/unidade"},
   {"id":9071,"nome":"Colher de madeira 53-52","categoria":"diversos","subcategoria":"outros","preco":7,"unidade":"/unidade"},
-  {"id":9072,"nome":"LIXEIRA PARA COPO PLASTICO CLEAN EXECUTIVA","categoria":"utilidades","subcategoria":"organiz-limpeza","preco":64,"unidade":"/unidade","marca":"CLEAN","imagem":"https://lojaobramax.vtexassets.com/arquivos/ids/35678763-1600-1600?v=639123237596800000&width=1600&height=1600&aspect=true","imgmode":"thumbnail"},
-  {"id":9073,"nome":"SACOLA VERDE REFORÇADO 1KG 35X45","categoria":"limpeza","subcategoria":"sacos-lixo","preco":15.5,"unidade":"/unidade","marca":"VERDE REFORÇADO","imagem":"https://http2.mlstatic.com/D_NQ_NP_2X_696439-MLB89455418216_082025-F-5kg-sacola-plastica-reciclada-reforcada-de-alta-qualidade.webp","imgmode":"thumbnail"}
+  {"id":9072,"nome":"LIXEIRA PARA COPO PLASTICO CLEAN EXECUTIVA","categoria":"utilidades","subcategoria":"organiz-limpeza","preco":64,"unidade":"/unidade","marca":"CLEAN","imagem":"https://lojaobramax.vtexassets.com/arquivos/ids/35678763-1600-1600?v=639123237596800000&width=1600&height=1600&aspect=true","imgmode":"thumbnail"}
 ];
