@@ -410,7 +410,29 @@ function toggleNav(id){document.querySelectorAll('.nav-item').forEach(function(e
 function fecharNav(){document.querySelectorAll('.nav-item').forEach(function(el){el.classList.remove('open')});}
 document.addEventListener('click',function(e){if(!e.target.closest('.nav-item'))fecharNav();});
 function toggleTheme(){var html=document.documentElement,btn=document.getElementById('themeBtn');var dark=html.getAttribute('data-theme')==='dark';html.setAttribute('data-theme',dark?'light':'dark');btn.textContent=dark?'🌙':'☀️';}
+var relacionados = {
+  "marmita": ["tampa", "garfo", "sacola"],
+  "copo": ["tampa", "canudo"],
+  "bolo": ["embalagem", "bandeja"],
+};
+  function getRelacionados(prod) {
+  var nome = (prod.nome || "").toLowerCase();
+  var encontrados = [];
 
+  Object.keys(relacionados).forEach(function (key) {
+    if (nome.includes(key)) {
+      relacionados[key].forEach(function (rel) {
+        encontrados.push(rel);
+      });
+    }
+  });
+
+  return prods().filter(p =>
+    encontrados.some(r =>
+      (p.nome || "").toLowerCase().includes(r)
+    )
+  ).slice(0, 4);
+}
 var carrinho={};
 var estado={cat:'todos',sub:'todas',busca:'',marca:'todas'};
 var catMap={caixas:['caixas','caixas-correio','caixas-alimentos'],sacolas:['sacolas','sacos-lixo','sacolas-papel','sacolas-plasticas'],plastico:['plastico','potes-tampas','embalagens-bolo'],festa:['festa','copos-pratos','talheres'],limpeza:['limpeza','produtos-limpeza','utensilios-limpeza','epi','sacos-lixo'],higiene:['higiene','papel-higiene'],utilidades:['utilidades','pilhas-baterias','aromas-inseticidas','organiz-limpeza','ferramentas','escritorio','ganchos'],diversos:['diversos','isopor-geral','emb-flexiveis','emb-diversas','outros']};
