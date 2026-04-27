@@ -80,7 +80,9 @@ body::after{content:'';position:fixed;inset:0;z-index:0;pointer-events:none;back
 .btn-cart-hdr{display:flex;align-items:center;gap:8px;padding:8px 18px;background:var(--glass2);border:1px solid var(--bdr2);border-radius:99px;color:var(--t1);font-size:.85rem;font-weight:500;position:relative;transition:all .22s var(--ease2)}
 .btn-cart-hdr:hover{background:var(--glass3);border-color:var(--bdr3)}
 .cbadge{position:absolute;top:-4px;right:-4px;background:var(--grn);color:#fff;font-size:.6rem;font-weight:700;min-width:17px;height:17px;border-radius:99px;display:flex;align-items:center;justify-content:center;border:2px solid var(--ink);opacity:0;transform:scale(.3);transition:all .3s var(--ease);padding:0 3px}
-.cbadge.on{opacity:1;transform:scale(1)}
+.cbadge{
+  background:#2563eb;
+}
 .btn-wpp{display:flex;align-items:center;gap:7px;padding:9px 18px;background:var(--grn);border-radius:99px;color:#fff;font-weight:600;font-size:.84rem;box-shadow:0 4px 18px var(--grn-glow);transition:all .25s var(--ease2)}
 .btn-wpp:hover{transform:translateY(-2px);box-shadow:0 8px 28px var(--grn-glow)}
 .btn-wpp img{width:16px;height:16px}
@@ -135,13 +137,23 @@ body::after{content:'';position:fixed;inset:0;z-index:0;pointer-events:none;back
 .search-wrap{max-width:580px;margin:0 auto 2.5rem;position:relative}
 .search-icon{position:absolute;left:20px;top:50%;transform:translateY(-50%);font-size:1rem;opacity:.4;pointer-events:none}
 .search-inp{width:100%;padding:14px 20px 14px 50px;background:var(--glass2);border:1px solid var(--bdr2);border-radius:14px;color:var(--t1);font-family:var(--font);font-size:.95rem;outline:none;transition:all .3s var(--ease2);backdrop-filter:var(--blur-sm)}
-.search-inp::placeholder{color:var(--t3)}
-.search-inp:focus{border-color:rgba(59,127,255,.5);background:var(--glass3);box-shadow:0 0 0 4px rgba(59,127,255,.1)}
+.search-inp{
+  background:#ffffff;
+  border:1px solid #dbeafe;
+}
+
+.search-inp:focus{
+  border-color:#3b82f6;
+  box-shadow:0 0 0 3px rgba(59,130,246,.15);
+}
 .filter-tabs{display:flex;gap:4px;justify-content:center;flex-wrap:wrap;margin-bottom:.75rem}
 .ftab{display:flex;align-items:center;gap:6px;padding:9px 16px;border-radius:10px;font-size:.82rem;font-weight:500;color:var(--t3);background:var(--glass);border:1px solid var(--bdr);transition:all .2s var(--ease2);cursor:pointer;white-space:nowrap}
 .ftab img{width:14px;height:14px;opacity:.5;transition:opacity .2s}
 .ftab:hover{color:var(--t1);border-color:var(--bdr2);background:var(--glass2)}
-.ftab.on{background:var(--t1);color:var(--ink);border-color:transparent;font-weight:600}
+.ftab.on{
+  background:#3b82f6;
+  color:#fff;
+}
 .ftab.on img{opacity:1;filter:invert(1)}
 [data-theme="light"] .ftab.on img{filter:none}
 .subtabs-wrap{display:flex;justify-content:center;margin-bottom:.75rem;min-height:36px;align-items:center}
@@ -166,9 +178,14 @@ body::after{content:'';position:fixed;inset:0;z-index:0;pointer-events:none;back
 .psec-count{font-size:.78rem;color:var(--t3);margin-left:auto;background:var(--glass2);border:1px solid var(--bdr);border-radius:99px;padding:3px 10px}
 .psec-brand{font-size:.7rem;font-weight:600;color:var(--grn);background:rgba(0,200,117,.1);border:1px solid rgba(0,200,117,.2);border-radius:99px;padding:2px 9px;margin-left:4px;vertical-align:middle}
 .pgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:1.25rem}
-.pcard{background:var(--glass);border:1px solid var(--bdr);border-radius:18px;overflow:hidden;display:flex;flex-direction:column;opacity:0;transform:translateY(20px);transition:opacity .45s,transform .45s var(--ease),border-color .25s,background .25s,box-shadow .25s}
+.pcard{
+  background:#ffffff;
+  border:1px solid #e3edff;
+}
 .pcard.in{opacity:1;transform:translateY(0)}
-.pcard:hover{border-color:var(--bdr2);background:var(--glass2);transform:translateY(-6px);box-shadow:0 20px 50px rgba(0,0,0,.2)}
+.pcard:hover{
+  box-shadow:0 12px 30px rgba(59,130,246,.12);
+}
 .pcard.incart{border-color:rgba(0,200,117,.35);box-shadow:0 0 0 1px rgba(0,200,117,.12)}
 /* Área de imagem */
 .pimg{height:150px;display:flex;align-items:center;justify-content:center;border-bottom:1px solid var(--bdr);position:relative;overflow:hidden;background:linear-gradient(135deg,var(--glass),var(--glass2))}
