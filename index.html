@@ -23,8 +23,10 @@ img{display:block}
 body::before{content:'';position:fixed;inset:0;z-index:0;pointer-events:none;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.025'/%3E%3C/svg%3E");opacity:.4}
 body::after{content:'';position:fixed;inset:0;z-index:0;pointer-events:none;background:radial-gradient(ellipse 80% 60% at 20% 10%,rgba(59,127,255,.09) 0%,transparent 60%),radial-gradient(ellipse 60% 50% at 80% 80%,rgba(0,200,117,.06) 0%,transparent 60%)}
 .hdr{position:fixed;top:0;left:0;right:0;z-index:900;transition:all .4s var(--ease)}
-.hdr-inner{height:var(--nav-h);display:flex;align-items:center;justify-content:space-between;padding:0 2.5rem;background:var(--surface);backdrop-filter:var(--blur);-webkit-backdrop-filter:var(--blur);border-bottom:1px solid var(--bdr);transition:all .4s var(--ease)}
-.hdr.sc .hdr-inner{height:60px;background:rgba(10,12,16,.9)}
+.hdr-inner{
+  background:linear-gradient(135deg,#1a54cc,#3b7fff);
+  border-bottom:1px solid rgba(255,255,255,.15);
+}
 [data-theme="light"] .hdr-inner{background:rgba(240,242,248,.85)}
 [data-theme="light"] .hdr.sc .hdr-inner{background:rgba(240,242,248,.97)}
 .logo{display:flex;align-items:center;gap:12px;color:var(--t1);flex-shrink:0}
@@ -239,6 +241,7 @@ footer strong{color:var(--t2);font-weight:500}
 <header class="hdr" id="hdr">
   <div class="hdr-inner">
     <a href="#" class="logo">
+      
       <div class="logo-mark"><img src="https://img.icons8.com/fluency/48/box.png" alt=""></div>
       <div class="logo-name">Cia das<span> Embalagens</span></div>
     </a>
