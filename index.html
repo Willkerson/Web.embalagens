@@ -9,7 +9,7 @@
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
 <style>
 :root{--ink:#0a0c10;--ink1:#12161e;--ink2:#1a2030;--ink3:#232c3e;--surface:rgba(18,22,30,.72);--surface2:rgba(26,32,48,.6);--glass:rgba(255,255,255,.04);--glass2:rgba(255,255,255,.08);--glass3:rgba(255,255,255,.13);--t1:#f2f4f9;--t2:#8c9ab8;--t3:#4a5570;--bdr:rgba(255,255,255,.07);--bdr2:rgba(255,255,255,.13);--bdr3:rgba(255,255,255,.2);--acc:#3b7fff;--acc-glow:rgba(59,127,255,.22);--acc2:#1a54cc;--grn:#00c875;--grn-glow:rgba(0,200,117,.2);--ease:cubic-bezier(.22,1,.36,1);--ease2:cubic-bezier(.4,0,.2,1);--font:'DM Sans',system-ui,sans-serif;--font-display:'DM Serif Display',Georgia,serif;--blur:blur(24px) saturate(180%);--blur-sm:blur(12px) saturate(160%);--nav-h:70px}
-[data-theme="light"]{--ink:#f0f2f8;--ink1:#e4e8f4;--ink2:#d6dcee;--ink3:#c8d0e4;--surface:rgba(240,242,248,.8);--surface2:rgba(228,232,244,.7);--glass:rgba(0,0,0,.03);--glass2:rgba(0,0,0,.05);--glass3:rgba(0,0,0,.08);--t1:#0d1320;--t2:#3e4d6a;--t3:#7a89a8;--bdr:rgba(0,0,0,.07);--bdr2:rgba(0,0,0,.12);--bdr3:rgba(0,0,0,.2)}
+[data-theme="light"]{--ink:#f6f9ff;--ink1:#f6f9ff;--ink2:#f6f9ff;--ink3:#f9fafb;--surface:rgba(240,242,248,.8);--surface2:rgba(228,232,244,.7);--glass:rgba(0,0,0,.03);--glass2:rgba(0,0,0,.05);--glass3:rgba(0,0,0,.08);--t1:#0d1320;--t2:#3e4d6a;--t3:#7a89a8;--bdr:rgba(0,0,0,.07);--bdr2:rgba(0,0,0,.12);--bdr3:rgba(0,0,0,.2)}
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
 html{scroll-behavior:smooth;scroll-padding-top:var(--nav-h)}
 body{
@@ -26,10 +26,17 @@ body::before{content:'';position:fixed;inset:0;z-index:0;pointer-events:none;bac
 body::after{content:'';position:fixed;inset:0;z-index:0;pointer-events:none;background:radial-gradient(ellipse 80% 60% at 20% 10%,rgba(59,127,255,.09) 0%,transparent 60%),radial-gradient(ellipse 60% 50% at 80% 80%,rgba(0,200,117,.06) 0%,transparent 60%)}
 .hdr{position:fixed;top:0;left:0;right:0;z-index:900;transition:all .4s var(--ease)}
 .hdr-inner{
-  background:rgba(255,255,255,.75);
-  backdrop-filter:blur(14px);
-  -webkit-backdrop-filter:blur(14px);
-  border-bottom:1px solid #e5e7eb;
+  height:var(--nav-h);
+  display:flex;
+  align-items:center;
+  justify-content:space-between; /* muda isso */
+  padding:0 2.5rem;
+
+  background:rgba(59,127,255,.08); /* azul leve */
+  backdrop-filter:blur(16px);
+  -webkit-backdrop-filter:blur(16px);
+
+  border-bottom:1px solid rgba(59,127,255,.18);
 }
 }
 [data-theme="light"] .hdr-inner{
