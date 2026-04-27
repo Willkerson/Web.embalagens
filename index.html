@@ -261,7 +261,10 @@ body::after{content:'';position:fixed;inset:0;z-index:0;pointer-events:none;back
 .badd:hover{background:var(--acc);color:#fff;box-shadow:0 4px 14px var(--acc-glow)}
 .badd.done{background:rgba(0,200,117,.12);color:var(--grn);border-color:rgba(0,200,117,.2)}
 .badd.done:hover{background:var(--grn);color:#fff;box-shadow:0 4px 14px var(--grn-glow)}
-.backdrop{position:fixed;inset:0;background:rgba(0,0,0,.7);backdrop-filter:blur(12px);z-index:950;opacity:0;pointer-events:none;transition:opacity .35s}
+.backdrop{
+  position:fixed;
+  inset:0;
+}
 .backdrop.on{opacity:1;pointer-events:all}
 .cart-panel{
   position:fixed;
@@ -302,7 +305,16 @@ body::after{content:'';position:fixed;inset:0;z-index:0;pointer-events:none;back
 .btn-send-wpp img{width:18px;height:18px}
 .btn-clear{width:100%;padding:9px;color:var(--t3);font-size:.8rem;font-weight:500;display:flex;align-items:center;justify-content:center;gap:6px;border-radius:8px;transition:all .2s}
 .btn-clear:hover{color:#ef4444;background:rgba(239,68,68,.07)}
-.wpp-float{position:fixed;bottom:28px;right:28px;z-index:800;display:flex;flex-direction:column;align-items:flex-end;gap:10px}
+.wpp-float{
+  position:fixed;
+  bottom:28px;
+  right:28px;   /* ← ESSA LINHA é o que joga pra direita */
+  z-index:800;
+  display:flex;
+  flex-direction:column;
+  align-items:flex-end;
+  gap:10px;
+}
 .wpp-tip{background:var(--grn);color:#fff;font-size:.76rem;font-weight:600;padding:5px 13px;border-radius:99px;white-space:nowrap;opacity:0;transform:translateX(8px) scale(.95);transition:all .25s var(--ease);pointer-events:none}
 .wpp-float:hover .wpp-tip{opacity:1;transform:translateX(0) scale(1)}
 .wpp-btn{width:58px;height:58px;background:var(--grn);border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 8px 26px var(--grn-glow);transition:all .3s var(--ease);position:relative}
