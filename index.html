@@ -449,6 +449,106 @@ footer { border-top:1px solid var(--border); padding:2rem; text-align:center; co
 /* Animations */
 @keyframes fadeUp { from{opacity:0;transform:translateY(12px)} to{opacity:1;transform:translateY(0)} }
 
+/* ─── SEARCH SUGGESTIONS ─── */
+.search-suggestions {
+  position:absolute; top:calc(100% + 6px); left:0; right:0; z-index:200;
+  background:var(--surface); border:1px solid var(--border);
+  border-radius:12px; box-shadow:0 12px 40px rgba(0,0,0,.12);
+  overflow:hidden; display:none;
+}
+.search-suggestions.on { display:block; }
+.search-sug-item {
+  display:flex; align-items:center; gap:10px;
+  padding:10px 14px; cursor:pointer; transition:background .12s;
+  font-size:.875rem; color:var(--text2);
+}
+.search-sug-item:hover { background:rgba(0,0,0,.04); }
+[data-theme="dark"] .search-sug-item:hover { background:rgba(255,255,255,.06); }
+.search-sug-item .sug-ico { font-size:.9rem; flex-shrink:0; }
+.search-sug-item .sug-name { flex:1; color:var(--text); font-weight:500; }
+.search-sug-item .sug-cat { font-size:.725rem; color:var(--text3); }
+.sug-fuzzy-label { font-size:.6875rem; color:var(--text3); padding:6px 14px 4px; text-transform:uppercase; letter-spacing:.06em; font-weight:600; border-top:1px solid var(--border); }
+
+/* ─── CHECKOUT MODAL ─── */
+.modal-overlay {
+  position:fixed; inset:0; z-index:1000;
+  background:rgba(0,0,0,.4);
+  backdrop-filter:blur(4px);
+  display:flex; align-items:center; justify-content:center;
+  padding:1rem;
+  opacity:0; pointer-events:none;
+  transition:opacity .25s;
+}
+.modal-overlay.on { opacity:1; pointer-events:all; }
+.modal-box {
+  background:var(--surface); border:1px solid var(--border);
+  border-radius:22px; width:100%; max-width:480px;
+  max-height:90vh; overflow-y:auto;
+  box-shadow:0 32px 80px rgba(0,0,0,.2);
+  transform:translateY(16px) scale(.97);
+  transition:transform .3s;
+}
+.modal-overlay.on .modal-box { transform:translateY(0) scale(1); }
+.modal-hdr { padding:1.5rem 1.5rem 0; display:flex; align-items:flex-start; justify-content:space-between; }
+.modal-hdr-text h3 { font-size:1.125rem; font-weight:600; color:var(--text); letter-spacing:-.02em; }
+.modal-hdr-text p { font-size:.8375rem; color:var(--text3); margin-top:3px; font-weight:300; }
+.modal-body { padding:1.25rem 1.5rem; }
+.modal-items { margin-bottom:1.25rem; }
+.modal-item {
+  display:flex; justify-content:space-between; align-items:baseline;
+  padding:6px 0; border-bottom:1px solid var(--border); font-size:.8375rem;
+}
+.modal-item:last-child { border-bottom:none; }
+.modal-item-name { color:var(--text2); flex:1; padding-right:8px; }
+.modal-item-qty { color:var(--text3); font-size:.775rem; margin-right:8px; white-space:nowrap; }
+.modal-item-price { font-weight:500; color:var(--text); white-space:nowrap; }
+.modal-total-row {
+  display:flex; justify-content:space-between; align-items:baseline;
+  padding:10px 0; border-top:2px solid var(--border); margin-bottom:1.25rem;
+}
+.modal-total-lbl { font-size:.8375rem; color:var(--text3); }
+.modal-total-val { font-size:1.375rem; font-weight:300; color:var(--text); letter-spacing:-.02em; }
+.modal-divider { font-size:.7rem; font-weight:600; text-transform:uppercase; letter-spacing:.08em; color:var(--text3); margin-bottom:.875rem; padding-top:.25rem; border-top:1px solid var(--border); }
+.modal-field { margin-bottom:.875rem; }
+.modal-field label { display:block; font-size:.75rem; font-weight:600; color:var(--text3); text-transform:uppercase; letter-spacing:.07em; margin-bottom:.375rem; }
+.modal-field input, .modal-field select {
+  width:100%; padding:11px 14px;
+  background:var(--bg); border:1px solid var(--border);
+  border-radius:10px; color:var(--text); font-family:var(--font); font-size:.9rem; outline:none;
+  transition:border-color .2s, box-shadow .2s; appearance:none; -webkit-appearance:none;
+}
+.modal-field input:focus, .modal-field select:focus {
+  border-color:var(--blue); box-shadow:0 0 0 3px rgba(0,113,227,.15);
+}
+.modal-field select {
+  background-image:url("data:image/svg+xml,%3Csvg width='10' height='6' viewBox='0 0 10 6' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1l4 4 4-4' stroke='%236e6e73' stroke-width='1.5' stroke-linecap='round' fill='none'/%3E%3C/svg%3E");
+  background-repeat:no-repeat; background-position:right 12px center; padding-right:32px;
+}
+.modal-field input::placeholder { color:var(--text3); }
+.modal-field input.error { border-color:#e74c3c; box-shadow:0 0 0 3px rgba(231,76,60,.12); }
+.modal-field .field-error { font-size:.725rem; color:#e74c3c; margin-top:4px; display:none; }
+.modal-field.has-error .field-error { display:block; }
+.pagto-chips { display:flex; gap:6px; flex-wrap:wrap; margin-top:.25rem; }
+.pagto-chip {
+  padding:7px 14px; border-radius:99px; font-size:.8rem; font-weight:500;
+  color:var(--text3); border:1px solid var(--border); background:var(--surface);
+  cursor:pointer; transition:all .15s; white-space:nowrap;
+}
+.pagto-chip:hover { color:var(--text); border-color:var(--border2); }
+.pagto-chip.on { background:var(--text); color:var(--bg); border-color:transparent; }
+[data-theme="dark"] .pagto-chip.on { background:#f5f5f7; color:#1d1d1f; }
+.modal-foot { padding:0 1.5rem 1.5rem; display:flex; flex-direction:column; gap:.625rem; }
+.btn-confirm-wpp {
+  width:100%; padding:14px; background:var(--green); color:#fff;
+  border-radius:12px; font-weight:600; font-size:.9375rem;
+  display:flex; align-items:center; justify-content:center; gap:8px;
+  transition:filter .2s, transform .2s; box-shadow:0 4px 16px rgba(29,145,71,.3);
+}
+.btn-confirm-wpp:hover { filter:brightness(1.07); transform:translateY(-1px); }
+.btn-confirm-wpp img { width:18px; height:18px; }
+.btn-modal-cancel { width:100%; padding:10px; color:var(--text3); font-size:.8rem; font-weight:500; border-radius:8px; transition:all .15s; }
+.btn-modal-cancel:hover { color:var(--text); background:rgba(0,0,0,.05); }
+
 /* ─── RESPONSIVE ─── */
 @media(max-width:900px) {
   .nav-center { display:none; }
@@ -589,9 +689,10 @@ footer { border-top:1px solid var(--border); padding:2rem; text-align:center; co
     <p class="sec-sub">Explore por categoria ou busque pelo nome</p>
   </div>
 
-  <div class="search-wrap">
+  <div class="search-wrap" id="searchWrap">
     <span class="search-icon">🔍</span>
-    <input type="text" id="searchInput" class="search-inp" placeholder="Buscar produto, marca, tipo…" oninput="handleSearch(event)">
+    <input type="text" id="searchInput" class="search-inp" placeholder="Buscar produto, marca, tipo…" oninput="handleSearch(event)" autocomplete="off">
+    <div class="search-suggestions" id="searchSuggestions"></div>
   </div>
 
   <div class="filter-tabs" id="fbar">
@@ -658,6 +759,53 @@ footer { border-top:1px solid var(--border); padding:2rem; text-align:center; co
 </section>
 
 <footer><p>© 2026 <strong>Cia Das Embalagens</strong> — Todos os direitos reservados · São Paulo, SP</p></footer>
+
+<!-- Checkout Modal -->
+<div class="modal-overlay" id="checkoutModal">
+  <div class="modal-box">
+    <div class="modal-hdr">
+      <div class="modal-hdr-text">
+        <h3>Confirmar Pedido</h3>
+        <p>Revise e preencha para enviar pelo WhatsApp</p>
+      </div>
+      <button class="btn-close" onclick="fecharModal()" style="flex-shrink:0;margin-left:12px;margin-top:2px">✕</button>
+    </div>
+    <div class="modal-body">
+      <div class="modal-items" id="modalItems"></div>
+      <div class="modal-total-row">
+        <span class="modal-total-lbl">Total estimado</span>
+        <span class="modal-total-val" id="modalTotal">R$ 0,00</span>
+      </div>
+      <div class="modal-divider">Seus dados</div>
+      <div class="modal-field" id="fieldNome">
+        <label>Seu nome *</label>
+        <input type="text" id="inputNome" placeholder="Ex: João Silva" />
+        <div class="field-error">Por favor, informe seu nome.</div>
+      </div>
+      <div class="modal-field">
+        <label>Forma de pagamento *</label>
+        <div class="pagto-chips" id="pagtoChips">
+          <div class="pagto-chip" onclick="selecionarPagto(this,'Dinheiro')">💵 Dinheiro</div>
+          <div class="pagto-chip" onclick="selecionarPagto(this,'Pix')">⚡ Pix</div>
+          <div class="pagto-chip" onclick="selecionarPagto(this,'Cartão de Débito')">💳 Débito</div>
+          <div class="pagto-chip" onclick="selecionarPagto(this,'Cartão de Crédito')">💳 Crédito</div>
+          <div class="pagto-chip" onclick="selecionarPagto(this,'Boleto')">🧾 Boleto</div>
+        </div>
+        <div class="field-error" id="pagtoError" style="display:none;color:#e74c3c;font-size:.725rem;margin-top:6px;">Selecione uma forma de pagamento.</div>
+      </div>
+      <div class="modal-field" id="fieldObs" style="margin-top:.25rem">
+        <label>Observações <span style="font-weight:400;text-transform:none;letter-spacing:0">(opcional)</span></label>
+        <input type="text" id="inputObs" placeholder="Ex: entregar no período da manhã" />
+      </div>
+    </div>
+    <div class="modal-foot">
+      <button class="btn-confirm-wpp" onclick="confirmarEEnviar()">
+        <img src="https://img.icons8.com/color/48/whatsapp.png" alt=""> Enviar Pedido pelo WhatsApp
+      </button>
+      <button class="btn-modal-cancel" onclick="fecharModal()">Voltar ao carrinho</button>
+    </div>
+  </div>
+</div>
 
 <script src="produtos_planilha.js"></script>
 <script>
