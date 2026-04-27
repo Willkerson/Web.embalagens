@@ -618,45 +618,61 @@ function renderCartList(){
   var total=itens.reduce(function(s,i){return s+(parseFloat(i.prod.preco)||0)*i.qtd;},0);
   totalEl.textContent='R$ '+total.toFixed(2).replace('.',',');
   // ===== SUGESTÕES =====
+// ===== SUGESTÕES VISUAIS =====
 var sugestoes = [];
 
 Object.values(carrinho).forEach(item => {
   sugestoes = sugestoes.concat(getRelacionados(item.prod));
 });
 
-// remover duplicados
 sugestoes = sugestoes.filter((v, i, a) => 
   a.findIndex(t => t.id === v.id) === i
 );
 
-// remover itens já no carrinho
 sugestoes = sugestoes.filter(p => !carrinho[p.id]);
 
 if (sugestoes.length) {
   var box = document.createElement("div");
-  box.style.marginTop = "15px";
+  box.style.marginTop = "18px";
 
   var title = document.createElement("div");
-  title.style.fontSize = "0.85rem";
+  title.textContent = "💡 Combine com:";
+  title.style.fontSize = "0.9rem";
   title.style.fontWeight = "600";
-  title.style.marginBottom = "8px";
-  title.textContent = "💡 Você também pode precisar:";
+  title.style.marginBottom = "10px";
+
   box.appendChild(title);
 
-  sugestoes.slice(0,4).forEach(p => {
-    var item = document.createElement("div");
-    item.style.fontSize = "0.8rem";
-    item.style.marginBottom = "6px";
-    item.innerHTML = `
-      ${p.nome} 
-      <span style="color:#3b7fff;cursor:pointer;font-weight:600"
-       onclick="addSugestao(${p.id})">
-        + adicionar
-      </span>
+  var wrap = document.createElement("div");
+  wrap.style.display = "flex";
+  wrap.style.gap = "8px";
+  wrap.style.overflowX = "auto";
+
+  sugestoes.forEach(p => {
+    var preco = parseFloat(p.preco);
+    var precoStr = preco > 0 ? "R$ " + preco.toFixed(2).replace('.',',') : "";
+
+    var card = document.createElement("div");
+    card.style.minWidth = "100px";
+    card.style.background = "rgba(255,255,255,0.05)";
+    card.style.border = "1px solid rgba(255,255,255,0.1)";
+    card.style.borderRadius = "8px";
+    card.style.padding = "6px";
+    card.style.textAlign = "center";
+
+    card.innerHTML = `
+      <div style="font-size:0.75rem;height:30px;overflow:hidden">${p.nome}</div>
+      <div style="font-size:0.8rem;font-weight:600">${precoStr}</div>
+      <button onclick="addSugestao(${p.id})"
+        style="margin-top:4px;background:#3b7fff;color:#fff;border:none;border-radius:6px;padding:4px 6px;font-size:0.7rem">
+        +
+      </button>
     `;
-    box.appendChild(item);
+
+    wrap.appendChild(card);
   });
 
+  box.appendChild(wrap);
   list.appendChild(box);
 }
 }
