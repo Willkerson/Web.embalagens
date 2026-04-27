@@ -571,6 +571,19 @@ function addCart(id){var prod=prods().find(function(p){return p.id===id});if(!pr
 function removerItem(id){delete carrinho[id];salvarCarrinho();var card=document.getElementById('card-'+id);var btn=document.getElementById('badd-'+id);if(card)card.classList.remove('incart');if(btn){btn.textContent='+ Adicionar';btn.classList.remove('done');}updateBadge();renderCartList();}
 function limparCart(){if(!Object.keys(carrinho).length)return;if(!confirm('Limpar o carrinho?'))return;Object.keys(carrinho).forEach(function(id){var card=document.getElementById('card-'+id);var btn=document.getElementById('badd-'+id);if(card)card.classList.remove('incart');if(btn){btn.textContent='+ Adicionar';btn.classList.remove('done');}});carrinho={};salvarCarrinho();updateBadge();renderCartList();}
 function updateBadge(){var n=Object.keys(carrinho).length;var b=document.getElementById('cbadge');b.textContent=n;b.classList.toggle('on',n>0);}
+function getRelacionados(prod) {
+  var nome = (prod.nome || "").toLowerCase();
+
+  return prods().filter(p => {
+    var n = (p.nome || "").toLowerCase();
+
+    if (nome.includes("marm")) return n.includes("tampa") || n.includes("garfo") || n.includes("sacola");
+    if (nome.includes("copo")) return n.includes("tampa") || n.includes("canudo");
+    if (nome.includes("bolo")) return n.includes("bandeja") || n.includes("embalagem");
+
+    return false;
+  }).slice(0,4);
+}
 function renderCartList(){
   var list=document.getElementById('clist');var totalEl=document.getElementById('ctotal');var itens=Object.values(carrinho);
   if(!itens.length){list.innerHTML='<div class="cart-empty"><div class="cart-empty-ico">🛒</div><p>Carrinho vazio</p></div>';totalEl.textContent='R$ 0,00';return;}
@@ -590,6 +603,48 @@ function renderCartList(){
   });
   var total=itens.reduce(function(s,i){return s+(parseFloat(i.prod.preco)||0)*i.qtd;},0);
   totalEl.textContent='R$ '+total.toFixed(2).replace('.',',');
+  // ===== SUGESTÕES =====
+var sugestoes = [];
+
+Object.values(carrinho).forEach(item => {
+  sugestoes = sugestoes.concat(getRelacionados(item.prod));
+});
+
+// remover duplicados
+sugestoes = sugestoes.filter((v, i, a) => 
+  a.findIndex(t => t.id === v.id) === i
+);
+
+// remover itens já no carrinho
+sugestoes = sugestoes.filter(p => !carrinho[p.id]);
+
+if (sugestoes.length) {
+  var box = document.createElement("div");
+  box.style.marginTop = "15px";
+
+  var title = document.createElement("div");
+  title.style.fontSize = "0.85rem";
+  title.style.fontWeight = "600";
+  title.style.marginBottom = "8px";
+  title.textContent = "💡 Você também pode precisar:";
+  box.appendChild(title);
+
+  sugestoes.slice(0,4).forEach(p => {
+    var item = document.createElement("div");
+    item.style.fontSize = "0.8rem";
+    item.style.marginBottom = "6px";
+    item.innerHTML = `
+      ${p.nome} 
+      <span style="color:#3b7fff;cursor:pointer;font-weight:600"
+        onclick="addCart(${p.id}); renderCartList();">
+        + adicionar
+      </span>
+    `;
+    box.appendChild(item);
+  });
+
+  list.appendChild(box);
+}
 }
 function abrirCart(){renderCartList();document.getElementById('cartPanel').classList.add('on');document.getElementById('backdrop').classList.add('on');document.body.style.overflow='hidden';}
 function fecharCart(){document.getElementById('cartPanel').classList.remove('on');document.getElementById('backdrop').classList.remove('on');document.body.style.overflow='';}
