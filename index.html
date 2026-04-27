@@ -26,12 +26,10 @@ body::before{content:'';position:fixed;inset:0;z-index:0;pointer-events:none;bac
 body::after{content:'';position:fixed;inset:0;z-index:0;pointer-events:none;background:radial-gradient(ellipse 80% 60% at 20% 10%,rgba(59,127,255,.09) 0%,transparent 60%),radial-gradient(ellipse 60% 50% at 80% 80%,rgba(0,200,117,.06) 0%,transparent 60%)}
 .hdr{position:fixed;top:0;left:0;right:0;z-index:900;transition:all .4s var(--ease)}
 .hdr-inner{
-   background:linear-gradient(135deg,#60a5fa,#3b82f6);
-  border-bottom:1px solid rgba(255,255,255,.25);
-  position:relative;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
+  background:rgba(255,255,255,.75);
+  backdrop-filter:blur(14px);
+  -webkit-backdrop-filter:blur(14px);
+  border-bottom:1px solid #e5e7eb;
 }
 }
 [data-theme="light"] .hdr-inner{
@@ -39,8 +37,7 @@ body::after{content:'';position:fixed;inset:0;z-index:0;pointer-events:none;back
   border-bottom:1px solid rgba(255,255,255,.2);
 }
 .hdr.sc .hdr-inner{
-  height:60px;
-  background:linear-gradient(135deg,#1a54cc,#3b7fff);
+  background:rgba(255,255,255,.9);
 }
 .logo{display:flex;align-items:center;gap:12px;color:var(--t1);flex-shrink:0}
 .logo-mark{width:36px;height:36px;background:linear-gradient(135deg,var(--acc),var(--acc2));border-radius:10px;display:flex;align-items:center;justify-content:center;box-shadow:0 0 20px var(--acc-glow)}
