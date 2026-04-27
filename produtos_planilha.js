@@ -145,7 +145,7 @@ window.listaProdutosPlanilha = [
   {"id":2143,"nome":"CONCHA SILICONE CLINCK","categoria":"diversos","subcategoria":"outros","preco":20,"unidade":"/unidade"},
   {"id":2144,"nome":"CONJUNTOS P/CHURASCO 3 PECAS","categoria":"diversos","subcategoria":"outros","preco":28,"unidade":"/unidade"},
   {"id":2145,"nome":"Cópia de SUPORTE LT C/ VELCRO BIG SANCHES","categoria":"diversos","subcategoria":"outros","preco":20,"unidade":"/unidade"},
-  {"id":2146,"nome":"COPO 200ML CRISTAL C/10UN","categoria":"festa","subcategoria":"copos-pratos","preco":5,"unidade":"/pct (10un)","marca":"ELITE"},
+  {"id":2146,"nome":"COPO 200ML CRISTAL C/10UN","categoria":"festa","subcategoria":"copos-pratos","preco":5,"unidade":"/pct (10un)","marca":"ELITE","imagem":"https://www.atacadao.com.br/_next/image?url=https%3A%2F%2Fatacadaobr.vtexassets.com%2Farquivos%2Fids%2F1278052-300-auto%3Fwidth%3D300%26height%3Dauto%26aspect%3Dtrue&w=384&q=75","imgmode":"thumbnail"},
   {"id":2147,"nome":"COPO 300ML CRISTAL C/10UN ELITE","categoria":"festa","subcategoria":"copos-pratos","preco":6,"unidade":"/pct (10un)","marca":"ELITE"},
   {"id":2148,"nome":"COPO DESCARTAVEL 330ML C/50UN ULTRA","categoria":"festa","subcategoria":"copos-pratos","preco":7,"unidade":"/pct (50un)","marca":"ULTRA"},
   {"id":2149,"nome":"COPO DESCARTAVEL 500ML C/50UN ULTRA","categoria":"festa","subcategoria":"copos-pratos","preco":11,"unidade":"/pct (50un)","marca":"ULTRA"},
