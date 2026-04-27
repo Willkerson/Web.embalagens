@@ -38,23 +38,16 @@ body::before{content:'';position:fixed;inset:0;z-index:0;pointer-events:none;bac
 body::after{content:'';position:fixed;inset:0;z-index:0;pointer-events:none;background:radial-gradient(ellipse 80% 60% at 20% 10%,rgba(59,127,255,.09) 0%,transparent 60%),radial-gradient(ellipse 60% 50% at 80% 80%,rgba(0,200,117,.06) 0%,transparent 60%)}
 .hdr{position:fixed;top:0;left:0;right:0;z-index:900;transition:all .4s var(--ease)}
 .hdr-inner{
-  height:70px;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  padding:0 2rem;
+  background:rgba(255,255,255,.92); /* mais sólido */
+  backdrop-filter:blur(16px);
+  -webkit-backdrop-filter:blur(16px);
 
-  background:rgba(255,255,255,.75);
-  backdrop-filter:blur(18px);
-  -webkit-backdrop-filter:blur(18px);
-
-  border-bottom:1px solid var(--border);
+  border-bottom:1px solid rgba(0,0,0,.06);
 
   box-shadow:
-    0 1px 0 rgba(0,0,0,.03),
-    0 10px 30px rgba(0,0,0,.05);
+    0 1px 0 rgba(0,0,0,.04),
+    0 10px 30px rgba(0,0,0,.06);
 }
-
 /* menu central */
 .nav-center{
   position:absolute;
@@ -64,10 +57,7 @@ body::after{content:'';position:fixed;inset:0;z-index:0;pointer-events:none;back
   gap:6px;
 }
 }
-[data-theme="light"] .hdr-inner{
-  background:linear-gradient(135deg,#60a5fa,#3b82f6);
-  border-bottom:1px solid rgba(255,255,255,.2);
-}
+
 .hdr.sc .hdr-inner{
   background:rgba(255,255,255,.9);
   box-shadow:
@@ -303,6 +293,8 @@ body::after{content:'';position:fixed;inset:0;z-index:0;pointer-events:none;back
 .cart-total-row{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:1.25rem}
 .cart-total-lbl{font-size:.82rem;color:var(--t3)}
 .cart-total-val{font-size:1.8rem;font-weight:300;font-family:var(--font-display);color:var(--t1)}
+    <div class="divider"></div>
+
 .btn-send-wpp{width:100%;padding:14px;background:var(--grn);color:#fff;border-radius:12px;font-weight:600;font-size:.92rem;display:flex;align-items:center;justify-content:center;gap:9px;transition:all .3s var(--ease);box-shadow:0 6px 22px var(--grn-glow);margin-bottom:.75rem}
 .btn-send-wpp:hover{filter:brightness(1.08);transform:translateY(-2px);box-shadow:0 12px 34px var(--grn-glow)}
 .btn-send-wpp img{width:18px;height:18px}
