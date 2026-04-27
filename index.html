@@ -568,7 +568,21 @@ function renderMais(){
 
 function mudaQtd(id,d){var i=document.getElementById('qtd-'+id);if(i){i.value=Math.max(1,(parseInt(i.value)||1)+d);if(carrinho[id]){carrinho[id].qtd=parseInt(i.value);salvarCarrinho();}}}
 function addCart(id){var prod=prods().find(function(p){return p.id===id});if(!prod)return;var qtd=parseInt(document.getElementById('qtd-'+id).value)||1;carrinho[id]={prod:prod,qtd:qtd};salvarCarrinho();var card=document.getElementById('card-'+id);var btn=document.getElementById('badd-'+id);if(card)card.classList.add('incart');if(btn){btn.textContent='✓ Adicionado';btn.classList.add('done');}updateBadge();}
-function removerItem(id){delete carrinho[id];salvarCarrinho();var card=document.getElementById('card-'+id);var btn=document.getElementById('badd-'+id);if(card)card.classList.remove('incart');if(btn){btn.textContent='+ Adicionar';btn.classList.remove('done');}updateBadge();renderCartList();}
+function addSugestao(id){
+  var prod = prods().find(p => p.id === id);
+  if (!prod) return;
+
+  // adiciona 1 unidade automaticamente
+  carrinho[id] = {
+    prod: prod,
+    qtd: (carrinho[id]?.qtd || 0) + 1
+  };
+
+  salvarCarrinho();
+  updateBadge();
+  renderCartList();
+}
+  function removerItem(id){delete carrinho[id];salvarCarrinho();var card=document.getElementById('card-'+id);var btn=document.getElementById('badd-'+id);if(card)card.classList.remove('incart');if(btn){btn.textContent='+ Adicionar';btn.classList.remove('done');}updateBadge();renderCartList();}
 function limparCart(){if(!Object.keys(carrinho).length)return;if(!confirm('Limpar o carrinho?'))return;Object.keys(carrinho).forEach(function(id){var card=document.getElementById('card-'+id);var btn=document.getElementById('badd-'+id);if(card)card.classList.remove('incart');if(btn){btn.textContent='+ Adicionar';btn.classList.remove('done');}});carrinho={};salvarCarrinho();updateBadge();renderCartList();}
 function updateBadge(){var n=Object.keys(carrinho).length;var b=document.getElementById('cbadge');b.textContent=n;b.classList.toggle('on',n>0);}
 function getRelacionados(prod) {
@@ -636,7 +650,7 @@ if (sugestoes.length) {
     item.innerHTML = `
       ${p.nome} 
       <span style="color:#3b7fff;cursor:pointer;font-weight:600"
-        onclick="addCart(${p.id}); renderCartList();">
+       onclick="addSugestao(${p.id})">
         + adicionar
       </span>
     `;
