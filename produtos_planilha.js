@@ -858,5 +858,6 @@ window.listaProdutosPlanilha = [
   {"id":9069,"nome":"Tesoura multifuncional 8","categoria":"diversos","subcategoria":"outros","preco":5,"unidade":"/unidade"},
   {"id":9070,"nome":"Tesouro prof. multi. 8","categoria":"diversos","subcategoria":"outros","preco":5,"unidade":"/unidade"},
   {"id":9071,"nome":"Colher de madeira 53-52","categoria":"diversos","subcategoria":"outros","preco":7,"unidade":"/unidade"},
-  {"id":9072,"nome":"LIXEIRA PARA COPO PLASTICO CLEAN EXECUTIVA","categoria":"utilidades","subcategoria":"organiz-limpeza","preco":64,"unidade":"/unidade","marca":"CLEAN","imagem":"https://lojaobramax.vtexassets.com/arquivos/ids/35678763-1600-1600?v=639123237596800000&width=1600&height=1600&aspect=true","imgmode":"thumbnail"}
+  {"id":9072,"nome":"LIXEIRA PARA COPO PLASTICO CLEAN EXECUTIVA","categoria":"utilidades","subcategoria":"organiz-limpeza","preco":64,"unidade":"/unidade","marca":"CLEAN","imagem":"https://lojaobramax.vtexassets.com/arquivos/ids/35678763-1600-1600?v=639123237596800000&width=1600&height=1600&aspect=true","imgmode":"thumbnail"},
+  {"id":9073,"nome":"CAIXA B-15 (32X42X12)","categoria":"caixas","subcategoria":"caixas-alimentos","preco":11.5,"unidade":"/unidade"}
 ];
