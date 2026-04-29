@@ -241,7 +241,7 @@ window.listaProdutosPlanilha = [
   {"id":2239,"nome":"ESCOVAO LIMPA TUDO PESADA SANCHES","categoria":"limpeza","subcategoria":"utensilios-limpeza","preco":22,"unidade":"/unidade","marca":"SANCHES"},
   {"id":2240,"nome":"ESCOVA SANITARIA C/ ESTOJO SANIBRISA","categoria":"limpeza","subcategoria":"utensilios-limpeza","preco":14,"unidade":"/unidade"},
   {"id":2241,"nome":"ESCOVA USO GERAL 9,5CM ESCOBEL","categoria":"limpeza","subcategoria":"utensilios-limpeza","preco":4,"unidade":"/unidade","marca":"ESCOBEL"},
-  {"id":2242,"nome":"ESPATULA  17CMX12CMX0,3CM C/2UN","categoria":"diversos","subcategoria":"outros","preco":12,"unidade":"/unidade"},
+  {"id":2242,"nome":"ESPATULA  17CMX12CMX0,3CM C/2UN","categoria":"diversos","subcategoria":"outros","preco":12,"unidade":"/unidade","marca":"DONA COTIA","imagem":"https://lojanetlab.fbitsstatic.net/img/p/espatula-laboratorio-kit-c-2un-comprimento-17cm-largura-7cm-12cm-163813/362081.jpg?w=520&h=520&v=no-value","imgmode":"thumbnail"},
   {"id":2243,"nome":"ESPATULAR  RETA  PROFISIONAL","categoria":"diversos","subcategoria":"outros","preco":19,"unidade":"/unidade"},
   {"id":2244,"nome":"ESPETO DE BAMBU 30CM C/50UN VABENE","categoria":"diversos","subcategoria":"emb-diversas","preco":4,"unidade":"/pct (50un)"},
   {"id":2245,"nome":"ESPETOS DE BAMBU GOLF TALGE","categoria":"diversos","subcategoria":"emb-diversas","preco":5,"unidade":"/unidade"},
