@@ -275,7 +275,7 @@ window.listaProdutosPlanilha = [
   {"id":2273,"nome":"FACA PEIX","categoria":"diversos","subcategoria":"outros","preco":10,"unidade":"/unidade","oculto":true},
   {"id":2274,"nome":"FACA REFEIÇÃO BRANCO C/200UN ELITE","categoria":"festa","subcategoria":"talheres","preco":30,"unidade":"/pct (200un)","imagem":"https://cdn.awsli.com.br/600x450/1615/1615759/produto/68497018/c54f2d56e9.jpg","imgmode":"thumbnail"},
   {"id":2275,"nome":"FACA REFEICAO PREMIUM BRANCA C/50UN","categoria":"festa","subcategoria":"talheres","preco":2,"unidade":"/pct (50un)","imagem":"https://images.tcdn.com.br/img/img_prod/694926/faca_descartavel_para_refeicao_c_50_premium_branca_prafesta_360771_1_71b7627681043659ed15fc1206c38556.jpg","imgmode":"thumbnail"},
-  {"id":2276,"nome":"FACILE","categoria":"diversos","subcategoria":"outros","preco":8,"unidade":"/unidade","oculto":true},
+  {"id":2276,"nome":"CORTADOR DE PIZZA","categoria":"utilidades","subcategoria":"ferramentas","preco":8,"unidade":"/unidade","marca":"FACILE","imagem":"https://images.tcdn.com.br/img/img_prod/887624/cortador_de_pizza_inox_ref_4002_ke_home_23597_1_df379dbd9fae6b55b77b4fec167044d7.jpg","imgmode":"thumbnail"},
   {"id":2277,"nome":"FECHA E CORTA MASSAS KEITA","categoria":"diversos","subcategoria":"outros","preco":6,"unidade":"/unidade"},
   {"id":2278,"nome":"FIBRA BRANCA LIMP. LEVE BETTANIN","categoria":"limpeza","subcategoria":"utensilios-limpeza","preco":3,"unidade":"/unidade","marca":"BETTANIN"},
   {"id":2279,"nome":"FIBRA LIMP. DE PORCLANATO AZUL 1UN","categoria":"limpeza","subcategoria":"utensilios-limpeza","preco":4,"unidade":"/unidade"},
