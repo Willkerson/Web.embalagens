@@ -130,7 +130,7 @@ window.listaProdutosPlanilha = [
   {"id":2128,"nome":"CESTO PLASTICO 15L BRANCO C/TAMPA TRILHA","categoria":"utilidades","subcategoria":"organiz-limpeza","preco":24,"unidade":"/unidade"},
   {"id":2129,"nome":"CESTO PLASTICO C/TAMPA 15L TRILHA","categoria":"utilidades","subcategoria":"organiz-limpeza","preco":24,"unidade":"/unidade"},
   {"id":2130,"nome":"CESTO PLASTICO PRETO C/TAMPA 15L TRILHA","categoria":"utilidades","subcategoria":"organiz-limpeza","preco":29,"unidade":"/unidade"},
-  {"id":2131,"nome":"CHAMA COLORIDA TOP FESTAS","categoria":"diversos","subcategoria":"outros","preco":8,"unidade":"/unidade"},
+  {"id":2131,"nome":"CHAMA COLORIDA TOP FESTAS","categoria":"diversos","subcategoria":"outros","preco":8.5,"unidade":"/unidade","imagem":"https://static.fescopan.com.br/public/fescopan/imagens/produtos/vela-vulcao-chama-colorida-prata-8748.jpg","imgmode":"thumbnail"},
   {"id":2132,"nome":"CHAVE DE VENDA E ESTILETE","categoria":"utilidades","subcategoria":"ferramentas","preco":12,"unidade":"/unidade"},
   {"id":2133,"nome":"COLHER BRANCA SOBREMESA C/50UN PRAFESTA","categoria":"festa","subcategoria":"talheres","preco":4,"unidade":"/pct (50un)"},
   {"id":2134,"nome":"COLHER DE ARROZ CLINK","categoria":"diversos","subcategoria":"outros","preco":9,"unidade":"/unidade"},
