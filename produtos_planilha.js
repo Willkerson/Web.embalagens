@@ -1,5 +1,5 @@
 window.listaProdutosPlanilha = [
-  {"id":2000,"nome":"ABRIDOR DE LATAS","categoria":"utilidades","subcategoria":"ferramentas","preco":3,"unidade":"/unidade","imagem":"https://m.media-amazon.com/images/I/51wBT5qAH4L._AC_SX679_.jpg","imgmode":"thumbnail","esgotado":true},
+  {"id":2000,"nome":"ABRIDOR DE LATAS","categoria":"utilidades","subcategoria":"ferramentas","preco":3,"unidade":"/unidade","imagem":"https://m.media-amazon.com/images/I/51wBT5qAH4L._AC_SX679_.jpg","imgmode":"thumbnail"},
   {"id":2001,"nome":"ABRIDOR DE GARRAFAS INTER","categoria":"utilidades","subcategoria":"ferramentas","preco":6,"unidade":"/unidade","imagem":"https://http2.mlstatic.com/D_NQ_NP_696127-MLA100115278751_122025-O.webp","imgmode":"thumbnail"},
   {"id":2002,"nome":"ABRIDOR MULTIUSO","categoria":"utilidades","subcategoria":"ferramentas","preco":11,"unidade":"/unidade"},
   {"id":2003,"nome":"ACCESSORIOS P/CORTINAS SANTONE","categoria":"diversos","subcategoria":"outros","preco":35,"unidade":"/unidade"},
