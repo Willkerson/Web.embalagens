@@ -365,8 +365,12 @@ footer { border-top:1px solid var(--border); padding:2rem; text-align:center; co
 
     <nav class="nav-center">
       <div class="nav-item" id="nav-emb">
-        <div class="nav-link" onclick="toggleNav('nav-emb')">Embalagens<svg viewBox="0 0 10 6" fill="none"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></div>
-        <div class="mega">
+        <div class="nav-link" onclick="filterCat('caixas')">Embalagens</div>
+<div class="nav-link" onclick="filterCat('festa')">Descartáveis</div>
+<div class="nav-link" onclick="filterCat('limpeza')">Limpeza & EPI</div>
+<div class="nav-link" onclick="filterCat('utilidades')">Utilidades</div>
+<a class="nav-link nav-link-green" href="https://wa.me/5511972999835" target="_blank">Contato</a>
+<div class="mega">
           <div class="mega-grid">
             <div class="mega-col">
               <div class="mega-col-title">Caixas & Papelão</div>
@@ -639,7 +643,8 @@ var catMap={
   utilidades:['utilidades','pilhas-baterias','aromas-inseticidas','organiz-limpeza','ferramentas','escritorio','ganchos'],
   diversos:['diversos','isopor-geral','emb-flexiveis','emb-diversas','outros']
 };
-var subLabels={'caixas-correio':'Caixas Correios',
+var subLabels={
+  'caixas-correio':'Caixas Correios',
   'caixas-alimentos':'Caixas p/ Alimentos',
   'sacos-lixo':'Sacos de Lixo',
   'sacolas-papel':'Sacolas de Papel',
@@ -662,7 +667,8 @@ var subLabels={'caixas-correio':'Caixas Correios',
   'emb-flexiveis':'Emb. Flexíveis',
   'emb-diversas':'Emb. Diversas',
   'outros':'Outros',
-  'caixas-ondulados':'Caixas Ondulados'};
+  'caixas-ondulados':'Caixas Ondulados'
+};
 var catEmojis={caixas:'📦',sacolas:'🛍️',plastico:'🧪',festa:'🥂',limpeza:'🧹',higiene:'🧻',utilidades:'🔧',diversos:'🔓','caixas-correio':'📬','caixas-alimentos':'🍕','sacos-lixo':'🗑️','sacolas-papel':'🧻','sacolas-plasticas':'🛒','potes-tampas':'🫙','embalagens-bolo':'🎂','copos-pratos':'🥤','talheres':'🍴','produtos-limpeza':'🧴','utensilios-limpeza':'🧽','epi':'🧤','papel-higiene':'🧻','pilhas-baterias':'🔋','aromas-inseticidas':'🌿','organiz-limpeza':'🪣','ferramentas':'🔨','escritorio':'✏️','ganchos':'🪝','isopor-geral':'❄️','emb-flexiveis':'📜','emb-diversas':'🎁','outros':'📎'};
 
 function prods(){return window.listaProdutosPlanilha||[];}
