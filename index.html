@@ -629,8 +629,40 @@ function isEsgotado(p){
 var carrinho={};
 var estado={cat:'todos',sub:'todas',busca:'',marca:'todas'};
 var pagtoSelecionado='';
-var catMap={caixas:['caixas','caixas-correio','caixas-alimentos'],sacolas:['sacolas','sacos-lixo','sacolas-papel','sacolas-plasticas'],plastico:['plastico','potes-tampas','embalagens-bolo'],festa:['festa','copos-pratos','talheres'],limpeza:['limpeza','produtos-limpeza','utensilios-limpeza','epi','sacos-lixo'],higiene:['higiene','papel-higiene'],utilidades:['utilidades','pilhas-baterias','aromas-inseticidas','organiz-limpeza','ferramentas','escritorio','ganchos'],diversos:['diversos','isopor-geral','emb-flexiveis','emb-diversas','outros']};
-var subLabels={'caixas-correio':'Caixas Correios','caixas-alimentos':'Caixas p/ Alimentos','sacos-lixo':'Sacos de Lixo','sacolas-papel':'Sacolas de Papel','sacolas-plasticas':'Sacolas Plásticas','potes-tampas':'Potes e Tampas','embalagens-bolo':'Embalagens p/ Bolo','copos-pratos':'Copos e Pratos','talheres':'Talheres','produtos-limpeza':'Produtos Químicos','utensilios-limpeza':'Utensílios','epi':'EPI & Proteção','papel-higiene':'Papel & Sabonetes','pilhas-baterias':'Pilhas & Baterias','aromas-inseticidas':'Aromas & Inseticidas','organiz-limpeza':'Organização','ferramentas':'Ferramentas','escritorio':'Escritório','ganchos':'Ganchos','isopor-geral':'Isopor Geral','emb-flexiveis':'Emb. Flexíveis','emb-diversas':'Emb. Diversas','outros':'Outros'};
+var catMap={
+  caixas:['caixas','caixas-correio','caixas-alimentos','ondulados'],
+  sacolas:['sacolas','sacos-lixo','sacolas-papel','sacolas-plasticas'],
+  plastico:['plastico','potes-tampas','embalagens-bolo'],
+  festa:['festa','copos-pratos','talheres'],
+  limpeza:['limpeza','produtos-limpeza','utensilios-limpeza','epi','sacos-lixo'],
+  higiene:['higiene','papel-higiene'],
+  utilidades:['utilidades','pilhas-baterias','aromas-inseticidas','organiz-limpeza','ferramentas','escritorio','ganchos'],
+  diversos:['diversos','isopor-geral','emb-flexiveis','emb-diversas','outros']
+};
+var subLabels={'caixas-correio':'Caixas Correios',
+  'caixas-alimentos':'Caixas p/ Alimentos',
+  'sacos-lixo':'Sacos de Lixo',
+  'sacolas-papel':'Sacolas de Papel',
+  'sacolas-plasticas':'Sacolas Plásticas',
+  'potes-tampas':'Potes e Tampas',
+  'embalagens-bolo':'Embalagens p/ Bolo',
+  'copos-pratos':'Copos e Pratos',
+  'talheres':'Talheres',
+  'produtos-limpeza':'Produtos Químicos',
+  'utensilios-limpeza':'Utensílios',
+  'epi':'EPI & Proteção',
+  'papel-higiene':'Papel & Sabonetes',
+  'pilhas-baterias':'Pilhas & Baterias',
+  'aromas-inseticidas':'Aromas & Inseticidas',
+  'organiz-limpeza':'Organização',
+  'ferramentas':'Ferramentas',
+  'escritorio':'Escritório',
+  'ganchos':'Ganchos',
+  'isopor-geral':'Isopor Geral',
+  'emb-flexiveis':'Emb. Flexíveis',
+  'emb-diversas':'Emb. Diversas',
+  'outros':'Outros',
+  'caixas-ondulados':'Caixas Ondulados'};
 var catEmojis={caixas:'📦',sacolas:'🛍️',plastico:'🧪',festa:'🥂',limpeza:'🧹',higiene:'🧻',utilidades:'🔧',diversos:'🔓','caixas-correio':'📬','caixas-alimentos':'🍕','sacos-lixo':'🗑️','sacolas-papel':'🧻','sacolas-plasticas':'🛒','potes-tampas':'🫙','embalagens-bolo':'🎂','copos-pratos':'🥤','talheres':'🍴','produtos-limpeza':'🧴','utensilios-limpeza':'🧽','epi':'🧤','papel-higiene':'🧻','pilhas-baterias':'🔋','aromas-inseticidas':'🌿','organiz-limpeza':'🪣','ferramentas':'🔨','escritorio':'✏️','ganchos':'🪝','isopor-geral':'❄️','emb-flexiveis':'📜','emb-diversas':'🎁','outros':'📎'};
 
 function prods(){return window.listaProdutosPlanilha||[];}
