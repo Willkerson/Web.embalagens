@@ -92,7 +92,6 @@ body{background:var(--bg);color:var(--t2);font-family:var(--font);line-height:1.
 .sub-sel{padding:7px 10px;background:var(--bg2);border:1px solid var(--bdr);border-radius:8px;font-family:var(--font);font-size:.78rem;color:var(--t2);outline:none;cursor:pointer;transition:border-color .15s}
 .sub-sel:focus{border-color:var(--acc)}
 
-/* ESGOTADOS PANEL */
 .esg-panel{background:var(--bg1);border:1px solid rgba(234,88,12,.3);border-radius:12px;overflow:hidden;display:none;box-shadow:var(--sh)}
 .esg-panel.on{display:block}
 .esg-phdr{display:flex;align-items:center;gap:10px;padding:.8rem 1rem;background:var(--org-g);border-bottom:1px solid rgba(234,88,12,.2)}
@@ -107,7 +106,6 @@ body{background:var(--bg);color:var(--t2);font-family:var(--font);line-height:1.
 .esg-item-meta{font-size:.69rem;color:var(--t3)}
 .esg-pfoot{padding:.7rem 1rem;display:flex;gap:8px;flex-wrap:wrap;border-top:1px solid var(--bdr);background:var(--bg2)}
 
-/* GROUPS */
 .cat-group{background:var(--bg1);border:1px solid var(--bdr);border-radius:12px;overflow:hidden;box-shadow:var(--sh)}
 .cat-hdr{display:flex;align-items:center;gap:10px;padding:.8rem 1rem;background:var(--bg2);border-bottom:1px solid var(--bdr)}
 .cat-emo{width:30px;height:30px;background:#fff;border:1px solid var(--bdr);border-radius:7px;display:flex;align-items:center;justify-content:center;font-size:.82rem;flex-shrink:0}
@@ -122,7 +120,6 @@ body{background:var(--bg);color:var(--t2);font-family:var(--font);line-height:1.
 .alt-btn:hover{color:var(--t1);background:var(--bg3)}
 .pgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:10px;padding:10px}
 
-/* CARD */
 .pcard{background:#fff;border:1.5px solid var(--bdr);border-radius:10px;padding:.875rem;display:flex;flex-direction:column;gap:8px;transition:all .2s var(--ease)}
 .pcard:hover{box-shadow:var(--sh-md);border-color:var(--bdr2)}
 .pcard.vis{border-color:rgba(22,163,74,.3);background:rgba(22,163,74,.012)}
@@ -238,7 +235,16 @@ body{background:var(--bg);color:var(--t2);font-family:var(--font);line-height:1.
 @keyframes spin{to{transform:rotate(360deg)}}
 .code-area{background:var(--bg2);border:1.5px solid var(--bdr);border-radius:8px;padding:.9rem;font-family:var(--mono);font-size:.7rem;color:var(--acc);max-height:240px;overflow-y:auto;white-space:pre;line-height:1.7;margin-bottom:.875rem}
 
-/* STRUCT */
+/* pub-steps */
+.pub-steps{display:flex;flex-direction:column;gap:6px;margin:1rem 0}
+.pub-step{display:flex;align-items:center;gap:10px;padding:6px 10px;border-radius:8px;font-size:.79rem;background:var(--bg2);border:1px solid var(--bdr);transition:all .2s}
+.pub-step.doing{background:var(--acc-g);border-color:rgba(37,99,235,.25);color:var(--acc)}
+.pub-step.done{background:var(--grn-g);border-color:rgba(22,163,74,.25);color:var(--grn)}
+.pub-step.err{background:var(--red-g);border-color:rgba(220,38,38,.25);color:var(--red)}
+.pub-step-ico{width:18px;height:18px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.68rem;flex-shrink:0;border:1.5px solid currentColor}
+.pub-step.doing .pub-step-ico{animation:spin .7s linear infinite}
+.step-warn{font-size:.73rem;color:var(--amber);margin-top:.3rem;padding:5px 10px;background:var(--amb-g);border-radius:6px;border:1px solid rgba(217,119,6,.2)}
+
 .struct-tabs{display:flex;border-bottom:1px solid var(--bdr);margin-bottom:.875rem;gap:0}
 .struct-tab{padding:.45rem .95rem;font-size:.77rem;font-weight:600;color:var(--t3);cursor:pointer;border-bottom:2px solid transparent;margin-bottom:-1px;transition:all .14s}
 .struct-tab:hover{color:var(--t2)}
@@ -253,7 +259,6 @@ body{background:var(--bg);color:var(--t2);font-family:var(--font);line-height:1.
 .struct-item-sub{font-size:.67rem;color:var(--t3)}
 .struct-del{width:22px;height:22px;border-radius:5px;background:var(--red-g);border:1px solid rgba(220,38,38,.2);color:var(--red);font-size:.67rem;display:flex;align-items:center;justify-content:center;cursor:pointer;flex-shrink:0;transition:all .12s}
 .struct-del:hover{background:rgba(220,38,38,.2)}
-/* NOVO: botão editar no struct */
 .struct-edit{width:22px;height:22px;border-radius:5px;background:var(--amb-g);border:1px solid rgba(217,119,6,.2);color:var(--amber);font-size:.63rem;display:flex;align-items:center;justify-content:center;cursor:pointer;flex-shrink:0;transition:all .12s}
 .struct-edit:hover{background:rgba(217,119,6,.2)}
 
@@ -264,7 +269,6 @@ body{background:var(--bg);color:var(--t2);font-family:var(--font);line-height:1.
 .menu-code-box{margin-top:.875rem;background:var(--bg2);border:1px solid var(--bdr);border-radius:9px;padding:.875rem}
 .menu-code-title{font-size:.7rem;font-weight:700;color:var(--t3);text-transform:uppercase;letter-spacing:.07em;margin-bottom:.5rem}
 
-/* INDEX EDITOR */
 .index-editor-note{background:rgba(37,99,235,.06);border:1px solid rgba(37,99,235,.2);border-radius:8px;padding:.75rem 1rem;font-size:.78rem;color:var(--acc);margin-bottom:1rem;line-height:1.6}
 .index-editor-textarea{width:100%;min-height:300px;padding:.875rem;background:var(--bg2);border:1.5px solid var(--bdr);border-radius:10px;font-family:var(--mono);font-size:.72rem;color:var(--t1);outline:none;resize:vertical;line-height:1.7;transition:border-color .18s}
 .index-editor-textarea:focus{border-color:var(--acc);background:#fff;box-shadow:0 0 0 3px rgba(37,99,235,.08)}
@@ -274,7 +278,6 @@ body{background:var(--bg);color:var(--t2);font-family:var(--font);line-height:1.
 .index-tab.on{color:var(--acc);border-bottom-color:var(--acc)}
 .index-pane{display:none}
 .index-pane.on{display:block}
-/* catMap editor */
 .catmap-item{display:flex;align-items:flex-start;gap:8px;background:var(--bg2);border:1px solid var(--bdr);border-radius:8px;padding:8px 10px;margin-bottom:6px}
 .catmap-key{font-size:.75rem;font-weight:700;color:var(--purple);font-family:var(--mono);width:100px;flex-shrink:0;padding-top:2px}
 .catmap-vals{flex:1;min-width:0}
@@ -284,7 +287,6 @@ body{background:var(--bg);color:var(--t2);font-family:var(--font);line-height:1.
 .catmap-add-row{display:flex;gap:6px;margin-top:6px}
 .catmap-add-inp{flex:1;padding:4px 8px;background:#fff;border:1px solid var(--bdr);border-radius:6px;font-family:var(--mono);font-size:.72rem;color:var(--t1);outline:none}
 .catmap-add-inp:focus{border-color:var(--purple)}
-/* sublabels editor */
 .sublabel-item{display:grid;grid-template-columns:160px 1fr auto;gap:6px;align-items:center;margin-bottom:5px}
 .sublabel-key{font-size:.72rem;font-family:var(--mono);color:var(--purple);background:var(--bg2);border:1px solid var(--bdr);border-radius:6px;padding:4px 7px}
 .sublabel-val{padding:4px 8px;background:var(--bg2);border:1px solid var(--bdr);border-radius:6px;font-size:.76rem;color:var(--t1);font-family:var(--font);outline:none;transition:border-color .14s}
@@ -295,7 +297,6 @@ body{background:var(--bg);color:var(--t2);font-family:var(--font);line-height:1.
 .add-sublabel-inp{padding:5px 8px;background:var(--bg2);border:1px solid var(--bdr);border-radius:6px;font-size:.74rem;color:var(--t1);font-family:var(--mono);outline:none}
 .add-sublabel-inp:focus{border-color:var(--acc);background:#fff}
 
-/* EMAIL */
 .email-chips{display:flex;gap:5px;flex-wrap:wrap;margin-bottom:.8rem}
 .e-chip{padding:5px 12px;border-radius:7px;font-size:.74rem;font-weight:600;cursor:pointer;border:1.5px solid var(--bdr);background:var(--bg2);color:var(--t3);transition:all .14s;font-family:var(--font)}
 .e-chip:hover{color:var(--t2);border-color:var(--bdr2)}
@@ -309,7 +310,6 @@ body{background:var(--bg);color:var(--t2);font-family:var(--font);line-height:1.
 .email-inp:focus{border-color:var(--orange);background:#fff}
 .email-inp::placeholder{color:var(--t3)}
 
-/* MENU EDIT inline */
 .menu-edit-row{background:#fff;border:1.5px solid var(--amber);border-radius:8px;padding:.7rem;margin-top:6px;display:none;flex-direction:column;gap:6px}
 .menu-edit-row.on{display:flex}
 
@@ -332,7 +332,7 @@ body{background:var(--bg);color:var(--t2);font-family:var(--font);line-height:1.
       <button class="btn btn-ghost" id="btn-struct">🗂 Estrutura</button>
       <button class="btn btn-purple" id="btn-novo">＋ Produto</button>
       <a href="index.html" target="_blank" class="btn btn-ghost">🌐 Loja</a>
-      <button class="btn btn-success" id="btn-pub">🚀 Publicar</button>
+      <button class="btn btn-success" id="btn-pub">🚀 Publicar tudo</button>
     </div>
   </div>
 </header>
@@ -364,7 +364,6 @@ body{background:var(--bg);color:var(--t2);font-family:var(--font);line-height:1.
         </div>
       </div>
     </div>
-
     <div class="sbox">
       <div class="sbox-hdr"><span class="sbox-title">Visibilidade</span></div>
       <div class="sbox-body" id="vis-filters">
@@ -375,12 +374,10 @@ body{background:var(--bg);color:var(--t2);font-family:var(--font);line-height:1.
         <button class="filter-btn" data-vis="esg">⚠ Esgotados <span class="fbadge" id="fb-esg">0</span></button>
       </div>
     </div>
-
     <div class="sbox">
       <div class="sbox-hdr"><span class="sbox-title">Categoria</span></div>
       <div class="sbox-body" id="cat-filters"></div>
     </div>
-
     <div class="sbox">
       <div class="sbox-hdr"><span class="sbox-title">Ações rápidas</span></div>
       <div class="sbox-body" style="display:flex;flex-direction:column;gap:5px">
@@ -397,7 +394,6 @@ body{background:var(--bg);color:var(--t2);font-family:var(--font);line-height:1.
         <button class="btn btn-ghost btn-sm" id="btn-exportar">⬇ Exportar JS</button>
       </div>
     </div>
-
     <div class="esg-panel" id="esgPanel">
       <div class="esg-phdr">
         <span style="font-size:1rem">⚠️</span>
@@ -414,7 +410,6 @@ body{background:var(--bg);color:var(--t2);font-family:var(--font);line-height:1.
         <button class="btn btn-ghost btn-sm" onclick="document.getElementById('esgPanel').classList.remove('on')">Fechar</button>
       </div>
     </div>
-
     <div id="container"></div>
   </div>
 </div>
@@ -431,8 +426,16 @@ body{background:var(--bg);color:var(--t2);font-family:var(--font);line-height:1.
     <div class="field"><label>Branch</label><input id="cfg-branch" value="main"></div>
     <div class="field"><label>Arquivo JS</label><input id="cfg-path" value="produtos_planilha.js"></div>
   </div>
-  <div class="field"><label>Arquivo HTML (index)</label><input id="cfg-html-path" value="index.html"><div class="field-hint">Caminho do index.html no repositório para edição direta.</div></div>
+  <div class="field"><label>Arquivo HTML (index)</label><input id="cfg-html-path" value="index.html"><div class="field-hint">Caminho do index.html no repositório.</div></div>
   <div class="field"><label>Token GitHub</label><input id="cfg-token" type="password" placeholder="ghp_xxxxxxxxxxxx"><div class="field-hint">Settings → Developer settings → Personal access tokens → Contents: Read &amp; Write</div></div>
+  <!-- NOVO: opção de publicação automática do index -->
+  <div style="background:var(--acc-g);border:1px solid rgba(37,99,235,.2);border-radius:8px;padding:.75rem 1rem;margin-bottom:.8rem">
+    <label style="display:flex;align-items:center;gap:10px;cursor:pointer;font-size:.82rem;font-weight:600;color:var(--acc)">
+      <input type="checkbox" id="cfg-auto-index" style="width:16px;height:16px;cursor:pointer">
+      Atualizar index.html automaticamente ao publicar
+    </label>
+    <div style="font-size:.7rem;color:var(--t3);margin-top:.35rem;margin-left:26px">Ao clicar em "Publicar tudo", o admin também aplica o catMap, subLabels e menu atualizados diretamente no index.html do GitHub.</div>
+  </div>
   <div class="modal-foot">
     <button class="btn btn-primary" id="btn-salvar-cfg">💾 Salvar</button>
     <button class="btn btn-ghost" id="btn-testar-cfg">🔌 Testar</button>
@@ -476,13 +479,18 @@ body{background:var(--bg);color:var(--t2);font-family:var(--font);line-height:1.
   </div>
 </div>
 
-<!-- Publicando -->
+<!-- Publicando — NOVO com steps detalhados -->
 <div class="modal modal-sm" id="modalPublicando">
-  <div style="text-align:center;padding:1rem 0">
+  <div style="text-align:center;padding:.5rem 0 .2rem">
     <div class="pub-spinner"></div>
     <div style="font-size:.92rem;font-weight:700;color:var(--t1);margin-top:1rem" id="pubMsg">Publicando...</div>
-    <div style="font-size:.77rem;color:var(--t3);margin-top:.3rem" id="pubSub">Enviando para o GitHub</div>
+    <div style="font-size:.77rem;color:var(--t3);margin-top:.3rem" id="pubSub">Preparando arquivos</div>
   </div>
+  <div class="pub-steps" id="pub-steps">
+    <div class="pub-step" id="step-js"><span class="pub-step-ico">⏳</span><span>produtos_planilha.js</span></div>
+    <div class="pub-step" id="step-index"><span class="pub-step-ico">⏳</span><span>index.html (catMap + menu)</span></div>
+  </div>
+  <div class="step-warn" id="step-warn" style="display:none">⚠ index.html não encontrado em cache — carregue pelo botão "📄 Editar index.html" antes de publicar pela primeira vez.</div>
 </div>
 
 <!-- Export -->
@@ -505,26 +513,17 @@ body{background:var(--bg);color:var(--t2);font-family:var(--font);line-height:1.
       <button class="modal-close" data-close>✕</button>
     </div>
   </div>
-
   <div class="index-tabs">
     <div class="index-tab on" data-ipane="catmap">🗺 catMap</div>
     <div class="index-tab" data-ipane="sublabels">🏷 subLabels</div>
     <div class="index-tab" data-ipane="rawhtml">⌨ HTML Bruto</div>
   </div>
-
-  <!-- catMap pane -->
   <div class="index-pane on" id="ipane-catmap">
-    <div class="index-editor-note">
-      ⚡ <strong>catMap</strong> define quais subcategorias pertencem a cada categoria. Ao adicionar um novo submenu no código (ex: "ondulados"), adicione aqui o ID correspondente na categoria correta.
-    </div>
+    <div class="index-editor-note">⚡ <strong>catMap</strong> define quais subcategorias pertencem a cada categoria. Edite aqui e clique "Aplicar + Publicar" para atualizar o site.</div>
     <div id="catmap-editor"></div>
   </div>
-
-  <!-- subLabels pane -->
   <div class="index-pane" id="ipane-sublabels">
-    <div class="index-editor-note">
-      🏷 <strong>subLabels</strong> são os títulos exibidos na loja para cada subcategoria. Adicione ou edite rótulos legíveis para o cliente.
-    </div>
+    <div class="index-editor-note">🏷 <strong>subLabels</strong> são os títulos exibidos na loja para cada subcategoria.</div>
     <div id="sublabels-editor"></div>
     <div class="add-sublabel-row">
       <input class="add-sublabel-inp" id="sl-new-key" placeholder="id-da-sub" style="font-family:var(--mono)">
@@ -532,37 +531,30 @@ body{background:var(--bg);color:var(--t2);font-family:var(--font);line-height:1.
       <button class="btn btn-primary btn-sm" id="btn-add-sublabel">＋</button>
     </div>
   </div>
-
-  <!-- Raw HTML pane -->
   <div class="index-pane" id="ipane-rawhtml">
-    <div class="index-editor-note">
-      ⚠️ <strong>Modo avançado:</strong> edição direta do HTML. Carregue o arquivo do GitHub primeiro. Qualquer alteração aqui substitui o conteúdo do index.html no repositório.
-    </div>
+    <div class="index-editor-note">⚠️ <strong>Modo avançado:</strong> edição direta do HTML. Carregue o arquivo do GitHub primeiro.</div>
     <div style="display:flex;gap:8px;margin-bottom:.7rem">
       <button class="btn btn-teal btn-sm" id="btn-load-index">⬇ Carregar do GitHub</button>
-      <button class="btn btn-ghost btn-sm" id="btn-fmt-index">🔍 Buscar catMap no texto</button>
+      <button class="btn btn-ghost btn-sm" id="btn-fmt-index">🔍 Localizar catMap</button>
     </div>
     <textarea class="index-editor-textarea" id="raw-index-content" placeholder="Clique em 'Carregar do GitHub' para buscar o index.html atual..."></textarea>
   </div>
-
   <div class="modal-foot">
-    <button class="btn btn-teal" id="btn-pub-index">🚀 Publicar index.html</button>
-    <button class="btn btn-primary" id="btn-apply-catmap">✓ Aplicar catMap + subLabels ao HTML</button>
+    <button class="btn btn-success" id="btn-apply-pub-index">🚀 Aplicar e Publicar index.html</button>
+    <button class="btn btn-primary" id="btn-apply-catmap">✓ Aplicar catMap + Menu ao HTML</button>
     <button class="btn btn-ghost" data-close>Fechar</button>
   </div>
 </div>
 
-<!-- ESTRUTURA (Cats/Subs/Menu) -->
+<!-- ESTRUTURA -->
 <div class="modal modal-lg" id="modalStruct">
   <div class="modal-title">🗂 Gerenciar Estrutura <button class="modal-close" data-close>✕</button></div>
-  <div style="font-size:.77rem;color:var(--t3);margin-bottom:.875rem">Adicione, edite ou remova categorias, subcategorias e itens do menu.</div>
+  <div style="font-size:.77rem;color:var(--t3);margin-bottom:.875rem">Adicione, edite ou remova categorias, subcategorias e itens do menu. <strong>As alterações são aplicadas automaticamente ao publicar.</strong></div>
   <div class="struct-tabs">
     <div class="struct-tab on" data-pane="cats">📦 Categorias</div>
     <div class="struct-tab" data-pane="subs">📌 Subcategorias</div>
     <div class="struct-tab" data-pane="menu">🧭 Menu</div>
   </div>
-
-  <!-- CATS -->
   <div class="struct-pane on" id="pane-cats">
     <div class="struct-list" id="list-cats"></div>
     <div class="add-form">
@@ -572,8 +564,6 @@ body{background:var(--bg);color:var(--t2);font-family:var(--font);line-height:1.
       <button class="btn btn-primary btn-sm" id="btn-add-cat" style="align-self:flex-end">＋ Adicionar</button>
     </div>
   </div>
-
-  <!-- SUBS -->
   <div class="struct-pane" id="pane-subs">
     <div class="struct-list" id="list-subs"></div>
     <div class="add-form">
@@ -583,10 +573,8 @@ body{background:var(--bg);color:var(--t2);font-family:var(--font);line-height:1.
       <button class="btn btn-primary btn-sm" id="btn-add-sub" style="align-self:flex-end">＋ Adicionar</button>
     </div>
   </div>
-
-  <!-- MENU com edição inline -->
   <div class="struct-pane" id="pane-menu">
-    <div style="font-size:.76rem;color:var(--t3);margin-bottom:.7rem">Clique em ✎ para editar um item existente. O código gerado deve ser colado no <code style="color:var(--acc)">index.html</code>.</div>
+    <div style="font-size:.76rem;color:var(--t3);margin-bottom:.7rem">O menu é atualizado automaticamente no index.html ao publicar. Clique em ✎ para editar um item.</div>
     <div class="struct-list" id="list-menu"></div>
     <div class="add-form">
       <div class="field" style="flex:2"><label>Rótulo no menu</label><input id="nm-label" placeholder="ex: Bebidas"></div>
@@ -601,19 +589,18 @@ body{background:var(--bg);color:var(--t2);font-family:var(--font);line-height:1.
       <button class="btn btn-primary btn-sm" id="btn-add-menu" style="align-self:flex-end">＋ Adicionar</button>
     </div>
     <div class="menu-code-box">
-      <div class="menu-code-title">Código gerado para o index.html</div>
+      <div class="menu-code-title">Prévia do código gerado</div>
       <div class="code-area" id="menu-code" style="max-height:140px;margin:0;font-size:.68rem"></div>
       <button class="btn btn-ghost btn-sm" id="btn-copiar-menu" style="margin-top:.5rem">📋 Copiar código do menu</button>
     </div>
   </div>
-
   <div class="modal-foot">
     <button class="btn btn-success" id="btn-salvar-struct">💾 Salvar estrutura</button>
     <button class="btn btn-ghost" data-close>Fechar</button>
   </div>
 </div>
 
-<!-- E-MAIL RECOMPRA -->
+<!-- E-MAIL -->
 <div class="modal modal-lg" id="modalEmail">
   <div class="modal-title">📧 Notificação de Esgotado <button class="modal-close" data-close>✕</button></div>
   <div class="email-chips" id="emailChips">
@@ -641,9 +628,9 @@ body{background:var(--bg);color:var(--t2);font-family:var(--font);line-height:1.
 (function(){
 'use strict';
 
-var WPP_NUM = '5511972999835'; // número WhatsApp da loja
+var WPP_NUM = '5511972999835';
 
-var K={OCU:'cia_ocultos_v2',ED:'cia_edicoes_v2',CFG:'cia_github_cfg',NEW:'cia_novos_v1',DEL:'cia_deletados_v1',ESG:'cia_esgotados_v1',CAT:'cia_cats_v1',SUB:'cia_subs_v1',MENU:'cia_menu_v1',CATMAP:'cia_catmap_v1',SUBLABELS:'cia_sublabels_v1'};
+var K={OCU:'cia_ocultos_v2',ED:'cia_edicoes_v2',CFG:'cia_github_cfg',NEW:'cia_novos_v1',DEL:'cia_deletados_v1',ESG:'cia_esgotados_v1',CAT:'cia_cats_v1',SUB:'cia_subs_v1',MENU:'cia_menu_v1',CATMAP:'cia_catmap_v1',SUBLABELS:'cia_sublabels_v1',IDXHTML:'cia_index_html_cache',IDXSHA:'cia_index_sha_cache'};
 
 var DEF_CATS=[
   {id:'caixas',label:'📦 Caixas'},{id:'sacolas',label:'🛍️ Sacolas & Lixo'},
@@ -670,8 +657,6 @@ var DEF_MENU=[
   {label:'Limpeza & EPI',catId:'limpeza',tipo:'normal'},{label:'Utilidades',catId:'utilidades',tipo:'normal'},
   {label:'Contato',catId:'',tipo:'green'}
 ];
-
-// catMap padrão — espelha o index.html original
 var DEF_CATMAP={
   caixas:['caixas','caixas-correio','caixas-alimentos'],
   sacolas:['sacolas','sacos-lixo','sacolas-papel','sacolas-plasticas'],
@@ -682,8 +667,6 @@ var DEF_CATMAP={
   utilidades:['utilidades','pilhas-baterias','aromas-inseticidas','organiz-limpeza','ferramentas','escritorio','ganchos'],
   diversos:['diversos','isopor-geral','emb-flexiveis','emb-diversas','outros']
 };
-
-// subLabels padrão
 var DEF_SUBLABELS={
   'caixas-correio':'Caixas Correios','caixas-alimentos':'Caixas p/ Alimentos',
   'sacos-lixo':'Sacos de Lixo','sacolas-papel':'Sacolas de Papel',
@@ -712,10 +695,13 @@ var menuItems=rls(K.MENU,DEF_MENU);
 var catMap   =rls(K.CATMAP,DEF_CATMAP);
 var subLabels=rls(K.SUBLABELS,DEF_SUBLABELS);
 
+// Cache do index.html (para publicação automática)
+var indexHtmlContent = localStorage.getItem(K.IDXHTML) || '';
+var indexSha = localStorage.getItem(K.IDXSHA) || null;
+
 var filtroVis='todos', filtroCatId='', filtroSubId='';
 var prodsFiltrados=[], deletePendente=null;
 var emailAlvos=[], emailTipo='fornecedor';
-// índice do item de menu sendo editado (-1 = nenhum)
 var menuEditIdx=-1;
 
 function savO(){wls(K.OCU,[...ocultos]);}
@@ -800,7 +786,7 @@ function onImgMode(id,mode){
   setEd(id,'imgmode',mode);
   var lbl=document.querySelector('#imgprev-'+id+' .img-mode-lbl');if(lbl){lbl.className='img-mode-lbl '+mode;lbl.textContent=mode;}
   var bt=document.getElementById('ibt-t-'+id),br=document.getElementById('ibt-r-'+id);
-  if(bt)bt.classList.toggle('on',mode==='thumbnail');if(br)bt.classList.toggle('on',mode==='replace');
+  if(bt)bt.classList.toggle('on',mode==='thumbnail');if(br)br.classList.toggle('on',mode==='replace');
 }
 function limparImg(id){
   setEd(id,'imagem','');setEd(id,'imgmode','thumbnail');
@@ -814,15 +800,13 @@ function pedirDelete(id){
   document.getElementById('confirm-nome').textContent=p?'"'+getProd(p).nome+'"':'este produto';
   abrirModal('modalConfirmar');
 }
-
 function confirmarDelete(){
   if(deletePendente===null)return;
   var id=deletePendente; deletePendente=null;
   deletados.add(id); savD();
   novosProd=novosProd.filter(function(p){return p.id!==id;}); savN();
   if(edicoes[id]){delete edicoes[id]; savE();}
-  ocultos.delete(id); savO();
-  esgotados.delete(id); savEsg();
+  ocultos.delete(id); savO(); esgotados.delete(id); savEsg();
   markUnsaved();
   var card=document.getElementById('pc-'+id);
   if(card){
@@ -1032,9 +1016,7 @@ function criarCard(p,ep,idx){
   return card;
 }
 
-/* ────────────────────────
-   PAINEL ESGOTADOS
-──────────────────────── */
+/* ── PAINEL ESGOTADOS ── */
 function painelEsg(){
   var lista=prods().filter(function(p){return esgotados.has(p.id);});
   document.getElementById('esgCount').textContent=lista.length;
@@ -1055,42 +1037,103 @@ function painelEsg(){
   });
 }
 
-/* ────────────────────────
-   WHATSAPP ESGOTADOS
-──────────────────────── */
+/* ── WHATSAPP ── */
 function wppEsgMsg(alvos){
   var d=new Date().toLocaleDateString('pt-BR');
   var linhas=alvos.map(function(p){return '• '+p.nome+(p.marca?' ['+p.marca+']':'')+(p.preco>0?' — R$ '+p.preco.toFixed(2).replace('.',','):'');}).join('\n');
   return '⚠️ *Produtos Esgotados — Cia Das Embalagens*\n\nData: '+d+'\n\n'+linhas+'\n\nPrecisamos repor esses itens. Aguardamos cotação. 🙏';
 }
 function enviarWppEsgotado(alvos){
-  var msg=wppEsgMsg(alvos);
-  window.open('https://wa.me/'+WPP_NUM+'?text='+encodeURIComponent(msg),'_blank');
+  window.open('https://wa.me/'+WPP_NUM+'?text='+encodeURIComponent(wppEsgMsg(alvos)),'_blank');
 }
 
-/* ────────────────────────
-   INDEX.HTML EDITOR
-──────────────────────── */
-var indexHtmlContent = '';
-var indexSha = null;
+/* ── GERAÇÃO DO JS ── */
+function gerarJS(){
+  var lista=prods();
+  var lines=['window.listaProdutosPlanilha = ['];
+  lista.forEach(function(p,i){
+    var ep=getProd(p), comma=i<lista.length-1?',':'';
+    var obj={id:ep.id,nome:ep.nome,categoria:ep.categoria,subcategoria:ep.subcategoria,preco:ep.preco,unidade:ep.unidade};
+    if(ep.marca)obj.marca=ep.marca;
+    if(ep.imagem){obj.imagem=ep.imagem;obj.imgmode=ep.imgmode||'thumbnail';}
+    if(ep.oculto)obj.oculto=true;
+    if(ep.esgotado)obj.esgotado=true;
+    lines.push('  '+JSON.stringify(obj)+comma);
+  });
+  lines.push('];'); return lines.join('\n');
+}
 
-// Gera o bloco JS do catMap para injeção no index.html
+/* ── GERAÇÃO DO CATMAP / SUBLABELS / MENU PARA INJETAR NO HTML ── */
 function gerarCatMapJS(){
   var lines=['var catMap={'];
-  Object.keys(catMap).forEach(function(k,i,arr){
+  var keys=Object.keys(catMap);
+  keys.forEach(function(k,i){
     var vals=catMap[k].map(function(v){return '\''+v+'\'';}).join(',');
-    lines.push('  '+k+':['+vals+']'+(i<arr.length-1?',':''));
+    lines.push('  '+k+':['+vals+']'+(i<keys.length-1?',':''));
   });
   lines.push('};');
   return lines.join('\n');
 }
 
 function gerarSubLabelsJS(){
-  var pairs=Object.keys(subLabels).map(function(k){return '\''+k+'\':\''+subLabels[k]+'\'';});
-  return 'var subLabels={'+pairs.join(',\n  ')+'};';
+  var pairs=Object.keys(subLabels).map(function(k){return '  \''+k+'\':\''+subLabels[k]+'\'';});
+  return 'var subLabels={\n'+pairs.join(',\n')+'\n};';
 }
 
-// Renderiza o editor de catMap
+// Gera HTML do menu de navegação baseado nos menuItems
+function gerarMenuHTML(){
+  var lines=[];
+  menuItems.forEach(function(m){
+    if(m.catId){
+      lines.push('<div class="nav-link" onclick="filterCat(\''+m.catId+'\')">'+m.label+'</div>');
+    } else {
+      var cls=m.tipo==='green'?'nav-link nav-link-green':(m.tipo==='blue'?'nav-link nav-link-blue':'nav-link');
+      lines.push('<a class="'+cls+'" href="https://wa.me/'+WPP_NUM+'" target="_blank">'+m.label+'</a>');
+    }
+  });
+  return lines.join('\n');
+}
+
+// Aplica catMap, subLabels e menu no HTML bruto
+// Retorna o HTML atualizado ou null se não encontrou os blocos
+function aplicarTudoNoHTML(txt){
+  var alterado=false;
+
+  // 1. catMap
+  var reCatMap=/var catMap\s*=\s*\{[\s\S]*?\};/;
+  if(reCatMap.test(txt)){
+    txt=txt.replace(reCatMap,gerarCatMapJS());
+    alterado=true;
+  }
+
+  // 2. subLabels
+  var reSubLabels=/var subLabels\s*=\s*\{[\s\S]*?\};/;
+  if(reSubLabels.test(txt)){
+    txt=txt.replace(reSubLabels,gerarSubLabelsJS());
+  }
+
+  // 3. Menu de navegação — detecta bloco entre comentários ou por padrão de nav-link
+  // Estratégia: encontra a primeira sequência contígua de nav-link e substitui
+  var novoMenu=gerarMenuHTML();
+
+  // Tenta pelo marcador de comentário (caso exista)
+  var reMenuComentario=/<!-- MENU-START -->[\s\S]*?<!-- MENU-END -->/;
+  if(reMenuComentario.test(txt)){
+    txt=txt.replace(reMenuComentario,'<!-- MENU-START -->\n'+novoMenu+'\n<!-- MENU-END -->');
+  } else {
+    // Fallback: substitui o bloco de nav-links contíguos
+    // Regex para bloco de 1+ elementos nav-link consecutivos (com possível espaço/quebra entre eles)
+    var reNavBlock=/((?:<(?:div|a)[^>]*class="[^"]*nav-link[^"]*"[^>]*>[\s\S]*?<\/(?:div|a)>\s*)+)/;
+    if(reNavBlock.test(txt)){
+      txt=txt.replace(reNavBlock,novoMenu+'\n');
+    }
+  }
+
+  if(!alterado){return null;}
+  return txt;
+}
+
+/* ── INDEX HTML EDITOR ── */
 function renderCatMapEditor(){
   var box=document.getElementById('catmap-editor'); if(!box)return;
   box.innerHTML='';
@@ -1098,18 +1141,15 @@ function renderCatMapEditor(){
     var row=document.createElement('div'); row.className='catmap-item';
     var keyEl=document.createElement('div'); keyEl.className='catmap-key'; keyEl.textContent=catId;
     var valsEl=document.createElement('div'); valsEl.className='catmap-vals';
-
     catMap[catId].forEach(function(v,vi){
       var chip=document.createElement('span'); chip.className='catmap-val-chip';
-      chip.innerHTML=v+' <span class="catmap-val-del" data-cat="'+catId+'" data-idx="'+vi+'" title="Remover">✕</span>';
+      chip.innerHTML=v+' <span class="catmap-val-del" data-cat="'+catId+'" data-idx="'+vi+'">✕</span>';
       chip.querySelector('.catmap-val-del').addEventListener('click',function(){
         catMap[this.dataset.cat].splice(parseInt(this.dataset.idx),1);
         savCatMap(); renderCatMapEditor();
       });
       valsEl.appendChild(chip);
     });
-
-    // input para adicionar novo valor
     var addRow=document.createElement('div'); addRow.className='catmap-add-row';
     var addInp=document.createElement('input'); addInp.className='catmap-add-inp'; addInp.placeholder='+ nova-sub'; addInp.dataset.cat=catId;
     var addBtn=document.createElement('button'); addBtn.textContent='＋'; addBtn.style.cssText='padding:3px 9px;border-radius:5px;background:var(--acc);color:#fff;border:none;cursor:pointer;font-size:.72rem;font-family:var(--font);font-weight:700';
@@ -1118,18 +1158,16 @@ function renderCatMapEditor(){
       if(!val)return;
       if(!catMap[catId])catMap[catId]=[];
       if(catMap[catId].indexOf(val)>=0){showToast('Já existe!','amber');return;}
-      catMap[catId].push(val);
-      savCatMap(); renderCatMapEditor();
+      catMap[catId].push(val); savCatMap(); renderCatMapEditor();
       showToast('✓ Adicionado ao catMap','teal');
     });
     addInp.addEventListener('keydown',function(e){if(e.key==='Enter')addBtn.click();});
     addRow.appendChild(addInp); addRow.appendChild(addBtn);
     valsEl.appendChild(addRow);
-
     row.appendChild(keyEl); row.appendChild(valsEl);
     box.appendChild(row);
   });
-  // Opção de adicionar nova categoria no catMap
+  // Nova categoria no catMap
   var newRow=document.createElement('div'); newRow.style.cssText='display:flex;gap:6px;margin-top:8px;border-top:1px solid var(--bdr);padding-top:8px';
   var ni=document.createElement('input'); ni.className='catmap-add-inp'; ni.placeholder='Nova categoria ID'; ni.style.flex='1';
   var nb=document.createElement('button'); nb.textContent='＋ Nova categoria'; nb.style.cssText='padding:5px 12px;border-radius:6px;background:var(--purple);color:#fff;border:none;cursor:pointer;font-size:.72rem;font-family:var(--font);font-weight:700;white-space:nowrap';
@@ -1169,42 +1207,35 @@ async function carregarIndexGitHub(){
     if(!r.ok)throw new Error('HTTP '+r.status);
     var data=await r.json();
     indexSha=data.sha;
+    localStorage.setItem(K.IDXSHA,indexSha);
     indexHtmlContent=decodeURIComponent(escape(atob(data.content.replace(/\n/g,''))));
+    localStorage.setItem(K.IDXHTML,indexHtmlContent);
     document.getElementById('raw-index-content').value=indexHtmlContent;
     badge.className='sync-badge ok'; badge.textContent='✓ Carregado';
-    showToast('✓ index.html carregado','green');
+    showToast('✓ index.html carregado e em cache','green');
   }catch(e){
     badge.className='sync-badge err'; badge.textContent='✕ Erro';
     showToast('Erro ao carregar: '+e.message,'red');
   }
 }
 
-// Injeta catMap e subLabels atualizados no HTML bruto
 function aplicarCatMapAoHTML(){
   var txt=document.getElementById('raw-index-content').value;
   if(!txt){showToast('⚠ Carregue o index.html primeiro','amber');return;}
-
-  // Substituir bloco catMap
-  var catMapStr=gerarCatMapJS();
-  var re1=/var catMap\s*=\s*\{[^}]+\};/s;
-  if(re1.test(txt)){txt=txt.replace(re1,catMapStr);showToast('✓ catMap atualizado no HTML','teal');}
-  else{showToast('⚠ catMap não encontrado no HTML','amber');}
-
-  // Substituir bloco subLabels
-  var subLabStr=gerarSubLabelsJS();
-  var re2=/var subLabels\s*=\s*\{[^}]+\};/s;
-  if(re2.test(txt)){txt=txt.replace(re2,subLabStr);}
-
-  document.getElementById('raw-index-content').value=txt;
-  indexHtmlContent=txt;
+  var novo=aplicarTudoNoHTML(txt);
+  if(!novo){showToast('⚠ catMap não encontrado no HTML. Verifique o arquivo.','amber');return;}
+  document.getElementById('raw-index-content').value=novo;
+  indexHtmlContent=novo;
+  localStorage.setItem(K.IDXHTML,novo);
+  showToast('✓ catMap, subLabels e menu aplicados','teal');
 }
 
 async function publicarIndex(){
   var c=getCfg();
   if(!c.token||!c.user||!c.repo){showToast('⚠ Configure o GitHub primeiro','red');return;}
   var htmlPath=c.htmlPath||'index.html';
-  var content=document.getElementById('raw-index-content').value;
-  if(!content){showToast('⚠ Nada para publicar. Carregue e edite o index.html','amber');return;}
+  var content=document.getElementById('raw-index-content').value||indexHtmlContent;
+  if(!content){showToast('⚠ Carregue o index.html primeiro','amber');return;}
   var badge=document.getElementById('index-sync-badge');
   badge.className='sync-badge'; badge.textContent='⏳ Publicando...';
   try{
@@ -1215,7 +1246,8 @@ async function publicarIndex(){
     if(indexSha)body.sha=indexSha;
     var r=await fetch(apiUrl,{method:'PUT',headers:hdrs,body:JSON.stringify(body)});
     if(!r.ok){var e2=await r.json();throw new Error(e2.message||'HTTP '+r.status);}
-    var d2=await r.json(); if(d2.content)indexSha=d2.content.sha;
+    var d2=await r.json();
+    if(d2.content){indexSha=d2.content.sha;localStorage.setItem(K.IDXSHA,indexSha);}
     badge.className='sync-badge ok'; badge.textContent='✓ Publicado';
     showToast('🚀 index.html publicado!','green');
   }catch(e){
@@ -1224,9 +1256,7 @@ async function publicarIndex(){
   }
 }
 
-/* ────────────────────────
-   ESTRUTURA (cats/subs/menu)
-──────────────────────── */
+/* ── ESTRUTURA ── */
 function renderStruct(){
   var lc=document.getElementById('list-cats'); lc.innerHTML='';
   cats.forEach(function(c,i){
@@ -1252,6 +1282,7 @@ function renderStruct(){
   ['ns-cat','nm-cat'].forEach(function(sid){
     var sel=document.getElementById(sid); if(!sel)return;
     var cur=sel.value; sel.innerHTML='';
+    var emp=document.createElement('option'); emp.value=''; emp.textContent='(sem link de categoria)'; sel.appendChild(emp);
     cats.forEach(function(c){var o=document.createElement('option');o.value=c.id;o.textContent=c.label;sel.appendChild(o);});
     if(cur)sel.value=cur;
   });
@@ -1262,27 +1293,16 @@ function renderMenuList(){
   var lm=document.getElementById('list-menu'); lm.innerHTML='';
   menuItems.forEach(function(m,i){
     var wrap=document.createElement('div');
-
     var item=document.createElement('div'); item.className='struct-item';
     var info=document.createElement('div'); info.className='struct-item-info';
     info.innerHTML='<div class="struct-item-label">'+m.label+'</div><div class="struct-item-sub">cat: '+(m.catId||'—')+' · estilo: '+m.tipo+'</div>';
-
-    // Botão editar
     var eb=document.createElement('div'); eb.className='struct-edit'; eb.textContent='✎'; eb.title='Editar';
-    eb.addEventListener('click',(function(idx){
-      return function(){
-        menuEditIdx=menuEditIdx===idx?-1:idx;
-        renderMenuList(); gerarMenuCode();
-      };
-    })(i));
-
+    eb.addEventListener('click',(function(idx){return function(){menuEditIdx=menuEditIdx===idx?-1:idx;renderMenuList();gerarMenuCode();};})(i));
     var d=document.createElement('div'); d.className='struct-del'; d.textContent='✕';
     d.addEventListener('click',(function(idx){return function(){menuItems.splice(idx,1);savMenu();renderMenuList();gerarMenuCode();};})(i));
-
     item.appendChild(info); item.appendChild(eb); item.appendChild(d);
     wrap.appendChild(item);
 
-    // Painel de edição inline
     if(menuEditIdx===i){
       var editRow=document.createElement('div'); editRow.className='menu-edit-row on';
       editRow.innerHTML='<div style="display:flex;gap:6px;flex-wrap:wrap">'
@@ -1299,14 +1319,10 @@ function renderMenuList(){
         +'<button id="me-cancel" style="padding:5px 12px;border-radius:6px;background:var(--bg3);color:var(--t2);border:1px solid var(--bdr2);cursor:pointer;font-size:.74rem;font-weight:600;font-family:var(--font)">Cancelar</button>'
         +'</div>';
       wrap.appendChild(editRow);
-
-      // Popular select de categoria
       var meCat=editRow.querySelector('#me-cat');
       var meOpt=document.createElement('option'); meOpt.value=''; meOpt.textContent='(sem link)'; meCat.appendChild(meOpt);
       cats.forEach(function(c){var o=document.createElement('option');o.value=c.id;o.textContent=c.label;if(m.catId===c.id)o.selected=true;meCat.appendChild(o);});
-
       editRow.querySelector('#me-tipo').value=m.tipo||'normal';
-
       editRow.querySelector('#me-save').addEventListener('click',function(){
         menuItems[menuEditIdx].label=editRow.querySelector('#me-label').value.trim();
         menuItems[menuEditIdx].catId=editRow.querySelector('#me-cat').value;
@@ -1321,7 +1337,7 @@ function renderMenuList(){
 }
 
 function gerarMenuCode(){
-  var lines=['<!-- Menu gerado pelo Admin — cole no index.html -->'];
+  var lines=['<!-- Cole este bloco no index.html no lugar dos nav-links -->'];
   menuItems.forEach(function(m){
     if(m.catId){lines.push('<div class="nav-link" onclick="filterCat(\''+m.catId+'\')">'+m.label+'</div>');}
     else{var cls=m.tipo==='green'?'nav-link nav-link-green':'nav-link';lines.push('<a class="'+cls+'" href="https://wa.me/'+WPP_NUM+'" target="_blank">'+m.label+'</a>');}
@@ -1361,9 +1377,7 @@ function adicionarProd(){
   showToast('✓ Produto adicionado!','green');
 }
 
-/* ────────────────────────
-   GITHUB
-──────────────────────── */
+/* ── GITHUB ── */
 function getCfg(){return rls(K.CFG,{});}
 function setCfg(o){wls(K.CFG,o);}
 function abrirCfg(){
@@ -1374,6 +1388,7 @@ function abrirCfg(){
   document.getElementById('cfg-path').value=c.path||'produtos_planilha.js';
   document.getElementById('cfg-html-path').value=c.htmlPath||'index.html';
   document.getElementById('cfg-token').value=c.token||'';
+  document.getElementById('cfg-auto-index').checked=!!c.autoIndex;
   abrirModal('modalConfig');
 }
 function salvarCfg(){
@@ -1383,7 +1398,8 @@ function salvarCfg(){
     branch:document.getElementById('cfg-branch').value.trim()||'main',
     path:document.getElementById('cfg-path').value.trim()||'produtos_planilha.js',
     htmlPath:document.getElementById('cfg-html-path').value.trim()||'index.html',
-    token:document.getElementById('cfg-token').value.trim()
+    token:document.getElementById('cfg-token').value.trim(),
+    autoIndex:document.getElementById('cfg-auto-index').checked
   };
   if(!c.user||!c.repo||!c.token){showToast('⚠ Preencha usuário, repo e token','red');return;}
   setCfg(c); fecharModais(); syncBadge(); showToast('✓ Config salva!','green');
@@ -1391,7 +1407,8 @@ function salvarCfg(){
 async function testarCfg(){
   var c=getCfg(); if(!c.token){showToast('⚠ Configure o token primeiro','red');return;}
   setSyncSt('','🔄 Testando...');
-  try{var r=await fetch('https://api.github.com/repos/'+c.user+'/'+c.repo+'/contents/'+c.path,{headers:{Authorization:'token '+c.token,Accept:'application/vnd.github+json'}});
+  try{
+    var r=await fetch('https://api.github.com/repos/'+c.user+'/'+c.repo+'/contents/'+c.path,{headers:{Authorization:'token '+c.token,Accept:'application/vnd.github+json'}});
     if(r.ok){setSyncSt('ok','✓ Conectado');showToast('✓ OK!','green');}
     else{var e=await r.json();setSyncSt('err','✕ Erro '+r.status);showToast('Erro: '+(e.message||r.status),'red');}
   }catch(e){setSyncSt('err','✕ Falha');showToast('Falha: '+e.message,'red');}
@@ -1399,50 +1416,128 @@ async function testarCfg(){
 function syncBadge(){var c=getCfg();if(c.token&&c.user&&c.repo)setSyncSt('ok','✓ '+c.user+'/'+c.repo);else setSyncSt('','⬤ não configurado');}
 function setSyncSt(t,txt){var el=document.getElementById('sync-status');el.className='sync-badge'+(t?' '+t:'');el.textContent=txt;}
 
-function gerarJS(){
-  var lista=prods();
-  var lines=['window.listaProdutosPlanilha = ['];
-  lista.forEach(function(p,i){
-    var ep=getProd(p), comma=i<lista.length-1?',':'';
-    var obj={id:ep.id,nome:ep.nome,categoria:ep.categoria,subcategoria:ep.subcategoria,preco:ep.preco,unidade:ep.unidade};
-    if(ep.marca)obj.marca=ep.marca;
-    if(ep.imagem){obj.imagem=ep.imagem;obj.imgmode=ep.imgmode||'thumbnail';}
-    if(ep.oculto)obj.oculto=true;
-    if(ep.esgotado)obj.esgotado=true;
-    lines.push('  '+JSON.stringify(obj)+comma);
-  });
-  lines.push('];'); return lines.join('\n');
+function setStep(id,estado){
+  var el=document.getElementById(id); if(!el)return;
+  el.className='pub-step '+estado;
+  var ico=el.querySelector('.pub-step-ico');
+  if(ico)ico.textContent=estado==='doing'?'↻':estado==='done'?'✓':'✕';
 }
 
+/* ── PUBLICAR TUDO (JS + index.html automaticamente) ── */
 async function publicar(){
   var c=getCfg();
   if(!c.token||!c.user||!c.repo){abrirCfg();showToast('⚠ Configure o GitHub primeiro','red');return;}
+
   abrirModal('modalPublicando');
-  setPM('Buscando arquivo...','Conectando ao GitHub');
+  var autoIndex=!!c.autoIndex;
+  document.getElementById('step-index').style.opacity=autoIndex?'1':'0.35';
+  document.getElementById('step-warn').style.display='none';
+  setPM('Publicando...','Preparando arquivos');
+  setStep('step-js','doing'); setStep('step-index','');
+
+  var apiBase='https://api.github.com/repos/'+c.user+'/'+c.repo+'/contents/';
+  var hdrs={Authorization:'token '+c.token,Accept:'application/vnd.github+json','Content-Type':'application/json'};
+
+  // ── PASSO 1: produtos_planilha.js ──
   try{
-    var apiUrl='https://api.github.com/repos/'+c.user+'/'+c.repo+'/contents/'+c.path;
-    var hdrs={Authorization:'token '+c.token,Accept:'application/vnd.github+json','Content-Type':'application/json'};
-    var getR=await fetch(apiUrl,{headers:hdrs}); var sha=null;
-    if(getR.ok)sha=(await getR.json()).sha;
+    setPM('Passo 1/2','Publicando produtos_planilha.js...');
+    var jsUrl=apiBase+c.path;
+    var getR=await fetch(jsUrl,{headers:hdrs}); var shaProd=null;
+    if(getR.ok)shaProd=(await getR.json()).sha;
     else if(getR.status!==404){var err=await getR.json();throw new Error(err.message||'Erro '+getR.status);}
-    setPM('Publicando...','Enviando '+prods().length+' produtos');
-    var b64=btoa(unescape(encodeURIComponent(gerarJS())));
-    var body={message:'🔧 Admin: atualiza produtos — '+new Date().toLocaleString('pt-BR'),content:b64,branch:c.branch||'main'};
-    if(sha)body.sha=sha;
-    var putR=await fetch(apiUrl,{method:'PUT',headers:hdrs,body:JSON.stringify(body)});
-    if(!putR.ok){var pe=await putR.json();throw new Error(pe.message||'Erro '+putR.status);}
-    novosProd=[];savN(); deletados=new Set();savD();
-    setPM('✓ Publicado!','Loja atualizada em ~1 min');
+    var b64js=btoa(unescape(encodeURIComponent(gerarJS())));
+    var bodyJs={message:'🔧 Admin: atualiza produtos — '+new Date().toLocaleString('pt-BR'),content:b64js,branch:c.branch||'main'};
+    if(shaProd)bodyJs.sha=shaProd;
+    var putJs=await fetch(jsUrl,{method:'PUT',headers:hdrs,body:JSON.stringify(bodyJs)});
+    if(!putJs.ok){var pe=await putJs.json();throw new Error(pe.message||'Erro '+putJs.status);}
+    setStep('step-js','done');
+    novosProd=[]; savN(); deletados=new Set(); savD();
+  }catch(e){
+    setStep('step-js','err');
+    fecharModais(); showToast('✕ Falha no JS: '+e.message,'red'); setSyncSt('err','✕ Erro');
+    document.getElementById('codeArea').textContent=gerarJS(); abrirModal('modalExport');
+    return;
+  }
+
+  // ── PASSO 2: index.html (somente se autoIndex ativado) ──
+  if(!autoIndex){
+    setPM('✓ Produtos publicados!','index.html não atualizado (desativado nas config)');
     setSyncSt('ok','✓ Publicado');
     document.getElementById('unsaved-pill').classList.remove('on');
-    setTimeout(fecharModais,1900); showToast('🚀 Publicado!','green');
-  }catch(e){fecharModais();showToast('✕ Falha: '+e.message,'red');setSyncSt('err','✕ Erro');setTimeout(function(){document.getElementById('codeArea').textContent=gerarJS();abrirModal('modalExport');},350);}
+    setTimeout(fecharModais,2000); showToast('🚀 Produtos publicados!','green');
+    return;
+  }
+
+  setStep('step-index','doing');
+  setPM('Passo 2/2','Atualizando index.html...');
+
+  // Verifica se temos o HTML em cache
+  if(!indexHtmlContent){
+    setStep('step-index','err');
+    document.getElementById('step-warn').style.display='block';
+    setPM('⚠ index.html não carregado','Abra "📄 Editar index.html" e clique em "Carregar do GitHub"');
+    showToast('⚠ index.html não carregado — use o botão "📄 Editar index.html" primeiro','amber');
+    setTimeout(fecharModais,3500);
+    return;
+  }
+
+  try{
+    // Sempre busca o SHA mais recente para evitar conflito
+    var htmlPath=c.htmlPath||'index.html';
+    var htmlUrl=apiBase+htmlPath;
+    var getHtml=await fetch(htmlUrl,{headers:hdrs});
+    if(getHtml.ok){
+      var dataHtml=await getHtml.json();
+      indexSha=dataHtml.sha;
+      localStorage.setItem(K.IDXSHA,indexSha);
+      // Atualiza o cache local com o conteúdo mais recente do GitHub
+      var htmlAtual=decodeURIComponent(escape(atob(dataHtml.content.replace(/\n/g,''))));
+      // Aplica as mudanças no HTML atualizado
+      var novoHtml=aplicarTudoNoHTML(htmlAtual);
+      if(!novoHtml){
+        // Fallback: tenta aplicar no cache local
+        novoHtml=aplicarTudoNoHTML(indexHtmlContent);
+      }
+      if(!novoHtml){
+        throw new Error('Não foi possível localizar o bloco catMap no index.html. Verifique se o arquivo contém "var catMap={..."');
+      }
+      indexHtmlContent=novoHtml;
+      localStorage.setItem(K.IDXHTML,novoHtml);
+      // Atualiza textarea se estiver aberto
+      var ta=document.getElementById('raw-index-content');
+      if(ta&&ta.value)ta.value=novoHtml;
+    } else if(getHtml.status!==404){
+      throw new Error('Erro ao buscar index.html: HTTP '+getHtml.status);
+    }
+
+    var b64html=btoa(unescape(encodeURIComponent(indexHtmlContent)));
+    var bodyHtml={
+      message:'📄 Admin: atualiza catMap + menu — '+new Date().toLocaleString('pt-BR'),
+      content:b64html,
+      branch:c.branch||'main'
+    };
+    if(indexSha)bodyHtml.sha=indexSha;
+    var putHtml=await fetch(htmlUrl,{method:'PUT',headers:hdrs,body:JSON.stringify(bodyHtml)});
+    if(!putHtml.ok){var he=await putHtml.json();throw new Error(he.message||'Erro '+putHtml.status);}
+    var dHtml=await putHtml.json();
+    if(dHtml.content){indexSha=dHtml.content.sha;localStorage.setItem(K.IDXSHA,indexSha);}
+    setStep('step-index','done');
+    setPM('✓ Tudo publicado!','Loja atualizada em ~1 min');
+    setSyncSt('ok','✓ Publicado');
+    document.getElementById('unsaved-pill').classList.remove('on');
+    setTimeout(fecharModais,2200); showToast('🚀 Produtos + index.html publicados!','green');
+  }catch(e){
+    setStep('step-index','err');
+    setPM('⚠ Produtos ok, index.html falhou',e.message);
+    showToast('⚠ index.html: '+e.message,'amber');
+    setSyncSt('ok','✓ Produtos ok');
+    setTimeout(fecharModais,3000);
+  }
 }
+
 function setPM(t,s){document.getElementById('pubMsg').textContent=t;document.getElementById('pubSub').textContent=s;}
 
-/* ────────────────────────
-   E-MAIL
-──────────────────────── */
+/* ── E-MAIL ── */
 function emailBody(tipo,alvos){
   var d=new Date().toLocaleDateString('pt-BR');
   if(tipo==='fornecedor'){
@@ -1477,33 +1572,28 @@ function refreshEmailPrev(){
   document.getElementById('em-body').textContent=emailBody(emailTipo,emailAlvos);
 }
 
-/* ────────────────────────
-   MODAIS
-──────────────────────── */
+/* ── MODAIS ── */
 function abrirModal(id){fecharModais();document.getElementById('overlay').classList.add('on');document.getElementById(id).classList.add('on');}
 function fecharModais(){document.getElementById('overlay').classList.remove('on');document.querySelectorAll('.modal').forEach(function(m){m.classList.remove('on');});}
 
-/* TOAST */
 var tT;
 function showToast(msg,type){var t=document.getElementById('toast');t.textContent=msg;t.className='toast show'+(type?' '+type:'');clearTimeout(tT);tT=setTimeout(function(){t.className='toast';},2700);}
 
-/* ────────────────────────
-   BIND EVENTS
-──────────────────────── */
+/* ── BIND ── */
 function bind(){
   document.getElementById('btn-cfg').addEventListener('click',abrirCfg);
   document.getElementById('btn-pub').addEventListener('click',publicar);
   document.getElementById('btn-exportar').addEventListener('click',function(){document.getElementById('codeArea').textContent=gerarJS();abrirModal('modalExport');});
 
-  // Index editor
   document.getElementById('btn-index-editor').addEventListener('click',function(){
-    renderCatMapEditor();
-    renderSubLabelsEditor();
-    abrirModal('modalIndexEditor');
+    renderCatMapEditor(); renderSubLabelsEditor(); abrirModal('modalIndexEditor');
   });
   document.getElementById('btn-load-index').addEventListener('click',carregarIndexGitHub);
   document.getElementById('btn-apply-catmap').addEventListener('click',aplicarCatMapAoHTML);
-  document.getElementById('btn-pub-index').addEventListener('click',publicarIndex);
+  document.getElementById('btn-apply-pub-index').addEventListener('click',async function(){
+    aplicarCatMapAoHTML();
+    await publicarIndex();
+  });
   document.getElementById('btn-fmt-index').addEventListener('click',function(){
     var txt=document.getElementById('raw-index-content').value;
     var idx=txt.indexOf('var catMap');
@@ -1511,7 +1601,6 @@ function bind(){
     else showToast('⚠ catMap não encontrado','amber');
   });
 
-  // index tabs
   document.querySelectorAll('.index-tab').forEach(function(tab){
     tab.addEventListener('click',function(){
       document.querySelectorAll('.index-tab').forEach(function(t){t.classList.remove('on');});
@@ -1521,7 +1610,6 @@ function bind(){
     });
   });
 
-  // subLabels add
   document.getElementById('btn-add-sublabel').addEventListener('click',function(){
     var k=document.getElementById('sl-new-key').value.trim().replace(/\s+/g,'-').toLowerCase();
     var v=document.getElementById('sl-new-val').value.trim();
@@ -1540,7 +1628,6 @@ function bind(){
   document.getElementById('btn-add-prod').addEventListener('click',adicionarProd);
   document.getElementById('np-cat').addEventListener('change',function(){popularNpSub(this.value);});
 
-  // Esgotados panel
   document.getElementById('btn-esg-panel').addEventListener('click',function(){var p=document.getElementById('esgPanel');p.classList.toggle('on');painelEsg();if(p.classList.contains('on'))p.scrollIntoView({behavior:'smooth',block:'start'});});
   document.getElementById('btn-email-todos').addEventListener('click',function(){var l=prods().filter(function(p){return esgotados.has(p.id);});if(!l.length){showToast('Nenhum esgotado','amber');return;}abrirEmailModal(l.map(function(p){return getProd(p);}));});
   document.getElementById('btn-wpp-todos').addEventListener('click',function(){
@@ -1572,7 +1659,6 @@ function bind(){
   document.getElementById('btn-copiar-codigo').addEventListener('click',function(){navigator.clipboard.writeText(document.getElementById('codeArea').textContent).then(function(){showToast('📋 Copiado!','green');});});
   document.getElementById('btn-cfg-from-export').addEventListener('click',abrirCfg);
 
-  // Estrutura
   document.getElementById('btn-struct').addEventListener('click',function(){menuEditIdx=-1;renderStruct();abrirModal('modalStruct');});
   document.getElementById('btn-salvar-struct').addEventListener('click',function(){markUnsaved();fecharModais();renderizar();renderCatFilters();popularSubSel();showToast('✓ Estrutura salva!','green');});
   document.querySelectorAll('.struct-tab').forEach(function(tab){
@@ -1612,7 +1698,6 @@ function bind(){
   });
   document.getElementById('btn-copiar-menu').addEventListener('click',function(){navigator.clipboard.writeText(document.getElementById('menu-code').textContent).then(function(){showToast('📋 Código copiado!','green');});});
 
-  // Email modal
   document.querySelectorAll('.e-chip').forEach(function(chip){
     chip.addEventListener('click',function(){
       emailTipo=this.dataset.tipo;
@@ -1639,7 +1724,7 @@ function bind(){
   document.getElementById('btn-copy-email').addEventListener('click',function(){navigator.clipboard.writeText(emailBody(emailTipo,emailAlvos)).then(function(){showToast('📋 E-mail copiado!','green');});});
 }
 
-/* INIT */
+/* ── INIT ── */
 function init(){
   if(!window.listaProdutosPlanilha)window.listaProdutosPlanilha=[];
   bind(); popularNpSelects(); renderCatFilters(); popularSubSel(); renderizar(); syncBadge(); painelEsg();
