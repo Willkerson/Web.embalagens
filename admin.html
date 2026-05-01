@@ -198,6 +198,68 @@ body{background:var(--bg);color:var(--t2);font-family:var(--font);line-height:1.
 .pc-btn-email{background:var(--org-g);color:var(--orange);border:1px solid rgba(234,88,12,.15)}
 .pc-btn-email:hover{background:rgba(234,88,12,.2)}
 
+/* ── ESTOQUE ── */
+.stk-row{display:flex;align-items:center;gap:6px;border-radius:8px;padding:6px 9px;border:1px solid var(--bdr);background:var(--bg2);transition:border-color .15s}
+.stk-row:focus-within{border-color:var(--acc);background:#fff}
+.stk-row.ok{border-color:rgba(22,163,74,.35);background:rgba(22,163,74,.04)}
+.stk-row.low{border-color:rgba(217,119,6,.45);background:rgba(217,119,6,.06)}
+.stk-row.out{border-color:rgba(220,38,38,.45);background:rgba(220,38,38,.05)}
+.stk-bar-wrap{flex:1;height:5px;background:var(--bg3);border-radius:99px;overflow:hidden;min-width:40px}
+.stk-bar{height:100%;border-radius:99px;transition:width .4s var(--ease),background .3s}
+.stk-ico{font-size:.75rem;flex-shrink:0}
+.stk-inp{width:46px;background:transparent;border:none;outline:none;font-family:var(--mono);font-size:.78rem;font-weight:700;color:var(--t1);text-align:center}
+.stk-sep{font-size:.65rem;color:var(--t3)}
+.stk-min-inp{width:38px;background:transparent;border:none;outline:none;font-family:var(--mono);font-size:.72rem;color:var(--t3);text-align:center}
+.stk-lbl{font-size:.63rem;color:var(--t3);white-space:nowrap}
+.stk-status{font-size:.58rem;font-weight:800;text-transform:uppercase;letter-spacing:.06em;padding:2px 6px;border-radius:99px;white-space:nowrap}
+.stk-status.ok{background:var(--grn-g);color:var(--grn);border:1px solid rgba(22,163,74,.2)}
+.stk-status.low{background:var(--amb-g);color:var(--amber);border:1px solid rgba(217,119,6,.25)}
+.stk-status.out{background:var(--red-g);color:var(--red);border:1px solid rgba(220,38,38,.2)}
+.stk-status.none{display:none}
+/* painel de estoque */
+.stk-panel{background:var(--bg1);border:1px solid rgba(37,99,235,.25);border-radius:12px;overflow:hidden;display:none;box-shadow:var(--sh)}
+.stk-panel.on{display:block}
+.stk-phdr{display:flex;align-items:center;gap:10px;padding:.8rem 1rem;background:var(--acc-g);border-bottom:1px solid rgba(37,99,235,.15)}
+.stk-ptitle{font-size:.85rem;font-weight:700;color:var(--acc)}
+.stk-tabs{display:flex;gap:0;border-bottom:1px solid var(--bdr);background:var(--bg2)}
+.stk-tab{padding:.45rem .9rem;font-size:.75rem;font-weight:600;color:var(--t3);cursor:pointer;border-bottom:2px solid transparent;transition:all .14s;white-space:nowrap}
+.stk-tab:hover{color:var(--t2)}
+.stk-tab.on{color:var(--acc);border-bottom-color:var(--acc);background:#fff}
+.stk-pane{display:none;padding:.875rem 1rem}
+.stk-pane.on{display:block}
+.stk-table{width:100%;border-collapse:collapse;font-size:.78rem}
+.stk-table th{text-align:left;font-size:.65rem;font-weight:700;color:var(--t3);text-transform:uppercase;letter-spacing:.07em;padding:0 8px 8px;border-bottom:1px solid var(--bdr)}
+.stk-table td{padding:7px 8px;border-bottom:1px solid var(--bdr);vertical-align:middle}
+.stk-table tr:last-child td{border-bottom:none}
+.stk-table tr:hover td{background:var(--bg2)}
+.stk-mini-bar{display:flex;align-items:center;gap:6px}
+.stk-mini-bar-wrap{width:60px;height:5px;background:var(--bg3);border-radius:99px;overflow:hidden;flex-shrink:0}
+.stk-mini-bar-fill{height:100%;border-radius:99px}
+.stk-pct{font-size:.67rem;color:var(--t3);font-family:var(--mono)}
+.stk-badge{font-size:.6rem;font-weight:800;padding:2px 7px;border-radius:99px;text-transform:uppercase;white-space:nowrap}
+.stk-badge.ok{background:var(--grn-g);color:var(--grn);border:1px solid rgba(22,163,74,.2)}
+.stk-badge.low{background:var(--amb-g);color:var(--amber);border:1px solid rgba(217,119,6,.25)}
+.stk-badge.out{background:var(--red-g);color:var(--red);border:1px solid rgba(220,38,38,.2)}
+/* resumo cards no topo do painel */
+.stk-summary{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;padding:.875rem 1rem;border-bottom:1px solid var(--bdr)}
+.stk-sum-card{background:var(--bg2);border:1px solid var(--bdr);border-radius:9px;padding:.6rem .8rem;text-align:center}
+.stk-sum-num{font-size:1.4rem;font-weight:300;font-family:var(--mono);color:var(--t1);line-height:1}
+.stk-sum-lbl{font-size:.65rem;color:var(--t3);margin-top:3px}
+.stk-sum-card.low-c .stk-sum-num{color:var(--amber)}
+.stk-sum-card.out-c .stk-sum-num{color:var(--red)}
+.stk-sum-card.ok-c .stk-sum-num{color:var(--grn)}
+/* histórico entrada/saída */
+.hist-row{display:flex;align-items:center;gap:8px;padding:6px 0;border-bottom:1px solid var(--bdr);font-size:.77rem}
+.hist-row:last-child{border-bottom:none}
+.hist-tipo{font-size:.6rem;font-weight:800;padding:2px 7px;border-radius:99px;text-transform:uppercase;white-space:nowrap}
+.hist-tipo.entrada{background:var(--grn-g);color:var(--grn);border:1px solid rgba(22,163,74,.2)}
+.hist-tipo.saida{background:var(--red-g);color:var(--red);border:1px solid rgba(220,38,38,.15)}
+.hist-tipo.ajuste{background:var(--acc-g);color:var(--acc);border:1px solid rgba(37,99,235,.2)}
+/* modal estoque rápido */
+.stk-quick-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;margin-bottom:.875rem}
+.stk-quick-btn{padding:10px 6px;border-radius:8px;border:1.5px solid var(--bdr);background:var(--bg2);font-size:.8rem;font-weight:600;cursor:pointer;text-align:center;transition:all .15s;font-family:var(--font);color:var(--t2)}
+.stk-quick-btn:hover{border-color:var(--acc);color:var(--acc);background:var(--acc-g)}
+
 .empty{text-align:center;padding:4rem;color:var(--t3);grid-column:1/-1}
 .empty-ico{font-size:2.5rem;opacity:.18;margin-bottom:.75rem}
 
@@ -329,6 +391,7 @@ body{background:var(--bg);color:var(--t2);font-family:var(--font);line-height:1.
       <button class="btn btn-ghost" id="btn-cfg">⚙ GitHub</button>
       <button class="btn btn-teal" id="btn-index-editor">📄 Editar index.html</button>
       <button class="btn btn-orange" id="btn-esg-panel">⚠ Esgotados</button>
+      <button class="btn btn-primary" id="btn-stk-panel">📦 Estoque</button>
       <button class="btn btn-ghost" id="btn-struct">🗂 Estrutura</button>
       <button class="btn btn-purple" id="btn-novo">＋ Produto</button>
       <a href="index.html" target="_blank" class="btn btn-ghost">🌐 Loja</a>
@@ -410,12 +473,103 @@ body{background:var(--bg);color:var(--t2);font-family:var(--font);line-height:1.
         <button class="btn btn-ghost btn-sm" onclick="document.getElementById('esgPanel').classList.remove('on')">Fechar</button>
       </div>
     </div>
+
+    <!-- PAINEL ESTOQUE -->
+    <div class="stk-panel" id="stkPanel">
+      <div class="stk-phdr">
+        <span style="font-size:1rem">📦</span>
+        <span class="stk-ptitle">Monitoramento de Estoque</span>
+        <div style="margin-left:auto;display:flex;gap:6px;flex-wrap:wrap">
+          <button class="btn btn-primary btn-sm" id="btn-stk-wpp-criticos">💬 WhatsApp críticos</button>
+          <button class="btn btn-ghost btn-sm" id="btn-stk-email-criticos">📧 E-mail críticos</button>
+          <button class="btn btn-ghost btn-sm" onclick="document.getElementById('stkPanel').classList.remove('on')">Fechar</button>
+        </div>
+      </div>
+      <!-- resumo -->
+      <div class="stk-summary">
+        <div class="stk-sum-card out-c"><div class="stk-sum-num" id="stk-sum-out">0</div><div class="stk-sum-lbl">🔴 Zerados</div></div>
+        <div class="stk-sum-card low-c"><div class="stk-sum-num" id="stk-sum-low">0</div><div class="stk-sum-lbl">⚠️ Críticos</div></div>
+        <div class="stk-sum-card ok-c"><div class="stk-sum-num" id="stk-sum-ok">0</div><div class="stk-sum-lbl">✅ OK</div></div>
+        <div class="stk-sum-card"><div class="stk-sum-num" id="stk-sum-none">0</div><div class="stk-sum-lbl">— Sem registro</div></div>
+      </div>
+      <!-- abas -->
+      <div class="stk-tabs">
+        <div class="stk-tab on" data-spane="criticos">🔴 Zerados + Críticos</div>
+        <div class="stk-tab" data-spane="todos">📋 Todos com estoque</div>
+        <div class="stk-tab" data-spane="hist">🕓 Histórico</div>
+      </div>
+      <div class="stk-pane on" id="spane-criticos">
+        <table class="stk-table" id="stk-table-criticos">
+          <thead><tr><th>Produto</th><th>Estoque</th><th>Mínimo</th><th>Situação</th><th>Ação</th></tr></thead>
+          <tbody></tbody>
+        </table>
+        <div id="stk-criticos-empty" style="text-align:center;padding:2rem;color:var(--t3);font-size:.83rem;display:none">✅ Nenhum produto crítico no momento!</div>
+      </div>
+      <div class="stk-pane" id="spane-todos">
+        <table class="stk-table" id="stk-table-todos">
+          <thead><tr><th>Produto</th><th>Estoque atual</th><th>Mínimo</th><th>Nível</th><th>Situação</th></tr></thead>
+          <tbody></tbody>
+        </table>
+      </div>
+      <div class="stk-pane" id="spane-hist">
+        <div id="stk-hist-list" style="max-height:320px;overflow-y:auto"></div>
+        <div id="stk-hist-empty" style="text-align:center;padding:2rem;color:var(--t3);font-size:.83rem">Nenhum movimento registrado ainda.</div>
+      </div>
+    </div>
+
     <div id="container"></div>
   </div>
 </div>
 
 <div class="toast" id="toast"></div>
 <div class="overlay" id="overlay"></div>
+
+<!-- MODAL AJUSTE ESTOQUE -->
+<div class="modal modal-sm" id="modalStkAjuste">
+  <div class="modal-title">📦 Ajustar Estoque <button class="modal-close" data-close>✕</button></div>
+  <div style="font-size:.82rem;font-weight:600;color:var(--t1);margin-bottom:1rem;padding:.6rem .875rem;background:var(--bg2);border-radius:8px;border:1px solid var(--bdr)" id="stk-ajuste-nome">—</div>
+  <div class="stk-quick-grid" id="stk-quick-btns">
+    <button class="stk-quick-btn" data-delta="+1">+1</button>
+    <button class="stk-quick-btn" data-delta="+5">+5</button>
+    <button class="stk-quick-btn" data-delta="+10">+10</button>
+    <button class="stk-quick-btn" data-delta="+25">+25</button>
+    <button class="stk-quick-btn" data-delta="+50">+50</button>
+    <button class="stk-quick-btn" data-delta="+100">+100</button>
+    <button class="stk-quick-btn" data-delta="-1" style="color:var(--red)">-1</button>
+    <button class="stk-quick-btn" data-delta="-5" style="color:var(--red)">-5</button>
+    <button class="stk-quick-btn" data-delta="-10" style="color:var(--red)">-10</button>
+  </div>
+  <div class="field-row" style="margin-bottom:.875rem">
+    <div class="field" style="margin:0">
+      <label>Quantidade exata</label>
+      <input type="number" id="stk-ajuste-val" min="0" placeholder="ex: 150">
+    </div>
+    <div class="field" style="margin:0">
+      <label>Mínimo alerta</label>
+      <input type="number" id="stk-ajuste-min" min="0" placeholder="ex: 20">
+    </div>
+  </div>
+  <div class="field" style="margin-bottom:.875rem">
+    <label>Tipo de movimento</label>
+    <select id="stk-ajuste-tipo">
+      <option value="entrada">📥 Entrada (compra/reposição)</option>
+      <option value="saida">📤 Saída (venda/uso)</option>
+      <option value="ajuste">🔧 Ajuste manual (inventário)</option>
+    </select>
+  </div>
+  <div class="field" style="margin-bottom:.875rem">
+    <label>Observação (opcional)</label>
+    <input type="text" id="stk-ajuste-obs" placeholder="ex: NF 1234, pedido fornecedor X">
+  </div>
+  <div style="background:var(--bg2);border:1px solid var(--bdr);border-radius:8px;padding:.6rem .875rem;font-size:.8rem;color:var(--t2);margin-bottom:.875rem">
+    Estoque atual: <strong id="stk-ajuste-atual" style="font-family:var(--mono);color:var(--acc)">—</strong>
+    → Novo: <strong id="stk-ajuste-novo" style="font-family:var(--mono);color:var(--grn)">—</strong>
+  </div>
+  <div class="modal-foot">
+    <button class="btn btn-primary" id="btn-stk-confirmar">✓ Confirmar</button>
+    <button class="btn btn-ghost" data-close>Cancelar</button>
+  </div>
+</div>
 
 <!-- GitHub Config -->
 <div class="modal" id="modalConfig">
@@ -630,7 +784,7 @@ body{background:var(--bg);color:var(--t2);font-family:var(--font);line-height:1.
 
 var WPP_NUM = '5511972999835';
 
-var K={OCU:'cia_ocultos_v2',ED:'cia_edicoes_v2',CFG:'cia_github_cfg',NEW:'cia_novos_v1',DEL:'cia_deletados_v1',ESG:'cia_esgotados_v1',CAT:'cia_cats_v1',SUB:'cia_subs_v1',MENU:'cia_menu_v1',CATMAP:'cia_catmap_v1',SUBLABELS:'cia_sublabels_v1',IDXHTML:'cia_index_html_cache',IDXSHA:'cia_index_sha_cache'};
+var K={OCU:'cia_ocultos_v2',ED:'cia_edicoes_v2',CFG:'cia_github_cfg',NEW:'cia_novos_v1',DEL:'cia_deletados_v1',ESG:'cia_esgotados_v1',CAT:'cia_cats_v1',SUB:'cia_subs_v1',MENU:'cia_menu_v1',CATMAP:'cia_catmap_v1',SUBLABELS:'cia_sublabels_v1',IDXHTML:'cia_index_html_cache',IDXSHA:'cia_index_sha_cache',STK:'cia_estoque_v1',STKHIST:'cia_stk_hist_v1'};
 
 var DEF_CATS=[
   {id:'caixas',label:'📦 Caixas'},{id:'sacolas',label:'🛍️ Sacolas & Lixo'},
@@ -694,6 +848,91 @@ var subs     =rls(K.SUB,DEF_SUBS);
 var menuItems=rls(K.MENU,DEF_MENU);
 var catMap   =rls(K.CATMAP,DEF_CATMAP);
 var subLabels=rls(K.SUBLABELS,DEF_SUBLABELS);
+
+// ── ESTOQUE ──
+// estoque = {id: {qty: N, min: N}}
+// stkHist = [{id, nome, tipo, delta, qtyAntes, qtyDepois, obs, ts}]
+var estoque  =rls(K.STK,{});
+var stkHist  =rls(K.STKHIST,[]);
+var stkAjusteId=null; // id do produto sendo ajustado no modal
+
+function savStk(){wls(K.STK,estoque);}
+function savStkHist(){wls(K.STKHIST,stkHist.slice(-500));} // mantém últimos 500 registros
+
+function getStkQty(id){return estoque[id]?estoque[id].qty:null;}
+function getStkMin(id){return estoque[id]?estoque[id].min:0;}
+
+// retorna 'out'(zerado), 'low'(crítico), 'ok', ou 'none'(sem registro)
+function getStkStatus(id){
+  var qty=getStkQty(id);
+  if(qty===null)return 'none';
+  if(qty<=0)return 'out';
+  var min=getStkMin(id)||0;
+  if(min>0&&qty<=min)return 'low';
+  return 'ok';
+}
+
+function getStkPct(id){
+  var qty=getStkQty(id); if(qty===null)return 0;
+  var min=getStkMin(id)||10;
+  var ref=min*3||30;
+  return Math.min(100,Math.round((qty/ref)*100));
+}
+
+function getStkColor(status){
+  if(status==='out')return 'var(--red)';
+  if(status==='low')return 'var(--amber)';
+  if(status==='ok')return 'var(--grn)';
+  return 'var(--bdr2)';
+}
+
+// registra movimento no histórico
+function registrarHist(id,nome,tipo,qtyAntes,qtyDepois,obs){
+  var delta=qtyDepois-qtyAntes;
+  stkHist.unshift({id:id,nome:nome,tipo:tipo,delta:delta,qtyAntes:qtyAntes,qtyDepois:qtyDepois,obs:obs||'',ts:Date.now()});
+  savStkHist();
+}
+
+// aplica ajuste
+function aplicarAjusteEstoque(id,novaQty,novoMin,tipo,obs){
+  var prod=prods().find(function(p){return p.id===id;});
+  var nomeProd=prod?getProd(prod).nome:'#'+id;
+  var qtyAntes=getStkQty(id)!==null?getStkQty(id):0;
+  if(!estoque[id])estoque[id]={qty:0,min:0};
+  estoque[id].qty=Math.max(0,novaQty);
+  if(novoMin>=0)estoque[id].min=novoMin;
+  savStk(); markUnsaved();
+  registrarHist(id,nomeProd,tipo,qtyAntes,estoque[id].qty,obs);
+  // auto-esgotado se zerar
+  if(estoque[id].qty===0&&!esgotados.has(id)){
+    esgotados.add(id); savEsg(); refreshCard(id); showToast('⚠ Estoque zerado — marcado como esgotado','orange');
+  } else if(estoque[id].qty>0&&esgotados.has(id)){
+    esgotados.delete(id); savEsg(); refreshCard(id); showToast('✓ Estoque reposto — produto reativado','green');
+  }
+  atualizarBarraEstoque(id);
+  painelStkRender();
+}
+
+// atualiza a barrinha no card
+function atualizarBarraEstoque(id){
+  var row=document.getElementById('stk-row-'+id); if(!row)return;
+  var status=getStkStatus(id);
+  var qty=getStkQty(id); var min=getStkMin(id);
+  var pct=getStkPct(id);
+  row.className='stk-row '+status;
+  var bar=row.querySelector('.stk-bar');
+  var statusEl=row.querySelector('.stk-status');
+  var inpQty=row.querySelector('.stk-inp');
+  var inpMin=row.querySelector('.stk-min-inp');
+  if(bar){bar.style.width=pct+'%';bar.style.background=getStkColor(status);}
+  if(statusEl){
+    statusEl.className='stk-status '+status;
+    statusEl.textContent=status==='out'?'🔴 Zerado':status==='low'?'⚠ Crítico':status==='ok'?'✅ OK':'';
+    statusEl.style.display=status==='none'?'none':'';
+  }
+  if(inpQty&&qty!==null)inpQty.value=qty;
+  if(inpMin)inpMin.value=min||'';
+}
 
 // Cache do index.html (para publicação automática)
 var indexHtmlContent = localStorage.getItem(K.IDXHTML) || '';
@@ -1011,6 +1250,69 @@ function criarCard(p,ep,idx){
   db.addEventListener('click',function(){pedirDelete(parseInt(this.dataset.id));});
   ac.appendChild(emb); ac.appendChild(db); card.appendChild(ac);
 
+  // ── LINHA DE ESTOQUE ──
+  var status=getStkStatus(p.id);
+  var qty=getStkQty(p.id); var min=getStkMin(p.id);
+  var pct=getStkPct(p.id);
+
+  var stkRow=document.createElement('div');
+  stkRow.className='stk-row '+status;
+  stkRow.id='stk-row-'+p.id;
+
+  var stkIco=document.createElement('span'); stkIco.className='stk-ico'; stkIco.textContent='📦';
+  var stkLbl=document.createElement('span'); stkLbl.className='stk-lbl'; stkLbl.textContent='Estoque:';
+
+  var stkInpQ=document.createElement('input'); stkInpQ.type='number'; stkInpQ.className='stk-inp';
+  stkInpQ.min='0'; stkInpQ.placeholder='—'; stkInpQ.dataset.id=p.id;
+  if(qty!==null)stkInpQ.value=qty;
+  stkInpQ.title='Clique para ajustar o estoque';
+
+  var stkSep=document.createElement('span'); stkSep.className='stk-sep'; stkSep.textContent='/';
+  var stkLblMin=document.createElement('span'); stkLblMin.className='stk-lbl'; stkLblMin.textContent='mín:';
+  var stkInpM=document.createElement('input'); stkInpM.type='number'; stkInpM.className='stk-min-inp';
+  stkInpM.min='0'; stkInpM.placeholder='0'; stkInpM.dataset.id=p.id;
+  if(min)stkInpM.value=min;
+  stkInpM.title='Mínimo para alerta';
+
+  var stkBarW=document.createElement('div'); stkBarW.className='stk-bar-wrap';
+  var stkBar=document.createElement('div'); stkBar.className='stk-bar';
+  stkBar.style.width=pct+'%'; stkBar.style.background=getStkColor(status);
+  stkBarW.appendChild(stkBar);
+
+  var stkStatusEl=document.createElement('span');
+  stkStatusEl.className='stk-status '+status;
+  stkStatusEl.textContent=status==='out'?'🔴 Zerado':status==='low'?'⚠ Crítico':status==='ok'?'✅ OK':'';
+  if(status==='none')stkStatusEl.style.display='none';
+
+  // botão de ajuste rápido
+  var stkAdjBtn=document.createElement('button');
+  stkAdjBtn.style.cssText='padding:2px 7px;border-radius:5px;background:var(--acc-g);border:1px solid rgba(37,99,235,.2);color:var(--acc);font-size:.65rem;font-weight:700;cursor:pointer;font-family:var(--font);flex-shrink:0';
+  stkAdjBtn.textContent='✎'; stkAdjBtn.title='Ajuste rápido'; stkAdjBtn.dataset.id=p.id;
+  stkAdjBtn.addEventListener('click',function(){abrirStkAjuste(parseInt(this.dataset.id));});
+
+  // salvar ao sair do campo qty
+  stkInpQ.addEventListener('change',function(){
+    var id2=parseInt(this.dataset.id);
+    var novaQty=parseInt(this.value);
+    if(isNaN(novaQty)||novaQty<0)return;
+    var novoMin=parseInt(document.querySelector('#stk-row-'+id2+' .stk-min-inp').value)||getStkMin(id2);
+    aplicarAjusteEstoque(id2,novaQty,novoMin,'ajuste','Edição direta no card');
+  });
+  stkInpM.addEventListener('change',function(){
+    var id2=parseInt(this.dataset.id);
+    var novoMin=parseInt(this.value)||0;
+    if(!estoque[id2])estoque[id2]={qty:0,min:0};
+    estoque[id2].min=novoMin; savStk();
+    atualizarBarraEstoque(id2); painelStkRender();
+  });
+
+  stkRow.appendChild(stkIco); stkRow.appendChild(stkLbl);
+  stkRow.appendChild(stkInpQ); stkRow.appendChild(stkSep);
+  stkRow.appendChild(stkLblMin); stkRow.appendChild(stkInpM);
+  stkRow.appendChild(stkBarW); stkRow.appendChild(stkStatusEl);
+  stkRow.appendChild(stkAdjBtn);
+  card.appendChild(stkRow);
+
   card.style.opacity='0'; card.style.transform='translateY(5px)';
   setTimeout(function(){card.style.transition='opacity .22s,transform .22s';card.style.opacity='';card.style.transform='';},idx*5);
   return card;
@@ -1047,6 +1349,141 @@ function enviarWppEsgotado(alvos){
   window.open('https://wa.me/'+WPP_NUM+'?text='+encodeURIComponent(wppEsgMsg(alvos)),'_blank');
 }
 
+/* ── PAINEL ESTOQUE ── */
+function painelStkRender(){
+  var lista=prods().filter(function(p){return getStkQty(p.id)!==null;});
+  var out=lista.filter(function(p){return getStkStatus(p.id)==='out';});
+  var low=lista.filter(function(p){return getStkStatus(p.id)==='low';});
+  var ok=lista.filter(function(p){return getStkStatus(p.id)==='ok';});
+  var none=prods().filter(function(p){return getStkStatus(p.id)==='none';});
+  document.getElementById('stk-sum-out').textContent=out.length;
+  document.getElementById('stk-sum-low').textContent=low.length;
+  document.getElementById('stk-sum-ok').textContent=ok.length;
+  document.getElementById('stk-sum-none').textContent=none.length;
+
+  var criticos=out.concat(low).sort(function(a,b){return getStkQty(a.id)-getStkQty(b.id);});
+  var tbodyCrit=document.querySelector('#stk-table-criticos tbody');
+  var emptyEl=document.getElementById('stk-criticos-empty');
+  if(tbodyCrit){
+    tbodyCrit.innerHTML='';
+    if(!criticos.length){
+      document.getElementById('stk-table-criticos').style.display='none';
+      emptyEl.style.display='block';
+    } else {
+      document.getElementById('stk-table-criticos').style.display='';
+      emptyEl.style.display='none';
+      criticos.forEach(function(p){
+        var ep=getProd(p); var st=getStkStatus(p.id);
+        var qty=getStkQty(p.id); var min=getStkMin(p.id);
+        var tr=document.createElement('tr');
+        tr.innerHTML='<td><div style="font-weight:600;font-size:.8rem;color:var(--t1)">'+ep.nome+'</div>'
+          +'<div style="font-size:.67rem;color:var(--t3)">'+subLabel(ep.subcategoria)+'</div></td>'
+          +'<td><span style="font-family:var(--mono);font-weight:700;color:'+(st==='out'?'var(--red)':'var(--amber)')+'">'+qty+'</span></td>'
+          +'<td><span style="font-family:var(--mono);color:var(--t3)">'+min+'</span></td>'
+          +'<td><span class="stk-badge '+st+'">'+(st==='out'?'🔴 Zerado':'⚠ Crítico')+'</span></td>'
+          +'<td><button class="btn btn-primary btn-sm" onclick="abrirStkAjuste('+p.id+')">📥 Repor</button></td>';
+        tbodyCrit.appendChild(tr);
+      });
+    }
+  }
+
+  var tbodyTodos=document.querySelector('#stk-table-todos tbody');
+  if(tbodyTodos){
+    tbodyTodos.innerHTML='';
+    lista.sort(function(a,b){return getStkPct(a.id)-getStkPct(b.id);}).forEach(function(p){
+      var ep=getProd(p); var st=getStkStatus(p.id);
+      var qty=getStkQty(p.id); var min=getStkMin(p.id); var pct=getStkPct(p.id);
+      var tr=document.createElement('tr');
+      tr.innerHTML='<td><div style="font-weight:600;font-size:.79rem">'+ep.nome+'</div>'
+        +'<div style="font-size:.65rem;color:var(--t3)">'+subLabel(ep.subcategoria)+'</div></td>'
+        +'<td><span style="font-family:var(--mono);font-weight:700">'+qty+'</span></td>'
+        +'<td><span style="font-family:var(--mono);color:var(--t3)">'+min+'</span></td>'
+        +'<td><div class="stk-mini-bar"><div class="stk-mini-bar-wrap"><div class="stk-mini-bar-fill" style="width:'+pct+'%;height:5px;border-radius:99px;background:'+getStkColor(st)+'"></div></div><span class="stk-pct">'+pct+'%</span></div></td>'
+        +'<td><span class="stk-badge '+st+'">'+(st==='out'?'🔴 Zerado':st==='low'?'⚠ Crítico':'✅ OK')+'</span></td>';
+      tbodyTodos.appendChild(tr);
+    });
+  }
+
+  var histEl=document.getElementById('stk-hist-list');
+  var histEmpty=document.getElementById('stk-hist-empty');
+  if(histEl){
+    if(!stkHist.length){histEl.innerHTML='';if(histEmpty)histEmpty.style.display='block';return;}
+    if(histEmpty)histEmpty.style.display='none';
+    histEl.innerHTML='';
+    stkHist.slice(0,80).forEach(function(h){
+      var d=new Date(h.ts);
+      var dStr=d.toLocaleDateString('pt-BR')+' '+d.toLocaleTimeString('pt-BR',{hour:'2-digit',minute:'2-digit'});
+      var sinal=h.delta>=0?'+':'';
+      var cor=h.tipo==='entrada'?'var(--grn)':h.tipo==='saida'?'var(--red)':'var(--acc)';
+      var row=document.createElement('div'); row.className='hist-row';
+      row.innerHTML='<span class="hist-tipo '+h.tipo+'">'+h.tipo+'</span>'
+        +'<div style="flex:1;min-width:0"><div style="font-size:.78rem;font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">'+h.nome+'</div>'
+        +(h.obs?'<div style="font-size:.67rem;color:var(--t3)">'+h.obs+'</div>':'')+'</div>'
+        +'<span style="font-family:var(--mono);font-size:.78rem;font-weight:700;color:'+cor+'">'+sinal+h.delta+'</span>'
+        +'<span style="font-family:var(--mono);font-size:.72rem;color:var(--t3);margin-left:4px">→ '+h.qtyDepois+'</span>'
+        +'<span style="font-size:.65rem;color:var(--t3);white-space:nowrap;margin-left:6px">'+dStr+'</span>';
+      histEl.appendChild(row);
+    });
+  }
+}
+
+/* ── MODAL AJUSTE RÁPIDO ── */
+function abrirStkAjuste(id){
+  stkAjusteId=id;
+  var prod=prods().find(function(p){return p.id===id;});
+  var ep=prod?getProd(prod):{nome:'#'+id};
+  document.getElementById('stk-ajuste-nome').textContent=ep.nome;
+  var qty=getStkQty(id)!==null?getStkQty(id):0;
+  document.getElementById('stk-ajuste-val').value=qty;
+  document.getElementById('stk-ajuste-min').value=getStkMin(id)||'';
+  document.getElementById('stk-ajuste-obs').value='';
+  document.getElementById('stk-ajuste-tipo').value='ajuste';
+  document.getElementById('stk-ajuste-atual').textContent=qty;
+  document.getElementById('stk-ajuste-novo').textContent=qty;
+  document.querySelectorAll('.stk-quick-btn').forEach(function(btn){
+    btn.onclick=function(){
+      var delta=parseInt(this.dataset.delta);
+      var cur=parseInt(document.getElementById('stk-ajuste-val').value)||0;
+      var nova=Math.max(0,cur+delta);
+      document.getElementById('stk-ajuste-val').value=nova;
+      document.getElementById('stk-ajuste-novo').textContent=nova;
+      document.getElementById('stk-ajuste-tipo').value=delta>0?'entrada':'saida';
+    };
+  });
+  document.getElementById('stk-ajuste-val').oninput=function(){
+    document.getElementById('stk-ajuste-novo').textContent=Math.max(0,parseInt(this.value)||0);
+  };
+  abrirModal('modalStkAjuste');
+}
+
+function confirmarStkAjuste(){
+  if(stkAjusteId===null)return;
+  var novaQty=Math.max(0,parseInt(document.getElementById('stk-ajuste-val').value)||0);
+  var novoMin=Math.max(0,parseInt(document.getElementById('stk-ajuste-min').value)||0);
+  var tipo=document.getElementById('stk-ajuste-tipo').value;
+  var obs=document.getElementById('stk-ajuste-obs').value.trim();
+  aplicarAjusteEstoque(stkAjusteId,novaQty,novoMin,tipo,obs);
+  fecharModais(); showToast('✓ Estoque atualizado','green'); stkAjusteId=null;
+}
+
+function wppCriticos(){
+  var criticos=prods().filter(function(p){return getStkStatus(p.id)==='out'||getStkStatus(p.id)==='low';});
+  if(!criticos.length){showToast('Nenhum produto crítico no momento','amber');return;}
+  var d=new Date().toLocaleDateString('pt-BR');
+  var linhas=criticos.map(function(p){
+    var ep=getProd(p); var st=getStkStatus(p.id);
+    return (st==='out'?'🔴':'⚠️')+' '+ep.nome+' — estoque: '+getStkQty(p.id)+' (mín: '+getStkMin(p.id)+')';
+  }).join('\n');
+  var msg='📦 *Alerta de Estoque — Cia Das Embalagens*\nData: '+d+'\n\n'+linhas+'\n\nSolicitar reposição urgente. 🙏';
+  window.open('https://wa.me/'+WPP_NUM+'?text='+encodeURIComponent(msg),'_blank');
+}
+
+function emailCriticos(){
+  var criticos=prods().filter(function(p){return getStkStatus(p.id)==='out'||getStkStatus(p.id)==='low';});
+  if(!criticos.length){showToast('Nenhum produto crítico no momento','amber');return;}
+  abrirEmailModal(criticos.map(function(p){return getProd(p);}));
+}
+
 /* ── GERAÇÃO DO JS ── */
 function gerarJS(){
   var lista=prods();
@@ -1058,6 +1495,11 @@ function gerarJS(){
     if(ep.imagem){obj.imagem=ep.imagem;obj.imgmode=ep.imgmode||'thumbnail';}
     if(ep.oculto)obj.oculto=true;
     if(ep.esgotado)obj.esgotado=true;
+    // inclui dados de estoque no JS publicado
+    if(estoque[ep.id]&&estoque[ep.id].qty!==undefined){
+      obj.qty=estoque[ep.id].qty;
+      if(estoque[ep.id].min)obj.estoqueMin=estoque[ep.id].min;
+    }
     lines.push('  '+JSON.stringify(obj)+comma);
   });
   lines.push('];'); return lines.join('\n');
