@@ -519,7 +519,7 @@ body{background:var(--bg);color:var(--t2);font-family:var(--font);line-height:1.
     <div class="index-tab" data-ipane="rawhtml">⌨ HTML Bruto</div>
   </div>
   <div class="index-pane on" id="ipane-catmap">
-    <div class="index-editor-note">⚡ <strong>catMap</strong> define quais subcategorias pertencem a cada categoria. Edite aqui e clique "Aplicar + Publicar" para atualizar o site.</div>
+    <div class="index-editor-note">⚡ <strong>catMap</strong> define quais subcategorias pertencem a cada categoria. Ao salvar e publicar, o admin gera automaticamente os botões de submenu (<code>subtabs</code>) no seu index.html. Adicione aqui o ID da nova sub e ela aparece no site após publicar.</div>
     <div id="catmap-editor"></div>
   </div>
   <div class="index-pane" id="ipane-sublabels">
@@ -1063,7 +1063,7 @@ function gerarJS(){
   lines.push('];'); return lines.join('\n');
 }
 
-/* ── GERAÇÃO DO CATMAP / SUBLABELS / MENU PARA INJETAR NO HTML ── */
+/* ── GERAÇÃO DO CATMAP / SUBLABELS / MENU / SUBTABS PARA INJETAR NO HTML ── */
 function gerarCatMapJS(){
   var lines=['var catMap={'];
   var keys=Object.keys(catMap);
@@ -1080,57 +1080,139 @@ function gerarSubLabelsJS(){
   return 'var subLabels={\n'+pairs.join(',\n')+'\n};';
 }
 
-// Gera HTML do menu de navegação baseado nos menuItems
-function gerarMenuHTML(){
-  var lines=[];
-  menuItems.forEach(function(m){
-    if(m.catId){
-      lines.push('<div class="nav-link" onclick="filterCat(\''+m.catId+'\')">'+m.label+'</div>');
-    } else {
-      var cls=m.tipo==='green'?'nav-link nav-link-green':(m.tipo==='blue'?'nav-link nav-link-blue':'nav-link');
-      lines.push('<a class="'+cls+'" href="https://wa.me/'+WPP_NUM+'" target="_blank">'+m.label+'</a>');
-    }
+// Gera o bloco COMPLETO de subtabs-wrap com todos os sub-X divs
+// baseado nas categorias e subcategorias cadastradas
+function gerarSubtabsHTML(){
+  var indent='    '; // 4 spaces to match index.html style
+  var linhas=[];
+  linhas.push('<div class="subtabs-wrap">');
+
+  cats.forEach(function(cat){
+    var subsDestacat=subs.filter(function(s){return s.catId===cat.id;});
+    if(!subsDestacat.length)return;
+
+    // Texto do botão "Todas" varia por categoria
+    var todasLabel='Todas';
+    if(cat.id==='festa')todasLabel='Tudo';
+    else if(cat.id==='limpeza')todasLabel='Tudo';
+    else if(cat.id==='higiene')todasLabel='Tudo';
+    else if(cat.id==='diversos')todasLabel='Tudo';
+    else if(cat.id==='plastico')todasLabel='Todos';
+
+    var btns=[];
+    // Botão "Todas"
+    btns.push('<button class="stab on" onclick="filtrarSub(\'todas\',this,\''+cat.id+'\')">'+todasLabel+'</button>');
+    // Um botão por subcategoria
+    subsDestacat.forEach(function(s){
+      var label=subLabels[s.id]||s.label||s.id;
+      btns.push('<button class="stab" onclick="filtrarSub(\''+s.id+'\',this,\''+cat.id+'\')">'+label+'</button>');
+    });
+
+    linhas.push(indent+'<div class="subtabs" id="sub-'+cat.id+'">'+btns.join('')+'</div>');
   });
-  return lines.join('\n');
+
+  linhas.push('  </div>');
+  return linhas.join('\n');
 }
 
-// Aplica catMap, subLabels e menu no HTML bruto
-// Retorna o HTML atualizado ou null se não encontrou os blocos
+// Aplica catMap, subLabels, subtabs e catEmojis no HTML bruto
+// Retorna o HTML atualizado ou null se não encontrou os blocos obrigatórios
 function aplicarTudoNoHTML(txt){
   var alterado=false;
 
-  // 1. catMap
+  // ── 1. catMap (bloco JS no <script>) ──
   var reCatMap=/var catMap\s*=\s*\{[\s\S]*?\};/;
   if(reCatMap.test(txt)){
     txt=txt.replace(reCatMap,gerarCatMapJS());
     alterado=true;
   }
 
-  // 2. subLabels
+  // ── 2. subLabels (bloco JS no <script>) ──
   var reSubLabels=/var subLabels\s*=\s*\{[\s\S]*?\};/;
   if(reSubLabels.test(txt)){
     txt=txt.replace(reSubLabels,gerarSubLabelsJS());
   }
 
-  // 3. Menu de navegação — detecta bloco entre comentários ou por padrão de nav-link
-  // Estratégia: encontra a primeira sequência contígua de nav-link e substitui
-  var novoMenu=gerarMenuHTML();
-
-  // Tenta pelo marcador de comentário (caso exista)
-  var reMenuComentario=/<!-- MENU-START -->[\s\S]*?<!-- MENU-END -->/;
-  if(reMenuComentario.test(txt)){
-    txt=txt.replace(reMenuComentario,'<!-- MENU-START -->\n'+novoMenu+'\n<!-- MENU-END -->');
-  } else {
-    // Fallback: substitui o bloco de nav-links contíguos
-    // Regex para bloco de 1+ elementos nav-link consecutivos (com possível espaço/quebra entre eles)
-    var reNavBlock=/((?:<(?:div|a)[^>]*class="[^"]*nav-link[^"]*"[^>]*>[\s\S]*?<\/(?:div|a)>\s*)+)/;
-    if(reNavBlock.test(txt)){
-      txt=txt.replace(reNavBlock,novoMenu+'\n');
+  // ── 3. catEmojis — adiciona novas entradas sem apagar as existentes ──
+  // Injeta subcategorias novas como 'id':'emoji' no objeto catEmojis
+  var reCatEmojis=/var catEmojis\s*=\s*\{[\s\S]*?\};/;
+  if(reCatEmojis.test(txt)){
+    // Extrai o conteúdo atual do catEmojis
+    var matchEmoji=txt.match(/var catEmojis\s*=\s*\{([\s\S]*?)\};/);
+    if(matchEmoji){
+      var existingEmojis=matchEmoji[1];
+      // Para cada sub nova, se não tiver no bloco, adiciona com emoji padrão
+      subs.forEach(function(s){
+        var safeId=s.id.replace(/'/g,"\\'");
+        if(existingEmojis.indexOf("'"+safeId+"'")<0&&existingEmojis.indexOf('"'+safeId+'"')<0){
+          // Não existe: adiciona antes do fechamento }
+          existingEmojis=existingEmojis.trimEnd();
+          if(existingEmojis.slice(-1)!==',')existingEmojis+=',';
+          existingEmojis+="\n  '"+safeId+"':'📦'";
+        }
+      });
+      txt=txt.replace(reCatEmojis,'var catEmojis={'+existingEmojis+'};');
     }
   }
 
+  // ── 4. Bloco subtabs-wrap — substitui o bloco inteiro ──
+  // Detecta pelo marcador de comentário (recomendado) ou pelo padrão da div
+  var novoSubtabs=gerarSubtabsHTML();
+
+  var reSubComentario=/<!-- SUBTABS-START -->[\s\S]*?<!-- SUBTABS-END -->/;
+  if(reSubComentario.test(txt)){
+    txt=txt.replace(reSubComentario,'<!-- SUBTABS-START -->\n'+novoSubtabs+'\n<!-- SUBTABS-END -->');
+  } else {
+    // Fallback: encontra a div.subtabs-wrap e substitui ela inteira
+    var reSubWrap=/<div\s+class="subtabs-wrap"[\s\S]*?<\/div>\s*(?=\s*<div\s+class="brand-filter)/;
+    if(reSubWrap.test(txt)){
+      txt=txt.replace(reSubWrap,novoSubtabs+'\n\n  ');
+    } else {
+      // Fallback 2: regex mais simples — encontra a abertura e fecha no próximo </div> após subtabs
+      var reSubWrap2=/(<div class="subtabs-wrap">)([\s\S]*?)(<\/div>\s*\n\s*<div class="brand-filter)/;
+      if(reSubWrap2.test(txt)){
+        txt=txt.replace(reSubWrap2, novoSubtabs+'\n\n  <div class="brand-filter');
+      }
+    }
+  }
+
+  // ── 5. filter-tabs (os botões da barra horizontal de categorias) ──
+  // Também pode ser substituído pelo marcador de comentário
+  var novoFtabs=gerarFilterTabsHTML();
+  var reFtabComentario=/<!-- FTABS-START -->[\s\S]*?<!-- FTABS-END -->/;
+  if(reFtabComentario.test(txt)){
+    txt=txt.replace(reFtabComentario,'<!-- FTABS-START -->\n'+novoFtabs+'\n<!-- FTABS-END -->');
+  }
+  // sem marcador: não toca, muito arriscado substituir automaticamente
+
   if(!alterado){return null;}
   return txt;
+}
+
+// Gera os filter-tabs (barra de categorias) para quem usar marcadores
+function gerarFilterTabsHTML(){
+  // Ícones padrão por categoria — usa os do index ou genérico
+  var iconMap={
+    todos:'https://img.icons8.com/fluency/48/layers.png',
+    caixas:'https://img.icons8.com/fluency/48/box.png',
+    sacolas:'https://img.icons8.com/fluency/48/trash.png',
+    plastico:'https://img.icons8.com/fluency/48/test-tube.png',
+    festa:'https://img.icons8.com/fluency/48/wine-glass.png',
+    limpeza:'https://img.icons8.com/fluency/48/broom.png',
+    higiene:'https://img.icons8.com/fluency/48/toilet-paper.png',
+    utilidades:'https://img.icons8.com/fluency/48/toolbox.png',
+    diversos:'https://img.icons8.com/fluency/48/open-box.png'
+  };
+  var indent='    ';
+  var linhas=['<div class="filter-tabs" id="fbar">'];
+  linhas.push(indent+'<button class="ftab on" data-cat="todos" onclick="filterCat(\'todos\',this)"><img src="'+iconMap.todos+'" alt="">Todos</button>');
+  cats.forEach(function(cat){
+    var ico=iconMap[cat.id]||'https://img.icons8.com/fluency/48/box.png';
+    var labelText=cat.label.replace(/^\S+\s*/,''); // Remove emoji do label
+    linhas.push(indent+'<button class="ftab" data-cat="'+cat.id+'" onclick="filterCat(\''+cat.id+'\',this)"><img src="'+ico+'" alt="">'+labelText+'</button>');
+  });
+  linhas.push('  </div>');
+  return linhas.join('\n');
 }
 
 /* ── INDEX HTML EDITOR ── */
@@ -1219,15 +1301,53 @@ async function carregarIndexGitHub(){
   }
 }
 
+// Insere comentários-guia no index.html para que a substituição automática funcione
+function inserirMarcadoresNoHTML(txt){
+  var alterou=false;
+  // Marcador subtabs-wrap: envolve a div.subtabs-wrap existente
+  if(txt.indexOf('<!-- SUBTABS-START -->')<0){
+    // Encontra abertura da subtabs-wrap e fecha no primeiro </div> seguido de brand-filter ou containerProdutos
+    var idx=txt.indexOf('<div class="subtabs-wrap">');
+    if(idx>=0){
+      // Encontra o </div> de fechamento da subtabs-wrap
+      // A subtabs-wrap fecha antes do brand-filter-wrap
+      var posClose=txt.indexOf('<div class="brand-filter-wrap"',idx);
+      if(posClose>=0){
+        // Retroage até o </div> anterior
+        var segmento=txt.substring(idx,posClose);
+        var ultimoFecha=segmento.lastIndexOf('</div>');
+        if(ultimoFecha>=0){
+          var fimBloco=idx+ultimoFecha+6; // +6 = len('</div>')
+          txt=txt.substring(0,idx)+'<!-- SUBTABS-START -->\n'+txt.substring(idx,fimBloco)+'</div>\n<!-- SUBTABS-END -->'+txt.substring(fimBloco);
+          // Remove o </div> extra que ficou duplicado
+          txt=txt.replace('</div>\n<!-- SUBTABS-END --></div>','</div>\n<!-- SUBTABS-END -->');
+          alterou=true;
+        }
+      }
+    }
+  }
+  return {txt:txt,alterou:alterou};
+}
+
 function aplicarCatMapAoHTML(){
-  var txt=document.getElementById('raw-index-content').value;
+  var ta=document.getElementById('raw-index-content');
+  var txt=ta.value;
   if(!txt){showToast('⚠ Carregue o index.html primeiro','amber');return;}
+
+  // Tenta inserir marcadores automaticamente se ainda não existirem
+  if(txt.indexOf('<!-- SUBTABS-START -->')<0){
+    var res=inserirMarcadoresNoHTML(txt);
+    if(res.alterou){txt=res.txt;showToast('✓ Marcadores inseridos','teal');}
+  }
+
   var novo=aplicarTudoNoHTML(txt);
-  if(!novo){showToast('⚠ catMap não encontrado no HTML. Verifique o arquivo.','amber');return;}
-  document.getElementById('raw-index-content').value=novo;
+  if(!novo){showToast('⚠ catMap não encontrado no HTML','amber');return;}
+
+  ta.value=novo;
   indexHtmlContent=novo;
   localStorage.setItem(K.IDXHTML,novo);
-  showToast('✓ catMap, subLabels e menu aplicados','teal');
+  var temSub=novo.indexOf('<!-- SUBTABS-START -->')>=0;
+  showToast('✓ catMap + subLabels'+(temSub?' + subtabs':'')+' aplicados','teal');
 }
 
 async function publicarIndex(){
@@ -1490,16 +1610,21 @@ async function publicar(){
       var dataHtml=await getHtml.json();
       indexSha=dataHtml.sha;
       localStorage.setItem(K.IDXSHA,indexSha);
-      // Atualiza o cache local com o conteúdo mais recente do GitHub
+      // Usa o conteúdo mais recente do GitHub como base
       var htmlAtual=decodeURIComponent(escape(atob(dataHtml.content.replace(/\n/g,''))));
-      // Aplica as mudanças no HTML atualizado
+      // Insere marcadores automaticamente se ainda não existirem
+      if(htmlAtual.indexOf('<!-- SUBTABS-START -->')<0){
+        var mRes=inserirMarcadoresNoHTML(htmlAtual);
+        if(mRes.alterou)htmlAtual=mRes.txt;
+      }
+      // Aplica catMap + subLabels + subtabs
       var novoHtml=aplicarTudoNoHTML(htmlAtual);
       if(!novoHtml){
-        // Fallback: tenta aplicar no cache local
+        // Fallback: tenta no cache local
         novoHtml=aplicarTudoNoHTML(indexHtmlContent);
       }
       if(!novoHtml){
-        throw new Error('Não foi possível localizar o bloco catMap no index.html. Verifique se o arquivo contém "var catMap={..."');
+        throw new Error('catMap não encontrado no index.html. Verifique se o arquivo contém "var catMap={..."');
       }
       indexHtmlContent=novoHtml;
       localStorage.setItem(K.IDXHTML,novoHtml);
