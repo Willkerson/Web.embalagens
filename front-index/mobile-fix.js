@@ -32,19 +32,20 @@
     window.addEventListener('scroll', reposicionarSugestoes, { passive: true });
   }
 
-  // ── 2. BUSCA: fecha sugestões ao rolar a página no mobile ──
-  // No desktop o scroll é normal; no mobile o usuário role para ver mais produtos.
+  // ── 2. BUSCA: fecha sugestões ao rolar a PÁGINA (não as sugestões em si) ──
+  // Só fecha se o scroll for no body/window, não dentro do box de sugestões.
   if (isMobile) {
     var _scrollTimer;
     window.addEventListener('scroll', function () {
       clearTimeout(_scrollTimer);
       _scrollTimer = setTimeout(function () {
         var box = document.getElementById('searchSuggestions');
-        if (box && box.classList.contains('on')) {
+        // Só fecha se as sugestões estiverem abertas E o foco não estiver nelas
+        if (box && box.classList.contains('on') && !_tocandoSugestao) {
           box.classList.remove('on');
           box.innerHTML = '';
         }
-      }, 80);
+      }, 200); // delay maior para não fechar ao abrir teclado
     }, { passive: true });
   }
 
