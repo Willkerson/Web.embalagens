@@ -1,115 +1,159 @@
 /* ═══════════════════════════════════════════════════════════
    MOBILE.CSS — Melhorias para Android e iPhone
-   Adicione APÓS o estilo.css. Não altera nada do desktop.
+   Adicione este arquivo APÓS o estilo.css principal.
+   O design do desktop não é alterado.
    ═══════════════════════════════════════════════════════════ */
 
-/* ─── PREVINE ZOOM NO iOS AO FOCAR INPUTS ─── */
-/* iOS faz zoom quando font-size < 16px no input */
+/* ─── 1. PREVINE ZOOM NO iOS AO FOCAR INPUTS ─── */
+/* O iOS faz zoom quando font-size < 16px — fixamos isso */
 @media (max-width: 768px) {
-  .search-inp,
-  .modal-field input,
-  .modal-field textarea {
+  input, select, textarea {
     font-size: 16px !important;
   }
+
+  /* Exceções pequenas que não são campos de texto do usuário */
+  .iq { font-size: 15px !important; }
 }
 
-/* ─── HEADER ─── */
+/* ─── 2. HEADER MOBILE ─── */
 @media (max-width: 768px) {
-  .hdr-inner { padding: 0 12px; }
+  :root { --nav-h: 52px; }
+
+  .hdr-inner { padding: 0 12px; gap: 6px; }
+
+  /* Logo menor */
+  .logo-name { font-size: .8rem; }
+  .logo-mark { width: 26px; height: 26px; }
+
+  /* Botão WhatsApp: esconde texto, mantém ícone */
   .btn-wpp span { display: none; }
   .btn-wpp { padding: 7px 10px; }
+
+  /* Botão carrinho: esconde texto */
   .btn-cart span { display: none; }
   .btn-cart { padding: 7px 10px; }
 }
 
-/* ─── BUSCA ─── */
+/* ─── 3. BUSCA — o problema principal no mobile ─── */
 @media (max-width: 768px) {
+  /* Wrap ocupa toda a largura com margem mínima */
   .search-wrap {
     max-width: 100%;
     margin: 0 0 1.25rem;
+    position: relative;
   }
 
   /* Campo maior e mais fácil de tocar */
   .search-inp {
-    padding: 13px 16px 13px 44px;
+    padding: 14px 16px 14px 44px;
+    font-size: 16px; /* crítico: evita zoom no iOS */
     border-radius: 14px;
     -webkit-appearance: none;
+    appearance: none;
   }
 
-  /* Sugestões ficam logo abaixo do campo — SEM position:fixed
-     para não sobrepor o texto digitado */
+  /* Sugestões: ficam fixas na tela quando o teclado sobe */
   .search-suggestions {
-    position: absolute; /* mantém relativo ao .search-wrap */
-    top: calc(100% + 6px);
-    left: 0;
-    right: 0;
+    position: fixed;
+    top: auto;
+    /* Posicionamos logo abaixo do header + campo */
+    top: calc(var(--nav-h) + 80px);
+    left: 12px;
+    right: 12px;
     z-index: 950;
-    max-height: 50vh;
+    max-height: 45vh;
     overflow-y: auto;
     -webkit-overflow-scrolling: touch;
     border-radius: 14px;
     box-shadow: 0 16px 48px rgba(0,0,0,.18);
   }
 
-  /* Itens maiores para toque fácil */
+  /* Itens de sugestão maiores — mais fáceis de tocar */
   .search-sug-item {
     padding: 13px 16px;
-    min-height: 48px;
+    font-size: .9rem;
+    min-height: 52px; /* alvo mínimo de toque Apple/Google: 44px */
   }
 
-  .search-sug-item .sug-name { font-size: .875rem; }
-  .search-sug-item .sug-ico  { font-size: 1.1rem; }
+  .search-sug-item .sug-name {
+    font-size: .875rem;
+  }
+
+  .search-sug-item .sug-ico {
+    font-size: 1.1rem;
+  }
+
+  .sug-section-label {
+    padding: 8px 16px 5px;
+    font-size: .7rem;
+  }
 }
 
-/* ─── CATÁLOGO — padding lateral ─── */
+/* ─── 4. CATALOG SECTION — padding e espaçamentos ─── */
 @media (max-width: 768px) {
   .sec-catalog {
     padding: calc(var(--nav-h) + 1.5rem) 12px 5rem;
   }
+
   .cat-head { margin-bottom: 1.5rem; }
+
   .sec-title { font-size: 1.6rem; }
+  .sec-sub { font-size: .875rem; }
 }
 
-/* ─── FILTROS DE CATEGORIA — scroll horizontal ─── */
+/* ─── 5. FILTROS DE CATEGORIA — scroll horizontal suave ─── */
 @media (max-width: 768px) {
   .filter-tabs {
     justify-content: flex-start;
     flex-wrap: nowrap;
     overflow-x: auto;
+    overflow-y: visible;
+    padding: 4px 0 8px;
+    margin: 0 -12px;          /* sangra até a borda */
+    padding-left: 12px;
+    padding-right: 12px;
     -webkit-overflow-scrolling: touch;
     scrollbar-width: none;
-    padding-bottom: 6px;
     gap: 6px;
   }
   .filter-tabs::-webkit-scrollbar { display: none; }
 
+  /* Tabs maiores para toque fácil */
   .ftab {
     flex-shrink: 0;
     padding: 8px 14px;
+    font-size: .8125rem;
     min-height: 36px;
   }
 }
 
-/* ─── SUBTABS — scroll horizontal ─── */
+/* ─── 6. SUBTABS — também scroll horizontal ─── */
 @media (max-width: 768px) {
   .subtabs-wrap {
+    margin: 0 -12px .75rem;
+    padding: 0 12px;
     overflow-x: auto;
     -webkit-overflow-scrolling: touch;
     scrollbar-width: none;
     justify-content: flex-start;
+    min-height: auto;
   }
   .subtabs-wrap::-webkit-scrollbar { display: none; }
 
-  .subtabs { flex-wrap: nowrap; gap: 6px; }
+  .subtabs {
+    flex-wrap: nowrap;
+    gap: 6px;
+  }
 
   .stab {
     flex-shrink: 0;
     padding: 7px 13px;
+    font-size: .8rem;
     min-height: 34px;
   }
 }
 
-/* ─── FILTRO DE MARCA ─── */
+/* ─── 7. FILTRO DE MARCA ─── */
 @media (max-width: 768px) {
   .brand-filter-inner {
     flex-wrap: nowrap;
@@ -117,37 +161,55 @@
     -webkit-overflow-scrolling: touch;
     scrollbar-width: none;
     justify-content: flex-start;
+    padding: .5rem 12px;
+    margin: 0 -12px;
   }
   .brand-filter-inner::-webkit-scrollbar { display: none; }
 
-  .btab { flex-shrink: 0; min-height: 32px; }
+  .btab {
+    flex-shrink: 0;
+    padding: 6px 13px;
+    min-height: 32px;
+  }
 }
 
-/* ─── GRID DE PRODUTOS ─── */
+/* ─── 8. GRID DE PRODUTOS ─── */
 @media (max-width: 768px) {
+  /* 2 colunas confortáveis em telas médias */
   .pgrid {
     grid-template-columns: repeat(2, 1fr);
     gap: .625rem;
   }
-  .pbody { padding: .75rem; gap: .375rem; }
-  .pname { font-size: .8125rem; }
-  .pprice { font-size: 1.0625rem; }
-  .badd, .badd-esg { height: 36px; font-size: .8rem; }
-  .bq { width: 32px; height: 36px; }
-  .iq  { width: 32px; height: 36px; }
 
-  /* Remove hover transform — não existe hover real no touch */
-  .pcard:hover { transform: none; box-shadow: none; }
-  .btn-wpp:hover,
-  .btn-send-wpp:hover,
-  .btn-confirm-wpp:hover { transform: none; }
+  /* Card: body com menos padding */
+  .pbody { padding: .75rem; gap: .375rem; }
+
+  .pname { font-size: .8125rem; }
+
+  .pprice { font-size: 1.0625rem; }
+
+  /* Fotos: mantém contain, reduz altura no mobile */
+  .pimg,
+  .pimg-thumb,
+  .pimg-replace {
+    height: 130px;
+  }
+
+  /* Botões de ação maiores para toque */
+  .badd, .badd-esg {
+    height: 36px;
+    font-size: .8rem;
+  }
+  .bq { width: 32px; height: 36px; font-size: 1rem; }
+  .iq  { width: 32px; height: 36px; }
 }
 
 @media (max-width: 380px) {
+  /* Telas muito pequenas: 1 coluna */
   .pgrid { grid-template-columns: 1fr; }
 }
 
-/* ─── CART PANEL — bottom sheet no mobile ─── */
+/* ─── 9. CART PANEL — largura total no mobile ─── */
 @media (max-width: 480px) {
   .cart-panel {
     width: 100vw;
@@ -162,12 +224,25 @@
     max-height: 92vh;
   }
   .cart-panel.on { transform: translateY(0); }
+
   .cart-head { padding: 1rem 1.25rem; }
   .cart-list  { padding: .75rem 1.25rem; }
   .cart-foot  { padding: 1rem 1.25rem 1.5rem; }
 }
 
-/* ─── MODAL DE CHECKOUT — bottom sheet no mobile ─── */
+/* ─── 10. WHATSAPP FLOAT — sobe acima do teclado virtual ─── */
+@media (max-width: 768px) {
+  .wpp-float {
+    bottom: 16px;
+    right: 14px;
+  }
+  .wpp-btn { width: 48px; height: 48px; }
+  .wpp-btn img { width: 24px; height: 24px; }
+  /* Esconde tooltip no mobile (tap, não hover) */
+  .wpp-tip { display: none; }
+}
+
+/* ─── 11. MODAL DE CHECKOUT — tela cheia no mobile ─── */
 @media (max-width: 540px) {
   .modal-overlay {
     padding: 0;
@@ -178,29 +253,62 @@
     max-height: 95vh;
     max-width: 100%;
   }
-  .modal-hdr   { padding: 1.25rem 1.25rem 0; }
-  .modal-body  { padding: .875rem 1.25rem; }
-  .modal-foot  { padding: 0 1.25rem 1.5rem; }
+
+  .modal-hdr { padding: 1.25rem 1.25rem 0; }
+  .modal-body { padding: .875rem 1.25rem; }
+  .modal-foot { padding: 0 1.25rem 1.5rem; }
   .modal-steps { padding: .875rem 1.25rem .5rem; }
-  .pagto-chip  { min-height: 60px; }
+
+  /* Chips de pagamento maiores */
+  .pagto-chip { min-height: 60px; }
 }
 
-/* ─── WHATSAPP FLOAT ─── */
-@media (max-width: 768px) {
-  .wpp-float { bottom: 16px; right: 14px; }
-  .wpp-btn { width: 48px; height: 48px; }
-  .wpp-btn img { width: 24px; height: 24px; }
-  .wpp-tip { display: none; }
-}
-
-/* ─── AVALIAÇÕES ─── */
+/* ─── 12. SEÇÃO DE AVALIAÇÕES ─── */
 @media (max-width: 640px) {
   .sec-reviews { padding: 3rem 1rem; }
   .reviews-grid { grid-template-columns: 1fr; gap: .75rem; }
 }
 
-/* ─── TOUCH TARGETS mínimos 44px ─── */
+/* ─── 13. HEADER COM BUSCA ABERTA — previne conteúdo saltando ─── */
+/* Quando o teclado virtual sobe no iOS, evita reflow do layout */
+@supports (-webkit-touch-callout: none) {
+  @media (max-width: 768px) {
+    .search-suggestions {
+      /* No iOS, usa dvh para respeitar o teclado virtual */
+      max-height: 38dvh;
+    }
+  }
+}
+
+/* ─── 14. SCROLL SUAVE SEM BOUNCE INDESEJADO ─── */
 @media (max-width: 768px) {
-  .btn-theme { width: 36px; height: 36px; }
-  .btn-close { width: 36px; height: 36px; }
+  body { -webkit-overflow-scrolling: touch; }
+
+  /* Previne scroll lateral acidental no body */
+  body { overflow-x: hidden; }
+}
+
+/* ─── 15. TOUCH TARGETS — garante área mínima de 44px ─── */
+@media (max-width: 768px) {
+  .btn-theme {
+    width: 36px;
+    height: 36px;
+  }
+  .btn-close {
+    width: 36px;
+    height: 36px;
+  }
+  .bq {
+    min-width: 36px;
+  }
+  /* Remove hover/transform no touch (não existe hover real no mobile) */
+  .pcard:hover {
+    transform: none;
+    box-shadow: none;
+  }
+  .btn-wpp:hover,
+  .btn-send-wpp:hover,
+  .btn-confirm-wpp:hover {
+    transform: none;
+  }
 }
