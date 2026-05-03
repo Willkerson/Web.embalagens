@@ -91,8 +91,8 @@ function confirmarEEnviar() {
   }
 
   var itens = Object.values(carrinho);
-  var msg   = '🛍️ *Pedido - Cia Das Embalagens*\n\n';
-  msg += '👤 *Cliente:* ' + nome + '\n💳 *Pagamento:* ' + pagtoSelecionado + '\n\n*Itens do pedido:*\n';
+  var msg   = ' *Pedido - Cia Das Embalagens*\n\n';
+  msg += ' *Cliente:* ' + nome + '\n *Pagamento:* ' + pagtoSelecionado + '\n\n*Itens do pedido:*\n';
 
   itens.forEach(function(i) {
     var preco = parseFloat(i.prod.preco) || 0;
@@ -105,8 +105,8 @@ function confirmarEEnviar() {
   var total = itens.reduce(function(s, i) {
     return s + (parseFloat(i.prod.preco) || 0) * i.qtd;
   }, 0);
-  msg += '\n💰 *Total estimado: R$ ' + total.toFixed(2).replace('.', ',') + '*';
-  if (obs) msg += '\n\n📝 *Observação:* ' + obs;
+  msg += '\n *Total estimado: R$ ' + total.toFixed(2).replace('.', ',') + '*';
+  if (obs) msg += '\n\n *Observação:* ' + obs;
   msg += '\n\n_Aguardo confirmação, obrigado!';
 
   fecharModal();
