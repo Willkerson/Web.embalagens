@@ -3,15 +3,19 @@
 // ─────────────────────────────────────────────────────────────
 
 var _sugTimeout = null;
+var _tocandoSugestao = false; // flag para mobile: evita fechar ao recolher teclado
 var _debouncedSearch = debounce(function(q) { mostrarSugestoes(q); }, 120);
 
 function esconderSugestoes() {
+  if (_tocandoSugestao) return; // usuário está selecionando — não fecha
   var el = document.getElementById('searchSuggestions');
   if (el) { el.classList.remove('on'); el.innerHTML = ''; }
 }
 
 function hideSuggestionsDelayed() {
-  _sugTimeout = setTimeout(esconderSugestoes, 200);
+  // Delay maior no mobile para não fechar ao recolher teclado
+  var delay = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent) ? 400 : 200;
+  _sugTimeout = setTimeout(esconderSugestoes, delay);
 }
 
 function handleSearchFocus() {
@@ -20,90 +24,96 @@ function handleSearchFocus() {
   if (q.length >= 2) mostrarSugestoes(q);
 }
 
-// ── BUSCA POR TODAS AS PALAVRAS (resolve "garrafa pet 500ml") ──
-// Retorna true se TODAS as palavras da query aparecem no nome do produto
-function contemTodasPalavras(nome, query) {
-  var nomeLower = nome.toLowerCase();
-  var palavras  = query.toLowerCase().trim().split(/\s+/);
-  return palavras.every(function(p) { return nomeLower.indexOf(p) >= 0; });
-}
+// Registra touchstart nas sugestões para não fechar ao tocar nelas (mobile)
+document.addEventListener('DOMContentLoaded', function() {
+  var box = document.getElementById('searchSuggestions');
+  if (!box) return;
+  box.addEventListener('touchstart', function() {
+    _tocandoSugestao = true;
+  }, { passive: true });
+  box.addEventListener('touchend', function() {
+    setTimeout(function() { _tocandoSugestao = false; }, 500);
+  }, { passive: true });
+});
 
 function mostrarSugestoes(query) {
   var box = document.getElementById('searchSuggestions');
   if (!box) return;
   if (!query || query.length < 2) { esconderSugestoes(); return; }
 
-  var q = query.toLowerCase().trim();
+  var qNorm = normalizar(query);
+  var todosProds = prods().filter(function(p) { return !p.oculto; });
 
-  // 1º — busca exata por todas as palavras (prioridade máxima)
-  var todosProd   = prods ? prods() : (window.listaProdutosPlanilha || []);
-  var exatosPalavras = todosProd.filter(function(p) {
-    return !isEsgotado(p) && contemTodasPalavras(p.nome, q);
+  // ── PASSO 1: substring direta (mais confiável para buscas compostas) ──
+  // Ex: "garrafa pet" encontra TODOS os produtos que contêm "garrafa pet" no nome
+  var diretos = todosProds.filter(function(p) {
+    return normalizar(p.nome).includes(qNorm) ||
+           normalizar(p.marca || '').includes(qNorm);
   });
 
-  // 2º — busca fuzzy normal (resultado original)
-  var fuzzyResults = buscaFuzzy(query);
-  var exatos = fuzzyResults.filter(function(r) { return r.score >= 60; });
-  var fuzzy  = fuzzyResults.filter(function(r) { return r.score >= 30 && r.score < 60; });
+  // ── PASSO 2: busca por TODAS as palavras (AND) ──
+  // Ex: "garrafa 500" → nome deve conter "garrafa" E "500"
+  var palavras = qNorm.split(/\s+/).filter(Boolean);
+  var porPalavras = palavras.length > 1
+    ? todosProds.filter(function(p) {
+        var n = normalizar(p.nome) + ' ' + normalizar(p.marca || '');
+        return palavras.every(function(w) { return n.includes(w); }) &&
+               diretos.indexOf(p) < 0; // não duplica
+      })
+    : [];
 
-  // Mescla: exatosPalavras primeiro, depois fuzzy, sem duplicatas
-  var mostrados = {};
+  // ── PASSO 3: fuzzy para complementar (menos prioritário) ──
+  var fuzzyResults = buscaFuzzy(query)
+    .filter(function(r) {
+      return r.score >= 40 &&
+             diretos.indexOf(r.prod) < 0 &&
+             porPalavras.indexOf(r.prod) < 0;
+    })
+    .map(function(r) { return r.prod; });
+
+  // Total encontrado por substring/palavras (para o cabeçalho)
+  var totalDireto = diretos.length + porPalavras.length;
+
+  if (!totalDireto && !fuzzyResults.length) { esconderSugestoes(); return; }
+
   var html = '';
-  var shown = 0;
 
-  // Bloco 1: matches exatos por palavras
-  exatosPalavras.slice(0, 6).forEach(function(p) {
-    mostrados[p.id] = true;
-    var ico  = catEmojis[p.subcategoria] || catEmojis[p.categoria] || '📦';
-    var cat  = subLabels[p.subcategoria] || p.categoria || '';
-    var nome = highlightMatch(p.nome, query);
-    html +=
-      '<div class="search-sug-item" onclick="selecionarSugestao(' + p.id + ')">' +
-        '<span class="sug-ico">' + ico + '</span>' +
-        '<div style="flex:1;min-width:0">' +
-          '<div class="sug-name">' + nome + '</div>' +
-          (cat ? '<div class="sug-cat">' + cat + '</div>' : '') +
-        '</div>' +
-        (parseFloat(p.preco) > 0
-          ? '<div class="sug-cat">R$ ' + parseFloat(p.preco).toFixed(2).replace('.', ',') + '</div>'
-          : '') +
+  // Cabeçalho com contagem quando há muitos resultados diretos
+  if (totalDireto > 0) {
+    if (totalDireto > 5) {
+      // Mostra quantos foram encontrados + botão "ver todos"
+      html += '<div class="sug-section-label" style="display:flex;align-items:center;justify-content:space-between">' +
+        '<span>🔎 ' + totalDireto + ' produto' + (totalDireto > 1 ? 's' : '') + ' encontrado' + (totalDireto > 1 ? 's' : '') + '</span>' +
+        '<span onclick="confirmarBuscaCompleta()" style="color:var(--blue);font-weight:700;cursor:pointer;font-size:.7rem">Ver todos →</span>' +
       '</div>';
-    shown++;
-  });
+    }
 
-  // Bloco 2: exatos fuzzy que ainda não apareceram
-  exatos.forEach(function(r) {
-    if (shown >= 7) return;
-    if (mostrados[r.prod.id]) return;
-    mostrados[r.prod.id] = true;
-    var p   = r.prod;
-    var ico = catEmojis[p.subcategoria] || catEmojis[p.categoria] || '📦';
-    var cat = subLabels[p.subcategoria] || p.categoria || '';
-    var nome = highlightMatch(p.nome, query);
-    var esgTag = isEsgotado(p)
-      ? '<span style="font-size:.6rem;background:#ea580c;color:#fff;padding:1px 6px;border-radius:99px;margin-left:4px;font-weight:700">ESGOTADO</span>'
-      : '';
-    html +=
-      '<div class="search-sug-item" onclick="selecionarSugestao(' + p.id + ')">' +
-        '<span class="sug-ico">' + ico + '</span>' +
-        '<div style="flex:1;min-width:0">' +
-          '<div class="sug-name">' + nome + esgTag + '</div>' +
-          (cat ? '<div class="sug-cat">' + cat + '</div>' : '') +
-        '</div>' +
-        (parseFloat(p.preco) > 0
-          ? '<div class="sug-cat">R$ ' + parseFloat(p.preco).toFixed(2).replace('.', ',') + '</div>'
-          : '') +
-      '</div>';
-    shown++;
-  });
+    // Mostra os primeiros 6 resultados diretos
+    diretos.concat(porPalavras).slice(0, 6).forEach(function(p) {
+      var ico = catEmojis[p.subcategoria] || catEmojis[p.categoria] || '📦';
+      var cat = subLabels[p.subcategoria] || p.categoria || '';
+      var nome = highlightMatch(p.nome, query);
+      var esgTag = isEsgotado(p)
+        ? '<span style="font-size:.6rem;background:#ea580c;color:#fff;padding:1px 6px;border-radius:99px;margin-left:4px;font-weight:700">ESGOTADO</span>'
+        : '';
+      html +=
+        '<div class="search-sug-item" onclick="selecionarSugestao(' + p.id + ')">' +
+          '<span class="sug-ico">' + ico + '</span>' +
+          '<div style="flex:1;min-width:0">' +
+            '<div class="sug-name">' + nome + esgTag + '</div>' +
+            (cat ? '<div class="sug-cat">' + cat + '</div>' : '') +
+          '</div>' +
+          (parseFloat(p.preco) > 0
+            ? '<div class="sug-cat">R$ ' + parseFloat(p.preco).toFixed(2).replace('.', ',') + '</div>'
+            : '') +
+        '</div>';
+    });
+  }
 
-  // Bloco 3: sugestões fuzzy ("você quis dizer")
-  var fuzzyNovos = fuzzy.filter(function(r) { return !mostrados[r.prod.id]; });
-  if (fuzzyNovos.length && shown < 7) {
+  // Fuzzy como sugestão alternativa (só se resultados diretos forem poucos)
+  if (fuzzyResults.length && totalDireto < 4) {
     html += '<div class="sug-section-label">💡 Você quis dizer…</div>';
-    fuzzyNovos.slice(0, 3).forEach(function(r) {
-      if (shown >= 7) return;
-      var p   = r.prod;
+    fuzzyResults.slice(0, 3).forEach(function(p) {
       var ico = catEmojis[p.subcategoria] || catEmojis[p.categoria] || '📦';
       html +=
         '<div class="search-sug-item" onclick="selecionarSugestao(' + p.id + ')">' +
@@ -113,14 +123,19 @@ function mostrarSugestoes(query) {
             ? '<div class="sug-cat">R$ ' + parseFloat(p.preco).toFixed(2).replace('.', ',') + '</div>'
             : '') +
         '</div>';
-      shown++;
     });
   }
 
-  if (!shown) { esconderSugestoes(); return; }
-
   box.innerHTML = html;
   box.classList.add('on');
+}
+
+// Confirma a busca atual e fecha sugestões (mostra todos no grid)
+function confirmarBuscaCompleta() {
+  esconderSugestoes();
+  renderizar();
+  var c = document.getElementById('containerProdutos');
+  if (c) c.scrollIntoView({ behavior: 'smooth', block: 'start' });
 }
 
 function selecionarSugestao(id) {
