@@ -164,15 +164,18 @@ img { display:block; }
 .pcard.esgotado .pimg-thumb::after,
 .pcard.esgotado .pimg-replace::after { content:''; position:absolute; inset:0; background:rgba(0,0,0,.18); pointer-events:none; }
 
-/* ─── IMAGENS DOS CARDS: alterado de 140px → 100px ─── */
-.pimg { height:100px; display:flex; align-items:center; justify-content:center; background:var(--bg); border-bottom:1px solid var(--border); }
+/* ─── IMAGENS DOS CARDS ─── */
+.pimg { height:160px; display:flex; align-items:center; justify-content:center; background:var(--bg); border-bottom:1px solid var(--border); }
 .pimg-emoji { font-size:2.5rem; opacity:.12; transition:all .3s; user-select:none; }
 .pcard:not(.esgotado):hover .pimg-emoji { opacity:.18; transform:scale(1.08) rotate(-4deg); }
-.pimg-thumb { height:100px; display:block; border-bottom:1px solid var(--border); background:var(--bg); }
-.pimg-thumb img { width:100%; height:100%; object-fit:cover; transition:transform .35s var(--ease); }
-.pcard:not(.esgotado):hover .pimg-thumb img { transform:scale(1.04); }
-.pimg-replace { height:100px; display:flex; align-items:center; justify-content:center; border-bottom:1px solid var(--border); background:var(--bg); }
-.pimg-replace img { max-width:75%; max-height:75%; object-fit:contain; transition:transform .35s; }
+
+/* thumbnail: contain para não cortar a foto do produto */
+.pimg-thumb { height:160px; display:flex; align-items:center; justify-content:center; border-bottom:1px solid var(--border); background:#fff; overflow:hidden; }
+.pimg-thumb img { max-width:90%; max-height:90%; width:auto; height:auto; object-fit:contain; transition:transform .35s var(--ease); display:block; }
+.pcard:not(.esgotado):hover .pimg-thumb img { transform:scale(1.05); }
+
+.pimg-replace { height:160px; display:flex; align-items:center; justify-content:center; border-bottom:1px solid var(--border); background:#fff; overflow:hidden; }
+.pimg-replace img { max-width:82%; max-height:82%; object-fit:contain; transition:transform .35s; }
 .pcard:not(.esgotado):hover .pimg-replace img { transform:scale(1.06); }
 .incart-badge { position:absolute; top:8px; right:8px; background:var(--green); color:#fff; font-size:.625rem; font-weight:700; padding:3px 8px; border-radius:99px; opacity:0; transform:scale(.4) translateY(-4px); transition:all .25s; z-index:2; }
 .pcard.incart .incart-badge { opacity:1; transform:scale(1) translateY(0); }
