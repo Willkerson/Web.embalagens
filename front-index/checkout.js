@@ -107,7 +107,7 @@ function confirmarEEnviar() {
   }, 0);
   msg += '\n💰 *Total estimado: R$ ' + total.toFixed(2).replace('.', ',') + '*';
   if (obs) msg += '\n\n📝 *Observação:* ' + obs;
-  msg += '\n\n_Aguardo confirmação, obrigado!_ 🙏';
+  msg += '\n\n_Aguardo confirmação, obrigado!';
 
   fecharModal();
   window.open('https://wa.me/5511972999835?text=' + encodeURIComponent(msg), '_blank');
