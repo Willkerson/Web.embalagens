@@ -20,46 +20,89 @@ function handleSearchFocus() {
   if (q.length >= 2) mostrarSugestoes(q);
 }
 
+// ── BUSCA POR TODAS AS PALAVRAS (resolve "garrafa pet 500ml") ──
+// Retorna true se TODAS as palavras da query aparecem no nome do produto
+function contemTodasPalavras(nome, query) {
+  var nomeLower = nome.toLowerCase();
+  var palavras  = query.toLowerCase().trim().split(/\s+/);
+  return palavras.every(function(p) { return nomeLower.indexOf(p) >= 0; });
+}
+
 function mostrarSugestoes(query) {
   var box = document.getElementById('searchSuggestions');
   if (!box) return;
   if (!query || query.length < 2) { esconderSugestoes(); return; }
 
-  var results = buscaFuzzy(query);
-  var exatos  = results.filter(function(r) { return r.score >= 60; });
-  var fuzzy   = results.filter(function(r) { return r.score >= 30 && r.score < 60; });
-  if (!results.length) { esconderSugestoes(); return; }
+  var q = query.toLowerCase().trim();
 
+  // 1º — busca exata por todas as palavras (prioridade máxima)
+  var todosProd   = prods ? prods() : (window.listaProdutosPlanilha || []);
+  var exatosPalavras = todosProd.filter(function(p) {
+    return !isEsgotado(p) && contemTodasPalavras(p.nome, q);
+  });
+
+  // 2º — busca fuzzy normal (resultado original)
+  var fuzzyResults = buscaFuzzy(query);
+  var exatos = fuzzyResults.filter(function(r) { return r.score >= 60; });
+  var fuzzy  = fuzzyResults.filter(function(r) { return r.score >= 30 && r.score < 60; });
+
+  // Mescla: exatosPalavras primeiro, depois fuzzy, sem duplicatas
+  var mostrados = {};
   var html = '';
   var shown = 0;
 
-  if (exatos.length) {
-    exatos.slice(0, 5).forEach(function(r) {
-      var p    = r.prod;
-      var ico  = catEmojis[p.subcategoria] || catEmojis[p.categoria] || '📦';
-      var cat  = subLabels[p.subcategoria] || p.categoria || '';
-      var nome = highlightMatch(p.nome, query);
-      var esgTag = isEsgotado(p)
-        ? '<span style="font-size:.6rem;background:#ea580c;color:#fff;padding:1px 6px;border-radius:99px;margin-left:4px;font-weight:700">ESGOTADO</span>'
-        : '';
-      html +=
-        '<div class="search-sug-item" onclick="selecionarSugestao(' + p.id + ')">' +
-          '<span class="sug-ico">' + ico + '</span>' +
-          '<div style="flex:1;min-width:0">' +
-            '<div class="sug-name">' + nome + esgTag + '</div>' +
-            (cat ? '<div class="sug-cat">' + cat + '</div>' : '') +
-          '</div>' +
-          (parseFloat(p.preco) > 0
-            ? '<div class="sug-cat">R$ ' + parseFloat(p.preco).toFixed(2).replace('.', ',') + '</div>'
-            : '') +
-        '</div>';
-      shown++;
-    });
-  }
+  // Bloco 1: matches exatos por palavras
+  exatosPalavras.slice(0, 6).forEach(function(p) {
+    mostrados[p.id] = true;
+    var ico  = catEmojis[p.subcategoria] || catEmojis[p.categoria] || '📦';
+    var cat  = subLabels[p.subcategoria] || p.categoria || '';
+    var nome = highlightMatch(p.nome, query);
+    html +=
+      '<div class="search-sug-item" onclick="selecionarSugestao(' + p.id + ')">' +
+        '<span class="sug-ico">' + ico + '</span>' +
+        '<div style="flex:1;min-width:0">' +
+          '<div class="sug-name">' + nome + '</div>' +
+          (cat ? '<div class="sug-cat">' + cat + '</div>' : '') +
+        '</div>' +
+        (parseFloat(p.preco) > 0
+          ? '<div class="sug-cat">R$ ' + parseFloat(p.preco).toFixed(2).replace('.', ',') + '</div>'
+          : '') +
+      '</div>';
+    shown++;
+  });
 
-  if (fuzzy.length && shown < 6) {
+  // Bloco 2: exatos fuzzy que ainda não apareceram
+  exatos.forEach(function(r) {
+    if (shown >= 7) return;
+    if (mostrados[r.prod.id]) return;
+    mostrados[r.prod.id] = true;
+    var p   = r.prod;
+    var ico = catEmojis[p.subcategoria] || catEmojis[p.categoria] || '📦';
+    var cat = subLabels[p.subcategoria] || p.categoria || '';
+    var nome = highlightMatch(p.nome, query);
+    var esgTag = isEsgotado(p)
+      ? '<span style="font-size:.6rem;background:#ea580c;color:#fff;padding:1px 6px;border-radius:99px;margin-left:4px;font-weight:700">ESGOTADO</span>'
+      : '';
+    html +=
+      '<div class="search-sug-item" onclick="selecionarSugestao(' + p.id + ')">' +
+        '<span class="sug-ico">' + ico + '</span>' +
+        '<div style="flex:1;min-width:0">' +
+          '<div class="sug-name">' + nome + esgTag + '</div>' +
+          (cat ? '<div class="sug-cat">' + cat + '</div>' : '') +
+        '</div>' +
+        (parseFloat(p.preco) > 0
+          ? '<div class="sug-cat">R$ ' + parseFloat(p.preco).toFixed(2).replace('.', ',') + '</div>'
+          : '') +
+      '</div>';
+    shown++;
+  });
+
+  // Bloco 3: sugestões fuzzy ("você quis dizer")
+  var fuzzyNovos = fuzzy.filter(function(r) { return !mostrados[r.prod.id]; });
+  if (fuzzyNovos.length && shown < 7) {
     html += '<div class="sug-section-label">💡 Você quis dizer…</div>';
-    fuzzy.slice(0, Math.min(3, 6 - shown)).forEach(function(r) {
+    fuzzyNovos.slice(0, 3).forEach(function(r) {
+      if (shown >= 7) return;
       var p   = r.prod;
       var ico = catEmojis[p.subcategoria] || catEmojis[p.categoria] || '📦';
       html +=
@@ -70,8 +113,11 @@ function mostrarSugestoes(query) {
             ? '<div class="sug-cat">R$ ' + parseFloat(p.preco).toFixed(2).replace('.', ',') + '</div>'
             : '') +
         '</div>';
+      shown++;
     });
   }
+
+  if (!shown) { esconderSugestoes(); return; }
 
   box.innerHTML = html;
   box.classList.add('on');
