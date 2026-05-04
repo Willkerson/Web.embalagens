@@ -7,7 +7,7 @@ var _tocandoSugestao = false;
 var _debouncedSearch = debounce(function(q) { mostrarSugestoes(q); }, 120);
 
 // ─────────────────────────────────────────────────────────────
-// 🎂 EASTER EGG — Aniversário da Laryssa (versão amostrada)
+// 🎂 EASTER EGG 
 // ─────────────────────────────────────────────────────────────
 var _laryssaAtivado = false;
 var _laryssaMsgIdx = 0;
