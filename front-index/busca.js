@@ -41,7 +41,7 @@ var _L = {
 var _MSGS = [
   'Feliz aniversário, Laryssa! 🎉\n\nQue seu dia seja tão incrível quanto você — e olha que a régua tá alta demais pra maioria das pessoas chegar perto. ✨',
   'Parabéns! 🥳\n\nQue neste novo ano você receba só pedidos urgentes na véspera do feriado.\n\nAh, não — esse é o pesadelo. Que venha muita coisa boa mesmo! 🎁',
-  'Hoje é o dia da Laryssa. Aquela que chegou, tomou conta do pedaço e não tem a menor intenção de devolver. 👑\n\nE honestamente? Que bom.',
+  'Nicole? Barbara? NÂO LARISSA MANOELA!!!',
   'Muitos anos de vida, saúde, alegria e — se o universo tiver generosidade — clientes que mandam briefing completo na primeira mensagem. 🙏✨',
   'Feliz aniversário! 🎂\n\nHoje o universo inteiro conspirou a seu favor. Aproveita, que amanhã o e-mail volta e a caixa de entrada não tem pena de ninguém. 😅💖',
   'Você merece: bolo incrível, zero reunião chata e 100% de pessoas maravilhosas ao redor.\n\nParabéns! 🥂',
