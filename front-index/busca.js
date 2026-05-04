@@ -17,13 +17,12 @@ var _laryssaMsgCount = 0;
 var _laryssaMsgs = [
   'Feliz aniversário, Laryssa! 🎉 Que seu dia seja tão incrível quanto você — e olha que a régua tá alta! ✨',
   'Parabéns! 🥳 Que neste novo ano você receba só pedidos urgentes na véspera do feriado. Ah, não — esse é o pesadelo. Que venha muita coisa boa mesmo! 🎁',
-  'Hoje é o dia da Laryssa! Aquela que chegou, tomou conta e não vai devolver. Feliz aniversário! 👑',
+  'Nicoli? Maria? Claudia? NÃO! LARYSSA MANOELA!!!🫵🏻🫵🏻🫵🏻',
   'Muitos anos de vida, saúde, e clientes que mandam briefing completo! 🙏✨',
   'Parabéns, aniversariante! Que a vida te dê tanto quanto você dá de energia pra tudo que faz — e aí sim a festa nunca para! 🎊',
   'Feliz aniversário! 🎂 Hoje o universo inteiro conspirou a seu favor. Aproveita, que amanhã o e-mail volta. 😅💖',
   'Você merece: bolo incrível, zero reunião chata e 100% de pessoas maravilhosas ao redor. Parabéns! 🥂',
   'Um brinde à Laryssa! 🥂 Que seus projetos saiam do papel, sua caixa de entrada fique zerada e seu aniversário seja épico! 🎉',
-  'A Laryssa entrou no chat ✨ — e o aniversário nunca mais foi o mesmo. Muitas felicidades! 🎈',
   'Parabéns! Que cada embalagem que você criar neste ano carregue um pouco da magia que você tem. 📦✨💖'
 ];
 
@@ -35,7 +34,7 @@ function _normalNome(str) {
 
 function _verificarLaryssa(query) {
   var q = _normalNome(query);
-  if (q === 'laryssa' || q === 'larissa' || q === 'larysa' || q === 'larisssa') {
+  if (q === 'laryssa' || q === 'larissa' || q === 'larysa' || q === 'larisssa' || q === 'Laryssa') {
     if (!_laryssaAtivado) {
       _laryssaAtivado = true;
       _dispararAniversario();
