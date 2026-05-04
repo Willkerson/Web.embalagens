@@ -7,8 +7,7 @@ var _tocandoSugestao = false;
 var _debouncedSearch = debounce(function(q) { mostrarSugestoes(q); }, 120);
 
 // ═════════════════════════════════════════════════════════════
-// 🎂 EASTER EGG — Aniversário da Laryssa
-//    Versão CINEMATOGRÁFICA — transforma o site inteiro
+// 🎂 EASTER EGG 
 // ═════════════════════════════════════════════════════════════
 
 var _L = {
@@ -660,8 +659,8 @@ function _lCriarCard() {
             '<span class="ico">🎺</span>Fanfarra' +
           '</button>' +
           '<button class="_l-festa-btn" onclick="_lParabensMusica()">' +
-            '<span class="ico" id="_l-mus-ico">🎵</span>' +
-            '<span id="_l-mus-txt">Parabéns</span>' +
+            '<span class="ico" id="_l-mus-ico">🦉</span>' +
+            '<span id="_l-mus-txt">Tema do Hedwig</span>' +
           '</button>' +
           '<button class="_l-festa-btn" onclick="_lModoRainbow()">' +
             '<span class="ico">🌈</span>Arco-íris' +
@@ -739,24 +738,55 @@ function _lBannerClick() {
   _L.comboTimer = setTimeout(function() { _L.comboCount = 0; }, 1600);
   if (_L.comboCount >= 3) _lMostrarCombo(_L.comboCount);
   _lLancarPetalas(10);
-  if (_L.comboClicks === 7)  _lToast('🎂 Sete cliques. Você claramente ama bolo.');
-  if (_L.comboClicks === 15) _lToast('👑 15 cliques. Status: fã número 1 de si mesma. Merecido.');
-  if (_L.comboClicks === 25) { _lToast('🚀 25 cliques! Modo lendária: ativado.'); _lModoCinematico(); }
+  // Toasts temáticos de HP por milestone de cliques
+  var frases = {
+    5:  '🪄 "Você bruxou o bolo!" — Rony Weasley, provavelmente.',
+    10: '⚡ 10 cliques. Você claramente foi selecionada pela Grifinória.',
+    15: '🦅 15 cliques. Dumbledore aprovaria sua dedicação.',
+    20: '🗺️ 20 cliques. Mischief very much managed.',
+    25: '🏆 25 cliques! Você ganhou a Copa das Casas. Modo Lendária: ativado!',
+  };
+  if (frases[_L.comboClicks]) _lToast(frases[_L.comboClicks]);
+  if (_L.comboClicks === 25) _lModoCinematico();
 }
 
 function _lMostrarCombo(n) {
-  var labels = {3:'COMBO x3! 🔥', 5:'FANTÁSTICA x5! 💥', 7:'LENDÁRIA x7! 👑', 10:'MITOLÓGICA! ✨', 15:'IMPOSSÍVEL! 🌌'};
-  var txt = labels[n] || (n >= 10 ? '× ' + n + ' 🚀' : null);
-  if (!txt) return;
+  // Feitiços de HP por nível — cada um com emoji temático e cor diferente
+  var feiticos = {
+    3:  { txt: 'Wingardium Leviosa! 🪄',       cor: '#a8e6cf' },
+    4:  { txt: 'Lumos! ✨',                      cor: '#fff9c4' },
+    5:  { txt: 'Expecto Patronum! 🦌',           cor: '#b3e5fc' },
+    6:  { txt: 'Accio Parabéns! 🎂',             cor: '#ffd700' },
+    7:  { txt: 'Riddikulus! 🎉',                 cor: '#f8bbd0' },
+    8:  { txt: 'Alohomora! 🔓✨',               cor: '#e1bee7' },
+    9:  { txt: 'Finite Incantatem! 🌟',          cor: '#ffe082' },
+    10: { txt: 'Avada... brincadeira! 💖',       cor: '#ef9a9a' },
+    12: { txt: 'Mischief Managed! 🗺️',          cor: '#a5d6a7' },
+    15: { txt: 'She is The Chosen One! ⚡👑',   cor: '#ffd700' },
+    20: { txt: '🧹 Voando em Nimbus 2000!',      cor: '#b39ddb' },
+  };
+  var entrada = feiticos[n];
+  if (!entrada) {
+    if (n > 10 && n < 15) entrada = { txt: 'Albus Laryssa-dore! ⚡', cor: '#ffe082' };
+    else if (n > 15) entrada = { txt: 'Hogwarts lhe saúda! 🏰', cor: '#ffd700' };
+    else return;
+  }
+
   var el = document.createElement('div');
   el.className = '_l-combo';
-  el.textContent = txt;
+  el.textContent = entrada.txt;
+  el.style.color = entrada.cor;
+  el.style.textShadow = '0 0 30px ' + entrada.cor + ', -2px -2px 0 rgba(0,0,0,.5), 2px 2px 0 rgba(0,0,0,.5)';
   el.style.animation = '_lComboIn .35s ease both';
   document.body.appendChild(el);
+
+  // Som de feitiço correspondente ao nível
+  _lSomFeitico(n);
+
   setTimeout(function() {
     el.style.animation = '_lComboOut .4s ease both';
     setTimeout(function() { if (el.parentNode) el.parentNode.removeChild(el); }, 450);
-  }, 1400);
+  }, 1800);
 }
 
 function _lNovaMsg() {
@@ -928,25 +958,69 @@ function _lNota(ctx, freq, t, dur, tipo, vol) {
 }
 
 function _lSomRevela() {
+  // Abertura mágica inspirada em Harry Potter — arpejo ascendente com timbre de varinha
   try {
     var ctx = _lCtx();
     var t = ctx.currentTime;
-    // Acorde de revelação — Dó maior / Mi maior subindo
-    [[261,.2,'sine',.08],[329,.3,'sine',.06],[392,.4,'triangle',.05],[523,.5,'sine',.1]].forEach(function(n) {
-      _lNota(ctx, n[0], t + n[1], .8, n[2], n[3]);
+    // Arpejo de Mi menor (tom sombrio-mágico como a trilha do Hedwig)
+    var arpejo = [
+      [659, 0.00, 0.25, 'triangle', .10],  // Mi5
+      [784, 0.20, 0.25, 'triangle', .09],  // Sol5
+      [988, 0.38, 0.30, 'triangle', .08],  // Si5
+      [1319,0.55, 0.40, 'triangle', .07],  // Mi6 — pico
+      [988, 0.85, 0.25, 'sine',     .06],  // descendo
+      [784, 1.05, 0.50, 'sine',     .08],  // pouso suave
+    ];
+    arpejo.forEach(function(n) { _lNota(ctx, n[0], t + n[1], n[2], n[3], n[4]); });
+    // Shimmer de fundo — pad largo
+    [[329, .05, 1.5, 'sine', .04], [392, .08, 1.5, 'sine', .03]].forEach(function(n) {
+      _lNota(ctx, n[0], t + n[1], n[2], n[3], n[4]);
     });
-    // Brilho agudo
-    _lNota(ctx, 1046, t + .6, .5, 'triangle', .04);
+  } catch(e) {}
+}
+
+// Som de feitiço por nível de combo — cada feitiço tem seu próprio "sotaque" sonoro
+function _lSomFeitico(nivel) {
+  try {
+    var ctx = _lCtx();
+    var t = ctx.currentTime;
+    if (nivel <= 4) {
+      // Wingardium / Lumos — ascendente simples, levinho
+      [[523,.00,.15,'triangle',.12],[659,.12,.15,'triangle',.10],[784,.22,.20,'triangle',.08]].forEach(function(n){_lNota(ctx,n[0],t+n[1],n[2],n[3],n[4]);});
+    } else if (nivel <= 6) {
+      // Expecto Patronum / Accio — dramático, dois tempos
+      [[392,.00,.10,'sawtooth',.07],[784,.08,.20,'triangle',.12],[988,.25,.30,'triangle',.10],[1175,.50,.20,'sine',.08]].forEach(function(n){_lNota(ctx,n[0],t+n[1],n[2],n[3],n[4]);});
+    } else if (nivel <= 9) {
+      // Riddikulus / Alohomora — rápido e surpreso, staccato
+      [[1047,.00,.07,'triangle',.14],[784,.07,.07,'triangle',.12],[988,.14,.07,'triangle',.10],[1319,.21,.12,'triangle',.09],[659,.33,.15,'sine',.08]].forEach(function(n){_lNota(ctx,n[0],t+n[1],n[2],n[3],n[4]);});
+    } else {
+      // Chosen One / Mischief Managed — tema completo, épico
+      [[392,.00,.12,'sawtooth',.08],[523,.10,.12,'triangle',.12],[659,.20,.15,'triangle',.14],[784,.32,.20,'triangle',.15],
+       [988,.50,.15,'triangle',.13],[1175,.65,.20,'triangle',.12],[1319,.82,.35,'sine',.14],[784,1.10,.30,'sine',.08]].forEach(function(n){_lNota(ctx,n[0],t+n[1],n[2],n[3],n[4]);});
+    }
   } catch(e) {}
 }
 
 function _lFanfarra() {
+  // Tema do Hedwig (Harry Potter) — as primeiras 8 notas icônicas
+  // Mi, Sol#, Dó, Si, Lá#, Mi, Sol#, Dó
   try {
     var ctx = _lCtx();
-    var notas  = [523,659,784,1047,784,1047,784,1047];
-    var tempos = [0,.15,.30,.45,.65,.80,.95,1.10];
-    notas.forEach(function(freq, i) {
-      _lNota(ctx, freq, ctx.currentTime + tempos[i], .13, 'triangle', .18);
+    var t = ctx.currentTime;
+    var hedwig = [
+      [659, 0.00, 0.20, 'triangle', .16],  // Mi5
+      [831, 0.22, 0.10, 'triangle', .13],  // Sol#5
+      [1047,0.34, 0.32, 'triangle', .15],  // Dó6
+      [988, 0.70, 0.20, 'triangle', .13],  // Si5
+      [932, 0.92, 0.10, 'triangle', .11],  // La#5
+      [659, 1.06, 0.20, 'triangle', .14],  // Mi5
+      [831, 1.30, 0.12, 'triangle', .12],  // Sol#5
+      [1047,1.44, 0.48, 'sine',     .13],  // Dó6 — longo
+    ];
+    hedwig.forEach(function(n) { _lNota(ctx, n[0], t + n[1], n[2], n[3], n[4]); });
+    // Pad de fundo
+    [[329, .1, 1.8, 'sine', .04],[392, .1, 1.8, 'sine', .03]].forEach(function(n) {
+      _lNota(ctx, n[0], t + n[1], n[2], n[3], n[4]);
     });
   } catch(e) {}
   _lLancarPetalas(55);
@@ -954,40 +1028,59 @@ function _lFanfarra() {
 }
 
 function _lParabensMusica() {
+  // Melodia completa do Tema do Hedwig
   var icoEl = document.getElementById('_l-mus-ico');
   var txtEl = document.getElementById('_l-mus-txt');
   if (_L.musicando) {
     _L.musicNodes.forEach(function(n) { try { n.stop(); } catch(e){} });
     _L.musicNodes = []; _L.musicando = false;
     if (icoEl) icoEl.textContent = '🎵';
-    if (txtEl) txtEl.textContent = 'Parabéns';
+    if (txtEl) txtEl.textContent = 'Tema do Hedwig';
     return;
   }
   try {
     var ctx = _lCtx();
-    var parens = [
-      [392,.75],[392,.25],[440,1],[392,1],[523,1],[494,2],
-      [392,.75],[392,.25],[440,1],[392,1],[587,1],[523,2],
-      [392,.75],[392,.25],[784,1],[659,1],[523,1],[494,1],[440,2],
-      [698,.75],[698,.25],[659,1],[523,1],[587,1],[523,2]
+    // Tema do Hedwig completo (A e B)
+    // Formato: [freq_Hz, duracao_beats]  bpm=120
+    var hedwigCompleto = [
+      // Frase A
+      [659,.75],[831,.25],[1047,.5],[988,.25],[932,.25],
+      [659,.75],[831,.25],[1047,.5],[988,.5],
+      [932,.25],[988,.25],[1047,.5],[831,.5],
+      [659,.5],[831,.25],[988,.25],[932,.25],[831,.25],
+      [988,.5],[988,.25],[1047,.25],[932,.5],[831,.5],
+      [659,.5],
+      // Frase B
+      [988,.75],[1175,.25],[1480,.5],[1397,.25],[1319,.25],
+      [1047,.75],[1175,.25],[1480,.5],[1397,.5],
+      [1319,.25],[1397,.25],[1480,.5],[1175,.5],
+      [988,.5],[1175,.25],[1397,.25],[1319,.25],[1175,.25],
+      [988,.5],[1047,.25],[659,.25],[831,.25],[988,.25],
+      [1047,1.0],
     ];
-    var bpm = 112, beat = 60 / bpm, t = ctx.currentTime + .1, totalDur = 0;
-    parens.forEach(function(n) { totalDur += n[1] * beat; });
+    var bpm = 120, beat = 60 / bpm;
+    var t = ctx.currentTime + .15, totalDur = 0;
+    hedwigCompleto.forEach(function(n) { totalDur += n[1] * beat; });
     _L.musicando = true;
     if (icoEl) icoEl.textContent = '⏹';
     if (txtEl) txtEl.textContent = 'Parar';
-    parens.forEach(function(nota) {
-      var osc = _lNota(ctx, nota[0], t, nota[1] * beat, 'sine', .14);
+    hedwigCompleto.forEach(function(nota) {
+      var dur = nota[1] * beat;
+      var osc = _lNota(ctx, nota[0], t, dur * .88, 'triangle', .13);
       _L.musicNodes.push(osc);
-      t += nota[1] * beat;
+      // Pad sutil em harmonia uma oitava abaixo
+      var pad = _lNota(ctx, nota[0] / 2, t, dur * .9, 'sine', .04);
+      _L.musicNodes.push(pad);
+      t += dur;
     });
     setTimeout(function() {
       _L.musicando = false; _L.musicNodes = [];
       if (icoEl) icoEl.textContent = '🎵';
-      if (txtEl) txtEl.textContent = 'Parabéns';
-    }, (totalDur + .5) * 1000);
-    _lLancarPetalas(35);
-    _lLancarBaloes(10);
+      if (txtEl) txtEl.textContent = 'Tema do Hedwig';
+    }, (totalDur + .8) * 1000);
+    _lLancarPetalas(40);
+    _lLancarBaloes(12);
+    _lToast('🦉 Tema do Hedwig — para a bruxa mais incrível do escritório');
   } catch(e) { _lToast('Não foi possível tocar o áudio 😅'); }
 }
 
@@ -997,7 +1090,7 @@ function _lParabensMusica() {
 function _lAnimarTitulo() {
   if (_L.tituloOriginal === null) _L.tituloOriginal = document.title;
   clearInterval(_L.tituloTimer);
-  var frames = ['🎂 Feliz Aniversário!','🎉 Parabéns Laryssa!','🎈 É hoje!','👑 Rainha do dia!','✨ Que dia incrível!'];
+  var frames = ['⚡ Feliz Aniversário!','🦉 Parabéns Laryssa!','🪄 Wingardium!','👑 The Chosen One!','🏰 Hogwarts te saúda!','✨ Lumos, Laryssa!'];
   var idx = 0;
   _L.tituloTimer = setInterval(function() {
     document.title = frames[idx % frames.length]; idx++;
