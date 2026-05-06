@@ -756,12 +756,13 @@ function aplicarNoCatalogo() {
   var mudancas = getMudancas();
   mudancas = mudancas.filter(function(m) { return m.id !== prodSel.id; });
   mudancas.unshift({
-    id:   prodSel.id,
-    nome: prodSel.nome,
-    de:   precoAnterior,
-    para: precoNovo,
-    tipo: 'edit',
-    ts:   Date.now()
+    id:     prodSel.id,
+    nome:   prodSel.nome,
+    de:     precoAnterior,
+    para:   precoNovo,
+    margem: resultado.margem,
+    tipo:   'edit',
+    ts:     Date.now()
   });
   saveMudancas(mudancas);
 
@@ -871,10 +872,13 @@ function renderMudancas() {
     var badge = m.tipo === 'new'
       ? '<span class="mudanca-badge badge-new">Novo</span>'
       : '<span class="mudanca-badge badge-edit">Editado</span>';
+    var margBadge = m.margem != null
+      ? '<span style="font-size:.6rem;font-weight:600;padding:2px 7px;border-radius:99px;background:var(--amber-s);color:var(--amber);border:1px solid rgba(217,119,6,.2);flex-shrink:0">' + m.margem + '%</span>'
+      : '';
     var vals = m.tipo === 'edit'
       ? '<span class="mudanca-vals">R$ ' + fmtNum(m.de) + ' → <span>R$ ' + fmtNum(m.para) + '</span></span>'
       : '<span class="mudanca-vals"><span>R$ ' + fmtNum(m.para) + '</span></span>';
-    div.innerHTML = badge + '<span class="mudanca-nome">' + escHtml(m.nome) + '</span>' + vals;
+    div.innerHTML = badge + '<span class="mudanca-nome">' + escHtml(m.nome) + '</span>' + margBadge + vals;
     el.appendChild(div);
   });
 }
@@ -884,8 +888,9 @@ function enviarRelatorioWpp() {
   if (!lista.length) { showToast('Nenhuma mudança para enviar', 'amber'); return; }
   var d = new Date().toLocaleDateString('pt-BR') + ' ' + new Date().toLocaleTimeString('pt-BR', { hour:'2-digit', minute:'2-digit' });
   var linhas = lista.map(function(m) {
-    if (m.tipo === 'edit') return '✏️ ' + m.nome + '\n   De: R$ ' + fmtNum(m.de) + '  →  Para: R$ ' + fmtNum(m.para);
-    return '🆕 ' + m.nome + '\n   Preço: R$ ' + fmtNum(m.para);
+    var marg = m.margem != null ? '  · Margem: ' + m.margem + '%' : '';
+    if (m.tipo === 'edit') return '✏️ ' + m.nome + '\n   De: R$ ' + fmtNum(m.de) + '  →  Para: R$ ' + fmtNum(m.para) + marg;
+    return '🆕 ' + m.nome + '\n   Preço: R$ ' + fmtNum(m.para) + marg;
   });
   var msg = '📋 *Relatório de Mudanças de Preço — Cia Das Embalagens*\n📅 ' + d
     + '\n\n' + linhas.join('\n\n')
