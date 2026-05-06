@@ -690,7 +690,11 @@ function toggleTheme() {
 var prodSel = null; // { id, nome, preco }
 
 function getProdutos() {
-  return window.listaProdutosPlanilha || [];
+  if (!window.listaProdutosPlanilha) {
+    console.warn("Produtos não carregados");
+    return [];
+  }
+  return window.listaProdutosPlanilha;
 }
 
 function buscarProduto() {
