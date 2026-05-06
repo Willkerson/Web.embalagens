@@ -1,0 +1,1178 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>Calculadora — Cia Das Embalagens</title>
+<link rel="icon" type="image/png" href="https://img.icons8.com/fluency/48/box.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+/* ── TOKENS — mesmos do index.html ──────────────────────── */
+:root {
+  --bg:       #f5f5f7;
+  --surface:  #ffffff;
+  --border:   rgba(0,0,0,0.08);
+  --border2:  rgba(0,0,0,0.14);
+  --text:     #1d1d1f;
+  --text2:    #424245;
+  --text3:    #6e6e73;
+  --blue:     #0071e3;
+  --blue-s:   rgba(0,113,227,0.08);
+  --blue-s2:  rgba(0,113,227,0.14);
+  --green:    #1d9147;
+  --green-s:  rgba(29,145,71,0.1);
+  --green-glow: rgba(29,145,71,0.25);
+  --orange:   #ea580c;
+  --orange-s: rgba(234,88,12,0.09);
+  --amber:    #d97706;
+  --amber-s:  rgba(217,119,6,0.09);
+  --red:      #dc2626;
+  --red-s:    rgba(220,38,38,0.08);
+  --purple:   #7c3aed;
+  --nav-h:    52px;
+  --radius:   12px;
+  --radius-lg:18px;
+  --ease:     cubic-bezier(0.4,0,0.2,1);
+  --font:     'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  --sh:       0 1px 4px rgba(0,0,0,0.06), 0 4px 16px rgba(0,0,0,0.06);
+  --sh-lg:    0 8px 32px rgba(0,0,0,0.1);
+}
+[data-theme="dark"] {
+  --bg:      #000;
+  --surface: #1c1c1e;
+  --border:  rgba(255,255,255,0.1);
+  --border2: rgba(255,255,255,0.18);
+  --text:    #f5f5f7;
+  --text2:   #a1a1a6;
+  --text3:   #636366;
+  --blue-s:  rgba(0,113,227,0.14);
+  --blue-s2: rgba(0,113,227,0.22);
+}
+
+*,*::before,*::after { margin:0; padding:0; box-sizing:border-box; -webkit-font-smoothing:antialiased; }
+html { scroll-behavior:smooth; scroll-padding-top:calc(var(--nav-h) + 16px); }
+body { background:var(--bg); font-family:var(--font); color:var(--text); line-height:1.5; min-height:100vh; }
+a { text-decoration:none; color:inherit; }
+button { cursor:pointer; border:none; background:none; font-family:var(--font); }
+img { display:block; }
+
+/* ── TELA DE SENHA ──────────────────────────────────────── */
+#lock-screen {
+  position:fixed; inset:0; z-index:1000;
+  display:flex; align-items:center; justify-content:center;
+  background:var(--bg); padding:1.5rem;
+}
+.lock-box {
+  width:100%; max-width:360px;
+  background:var(--surface);
+  border:1px solid var(--border);
+  border-radius:22px;
+  padding:2.5rem 2rem;
+  box-shadow:var(--sh-lg);
+  text-align:center;
+  animation:fadeUp .4s var(--ease);
+}
+@keyframes fadeUp { from{opacity:0;transform:translateY(12px)} to{opacity:1;transform:translateY(0)} }
+.lock-mark {
+  width:52px; height:52px; border-radius:14px;
+  background:var(--blue); display:flex; align-items:center; justify-content:center;
+  margin:0 auto 1.25rem; font-size:1.4rem;
+  box-shadow:0 6px 20px rgba(0,113,227,0.28);
+}
+.lock-title { font-size:1.125rem; font-weight:600; color:var(--text); margin-bottom:.3rem; }
+.lock-sub   { font-size:.8125rem; color:var(--text3); margin-bottom:1.75rem; }
+.lock-inp {
+  width:100%; padding:13px 16px; margin-bottom:.75rem;
+  background:var(--bg); border:1.5px solid var(--border);
+  border-radius:10px; color:var(--text); font-family:var(--font);
+  font-size:1rem; outline:none; text-align:center; letter-spacing:.15em;
+  transition:all .2s;
+}
+.lock-inp:focus { border-color:var(--blue); box-shadow:0 0 0 3px rgba(0,113,227,0.12); }
+.lock-inp.err   { border-color:var(--red); animation:shake .3s; }
+@keyframes shake { 0%,100%{transform:translateX(0)} 25%{transform:translateX(-5px)} 75%{transform:translateX(5px)} }
+.lock-btn {
+  width:100%; padding:13px; border-radius:10px;
+  background:var(--blue); color:#fff;
+  font-size:.875rem; font-weight:600; cursor:pointer;
+  transition:all .18s;
+}
+.lock-btn:hover { filter:brightness(1.08); transform:translateY(-1px); }
+.lock-err { font-size:.775rem; color:var(--red); margin-top:.5rem; min-height:18px; }
+
+/* ── HEADER ─────────────────────────────────────────────── */
+
+<script src="front-index/produtos_planilha.js"></script>
+  
+#app { display:none; }
+.hdr {
+  position:sticky; top:0; z-index:200;
+  background:rgba(255,255,255,.88);
+  backdrop-filter:saturate(180%) blur(20px);
+  -webkit-backdrop-filter:saturate(180%) blur(20px);
+  border-bottom:1px solid var(--border);
+  height:var(--nav-h); display:flex; align-items:center;
+  padding:0 1.5rem; gap:10px;
+}
+[data-theme="dark"] .hdr { background:rgba(22,22,23,.88); }
+.hdr-logo { display:flex; align-items:center; gap:8px; }
+.hdr-logo-mark {
+  width:28px; height:28px; border-radius:7px; background:var(--blue);
+  display:flex; align-items:center; justify-content:center;
+}
+.hdr-logo-mark img { width:16px; height:16px; filter:invert(1); }
+.hdr-logo-name { font-size:.875rem; font-weight:600; color:var(--text); }
+.hdr-logo-name span { color:var(--text3); font-weight:400; }
+.hdr-badge {
+  font-size:.6rem; font-weight:600; text-transform:uppercase; letter-spacing:.08em;
+  padding:2px 8px; border-radius:99px;
+  background:var(--amber-s); color:var(--amber); border:1px solid rgba(217,119,6,.2);
+}
+.hdr-gap { flex:1; }
+.hdr-actions { display:flex; align-items:center; gap:6px; }
+.hdr-btn {
+  display:flex; align-items:center; gap:5px; padding:6px 12px; border-radius:8px;
+  font-size:.775rem; font-weight:500; color:var(--text2);
+  border:1px solid var(--border); background:transparent; transition:all .15s;
+}
+.hdr-btn:hover { background:rgba(0,0,0,.05); color:var(--text); }
+[data-theme="dark"] .hdr-btn:hover { background:rgba(255,255,255,.06); }
+.btn-theme {
+  width:32px; height:32px; border-radius:50%;
+  background:rgba(0,0,0,.05); border:1px solid var(--border);
+  display:flex; align-items:center; justify-content:center; font-size:.8rem;
+  transition:background .15s;
+}
+.btn-theme:hover { background:rgba(0,0,0,.1); }
+[data-theme="dark"] .btn-theme { background:rgba(255,255,255,.08); }
+
+/* ── MAIN LAYOUT ────────────────────────────────────────── */
+.main { max-width:860px; margin:0 auto; padding:2rem 1.25rem 5rem; display:flex; flex-direction:column; gap:1.25rem; }
+
+/* ── CARDS ──────────────────────────────────────────────── */
+.card {
+  background:var(--surface); border:1px solid var(--border);
+  border-radius:var(--radius-lg); overflow:hidden; box-shadow:var(--sh);
+}
+.card-hdr {
+  display:flex; align-items:center; gap:10px;
+  padding:.875rem 1.25rem; border-bottom:1px solid var(--border);
+  background:rgba(0,0,0,.015);
+}
+[data-theme="dark"] .card-hdr { background:rgba(255,255,255,.015); }
+.card-ico {
+  width:30px; height:30px; border-radius:8px;
+  display:flex; align-items:center; justify-content:center; font-size:.85rem; flex-shrink:0;
+}
+.ico-blue   { background:var(--blue-s); border:1px solid var(--blue-s2); }
+.ico-green  { background:var(--green-s); border:1px solid rgba(29,145,71,.2); }
+.ico-amber  { background:var(--amber-s); border:1px solid rgba(217,119,6,.18); }
+.ico-purple { background:rgba(124,58,237,.08); border:1px solid rgba(124,58,237,.18); }
+.card-title { font-size:.9rem; font-weight:600; color:var(--text); }
+.card-sub   { font-size:.72rem; color:var(--text3); margin-top:1px; }
+.card-body  { padding:1.25rem; }
+
+/* ── CAMPOS ──────────────────────────────────────────────── */
+.field { margin-bottom:.875rem; }
+.field:last-child { margin-bottom:0; }
+.field > label {
+  display:block; font-size:.67rem; font-weight:600;
+  color:var(--text3); text-transform:uppercase; letter-spacing:.08em;
+  margin-bottom:.35rem;
+}
+.field input, .field select, .field textarea {
+  width:100%; padding:10px 13px;
+  background:var(--bg); border:1.5px solid var(--border);
+  border-radius:9px; color:var(--text); font-family:var(--font);
+  font-size:.875rem; outline:none; transition:all .18s;
+}
+.field input:focus, .field select:focus, .field textarea:focus {
+  border-color:var(--blue); background:var(--surface);
+  box-shadow:0 0 0 3px rgba(0,113,227,.1);
+}
+.field input::placeholder, .field textarea::placeholder { color:var(--text3); }
+.field select option { background:var(--surface); }
+.field-hint { font-size:.67rem; color:var(--text3); margin-top:.28rem; }
+.field-row  { display:grid; grid-template-columns:1fr 1fr; gap:10px; }
+
+.inp-wrap { position:relative; }
+.inp-pfx { position:absolute; left:12px; top:50%; transform:translateY(-50%); font-size:.78rem; color:var(--text3); pointer-events:none; }
+.inp-sfx { position:absolute; right:12px; top:50%; transform:translateY(-50%); font-size:.78rem; color:var(--text3); pointer-events:none; }
+.inp-wrap input { padding-left:32px; }
+.inp-sfx ~ input, .inp-wrap.sfx input { padding-right:36px; }
+.inp-wrap.sfx input { padding-left:13px; }
+
+/* ── DIVISOR ─────────────────────────────────────────────── */
+.divider { height:1px; background:var(--border); margin:1rem 0; }
+.sec-lbl {
+  font-size:.65rem; font-weight:600; color:var(--text3);
+  text-transform:uppercase; letter-spacing:.1em;
+  margin-bottom:.75rem; display:flex; align-items:center; gap:8px;
+}
+.sec-lbl::after { content:''; flex:1; height:1px; background:var(--border); }
+
+/* ── CHIPS ───────────────────────────────────────────────── */
+.chips { display:flex; gap:5px; flex-wrap:wrap; margin-top:.45rem; }
+.chip {
+  padding:4px 11px; border-radius:99px; font-size:.72rem; font-weight:500;
+  color:var(--text3); border:1px solid var(--border); background:var(--surface);
+  cursor:pointer; transition:all .13s;
+}
+.chip:hover { color:var(--text); border-color:var(--border2); }
+.chip.on { background:var(--blue-s); color:var(--blue); border-color:var(--blue-s2); }
+
+/* ── RESULTADO ───────────────────────────────────────────── */
+.result-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(155px,1fr)); gap:.75rem; margin-top:.875rem; }
+.rc {
+  background:var(--bg); border:1px solid var(--border);
+  border-radius:11px; padding:.75rem 1rem;
+}
+.rc.hi-green  { background:var(--green-s); border-color:rgba(29,145,71,.22); }
+.rc.hi-blue   { background:var(--blue-s); border-color:var(--blue-s2); }
+.rc.hi-amber  { background:var(--amber-s); border-color:rgba(217,119,6,.2); }
+.rc-lbl { font-size:.62rem; font-weight:600; color:var(--text3); text-transform:uppercase; letter-spacing:.07em; margin-bottom:.3rem; }
+.rc-val { font-size:1.15rem; font-weight:300; color:var(--text); line-height:1.1; }
+.rc-val.big   { font-size:1.5rem; }
+.rc-val.green { color:var(--green); font-weight:500; }
+.rc-val.blue  { color:var(--blue); }
+.rc-val.amber { color:var(--amber); }
+.rc-sub { font-size:.67rem; color:var(--text3); margin-top:3px; }
+
+/* ── BREAKDOWN ───────────────────────────────────────────── */
+.breakdown { background:var(--bg); border:1px solid var(--border); border-radius:10px; overflow:hidden; margin-top:.875rem; }
+.bd-row { display:flex; justify-content:space-between; align-items:center; padding:8px 14px; border-bottom:1px solid var(--border); font-size:.8rem; }
+.bd-row:last-child { border-bottom:none; }
+.bd-row.tot { background:var(--green-s); border-top:1px solid rgba(29,145,71,.18); font-weight:600; }
+.bd-lbl { color:var(--text2); }
+.bd-val { font-weight:600; color:var(--text); }
+.bd-val.green  { color:var(--green); }
+.bd-val.blue   { color:var(--blue); }
+.bd-val.amber  { color:var(--amber); }
+.bd-val.red    { color:var(--red); }
+
+/* ── BOTÕES ──────────────────────────────────────────────── */
+.btn {
+  display:inline-flex; align-items:center; justify-content:center; gap:6px;
+  padding:10px 18px; border-radius:9px; font-size:.8125rem; font-weight:500;
+  cursor:pointer; font-family:var(--font); border:none; transition:all .18s;
+}
+.btn-blue  { background:var(--blue); color:#fff; box-shadow:0 2px 10px rgba(0,113,227,.22); }
+.btn-blue:hover { filter:brightness(1.08); transform:translateY(-1px); }
+.btn-green { background:var(--green); color:#fff; box-shadow:0 2px 10px var(--green-glow); }
+.btn-green:hover { filter:brightness(1.08); transform:translateY(-1px); }
+.btn-ghost { background:var(--bg); color:var(--text2); border:1px solid var(--border); }
+.btn-ghost:hover { background:rgba(0,0,0,.05); color:var(--text); }
+.btn-amber { background:var(--amber); color:#fff; }
+.btn-amber:hover { filter:brightness(1.08); transform:translateY(-1px); }
+.btn-row { display:flex; gap:8px; flex-wrap:wrap; margin-top:.875rem; }
+
+/* ── NCM ─────────────────────────────────────────────────── */
+.ncm-box {
+  background:var(--bg); border:1px solid var(--border);
+  border-radius:11px; padding:1rem 1.25rem; margin-top:.875rem; display:none;
+  animation:fadeUp .25s var(--ease);
+}
+.ncm-box.on { display:block; }
+.ncm-code { font-size:1.5rem; font-weight:300; color:var(--blue); letter-spacing:.1em; margin-bottom:.3rem; }
+.ncm-desc { font-size:.875rem; font-weight:600; color:var(--text); margin-bottom:.4rem; line-height:1.4; }
+.ncm-obs  { font-size:.75rem; color:var(--text3); margin-bottom:.875rem; }
+.ncm-aliq-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:6px; }
+.ncm-aliq {
+  background:var(--surface); border:1px solid var(--border);
+  border-radius:8px; padding:.5rem .6rem; text-align:center;
+}
+.ncm-aliq-lbl { font-size:.58rem; font-weight:700; color:var(--text3); text-transform:uppercase; letter-spacing:.07em; }
+.ncm-aliq-val { font-size:.95rem; font-weight:600; margin-top:2px; }
+
+/* ── HISTÓRICO ───────────────────────────────────────────── */
+.hist-item {
+  display:flex; align-items:center; gap:10px;
+  background:var(--bg); border:1px solid var(--border);
+  border-radius:9px; padding:.65rem 1rem; margin-bottom:6px;
+  cursor:pointer; transition:all .13s;
+}
+.hist-item:hover { background:rgba(0,0,0,.03); border-color:var(--border2); }
+[data-theme="dark"] .hist-item:hover { background:rgba(255,255,255,.04); }
+.hist-nome { flex:1; font-size:.8rem; font-weight:500; color:var(--text); white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+.hist-preco { font-size:.8rem; font-weight:600; color:var(--green); flex-shrink:0; }
+.hist-data  { font-size:.65rem; color:var(--text3); flex-shrink:0; }
+.hist-del   { font-size:.7rem; color:var(--text3); cursor:pointer; padding:2px 5px; border-radius:4px; flex-shrink:0; transition:color .12s; }
+.hist-del:hover { color:var(--red); }
+.hist-empty { text-align:center; padding:2rem; color:var(--text3); font-size:.8125rem; }
+
+/* ── RELATÓRIO MUDANÇAS ──────────────────────────────────── */
+.mudanca-item {
+  display:flex; align-items:center; gap:8px; padding:7px 12px;
+  background:var(--bg); border:1px solid var(--border);
+  border-radius:8px; margin-bottom:5px; font-size:.8rem;
+}
+.mudanca-badge {
+  font-size:.6rem; font-weight:700; text-transform:uppercase; letter-spacing:.06em;
+  padding:2px 7px; border-radius:99px; flex-shrink:0;
+}
+.badge-edit  { background:var(--blue-s); color:var(--blue); border:1px solid var(--blue-s2); }
+.badge-new   { background:var(--green-s); color:var(--green); border:1px solid rgba(29,145,71,.2); }
+.mudanca-nome { flex:1; font-weight:500; color:var(--text); min-width:0; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }
+.mudanca-vals { font-size:.72rem; color:var(--text3); flex-shrink:0; }
+.mudanca-vals span { color:var(--green); font-weight:600; }
+
+/* ── TOAST ───────────────────────────────────────────────── */
+.toast {
+  position:fixed; bottom:1.5rem; left:50%;
+  transform:translateX(-50%) translateY(8px);
+  background:var(--text); color:var(--bg);
+  border-radius:10px; padding:.65rem 1.25rem;
+  font-size:.8rem; font-weight:500; z-index:9999;
+  opacity:0; pointer-events:none; transition:all .22s var(--ease);
+  white-space:nowrap; box-shadow:var(--sh-lg);
+}
+.toast.on { opacity:1; transform:translateX(-50%) translateY(0); }
+.toast.green { background:var(--green); color:#fff; }
+.toast.blue  { background:var(--blue);  color:#fff; }
+.toast.amber { background:var(--amber); color:#fff; }
+
+/* ── RESPONSIVO ──────────────────────────────────────────── */
+@media(max-width:600px) {
+  .field-row { grid-template-columns:1fr; }
+  .ncm-aliq-grid { grid-template-columns:repeat(2,1fr); }
+  .result-grid { grid-template-columns:1fr 1fr; }
+  .hdr { padding:0 1rem; }
+  .main { padding:1.25rem .875rem 4rem; }
+}
+</style>
+</head>
+<body>
+
+<!-- ══ TELA DE SENHA ══════════════════════════════════════ -->
+<div id="lock-screen">
+  <div class="lock-box">
+    <div class="lock-mark">
+      <img src="https://img.icons8.com/fluency/48/box.png" alt="">
+    </div>
+    <div class="lock-title">Área Interna</div>
+    <div class="lock-sub">Calculadora de preços — Cia Das Embalagens</div>
+    <input class="lock-inp" type="password" id="lock-inp" placeholder="••••••••" maxlength="20"
+      onkeydown="if(event.key==='Enter')autenticar()">
+    <button class="lock-btn" onclick="autenticar()">Entrar →</button>
+    <div class="lock-err" id="lock-err"></div>
+  </div>
+</div>
+
+<!-- ══ APP ════════════════════════════════════════════════ -->
+<div id="app">
+
+  <header class="hdr">
+    <div class="hdr-logo">
+      <div class="hdr-logo-mark"><img src="https://img.icons8.com/fluency/48/box.png" alt=""></div>
+      <div class="hdr-logo-name">Cia das <span>Embalagens</span></div>
+    </div>
+    <span class="hdr-badge">Calculadora</span>
+    <div class="hdr-gap"></div>
+    <div class="hdr-actions">
+      <button class="btn-theme" onclick="toggleTheme()" id="themeBtn">🌙</button>
+      <a href="index.html" class="hdr-btn">← Loja</a>
+      <button class="hdr-btn" onclick="sair()">Sair 🔒</button>
+    </div>
+  </header>
+
+  <div class="main">
+
+    <!-- ════════════════════════════════════════════════════
+         1. CALCULADORA DE PREÇO
+    ════════════════════════════════════════════════════ -->
+    <div class="card" id="sec-calc">
+      <div class="card-hdr">
+        <div class="card-ico ico-blue">🧮</div>
+        <div>
+          <div class="card-title">Calculadora de Preço de Venda</div>
+          <div class="card-sub">Valor da DANFE → preço final com margem · atualiza o catálogo automaticamente</div>
+        </div>
+      </div>
+      <div class="card-body">
+
+        <div class="sec-lbl">Selecionar produto do catálogo</div>
+        <div class="field">
+          <label>Produto (opcional — para atualizar o catálogo)</label>
+          <input type="text" id="c-busca-prod" placeholder="Digite para buscar no catálogo…" oninput="buscarProduto()" autocomplete="off">
+          <div id="c-prod-suggestions" style="display:none;background:var(--surface);border:1px solid var(--border);border-radius:9px;margin-top:4px;overflow:hidden;box-shadow:var(--sh-lg);max-height:200px;overflow-y:auto;z-index:50;position:relative;"></div>
+          <div class="field-hint">Selecione para vincular o cálculo ao produto e atualizar o preço no catálogo</div>
+        </div>
+
+        <div id="prod-selecionado" style="display:none;background:var(--blue-s);border:1px solid var(--blue-s2);border-radius:9px;padding:.65rem 1rem;margin-bottom:.875rem;display:none;align-items:center;gap:8px;font-size:.8125rem">
+          <span>📦</span>
+          <span id="prod-sel-nome" style="flex:1;font-weight:500;color:var(--text)"></span>
+          <span id="prod-sel-preco-atual" style="color:var(--text3);font-size:.72rem"></span>
+          <button onclick="limparProdSel()" style="color:var(--text3);font-size:.75rem;padding:2px 6px;border-radius:5px;border:1px solid var(--border);background:var(--surface)">✕</button>
+        </div>
+
+        <div class="divider"></div>
+        <div class="sec-lbl">Dados da DANFE</div>
+
+        <div class="field-row">
+          <div class="field">
+            <label>Valor unitário na DANFE (R$)</label>
+            <div class="inp-wrap">
+              <span class="inp-pfx">R$</span>
+              <input type="number" id="c-custo" placeholder="0,00" step="0.01" min="0" oninput="calcular()">
+            </div>
+          </div>
+          <div class="field">
+            <label>DANFE já inclui ICMS?</label>
+            <select id="c-icms-inc" onchange="toggleICMSRow();calcular()">
+              <option value="sim">Sim — ICMS já embutido</option>
+              <option value="nao">Não — adicionar ICMS</option>
+            </select>
+          </div>
+        </div>
+
+        <div id="icms-row" style="display:none">
+          <div class="field-row">
+            <div class="field">
+              <label>Alíquota ICMS (%)</label>
+              <div class="inp-wrap sfx">
+                <input type="number" id="c-icms" placeholder="12" step="0.1" min="0" max="30" oninput="calcular()">
+                <span class="inp-sfx">%</span>
+              </div>
+            </div>
+            <div class="field">
+              <label>Alíquota IPI (%)</label>
+              <div class="inp-wrap sfx">
+                <input type="number" id="c-ipi" placeholder="0" step="0.1" min="0" oninput="calcular()">
+                <span class="inp-sfx">%</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="divider"></div>
+        <div class="sec-lbl">Margem e custos</div>
+
+        <div class="field-row">
+          <div class="field">
+            <label>Margem de lucro (%)</label>
+            <div class="inp-wrap sfx">
+              <input type="number" id="c-margem" value="80" step="1" min="0" oninput="calcular()">
+              <span class="inp-sfx">%</span>
+            </div>
+            <div class="chips" id="margem-chips">
+              <button class="chip" onclick="setMargem(50)">50%</button>
+              <button class="chip on" onclick="setMargem(80)">80%</button>
+              <button class="chip" onclick="setMargem(100)">100%</button>
+              <button class="chip" onclick="setMargem(120)">120%</button>
+              <button class="chip" onclick="setMargem(150)">150%</button>
+            </div>
+          </div>
+          <div class="field">
+            <label>Frete / outros custos (R$) <span style="font-weight:400">(opcional)</span></label>
+            <div class="inp-wrap">
+              <span class="inp-pfx">R$</span>
+              <input type="number" id="c-frete" placeholder="0,00" step="0.01" min="0" oninput="calcular()">
+            </div>
+          </div>
+        </div>
+
+        <div class="field">
+          <label>Arredondamento</label>
+          <select id="c-arred" onchange="calcular()">
+            <option value="0">Sem arredondamento</option>
+            <option value="0.49">...49 (ex: R$ 12,49)</option>
+            <option value="0.90">...90 (ex: R$ 12,90)</option>
+            <option value="0.99">...99 (ex: R$ 12,99)</option>
+            <option value="ceil">Próximo inteiro (ex: R$ 13,00)</option>
+          </select>
+        </div>
+
+        <!-- RESULTADO -->
+        <div id="calc-resultado" style="display:none">
+          <div class="divider"></div>
+          <div class="sec-lbl">Resultado</div>
+
+          <div class="result-grid">
+            <div class="rc hi-blue">
+              <div class="rc-lbl">Custo total</div>
+              <div class="rc-val blue" id="r-custo">R$ 0,00</div>
+              <div class="rc-sub">Impostos + frete</div>
+            </div>
+            <div class="rc hi-amber">
+              <div class="rc-lbl">Margem aplicada</div>
+              <div class="rc-val amber" id="r-margem">0%</div>
+              <div class="rc-sub">Sobre o custo</div>
+            </div>
+            <div class="rc hi-green">
+              <div class="rc-lbl">Preço de venda</div>
+              <div class="rc-val green big" id="r-preco">R$ 0,00</div>
+              <div class="rc-sub" id="r-arred-txt"></div>
+            </div>
+            <div class="rc">
+              <div class="rc-lbl">Lucro bruto</div>
+              <div class="rc-val green" id="r-lucro">R$ 0,00</div>
+              <div class="rc-sub" id="r-lucro-pct"></div>
+            </div>
+          </div>
+
+          <div class="breakdown" id="r-breakdown"></div>
+
+          <!-- Aviso de atualização do catálogo -->
+          <div id="aviso-catalogo" style="display:none;margin-top:.875rem;background:var(--green-s);border:1px solid rgba(29,145,71,.22);border-radius:9px;padding:.65rem 1rem;font-size:.8rem;color:var(--green)">
+            ✅ Preço atualizado no catálogo local — publique no GitHub para aplicar na loja.
+          </div>
+
+          <div class="btn-row">
+            <button class="btn btn-green" onclick="aplicarNoCatalogo()">💾 Aplicar preço no catálogo</button>
+            <button class="btn btn-blue" onclick="copiarPreco()">📋 Copiar preço</button>
+            <button class="btn btn-ghost" onclick="salvarHistorico()">🕓 Salvar histórico</button>
+            <button class="btn btn-ghost" onclick="limparCalc()">✕ Limpar</button>
+          </div>
+
+          <!-- Campo nome histórico -->
+          <div id="form-hist" style="display:none;margin-top:.875rem">
+            <div class="field">
+              <label>Nome para o histórico</label>
+              <input type="text" id="c-nome-hist" placeholder="Ex: Caixa PET 500ml — Fornecedor X">
+            </div>
+            <div class="btn-row" style="margin-top:.5rem">
+              <button class="btn btn-green" onclick="confirmarHistorico()">✓ Salvar</button>
+              <button class="btn btn-ghost" onclick="cancelarHistorico()">Cancelar</button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- ════════════════════════════════════════════════════
+         2. CONSULTA NCM
+    ════════════════════════════════════════════════════ -->
+    <div class="card" id="sec-ncm">
+      <div class="card-hdr">
+        <div class="card-ico ico-amber">🏷️</div>
+        <div>
+          <div class="card-title">Consulta NCM</div>
+          <div class="card-sub">Busque por código (ex: 3923.30.00) ou por nome (ex: garrafa, caixa, sacola)</div>
+        </div>
+      </div>
+      <div class="card-body">
+        <div class="field">
+          <label>Código NCM ou palavra-chave</label>
+          <div style="display:flex;gap:8px">
+            <input type="text" id="ncm-inp" placeholder="Ex: 3923.30.00  ou  garrafa pet  ou  caixa papelão"
+              style="flex:1" oninput="ncmSugestoes()" onkeydown="if(event.key==='Enter')buscarNCM()">
+            <button class="btn btn-amber" onclick="buscarNCM()" style="flex-shrink:0">Buscar →</button>
+          </div>
+          <!-- Sugestões ao digitar -->
+          <div id="ncm-sug" style="display:none;background:var(--surface);border:1px solid var(--border);border-radius:9px;margin-top:4px;overflow:hidden;box-shadow:var(--sh-lg);position:relative;z-index:50;max-height:220px;overflow-y:auto;"></div>
+          <div class="field-hint">Funciona offline — base local com os principais NCMs de embalagens</div>
+        </div>
+
+        <div class="sec-lbl" style="margin-top:.5rem">Atalhos frequentes</div>
+        <div class="chips">
+          <button class="chip" onclick="ncmDireto('39233000')">Garrafas PET</button>
+          <button class="chip" onclick="ncmDireto('48191000')">Caixas papelão</button>
+          <button class="chip" onclick="ncmDireto('39232190')">Sacos plástico</button>
+          <button class="chip" onclick="ncmDireto('39239000')">Potes / marmitas</button>
+          <button class="chip" onclick="ncmDireto('48192000')">Caixas dobráveis</button>
+          <button class="chip" onclick="ncmDireto('39241000')">Copos plásticos</button>
+          <button class="chip" onclick="ncmDireto('63053300')">Sacolas TNT</button>
+          <button class="chip" onclick="ncmDireto('39235000')">Tampas</button>
+          <button class="chip" onclick="ncmDireto('48194000')">Sacos papel</button>
+          <button class="chip" onclick="ncmDireto('39199090')">Fitas adesivas</button>
+        </div>
+
+        <div class="ncm-box" id="ncm-result">
+          <div id="ncm-content"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ════════════════════════════════════════════════════
+         3. MUDANÇAS NO CATÁLOGO + RELATÓRIO WPP
+    ════════════════════════════════════════════════════ -->
+    <div class="card" id="sec-mudancas">
+      <div class="card-hdr">
+        <div class="card-ico ico-green">📝</div>
+        <div>
+          <div class="card-title">Mudanças no Catálogo</div>
+          <div class="card-sub">Preços atualizados nesta sessão — envie o relatório pelo WhatsApp</div>
+        </div>
+        <div style="margin-left:auto;display:flex;gap:6px">
+          <button class="btn btn-ghost" style="padding:5px 11px;font-size:.72rem" onclick="enviarRelatorioWpp()">💬 Enviar WPP</button>
+          <button class="btn btn-ghost" style="padding:5px 11px;font-size:.72rem;color:var(--red)" onclick="limparMudancas()">🗑 Limpar</button>
+        </div>
+      </div>
+      <div class="card-body">
+        <div id="mudancas-lista">
+          <div class="hist-empty">Nenhuma mudança ainda — aplique preços na calculadora acima.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ════════════════════════════════════════════════════
+         4. HISTÓRICO DE CÁLCULOS
+    ════════════════════════════════════════════════════ -->
+    <div class="card" id="sec-hist">
+      <div class="card-hdr">
+        <div class="card-ico ico-purple">🕓</div>
+        <div>
+          <div class="card-title">Histórico de Cálculos</div>
+          <div class="card-sub">Clique para recarregar um cálculo anterior</div>
+        </div>
+        <div style="margin-left:auto;display:flex;gap:6px">
+          <button class="btn btn-ghost" style="padding:5px 11px;font-size:.72rem" onclick="exportarHistorico()">⬇ Exportar CSV</button>
+          <button class="btn btn-ghost" style="padding:5px 11px;font-size:.72rem;color:var(--red)" onclick="limparHistoricoTodo()">🗑 Limpar</button>
+        </div>
+      </div>
+      <div class="card-body">
+        <div id="hist-lista">
+          <div class="hist-empty">Nenhum cálculo salvo ainda.</div>
+        </div>
+      </div>
+    </div>
+
+  </div><!-- /main -->
+</div><!-- /app -->
+
+<div class="toast" id="toast"></div>
+
+<script>
+/* ──────────────────────────────────────────────────────────
+   CONFIG
+────────────────────────────────────────────────────────── */
+var SENHA    = 'cia2026';
+var WPP_NUM  = '5511972999835';
+var HIST_KEY = 'cia_calc_hist_v2';
+var MUD_KEY  = 'cia_mudancas_v1';
+
+/* ──────────────────────────────────────────────────────────
+   AUTENTICAÇÃO
+────────────────────────────────────────────────────────── */
+function autenticar() {
+  var inp = document.getElementById('lock-inp');
+  var err = document.getElementById('lock-err');
+  if (inp.value === SENHA) {
+    document.getElementById('lock-screen').style.display = 'none';
+    document.getElementById('app').style.display = 'block';
+    sessionStorage.setItem('cia_auth','1');
+    renderHistorico(); renderMudancas(); calcular();
+  } else {
+    inp.classList.add('err');
+    err.textContent = 'Senha incorreta.';
+    inp.value = '';
+    setTimeout(function(){ inp.classList.remove('err'); }, 400);
+  }
+}
+function sair() {
+  sessionStorage.removeItem('cia_auth');
+  document.getElementById('lock-screen').style.display = 'flex';
+  document.getElementById('app').style.display = 'none';
+  document.getElementById('lock-inp').value = '';
+  document.getElementById('lock-err').textContent = '';
+}
+if (sessionStorage.getItem('cia_auth') === '1') {
+  document.getElementById('lock-screen').style.display = 'none';
+  document.getElementById('app').style.display = 'block';
+  setTimeout(function(){ renderHistorico(); renderMudancas(); calcular(); }, 50);
+}
+
+/* ──────────────────────────────────────────────────────────
+   TEMA
+────────────────────────────────────────────────────────── */
+function toggleTheme() {
+  var html = document.documentElement;
+  var dark = html.getAttribute('data-theme') === 'dark';
+  html.setAttribute('data-theme', dark ? 'light' : 'dark');
+  document.getElementById('themeBtn').textContent = dark ? '🌙' : '☀️';
+}
+
+/* ──────────────────────────────────────────────────────────
+   PRODUTO SELECIONADO
+────────────────────────────────────────────────────────── */
+var prodSel = null; // { id, nome, preco }
+
+function getProdutos() {
+  return window.listaProdutosPlanilha || [];
+}
+
+function buscarProduto() {
+  var q = document.getElementById('c-busca-prod').value.toLowerCase().trim();
+  var sug = document.getElementById('c-prod-suggestions');
+  if (!q || q.length < 2) { sug.style.display = 'none'; return; }
+  var lista = getProdutos().filter(function(p) {
+    return p.nome && p.nome.toLowerCase().includes(q);
+  }).slice(0, 8);
+  if (!lista.length) { sug.style.display = 'none'; return; }
+  sug.innerHTML = '';
+  sug.style.display = 'block';
+  lista.forEach(function(p) {
+    var div = document.createElement('div');
+    div.style.cssText = 'padding:9px 14px;cursor:pointer;font-size:.8125rem;color:var(--text2);display:flex;align-items:center;gap:8px;border-bottom:1px solid var(--border);';
+    div.innerHTML = '<span style="flex:1;font-weight:500;color:var(--text)">' + p.nome + '</span>'
+      + '<span style="color:var(--green);font-size:.78rem">R$ ' + fmtNum(p.preco || 0) + '</span>';
+    div.onmousedown = function() { selecionarProd(p); };
+    div.onmouseenter = function() { div.style.background = 'rgba(0,0,0,.04)'; };
+    div.onmouseleave = function() { div.style.background = ''; };
+    sug.appendChild(div);
+  });
+}
+
+function selecionarProd(p) {
+  prodSel = { id: p.id, nome: p.nome, preco: parseFloat(p.preco) || 0 };
+  document.getElementById('c-busca-prod').value = p.nome;
+  document.getElementById('c-prod-suggestions').style.display = 'none';
+  var box = document.getElementById('prod-selecionado');
+  box.style.display = 'flex';
+  document.getElementById('prod-sel-nome').textContent = p.nome;
+  document.getElementById('prod-sel-preco-atual').textContent = 'Preço atual: R$ ' + fmtNum(p.preco || 0);
+  calcular();
+}
+
+function limparProdSel() {
+  prodSel = null;
+  document.getElementById('c-busca-prod').value = '';
+  document.getElementById('prod-selecionado').style.display = 'none';
+  document.getElementById('aviso-catalogo').style.display = 'none';
+}
+
+/* ──────────────────────────────────────────────────────────
+   CALCULADORA
+────────────────────────────────────────────────────────── */
+var resultado = null;
+
+function toggleICMSRow() {
+  var inc = document.getElementById('c-icms-inc').value;
+  document.getElementById('icms-row').style.display = inc === 'nao' ? 'block' : 'none';
+}
+
+function setMargem(v) {
+  document.getElementById('c-margem').value = v;
+  document.querySelectorAll('#margem-chips .chip').forEach(function(b) {
+    b.classList.toggle('on', parseInt(b.textContent) === v);
+  });
+  calcular();
+}
+
+function calcular() {
+  var custo   = parseFloat(document.getElementById('c-custo').value) || 0;
+  var margem  = parseFloat(document.getElementById('c-margem').value) || 0;
+  var frete   = parseFloat(document.getElementById('c-frete').value) || 0;
+  var inc     = document.getElementById('c-icms-inc').value;
+  var icmsA   = parseFloat((document.getElementById('c-icms')||{}).value) || 0;
+  var ipiA    = parseFloat((document.getElementById('c-ipi')||{}).value) || 0;
+  var arred   = document.getElementById('c-arred').value;
+
+  if (custo <= 0) { document.getElementById('calc-resultado').style.display = 'none'; return; }
+
+  var base = custo;
+  var vICMS = 0, vIPI = 0;
+  if (inc === 'nao') {
+    if (icmsA > 0) { vICMS = base * (icmsA / 100); base += vICMS; }
+    if (ipiA  > 0) { vIPI  = custo * (ipiA / 100);  base += vIPI; }
+  }
+  var custoTotal = base + frete;
+  var fator = 1 + margem / 100;
+  var calc  = custoTotal * fator;
+
+  var final = calc, arredTxt = '';
+  if (arred === 'ceil') {
+    final = Math.ceil(calc); arredTxt = 'Arredondado para cima';
+  } else if (parseFloat(arred) > 0) {
+    var dec = parseFloat(arred);
+    var intP = Math.floor(calc);
+    final = intP + dec;
+    if (final < calc) final += 1;
+    arredTxt = 'Arredondado para ,' + String(arred).replace('0.','');
+  }
+
+  var lucro = final - custoTotal;
+  var lucroP = custoTotal > 0 ? (lucro / custoTotal * 100).toFixed(1) : '0';
+
+  resultado = { custo, custoTotal, final, lucro, lucroP, margem, vICMS, vIPI, frete, inc, icmsA, ipiA, fator };
+
+  document.getElementById('calc-resultado').style.display = 'block';
+  document.getElementById('r-custo').textContent  = 'R$ ' + fmtNum(custoTotal);
+  document.getElementById('r-margem').textContent = margem + '%';
+  document.getElementById('r-preco').textContent  = 'R$ ' + fmtNum(final);
+  document.getElementById('r-arred-txt').textContent = arredTxt;
+  document.getElementById('r-lucro').textContent  = 'R$ ' + fmtNum(lucro);
+  document.getElementById('r-lucro-pct').textContent = lucroP + '% sobre o custo';
+
+  // Breakdown
+  var html = '';
+  html += bdR('Valor na DANFE', 'R$ ' + fmtNum(custo), '');
+  if (inc === 'nao' && vICMS > 0) html += bdR('+ ICMS (' + icmsA + '%)', 'R$ ' + fmtNum(vICMS), 'amber');
+  if (inc === 'nao' && vIPI  > 0) html += bdR('+ IPI ('  + ipiA  + '%)', 'R$ ' + fmtNum(vIPI),  'red');
+  if (frete > 0)                   html += bdR('+ Frete / outros',       'R$ ' + fmtNum(frete),  'blue');
+  html += bdR('= Custo total', 'R$ ' + fmtNum(custoTotal), 'blue');
+  html += bdR('× Markup ' + margem + '%', '× ' + fator.toFixed(2), 'amber');
+  html += '<div class="bd-row tot"><span class="bd-lbl">Preço de venda final</span><span class="bd-val green">R$ ' + fmtNum(final) + '</span></div>';
+  document.getElementById('r-breakdown').innerHTML = html;
+}
+
+function bdR(lbl, val, cls) {
+  return '<div class="bd-row"><span class="bd-lbl">' + lbl + '</span><span class="bd-val' + (cls ? ' ' + cls : '') + '">' + val + '</span></div>';
+}
+
+function copiarPreco() {
+  if (!resultado) return;
+  navigator.clipboard.writeText('R$ ' + fmtNum(resultado.final)).then(function() {
+    showToast('📋 R$ ' + fmtNum(resultado.final) + ' copiado!', 'green');
+  });
+}
+
+/* ──────────────────────────────────────────────────────────
+   APLICAR NO CATÁLOGO (atualiza localStorage que o admin lê)
+────────────────────────────────────────────────────────── */
+function aplicarNoCatalogo() {
+  if (!resultado) { showToast('Calcule um preço primeiro', ''); return; }
+  if (!prodSel)   { showToast('Selecione um produto do catálogo acima', 'amber'); return; }
+
+  var precoAnterior = prodSel.preco;
+  var precoNovo = resultado.final;
+
+  // Atualiza nas edições do admin (mesma chave que o admin usa)
+  var edicoes = {};
+  try { edicoes = JSON.parse(localStorage.getItem('cia_edicoes_v2') || '{}'); } catch(e) {}
+  if (!edicoes[prodSel.id]) edicoes[prodSel.id] = {};
+  edicoes[prodSel.id].preco = precoNovo;
+  localStorage.setItem('cia_edicoes_v2', JSON.stringify(edicoes));
+
+  // Registra mudança
+  var mudancas = getMudancas();
+  // Remove entrada anterior do mesmo produto se existir
+  mudancas = mudancas.filter(function(m) { return m.id !== prodSel.id; });
+  mudancas.unshift({
+    id:     prodSel.id,
+    nome:   prodSel.nome,
+    de:     precoAnterior,
+    para:   precoNovo,
+    tipo:   'edit',
+    ts:     Date.now()
+  });
+  saveMudancas(mudancas);
+
+  // Atualiza exibição
+  document.getElementById('prod-sel-preco-atual').textContent = 'Preço atual: R$ ' + fmtNum(precoNovo);
+  document.getElementById('aviso-catalogo').style.display = 'block';
+  renderMudancas();
+  showToast('✅ Preço atualizado no catálogo local!', 'green');
+}
+
+/* ──────────────────────────────────────────────────────────
+   MUDANÇAS
+────────────────────────────────────────────────────────── */
+function getMudancas()    { try { return JSON.parse(localStorage.getItem(MUD_KEY) || '[]'); } catch(e) { return []; } }
+function saveMudancas(m)  { localStorage.setItem(MUD_KEY, JSON.stringify(m)); }
+function limparMudancas() { if (!confirm('Limpar lista de mudanças?')) return; saveMudancas([]); renderMudancas(); }
+
+function renderMudancas() {
+  var lista = getMudancas();
+  var el = document.getElementById('mudancas-lista');
+  if (!lista.length) { el.innerHTML = '<div class="hist-empty">Nenhuma mudança ainda — aplique preços na calculadora acima.</div>'; return; }
+  el.innerHTML = '';
+  lista.forEach(function(m) {
+    var div = document.createElement('div'); div.className = 'mudanca-item';
+    var badge = m.tipo === 'new'
+      ? '<span class="mudanca-badge badge-new">Novo</span>'
+      : '<span class="mudanca-badge badge-edit">Editado</span>';
+    var vals = m.tipo === 'edit'
+      ? '<span class="mudanca-vals">R$ ' + fmtNum(m.de) + ' → <span>R$ ' + fmtNum(m.para) + '</span></span>'
+      : '<span class="mudanca-vals"><span>R$ ' + fmtNum(m.para) + '</span></span>';
+    div.innerHTML = badge + '<span class="mudanca-nome">' + m.nome + '</span>' + vals;
+    el.appendChild(div);
+  });
+}
+
+function enviarRelatorioWpp() {
+  var lista = getMudancas();
+  if (!lista.length) { showToast('Nenhuma mudança para enviar', 'amber'); return; }
+  var d = new Date().toLocaleDateString('pt-BR') + ' ' + new Date().toLocaleTimeString('pt-BR', { hour:'2-digit', minute:'2-digit' });
+  var linhas = lista.map(function(m) {
+    if (m.tipo === 'edit') return '✏️ ' + m.nome + '\n   De: R$ ' + fmtNum(m.de) + '  →  Para: R$ ' + fmtNum(m.para);
+    return '🆕 ' + m.nome + '\n   Preço: R$ ' + fmtNum(m.para);
+  });
+  var msg = '📋 *Relatório de Mudanças de Preço — Cia Das Embalagens*\n📅 ' + d
+    + '\n\n' + linhas.join('\n\n')
+    + '\n\n_Total: ' + lista.length + ' produto(s) atualizado(s)_';
+  window.open('https://wa.me/' + WPP_NUM + '?text=' + encodeURIComponent(msg), '_blank');
+}
+
+/* ──────────────────────────────────────────────────────────
+   HISTÓRICO
+────────────────────────────────────────────────────────── */
+function limparCalc() {
+  ['c-custo','c-frete','c-icms','c-ipi'].forEach(function(id) {
+    var el = document.getElementById(id); if (el) el.value = '';
+  });
+  document.getElementById('c-margem').value = '80';
+  document.getElementById('c-icms-inc').value = 'sim';
+  document.getElementById('icms-row').style.display = 'none';
+  document.getElementById('calc-resultado').style.display = 'none';
+  document.getElementById('aviso-catalogo').style.display = 'none';
+  cancelarHistorico(); limparProdSel(); resultado = null;
+}
+
+function salvarHistorico() {
+  if (!resultado) return;
+  document.getElementById('form-hist').style.display = 'block';
+  var nome = prodSel ? prodSel.nome : '';
+  document.getElementById('c-nome-hist').value = nome;
+  document.getElementById('c-nome-hist').focus();
+}
+function confirmarHistorico() {
+  if (!resultado) return;
+  var nome = document.getElementById('c-nome-hist').value.trim() || 'Produto sem nome';
+  var hist = getHist();
+  hist.unshift({ id: Date.now(), nome, custo: resultado.custo, custoTotal: resultado.custoTotal, final: resultado.final, lucro: resultado.lucro, lucroP: resultado.lucroP, margem: resultado.margem, ts: Date.now() });
+  localStorage.setItem(HIST_KEY, JSON.stringify(hist.slice(0, 50)));
+  cancelarHistorico(); renderHistorico(); showToast('✓ Salvo no histórico', 'green');
+}
+function cancelarHistorico() {
+  document.getElementById('form-hist').style.display = 'none';
+  document.getElementById('c-nome-hist').value = '';
+}
+function getHist() { try { return JSON.parse(localStorage.getItem(HIST_KEY) || '[]'); } catch(e) { return []; } }
+
+function renderHistorico() {
+  var hist = getHist();
+  var el = document.getElementById('hist-lista');
+  if (!hist.length) { el.innerHTML = '<div class="hist-empty">Nenhum cálculo salvo ainda.</div>'; return; }
+  el.innerHTML = '';
+  hist.forEach(function(h) {
+    var d = new Date(h.ts);
+    var ds = d.toLocaleDateString('pt-BR') + ' ' + d.toLocaleTimeString('pt-BR', { hour:'2-digit', minute:'2-digit' });
+    var item = document.createElement('div'); item.className = 'hist-item';
+    item.innerHTML =
+      '<div style="flex:1;min-width:0">'
+      + '<div class="hist-nome">' + h.nome + '</div>'
+      + '<div style="font-size:.67rem;color:var(--text3);margin-top:2px">Custo: R$ ' + fmtNum(h.custoTotal) + ' · Margem: ' + h.margem + '%</div>'
+      + '</div>'
+      + '<div class="hist-preco">R$ ' + fmtNum(h.final) + '</div>'
+      + '<div class="hist-data">' + ds + '</div>'
+      + '<div class="hist-del" onclick="delHist(' + h.id + ',event)" title="Excluir">✕</div>';
+    item.addEventListener('click', function(e) {
+      if (e.target.classList.contains('hist-del')) return;
+      document.getElementById('c-custo').value  = h.custo;
+      document.getElementById('c-margem').value = h.margem;
+      document.getElementById('c-icms-inc').value = 'sim';
+      document.getElementById('icms-row').style.display = 'none';
+      calcular();
+      document.getElementById('c-custo').scrollIntoView({ behavior:'smooth', block:'center' });
+      showToast('↑ Cálculo recarregado', '');
+    });
+    el.appendChild(item);
+  });
+}
+function delHist(id, e) {
+  e.stopPropagation();
+  var hist = getHist().filter(function(h) { return h.id !== id; });
+  localStorage.setItem(HIST_KEY, JSON.stringify(hist));
+  renderHistorico();
+}
+function limparHistoricoTodo() {
+  if (!confirm('Limpar todo o histórico?')) return;
+  localStorage.removeItem(HIST_KEY); renderHistorico();
+}
+function exportarHistorico() {
+  var hist = getHist();
+  if (!hist.length) { showToast('Histórico vazio', ''); return; }
+  var linhas = ['Nome,Custo (R$),Custo Total (R$),Preço Final (R$),Lucro (R$),Margem (%),Data'];
+  hist.forEach(function(h) {
+    linhas.push([h.nome, fmtNum(h.custo), fmtNum(h.custoTotal), fmtNum(h.final), fmtNum(h.lucro), h.margem, new Date(h.ts).toLocaleString('pt-BR')].join(','));
+  });
+  var blob = new Blob([linhas.join('\n')], { type:'text/csv;charset=utf-8;' });
+  var a = document.createElement('a'); a.href = URL.createObjectURL(blob); a.download = 'historico-precos.csv'; a.click();
+}
+
+/* ──────────────────────────────────────────────────────────
+   NCM — base local + busca por texto
+────────────────────────────────────────────────────────── */
+var NCM = {
+  '39231000': { desc:'Caixas, caixotes e artigos semelhantes de plástico', ipi:0, icms:12, pis:1.65, cofins:7.6, obs:'Embalagens plásticas rígidas', tags:['caixa plástico','engradado','plástico rígido'] },
+  '39232100': { desc:'Sacos e sacolas de polímeros de etileno', ipi:0, icms:12, pis:1.65, cofins:7.6, obs:'Sacolas plásticas comuns de polietileno', tags:['sacola plástica','sacolinha','saco polietileno','saco pe','sacos plasticos'] },
+  '39232190': { desc:'Sacos e sacolas de polietileno — outros', ipi:0, icms:12, pis:1.65, cofins:7.6, obs:'Sacos de lixo, sacolas diversas', tags:['saco lixo','lixo','saco preto','saco verde','saco azul','sacos de lixo'] },
+  '39233000': { desc:'Garrafões, garrafas, frascos e artigos semelhantes de plástico', ipi:0, icms:12, pis:1.65, cofins:7.6, obs:'Garrafas PET, garrafões, frascos plásticos', tags:['garrafa','pet','garrafão','frasco','galão','garrafa pet','garrafas','pets'] },
+  '39235000': { desc:'Rolhas, tampas, cápsulas e outros dispositivos de fechar de plástico', ipi:0, icms:12, pis:1.65, cofins:7.6, obs:'Tampas plásticas para embalagens', tags:['tampa','rolha','cápsula','fechar','tampas','tampinha'] },
+  '39239000': { desc:'Artigos de transporte ou embalagem de plástico — outros', ipi:0, icms:12, pis:1.65, cofins:7.6, obs:'Potes, marmitas, embalagens plásticas diversas', tags:['pote','marmita','embalagem plástico','recipiente','vasilha','bandeja plástica'] },
+  '39241000': { desc:'Serviços de mesa e outros artigos de uso doméstico de plástico', ipi:0, icms:12, pis:1.65, cofins:7.6, obs:'Copos, pratos e talheres plásticos', tags:['copo plástico','prato plástico','talher plástico','descartável','copos','pratos'] },
+  '48191000': { desc:'Caixas de papel ou cartão canelado (corrugado)', ipi:0, icms:12, pis:1.65, cofins:7.6, obs:'Caixas de papelão ondulado — correios, e-commerce', tags:['caixa papelão','papelão','caixa ondulada','caixa correio','caixa sedex','caixa ondulado','cartão ondulado'] },
+  '48192000': { desc:'Caixas e cartonagens de papel ou cartão não canelado', ipi:0, icms:12, pis:1.65, cofins:7.6, obs:'Caixas dobráveis de papelão liso — pizza, bolo', tags:['caixa pizza','caixa bolo','caixa dobrável','caixa lisa','cartonagem'] },
+  '48193000': { desc:'Sacos de grande capacidade de papel ou cartão', ipi:0, icms:12, pis:1.65, cofins:7.6, obs:'Sacos de papel kraft industrial', tags:['saco papel','saco kraft','kraft','sacão','saco industrial'] },
+  '48194000': { desc:'Outros sacos, bolsas e cartuchos de papel ou cartão', ipi:0, icms:12, pis:1.65, cofins:7.6, obs:'Sacos e sacolas de papel para varejo', tags:['sacola papel','sacola kraft','saco papel pequeno','sacolinhas papel'] },
+  '63053300': { desc:'Sacos e sacolas de embalagem de fitas de polipropileno', ipi:0, icms:12, pis:1.65, cofins:7.6, obs:'Sacolas de TNT/não tecido, ecobag polipropileno', tags:['tnt','não tecido','nao tecido','sacola tnt','ecobag','sacola ecológica','reutilizável'] },
+  '39199090': { desc:'Chapas e lâminas autoadesivas de plástico — outras', ipi:0, icms:12, pis:1.65, cofins:7.6, obs:'Fitas adesivas, BOPP, fitas de embalagem', tags:['fita','fita adesiva','durex','bopp','adesivo','fita embalagem','fita transparente'] },
+  '48114100': { desc:'Papel autoadesivo em rolos ou folhas', ipi:0, icms:12, pis:1.65, cofins:7.6, obs:'Etiquetas, papel adesivo para impressão', tags:['etiqueta','papel adesivo','label','rótulo','adesivo papel'] },
+  '39269090': { desc:'Outras obras de plástico — outros', ipi:5, icms:12, pis:1.65, cofins:7.6, obs:'Artigos plásticos diversos não classificados acima', tags:['plástico geral','artigo plástico','obra plástico'] },
+};
+
+// Busca por texto — normaliza e verifica tags + descrição
+function ncmBuscarTexto(q) {
+  var q2 = q.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'').trim();
+  var resultados = [];
+  Object.keys(NCM).forEach(function(cod) {
+    var item = NCM[cod];
+    var desc2 = item.desc.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'');
+    var tagMatch = (item.tags || []).some(function(t) {
+      var t2 = t.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'');
+      return t2.includes(q2) || q2.includes(t2);
+    });
+    var descMatch = desc2.includes(q2);
+    if (tagMatch || descMatch) resultados.push({ cod, item, score: tagMatch ? 2 : 1 });
+  });
+  return resultados.sort(function(a,b){ return b.score - a.score; });
+}
+
+function ncmSugestoes() {
+  var q = document.getElementById('ncm-inp').value.trim();
+  var sug = document.getElementById('ncm-sug');
+  if (!q || q.length < 2) { sug.style.display = 'none'; return; }
+
+  // Se parece ser número, não sugere texto
+  if (/^[\d\.]+$/.test(q)) { sug.style.display = 'none'; return; }
+
+  var res = ncmBuscarTexto(q).slice(0, 6);
+  if (!res.length) { sug.style.display = 'none'; return; }
+
+  sug.innerHTML = '';
+  sug.style.display = 'block';
+  res.forEach(function(r) {
+    var div = document.createElement('div');
+    div.style.cssText = 'padding:9px 14px;cursor:pointer;font-size:.8rem;color:var(--text2);display:flex;align-items:center;gap:8px;border-bottom:1px solid var(--border);';
+    var codFmt = r.cod.slice(0,4)+'.'+r.cod.slice(4,6)+'.'+r.cod.slice(6,8);
+    div.innerHTML = '<span style="font-family:monospace;color:var(--blue);font-size:.75rem;flex-shrink:0">' + codFmt + '</span>'
+      + '<span style="flex:1;color:var(--text)">' + r.item.desc + '</span>';
+    div.onmousedown = function() { ncmDireto(r.cod); sug.style.display='none'; };
+    div.onmouseenter = function() { div.style.background='rgba(0,0,0,.04)'; };
+    div.onmouseleave = function() { div.style.background=''; };
+    sug.appendChild(div);
+  });
+}
+
+function ncmDireto(cod) {
+  var codFmt = cod.replace(/\./g,'');
+  document.getElementById('ncm-inp').value = codFmt.slice(0,4)+'.'+codFmt.slice(4,6)+'.'+codFmt.slice(6,8);
+  document.getElementById('ncm-sug').style.display = 'none';
+  buscarNCM();
+}
+
+function buscarNCM() {
+  var q = document.getElementById('ncm-inp').value.trim();
+  var box = document.getElementById('ncm-result');
+  var content = document.getElementById('ncm-content');
+  if (!q) { showToast('Digite um código ou nome de produto', ''); return; }
+
+  document.getElementById('ncm-sug').style.display = 'none';
+  box.classList.add('on');
+  content.innerHTML = '<div style="text-align:center;padding:.75rem;color:var(--text3);font-size:.82rem">🔍 Consultando…</div>';
+
+  var codLimpo = q.replace(/[^0-9]/g,'');
+  var encontrado = null;
+
+  // Busca por código
+  if (codLimpo.length >= 4) {
+    if (NCM[codLimpo]) {
+      encontrado = { cod: codLimpo, item: NCM[codLimpo] };
+    } else {
+      Object.keys(NCM).forEach(function(k) {
+        if (!encontrado && k.startsWith(codLimpo)) encontrado = { cod: k, item: NCM[k] };
+      });
+    }
+  }
+
+  // Busca por texto
+  if (!encontrado && !/^[\d\.]+$/.test(q)) {
+    var res = ncmBuscarTexto(q);
+    if (res.length) encontrado = { cod: res[0].cod, item: res[0].item };
+  }
+
+  setTimeout(function() {
+    if (encontrado) {
+      renderNCM(encontrado.cod, encontrado.item, content);
+    } else if (codLimpo.length >= 4) {
+      // Tenta API externa
+      buscarNCMAPI(codLimpo, content);
+    } else {
+      ncmNaoEncontrado(q, content);
+    }
+  }, 250);
+}
+
+function buscarNCMAPI(cod, content) {
+  fetch('https://brasilapi.com.br/api/ncm/v1/' + cod)
+    .then(function(r) { return r.json(); })
+    .then(function(data) {
+      if (data && data.descricao) {
+        renderNCM(cod, { desc: data.descricao, ipi: data.aliquotaIpi || 0, icms: 12, pis: 1.65, cofins: 7.6, obs: 'Via BrasilAPI — ICMS/PIS/COFINS são referência média' }, content);
+      } else { ncmNaoEncontrado(cod, content); }
+    })
+    .catch(function() { ncmNaoEncontrado(cod, content); });
+}
+
+function renderNCM(cod, data, content) {
+  var fmt = cod.length === 8 ? cod.slice(0,4)+'.'+cod.slice(4,6)+'.'+cod.slice(6,8) : cod;
+  content.innerHTML =
+    '<div class="ncm-code">' + fmt + '</div>'
+    + '<div class="ncm-desc">' + data.desc + '</div>'
+    + (data.obs ? '<div class="ncm-obs">ℹ️ ' + data.obs + '</div>' : '')
+    + '<div class="ncm-aliq-grid">'
+    + aliqBox('IPI', data.ipi+'%', 'var(--red)')
+    + aliqBox('ICMS', data.icms+'%', 'var(--amber)')
+    + aliqBox('PIS', data.pis+'%', 'var(--purple)')
+    + aliqBox('COFINS', data.cofins+'%', 'var(--blue)')
+    + '</div>'
+    + '<div class="btn-row" style="margin-top:.875rem">'
+    + '<button class="btn btn-ghost" style="font-size:.75rem;padding:6px 12px" onclick="copiarNCM(\'' + fmt + '\')">📋 Copiar NCM</button>'
+    + '<button class="btn btn-ghost" style="font-size:.75rem;padding:6px 12px" onclick="usarAliq(' + data.icms + ',' + data.ipi + ')">→ Usar na calculadora</button>'
+    + '</div>';
+}
+
+function aliqBox(nome, val, cor) {
+  return '<div class="ncm-aliq"><div class="ncm-aliq-lbl">' + nome + '</div><div class="ncm-aliq-val" style="color:' + cor + '">' + val + '</div></div>';
+}
+
+function ncmNaoEncontrado(q, content) {
+  content.innerHTML = '<div style="text-align:center;padding:1rem">'
+    + '<div style="font-size:1.5rem;margin-bottom:.5rem">🤷</div>'
+    + '<div style="font-size:.82rem;color:var(--text2);margin-bottom:.5rem">Nenhum resultado para <strong>"' + q + '"</strong>.</div>'
+    + '<div style="font-size:.75rem;color:var(--text3);margin-bottom:.875rem">Tente: "garrafa", "caixa papelão", "sacola", "pote", "fita"…</div>'
+    + '<a href="https://www.receita.fazenda.gov.br/aliquotas/ItensVisualizarNCM.aspx" target="_blank" class="btn btn-ghost" style="font-size:.75rem;margin:0 auto">🌐 Receita Federal</a>'
+    + '</div>';
+}
+
+function copiarNCM(cod) { navigator.clipboard.writeText(cod).then(function(){ showToast('📋 NCM ' + cod + ' copiado!','green'); }); }
+function usarAliq(icms, ipi) {
+  document.getElementById('c-icms-inc').value = 'nao';
+  document.getElementById('icms-row').style.display = 'block';
+  document.getElementById('c-icms').value = icms;
+  document.getElementById('c-ipi').value  = ipi;
+  calcular();
+  document.getElementById('c-custo').scrollIntoView({ behavior:'smooth', block:'center' });
+  showToast('✓ Alíquotas aplicadas', 'green');
+}
+
+/* ──────────────────────────────────────────────────────────
+   UTILS
+────────────────────────────────────────────────────────── */
+function fmtNum(n) { return parseFloat(n).toFixed(2).replace('.',','); }
+
+var _tT;
+function showToast(msg, tipo) {
+  var t = document.getElementById('toast');
+  t.textContent = msg;
+  t.className = 'toast on' + (tipo ? ' '+tipo : '');
+  clearTimeout(_tT);
+  _tT = setTimeout(function(){ t.className = 'toast'; }, 2700);
+}
+
+// Fecha sugestões ao clicar fora
+document.addEventListener('click', function(e) {
+  if (!e.target.closest('#c-busca-prod') && !e.target.closest('#c-prod-suggestions'))
+    document.getElementById('c-prod-suggestions').style.display = 'none';
+  if (!e.target.closest('#ncm-inp') && !e.target.closest('#ncm-sug'))
+    document.getElementById('ncm-sug').style.display = 'none';
+});
+</script>
+
+
+
+</body>
+</html>
