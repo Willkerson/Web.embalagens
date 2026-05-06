@@ -8,7 +8,6 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
-/* ── TOKENS — mesmos do index.html ──────────────────────── */
 :root {
   --bg:       #f5f5f7;
   --surface:  #ffffff;
@@ -49,7 +48,6 @@
   --blue-s:  rgba(0,113,227,0.14);
   --blue-s2: rgba(0,113,227,0.22);
 }
-
 *,*::before,*::after { margin:0; padding:0; box-sizing:border-box; -webkit-font-smoothing:antialiased; }
 html { scroll-behavior:smooth; scroll-padding-top:calc(var(--nav-h) + 16px); }
 body { background:var(--bg); font-family:var(--font); color:var(--text); line-height:1.5; min-height:100vh; }
@@ -57,7 +55,6 @@ a { text-decoration:none; color:inherit; }
 button { cursor:pointer; border:none; background:none; font-family:var(--font); }
 img { display:block; }
 
-/* ── TELA DE SENHA ──────────────────────────────────────── */
 #lock-screen {
   position:fixed; inset:0; z-index:1000;
   display:flex; align-items:center; justify-content:center;
@@ -101,10 +98,6 @@ img { display:block; }
 .lock-btn:hover { filter:brightness(1.08); transform:translateY(-1px); }
 .lock-err { font-size:.775rem; color:var(--red); margin-top:.5rem; min-height:18px; }
 
-/* ── HEADER ─────────────────────────────────────────────── */
-
-
-  
 #app { display:none; }
 .hdr {
   position:sticky; top:0; z-index:200;
@@ -147,10 +140,8 @@ img { display:block; }
 .btn-theme:hover { background:rgba(0,0,0,.1); }
 [data-theme="dark"] .btn-theme { background:rgba(255,255,255,.08); }
 
-/* ── MAIN LAYOUT ────────────────────────────────────────── */
 .main { max-width:860px; margin:0 auto; padding:2rem 1.25rem 5rem; display:flex; flex-direction:column; gap:1.25rem; }
 
-/* ── CARDS ──────────────────────────────────────────────── */
 .card {
   background:var(--surface); border:1px solid var(--border);
   border-radius:var(--radius-lg); overflow:hidden; box-shadow:var(--sh);
@@ -173,7 +164,6 @@ img { display:block; }
 .card-sub   { font-size:.72rem; color:var(--text3); margin-top:1px; }
 .card-body  { padding:1.25rem; }
 
-/* ── CAMPOS ──────────────────────────────────────────────── */
 .field { margin-bottom:.875rem; }
 .field:last-child { margin-bottom:0; }
 .field > label {
@@ -203,7 +193,6 @@ img { display:block; }
 .inp-sfx ~ input, .inp-wrap.sfx input { padding-right:36px; }
 .inp-wrap.sfx input { padding-left:13px; }
 
-/* ── DIVISOR ─────────────────────────────────────────────── */
 .divider { height:1px; background:var(--border); margin:1rem 0; }
 .sec-lbl {
   font-size:.65rem; font-weight:600; color:var(--text3);
@@ -212,7 +201,6 @@ img { display:block; }
 }
 .sec-lbl::after { content:''; flex:1; height:1px; background:var(--border); }
 
-/* ── CHIPS ───────────────────────────────────────────────── */
 .chips { display:flex; gap:5px; flex-wrap:wrap; margin-top:.45rem; }
 .chip {
   padding:4px 11px; border-radius:99px; font-size:.72rem; font-weight:500;
@@ -222,7 +210,6 @@ img { display:block; }
 .chip:hover { color:var(--text); border-color:var(--border2); }
 .chip.on { background:var(--blue-s); color:var(--blue); border-color:var(--blue-s2); }
 
-/* ── RESULTADO ───────────────────────────────────────────── */
 .result-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(155px,1fr)); gap:.75rem; margin-top:.875rem; }
 .rc {
   background:var(--bg); border:1px solid var(--border);
@@ -239,7 +226,6 @@ img { display:block; }
 .rc-val.amber { color:var(--amber); }
 .rc-sub { font-size:.67rem; color:var(--text3); margin-top:3px; }
 
-/* ── BREAKDOWN ───────────────────────────────────────────── */
 .breakdown { background:var(--bg); border:1px solid var(--border); border-radius:10px; overflow:hidden; margin-top:.875rem; }
 .bd-row { display:flex; justify-content:space-between; align-items:center; padding:8px 14px; border-bottom:1px solid var(--border); font-size:.8rem; }
 .bd-row:last-child { border-bottom:none; }
@@ -251,7 +237,6 @@ img { display:block; }
 .bd-val.amber  { color:var(--amber); }
 .bd-val.red    { color:var(--red); }
 
-/* ── BOTÕES ──────────────────────────────────────────────── */
 .btn {
   display:inline-flex; align-items:center; justify-content:center; gap:6px;
   padding:10px 18px; border-radius:9px; font-size:.8125rem; font-weight:500;
@@ -267,7 +252,6 @@ img { display:block; }
 .btn-amber:hover { filter:brightness(1.08); transform:translateY(-1px); }
 .btn-row { display:flex; gap:8px; flex-wrap:wrap; margin-top:.875rem; }
 
-/* ── NCM ─────────────────────────────────────────────────── */
 .ncm-box {
   background:var(--bg); border:1px solid var(--border);
   border-radius:11px; padding:1rem 1.25rem; margin-top:.875rem; display:none;
@@ -285,7 +269,6 @@ img { display:block; }
 .ncm-aliq-lbl { font-size:.58rem; font-weight:700; color:var(--text3); text-transform:uppercase; letter-spacing:.07em; }
 .ncm-aliq-val { font-size:.95rem; font-weight:600; margin-top:2px; }
 
-/* ── HISTÓRICO ───────────────────────────────────────────── */
 .hist-item {
   display:flex; align-items:center; gap:10px;
   background:var(--bg); border:1px solid var(--border);
@@ -301,7 +284,6 @@ img { display:block; }
 .hist-del:hover { color:var(--red); }
 .hist-empty { text-align:center; padding:2rem; color:var(--text3); font-size:.8125rem; }
 
-/* ── RELATÓRIO MUDANÇAS ──────────────────────────────────── */
 .mudanca-item {
   display:flex; align-items:center; gap:8px; padding:7px 12px;
   background:var(--bg); border:1px solid var(--border);
@@ -317,7 +299,6 @@ img { display:block; }
 .mudanca-vals { font-size:.72rem; color:var(--text3); flex-shrink:0; }
 .mudanca-vals span { color:var(--green); font-weight:600; }
 
-/* ── TOAST ───────────────────────────────────────────────── */
 .toast {
   position:fixed; bottom:1.5rem; left:50%;
   transform:translateX(-50%) translateY(8px);
@@ -332,7 +313,6 @@ img { display:block; }
 .toast.blue  { background:var(--blue);  color:#fff; }
 .toast.amber { background:var(--amber); color:#fff; }
 
-/* ── RESPONSIVO ──────────────────────────────────────────── */
 @media(max-width:600px) {
   .field-row { grid-template-columns:1fr; }
   .ncm-aliq-grid { grid-template-columns:repeat(2,1fr); }
@@ -344,7 +324,6 @@ img { display:block; }
 </head>
 <body>
 
-<!-- ══ TELA DE SENHA ══════════════════════════════════════ -->
 <div id="lock-screen">
   <div class="lock-box">
     <div class="lock-mark">
@@ -359,7 +338,6 @@ img { display:block; }
   </div>
 </div>
 
-<!-- ══ APP ════════════════════════════════════════════════ -->
 <div id="app">
 
   <header class="hdr">
@@ -375,12 +353,12 @@ img { display:block; }
       <button class="hdr-btn" onclick="sair()">Sair 🔒</button>
     </div>
   </header>
+
   <script src="front-index/produtos_planilha.js"></script>
+
   <div class="main">
 
-    <!-- ════════════════════════════════════════════════════
-         1. CALCULADORA DE PREÇO
-    ════════════════════════════════════════════════════ -->
+    <!-- CALCULADORA -->
     <div class="card" id="sec-calc">
       <div class="card-hdr">
         <div class="card-ico ico-blue">🧮</div>
@@ -399,7 +377,7 @@ img { display:block; }
           <div class="field-hint">Selecione para vincular o cálculo ao produto e atualizar o preço no catálogo</div>
         </div>
 
-        <div id="prod-selecionado" style="display:none;background:var(--blue-s);border:1px solid var(--blue-s2);border-radius:9px;padding:.65rem 1rem;margin-bottom:.875rem;display:none;align-items:center;gap:8px;font-size:.8125rem">
+        <div id="prod-selecionado" style="display:none;background:var(--blue-s);border:1px solid var(--blue-s2);border-radius:9px;padding:.65rem 1rem;margin-bottom:.875rem;align-items:center;gap:8px;font-size:.8125rem">
           <span>📦</span>
           <span id="prod-sel-nome" style="flex:1;font-weight:500;color:var(--text)"></span>
           <span id="prod-sel-preco-atual" style="color:var(--text3);font-size:.72rem"></span>
@@ -483,7 +461,6 @@ img { display:block; }
           </select>
         </div>
 
-        <!-- RESULTADO -->
         <div id="calc-resultado" style="display:none">
           <div class="divider"></div>
           <div class="sec-lbl">Resultado</div>
@@ -513,7 +490,6 @@ img { display:block; }
 
           <div class="breakdown" id="r-breakdown"></div>
 
-          <!-- Aviso de atualização do catálogo -->
           <div id="aviso-catalogo" style="display:none;margin-top:.875rem;background:var(--green-s);border:1px solid rgba(29,145,71,.22);border-radius:9px;padding:.65rem 1rem;font-size:.8rem;color:var(--green)">
             ✅ Preço atualizado no catálogo local — publique no GitHub para aplicar na loja.
           </div>
@@ -525,7 +501,6 @@ img { display:block; }
             <button class="btn btn-ghost" onclick="limparCalc()">✕ Limpar</button>
           </div>
 
-          <!-- Campo nome histórico -->
           <div id="form-hist" style="display:none;margin-top:.875rem">
             <div class="field">
               <label>Nome para o histórico</label>
@@ -541,9 +516,7 @@ img { display:block; }
       </div>
     </div>
 
-    <!-- ════════════════════════════════════════════════════
-         2. CONSULTA NCM
-    ════════════════════════════════════════════════════ -->
+    <!-- CONSULTA NCM -->
     <div class="card" id="sec-ncm">
       <div class="card-hdr">
         <div class="card-ico ico-amber">🏷️</div>
@@ -560,7 +533,6 @@ img { display:block; }
               style="flex:1" oninput="ncmSugestoes()" onkeydown="if(event.key==='Enter')buscarNCM()">
             <button class="btn btn-amber" onclick="buscarNCM()" style="flex-shrink:0">Buscar →</button>
           </div>
-          <!-- Sugestões ao digitar -->
           <div id="ncm-sug" style="display:none;background:var(--surface);border:1px solid var(--border);border-radius:9px;margin-top:4px;overflow:hidden;box-shadow:var(--sh-lg);position:relative;z-index:50;max-height:220px;overflow-y:auto;"></div>
           <div class="field-hint">Funciona offline — base local com os principais NCMs de embalagens</div>
         </div>
@@ -585,9 +557,7 @@ img { display:block; }
       </div>
     </div>
 
-    <!-- ════════════════════════════════════════════════════
-         3. MUDANÇAS NO CATÁLOGO + RELATÓRIO WPP
-    ════════════════════════════════════════════════════ -->
+    <!-- MUDANÇAS -->
     <div class="card" id="sec-mudancas">
       <div class="card-hdr">
         <div class="card-ico ico-green">📝</div>
@@ -607,9 +577,7 @@ img { display:block; }
       </div>
     </div>
 
-    <!-- ════════════════════════════════════════════════════
-         4. HISTÓRICO DE CÁLCULOS
-    ════════════════════════════════════════════════════ -->
+    <!-- HISTÓRICO -->
     <div class="card" id="sec-hist">
       <div class="card-hdr">
         <div class="card-ico ico-purple">🕓</div>
@@ -629,23 +597,19 @@ img { display:block; }
       </div>
     </div>
 
-  </div><!-- /main -->
-</div><!-- /app -->
+  </div>
+</div>
 
 <div class="toast" id="toast"></div>
 
 <script>
-/* ──────────────────────────────────────────────────────────
-   CONFIG
-────────────────────────────────────────────────────────── */
+/* ── CONFIG ── */
 var SENHA    = 'cia2026';
 var WPP_NUM  = '5511972999835';
 var HIST_KEY = 'cia_calc_hist_v2';
 var MUD_KEY  = 'cia_mudancas_v1';
 
-/* ──────────────────────────────────────────────────────────
-   AUTENTICAÇÃO
-────────────────────────────────────────────────────────── */
+/* ── AUTENTICAÇÃO ── */
 function autenticar() {
   var inp = document.getElementById('lock-inp');
   var err = document.getElementById('lock-err');
@@ -674,9 +638,7 @@ if (sessionStorage.getItem('cia_auth') === '1') {
   setTimeout(function(){ renderHistorico(); renderMudancas(); calcular(); }, 50);
 }
 
-/* ──────────────────────────────────────────────────────────
-   TEMA
-────────────────────────────────────────────────────────── */
+/* ── TEMA ── */
 function toggleTheme() {
   var html = document.documentElement;
   var dark = html.getAttribute('data-theme') === 'dark';
@@ -684,33 +646,54 @@ function toggleTheme() {
   document.getElementById('themeBtn').textContent = dark ? '🌙' : '☀️';
 }
 
-/* ──────────────────────────────────────────────────────────
+/* ══════════════════════════════════════════════════════════
    PRODUTO SELECIONADO
-────────────────────────────────────────────────────────── */
-var prodSel = null; // { id, nome, preco }
+   ──────────────────────────────────────────────────────────
+   CORREÇÃO: usa edicoes do localStorage para mostrar o preço
+   já atualizado; atualiza também window.listaProdutosPlanilha
+   em memória para refletir imediatamente na busca.
+══════════════════════════════════════════════════════════ */
+var prodSel = null;
 
 function getProdutos() {
   if (!window.listaProdutosPlanilha) {
-    console.warn("Produtos não carregados");
+    console.warn('produtos_planilha.js ainda não carregou');
     return [];
   }
-  return window.listaProdutosPlanilha;
+  // Mescla com edições salvas no localStorage para mostrar preços atualizados
+  var edicoes = {};
+  try { edicoes = JSON.parse(localStorage.getItem('cia_edicoes_v2') || '{}'); } catch(e) {}
+  return window.listaProdutosPlanilha.map(function(p) {
+    if (edicoes[p.id] && edicoes[p.id].preco !== undefined) {
+      return Object.assign({}, p, { preco: edicoes[p.id].preco });
+    }
+    return p;
+  });
+}
+
+function norm(s) {
+  return String(s || '').toLowerCase()
+    .normalize('NFD').replace(/[\u0300-\u036f]/g,'')
+    .trim();
 }
 
 function buscarProduto() {
-  var q = document.getElementById('c-busca-prod').value.toLowerCase().trim();
+  var q = norm(document.getElementById('c-busca-prod').value);
   var sug = document.getElementById('c-prod-suggestions');
   if (!q || q.length < 2) { sug.style.display = 'none'; return; }
+
   var lista = getProdutos().filter(function(p) {
-    return p.nome && p.nome.toLowerCase().includes(q);
+    return p.nome && norm(p.nome).includes(q);
   }).slice(0, 8);
+
   if (!lista.length) { sug.style.display = 'none'; return; }
+
   sug.innerHTML = '';
   sug.style.display = 'block';
   lista.forEach(function(p) {
     var div = document.createElement('div');
     div.style.cssText = 'padding:9px 14px;cursor:pointer;font-size:.8125rem;color:var(--text2);display:flex;align-items:center;gap:8px;border-bottom:1px solid var(--border);';
-    div.innerHTML = '<span style="flex:1;font-weight:500;color:var(--text)">' + p.nome + '</span>'
+    div.innerHTML = '<span style="flex:1;font-weight:500;color:var(--text)">' + escHtml(p.nome) + '</span>'
       + '<span style="color:var(--green);font-size:.78rem">R$ ' + fmtNum(p.preco || 0) + '</span>';
     div.onmousedown = function() { selecionarProd(p); };
     div.onmouseenter = function() { div.style.background = 'rgba(0,0,0,.04)'; };
@@ -733,13 +716,64 @@ function selecionarProd(p) {
 function limparProdSel() {
   prodSel = null;
   document.getElementById('c-busca-prod').value = '';
-  document.getElementById('prod-selecionado').style.display = 'none';
+  document.getElementById('c-prod-suggestions').style.display = 'none';
+  var box = document.getElementById('prod-selecionado');
+  box.style.display = 'none';
   document.getElementById('aviso-catalogo').style.display = 'none';
 }
 
-/* ──────────────────────────────────────────────────────────
-   CALCULADORA
-────────────────────────────────────────────────────────── */
+/* ══════════════════════════════════════════════════════════
+   APLICAR NO CATÁLOGO
+   ──────────────────────────────────────────────────────────
+   CORREÇÃO: além de salvar em cia_edicoes_v2 (que o admin.html
+   já lê), agora atualiza também window.listaProdutosPlanilha
+   em memória — assim a busca de produto mostra o novo preço
+   imediatamente sem precisar recarregar a página.
+══════════════════════════════════════════════════════════ */
+function aplicarNoCatalogo() {
+  if (!resultado) { showToast('Calcule um preço primeiro', ''); return; }
+  if (!prodSel)   { showToast('Selecione um produto do catálogo acima', 'amber'); return; }
+
+  var precoAnterior = prodSel.preco;
+  var precoNovo     = resultado.final;
+
+  /* 1. Persiste em localStorage (mesma chave que admin.html usa) */
+  var edicoes = {};
+  try { edicoes = JSON.parse(localStorage.getItem('cia_edicoes_v2') || '{}'); } catch(e) {}
+  if (!edicoes[prodSel.id]) edicoes[prodSel.id] = {};
+  edicoes[prodSel.id].preco = precoNovo;
+  localStorage.setItem('cia_edicoes_v2', JSON.stringify(edicoes));
+
+  /* 2. Atualiza array em memória → busca de produto reflete imediatamente */
+  if (window.listaProdutosPlanilha) {
+    var idx = window.listaProdutosPlanilha.findIndex(function(p) { return p.id === prodSel.id; });
+    if (idx !== -1) {
+      window.listaProdutosPlanilha[idx] = Object.assign({}, window.listaProdutosPlanilha[idx], { preco: precoNovo });
+    }
+  }
+
+  /* 3. Registra no histórico de mudanças */
+  var mudancas = getMudancas();
+  mudancas = mudancas.filter(function(m) { return m.id !== prodSel.id; });
+  mudancas.unshift({
+    id:   prodSel.id,
+    nome: prodSel.nome,
+    de:   precoAnterior,
+    para: precoNovo,
+    tipo: 'edit',
+    ts:   Date.now()
+  });
+  saveMudancas(mudancas);
+
+  /* 4. Atualiza UI */
+  prodSel.preco = precoNovo;
+  document.getElementById('prod-sel-preco-atual').textContent = 'Preço atual: R$ ' + fmtNum(precoNovo);
+  document.getElementById('aviso-catalogo').style.display = 'block';
+  renderMudancas();
+  showToast('✅ Preço atualizado no catálogo local!', 'green');
+}
+
+/* ── CALCULADORA ── */
 var resultado = null;
 
 function toggleICMSRow() {
@@ -800,7 +834,6 @@ function calcular() {
   document.getElementById('r-lucro').textContent  = 'R$ ' + fmtNum(lucro);
   document.getElementById('r-lucro-pct').textContent = lucroP + '% sobre o custo';
 
-  // Breakdown
   var html = '';
   html += bdR('Valor na DANFE', 'R$ ' + fmtNum(custo), '');
   if (inc === 'nao' && vICMS > 0) html += bdR('+ ICMS (' + icmsA + '%)', 'R$ ' + fmtNum(vICMS), 'amber');
@@ -823,47 +856,7 @@ function copiarPreco() {
   });
 }
 
-/* ──────────────────────────────────────────────────────────
-   APLICAR NO CATÁLOGO (atualiza localStorage que o admin lê)
-────────────────────────────────────────────────────────── */
-function aplicarNoCatalogo() {
-  if (!resultado) { showToast('Calcule um preço primeiro', ''); return; }
-  if (!prodSel)   { showToast('Selecione um produto do catálogo acima', 'amber'); return; }
-
-  var precoAnterior = prodSel.preco;
-  var precoNovo = resultado.final;
-
-  // Atualiza nas edições do admin (mesma chave que o admin usa)
-  var edicoes = {};
-  try { edicoes = JSON.parse(localStorage.getItem('cia_edicoes_v2') || '{}'); } catch(e) {}
-  if (!edicoes[prodSel.id]) edicoes[prodSel.id] = {};
-  edicoes[prodSel.id].preco = precoNovo;
-  localStorage.setItem('cia_edicoes_v2', JSON.stringify(edicoes));
-
-  // Registra mudança
-  var mudancas = getMudancas();
-  // Remove entrada anterior do mesmo produto se existir
-  mudancas = mudancas.filter(function(m) { return m.id !== prodSel.id; });
-  mudancas.unshift({
-    id:     prodSel.id,
-    nome:   prodSel.nome,
-    de:     precoAnterior,
-    para:   precoNovo,
-    tipo:   'edit',
-    ts:     Date.now()
-  });
-  saveMudancas(mudancas);
-
-  // Atualiza exibição
-  document.getElementById('prod-sel-preco-atual').textContent = 'Preço atual: R$ ' + fmtNum(precoNovo);
-  document.getElementById('aviso-catalogo').style.display = 'block';
-  renderMudancas();
-  showToast('✅ Preço atualizado no catálogo local!', 'green');
-}
-
-/* ──────────────────────────────────────────────────────────
-   MUDANÇAS
-────────────────────────────────────────────────────────── */
+/* ── MUDANÇAS ── */
 function getMudancas()    { try { return JSON.parse(localStorage.getItem(MUD_KEY) || '[]'); } catch(e) { return []; } }
 function saveMudancas(m)  { localStorage.setItem(MUD_KEY, JSON.stringify(m)); }
 function limparMudancas() { if (!confirm('Limpar lista de mudanças?')) return; saveMudancas([]); renderMudancas(); }
@@ -881,7 +874,7 @@ function renderMudancas() {
     var vals = m.tipo === 'edit'
       ? '<span class="mudanca-vals">R$ ' + fmtNum(m.de) + ' → <span>R$ ' + fmtNum(m.para) + '</span></span>'
       : '<span class="mudanca-vals"><span>R$ ' + fmtNum(m.para) + '</span></span>';
-    div.innerHTML = badge + '<span class="mudanca-nome">' + m.nome + '</span>' + vals;
+    div.innerHTML = badge + '<span class="mudanca-nome">' + escHtml(m.nome) + '</span>' + vals;
     el.appendChild(div);
   });
 }
@@ -900,9 +893,7 @@ function enviarRelatorioWpp() {
   window.open('https://wa.me/' + WPP_NUM + '?text=' + encodeURIComponent(msg), '_blank');
 }
 
-/* ──────────────────────────────────────────────────────────
-   HISTÓRICO
-────────────────────────────────────────────────────────── */
+/* ── HISTÓRICO ── */
 function limparCalc() {
   ['c-custo','c-frete','c-icms','c-ipi'].forEach(function(id) {
     var el = document.getElementById(id); if (el) el.value = '';
@@ -918,8 +909,7 @@ function limparCalc() {
 function salvarHistorico() {
   if (!resultado) return;
   document.getElementById('form-hist').style.display = 'block';
-  var nome = prodSel ? prodSel.nome : '';
-  document.getElementById('c-nome-hist').value = nome;
+  document.getElementById('c-nome-hist').value = prodSel ? prodSel.nome : '';
   document.getElementById('c-nome-hist').focus();
 }
 function confirmarHistorico() {
@@ -947,7 +937,7 @@ function renderHistorico() {
     var item = document.createElement('div'); item.className = 'hist-item';
     item.innerHTML =
       '<div style="flex:1;min-width:0">'
-      + '<div class="hist-nome">' + h.nome + '</div>'
+      + '<div class="hist-nome">' + escHtml(h.nome) + '</div>'
       + '<div style="font-size:.67rem;color:var(--text3);margin-top:2px">Custo: R$ ' + fmtNum(h.custoTotal) + ' · Margem: ' + h.margem + '%</div>'
       + '</div>'
       + '<div class="hist-preco">R$ ' + fmtNum(h.final) + '</div>'
@@ -987,63 +977,252 @@ function exportarHistorico() {
   var a = document.createElement('a'); a.href = URL.createObjectURL(blob); a.download = 'historico-precos.csv'; a.click();
 }
 
-/* ──────────────────────────────────────────────────────────
-   NCM — base local + busca por texto
-────────────────────────────────────────────────────────── */
+/* ══════════════════════════════════════════════════════════
+   NCM — BASE LOCAL EXPANDIDA
+   ──────────────────────────────────────────────────────────
+   CORREÇÕES:
+   1. Tags muito mais abrangentes em cada entrada
+   2. Busca normaliza acentos E ignora pontos/hifens/espaços
+   3. Matching por substring bidirecional + score por posição
+   4. Busca por código aceita 4, 6 ou 8 dígitos
+   5. Todas as entradas com variações ortográficas (plural, sigla, apelido)
+══════════════════════════════════════════════════════════ */
 var NCM = {
-  '39231000': { desc:'Caixas, caixotes e artigos semelhantes de plástico', ipi:0, icms:12, pis:1.65, cofins:7.6, obs:'Embalagens plásticas rígidas', tags:['caixa plástico','engradado','plástico rígido'] },
-  '39232100': { desc:'Sacos e sacolas de polímeros de etileno', ipi:0, icms:12, pis:1.65, cofins:7.6, obs:'Sacolas plásticas comuns de polietileno', tags:['sacola plástica','sacolinha','saco polietileno','saco pe','sacos plasticos'] },
-  '39232190': { desc:'Sacos e sacolas de polietileno — outros', ipi:0, icms:12, pis:1.65, cofins:7.6, obs:'Sacos de lixo, sacolas diversas', tags:['saco lixo','lixo','saco preto','saco verde','saco azul','sacos de lixo'] },
-  '39233000': { desc:'Garrafões, garrafas, frascos e artigos semelhantes de plástico', ipi:0, icms:12, pis:1.65, cofins:7.6, obs:'Garrafas PET, garrafões, frascos plásticos', tags:['garrafa','pet','garrafão','frasco','galão','garrafa pet','garrafas','pets'] },
-  '39235000': { desc:'Rolhas, tampas, cápsulas e outros dispositivos de fechar de plástico', ipi:0, icms:12, pis:1.65, cofins:7.6, obs:'Tampas plásticas para embalagens', tags:['tampa','rolha','cápsula','fechar','tampas','tampinha'] },
-  '39239000': { desc:'Artigos de transporte ou embalagem de plástico — outros', ipi:0, icms:12, pis:1.65, cofins:7.6, obs:'Potes, marmitas, embalagens plásticas diversas', tags:['pote','marmita','embalagem plástico','recipiente','vasilha','bandeja plástica'] },
-  '39241000': { desc:'Serviços de mesa e outros artigos de uso doméstico de plástico', ipi:0, icms:12, pis:1.65, cofins:7.6, obs:'Copos, pratos e talheres plásticos', tags:['copo plástico','prato plástico','talher plástico','descartável','copos','pratos'] },
-  '48191000': { desc:'Caixas de papel ou cartão canelado (corrugado)', ipi:0, icms:12, pis:1.65, cofins:7.6, obs:'Caixas de papelão ondulado — correios, e-commerce', tags:['caixa papelão','papelão','caixa ondulada','caixa correio','caixa sedex','caixa ondulado','cartão ondulado'] },
-  '48192000': { desc:'Caixas e cartonagens de papel ou cartão não canelado', ipi:0, icms:12, pis:1.65, cofins:7.6, obs:'Caixas dobráveis de papelão liso — pizza, bolo', tags:['caixa pizza','caixa bolo','caixa dobrável','caixa lisa','cartonagem'] },
-  '48193000': { desc:'Sacos de grande capacidade de papel ou cartão', ipi:0, icms:12, pis:1.65, cofins:7.6, obs:'Sacos de papel kraft industrial', tags:['saco papel','saco kraft','kraft','sacão','saco industrial'] },
-  '48194000': { desc:'Outros sacos, bolsas e cartuchos de papel ou cartão', ipi:0, icms:12, pis:1.65, cofins:7.6, obs:'Sacos e sacolas de papel para varejo', tags:['sacola papel','sacola kraft','saco papel pequeno','sacolinhas papel'] },
-  '63053300': { desc:'Sacos e sacolas de embalagem de fitas de polipropileno', ipi:0, icms:12, pis:1.65, cofins:7.6, obs:'Sacolas de TNT/não tecido, ecobag polipropileno', tags:['tnt','não tecido','nao tecido','sacola tnt','ecobag','sacola ecológica','reutilizável'] },
-  '39199090': { desc:'Chapas e lâminas autoadesivas de plástico — outras', ipi:0, icms:12, pis:1.65, cofins:7.6, obs:'Fitas adesivas, BOPP, fitas de embalagem', tags:['fita','fita adesiva','durex','bopp','adesivo','fita embalagem','fita transparente'] },
-  '48114100': { desc:'Papel autoadesivo em rolos ou folhas', ipi:0, icms:12, pis:1.65, cofins:7.6, obs:'Etiquetas, papel adesivo para impressão', tags:['etiqueta','papel adesivo','label','rótulo','adesivo papel'] },
-  '39269090': { desc:'Outras obras de plástico — outros', ipi:5, icms:12, pis:1.65, cofins:7.6, obs:'Artigos plásticos diversos não classificados acima', tags:['plástico geral','artigo plástico','obra plástico'] },
+  /* ── Plástico rígido ── */
+  '39231000': {
+    desc:'Caixas, caixotes e artigos semelhantes de plástico',
+    ipi:0, icms:12, pis:1.65, cofins:7.6,
+    obs:'Embalagens plásticas rígidas (caixas, engradados, paletes)',
+    tags:['caixa plastico','caixote','engradado','plastico rigido','plastico','caixa rigida','caixas plastico']
+  },
+  '39232100': {
+    desc:'Sacos e sacolas de polímeros de etileno (PEAD/PEBD)',
+    ipi:0, icms:12, pis:1.65, cofins:7.6,
+    obs:'Sacolas de supermercado, sacos de polietileno comum',
+    tags:['sacola plastica','sacolinha','saco polietileno','saco pe','sacola','sacolas plasticas','saco plastico','sacos plasticos','polietileno','pead','pebd']
+  },
+  '39232190': {
+    desc:'Sacos e sacolas de plástico — outros',
+    ipi:0, icms:12, pis:1.65, cofins:7.6,
+    obs:'Sacos de lixo, sacos para alimentos, sacolas diversas',
+    tags:['saco lixo','sacos de lixo','lixo','saco preto','saco verde','saco azul','saco colorido','saco para lixo','lixeira','plastico lixo','sacos lixo']
+  },
+  '39233000': {
+    desc:'Garrafões, garrafas, frascos e artigos semelhantes de plástico',
+    ipi:0, icms:12, pis:1.65, cofins:7.6,
+    obs:'Garrafas PET, garrafões de água, frascos plásticos, bombonas',
+    tags:['garrafa','pet','garrafao','frasco','galao','garrafa pet','garrafas','pets','bombona','garrafao agua','garrafa plastica','frasco plastico','garrafa refrigerante']
+  },
+  '39235000': {
+    desc:'Rolhas, tampas, cápsulas e outros dispositivos de fechar de plástico',
+    ipi:0, icms:12, pis:1.65, cofins:7.6,
+    obs:'Tampas plásticas para garrafas, potes e embalagens em geral',
+    tags:['tampa','rolha','capsula','fechar','tampas','tampinha','lacre','tampa garrafa','tampa pote','lacre plastico','tampa rosca']
+  },
+  '39239000': {
+    desc:'Artigos de transporte ou embalagem de plástico — outros',
+    ipi:0, icms:12, pis:1.65, cofins:7.6,
+    obs:'Potes, marmitas, embalagens para alimentos, bandejas plásticas',
+    tags:['pote','marmita','embalagem plastico','recipiente','vasilha','bandeja plastica','pote plastico','pote alimento','marmita plastica','embalagem marmita','embalagem alimento','pote descartavel','vasilha plastica']
+  },
+  '39241000': {
+    desc:'Artigos de mesa e uso doméstico de plástico',
+    ipi:0, icms:12, pis:1.65, cofins:7.6,
+    obs:'Copos, pratos, talheres e descartáveis plásticos',
+    tags:['copo plastico','prato plastico','talher plastico','descartavel','copos','pratos','garfo plastico','faca plastica','colher plastica','copo descartavel','prato descartavel','descartaveis','copo agua','copo refrigerante']
+  },
+  '39269090': {
+    desc:'Outras obras de plástico — outros',
+    ipi:5, icms:12, pis:1.65, cofins:7.6,
+    obs:'Artigos plásticos diversos não classificados em outras posições',
+    tags:['plastico geral','artigo plastico','obra plastico','outros plasticos']
+  },
+  /* ── Papel e papelão ── */
+  '48191000': {
+    desc:'Caixas de papel ou cartão canelado (corrugado / ondulado)',
+    ipi:0, icms:12, pis:1.65, cofins:7.6,
+    obs:'Caixas de papelão ondulado — e-commerce, correio, mudança',
+    tags:['caixa papelao','papelao','caixa ondulada','caixa correio','caixa sedex','caixa ondulado','cartao ondulado','caixa ecommerce','caixa mudanca','caixa transporte','papelao ondulado','caixa de papelao','caixas papelao']
+  },
+  '48192000': {
+    desc:'Caixas e cartonagens de papel ou cartão não canelado',
+    ipi:0, icms:12, pis:1.65, cofins:7.6,
+    obs:'Caixas dobráveis — pizza, bolo, confeitaria, presente',
+    tags:['caixa pizza','caixa bolo','caixa dobravel','caixa lisa','cartonagem','caixa confeitaria','caixa presente','caixa papelao liso','caixa cartao','embalagem pizza','embalagem bolo','caixa para pizza']
+  },
+  '48193000': {
+    desc:'Sacos de grande capacidade de papel ou cartão',
+    ipi:0, icms:12, pis:1.65, cofins:7.6,
+    obs:'Sacos de papel kraft industrial — cimento, ração, produtos a granel',
+    tags:['saco papel','saco kraft','kraft','sacao','saco industrial','saco cimento','saco racao','saco farinha','saco papel kraft','embalagem kraft']
+  },
+  '48194000': {
+    desc:'Outros sacos, bolsas e cartuchos de papel ou cartão',
+    ipi:0, icms:12, pis:1.65, cofins:7.6,
+    obs:'Sacos e sacolas de papel para varejo, padaria, farmácia',
+    tags:['sacola papel','sacola kraft','saco papel pequeno','sacolinhas papel','saco padaria','saco farmacia','saco presente','sacola presente','sacola papel kraft','sacola varejo']
+  },
+  '48195000': {
+    desc:'Outros artigos de embalagem de papel ou cartão',
+    ipi:0, icms:12, pis:1.65, cofins:7.6,
+    obs:'Embalagens diversas de papel não classificadas acima',
+    tags:['embalagem papel','papel embalagem','outros papel','cartucho papel']
+  },
+  '48114100': {
+    desc:'Papel autoadesivo — em rolos ou folhas',
+    ipi:0, icms:12, pis:1.65, cofins:7.6,
+    obs:'Etiquetas, papel adesivo para impressão, rótulos',
+    tags:['etiqueta','papel adesivo','label','rotulo','adesivo papel','etiqueta impressora','etiqueta produto','etiqueta codigo barras','etiqueta codigo de barras','papel etiqueta']
+  },
+  /* ── Têxtil / não-tecido ── */
+  '63053300': {
+    desc:'Sacos e sacolas de embalagem de fitas de polipropileno',
+    ipi:0, icms:12, pis:1.65, cofins:7.6,
+    obs:'Sacolas TNT/não-tecido, ecobag, sacola reutilizável',
+    tags:['tnt','nao tecido','nao-tecido','sacola tnt','ecobag','sacola ecologica','reutilizavel','sacola reutilizavel','bag','eco bag','sacola pp','polipropileno','sacola sustentavel','sacola nao tecido']
+  },
+  '63049200': {
+    desc:'Outros artigos de tecidos não tecidos (TNT) — outros',
+    ipi:0, icms:12, pis:1.65, cofins:7.6,
+    obs:'Tecidos não-tecidos para proteção, embalagem e uso geral',
+    tags:['tnt geral','nao tecido geral','tecido nao tecido','spunbond','meltblown']
+  },
+  /* ── Adesivos / fitas ── */
+  '39199090': {
+    desc:'Chapas e lâminas autoadesivas de plástico — outras',
+    ipi:0, icms:12, pis:1.65, cofins:7.6,
+    obs:'Fitas adesivas BOPP, fitas de embalagem, durex, fita crepe',
+    tags:['fita','fita adesiva','durex','bopp','adesivo','fita embalagem','fita transparente','fita marrom','fita laranja','fita crepe','fita plastica','fita polipropileno','fita de embalar','fita para caixa']
+  },
+  '48239090': {
+    desc:'Papel e cartão — outros usos — outros',
+    ipi:0, icms:12, pis:1.65, cofins:7.6,
+    obs:'Papel de seda, papel manteiga, papel craft, papel para embalagem',
+    tags:['papel seda','papel manteiga','papel craft','papel embrulho','papel de embrulho','papel presente','papel para embalagem','lenco de papel','guardanapo']
+  },
+  /* ── Isopor / EPS ── */
+  '39211100': {
+    desc:'Chapas, folhas, películas, tiras de plástico espumado — polímeros de estireno',
+    ipi:0, icms:12, pis:1.65, cofins:7.6,
+    obs:'Caixas de isopor (EPS), embalagens térmicas de poliestireno',
+    tags:['isopor','eps','poliestireno','caixa isopor','embalagem termica','caixa termica','isopor caixa','embalagem eps','poliestireno expandido','caixa de isopor','caixinha isopor']
+  },
+  /* ── Plástico bolha / espuma ── */
+  '39219099': {
+    desc:'Outras chapas, folhas e películas de plástico',
+    ipi:0, icms:12, pis:1.65, cofins:7.6,
+    obs:'Plástico bolha, espuma de polietileno, laminados plásticos',
+    tags:['plastico bolha','bolha','espuma','embalagem bolha','plastico espuma','espuma polietileno','bubble wrap','bolha de ar','plastico protetor']
+  },
+  /* ── Vidro ── */
+  '70109000': {
+    desc:'Garrafões, garrafas, frascos e outros recipientes de vidro',
+    ipi:0, icms:12, pis:1.65, cofins:7.6,
+    obs:'Garrafas, potes e frascos de vidro para alimentos e bebidas',
+    tags:['garrafa vidro','pote vidro','frasco vidro','vidro','recipiente vidro','pote de vidro','frasco de vidro','garrafa de vidro','vidro alimento']
+  },
+  /* ── Alumínio / lata ── */
+  '76129000': {
+    desc:'Reservatórios e recipientes de alumínio para gases — outros',
+    ipi:0, icms:12, pis:1.65, cofins:7.6,
+    obs:'Latas de alumínio para bebidas e alimentos em geral',
+    tags:['lata','lata aluminio','aluminio','lata bebida','lata refrigerante','lata cerveja','lata alimento','embalagem aluminio']
+  },
+  /* ── Papel higiênico / guardanapo (uso em food service) ── */
+  '48181000': {
+    desc:'Papel higiênico',
+    ipi:0, icms:12, pis:1.65, cofins:7.6,
+    obs:'Papel higiênico para uso institucional e doméstico',
+    tags:['papel higienico','higienico','papel banheiro','rolo papel']
+  },
+  '48185000': {
+    desc:'Artigos de vestuário e seus acessórios de papel',
+    ipi:0, icms:12, pis:1.65, cofins:7.6,
+    obs:'Guardanapos, toalhas de papel, afazeres em papel',
+    tags:['guardanapo','toalha papel','toalha de papel','lenco papel','papel toalha','guardanapo papel','lenco de papel','tissue']
+  },
+  /* ── Filme stretch / filme plástico ── */
+  '39202010': {
+    desc:'Chapas, folhas e películas de polietileno — sem suporte',
+    ipi:0, icms:12, pis:1.65, cofins:7.6,
+    obs:'Filme stretch, filme de PVC, filme para paletização',
+    tags:['filme stretch','stretch','filme plastico','filme pvc','filme paletizacao','stretch film','filme para pallet','filme de embalar','plastico filme','manta plastica']
+  },
 };
 
-// Busca por texto — normaliza e verifica tags + descrição
+/* ── Normalização robusta ── */
+function normNCM(s) {
+  return String(s || '').toLowerCase()
+    .normalize('NFD').replace(/[\u0300-\u036f]/g,'')
+    .replace(/[.\-\/\s]+/g,' ')
+    .trim();
+}
+
+/* ── Busca por texto com score ── */
 function ncmBuscarTexto(q) {
-  var q2 = q.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'').trim();
+  var q2 = normNCM(q);
+  if (!q2) return [];
+  var termos = q2.split(' ').filter(Boolean);
   var resultados = [];
+
   Object.keys(NCM).forEach(function(cod) {
     var item = NCM[cod];
-    var desc2 = item.desc.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'');
-    var tagMatch = (item.tags || []).some(function(t) {
-      var t2 = t.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'');
-      return t2.includes(q2) || q2.includes(t2);
+    var desc2 = normNCM(item.desc);
+    var tags2 = (item.tags || []).map(normNCM);
+    var score = 0;
+
+    /* tag exata */
+    if (tags2.some(function(t){ return t === q2; })) score += 10;
+    /* tag contém a query inteira */
+    if (tags2.some(function(t){ return t.includes(q2); })) score += 6;
+    /* query contém a tag (ex: "saco de lixo preto" bate em "saco lixo") */
+    if (tags2.some(function(t){ return q2.includes(t) && t.length > 3; })) score += 5;
+    /* todos os termos estão em alguma tag */
+    var todosNaTags = termos.every(function(tr){
+      return tags2.some(function(t){ return t.includes(tr); });
     });
-    var descMatch = desc2.includes(q2);
-    if (tagMatch || descMatch) resultados.push({ cod, item, score: tagMatch ? 2 : 1 });
+    if (todosNaTags && termos.length > 0) score += 4;
+    /* descrição contém a query */
+    if (desc2.includes(q2)) score += 3;
+    /* cada termo isolado em tag */
+    termos.forEach(function(tr){
+      if (tags2.some(function(t){ return t.includes(tr); })) score += 1;
+    });
+
+    if (score > 0) resultados.push({ cod, item, score });
   });
+
   return resultados.sort(function(a,b){ return b.score - a.score; });
 }
 
+/* ── Sugestões ao digitar ── */
 function ncmSugestoes() {
   var q = document.getElementById('ncm-inp').value.trim();
   var sug = document.getElementById('ncm-sug');
   if (!q || q.length < 2) { sug.style.display = 'none'; return; }
 
-  // Se parece ser número, não sugere texto
-  if (/^[\d\.]+$/.test(q)) { sug.style.display = 'none'; return; }
+  var codLimpo = q.replace(/[^0-9]/g,'');
+  var res = [];
 
-  var res = ncmBuscarTexto(q).slice(0, 6);
+  if (codLimpo.length >= 4) {
+    /* sugestão de código */
+    Object.keys(NCM).forEach(function(k){
+      if (k.startsWith(codLimpo)) res.push({ cod:k, item:NCM[k] });
+    });
+  } else {
+    res = ncmBuscarTexto(q).slice(0, 6).map(function(r){ return { cod:r.cod, item:r.item }; });
+  }
+
   if (!res.length) { sug.style.display = 'none'; return; }
 
   sug.innerHTML = '';
   sug.style.display = 'block';
-  res.forEach(function(r) {
+  res.slice(0,6).forEach(function(r) {
     var div = document.createElement('div');
     div.style.cssText = 'padding:9px 14px;cursor:pointer;font-size:.8rem;color:var(--text2);display:flex;align-items:center;gap:8px;border-bottom:1px solid var(--border);';
     var codFmt = r.cod.slice(0,4)+'.'+r.cod.slice(4,6)+'.'+r.cod.slice(6,8);
     div.innerHTML = '<span style="font-family:monospace;color:var(--blue);font-size:.75rem;flex-shrink:0">' + codFmt + '</span>'
-      + '<span style="flex:1;color:var(--text)">' + r.item.desc + '</span>';
+      + '<span style="flex:1;color:var(--text)">' + escHtml(r.item.desc) + '</span>';
     div.onmousedown = function() { ncmDireto(r.cod); sug.style.display='none'; };
     div.onmouseenter = function() { div.style.background='rgba(0,0,0,.04)'; };
     div.onmouseleave = function() { div.style.background=''; };
@@ -1052,15 +1231,16 @@ function ncmSugestoes() {
 }
 
 function ncmDireto(cod) {
-  var codFmt = cod.replace(/\./g,'');
-  document.getElementById('ncm-inp').value = codFmt.slice(0,4)+'.'+codFmt.slice(4,6)+'.'+codFmt.slice(6,8);
+  var c = cod.replace(/\D/g,'');
+  document.getElementById('ncm-inp').value = c.slice(0,4)+'.'+c.slice(4,6)+'.'+c.slice(6,8);
   document.getElementById('ncm-sug').style.display = 'none';
   buscarNCM();
 }
 
+/* ── Busca principal ── */
 function buscarNCM() {
   var q = document.getElementById('ncm-inp').value.trim();
-  var box = document.getElementById('ncm-result');
+  var box     = document.getElementById('ncm-result');
   var content = document.getElementById('ncm-content');
   if (!q) { showToast('Digite um código ou nome de produto', ''); return; }
 
@@ -1071,19 +1251,21 @@ function buscarNCM() {
   var codLimpo = q.replace(/[^0-9]/g,'');
   var encontrado = null;
 
-  // Busca por código
-  if (codLimpo.length >= 4) {
-    if (NCM[codLimpo]) {
-      encontrado = { cod: codLimpo, item: NCM[codLimpo] };
-    } else {
-      Object.keys(NCM).forEach(function(k) {
-        if (!encontrado && k.startsWith(codLimpo)) encontrado = { cod: k, item: NCM[k] };
-      });
+  /* 1. Busca por código exato (8 dígitos) */
+  if (codLimpo.length === 8 && NCM[codLimpo]) {
+    encontrado = { cod: codLimpo, item: NCM[codLimpo] };
+  }
+
+  /* 2. Prefixo de código (4 ou 6 dígitos) */
+  if (!encontrado && codLimpo.length >= 4) {
+    var keys = Object.keys(NCM);
+    for (var i=0; i<keys.length; i++) {
+      if (keys[i].startsWith(codLimpo)) { encontrado = { cod:keys[i], item:NCM[keys[i]] }; break; }
     }
   }
 
-  // Busca por texto
-  if (!encontrado && !/^[\d\.]+$/.test(q)) {
+  /* 3. Busca textual (se não parece só número) */
+  if (!encontrado) {
     var res = ncmBuscarTexto(q);
     if (res.length) encontrado = { cod: res[0].cod, item: res[0].item };
   }
@@ -1092,35 +1274,41 @@ function buscarNCM() {
     if (encontrado) {
       renderNCM(encontrado.cod, encontrado.item, content);
     } else if (codLimpo.length >= 4) {
-      // Tenta API externa
       buscarNCMAPI(codLimpo, content);
     } else {
       ncmNaoEncontrado(q, content);
     }
-  }, 250);
+  }, 200);
 }
 
+/* ── API externa (fallback) ── */
 function buscarNCMAPI(cod, content) {
   fetch('https://brasilapi.com.br/api/ncm/v1/' + cod)
     .then(function(r) { return r.json(); })
     .then(function(data) {
       if (data && data.descricao) {
-        renderNCM(cod, { desc: data.descricao, ipi: data.aliquotaIpi || 0, icms: 12, pis: 1.65, cofins: 7.6, obs: 'Via BrasilAPI — ICMS/PIS/COFINS são referência média' }, content);
+        renderNCM(cod, {
+          desc: data.descricao,
+          ipi: data.aliquotaIpi || 0,
+          icms: 12, pis: 1.65, cofins: 7.6,
+          obs: 'Via BrasilAPI — ICMS/PIS/COFINS são referência média SP'
+        }, content);
       } else { ncmNaoEncontrado(cod, content); }
     })
     .catch(function() { ncmNaoEncontrado(cod, content); });
 }
 
 function renderNCM(cod, data, content) {
-  var fmt = cod.length === 8 ? cod.slice(0,4)+'.'+cod.slice(4,6)+'.'+cod.slice(6,8) : cod;
+  var fmt = String(cod).replace(/\D/g,'');
+  fmt = fmt.slice(0,4)+'.'+fmt.slice(4,6)+'.'+fmt.slice(6,8);
   content.innerHTML =
     '<div class="ncm-code">' + fmt + '</div>'
-    + '<div class="ncm-desc">' + data.desc + '</div>'
-    + (data.obs ? '<div class="ncm-obs">ℹ️ ' + data.obs + '</div>' : '')
+    + '<div class="ncm-desc">' + escHtml(data.desc) + '</div>'
+    + (data.obs ? '<div class="ncm-obs">ℹ️ ' + escHtml(data.obs) + '</div>' : '')
     + '<div class="ncm-aliq-grid">'
-    + aliqBox('IPI', data.ipi+'%', 'var(--red)')
-    + aliqBox('ICMS', data.icms+'%', 'var(--amber)')
-    + aliqBox('PIS', data.pis+'%', 'var(--purple)')
+    + aliqBox('IPI',    data.ipi+'%',    'var(--red)')
+    + aliqBox('ICMS',   data.icms+'%',   'var(--amber)')
+    + aliqBox('PIS',    data.pis+'%',    'var(--purple)')
     + aliqBox('COFINS', data.cofins+'%', 'var(--blue)')
     + '</div>'
     + '<div class="btn-row" style="margin-top:.875rem">'
@@ -1136,13 +1324,16 @@ function aliqBox(nome, val, cor) {
 function ncmNaoEncontrado(q, content) {
   content.innerHTML = '<div style="text-align:center;padding:1rem">'
     + '<div style="font-size:1.5rem;margin-bottom:.5rem">🤷</div>'
-    + '<div style="font-size:.82rem;color:var(--text2);margin-bottom:.5rem">Nenhum resultado para <strong>"' + q + '"</strong>.</div>'
-    + '<div style="font-size:.75rem;color:var(--text3);margin-bottom:.875rem">Tente: "garrafa", "caixa papelão", "sacola", "pote", "fita"…</div>'
+    + '<div style="font-size:.82rem;color:var(--text2);margin-bottom:.5rem">Nenhum resultado para <strong>"' + escHtml(q) + '"</strong>.</div>'
+    + '<div style="font-size:.75rem;color:var(--text3);margin-bottom:.875rem">Tente: "garrafa", "caixa papelão", "sacola", "pote", "fita", "isopor", "marmita"…</div>'
     + '<a href="https://www.receita.fazenda.gov.br/aliquotas/ItensVisualizarNCM.aspx" target="_blank" class="btn btn-ghost" style="font-size:.75rem;margin:0 auto">🌐 Receita Federal</a>'
     + '</div>';
 }
 
-function copiarNCM(cod) { navigator.clipboard.writeText(cod).then(function(){ showToast('📋 NCM ' + cod + ' copiado!','green'); }); }
+function copiarNCM(cod) {
+  navigator.clipboard.writeText(cod).then(function(){ showToast('📋 NCM ' + cod + ' copiado!','green'); });
+}
+
 function usarAliq(icms, ipi) {
   document.getElementById('c-icms-inc').value = 'nao';
   document.getElementById('icms-row').style.display = 'block';
@@ -1153,10 +1344,9 @@ function usarAliq(icms, ipi) {
   showToast('✓ Alíquotas aplicadas', 'green');
 }
 
-/* ──────────────────────────────────────────────────────────
-   UTILS
-────────────────────────────────────────────────────────── */
+/* ── UTILS ── */
 function fmtNum(n) { return parseFloat(n).toFixed(2).replace('.',','); }
+function escHtml(s) { return String(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;'); }
 
 var _tT;
 function showToast(msg, tipo) {
@@ -1167,18 +1357,13 @@ function showToast(msg, tipo) {
   _tT = setTimeout(function(){ t.className = 'toast'; }, 2700);
 }
 
-// Fecha sugestões ao clicar fora
 document.addEventListener('click', function(e) {
   if (!e.target.closest('#c-busca-prod') && !e.target.closest('#c-prod-suggestions'))
     document.getElementById('c-prod-suggestions').style.display = 'none';
   if (!e.target.closest('#ncm-inp') && !e.target.closest('#ncm-sug'))
     document.getElementById('ncm-sug').style.display = 'none';
 });
-
-
 </script>
-
-
 
 </body>
 </html>
