@@ -10,6 +10,14 @@ var _debouncedRender = debounce(renderizar, 200);
 function getListaFiltrada() {
   var lista = prods().filter(function(p) { return !p.oculto; });
 
+  // ── Filtro por preço ──────────────────────────────────────────
+  if (estado.precoFiltro !== null && estado.precoFiltro !== undefined) {
+    return lista.filter(function(p) {
+      var v = parseFloat(p.preco);
+      return !isNaN(v) && Math.abs(v - estado.precoFiltro) <= 0.05;
+    });
+  }
+
   if (estado.busca) {
     var results = buscaFuzzy(estado.busca);
     return results
@@ -92,7 +100,9 @@ function renderizar() {
   if (!lista.length) {
     c.innerHTML =
       '<div class="no-results"><span>🔍</span>Nenhum produto encontrado para "<strong>' +
-      estado.busca +
+      (estado.precoFiltro !== null && estado.precoFiltro !== undefined
+        ? 'R$ ' + estado.precoFiltro.toFixed(2).replace('.', ',')
+        : estado.busca) +
       '</strong>".<br>Tente outro termo ou limpe os filtros.</div>';
     return;
   }
