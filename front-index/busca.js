@@ -7,7 +7,7 @@ var _tocandoSugestao = false;
 var _debouncedSearch = debounce(function(q) { mostrarSugestoes(q); }, 120);
 
 // ═════════════════════════════════════════════════════════════
-// 🎂 EASTER EGG 
+// 🎂 EASTER EGG
 // ═════════════════════════════════════════════════════════════
 
 var _L = {
@@ -91,9 +91,9 @@ document.addEventListener('keypress', function(e) {
 function _lNormalizar(str) {
   return str.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '').replace(/[^a-z]/g, '');
 }
-// ── Detecção de busca por preço ─────────────────────────────
+
+// ── Detecção de busca por preço ────────────────────────────────
 function _extrairPreco(query) {
-  // Aceita: 11,40 | 11.40 | R$ 11,40 | 11 (inteiro)
   var limpo = query.trim().replace(/^R\$\s*/i, '').replace(',', '.').trim();
   var num = parseFloat(limpo);
   if (!isNaN(num) && /^[\d.,\s]+$/.test(query.replace(/^R\$\s*/i, ''))) return num;
@@ -102,7 +102,7 @@ function _extrairPreco(query) {
 
 function _verificarLaryssa(query) {
   var q = _lNormalizar(query);
-  if (['laryssa','larissa','larysa','larisssa','larissa'].indexOf(q) >= 0) {
+  if (['laryssa','larissa','larysa','larisssa'].indexOf(q) >= 0) {
     if (!_L.ativo) { _L.ativo = true; _lDisparar(); }
     return true;
   }
@@ -114,22 +114,11 @@ function _verificarLaryssa(query) {
 // ══════════════════════════════════════════════════════════════
 function _lDisparar() {
   _lInjetarEstilos();
-
-  // 1. Fade-out cinematográfico do site
   _lFadeSite(true, function() {
-    // 2. Canvas de partículas vivo
     _lIniciarCanvas();
-
-    // 3. Overlay de revelação
     _lCriarOverlayRevela();
-
-    // 4. Troca o título
     _lAnimarTitulo();
-
-    // 5. Libera o site depois de alguns segundos
     setTimeout(function() { _lFadeSite(false); }, 9000);
-
-    // 6. Reseta estado
     setTimeout(function() { _L.ativo = false; }, 12000);
   });
 }
@@ -172,261 +161,60 @@ function _lInjetarEstilos() {
     @keyframes _lPetal   { 0%{transform:translateY(-10px) rotate(0deg) scale(1);opacity:1} 100%{transform:translateY(105vh) rotate(var(--lr)) scale(.4);opacity:0} }
     @keyframes _lCinema  { 0%{opacity:0;transform:scaleY(0)} 100%{opacity:1;transform:scaleY(1)} }
     @keyframes _lCinemaOut{from{opacity:1} to{opacity:0}}
-
-    /* ── Canvas de fundo ── */
     #_l-canvas { position:fixed;inset:0;z-index:9990;pointer-events:none; }
-
-    /* ── Escurecimento cinematográfico ── */
-    #_l-cinema-top, #_l-cinema-bot {
-      position:fixed;left:0;right:0;z-index:9991;background:#0a0005;
-      pointer-events:none;height:0;transition:height .9s cubic-bezier(.4,0,.2,1);
-    }
+    #_l-cinema-top, #_l-cinema-bot { position:fixed;left:0;right:0;z-index:9991;background:#0a0005;pointer-events:none;height:0;transition:height .9s cubic-bezier(.4,0,.2,1); }
     #_l-cinema-top{top:0;transform-origin:top;}
     #_l-cinema-bot{bottom:0;transform-origin:bottom;}
     #_l-cinema-top.on, #_l-cinema-bot.on { height:10vh; }
-
-    /* ── Overlay de revelação ── */
-    #_l-overlay {
-      position:fixed;inset:0;z-index:9992;
-      display:flex;flex-direction:column;align-items:center;justify-content:center;
-      pointer-events:none;padding:2rem;box-sizing:border-box;
-    }
-
-    /* ── Card principal ── */
-    #_l-card {
-      position:fixed;inset:0;z-index:9993;
-      display:flex;align-items:center;justify-content:center;
-      padding:1rem;box-sizing:border-box;
-      pointer-events:none;
-    }
-    #_l-card-inner {
-      background:rgba(14,8,22,.95);
-      backdrop-filter:blur(24px) saturate(1.8);
-      border:1px solid rgba(255,200,120,.2);
-      border-radius:28px;
-      width:100%;max-width:440px;
-      overflow:hidden;
-      box-shadow:0 40px 120px rgba(0,0,0,.7), 0 0 0 1px rgba(255,255,255,.04) inset;
-      animation:_lPop .6s cubic-bezier(.34,1.56,.64,1) both;
-      pointer-events:all;
-    }
+    #_l-overlay { position:fixed;inset:0;z-index:9992;display:flex;flex-direction:column;align-items:center;justify-content:center;pointer-events:none;padding:2rem;box-sizing:border-box; }
+    #_l-card { position:fixed;inset:0;z-index:9993;display:flex;align-items:center;justify-content:center;padding:1rem;box-sizing:border-box;pointer-events:none; }
+    #_l-card-inner { background:rgba(14,8,22,.95);backdrop-filter:blur(24px) saturate(1.8);border:1px solid rgba(255,200,120,.2);border-radius:28px;width:100%;max-width:440px;overflow:hidden;box-shadow:0 40px 120px rgba(0,0,0,.7), 0 0 0 1px rgba(255,255,255,.04) inset;animation:_lPop .6s cubic-bezier(.34,1.56,.64,1) both;pointer-events:all; }
     #_l-card-inner.lendaria { animation:_lRainbow 2s linear infinite, _lHalo 2s ease-in-out infinite; }
-
-    /* ── Banner do card ── */
-    ._l-banner {
-      background:linear-gradient(135deg,#1a0030 0%,#2d0050 40%,#1a001a 100%);
-      padding:2.5rem 1.5rem 2rem;
-      text-align:center;
-      position:relative;
-      overflow:hidden;
-      cursor:pointer;
-    }
-    ._l-banner::before {
-      content:'';position:absolute;inset:0;
-      background:linear-gradient(135deg,rgba(255,160,50,.08),rgba(200,80,255,.06),rgba(80,120,255,.08));
-      animation:_lShimmer 4s linear infinite;
-      background-size:300% 300%;
-    }
-    ._l-banner-emoji {
-      font-size:4rem;display:block;margin-bottom:.6rem;
-      animation:_lFloat 4s ease-in-out infinite;
-      position:relative;z-index:1;
-      filter:drop-shadow(0 8px 24px rgba(255,200,100,.3));
-    }
+    ._l-banner { background:linear-gradient(135deg,#1a0030 0%,#2d0050 40%,#1a001a 100%);padding:2.5rem 1.5rem 2rem;text-align:center;position:relative;overflow:hidden;cursor:pointer; }
+    ._l-banner::before { content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(255,160,50,.08),rgba(200,80,255,.06),rgba(80,120,255,.08));animation:_lShimmer 4s linear infinite;background-size:300% 300%; }
+    ._l-banner-emoji { font-size:4rem;display:block;margin-bottom:.6rem;animation:_lFloat 4s ease-in-out infinite;position:relative;z-index:1;filter:drop-shadow(0 8px 24px rgba(255,200,100,.3)); }
     ._l-banner-emoji.hit { animation:_lBounce .3s ease both!important; }
-    ._l-banner-nome {
-      font-size:1.9rem;font-weight:700;color:#fff;margin:0;
-      background:linear-gradient(135deg,#ffd700,#ffb347,#ff8c69,#ff69b4);
-      -webkit-background-clip:text;-webkit-text-fill-color:transparent;
-      background-clip:text;
-      animation:_lShimmer 3s linear infinite, _lGlow 3s ease-in-out infinite;
-      background-size:300% 300%;
-      position:relative;z-index:1;
-    }
-    ._l-banner-sub {
-      font-size:.78rem;color:rgba(255,200,100,.6);
-      margin:.3rem 0 0;letter-spacing:.15em;text-transform:uppercase;
-      position:relative;z-index:1;
-    }
-    ._l-star-deco {
-      position:absolute;color:rgba(255,220,100,.5);
-      animation:_lStarPop .5s ease both;
-    }
-
-    /* ── Body do card ── */
+    ._l-banner-nome { font-size:1.9rem;font-weight:700;color:#fff;margin:0;background:linear-gradient(135deg,#ffd700,#ffb347,#ff8c69,#ff69b4);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;animation:_lShimmer 3s linear infinite, _lGlow 3s ease-in-out infinite;background-size:300% 300%;position:relative;z-index:1; }
+    ._l-banner-sub { font-size:.78rem;color:rgba(255,200,100,.6);margin:.3rem 0 0;letter-spacing:.15em;text-transform:uppercase;position:relative;z-index:1; }
+    ._l-star-deco { position:absolute;color:rgba(255,220,100,.5);animation:_lStarPop .5s ease both; }
     ._l-body { padding:1.5rem 1.5rem 1.75rem;color:#e8e0f0; }
-
-    /* ── Tabs ── */
     ._l-tabs { display:flex;gap:6px;margin-bottom:1.25rem; }
-    ._l-tab {
-      flex:1;padding:.45rem .4rem;
-      background:rgba(255,255,255,.04);
-      border:1px solid rgba(255,255,255,.08);
-      border-radius:99px;font-size:.75rem;cursor:pointer;
-      color:rgba(255,255,255,.5);transition:all .2s;
-      font-family:inherit;text-align:center;
-    }
-    ._l-tab.on {
-      background:linear-gradient(135deg,rgba(255,180,50,.25),rgba(200,80,255,.2));
-      border-color:rgba(255,200,100,.4);
-      color:#ffd700;font-weight:600;
-    }
+    ._l-tab { flex:1;padding:.45rem .4rem;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:99px;font-size:.75rem;cursor:pointer;color:rgba(255,255,255,.5);transition:all .2s;font-family:inherit;text-align:center; }
+    ._l-tab.on { background:linear-gradient(135deg,rgba(255,180,50,.25),rgba(200,80,255,.2));border-color:rgba(255,200,100,.4);color:#ffd700;font-weight:600; }
     ._l-tab:hover:not(.on) { background:rgba(255,255,255,.07);color:rgba(255,255,255,.75); }
-
     ._l-panel { display:none; }
     ._l-panel.on { display:block; }
-
-    /* ── Caixa de mensagem ── */
-    ._l-msgbox {
-      background:rgba(255,255,255,.04);
-      border:1px solid rgba(255,200,100,.12);
-      border-radius:14px;padding:1.1rem 1.2rem;
-      min-height:80px;font-size:.95rem;color:#f0e8ff;
-      line-height:1.7;margin-bottom:1.1rem;
-      white-space:pre-line;
-    }
-    ._l-cursor {
-      display:inline-block;width:2px;height:1em;
-      background:#ffd700;vertical-align:text-bottom;
-      animation:_lBlink .7s infinite;margin-left:2px;
-    }
-
-    /* ── Botões ── */
+    ._l-msgbox { background:rgba(255,255,255,.04);border:1px solid rgba(255,200,100,.12);border-radius:14px;padding:1.1rem 1.2rem;min-height:80px;font-size:.95rem;color:#f0e8ff;line-height:1.7;margin-bottom:1.1rem;white-space:pre-line; }
+    ._l-cursor { display:inline-block;width:2px;height:1em;background:#ffd700;vertical-align:text-bottom;animation:_lBlink .7s infinite;margin-left:2px; }
     ._l-actions { display:flex;flex-direction:column;gap:8px; }
-    ._l-btn {
-      background:rgba(255,255,255,.04);
-      border:1px solid rgba(255,255,255,.1);
-      border-radius:99px;padding:.65rem 1.2rem;
-      font-size:.88rem;cursor:pointer;
-      color:rgba(255,255,255,.75);
-      display:flex;align-items:center;gap:10px;
-      transition:all .18s;font-family:inherit;width:100%;
-      text-align:left;
-    }
+    ._l-btn { background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);border-radius:99px;padding:.65rem 1.2rem;font-size:.88rem;cursor:pointer;color:rgba(255,255,255,.75);display:flex;align-items:center;gap:10px;transition:all .18s;font-family:inherit;width:100%;text-align:left; }
     ._l-btn:hover { background:rgba(255,255,255,.09);color:#fff;transform:translateX(4px); }
     ._l-btn:active { transform:scale(.98); }
-    ._l-btn-main {
-      background:linear-gradient(135deg,rgba(255,160,50,.3),rgba(200,80,255,.25)) !important;
-      border-color:rgba(255,200,100,.4) !important;
-      color:#ffd700 !important;font-weight:600;
-      justify-content:center;
-      box-shadow:0 4px 24px rgba(255,160,50,.15);
-      animation:_lPulse 2.5s ease-in-out infinite;
-    }
+    ._l-btn-main { background:linear-gradient(135deg,rgba(255,160,50,.3),rgba(200,80,255,.25)) !important;border-color:rgba(255,200,100,.4) !important;color:#ffd700 !important;font-weight:600;justify-content:center;box-shadow:0 4px 24px rgba(255,160,50,.15);animation:_lPulse 2.5s ease-in-out infinite; }
     ._l-btn-main:hover { box-shadow:0 8px 36px rgba(255,160,50,.3);transform:scale(1.02) !important; }
     ._l-btn-wave { animation:_lWave .9s ease-in-out infinite; }
-
-    /* ── Seção "sobre você" ── */
-    ._l-horo {
-      background:rgba(140,60,255,.12);border:1px solid rgba(140,60,255,.25);
-      border-radius:12px;padding:.9rem 1rem;margin-bottom:.75rem;
-      font-size:.88rem;color:#d4b8ff;line-height:1.6;
-    }
-    ._l-fato {
-      background:rgba(50,180,255,.1);border:1px solid rgba(50,180,255,.2);
-      border-radius:12px;padding:.9rem 1rem;margin-bottom:.75rem;
-      font-size:.88rem;color:#a8d8ff;line-height:1.6;
-    }
-    ._l-prog-wrap {
-      background:rgba(255,255,255,.08);border-radius:99px;height:6px;
-      overflow:hidden;margin:.5rem 0;
-    }
-    ._l-prog-bar {
-      height:100%;
-      background:linear-gradient(90deg,#ff8c00,#ffd700,#ff69b4,#c77dff);
-      background-size:200% 100%;
-      border-radius:99px;
-      animation:_lShimmer 2s linear infinite;
-    }
-    ._l-orbit-wrap {
-      position:relative;width:90px;height:90px;
-      margin:0 auto .75rem;
-      display:flex;align-items:center;justify-content:center;
-    }
+    ._l-horo { background:rgba(140,60,255,.12);border:1px solid rgba(140,60,255,.25);border-radius:12px;padding:.9rem 1rem;margin-bottom:.75rem;font-size:.88rem;color:#d4b8ff;line-height:1.6; }
+    ._l-fato { background:rgba(50,180,255,.1);border:1px solid rgba(50,180,255,.2);border-radius:12px;padding:.9rem 1rem;margin-bottom:.75rem;font-size:.88rem;color:#a8d8ff;line-height:1.6; }
+    ._l-prog-wrap { background:rgba(255,255,255,.08);border-radius:99px;height:6px;overflow:hidden;margin:.5rem 0; }
+    ._l-prog-bar { height:100%;background:linear-gradient(90deg,#ff8c00,#ffd700,#ff69b4,#c77dff);background-size:200% 100%;border-radius:99px;animation:_lShimmer 2s linear infinite; }
+    ._l-orbit-wrap { position:relative;width:90px;height:90px;margin:0 auto .75rem;display:flex;align-items:center;justify-content:center; }
     ._l-orbit-center { font-size:3rem;animation:_lHeartbeat 1.4s ease-in-out infinite; }
-    ._l-orbit-star {
-      position:absolute;top:50%;left:50%;
-      font-size:.85rem;animation:_lOrbit linear infinite;
-    }
-
-    /* ── Seção festa ── */
+    ._l-orbit-star { position:absolute;top:50%;left:50%;font-size:.85rem;animation:_lOrbit linear infinite; }
     ._l-festa-grid { display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:.75rem; }
-    ._l-festa-btn {
-      background:rgba(255,255,255,.04);
-      border:1px solid rgba(255,255,255,.08);
-      border-radius:14px;padding:1rem .75rem;
-      text-align:center;cursor:pointer;
-      transition:all .18s;font-family:inherit;color:rgba(255,255,255,.75);
-      font-size:.8rem;
-    }
+    ._l-festa-btn { background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:14px;padding:1rem .75rem;text-align:center;cursor:pointer;transition:all .18s;font-family:inherit;color:rgba(255,255,255,.75);font-size:.8rem; }
     ._l-festa-btn:hover { background:rgba(255,255,255,.1);transform:scale(1.04);color:#fff; }
     ._l-festa-btn .ico { font-size:1.6rem;display:block;margin-bottom:.35rem; }
-    ._l-confetes-count {
-      text-align:center;font-size:.72rem;
-      color:rgba(255,200,100,.5);margin-top:.75rem;
-    }
-
-    /* ── Rodapé ── */
-    ._l-footer {
-      margin-top:1.1rem;padding-top:1.1rem;
-      border-top:1px solid rgba(255,255,255,.06);
-      display:flex;align-items:center;justify-content:space-between;
-    }
+    ._l-confetes-count { text-align:center;font-size:.72rem;color:rgba(255,200,100,.5);margin-top:.75rem; }
+    ._l-footer { margin-top:1.1rem;padding-top:1.1rem;border-top:1px solid rgba(255,255,255,.06);display:flex;align-items:center;justify-content:space-between; }
     ._l-counter { font-size:.72rem;color:rgba(255,255,255,.3); }
-    ._l-fechar {
-      background:transparent;border:none;cursor:pointer;
-      font-size:.8rem;color:rgba(255,255,255,.3);
-      font-family:inherit;padding:.3rem .6rem;border-radius:99px;
-      transition:all .15s;
-    }
+    ._l-fechar { background:transparent;border:none;cursor:pointer;font-size:.8rem;color:rgba(255,255,255,.3);font-family:inherit;padding:.3rem .6rem;border-radius:99px;transition:all .15s; }
     ._l-fechar:hover { color:rgba(255,255,255,.7);background:rgba(255,255,255,.06); }
-
-    /* ── Toast ── */
-    ._l-toast {
-      position:fixed;bottom:2.5rem;left:50%;transform:translateX(-50%);
-      z-index:10002;background:rgba(20,10,35,.95);
-      backdrop-filter:blur(12px);
-      border:1px solid rgba(255,200,100,.2);
-      color:#f0e8ff;border-radius:14px;
-      padding:.75rem 1.5rem;font-size:.85rem;
-      pointer-events:none;animation:_lToastIn .3s ease both;
-      max-width:90vw;text-align:center;white-space:pre-line;
-      box-shadow:0 8px 40px rgba(0,0,0,.5);
-    }
-
-    /* ── Combo ── */
-    ._l-combo {
-      position:fixed;top:50%;left:50%;z-index:10003;
-      pointer-events:none;font-size:3.5rem;font-weight:800;
-      color:#ffd700;
-      text-shadow:0 0 30px rgba(255,215,0,.6),-2px -2px 0 rgba(0,0,0,.4),2px 2px 0 rgba(0,0,0,.4);
-      white-space:nowrap;transform:translate(-50%,-50%);
-    }
-
-    /* ── Balão ── */
-    ._l-balao {
-      position:fixed;pointer-events:none;z-index:9989;
-      animation:_lBalloon linear forwards;bottom:-80px;
-    }
-
-    /* ── Pétala/confete ── */
-    ._l-petala {
-      position:fixed;top:-20px;pointer-events:none;z-index:9989;
-      animation:_lPetal linear forwards;
-    }
-
-    /* ── Estrelas do banner ── */
-    ._l-banner-star {
-      position:absolute;pointer-events:none;
-      animation:_lStarPop ease both, _lPulse 2s ease-in-out infinite;
-    }
-
-    /* ── Barras de cinema (cima e baixo) ── */
-    ._l-bar-cima, ._l-bar-baixo {
-      position:fixed;left:0;right:0;background:#000;z-index:9991;
-      pointer-events:none;transition:height .8s cubic-bezier(.4,0,.2,1);
-      height:0;
-    }
+    ._l-toast { position:fixed;bottom:2.5rem;left:50%;transform:translateX(-50%);z-index:10002;background:rgba(20,10,35,.95);backdrop-filter:blur(12px);border:1px solid rgba(255,200,100,.2);color:#f0e8ff;border-radius:14px;padding:.75rem 1.5rem;font-size:.85rem;pointer-events:none;animation:_lToastIn .3s ease both;max-width:90vw;text-align:center;white-space:pre-line;box-shadow:0 8px 40px rgba(0,0,0,.5); }
+    ._l-combo { position:fixed;top:50%;left:50%;z-index:10003;pointer-events:none;font-size:3.5rem;font-weight:800;color:#ffd700;text-shadow:0 0 30px rgba(255,215,0,.6),-2px -2px 0 rgba(0,0,0,.4),2px 2px 0 rgba(0,0,0,.4);white-space:nowrap;transform:translate(-50%,-50%); }
+    ._l-balao { position:fixed;pointer-events:none;z-index:9989;animation:_lBalloon linear forwards;bottom:-80px; }
+    ._l-petala { position:fixed;top:-20px;pointer-events:none;z-index:9989;animation:_lPetal linear forwards; }
+    ._l-banner-star { position:absolute;pointer-events:none;animation:_lStarPop ease both, _lPulse 2s ease-in-out infinite; }
+    ._l-bar-cima, ._l-bar-baixo { position:fixed;left:0;right:0;background:#000;z-index:9991;pointer-events:none;transition:height .8s cubic-bezier(.4,0,.2,1);height:0; }
     ._l-bar-cima { top:0; }
     ._l-bar-baixo { bottom:0; }
   `;
@@ -437,21 +225,17 @@ function _lInjetarEstilos() {
 // FADE DO SITE + BARRAS DE CINEMA
 // ══════════════════════════════════════════════════════════════
 function _lFadeSite(entrar, cb) {
-  // Barras de cinema
-  var cima  = document.getElementById('_l-bar-cima')  || _lCriarEl('div','_l-bar-cima _l-bar-cima');
-  var baixo = document.getElementById('_l-bar-baixo') || _lCriarEl('div','_l-bar-baixo _l-bar-baixo');
+  var cima  = document.getElementById('_l-bar-cima')  || _lCriarEl('div','_l-bar-cima');
+  var baixo = document.getElementById('_l-bar-baixo') || _lCriarEl('div','_l-bar-baixo');
   if (!cima.parentNode)  { cima.id  = '_l-bar-cima';  document.body.appendChild(cima);  }
   if (!baixo.parentNode) { baixo.id = '_l-bar-baixo'; document.body.appendChild(baixo); }
-
   if (entrar) {
-    // Escurece o site
     document.body.style.transition = 'filter 1.2s ease';
     document.body.style.filter = 'brightness(.08) saturate(.3) blur(2px)';
     cima.style.height  = '12vh';
     baixo.style.height = '12vh';
     setTimeout(function() { if (cb) cb(); }, 900);
   } else {
-    // Restaura
     document.body.style.filter = '';
     cima.style.height  = '0';
     baixo.style.height = '0';
@@ -480,13 +264,9 @@ function _lIniciarCanvas() {
   document.body.appendChild(c);
   _L.canvas = c;
   _L.ctx2d  = c.getContext('2d');
-
-  // Cria partículas iniciais
   _L.particulas = [];
   for (var i = 0; i < 80; i++) _lAddParticula();
-
   _lAnimarCanvas();
-
   window.addEventListener('resize', _lResizeCanvas);
 }
 
@@ -514,7 +294,6 @@ function _lAnimarCanvas() {
   if (!_L.canvas) return;
   var ctx = _L.ctx2d;
   ctx.clearRect(0, 0, _L.canvas.width, _L.canvas.height);
-
   for (var i = _L.particulas.length - 1; i >= 0; i--) {
     var p = _L.particulas[i];
     p.x += p.vx + (_L.lendaria ? (Math.random()-.5)*.5 : 0);
@@ -530,7 +309,6 @@ function _lAnimarCanvas() {
     ctx.fill();
     ctx.globalAlpha = 1;
   }
-
   _L.animFrame = requestAnimationFrame(_lAnimarCanvas);
 }
 
@@ -543,10 +321,9 @@ function _lPararCanvas() {
 }
 
 // ══════════════════════════════════════════════════════════════
-// OVERLAY DE REVELAÇÃO (aparece antes do card)
+// OVERLAY DE REVELAÇÃO
 // ══════════════════════════════════════════════════════════════
 function _lCriarOverlayRevela() {
-  // Texto central flutuante — revelação cinematográfica
   var ov = document.createElement('div');
   ov.id = '_l-overlay-revela';
   ov.style.cssText = 'position:fixed;inset:0;z-index:9992;display:flex;flex-direction:column;align-items:center;justify-content:center;pointer-events:none;';
@@ -573,12 +350,9 @@ function _lCriarOverlayRevela() {
     ].filter(Boolean).join(';');
     ov.appendChild(el);
     setTimeout(function() { el.style.opacity = '1'; }, l.delay);
-
-    // Digita "Laryssa" com efeito de máquina de escrever
     if (l.glow) {
       el.textContent = '';
-      var nome = l.txt;
-      var ii = 0;
+      var nome = l.txt, ii = 0;
       setTimeout(function() {
         var t = setInterval(function() {
           if (ii < nome.length) { el.textContent += nome[ii]; ii++; }
@@ -591,14 +365,9 @@ function _lCriarOverlayRevela() {
   });
 
   document.body.appendChild(ov);
-
-  // Balões e confetes na revelação
   setTimeout(function() { _lLancarBaloes(12); }, 1800);
   setTimeout(function() { _lLancarPetalas(40); }, 2000);
-
-  // Abre o card depois da revelação
   setTimeout(function() {
-    // Remove overlay
     ov.style.transition = 'opacity .8s';
     ov.style.opacity = '0';
     setTimeout(function() { if (ov.parentNode) ov.parentNode.removeChild(ov); }, 900);
@@ -625,21 +394,18 @@ function _lCriarCard() {
   });
 
   wrap.innerHTML = '<div id="_l-card-inner">' +
-
     '<div class="_l-banner" onclick="_lBannerClick()">' +
       bannerStars +
       '<span class="_l-banner-emoji" id="_l-emoji">🎂</span>' +
       '<h2 class="_l-banner-nome" id="_l-nome">Feliz Aniversário!</h2>' +
       '<p class="_l-banner-sub">Laryssa · A pessoa mais especial do escritório</p>' +
     '</div>' +
-
     '<div class="_l-body">' +
       '<div class="_l-tabs">' +
         '<button class="_l-tab on" onclick="_lTab(\'msg\',this)">💌 Mensagem</button>' +
         '<button class="_l-tab" onclick="_lTab(\'festa\',this)">🎊 Festa</button>' +
         '<button class="_l-tab" onclick="_lTab(\'voce\',this)">👑 Você</button>' +
       '</div>' +
-
       '<div class="_l-panel on" id="_l-panel-msg">' +
         '<div class="_l-msgbox"><span id="_l-typed"></span><span class="_l-cursor"></span></div>' +
         '<div class="_l-actions">' +
@@ -654,32 +420,17 @@ function _lCriarCard() {
           '</button>' +
         '</div>' +
       '</div>' +
-
       '<div class="_l-panel" id="_l-panel-festa">' +
         '<div class="_l-festa-grid">' +
-          '<button class="_l-festa-btn" onclick="_lLancarPetalas(120)">' +
-            '<span class="ico">🎊</span>Confetes' +
-          '</button>' +
-          '<button class="_l-festa-btn" onclick="_lLancarBaloes(20)">' +
-            '<span class="ico">🎈</span>Balões' +
-          '</button>' +
-          '<button class="_l-festa-btn" onclick="_lFanfarra()">' +
-            '<span class="ico">🎺</span>Fanfarra' +
-          '</button>' +
-          '<button class="_l-festa-btn" onclick="_lParabensMusica()">' +
-            '<span class="ico" id="_l-mus-ico">🦉</span>' +
-            '<span id="_l-mus-txt">Tema do Hedwig</span>' +
-          '</button>' +
-          '<button class="_l-festa-btn" onclick="_lModoRainbow()">' +
-            '<span class="ico">🌈</span>Arco-íris' +
-          '</button>' +
-          '<button class="_l-festa-btn" onclick="_lModoCinematico()">' +
-            '<span class="ico">🚀</span>Modo Lendária' +
-          '</button>' +
+          '<button class="_l-festa-btn" onclick="_lLancarPetalas(120)"><span class="ico">🎊</span>Confetes</button>' +
+          '<button class="_l-festa-btn" onclick="_lLancarBaloes(20)"><span class="ico">🎈</span>Balões</button>' +
+          '<button class="_l-festa-btn" onclick="_lFanfarra()"><span class="ico">🎺</span>Fanfarra</button>' +
+          '<button class="_l-festa-btn" onclick="_lParabensMusica()"><span class="ico" id="_l-mus-ico">🦉</span><span id="_l-mus-txt">Tema do Hedwig</span></button>' +
+          '<button class="_l-festa-btn" onclick="_lModoRainbow()"><span class="ico">🌈</span>Arco-íris</button>' +
+          '<button class="_l-festa-btn" onclick="_lModoCinematico()"><span class="ico">🚀</span>Modo Lendária</button>' +
         '</div>' +
         '<div class="_l-confetes-count">🎊 <span id="_l-ct">0</span> confetes lançados</div>' +
       '</div>' +
-
       '<div class="_l-panel" id="_l-panel-voce">' +
         '<div class="_l-orbit-wrap"><div class="_l-orbit-center">🌟</div>' + orbitStars + '</div>' +
         '<div id="_l-horo" class="_l-horo">Consultando os astros...</div>' +
@@ -694,23 +445,17 @@ function _lCriarCard() {
           '<span style="flex:1">Novo fato científico</span>' +
         '</button>' +
       '</div>' +
-
       '<div class="_l-footer">' +
         '<span class="_l-counter">🎁 <span id="_l-count">0</span> mensagens · <span id="_l-streak"></span></span>' +
         '<button class="_l-fechar" onclick="_lFechar()">💖 Fechar</button>' +
       '</div>' +
     '</div>' +
-
   '</div>';
 
   document.body.appendChild(wrap);
-
-  // Anima barra de progresso
   setTimeout(function() { var b = document.getElementById('_l-prog'); if (b) b.style.width = '100%'; }, 200);
   _lAtualizarVoce();
   _lNovaMsg();
-
-  // Clique fora fecha
   setTimeout(function() {
     document.addEventListener('click', function _fc(e) {
       var c = document.getElementById('_l-card-inner');
@@ -746,7 +491,6 @@ function _lBannerClick() {
   _L.comboTimer = setTimeout(function() { _L.comboCount = 0; }, 1600);
   if (_L.comboCount >= 3) _lMostrarCombo(_L.comboCount);
   _lLancarPetalas(10);
-  // Toasts temáticos de HP por milestone de cliques
   var frases = {
     5:  '🪄 "Você bruxou o bolo!" — Rony Weasley, provavelmente.',
     10: '⚡ 10 cliques. Você claramente foi selecionada pela Grifinória.',
@@ -759,19 +503,18 @@ function _lBannerClick() {
 }
 
 function _lMostrarCombo(n) {
-  // Feitiços de HP por nível — cada um com emoji temático e cor diferente
   var feiticos = {
-    3:  { txt: 'Wingardium Leviosa! 🪄',       cor: '#a8e6cf' },
-    4:  { txt: 'Lumos! ✨',                      cor: '#fff9c4' },
-    5:  { txt: 'Expecto Patronum! 🦌',           cor: '#b3e5fc' },
-    6:  { txt: 'Accio Parabéns! 🎂',             cor: '#ffd700' },
-    7:  { txt: 'Riddikulus! 🎉',                 cor: '#f8bbd0' },
-    8:  { txt: 'Alohomora! 🔓✨',               cor: '#e1bee7' },
-    9:  { txt: 'Finite Incantatem! 🌟',          cor: '#ffe082' },
-    10: { txt: 'Avada... brincadeira! 💖',       cor: '#ef9a9a' },
-    12: { txt: 'Mischief Managed! 🗺️',          cor: '#a5d6a7' },
-    15: { txt: 'She is The Chosen One! ⚡👑',   cor: '#ffd700' },
-    20: { txt: '🧹 Voando em Nimbus 2000!',      cor: '#b39ddb' },
+    3:  { txt: 'Wingardium Leviosa! 🪄', cor: '#a8e6cf' },
+    4:  { txt: 'Lumos! ✨',              cor: '#fff9c4' },
+    5:  { txt: 'Expecto Patronum! 🦌',   cor: '#b3e5fc' },
+    6:  { txt: 'Accio Parabéns! 🎂',     cor: '#ffd700' },
+    7:  { txt: 'Riddikulus! 🎉',          cor: '#f8bbd0' },
+    8:  { txt: 'Alohomora! 🔓✨',        cor: '#e1bee7' },
+    9:  { txt: 'Finite Incantatem! 🌟',  cor: '#ffe082' },
+    10: { txt: 'Avada... brincadeira! 💖', cor: '#ef9a9a' },
+    12: { txt: 'Mischief Managed! 🗺️',  cor: '#a5d6a7' },
+    15: { txt: 'She is The Chosen One! ⚡👑', cor: '#ffd700' },
+    20: { txt: '🧹 Voando em Nimbus 2000!', cor: '#b39ddb' },
   };
   var entrada = feiticos[n];
   if (!entrada) {
@@ -779,7 +522,6 @@ function _lMostrarCombo(n) {
     else if (n > 15) entrada = { txt: 'Hogwarts lhe saúda! 🏰', cor: '#ffd700' };
     else return;
   }
-
   var el = document.createElement('div');
   el.className = '_l-combo';
   el.textContent = entrada.txt;
@@ -787,10 +529,7 @@ function _lMostrarCombo(n) {
   el.style.textShadow = '0 0 30px ' + entrada.cor + ', -2px -2px 0 rgba(0,0,0,.5), 2px 2px 0 rgba(0,0,0,.5)';
   el.style.animation = '_lComboIn .35s ease both';
   document.body.appendChild(el);
-
-  // Som de feitiço correspondente ao nível
   _lSomFeitico(n);
-
   setTimeout(function() {
     el.style.animation = '_lComboOut .4s ease both';
     setTimeout(function() { if (el.parentNode) el.parentNode.removeChild(el); }, 450);
@@ -829,9 +568,7 @@ function _lCopiar() {
   var txt = el ? el.textContent : '';
   if (!txt) { _lToast('Aguarda a mensagem terminar! ✨'); return; }
   try {
-    navigator.clipboard.writeText(txt).then(function() {
-      _lToast('✅ Copiado! Manda no grupo da família 😄');
-    });
+    navigator.clipboard.writeText(txt).then(function() { _lToast('✅ Copiado! Manda no grupo da família 😄'); });
   } catch(e) { _lToast('Seleciona e copia manualmente 🙏'); }
 }
 
@@ -877,9 +614,7 @@ function _lLancarPetalas(n) {
   }
   document.body.appendChild(frag);
   setTimeout(function() {
-    document.querySelectorAll('._l-petala').forEach(function(el) {
-      if (el.parentNode) el.parentNode.removeChild(el);
-    });
+    document.querySelectorAll('._l-petala').forEach(function(el) { if (el.parentNode) el.parentNode.removeChild(el); });
   }, 6500);
 }
 
@@ -966,43 +701,24 @@ function _lNota(ctx, freq, t, dur, tipo, vol) {
 }
 
 function _lSomRevela() {
-  // Abertura mágica inspirada em Harry Potter — arpejo ascendente com timbre de varinha
   try {
-    var ctx = _lCtx();
-    var t = ctx.currentTime;
-    // Arpejo de Mi menor (tom sombrio-mágico como a trilha do Hedwig)
-    var arpejo = [
-      [659, 0.00, 0.25, 'triangle', .10],  // Mi5
-      [784, 0.20, 0.25, 'triangle', .09],  // Sol5
-      [988, 0.38, 0.30, 'triangle', .08],  // Si5
-      [1319,0.55, 0.40, 'triangle', .07],  // Mi6 — pico
-      [988, 0.85, 0.25, 'sine',     .06],  // descendo
-      [784, 1.05, 0.50, 'sine',     .08],  // pouso suave
-    ];
-    arpejo.forEach(function(n) { _lNota(ctx, n[0], t + n[1], n[2], n[3], n[4]); });
-    // Shimmer de fundo — pad largo
-    [[329, .05, 1.5, 'sine', .04], [392, .08, 1.5, 'sine', .03]].forEach(function(n) {
-      _lNota(ctx, n[0], t + n[1], n[2], n[3], n[4]);
-    });
+    var ctx = _lCtx(), t = ctx.currentTime;
+    [[659,0.00,0.25,'triangle',.10],[784,0.20,0.25,'triangle',.09],[988,0.38,0.30,'triangle',.08],
+     [1319,0.55,0.40,'triangle',.07],[988,0.85,0.25,'sine',.06],[784,1.05,0.50,'sine',.08]].forEach(function(n){ _lNota(ctx,n[0],t+n[1],n[2],n[3],n[4]); });
+    [[329,.05,1.5,'sine',.04],[392,.08,1.5,'sine',.03]].forEach(function(n){ _lNota(ctx,n[0],t+n[1],n[2],n[3],n[4]); });
   } catch(e) {}
 }
 
-// Som de feitiço por nível de combo — cada feitiço tem seu próprio "sotaque" sonoro
 function _lSomFeitico(nivel) {
   try {
-    var ctx = _lCtx();
-    var t = ctx.currentTime;
+    var ctx = _lCtx(), t = ctx.currentTime;
     if (nivel <= 4) {
-      // Wingardium / Lumos — ascendente simples, levinho
       [[523,.00,.15,'triangle',.12],[659,.12,.15,'triangle',.10],[784,.22,.20,'triangle',.08]].forEach(function(n){_lNota(ctx,n[0],t+n[1],n[2],n[3],n[4]);});
     } else if (nivel <= 6) {
-      // Expecto Patronum / Accio — dramático, dois tempos
       [[392,.00,.10,'sawtooth',.07],[784,.08,.20,'triangle',.12],[988,.25,.30,'triangle',.10],[1175,.50,.20,'sine',.08]].forEach(function(n){_lNota(ctx,n[0],t+n[1],n[2],n[3],n[4]);});
     } else if (nivel <= 9) {
-      // Riddikulus / Alohomora — rápido e surpreso, staccato
       [[1047,.00,.07,'triangle',.14],[784,.07,.07,'triangle',.12],[988,.14,.07,'triangle',.10],[1319,.21,.12,'triangle',.09],[659,.33,.15,'sine',.08]].forEach(function(n){_lNota(ctx,n[0],t+n[1],n[2],n[3],n[4]);});
     } else {
-      // Chosen One / Mischief Managed — tema completo, épico
       [[392,.00,.12,'sawtooth',.08],[523,.10,.12,'triangle',.12],[659,.20,.15,'triangle',.14],[784,.32,.20,'triangle',.15],
        [988,.50,.15,'triangle',.13],[1175,.65,.20,'triangle',.12],[1319,.82,.35,'sine',.14],[784,1.10,.30,'sine',.08]].forEach(function(n){_lNota(ctx,n[0],t+n[1],n[2],n[3],n[4]);});
     }
@@ -1010,33 +726,18 @@ function _lSomFeitico(nivel) {
 }
 
 function _lFanfarra() {
-  // Tema do Hedwig (Harry Potter) — as primeiras 8 notas icônicas
-  // Mi, Sol#, Dó, Si, Lá#, Mi, Sol#, Dó
   try {
-    var ctx = _lCtx();
-    var t = ctx.currentTime;
-    var hedwig = [
-      [659, 0.00, 0.20, 'triangle', .16],  // Mi5
-      [831, 0.22, 0.10, 'triangle', .13],  // Sol#5
-      [1047,0.34, 0.32, 'triangle', .15],  // Dó6
-      [988, 0.70, 0.20, 'triangle', .13],  // Si5
-      [932, 0.92, 0.10, 'triangle', .11],  // La#5
-      [659, 1.06, 0.20, 'triangle', .14],  // Mi5
-      [831, 1.30, 0.12, 'triangle', .12],  // Sol#5
-      [1047,1.44, 0.48, 'sine',     .13],  // Dó6 — longo
-    ];
-    hedwig.forEach(function(n) { _lNota(ctx, n[0], t + n[1], n[2], n[3], n[4]); });
-    // Pad de fundo
-    [[329, .1, 1.8, 'sine', .04],[392, .1, 1.8, 'sine', .03]].forEach(function(n) {
-      _lNota(ctx, n[0], t + n[1], n[2], n[3], n[4]);
-    });
+    var ctx = _lCtx(), t = ctx.currentTime;
+    [[659,0.00,0.20,'triangle',.16],[831,0.22,0.10,'triangle',.13],[1047,0.34,0.32,'triangle',.15],
+     [988,0.70,0.20,'triangle',.13],[932,0.92,0.10,'triangle',.11],[659,1.06,0.20,'triangle',.14],
+     [831,1.30,0.12,'triangle',.12],[1047,1.44,0.48,'sine',.13]].forEach(function(n){ _lNota(ctx,n[0],t+n[1],n[2],n[3],n[4]); });
+    [[329,.1,1.8,'sine',.04],[392,.1,1.8,'sine',.03]].forEach(function(n){ _lNota(ctx,n[0],t+n[1],n[2],n[3],n[4]); });
   } catch(e) {}
   _lLancarPetalas(55);
   _lLancarBaloes(14);
 }
 
 function _lParabensMusica() {
-  // Melodia completa do Tema do Hedwig
   var icoEl = document.getElementById('_l-mus-ico');
   var txtEl = document.getElementById('_l-mus-txt');
   if (_L.musicando) {
@@ -1048,23 +749,17 @@ function _lParabensMusica() {
   }
   try {
     var ctx = _lCtx();
-    // Tema do Hedwig completo (A e B)
-    // Formato: [freq_Hz, duracao_beats]  bpm=120
     var hedwigCompleto = [
-      // Frase A
       [659,.75],[831,.25],[1047,.5],[988,.25],[932,.25],
       [659,.75],[831,.25],[1047,.5],[988,.5],
       [932,.25],[988,.25],[1047,.5],[831,.5],
       [659,.5],[831,.25],[988,.25],[932,.25],[831,.25],
-      [988,.5],[988,.25],[1047,.25],[932,.5],[831,.5],
-      [659,.5],
-      // Frase B
+      [988,.5],[988,.25],[1047,.25],[932,.5],[831,.5],[659,.5],
       [988,.75],[1175,.25],[1480,.5],[1397,.25],[1319,.25],
       [1047,.75],[1175,.25],[1480,.5],[1397,.5],
       [1319,.25],[1397,.25],[1480,.5],[1175,.5],
       [988,.5],[1175,.25],[1397,.25],[1319,.25],[1175,.25],
-      [988,.5],[1047,.25],[659,.25],[831,.25],[988,.25],
-      [1047,1.0],
+      [988,.5],[1047,.25],[659,.25],[831,.25],[988,.25],[1047,1.0],
     ];
     var bpm = 120, beat = 60 / bpm;
     var t = ctx.currentTime + .15, totalDur = 0;
@@ -1074,11 +769,8 @@ function _lParabensMusica() {
     if (txtEl) txtEl.textContent = 'Parar';
     hedwigCompleto.forEach(function(nota) {
       var dur = nota[1] * beat;
-      var osc = _lNota(ctx, nota[0], t, dur * .88, 'triangle', .13);
-      _L.musicNodes.push(osc);
-      // Pad sutil em harmonia uma oitava abaixo
-      var pad = _lNota(ctx, nota[0] / 2, t, dur * .9, 'sine', .04);
-      _L.musicNodes.push(pad);
+      _L.musicNodes.push(_lNota(ctx, nota[0], t, dur * .88, 'triangle', .13));
+      _L.musicNodes.push(_lNota(ctx, nota[0] / 2, t, dur * .9, 'sine', .04));
       t += dur;
     });
     setTimeout(function() {
@@ -1086,8 +778,7 @@ function _lParabensMusica() {
       if (icoEl) icoEl.textContent = '🎵';
       if (txtEl) txtEl.textContent = 'Tema do Hedwig';
     }, (totalDur + .8) * 1000);
-    _lLancarPetalas(40);
-    _lLancarBaloes(12);
+    _lLancarPetalas(40); _lLancarBaloes(12);
     _lToast('🦉 Tema do Hedwig — para a bruxa mais incrível do escritório');
   } catch(e) { _lToast('Não foi possível tocar o áudio 😅'); }
 }
@@ -1100,46 +791,26 @@ function _lAnimarTitulo() {
   clearInterval(_L.tituloTimer);
   var frames = ['⚡ Feliz Aniversário!','🦉 Parabéns Laryssa!','🪄 Wingardium!','👑 The Chosen One!','🏰 Hogwarts te saúda!','✨ Lumos, Laryssa!'];
   var idx = 0;
-  _L.tituloTimer = setInterval(function() {
-    document.title = frames[idx % frames.length]; idx++;
-  }, 950);
-  setTimeout(function() {
-    clearInterval(_L.tituloTimer);
-    if (_L.tituloOriginal !== null) document.title = _L.tituloOriginal;
-  }, 18000);
+  _L.tituloTimer = setInterval(function() { document.title = frames[idx % frames.length]; idx++; }, 950);
+  setTimeout(function() { clearInterval(_L.tituloTimer); if (_L.tituloOriginal !== null) document.title = _L.tituloOriginal; }, 18000);
 }
 
 // ══════════════════════════════════════════════════════════════
 // FECHAR
 // ══════════════════════════════════════════════════════════════
 function _lFechar() {
-  // Restaura o site
   document.body.style.filter = '';
   document.body.style.transition = '';
-
-  // Remove elementos
   ['_l-card','_l-overlay-revela','_l-bar-cima','_l-bar-baixo'].forEach(function(id) {
     var el = document.getElementById(id);
     if (el && el.parentNode) el.parentNode.removeChild(el);
   });
-
-  // Para canvas
   _lPararCanvas();
-
-  // Limpa áudio
   _L.musicNodes.forEach(function(n) { try { n.stop(); } catch(e){} });
   _L.musicNodes = []; _L.musicando = false;
-
-  // Limpa título
   if (_L.tituloTimer) { clearInterval(_L.tituloTimer); document.title = _L.tituloOriginal || document.title; }
-
-  // Limpa tipo
   if (_L.typeTimer) clearInterval(_L.typeTimer);
-
-  // Reset estado
   _L.lendaria = false; _L.rainbowOn = false;
-
-  // Limpa input
   var inp = document.getElementById('searchInput');
   if (inp) inp.value = '';
   esconderSugestoes();
@@ -1173,9 +844,10 @@ document.addEventListener('DOMContentLoaded', function() {
   box.addEventListener('touchend',   function() { setTimeout(function() { _tocandoSugestao = false; }, 500); }, { passive: true });
 });
 
-Vejo o problema — a função mostrarSugestoes ficou duplicada e com a lógica fora do lugar. A função fecha no meio e o código de preço ficou solto fora dela. Aqui está a versão corrigida e completa da função:
-Substitui toda a função mostrarSugestoes por esta:
-jsfunction mostrarSugestoes(query) {
+// ══════════════════════════════════════════════════════════════
+// MOSTRAR SUGESTÕES (busca por nome/marca + busca por preço)
+// ══════════════════════════════════════════════════════════════
+function mostrarSugestoes(query) {
   var box = document.getElementById('searchSuggestions');
   if (!box) return;
   if (!query || query.length < 2) { esconderSugestoes(); return; }
@@ -1189,11 +861,10 @@ jsfunction mostrarSugestoes(query) {
   // ── Busca por preço ──────────────────────────────────────────
   var precoQuery = _extrairPreco(query);
   if (precoQuery !== null) {
-    var MARGEM = 0.05;
     var todosParaPreco = prods().filter(function(p) { return !p.oculto; });
     var porPreco = todosParaPreco.filter(function(p) {
       var v = parseFloat(p.preco);
-      return !isNaN(v) && Math.abs(v - precoQuery) <= MARGEM;
+      return !isNaN(v) && Math.abs(v - precoQuery) <= 0.05;
     });
     if (porPreco.length === 0) {
       box.innerHTML = '<div class="sug-section-label" style="padding:12px 14px">Nenhum produto com preço R$ ' + precoQuery.toFixed(2).replace('.', ',') + '</div>';
@@ -1205,18 +876,15 @@ jsfunction mostrarSugestoes(query) {
       porPreco.slice(0, 8).forEach(function(p) {
         var ico = catEmojis[p.subcategoria] || catEmojis[p.categoria] || '📦';
         var cat = subLabels[p.subcategoria] || p.categoria || '';
-        var esgTag = isEsgotado(p)
-          ? '<span style="font-size:.6rem;background:#ea580c;color:#fff;padding:1px 6px;border-radius:99px;margin-left:4px;font-weight:700">ESGOTADO</span>'
-          : '';
-        html +=
-          '<div class="search-sug-item" onclick="selecionarSugestao(' + p.id + ')">' +
-            '<span class="sug-ico">' + ico + '</span>' +
-            '<div style="flex:1;min-width:0">' +
-              '<div class="sug-name">' + p.nome + esgTag + '</div>' +
-              (cat ? '<div class="sug-cat">' + cat + '</div>' : '') +
-            '</div>' +
-            '<div class="sug-cat" style="white-space:nowrap;color:#16a34a;font-weight:700">R$ ' + parseFloat(p.preco).toFixed(2).replace('.', ',') + '</div>' +
-          '</div>';
+        var esgTag = isEsgotado(p) ? '<span style="font-size:.6rem;background:#ea580c;color:#fff;padding:1px 6px;border-radius:99px;margin-left:4px;font-weight:700">ESGOTADO</span>' : '';
+        html += '<div class="search-sug-item" onclick="selecionarSugestao(' + p.id + ')">' +
+          '<span class="sug-ico">' + ico + '</span>' +
+          '<div style="flex:1;min-width:0">' +
+            '<div class="sug-name">' + p.nome + esgTag + '</div>' +
+            (cat ? '<div class="sug-cat">' + cat + '</div>' : '') +
+          '</div>' +
+          '<div class="sug-cat" style="white-space:nowrap;color:#16a34a;font-weight:700">R$ ' + parseFloat(p.preco).toFixed(2).replace('.', ',') + '</div>' +
+        '</div>';
       });
       if (porPreco.length > 8) {
         html += '<div onclick="confirmarBuscaCompleta()" style="text-align:center;padding:10px;font-size:.78rem;font-weight:600;color:var(--blue);cursor:pointer;border-top:1px solid var(--border);background:var(--blue-soft)">Ver todos os ' + porPreco.length + ' resultados →</div>';
@@ -1268,31 +936,22 @@ jsfunction mostrarSugestoes(query) {
     var limite = 7;
     html += '<div class="sug-section-label" style="display:flex;align-items:center;justify-content:space-between;padding:8px 14px 5px">' +
       '<span>' + totalDireto + ' produto' + (totalDireto !== 1 ? 's' : '') + ' encontrado' + (totalDireto !== 1 ? 's' : '') + '</span>' +
-      (totalDireto > limite
-        ? '<span onclick="confirmarBuscaCompleta()" style="color:var(--blue);font-weight:700;cursor:pointer;font-size:.7rem;padding:2px 6px">Ver todos ' + totalDireto + ' →</span>'
-        : '') +
+      (totalDireto > limite ? '<span onclick="confirmarBuscaCompleta()" style="color:var(--blue);font-weight:700;cursor:pointer;font-size:.7rem;padding:2px 6px">Ver todos ' + totalDireto + ' →</span>' : '') +
     '</div>';
-
     encontrados.slice(0, limite).forEach(function(p) {
       var ico  = catEmojis[p.subcategoria] || catEmojis[p.categoria] || '📦';
       var cat  = subLabels[p.subcategoria] || p.categoria || '';
       var nome = highlightMatch(p.nome, query);
-      var esgTag = isEsgotado(p)
-        ? '<span style="font-size:.6rem;background:#ea580c;color:#fff;padding:1px 6px;border-radius:99px;margin-left:4px;font-weight:700">ESGOTADO</span>'
-        : '';
-      html +=
-        '<div class="search-sug-item" onclick="selecionarSugestao(' + p.id + ')">' +
-          '<span class="sug-ico">' + ico + '</span>' +
-          '<div style="flex:1;min-width:0">' +
-            '<div class="sug-name">' + nome + esgTag + '</div>' +
-            (cat ? '<div class="sug-cat">' + cat + '</div>' : '') +
-          '</div>' +
-          (parseFloat(p.preco) > 0
-            ? '<div class="sug-cat" style="white-space:nowrap">R$ ' + parseFloat(p.preco).toFixed(2).replace('.', ',') + '</div>'
-            : '') +
-        '</div>';
+      var esgTag = isEsgotado(p) ? '<span style="font-size:.6rem;background:#ea580c;color:#fff;padding:1px 6px;border-radius:99px;margin-left:4px;font-weight:700">ESGOTADO</span>' : '';
+      html += '<div class="search-sug-item" onclick="selecionarSugestao(' + p.id + ')">' +
+        '<span class="sug-ico">' + ico + '</span>' +
+        '<div style="flex:1;min-width:0">' +
+          '<div class="sug-name">' + nome + esgTag + '</div>' +
+          (cat ? '<div class="sug-cat">' + cat + '</div>' : '') +
+        '</div>' +
+        (parseFloat(p.preco) > 0 ? '<div class="sug-cat" style="white-space:nowrap">R$ ' + parseFloat(p.preco).toFixed(2).replace('.', ',') + '</div>' : '') +
+      '</div>';
     });
-
     if (totalDireto > limite) {
       html += '<div onclick="confirmarBuscaCompleta()" style="text-align:center;padding:10px;font-size:.78rem;font-weight:600;color:var(--blue);cursor:pointer;border-top:1px solid var(--border);background:var(--blue-soft)">Ver todos os ' + totalDireto + ' resultados →</div>';
     }
@@ -1302,105 +961,11 @@ jsfunction mostrarSugestoes(query) {
     html += '<div class="sug-section-label">💡 Você quis dizer…</div>';
     fuzzyProds.forEach(function(p) {
       var ico = catEmojis[p.subcategoria] || catEmojis[p.categoria] || '📦';
-      html +=
-        '<div class="search-sug-item" onclick="selecionarSugestao(' + p.id + ')">' +
-          '<span class="sug-ico">' + ico + '</span>' +
-          '<div style="flex:1;min-width:0"><div class="sug-name">' + p.nome + '</div></div>' +
-          (parseFloat(p.preco) > 0
-            ? '<div class="sug-cat" style="white-space:nowrap">R$ ' + parseFloat(p.preco).toFixed(2).replace('.', ',') + '</div>'
-            : '') +
-        '</div>';
-    });
-  }
-
-  box.innerHTML = html;
-  box.classList.add('on');
-}
-  return; // ← sai da função, não continua busca normal
-}
-
-  var qNorm = normalizar(query);
-  var todosProds = prods().filter(function(p) { return !p.oculto; });
-
-  var diretos = todosProds.filter(function(p) {
-    var nNorm = normalizar(p.nome);
-    var mNorm = normalizar(p.marca || '');
-    return nNorm.includes(qNorm) || mNorm.includes(qNorm);
-  });
-
-  var palavras = qNorm.split(/\s+/).filter(Boolean);
-  var jaEncontrados = diretos.map(function(p) { return p.id; });
-
-  var porPalavras = palavras.length > 1
-    ? todosProds.filter(function(p) {
-        if (jaEncontrados.indexOf(p.id) >= 0) return false;
-        var nNorm = normalizar(p.nome) + ' ' + normalizar(p.marca || '');
-        return palavras.every(function(w) { return nNorm.includes(w); });
-      })
-    : [];
-
-  var idsJaVistos = diretos.concat(porPalavras).map(function(p) { return p.id; });
-  var fuzzyProds = [];
-  if (diretos.length + porPalavras.length < 3) {
-    fuzzyProds = buscaFuzzy(query)
-      .filter(function(r) { return r.score >= 45 && idsJaVistos.indexOf(r.prod.id) < 0; })
-      .map(function(r) { return r.prod; })
-      .slice(0, 4);
-  }
-
-  var encontrados = diretos.concat(porPalavras);
-  var totalDireto = encontrados.length;
-
-  if (!totalDireto && !fuzzyProds.length) { esconderSugestoes(); return; }
-
-  var html = '';
-
-  if (totalDireto > 0) {
-    var limite = 7;
-    html += '<div class="sug-section-label" style="display:flex;align-items:center;justify-content:space-between;padding:8px 14px 5px">' +
-      '<span>' + totalDireto + ' produto' + (totalDireto !== 1 ? 's' : '') + ' encontrado' + (totalDireto !== 1 ? 's' : '') + '</span>' +
-      (totalDireto > limite
-        ? '<span onclick="confirmarBuscaCompleta()" style="color:var(--blue);font-weight:700;cursor:pointer;font-size:.7rem;padding:2px 6px">Ver todos ' + totalDireto + ' →</span>'
-        : '') +
-    '</div>';
-
-    encontrados.slice(0, limite).forEach(function(p) {
-      var ico  = catEmojis[p.subcategoria] || catEmojis[p.categoria] || '📦';
-      var cat  = subLabels[p.subcategoria] || p.categoria || '';
-      var nome = highlightMatch(p.nome, query);
-      var esgTag = isEsgotado(p)
-        ? '<span style="font-size:.6rem;background:#ea580c;color:#fff;padding:1px 6px;border-radius:99px;margin-left:4px;font-weight:700">ESGOTADO</span>'
-        : '';
-      html +=
-        '<div class="search-sug-item" onclick="selecionarSugestao(' + p.id + ')">' +
-          '<span class="sug-ico">' + ico + '</span>' +
-          '<div style="flex:1;min-width:0">' +
-            '<div class="sug-name">' + nome + esgTag + '</div>' +
-            (cat ? '<div class="sug-cat">' + cat + '</div>' : '') +
-          '</div>' +
-          (parseFloat(p.preco) > 0
-            ? '<div class="sug-cat" style="white-space:nowrap">R$ ' + parseFloat(p.preco).toFixed(2).replace('.', ',') + '</div>'
-            : '') +
-        '</div>';
-    });
-
-    if (totalDireto > limite) {
-      html += '<div onclick="confirmarBuscaCompleta()" style="text-align:center;padding:10px;font-size:.78rem;font-weight:600;color:var(--blue);cursor:pointer;border-top:1px solid var(--border);background:var(--blue-soft)">Ver todos os ' + totalDireto + ' resultados →</div>';
-    }
-  }
-
-  if (fuzzyProds.length) {
-    html += '<div class="sug-section-label">💡 Você quis dizer…</div>';
-    fuzzyProds.forEach(function(p) {
-      var ico = catEmojis[p.subcategoria] || catEmojis[p.categoria] || '📦';
-      html +=
-        '<div class="search-sug-item" onclick="selecionarSugestao(' + p.id + ')">' +
-          '<span class="sug-ico">' + ico + '</span>' +
-          '<div style="flex:1;min-width:0"><div class="sug-name">' + p.nome + '</div></div>' +
-          (parseFloat(p.preco) > 0
-            ? '<div class="sug-cat" style="white-space:nowrap">R$ ' + parseFloat(p.preco).toFixed(2).replace('.', ',') + '</div>'
-            : '') +
-        '</div>';
+      html += '<div class="search-sug-item" onclick="selecionarSugestao(' + p.id + ')">' +
+        '<span class="sug-ico">' + ico + '</span>' +
+        '<div style="flex:1;min-width:0"><div class="sug-name">' + p.nome + '</div></div>' +
+        (parseFloat(p.preco) > 0 ? '<div class="sug-cat" style="white-space:nowrap">R$ ' + parseFloat(p.preco).toFixed(2).replace('.', ',') + '</div>' : '') +
+      '</div>';
     });
   }
 
