@@ -420,7 +420,21 @@ function criarCard(p, ep, idx) {
   var ic = document.createElement('div'); ic.className = 'img-ctrl';
   var ii = document.createElement('input'); ii.type='url'; ii.className='img-url'; ii.id='img-inp-'+p.id;
   ii.placeholder='https://link-da-imagem.jpg'; ii.value=ep.imagem||''; ii.dataset.id=p.id;
-  ii.addEventListener('change', function(){ onImgChange(parseInt(this.dataset.id),this.value); });
+ii.addEventListener('change', function(){ onImgChange(parseInt(this.dataset.id),this.value); });
+ii.addEventListener('paste', function(e){
+  var id2 = parseInt(this.dataset.id);
+  var inp = this;
+  setTimeout(function(){
+    onImgChange(id2, inp.value);
+  }, 0);
+});
+ii.addEventListener('input', function(){
+  var url = this.value.trim();
+  var id2 = parseInt(this.dataset.id);
+  if(!url) { buildImgPrev(id2,'','thumbnail'); return; }
+  // Só tenta carregar se parecer uma URL
+  if(url.startsWith('http')) buildImgPrev(id2, url, (edicoes[id2]&&edicoes[id2].imgmode)||'thumbnail');
+});
   var mt = document.createElement('div'); mt.className = 'img-mtog';
   var bT = document.createElement('button'); bT.className='img-mbtn'+((!ep.imagem||ep.imgmode==='thumbnail')?' on':'');
   bT.id='ibt-t-'+p.id; bT.dataset.id=p.id; bT.dataset.mode='thumbnail'; bT.textContent='thumb';
