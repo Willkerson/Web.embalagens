@@ -609,6 +609,12 @@ var WPP_NUM  = '5511972999835';
 var HIST_KEY = 'cia_calc_hist_v2';
 var MUD_KEY  = 'cia_mudancas_v1';
 
+/* ── GITHUB CONFIG ── substitua o token abaixo ── */
+var GH_TOKEN = 'SEU_TOKEN_AQUI';   /* cole aqui o token após revogar o exposto */
+var GH_OWNER = 'willkerson';
+var GH_REPO  = 'web.embalagens';
+var GH_FILE  = 'front-index/produtos_planilha.js';
+
 /* ── AUTENTICAÇÃO ── */
 function autenticar() {
   var inp = document.getElementById('lock-inp');
@@ -771,7 +777,10 @@ function aplicarNoCatalogo() {
   document.getElementById('prod-sel-preco-atual').textContent = 'Preço atual: R$ ' + fmtNum(precoNovo);
   document.getElementById('aviso-catalogo').style.display = 'block';
   renderMudancas();
-  showToast('✅ Preço atualizado no catálogo local!', 'green');
+  showToast('✅ Preço atualizado! Publicando no GitHub…', 'green');
+
+  /* 5. Commit automático no GitHub */
+  commitPrecosGitHub();
 }
 
 /* ── CALCULADORA ── */
@@ -1269,21 +1278,74 @@ function buscarNCM() {
     }
   }
 
-  /* 3. Busca textual (se não parece só número) */
+  /* 3. Busca textual local */
   if (!encontrado) {
     var res = ncmBuscarTexto(q);
     if (res.length) encontrado = { cod: res[0].cod, item: res[0].item };
   }
 
-  setTimeout(function() {
-    if (encontrado) {
-      renderNCM(encontrado.cod, encontrado.item, content);
-    } else if (codLimpo.length >= 4) {
-      buscarNCMAPI(codLimpo, content);
-    } else {
-      ncmNaoEncontrado(q, content);
+  if (encontrado) {
+    setTimeout(function(){ renderNCM(encontrado.cod, encontrado.item, content); }, 200);
+    return;
+  }
+
+  /* 4. Fallback IA — Claude interpreta texto livre e sugere NCM */
+  if (codLimpo.length >= 4) {
+    /* parece código numérico — tenta BrasilAPI */
+    buscarNCMAPI(codLimpo, content);
+  } else {
+    /* texto livre — manda para IA */
+    buscarNCMComIA(q, content);
+  }
+}
+
+/* ── IA: Claude interpreta texto livre e sugere até 3 NCMs ── */
+function buscarNCMComIA(q, content) {
+  content.innerHTML = '<div style="text-align:center;padding:.75rem;color:var(--text3);font-size:.82rem">🤖 Consultando IA…</div>';
+
+  var prompt = 'Você é especialista em classificação fiscal brasileira (NCM/TIPI).\n'
+    + 'O usuário descreveu um produto: "' + q + '".\n'
+    + 'Responda SOMENTE com JSON válido, sem markdown, sem texto extra.\n'
+    + 'Formato exato (array com até 3 opções, mais provável primeiro):\n'
+    + '[{"cod":"XXXXXXXX","desc":"Descrição oficial NCM","ipi":0,"icms":12,"pis":1.65,"cofins":7.6,"obs":"Motivo/observação curta"}]\n'
+    + 'Use 8 dígitos sem pontos no campo cod. Se não souber, retorne array vazio [].';
+
+  fetch('https://api.anthropic.com/v1/messages', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({
+      model: 'claude-sonnet-4-20250514',
+      max_tokens: 600,
+      messages: [{ role: 'user', content: prompt }]
+    })
+  })
+  .then(function(r){ return r.json(); })
+  .then(function(data){
+    var texto = (data.content && data.content[0] && data.content[0].text) ? data.content[0].text.trim() : '[]';
+    var lista;
+    try { lista = JSON.parse(texto); } catch(e){ lista = []; }
+    if (!Array.isArray(lista) || !lista.length) { ncmNaoEncontrado(q, content); return; }
+
+    /* renderiza o principal e lista alternativas */
+    var principal = lista[0];
+    renderNCM(principal.cod, principal, content);
+
+    if (lista.length > 1) {
+      var extra = '<div style="margin-top:.875rem;font-size:.72rem;font-weight:600;color:var(--text3);text-transform:uppercase;letter-spacing:.07em">Outras possibilidades</div>';
+      lista.slice(1).forEach(function(it){
+        var fmt = it.cod.slice(0,4)+'.'+it.cod.slice(4,6)+'.'+it.cod.slice(6,8);
+        extra += '<div onclick="ncmDireto(\''+it.cod+'\')" style="cursor:pointer;padding:7px 10px;margin-top:5px;background:var(--bg);border:1px solid var(--border);border-radius:8px;display:flex;gap:8px;align-items:center">'
+          + '<span style="font-family:monospace;color:var(--blue);font-size:.72rem;flex-shrink:0">'+fmt+'</span>'
+          + '<span style="font-size:.78rem;color:var(--text2)">'+escHtml(it.desc)+'</span>'
+          + '</div>';
+      });
+      var box2 = document.getElementById('ncm-result');
+      box2.innerHTML += extra;
     }
-  }, 200);
+    /* badge IA */
+    content.insertAdjacentHTML('afterbegin','<div style="display:inline-flex;align-items:center;gap:4px;font-size:.65rem;font-weight:700;padding:2px 8px;border-radius:99px;background:rgba(124,58,237,.1);color:var(--purple);border:1px solid rgba(124,58,237,.2);margin-bottom:.5rem">🤖 Classificação via IA — verifique na Receita Federal</div>');
+  })
+  .catch(function(){ ncmNaoEncontrado(q, content); });
 }
 
 /* ── API externa (fallback) ── */
@@ -1347,6 +1409,85 @@ function usarAliq(icms, ipi) {
   calcular();
   document.getElementById('c-custo').scrollIntoView({ behavior:'smooth', block:'center' });
   showToast('✓ Alíquotas aplicadas', 'green');
+}
+
+/* ══════════════════════════════════════════════════════════
+   COMMIT AUTOMÁTICO NO GITHUB
+   ──────────────────────────────────────────────────────────
+   1. Busca o SHA atual do arquivo no GitHub
+   2. Reconstrói o conteúdo do produtos_planilha.js aplicando
+      todos os preços editados (cia_edicoes_v2)
+   3. Faz PUT via API do GitHub com o conteúdo atualizado
+══════════════════════════════════════════════════════════ */
+function commitPrecosGitHub() {
+  if (!GH_TOKEN || GH_TOKEN === 'SEU_TOKEN_AQUI') {
+    showToast('⚠️ Configure o token do GitHub no arquivo', 'amber'); return;
+  }
+  if (!window.listaProdutosPlanilha || !window.listaProdutosPlanilha.length) {
+    showToast('⚠️ Lista de produtos não carregada', 'amber'); return;
+  }
+
+  var apiBase = 'https://api.github.com/repos/' + GH_OWNER + '/' + GH_REPO + '/contents/' + GH_FILE;
+  var headers  = {
+    'Authorization': 'Bearer ' + GH_TOKEN,
+    'Accept': 'application/vnd.github+json',
+    'X-GitHub-Api-Version': '2022-11-28',
+    'Content-Type': 'application/json'
+  };
+
+  /* passo 1 — pegar SHA atual */
+  fetch(apiBase, { headers: headers })
+    .then(function(r){ return r.json(); })
+    .then(function(meta){
+      if (!meta.sha) throw new Error('SHA não encontrado');
+      var sha = meta.sha;
+
+      /* passo 2 — aplicar edições à lista em memória */
+      var edicoes = {};
+      try { edicoes = JSON.parse(localStorage.getItem('cia_edicoes_v2') || '{}'); } catch(e){}
+
+      var lista = window.listaProdutosPlanilha.map(function(p){
+        if (edicoes[p.id] && edicoes[p.id].preco !== undefined) {
+          return Object.assign({}, p, { preco: edicoes[p.id].preco });
+        }
+        return p;
+      });
+
+      /* passo 3 — serializar para JS (mesma estrutura do arquivo original) */
+      var linhas = lista.map(function(p){ return '  ' + JSON.stringify(p); });
+      var jsContent = 'window.listaProdutosPlanilha = [\n' + linhas.join(',\n') + '\n];\n';
+
+      /* passo 4 — codificar em base64 */
+      var b64 = btoa(unescape(encodeURIComponent(jsContent)));
+
+      var d = new Date();
+      var msg = '🔄 Preços atualizados via Calculadora — '
+        + d.toLocaleDateString('pt-BR') + ' ' + d.toLocaleTimeString('pt-BR',{hour:'2-digit',minute:'2-digit'});
+
+      /* passo 5 — PUT no GitHub */
+      return fetch(apiBase, {
+        method: 'PUT',
+        headers: headers,
+        body: JSON.stringify({ message: msg, content: b64, sha: sha })
+      });
+    })
+    .then(function(r){ return r.json(); })
+    .then(function(res){
+      if (res.content && res.content.sha) {
+        document.getElementById('aviso-catalogo').innerHTML =
+          '✅ Publicado no GitHub! A loja atualiza em instantes. '
+          + '<a href="https://github.com/' + GH_OWNER + '/' + GH_REPO + '/commits/main" target="_blank" style="color:var(--green);text-decoration:underline">Ver commit →</a>';
+        showToast('🚀 Publicado no GitHub!', 'green');
+      } else {
+        throw new Error(JSON.stringify(res));
+      }
+    })
+    .catch(function(err){
+      console.error('GitHub commit error:', err);
+      document.getElementById('aviso-catalogo').innerHTML =
+        '⚠️ Preço salvo localmente, mas falha ao publicar no GitHub. Verifique o token ou permissões.';
+      showToast('⚠️ Falha ao publicar no GitHub', 'amber');
+    });
 }
 
 /* ── UTILS ── */
