@@ -973,8 +973,27 @@ function mostrarSugestoes(query) {
   box.classList.add('on');
 }
 
+// ── CORRIGIDO: seta estado.precoFiltro quando query é um preço ──
 function confirmarBuscaCompleta() {
+  var inp = document.getElementById('searchInput');
+  var q = inp ? inp.value.trim() : '';
+  var precoQuery = _extrairPreco(q);
+
   esconderSugestoes();
+
+  if (precoQuery !== null) {
+    estado.busca       = '';
+    estado.precoFiltro = precoQuery;
+    estado.cat         = 'todos';
+    estado.sub         = 'todas';
+    estado.marca       = 'todas';
+    document.querySelectorAll('.ftab').forEach(function(b) { b.classList.remove('on'); });
+    var all = document.querySelector('.ftab[data-cat="todos"]');
+    if (all) all.classList.add('on');
+    document.querySelectorAll('.subtabs').forEach(function(b) { b.classList.remove('on'); });
+    document.getElementById('brandFilterWrap').classList.remove('on');
+  }
+
   renderizar();
   var c = document.getElementById('containerProdutos');
   if (c) setTimeout(function() { c.scrollIntoView({ behavior: 'smooth', block: 'start' }); }, 80);
@@ -985,10 +1004,11 @@ function selecionarSugestao(id) {
   if (!prod) return;
   esconderSugestoes();
   document.getElementById('searchInput').value = prod.nome;
-  estado.busca = prod.nome.toLowerCase();
-  estado.cat   = 'todos';
-  estado.sub   = 'todas';
-  estado.marca = 'todas';
+  estado.busca       = prod.nome.toLowerCase();
+  estado.precoFiltro = null;
+  estado.cat         = 'todos';
+  estado.sub         = 'todas';
+  estado.marca       = 'todas';
   document.querySelectorAll('.ftab').forEach(function(b) { b.classList.remove('on'); });
   var all = document.querySelector('.ftab[data-cat="todos"]');
   if (all) all.classList.add('on');
@@ -998,7 +1018,8 @@ function selecionarSugestao(id) {
 }
 
 function limparBusca() {
-  estado.busca = '';
+  estado.busca       = '';
+  estado.precoFiltro = null;
   var inp = document.getElementById('searchInput');
   if (inp) inp.value = '';
   esconderSugestoes();
@@ -1006,10 +1027,11 @@ function limparBusca() {
 
 function buscarPorTermo(termo) {
   limparBusca();
-  estado.cat   = 'todos';
-  estado.sub   = 'todas';
-  estado.marca = 'todas';
-  estado.busca = termo.toLowerCase();
+  estado.cat         = 'todos';
+  estado.sub         = 'todas';
+  estado.marca       = 'todas';
+  estado.busca       = termo.toLowerCase();
+  estado.precoFiltro = null;
   document.getElementById('searchInput').value = termo;
   document.querySelectorAll('.ftab').forEach(function(b) { b.classList.remove('on'); });
   var all = document.querySelector('.ftab[data-cat="todos"]');
@@ -1027,6 +1049,7 @@ function buscarPorTermo(termo) {
 function handleSearch(e) {
   var q = e.target.value;
   estado.busca = q.toLowerCase();
+  estado.precoFiltro = null;
   if (q.length >= 2) {
     estado.cat   = 'todos';
     estado.sub   = 'todas';
