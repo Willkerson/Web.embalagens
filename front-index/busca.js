@@ -1173,38 +1173,110 @@ document.addEventListener('DOMContentLoaded', function() {
   box.addEventListener('touchend',   function() { setTimeout(function() { _tocandoSugestao = false; }, 500); }, { passive: true });
 });
 
-function mostrarSugestoes(query) {
+Vejo o problema — a função mostrarSugestoes ficou duplicada e com a lógica fora do lugar. A função fecha no meio e o código de preço ficou solto fora dela. Aqui está a versão corrigida e completa da função:
+Substitui toda a função mostrarSugestoes por esta:
+jsfunction mostrarSugestoes(query) {
   var box = document.getElementById('searchSuggestions');
   if (!box) return;
   if (!query || query.length < 2) { esconderSugestoes(); return; }
 
-  if (_verificarLaryssa(query)) { /* ... */ return; }
+  if (_verificarLaryssa(query)) {
+    esconderSugestoes();
+    document.getElementById('searchInput').value = '';
+    return;
+  }
 
-  // ← AQUI: bloco de busca por preço (código acima)
-  var precoQuery = _extrairPreco(query);
-  // ...
-
-  var qNorm = normalizar(query); // continua o fluxo normal
-  // ...
-}
   // ── Busca por preço ──────────────────────────────────────────
-var precoQuery = _extrairPreco(query);
-if (precoQuery !== null) {
-  var MARGEM = 0.05; // tolerância de R$ 0,05
-  var porPreco = todosProds.filter(function(p) {
-    var v = parseFloat(p.preco);
-    return !isNaN(v) && Math.abs(v - precoQuery) <= MARGEM;
+  var precoQuery = _extrairPreco(query);
+  if (precoQuery !== null) {
+    var MARGEM = 0.05;
+    var todosParaPreco = prods().filter(function(p) { return !p.oculto; });
+    var porPreco = todosParaPreco.filter(function(p) {
+      var v = parseFloat(p.preco);
+      return !isNaN(v) && Math.abs(v - precoQuery) <= MARGEM;
+    });
+    if (porPreco.length === 0) {
+      box.innerHTML = '<div class="sug-section-label" style="padding:12px 14px">Nenhum produto com preço R$ ' + precoQuery.toFixed(2).replace('.', ',') + '</div>';
+      box.classList.add('on');
+    } else {
+      var html = '<div class="sug-section-label" style="display:flex;align-items:center;justify-content:space-between;padding:8px 14px 5px">' +
+        '<span>💰 ' + porPreco.length + ' produto' + (porPreco.length !== 1 ? 's' : '') + ' por R$ ' + precoQuery.toFixed(2).replace('.', ',') + '</span>' +
+        '</div>';
+      porPreco.slice(0, 8).forEach(function(p) {
+        var ico = catEmojis[p.subcategoria] || catEmojis[p.categoria] || '📦';
+        var cat = subLabels[p.subcategoria] || p.categoria || '';
+        var esgTag = isEsgotado(p)
+          ? '<span style="font-size:.6rem;background:#ea580c;color:#fff;padding:1px 6px;border-radius:99px;margin-left:4px;font-weight:700">ESGOTADO</span>'
+          : '';
+        html +=
+          '<div class="search-sug-item" onclick="selecionarSugestao(' + p.id + ')">' +
+            '<span class="sug-ico">' + ico + '</span>' +
+            '<div style="flex:1;min-width:0">' +
+              '<div class="sug-name">' + p.nome + esgTag + '</div>' +
+              (cat ? '<div class="sug-cat">' + cat + '</div>' : '') +
+            '</div>' +
+            '<div class="sug-cat" style="white-space:nowrap;color:#16a34a;font-weight:700">R$ ' + parseFloat(p.preco).toFixed(2).replace('.', ',') + '</div>' +
+          '</div>';
+      });
+      if (porPreco.length > 8) {
+        html += '<div onclick="confirmarBuscaCompleta()" style="text-align:center;padding:10px;font-size:.78rem;font-weight:600;color:var(--blue);cursor:pointer;border-top:1px solid var(--border);background:var(--blue-soft)">Ver todos os ' + porPreco.length + ' resultados →</div>';
+      }
+      box.innerHTML = html;
+      box.classList.add('on');
+    }
+    return;
+  }
+
+  // ── Busca normal por nome/marca ──────────────────────────────
+  var qNorm = normalizar(query);
+  var todosProds = prods().filter(function(p) { return !p.oculto; });
+
+  var diretos = todosProds.filter(function(p) {
+    var nNorm = normalizar(p.nome);
+    var mNorm = normalizar(p.marca || '');
+    return nNorm.includes(qNorm) || mNorm.includes(qNorm);
   });
-  if (porPreco.length === 0) {
-    box.innerHTML = '<div class="sug-section-label" style="padding:12px 14px">Nenhum produto com preço R$ ' + precoQuery.toFixed(2).replace('.', ',') + '</div>';
-    box.classList.add('on');
-  } else {
-    var html = '<div class="sug-section-label" style="display:flex;align-items:center;justify-content:space-between;padding:8px 14px 5px">' +
-      '<span>💰 ' + porPreco.length + ' produto' + (porPreco.length !== 1 ? 's' : '') + ' por R$ ' + precoQuery.toFixed(2).replace('.', ',') + '</span>' +
+
+  var palavras = qNorm.split(/\s+/).filter(Boolean);
+  var jaEncontrados = diretos.map(function(p) { return p.id; });
+
+  var porPalavras = palavras.length > 1
+    ? todosProds.filter(function(p) {
+        if (jaEncontrados.indexOf(p.id) >= 0) return false;
+        var nNorm = normalizar(p.nome) + ' ' + normalizar(p.marca || '');
+        return palavras.every(function(w) { return nNorm.includes(w); });
+      })
+    : [];
+
+  var idsJaVistos = diretos.concat(porPalavras).map(function(p) { return p.id; });
+  var fuzzyProds = [];
+  if (diretos.length + porPalavras.length < 3) {
+    fuzzyProds = buscaFuzzy(query)
+      .filter(function(r) { return r.score >= 45 && idsJaVistos.indexOf(r.prod.id) < 0; })
+      .map(function(r) { return r.prod; })
+      .slice(0, 4);
+  }
+
+  var encontrados = diretos.concat(porPalavras);
+  var totalDireto = encontrados.length;
+
+  if (!totalDireto && !fuzzyProds.length) { esconderSugestoes(); return; }
+
+  var html = '';
+
+  if (totalDireto > 0) {
+    var limite = 7;
+    html += '<div class="sug-section-label" style="display:flex;align-items:center;justify-content:space-between;padding:8px 14px 5px">' +
+      '<span>' + totalDireto + ' produto' + (totalDireto !== 1 ? 's' : '') + ' encontrado' + (totalDireto !== 1 ? 's' : '') + '</span>' +
+      (totalDireto > limite
+        ? '<span onclick="confirmarBuscaCompleta()" style="color:var(--blue);font-weight:700;cursor:pointer;font-size:.7rem;padding:2px 6px">Ver todos ' + totalDireto + ' →</span>'
+        : '') +
     '</div>';
-    porPreco.slice(0, 8).forEach(function(p) {
+
+    encontrados.slice(0, limite).forEach(function(p) {
       var ico  = catEmojis[p.subcategoria] || catEmojis[p.categoria] || '📦';
       var cat  = subLabels[p.subcategoria] || p.categoria || '';
+      var nome = highlightMatch(p.nome, query);
       var esgTag = isEsgotado(p)
         ? '<span style="font-size:.6rem;background:#ea580c;color:#fff;padding:1px 6px;border-radius:99px;margin-left:4px;font-weight:700">ESGOTADO</span>'
         : '';
@@ -1212,18 +1284,38 @@ if (precoQuery !== null) {
         '<div class="search-sug-item" onclick="selecionarSugestao(' + p.id + ')">' +
           '<span class="sug-ico">' + ico + '</span>' +
           '<div style="flex:1;min-width:0">' +
-            '<div class="sug-name">' + p.nome + esgTag + '</div>' +
+            '<div class="sug-name">' + nome + esgTag + '</div>' +
             (cat ? '<div class="sug-cat">' + cat + '</div>' : '') +
           '</div>' +
-          '<div class="sug-cat" style="white-space:nowrap;color:#16a34a;font-weight:700">R$ ' + parseFloat(p.preco).toFixed(2).replace('.', ',') + '</div>' +
+          (parseFloat(p.preco) > 0
+            ? '<div class="sug-cat" style="white-space:nowrap">R$ ' + parseFloat(p.preco).toFixed(2).replace('.', ',') + '</div>'
+            : '') +
         '</div>';
     });
-    if (porPreco.length > 8) {
-      html += '<div onclick="confirmarBuscaCompleta()" style="text-align:center;padding:10px;font-size:.78rem;font-weight:600;color:var(--blue);cursor:pointer;border-top:1px solid var(--border);background:var(--blue-soft)">Ver todos os ' + porPreco.length + ' resultados →</div>';
+
+    if (totalDireto > limite) {
+      html += '<div onclick="confirmarBuscaCompleta()" style="text-align:center;padding:10px;font-size:.78rem;font-weight:600;color:var(--blue);cursor:pointer;border-top:1px solid var(--border);background:var(--blue-soft)">Ver todos os ' + totalDireto + ' resultados →</div>';
     }
-    box.innerHTML = html;
-    box.classList.add('on');
   }
+
+  if (fuzzyProds.length) {
+    html += '<div class="sug-section-label">💡 Você quis dizer…</div>';
+    fuzzyProds.forEach(function(p) {
+      var ico = catEmojis[p.subcategoria] || catEmojis[p.categoria] || '📦';
+      html +=
+        '<div class="search-sug-item" onclick="selecionarSugestao(' + p.id + ')">' +
+          '<span class="sug-ico">' + ico + '</span>' +
+          '<div style="flex:1;min-width:0"><div class="sug-name">' + p.nome + '</div></div>' +
+          (parseFloat(p.preco) > 0
+            ? '<div class="sug-cat" style="white-space:nowrap">R$ ' + parseFloat(p.preco).toFixed(2).replace('.', ',') + '</div>'
+            : '') +
+        '</div>';
+    });
+  }
+
+  box.innerHTML = html;
+  box.classList.add('on');
+}
   return; // ← sai da função, não continua busca normal
 }
 
