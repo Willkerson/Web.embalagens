@@ -1,10 +1,16 @@
 <!--
-  Bloco HTML — cole dentro do seu #calcPanel, antes ou depois das abas.
-  CSS: adicione admin-calc-danfe.css (ou cole o bloco <style> abaixo no seu admin.css)
-  Scripts: carregue admin-calc-danfe.js APÓS admin-calc.js
+  danfe-painel.html — Cole dentro do #calcPanel
+  CORREÇÕES aplicadas:
+  - #danfe-resultado mantém o cabeçalho fixo no HTML
+  - <div id="danfe-itens-lista"> e <div id="danfe-itens-btns"> recebem
+    o conteúdo injetado pelo JS sem apagar o cabeçalho
+  - Botões de salvar / copiar adicionados ao bloco #calc-resultado
+    (cole esses botões no HTML do seu painel de calculadora)
 -->
 
-<!-- ══ ESTILOS (cole no admin.css ou num <style> no <head>) ══ -->
+<!-- ══════════════════════════════════════════
+     ESTILOS — cole no admin.css ou no <head>
+     ══════════════════════════════════════════ -->
 <style>
 .danfe-card {
   border: 1px solid #e0e0e0;
@@ -42,7 +48,6 @@
 
 #danfe-resultado { margin-top: 10px; }
 
-/* Grid de itens */
 .danfe-header-row,
 .danfe-item-row {
   display: grid;
@@ -75,8 +80,6 @@
   border-color: #1D9E75;
   background: #fff;
 }
-
-/* Botões */
 .danfe-btn-primary {
   background: #1D9E75;
   color: #fff;
@@ -85,7 +88,6 @@
   padding: 9px 20px;
   font-size: 14px;
   cursor: pointer;
-  margin-top: 12px;
   font-weight: 500;
 }
 .danfe-btn-primary:hover { background: #0F6E56; }
@@ -97,13 +99,15 @@
   padding: 8px 14px;
   font-size: 13px;
   cursor: pointer;
-  margin-top: 12px;
   margin-left: 6px;
 }
 .danfe-btn-sec:hover { background: #f5f5f5; }
 </style>
 
-<!-- ══ HTML — cole dentro do #calcPanel ══ -->
+
+<!-- ══════════════════════════════════════════
+     PAINEL DANFE — cole dentro do #calcPanel
+     ══════════════════════════════════════════ -->
 <div id="danfe-painel" class="danfe-card">
   <div class="calc-sec-title" style="font-size:13px;font-weight:600;color:#666;text-transform:uppercase;letter-spacing:.05em;margin-bottom:10px">
     📄 Importar DANFE (PDF)
@@ -119,7 +123,7 @@
   >
     <div style="font-size:28px;margin-bottom:6px">📄</div>
     <span id="danfe-drop-txt">Clique aqui ou arraste o PDF da DANFE</span><br>
-    <span style="font-size:12px;color:#aaa">PDF · máx. 10 MB</span>
+    <span style="font-size:12px;color:#aaa">PDF · máx. 20 MB</span>
   </div>
 
   <input
@@ -132,6 +136,11 @@
 
   <div id="danfe-status" style="display:none"></div>
 
+  <!--
+    #danfe-resultado fica sempre visível com o cabeçalho fixo.
+    O JS injeta as linhas em #danfe-itens-lista e os botões em #danfe-itens-btns,
+    sem apagar o cabeçalho.
+  -->
   <div id="danfe-resultado" style="display:none">
     <div class="danfe-header-row">
       <span>Descrição</span>
@@ -140,10 +149,45 @@
       <span>ICMS %</span>
       <span>IPI %</span>
     </div>
-    <!-- Itens injetados por admin-calc-danfe.js -->
+    <!-- Linhas injetadas pelo JS aqui ↓ -->
+    <div id="danfe-itens-lista"></div>
+    <!-- Botões de ação injetados pelo JS aqui ↓ -->
+    <div id="danfe-itens-btns"></div>
   </div>
 </div>
 
-<!-- ══ SCRIPTS — depois de admin-calc.js ══ -->
-<!-- <script src="admin-fl/admin-calc.js"></script>        (já carregado) -->
+
+<!-- ══════════════════════════════════════════
+     BOTÕES SALVAR / COPIAR no calc-resultado
+     Cole DENTRO do seu #calc-resultado, após
+     os campos de exibição do preço calculado.
+     ══════════════════════════════════════════ -->
+<!--
+  Procure no seu HTML o bloco #calc-resultado e adicione
+  os dois botões abaixo dentro dele, após #calc-breakdown:
+
+  <div id="calc-resultado" style="display:none">
+    ... seus campos de resultado ...
+    <div id="calc-breakdown"></div>
+
+    ✅ ADICIONE ISTO:
+    <div style="display:flex; gap:8px; margin-top:14px; flex-wrap:wrap;">
+      <button class="calc-btn" onclick="calcAplicarPreco()">
+        💾 Salvar no produto
+      </button>
+      <button class="calc-btn" onclick="calcCopiarPreco()">
+        📋 Copiar preço
+      </button>
+    </div>
+    <div id="calc-aviso" style="display:none; margin-top:8px; font-size:13px;
+         padding:8px 12px; background:#e8f7f0; border-radius:8px; color:#085041;">
+    </div>
+  </div>
+-->
+
+
+<!-- ══════════════════════════════════════════
+     SCRIPTS — ordem obrigatória
+     ══════════════════════════════════════════ -->
+<!-- <script src="admin-fl/admin-calc.js"></script>        já carregado -->
 <!-- <script src="admin-fl/admin-calc-danfe.js"></script>  ← adicione esta linha -->
