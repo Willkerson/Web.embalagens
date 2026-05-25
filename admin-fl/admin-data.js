@@ -1,4 +1,4 @@
-/* admin-data.js — Defaults, constantes e storage */
+/* admin-data.js — Defaults, constantes, storage e sincronização com planilha.js */
 'use strict';
 
 var WPP_NUM = '5511972999835';
@@ -10,7 +10,8 @@ var K = {
   CATMAP:'cia_catmap_v1', SUBLABELS:'cia_sublabels_v1',
   IDXHTML:'cia_index_html_cache', IDXSHA:'cia_index_sha_cache',
   STK:'cia_estoque_v1', STKHIST:'cia_stk_hist_v1',
-  WPPCFG:'cia_wpp_alert_cfg'
+  WPPCFG:'cia_wpp_alert_cfg',
+  SNAP:'cia_planilha_snap_v1'   /* snapshot dos IDs da última carga */
 };
 
 var DEF_CATS = [
@@ -65,11 +66,15 @@ var DEF_SUBLABELS = {
   'isopor-geral':'Isopor Geral','emb-flexiveis':'Emb. Flexíveis','emb-diversas':'Emb. Diversas','outros':'Outros'
 };
 
-/* ── Storage helpers ── */
+/* ══════════════════════════════════════════════
+   STORAGE HELPERS
+══════════════════════════════════════════════ */
 function rls(k, d) { try { var v = localStorage.getItem(k); return v ? JSON.parse(v) : d; } catch(e) { return d; } }
 function wls(k, v) { localStorage.setItem(k, JSON.stringify(v)); }
 
-/* ── Estado global ── */
+/* ══════════════════════════════════════════════
+   ESTADO GLOBAL
+══════════════════════════════════════════════ */
 var ocultos    = new Set(rls(K.OCU, []));
 var edicoes    = rls(K.ED, {});
 var novosProd  = rls(K.NEW, []);
@@ -84,7 +89,9 @@ var estoque    = rls(K.STK, {});
 var stkHist    = rls(K.STKHIST, []);
 var wppCfg     = rls(K.WPPCFG, {enabled:false, num:WPP_NUM, interval:15});
 
-/* ── Persistência ── */
+/* ══════════════════════════════════════════════
+   PERSISTÊNCIA
+══════════════════════════════════════════════ */
 function savO()         { wls(K.OCU, [...ocultos]); }
 function savE()         { wls(K.ED, edicoes); }
 function savN()         { wls(K.NEW, novosProd); }
@@ -98,3 +105,119 @@ function savSubLabels() { wls(K.SUBLABELS, subLabels); }
 function savStk()       { wls(K.STK, estoque); }
 function savStkHist()   { wls(K.STKHIST, stkHist.slice(-500)); }
 function savWppCfg()    { wls(K.WPPCFG, wppCfg); }
+
+/* ══════════════════════════════════════════════
+   SINCRONIZAÇÃO COM planilha.js
+   
+   Roda UMA VEZ no carregamento, antes de qualquer
+   render. Compara o que veio do planilha.js com o
+   snapshot da última carga e faz a limpeza:
+
+   1. Produto NOVO na planilha  → respeita (aparece normalmente)
+   2. Produto REMOVIDO da planilha → remove de edicoes, ocultos,
+      esgotados (não cria entrada no deletados, pois ele
+      já não existe na fonte)
+   3. Produto que estava em novosProd mas agora existe na
+      planilha → migra (remove de novosProd, preserva edicoes)
+   4. Produto em edicoes/ocultos/esgotados que NÃO existe
+      em nenhuma fonte → limpa o registro órfão
+══════════════════════════════════════════════ */
+function sincronizarComPlanilha() {
+  var planilha = window.listaProdutosPlanilha || [];
+  if (!planilha.length) return; /* planilha vazia = nada a fazer */
+
+  var idsPlanilha  = new Set(planilha.map(function(p){ return p.id; }));
+  var idsSnapshot  = new Set(rls(K.SNAP, []));
+  var idsNovos     = new Set(novosProd.map(function(p){ return p.id; }));
+
+  var removidos    = [];  /* IDs que saíram da planilha desde a última carga */
+  var incorporados = [];  /* IDs que eram novosProd e agora entraram na planilha */
+
+  /* ── 1. Detectar o que SAIU da planilha ── */
+  idsSnapshot.forEach(function(id) {
+    if (!idsPlanilha.has(id)) {
+      removidos.push(id);
+    }
+  });
+
+  /* ── 2. Limpar registros de produtos removidos da planilha ── */
+  if (removidos.length) {
+    removidos.forEach(function(id) {
+      /* Só limpa se também não está em novosProd
+         (evita apagar produto adicionado pelo admin com mesmo id) */
+      if (idsNovos.has(id)) return;
+
+      if (edicoes[id])      { delete edicoes[id]; }
+      if (ocultos.has(id))  { ocultos.delete(id); }
+      if (esgotados.has(id)){ esgotados.delete(id); }
+      /* Não tocamos em deletados nem estoque intencionalmente */
+    });
+    savE(); savO(); savEsg();
+  }
+
+  /* ── 3. Migrar novosProd que a planilha absorveu ──
+     Quando você publica, o produto sai de novosProd e vai para
+     a planilha. Na próxima carga o admin precisa reconhecer isso. */
+  var novosRestantes = novosProd.filter(function(p) {
+    if (idsPlanilha.has(p.id)) {
+      incorporados.push(p.id);
+      /* Preserva edições que estavam sobre ele — já estão em edicoes */
+      return false; /* remove de novosProd */
+    }
+    return true;
+  });
+
+  if (incorporados.length) {
+    novosProd = novosRestantes;
+    savN();
+  }
+
+  /* ── 4. Limpar edicoes/ocultos/esgotados órfãos ──
+     Registros locais que não existem nem na planilha nem em novosProd */
+  var idsNovosAtual = new Set(novosProd.map(function(p){ return p.id; }));
+  var sujo = false;
+
+  Object.keys(edicoes).forEach(function(id) {
+    var idN = parseInt(id);
+    if (!idsPlanilha.has(idN) && !idsNovosAtual.has(idN)) {
+      delete edicoes[id]; sujo = true;
+    }
+  });
+  if (sujo) savE();
+
+  ocultos.forEach(function(id) {
+    if (!idsPlanilha.has(id) && !idsNovosAtual.has(id)) {
+      ocultos.delete(id); sujo = true;
+    }
+  });
+  if (sujo) savO();
+
+  esgotados.forEach(function(id) {
+    if (!idsPlanilha.has(id) && !idsNovosAtual.has(id)) {
+      esgotados.delete(id); sujo = true;
+    }
+  });
+  if (sujo) savEsg();
+
+  /* ── 5. Sincronizar campos da planilha para o admin ──
+     Se um campo foi alterado DIRETAMENTE na planilha (sem passar
+     pelo admin), e NÃO há edição local para aquele campo,
+     o admin vai ler o valor certo automaticamente porque getProd()
+     já usa a planilha como base e só sobrepõe com edicoes.
+     Portanto este passo não precisa de código extra — já funciona. */
+
+  /* ── 6. Salvar novo snapshot dos IDs atuais ── */
+  wls(K.SNAP, [...idsPlanilha]);
+
+  /* Log resumido no console para diagnóstico */
+  if (removidos.length || incorporados.length) {
+    console.log(
+      '[Admin] Sincronização com planilha.js:',
+      removidos.length   ? removidos.length   + ' removido(s) da planilha limpos' : '',
+      incorporados.length ? incorporados.length + ' produto(s) migrado(s) de novosProd → planilha' : ''
+    );
+  }
+}
+
+/* Executa a sincronização imediatamente */
+sincronizarComPlanilha();
