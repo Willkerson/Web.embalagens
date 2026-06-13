@@ -3532,7 +3532,7 @@ window.listaProdutosPlanilha = [
     "marca": "START",
     "imagem": "https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcQyiEVjyWkt7JlM264wnRceqpDhUU95Yg6QwjUIHnOEh4PGh4vayVrAlspIs3_zC_pGBWPe1eWxcRTfrDD4L-lAnmmn1Mcs-6potTdYUdoDR1G4PrN-UlPyy1OA5AA6fYBKrnV2mklZ&usqp=CAc",
     "imgmode": "thumbnail",
-    "ean": ""
+    "ean": "2414493219227"
   },
   {
     "id": 2444,
