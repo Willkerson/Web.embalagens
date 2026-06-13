@@ -3,569 +3,761 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-<title>Scanner de Estoque — Cia das Embalagens</title>
+<title>Scanner — Cia das Embalagens</title>
 
-<!-- Quagga: leitura de código de barras -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/quagga/0.12.1/quagga.min.js"></script>
-<!-- TensorFlow.js + Teachable Machine -->
 <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@4.2.0/dist/tf.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@teachablemachine/image@0.8.5/dist/teachablemachine-image.min.js"></script>
 
 <style>
 :root {
-  --bg:#0f1117;--surface:#1a1d27;--card:#22263a;--border:#2e3352;
-  --accent:#4f6ef7;--accent2:#7c3aed;--green:#22c55e;--red:#ef4444;
-  --yellow:#f59e0b;--text:#e8eaf6;--muted:#8892b0;--radius:14px;
-  --font:'Segoe UI',system-ui,sans-serif;
+  --bg:      #f5f5f7;
+  --card:    #ffffff;
+  --surface: #f0f0f2;
+  --t1:      #1d1d1f;
+  --t2:      #3d3d3f;
+  --t3:      #6e6e73;
+  --t4:      #aeaeb2;
+  --bdr:     rgba(0,0,0,.09);
+  --acc:     #0071E3;
+  --acc-s:   rgba(0,113,227,.09);
+  --acc-m:   rgba(0,113,227,.16);
+  --grn:     #30C85E;
+  --grn-s:   rgba(48,200,94,.1);
+  --red:     #FF3B30;
+  --red-s:   rgba(255,59,48,.09);
+  --amb:     #FF9F0A;
+  --amb-s:   rgba(255,159,10,.09);
+  --font: -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', sans-serif;
+  --mono: 'SF Mono', ui-monospace, monospace;
+  --r: 14px;
+  --r-sm: 10px;
+  --sh: 0 1px 3px rgba(0,0,0,.06), 0 0 0 1px rgba(0,0,0,.06);
+  --sh-md: 0 8px 32px rgba(0,0,0,.1), 0 0 0 1px rgba(0,0,0,.05);
 }
-*{box-sizing:border-box;margin:0;padding:0;}
-body{background:var(--bg);color:var(--text);font-family:var(--font);min-height:100vh;overflow-x:hidden;}
 
-/* LOGIN */
-#login-screen{display:flex;flex-direction:column;align-items:center;justify-content:center;
-  min-height:100vh;padding:24px;background:radial-gradient(ellipse at 50% 0%,#1e2340 0%,var(--bg) 70%);}
-.login-logo{font-size:48px;margin-bottom:12px;}
-.login-title{font-size:22px;font-weight:700;margin-bottom:4px;}
-.login-sub{font-size:13px;color:var(--muted);margin-bottom:36px;}
-.login-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);
-  padding:28px 24px;width:100%;max-width:340px;}
-.login-card label{display:block;font-size:12px;color:var(--muted);margin-bottom:8px;
-  text-transform:uppercase;letter-spacing:.08em;}
-.login-card input{width:100%;background:var(--card);border:1px solid var(--border);
-  border-radius:10px;padding:14px 16px;color:var(--text);font-size:20px;
-  letter-spacing:6px;text-align:center;outline:none;transition:border-color .2s;}
-.login-card input:focus{border-color:var(--accent);}
-.btn-primary{width:100%;margin-top:16px;background:linear-gradient(135deg,var(--accent),var(--accent2));
-  border:none;border-radius:10px;padding:14px;color:#fff;font-size:15px;font-weight:600;
-  cursor:pointer;transition:opacity .2s;}
-.btn-primary:hover{opacity:.88;}
-.login-error{margin-top:12px;text-align:center;font-size:13px;color:var(--red);display:none;}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; -webkit-font-smoothing: antialiased; }
+html { height: 100%; }
+body { background: var(--bg); color: var(--t2); font-family: var(--font); min-height: 100vh; font-size: 15px; }
+button { cursor: pointer; border: none; background: none; font-family: var(--font); }
 
-/* APP */
-#app{display:none;}
-.topbar{background:var(--surface);border-bottom:1px solid var(--border);padding:14px 16px;
-  display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:100;}
-.topbar-title{font-size:15px;font-weight:700;display:flex;align-items:center;gap:8px;}
-.badge-count{background:var(--accent);color:#fff;border-radius:20px;padding:2px 10px;
-  font-size:12px;font-weight:700;}
-.btn-save{background:var(--green);border:none;border-radius:8px;padding:8px 16px;
-  color:#fff;font-size:13px;font-weight:600;cursor:pointer;transition:opacity .2s;}
-.btn-save:hover{opacity:.85;}
-.btn-save:disabled{background:var(--muted);cursor:not-allowed;}
+/* ── TOPBAR ── */
+.topbar {
+  position: sticky; top: 0; z-index: 200;
+  background: rgba(255,255,255,.88);
+  backdrop-filter: saturate(180%) blur(20px);
+  -webkit-backdrop-filter: saturate(180%) blur(20px);
+  border-bottom: 1px solid var(--bdr);
+  padding: 0 16px;
+  height: 52px;
+  display: flex; align-items: center; justify-content: space-between;
+}
+.topbar-logo {
+  font-size: 15px; font-weight: 600; color: var(--t1);
+  letter-spacing: -.02em; display: flex; align-items: center; gap: 8px;
+}
+.logo-dot { width: 7px; height: 7px; background: var(--grn); border-radius: 50%; animation: pulse 3s ease-in-out infinite; }
+@keyframes pulse { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:.3;transform:scale(.6)} }
 
-/* TABS */
-.tabs{display:flex;background:var(--surface);border-bottom:1px solid var(--border);}
-.tab{flex:1;padding:12px 4px;text-align:center;font-size:12px;font-weight:600;
-  color:var(--muted);cursor:pointer;border-bottom:2px solid transparent;transition:all .2s;}
-.tab.active{color:var(--accent);border-bottom-color:var(--accent);}
+.topbar-right { display: flex; align-items: center; gap: 8px; }
+.cart-btn {
+  position: relative;
+  width: 36px; height: 36px;
+  border-radius: var(--r-sm);
+  background: var(--acc-s);
+  border: 1px solid rgba(0,113,227,.15);
+  color: var(--acc);
+  font-size: 17px;
+  display: flex; align-items: center; justify-content: center;
+  transition: background .15s;
+}
+.cart-btn:hover { background: var(--acc-m); }
+.cart-badge {
+  position: absolute; top: -5px; right: -5px;
+  background: var(--red); color: #fff;
+  border-radius: 99px; font-size: 10px; font-weight: 700;
+  padding: 1px 5px; min-width: 16px; text-align: center;
+  display: none; border: 1.5px solid #fff;
+}
+.admin-btn {
+  width: 36px; height: 36px;
+  border-radius: var(--r-sm);
+  background: var(--surface);
+  border: 1px solid var(--bdr);
+  color: var(--t3);
+  font-size: 16px;
+  display: flex; align-items: center; justify-content: center;
+  transition: background .15s;
+}
+.admin-btn:hover { background: var(--bdr); }
 
-/* TAB PANELS */
-#tab-scanner,#tab-lista,#tab-vincular,#tab-modelo{display:none;padding:16px;}
-#tab-scanner.active,#tab-lista.active,#tab-vincular.active,#tab-modelo.active{display:block;}
+/* ── TABS ── */
+.tabs {
+  display: flex;
+  background: rgba(255,255,255,.88);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--bdr);
+  padding: 0 16px;
+  gap: 0;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+.tab {
+  padding: 10px 14px;
+  font-size: 13px; font-weight: 500;
+  color: var(--t3);
+  cursor: pointer;
+  border-bottom: 2px solid transparent;
+  transition: all .15s;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+.tab:hover { color: var(--t2); }
+.tab.active { color: var(--acc); border-bottom-color: var(--acc); font-weight: 600; }
 
-/* MODO SCANNER */
-.mode-toggle{display:flex;gap:8px;margin-bottom:12px;}
-.mode-btn{flex:1;padding:10px;border-radius:10px;border:1px solid var(--border);
-  background:var(--card);color:var(--muted);font-size:13px;font-weight:600;
-  cursor:pointer;transition:all .2s;text-align:center;}
-.mode-btn.active{background:var(--accent);border-color:var(--accent);color:#fff;}
+/* ── PAINÉIS ── */
+.panel { display: none; padding: 16px; }
+.panel.active { display: block; }
 
-/* CÂMERA */
-.camera-wrap{position:relative;background:#000;border-radius:var(--radius);
-  overflow:hidden;width:100%;max-height:300px;aspect-ratio:4/3;}
-#interactive{width:100%;height:100%;}
-#interactive video{width:100%!important;height:100%!important;object-fit:cover;}
-#interactive canvas.drawingBuffer{display:none;}
+/* ── CÂMERA ── */
+.camera-wrap {
+  position: relative;
+  background: #000;
+  border-radius: var(--r);
+  overflow: hidden;
+  width: 100%;
+  aspect-ratio: 4/3;
+  max-height: 280px;
+}
+#interactive { width: 100%; height: 100%; }
+#interactive video { width: 100% !important; height: 100% !important; object-fit: cover; }
+#interactive canvas.drawingBuffer { display: none; }
+#canvas-ia { width: 100%; height: 100%; object-fit: cover; display: none; position: absolute; inset: 0; }
+#video-ia  { display: none; }
 
-/* Canvas da IA */
-#canvas-ia{width:100%;height:100%;object-fit:cover;display:none;}
+/* Cantos do scanner */
+.scan-corner { position: absolute; width: 22px; height: 22px; border-color: #fff; border-style: solid; pointer-events: none; opacity: .8; }
+.scan-corner.tl { top: 16%; left: 8%; border-width: 2px 0 0 2px; border-radius: 3px 0 0 0; }
+.scan-corner.tr { top: 16%; right: 8%; border-width: 2px 2px 0 0; border-radius: 0 3px 0 0; }
+.scan-corner.bl { bottom: 16%; left: 8%; border-width: 0 0 2px 2px; border-radius: 0 0 0 3px; }
+.scan-corner.br { bottom: 16%; right: 8%; border-width: 0 2px 2px 0; border-radius: 0 0 3px 0; }
 
-.scan-line{position:absolute;left:10%;right:10%;top:50%;height:2px;
-  background:linear-gradient(90deg,transparent,var(--accent),transparent);
-  animation:scanAnim 2s linear infinite;pointer-events:none;}
-@keyframes scanAnim{0%{top:25%;opacity:0;}10%{opacity:1;}90%{opacity:1;}100%{top:75%;opacity:0;}}
-
-.scan-corner{position:absolute;width:24px;height:24px;border-color:var(--accent);
-  border-style:solid;pointer-events:none;}
-.scan-corner.tl{top:20%;left:10%;border-width:3px 0 0 3px;border-radius:4px 0 0 0;}
-.scan-corner.tr{top:20%;right:10%;border-width:3px 3px 0 0;border-radius:0 4px 0 0;}
-.scan-corner.bl{bottom:20%;left:10%;border-width:0 0 3px 3px;border-radius:0 0 0 4px;}
-.scan-corner.br{bottom:20%;right:10%;border-width:0 3px 3px 0;border-radius:0 0 4px 0;}
-
-.camera-status{position:absolute;bottom:0;left:0;right:0;padding:8px;
-  text-align:center;font-size:12px;color:rgba(255,255,255,.8);
-  background:linear-gradient(transparent,rgba(0,0,0,.6));}
+.scan-line {
+  position: absolute; left: 8%; right: 8%;
+  height: 1.5px;
+  background: linear-gradient(90deg, transparent, var(--acc), transparent);
+  animation: scanLine 2.4s ease-in-out infinite;
+  pointer-events: none;
+  display: none;
+}
+@keyframes scanLine { 0%{top:18%;opacity:0} 10%{opacity:1} 90%{opacity:1} 100%{top:82%;opacity:0} }
 
 /* IA overlay */
-.ia-overlay{position:absolute;top:8px;left:8px;right:8px;
-  background:rgba(0,0,0,.75);border-radius:10px;padding:10px 12px;
-  display:none;}
-.ia-resultado{font-size:15px;font-weight:700;color:#fff;}
-.ia-confianca{font-size:12px;color:var(--muted);margin-top:2px;}
-.ia-barra{height:4px;border-radius:2px;background:var(--border);margin-top:6px;overflow:hidden;}
-.ia-barra-fill{height:100%;background:var(--green);border-radius:2px;transition:width .3s;}
+.ia-overlay {
+  position: absolute; top: 10px; left: 10px; right: 10px;
+  background: rgba(0,0,0,.65);
+  backdrop-filter: blur(10px);
+  border-radius: var(--r-sm);
+  padding: 10px 12px;
+  display: none;
+}
+.ia-nome  { font-size: 14px; font-weight: 600; color: #fff; }
+.ia-conf  { font-size: 11px; color: rgba(255,255,255,.6); margin-top: 2px; }
+.ia-barra { height: 3px; border-radius: 99px; background: rgba(255,255,255,.15); margin-top: 7px; overflow: hidden; }
+.ia-fill  { height: 100%; border-radius: 99px; background: var(--grn); transition: width .3s; }
 
-.btn-camera{width:100%;margin-top:10px;background:var(--card);border:1px solid var(--border);
-  border-radius:10px;padding:12px;color:var(--text);font-size:14px;font-weight:600;
-  cursor:pointer;display:flex;align-items:center;justify-content:center;gap:8px;transition:background .2s;}
-.btn-camera:hover{background:var(--border);}
-.btn-camera.active{background:var(--red);border-color:var(--red);}
+.cam-status {
+  position: absolute; bottom: 0; left: 0; right: 0;
+  padding: 10px 12px;
+  text-align: center; font-size: 12px; color: rgba(255,255,255,.7);
+  background: linear-gradient(transparent, rgba(0,0,0,.5));
+  pointer-events: none;
+}
 
-/* CAPTURAR FOTO (modo IA) */
-.btn-capturar{width:100%;margin-top:10px;background:linear-gradient(135deg,var(--accent),var(--accent2));
-  border:none;border-radius:10px;padding:14px;color:#fff;font-size:15px;font-weight:700;
-  cursor:pointer;display:none;align-items:center;justify-content:center;gap:8px;}
-.btn-capturar.visivel{display:flex;}
+/* Modo toggle */
+.mode-row {
+  display: flex; gap: 6px; margin-bottom: 12px;
+}
+.mode-btn {
+  flex: 1; padding: 9px;
+  border-radius: var(--r-sm);
+  border: 1px solid var(--bdr);
+  background: var(--card);
+  color: var(--t3);
+  font-size: 12.5px; font-weight: 500;
+  cursor: pointer; transition: all .15s; text-align: center;
+}
+.mode-btn.active { background: var(--acc); border-color: var(--acc); color: #fff; }
 
-/* RESULTADO SCAN */
-#ultimo-scan{margin-top:14px;background:var(--surface);border:1px solid var(--border);
-  border-radius:var(--radius);padding:16px;display:none;}
-#ultimo-scan.encontrado{border-color:var(--green);}
-#ultimo-scan.nao-vinculado{border-color:var(--yellow);}
-#ultimo-scan.nao-encontrado{border-color:var(--red);}
-#ultimo-scan.ia-resultado-card{border-color:var(--accent);}
+/* Botão câmera */
+.btn-cam {
+  width: 100%; margin-top: 10px;
+  background: var(--card);
+  border: 1px solid var(--bdr);
+  border-radius: var(--r-sm);
+  padding: 11px;
+  color: var(--t2); font-size: 13.5px; font-weight: 500;
+  display: flex; align-items: center; justify-content: center; gap: 8px;
+  transition: all .15s;
+}
+.btn-cam:hover  { background: var(--surface); }
+.btn-cam.active { background: var(--red-s); border-color: rgba(255,59,48,.3); color: var(--red); }
 
-.scan-result-label{font-size:11px;text-transform:uppercase;letter-spacing:.08em;
-  color:var(--muted);margin-bottom:8px;}
-.scan-result-nome{font-size:17px;font-weight:700;margin-bottom:4px;}
-.scan-result-info{font-size:13px;color:var(--muted);margin-bottom:12px;}
+/* Botão capturar */
+.btn-capturar {
+  width: 100%; margin-top: 8px;
+  background: var(--acc); border: none;
+  border-radius: var(--r-sm); padding: 13px;
+  color: #fff; font-size: 14px; font-weight: 600;
+  display: none; align-items: center; justify-content: center; gap: 8px;
+  transition: background .15s;
+}
+.btn-capturar:hover { background: #0077ED; }
+.btn-capturar.show { display: flex; }
 
-.produto-foto{width:100%;max-height:160px;object-fit:contain;border-radius:10px;
-  margin-bottom:12px;background:var(--card);}
+/* ── RESULTADO ── */
+.resultado {
+  margin-top: 14px;
+  background: var(--card);
+  border: 1px solid var(--bdr);
+  border-radius: var(--r);
+  overflow: hidden;
+  display: none;
+  box-shadow: var(--sh);
+}
+.resultado.show { display: block; }
+.resultado.ok   { border-color: rgba(48,200,94,.3); }
+.resultado.warn { border-color: rgba(255,159,10,.3); }
+.resultado.err  { border-color: rgba(255,59,48,.25); }
+.resultado.ia   { border-color: rgba(0,113,227,.25); }
 
-.qty-control{display:flex;align-items:center;gap:12px;}
-.qty-btn{width:40px;height:40px;border-radius:10px;border:1px solid var(--border);
-  background:var(--card);color:var(--text);font-size:20px;font-weight:700;
-  cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background .15s;}
-.qty-btn:hover{background:var(--border);}
-.qty-btn.plus{background:var(--green);border-color:var(--green);}
-.qty-btn.minus{background:var(--red);border-color:var(--red);}
-.qty-value{font-size:28px;font-weight:800;min-width:50px;text-align:center;}
-.btn-add-qty{margin-top:0;width:auto;padding:10px 16px;font-size:13px;}
+.res-img {
+  width: 100%; max-height: 160px;
+  object-fit: contain; background: var(--surface);
+  border-bottom: 1px solid var(--bdr);
+  display: none;
+}
+.res-body { padding: 14px; }
+.res-label { font-size: 11px; font-weight: 600; color: var(--t4); text-transform: uppercase; letter-spacing: .05em; margin-bottom: 6px; }
+.res-nome  { font-size: 17px; font-weight: 600; color: var(--t1); letter-spacing: -.02em; margin-bottom: 4px; }
+.res-preco { font-size: 22px; font-weight: 700; color: var(--acc); letter-spacing: -.03em; margin-bottom: 4px; }
+.res-info  { font-size: 12.5px; color: var(--t3); margin-bottom: 14px; }
 
-/* BUSCA MANUAL */
-.search-wrap{position:relative;margin-top:14px;}
-.search-wrap input{width:100%;background:var(--surface);border:1px solid var(--border);
-  border-radius:10px;padding:12px 16px 12px 40px;color:var(--text);font-size:14px;
-  outline:none;transition:border-color .2s;}
-.search-wrap input:focus{border-color:var(--accent);}
-.search-icon{position:absolute;left:13px;top:50%;transform:translateY(-50%);
-  color:var(--muted);font-size:16px;}
-.search-results{background:var(--surface);border:1px solid var(--border);border-radius:10px;
-  margin-top:8px;max-height:220px;overflow-y:auto;display:none;}
-.search-item{padding:12px 16px;border-bottom:1px solid var(--border);cursor:pointer;
-  transition:background .15s;display:flex;align-items:center;gap:12px;}
-.search-item:last-child{border-bottom:none;}
-.search-item:hover{background:var(--card);}
-.search-item-img{width:40px;height:40px;border-radius:8px;object-fit:cover;
-  background:var(--card);flex-shrink:0;}
-.search-item-nome{font-size:13px;font-weight:600;}
-.search-item-preco{font-size:12px;color:var(--muted);}
+/* Candidatos IA */
+.candidatos { margin-bottom: 12px; }
+.candidato  {
+  display: flex; align-items: center; gap: 10px;
+  padding: 10px 12px;
+  background: var(--surface); border: 1px solid var(--bdr);
+  border-radius: var(--r-sm); margin-bottom: 6px;
+  cursor: pointer; transition: all .15s;
+}
+.candidato:hover  { border-color: var(--acc); background: var(--acc-s); }
+.candidato-nome   { flex: 1; font-size: 13px; font-weight: 500; color: var(--t1); }
+.candidato-pct    { font-size: 12px; color: var(--t3); font-family: var(--mono); }
 
-/* LISTA INVENTÁRIO */
-.inventario-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;}
-.inventario-title{font-size:15px;font-weight:700;}
-.btn-clear{background:none;border:1px solid var(--red);border-radius:8px;
-  padding:6px 12px;color:var(--red);font-size:12px;cursor:pointer;}
-.inventario-vazio{text-align:center;padding:48px 24px;color:var(--muted);}
-.inventario-vazio .icon{font-size:48px;margin-bottom:12px;}
-.inv-item{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);
-  padding:14px 16px;margin-bottom:10px;display:flex;align-items:center;gap:12px;}
-.inv-item-img{width:48px;height:48px;border-radius:10px;object-fit:cover;
-  background:var(--card);flex-shrink:0;}
-.inv-item-info{flex:1;min-width:0;}
-.inv-item-nome{font-size:13px;font-weight:700;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
-.inv-item-preco{font-size:12px;color:var(--muted);margin-top:2px;}
-.inv-qty-control{display:flex;align-items:center;gap:8px;flex-shrink:0;}
-.inv-qty-btn{width:32px;height:32px;border-radius:8px;border:1px solid var(--border);
-  background:var(--card);color:var(--text);font-size:18px;font-weight:700;
-  cursor:pointer;display:flex;align-items:center;justify-content:center;}
-.inv-qty-btn:hover{background:var(--border);}
-.inv-qty-value{font-size:18px;font-weight:800;min-width:32px;text-align:center;color:var(--accent);}
-.btn-remove-item{background:none;border:none;color:var(--muted);font-size:18px;
-  cursor:pointer;padding:4px;flex-shrink:0;transition:color .2s;}
-.btn-remove-item:hover{color:var(--red);}
+/* Qty control */
+.qty-row {
+  display: flex; align-items: center; gap: 10px;
+}
+.qty-btn {
+  width: 38px; height: 38px;
+  border-radius: var(--r-sm);
+  border: 1px solid var(--bdr);
+  background: var(--surface);
+  color: var(--t1); font-size: 20px; font-weight: 300;
+  display: flex; align-items: center; justify-content: center;
+  transition: all .15s;
+}
+.qty-btn:hover { background: var(--bdr); }
+.qty-val {
+  font-size: 24px; font-weight: 700; color: var(--t1);
+  min-width: 40px; text-align: center; font-family: var(--mono);
+}
+.btn-add {
+  flex: 1; padding: 10px;
+  background: var(--acc); border: none;
+  border-radius: var(--r-sm);
+  color: #fff; font-size: 13.5px; font-weight: 600;
+  display: flex; align-items: center; justify-content: center; gap: 6px;
+  transition: background .15s;
+}
+.btn-add:hover { background: #0077ED; }
+.btn-add:active { background: #006AD6; }
 
-/* VINCULAR */
-.vincular-info{background:var(--surface);border:1px solid var(--yellow);
-  border-radius:var(--radius);padding:16px;margin-bottom:16px;}
-.vincular-ean{font-size:22px;font-weight:800;font-family:monospace;
-  color:var(--yellow);letter-spacing:2px;}
-.vincular-sub{font-size:13px;color:var(--muted);margin-top:4px;}
-.pending-badge{background:var(--yellow);color:#000;border-radius:20px;
-  padding:2px 8px;font-size:11px;font-weight:700;margin-left:6px;display:none;}
+/* ── BUSCA ── */
+.search-wrap { position: relative; margin-top: 14px; }
+.search-wrap input {
+  width: 100%;
+  background: var(--card); border: 1px solid var(--bdr);
+  border-radius: var(--r-sm); padding: 11px 14px 11px 38px;
+  color: var(--t1); font-size: 14px; outline: none;
+  transition: all .15s; font-family: var(--font);
+}
+.search-wrap input:focus { border-color: var(--acc); box-shadow: 0 0 0 3px var(--acc-s); }
+.search-wrap input::placeholder { color: var(--t4); }
+.search-icon { position: absolute; left: 13px; top: 50%; transform: translateY(-50%); color: var(--t4); font-size: 15px; pointer-events: none; }
 
-/* MODELO IA */
-.modelo-status{background:var(--surface);border:1px solid var(--border);
-  border-radius:var(--radius);padding:16px;margin-bottom:16px;}
-.modelo-status-title{font-size:13px;font-weight:700;margin-bottom:6px;}
-.modelo-status-info{font-size:12px;color:var(--muted);}
-.status-dot{display:inline-block;width:8px;height:8px;border-radius:50%;
-  margin-right:6px;background:var(--muted);}
-.status-dot.ok{background:var(--green);}
-.status-dot.warn{background:var(--yellow);}
-.status-dot.err{background:var(--red);}
+.search-results {
+  background: var(--card); border: 1px solid var(--bdr);
+  border-radius: var(--r); margin-top: 8px;
+  max-height: 280px; overflow-y: auto; display: none;
+  box-shadow: var(--sh-md);
+}
+.s-item {
+  display: flex; align-items: center; gap: 12px;
+  padding: 11px 14px; border-bottom: 1px solid var(--bdr);
+  cursor: pointer; transition: background .12s;
+}
+.s-item:last-child { border-bottom: none; }
+.s-item:hover { background: var(--surface); }
+.s-item-img {
+  width: 42px; height: 42px; border-radius: var(--r-sm);
+  object-fit: cover; background: var(--surface); flex-shrink: 0;
+}
+.s-item-nome  { font-size: 13px; font-weight: 500; color: var(--t1); }
+.s-item-preco { font-size: 12px; color: var(--acc); font-family: var(--mono); font-weight: 600; margin-top: 1px; }
 
-.modelo-url-wrap{margin-top:12px;}
-.modelo-url-wrap label{display:block;font-size:12px;color:var(--muted);
-  margin-bottom:6px;text-transform:uppercase;letter-spacing:.06em;}
-.modelo-url-wrap input{width:100%;background:var(--card);border:1px solid var(--border);
-  border-radius:10px;padding:11px 14px;color:var(--text);font-size:13px;outline:none;}
-.modelo-url-wrap input:focus{border-color:var(--accent);}
-.btn-carregar-modelo{margin-top:10px;width:100%;background:var(--accent);border:none;
-  border-radius:10px;padding:12px;color:#fff;font-size:14px;font-weight:600;cursor:pointer;}
+/* ── CARRINHO ── */
+.cart-empty {
+  text-align: center; padding: 60px 24px;
+  color: var(--t4);
+}
+.cart-empty-ico { font-size: 48px; opacity: .2; margin-bottom: 12px; }
 
-.tutorial{background:var(--card);border-radius:var(--radius);padding:16px;margin-top:16px;}
-.tutorial-title{font-size:14px;font-weight:700;margin-bottom:10px;}
-.tutorial-step{display:flex;gap:12px;margin-bottom:10px;align-items:flex-start;}
-.tutorial-num{background:var(--accent);color:#fff;border-radius:50%;
-  width:24px;height:24px;display:flex;align-items:center;justify-content:center;
-  font-size:12px;font-weight:700;flex-shrink:0;}
-.tutorial-text{font-size:13px;color:var(--muted);line-height:1.5;}
-.tutorial-text a{color:var(--accent);text-decoration:none;}
-.tutorial-text strong{color:var(--text);}
+.cart-item {
+  background: var(--card); border: 1px solid var(--bdr);
+  border-radius: var(--r); padding: 14px;
+  margin-bottom: 10px; display: flex; align-items: center; gap: 12px;
+  box-shadow: var(--sh);
+}
+.cart-item-img {
+  width: 52px; height: 52px; border-radius: var(--r-sm);
+  object-fit: cover; background: var(--surface); flex-shrink: 0;
+  display: flex; align-items: center; justify-content: center; font-size: 22px;
+}
+.cart-item-img img { width: 100%; height: 100%; object-fit: cover; border-radius: var(--r-sm); }
+.cart-item-info { flex: 1; min-width: 0; }
+.cart-item-nome  { font-size: 13px; font-weight: 600; color: var(--t1); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.cart-item-preco { font-size: 12px; color: var(--t3); margin-top: 2px; }
+.cart-item-sub   { font-size: 13px; color: var(--acc); font-weight: 700; font-family: var(--mono); margin-top: 2px; }
 
-/* CANDIDATOS IA */
-.candidatos{margin-top:12px;}
-.candidato{background:var(--card);border:1px solid var(--border);border-radius:10px;
-  padding:12px 14px;margin-bottom:8px;display:flex;align-items:center;
-  gap:12px;cursor:pointer;transition:border-color .2s;}
-.candidato:hover{border-color:var(--accent);}
-.candidato.selecionado{border-color:var(--green);}
-.candidato-nome{font-size:13px;font-weight:700;flex:1;}
-.candidato-conf{font-size:12px;color:var(--muted);}
-.candidato-barra{height:3px;border-radius:2px;background:var(--border);margin-top:4px;}
-.candidato-barra-fill{height:100%;border-radius:2px;}
+.cart-qty {
+  display: flex; align-items: center; gap: 8px; flex-shrink: 0;
+}
+.cq-btn {
+  width: 30px; height: 30px; border-radius: 8px;
+  border: 1px solid var(--bdr); background: var(--surface);
+  color: var(--t2); font-size: 17px; font-weight: 300;
+  display: flex; align-items: center; justify-content: center;
+  transition: all .12s;
+}
+.cq-btn:hover { background: var(--bdr); }
+.cq-val { font-size: 15px; font-weight: 700; min-width: 28px; text-align: center; color: var(--t1); font-family: var(--mono); }
+.btn-rm { background: none; border: none; color: var(--t4); font-size: 17px; cursor: pointer; padding: 4px; transition: color .12s; }
+.btn-rm:hover { color: var(--red); }
 
-/* TOAST */
-#toast{position:fixed;bottom:24px;left:50%;transform:translateX(-50%) translateY(80px);
-  background:var(--card);border:1px solid var(--border);border-radius:12px;
-  padding:12px 24px;font-size:14px;font-weight:600;transition:transform .3s ease;
-  z-index:9999;white-space:nowrap;max-width:calc(100vw - 32px);text-align:center;}
-#toast.show{transform:translateX(-50%) translateY(0);}
-#toast.success{border-color:var(--green);color:var(--green);}
-#toast.error{border-color:var(--red);color:var(--red);}
-#toast.info{border-color:var(--accent);color:var(--accent);}
+/* Resumo carrinho */
+.cart-resumo {
+  background: var(--card); border: 1px solid var(--bdr);
+  border-radius: var(--r); padding: 16px; margin-top: 4px;
+  box-shadow: var(--sh);
+}
+.cart-total-row {
+  display: flex; justify-content: space-between;
+  font-size: 14px; color: var(--t3); margin-bottom: 6px;
+}
+.cart-total-row.total {
+  font-size: 18px; font-weight: 700; color: var(--t1);
+  padding-top: 10px; border-top: 1px solid var(--bdr);
+  margin-bottom: 14px;
+}
+.cart-total-row.total span:last-child { color: var(--acc); }
 
-/* OVERLAY */
-#saving-overlay{display:none;position:fixed;inset:0;background:rgba(15,17,23,.85);
-  z-index:9998;align-items:center;justify-content:center;flex-direction:column;gap:16px;}
-#saving-overlay.show{display:flex;}
-.spinner{width:40px;height:40px;border:3px solid var(--border);border-top-color:var(--accent);
-  border-radius:50%;animation:spin .8s linear infinite;}
-@keyframes spin{to{transform:rotate(360deg);}}
-.saving-text{font-size:15px;color:var(--muted);}
+.btn-wpp {
+  width: 100%; padding: 14px;
+  background: #25D366; border: none;
+  border-radius: var(--r-sm); color: #fff;
+  font-size: 15px; font-weight: 600;
+  display: flex; align-items: center; justify-content: center; gap: 8px;
+  transition: background .15s;
+}
+.btn-wpp:hover { background: #20BD5A; }
+
+.btn-limpar-cart {
+  width: 100%; margin-top: 8px; padding: 10px;
+  background: none; border: 1px solid var(--bdr);
+  border-radius: var(--r-sm); color: var(--t3);
+  font-size: 13px; cursor: pointer; transition: all .15s;
+}
+.btn-limpar-cart:hover { background: var(--red-s); color: var(--red); border-color: rgba(255,59,48,.25); }
+
+/* ── ADMIN SCREEN ── */
+#admin-login {
+  display: none; position: fixed; inset: 0;
+  background: rgba(0,0,0,.4);
+  backdrop-filter: blur(12px);
+  z-index: 500;
+  align-items: center; justify-content: center;
+  padding: 24px;
+}
+#admin-login.show { display: flex; }
+
+.admin-card {
+  background: var(--card); border-radius: 18px;
+  padding: 28px 24px; width: 100%; max-width: 320px;
+  box-shadow: var(--sh-md);
+}
+.admin-title { font-size: 17px; font-weight: 600; color: var(--t1); margin-bottom: 4px; text-align: center; }
+.admin-sub   { font-size: 13px; color: var(--t4); text-align: center; margin-bottom: 24px; }
+.admin-inp   {
+  width: 100%; background: var(--surface); border: 1px solid var(--bdr);
+  border-radius: var(--r-sm); padding: 13px; color: var(--t1);
+  font-size: 22px; letter-spacing: 8px; text-align: center;
+  outline: none; font-family: var(--mono); transition: all .15s;
+}
+.admin-inp:focus { border-color: var(--acc); box-shadow: 0 0 0 3px var(--acc-s); }
+.btn-admin-enter {
+  width: 100%; margin-top: 12px; padding: 13px;
+  background: var(--acc); border: none; border-radius: var(--r-sm);
+  color: #fff; font-size: 15px; font-weight: 600; cursor: pointer;
+  transition: background .15s;
+}
+.btn-admin-enter:hover { background: #0077ED; }
+.admin-err { font-size: 13px; color: var(--red); text-align: center; margin-top: 8px; display: none; }
+.btn-admin-close {
+  width: 100%; margin-top: 8px; padding: 10px;
+  background: none; border: 1px solid var(--bdr); border-radius: var(--r-sm);
+  color: var(--t3); font-size: 13px; cursor: pointer;
+}
+
+/* ── ADMIN PANEL (inventário) ── */
+#admin-panel { display: none; }
+#admin-panel.show { display: block; }
+
+.admin-bar {
+  background: rgba(0,113,227,.06);
+  border: 1px solid rgba(0,113,227,.15);
+  border-radius: var(--r); padding: 12px 14px;
+  display: flex; align-items: center; gap: 10px;
+  margin-bottom: 14px;
+}
+.admin-bar-txt { flex: 1; font-size: 13px; font-weight: 500; color: var(--acc); }
+.btn-salvar-inv {
+  padding: 8px 16px;
+  background: var(--grn); border: none; border-radius: var(--r-sm);
+  color: #fff; font-size: 13px; font-weight: 600; cursor: pointer;
+  transition: background .15s;
+}
+.btn-salvar-inv:disabled { background: var(--t4); cursor: not-allowed; }
+.btn-sair-admin {
+  padding: 8px 12px;
+  background: var(--surface); border: 1px solid var(--bdr); border-radius: var(--r-sm);
+  color: var(--t3); font-size: 12px; cursor: pointer;
+}
+
+.inv-item {
+  background: var(--card); border: 1px solid var(--bdr);
+  border-radius: var(--r); padding: 12px 14px;
+  margin-bottom: 8px; display: flex; align-items: center; gap: 12px;
+}
+.inv-img {
+  width: 44px; height: 44px; border-radius: var(--r-sm);
+  object-fit: cover; background: var(--surface); flex-shrink: 0;
+  display: flex; align-items: center; justify-content: center; font-size: 20px;
+}
+.inv-img img { width: 100%; height: 100%; object-fit: cover; border-radius: var(--r-sm); }
+.inv-info { flex: 1; min-width: 0; }
+.inv-nome  { font-size: 12.5px; font-weight: 600; color: var(--t1); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.inv-preco { font-size: 11.5px; color: var(--t3); }
+.inv-qty   { display: flex; align-items: center; gap: 8px; flex-shrink: 0; }
+.inv-qty-btn {
+  width: 28px; height: 28px; border-radius: 7px;
+  border: 1px solid var(--bdr); background: var(--surface);
+  color: var(--t2); font-size: 16px;
+  display: flex; align-items: center; justify-content: center;
+  transition: all .12s;
+}
+.inv-qty-btn:hover { background: var(--bdr); }
+.inv-qty-val { font-size: 16px; font-weight: 700; min-width: 28px; text-align: center; color: var(--acc); font-family: var(--mono); }
+.btn-rm-inv { background: none; border: none; color: var(--t4); font-size: 16px; cursor: pointer; padding: 3px; transition: color .12s; }
+.btn-rm-inv:hover { color: var(--red); }
+
+/* Vincular EAN (admin) */
+.vincular-card {
+  background: var(--surface); border: 1px solid rgba(255,159,10,.25);
+  border-radius: var(--r); padding: 14px; margin-bottom: 10px;
+}
+.vincular-ean { font-size: 18px; font-weight: 700; color: var(--amb); font-family: var(--mono); letter-spacing: 2px; }
+.vincular-sub { font-size: 12px; color: var(--t3); margin-top: 3px; margin-bottom: 10px; }
+
+/* ── TOAST ── */
+#toast {
+  position: fixed; bottom: 24px; left: 50%;
+  transform: translateX(-50%) translateY(60px);
+  background: rgba(29,29,31,.94); color: #fff;
+  border-radius: 12px; padding: 10px 20px;
+  font-size: 13.5px; font-weight: 500;
+  z-index: 9999; transition: transform .28s ease;
+  white-space: nowrap; pointer-events: none;
+  box-shadow: 0 8px 32px rgba(0,0,0,.2);
+}
+#toast.show  { transform: translateX(-50%) translateY(0); }
+#toast.ok    { background: rgba(48,200,94,.95); }
+#toast.err   { background: rgba(255,59,48,.95); }
+#toast.info  { background: rgba(0,113,227,.95); }
+
+/* ── OVERLAY SAVING ── */
+#saving {
+  display: none; position: fixed; inset: 0;
+  background: rgba(0,0,0,.4); backdrop-filter: blur(8px);
+  z-index: 9000; align-items: center; justify-content: center; flex-direction: column; gap: 14px;
+}
+#saving.show { display: flex; }
+.spinner { width: 36px; height: 36px; border: 3px solid rgba(255,255,255,.2); border-top-color: #fff; border-radius: 50%; animation: spin .7s linear infinite; }
+@keyframes spin { to { transform: rotate(360deg); } }
+.saving-txt { color: rgba(255,255,255,.8); font-size: 14px; }
+
+/* Seção vazia */
+.empty-state { text-align: center; padding: 56px 24px; color: var(--t4); }
+.empty-state-ico { font-size: 44px; opacity: .2; margin-bottom: 12px; }
+.empty-state p { font-size: 14px; line-height: 1.6; }
 </style>
 </head>
 <body>
 
-<!-- ═══ LOGIN ═══ -->
-<div id="login-screen">
-  <div class="login-logo">📦</div>
-  <div class="login-title">Scanner de Estoque</div>
-  <div class="login-sub">Cia das Embalagens</div>
-  <div class="login-card">
-    <label>Senha de acesso</label>
-    <input type="password" id="senha-input" placeholder="••••" maxlength="10" autofocus>
-    <button class="btn-primary" onclick="fazerLogin()">Entrar</button>
-    <div class="login-error" id="login-error">Senha incorreta</div>
+<!-- TOPBAR -->
+<div class="topbar">
+  <div class="topbar-logo">
+    <span class="logo-dot"></span>
+    Cia das Embalagens
+  </div>
+  <div class="topbar-right">
+    <button class="cart-btn" onclick="switchTab('carrinho')" title="Carrinho">
+      🛒
+      <span class="cart-badge" id="cart-badge">0</span>
+    </button>
+    <button class="admin-btn" onclick="abrirAdminLogin()" title="Área admin">⚙</button>
   </div>
 </div>
 
-<!-- ═══ APP ═══ -->
-<div id="app">
+<!-- TABS -->
+<div class="tabs">
+  <div class="tab active" id="tab-btn-scanner" onclick="switchTab('scanner')">📷 Scanner</div>
+  <div class="tab" id="tab-btn-carrinho" onclick="switchTab('carrinho')">🛒 Carrinho</div>
+  <div class="tab" id="tab-btn-admin" id="tab-btn-admin" onclick="switchTab('admin')" style="display:none">📦 Inventário</div>
+</div>
 
-  <div class="topbar">
-    <div class="topbar-title">
-      📦 Inventário
-      <span class="badge-count" id="badge-total">0</span>
-    </div>
-    <button class="btn-save" id="btn-salvar" onclick="salvarInventario()" disabled>💾 Salvar</button>
+<!-- ═══ SCANNER ═══ -->
+<div class="panel active" id="panel-scanner">
+
+  <div class="mode-row">
+    <div class="mode-btn active" id="mode-barcode" onclick="setModo('barcode')">📊 Código de Barras</div>
+    <div class="mode-btn" id="mode-ia" onclick="setModo('ia')">🤖 Reconhecer Produto</div>
   </div>
 
-  <div class="tabs">
-    <div class="tab active" onclick="switchTab('scanner')" id="tab-btn-scanner">📷 Scanner</div>
-    <div class="tab" onclick="switchTab('lista')" id="tab-btn-lista">📋 Lista</div>
-    <div class="tab" onclick="switchTab('vincular')" id="tab-btn-vincular">
-      🔗 Vincular<span class="pending-badge" id="pending-badge">0</span>
+  <!-- Câmera -->
+  <div class="camera-wrap">
+    <div id="interactive"></div>
+    <canvas id="canvas-ia"></canvas>
+    <video id="video-ia" autoplay playsinline></video>
+    <div class="scan-line" id="scan-line"></div>
+    <div class="scan-corner tl"></div>
+    <div class="scan-corner tr"></div>
+    <div class="scan-corner bl"></div>
+    <div class="scan-corner br"></div>
+    <div class="ia-overlay" id="ia-overlay">
+      <div class="ia-nome" id="ia-nome">—</div>
+      <div class="ia-conf" id="ia-conf">—</div>
+      <div class="ia-barra"><div class="ia-fill" id="ia-fill" style="width:0%"></div></div>
     </div>
-    <div class="tab" onclick="switchTab('modelo')" id="tab-btn-modelo">🤖 IA</div>
+    <div class="cam-status" id="cam-status">Câmera desligada</div>
   </div>
 
-  <!-- ─── SCANNER ─── -->
-  <div id="tab-scanner" class="active">
+  <button class="btn-cam" id="btn-cam" onclick="toggleCamera()">
+    <span id="cam-icon">📷</span>
+    <span id="cam-label">Ligar Câmera</span>
+  </button>
 
-    <!-- Modo: Barcode ou IA -->
-    <div class="mode-toggle">
-      <div class="mode-btn active" id="mode-barcode" onclick="setModo('barcode')">
-        📊 Código de Barras
-      </div>
-      <div class="mode-btn" id="mode-ia" onclick="setModo('ia')">
-        🤖 Reconhecimento IA
-      </div>
-    </div>
+  <button class="btn-capturar" id="btn-capturar" onclick="capturarIA()">
+    📸 Identificar Produto
+  </button>
 
-    <!-- Câmera -->
-    <div class="camera-wrap" id="camera-wrap">
-      <!-- Barcode: usa Quagga -->
-      <div id="interactive" class="viewport"></div>
-      <!-- IA: usa canvas -->
-      <canvas id="canvas-ia"></canvas>
-      <video id="video-ia" style="display:none" autoplay playsinline></video>
-
-      <div class="scan-line" id="scan-line"></div>
-      <div class="scan-corner tl"></div>
-      <div class="scan-corner tr"></div>
-      <div class="scan-corner bl"></div>
-      <div class="scan-corner br"></div>
-      <div class="camera-status" id="camera-status">Câmera desligada</div>
-
-      <!-- Resultado IA em tempo real -->
-      <div class="ia-overlay" id="ia-overlay">
-        <div class="ia-resultado" id="ia-resultado-nome">—</div>
-        <div class="ia-confianca" id="ia-resultado-conf">—</div>
-        <div class="ia-barra"><div class="ia-barra-fill" id="ia-barra-fill" style="width:0%"></div></div>
+  <!-- Resultado -->
+  <div class="resultado" id="resultado">
+    <img class="res-img" id="res-img" src="" alt="">
+    <div class="res-body">
+      <div class="res-label" id="res-label">Produto encontrado</div>
+      <div class="candidatos" id="candidatos" style="display:none"></div>
+      <div id="res-info-wrap">
+        <div class="res-nome"  id="res-nome">—</div>
+        <div class="res-preco" id="res-preco">—</div>
+        <div class="res-info"  id="res-info">—</div>
+        <div class="qty-row" id="qty-row">
+          <button class="qty-btn" onclick="ajustarQty(-1)">−</button>
+          <div class="qty-val" id="qty-val">1</div>
+          <button class="qty-btn" onclick="ajustarQty(1)">+</button>
+          <button class="btn-add" onclick="addCarrinho()">＋ Adicionar ao carrinho</button>
+        </div>
       </div>
     </div>
+  </div>
 
-    <button class="btn-camera" id="btn-camera" onclick="toggleCamera()">
-      <span id="camera-icon">📷</span>
-      <span id="camera-label">Ligar Câmera</span>
-    </button>
+  <!-- Busca manual -->
+  <div class="search-wrap">
+    <span class="search-icon">🔍</span>
+    <input type="text" id="busca-inp" placeholder="Buscar produto pelo nome…" oninput="buscar(this.value)">
+  </div>
+  <div class="search-results" id="search-results"></div>
 
-    <!-- Botão capturar (modo IA) -->
-    <button class="btn-capturar" id="btn-capturar" onclick="capturarIA()">
-      📸 Capturar e Identificar
-    </button>
+</div>
 
-    <!-- Resultado do scan/IA -->
-    <div id="ultimo-scan">
-      <div class="scan-result-label" id="scan-label">Último identificado</div>
-      <img id="scan-foto" class="produto-foto" src="" alt="" style="display:none">
-      <div class="scan-result-nome" id="scan-nome">—</div>
-      <div class="scan-result-info" id="scan-info">—</div>
+<!-- ═══ CARRINHO ═══ -->
+<div class="panel" id="panel-carrinho">
+  <div id="cart-lista"></div>
+</div>
 
-      <!-- Candidatos IA (quando há mais de 1 opção provável) -->
-      <div class="candidatos" id="candidatos-ia" style="display:none"></div>
-
-      <div class="qty-control" id="qty-control" style="display:none">
-        <button class="qty-btn minus" onclick="ajustarQtyAtual(-1)">−</button>
-        <div class="qty-value" id="qty-atual">1</div>
-        <button class="qty-btn plus" onclick="ajustarQtyAtual(1)">+</button>
-        <button class="btn-primary btn-add-qty" onclick="adicionarAtual()">Adicionar</button>
+<!-- ═══ ADMIN (INVENTÁRIO) ═══ -->
+<div class="panel" id="panel-admin">
+  <div id="admin-panel">
+    <div class="admin-bar">
+      <div class="admin-bar-txt">
+        📦 Modo Admin — Inventário
+        <span id="inv-badge" style="font-size:11px;background:var(--acc);color:#fff;border-radius:99px;padding:1px 8px;margin-left:6px">0 itens</span>
       </div>
+      <button class="btn-salvar-inv" id="btn-salvar-inv" onclick="salvarInventario()" disabled>💾 Salvar no GitHub</button>
+      <button class="btn-sair-admin" onclick="sairAdmin()">Sair</button>
     </div>
 
-    <!-- Busca manual -->
-    <div class="search-wrap">
+    <!-- Busca para inventário -->
+    <div class="search-wrap" style="margin-bottom:12px">
       <span class="search-icon">🔍</span>
-      <input type="text" id="busca-input" placeholder="Buscar produto pelo nome..."
-        oninput="buscarProduto(this.value)">
+      <input type="text" id="busca-inv" placeholder="Buscar produto para adicionar ao inventário…" oninput="buscarInv(this.value)">
     </div>
-    <div class="search-results" id="search-results"></div>
+    <div class="search-results" id="search-results-inv"></div>
 
-  </div>
+    <!-- EANs pendentes de vinculação -->
+    <div id="vincular-lista"></div>
 
-  <!-- ─── LISTA ─── -->
-  <div id="tab-lista">
-    <div class="inventario-header">
-      <div class="inventario-title">Contagem atual</div>
-      <button class="btn-clear" onclick="limparInventario()">🗑 Limpar</button>
-    </div>
-    <div id="lista-inventario">
-      <div class="inventario-vazio">
-        <div class="icon">📋</div>
-        <div>Nenhum produto contado ainda.</div>
+    <!-- Lista do inventário -->
+    <div id="inv-lista">
+      <div class="empty-state">
+        <div class="empty-state-ico">📦</div>
+        <p>Nenhum produto contado ainda.<br>Use o scanner ou busca acima.</p>
       </div>
     </div>
   </div>
+</div>
 
-  <!-- ─── VINCULAR ─── -->
-  <div id="tab-vincular">
-    <div id="vincular-container">
-      <div class="inventario-vazio">
-        <div class="icon">🔗</div>
-        <div>Nenhum código pendente.</div>
-      </div>
-    </div>
-  </div>
-
-  <!-- ─── MODELO IA ─── -->
-  <div id="tab-modelo">
-
-    <div class="modelo-status">
-      <div class="modelo-status-title">
-        <span class="status-dot" id="modelo-dot"></span>
-        Status do modelo IA
-      </div>
-      <div class="modelo-status-info" id="modelo-status-info">Nenhum modelo carregado</div>
-    </div>
-
-    <div class="modelo-url-wrap">
-      <label>URL do modelo (Teachable Machine)</label>
-      <input type="text" id="modelo-url" placeholder="https://teachablemachine.withgoogle.com/models/XXXXXX/"
-        value="">
-      <button class="btn-carregar-modelo" onclick="carregarModelo()">🤖 Carregar Modelo</button>
-    </div>
-
-    <!-- Tutorial -->
-    <div class="tutorial">
-      <div class="tutorial-title">📚 Como treinar e plugar seu modelo</div>
-
-      <div class="tutorial-step">
-        <div class="tutorial-num">1</div>
-        <div class="tutorial-text">
-          Acesse <a href="https://teachablemachine.withgoogle.com" target="_blank">teachablemachine.withgoogle.com</a>
-          → <strong>Image Project → Standard Image Model</strong>
-        </div>
-      </div>
-
-      <div class="tutorial-step">
-        <div class="tutorial-num">2</div>
-        <div class="tutorial-text">
-          Para cada produto: crie uma classe com o <strong>nome exato do produto</strong>
-          (igual ao cadastro) e adicione 15~20 fotos do Google ou tiradas com o celular
-        </div>
-      </div>
-
-      <div class="tutorial-step">
-        <div class="tutorial-num">3</div>
-        <div class="tutorial-text">
-          Clique em <strong>Treinar Modelo</strong> e aguarde
-        </div>
-      </div>
-
-      <div class="tutorial-step">
-        <div class="tutorial-num">4</div>
-        <div class="tutorial-text">
-          Clique em <strong>Exportar Modelo → Tensorflow.js → Fazer upload do modelo</strong>.
-          O Teachable Machine vai gerar uma URL pública automaticamente
-        </div>
-      </div>
-
-      <div class="tutorial-step">
-        <div class="tutorial-num">5</div>
-        <div class="tutorial-text">
-          Cole essa URL aqui em cima e clique em <strong>Carregar Modelo</strong>.
-          Pronto! O app vai reconhecer os produtos pela câmera
-        </div>
-      </div>
-
-      <div class="tutorial-step">
-        <div class="tutorial-num">💡</div>
-        <div class="tutorial-text">
-          <strong>Dica:</strong> comece com 20~30 produtos mais distintos visualmente.
-          O app usa barcode como principal e IA como apoio visual
-        </div>
-      </div>
-    </div>
-
+<!-- Login admin -->
+<div id="admin-login">
+  <div class="admin-card">
+    <div class="admin-title">Área Administrativa</div>
+    <div class="admin-sub">Digite a senha para continuar</div>
+    <input type="password" class="admin-inp" id="admin-senha" placeholder="••••" maxlength="10">
+    <button class="btn-admin-enter" onclick="confirmarAdmin()">Entrar</button>
+    <div class="admin-err" id="admin-err">Senha incorreta</div>
+    <button class="btn-admin-close" onclick="fecharAdminLogin()">Cancelar</button>
   </div>
 </div>
 
 <!-- Toast -->
 <div id="toast"></div>
 
-<!-- Saving overlay -->
-<div id="saving-overlay">
+<!-- Saving -->
+<div id="saving">
   <div class="spinner"></div>
-  <div class="saving-text" id="saving-text">Salvando no GitHub...</div>
+  <div class="saving-txt" id="saving-txt">Salvando…</div>
 </div>
 
 <script>
 // ═══════════════════════════════════════════════════════
-// CONFIG
+// CONFIG — edite aqui
 // ═══════════════════════════════════════════════════════
-const SENHA       = '2026';
-const GH_USER     = 'Willkerson';
-const GH_REPO     = 'Web.embalagens';
-const GH_FILE     = 'front-index/produtos_planilha.js';
-const GH_BRANCH   = 'main';
-const GH_TOKEN_KEY = 'cia_gh_token';
-const MODELO_URL_KEY = 'cia_modelo_url';
-const CONFIANCA_MIN = 0.65; // 65% mínimo para aceitar resultado da IA
+const CFG = {
+  SENHA_ADMIN: '2026',
+  GH_USER:  'Willkerson',
+  GH_REPO:  'Web.embalagens',
+  GH_FILE:  'front-index/produtos_planilha.js',
+  GH_BRANCH:'main',
+  MODELO_URL: 'https://teachablemachine.withgoogle.com/models/hvecayJb3/',
+  CONFIANCA_MIN: 0.65,
+  WPP_NUM: '5511999999999', // substitua pelo número da loja
+};
+
+const TOKEN_KEY = 'cia_gh_token';
+const MODELO_KEY= 'cia_modelo_ok';
 
 // ═══════════════════════════════════════════════════════
 // ESTADO
 // ═══════════════════════════════════════════════════════
 let produtos     = [];
-let inventario   = {};
-let pendentesEAN = {};
+let carrinho     = {};        // { prodId: qty }
+let inventario   = {};        // { prodId: qty } — só admin
+let pendentesEAN = {};        // { ean: true }
 let produtoAtual = null;
 let qtyAtual     = 1;
 let cameraAtiva  = false;
-let ghToken      = '';
-let ultimoEanLido = '';
-let cooldown     = false;
 let modo         = 'barcode'; // 'barcode' | 'ia'
-
-// IA
 let modelo       = null;
 let streamIA     = null;
 let loopIA       = null;
+let cooldown     = false;
+let ultimoEAN    = '';
+let isAdmin      = false;
+let ghToken      = '';
 
 // ═══════════════════════════════════════════════════════
-// LOGIN
+// INIT
 // ═══════════════════════════════════════════════════════
-document.getElementById('senha-input').addEventListener('keydown', e => {
-  if (e.key === 'Enter') fazerLogin();
-});
+window.addEventListener('load', async () => {
+  ghToken = localStorage.getItem(TOKEN_KEY) || '';
 
-function fazerLogin() {
-  const v = document.getElementById('senha-input').value;
-  if (v === SENHA) {
-    document.getElementById('login-screen').style.display = 'none';
-    document.getElementById('app').style.display = 'block';
-    inicializar();
-  } else {
-    document.getElementById('login-error').style.display = 'block';
-    document.getElementById('senha-input').value = '';
-  }
-}
+  // Carrinho salvo
+  const c = localStorage.getItem('cia_carrinho');
+  if (c) carrinho = JSON.parse(c);
 
-// ═══════════════════════════════════════════════════════
-// INICIALIZAR
-// ═══════════════════════════════════════════════════════
-async function inicializar() {
-  ghToken = localStorage.getItem(GH_TOKEN_KEY) || '';
-  if (!ghToken) {
-    ghToken = prompt('Cole seu GitHub Personal Access Token:') || '';
-    if (ghToken) localStorage.setItem(GH_TOKEN_KEY, ghToken);
-  }
+  // Inventário salvo
+  const inv = localStorage.getItem('cia_inventario');
+  if (inv) inventario = JSON.parse(inv);
 
-  const inv  = localStorage.getItem('cia_inventario');
-  if (inv)  inventario   = JSON.parse(inv);
   const pend = localStorage.getItem('cia_pendentes');
   if (pend) pendentesEAN = JSON.parse(pend);
 
-  // Restaurar URL do modelo se salva
-  const urlSalva = localStorage.getItem(MODELO_URL_KEY);
-  if (urlSalva) {
-    document.getElementById('modelo-url').value = urlSalva;
-    carregarModelo(true); // silencioso
-  }
-
   await carregarProdutos();
-  renderLista();
-  renderVincular();
-  atualizarBadge();
-}
+  renderCarrinho();
+
+  // Carregar modelo IA em background
+  carregarModelo();
+});
 
 // ═══════════════════════════════════════════════════════
-// CARREGAR PRODUTOS
+// PRODUTOS
 // ═══════════════════════════════════════════════════════
 async function carregarProdutos() {
   try {
-    const url = `https://raw.githubusercontent.com/${GH_USER}/${GH_REPO}/refs/heads/${GH_BRANCH}/${GH_FILE}?t=${Date.now()}`;
+    const url = `https://raw.githubusercontent.com/${CFG.GH_USER}/${CFG.GH_REPO}/refs/heads/${CFG.GH_BRANCH}/${CFG.GH_FILE}?t=${Date.now()}`;
     const r   = await fetch(url);
     const txt = await r.text();
-    const match = txt.match(/window\.listaProdutosPlanilha\s*=\s*(\[[\s\S]*?\]);/);
-    if (match) {
-      produtos = JSON.parse(match[1]);
-      toast('✅ ' + produtos.length + ' produtos carregados', 'success');
+    const m   = txt.match(/window\.listaProdutosPlanilha\s*=\s*(\[[\s\S]*?\]);/);
+    if (m) {
+      produtos = JSON.parse(m[1]).filter(p => !p.oculto);
+      toast(`✅ ${produtos.length} produtos`, 'ok');
     }
   } catch(e) {
-    toast('⚠️ Erro ao carregar produtos', 'error');
+    toast('⚠️ Sem conexão — dados podem estar desatualizados', 'err');
+  }
+}
+
+// ═══════════════════════════════════════════════════════
+// MODELO IA — carrega em background, sem pedir URL
+// ═══════════════════════════════════════════════════════
+async function carregarModelo() {
+  try {
+    const mUrl = CFG.MODELO_URL.endsWith('/') ? CFG.MODELO_URL : CFG.MODELO_URL + '/';
+    modelo = await tmImage.load(mUrl + 'model.json', mUrl + 'metadata.json');
+  } catch(e) {
+    modelo = null; // silencioso — barcode ainda funciona
   }
 }
 
@@ -573,30 +765,28 @@ async function carregarProdutos() {
 // TABS
 // ═══════════════════════════════════════════════════════
 function switchTab(nome) {
-  ['scanner','lista','vincular','modelo'].forEach(t => {
-    document.getElementById('tab-' + t).classList.remove('active');
-    document.getElementById('tab-btn-' + t).classList.remove('active');
+  ['scanner','carrinho','admin'].forEach(t => {
+    document.getElementById('panel-' + t).classList.remove('active');
+    const btn = document.getElementById('tab-btn-' + t);
+    if (btn) btn.classList.remove('active');
   });
-  document.getElementById('tab-' + nome).classList.add('active');
-  document.getElementById('tab-btn-' + nome).classList.add('active');
+  document.getElementById('panel-' + nome).classList.add('active');
+  const btn = document.getElementById('tab-btn-' + nome);
+  if (btn) btn.classList.add('active');
 }
 
 // ═══════════════════════════════════════════════════════
 // MODO: BARCODE vs IA
 // ═══════════════════════════════════════════════════════
-function setModo(novoModo) {
+function setModo(m) {
   if (cameraAtiva) pararCamera();
-
-  modo = novoModo;
-  document.getElementById('mode-barcode').classList.toggle('active', modo === 'barcode');
-  document.getElementById('mode-ia').classList.toggle('active', modo === 'ia');
-  document.getElementById('scan-line').style.display = modo === 'barcode' ? 'block' : 'none';
-  document.getElementById('btn-capturar').classList.toggle('visivel', modo === 'ia');
+  modo = m;
+  document.getElementById('mode-barcode').classList.toggle('active', m === 'barcode');
+  document.getElementById('mode-ia').classList.toggle('active', m === 'ia');
+  document.getElementById('scan-line').style.display = m === 'barcode' ? 'block' : 'none';
+  document.getElementById('btn-capturar').classList.toggle('show', m === 'ia');
   document.getElementById('ia-overlay').style.display = 'none';
-
-  if (modo === 'ia' && !modelo) {
-    toast('⚠️ Carregue um modelo IA na aba 🤖', 'info');
-  }
+  if (m === 'ia' && !modelo) toast('⏳ Modelo IA ainda carregando…', 'info');
 }
 
 // ═══════════════════════════════════════════════════════
@@ -607,8 +797,8 @@ function toggleCamera() {
 }
 
 function ligarCamera() {
-  document.getElementById('camera-status').textContent = 'Inicializando câmera...';
-  if (modo === 'barcode') ligarBarcode(); else ligarCameraIA();
+  document.getElementById('cam-status').textContent = 'Iniciando câmera…';
+  if (modo === 'barcode') ligarBarcode(); else ligarIA();
 }
 
 // ── BARCODE ──
@@ -622,469 +812,555 @@ function ligarBarcode() {
       target: document.querySelector('#interactive'),
       constraints: { facingMode: 'environment', width:{ideal:1280}, height:{ideal:720} }
     },
-    decoder: {
-      readers: ['ean_reader','ean_8_reader','code_128_reader',
-                'code_39_reader','upc_reader','upc_e_reader']
-    },
+    decoder: { readers: ['ean_reader','ean_8_reader','code_128_reader','code_39_reader','upc_reader','upc_e_reader'] },
     locate: true
   }, err => {
-    if (err) { toast('❌ Erro ao acessar câmera', 'error'); return; }
+    if (err) { toast('❌ Erro ao acessar câmera', 'err'); return; }
     Quagga.start();
-    setCameraAtiva(true);
-    document.getElementById('camera-status').textContent = 'Aponte para o código de barras';
+    setCamAtiva(true);
+    document.getElementById('cam-status').textContent = 'Aponte para o código de barras';
+    document.getElementById('scan-line').style.display = 'block';
   });
 
   Quagga.onDetected(res => {
     if (cooldown) return;
     const code = res.codeResult.code;
-    if (!code || code === ultimoEanLido) return;
-    cooldown = true;
-    ultimoEanLido = code;
+    if (!code || code === ultimoEAN) return;
+    cooldown = true; ultimoEAN = code;
     setTimeout(() => { cooldown = false; }, 2000);
     vibrar();
     processarEAN(code);
   });
 }
 
-// ── CÂMERA IA ──
-async function ligarCameraIA() {
+// ── IA ──
+async function ligarIA() {
   if (!modelo) {
-    toast('⚠️ Nenhum modelo IA carregado. Vá em 🤖 IA', 'info');
-    return;
+    await carregarModelo();
+    if (!modelo) { toast('❌ Modelo IA indisponível', 'err'); return; }
   }
-
-  document.getElementById('interactive').style.display  = 'none';
+  document.getElementById('interactive').style.display = 'none';
   const canvas = document.getElementById('canvas-ia');
   const video  = document.getElementById('video-ia');
   canvas.style.display = 'block';
 
   try {
-    streamIA = await navigator.mediaDevices.getUserMedia({
-      video: { facingMode: 'environment', width:{ideal:1280}, height:{ideal:720} }
-    });
+    streamIA = await navigator.mediaDevices.getUserMedia({ video:{ facingMode:'environment', width:{ideal:1280}, height:{ideal:720} } });
     video.srcObject = streamIA;
     await video.play();
-
-    setCameraAtiva(true);
-    document.getElementById('camera-status').textContent = 'Câmera IA ativa — aponte para o produto';
+    setCamAtiva(true);
+    document.getElementById('cam-status').textContent = 'Câmera IA ativa';
     document.getElementById('ia-overlay').style.display = 'block';
-
-    // Loop de predição em tempo real
-    loopPrevisaoIA(video, canvas);
+    loopPrevisao(video, canvas);
   } catch(e) {
-    toast('❌ Erro ao acessar câmera', 'error');
+    toast('❌ Erro ao acessar câmera', 'err');
   }
 }
 
-function loopPrevisaoIA(video, canvas) {
+function loopPrevisao(video, canvas) {
   const ctx = canvas.getContext('2d');
   async function frame() {
     if (!cameraAtiva || modo !== 'ia') return;
     canvas.width  = video.videoWidth  || 320;
     canvas.height = video.videoHeight || 240;
     ctx.drawImage(video, 0, 0, canvas.width, canvas.height);
-
     try {
       const preds = await modelo.predict(canvas);
-      // Ordenar por confiança
       preds.sort((a,b) => b.probability - a.probability);
       const top = preds[0];
-
-      document.getElementById('ia-resultado-nome').textContent = top.className;
-      document.getElementById('ia-resultado-conf').textContent =
-        Math.round(top.probability * 100) + '% de confiança';
-      document.getElementById('ia-barra-fill').style.width =
-        Math.round(top.probability * 100) + '%';
-      document.getElementById('ia-barra-fill').style.background =
-        top.probability >= CONFIANCA_MIN ? 'var(--green)' : 'var(--yellow)';
+      document.getElementById('ia-nome').textContent = top.className;
+      document.getElementById('ia-conf').textContent = Math.round(top.probability*100) + '% de confiança';
+      const pct = Math.round(top.probability*100);
+      document.getElementById('ia-fill').style.width = pct + '%';
+      document.getElementById('ia-fill').style.background = pct >= 65 ? 'var(--grn)' : 'var(--amb)';
     } catch(e) {}
-
     loopIA = requestAnimationFrame(frame);
   }
   frame();
 }
 
-// Capturar foto e identificar (botão manual)
 async function capturarIA() {
-  if (!modelo || !cameraAtiva) {
-    toast('⚠️ Ligue a câmera primeiro', 'info'); return;
-  }
-
+  if (!modelo || !cameraAtiva) { toast('Ligue a câmera primeiro', 'info'); return; }
   const canvas = document.getElementById('canvas-ia');
   try {
     const preds = await modelo.predict(canvas);
     preds.sort((a,b) => b.probability - a.probability);
-    processarResultadoIA(preds);
+    processarIA(preds);
     vibrar();
   } catch(e) {
-    toast('❌ Erro ao analisar imagem', 'error');
+    toast('❌ Erro ao analisar', 'err');
   }
 }
 
-function processarResultadoIA(preds) {
+function processarIA(preds) {
   const top = preds[0];
+  const prod = matchProduto(top.className);
 
-  // Tenta encontrar produto pelo nome da classe
-  const prod = produtos.find(p =>
-    p.nome.toLowerCase().includes(top.className.toLowerCase()) ||
-    top.className.toLowerCase().includes(p.nome.toLowerCase().substring(0,10))
-  );
-
-  const el = document.getElementById('ultimo-scan');
-  el.style.display = 'block';
-
-  if (top.probability >= CONFIANCA_MIN && prod) {
-    mostrarProdutoAtual(prod, null, 'ia-resultado-card');
-    toast(`🤖 ${prod.nome} (${Math.round(top.probability*100)}%)`, 'success');
+  if (top.probability >= CFG.CONFIANCA_MIN && prod) {
+    mostrarProduto(prod, 'ia');
+    toast(`🤖 ${prod.nome} (${Math.round(top.probability*100)}%)`, 'ok');
   } else if (top.probability >= 0.4) {
-    // Confiança média — mostra candidatos para o usuário escolher
     mostrarCandidatos(preds.slice(0, 3));
   } else {
-    // Baixa confiança
-    el.className = 'nao-encontrado';
-    document.getElementById('scan-label').textContent = '❌ Produto não reconhecido';
-    document.getElementById('scan-nome').textContent = 'Confiança muito baixa';
-    document.getElementById('scan-info').textContent =
-      `Melhor resultado: "${top.className}" (${Math.round(top.probability*100)}%). ` +
-      'Tente busca manual abaixo.';
-    document.getElementById('qty-control').style.display = 'none';
-    document.getElementById('candidatos-ia').style.display = 'none';
-    document.getElementById('scan-foto').style.display = 'none';
-    toast('❓ Produto não reconhecido com confiança suficiente', 'info');
+    mostrarErro('Produto não reconhecido. Tente busca manual abaixo.');
   }
+}
+
+function matchProduto(className) {
+  const cl = className.toLowerCase();
+  return produtos.find(p =>
+    p.nome.toLowerCase().includes(cl) ||
+    cl.includes(p.nome.toLowerCase().substring(0,12))
+  );
 }
 
 function mostrarCandidatos(preds) {
-  const el = document.getElementById('candidatos-ia');
+  const el = document.getElementById('candidatos');
   el.style.display = 'block';
-  document.getElementById('qty-control').style.display = 'none';
-  document.getElementById('scan-label').textContent = '🤖 Possíveis produtos — confirme:';
-  document.getElementById('scan-nome').textContent = '';
-  document.getElementById('scan-info').textContent = '';
-  document.getElementById('scan-foto').style.display = 'none';
+  document.getElementById('res-info-wrap').style.display = 'none';
+  document.getElementById('res-label').textContent = '🤖 Qual destes é o produto?';
+  document.getElementById('res-img').style.display = 'none';
 
-  el.innerHTML = preds.map((p, i) => {
-    const prod = produtos.find(pr =>
-      pr.nome.toLowerCase().includes(p.className.toLowerCase()) ||
-      p.className.toLowerCase().includes(pr.nome.toLowerCase().substring(0,10))
-    );
-    const pct = Math.round(p.probability * 100);
-    const cor = pct >= 65 ? 'var(--green)' : pct >= 40 ? 'var(--yellow)' : 'var(--red)';
+  const res = document.getElementById('resultado');
+  res.className = 'resultado show ia';
+
+  el.innerHTML = preds.map(p => {
+    const prod = matchProduto(p.className);
+    const pct  = Math.round(p.probability * 100);
     return `<div class="candidato" onclick="selecionarCandidato('${p.className}')">
-      <div style="flex:1">
-        <div class="candidato-nome">${prod ? prod.nome : p.className}</div>
-        <div class="candidato-conf">${pct}% de confiança</div>
-        <div class="candidato-barra">
-          <div class="candidato-barra-fill" style="width:${pct}%;background:${cor}"></div>
-        </div>
-      </div>
+      <div class="candidato-nome">${prod ? prod.nome : p.className}</div>
+      <div class="candidato-pct">${pct}%</div>
     </div>`;
   }).join('');
 }
 
 function selecionarCandidato(className) {
-  const prod = produtos.find(p =>
-    p.nome.toLowerCase().includes(className.toLowerCase()) ||
-    className.toLowerCase().includes(p.nome.toLowerCase().substring(0,10))
-  );
+  const prod = matchProduto(className);
   if (prod) {
-    mostrarProdutoAtual(prod, null, 'ia-resultado-card');
-    document.getElementById('candidatos-ia').style.display = 'none';
+    document.getElementById('candidatos').style.display = 'none';
+    document.getElementById('res-info-wrap').style.display = 'block';
+    mostrarProduto(prod, 'ia');
   } else {
     toast('Produto não encontrado no catálogo', 'info');
   }
 }
 
-// ══ PARAR CÂMERA ══
 function pararCamera() {
-  if (modo === 'barcode') {
-    try { Quagga.stop(); } catch(e) {}
-  } else {
-    if (loopIA) { cancelAnimationFrame(loopIA); loopIA = null; }
+  if (modo === 'barcode') { try { Quagga.stop(); } catch(e){} }
+  else {
+    if (loopIA)   { cancelAnimationFrame(loopIA); loopIA = null; }
     if (streamIA) { streamIA.getTracks().forEach(t => t.stop()); streamIA = null; }
     document.getElementById('ia-overlay').style.display = 'none';
   }
-  setCameraAtiva(false);
-  document.getElementById('camera-status').textContent = 'Câmera desligada';
+  setCamAtiva(false);
+  document.getElementById('cam-status').textContent = 'Câmera desligada';
+  document.getElementById('scan-line').style.display = 'none';
 }
 
-function setCameraAtiva(ativo) {
-  cameraAtiva = ativo;
-  document.getElementById('camera-icon').textContent  = ativo ? '⏹' : '📷';
-  document.getElementById('camera-label').textContent = ativo ? 'Parar Câmera' : 'Ligar Câmera';
-  document.getElementById('btn-camera').classList.toggle('active', ativo);
+function setCamAtiva(v) {
+  cameraAtiva = v;
+  document.getElementById('cam-icon').textContent  = v ? '⏹' : '📷';
+  document.getElementById('cam-label').textContent = v ? 'Parar câmera' : 'Ligar câmera';
+  document.getElementById('btn-cam').classList.toggle('active', v);
 }
 
 function vibrar() { if (navigator.vibrate) navigator.vibrate(80); }
 
 // ═══════════════════════════════════════════════════════
-// MODELO IA — TEACHABLE MACHINE
-// ═══════════════════════════════════════════════════════
-async function carregarModelo(silencioso = false) {
-  const url = document.getElementById('modelo-url').value.trim();
-  if (!url) { toast('Cole a URL do modelo', 'info'); return; }
-
-  const dot  = document.getElementById('modelo-dot');
-  const info = document.getElementById('modelo-status-info');
-
-  dot.className  = 'status-dot warn';
-  info.textContent = 'Carregando modelo...';
-  if (!silencioso) document.getElementById('saving-overlay').classList.add('show');
-
-  try {
-    const modelURL    = url.endsWith('/') ? url + 'model.json'    : url + '/model.json';
-    const metaURL     = url.endsWith('/') ? url + 'metadata.json' : url + '/metadata.json';
-
-    modelo = await tmImage.load(modelURL, metaURL);
-
-    dot.className    = 'status-dot ok';
-    info.textContent = `✅ Modelo carregado — ${modelo.getTotalClasses()} classes`;
-    localStorage.setItem(MODELO_URL_KEY, url);
-    if (!silencioso) toast('🤖 Modelo IA carregado!', 'success');
-  } catch(e) {
-    dot.className    = 'status-dot err';
-    info.textContent = '❌ Erro ao carregar modelo. Verifique a URL.';
-    modelo = null;
-    if (!silencioso) toast('❌ Erro ao carregar modelo', 'error');
-  } finally {
-    document.getElementById('saving-overlay').classList.remove('show');
-  }
-}
-
-// ═══════════════════════════════════════════════════════
-// PROCESSAR EAN (barcode)
+// PROCESSAR EAN
 // ═══════════════════════════════════════════════════════
 function processarEAN(ean) {
   const prod = produtos.find(p => p.ean === ean);
   if (prod) {
-    mostrarProdutoAtual(prod, ean, 'encontrado');
+    mostrarProduto(prod, 'ok');
+    toast('✅ ' + prod.nome, 'ok');
   } else {
-    if (!pendentesEAN[ean]) pendentesEAN[ean] = { ean };
-    salvarLocal();
-    mostrarEANNaoVinculado(ean);
-    atualizarBadgePendentes();
-    renderVincular();
+    // Admin: salva pendente para vincular
+    if (isAdmin) {
+      pendentesEAN[ean] = true;
+      salvarLocal();
+      renderVincular();
+      toast('⚠️ EAN não vinculado — vá em Inventário', 'info');
+    } else {
+      mostrarErro('Produto não encontrado. Tente buscar pelo nome abaixo.');
+    }
   }
 }
 
-function mostrarProdutoAtual(prod, ean, status) {
+// ═══════════════════════════════════════════════════════
+// MOSTRAR PRODUTO
+// ═══════════════════════════════════════════════════════
+function mostrarProduto(prod, status) {
   produtoAtual = prod;
   qtyAtual = 1;
 
-  const el = document.getElementById('ultimo-scan');
-  el.style.display = 'block';
-  el.className = status;
+  const res = document.getElementById('resultado');
+  res.className = 'resultado show ' + status;
+  document.getElementById('candidatos').style.display = 'none';
+  document.getElementById('res-info-wrap').style.display = 'block';
 
-  const label = status === 'encontrado' ? '✅ Produto identificado' : '🤖 Identificado por IA';
-  document.getElementById('scan-label').textContent = label;
-  document.getElementById('scan-nome').textContent  = prod.nome;
-  document.getElementById('scan-info').textContent  =
-    `R$ ${Number(prod.preco).toFixed(2)} ${prod.unidade || ''}`
-    + (prod.marca ? ` • ${prod.marca}` : '')
-    + (ean ? ` • EAN: ${ean}` : '');
-  document.getElementById('qty-atual').textContent  = 1;
-  document.getElementById('qty-control').style.display = 'flex';
-  document.getElementById('candidatos-ia').style.display = 'none';
+  document.getElementById('res-label').textContent = status === 'ia' ? '🤖 Identificado por IA' : '✅ Produto encontrado';
+  document.getElementById('res-nome').textContent  = prod.nome;
+  document.getElementById('res-preco').textContent = 'R$ ' + Number(prod.preco).toFixed(2) + (prod.unidade || '');
+  document.getElementById('res-info').textContent  =
+    [prod.marca, prod.categoria, prod.subcategoria].filter(Boolean).join(' · ');
+  document.getElementById('qty-val').textContent = 1;
+  document.getElementById('qty-row').style.display = 'flex';
 
-  // Foto do produto
-  const fotoEl = document.getElementById('scan-foto');
+  const img = document.getElementById('res-img');
   if (prod.imagem && !prod.imagem.startsWith('data:')) {
-    fotoEl.src = prod.imagem;
-    fotoEl.style.display = 'block';
+    img.src = prod.imagem;
+    img.style.display = 'block';
+    img.onerror = () => img.style.display = 'none';
   } else {
-    fotoEl.style.display = 'none';
+    img.style.display = 'none';
   }
 }
 
-function mostrarEANNaoVinculado(ean) {
+function mostrarErro(msg) {
   produtoAtual = null;
-  const el = document.getElementById('ultimo-scan');
-  el.style.display = 'block';
-  el.className = 'nao-vinculado';
-  document.getElementById('scan-label').textContent  = '⚠️ Código não vinculado';
-  document.getElementById('scan-nome').textContent   = ean;
-  document.getElementById('scan-info').textContent   = 'Vá em "Vincular" para associar ao produto';
-  document.getElementById('qty-control').style.display = 'none';
-  document.getElementById('scan-foto').style.display = 'none';
-  document.getElementById('candidatos-ia').style.display = 'none';
-  toast('⚠️ EAN não vinculado: ' + ean, 'info');
+  const res = document.getElementById('resultado');
+  res.className = 'resultado show err';
+  document.getElementById('res-img').style.display = 'none';
+  document.getElementById('candidatos').style.display = 'none';
+  document.getElementById('res-info-wrap').style.display = 'block';
+  document.getElementById('res-label').textContent  = '❌ Não encontrado';
+  document.getElementById('res-nome').textContent   = msg;
+  document.getElementById('res-preco').textContent  = '';
+  document.getElementById('res-info').textContent   = '';
+  document.getElementById('qty-row').style.display  = 'none';
 }
 
-function ajustarQtyAtual(delta) {
+// ═══════════════════════════════════════════════════════
+// QUANTIDADE + CARRINHO
+// ═══════════════════════════════════════════════════════
+function ajustarQty(d) {
   if (!produtoAtual) return;
-  qtyAtual = Math.max(1, qtyAtual + delta);
-  document.getElementById('qty-atual').textContent = qtyAtual;
+  qtyAtual = Math.max(1, qtyAtual + d);
+  document.getElementById('qty-val').textContent = qtyAtual;
 }
 
-function adicionarAtual() {
+function addCarrinho() {
   if (!produtoAtual) return;
   const id = produtoAtual.id;
-  inventario[id] = (inventario[id] || 0) + qtyAtual;
+  carrinho[id] = (carrinho[id] || 0) + qtyAtual;
   salvarLocal();
-  renderLista();
-  atualizarBadge();
-  toast(`+${qtyAtual} ${produtoAtual.nome}`, 'success');
+  renderCarrinho();
+  toast(`🛒 +${qtyAtual} ${produtoAtual.nome}`, 'ok');
+  vibrar();
   qtyAtual = 1;
-  document.getElementById('qty-atual').textContent = 1;
+  document.getElementById('qty-val').textContent = 1;
+}
+
+// ═══════════════════════════════════════════════════════
+// RENDER CARRINHO
+// ═══════════════════════════════════════════════════════
+function renderCarrinho() {
+  const ids   = Object.keys(carrinho).filter(id => carrinho[id] > 0);
+  const total = ids.reduce((s, id) => {
+    const p = produtos.find(x => x.id == id);
+    return s + (p ? p.preco * carrinho[id] : 0);
+  }, 0);
+
+  // Badge
+  const totalItens = ids.reduce((s, id) => s + carrinho[id], 0);
+  const badge = document.getElementById('cart-badge');
+  badge.textContent = totalItens;
+  badge.style.display = totalItens > 0 ? 'block' : 'none';
+
+  const el = document.getElementById('cart-lista');
+
+  if (!ids.length) {
+    el.innerHTML = `<div class="cart-empty">
+      <div class="cart-empty-ico">🛒</div>
+      <p style="font-size:15px;color:var(--t3)">Seu carrinho está vazio</p>
+      <p style="font-size:13px;color:var(--t4);margin-top:6px">Use o scanner para adicionar produtos</p>
+    </div>`;
+    return;
+  }
+
+  const itensHtml = ids.map(id => {
+    const prod = produtos.find(p => p.id == id);
+    if (!prod) return '';
+    const qty     = carrinho[id];
+    const subtotal = (prod.preco * qty).toFixed(2);
+    const imgSrc  = prod.imagem && !prod.imagem.startsWith('data:') ? prod.imagem : '';
+
+    return `<div class="cart-item">
+      <div class="cart-item-img">
+        ${imgSrc ? `<img src="${imgSrc}" alt="" onerror="this.parentElement.textContent='📦'">` : '📦'}
+      </div>
+      <div class="cart-item-info">
+        <div class="cart-item-nome">${prod.nome}</div>
+        <div class="cart-item-preco">R$ ${Number(prod.preco).toFixed(2)} ${prod.unidade || ''}</div>
+        <div class="cart-item-sub">R$ ${subtotal}</div>
+      </div>
+      <div class="cart-qty">
+        <button class="cq-btn" onclick="ajustarCart(${id},-1)">−</button>
+        <div class="cq-val">${qty}</div>
+        <button class="cq-btn" onclick="ajustarCart(${id},1)">+</button>
+      </div>
+      <button class="btn-rm" onclick="removerCart(${id})">✕</button>
+    </div>`;
+  }).join('');
+
+  // Montar lista dos itens para WhatsApp
+  const listaWpp = ids.map(id => {
+    const p = produtos.find(x => x.id == id);
+    if (!p) return '';
+    return `• ${p.nome} x${carrinho[id]} = R$ ${(p.preco * carrinho[id]).toFixed(2)}`;
+  }).filter(Boolean).join('\n');
+
+  const msgWpp = encodeURIComponent(
+    `Olá! Gostaria de fazer um pedido:\n\n${listaWpp}\n\n*Total: R$ ${total.toFixed(2)}*`
+  );
+
+  el.innerHTML = itensHtml + `
+    <div class="cart-resumo">
+      <div class="cart-total-row"><span>Itens (${totalItens})</span><span>R$ ${total.toFixed(2)}</span></div>
+      <div class="cart-total-row total"><span>Total</span><span>R$ ${total.toFixed(2)}</span></div>
+      <button class="btn-wpp" onclick="window.open('https://wa.me/${CFG.WPP_NUM}?text=${msgWpp}','_blank')">
+        💬 Finalizar pelo WhatsApp
+      </button>
+      <button class="btn-limpar-cart" onclick="limparCarrinho()">🗑 Limpar carrinho</button>
+    </div>`;
+}
+
+function ajustarCart(id, d) {
+  carrinho[id] = Math.max(0, (carrinho[id] || 0) + d);
+  if (carrinho[id] === 0) delete carrinho[id];
+  salvarLocal(); renderCarrinho();
+}
+function removerCart(id) {
+  delete carrinho[id];
+  salvarLocal(); renderCarrinho();
+}
+function limparCarrinho() {
+  if (!confirm('Limpar o carrinho?')) return;
+  carrinho = {}; salvarLocal(); renderCarrinho();
 }
 
 // ═══════════════════════════════════════════════════════
 // BUSCA MANUAL
 // ═══════════════════════════════════════════════════════
-function buscarProduto(q) {
+function buscar(q) {
   const el = document.getElementById('search-results');
   if (!q || q.length < 2) { el.style.display = 'none'; return; }
-  const ql  = q.toLowerCase();
-  const res = produtos.filter(p => !p.oculto && p.nome.toLowerCase().includes(ql)).slice(0, 8);
+  const res = produtos.filter(p => p.nome.toLowerCase().includes(q.toLowerCase())).slice(0, 8);
+  if (!res.length) { el.style.display = 'none'; return; }
+  el.style.display = 'block';
+  el.innerHTML = res.map(p => {
+    const img = p.imagem && !p.imagem.startsWith('data:')
+      ? `<img class="s-item-img" src="${p.imagem}" onerror="this.style.display='none'" alt="">`
+      : `<div class="s-item-img">📦</div>`;
+    return `<div class="s-item" onclick="selecionarBusca(${p.id})">
+      ${img}
+      <div>
+        <div class="s-item-nome">${p.nome}</div>
+        <div class="s-item-preco">R$ ${Number(p.preco).toFixed(2)} ${p.unidade||''}</div>
+      </div>
+    </div>`;
+  }).join('');
+}
+
+function selecionarBusca(id) {
+  const prod = produtos.find(p => p.id === id);
+  if (!prod) return;
+  document.getElementById('busca-inp').value = '';
+  document.getElementById('search-results').style.display = 'none';
+  mostrarProduto(prod, 'ok');
+}
+
+// ═══════════════════════════════════════════════════════
+// ADMIN
+// ═══════════════════════════════════════════════════════
+function abrirAdminLogin() {
+  if (isAdmin) { switchTab('admin'); return; }
+  document.getElementById('admin-login').classList.add('show');
+  document.getElementById('admin-senha').value = '';
+  document.getElementById('admin-err').style.display = 'none';
+  setTimeout(() => document.getElementById('admin-senha').focus(), 100);
+}
+
+function fecharAdminLogin() {
+  document.getElementById('admin-login').classList.remove('show');
+}
+
+document.getElementById('admin-senha').addEventListener('keydown', e => {
+  if (e.key === 'Enter') confirmarAdmin();
+});
+
+function confirmarAdmin() {
+  const v = document.getElementById('admin-senha').value;
+  if (v === CFG.SENHA_ADMIN) {
+    isAdmin = true;
+    fecharAdminLogin();
+
+    // Solicitar token se não tiver
+    if (!ghToken) {
+      ghToken = prompt('Cole seu GitHub Personal Access Token:') || '';
+      if (ghToken) localStorage.setItem(TOKEN_KEY, ghToken);
+    }
+
+    // Mostrar tab admin
+    document.getElementById('tab-btn-admin').style.display = 'block';
+    document.getElementById('admin-panel').classList.add('show');
+    switchTab('admin');
+    renderInventario();
+    renderVincular();
+    toast('✅ Modo admin ativado', 'ok');
+  } else {
+    document.getElementById('admin-err').style.display = 'block';
+    document.getElementById('admin-senha').value = '';
+  }
+}
+
+function sairAdmin() {
+  isAdmin = false;
+  document.getElementById('tab-btn-admin').style.display = 'none';
+  document.getElementById('admin-panel').classList.remove('show');
+  switchTab('scanner');
+  toast('Saindo do modo admin', 'info');
+}
+
+// Busca para inventário (admin)
+function buscarInv(q) {
+  const el = document.getElementById('search-results-inv');
+  if (!q || q.length < 2) { el.style.display = 'none'; return; }
+  const res = produtos.filter(p => p.nome.toLowerCase().includes(q.toLowerCase())).slice(0, 8);
   if (!res.length) { el.style.display = 'none'; return; }
   el.style.display = 'block';
   el.innerHTML = res.map(p => `
-    <div class="search-item" onclick="selecionarDaBusca(${p.id})">
-      ${p.imagem && !p.imagem.startsWith('data:')
-        ? `<img class="search-item-img" src="${p.imagem}" onerror="this.style.display='none'" alt="">`
-        : `<div class="search-item-img" style="display:flex;align-items:center;justify-content:center;font-size:20px">📦</div>`}
+    <div class="s-item" onclick="addInventario(${p.id})">
       <div>
-        <div class="search-item-nome">${p.nome}</div>
-        <div class="search-item-preco">R$ ${Number(p.preco).toFixed(2)} ${p.unidade || ''}</div>
+        <div class="s-item-nome">${p.nome}</div>
+        <div class="s-item-preco">R$ ${Number(p.preco).toFixed(2)}</div>
       </div>
     </div>`).join('');
 }
 
-function selecionarDaBusca(id) {
-  const prod = produtos.find(p => p.id === id);
-  if (!prod) return;
-  document.getElementById('busca-input').value = '';
-  document.getElementById('search-results').style.display = 'none';
-  mostrarProdutoAtual(prod, null, 'encontrado');
+function addInventario(id) {
+  inventario[id] = (inventario[id] || 0) + 1;
+  salvarLocal();
+  renderInventario();
+  document.getElementById('busca-inv').value = '';
+  document.getElementById('search-results-inv').style.display = 'none';
+  const p = produtos.find(x => x.id === id);
+  if (p) toast(`+1 ${p.nome}`, 'ok');
 }
 
-// ═══════════════════════════════════════════════════════
-// LISTA INVENTÁRIO
-// ═══════════════════════════════════════════════════════
-function renderLista() {
-  const el  = document.getElementById('lista-inventario');
-  const ids = Object.keys(inventario).filter(id => inventario[id] > 0);
+function renderInventario() {
+  const ids   = Object.keys(inventario).filter(id => inventario[id] > 0);
+  const total = ids.reduce((s, id) => s + inventario[id], 0);
+
+  document.getElementById('inv-badge').textContent = total + ' itens';
+  document.getElementById('btn-salvar-inv').disabled = total === 0;
+
+  const el = document.getElementById('inv-lista');
   if (!ids.length) {
-    el.innerHTML = `<div class="inventario-vazio"><div class="icon">📋</div>
-      <div>Nenhum produto contado ainda.</div></div>`;
+    el.innerHTML = `<div class="empty-state">
+      <div class="empty-state-ico">📦</div>
+      <p>Nenhum produto contado ainda.</p>
+    </div>`;
     return;
   }
+
   el.innerHTML = ids.map(id => {
     const prod = produtos.find(p => p.id == id);
     if (!prod) return '';
     const qty    = inventario[id];
     const imgSrc = prod.imagem && !prod.imagem.startsWith('data:') ? prod.imagem : '';
     return `<div class="inv-item">
-      ${imgSrc
-        ? `<img class="inv-item-img" src="${imgSrc}" alt="" onerror="this.style.display='none'">`
-        : `<div class="inv-item-img" style="display:flex;align-items:center;justify-content:center;font-size:24px">📦</div>`}
-      <div class="inv-item-info">
-        <div class="inv-item-nome">${prod.nome}</div>
-        <div class="inv-item-preco">R$ ${Number(prod.preco).toFixed(2)} ${prod.unidade || ''}</div>
+      <div class="inv-img">
+        ${imgSrc ? `<img src="${imgSrc}" alt="" onerror="this.parentElement.textContent='📦'">` : '📦'}
       </div>
-      <div class="inv-qty-control">
+      <div class="inv-info">
+        <div class="inv-nome">${prod.nome}</div>
+        <div class="inv-preco">R$ ${Number(prod.preco).toFixed(2)}</div>
+      </div>
+      <div class="inv-qty">
         <button class="inv-qty-btn" onclick="ajustarInv(${id},-1)">−</button>
-        <div class="inv-qty-value" id="inv-qty-${id}">${qty}</div>
+        <div class="inv-qty-val" id="iqv-${id}">${qty}</div>
         <button class="inv-qty-btn" onclick="ajustarInv(${id},1)">+</button>
       </div>
-      <button class="btn-remove-item" onclick="removerDoInv(${id})">✕</button>
+      <button class="btn-rm-inv" onclick="removerInv(${id})">✕</button>
     </div>`;
   }).join('');
-  atualizarBadge();
 }
 
-function ajustarInv(id, delta) {
-  inventario[id] = Math.max(0, (inventario[id] || 0) + delta);
-  const el = document.getElementById('inv-qty-' + id);
-  if (el) el.textContent = inventario[id];
-  if (inventario[id] === 0) { delete inventario[id]; renderLista(); }
-  salvarLocal(); atualizarBadge();
+function ajustarInv(id, d) {
+  inventario[id] = Math.max(0, (inventario[id] || 0) + d);
+  if (inventario[id] === 0) { delete inventario[id]; renderInventario(); }
+  else {
+    const el = document.getElementById('iqv-' + id);
+    if (el) el.textContent = inventario[id];
+    document.getElementById('inv-badge').textContent = Object.values(inventario).reduce((a,b)=>a+b,0) + ' itens';
+  }
+  salvarLocal();
 }
 
-function removerDoInv(id) {
-  delete inventario[id]; salvarLocal(); renderLista();
-}
-
-function limparInventario() {
-  if (!confirm('Limpar toda a contagem atual?')) return;
-  inventario = {}; salvarLocal(); renderLista();
-  toast('🗑 Inventário limpo', 'info');
-}
-
-function atualizarBadge() {
-  const total = Object.values(inventario).reduce((a,b) => a + b, 0);
-  document.getElementById('badge-total').textContent = total;
-  document.getElementById('btn-salvar').disabled = total === 0;
+function removerInv(id) {
+  delete inventario[id]; salvarLocal(); renderInventario();
 }
 
 // ═══════════════════════════════════════════════════════
-// VINCULAR EAN
+// VINCULAR EAN (admin)
 // ═══════════════════════════════════════════════════════
 function renderVincular() {
-  const el   = document.getElementById('vincular-container');
   const eans = Object.keys(pendentesEAN);
-  if (!eans.length) {
-    el.innerHTML = `<div class="inventario-vazio"><div class="icon">🔗</div>
-      <div>Nenhum código pendente.</div></div>`;
-    return;
-  }
+  const el   = document.getElementById('vincular-lista');
+  if (!eans.length) { el.innerHTML = ''; return; }
+
   el.innerHTML = eans.map(ean => `
-    <div class="vincular-info" id="vincular-${ean}">
+    <div class="vincular-card" id="vc-${ean}">
       <div class="vincular-ean">${ean}</div>
-      <div class="vincular-sub">Selecione o produto correspondente:</div>
-      <div class="search-wrap" style="margin-top:12px">
+      <div class="vincular-sub">Código desconhecido. Selecione o produto:</div>
+      <div class="search-wrap" style="margin-top:0">
         <span class="search-icon">🔍</span>
-        <input type="text" placeholder="Buscar produto..."
-          oninput="buscarParaVincular(this.value,'${ean}')" id="busca-vincular-${ean}">
+        <input type="text" placeholder="Buscar produto…"
+          oninput="buscarVincular(this.value,'${ean}')" id="bv-${ean}">
       </div>
-      <div class="search-results" id="res-vincular-${ean}"></div>
+      <div class="search-results" id="rv-${ean}"></div>
     </div>`).join('');
 }
 
-function buscarParaVincular(q, ean) {
-  const el = document.getElementById('res-vincular-' + ean);
+function buscarVincular(q, ean) {
+  const el = document.getElementById('rv-' + ean);
   if (!q || q.length < 2) { el.style.display = 'none'; return; }
   const res = produtos.filter(p => p.nome.toLowerCase().includes(q.toLowerCase())).slice(0,6);
   if (!res.length) { el.style.display = 'none'; return; }
   el.style.display = 'block';
   el.innerHTML = res.map(p => `
-    <div class="search-item" onclick="vincularEAN('${ean}',${p.id})">
+    <div class="s-item" onclick="vincularEAN('${ean}',${p.id})">
       <div>
-        <div class="search-item-nome">${p.nome}</div>
-        <div class="search-item-preco">R$ ${Number(p.preco).toFixed(2)}</div>
+        <div class="s-item-nome">${p.nome}</div>
+        <div class="s-item-preco">R$ ${Number(p.preco).toFixed(2)}</div>
       </div>
     </div>`).join('');
 }
 
-async function vincularEAN(ean, prodId) {
-  const prod = produtos.find(p => p.id === prodId);
+async function vincularEAN(ean, id) {
+  const prod = produtos.find(p => p.id === id);
   if (!prod) return;
   prod.ean = ean;
   delete pendentesEAN[ean];
   salvarLocal();
-  atualizarBadgePendentes();
   renderVincular();
-  toast(`🔗 EAN vinculado a "${prod.nome}"`, 'success');
-  await salvarGitHub(false);
-}
-
-function atualizarBadgePendentes() {
-  const n     = Object.keys(pendentesEAN).length;
-  const badge = document.getElementById('pending-badge');
-  badge.style.display = n > 0 ? 'inline' : 'none';
-  badge.textContent   = n;
+  toast(`🔗 EAN vinculado a "${prod.nome}"`, 'ok');
+  await salvarGitHub(false); // salva só os EANs, silencioso
 }
 
 // ═══════════════════════════════════════════════════════
 // LOCAL STORAGE
 // ═══════════════════════════════════════════════════════
 function salvarLocal() {
+  localStorage.setItem('cia_carrinho',   JSON.stringify(carrinho));
   localStorage.setItem('cia_inventario', JSON.stringify(inventario));
   localStorage.setItem('cia_pendentes',  JSON.stringify(pendentesEAN));
 }
 
 // ═══════════════════════════════════════════════════════
-// SALVAR NO GITHUB
+// SALVAR NO GITHUB (só admin)
 // ═══════════════════════════════════════════════════════
 async function salvarInventario() { await salvarGitHub(true); }
 
@@ -1092,67 +1368,64 @@ async function salvarGitHub(comInventario = true) {
   if (!ghToken) {
     ghToken = prompt('Token do GitHub:') || '';
     if (!ghToken) return;
-    localStorage.setItem(GH_TOKEN_KEY, ghToken);
+    localStorage.setItem(TOKEN_KEY, ghToken);
   }
 
-  document.getElementById('saving-overlay').classList.add('show');
-  document.getElementById('saving-text').textContent = 'Salvando no GitHub...';
+  mostrarSaving(comInventario ? 'Salvando inventário no GitHub…' : 'Salvando vínculos EAN…');
 
   try {
-    const res  = await fetch(
-      `https://api.github.com/repos/${GH_USER}/${GH_REPO}/contents/${GH_FILE}?ref=${GH_BRANCH}`,
-      { headers: { Authorization: `token ${ghToken}` } }
-    );
-    const data = await res.json();
+    const r    = await fetch(`https://api.github.com/repos/${CFG.GH_USER}/${CFG.GH_REPO}/contents/${CFG.GH_FILE}?ref=${CFG.GH_BRANCH}`, { headers:{ Authorization:`token ${ghToken}` } });
+    const data = await r.json();
     const sha  = data.sha;
 
     if (comInventario) {
-      produtos.forEach(prod => {
-        if (inventario[prod.id] !== undefined) prod.estoque = inventario[prod.id];
-      });
+      produtos.forEach(p => { if (inventario[p.id] !== undefined) p.estoque = inventario[p.id]; });
     }
 
     const conteudo = 'window.listaProdutosPlanilha = ' + JSON.stringify(produtos, null, 2) + ';';
     const base64   = btoa(unescape(encodeURIComponent(conteudo)));
 
-    const putRes = await fetch(
-      `https://api.github.com/repos/${GH_USER}/${GH_REPO}/contents/${GH_FILE}`,
-      {
-        method: 'PUT',
-        headers: { Authorization: `token ${ghToken}`, 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          message: comInventario
-            ? `📦 Inventário — ${new Date().toLocaleDateString('pt-BR')}`
-            : `🔗 EAN vinculado`,
-          content: base64, sha, branch: GH_BRANCH
-        })
-      }
-    );
+    const put = await fetch(`https://api.github.com/repos/${CFG.GH_USER}/${CFG.GH_REPO}/contents/${CFG.GH_FILE}`, {
+      method: 'PUT',
+      headers: { Authorization:`token ${ghToken}`, 'Content-Type':'application/json' },
+      body: JSON.stringify({
+        message: comInventario ? `📦 Inventário ${new Date().toLocaleDateString('pt-BR')}` : '🔗 EAN vinculado',
+        content: base64, sha, branch: CFG.GH_BRANCH
+      })
+    });
 
-    if (putRes.ok) {
-      toast('✅ Salvo no GitHub!', 'success');
-      if (comInventario) { inventario = {}; salvarLocal(); renderLista(); }
+    if (put.ok) {
+      toast('✅ Salvo no GitHub!', 'ok');
+      if (comInventario) { inventario = {}; salvarLocal(); renderInventario(); }
     } else {
-      const err = await putRes.json();
-      toast('❌ ' + (err.message || 'Falha ao salvar'), 'error');
+      const err = await put.json();
+      toast('❌ ' + (err.message || 'Erro ao salvar'), 'err');
     }
   } catch(e) {
-    toast('❌ Erro de conexão', 'error');
+    toast('❌ Erro de conexão', 'err');
   } finally {
-    document.getElementById('saving-overlay').classList.remove('show');
+    esconderSaving();
   }
 }
 
 // ═══════════════════════════════════════════════════════
-// TOAST
+// TOAST + SAVING
 // ═══════════════════════════════════════════════════════
-let toastTimer;
-function toast(msg, tipo = 'info') {
+let toastT;
+function toast(msg, tipo='info') {
   const el = document.getElementById('toast');
   el.textContent = msg;
   el.className = 'show ' + tipo;
-  clearTimeout(toastTimer);
-  toastTimer = setTimeout(() => el.className = '', 3000);
+  clearTimeout(toastT);
+  toastT = setTimeout(() => el.className = '', 3000);
+}
+
+function mostrarSaving(txt='Salvando…') {
+  document.getElementById('saving-txt').textContent = txt;
+  document.getElementById('saving').classList.add('show');
+}
+function esconderSaving() {
+  document.getElementById('saving').classList.remove('show');
 }
 </script>
 </body>
