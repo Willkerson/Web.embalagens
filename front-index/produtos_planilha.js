@@ -3389,7 +3389,7 @@ window.listaProdutosPlanilha = [
     "preco": 10,
     "unidade": "/unidade",
     "marca": "AZULIM",
-    "ean": ""
+    "ean": "7897534800410"
   },
   {
     "id": 2421,
