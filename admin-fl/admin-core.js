@@ -296,16 +296,41 @@ function toggleEsg(id) {
 }
 
 /* ── Imagem ── */
-function buildImgPrev(id, url, mode) {
-  var box = document.getElementById('imgprev-'+id); if(!box) return;
+
+/**
+ * Constrói o preview de imagem diretamente num elemento (sem precisar do DOM).
+ * Usada na criação de cards (antes do card ser appendado ao documento).
+ */
+function buildImgPrevEl(box, url, mode) {
   box.innerHTML = '';
-  if(url) {
-    var lbl = document.createElement('span'); lbl.className = 'img-mode-lbl '+(mode||'thumbnail'); lbl.textContent = mode||'thumbnail'; box.appendChild(lbl);
-    var img = document.createElement('img'); img.src = url; img.alt = '';
-    img.onerror = function(){ box.innerHTML = '<div class="img-empty"><span>⚠️</span><p>URL inválida</p></div>'; };
+  if (url) {
+    var lbl = document.createElement('span');
+    lbl.className = 'img-mode-lbl ' + (mode || 'thumbnail');
+    lbl.textContent = mode || 'thumbnail';
+    box.appendChild(lbl);
+
+    var img = document.createElement('img');
+    img.src = url;
+    img.alt = '';
+    img.onerror = function () {
+      box.innerHTML = '<div class="img-empty"><span>⚠️</span><p>URL inválida</p></div>';
+    };
     box.appendChild(img);
-  } else { box.innerHTML = '<div class="img-empty"><span>🖼</span><p>Sem imagem</p></div>'; }
+  } else {
+    box.innerHTML = '<div class="img-empty"><span>🖼</span><p>Sem imagem</p></div>';
+  }
 }
+
+/**
+ * Busca o elemento pelo id no DOM e delega para buildImgPrevEl.
+ * Usada em onImgChange e outros lugares onde o card já está no DOM.
+ */
+function buildImgPrev(id, url, mode) {
+  var box = document.getElementById('imgprev-' + id);
+  if (!box) return;
+  buildImgPrevEl(box, url, mode);
+}
+
 function onImgChange(id, url) { setEd(id,'imagem',url.trim()); var ep=getProd(getOrig(id)||{id:id}); buildImgPrev(id,url.trim(),ep.imgmode); }
 function onImgMode(id, mode) {
   setEd(id,'imgmode',mode);
@@ -416,6 +441,12 @@ function criarCard(p, ep, idx) {
   /* Imagem */
   var is2 = document.createElement('div'); is2.className = 'img-sec';
   var ip  = document.createElement('div'); ip.className = 'img-prev'; ip.id = 'imgprev-'+p.id;
+
+  /* FIX: usa buildImgPrevEl passando o elemento diretamente,
+     pois o card ainda não foi appendado ao DOM neste momento.
+     getElementById('imgprev-X') retornaria null aqui. */
+  buildImgPrevEl(ip, ep.imagem, ep.imgmode);
+
   is2.appendChild(ip);
   var ic = document.createElement('div'); ic.className = 'img-ctrl';
   var ii = document.createElement('input'); ii.type='url'; ii.className='img-url'; ii.id='img-inp-'+p.id;
@@ -433,7 +464,6 @@ function criarCard(p, ep, idx) {
   clr.addEventListener('click', function(){ limparImg(parseInt(this.dataset.id)); });
   ic.appendChild(ii); ic.appendChild(mt); ic.appendChild(clr);
   is2.appendChild(ic); card.appendChild(is2);
-  buildImgPrev(p.id, ep.imagem, ep.imgmode);
 
   /* Preço */
   var pr = document.createElement('div'); pr.className = 'price-row';
