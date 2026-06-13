@@ -1,0 +1,1226 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>Scanner de Estoque — Cia das Embalagens</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/quagga/0.12.1/quagga.min.js"></script>
+<style>
+  :root {
+    --bg: #0f1117;
+    --surface: #1a1d27;
+    --card: #22263a;
+    --border: #2e3352;
+    --accent: #4f6ef7;
+    --accent2: #7c3aed;
+    --green: #22c55e;
+    --red: #ef4444;
+    --yellow: #f59e0b;
+    --text: #e8eaf6;
+    --muted: #8892b0;
+    --radius: 14px;
+    --font: 'Segoe UI', system-ui, sans-serif;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--font);
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+
+  /* ─── LOGIN ─── */
+  #login-screen {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 24px;
+    background: radial-gradient(ellipse at 50% 0%, #1e2340 0%, var(--bg) 70%);
+  }
+
+  .login-logo {
+    font-size: 48px;
+    margin-bottom: 12px;
+  }
+
+  .login-title {
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--text);
+    margin-bottom: 4px;
+  }
+
+  .login-sub {
+    font-size: 13px;
+    color: var(--muted);
+    margin-bottom: 36px;
+  }
+
+  .login-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 28px 24px;
+    width: 100%;
+    max-width: 340px;
+  }
+
+  .login-card label {
+    display: block;
+    font-size: 12px;
+    color: var(--muted);
+    margin-bottom: 8px;
+    text-transform: uppercase;
+    letter-spacing: .08em;
+  }
+
+  .login-card input {
+    width: 100%;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 14px 16px;
+    color: var(--text);
+    font-size: 20px;
+    letter-spacing: 6px;
+    text-align: center;
+    outline: none;
+    transition: border-color .2s;
+  }
+
+  .login-card input:focus { border-color: var(--accent); }
+
+  .btn-primary {
+    width: 100%;
+    margin-top: 16px;
+    background: linear-gradient(135deg, var(--accent), var(--accent2));
+    border: none;
+    border-radius: 10px;
+    padding: 14px;
+    color: #fff;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: opacity .2s;
+  }
+
+  .btn-primary:hover { opacity: .88; }
+
+  .login-error {
+    margin-top: 12px;
+    text-align: center;
+    font-size: 13px;
+    color: var(--red);
+    display: none;
+  }
+
+  /* ─── APP ─── */
+  #app { display: none; }
+
+  .topbar {
+    background: var(--surface);
+    border-bottom: 1px solid var(--border);
+    padding: 14px 16px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+
+  .topbar-title {
+    font-size: 15px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .badge-count {
+    background: var(--accent);
+    color: #fff;
+    border-radius: 20px;
+    padding: 2px 10px;
+    font-size: 12px;
+    font-weight: 700;
+  }
+
+  .btn-save {
+    background: var(--green);
+    border: none;
+    border-radius: 8px;
+    padding: 8px 16px;
+    color: #fff;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: opacity .2s;
+  }
+
+  .btn-save:hover { opacity: .85; }
+  .btn-save:disabled { background: var(--muted); cursor: not-allowed; }
+
+  /* ─── TABS ─── */
+  .tabs {
+    display: flex;
+    background: var(--surface);
+    border-bottom: 1px solid var(--border);
+  }
+
+  .tab {
+    flex: 1;
+    padding: 12px;
+    text-align: center;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--muted);
+    cursor: pointer;
+    border-bottom: 2px solid transparent;
+    transition: all .2s;
+  }
+
+  .tab.active {
+    color: var(--accent);
+    border-bottom-color: var(--accent);
+  }
+
+  /* ─── SCANNER ─── */
+  #tab-scanner, #tab-lista, #tab-vincular { display: none; padding: 16px; }
+  #tab-scanner.active, #tab-lista.active, #tab-vincular.active { display: block; }
+
+  .camera-wrap {
+    position: relative;
+    background: #000;
+    border-radius: var(--radius);
+    overflow: hidden;
+    aspect-ratio: 4/3;
+    max-height: 320px;
+  }
+
+  #interactive {
+    width: 100%;
+    height: 100%;
+  }
+
+  #interactive video {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover;
+  }
+
+  #interactive canvas { display: none; }
+
+  .scan-line {
+    position: absolute;
+    left: 10%;
+    right: 10%;
+    top: 50%;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--accent), transparent);
+    animation: scanAnim 2s linear infinite;
+    pointer-events: none;
+  }
+
+  @keyframes scanAnim {
+    0%   { top: 25%; opacity: 0; }
+    10%  { opacity: 1; }
+    90%  { opacity: 1; }
+    100% { top: 75%; opacity: 0; }
+  }
+
+  .scan-corner {
+    position: absolute;
+    width: 24px;
+    height: 24px;
+    border-color: var(--accent);
+    border-style: solid;
+    pointer-events: none;
+  }
+
+  .scan-corner.tl { top: 20%; left: 10%; border-width: 3px 0 0 3px; border-radius: 4px 0 0 0; }
+  .scan-corner.tr { top: 20%; right: 10%; border-width: 3px 3px 0 0; border-radius: 0 4px 0 0; }
+  .scan-corner.bl { bottom: 20%; left: 10%; border-width: 0 0 3px 3px; border-radius: 0 0 0 4px; }
+  .scan-corner.br { bottom: 20%; right: 10%; border-width: 0 3px 3px 0; border-radius: 0 0 4px 0; }
+
+  .camera-status {
+    position: absolute;
+    bottom: 12px;
+    left: 0; right: 0;
+    text-align: center;
+    font-size: 12px;
+    color: rgba(255,255,255,.7);
+  }
+
+  .btn-camera {
+    width: 100%;
+    margin-top: 12px;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 12px;
+    color: var(--text);
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    transition: background .2s;
+  }
+
+  .btn-camera:hover { background: var(--border); }
+  .btn-camera.active { background: var(--red); border-color: var(--red); }
+
+  /* ─── ÚLTIMO ESCANEADO ─── */
+  #ultimo-scan {
+    margin-top: 16px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 16px;
+    display: none;
+  }
+
+  #ultimo-scan.encontrado { border-color: var(--green); }
+  #ultimo-scan.nao-vinculado { border-color: var(--yellow); }
+  #ultimo-scan.nao-encontrado { border-color: var(--red); }
+
+  .scan-result-label {
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: .08em;
+    color: var(--muted);
+    margin-bottom: 8px;
+  }
+
+  .scan-result-nome {
+    font-size: 17px;
+    font-weight: 700;
+    margin-bottom: 4px;
+  }
+
+  .scan-result-info {
+    font-size: 13px;
+    color: var(--muted);
+    margin-bottom: 12px;
+  }
+
+  .qty-control {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .qty-btn {
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+    border: 1px solid var(--border);
+    background: var(--card);
+    color: var(--text);
+    font-size: 20px;
+    font-weight: 700;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background .15s;
+  }
+
+  .qty-btn:hover { background: var(--border); }
+  .qty-btn.plus { background: var(--green); border-color: var(--green); }
+  .qty-btn.minus { background: var(--red); border-color: var(--red); }
+
+  .qty-value {
+    font-size: 28px;
+    font-weight: 800;
+    min-width: 50px;
+    text-align: center;
+  }
+
+  /* ─── BUSCA MANUAL ─── */
+  .search-wrap {
+    position: relative;
+    margin-top: 16px;
+  }
+
+  .search-wrap input {
+    width: 100%;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 12px 16px 12px 40px;
+    color: var(--text);
+    font-size: 14px;
+    outline: none;
+    transition: border-color .2s;
+  }
+
+  .search-wrap input:focus { border-color: var(--accent); }
+
+  .search-icon {
+    position: absolute;
+    left: 13px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--muted);
+    font-size: 16px;
+  }
+
+  .search-results {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    margin-top: 8px;
+    max-height: 220px;
+    overflow-y: auto;
+    display: none;
+  }
+
+  .search-item {
+    padding: 12px 16px;
+    border-bottom: 1px solid var(--border);
+    cursor: pointer;
+    transition: background .15s;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .search-item:last-child { border-bottom: none; }
+  .search-item:hover { background: var(--card); }
+
+  .search-item-img {
+    width: 40px;
+    height: 40px;
+    border-radius: 8px;
+    object-fit: cover;
+    background: var(--card);
+    flex-shrink: 0;
+  }
+
+  .search-item-nome { font-size: 13px; font-weight: 600; }
+  .search-item-preco { font-size: 12px; color: var(--muted); }
+
+  /* ─── LISTA DE INVENTÁRIO ─── */
+  .inventario-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+  }
+
+  .inventario-title { font-size: 15px; font-weight: 700; }
+
+  .btn-clear {
+    background: none;
+    border: 1px solid var(--red);
+    border-radius: 8px;
+    padding: 6px 12px;
+    color: var(--red);
+    font-size: 12px;
+    cursor: pointer;
+  }
+
+  .inventario-vazio {
+    text-align: center;
+    padding: 48px 24px;
+    color: var(--muted);
+  }
+
+  .inventario-vazio .icon { font-size: 48px; margin-bottom: 12px; }
+
+  .inv-item {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 14px 16px;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .inv-item-img {
+    width: 48px;
+    height: 48px;
+    border-radius: 10px;
+    object-fit: cover;
+    background: var(--card);
+    flex-shrink: 0;
+  }
+
+  .inv-item-info { flex: 1; min-width: 0; }
+  .inv-item-nome { font-size: 13px; font-weight: 700; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .inv-item-preco { font-size: 12px; color: var(--muted); margin-top: 2px; }
+
+  .inv-qty-control {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-shrink: 0;
+  }
+
+  .inv-qty-btn {
+    width: 32px;
+    height: 32px;
+    border-radius: 8px;
+    border: 1px solid var(--border);
+    background: var(--card);
+    color: var(--text);
+    font-size: 18px;
+    font-weight: 700;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .inv-qty-btn:hover { background: var(--border); }
+
+  .inv-qty-value {
+    font-size: 18px;
+    font-weight: 800;
+    min-width: 32px;
+    text-align: center;
+    color: var(--accent);
+  }
+
+  .btn-remove-item {
+    background: none;
+    border: none;
+    color: var(--muted);
+    font-size: 18px;
+    cursor: pointer;
+    padding: 4px;
+    flex-shrink: 0;
+    transition: color .2s;
+  }
+
+  .btn-remove-item:hover { color: var(--red); }
+
+  /* ─── VINCULAR EAN ─── */
+  .vincular-info {
+    background: var(--surface);
+    border: 1px solid var(--yellow);
+    border-radius: var(--radius);
+    padding: 16px;
+    margin-bottom: 16px;
+  }
+
+  .vincular-ean {
+    font-size: 22px;
+    font-weight: 800;
+    font-family: monospace;
+    color: var(--yellow);
+    letter-spacing: 2px;
+  }
+
+  .vincular-sub { font-size: 13px; color: var(--muted); margin-top: 4px; }
+
+  /* ─── TOAST ─── */
+  #toast {
+    position: fixed;
+    bottom: 24px;
+    left: 50%;
+    transform: translateX(-50%) translateY(80px);
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 12px 24px;
+    font-size: 14px;
+    font-weight: 600;
+    transition: transform .3s ease;
+    z-index: 9999;
+    white-space: nowrap;
+    max-width: calc(100vw - 32px);
+    text-align: center;
+  }
+
+  #toast.show { transform: translateX(-50%) translateY(0); }
+  #toast.success { border-color: var(--green); color: var(--green); }
+  #toast.error { border-color: var(--red); color: var(--red); }
+  #toast.info { border-color: var(--accent); color: var(--accent); }
+
+  /* ─── SAVING OVERLAY ─── */
+  #saving-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(15,17,23,.85);
+    z-index: 9998;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  #saving-overlay.show { display: flex; }
+
+  .spinner {
+    width: 40px;
+    height: 40px;
+    border: 3px solid var(--border);
+    border-top-color: var(--accent);
+    border-radius: 50%;
+    animation: spin .8s linear infinite;
+  }
+
+  @keyframes spin { to { transform: rotate(360deg); } }
+
+  .saving-text { font-size: 15px; color: var(--muted); }
+
+  /* ─── VINCULO PENDENTE BADGE ─── */
+  .pending-badge {
+    background: var(--yellow);
+    color: #000;
+    border-radius: 20px;
+    padding: 2px 8px;
+    font-size: 11px;
+    font-weight: 700;
+    margin-left: 6px;
+    display: none;
+  }
+</style>
+</head>
+<body>
+
+<!-- ═══ LOGIN ═══ -->
+<div id="login-screen">
+  <div class="login-logo">📦</div>
+  <div class="login-title">Scanner de Estoque</div>
+  <div class="login-sub">Cia das Embalagens</div>
+  <div class="login-card">
+    <label>Senha de acesso</label>
+    <input type="password" id="senha-input" placeholder="••••" maxlength="10" autofocus>
+    <button class="btn-primary" onclick="fazerLogin()">Entrar</button>
+    <div class="login-error" id="login-error">Senha incorreta</div>
+  </div>
+</div>
+
+<!-- ═══ APP ═══ -->
+<div id="app">
+
+  <!-- Topbar -->
+  <div class="topbar">
+    <div class="topbar-title">
+      📦 Inventário
+      <span class="badge-count" id="badge-total">0</span>
+    </div>
+    <button class="btn-save" id="btn-salvar" onclick="salvarInventario()" disabled>
+      💾 Salvar
+    </button>
+  </div>
+
+  <!-- Tabs -->
+  <div class="tabs">
+    <div class="tab active" onclick="switchTab('scanner')" id="tab-btn-scanner">📷 Scanner</div>
+    <div class="tab" onclick="switchTab('lista')" id="tab-btn-lista">📋 Lista</div>
+    <div class="tab" onclick="switchTab('vincular')" id="tab-btn-vincular">
+      🔗 Vincular<span class="pending-badge" id="pending-badge">0</span>
+    </div>
+  </div>
+
+  <!-- ─── TAB SCANNER ─── -->
+  <div id="tab-scanner" class="active">
+
+    <!-- Câmera -->
+    <div class="camera-wrap" id="camera-wrap">
+      <div id="interactive" class="viewport"></div>
+      <div class="scan-line"></div>
+      <div class="scan-corner tl"></div>
+      <div class="scan-corner tr"></div>
+      <div class="scan-corner bl"></div>
+      <div class="scan-corner br"></div>
+      <div class="camera-status" id="camera-status">Câmera desligada</div>
+    </div>
+
+    <button class="btn-camera" id="btn-camera" onclick="toggleCamera()">
+      <span id="camera-icon">📷</span>
+      <span id="camera-label">Ligar Câmera</span>
+    </button>
+
+    <!-- Resultado do scan -->
+    <div id="ultimo-scan">
+      <div class="scan-result-label" id="scan-label">Último escaneado</div>
+      <div class="scan-result-nome" id="scan-nome">—</div>
+      <div class="scan-result-info" id="scan-info">—</div>
+      <div class="qty-control">
+        <button class="qty-btn minus" onclick="ajustarQtyAtual(-1)">−</button>
+        <div class="qty-value" id="qty-atual">1</div>
+        <button class="qty-btn plus" onclick="ajustarQtyAtual(1)">+</button>
+        <button class="btn-primary" style="margin-top:0;width:auto;padding:10px 16px;font-size:13px" onclick="adicionarAtual()">Adicionar</button>
+      </div>
+    </div>
+
+    <!-- Busca manual -->
+    <div class="search-wrap">
+      <span class="search-icon">🔍</span>
+      <input type="text" id="busca-input" placeholder="Buscar produto pelo nome..." oninput="buscarProduto(this.value)">
+    </div>
+    <div class="search-results" id="search-results"></div>
+
+  </div>
+
+  <!-- ─── TAB LISTA ─── -->
+  <div id="tab-lista">
+    <div class="inventario-header">
+      <div class="inventario-title">Contagem atual</div>
+      <button class="btn-clear" onclick="limparInventario()">🗑 Limpar</button>
+    </div>
+    <div id="lista-inventario">
+      <div class="inventario-vazio">
+        <div class="icon">📋</div>
+        <div>Nenhum produto contado ainda.<br>Use o scanner para começar.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ─── TAB VINCULAR ─── -->
+  <div id="tab-vincular">
+    <div id="vincular-container">
+      <div class="inventario-vazio">
+        <div class="icon">🔗</div>
+        <div>Nenhum código pendente.<br>Escaneie um produto para começar.</div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- Toast -->
+<div id="toast"></div>
+
+<!-- Saving overlay -->
+<div id="saving-overlay">
+  <div class="spinner"></div>
+  <div class="saving-text">Salvando no GitHub...</div>
+</div>
+
+<script>
+// ═══════════════════════════════════════════════
+// CONFIG
+// ═══════════════════════════════════════════════
+const SENHA       = '2026';
+const GH_USER     = 'Willkerson';
+const GH_REPO     = 'Web.embalagens';
+const GH_FILE     = 'front-index/produtos_planilha.js';
+const GH_BRANCH   = 'main';
+const GH_TOKEN_KEY = 'cia_gh_token';
+
+// ═══════════════════════════════════════════════
+// ESTADO
+// ═══════════════════════════════════════════════
+let produtos        = [];     // lista completa do catálogo
+let inventario      = {};     // { produtoId: qty }
+let pendentesEAN    = {};     // { ean: true } — EANs escaneados sem vínculo
+let produtoAtual    = null;   // produto do último scan
+let qtyAtual        = 1;
+let cameraAtiva     = false;
+let ghToken         = '';
+let ultimoEanLido   = '';
+let cooldown        = false;
+
+// ═══════════════════════════════════════════════
+// LOGIN
+// ═══════════════════════════════════════════════
+document.getElementById('senha-input').addEventListener('keydown', e => {
+  if (e.key === 'Enter') fazerLogin();
+});
+
+function fazerLogin() {
+  const v = document.getElementById('senha-input').value;
+  if (v === SENHA) {
+    document.getElementById('login-screen').style.display = 'none';
+    document.getElementById('app').style.display = 'block';
+    inicializar();
+  } else {
+    document.getElementById('login-error').style.display = 'block';
+    document.getElementById('senha-input').value = '';
+  }
+}
+
+// ═══════════════════════════════════════════════
+// INICIALIZAR
+// ═══════════════════════════════════════════════
+async function inicializar() {
+  ghToken = localStorage.getItem(GH_TOKEN_KEY) || '';
+  if (!ghToken) {
+    ghToken = prompt('Cole seu GitHub Personal Access Token (necessário para salvar):') || '';
+    if (ghToken) localStorage.setItem(GH_TOKEN_KEY, ghToken);
+  }
+
+  // Carregar inventário salvo localmente
+  const inv = localStorage.getItem('cia_inventario');
+  if (inv) inventario = JSON.parse(inv);
+
+  const pend = localStorage.getItem('cia_pendentes');
+  if (pend) pendentesEAN = JSON.parse(pend);
+
+  await carregarProdutos();
+  renderLista();
+  renderVincular();
+}
+
+// ═══════════════════════════════════════════════
+// CARREGAR PRODUTOS DO GITHUB
+// ═══════════════════════════════════════════════
+async function carregarProdutos() {
+  try {
+    const url = `https://raw.githubusercontent.com/${GH_USER}/${GH_REPO}/refs/heads/${GH_BRANCH}/${GH_FILE}?t=${Date.now()}`;
+    const r = await fetch(url);
+    const txt = await r.text();
+
+    // Extrair o array do JS
+    const match = txt.match(/window\.listaProdutosPlanilha\s*=\s*(\[[\s\S]*?\]);/);
+    if (match) {
+      produtos = JSON.parse(match[1]);
+      toast('✅ ' + produtos.length + ' produtos carregados', 'success');
+    }
+  } catch (e) {
+    toast('⚠️ Erro ao carregar produtos', 'error');
+  }
+}
+
+// ═══════════════════════════════════════════════
+// TABS
+// ═══════════════════════════════════════════════
+function switchTab(nome) {
+  ['scanner','lista','vincular'].forEach(t => {
+    document.getElementById('tab-' + t).classList.remove('active');
+    document.getElementById('tab-btn-' + t).classList.remove('active');
+  });
+  document.getElementById('tab-' + nome).classList.add('active');
+  document.getElementById('tab-btn-' + nome).classList.add('active');
+}
+
+// ═══════════════════════════════════════════════
+// CÂMERA / QUAGGA
+// ═══════════════════════════════════════════════
+function toggleCamera() {
+  if (cameraAtiva) pararCamera(); else ligarCamera();
+}
+
+function ligarCamera() {
+  document.getElementById('camera-status').textContent = 'Inicializando câmera...';
+
+  Quagga.init({
+    inputStream: {
+      name: 'Live',
+      type: 'LiveStream',
+      target: document.querySelector('#interactive'),
+      constraints: {
+        facingMode: 'environment',
+        width: { ideal: 1280 },
+        height: { ideal: 720 }
+      }
+    },
+    decoder: {
+      readers: [
+        'ean_reader', 'ean_8_reader', 'code_128_reader',
+        'code_39_reader', 'upc_reader', 'upc_e_reader',
+        'codabar_reader', 'i2of5_reader'
+      ]
+    },
+    locate: true
+  }, err => {
+    if (err) {
+      toast('❌ Erro ao acessar câmera', 'error');
+      document.getElementById('camera-status').textContent = 'Erro ao acessar câmera';
+      return;
+    }
+    Quagga.start();
+    cameraAtiva = true;
+    document.getElementById('camera-icon').textContent = '⏹';
+    document.getElementById('camera-label').textContent = 'Parar Câmera';
+    document.getElementById('btn-camera').classList.add('active');
+    document.getElementById('camera-status').textContent = 'Câmera ativa — aponte para o código';
+  });
+
+  Quagga.onDetected(resultado => {
+    if (cooldown) return;
+    const code = resultado.codeResult.code;
+    if (!code || code === ultimoEanLido) return;
+
+    cooldown = true;
+    ultimoEanLido = code;
+    setTimeout(() => { cooldown = false; }, 2000);
+
+    vibrar();
+    processarEAN(code);
+  });
+}
+
+function pararCamera() {
+  Quagga.stop();
+  cameraAtiva = false;
+  document.getElementById('camera-icon').textContent = '📷';
+  document.getElementById('camera-label').textContent = 'Ligar Câmera';
+  document.getElementById('btn-camera').classList.remove('active');
+  document.getElementById('camera-status').textContent = 'Câmera desligada';
+}
+
+function vibrar() {
+  if (navigator.vibrate) navigator.vibrate(80);
+}
+
+// ═══════════════════════════════════════════════
+// PROCESSAR EAN LIDO
+// ═══════════════════════════════════════════════
+function processarEAN(ean) {
+  // Buscar produto por EAN
+  const prod = produtos.find(p => p.ean === ean);
+
+  if (prod) {
+    mostrarProdutoAtual(prod, ean, 'encontrado');
+  } else {
+    // EAN não vinculado — adicionar aos pendentes
+    pendentesEAN[ean] = (pendentesEAN[ean] || { count: 0 });
+    pendentesEAN[ean].ean = ean;
+    salvarLocal();
+    mostrarEANNaoVinculado(ean);
+    atualizarBadgePendentes();
+    renderVincular();
+  }
+}
+
+function mostrarProdutoAtual(prod, ean, status) {
+  produtoAtual = prod;
+  qtyAtual = 1;
+
+  const el = document.getElementById('ultimo-scan');
+  el.style.display = 'block';
+  el.className = status;
+
+  document.getElementById('scan-label').textContent = status === 'encontrado'
+    ? '✅ Produto identificado'
+    : '🔍 Produto encontrado';
+  document.getElementById('scan-nome').textContent = prod.nome;
+  document.getElementById('scan-info').textContent =
+    `R$ ${Number(prod.preco).toFixed(2)} • ${prod.categoria}` +
+    (prod.marca ? ` • ${prod.marca}` : '') +
+    (ean ? ` • EAN: ${ean}` : '');
+  document.getElementById('qty-atual').textContent = qtyAtual;
+
+  toast('🔊 ' + prod.nome, 'success');
+}
+
+function mostrarEANNaoVinculado(ean) {
+  produtoAtual = null;
+  const el = document.getElementById('ultimo-scan');
+  el.style.display = 'block';
+  el.className = 'nao-vinculado';
+  document.getElementById('scan-label').textContent = '⚠️ Código não vinculado';
+  document.getElementById('scan-nome').textContent = ean;
+  document.getElementById('scan-info').textContent = 'Vá em "Vincular" para associar este código a um produto';
+  document.getElementById('qty-atual').textContent = '—';
+  toast('⚠️ EAN não vinculado: ' + ean, 'info');
+}
+
+function ajustarQtyAtual(delta) {
+  if (!produtoAtual) return;
+  qtyAtual = Math.max(1, qtyAtual + delta);
+  document.getElementById('qty-atual').textContent = qtyAtual;
+}
+
+function adicionarAtual() {
+  if (!produtoAtual) return;
+  const id = produtoAtual.id;
+  inventario[id] = (inventario[id] || 0) + qtyAtual;
+  salvarLocal();
+  renderLista();
+  atualizarBadge();
+  toast(`+${qtyAtual} ${produtoAtual.nome}`, 'success');
+  qtyAtual = 1;
+  document.getElementById('qty-atual').textContent = 1;
+}
+
+// ═══════════════════════════════════════════════
+// BUSCA MANUAL
+// ═══════════════════════════════════════════════
+function buscarProduto(q) {
+  const el = document.getElementById('search-results');
+  if (!q || q.length < 2) { el.style.display = 'none'; return; }
+
+  const ql = q.toLowerCase();
+  const res = produtos.filter(p =>
+    !p.oculto && p.nome.toLowerCase().includes(ql)
+  ).slice(0, 8);
+
+  if (!res.length) { el.style.display = 'none'; return; }
+
+  el.style.display = 'block';
+  el.innerHTML = res.map(p => `
+    <div class="search-item" onclick="selecionarDaBusca(${p.id})">
+      ${p.imagem
+        ? `<img class="search-item-img" src="${p.imagem.startsWith('data:') ? '' : p.imagem}" 
+             onerror="this.src=''" alt="">`
+        : `<div class="search-item-img" style="display:flex;align-items:center;justify-content:center;font-size:20px">📦</div>`}
+      <div>
+        <div class="search-item-nome">${p.nome}</div>
+        <div class="search-item-preco">R$ ${Number(p.preco).toFixed(2)} ${p.unidade || ''}</div>
+      </div>
+    </div>
+  `).join('');
+}
+
+function selecionarDaBusca(id) {
+  const prod = produtos.find(p => p.id === id);
+  if (!prod) return;
+  document.getElementById('busca-input').value = '';
+  document.getElementById('search-results').style.display = 'none';
+  mostrarProdutoAtual(prod, null, 'encontrado');
+}
+
+// ═══════════════════════════════════════════════
+// LISTA DE INVENTÁRIO
+// ═══════════════════════════════════════════════
+function renderLista() {
+  const el = document.getElementById('lista-inventario');
+  const ids = Object.keys(inventario).filter(id => inventario[id] > 0);
+
+  if (!ids.length) {
+    el.innerHTML = `<div class="inventario-vazio">
+      <div class="icon">📋</div>
+      <div>Nenhum produto contado ainda.<br>Use o scanner para começar.</div>
+    </div>`;
+    return;
+  }
+
+  el.innerHTML = ids.map(id => {
+    const prod = produtos.find(p => p.id == id);
+    if (!prod) return '';
+    const qty = inventario[id];
+    const imgSrc = prod.imagem && !prod.imagem.startsWith('data:') ? prod.imagem : '';
+
+    return `<div class="inv-item">
+      ${imgSrc
+        ? `<img class="inv-item-img" src="${imgSrc}" alt="" onerror="this.style.display='none'">`
+        : `<div class="inv-item-img" style="display:flex;align-items:center;justify-content:center;font-size:24px;background:var(--card)">📦</div>`}
+      <div class="inv-item-info">
+        <div class="inv-item-nome">${prod.nome}</div>
+        <div class="inv-item-preco">R$ ${Number(prod.preco).toFixed(2)} ${prod.unidade || ''}</div>
+      </div>
+      <div class="inv-qty-control">
+        <button class="inv-qty-btn" onclick="ajustarInv(${id}, -1)">−</button>
+        <div class="inv-qty-value" id="inv-qty-${id}">${qty}</div>
+        <button class="inv-qty-btn" onclick="ajustarInv(${id}, 1)">+</button>
+      </div>
+      <button class="btn-remove-item" onclick="removerDoInv(${id})">✕</button>
+    </div>`;
+  }).join('');
+
+  atualizarBadge();
+}
+
+function ajustarInv(id, delta) {
+  inventario[id] = Math.max(0, (inventario[id] || 0) + delta);
+  const el = document.getElementById('inv-qty-' + id);
+  if (el) el.textContent = inventario[id];
+  if (inventario[id] === 0) { delete inventario[id]; renderLista(); }
+  salvarLocal();
+  atualizarBadge();
+}
+
+function removerDoInv(id) {
+  delete inventario[id];
+  salvarLocal();
+  renderLista();
+}
+
+function limparInventario() {
+  if (!confirm('Limpar toda a contagem atual?')) return;
+  inventario = {};
+  salvarLocal();
+  renderLista();
+  toast('🗑 Inventário limpo', 'info');
+}
+
+function atualizarBadge() {
+  const total = Object.values(inventario).reduce((a, b) => a + b, 0);
+  document.getElementById('badge-total').textContent = total;
+  document.getElementById('btn-salvar').disabled = total === 0;
+}
+
+// ═══════════════════════════════════════════════
+// VINCULAR EAN
+// ═══════════════════════════════════════════════
+function renderVincular() {
+  const el = document.getElementById('vincular-container');
+  const eans = Object.keys(pendentesEAN);
+
+  if (!eans.length) {
+    el.innerHTML = `<div class="inventario-vazio">
+      <div class="icon">🔗</div>
+      <div>Nenhum código pendente.<br>Escaneie um produto para começar.</div>
+    </div>`;
+    return;
+  }
+
+  el.innerHTML = eans.map(ean => `
+    <div class="vincular-info" id="vincular-${ean}">
+      <div class="vincular-ean">${ean}</div>
+      <div class="vincular-sub">Código de barras não vinculado. Selecione o produto correspondente:</div>
+      <div class="search-wrap" style="margin-top:12px">
+        <span class="search-icon">🔍</span>
+        <input type="text" placeholder="Buscar produto..." 
+          oninput="buscarParaVincular(this.value, '${ean}')"
+          id="busca-vincular-${ean}">
+      </div>
+      <div class="search-results" id="res-vincular-${ean}"></div>
+    </div>
+  `).join('');
+}
+
+function buscarParaVincular(q, ean) {
+  const el = document.getElementById('res-vincular-' + ean);
+  if (!q || q.length < 2) { el.style.display = 'none'; return; }
+
+  const ql = q.toLowerCase();
+  const res = produtos.filter(p => p.nome.toLowerCase().includes(ql)).slice(0, 6);
+
+  if (!res.length) { el.style.display = 'none'; return; }
+
+  el.style.display = 'block';
+  el.innerHTML = res.map(p => `
+    <div class="search-item" onclick="vincularEAN('${ean}', ${p.id})">
+      <div>
+        <div class="search-item-nome">${p.nome}</div>
+        <div class="search-item-preco">R$ ${Number(p.preco).toFixed(2)}</div>
+      </div>
+    </div>
+  `).join('');
+}
+
+async function vincularEAN(ean, prodId) {
+  // Salvar EAN no produto no GitHub
+  const prod = produtos.find(p => p.id === prodId);
+  if (!prod) return;
+
+  prod.ean = ean;
+
+  // Remover dos pendentes
+  delete pendentesEAN[ean];
+  salvarLocal();
+  atualizarBadgePendentes();
+  renderVincular();
+
+  toast(`🔗 EAN vinculado a "${prod.nome}"`, 'success');
+
+  // Salvar no GitHub em background
+  await salvarGitHub(false);
+}
+
+function atualizarBadgePendentes() {
+  const n = Object.keys(pendentesEAN).length;
+  const badge = document.getElementById('pending-badge');
+  badge.style.display = n > 0 ? 'inline' : 'none';
+  badge.textContent = n;
+}
+
+// ═══════════════════════════════════════════════
+// LOCAL STORAGE
+// ═══════════════════════════════════════════════
+function salvarLocal() {
+  localStorage.setItem('cia_inventario', JSON.stringify(inventario));
+  localStorage.setItem('cia_pendentes', JSON.stringify(pendentesEAN));
+}
+
+// ═══════════════════════════════════════════════
+// SALVAR NO GITHUB
+// ═══════════════════════════════════════════════
+async function salvarInventario() {
+  await salvarGitHub(true);
+}
+
+async function salvarGitHub(comInventario = true) {
+  if (!ghToken) {
+    ghToken = prompt('Token do GitHub:') || '';
+    if (!ghToken) return;
+    localStorage.setItem(GH_TOKEN_KEY, ghToken);
+  }
+
+  document.getElementById('saving-overlay').classList.add('show');
+
+  try {
+    // 1. Buscar SHA atual
+    const res = await fetch(
+      `https://api.github.com/repos/${GH_USER}/${GH_REPO}/contents/${GH_FILE}?ref=${GH_BRANCH}`,
+      { headers: { Authorization: `token ${ghToken}` } }
+    );
+    const data = await res.json();
+    const sha = data.sha;
+
+    // 2. Aplicar EANs vinculados e estoque ao catálogo
+    produtos.forEach(prod => {
+      if (comInventario && inventario[prod.id] !== undefined) {
+        prod.estoque = inventario[prod.id];
+      }
+    });
+
+    // 3. Montar novo conteúdo
+    const conteudo = 'window.listaProdutosPlanilha = ' +
+      JSON.stringify(produtos, null, 2) + ';';
+
+    const base64 = btoa(unescape(encodeURIComponent(conteudo)));
+
+    // 4. PUT no GitHub
+    const putRes = await fetch(
+      `https://api.github.com/repos/${GH_USER}/${GH_REPO}/contents/${GH_FILE}`,
+      {
+        method: 'PUT',
+        headers: {
+          Authorization: `token ${ghToken}`,
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+          message: comInventario
+            ? `📦 Inventário atualizado — ${new Date().toLocaleDateString('pt-BR')}`
+            : `🔗 EAN vinculado`,
+          content: base64,
+          sha,
+          branch: GH_BRANCH
+        })
+      }
+    );
+
+    if (putRes.ok) {
+      toast('✅ Salvo no GitHub!', 'success');
+      if (comInventario) {
+        inventario = {};
+        salvarLocal();
+        renderLista();
+      }
+    } else {
+      const err = await putRes.json();
+      toast('❌ Erro: ' + (err.message || 'falha ao salvar'), 'error');
+    }
+
+  } catch (e) {
+    toast('❌ Erro de conexão', 'error');
+  } finally {
+    document.getElementById('saving-overlay').classList.remove('show');
+  }
+}
+
+// ═══════════════════════════════════════════════
+// TOAST
+// ═══════════════════════════════════════════════
+let toastTimer;
+function toast(msg, tipo = 'info') {
+  const el = document.getElementById('toast');
+  el.textContent = msg;
+  el.className = 'show ' + tipo;
+  clearTimeout(toastTimer);
+  toastTimer = setTimeout(() => el.className = '', 3000);
+}
+</script>
+</body>
+</html>
