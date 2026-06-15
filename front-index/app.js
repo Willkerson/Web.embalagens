@@ -7,79 +7,50 @@ window.produtos = [];
 async function carregarProdutos() {
   try {
 
- const resposta = await fetch('front-index/produtos.json');
+    const resposta = await fetch('front-index/produtos.json');
 
     if (!resposta.ok) {
-      throw new Error(
-        `Erro HTTP ${resposta.status}`
-      );
+      throw new Error(`Erro HTTP ${resposta.status}`);
     }
 
     window.produtos = await resposta.json();
 
-    console.log(
-      `${window.produtos.length} produtos carregados`
-    );
+    console.log(`${window.produtos.length} produtos carregados`);
+
+    // força filtros zerados
+    estado.cat = 'todos';
+    estado.sub = 'todas';
+    estado.busca = '';
+    estado.marca = 'todas';
+    estado.precoFiltro = null;
 
     document.dispatchEvent(
       new CustomEvent('planilhaCarregada')
     );
 
   } catch (erro) {
-
-    console.error(
-      'Erro ao carregar produtos.json',
-      erro
-    );
-
+    console.error('Erro ao carregar produtos.json', erro);
   }
 }
 
-// Inicia carregamento
 carregarProdutos();
-
 
 // ─────────────────────────────────────────────────────────────
 // APP.JS — Inicialização da página
 // ─────────────────────────────────────────────────────────────
 
 function inicializarLoja() {
+
   restaurarCarrinho();
-  lerHash();
 
-  if (estado.cat !== 'todos') {
+  // NÃO usar mais os filtros antigos da planilha
+  // lerHash();
 
-    var fb = document.querySelector(
-      '.ftab[data-cat="' + estado.cat + '"]'
-    );
-
-    if (fb) {
-
-      document
-        .querySelectorAll('.ftab')
-        .forEach(function(b) {
-          b.classList.remove('on');
-        });
-
-      fb.classList.add('on');
-
-      var subEl =
-        document.getElementById(
-          'sub-' + estado.cat
-        );
-
-      if (subEl) {
-
-        document
-          .querySelectorAll('.subtabs')
-          .forEach(function(b) {
-            b.classList.remove('on');
-          });
-
-        subEl.classList.add('on');
-      }
-    }
-  }
+  estado.cat = 'todos';
+  estado.sub = 'todas';
+  estado.busca = '';
+  estado.marca = 'todas';
+  estado.precoFiltro = null;
 
   updateBadge();
   renderizar();
@@ -89,9 +60,7 @@ document.addEventListener(
   'planilhaCarregada',
   function () {
 
-    if (
-      document.readyState === 'loading'
-    ) {
+    if (document.readyState === 'loading') {
 
       document.addEventListener(
         'DOMContentLoaded',
