@@ -161,17 +161,20 @@ function renderMais() {
       grid = document.getElementById('grid-' + safeId);
     }
 
-    while (g.count < g.itens.length && addCount < maxPorRender) {
-      var p      = g.itens[g.count];
-      var esg    = isEsgotado(p);
-      var inCart = !!carrinho[p.id];
-      var preco  = parseFloat(p.preco);
-      var precoStr = preco > 0
-        ? 'R$ ' + preco.toFixed(2).replace('.', ',')
-        : 'Sob consulta';
-      var marcaTag = p.marca
-        ? '<span class="pmarca-tag">' + p.marca + '</span>'
-        : '';
+while (g.count < g.itens.length && addCount < maxPorRender) {
+  var p      = g.itens[g.count];
+  var esg    = isEsgotado(p);
+  var inCart = !!carrinho[p.id];
+
+  var preco = parseFloat(String(p.preco).replace(',', '.'));
+
+  var precoStr = preco > 0
+    ? 'R$ ' + preco.toFixed(2).replace('.', ',')
+    : 'Sob consulta';
+
+  var marcaTag = p.marca
+    ? '<span class="pmarca-tag">' + p.marca + '</span>'
+    : '';
 
       var card = document.createElement('div');
       card.className = 'pcard' + (inCart ? ' incart' : '') + (esg ? ' esgotado' : '');
