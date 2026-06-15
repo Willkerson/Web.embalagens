@@ -1442,33 +1442,80 @@ function salvarLocal(){
   localStorage.setItem('cia_pendentes', JSON.stringify(pendentesEAN));
 }
 
-// ═══ SALVAR GITHUB ═══
-async function salvarInventario(){await salvarGitHub(true);}
-async function salvarGitHub(comInv=true){
-  if(!ghToken){ghToken=prompt('Token do GitHub:')||'';if(!ghToken)return;localStorage.setItem(TOKEN_KEY,ghToken);}
-  mostrarSaving(comInv?'Salvando inventário…':'Salvando no GitHub…');
-  try{
-    const r=await fetch(`https://api.github.com/repos/${CFG.GH_USER}/${CFG.GH_REPO}/contents/${CFG.GH_FILE}?ref=${CFG.GH_BRANCH}`,{headers:{Authorization:`token ${ghToken}`}});
-    const d=await r.json();const sha=d.sha;
-    if(comInv)produtos.forEach(p=>{if(inventario[p.id]!==undefined)p.estoque=inventario[p.id];});
-    const content='window.listaProdutosPlanilha = '+JSON.stringify(produtos,null,2)+';';
-    const base64=btoa(unescape(encodeURIComponent(content)));
-    const put=await fetch(`https://api.github.com/repos/${CFG.GH_USER}/${CFG.GH_REPO}/contents/${CFG.GH_FILE}`,{
-      method:'PUT',headers:{Authorization:`token ${ghToken}`,'Content-Type':'application/json'},
-      body:JSON.stringify({
-        message:comInv?`📦 Inventário ${new Date().toLocaleDateString('pt-BR')}`:`✏️ Produtos atualizados ${new Date().toLocaleDateString('pt-BR')}`,
-        content:base64,sha,branch:CFG.GH_BRANCH
-      })
-    });
-    if(put.ok){
-      toast('✅ Salvo no GitHub!','ok');
-      if(comInv){inventario={};salvarLocal();renderInventario();}
-    } else {
-      const err=await put.json();
-      toast('❌ '+(err.message||'Erro ao salvar'),'err');
+async function salvarGitHub(comInv = true) {
+  if (!ghToken) {
+    ghToken = prompt('Token do GitHub:') || '';
+    if (!ghToken) return;
+    localStorage.setItem(TOKEN_KEY, ghToken);
+  }
+
+  mostrarSaving(comInv ? 'Salvando inventário…' : 'Salvando no GitHub…');
+
+  try {
+    const r = await fetch(
+      `https://api.github.com/repos/${CFG.GH_USER}/${CFG.GH_REPO}/contents/${CFG.GH_FILE}?ref=${CFG.GH_BRANCH}`,
+      {
+        headers: {
+          Authorization: `token ${ghToken}`
+        }
+      }
+    );
+
+    const d = await r.json();
+    const sha = d.sha;
+
+    // aplica inventário antes de salvar
+    if (comInv) {
+      produtos.forEach(p => {
+        if (inventario[p.id] !== undefined) {
+          p.estoque = inventario[p.id];
+        }
+      });
     }
-  }catch(e){toast('❌ Erro de conexão','err');}
-  finally{esconderSaving();}
+
+    // 🔥 AQUI ESTÁ A MUDANÇA PRINCIPAL
+    const content = JSON.stringify(produtos, null, 2);
+
+    const base64 = btoa(unescape(encodeURIComponent(content)));
+
+    const put = await fetch(
+      `https://api.github.com/repos/${CFG.GH_USER}/${CFG.GH_REPO}/contents/${CFG.GH_FILE}`,
+      {
+        method: 'PUT',
+        headers: {
+          Authorization: `token ${ghToken}`,
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+          message: comInv
+            ? `📦 Inventário ${new Date().toLocaleDateString('pt-BR')}`
+            : `✏️ Produtos atualizados ${new Date().toLocaleDateString('pt-BR')}`,
+          content: base64,
+          sha,
+          branch: CFG.GH_BRANCH
+        })
+      }
+    );
+
+    if (put.ok) {
+      toast('✅ Salvo no GitHub!', 'ok');
+
+      if (comInv) {
+        inventario = {};
+        salvarLocal();
+        renderInventario();
+      }
+    } else {
+      const err = await put.json();
+      toast('❌ ' + (err.message || 'Erro ao salvar'), 'err');
+    }
+
+  } catch (e) {
+    console.error(e);
+    toast('❌ Erro de conexão', 'err');
+  } finally {
+    esconderSaving();
+  }
 }
 
 // ═══ TOAST + SAVING ═══
