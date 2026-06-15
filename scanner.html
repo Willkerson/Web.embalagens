@@ -783,20 +783,30 @@ window.addEventListener('load', async () => {
   carregarModelo();
 });
 
-// ═══ PRODUTOS ═══
 async function carregarProdutos() {
   try {
     const url = `https://raw.githubusercontent.com/${CFG.GH_USER}/${CFG.GH_REPO}/refs/heads/${CFG.GH_BRANCH}/${CFG.GH_FILE}?t=${Date.now()}`;
-    const r   = await fetch(url);
-    const txt = await r.text();
-    const m   = txt.match(/window\.listaProdutosPlanilha\s*=\s*(\[[\s\S]*\]);/);
-    if (m) {
-      produtos = JSON.parse(m[1])
-        .filter(p => !p.oculto)
-        .map(p => ({ ...p, id: Number(p.id), ean: p.ean || '' }));
-      toast(`✅ ${produtos.length} produtos carregados`, 'ok');
-    }
-  } catch(e) { toast('⚠️ Sem conexão — dados desatualizados', 'err'); }
+
+    const r = await fetch(url);
+
+    if (!r.ok) throw new Error("Erro ao buscar JSON");
+
+    const data = await r.json(); // 👈 AQUI está a mudança principal
+
+    produtos = data
+      .filter(p => !p.oculto)
+      .map(p => ({
+        ...p,
+        id: Number(p.id),
+        ean: p.ean || ''
+      }));
+
+    toast(`✅ ${produtos.length} produtos carregados`, 'ok');
+
+  } catch (e) {
+    console.error(e);
+    toast('⚠️ Sem conexão — dados desatualizados', 'err');
+  }
 }
 
 // ═══ MODELO IA ═══
