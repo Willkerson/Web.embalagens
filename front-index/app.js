@@ -7,7 +7,7 @@ window.produtos = [];
 async function carregarProdutos() {
   try {
 
-    const resposta = await fetch('./produtos.json');
+ const resposta = await fetch('front-index/produtos.json');
 
     if (!resposta.ok) {
       throw new Error(
