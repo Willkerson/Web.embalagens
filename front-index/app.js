@@ -4,6 +4,10 @@
 
 window.produtos = [];
 
+window.prods = function() {
+    return window.produtos || [];
+};
+
 async function carregarProdutos() {
   try {
 
