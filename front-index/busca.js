@@ -42,11 +42,7 @@ function mostrarSugestoes(query) {
   if (!box) return;
   if (!query || query.length < 2) { esconderSugestoes(); return; }
 
-  if (_verificarLaryssa(query)) {
-    esconderSugestoes();
-    document.getElementById('searchInput').value = '';
-    return;
-  }
+
 
   // ── Busca por preço ──────────────────────────────────────────
   var precoQuery = _extrairPreco(query);
