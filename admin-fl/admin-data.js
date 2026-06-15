@@ -219,5 +219,25 @@ function sincronizarComPlanilha() {
   }
 }
 
-/* Executa a sincronização imediatamente */
-sincronizarComPlanilha();
+// ─────────────────────────────────────────────────────────────
+// PATCH para admin-data.js
+// Substitua a última linha do admin-data.js:
+//
+//   sincronizarComPlanilha();       ← REMOVA ESSA LINHA
+//
+// E cole este trecho no lugar (ou inclua este arquivo DEPOIS
+// do admin-data.js nos scripts do admin.html):
+// ─────────────────────────────────────────────────────────────
+
+document.addEventListener('planilhaCarregada', function () {
+  sincronizarComPlanilha();
+
+  // Inicializa o admin após os dados estarem prontos
+  if (typeof inicializarAdmin === 'function') {
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', inicializarAdmin);
+    } else {
+      inicializarAdmin();
+    }
+  }
+}, { once: true });
