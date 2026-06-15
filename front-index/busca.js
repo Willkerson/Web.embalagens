@@ -1,8 +1,11 @@
 // ─────────────────────────────────────────────────────────────
 // BUSCA.JS — Sugestões de busca e handlers do campo de pesquisa
 // ─────────────────────────────────────────────────────────────
-
-var _sugTimeout = null;
+function precoNum(valor) {
+  return parseFloat(String(valor).replace(',', '.'));
+}
+var _sugTimeout 
+  = null;
 var _tocandoSugestao = false;
 var _debouncedSearch = debounce(function(q) { mostrarSugestoes(q); }, 120);
 
@@ -50,7 +53,7 @@ function mostrarSugestoes(query) {
   if (precoQuery !== null) {
     var todosParaPreco = prods().filter(function(p) { return !p.oculto; });
     var porPreco = todosParaPreco.filter(function(p) {
-      var v = parseFloat(p.preco);
+      var v = precoNum(p.preco)
       return !isNaN(v) && Math.abs(v - precoQuery) <= 0.05;
     });
     if (porPreco.length === 0) {
@@ -70,7 +73,7 @@ function mostrarSugestoes(query) {
             '<div class="sug-name">' + p.nome + esgTag + '</div>' +
             (cat ? '<div class="sug-cat">' + cat + '</div>' : '') +
           '</div>' +
-          '<div class="sug-cat" style="white-space:nowrap;color:#16a34a;font-weight:700">R$ ' + parseFloat(p.preco).toFixed(2).replace('.', ',') + '</div>' +
+          '<div class="sug-cat" style="white-space:nowrap;color:#16a34a;font-weight:700">R$ ' + precoNum(p.preco).toFixed(2).replace('.', ',') + '</div>' +
         '</div>';
       });
       if (porPreco.length > 8) {
@@ -136,7 +139,7 @@ function mostrarSugestoes(query) {
           '<div class="sug-name">' + nome + esgTag + '</div>' +
           (cat ? '<div class="sug-cat">' + cat + '</div>' : '') +
         '</div>' +
-        (parseFloat(p.preco) > 0 ? '<div class="sug-cat" style="white-space:nowrap">R$ ' + parseFloat(p.preco).toFixed(2).replace('.', ',') + '</div>' : '') +
+        (precoNum(p.preco) > 0 ? '<div class="sug-cat" style="white-space:nowrap">R$ ' + precoNum(p.preco).toFixed(2).replace('.', ',') + '</div>' : '') +
       '</div>';
     });
     if (totalDireto > limite) {
@@ -151,7 +154,7 @@ function mostrarSugestoes(query) {
       html += '<div class="search-sug-item" onclick="selecionarSugestao(' + p.id + ')">' +
         '<span class="sug-ico">' + ico + '</span>' +
         '<div style="flex:1;min-width:0"><div class="sug-name">' + p.nome + '</div></div>' +
-        (parseFloat(p.preco) > 0 ? '<div class="sug-cat" style="white-space:nowrap">R$ ' + parseFloat(p.preco).toFixed(2).replace('.', ',') + '</div>' : '') +
+        (precoNum(p.preco) > 0 ? '<div class="sug-cat" style="white-space:nowrap">R$ ' + precoNum(p.preco).toFixed(2).replace('.', ',') + '</div>' : '') +
       '</div>';
     });
   }
