@@ -1070,7 +1070,10 @@ function mostrarProduto(prod,status) {
 
   document.getElementById('prod-nome-txt').textContent   = prod.nome;
   document.getElementById('prod-meta-txt').textContent   = [prod.marca,prod.categoria,prod.subcategoria].filter(Boolean).join(' · ');
-  document.getElementById('prod-price-val').textContent  = Number(prod.preco).toFixed(2);
+  function formatarPreco(valor) {
+  const n = Number(String(valor).replace(',', '.'));
+  return isNaN(n) ? '0.00' : n.toFixed(2);
+}
   document.getElementById('qty-val').textContent         = 1;
 
   // Admin: mostra campos de edição
