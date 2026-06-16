@@ -27,12 +27,15 @@ function getListaFiltrada() {
   }
 
   if (estado.cat !== 'todos') {
-    lista = lista.filter(function(p) {
-      if (p.categoria !== estado.cat) return false;
-      if (estado.sub === 'todas') return true;
-      return p.subcategoria === estado.sub;
-    });
-  }
+  var subs = catMap[estado.cat] || [];
+  lista = lista.filter(function(p) {
+    // produto pertence à categoria principal?
+    if (p.categoria !== estado.cat) return false;
+    // subcategoria selecionada?
+    if (estado.sub === 'todas') return true;
+    return p.subcategoria === estado.sub;
+  });
+}
 
   if (estado.marca && estado.marca !== 'todas') {
     lista = lista.filter(function(p) {
