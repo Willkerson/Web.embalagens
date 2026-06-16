@@ -1074,6 +1074,8 @@ function mostrarProduto(prod,status) {
   const n = Number(String(valor).replace(',', '.'));
   return isNaN(n) ? '0.00' : n.toFixed(2);
 }
+document.getElementById('prod-price-val').textContent = formatarPreco(prod.preco);
+
   document.getElementById('qty-val').textContent         = 1;
 
   // Admin: mostra campos de edição
