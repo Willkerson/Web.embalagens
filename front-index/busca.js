@@ -27,8 +27,14 @@ function handleSearchFocus() {
   if (q.length >= 2) mostrarSugestoes(q);
 }
 
-document.addEventListener('DOMContentLoaded', function() {
-  var box = document.getElementById('searchSuggestions');
+document.addEventListener('DOMContentLoaded', var inp = document.getElementById('searchInput');
+if (inp) {
+  inp.addEventListener('keydown', function(e) {
+    if (e.key === 'Enter') confirmarBuscaCompleta();
+  });
+}
+
+   var box = document.getElementById('searchSuggestions');
   if (!box) return;
   box.addEventListener('touchstart', function() { _tocandoSugestao = true; }, { passive: true });
   box.addEventListener('touchend',   function() { setTimeout(function() { _tocandoSugestao = false; }, 500); }, { passive: true });
