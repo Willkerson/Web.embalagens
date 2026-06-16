@@ -77,7 +77,33 @@ function buildCardImg(p) {
     return d;
   }
 }
+function selecionarSugestao(id) {
+  var prod = prods().find(function(p) {
+    return String(p.id) === String(id);
+  });
 
+  if (!prod) return;
+
+  esconderSugestoes();
+
+  document.getElementById('searchInput').value = prod.nome;
+
+  estado.busca = prod.nome.toLowerCase();
+  estado.precoFiltro = null;
+
+  renderizar();
+
+  setTimeout(function() {
+    var card = document.getElementById('card-' + prod.id);
+
+    if (card) {
+      card.scrollIntoView({
+        behavior: 'smooth',
+        block: 'center'
+      });
+    }
+  }, 300);
+}
 function renderizar() {
   var c = document.getElementById('containerProdutos');
   if (!c) return;
@@ -86,7 +112,7 @@ function renderizar() {
   var lista     = getListaFiltrada();
   var listaBase = prods().filter(function(p) { return !p.oculto; });
 
-if (!estado.busca && estado.cat !== 'todos') {
+if (true) {
   listaBase = listaBase.filter(function(p) {
     if (p.categoria !== estado.cat) return false;
     if (estado.sub === 'todas') return true;
