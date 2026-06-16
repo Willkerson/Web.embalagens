@@ -2,7 +2,7 @@
 // PRODUTOS_LOADER.JS
 // Substitui o antigo produtos_planilha.js
 // Faz fetch de produtos.json + imagens.json, monta
-// window.listaProdutosPlanilha e avisa os scripts dependentes.
+// window.produtos e avisa os scripts dependentes.
 // ─────────────────────────────────────────────────────────────
 
 (function () {
@@ -43,13 +43,13 @@
   .then(function (resultados) {
     var produtos = resultados[0];
     var imagens  = resultados[1];
-    window.listaProdutosPlanilha = combinar(produtos, imagens);
+    window.produtos = combinar(produtos, imagens);
     dispararEvento();
   })
   .catch(function (erro) {
     console.error('[Loader] Falha ao carregar dados:', erro);
     // Mesmo com erro dispara o evento (site abre vazio em vez de travar)
-    window.listaProdutosPlanilha = [];
+    window.produtos = [];
     dispararEvento();
   });
 })();

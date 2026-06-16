@@ -23,7 +23,7 @@ function catLabelText(id) { var c = cats.find(function(x){return x.id===id;}); r
 
 /* ── Dados de produto ── */
 function prods() {
-  var base = (window.listaProdutosPlanilha || []).filter(function(p){ return !deletados.has(p.id); });
+  var base = (window.produtos || []).filter(function(p){ return !deletados.has(p.id); });
   return base.concat(novosProd.filter(function(p){ return !deletados.has(p.id); }));
 }
 function getProd(p) {
@@ -167,7 +167,7 @@ function iniciarMonitoramento() {
 /* ── Geração JS ── */
 function gerarJS() {
   var lista = prods();
-  var lines = ['window.listaProdutosPlanilha = ['];
+  var lines = ['window.produtos = ['];
   lista.forEach(function(p, i) {
     var ep = getProd(p), comma = i < lista.length-1 ? ',' : '';
     var obj = {id:ep.id,nome:ep.nome,categoria:ep.categoria,subcategoria:ep.subcategoria,preco:ep.preco,unidade:ep.unidade};

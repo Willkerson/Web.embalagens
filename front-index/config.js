@@ -62,5 +62,5 @@ var catEmojis = {
 var ESGOTADOS_KEY = 'cia_esgotados_v1';
 
 function prods() {
-  return window.listaProdutosPlanilha || [];
+  return window.produtos || [];
 }

@@ -123,7 +123,7 @@ function savWppCfg()    { wls(K.WPPCFG, wppCfg); }
       em nenhuma fonte → limpa o registro órfão
 ══════════════════════════════════════════════ */
 function sincronizarComPlanilha() {
-  var planilha = window.listaProdutosPlanilha || [];
+  var planilha = window.produtos|| [];
   if (!planilha.length) return; /* planilha vazia = nada a fazer */
 
   var idsPlanilha  = new Set(planilha.map(function(p){ return p.id; }));

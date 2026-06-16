@@ -1423,7 +1423,7 @@ function commitPrecosGitHub() {
   if (!GH_TOKEN || GH_TOKEN === 'SEU_TOKEN_AQUI') {
     showToast('⚠️ Configure o token do GitHub no arquivo', 'amber'); return;
   }
-  if (!window.listaProdutosPlanilha || !window.listaProdutosPlanilha.length) {
+  if (!window.produtos || !window.produtos.length) {
     showToast('⚠️ Lista de produtos não carregada', 'amber'); return;
   }
 
@@ -1455,7 +1455,7 @@ function commitPrecosGitHub() {
 
       /* passo 3 — serializar para JS (mesma estrutura do arquivo original) */
       var linhas = lista.map(function(p){ return '  ' + JSON.stringify(p); });
-      var jsContent = 'window.listaProdutosPlanilha = [\n' + linhas.join(',\n') + '\n];\n';
+      var jsContent = 'window.produtos = [\n' + linhas.join(',\n') + '\n];\n';
 
       /* passo 4 — codificar em base64 */
       var b64 = btoa(unescape(encodeURIComponent(jsContent)));
