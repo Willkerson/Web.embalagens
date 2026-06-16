@@ -113,12 +113,20 @@ if (!estado.busca && estado.cat !== 'todos') {
     grupos[k].itens.push(p);
   });
 
-  gruposRender = Object.keys(grupos).map(function(k) {
-    return { id: grupos[k].id, label: grupos[k].label, itens: grupos[k].itens, count: 0 };
+   gruposRender = Object.keys(grupos).map(function(k) {
+    return {
+      id: grupos[k].id,
+      label: grupos[k].label,
+      itens: grupos[k].itens,
+      count: 0
+    };
   });
 
   renderMais();
-}
+
+} // <-- FECHA O if (!estado.busca && estado.cat !== 'todos')
+
+} // <-- FECHA A função renderizar()
 
 function renderMais() {
   var c        = document.getElementById('containerProdutos');
