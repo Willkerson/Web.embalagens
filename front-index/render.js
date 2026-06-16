@@ -10,7 +10,11 @@ var _debouncedRender = debounce(renderizar, 200);
 
 function getListaFiltrada() {
   var lista = prods().filter(function(p) { return !p.oculto; });
-
+if (estado.produtoSelecionado) {
+  return prods().filter(function(p) {
+    return String(p.id) === String(estado.produtoSelecionado);
+  });
+}
   // ── Filtro por preço ──────────────────────────────────────────
   if (estado.precoFiltro !== null && estado.precoFiltro !== undefined) {
     return lista.filter(function(p) {
@@ -88,8 +92,11 @@ function selecionarSugestao(id) {
 
   document.getElementById('searchInput').value = prod.nome;
 
-  estado.busca = prod.nome.toLowerCase();
+  estado.busca = '';
   estado.precoFiltro = null;
+
+  // 👇 FORÇA O PRODUTO EXATO
+  estado.produtoSelecionado = prod.id;
 
   renderizar();
 
@@ -101,6 +108,11 @@ function selecionarSugestao(id) {
         behavior: 'smooth',
         block: 'center'
       });
+
+      card.style.outline = '3px solid #2563eb';
+      setTimeout(function() {
+        card.style.outline = '';
+      }, 2000);
     }
   }, 300);
 }
