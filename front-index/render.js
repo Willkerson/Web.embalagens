@@ -83,13 +83,12 @@ function renderizar() {
   var lista     = getListaFiltrada();
   var listaBase = prods().filter(function(p) { return !p.oculto; });
 
-  if (!estado.busca && estado.cat !== 'todos') {
-    listaBase = listaBase.filter(function(p) {
-      if (p.categoria !== estado.cat) return false;
-      if (estado.sub === 'todas') return true;
-      return p.subcategoria === estado.sub;
-    });
-  }
+if (!estado.busca && estado.cat !== 'todos') {
+  listaBase = listaBase.filter(function(p) {
+    if (p.categoria !== estado.cat) return false;
+    if (estado.sub === 'todas') return true;
+    return p.subcategoria === estado.sub;
+  });
 
   renderBrandFilter(listaBase);
   c.innerHTML = '';
