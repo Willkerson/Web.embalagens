@@ -34,6 +34,18 @@ document.addEventListener('DOMContentLoaded', function() {
   box.addEventListener('touchend',   function() { setTimeout(function() { _tocandoSugestao = false; }, 500); }, { passive: true });
 });
 
+function _extrairPreco(texto) {
+  if (!texto) return null;
+
+  texto = String(texto)
+    .replace(/[Rr]\$/g, '')
+    .replace(',', '.')
+    .trim();
+
+  var num = parseFloat(texto);
+
+  return isNaN(num) ? null : num;
+}
 // ══════════════════════════════════════════════════════════════
 // MOSTRAR SUGESTÕES (busca por nome/marca + busca por preço)
 // ══════════════════════════════════════════════════════════════
