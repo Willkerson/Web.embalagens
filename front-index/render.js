@@ -1,3 +1,4 @@
+
 // ─────────────────────────────────────────────────────────────
 // RENDER.JS — Renderização do grid de produtos
 // ─────────────────────────────────────────────────────────────
@@ -26,10 +27,8 @@ function getListaFiltrada() {
   }
 
   if (estado.cat !== 'todos') {
-    var allowed = catMap[estado.cat] || [estado.cat];
     lista = lista.filter(function(p) {
-      var mc = allowed.indexOf(p.categoria) >= 0 || allowed.indexOf(p.subcategoria) >= 0;
-      if (!mc) return false;
+      if (p.categoria !== estado.cat) return false;
       if (estado.sub === 'todas') return true;
       return p.subcategoria === estado.sub;
     });
@@ -85,10 +84,8 @@ function renderizar() {
   var listaBase = prods().filter(function(p) { return !p.oculto; });
 
   if (!estado.busca && estado.cat !== 'todos') {
-    var allowed = catMap[estado.cat] || [estado.cat];
     listaBase = listaBase.filter(function(p) {
-      var mc = allowed.indexOf(p.categoria) >= 0 || allowed.indexOf(p.subcategoria) >= 0;
-      if (!mc) return false;
+      if (p.categoria !== estado.cat) return false;
       if (estado.sub === 'todas') return true;
       return p.subcategoria === estado.sub;
     });
@@ -161,20 +158,20 @@ function renderMais() {
       grid = document.getElementById('grid-' + safeId);
     }
 
-while (g.count < g.itens.length && addCount < maxPorRender) {
-  var p      = g.itens[g.count];
-  var esg    = isEsgotado(p);
-  var inCart = !!carrinho[p.id];
+    while (g.count < g.itens.length && addCount < maxPorRender) {
+      var p      = g.itens[g.count];
+      var esg    = isEsgotado(p);
+      var inCart = !!carrinho[p.id];
 
-  var preco = parseFloat(String(p.preco).replace(',', '.'));
+      var preco = parseFloat(String(p.preco).replace(',', '.'));
 
-  var precoStr = preco > 0
-    ? 'R$ ' + preco.toFixed(2).replace('.', ',')
-    : 'Sob consulta';
+      var precoStr = preco > 0
+        ? 'R$ ' + preco.toFixed(2).replace('.', ',')
+        : 'Sob consulta';
 
-  var marcaTag = p.marca
-    ? '<span class="pmarca-tag">' + p.marca + '</span>'
-    : '';
+      var marcaTag = p.marca
+        ? '<span class="pmarca-tag">' + p.marca + '</span>'
+        : '';
 
       var card = document.createElement('div');
       card.className = 'pcard' + (inCart ? ' incart' : '') + (esg ? ' esgotado' : '');
