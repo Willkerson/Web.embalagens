@@ -1901,7 +1901,7 @@
     "nome": "SACO P/ LIXO PRETO P8 60L C/50UN",
     "categoria": "SACO LIXO",
     "preco": 38.25,
-    "estoque": "5,00 un"
+    "estoque": "4,00 un"
   },
   {
     "codigo": "1042",
@@ -2055,7 +2055,7 @@
     "nome": "MARMITEX DE ISOPOR 750ML C/10UN BOM APETITE",
     "categoria": "DESCARTAVEIS",
     "preco": 8,
-    "estoque": "-57,00 un"
+    "estoque": "-58,00 un"
   },
   {
     "codigo": "1113",
@@ -2461,7 +2461,7 @@
     "nome": "TOALHA INTERFOLHA (OURO) CELULOSE ISAPEL C/1000UN",
     "categoria": "PRODUTO DE HIGIENE",
     "preco": 23,
-    "estoque": "49,00 un"
+    "estoque": "48,00 un"
   },
   {
     "codigo": "1341",
@@ -7015,9 +7015,9 @@
   },
   {
     "codigo": "129102",
-    "nome": "BATERIA LITHIUM BOTAO CR2025-5",
+    "nome": "BATERIA LITHIUM BOTAO CR2025-5 1 UNIDADE",
     "categoria": "UTENSILIOS",
-    "preco": 6,
+    "preco": 2.5,
     "estoque": "25,00 un"
   },
   {
