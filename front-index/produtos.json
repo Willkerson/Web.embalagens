@@ -354,7 +354,7 @@
     "nome": "PANO PANOTEK REUTILIZAVEL C/40UN",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 12,
-    "estoque": "43,00 un"
+    "estoque": "42,00 un"
   },
   {
     "codigo": "312",
@@ -515,7 +515,7 @@
     "nome": "PANO DE CHAO XADREZ 45CMX68CM SOUZA BR2",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 4.7,
-    "estoque": "76,00 un"
+    "estoque": "73,00 un"
   },
   {
     "codigo": "390",
@@ -921,7 +921,7 @@
     "nome": "PAPEL MANTEIGA 7,5MX29CM WYDA",
     "categoria": "DESCARTAVEIS",
     "preco": 8.99,
-    "estoque": "-19,00 un"
+    "estoque": "-20,00 un"
   },
   {
     "codigo": "608",
@@ -1649,7 +1649,7 @@
     "nome": "COPO DESCARTAVEL TRANSPARENTE 50ML C/100UN TOTAL PLAST",
     "categoria": "DESCARTAVEIS",
     "preco": 3.5,
-    "estoque": "46,00 un"
+    "estoque": "44,00 un"
   },
   {
     "codigo": "904",
@@ -2006,7 +2006,7 @@
     "nome": "SACOS P/LIXO 100L P8 C10UN PRETO",
     "categoria": "SACO LIXO",
     "preco": 13.5,
-    "estoque": "27,00 un"
+    "estoque": "26,00 un"
   },
   {
     "codigo": "1055",
@@ -2489,7 +2489,7 @@
     "nome": "TOALHA INTERFOLHA BRANCA (VERDE) C/1000UN ISAPEL",
     "categoria": "PRODUTO DE HIGIENE",
     "preco": 16,
-    "estoque": "104,00 un"
+    "estoque": "102,00 un"
   },
   {
     "codigo": "1331",
@@ -3028,7 +3028,7 @@
     "nome": "SACOLA PRETA 1KG 40X50",
     "categoria": "Embalagem",
     "preco": 16.99,
-    "estoque": "-35,00 un"
+    "estoque": "-36,00 un"
   },
   {
     "codigo": "1755",
@@ -3413,7 +3413,7 @@
     "nome": "TOUCAS DESCARTAVEIS C/100UN 45X50CM BOMPACK",
     "categoria": "DESCARTAVEIS",
     "preco": 13.5,
-    "estoque": "6,00 un"
+    "estoque": "5,00 un"
   },
   {
     "codigo": "2067",
