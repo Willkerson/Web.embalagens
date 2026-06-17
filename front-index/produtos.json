@@ -200,7 +200,7 @@
     "nome": "COPO TERMICO 180ML C/20UN TOTALPLAST",
     "categoria": "DESCARTAVEIS",
     "preco": 5.99,
-    "estoque": "50,00 un"
+    "estoque": "100,00 un"
   },
   {
     "codigo": "189",
@@ -362,6 +362,13 @@
     "categoria": "DESCARTAVEIS",
     "preco": 6.99,
     "estoque": "50,00 un"
+  },
+  {
+    "codigo": "313",
+    "nome": "PAPEL HIGIENICO PREM. DUPLA DELICATTO C/4UN 10X30M",
+    "categoria": "PRODUTO DE HIGIENE",
+    "preco": 7.5,
+    "estoque": "16,00 un"
   },
   {
     "codigo": "319",
