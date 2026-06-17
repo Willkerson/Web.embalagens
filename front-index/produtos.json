@@ -763,6 +763,13 @@
     "estoque": "15,00 un"
   },
   {
+    "codigo": "530",
+    "nome": "FITA ADESIVA 18X50M ALFACELL",
+    "categoria": "Embalagem",
+    "preco": 2.5,
+    "estoque": "16,00 un"
+  },
+  {
     "codigo": "535",
     "nome": "CAIXA ONDULADA N05",
     "categoria": "Embalagem",
