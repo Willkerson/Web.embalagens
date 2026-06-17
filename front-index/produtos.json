@@ -196,6 +196,13 @@
     "estoque": "7,00 un"
   },
   {
+    "codigo": "183",
+    "nome": "COPO TERMICO 180ML C/20UN TOTALPLAST",
+    "categoria": "DESCARTAVEIS",
+    "preco": 5.99,
+    "estoque": "50,00 un"
+  },
+  {
     "codigo": "189",
     "nome": "LIXEIRA BRANCA 6L RATTAN",
     "categoria": "PRODUTO DE LIMPEZA",
@@ -350,6 +357,13 @@
     "estoque": "44,00 un"
   },
   {
+    "codigo": "312",
+    "nome": "COPO TERMICO 240ML C/20UN TOTALPLAST",
+    "categoria": "DESCARTAVEIS",
+    "preco": 6.99,
+    "estoque": "50,00 un"
+  },
+  {
     "codigo": "319",
     "nome": "FACA REFEICAO PREMIUM BRANCA C/50UN",
     "categoria": "-",
@@ -480,7 +494,7 @@
     "nome": "LUVA LATEX P PLUS SANRO LARANJA P/ LIMPEZA",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 11.5,
-    "estoque": "11,00 un"
+    "estoque": "9,00 un"
   },
   {
     "codigo": "388",
@@ -1796,7 +1810,7 @@
     "nome": "BQALDE DE 7,4 LTS PLASNEW",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 13,
-    "estoque": "-13,00 un"
+    "estoque": "-16,00 un"
   },
   {
     "codigo": "0355",
@@ -1978,7 +1992,7 @@
     "nome": "SACOS P/LIXO 100L P8 C10UN PRETO",
     "categoria": "SACO LIXO",
     "preco": 13.5,
-    "estoque": "30,00 un"
+    "estoque": "28,00 un"
   },
   {
     "codigo": "1055",
@@ -3616,7 +3630,7 @@
     "nome": "CAIXA COPO 180ML TOTALPLAST C/2500UN FECHADA",
     "categoria": "DESCARTAVEIS",
     "preco": 176,
-    "estoque": "16,00 un"
+    "estoque": "17,00 un"
   },
   {
     "codigo": "2296",
@@ -3854,7 +3868,7 @@
     "nome": "POTE TERMICO 360ML C/25UN ULTRA",
     "categoria": "DESCARTAVEIS",
     "preco": 14,
-    "estoque": "38,00 un"
+    "estoque": "37,00 un"
   },
   {
     "codigo": "2457",
@@ -4211,7 +4225,7 @@
     "nome": "COPO ISOPOR 70ML C/20UN TOTAL PLAST",
     "categoria": "DESCARTAVEIS",
     "preco": 3,
-    "estoque": "28,00 un"
+    "estoque": "78,00 un"
   },
   {
     "codigo": "2833",
@@ -5681,7 +5695,7 @@
     "nome": "ALCOOL 70% LIQUIDO 5L BARBAREX",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 49.99,
-    "estoque": "4,00 un"
+    "estoque": "3,00 un"
   },
   {
     "codigo": "8349",
@@ -7119,6 +7133,13 @@
     "estoque": "0,00 un"
   },
   {
+    "codigo": "286457",
+    "nome": "D640 DOCE REDONDO 170ML CRISTAL C/10UN DONA RITA",
+    "categoria": "DESCARTAVEIS",
+    "preco": 3.5,
+    "estoque": "0,00 un"
+  },
+  {
     "codigo": "298178",
     "nome": "DESINFETANTE FLORAL 5L DVISAO",
     "categoria": "PRODUTO DE LIMPEZA",
@@ -7172,13 +7193,6 @@
     "nome": "Cópia de DESINFETANTE ORIGINAL SANOL 2L",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 10.15,
-    "estoque": "0,00 un"
-  },
-  {
-    "codigo": "28645_1030",
-    "nome": "Cópia de D640 DOCE REDONDO 170ML CRISTAL C/10UN DONA RITA",
-    "categoria": "DESCARTAVEIS",
-    "preco": 3.5,
     "estoque": "0,00 un"
   },
   {
@@ -7396,6 +7410,6 @@
     "nome": "FATIADOR 3 EM 1",
     "categoria": "-",
     "preco": 59.99,
-    "estoque": "0,00 un"
+    "estoque": "1,00 un"
   }
 ]
