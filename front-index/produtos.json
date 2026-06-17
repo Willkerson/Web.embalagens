@@ -179,7 +179,7 @@
     "nome": "COLHER SOFT BRANCA C/50UN ELITE",
     "categoria": "DESCARTAVEIS",
     "preco": 6.5,
-    "estoque": "9,00 un"
+    "estoque": "8,00 un"
   },
   {
     "codigo": "178",
@@ -312,7 +312,7 @@
     "nome": "ESPONJA MULTIUSO C/4UN ALCKLIN",
     "categoria": "UTENSILIOS",
     "preco": 3.5,
-    "estoque": "93,00 un"
+    "estoque": "92,00 un"
   },
   {
     "codigo": "294",
@@ -354,7 +354,7 @@
     "nome": "PANO PANOTEK REUTILIZAVEL C/40UN",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 12,
-    "estoque": "44,00 un"
+    "estoque": "43,00 un"
   },
   {
     "codigo": "312",
@@ -369,6 +369,13 @@
     "categoria": "PRODUTO DE HIGIENE",
     "preco": 7.5,
     "estoque": "16,00 un"
+  },
+  {
+    "codigo": "314",
+    "nome": "PAPEL HIGIENICO F/DUPLA C/16UN 10X30M NESS",
+    "categoria": "PRODUTO DE HIGIENE",
+    "preco": 31.99,
+    "estoque": "4,00 un"
   },
   {
     "codigo": "319",
@@ -522,7 +529,7 @@
     "nome": "PANO DE CHAO ALVEJADO CAIPIRA 45CMX68CM",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 5.25,
-    "estoque": "48,00 un"
+    "estoque": "47,00 un"
   },
   {
     "codigo": "400",
@@ -662,7 +669,7 @@
     "nome": "POTE REDONDO 350ML C/TAMPA C/24UN PRAFESTA",
     "categoria": "DESCARTAVEIS",
     "preco": 22.5,
-    "estoque": "18,00 un"
+    "estoque": "17,00 un"
   },
   {
     "codigo": "453",
@@ -816,7 +823,7 @@
     "nome": "AGUA SANITARIA SUPREMA 2L",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 8,
-    "estoque": "22,00 un"
+    "estoque": "21,00 un"
   },
   {
     "codigo": "568",
@@ -1159,7 +1166,7 @@
     "nome": "PALITO DENTAL NATURAL BAMBU C/100UN",
     "categoria": "DESCARTAVEIS",
     "preco": 1.5,
-    "estoque": "-31,00 un"
+    "estoque": "24,00 un"
   },
   {
     "codigo": "711",
@@ -1194,7 +1201,7 @@
     "nome": "PAPEL HIGIENICO FOLHA DUPLA DELICATTO C/12UN 10X20M",
     "categoria": "PRODUTO DE HIGIENE",
     "preco": 14.99,
-    "estoque": "1,00 un"
+    "estoque": "0,00 un"
   },
   {
     "codigo": "726",
@@ -1341,7 +1348,7 @@
     "nome": "KIT GARFO E FACA MASTER C/25 PRAFESTA",
     "categoria": "DESCARTAVEIS",
     "preco": 21,
-    "estoque": "12,00 un"
+    "estoque": "11,00 un"
   },
   {
     "codigo": "785",
@@ -1537,7 +1544,7 @@
     "nome": "DESINFETANTE LAVANDA BOUQUET 2L SUPREMA",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 8,
-    "estoque": "8,00 un"
+    "estoque": "7,00 un"
   },
   {
     "codigo": "860",
@@ -1817,7 +1824,7 @@
     "nome": "BQALDE DE 7,4 LTS PLASNEW",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 13,
-    "estoque": "-16,00 un"
+    "estoque": "-17,00 un"
   },
   {
     "codigo": "0355",
@@ -1985,7 +1992,7 @@
     "nome": "SACO P/ LIXO PRETO P6 40L C/10UN",
     "categoria": "SACO LIXO",
     "preco": 5.5,
-    "estoque": "33,00 un"
+    "estoque": "32,00 un"
   },
   {
     "codigo": "1052",
@@ -2387,6 +2394,13 @@
     "estoque": "-1,00 un"
   },
   {
+    "codigo": "1299",
+    "nome": "ESPONJA DE LÃ DE AÇO ASSOLAN 45G",
+    "categoria": "PRODUTO DE LIMPEZA",
+    "preco": 3,
+    "estoque": "22,00 un"
+  },
+  {
     "codigo": "1301",
     "nome": "FILME STRETCH 50CM",
     "categoria": "Embalagem",
@@ -2475,7 +2489,7 @@
     "nome": "TOALHA INTERFOLHA BRANCA (VERDE) C/1000UN ISAPEL",
     "categoria": "PRODUTO DE HIGIENE",
     "preco": 16,
-    "estoque": "105,00 un"
+    "estoque": "104,00 un"
   },
   {
     "codigo": "1331",
@@ -2531,7 +2545,7 @@
     "nome": "COPO TERMICO 120ML C/25UN ULTRA",
     "categoria": "DESCARTAVEIS",
     "preco": 5.99,
-    "estoque": "15,00 un"
+    "estoque": "13,00 un"
   },
   {
     "codigo": "1352",
@@ -2797,7 +2811,7 @@
     "nome": "PANO DE PRATO BRANCO/ESTAMPADO TATI/NACIONAL 66X38CM",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 4.3,
-    "estoque": "-24,00 un"
+    "estoque": "-25,00 un"
   },
   {
     "codigo": "1530",
@@ -3140,7 +3154,7 @@
     "nome": "PEDRA SANITARIA 25G MISTA AZULIM",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 2.99,
-    "estoque": "6,00 un"
+    "estoque": "101,00 un"
   },
   {
     "codigo": "1853",
@@ -3637,7 +3651,7 @@
     "nome": "CAIXA COPO 180ML TOTALPLAST C/2500UN FECHADA",
     "categoria": "DESCARTAVEIS",
     "preco": 176,
-    "estoque": "17,00 un"
+    "estoque": "18,00 un"
   },
   {
     "codigo": "2296",
@@ -4218,7 +4232,7 @@
     "nome": "POTE ISOPOR 240ML C/25UN ULTRA",
     "categoria": "DESCARTAVEIS",
     "preco": 12.5,
-    "estoque": "36,00 un"
+    "estoque": "34,00 un"
   },
   {
     "codigo": "2830",
@@ -4232,7 +4246,7 @@
     "nome": "COPO ISOPOR 70ML C/20UN TOTAL PLAST",
     "categoria": "DESCARTAVEIS",
     "preco": 3,
-    "estoque": "78,00 un"
+    "estoque": "128,00 un"
   },
   {
     "codigo": "2833",
@@ -4260,7 +4274,7 @@
     "nome": "PAPEL ACOPLADO C/PELICULA 30X38 C/100UN",
     "categoria": "DESCARTAVEIS",
     "preco": 18.5,
-    "estoque": "3,00 un"
+    "estoque": "11,00 un"
   },
   {
     "codigo": "2842",
@@ -4484,14 +4498,14 @@
     "nome": "AÇUCAR EM SACHE 100X5G UNIAO",
     "categoria": "ALIMENTO/GENERO ALIMENTICIO",
     "preco": 10,
-    "estoque": "0,00 un"
+    "estoque": "8,00 un"
   },
   {
     "codigo": "2993",
     "nome": "AÇUCAR EM SACHE 400X5G UNIAO CAIXA FECHADA",
     "categoria": "ALIMENTO/GENERO ALIMENTICIO",
     "preco": 38.5,
-    "estoque": "1,00 un"
+    "estoque": "2,00 un"
   },
   {
     "codigo": "2994",
@@ -4589,7 +4603,7 @@
     "nome": "COPO TERMICO 180ML C/25UN ULTRA",
     "categoria": "DESCARTAVEIS",
     "preco": 9,
-    "estoque": "-66,00 un"
+    "estoque": "2,00 un"
   },
   {
     "codigo": "3051",
@@ -4918,7 +4932,7 @@
     "nome": "PAPEL HIGIENICO FOFINHO FOLHA DUPLA 4X30M",
     "categoria": "PRODUTO DE HIGIENE",
     "preco": 8.5,
-    "estoque": "85,00 un"
+    "estoque": "84,00 un"
   },
   {
     "codigo": "3192",
@@ -5079,14 +5093,14 @@
     "nome": "LIMPADOR CONCENTRADO CHA BRANCO 120ML SANOL",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 11.5,
-    "estoque": "1,00 un"
+    "estoque": "0,00 un"
   },
   {
     "codigo": "3982",
     "nome": "LIMPADOR CONCENTRADO ROUPA LAVADA 120ML SANOL",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 11.5,
-    "estoque": "3,00 un"
+    "estoque": "2,00 un"
   },
   {
     "codigo": "3983",
@@ -5569,7 +5583,7 @@
     "nome": "SACO P/LIXO PRETO 20L P5 C/10UN",
     "categoria": "SACO LIXO",
     "preco": 4,
-    "estoque": "19,00 un"
+    "estoque": "18,00 un"
   },
   {
     "codigo": "7899",
@@ -5695,7 +5709,7 @@
     "nome": "ALCOOL LIQUIDO 1L 70% BARBAREX",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 10.99,
-    "estoque": "20,00 un"
+    "estoque": "19,00 un"
   },
   {
     "codigo": "8277",
@@ -6045,7 +6059,7 @@
     "nome": "DETERGENTE YPÊ NEUTRO 500ML",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 4,
-    "estoque": "9,00 un"
+    "estoque": "8,00 un"
   },
   {
     "codigo": "31653",
@@ -6395,13 +6409,6 @@
     "nome": "DESENTUPIDOR SANCHES",
     "categoria": "Outras",
     "preco": 11.5,
-    "estoque": "2,00 un"
-  },
-  {
-    "codigo": "129005",
-    "nome": "ESPONJA DE LÃ DE AÇO ASSOLAN 45G",
-    "categoria": "PRODUTO DE LIMPEZA",
-    "preco": 3,
     "estoque": "2,00 un"
   },
   {
