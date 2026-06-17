@@ -119,6 +119,13 @@
     "estoque": "18,00 un"
   },
   {
+    "codigo": "138",
+    "nome": "LAÇO P/PRESENTE 18X38CM C/10UN LISO",
+    "categoria": "Embalagem",
+    "preco": 2.99,
+    "estoque": "1,00 un"
+  },
+  {
     "codigo": "142",
     "nome": "SABONETE LIQ. CREMOSO PITANGA PLUS TRILHA 5L",
     "categoria": "PRODUTO DE LIMPEZA",
@@ -1544,7 +1551,7 @@
     "nome": "HAMBURGUEIRA BH02 C/10UN BOM APETITE",
     "categoria": "Embalagem",
     "preco": 3.5,
-    "estoque": "-21,00 un"
+    "estoque": "9,00 un"
   },
   {
     "codigo": "857",
