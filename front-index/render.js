@@ -208,11 +208,18 @@ function renderMais() {
 
     while (g.count < g.itens.length && addCount < maxPorRender) {
       var p      = g.itens[g.count];
-      var esg    = isEsgotado(p);
-      var inCart = !!carrinho[p.id];
+var esg    = isEsgotado(p);
+var inCart = !!carrinho[p.id];
 
-     var precoStr = p.preco && p.preco.trim()
-  ? p.preco
+// aceita número ou string numérica
+var preco = Number(p.preco);
+
+if (isNaN(preco)) {
+  preco = 0;
+}
+
+var precoStr = preco > 0
+  ? 'R$ ' + preco.toFixed(2).replace('.', ',')
   : 'Sob consulta';
 
       var marcaTag = p.marca
