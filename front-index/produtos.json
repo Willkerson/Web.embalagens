@@ -4459,6 +4459,13 @@
     "estoque": "0,00 un"
   },
   {
+    "codigo": "2993",
+    "nome": "AÇUCAR EM SACHE 400X5G UNIAO CAIXA FECHADA",
+    "categoria": "ALIMENTO/GENERO ALIMENTICIO",
+    "preco": 38.5,
+    "estoque": "0,00 un"
+  },
+  {
     "codigo": "2996",
     "nome": "DISPENSER DE PAPEL HIGIENICO CAI CAI",
     "categoria": "DESCARTAVEIS",
@@ -7095,13 +7102,6 @@
     "nome": "DESINFETANTE FLORAL 5L DVISAO",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 18.99,
-    "estoque": "0,00 un"
-  },
-  {
-    "codigo": "299247",
-    "nome": "AÇUCAR EM SACHE 100X5G UNIAO CAIXA FECHADA",
-    "categoria": "ALIMENTO/GENERO ALIMENTICIO",
-    "preco": 38.5,
     "estoque": "0,00 un"
   },
   {
