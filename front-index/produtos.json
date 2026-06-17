@@ -46,7 +46,7 @@
     "nome": "SACOLA KRAFT GG 1UN 30X20X36CM",
     "categoria": "Embalagem",
     "preco": 2.5,
-    "estoque": "-44,00 un"
+    "estoque": "-45,00 un"
   },
   {
     "codigo": "110",
@@ -862,7 +862,7 @@
   },
   {
     "codigo": "597",
-    "nome": "LUVA DE LATEX M 1 PAR SANRO PLUS",
+    "nome": "LUVA DE LATEX M SANRO PLUS",
     "categoria": "DESCARTAVEIS",
     "preco": 11.5,
     "estoque": "1,00 un"
@@ -3525,7 +3525,7 @@
     "nome": "FITA ADESIVA 45X100M TRANSPARENTE KORETECH",
     "categoria": "PAPELARIA",
     "preco": 10.5,
-    "estoque": "53,00 un"
+    "estoque": "52,00 un"
   },
   {
     "codigo": "2164",
@@ -3979,8 +3979,8 @@
     "codigo": "2655",
     "nome": "SACOS PLASTICO PEBD 50X70X0,10 1KG HELVIPACK",
     "categoria": "Embalagem",
-    "preco": 33.5,
-    "estoque": "13,00 un"
+    "preco": 46,
+    "estoque": "11,00 un"
   },
   {
     "codigo": "2657",
@@ -5625,7 +5625,7 @@
     "nome": "ESCOVA LIMP. MULTIUSO 19CM",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 4.5,
-    "estoque": "4,00 un"
+    "estoque": "3,00 un"
   },
   {
     "codigo": "8146",
