@@ -221,7 +221,7 @@
     "nome": "RODINHO PÍA P/SUPORTE 16CM PLASUTIL",
     "categoria": "-",
     "preco": 8.5,
-    "estoque": "0,00 un"
+    "estoque": "-1,00 un"
   },
   {
     "codigo": "216",
@@ -971,6 +971,13 @@
     "categoria": "Embalagem",
     "preco": 94.5,
     "estoque": "-1,00 un"
+  },
+  {
+    "codigo": "617",
+    "nome": "SACO DE PRESENTE 43X59 GALA",
+    "categoria": "Embalagem",
+    "preco": 2.99,
+    "estoque": "100,00 un"
   },
   {
     "codigo": "618",
@@ -1776,6 +1783,13 @@
     "categoria": "Embalagem",
     "preco": 15,
     "estoque": "14,00 un"
+  },
+  {
+    "codigo": "943",
+    "nome": "AROMATIZADOR DE AMBIENTE 250ML SPRAY LAVANDA",
+    "categoria": "PRODUTO DE HIGIENE",
+    "preco": 12.99,
+    "estoque": "5,00 un"
   },
   {
     "codigo": "957",
@@ -2951,7 +2965,7 @@
     "nome": "D50MM TORTA MDIA 1,5KG BR24CM DONA RITA",
     "categoria": "DESCARTAVEIS",
     "preco": 3,
-    "estoque": "1,00 un"
+    "estoque": "0,00 un"
   },
   {
     "codigo": "1649",
@@ -5442,7 +5456,7 @@
     "codigo": "6981",
     "nome": "VARAL DE AÇO REVESTIDO FORT 20METROS",
     "categoria": "-",
-    "preco": 5,
+    "preco": 4.99,
     "estoque": "6,00 un"
   },
   {
