@@ -777,6 +777,13 @@
     "estoque": "16,00 un"
   },
   {
+    "codigo": "534",
+    "nome": "PROCESSADOR DE ALIMENTOS 500ML TINGS",
+    "categoria": "ALIMENTO/GENERO ALIMENTICIO",
+    "preco": 14.99,
+    "estoque": "2,00 un"
+  },
+  {
     "codigo": "535",
     "nome": "CAIXA ONDULADA N05",
     "categoria": "Embalagem",
