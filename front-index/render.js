@@ -211,11 +211,9 @@ function renderMais() {
       var esg    = isEsgotado(p);
       var inCart = !!carrinho[p.id];
 
-      var preco = parseFloat(String(p.preco).replace(',', '.'));
-
-      var precoStr = preco > 0
-        ? 'R$ ' + preco.toFixed(2).replace('.', ',')
-        : 'Sob consulta';
+     var precoStr = p.preco && p.preco.trim()
+  ? p.preco
+  : 'Sob consulta';
 
       var marcaTag = p.marca
         ? '<span class="pmarca-tag">' + p.marca + '</span>'
