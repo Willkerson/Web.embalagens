@@ -7,13 +7,6 @@
     "estoque": "0,00 un"
   },
   {
-    "codigo": "79",
-    "nome": "LAÇO FACIL 30M - PRESENTE",
-    "categoria": "-",
-    "preco": 2,
-    "estoque": "18,00 un"
-  },
-  {
     "codigo": "035",
     "nome": "ESCOVA SANITARIA C/ ESTOJO SANIBRISA",
     "categoria": "PRODUTO DE LIMPEZA",
@@ -123,7 +116,7 @@
     "nome": "LAÇO P/PRESENTE 18X38CM C/10UN LISO",
     "categoria": "Embalagem",
     "preco": 2.99,
-    "estoque": "1,00 un"
+    "estoque": "18,00 un"
   },
   {
     "codigo": "142",
@@ -537,6 +530,13 @@
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 5.25,
     "estoque": "47,00 un"
+  },
+  {
+    "codigo": "398",
+    "nome": "FITA VEDA ROSCA 18MMX10M",
+    "categoria": "Embalagem",
+    "preco": 3.99,
+    "estoque": "10,00 un"
   },
   {
     "codigo": "400",
@@ -1540,10 +1540,17 @@
     "estoque": "-21,00 un"
   },
   {
-    "codigo": "848",
-    "nome": "ABRACEDEIRA 3,6X200MM C/100UN TINGS",
-    "categoria": "UTENSILIOS",
+    "codigo": "847",
+    "nome": "ABRAÇADEIRA 3,6X300MM C/100UN",
+    "categoria": "Embalagem",
     "preco": 19.99,
+    "estoque": "5,00 un"
+  },
+  {
+    "codigo": "848",
+    "nome": "ABRAÇADEIRA 3,6X200MM C/100UN TINGS",
+    "categoria": "UTENSILIOS",
+    "preco": 17.99,
     "estoque": "3,00 un"
   },
   {
@@ -4113,7 +4120,7 @@
     "nome": "POTE REDONDO 250ML C/TAMPA C/24UN DANUBIO",
     "categoria": "DESCARTAVEIS",
     "preco": 17.5,
-    "estoque": "24,00 un"
+    "estoque": "23,00 un"
   },
   {
     "codigo": "2717",
