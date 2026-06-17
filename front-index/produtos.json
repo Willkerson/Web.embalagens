@@ -4659,7 +4659,7 @@
     "nome": "COPO TERMICO 180ML C/25UN ULTRA",
     "categoria": "DESCARTAVEIS",
     "preco": 9,
-    "estoque": "2,00 un"
+    "estoque": "0,00 un"
   },
   {
     "codigo": "3051",
@@ -5036,8 +5036,8 @@
     "codigo": "3345",
     "nome": "FITA ISOLANTE 10X17MM C/3UN ALFACEL",
     "categoria": "UTENSILIOS",
-    "preco": 10,
-    "estoque": "4,00 un"
+    "preco": 3.5,
+    "estoque": "19,00 un"
   },
   {
     "codigo": "3420",
