@@ -375,7 +375,7 @@
     "nome": "PAPEL HIGIENICO F/DUPLA C/16UN 10X30M NESS",
     "categoria": "PRODUTO DE HIGIENE",
     "preco": 31.99,
-    "estoque": "4,00 un"
+    "estoque": "2,00 un"
   },
   {
     "codigo": "319",
@@ -823,7 +823,7 @@
     "nome": "AGUA SANITARIA SUPREMA 2L",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 8,
-    "estoque": "21,00 un"
+    "estoque": "19,00 un"
   },
   {
     "codigo": "568",
@@ -1411,7 +1411,7 @@
     "nome": "LIMPADOR PERF. INTENSE LAVANDA 500ML SANOL",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 6.5,
-    "estoque": "15,00 un"
+    "estoque": "14,00 un"
   },
   {
     "codigo": "812",
@@ -1516,7 +1516,7 @@
     "nome": "DESINFETANTE OCEAN 2L SANOL",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 10.15,
-    "estoque": "4,00 un"
+    "estoque": "3,00 un"
   },
   {
     "codigo": "846",
@@ -6199,7 +6199,7 @@
     "nome": "TEK BOND INSTANTÂNEA 2G",
     "categoria": "PAPELARIA",
     "preco": 3.99,
-    "estoque": "-4,00 un"
+    "estoque": "-5,00 un"
   },
   {
     "codigo": "31674",
