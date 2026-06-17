@@ -511,6 +511,13 @@
     "estoque": "9,00 un"
   },
   {
+    "codigo": "385",
+    "nome": "ABRAÇADEIRA 7,2X200MM C/100UN TINGS",
+    "categoria": "Embalagem",
+    "preco": 19.99,
+    "estoque": "5,00 un"
+  },
+  {
     "codigo": "388",
     "nome": "PANO DE CHAO XADREZ 45CMX68CM SOUZA BR2",
     "categoria": "PRODUTO DE LIMPEZA",
@@ -3070,14 +3077,14 @@
     "nome": "SACOLA PRETA 1KG 30X40",
     "categoria": "Embalagem",
     "preco": 16.99,
-    "estoque": "-33,00 un"
+    "estoque": "-34,00 un"
   },
   {
     "codigo": "1719",
     "nome": "SACOLA PRETA 1KG 40X50",
     "categoria": "Embalagem",
     "preco": 16.99,
-    "estoque": "-36,00 un"
+    "estoque": "-37,00 un"
   },
   {
     "codigo": "1755",
@@ -4589,7 +4596,7 @@
     "nome": "SACO SOS P PARDO C/10UN PLUMA",
     "categoria": "Embalagem",
     "preco": 5.5,
-    "estoque": "-4,00 un"
+    "estoque": "-8,00 un"
   },
   {
     "codigo": "3029",
