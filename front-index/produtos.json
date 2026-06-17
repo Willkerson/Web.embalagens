@@ -1579,7 +1579,7 @@
     "nome": "HAMBURGUEIRA BH02 C/10UN BOM APETITE",
     "categoria": "Embalagem",
     "preco": 3.5,
-    "estoque": "9,00 un"
+    "estoque": "7,00 un"
   },
   {
     "codigo": "857",
@@ -1663,7 +1663,7 @@
     "nome": "COPO DESCARTAVEL TRANSPARENTE 180ML C/100UN TOTAL PLAST",
     "categoria": "DESCARTAVEIS",
     "preco": 8.99,
-    "estoque": "442,00 un"
+    "estoque": "441,00 un"
   },
   {
     "codigo": "897",
@@ -2755,7 +2755,7 @@
     "nome": "POTE 100ML C/100UN COPOMAIS",
     "categoria": "DESCARTAVEIS",
     "preco": 6.5,
-    "estoque": "-17,00 un"
+    "estoque": "-21,00 un"
   },
   {
     "codigo": "1465",
