@@ -3606,10 +3606,10 @@
   },
   {
     "codigo": "2291",
-    "nome": "CAIXA COPO 180ML TOTALPLAST C/2500UN",
+    "nome": "CAIXA COPO 180ML TOTALPLAST C/2500UN FECHADA",
     "categoria": "DESCARTAVEIS",
     "preco": 176,
-    "estoque": "9,00 un"
+    "estoque": "16,00 un"
   },
   {
     "codigo": "2296",
@@ -4533,7 +4533,7 @@
     "nome": "HAMBURGUEIRA BH01 C/10UN BOM APETITE",
     "categoria": "DESCARTAVEIS",
     "preco": 3.5,
-    "estoque": "78,00 un"
+    "estoque": "88,00 un"
   },
   {
     "codigo": "3048",
