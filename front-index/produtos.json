@@ -7,6 +7,13 @@
     "estoque": "0,00 un"
   },
   {
+    "codigo": "79",
+    "nome": "LAÇO FACIL 30M",
+    "categoria": "-",
+    "preco": 2,
+    "estoque": "-1,00 un"
+  },
+  {
     "codigo": "035",
     "nome": "ESCOVA SANITARIA C/ ESTOJO SANIBRISA",
     "categoria": "PRODUTO DE LIMPEZA",
@@ -333,7 +340,7 @@
     "nome": "GANCHO DE BAMBU/METAL C/2UN HOUSE",
     "categoria": "UTENSILIOS",
     "preco": 5.99,
-    "estoque": "2,00 un"
+    "estoque": "1,00 un"
   },
   {
     "codigo": "308",
@@ -2062,7 +2069,7 @@
     "nome": "SACOS PLASTICO PEBD 15X20X0,06 COLOMBO/HELVIPACK",
     "categoria": "Embalagem",
     "preco": 46,
-    "estoque": "18,00 un"
+    "estoque": "17,00 un"
   },
   {
     "codigo": "1129",
@@ -2237,7 +2244,7 @@
     "nome": "SACO P/ LIXO PRETO P6 40L C/50UN",
     "categoria": "SACO LIXO",
     "preco": 25,
-    "estoque": "10,00 un"
+    "estoque": "9,00 un"
   },
   {
     "codigo": "1188",
@@ -3742,7 +3749,7 @@
     "nome": "PAPEL DE PRESENTE (GRANDE)",
     "categoria": "Embalagem",
     "preco": 4.5,
-    "estoque": "-5,00 un"
+    "estoque": "-6,00 un"
   },
   {
     "codigo": "2386",
@@ -4673,7 +4680,7 @@
     "nome": "BALDE PLASTICO 13,5L OVAL PLASNEW",
     "categoria": "-",
     "preco": 33,
-    "estoque": "-3,00 un"
+    "estoque": "-4,00 un"
   },
   {
     "codigo": "3111",
@@ -7347,6 +7354,48 @@
     "nome": "DESINFETANTE CITRONELA SANOL 2L",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 10.15,
+    "estoque": "0,00 un"
+  },
+  {
+    "codigo": "7893595170128",
+    "nome": "JOGO DE CHAVE FENDE E PHILIPS C/4UN",
+    "categoria": "Outras",
+    "preco": 10,
+    "estoque": "1,00 un"
+  },
+  {
+    "codigo": "7893595170129",
+    "nome": "SACOLA VERDE REFORÇÂDA 60x80 kg",
+    "categoria": "-",
+    "preco": 19.99,
+    "estoque": "-5,00 un"
+  },
+  {
+    "codigo": "7909875076499",
+    "nome": "RODO P/PIA 16CM",
+    "categoria": "PRODUTO DE LIMPEZA",
+    "preco": 9.5,
+    "estoque": "3,00 un"
+  },
+  {
+    "codigo": "7909875076500",
+    "nome": "SACOLA PARA VINHO 1UN",
+    "categoria": "-",
+    "preco": 1.7,
+    "estoque": "-10,00 un"
+  },
+  {
+    "codigo": "7909875076501",
+    "nome": "CORDA PARA VARAL 20M MAXCLEAN",
+    "categoria": "-",
+    "preco": 14.99,
+    "estoque": "3,00 un"
+  },
+  {
+    "codigo": "7909875076502",
+    "nome": "FATIADOR 3 EM 1",
+    "categoria": "-",
+    "preco": 59.99,
     "estoque": "0,00 un"
   }
 ]
