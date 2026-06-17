@@ -1043,6 +1043,13 @@
     "estoque": "3,00 un"
   },
   {
+    "codigo": "638",
+    "nome": "NEUTRALIZADOR DE ODORES 100ML LADYPRIME",
+    "categoria": "PRODUTO DE HIGIENE",
+    "preco": 11.99,
+    "estoque": "5,00 un"
+  },
+  {
     "codigo": "640",
     "nome": "PAPEL ANTIADERENTE ASSALIGTH 3MX30CM WYDA",
     "categoria": "Embalagem",
@@ -2993,7 +3000,7 @@
     "nome": "COPO 80ML PS DESCART. C/100UN COPOBRAS",
     "categoria": "DESCARTAVEIS",
     "preco": 8.5,
-    "estoque": "4,00 un"
+    "estoque": "3,00 un"
   },
   {
     "codigo": "1655",
