@@ -354,7 +354,7 @@
     "nome": "PANO PANOTEK REUTILIZAVEL C/40UN",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 12,
-    "estoque": "42,00 un"
+    "estoque": "41,00 un"
   },
   {
     "codigo": "312",
@@ -2188,7 +2188,7 @@
     "nome": "RODO ALUMINIO 30CM C/CABO 1,30MT C/ROSCA SANCHES",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 41,
-    "estoque": "-8,00 un"
+    "estoque": "-9,00 un"
   },
   {
     "codigo": "1133",
@@ -2223,7 +2223,7 @@
     "nome": "REFIL RODO ALUMINIO 30CM SANCHES",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 4,
-    "estoque": "-6,00 un"
+    "estoque": "-7,00 un"
   },
   {
     "codigo": "1141",
@@ -2328,7 +2328,7 @@
     "nome": "PANO MULTIUSO BRANCO C/50 PANOS 30CMX50CM MR.PLUS",
     "categoria": "PRODUTO DE HIGIENE",
     "preco": 15.5,
-    "estoque": "-33,00 un"
+    "estoque": "-34,00 un"
   },
   {
     "codigo": "1176",
@@ -2503,7 +2503,7 @@
     "nome": "TOP LIXO PIA E BANHEIRO BRANCO C/40UN PACK LIXO",
     "categoria": "SACO LIXO",
     "preco": 10,
-    "estoque": "53,00 un"
+    "estoque": "52,00 un"
   },
   {
     "codigo": "1315",
@@ -3945,7 +3945,7 @@
     "nome": "GUARDANAPO DE PAPEL WHITEPAPER C/50UN 20X22CM",
     "categoria": "DESCARTAVEIS",
     "preco": 1.7,
-    "estoque": "65,00 un"
+    "estoque": "59,00 un"
   },
   {
     "codigo": "2445",
@@ -4477,7 +4477,7 @@
     "nome": "SACOLA KRAFT BRANCO H2 C/100UN 19X12CM PLUMA",
     "categoria": "DESCARTAVEIS",
     "preco": 8,
-    "estoque": "19,00 un"
+    "estoque": "18,00 un"
   },
   {
     "codigo": "2922",
@@ -5422,7 +5422,7 @@
     "nome": "B120 FOLHA D ALUMINIO 500ML C/10UN PRAV.",
     "categoria": "Embalagem",
     "preco": 9.5,
-    "estoque": "3,00 un"
+    "estoque": "2,00 un"
   },
   {
     "codigo": "6050",
@@ -5702,7 +5702,7 @@
     "nome": "DIFUSOR DE AROMAS CITRONELA SENALAR",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 18,
-    "estoque": "12,00 un"
+    "estoque": "11,00 un"
   },
   {
     "codigo": "7908",
