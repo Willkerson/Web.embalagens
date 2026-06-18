@@ -2062,7 +2062,7 @@
     "nome": "SACO P/ LIXO PRETO P8 60L C/10UN",
     "categoria": "SACO LIXO",
     "preco": 8.99,
-    "estoque": "36,00 un"
+    "estoque": "35,00 un"
   },
   {
     "codigo": "1053",
@@ -4659,7 +4659,7 @@
     "nome": "RODO DE PIA KEITA",
     "categoria": "UTENSILIOS",
     "preco": 6.5,
-    "estoque": "-2,00 un"
+    "estoque": "-3,00 un"
   },
   {
     "codigo": "3046",
@@ -5660,7 +5660,7 @@
     "nome": "SACO P/LIXO PRETO 20L P5 C/10UN",
     "categoria": "SACO LIXO",
     "preco": 4,
-    "estoque": "17,00 un"
+    "estoque": "16,00 un"
   },
   {
     "codigo": "7899",
