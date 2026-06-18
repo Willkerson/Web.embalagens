@@ -375,7 +375,7 @@
     "nome": "PAPEL HIGIENICO F/DUPLA C/16UN 10X30M NESS",
     "categoria": "PRODUTO DE HIGIENE",
     "preco": 31.99,
-    "estoque": "2,00 un"
+    "estoque": "1,00 un"
   },
   {
     "codigo": "319",
@@ -501,7 +501,7 @@
     "nome": "LUVA LATEX M PLUS SANRO LARANJA P/LIMPEZA",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 11.5,
-    "estoque": "9,00 un"
+    "estoque": "8,00 un"
   },
   {
     "codigo": "374",
@@ -4225,7 +4225,7 @@
     "nome": "ODORIZANTE DE AMBIENTE GEL 60G MARINE PURO AR",
     "categoria": "PRODUTO DE HIGIENE",
     "preco": 12.3,
-    "estoque": "-9,00 un"
+    "estoque": "-10,00 un"
   },
   {
     "codigo": "2806",
