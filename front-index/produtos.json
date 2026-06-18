@@ -2482,7 +2482,7 @@
     "nome": "FILME STRETCH 50CM",
     "categoria": "Embalagem",
     "preco": 69.99,
-    "estoque": "0,00 un"
+    "estoque": "5,00 un"
   },
   {
     "codigo": "1310",
@@ -2636,7 +2636,7 @@
     "nome": "KIT POTE E TAMPA RET. 500ML C/12UN GOUR MAX",
     "categoria": "DESCARTAVEIS",
     "preco": 16,
-    "estoque": "-35,00 un"
+    "estoque": "25,00 un"
   },
   {
     "codigo": "1360",
@@ -2881,7 +2881,7 @@
     "nome": "TOALHA INTERFOLHA BRANCA PREMIUM WHITE PAPER C/1000UN",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 24,
-    "estoque": "34,00 un"
+    "estoque": "22,00 un"
   },
   {
     "codigo": "1526",
@@ -4239,7 +4239,7 @@
     "nome": "KIT POTE E TAMPA RET. 350ML C/12UN GOUR MAX",
     "categoria": "DESCARTAVEIS",
     "preco": 13,
-    "estoque": "-22,00 un"
+    "estoque": "24,00 un"
   },
   {
     "codigo": "2802",
@@ -4708,7 +4708,7 @@
     "nome": "POTE E TAMPA RET.350ML C/24UN GOUR MAX",
     "categoria": "DESCARTAVEIS",
     "preco": 28,
-    "estoque": "10,00 un"
+    "estoque": "22,00 un"
   },
   {
     "codigo": "3060",
@@ -4771,7 +4771,7 @@
     "nome": "POTE E TAMPA RET.500ML C/24UN GOUR MAX",
     "categoria": "DESCARTAVEIS",
     "preco": 29,
-    "estoque": "13,00 un"
+    "estoque": "23,00 un"
   },
   {
     "codigo": "3106",
