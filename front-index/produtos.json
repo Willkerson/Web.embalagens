@@ -378,6 +378,13 @@
     "estoque": "1,00 un"
   },
   {
+    "codigo": "315",
+    "nome": "FITA ADESIVA 18X50M EUROCEL",
+    "categoria": "UTENSILIOS",
+    "preco": 3.99,
+    "estoque": "6,00 un"
+  },
+  {
     "codigo": "317",
     "nome": "CAIXA P/BOLO TORRE 26X26X22",
     "categoria": "Embalagem",
