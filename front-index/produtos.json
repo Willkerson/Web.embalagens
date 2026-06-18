@@ -378,6 +378,13 @@
     "estoque": "1,00 un"
   },
   {
+    "codigo": "317",
+    "nome": "CAIXA P/BOLO TORRE 26X26X22",
+    "categoria": "Embalagem",
+    "preco": 4.99,
+    "estoque": "1,00 un"
+  },
+  {
     "codigo": "318",
     "nome": "CAIXA P/BOLO TORRE 40X40X22",
     "categoria": "Embalagem",
@@ -3882,7 +3889,7 @@
     "nome": "BANDEJA BF2 FUNDA C/100UN 210X140X28 B. APETITE",
     "categoria": "DESCARTAVEIS",
     "preco": 20,
-    "estoque": "-2,00 un"
+    "estoque": "-3,00 un"
   },
   {
     "codigo": "2387",
