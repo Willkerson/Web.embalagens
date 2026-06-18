@@ -1593,7 +1593,7 @@
     "nome": "HAMBURGUEIRA BH02 C/10UN BOM APETITE",
     "categoria": "Embalagem",
     "preco": 3.5,
-    "estoque": "7,00 un"
+    "estoque": "2,00 un"
   },
   {
     "codigo": "857",
@@ -3266,7 +3266,7 @@
     "nome": "HAMBURGUEIRA BH03 C/100UN BOM APETITE",
     "categoria": "DESCARTAVEIS",
     "preco": 38,
-    "estoque": "0,00 un"
+    "estoque": "-1,00 un"
   },
   {
     "codigo": "1888",
@@ -3497,7 +3497,7 @@
     "nome": "TOUCAS DESCARTAVEIS C/100UN 45X50CM BOMPACK",
     "categoria": "DESCARTAVEIS",
     "preco": 13.5,
-    "estoque": "5,00 un"
+    "estoque": "4,00 un"
   },
   {
     "codigo": "2067",
@@ -3518,7 +3518,7 @@
     "nome": "ESTOJO ISOPOR BH102 BEIRUTE C/10UN BOM APETITE",
     "categoria": "Embalagem",
     "preco": 17,
-    "estoque": "-14,00 un"
+    "estoque": "-15,00 un"
   },
   {
     "codigo": "2073",
@@ -5527,7 +5527,7 @@
     "nome": "PALITO DENTAL C/200UN FIAT LUX",
     "categoria": "ALIMENTO/GENERO ALIMENTICIO",
     "preco": 2.25,
-    "estoque": "13,00 un"
+    "estoque": "12,00 un"
   },
   {
     "codigo": "7012",
