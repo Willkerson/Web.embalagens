@@ -1348,7 +1348,7 @@
     "nome": "NAFTALINA AZULIM 30G START",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 3.5,
-    "estoque": "12,00 un"
+    "estoque": "9,00 un"
   },
   {
     "codigo": "766",
@@ -2244,7 +2244,7 @@
     "nome": "SUPORTE LT C/VELCRO SANCHES",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 20,
-    "estoque": "20,00 un"
+    "estoque": "18,00 un"
   },
   {
     "codigo": "1148",
@@ -3308,7 +3308,7 @@
     "nome": "LIMPA VIDRO SANCHES",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 16,
-    "estoque": "-16,00 un"
+    "estoque": "-17,00 un"
   },
   {
     "codigo": "1905",
@@ -3561,6 +3561,13 @@
     "categoria": "Embalagem",
     "preco": 5.5,
     "estoque": "-52,00 un"
+  },
+  {
+    "codigo": "2094",
+    "nome": "SACO SOS P PARDO C/50UN 17X10X24 PLUMA",
+    "categoria": "Embalagem",
+    "preco": 24,
+    "estoque": "-3,00 un"
   },
   {
     "codigo": "2094",
@@ -6605,7 +6612,7 @@
     "nome": "GANCHOS C/9UN",
     "categoria": "UTENSILIOS",
     "preco": 10,
-    "estoque": "2,00 un"
+    "estoque": "1,00 un"
   },
   {
     "codigo": "129022",
