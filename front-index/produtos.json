@@ -560,6 +560,13 @@
     "estoque": "-3,00 un"
   },
   {
+    "codigo": "402",
+    "nome": "FILM DE PVC 30MTS 28X15M TECKFIM",
+    "categoria": "ALIMENTO/GENERO ALIMENTICIO",
+    "preco": 4.5,
+    "estoque": "24,00 un"
+  },
+  {
     "codigo": "405",
     "nome": "GARFO SOBREMESA BRANCO C/50UN ELITE",
     "categoria": "DESCARTAVEIS",
@@ -1862,6 +1869,13 @@
     "estoque": "2,00 un"
   },
   {
+    "codigo": "0017",
+    "nome": "RODO MAGICO - CELESTE",
+    "categoria": "PRODUTO DE LIMPEZA",
+    "preco": 72,
+    "estoque": "0,00 un"
+  },
+  {
     "codigo": "0074",
     "nome": "GARRAFA PLASTICO 600ML ROSA NEON",
     "categoria": "UTENSILIOS",
@@ -3141,13 +3155,6 @@
     "categoria": "DESCARTAVEIS",
     "preco": 13.5,
     "estoque": "23,00 un"
-  },
-  {
-    "codigo": "1778",
-    "nome": "COPO 300ML CRISTAL C/10UN ELITE",
-    "categoria": "DESCARTAVEIS",
-    "preco": 7.5,
-    "estoque": "13,00 un"
   },
   {
     "codigo": "1778",
