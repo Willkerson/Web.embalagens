@@ -3602,7 +3602,7 @@
     "nome": "SACOLA BRANCA 1KG 35x45",
     "categoria": "Embalagem",
     "preco": 27,
-    "estoque": "41,00 un"
+    "estoque": "40,00 un"
   },
   {
     "codigo": "2103",
@@ -6115,7 +6115,7 @@
     "nome": "KITA GANCHOS",
     "categoria": "-",
     "preco": 9,
-    "estoque": "-3,00 un"
+    "estoque": "-4,00 un"
   },
   {
     "codigo": "31646",
@@ -6591,7 +6591,7 @@
     "nome": "GANCHOS C/4UN",
     "categoria": "UTENSILIOS",
     "preco": 8.5,
-    "estoque": "4,00 un"
+    "estoque": "3,00 un"
   },
   {
     "codigo": "129019",
