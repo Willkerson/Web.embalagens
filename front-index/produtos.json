@@ -952,6 +952,13 @@
     "estoque": "5,00 un"
   },
   {
+    "codigo": "584",
+    "nome": "COLA VINIL P/PVC 17G GARIN",
+    "categoria": "UTENSILIOS",
+    "preco": 14.99,
+    "estoque": "2,00 un"
+  },
+  {
     "codigo": "590",
     "nome": "COPO DESCARTAVEL TRANSPARNTE 80ML C/100UN TOTALPLAST",
     "categoria": "DESCARTAVEIS",
