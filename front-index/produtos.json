@@ -1039,7 +1039,7 @@
     "codigo": "637",
     "nome": "ASSADEIRA DE ALUMINIO OVAL 7L PRA VIAGEM",
     "categoria": "DESCARTAVEIS",
-    "preco": 11.5,
+    "preco": 8.5,
     "estoque": "3,00 un"
   },
   {
@@ -1081,7 +1081,7 @@
     "codigo": "650",
     "nome": "ASSADEIRA DE ALUMINIO RETANGULAR PRA VIAGEM 4L",
     "categoria": "DESCARTAVEIS",
-    "preco": 7,
+    "preco": 5.99,
     "estoque": "-6,00 un"
   },
   {
@@ -1971,7 +1971,7 @@
     "nome": "SACOS PLASTICO 200G 15X30X0,06 COLOMBO/HELVIPACK",
     "categoria": "Embalagem",
     "preco": 10,
-    "estoque": "-8,00 un"
+    "estoque": "-9,00 un"
   },
   {
     "codigo": "1017",
@@ -3092,6 +3092,13 @@
     "categoria": "Embalagem",
     "preco": 16.99,
     "estoque": "-37,00 un"
+  },
+  {
+    "codigo": "1751",
+    "nome": "ASSADEIRA DE ALUMINIO OVAL 4L PRA VIAGEM",
+    "categoria": "DESCARTAVEIS",
+    "preco": 5.99,
+    "estoque": "0,00 un"
   },
   {
     "codigo": "1755",
@@ -5607,6 +5614,13 @@
     "estoque": "4,00 un"
   },
   {
+    "codigo": "7832",
+    "nome": "GUARUFILME BOBINA PVC RES 28CMX300M C/SERRA",
+    "categoria": "Embalagem",
+    "preco": 107.99,
+    "estoque": "2,00 un"
+  },
+  {
     "codigo": "7874",
     "nome": "exacct retangular",
     "categoria": "Outras",
@@ -7299,13 +7313,6 @@
     "categoria": "Subproduto",
     "preco": 26,
     "estoque": "-1,00 un"
-  },
-  {
-    "codigo": "7893595170101",
-    "nome": "GUARUFILME BOBINA PVC RES 28CMX300M C/SERRA",
-    "categoria": "Embalagem",
-    "preco": 107.99,
-    "estoque": "2,00 un"
   },
   {
     "codigo": "7893595170102",
