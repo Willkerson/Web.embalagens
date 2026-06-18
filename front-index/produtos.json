@@ -378,6 +378,13 @@
     "estoque": "1,00 un"
   },
   {
+    "codigo": "318",
+    "nome": "CAIXA P/BOLO TORRE 40X40X22",
+    "categoria": "Embalagem",
+    "preco": 6.99,
+    "estoque": "1,00 un"
+  },
+  {
     "codigo": "319",
     "nome": "FACA REFEICAO PREMIUM BRANCA C/50UN",
     "categoria": "-",
@@ -3561,13 +3568,6 @@
     "categoria": "Embalagem",
     "preco": 5.5,
     "estoque": "-52,00 un"
-  },
-  {
-    "codigo": "2094",
-    "nome": "SACO SOS P PARDO C/50UN 17X10X24 PLUMA",
-    "categoria": "Embalagem",
-    "preco": 24,
-    "estoque": "-3,00 un"
   },
   {
     "codigo": "2094",
