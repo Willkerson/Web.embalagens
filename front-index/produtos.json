@@ -158,7 +158,7 @@
     "nome": "SABONETE LIQ. PEROLADO ONLY ERVA DOCE 2L START",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 25,
-    "estoque": "4,00 un"
+    "estoque": "3,00 un"
   },
   {
     "codigo": "153",
@@ -1103,7 +1103,7 @@
     "nome": "D7 750ML FOLHA DE ALUMINIO C/10UN WYDA",
     "categoria": "Embalagem",
     "preco": 14,
-    "estoque": "-19,00 un"
+    "estoque": "-20,00 un"
   },
   {
     "codigo": "660",
@@ -2006,7 +2006,7 @@
     "nome": "SACO P/ LIXO PRETO P8 60L C/100UN",
     "categoria": "SACO LIXO",
     "preco": 76.5,
-    "estoque": "7,00 un"
+    "estoque": "6,00 un"
   },
   {
     "codigo": "1044",
