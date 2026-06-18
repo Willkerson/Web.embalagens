@@ -228,7 +228,7 @@
     "nome": "PRENDEDOR ROUPA MADEIRA C/12UN",
     "categoria": "UTENSILIOS",
     "preco": 3,
-    "estoque": "5,00 un"
+    "estoque": "4,00 un"
   },
   {
     "codigo": "223",
@@ -312,7 +312,7 @@
     "nome": "ESPONJA MULTIUSO C/4UN ALCKLIN",
     "categoria": "UTENSILIOS",
     "preco": 3.5,
-    "estoque": "92,00 un"
+    "estoque": "91,00 un"
   },
   {
     "codigo": "294",
@@ -2265,7 +2265,7 @@
     "nome": "FIBRA BRANCA LIMP. LEVE BETTANIN",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 3,
-    "estoque": "-13,90 un"
+    "estoque": "-14,90 un"
   },
   {
     "codigo": "1151",
@@ -5044,7 +5044,7 @@
     "nome": "PAPEL TOALHA SCALA PLUS C/120 TOALHAS C/2 ROLOS",
     "categoria": "PRODUTO DE HIGIENE",
     "preco": 8,
-    "estoque": "41,00 un"
+    "estoque": "40,00 un"
   },
   {
     "codigo": "3267",
@@ -5289,7 +5289,7 @@
     "nome": "BOBINA PICOTADO 25X35 C/550UN (1.6KG) ALTAPLAST",
     "categoria": "Embalagem",
     "preco": 43.5,
-    "estoque": "1,00 un"
+    "estoque": "0,00 un"
   },
   {
     "codigo": "4008",
@@ -5471,7 +5471,7 @@
     "nome": "PRENDEDORES C/16UN TOP UTIL",
     "categoria": "-",
     "preco": 8,
-    "estoque": "4,00 un"
+    "estoque": "3,00 un"
   },
   {
     "codigo": "6666",
@@ -5583,7 +5583,7 @@
     "nome": "ESPONJA MULTIUSO NAO RISCA FLASHLIMP",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 5.5,
-    "estoque": "5,00 un"
+    "estoque": "4,00 un"
   },
   {
     "codigo": "7322",
