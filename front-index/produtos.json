@@ -413,6 +413,13 @@
     "estoque": "3,00 un"
   },
   {
+    "codigo": "333",
+    "nome": "MOP SPRAY 120CM C/RESERV. 300ML",
+    "categoria": "PRODUTO DE LIMPEZA",
+    "preco": 24.99,
+    "estoque": "2,00 un"
+  },
+  {
     "codigo": "334",
     "nome": "SACOLA UNIDADE GRANDE",
     "categoria": "SACO LIXO",
@@ -3133,7 +3140,7 @@
     "nome": "CESTO PLASTICO PRETO C/TAMPA 15L TRILHA",
     "categoria": "UTENSILIOS",
     "preco": 20.3,
-    "estoque": "-1,00 un"
+    "estoque": "-2,00 un"
   },
   {
     "codigo": "1769",
@@ -6472,7 +6479,7 @@
     "nome": "GLADE AUTOMATIC REFIL 2 UN (PROMOÇÃO)",
     "categoria": "-",
     "preco": 25,
-    "estoque": "-20,00 un"
+    "estoque": "-21,00 un"
   },
   {
     "codigo": "87687",
