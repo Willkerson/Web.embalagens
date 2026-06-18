@@ -2244,7 +2244,7 @@
     "nome": "FIBRA LIMP. USO GERAL 1UN 260X102MM BETTANIN",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 4,
-    "estoque": "-5,00 un"
+    "estoque": "-7,00 un"
   },
   {
     "codigo": "1150",
@@ -2461,7 +2461,7 @@
     "nome": "ESPONJA DE LÃ DE AÇO ASSOLAN 45G",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 3,
-    "estoque": "22,00 un"
+    "estoque": "20,00 un"
   },
   {
     "codigo": "1301",
@@ -3476,7 +3476,7 @@
     "nome": "LAVA ROUPAS EM PO 800G APYCE",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 5.9,
-    "estoque": "6,00 un"
+    "estoque": "5,00 un"
   },
   {
     "codigo": "2058",
