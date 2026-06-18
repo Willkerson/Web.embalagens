@@ -158,7 +158,7 @@
     "nome": "SABONETE LIQ. PEROLADO ONLY ERVA DOCE 2L START",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 25,
-    "estoque": "4,00 un"
+    "estoque": "3,00 un"
   },
   {
     "codigo": "153",
@@ -179,7 +179,7 @@
     "nome": "COLHER SOFT BRANCA C/50UN ELITE",
     "categoria": "DESCARTAVEIS",
     "preco": 6.5,
-    "estoque": "3,00 un"
+    "estoque": "2,00 un"
   },
   {
     "codigo": "178",
@@ -375,7 +375,7 @@
     "nome": "PAPEL HIGIENICO F/DUPLA C/16UN 10X30M NESS",
     "categoria": "PRODUTO DE HIGIENE",
     "preco": 31.99,
-    "estoque": "2,00 un"
+    "estoque": "1,00 un"
   },
   {
     "codigo": "319",
@@ -501,7 +501,7 @@
     "nome": "LUVA LATEX M PLUS SANRO LARANJA P/LIMPEZA",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 11.5,
-    "estoque": "9,00 un"
+    "estoque": "8,00 un"
   },
   {
     "codigo": "374",
@@ -669,7 +669,7 @@
     "nome": "POTE REDONDO 250ML C/TAMPA C/24UN PRAFESTA",
     "categoria": "DESCARTAVEIS",
     "preco": 19.99,
-    "estoque": "18,00 un"
+    "estoque": "17,00 un"
   },
   {
     "codigo": "445",
@@ -711,7 +711,7 @@
     "nome": "D56 B0LO E TORTA ROMA MEDIA B BRANCA",
     "categoria": "DESCARTAVEIS",
     "preco": 4,
-    "estoque": "38,00 un"
+    "estoque": "37,00 un"
   },
   {
     "codigo": "466",
@@ -1039,7 +1039,7 @@
     "codigo": "637",
     "nome": "ASSADEIRA DE ALUMINIO OVAL 7L PRA VIAGEM",
     "categoria": "DESCARTAVEIS",
-    "preco": 11.5,
+    "preco": 8.5,
     "estoque": "3,00 un"
   },
   {
@@ -1081,8 +1081,8 @@
     "codigo": "650",
     "nome": "ASSADEIRA DE ALUMINIO RETANGULAR PRA VIAGEM 4L",
     "categoria": "DESCARTAVEIS",
-    "preco": 7,
-    "estoque": "-6,00 un"
+    "preco": 5.99,
+    "estoque": "-7,00 un"
   },
   {
     "codigo": "656",
@@ -1103,7 +1103,7 @@
     "nome": "D7 750ML FOLHA DE ALUMINIO C/10UN WYDA",
     "categoria": "Embalagem",
     "preco": 14,
-    "estoque": "-19,00 un"
+    "estoque": "-20,00 un"
   },
   {
     "codigo": "660",
@@ -1418,7 +1418,7 @@
     "nome": "FILME PVC ESTICAVEL DF15 PROTECT 28CMX15M ALPFILM",
     "categoria": "Embalagem",
     "preco": 3.7,
-    "estoque": "-8,00 un"
+    "estoque": "3,00 un"
   },
   {
     "codigo": "795",
@@ -1943,7 +1943,7 @@
     "nome": "SACOS PLASTICO PEBD 1KG 15X30X0,06 COLOMBO/HELVIPACK",
     "categoria": "Embalagem",
     "preco": 46,
-    "estoque": "9,00 un"
+    "estoque": "8,00 un"
   },
   {
     "codigo": "1012",
@@ -1971,7 +1971,7 @@
     "nome": "SACOS PLASTICO 200G 15X30X0,06 COLOMBO/HELVIPACK",
     "categoria": "Embalagem",
     "preco": 10,
-    "estoque": "-8,00 un"
+    "estoque": "-9,00 un"
   },
   {
     "codigo": "1017",
@@ -2006,7 +2006,7 @@
     "nome": "SACO P/ LIXO PRETO P8 60L C/100UN",
     "categoria": "SACO LIXO",
     "preco": 76.5,
-    "estoque": "7,00 un"
+    "estoque": "6,00 un"
   },
   {
     "codigo": "1044",
@@ -3007,7 +3007,7 @@
     "nome": "HAMBURGUEIRA BH02 C/100UN BOM APETITE",
     "categoria": "DESCARTAVEIS",
     "preco": 28,
-    "estoque": "8,00 un"
+    "estoque": "7,00 un"
   },
   {
     "codigo": "1659",
@@ -3092,6 +3092,13 @@
     "categoria": "Embalagem",
     "preco": 16.99,
     "estoque": "-37,00 un"
+  },
+  {
+    "codigo": "1751",
+    "nome": "ASSADEIRA DE ALUMINIO OVAL 4L PRA VIAGEM",
+    "categoria": "DESCARTAVEIS",
+    "preco": 5.99,
+    "estoque": "0,00 un"
   },
   {
     "codigo": "1755",
@@ -3399,7 +3406,7 @@
     "nome": "TOALHA INTERFOLHA LUXO 20X21CM C/1000FOLHAS WHITE PAPER",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 22,
-    "estoque": "46,00 un"
+    "estoque": "40,00 un"
   },
   {
     "codigo": "1981",
@@ -3539,7 +3546,7 @@
     "nome": "FOLHA DE ALUMINIO 4MX30CM WYDA",
     "categoria": "Embalagem",
     "preco": 5.5,
-    "estoque": "-49,00 un"
+    "estoque": "-52,00 un"
   },
   {
     "codigo": "2094",
@@ -3931,7 +3938,7 @@
     "nome": "GUARDANAPO DE PAPEL 30X30CM C/50UN WHITEPAPER",
     "categoria": "DESCARTAVEIS",
     "preco": 3,
-    "estoque": "55,00 un"
+    "estoque": "53,00 un"
   },
   {
     "codigo": "2452",
@@ -4225,7 +4232,7 @@
     "nome": "ODORIZANTE DE AMBIENTE GEL 60G MARINE PURO AR",
     "categoria": "PRODUTO DE HIGIENE",
     "preco": 12.3,
-    "estoque": "-9,00 un"
+    "estoque": "-10,00 un"
   },
   {
     "codigo": "2806",
@@ -4337,7 +4344,7 @@
     "nome": "PAPEL ACOPLADO C/PELICULA 30X38 C/100UN",
     "categoria": "DESCARTAVEIS",
     "preco": 18.5,
-    "estoque": "11,00 un"
+    "estoque": "10,00 un"
   },
   {
     "codigo": "2842",
@@ -5401,7 +5408,7 @@
     "nome": "B120 FOLHA D ALUMINIO 500ML C/10UN PRAV.",
     "categoria": "Embalagem",
     "preco": 9.5,
-    "estoque": "4,00 un"
+    "estoque": "3,00 un"
   },
   {
     "codigo": "6050",
@@ -5605,6 +5612,13 @@
     "categoria": "Outras",
     "preco": 4.3,
     "estoque": "4,00 un"
+  },
+  {
+    "codigo": "7832",
+    "nome": "GUARUFILME BOBINA PVC RES 28CMX300M C/SERRA",
+    "categoria": "Embalagem",
+    "preco": 107.99,
+    "estoque": "2,00 un"
   },
   {
     "codigo": "7874",
@@ -6045,7 +6059,7 @@
     "nome": "G32MM TORTA MEDIA BAIXA 1KG",
     "categoria": "Embalagem",
     "preco": 1.99,
-    "estoque": "195,00 un"
+    "estoque": "191,00 un"
   },
   {
     "codigo": "28366",
@@ -7299,13 +7313,6 @@
     "categoria": "Subproduto",
     "preco": 26,
     "estoque": "-1,00 un"
-  },
-  {
-    "codigo": "7893595170101",
-    "nome": "GUARUFILME BOBINA PVC RES 28CMX300M C/SERRA",
-    "categoria": "Embalagem",
-    "preco": 107.99,
-    "estoque": "2,00 un"
   },
   {
     "codigo": "7893595170102",
