@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Estoque Mobile</title>
+
+<style>
+body{
+font-family:Arial,sans-serif;
+padding:15px;
+background:#f5f5f5;
+}
+
+input,button,select{
+width:100%;
+padding:12px;
+margin-top:8px;
+margin-bottom:8px;
+box-sizing:border-box;
+}
+
+.card{
+background:white;
+padding:12px;
+border-radius:8px;
+margin-bottom:10px;
+}
+
+.resultado{
+cursor:pointer;
+}
+
+.carrinho{
+border-left:4px solid #28a745;
+}
+
+.enviar{
+background:#28a745;
+color:white;
+border:none;
+font-size:18px;
+}
+
+.remover{
+background:#dc3545;
+color:white;
+border:none;
+padding:5px 10px;
+width:auto;
+}
+
+#resultados{
+margin-top:10px;
+}
+
+#carrinho{
+margin-top:20px;
+}
+</style>
+</head>
+<body>
+
+<h2>📦 Estoque Mobile</h2>
+
+<input
+id="busca"
+placeholder="Pesquisar produto..."
+>
+
+<div id="resultados"></div>
+
+<h3>🛒 Carrinho</h3>
+
+<div id="carrinho"></div>
+
+<button
+class="enviar"
+onclick="enviarMovimentacao()"
+>
+ENVIAR PARA ESTOQUE
+</button>
+
+<script src="app.js"></script>
+
+</body>
+</html>
