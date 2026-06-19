@@ -3,180 +3,650 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-
 <title>Estoque Pro</title>
-
 <style>
 
-body{
-margin:0;
-font-family:-apple-system, BlinkMacSystemFont, Arial;
-background:#f4f6f8;
-color:#1d1d1f;
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --azul: #0057FF;
+  --azul-light: #e8f0ff;
+  --verde: #00B37E;
+  --verde-light: #e6f7f2;
+  --amarelo: #F59E0B;
+  --amarelo-light: #fef3c7;
+  --vermelho: #E63946;
+  --vermelho-light: #fdecea;
+  --cinza-bg: #F2F4F7;
+  --cinza-borda: #E2E6EA;
+  --cinza-texto: #6B7280;
+  --texto: #111827;
+  --branco: #ffffff;
+  --sombra: 0 2px 8px rgba(0,0,0,0.08);
+  --sombra-lg: 0 8px 32px rgba(0,0,0,0.14);
+  --radius: 14px;
+  --radius-sm: 8px;
 }
 
-header{
-padding:16px;
-font-size:20px;
-font-weight:600;
-background:#fff;
-border-bottom:1px solid #e5e5e5;
-position:sticky;
-top:0;
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
+  background: var(--cinza-bg);
+  color: var(--texto);
+  min-height: 100vh;
 }
 
-.container{
-padding:12px;
+/* ── HEADER ── */
+header {
+  background: var(--branco);
+  border-bottom: 1px solid var(--cinza-borda);
+  position: sticky;
+  top: 0;
+  z-index: 100;
 }
 
-input{
-width:100%;
-padding:14px;
-border-radius:10px;
-border:1px solid #d0d7de;
-font-size:16px;
-outline:none;
-background:#fff;
+.header-inner {
+  max-width: 680px;
+  margin: 0 auto;
+  padding: 14px 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
-.card{
-background:#fff;
-padding:14px;
-border-radius:12px;
-margin-top:10px;
-border:1px solid #ececec;
-box-shadow:0 1px 2px rgba(0,0,0,0.03);
+.header-inner h1 {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--texto);
+  display: flex;
+  align-items: center;
+  gap: 8px;
 }
 
-.resultado{
-cursor:pointer;
-transition:0.2s;
+.badge-carrinho {
+  background: var(--azul);
+  color: #fff;
+  font-size: 12px;
+  font-weight: 700;
+  border-radius: 20px;
+  padding: 3px 10px;
+  cursor: pointer;
+  display: none;
+  align-items: center;
+  gap: 5px;
 }
 
-.resultado:active{
-background:#eef6ff;
+/* ── MAIN ── */
+main {
+  max-width: 680px;
+  margin: 0 auto;
+  padding: 16px 16px 120px;
 }
 
-#painel{
-position:fixed;
-bottom:0;
-left:0;
-right:0;
-background:#fff;
-border-top-left-radius:16px;
-border-top-right-radius:16px;
-box-shadow:0 -4px 20px rgba(0,0,0,0.08);
-padding:16px;
-display:none;
+/* ── BUSCA ── */
+.busca-wrap {
+  position: relative;
+  margin-bottom: 16px;
 }
 
-.btn-row{
-display:flex;
-gap:10px;
-margin-top:10px;
+.busca-wrap svg {
+  position: absolute;
+  left: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--cinza-texto);
+  width: 18px;
+  height: 18px;
+  pointer-events: none;
 }
 
-button{
-border:none;
-border-radius:10px;
-padding:14px;
-font-size:15px;
-cursor:pointer;
+#busca {
+  width: 100%;
+  padding: 14px 14px 14px 44px;
+  border-radius: var(--radius);
+  border: 1.5px solid var(--cinza-borda);
+  font-size: 16px;
+  outline: none;
+  background: var(--branco);
+  color: var(--texto);
+  box-shadow: var(--sombra);
+  transition: border-color 0.2s;
 }
 
-.azul{
-background:#2f80ed;
-color:#fff;
+#busca:focus {
+  border-color: var(--azul);
 }
 
-.cinza{
-background:#e9ecef;
+#busca::placeholder { color: #9CA3AF; }
+
+/* ── LABEL SEÇÃO ── */
+.secao-label {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--cinza-texto);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin-bottom: 8px;
 }
 
-.verde{
-background:#2ecc71;
-color:#fff;
+/* ── CARD PRODUTO ── */
+.card-produto {
+  background: var(--branco);
+  border-radius: var(--radius);
+  border: 1.5px solid var(--cinza-borda);
+  padding: 14px 16px;
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  cursor: pointer;
+  transition: border-color 0.18s, box-shadow 0.18s, background 0.18s;
+  box-shadow: var(--sombra);
 }
 
-.vermelho{
-background:#eb5757;
-color:#fff;
+.card-produto:active {
+  background: var(--azul-light);
+  border-color: var(--azul);
 }
 
-.qtd{
-text-align:center;
-font-size:22px;
-margin:10px 0;
+.card-produto-info {
+  flex: 1;
+  min-width: 0;
 }
 
-#carrinho{
-position:fixed;
-right:12px;
-bottom:12px;
-width:260px;
-background:#fff;
-border-radius:14px;
-box-shadow:0 6px 20px rgba(0,0,0,0.15);
-padding:12px;
-max-height:60vh;
-overflow:auto;
+.card-produto-nome {
+  font-size: 15px;
+  font-weight: 600;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
-.item{
-font-size:13px;
-border-bottom:1px solid #eee;
-padding:6px 0;
+.card-produto-cat {
+  font-size: 12px;
+  color: var(--cinza-texto);
+  margin-top: 2px;
 }
 
-.small{
-font-size:12px;
-color:#666;
+.badge-estoque {
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  min-width: 58px;
+}
+
+.badge-num {
+  font-size: 20px;
+  font-weight: 800;
+  line-height: 1;
+}
+
+.badge-label {
+  font-size: 10px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  border-radius: 20px;
+  padding: 2px 8px;
+}
+
+/* cores por status */
+.status-ok   .badge-num   { color: var(--verde); }
+.status-ok   .badge-label { background: var(--verde-light); color: var(--verde); }
+.status-low  .badge-num   { color: var(--amarelo); }
+.status-low  .badge-label { background: var(--amarelo-light); color: #92400E; }
+.status-zero .badge-num   { color: var(--vermelho); }
+.status-zero .badge-label { background: var(--vermelho-light); color: var(--vermelho); }
+
+.chevron {
+  color: #D1D5DB;
+  flex-shrink: 0;
+}
+
+/* ── VAZIO ── */
+.vazio {
+  text-align: center;
+  padding: 40px 20px;
+  color: var(--cinza-texto);
+  font-size: 14px;
+}
+
+/* ── OVERLAY ── */
+#overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.3);
+  z-index: 200;
+  backdrop-filter: blur(2px);
+}
+
+/* ── PAINEL INFERIOR ── */
+#painel {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: var(--branco);
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  box-shadow: var(--sombra-lg);
+  padding: 0 16px 24px;
+  z-index: 300;
+  display: none;
+  max-width: 680px;
+  margin: 0 auto;
+  transform: translateY(100%);
+  transition: transform 0.28s cubic-bezier(0.4,0,0.2,1);
+}
+
+#painel.aberto {
+  transform: translateY(0);
+}
+
+.painel-handle {
+  width: 36px;
+  height: 4px;
+  background: #E2E6EA;
+  border-radius: 99px;
+  margin: 12px auto 16px;
+}
+
+.painel-header {
+  margin-bottom: 16px;
+}
+
+.painel-nome {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--texto);
+  margin-bottom: 6px;
+}
+
+.painel-estoque-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.painel-estoque-num {
+  font-size: 28px;
+  font-weight: 800;
+}
+
+.painel-estoque-txt {
+  font-size: 13px;
+  color: var(--cinza-texto);
+}
+
+/* contador */
+.contador-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0;
+  background: var(--cinza-bg);
+  border-radius: var(--radius);
+  padding: 6px;
+  margin-bottom: 16px;
+}
+
+.btn-contador {
+  background: var(--branco);
+  border: 1.5px solid var(--cinza-borda);
+  border-radius: var(--radius-sm);
+  width: 48px;
+  height: 48px;
+  font-size: 22px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--texto);
+  font-weight: 700;
+  flex-shrink: 0;
+  transition: background 0.15s;
+  user-select: none;
+}
+
+.btn-contador:active { background: var(--cinza-borda); }
+
+#qtd {
+  font-size: 26px;
+  font-weight: 800;
+  width: 80px;
+  text-align: center;
+  color: var(--texto);
+}
+
+/* botões ação */
+.btn-row {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.btn {
+  flex: 1;
+  border: none;
+  border-radius: var(--radius);
+  padding: 16px;
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: opacity 0.15s, transform 0.1s;
+}
+
+.btn:active { opacity: 0.85; transform: scale(0.98); }
+
+.btn-verde   { background: var(--verde); color: #fff; }
+.btn-vermelho{ background: var(--vermelho); color: #fff; }
+.btn-fechar  { background: var(--cinza-bg); color: var(--cinza-texto); width: 100%; border: none; border-radius: var(--radius); padding: 14px; font-size: 15px; font-weight: 600; cursor: pointer; }
+
+/* ── CARRINHO PAINEL ── */
+#carrinho-painel {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: var(--branco);
+  z-index: 400;
+  flex-direction: column;
+}
+
+#carrinho-painel.aberto { display: flex; }
+
+.carrinho-header {
+  padding: 16px;
+  border-bottom: 1px solid var(--cinza-borda);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 680px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.carrinho-header h2 {
+  font-size: 17px;
+  font-weight: 700;
+}
+
+.btn-fechar-carrinho {
+  background: var(--cinza-bg);
+  border: none;
+  border-radius: 99px;
+  width: 32px;
+  height: 32px;
+  font-size: 16px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--cinza-texto);
+}
+
+.carrinho-lista {
+  flex: 1;
+  overflow-y: auto;
+  padding: 16px;
+  max-width: 680px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.carrinho-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 0;
+  border-bottom: 1px solid var(--cinza-borda);
+}
+
+.carrinho-item-nome {
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.carrinho-item-qtd {
+  font-size: 13px;
+  color: var(--cinza-texto);
+  margin-top: 2px;
+}
+
+.carrinho-badge {
+  font-size: 13px;
+  font-weight: 700;
+  padding: 4px 12px;
+  border-radius: 99px;
+}
+
+.badge-entrada { background: var(--verde-light); color: var(--verde); }
+.badge-saida   { background: var(--vermelho-light); color: var(--vermelho); }
+
+.carrinho-footer {
+  padding: 16px;
+  border-top: 1px solid var(--cinza-borda);
+  max-width: 680px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.btn-enviar {
+  width: 100%;
+  background: var(--azul);
+  color: #fff;
+  border: none;
+  border-radius: var(--radius);
+  padding: 17px;
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: opacity 0.15s;
+}
+
+.btn-enviar:active { opacity: 0.85; }
+
+.carrinho-vazio {
+  text-align: center;
+  padding: 60px 20px;
+  color: var(--cinza-texto);
+  font-size: 14px;
 }
 
 </style>
 </head>
-
 <body>
 
-<header>📦 Estoque Pro</header>
+<header>
+  <div class="header-inner">
+    <h1>📦 Estoque Pro</h1>
+    <div class="badge-carrinho" id="btnCarrinho">
+      🛒 <span id="carrinhoCount">0</span>
+    </div>
+  </div>
+</header>
 
-<div class="container">
+<main>
+  <div class="busca-wrap">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
+    </svg>
+    <input id="busca" placeholder="Buscar produto..." autocomplete="off">
+  </div>
 
-<input id="busca" placeholder="Buscar produto...">
+  <div class="secao-label">Produtos</div>
+  <div id="resultados"></div>
+</main>
 
-<div id="resultados"></div>
-
-</div>
+<!-- overlay -->
+<div id="overlay" onclick="fechar()"></div>
 
 <!-- PAINEL -->
 <div id="painel">
+  <div class="painel-handle"></div>
 
-<h3 id="nome"></h3>
-<div class="small">Estoque: <span id="estoque"></span></div>
+  <div class="painel-header">
+    <div class="painel-nome" id="nome"></div>
+    <div class="painel-estoque-row">
+      <div class="painel-estoque-num" id="estoque-num" style="color:var(--verde)">—</div>
+      <div class="painel-estoque-txt">em estoque</div>
+    </div>
+  </div>
 
-<div class="btn-row">
-<button class="cinza" onclick="menos()">-</button>
-<div class="qtd" id="qtd">1</div>
-<button class="cinza" onclick="mais()">+</button>
+  <div class="contador-wrap">
+    <button class="btn-contador" onclick="menos()">−</button>
+    <div id="qtd">1</div>
+    <button class="btn-contador" onclick="mais()">+</button>
+  </div>
+
+  <div class="btn-row">
+    <button class="btn btn-verde"    onclick="add('entrada')">↑ Entrada</button>
+    <button class="btn btn-vermelho" onclick="add('saida')">↓ Saída</button>
+  </div>
+
+  <button class="btn-fechar" onclick="fechar()">Cancelar</button>
 </div>
 
-<div class="btn-row">
-<button class="verde" onclick="add('entrada')">Entrada</button>
-<button class="vermelho" onclick="add('saida')">Saída</button>
+<!-- CARRINHO PAINEL -->
+<div id="carrinho-painel">
+  <div class="carrinho-header">
+    <h2>🛒 Carrinho</h2>
+    <button class="btn-fechar-carrinho" onclick="fecharCarrinho()">✕</button>
+  </div>
+  <div class="carrinho-lista" id="listaCarrinho"></div>
+  <div class="carrinho-footer">
+    <button class="btn-enviar" onclick="enviar()">Enviar tudo</button>
+  </div>
 </div>
 
-<button class="cinza" onclick="fechar()">Fechar</button>
+<script>
+/* ── dados de demonstração ── */
+const produtos = [
+  { id:1, nome:'Caixa de Papelão 40x30x20', categoria:'Caixas', estoque:142 },
+  { id:2, nome:'Fita Adesiva 50mm',          categoria:'Fixação', estoque:3   },
+  { id:3, nome:'Saco Plástico 30x40',        categoria:'Sacolas', estoque:0   },
+  { id:4, nome:'Papel Kraft 80g/m²',         categoria:'Papéis',  estoque:27  },
+  { id:5, nome:'Plástico Bolha 50m',         categoria:'Proteção',estoque:8   },
+  { id:6, nome:'Etiqueta Adesiva A4',        categoria:'Etiquetas',estoque:55 },
+];
 
-</div>
+let carrinho = [];
+let produtoAtual = null;
+let qtdAtual = 1;
 
-<!-- CARRINHO -->
-<div id="carrinho">
-<b>🛒 Carrinho</b>
-<div id="listaCarrinho"></div>
-<button class="azul" onclick="enviar()">Enviar tudo</button>
-</div>
+function statusEstoque(q){
+  if(q === 0)  return 'zero';
+  if(q <= 5)   return 'low';
+  return 'ok';
+}
 
-<script src="app.js"></script>
+function labelStatus(q){
+  if(q === 0) return 'Zerado';
+  if(q <= 5)  return 'Baixo';
+  return 'OK';
+}
 
+function renderizarProdutos(lista){
+  const el = document.getElementById('resultados');
+  if(!lista.length){
+    el.innerHTML = '<div class="vazio">Nenhum produto encontrado.</div>';
+    return;
+  }
+  el.innerHTML = lista.map(p => {
+    const st = statusEstoque(p.estoque);
+    return `
+    <div class="card-produto status-${st}" onclick="abrirPainel(${p.id})">
+      <div class="card-produto-info">
+        <div class="card-produto-nome">${p.nome}</div>
+        <div class="card-produto-cat">${p.categoria}</div>
+      </div>
+      <div class="badge-estoque">
+        <div class="badge-num">${p.estoque}</div>
+        <div class="badge-label">${labelStatus(p.estoque)}</div>
+      </div>
+      <svg class="chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+    </div>`;
+  }).join('');
+}
+
+renderizarProdutos(produtos);
+
+document.getElementById('busca').addEventListener('input', function(){
+  const q = this.value.toLowerCase();
+  renderizarProdutos(q ? produtos.filter(p => p.nome.toLowerCase().includes(q) || p.categoria.toLowerCase().includes(q)) : produtos);
+});
+
+/* ── painel ── */
+function abrirPainel(id){
+  produtoAtual = produtos.find(p => p.id === id);
+  qtdAtual = 1;
+  document.getElementById('nome').textContent = produtoAtual.nome;
+  const estoqueEl = document.getElementById('estoque-num');
+  estoqueEl.textContent = produtoAtual.estoque;
+  const cor = produtoAtual.estoque === 0 ? 'var(--vermelho)' : produtoAtual.estoque <= 5 ? 'var(--amarelo)' : 'var(--verde)';
+  estoqueEl.style.color = cor;
+  document.getElementById('qtd').textContent = 1;
+
+  document.getElementById('overlay').style.display = 'block';
+  const p = document.getElementById('painel');
+  p.style.display = 'block';
+  setTimeout(() => p.classList.add('aberto'), 10);
+}
+
+function fechar(){
+  const p = document.getElementById('painel');
+  p.classList.remove('aberto');
+  setTimeout(()=>{ p.style.display='none'; }, 280);
+  document.getElementById('overlay').style.display = 'none';
+}
+
+function mais(){ qtdAtual++; document.getElementById('qtd').textContent = qtdAtual; }
+function menos(){ if(qtdAtual > 1){ qtdAtual--; document.getElementById('qtd').textContent = qtdAtual; } }
+
+function add(tipo){
+  carrinho.push({ produto: produtoAtual, qtd: qtdAtual, tipo });
+  atualizarBadge();
+  fechar();
+}
+
+/* ── carrinho ── */
+function atualizarBadge(){
+  const n = carrinho.length;
+  const btn = document.getElementById('btnCarrinho');
+  document.getElementById('carrinhoCount').textContent = n;
+  btn.style.display = n ? 'flex' : 'none';
+}
+
+document.getElementById('btnCarrinho').onclick = abrirCarrinho;
+
+function abrirCarrinho(){
+  const lista = document.getElementById('listaCarrinho');
+  if(!carrinho.length){
+    lista.innerHTML = '<div class="carrinho-vazio">Nenhum item no carrinho.</div>';
+  } else {
+    lista.innerHTML = carrinho.map((it,i) => `
+      <div class="carrinho-item">
+        <div>
+          <div class="carrinho-item-nome">${it.produto.nome}</div>
+          <div class="carrinho-item-qtd">${it.qtd} unidade${it.qtd>1?'s':''}</div>
+        </div>
+        <span class="carrinho-badge badge-${it.tipo}">${it.tipo==='entrada'?'↑ Entrada':'↓ Saída'}</span>
+      </div>`).join('');
+  }
+  document.getElementById('carrinho-painel').classList.add('aberto');
+}
+
+function fecharCarrinho(){
+  document.getElementById('carrinho-painel').classList.remove('aberto');
+}
+
+function enviar(){
+  alert(`${carrinho.length} movimentação(ões) enviada(s)!`);
+  carrinho = [];
+  atualizarBadge();
+  fecharCarrinho();
+}
+</script>
 </body>
 </html>
