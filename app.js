@@ -1,44 +1,42 @@
-console.log("APP CARREGOU");
+console.log("APP OK");
 
 let produtos = [];
-let produtoAtual = null;
-let quantidade = 1;
+let carrinho = [];
+let atual = null;
+let qtd = 1;
 
-// CARREGA PRODUTOS
+// LOAD
 fetch("front-index/produtos.json")
 .then(r => r.json())
-.then(data => {
-produtos = data;
-console.log("Produtos:", produtos.length);
-});
+.then(data => produtos = data);
 
 // BUSCA
 document.getElementById("busca").addEventListener("input", (e) => {
 
-const termo = e.target.value.toLowerCase();
+const t = e.target.value.toLowerCase();
 
 const div = document.getElementById("resultados");
 
-if (termo.length < 2) {
+if(t.length < 2){
 div.innerHTML = "";
 return;
 }
 
-const encontrados = produtos.filter(p =>
-(p.nome || "").toLowerCase().includes(termo) ||
-String(p.codigo).includes(termo)
+const res = produtos.filter(p =>
+(p.nome || "").toLowerCase().includes(t) ||
+String(p.codigo).includes(t)
 );
 
 div.innerHTML = "";
 
-encontrados.slice(0, 10).forEach(p => {
+res.slice(0, 10).forEach(p => {
 
 div.innerHTML += `
 <div class="card resultado"
-onclick="abrirProduto('${p.codigo}')">
+onclick="abrir('${p.codigo}')">
 
 <b>${p.nome}</b><br>
-Código: ${p.codigo}
+<span class="small">${p.codigo}</span>
 
 </div>
 `;
@@ -47,52 +45,85 @@ Código: ${p.codigo}
 
 });
 
-// ABRIR ESTILO IFOOD
-function abrirProduto(codigo){
+// ABRIR PAINEL
+function abrir(codigo){
 
-produtoAtual = produtos.find(p =>
-String(p.codigo) === String(codigo)
-);
+atual = produtos.find(p => String(p.codigo) === String(codigo));
 
-if(!produtoAtual) return;
+qtd = 1;
 
-quantidade = 1;
+document.getElementById("nome").innerText = atual.nome;
+document.getElementById("estoque").innerText = atual.estoque || 0;
+document.getElementById("qtd").innerText = qtd;
 
-document.getElementById("nomeProduto").innerText = produtoAtual.nome;
-document.getElementById("estoqueProduto").innerText = produtoAtual.estoque || 0;
-document.getElementById("qtd").innerText = quantidade;
-
-document.getElementById("painelProduto").style.display = "block";
-
+document.getElementById("painel").style.display = "block";
 document.getElementById("resultados").innerHTML = "";
 document.getElementById("busca").value = "";
 }
 
-function aumentar(){
-quantidade++;
-document.getElementById("qtd").innerText = quantidade;
+function mais(){
+qtd++;
+document.getElementById("qtd").innerText = qtd;
 }
 
-function diminuir(){
-if(quantidade > 1) quantidade--;
-document.getElementById("qtd").innerText = quantidade;
+function menos(){
+if(qtd > 1) qtd--;
+document.getElementById("qtd").innerText = qtd;
 }
 
-function confirmar(tipo){
+// ADD CARRINHO
+function add(tipo){
 
-if(!produtoAtual) return;
+carrinho.push({
+nome: atual.nome,
+codigo: atual.codigo,
+qtd,
+tipo,
+estoque: atual.estoque || 0
+});
 
-alert(
-`${tipo.toUpperCase()} enviado:\n${produtoAtual.nome}\nQtd: ${quantidade}`
-);
-
-// aqui depois você salva no backend
-
-fecharPainel();
+renderCarrinho();
+fechar();
 }
 
-function fecharPainel(){
-document.getElementById("painelProduto").style.display = "none";
-produtoAtual = null;
-quantidade = 1;
+// CARRINHO
+function renderCarrinho(){
+
+const div = document.getElementById("listaCarrinho");
+
+div.innerHTML = "";
+
+carrinho.forEach((i, index) => {
+
+div.innerHTML += `
+<div class="item">
+<b>${i.nome}</b><br>
+${i.tipo.toUpperCase()} - ${i.qtd}
+</div>
+`;
+
+});
+
+}
+
+// FECHAR PAINEL
+function fechar(){
+document.getElementById("painel").style.display = "none";
+atual = null;
+}
+
+// ENVIAR
+function enviar(){
+
+if(!carrinho.length){
+alert("Carrinho vazio");
+return;
+}
+
+console.table(carrinho);
+
+alert("Enviado " + carrinho.length + " itens");
+
+carrinho = [];
+renderCarrinho();
 }
