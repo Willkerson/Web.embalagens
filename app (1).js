@@ -2,7 +2,7 @@ let produtos = [];
 let carrinho = [];
 
 // CARREGA PRODUTOS
-fetch("https://raw.githubusercontent.com/Willkerson/Web.embalagens/main/front-index/produtos.json")
+fetch("front-index/produtos.json")
   .then(r => {
     console.log("STATUS:", r.status);
 
