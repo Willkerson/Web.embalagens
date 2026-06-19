@@ -10,9 +10,8 @@ fetch("front-index/produtos.json")
   .then(r => r.json())
   .then(data => {
     produtos = data;
-    console.log("Produtos carregados:", produtos);
-  })
-  .catch(err => console.error("Erro:", err));
+    console.log("Produtos carregados:", produtos.length);
+  });
 
 // ── UTILS ──
 function statusEstoque(q) {
@@ -48,7 +47,7 @@ document.getElementById("busca").addEventListener("input", function () {
   }
 
   div.innerHTML = res.slice(0, 10).map(p => {
-    const est = estoqueNumero(p.estoque);
+    const est = p.estoque || 0;
     const st  = statusEstoque(est);
     return `
     <div class="card-produto status-${st}" onclick="abrir('${p.codigo}')">
@@ -67,20 +66,13 @@ document.getElementById("busca").addEventListener("input", function () {
     </div>`;
   }).join('');
 });
-function estoqueNumero(valor) {
-  return parseFloat(
-    String(valor)
-      .replace(" un", "")
-      .replace(/\./g, "")
-      .replace(",", ".")
-  ) || 0;
-}
+
 // ── ABRIR PAINEL ──
 function abrir(codigo) {
   atual = produtos.find(p => String(p.codigo) === String(codigo));
   qtdAtual = 1;
 
-  const est = estoqueNumero(atual.estoque);
+  const est = atual.estoque || 0;
   const cor = est === 0 ? 'var(--vermelho)' : est <= 5 ? 'var(--amarelo)' : 'var(--verde)';
 
   document.getElementById("nome").textContent        = atual.nome;
