@@ -1,204 +1,98 @@
 console.log("APP CARREGOU");
 
 let produtos = [];
-let carrinho = [];
+let produtoAtual = null;
+let quantidade = 1;
 
 // CARREGA PRODUTOS
 fetch("front-index/produtos.json")
-  .then(r => {
-    if (!r.ok) {
-      throw new Error("Não foi possível carregar produtos.json");
-    }
-    return r.json();
-  })
-  .then(data => {
-    produtos = data;
-    console.log("Produtos carregados:", produtos.length);
-  })
-  .catch(err => {
-    console.error(err);
-
-    const div = document.getElementById("resultados");
-    if (div) {
-      div.innerHTML =
-        "<div class='card'>Erro ao carregar produtos.json</div>";
-    }
-  });
-
-const busca = document.getElementById("busca");
-
-// BUSCA
-busca.addEventListener("input", () => {
-  const termo = busca.value.toLowerCase().trim();
-  const div = document.getElementById("resultados");
-
-  if (termo.length < 2) {
-    div.innerHTML = "";
-    return;
-  }
-
-  const encontrados = produtos.filter(produto => {
-    const nome = (produto.nome || "").toLowerCase();
-    const codigo = String(produto.codigo || "");
-
-    return nome.includes(termo) || codigo.includes(termo);
-  });
-
-  mostrarSugestoes(encontrados);
+.then(r => r.json())
+.then(data => {
+produtos = data;
+console.log("Produtos:", produtos.length);
 });
 
-function mostrarSugestoes(lista) {
-  const div = document.getElementById("resultados");
+// BUSCA
+document.getElementById("busca").addEventListener("input", (e) => {
 
-  div.innerHTML = "";
+const termo = e.target.value.toLowerCase();
 
-  if (!lista.length) {
-    div.innerHTML = `
-      <div class="card">
-        Nenhum produto encontrado
-      </div>
-    `;
-    return;
-  }
+const div = document.getElementById("resultados");
 
-  lista.slice(0, 10).forEach(produto => {
-    div.innerHTML += `
-      <div class="card resultado"
-        onclick="selecionarProduto('${produto.codigo}')">
-        <b>${produto.nome}</b><br>
-        Código: ${produto.codigo}
-      </div>
-    `;
-  });
+if (termo.length < 2) {
+div.innerHTML = "";
+return;
 }
 
-function selecionarProduto(codigo) {
-  const produto = produtos.find(
-    p => String(p.codigo) === String(codigo)
-  );
+const encontrados = produtos.filter(p =>
+(p.nome || "").toLowerCase().includes(termo) ||
+String(p.codigo).includes(termo)
+);
 
-  if (!produto) return;
+div.innerHTML = "";
 
-  document.getElementById("busca").value = produto.nome;
+encontrados.slice(0, 10).forEach(p => {
 
-  const div = document.getElementById("resultados");
+div.innerHTML += `
+<div class="card resultado"
+onclick="abrirProduto('${p.codigo}')">
 
-  div.innerHTML = `
-    <div class="card">
+<b>${p.nome}</b><br>
+Código: ${p.codigo}
 
-      <h3>${produto.nome}</h3>
+</div>
+`;
 
-      <p>Código: ${produto.codigo}</p>
+});
 
-      <p>Estoque atual: ${produto.estoque || 0}</p>
+});
 
-      <label>Quantidade</label>
-      <input type="number" min="1" value="1"
-        id="qtd_${produto.codigo}">
+// ABRIR ESTILO IFOOD
+function abrirProduto(codigo){
 
-      <label>Movimento</label>
-      <select id="tipo_${produto.codigo}">
-        <option value="entrada">Entrada</option>
-        <option value="saida">Saída</option>
-      </select>
+produtoAtual = produtos.find(p =>
+String(p.codigo) === String(codigo)
+);
 
-      <button onclick="adicionarCarrinho('${produto.codigo}')">
-        Adicionar ao Carrinho
-      </button>
+if(!produtoAtual) return;
 
-    </div>
-  `;
+quantidade = 1;
+
+document.getElementById("nomeProduto").innerText = produtoAtual.nome;
+document.getElementById("estoqueProduto").innerText = produtoAtual.estoque || 0;
+document.getElementById("qtd").innerText = quantidade;
+
+document.getElementById("painelProduto").style.display = "block";
+
+document.getElementById("resultados").innerHTML = "";
+document.getElementById("busca").value = "";
 }
 
-function adicionarCarrinho(codigo) {
-  const produto = produtos.find(
-    p => String(p.codigo) === String(codigo)
-  );
-
-  if (!produto) {
-    alert("Produto não encontrado");
-    return;
-  }
-
-  const quantidade = Number(
-    document.getElementById(`qtd_${codigo}`).value
-  );
-
-  const tipo = document.getElementById(`tipo_${codigo}`).value;
-
-  carrinho.push({
-    codigo: produto.codigo,
-    nome: produto.nome,
-    estoque: produto.estoque || 0,
-    quantidade,
-    tipo
-  });
-
-  document.getElementById("busca").value = "";
-  document.getElementById("resultados").innerHTML = "";
-
-  renderCarrinho();
+function aumentar(){
+quantidade++;
+document.getElementById("qtd").innerText = quantidade;
 }
 
-function renderCarrinho() {
-  const div = document.getElementById("carrinho");
-
-  div.innerHTML = "";
-
-  if (!carrinho.length) {
-    div.innerHTML = `
-      <div class="card">
-        Carrinho vazio
-      </div>
-    `;
-    return;
-  }
-
-  carrinho.forEach((item, index) => {
-    const atual = Number(item.estoque) || 0;
-
-    const futuro =
-      item.tipo === "entrada"
-        ? atual + item.quantidade
-        : atual - item.quantidade;
-
-    div.innerHTML += `
-      <div class="card carrinho">
-
-        <b>${item.nome}</b><br>
-
-        Estoque atual: ${atual}<br>
-
-        Movimento:
-        ${item.tipo === "entrada" ? "+" : "-"}
-        ${item.quantidade}<br>
-
-        Estoque previsto: ${futuro}
-
-        <br><br>
-
-        <button class="remover"
-          onclick="removerCarrinho(${index})">
-          Remover
-        </button>
-
-      </div>
-    `;
-  });
+function diminuir(){
+if(quantidade > 1) quantidade--;
+document.getElementById("qtd").innerText = quantidade;
 }
 
-function removerCarrinho(index) {
-  carrinho.splice(index, 1);
-  renderCarrinho();
+function confirmar(tipo){
+
+if(!produtoAtual) return;
+
+alert(
+`${tipo.toUpperCase()} enviado:\n${produtoAtual.nome}\nQtd: ${quantidade}`
+);
+
+// aqui depois você salva no backend
+
+fecharPainel();
 }
 
-function enviarMovimentacao() {
-  if (!carrinho.length) {
-    alert("Carrinho vazio");
-    return;
-  }
-
-  console.table(carrinho);
-
-  alert(`Movimentação pronta.\n\nProdutos: ${carrinho.length}`);
+function fecharPainel(){
+document.getElementById("painelProduto").style.display = "none";
+produtoAtual = null;
+quantidade = 1;
 }
