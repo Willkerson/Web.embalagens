@@ -1,3 +1,4 @@
+console.log("APP CARREGOU");
 let produtos = [];
 let carrinho = [];
 
