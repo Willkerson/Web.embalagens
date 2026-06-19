@@ -3,238 +3,286 @@ let carrinho = [];
 
 // CARREGA PRODUTOS
 fetch("front-index/produtos.json")
-  .then(r => {
-    console.log("STATUS:", r.status);
+.then(r => {
+if (!r.ok) {
+throw new Error("Não foi possível carregar produtos.json");
+}
+return r.json();
+})
+.then(data => {
+produtos = data;
+console.log("Produtos carregados:", produtos.length);
+})
+.catch(err => {
+console.error(err);
 
-    if (!r.ok) {
-      throw new Error("Não foi possível carregar produtos.json");
-    }
+```
+document.getElementById("resultados").innerHTML =
+  "<div class='card'>Erro ao carregar produtos.json</div>";
+```
 
-    return r.json();
-  })
-  .then(data => {
-    console.log("Produtos carregados:", data.length);
-    console.log("Primeiro produto:", data[0]);
-
-    produtos = data;
-  })
-  .catch(err => {
-    console.error("Erro:", err);
-
-    document.getElementById("resultados").innerHTML =
-      "<div class='card'>Erro ao carregar produtos.json</div>";
-  });
+});
 
 const busca = document.getElementById("busca");
 
+// BUSCA COM SUGESTÕES
 busca.addEventListener("input", () => {
 
-  if (!produtos.length) {
-    return;
-  }
+const termo = busca.value.toLowerCase().trim();
 
-  const termo = busca.value.toLowerCase().trim();
+const div = document.getElementById("resultados");
 
-  if (termo.length < 2) {
-    document.getElementById("resultados").innerHTML = "";
-    return;
-  }
+if (termo.length < 2) {
+div.innerHTML = "";
+return;
+}
 
-  const encontrados = produtos.filter(produto =>
-    produto.nome &&
-    produto.nome.toLowerCase().includes(termo)
-  );
+const encontrados = produtos.filter(produto => {
 
-  mostrarResultados(encontrados);
+```
+const nome = (produto.nome || "").toLowerCase();
+const codigo = String(produto.codigo || "");
+
+return (
+  nome.includes(termo) ||
+  codigo.includes(termo)
+);
+```
+
 });
 
-function mostrarResultados(lista) {
+mostrarSugestoes(encontrados);
 
-  const div = document.getElementById("resultados");
+});
 
-  div.innerHTML = "";
+function mostrarSugestoes(lista) {
 
-  if (!lista.length) {
+const div = document.getElementById("resultados");
 
-    div.innerHTML = `
-      <div class="card">
-        Nenhum produto encontrado.
-      </div>
-    `;
+div.innerHTML = "";
 
-    return;
-  }
+if (!lista.length) {
 
-  lista.slice(0, 20).forEach(produto => {
+```
+div.innerHTML = `
+  <div class="card">
+    Nenhum produto encontrado
+  </div>
+`;
 
-    div.innerHTML += `
-      <div class="card resultado">
+return;
+```
 
-        <b>${produto.nome}</b>
+}
 
-        <br>
+lista.slice(0, 10).forEach(produto => {
 
-        Código:
-        ${produto.codigo}
+```
+div.innerHTML += `
+  <div
+    class="card resultado"
+    onclick="selecionarProduto('${produto.codigo}')"
+  >
+    <b>${produto.nome}</b>
+    <br>
+    Código: ${produto.codigo}
+  </div>
+`;
+```
 
-        <br>
+});
 
-        Estoque:
-        ${produto.estoque || "0"}
+}
 
-        <br><br>
+function selecionarProduto(codigo) {
 
-        Quantidade:
+const produto = produtos.find(
+p => String(p.codigo) === String(codigo)
+);
 
-        <input
-          type="number"
-          min="1"
-          id="qtd_${produto.codigo}"
-          value="1"
-        >
+if (!produto) return;
 
-        <select id="tipo_${produto.codigo}">
-          <option value="entrada">
-            Entrada
-          </option>
+document.getElementById("busca").value = produto.nome;
 
-          <option value="saida">
-            Saída
-          </option>
-        </select>
+const div = document.getElementById("resultados");
 
-        <button
-          onclick="adicionarCarrinho('${produto.codigo}')"
-        >
-          Adicionar ao Carrinho
-        </button>
+div.innerHTML = ` <div class="card">
 
-      </div>
-    `;
-  });
+```
+  <h3>${produto.nome}</h3>
+
+  <p>
+    Código: ${produto.codigo}
+  </p>
+
+  <p>
+    Estoque atual: ${produto.estoque || 0}
+  </p>
+
+  <label>Quantidade</label>
+
+  <input
+    type="number"
+    min="1"
+    value="1"
+    id="qtd_${produto.codigo}"
+  >
+
+  <label>Movimento</label>
+
+  <select id="tipo_${produto.codigo}">
+    <option value="entrada">
+      Entrada
+    </option>
+
+    <option value="saida">
+      Saída
+    </option>
+  </select>
+
+  <button
+    onclick="adicionarCarrinho('${produto.codigo}')"
+  >
+    Adicionar ao Carrinho
+  </button>
+
+</div>
+```
+
+`;
 }
 
 function adicionarCarrinho(codigo) {
 
-  const produto = produtos.find(
-    p => String(p.codigo) === String(codigo)
-  );
+const produto = produtos.find(
+p => String(p.codigo) === String(codigo)
+);
 
-  if (!produto) {
-    alert("Produto não encontrado");
-    return;
-  }
+if (!produto) {
+alert("Produto não encontrado");
+return;
+}
 
-  const quantidade = Number(
-    document.getElementById(`qtd_${codigo}`).value
-  );
+const quantidade = Number(
+document.getElementById(`qtd_${codigo}`).value
+);
 
-  const tipo = document.getElementById(
-    `tipo_${codigo}`
-  ).value;
+const tipo = document.getElementById(
+`tipo_${codigo}`
+).value;
 
-  carrinho.push({
-    codigo: produto.codigo,
-    nome: produto.nome,
-    estoque: produto.estoque || "0",
-    quantidade,
-    tipo
-  });
+carrinho.push({
+codigo: produto.codigo,
+nome: produto.nome,
+estoque: produto.estoque || "0",
+quantidade,
+tipo
+});
 
-  renderCarrinho();
+document.getElementById("busca").value = "";
+document.getElementById("resultados").innerHTML = "";
+
+renderCarrinho();
 }
 
 function renderCarrinho() {
 
-  const div = document.getElementById("carrinho");
+const div = document.getElementById("carrinho");
 
-  div.innerHTML = "";
+div.innerHTML = "";
 
-  if (!carrinho.length) {
+if (!carrinho.length) {
 
-    div.innerHTML = `
-      <div class="card">
-        Carrinho vazio
-      </div>
-    `;
+```
+div.innerHTML = `
+  <div class="card">
+    Carrinho vazio
+  </div>
+`;
 
-    return;
-  }
+return;
+```
 
-  carrinho.forEach((item, index) => {
+}
 
-    const atual = parseFloat(
-      String(item.estoque)
-        .replace(" un", "")
-        .replace(",", ".")
-    ) || 0;
+carrinho.forEach((item, index) => {
 
-    const futuro =
-      item.tipo === "entrada"
-        ? atual + item.quantidade
-        : atual - item.quantidade;
+```
+const atual = parseFloat(
+  String(item.estoque)
+    .replace(" un", "")
+    .replace(",", ".")
+) || 0;
 
-    div.innerHTML += `
-      <div class="card carrinho">
+const futuro =
+  item.tipo === "entrada"
+    ? atual + item.quantidade
+    : atual - item.quantidade;
 
-        <b>${item.nome}</b>
+div.innerHTML += `
+  <div class="card carrinho">
 
-        <br>
+    <b>${item.nome}</b>
 
-        Estoque atual:
-        ${atual}
+    <br>
 
-        <br>
+    Estoque atual: ${atual}
 
-        Movimento:
-        ${item.tipo === "entrada" ? "+" : "-"}
-        ${item.quantidade}
+    <br>
 
-        <br>
+    Movimento:
+    ${item.tipo === "entrada" ? "+" : "-"}
+    ${item.quantidade}
 
-        Estoque previsto:
-        ${futuro}
+    <br>
 
-        <br><br>
+    Estoque previsto:
+    ${futuro}
 
-        <button
-          class="remover"
-          onclick="removerCarrinho(${index})"
-        >
-          Remover
-        </button>
+    <br><br>
 
-      </div>
-    `;
-  });
+    <button
+      class="remover"
+      onclick="removerCarrinho(${index})"
+    >
+      Remover
+    </button>
+
+  </div>
+`;
+```
+
+});
+
 }
 
 function removerCarrinho(index) {
 
-  carrinho.splice(index, 1);
+carrinho.splice(index, 1);
 
-  renderCarrinho();
+renderCarrinho();
 }
 
 async function enviarMovimentacao() {
 
-  if (!carrinho.length) {
+if (!carrinho.length) {
 
-    alert("Carrinho vazio");
+```
+alert("Carrinho vazio");
 
-    return;
-  }
+return;
+```
 
-  console.log("Itens enviados:");
+}
 
-  console.table(carrinho);
+console.table(carrinho);
 
-  alert(
-    `Movimentação pronta.\n\nProdutos: ${carrinho.length}`
-  );
+alert(
+`Movimentação pronta.\n\nProdutos: ${carrinho.length}`
+);
 
-  // FUTURO:
-  // enviar para GitHub Action
-  // acionar Playwright
-  // registrar no ConnectPlug
+// FUTURO:
+// enviar para GitHub Action
+// acionar Playwright
+// registrar no ConnectPlug
 }
