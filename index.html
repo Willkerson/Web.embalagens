@@ -1,275 +1,525 @@
 <!DOCTYPE html>
-<html lang="pt-BR" data-theme="light">
+<html lang="pt-BR">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-<title>Cia Das Embalagens</title>
-<link rel="icon" type="image/png" href="https://img.icons8.com/fluency/48/box.png">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="front-index/estilo.css">
-  <link rel="stylesheet" href="front-index/mobile.css">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<title>Estoque Pro</title>
+<style>
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --azul: #0057FF;
+  --azul-light: #e8f0ff;
+  --verde: #00B37E;
+  --verde-light: #e6f7f2;
+  --amarelo: #F59E0B;
+  --amarelo-light: #fef3c7;
+  --vermelho: #E63946;
+  --vermelho-light: #fdecea;
+  --cinza-bg: #F2F4F7;
+  --cinza-borda: #E2E6EA;
+  --cinza-texto: #6B7280;
+  --texto: #111827;
+  --branco: #ffffff;
+  --sombra: 0 2px 8px rgba(0,0,0,0.08);
+  --sombra-lg: 0 8px 32px rgba(0,0,0,0.14);
+  --radius: 14px;
+  --radius-sm: 8px;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
+  background: var(--cinza-bg);
+  color: var(--texto);
+  min-height: 100vh;
+}
+
+/* ── HEADER ── */
+header {
+  background: var(--branco);
+  border-bottom: 1px solid var(--cinza-borda);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.header-inner {
+  max-width: 680px;
+  margin: 0 auto;
+  padding: 14px 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.header-inner h1 {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--texto);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.badge-carrinho {
+  background: var(--azul);
+  color: #fff;
+  font-size: 12px;
+  font-weight: 700;
+  border-radius: 20px;
+  padding: 3px 10px;
+  cursor: pointer;
+  display: none;
+  align-items: center;
+  gap: 5px;
+}
+
+/* ── MAIN ── */
+main {
+  max-width: 680px;
+  margin: 0 auto;
+  padding: 16px 16px 120px;
+}
+
+/* ── BUSCA ── */
+.busca-wrap {
+  position: relative;
+  margin-bottom: 16px;
+}
+
+.busca-wrap svg {
+  position: absolute;
+  left: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--cinza-texto);
+  width: 18px;
+  height: 18px;
+  pointer-events: none;
+}
+
+#busca {
+  width: 100%;
+  padding: 14px 14px 14px 44px;
+  border-radius: var(--radius);
+  border: 1.5px solid var(--cinza-borda);
+  font-size: 16px;
+  outline: none;
+  background: var(--branco);
+  color: var(--texto);
+  box-shadow: var(--sombra);
+  transition: border-color 0.2s;
+}
+
+#busca:focus {
+  border-color: var(--azul);
+}
+
+#busca::placeholder { color: #9CA3AF; }
+
+/* ── LABEL SEÇÃO ── */
+.secao-label {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--cinza-texto);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin-bottom: 8px;
+}
+
+/* ── CARD PRODUTO ── */
+.card-produto {
+  background: var(--branco);
+  border-radius: var(--radius);
+  border: 1.5px solid var(--cinza-borda);
+  padding: 14px 16px;
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  cursor: pointer;
+  transition: border-color 0.18s, box-shadow 0.18s, background 0.18s;
+  box-shadow: var(--sombra);
+}
+
+.card-produto:active {
+  background: var(--azul-light);
+  border-color: var(--azul);
+}
+
+.card-produto-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.card-produto-nome {
+  font-size: 15px;
+  font-weight: 600;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.card-produto-cat {
+  font-size: 12px;
+  color: var(--cinza-texto);
+  margin-top: 2px;
+}
+
+.badge-estoque {
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  min-width: 58px;
+}
+
+.badge-num {
+  font-size: 20px;
+  font-weight: 800;
+  line-height: 1;
+}
+
+.badge-label {
+  font-size: 10px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  border-radius: 20px;
+  padding: 2px 8px;
+}
+
+/* cores por status */
+.status-ok   .badge-num   { color: var(--verde); }
+.status-ok   .badge-label { background: var(--verde-light); color: var(--verde); }
+.status-low  .badge-num   { color: var(--amarelo); }
+.status-low  .badge-label { background: var(--amarelo-light); color: #92400E; }
+.status-zero .badge-num   { color: var(--vermelho); }
+.status-zero .badge-label { background: var(--vermelho-light); color: var(--vermelho); }
+
+.chevron {
+  color: #D1D5DB;
+  flex-shrink: 0;
+}
+
+/* ── VAZIO ── */
+.vazio {
+  text-align: center;
+  padding: 40px 20px;
+  color: var(--cinza-texto);
+  font-size: 14px;
+}
+
+/* ── OVERLAY ── */
+#overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.3);
+  z-index: 200;
+  backdrop-filter: blur(2px);
+}
+
+/* ── PAINEL INFERIOR ── */
+#painel {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: var(--branco);
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  box-shadow: var(--sombra-lg);
+  padding: 0 16px 24px;
+  z-index: 300;
+  display: none;
+  max-width: 680px;
+  margin: 0 auto;
+  transform: translateY(100%);
+  transition: transform 0.28s cubic-bezier(0.4,0,0.2,1);
+}
+
+#painel.aberto {
+  transform: translateY(0);
+}
+
+.painel-handle {
+  width: 36px;
+  height: 4px;
+  background: #E2E6EA;
+  border-radius: 99px;
+  margin: 12px auto 16px;
+}
+
+.painel-header {
+  margin-bottom: 16px;
+}
+
+.painel-nome {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--texto);
+  margin-bottom: 6px;
+}
+
+.painel-estoque-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.painel-estoque-num {
+  font-size: 28px;
+  font-weight: 800;
+}
+
+.painel-estoque-txt {
+  font-size: 13px;
+  color: var(--cinza-texto);
+}
+
+/* contador */
+.contador-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0;
+  background: var(--cinza-bg);
+  border-radius: var(--radius);
+  padding: 6px;
+  margin-bottom: 16px;
+}
+
+.btn-contador {
+  background: var(--branco);
+  border: 1.5px solid var(--cinza-borda);
+  border-radius: var(--radius-sm);
+  width: 48px;
+  height: 48px;
+  font-size: 22px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--texto);
+  font-weight: 700;
+  flex-shrink: 0;
+  transition: background 0.15s;
+  user-select: none;
+}
+
+.btn-contador:active { background: var(--cinza-borda); }
+
+#qtd {
+  font-size: 26px;
+  font-weight: 800;
+  width: 80px;
+  text-align: center;
+  color: var(--texto);
+}
+
+/* botões ação */
+.btn-row {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.btn {
+  flex: 1;
+  border: none;
+  border-radius: var(--radius);
+  padding: 16px;
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: opacity 0.15s, transform 0.1s;
+}
+
+.btn:active { opacity: 0.85; transform: scale(0.98); }
+
+.btn-verde   { background: var(--verde); color: #fff; }
+.btn-vermelho{ background: var(--vermelho); color: #fff; }
+.btn-fechar  { background: var(--cinza-bg); color: var(--cinza-texto); width: 100%; border: none; border-radius: var(--radius); padding: 14px; font-size: 15px; font-weight: 600; cursor: pointer; }
+
+/* ── CARRINHO PAINEL ── */
+#carrinho-painel {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: var(--branco);
+  z-index: 400;
+  flex-direction: column;
+}
+
+#carrinho-painel.aberto { display: flex; }
+
+.carrinho-header {
+  padding: 16px;
+  border-bottom: 1px solid var(--cinza-borda);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 680px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.carrinho-header h2 {
+  font-size: 17px;
+  font-weight: 700;
+}
+
+.btn-fechar-carrinho {
+  background: var(--cinza-bg);
+  border: none;
+  border-radius: 99px;
+  width: 32px;
+  height: 32px;
+  font-size: 16px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--cinza-texto);
+}
+
+.carrinho-lista {
+  flex: 1;
+  overflow-y: auto;
+  padding: 16px;
+  max-width: 680px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.carrinho-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 0;
+  border-bottom: 1px solid var(--cinza-borda);
+}
+
+.carrinho-item-nome {
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.carrinho-item-qtd {
+  font-size: 13px;
+  color: var(--cinza-texto);
+  margin-top: 2px;
+}
+
+.carrinho-badge {
+  font-size: 13px;
+  font-weight: 700;
+  padding: 4px 12px;
+  border-radius: 99px;
+}
+
+.badge-entrada { background: var(--verde-light); color: var(--verde); }
+.badge-saida   { background: var(--vermelho-light); color: var(--vermelho); }
+
+.carrinho-footer {
+  padding: 16px;
+  border-top: 1px solid var(--cinza-borda);
+  max-width: 680px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.btn-enviar {
+  width: 100%;
+  background: var(--azul);
+  color: #fff;
+  border: none;
+  border-radius: var(--radius);
+  padding: 17px;
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: opacity 0.15s;
+}
+
+.btn-enviar:active { opacity: 0.85; }
+
+.carrinho-vazio {
+  text-align: center;
+  padding: 60px 20px;
+  color: var(--cinza-texto);
+  font-size: 14px;
+}
+
+</style>
 </head>
 <body>
 
-<header class="hdr" id="hdr">
-  <div class="hdr-inner">
-    <a href="#" class="logo">
-      <div class="logo-mark"><img src="https://img.icons8.com/fluency/48/box.png" alt=""></div>
-      <div class="logo-name">Cia das<span> Embalagens</span></div>
-    </a>
-
-    <nav class="nav-center">
-      <div class="nav-item" id="nav-emb">
-        <div class="nav-link" onclick="toggleNav('nav-emb')">Embalagens<svg viewBox="0 0 10 6" fill="none"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></div>
-        <div class="mega">
-          <div class="mega-grid">
-            <div class="mega-col">
-              <div class="mega-col-title">Caixas & Papelão</div>
-              <div class="mega-link" onclick="filterCat('caixas');filtrarSub('caixas-correio');fecharNav()"><div class="mega-link-ico">📬</div><div class="mega-link-info"><div class="mega-link-name">Padrão Correios</div><div class="mega-link-desc">Sedex, PAC, e-commerce</div></div></div>
-              <div class="mega-link" onclick="filterCat('caixas');filtrarSub('caixas-alimentos');fecharNav()"><div class="mega-link-ico">🍕</div><div class="mega-link-info"><div class="mega-link-name">Para Alimentos</div><div class="mega-link-desc">Pizza, hambúrguer, marmita</div></div></div>
-              <div class="mega-link" onclick="filterCat('caixas');filtrarSub('caixas-ondulados');fecharNav()"><div class="mega-link-ico">📦</div><div class="mega-link-info"><div class="mega-link-name">Ondulados</div><div class="mega-link-desc">Caixas de papelão corrugado</div></div></div>
-            </div>
-            <div class="mega-col">
-              <div class="mega-col-title">Plásticos & Potes</div>
-              <div class="mega-link" onclick="filterCat('plastico');filtrarSub('potes-tampas');fecharNav()"><div class="mega-link-ico">🫙</div><div class="mega-link-info"><div class="mega-link-name">Potes e Tampas</div><div class="mega-link-desc">PP, PET, diversas capacidades</div></div></div>
-              <div class="mega-link" onclick="filterCat('plastico');filtrarSub('embalagens-bolo');fecharNav()"><div class="mega-link-ico">🎂</div><div class="mega-link-info"><div class="mega-link-name">Embalagens p/ Bolo</div><div class="mega-link-desc">Acetato, forminhas, bases</div></div></div>
-            </div>
-            <div class="mega-col">
-              <div class="mega-col-title">Sacolas & Sacos</div>
-              <div class="mega-link" onclick="filterCat('sacolas');filtrarSub('sacolas-papel');fecharNav()"><div class="mega-link-ico">🧻</div><div class="mega-link-info"><div class="mega-link-name">Sacolas de Papel</div><div class="mega-link-desc">Kraft, branco, personalizado</div></div></div>
-              <div class="mega-link" onclick="filterCat('sacolas');filtrarSub('sacolas-plasticas');fecharNav()"><div class="mega-link-ico">🛒</div><div class="mega-link-info"><div class="mega-link-name">Sacolas Plásticas</div><div class="mega-link-desc">Alça, camiseta, biodegradável</div></div></div>
-              <div class="mega-link" onclick="filterCat('sacolas');filtrarSub('sacos-lixo');fecharNav()"><div class="mega-link-ico">🗑️</div><div class="mega-link-info"><div class="mega-link-name">Sacos de Lixo</div><div class="mega-link-desc">10L a 200L, todas cores</div></div></div>
-            </div>
-            <div class="mega-featured" onclick="filterCat('diversos');fecharNav()">
-              <div class="mega-featured-l"><div class="mega-feat-ico">❄️</div><div class="mega-feat-text"><strong>Embalagens de Isopor</strong><span>Peixaria, delivery, transporte de frios</span></div></div>
-              <div class="mega-feat-cta">Ver tudo →</div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="nav-item" id="nav-desc">
-        <div class="nav-link" onclick="toggleNav('nav-desc')">Descartáveis<svg viewBox="0 0 10 6" fill="none"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></div>
-        <div class="mega">
-          <div class="mega-grid" style="grid-template-columns:repeat(2,1fr)">
-            <div class="mega-col">
-              <div class="mega-col-title">Festa & Eventos</div>
-              <div class="mega-link" onclick="filtrarSub('copos-pratos',null,'festa');fecharNav()"><div class="mega-link-ico">🥤</div><div class="mega-link-info"><div class="mega-link-name">Copos e Pratos</div><div class="mega-link-desc">PS, PP, Biodegradável</div></div></div>
-              <div class="mega-link" onclick="filtrarSub('talheres',null,'festa');fecharNav()"><div class="mega-link-ico">🍴</div><div class="mega-link-info"><div class="mega-link-name">Talheres</div><div class="mega-link-desc">Garfo, faca, colher, kit</div></div></div>
-            </div>
-            <div class="mega-col">
-              <div class="mega-col-title">Higiene</div>
-              <div class="mega-link" onclick="filtrarSub('papel-higiene',null,'higiene');fecharNav()"><div class="mega-link-ico">🧻</div><div class="mega-link-info"><div class="mega-link-name">Papel & Sabonetes</div><div class="mega-link-desc">Papel toalha, higiênico, sabão</div></div></div>
-              <div class="mega-link" onclick="buscarPorTermo('alcool')"><div class="mega-link-ico">🧴</div><div class="mega-link-info"><div class="mega-link-name">Álcool & Desinfetante</div><div class="mega-link-desc">70°, gel, spray</div></div></div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="nav-item" id="nav-limp">
-        <div class="nav-link" onclick="toggleNav('nav-limp')">Limpeza & EPI<svg viewBox="0 0 10 6" fill="none"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></div>
-        <div class="mega">
-          <div class="mega-grid" style="grid-template-columns:repeat(3,1fr)">
-            <div class="mega-col">
-              <div class="mega-col-title">Produtos Químicos</div>
-              <div class="mega-link" onclick="filtrarSub('produtos-limpeza',null,'limpeza');fecharNav()"><div class="mega-link-ico">🧴</div><div class="mega-link-info"><div class="mega-link-name">Detergente & Deseng.</div><div class="mega-link-desc">Multi-uso, desincrustante</div></div></div>
-              <div class="mega-link" onclick="filtrarSub('aromas-inseticidas',null,'utilidades');fecharNav()"><div class="mega-link-ico">🌿</div><div class="mega-link-info"><div class="mega-link-name">Aromas & Inseticidas</div><div class="mega-link-desc">Ambientadores, repelentes</div></div></div>
-            </div>
-            <div class="mega-col">
-              <div class="mega-col-title">Utensílios</div>
-              <div class="mega-link" onclick="filtrarSub('utensilios-limpeza',null,'limpeza');fecharNav()"><div class="mega-link-ico">🧽</div><div class="mega-link-info"><div class="mega-link-name">Esponjas & Panos</div><div class="mega-link-desc">Fibra, microfibra, luva</div></div></div>
-              <div class="mega-link" onclick="filtrarSub('organiz-limpeza',null,'utilidades');fecharNav()"><div class="mega-link-ico">🪣</div><div class="mega-link-info"><div class="mega-link-name">Baldes & Cestos</div><div class="mega-link-desc">Coleta seletiva, cozinha</div></div></div>
-            </div>
-            <div class="mega-col">
-              <div class="mega-col-title">EPI & Proteção</div>
-              <div class="mega-link" onclick="filtrarSub('epi',null,'limpeza');fecharNav()"><div class="mega-link-ico">🧤</div><div class="mega-link-info"><div class="mega-link-name">Luvas & Aventais</div><div class="mega-link-desc">Látex, nitrílica, PVC</div></div></div>
-              <div class="mega-link" onclick="buscarPorTermo('touca')"><div class="mega-link-ico">😷</div><div class="mega-link-info"><div class="mega-link-name">Máscaras & Toucas</div><div class="mega-link-desc">Cirúrgica, TNT, descartável</div></div></div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="nav-item" id="nav-util">
-        <div class="nav-link" onclick="toggleNav('nav-util')">Utilidades<svg viewBox="0 0 10 6" fill="none"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></div>
-        <div class="mega" style="min-width:460px">
-          <div class="mega-grid" style="grid-template-columns:repeat(2,1fr)">
-            <div class="mega-col">
-              <div class="mega-col-title">Casa & Escritório</div>
-              <div class="mega-link" onclick="filterCat('utilidades');filtrarSub('escritorio');fecharNav()"><div class="mega-link-ico">✏️</div><div class="mega-link-info"><div class="mega-link-name">Escritório</div><div class="mega-link-desc">Papelaria, canetas, clipes</div></div></div>
-              <div class="mega-link" onclick="filterCat('utilidades');filtrarSub('ganchos');fecharNav()"><div class="mega-link-ico">🪝</div><div class="mega-link-info"><div class="mega-link-name">Ganchos & Fixadores</div><div class="mega-link-desc">3M, ventosa, parede</div></div></div>
-              <div class="mega-link" onclick="filterCat('utilidades');filtrarSub('pilhas-baterias');fecharNav()"><div class="mega-link-ico">🔋</div><div class="mega-link-info"><div class="mega-link-name">Pilhas & Baterias</div><div class="mega-link-desc">AA, AAA, 9V, recarregáveis</div></div></div>
-            </div>
-            <div class="mega-col">
-              <div class="mega-col-title">Ferramentas</div>
-              <div class="mega-link" onclick="filterCat('utilidades');filtrarSub('ferramentas');fecharNav()"><div class="mega-link-ico">🔨</div><div class="mega-link-info"><div class="mega-link-name">Ferramentas Manuais</div><div class="mega-link-desc">Chave, alicate, fita</div></div></div>
-              <div class="mega-link" onclick="filterCat('utilidades');filtrarSub('organiz-limpeza');fecharNav()"><div class="mega-link-ico">📦</div><div class="mega-link-info"><div class="mega-link-name">Organização</div><div class="mega-link-desc">Caixas, gavetas, prateleiras</div></div></div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <a class="nav-link nav-link-green" href="https://wa.me/5511972999835" target="_blank">Contato</a>
-    </nav>
-
-   
-    <div class="hdr-r">
-      <button class="btn-theme" onclick="toggleTheme()" id="themeBtn" title="Tema">🌙</button>
-       <a href="calculadora.html" class="btn-wpp" style="background:#add8e6"> 🖩 </a>
-      <button class="btn-cart" onclick="abrirCart()">
-        🛒 <span>Carrinho</span>
-        <span class="cbadge" id="cbadge">0</span>
-      </button>
-      <a href="https://wa.me/5511972999835" target="_blank" class="btn-wpp">
-        <img src="https://img.icons8.com/color/48/whatsapp.png" alt="">
-        <span>WhatsApp</span>
-      </a>
+<header>
+  <div class="header-inner">
+    <h1>📦 Estoque Pro</h1>
+    <div class="badge-carrinho" id="btnCarrinho">
+      🛒 <span id="carrinhoCount">0</span>
     </div>
   </div>
 </header>
 
-<!-- ─── CATALOG ─── -->
-<section class="sec-catalog" id="produtos">
-  <div class="cat-head">
-    <div class="sec-label">Catálogo</div>
-    <h2 class="sec-title">Todos os Produtos</h2>
-    <p class="sec-sub">Explore por categoria ou busque pelo nome</p>
+<main>
+  <div class="busca-wrap">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
+    </svg>
+    <input id="busca" placeholder="Buscar produto..." autocomplete="off">
   </div>
 
-  <div class="search-wrap" id="searchWrap">
-    <span class="search-icon">🔍</span>
-    <input type="text" id="searchInput" class="search-inp" placeholder="Buscar produto, marca, tipo…" oninput="handleSearch(event)" autocomplete="off" onblur="hideSuggestionsDelayed()" onfocus="handleSearchFocus()">
-    <div class="search-suggestions" id="searchSuggestions"></div>
+  <div class="secao-label">Produtos</div>
+  <div id="resultados"></div>
+</main>
+
+<!-- overlay -->
+<div id="overlay" onclick="fechar()"></div>
+
+<!-- PAINEL -->
+<div id="painel">
+  <div class="painel-handle"></div>
+
+  <div class="painel-header">
+    <div class="painel-nome" id="nome"></div>
+    <div class="painel-estoque-row">
+      <div class="painel-estoque-num" id="estoque-num" style="color:var(--verde)">—</div>
+      <div class="painel-estoque-txt">em estoque</div>
+    </div>
   </div>
 
-  <div class="filter-tabs" id="fbar">
-    <button class="ftab on" data-cat="todos" onclick="filterCat('todos',this)"><img src="https://img.icons8.com/fluency/48/layers.png" alt="">Todos</button>
-    <button class="ftab" data-cat="caixas" onclick="filterCat('caixas',this)"><img src="https://img.icons8.com/fluency/48/box.png" alt="">Caixas</button>
-    <button class="ftab" data-cat="sacolas" onclick="filterCat('sacolas',this)"><img src="https://img.icons8.com/fluency/48/trash.png" alt="">Sacolas & Lixo</button>
-    <button class="ftab" data-cat="plastico" onclick="filterCat('plastico',this)"><img src="https://img.icons8.com/fluency/48/test-tube.png" alt="">Plásticos</button>
-    <button class="ftab" data-cat="festa" onclick="filterCat('festa',this)"><img src="https://img.icons8.com/fluency/48/wine-glass.png" alt="">Festa</button>
-    <button class="ftab" data-cat="limpeza" onclick="filterCat('limpeza',this)"><img src="https://img.icons8.com/fluency/48/broom.png" alt="">Limpeza</button>
-    <button class="ftab" data-cat="higiene" onclick="filterCat('higiene',this)"><img src="https://img.icons8.com/fluency/48/toilet-paper.png" alt="">Higiene</button>
-    <button class="ftab" data-cat="utilidades" onclick="filterCat('utilidades',this)"><img src="https://img.icons8.com/fluency/48/toolbox.png" alt="">Utilidades</button>
-    <button class="ftab" data-cat="diversos" onclick="filterCat('diversos',this)"><img src="https://img.icons8.com/fluency/48/open-box.png" alt="">Diversos</button>
+  <div class="contador-wrap">
+    <button class="btn-contador" onclick="menos()">−</button>
+    <div id="qtd">1</div>
+    <button class="btn-contador" onclick="mais()">+</button>
   </div>
 
-  <div class="subtabs-wrap">
-  <div class="subtabs" id="sub-caixas"><button class="stab on" onclick="filtrarSub('todas',this,'caixas')">Todas</button><button class="stab" onclick="filtrarSub('caixas-correio',this,'caixas')">Caixas Correios</button><button class="stab" onclick="filtrarSub('caixas-alimentos',this,'caixas')">Caixas p/ Alimentos</button><button class="stab" onclick="filtrarSub('caixas-ondulados',this,'caixas')">Caixas Ondulados</button></div>
-  <div class="subtabs" id="sub-sacolas"><button class="stab on" onclick="filtrarSub('todas',this,'sacolas')">Todas</button><button class="stab" onclick="filtrarSub('sacos-lixo',this,'sacolas')">Sacos de Lixo</button><button class="stab" onclick="filtrarSub('sacolas-papel',this,'sacolas')">Sacolas de Papel</button><button class="stab" onclick="filtrarSub('sacolas-plasticas',this,'sacolas')">Sacolas Plásticas</button></div>
-  <div class="subtabs" id="sub-plastico"><button class="stab on" onclick="filtrarSub('todas',this,'plastico')">Todas</button><button class="stab" onclick="filtrarSub('potes-tampas',this,'plastico')">Potes e Tampas</button><button class="stab" onclick="filtrarSub('embalagens-bolo',this,'plastico')">Embalagens p/ Bolo</button></div>
-  <div class="subtabs" id="sub-festa"><button class="stab on" onclick="filtrarSub('todas',this,'festa')">Todas</button><button class="stab" onclick="filtrarSub('copos-pratos',this,'festa')">Copos e Pratos</button><button class="stab" onclick="filtrarSub('talheres',this,'festa')">Talheres</button><button class="stab" onclick="filtrarSub('pratos',this,'festa')">Pratos Descartáveis</button></div>
-  <div class="subtabs" id="sub-limpeza"><button class="stab on" onclick="filtrarSub('todas',this,'limpeza')">Todas</button><button class="stab" onclick="filtrarSub('produtos-limpeza',this,'limpeza')">Produtos Químicos</button><button class="stab" onclick="filtrarSub('utensilios-limpeza',this,'limpeza')">Utensílios</button><button class="stab" onclick="filtrarSub('epi',this,'limpeza')">EPI & Proteção</button></div>
-  <div class="subtabs" id="sub-higiene"><button class="stab on" onclick="filtrarSub('todas',this,'higiene')">Todas</button><button class="stab" onclick="filtrarSub('papel-higiene',this,'higiene')">Papel & Sabonetes</button><button class="stab" onclick="filtrarSub('aromas-inseticidas',this,'higiene')">Aromas & Inseticidas</button></div>
-  <div class="subtabs" id="sub-utilidades"><button class="stab on" onclick="filtrarSub('todas',this,'utilidades')">Todas</button><button class="stab" onclick="filtrarSub('pilhas-baterias',this,'utilidades')">Pilhas & Baterias</button><button class="stab" onclick="filtrarSub('organiz-limpeza',this,'utilidades')">Organização</button><button class="stab" onclick="filtrarSub('ferramentas',this,'utilidades')">Ferramentas</button><button class="stab" onclick="filtrarSub('escritorio',this,'utilidades')">Escritório</button><button class="stab" onclick="filtrarSub('ganchos',this,'utilidades')">Ganchos</button></div>
-  <div class="subtabs" id="sub-diversos"><button class="stab on" onclick="filtrarSub('todas',this,'diversos')">Todas</button><button class="stab" onclick="filtrarSub('isopor-geral',this,'diversos')">Isopor Geral</button><button class="stab" onclick="filtrarSub('emb-flexiveis',this,'diversos')">Emb. Flexíveis</button><button class="stab" onclick="filtrarSub('emb-diversas',this,'diversos')">Emb. Diversas</button><button class="stab" onclick="filtrarSub('outros',this,'diversos')">Outros</button></div>
+  <div class="btn-row">
+    <button class="btn btn-verde"    onclick="add('entrada')">↑ Entrada</button>
+    <button class="btn btn-vermelho" onclick="add('saida')">↓ Saída</button>
+  </div>
+
+  <button class="btn-fechar" onclick="fechar()">Cancelar</button>
 </div>
 
-  <div class="brand-filter-wrap" id="brandFilterWrap">
-    <div class="brand-filter-inner" id="brandFilterInner"><span class="brand-filter-label">Marca:</span></div>
+<!-- CARRINHO PAINEL -->
+<div id="carrinho-painel">
+  <div class="carrinho-header">
+    <h2>🛒 Carrinho</h2>
+    <button class="btn-fechar-carrinho" onclick="fecharCarrinho()">✕</button>
   </div>
-
-  <div id="containerProdutos"></div>
-</section>
-
-<div class="backdrop" id="backdrop" onclick="fecharCart()"></div>
-<aside class="cart-panel" id="cartPanel">
-  <div class="cart-head"><h3>🛍️ Meu Pedido</h3><button class="btn-close" onclick="fecharCart()">✕</button></div>
-  <div class="cart-list" id="clist"></div>
-  <div class="cart-foot">
-    <div class="cart-total-row"><span class="cart-total-lbl">Total estimado</span><span class="cart-total-val" id="ctotal">R$ 0,00</span></div>
-    <button class="btn-send-wpp" onclick="enviarWpp()">
-      <img src="https://img.icons8.com/color/48/whatsapp.png" alt=""> Confirmar e Enviar pelo WhatsApp
-    </button>
-    <button class="btn-clear" onclick="limparCart()">🗑 Limpar carrinho</button>
-  </div>
-</aside>
-
-<div class="wpp-float">
-  <div class="wpp-tip">Fale conosco!</div>
-  <a href="https://wa.me/5511972999835?text=Olá%2C+gostaria+de+atendimento" target="_blank" class="wpp-btn">
-    <div class="wpp-ring"></div><div class="wpp-ring wpp-ring2"></div>
-    <img src="https://img.icons8.com/color/48/whatsapp.png" alt="WhatsApp">
-  </a>
-</div>
-
-<section class="sec-reviews">
-  <div class="reviews-wrap">
-    <div class="reviews-head"><div class="sec-label">Depoimentos</div><h2 class="sec-title">O que nossos clientes dizem</h2></div>
-    <div class="reviews-grid">
-      <div class="review-card"><div class="review-stars">★★★★★</div><p class="review-quote">"Muitooo bom, recomendo — o atendimento é 10! Pessoal dá uma atenção boa 👌 Comprei umas marmitas e top demais."</p><div class="review-author"><div class="review-av">SC</div><div class="review-name">Shirley Cristina</div></div></div>
-      <div class="review-card"><div class="review-stars">★★★★★</div><p class="review-quote">"Tem muita coisa boa e o preço ótimo. Os atendentes são muito simpáticos e sempre prontos para ajudar em tudo."</p><div class="review-author"><div class="review-av">FL</div><div class="review-name">Francis Luci</div></div></div>
-      <div class="review-card"><div class="review-stars">★★★★★</div><p class="review-quote">"A empresa tem tudo em descartáveis, o atendimento é ótimo, tem estacionamento e ponto de ônibus em frente. Facinho de chegar."</p><div class="review-author"><div class="review-av">AR</div><div class="review-name">Adelaide Rocha</div></div></div>
-    </div>
-  </div>
-</section>
-
-<footer><p>© 2026 <strong>Cia Das Embalagens</strong> — Todos os direitos reservados · São Paulo, SP</p></footer>
-
-<!-- ─── CHECKOUT MODAL ─── -->
-<div class="modal-overlay" id="checkoutModal">
-  <div class="modal-box">
-    <div class="modal-hdr">
-      <div style="flex:1;padding-right:12px">
-        <div class="modal-hdr-ico"><img src="https://img.icons8.com/color/48/whatsapp.png" alt=""></div>
-        <div class="modal-hdr-text"><h3>Confirmar Pedido</h3><p>Revise seu pedido e preencha seus dados para envio</p></div>
-      </div>
-      <button class="btn-close" onclick="fecharModal()" style="flex-shrink:0;margin-top:4px">✕</button>
-    </div>
-    <div class="modal-steps">
-      <div class="mstep done" id="mstep1"><div class="mstep-dot">✓</div><span>Itens</span></div>
-      <div class="mstep-line done"></div>
-      <div class="mstep active" id="mstep2"><div class="mstep-dot">2</div><span>Seus dados</span></div>
-      <div class="mstep-line"></div>
-      <div class="mstep" id="mstep3"><div class="mstep-dot">3</div><span>WhatsApp</span></div>
-    </div>
-    <div class="modal-body">
-      <div class="order-summary">
-        <div class="order-summary-title">📋 Resumo do pedido</div>
-        <div id="modalItems"></div>
-        <div class="order-total-row"><span class="order-total-lbl">Total estimado</span><span class="order-total-val" id="modalTotal">R$ 0,00</span></div>
-      </div>
-      <div class="modal-section-label">Seus dados</div>
-      <div class="modal-field" id="fieldNome">
-        <label>Seu nome *</label>
-        <input type="text" id="inputNome" placeholder="Ex: João Silva" />
-        <div class="field-error">Por favor, informe seu nome.</div>
-      </div>
-      <div class="modal-field">
-        <label>Forma de pagamento *</label>
-        <div class="pagto-grid" id="pagtoChips">
-
-          <div class="pagto-chip" onclick="selecionarPagto(this,'Pix')"><span class="pagto-chip-ico">⚡</span>Pix</div>
-    
-        </div>
-        <div class="pagto-error" id="pagtoError">Selecione uma forma de pagamento.</div>
-      </div>
-      <div class="modal-field">
-        <label>Observações <span style="font-weight:400;font-size:.75rem;color:var(--text3)">(opcional)</span></label>
-        <textarea id="inputObs" placeholder="Ex: entregar no período da manhã, cor específica, etc."></textarea>
-      </div>
-    </div>
-    <div class="modal-foot">
-      <button class="btn-confirm-wpp" onclick="confirmarEEnviar()">
-        <img src="https://img.icons8.com/color/48/whatsapp.png" alt=""> Enviar Pedido pelo WhatsApp
-      </button>
-      <button class="btn-modal-cancel" onclick="fecharModal()">← Voltar ao carrinho</button>
-    </div>
+  <div class="carrinho-lista" id="listaCarrinho"></div>
+  <div class="carrinho-footer">
+    <button class="btn-enviar" onclick="enviar()">Enviar tudo</button>
   </div>
 </div>
 
-<!-- ─── SCRIPTS — ordem importa! ─── -->
-<script src="front-index/mapeamento.js"></script>
-<script src="front-index/config.js"></script>
-<script src="front-index/utils.js"></script>
-<script src="front-index/busca.js"></script>
-<script src="front-index/filtros.js"></script>
-<script src="front-index/render.js"></script>
-<script src="front-index/carrinho.js"></script>
-<script src="front-index/checkout.js"></script>
-<script src="front-index/nav.js"></script>
-<script src="front-index/mobile-fix.js"></script>
-<script src="front-index/app.js"></script>
-
+<script src="app.js"></script>
 </body>
 </html>
