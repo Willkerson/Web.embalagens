@@ -11,18 +11,28 @@ fetch("front-index/produtos.json")
   .then(data => {
     produtos = data;
     console.log("Produtos carregados:", produtos.length);
-  });
+  })
+  .catch(err => console.error("Erro ao carregar produtos.json:", err));
 
 // ── UTILS ──
-function statusEstoque(q) {
-  if (q === 0) return 'zero';
-  if (q <= 5)  return 'low';
+function estoqueNumero(valor) {
+  return parseFloat(
+    String(valor || "0")
+      .replace(/\s*un\.?/i, "")
+      .replace(/\./g, "")
+      .replace(",", ".")
+  ) || 0;
+}
+
+function statusEstoque(n) {
+  if (n === 0) return 'zero';
+  if (n <= 5)  return 'low';
   return 'ok';
 }
 
-function labelStatus(q) {
-  if (q === 0) return 'Zerado';
-  if (q <= 5)  return 'Baixo';
+function labelStatus(n) {
+  if (n === 0) return 'Zerado';
+  if (n <= 5)  return 'Baixo';
   return 'OK';
 }
 
@@ -47,7 +57,7 @@ document.getElementById("busca").addEventListener("input", function () {
   }
 
   div.innerHTML = res.slice(0, 10).map(p => {
-    const est = p.estoque || 0;
+    const est = estoqueNumero(p.estoque);
     const st  = statusEstoque(est);
     return `
     <div class="card-produto status-${st}" onclick="abrir('${p.codigo}')">
@@ -72,7 +82,7 @@ function abrir(codigo) {
   atual = produtos.find(p => String(p.codigo) === String(codigo));
   qtdAtual = 1;
 
-  const est = atual.estoque || 0;
+  const est = estoqueNumero(atual.estoque);
   const cor = est === 0 ? 'var(--vermelho)' : est <= 5 ? 'var(--amarelo)' : 'var(--verde)';
 
   document.getElementById("nome").textContent        = atual.nome;
@@ -109,7 +119,7 @@ function add(tipo) {
     codigo:  atual.codigo,
     qtd:     qtdAtual,
     tipo,
-    estoque: atual.estoque || 0
+    estoque: estoqueNumero(atual.estoque)
   });
   atualizarBadge();
   fechar();
