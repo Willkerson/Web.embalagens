@@ -3,127 +3,162 @@ console.log("APP OK");
 let produtos = [];
 let carrinho = [];
 let atual = null;
-let qtd = 1;
+let qtdAtual = 1;
 
-// LOAD
+// ── LOAD ──
 fetch("front-index/produtos.json")
-.then(r => r.json())
-.then(data => produtos = data);
+  .then(r => r.json())
+  .then(data => {
+    produtos = data;
+    console.log("Produtos carregados:", produtos.length);
+  });
 
-// BUSCA
-document.getElementById("busca").addEventListener("input", (e) => {
-
-const t = e.target.value.toLowerCase();
-
-const div = document.getElementById("resultados");
-
-if(t.length < 2){
-div.innerHTML = "";
-return;
+// ── UTILS ──
+function statusEstoque(q) {
+  if (q === 0) return 'zero';
+  if (q <= 5)  return 'low';
+  return 'ok';
 }
 
-const res = produtos.filter(p =>
-(p.nome || "").toLowerCase().includes(t) ||
-String(p.codigo).includes(t)
-);
+function labelStatus(q) {
+  if (q === 0) return 'Zerado';
+  if (q <= 5)  return 'Baixo';
+  return 'OK';
+}
 
-div.innerHTML = "";
+// ── BUSCA ──
+document.getElementById("busca").addEventListener("input", function () {
+  const t = this.value.toLowerCase().trim();
+  const div = document.getElementById("resultados");
 
-res.slice(0, 10).forEach(p => {
+  if (t.length < 2) {
+    div.innerHTML = "";
+    return;
+  }
 
-div.innerHTML += `
-<div class="card resultado"
-onclick="abrir('${p.codigo}')">
+  const res = produtos.filter(p =>
+    (p.nome || "").toLowerCase().includes(t) ||
+    String(p.codigo || "").includes(t)
+  );
 
-<b>${p.nome}</b><br>
-<span class="small">${p.codigo}</span>
+  if (!res.length) {
+    div.innerHTML = '<div class="vazio">Nenhum produto encontrado.</div>';
+    return;
+  }
 
-</div>
-`;
-
+  div.innerHTML = res.slice(0, 10).map(p => {
+    const est = p.estoque || 0;
+    const st  = statusEstoque(est);
+    return `
+    <div class="card-produto status-${st}" onclick="abrir('${p.codigo}')">
+      <div class="card-produto-info">
+        <div class="card-produto-nome">${p.nome}</div>
+        <div class="card-produto-cat">${p.codigo}</div>
+      </div>
+      <div class="badge-estoque">
+        <div class="badge-num">${est}</div>
+        <div class="badge-label">${labelStatus(est)}</div>
+      </div>
+      <svg class="chevron" width="16" height="16" viewBox="0 0 24 24" fill="none"
+        stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+        <polyline points="9 18 15 12 9 6"/>
+      </svg>
+    </div>`;
+  }).join('');
 });
 
-});
+// ── ABRIR PAINEL ──
+function abrir(codigo) {
+  atual = produtos.find(p => String(p.codigo) === String(codigo));
+  qtdAtual = 1;
 
-// ABRIR PAINEL
-function abrir(codigo){
+  const est = atual.estoque || 0;
+  const cor = est === 0 ? 'var(--vermelho)' : est <= 5 ? 'var(--amarelo)' : 'var(--verde)';
 
-atual = produtos.find(p => String(p.codigo) === String(codigo));
+  document.getElementById("nome").textContent        = atual.nome;
+  document.getElementById("estoque-num").textContent = est;
+  document.getElementById("estoque-num").style.color = cor;
+  document.getElementById("qtd").textContent         = 1;
 
-qtd = 1;
+  document.getElementById("resultados").innerHTML = "";
+  document.getElementById("busca").value = "";
 
-document.getElementById("nome").innerText = atual.nome;
-document.getElementById("estoque").innerText = atual.estoque || 0;
-document.getElementById("qtd").innerText = qtd;
-
-document.getElementById("painel").style.display = "block";
-document.getElementById("resultados").innerHTML = "";
-document.getElementById("busca").value = "";
+  document.getElementById("overlay").style.display = "block";
+  const painel = document.getElementById("painel");
+  painel.style.display = "block";
+  setTimeout(() => painel.classList.add("aberto"), 10);
 }
 
-function mais(){
-qtd++;
-document.getElementById("qtd").innerText = qtd;
+function fechar() {
+  const painel = document.getElementById("painel");
+  painel.classList.remove("aberto");
+  setTimeout(() => { painel.style.display = "none"; }, 280);
+  document.getElementById("overlay").style.display = "none";
+  atual = null;
 }
 
-function menos(){
-if(qtd > 1) qtd--;
-document.getElementById("qtd").innerText = qtd;
+document.getElementById("overlay").addEventListener("click", fechar);
+
+function mais()  { qtdAtual++; document.getElementById("qtd").textContent = qtdAtual; }
+function menos() { if (qtdAtual > 1) { qtdAtual--; document.getElementById("qtd").textContent = qtdAtual; } }
+
+// ── CARRINHO ──
+function add(tipo) {
+  carrinho.push({
+    nome:    atual.nome,
+    codigo:  atual.codigo,
+    qtd:     qtdAtual,
+    tipo,
+    estoque: atual.estoque || 0
+  });
+  atualizarBadge();
+  fechar();
 }
 
-// ADD CARRINHO
-function add(tipo){
-
-carrinho.push({
-nome: atual.nome,
-codigo: atual.codigo,
-qtd,
-tipo,
-estoque: atual.estoque || 0
-});
-
-renderCarrinho();
-fechar();
+function atualizarBadge() {
+  const n   = carrinho.length;
+  const btn = document.getElementById("btnCarrinho");
+  document.getElementById("carrinhoCount").textContent = n;
+  btn.style.display = n ? "flex" : "none";
 }
 
-// CARRINHO
-function renderCarrinho(){
+document.getElementById("btnCarrinho").addEventListener("click", abrirCarrinho);
 
-const div = document.getElementById("listaCarrinho");
+function abrirCarrinho() {
+  const lista = document.getElementById("listaCarrinho");
 
-div.innerHTML = "";
+  if (!carrinho.length) {
+    lista.innerHTML = '<div class="carrinho-vazio">Nenhum item no carrinho.</div>';
+  } else {
+    lista.innerHTML = carrinho.map(it => `
+      <div class="carrinho-item">
+        <div>
+          <div class="carrinho-item-nome">${it.nome}</div>
+          <div class="carrinho-item-qtd">${it.qtd} unidade${it.qtd > 1 ? 's' : ''} · Cód. ${it.codigo}</div>
+        </div>
+        <span class="carrinho-badge badge-${it.tipo}">
+          ${it.tipo === 'entrada' ? '↑ Entrada' : '↓ Saída'}
+        </span>
+      </div>`).join('');
+  }
 
-carrinho.forEach((i, index) => {
-
-div.innerHTML += `
-<div class="item">
-<b>${i.nome}</b><br>
-${i.tipo.toUpperCase()} - ${i.qtd}
-</div>
-`;
-
-});
-
+  document.getElementById("carrinho-painel").classList.add("aberto");
 }
 
-// FECHAR PAINEL
-function fechar(){
-document.getElementById("painel").style.display = "none";
-atual = null;
+function fecharCarrinho() {
+  document.getElementById("carrinho-painel").classList.remove("aberto");
 }
 
-// ENVIAR
-function enviar(){
+function enviar() {
+  if (!carrinho.length) {
+    alert("Carrinho vazio");
+    return;
+  }
 
-if(!carrinho.length){
-alert("Carrinho vazio");
-return;
-}
+  console.table(carrinho);
+  alert("Enviado " + carrinho.length + " item(ns)");
 
-console.table(carrinho);
-
-alert("Enviado " + carrinho.length + " itens");
-
-carrinho = [];
-renderCarrinho();
+  carrinho = [];
+  atualizarBadge();
+  fecharCarrinho();
 }
