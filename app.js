@@ -10,8 +10,9 @@ fetch("front-index/produtos.json")
   .then(r => r.json())
   .then(data => {
     produtos = data;
-    console.log("Produtos carregados:", produtos.length);
-  });
+    console.log("Produtos carregados:", produtos);
+  })
+  .catch(err => console.error("Erro:", err));
 
 // ── UTILS ──
 function statusEstoque(q) {
