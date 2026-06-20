@@ -1,22 +1,13 @@
+```javascript
 console.log("APP OK");
 
-// =========================
-// CONFIG GITHUB
-// =========================
-const GH_TOKEN = "SEU_TOKEN_AQUI";
-const REPO = "Willkerson/Automacao-ConnectPlug";
-const PATH = "fila/movimentacao.json";
+// ⚠️ IMPORTANTE: regenere esse token depois
+const GH_TOKEN = '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'';
+const REPO = 'Willkerson/Automacao-ConnectPlug';
+const PATH = 'fila/movimentacao.json';
 
-const githubHeaders = {
-  Authorization: "token " + GH_TOKEN,
-  Accept: "application/vnd.github+json"
-};
-
-// =========================
-// SENHA
-// =========================
-const SENHA_HASH =
-  "158a323a7ba44870f23d96f1516dd70aa48e9a72db4ebb026b0a89e212a208ab";
+// ── SENHA ──
+const SENHA_HASH = "158a323a7ba44870f23d96f1516dd70aa48e9a72db4ebb026b0a89e212a208ab";
 
 async function hashSenha(str) {
   const buf = await crypto.subtle.digest(
@@ -43,29 +34,44 @@ async function login() {
     document.getElementById("appContent").style.display = "block";
     iniciar();
   } else {
-    document.getElementById("senhaErro").style.display = "block";
-    setTimeout(() => {
-      document.getElementById("senhaErro").style.display = "none";
-    }, 2000);
+    const err = document.getElementById("senhaErro");
+    err.style.display = "block";
+    document.getElementById("senhaInput").value = "";
+    setTimeout(() => err.style.display = "none", 2500);
   }
 }
 
-// =========================
-// ESTADO
-// =========================
+document.addEventListener("DOMContentLoaded", () => {
+  if (verificarSenha()) {
+    document.getElementById("telaLogin").style.display = "none";
+    document.getElementById("appContent").style.display = "block";
+    iniciar();
+  }
+
+  document.getElementById("senhaInput").addEventListener("keydown", e => {
+    if (e.key === "Enter") login();
+  });
+});
+
+// ── DADOS ──
 let produtos = [];
 let carrinho = [];
 let historico = JSON.parse(localStorage.getItem("hist") || "[]");
-
+let atual = null;
+let qtdAtual = 1;
 let categoriaAtiva = "todas";
 let ordemAtiva = "nome";
 
-// =========================
-// UTIL
-// =========================
-function estoqueNumero(v) {
+// ── GITHUB ──
+const githubHeaders = {
+  Authorization: `Bearer ${GH_TOKEN}`,
+  Accept: "application/vnd.github+json"
+};
+
+// ── UTIL ──
+function estoqueNumero(valor) {
   return parseFloat(
-    String(v || "0")
+    String(valor || "0")
       .replace(/\s*un\.?/i, "")
       .replace(/\./g, "")
       .replace(",", ".")
@@ -80,147 +86,61 @@ function toast(msg, cor) {
   setTimeout(() => el.classList.remove("show"), 2200);
 }
 
-// =========================
-// RENDER PRINCIPAL
-// =========================
-function renderizar(lista) {
-  const div = document.getElementById("resultados");
-
-  if (!lista.length) {
-    div.innerHTML = "<div class='vazio'>Nenhum produto encontrado.</div>";
-    return;
-  }
-
-  div.innerHTML = lista.map(p => {
-    const est = estoqueNumero(p.estoque);
-
-    return `
-      <div class="card-produto" onclick="abrir('${p.codigo}')">
-        <div class="card-info">
-          <div class="card-nome">${p.nome}</div>
-          <div class="card-meta">Cód. ${p.codigo}</div>
-        </div>
-        <div class="badge-est">
-          ${est}
-        </div>
-      </div>
-    `;
-  }).join("");
-}
-
-// =========================
-// INICIAR APP
-// =========================
+// ── INICIAR ──
 function iniciar() {
   fetch("front-index/produtos.json")
     .then(r => r.json())
     .then(data => {
       produtos = data;
       renderizar(produtos);
-      buildFiltros();
     })
     .catch(err => {
-      console.error("Erro produtos:", err);
+      console.error(err);
     });
 }
 
-// =========================
-// FILTROS
-// =========================
-function aplicarFiltro() {
-  const t = document.getElementById("busca").value.toLowerCase();
-
-  let lista = produtos;
-
-  if (categoriaAtiva !== "todas") {
-    lista = lista.filter(p => p.categoria === categoriaAtiva);
-  }
-
-  if (t) {
-    lista = lista.filter(p =>
-      (p.nome || "").toLowerCase().includes(t) ||
-      String(p.codigo || "").includes(t)
-    );
-  }
-
-  renderizar(lista);
-}
-
-function buildFiltros() {
-  const cats = ["todas", ...new Set(produtos.map(p => p.categoria).filter(Boolean))];
-
-  const wrap = document.getElementById("filtros");
-
-  wrap.innerHTML = cats.map(c =>
-    `<div class="chip ${c === "todas" ? "ativo" : ""}" data-cat="${c}">
-      ${c}
-    </div>`
-  ).join("");
-
-  wrap.querySelectorAll(".chip").forEach(el => {
-    el.onclick = () => {
-      categoriaAtiva = el.dataset.cat;
-      aplicarFiltro();
-    };
-  });
-}
-
-// =========================
-// CARRINHO
-// =========================
-function add(tipo) {
-  carrinho.push({
-    codigo: atual.codigo,
-    nome: atual.nome,
-    qtd: qtdAtual,
-    tipo
-  });
-
-  toast("Adicionado ao carrinho", "#0057FF");
-  fechar();
-}
-
-function atualizarBadge() {
-  document.getElementById("carrinhoCount").textContent = carrinho.length;
-}
-
-// =========================
-// GITHUB (ROBUSTO)
-// =========================
+// ── ENVIO GITHUB ──
 async function enviar() {
-  if (!carrinho.length) return toast("Carrinho vazio", "#E63946");
+
+  if (!carrinho.length) {
+    toast("Carrinho vazio");
+    return;
+  }
 
   try {
+
     const url = `https://api.github.com/repos/${REPO}/contents/${PATH}`;
 
-    // GET
+    // GET arquivo atual
     const getFile = await fetch(url, {
       headers: githubHeaders
     });
 
     const getText = await getFile.text();
 
-    let sha = null;
+    if (!getFile.ok) {
+      throw new Error(`GET falhou: ${getFile.status} - ${getText}`);
+    }
+
+    const file = JSON.parse(getText);
+
     let dados = { itens: [] };
 
-    if (getFile.ok) {
-      const file = JSON.parse(getText);
-      sha = file.sha;
+    try {
+      dados = JSON.parse(atob(file.content.replace(/\n/g, "")));
+    } catch {}
 
-      try {
-        dados = JSON.parse(atob(file.content.replace(/\s/g, "")));
-      } catch {}
-    }
+    const sha = file.sha;
 
     carrinho.forEach(it => {
       dados.itens.push({
-        codigo: it.codigo,
-        qtd: it.qtd,
+        codigo: String(it.codigo),
+        qtd: Number(it.qtd),
         tipo: it.tipo
       });
     });
 
-    // PUT
+    // PUT atualizado
     const salvar = await fetch(url, {
       method: "PUT",
       headers: {
@@ -228,31 +148,37 @@ async function enviar() {
         "Content-Type": "application/json"
       },
       body: JSON.stringify({
-        message: "movimentacao estoque",
+        message: "nova movimentacao",
         content: btoa(JSON.stringify(dados, null, 2)),
-        ...(sha ? { sha } : {})
+        sha
       })
     });
 
-    const txt = await salvar.text();
+    const salvarText = await salvar.text();
 
     if (!salvar.ok) {
-      throw new Error(txt);
+      throw new Error(`PUT falhou: ${salvar.status} - ${salvarText}`);
     }
 
-    toast("Enviado com sucesso", "#00B37E");
+    const agora = new Date().toLocaleString("pt-BR");
+
+    carrinho.forEach(it =>
+      historico.unshift({ ...it, data: agora })
+    );
+
+    localStorage.setItem("hist", JSON.stringify(historico));
+
     carrinho = [];
-    atualizarBadge();
+
+    toast("Enviado com sucesso", "#0057FF");
 
   } catch (err) {
-    console.error(err);
-    toast("Erro ao enviar", "#E63946");
+    console.error("ERRO:", err);
+    toast(err.message || "Erro ao enviar", "#E63946");
   }
 }
 
-// =========================
-// SERVICE WORKER
-// =========================
+// ── SERVICE WORKER ──
 if ("serviceWorker" in navigator) {
   window.addEventListener("load", () => {
     navigator.serviceWorker
@@ -261,3 +187,4 @@ if ("serviceWorker" in navigator) {
       .catch(err => console.error("SW erro:", err));
   });
 }
+```
