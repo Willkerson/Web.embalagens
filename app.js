@@ -84,26 +84,33 @@ function renderizar(lista) {
 
 // ── ABRIR PRODUTO ──
 window.abrirProduto = function (codigo) {
-  console.log("CLICK RECEBIDO:", codigo);
-  console.log("PRODUTOS:", produtos);
+  console.log("clicou produto:", codigo);
 
   atual = produtos.find(p =>
     String(p.codigo).trim() === String(codigo).trim()
   );
 
-  console.log("ENCONTRADO:", atual);
-
   if (!atual) {
+    console.log("produto não encontrado");
     toast("Produto não encontrado");
     return;
   }
 
-  document.getElementById("painel-nome").textContent = atual.nome;
-  document.getElementById("painel-cod").textContent = atual.codigo;
-  document.getElementById("painel-est").textContent = atual.estoque;
+  // abrir painel SEM depender de ordem
+  const painel = document.getElementById("painel");
+  const overlay = document.getElementById("overlay");
 
-  document.getElementById("overlay").style.display = "block";
-  document.getElementById("painel").classList.add("aberto");
+  painel.style.display = "block";
+  overlay.style.display = "block";
+
+  requestAnimationFrame(() => {
+    painel.classList.add("aberto");
+  });
+
+  document.getElementById("painel-nome").textContent = atual.nome || "";
+  document.getElementById("painel-cod").textContent = atual.codigo || "";
+  document.getElementById("painel-est").textContent = atual.estoque ?? 0;
+  document.getElementById("qtd").value = 1;
 };
 // ── FECHAR ──
 window.fechar = function () {
