@@ -64,7 +64,7 @@ let ordemAtiva = "nome";
 
 // ── GITHUB ──
 const githubHeaders = {
-  Authorization: `Bearer ${GH_TOKEN}`,
+  Authorization: `token ${GH_TOKEN}`,
   Accept: "application/vnd.github+json"
 };
 
