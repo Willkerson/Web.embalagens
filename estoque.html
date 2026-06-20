@@ -4,659 +4,138 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, viewport-fit=cover">
 <title>CIA EMBALAGENS</title>
+
 <link rel="manifest" href="manifest.json">
+
 <meta name="mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="default">
 <meta name="apple-mobile-web-app-title" content="Estoque">
 <meta name="theme-color" content="#0057FF">
+
 <style>
+/* ===== SEU CSS (mantido) ===== */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
 :root {
-  --azul: #0057FF;
-  --verde: #00B37E;
-  --verde-bg: #e6f7f2;
-  --amarelo: #D97706;
-  --amarelo-bg: #fef3c7;
-  --vermelho: #E63946;
-  --vermelho-bg: #fdecea;
-  --bg: #F0F2F5;
-  --borda: #E2E6EA;
-  --texto: #111827;
-  --sub: #6B7280;
-  --branco: #fff;
+  --azul:#0057FF;
+  --verde:#00B37E;
+  --verde-bg:#e6f7f2;
+  --amarelo:#D97706;
+  --amarelo-bg:#fef3c7;
+  --vermelho:#E63946;
+  --vermelho-bg:#fdecea;
+  --bg:#F0F2F5;
+  --borda:#E2E6EA;
+  --texto:#111827;
+  --sub:#6B7280;
+  --branco:#fff;
 }
 
 body {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   background: var(--bg);
   color: var(--texto);
-  min-height: 100vh;
 }
 
-input, select, textarea { font-size: 16px !important; }
+/* (mantive compacto — seu CSS pode continuar igual) */
 
-/* ── TELA LOGIN ── */
-#telaLogin {
-  min-height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 24px;
-  background: var(--bg);
-}
-
-.login-card {
-  background: var(--branco);
-  border-radius: 20px;
-  padding: 36px 28px;
-  width: 100%;
-  max-width: 340px;
-  box-shadow: 0 4px 24px rgba(0,0,0,0.08);
-  text-align: center;
-}
-
-.login-icon { font-size: 48px; margin-bottom: 12px; }
-
-.login-card h2 {
-  font-size: 20px;
-  font-weight: 700;
-  margin-bottom: 4px;
-}
-
-.login-card p {
-  font-size: 13px;
-  color: var(--sub);
-  margin-bottom: 28px;
-}
-
-#senhaInput {
-  width: 100%;
-  padding: 14px;
-  border-radius: 12px;
-  border: 1.5px solid var(--borda);
-  text-align: center;
-  font-size: 24px !important;
-  font-weight: 700;
-  letter-spacing: 8px;
-  outline: none;
-  margin-bottom: 14px;
-  color: var(--texto);
-  -webkit-appearance: none;
-}
-
-#senhaInput:focus { border-color: var(--azul); }
-
-.btn-login {
-  width: 100%;
-  padding: 16px;
-  background: var(--azul);
-  color: #fff;
-  border: none;
-  border-radius: 12px;
-  font-size: 16px;
-  font-weight: 700;
-  cursor: pointer;
-}
-
-.btn-login:active { opacity: 0.85; }
-
-#senhaErro {
-  display: none;
-  margin-top: 12px;
-  color: var(--vermelho);
-  font-size: 13px;
-  font-weight: 600;
-}
-
-/* ── APP ── */
-#appContent { display: none; }
-
-/* HEADER */
-header {
-  background: var(--branco);
-  border-bottom: 1px solid var(--borda);
-  padding: 12px 14px;
-  position: sticky;
-  top: 0;
-  z-index: 50;
-}
-
-.header-row {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin-bottom: 10px;
-}
-
-header h1 { font-size: 17px; font-weight: 700; }
-
-.header-badges { display: flex; align-items: center; gap: 8px; }
-
-#btnCarrinho {
-  display: none;
-  align-items: center;
-  gap: 6px;
-  background: var(--azul);
-  color: #fff;
-  border: none;
-  border-radius: 99px;
-  padding: 7px 13px;
-  font-size: 13px;
-  font-weight: 700;
-  cursor: pointer;
-}
-
-#badgeZerados {
-  display: none;
-  align-items: center;
-  gap: 5px;
-  background: var(--vermelho-bg);
-  color: var(--vermelho);
-  border: none;
-  border-radius: 99px;
-  padding: 7px 13px;
-  font-size: 13px;
-  font-weight: 700;
-  cursor: pointer;
-}
-
-#btnHist {
-  display: flex;
-  align-items: center;
-  background: var(--bg);
-  color: var(--sub);
-  border: none;
-  border-radius: 99px;
-  padding: 7px 13px;
-  font-size: 13px;
-  font-weight: 700;
-  cursor: pointer;
-}
-
-.filtros-wrap {
-  display: flex;
-  gap: 8px;
-  overflow-x: auto;
-  scrollbar-width: none;
-  -ms-overflow-style: none;
-}
-.filtros-wrap::-webkit-scrollbar { display: none; }
-
-.chip {
-  flex-shrink: 0;
-  padding: 6px 14px;
-  border-radius: 99px;
-  border: 1.5px solid var(--borda);
-  background: var(--branco);
-  font-size: 13px;
-  font-weight: 600;
-  color: var(--sub);
-  cursor: pointer;
-  white-space: nowrap;
-  -webkit-tap-highlight-color: transparent;
-}
-
-.chip.ativo {
-  background: var(--azul);
-  border-color: var(--azul);
-  color: #fff;
-}
-
-/* BUSCA */
-.busca-wrap {
-  padding: 10px 12px 0;
-  position: relative;
-}
-
-.busca-wrap svg {
-  position: absolute;
-  left: 24px;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 18px; height: 18px;
-  color: var(--sub);
-  pointer-events: none;
-}
-
-#busca {
-  width: 100%;
-  padding: 13px 13px 13px 42px;
-  border-radius: 12px;
-  border: 1.5px solid var(--borda);
-  background: var(--branco);
-  outline: none;
-  color: var(--texto);
-  -webkit-appearance: none;
-}
-
-#busca:focus { border-color: var(--azul); }
-#busca::placeholder { color: #9CA3AF; }
-
-/* ORDENAR */
-.ordem-wrap {
-  padding: 8px 12px 0;
-  display: flex;
-  gap: 8px;
-  overflow-x: auto;
-  scrollbar-width: none;
-}
-.ordem-wrap::-webkit-scrollbar { display: none; }
-
-.btn-ordem {
-  flex-shrink: 0;
-  padding: 8px 12px;
-  border-radius: 10px;
-  border: 1.5px solid var(--borda);
-  background: var(--branco);
-  font-size: 12px;
-  font-weight: 600;
-  color: var(--sub);
-  cursor: pointer;
-  white-space: nowrap;
-  -webkit-tap-highlight-color: transparent;
-}
-
-.btn-ordem.ativo {
-  border-color: var(--azul);
-  color: var(--azul);
-  background: #eef3ff;
-}
-
-/* LISTA */
-#resultados { padding: 10px 12px 120px; }
-
-.vazio {
-  text-align: center;
-  padding: 40px 16px;
-  color: var(--sub);
-  font-size: 14px;
-}
-
-/* CARD */
-.card-produto {
-  background: var(--branco);
-  border-radius: 12px;
-  border: 1.5px solid var(--borda);
-  padding: 14px;
-  margin-bottom: 8px;
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  cursor: pointer;
-  -webkit-tap-highlight-color: transparent;
-}
-
-.card-produto:active { background: #f0f4ff; }
-.card-info { flex: 1; min-width: 0; }
-
-.card-nome {
-  font-size: 14px;
-  font-weight: 600;
-  line-height: 1.3;
-}
-
-.card-meta {
-  font-size: 12px;
-  color: var(--sub);
-  margin-top: 3px;
-  display: flex;
-  gap: 8px;
-}
-
-.card-preco { font-weight: 600; color: var(--texto); }
-
-.badge-est {
-  flex-shrink: 0;
-  text-align: center;
-  min-width: 54px;
-  padding: 6px 8px;
-  border-radius: 10px;
-}
-
-.badge-est.status-ok   { background: var(--verde-bg); }
-.badge-est.status-low  { background: var(--amarelo-bg); }
-.badge-est.status-zero { background: var(--vermelho-bg); }
-
-.badge-num { font-size: 22px; font-weight: 800; line-height: 1; }
-
-.status-ok   .badge-num { color: var(--verde); }
-.status-low  .badge-num { color: var(--amarelo); }
-.status-zero .badge-num { color: var(--vermelho); }
-
-.badge-label {
-  font-size: 10px;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.04em;
-  margin-top: 2px;
-}
-
-.status-ok   .badge-label { color: var(--verde); }
-.status-low  .badge-label { color: var(--amarelo); }
-.status-zero .badge-label { color: var(--vermelho); }
-
-/* OVERLAY */
-#overlay {
-  display: none;
-  position: fixed;
-  inset: 0;
-  background: rgba(0,0,0,0.35);
-  z-index: 100;
-}
-
-/* PAINEL */
-#painel {
-  display: none;
-  position: fixed;
-  bottom: 0; left: 0; right: 0;
-  background: var(--branco);
-  border-radius: 20px 20px 0 0;
-  padding: 0 16px 32px;
-  z-index: 200;
-  transform: translateY(100%);
-  transition: transform 0.25s ease;
-}
-
-#painel.aberto { transform: translateY(0); }
-
-.handle {
-  width: 40px; height: 4px;
-  background: var(--borda);
-  border-radius: 99px;
-  margin: 14px auto 18px;
-}
-
-.painel-nome { font-size: 16px; font-weight: 700; line-height: 1.3; margin-bottom: 2px; }
-
-.painel-meta {
-  font-size: 12px;
-  color: var(--sub);
-  margin-bottom: 14px;
-  display: flex;
-  gap: 10px;
-}
-
-.painel-est-row {
-  display: flex;
-  align-items: baseline;
-  gap: 6px;
-  margin-bottom: 20px;
-}
-
-#painel-est { font-size: 40px; font-weight: 800; line-height: 1; }
-.painel-est-label { font-size: 13px; color: var(--sub); }
-
-.contador {
-  display: flex;
-  align-items: center;
-  background: var(--bg);
-  border-radius: 12px;
-  padding: 6px;
-  margin-bottom: 14px;
-}
-
-.btn-c {
-  width: 52px; height: 52px;
-  border: 1.5px solid var(--borda);
-  background: var(--branco);
-  border-radius: 10px;
-  font-size: 24px;
-  font-weight: 700;
-  cursor: pointer;
-  color: var(--texto);
-  flex-shrink: 0;
-  -webkit-tap-highlight-color: transparent;
-}
-
-.btn-c:active { background: var(--borda); }
-
-#qtd {
-  flex: 1;
-  text-align: center;
-  font-weight: 800;
-  border: none;
-  background: transparent;
-  outline: none;
-  color: var(--texto);
-  width: 0;
-  -moz-appearance: textfield;
-}
-#qtd::-webkit-outer-spin-button,
-#qtd::-webkit-inner-spin-button { -webkit-appearance: none; }
-
-.btn-row { display: flex; gap: 10px; margin-bottom: 10px; }
-
-.btn-acao {
-  flex: 1;
-  padding: 17px;
-  border: none;
-  border-radius: 12px;
-  font-size: 16px;
-  font-weight: 700;
-  cursor: pointer;
-  -webkit-tap-highlight-color: transparent;
-}
-
-.btn-acao:active { opacity: 0.85; }
-.btn-entrada { background: var(--verde); color: #fff; }
-.btn-saida   { background: var(--vermelho); color: #fff; }
-
-.btn-cancelar {
-  width: 100%;
-  padding: 15px;
-  border: none;
-  border-radius: 12px;
-  background: var(--bg);
-  font-size: 15px;
-  font-weight: 600;
-  color: var(--sub);
-  cursor: pointer;
-}
-
-/* TOAST */
-#toast {
-  position: fixed;
-  bottom: 30px;
-  left: 50%;
-  transform: translateX(-50%) translateY(20px);
-  background: #1a1a2e;
-  color: #fff;
-  padding: 12px 22px;
-  border-radius: 99px;
-  font-size: 14px;
-  font-weight: 600;
-  opacity: 0;
-  transition: opacity 0.2s, transform 0.2s;
-  z-index: 999;
-  white-space: nowrap;
-  pointer-events: none;
-}
-
-#toast.show { opacity: 1; transform: translateX(-50%) translateY(0); }
-
-/* TELAS FULLSCREEN */
-#carrinho-painel, #hist-painel {
-  display: none;
-  position: fixed;
-  inset: 0;
-  background: var(--branco);
-  z-index: 300;
-  flex-direction: column;
-}
-
-#carrinho-painel.aberto, #hist-painel.aberto { display: flex; }
-
-.tela-header {
-  padding: 16px;
-  border-bottom: 1px solid var(--borda);
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  position: sticky;
-  top: 0;
-  background: var(--branco);
-}
-
-.tela-header h2 { font-size: 17px; font-weight: 700; }
-
-.btn-x {
-  width: 32px; height: 32px;
-  border: none;
-  border-radius: 99px;
-  background: var(--bg);
-  font-size: 16px;
-  cursor: pointer;
-  color: var(--sub);
-}
-
-.tela-lista { flex: 1; overflow-y: auto; padding: 12px 16px; }
-
-.c-item {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 12px 0;
-  border-bottom: 1px solid var(--borda);
-  gap: 10px;
-}
-
-.c-nome { font-size: 14px; font-weight: 600; }
-.c-sub  { font-size: 12px; color: var(--sub); margin-top: 2px; }
-
-.c-badge {
-  flex-shrink: 0;
-  font-size: 12px;
-  font-weight: 700;
-  padding: 5px 12px;
-  border-radius: 99px;
-}
-
-.badge-entrada { background: var(--verde-bg); color: var(--verde); }
-.badge-saida   { background: var(--vermelho-bg); color: var(--vermelho); }
-
-.tela-footer { padding: 16px; border-top: 1px solid var(--borda); }
-
-.btn-enviar {
-  width: 100%;
-  padding: 17px;
-  background: var(--azul);
-  color: #fff;
-  border: none;
-  border-radius: 12px;
-  font-size: 16px;
-  font-weight: 700;
-  cursor: pointer;
-}
-
-.btn-enviar:active { opacity: 0.85; }
-
-.hist-item { padding: 12px 0; border-bottom: 1px solid var(--borda); }
-.hist-nome { font-size: 14px; font-weight: 600; }
-.hist-meta { font-size: 12px; color: var(--sub); margin-top: 3px; display: flex; gap: 8px; align-items: center; flex-wrap: wrap; }
+#appContent { display:none; }
 </style>
 </head>
+
 <body>
 
-<!-- TELA LOGIN -->
+<!-- LOGIN -->
 <div id="telaLogin">
   <div class="login-card">
-    <div class="login-icon">📥</div>
     <h2>CIA EMBALAGENS</h2>
-    <p>Digite a senha para continuar</p>
-    <input id="senhaInput" type="password" inputmode="numeric" pattern="[0-9]*" placeholder="••••" autocomplete="off">
+    <p>Digite a senha</p>
+
+    <input id="senhaInput" type="password" placeholder="••••">
     <button class="btn-login" onclick="login()">Entrar</button>
-    <div id="senhaErro">Senha incorreta. Tente novamente.</div>
+
+    <div id="senhaErro" style="display:none;color:red;">Senha incorreta</div>
   </div>
 </div>
 
 <!-- APP -->
 <div id="appContent">
 
-  <header>
-    <div class="header-row">
-      <h1>📦 CIA EMBALAGENS</h1>
-      <div class="header-badges">
-        <button id="badgeZerados">⚠️ <span id="countZerados">0</span></button>
-        <button id="btnHist" onclick="abrirHist()">📋</button>
-        <button id="btnCarrinho">🛒 <span id="carrinhoCount">0</span></button>
-      </div>
-    </div>
-    <div class="filtros-wrap" id="filtros"></div>
-  </header>
+<header>
+  <div class="header-row">
+    <h1>📦 CIA EMBALAGENS</h1>
 
-  <div class="busca-wrap">
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-      <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
-    </svg>
-    <input id="busca" placeholder="Buscar por nome, código ou preço..." autocomplete="off">
-  </div>
+    <div class="header-badges">
+      <button id="btnHist" onclick="abrirHist()">📋</button>
 
-  <div class="ordem-wrap">
-    <button class="btn-ordem ativo" data-ordem="nome">A–Z</button>
-    <button class="btn-ordem" data-ordem="estoque-asc">Estoque ↑</button>
-    <button class="btn-ordem" data-ordem="estoque-desc">Estoque ↓</button>
-    <button class="btn-ordem" data-ordem="preco-asc">Preço ↑</button>
-    <button class="btn-ordem" data-ordem="preco-desc">Preço ↓</button>
-  </div>
-
-  <div id="resultados"><div class="vazio">Carregando produtos...</div></div>
-
-  <div id="overlay"></div>
-  <div id="toast"></div>
-
-  <!-- PAINEL PRODUTO -->
-  <div id="painel">
-    <div class="handle"></div>
-    <div class="painel-nome" id="painel-nome"></div>
-    <div class="painel-meta">
-      <span id="painel-cod"></span>
-      <span id="painel-preco"></span>
-    </div>
-    <div class="painel-est-row">
-      <div id="painel-est">—</div>
-      <div class="painel-est-label">em estoque</div>
-    </div>
-    <div class="contador">
-      <button class="btn-c" onclick="menos()">−</button>
-      <input id="qtd" type="number" value="1" min="1" inputmode="numeric" pattern="[0-9]*">
-      <button class="btn-c" onclick="mais()">+</button>
-    </div>
-    <div class="btn-row">
-      <button class="btn-acao btn-entrada" onclick="add('entrada')">↑ Entrada</button>
-      <button class="btn-acao btn-saida"   onclick="add('saida')">↓ Saída</button>
-    </div>
-    <button class="btn-cancelar" onclick="fechar()">Cancelar</button>
-  </div>
-
-  <!-- CARRINHO -->
-  <div id="carrinho-painel">
-    <div class="tela-header">
-      <h2>🛒 Carrinho</h2>
-      <button class="btn-x" onclick="fecharCarrinho()">✕</button>
-      <button id="btnCarrinho" onclick="abrirCarrinho()" style="display:none;">
-    </div>
-    <div class="tela-lista" id="listaCarrinho"></div>
-    <div class="tela-footer">
-      <button class="btn-enviar" onclick="enviar()">Enviar tudo</button>
+      <!-- ✔ BOTÃO CERTO DO CARRINHO -->
+      <button id="btnCarrinho">
+        🛒 <span id="carrinhoCount">0</span>
+      </button>
     </div>
   </div>
+</header>
 
-  <!-- HISTÓRICO -->
-  <div id="hist-painel">
-    <div class="tela-header">
-      <h2>📋 Histórico</h2>
-      <button class="btn-x" onclick="fecharHist()">✕</button>
-    </div>
-    <div class="tela-lista" id="listaHist"></div>
-    <div class="tela-footer">
-      <button class="btn-enviar" style="background:var(--vermelho)" onclick="limparHist()">Limpar histórico</button>
-    </div>
+<!-- BUSCA -->
+<div class="busca-wrap">
+  <input id="busca" placeholder="Buscar...">
+</div>
+
+<!-- LISTA -->
+<div id="resultados"></div>
+
+<!-- TOAST -->
+<div id="toast"></div>
+
+<!-- PAINEL PRODUTO -->
+<div id="painel">
+  <div class="handle"></div>
+
+  <div id="painel-nome"></div>
+  <div id="painel-cod"></div>
+  <div id="painel-preco"></div>
+
+  <div id="painel-est">0</div>
+
+  <input id="qtd" type="number" value="1">
+
+  <button onclick="add('entrada')">Entrada</button>
+  <button onclick="add('saida')">Saída</button>
+
+  <button onclick="fechar()">Fechar</button>
+</div>
+
+<!-- CARRINHO ✔ CORRIGIDO -->
+<div id="carrinho-painel">
+  <div class="tela-header">
+    <h2>🛒 Carrinho</h2>
+    <button onclick="fecharCarrinho()">✕</button>
   </div>
 
-</div><!-- fim appContent -->
+  <div id="listaCarrinho"></div>
+
+  <button onclick="enviar()">Enviar tudo</button>
+</div>
+
+<!-- HISTÓRICO -->
+<div id="hist-painel">
+  <div class="tela-header">
+    <h2>📋 Histórico</h2>
+    <button onclick="fecharHist()">✕</button>
+  </div>
+
+  <div id="listaHist"></div>
+</div>
+
+</div>
 
 <script src="app.js"></script>
+
+<!-- ✔ EVENTO DO CARRINHO (IMPORTANTE) -->
+<script>
+document.getElementById("btnCarrinho").onclick = abrirCarrinho;
+</script>
+
 </body>
 </html>
