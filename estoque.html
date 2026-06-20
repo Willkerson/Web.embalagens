@@ -2,7 +2,7 @@
 <html lang="pt-BR">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, viewport-fit=cover">
 <title>Estoque Pro</title>
 <style>
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -265,7 +265,15 @@ header h1 {
   text-align: center;
   font-size: 28px;
   font-weight: 800;
+  border: none;
+  background: transparent;
+  outline: none;
+  color: var(--texto);
+  width: 0;
+  -moz-appearance: textfield;
 }
+#qtd::-webkit-outer-spin-button,
+#qtd::-webkit-inner-spin-button { -webkit-appearance: none; }
 
 /* BOTÕES AÇÃO */
 .btn-row {
@@ -410,7 +418,7 @@ header h1 {
   </div>
   <div class="contador">
     <button class="btn-c" onclick="menos()">−</button>
-    <div id="qtd">1</div>
+    <input id="qtd" type="number" value="1" min="1" inputmode="numeric" pattern="[0-9]*">
     <button class="btn-c" onclick="mais()">+</button>
   </div>
   <div class="btn-row">
