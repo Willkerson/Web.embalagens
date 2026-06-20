@@ -317,7 +317,7 @@ async function enviar() {
     // Lê fila atual
     const getFile = await fetch(url, {
       headers: {
-        Authorization: `Bearer ${GH_TOKEN}`,
+        Authorization: `token ${GH_TOKEN}`,
         Accept: 'application/vnd.github+json'
       }
     });
