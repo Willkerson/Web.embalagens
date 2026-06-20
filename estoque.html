@@ -1,437 +1,166 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<title>Estoque Pro</title>
-<style>
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+console.log("APP OK");
 
-:root {
-  --azul: #0057FF;
-  --verde: #00B37E;
-  --verde-bg: #e6f7f2;
-  --amarelo: #D97706;
-  --amarelo-bg: #fef3c7;
-  --vermelho: #E63946;
-  --vermelho-bg: #fdecea;
-  --bg: #F0F2F5;
-  --borda: #E2E6EA;
-  --texto: #111827;
-  --sub: #6B7280;
-  --branco: #fff;
+let produtos = [];
+let carrinho = [];
+let atual = null;
+let qtdAtual = 1;
+
+// ── UTILS ──
+function estoqueNumero(valor) {
+  return parseFloat(
+    String(valor || "0")
+      .replace(/\s*un\.?/i, "")
+      .replace(/\./g, "")
+      .replace(",", ".")
+  ) || 0;
 }
 
-body {
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-  background: var(--bg);
-  color: var(--texto);
-  min-height: 100vh;
+function statusEstoque(n) {
+  if (n === 0) return 'zero';
+  if (n <= 5)  return 'low';
+  return 'ok';
 }
 
-/* HEADER */
-header {
-  background: var(--branco);
-  border-bottom: 1px solid var(--borda);
-  padding: 14px 16px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  position: sticky;
-  top: 0;
-  z-index: 50;
+function labelStatus(n) {
+  if (n === 0) return 'Zerado';
+  if (n <= 5)  return 'Baixo';
+  return 'OK';
 }
 
-header h1 {
-  font-size: 17px;
-  font-weight: 700;
+// ── RENDER ──
+function renderizar(lista) {
+  const div = document.getElementById("resultados");
+
+  if (!lista.length) {
+    div.innerHTML = '<div class="vazio">Nenhum produto encontrado.</div>';
+    return;
+  }
+
+  div.innerHTML = lista.map(p => {
+    const est = estoqueNumero(p.estoque);
+    const st  = statusEstoque(est);
+    return `
+    <div class="card-produto status-${st}" onclick="abrir('${p.codigo}')">
+      <div class="card-info">
+        <div class="card-nome">${p.nome}</div>
+        <div class="card-cod">Cód. ${p.codigo}</div>
+      </div>
+      <div class="badge-est status-${st}">
+        <div class="badge-num">${est}</div>
+        <div class="badge-label">${labelStatus(est)}</div>
+      </div>
+    </div>`;
+  }).join('');
 }
 
-#btnCarrinho {
-  display: none;
-  align-items: center;
-  gap: 6px;
-  background: var(--azul);
-  color: #fff;
-  border: none;
-  border-radius: 99px;
-  padding: 8px 14px;
-  font-size: 14px;
-  font-weight: 700;
-  cursor: pointer;
+// ── LOAD ──
+fetch("front-index/produtos.json")
+  .then(r => r.json())
+  .then(data => {
+    produtos = data;
+    renderizar(produtos);
+  })
+  .catch(err => {
+    document.getElementById("resultados").innerHTML = '<div class="vazio">Erro ao carregar produtos.</div>';
+    console.error(err);
+  });
+
+// ── BUSCA ──
+document.getElementById("busca").addEventListener("input", function () {
+  const t = this.value.toLowerCase().trim();
+
+  if (!t) {
+    renderizar(produtos);
+    return;
+  }
+
+  const res = produtos.filter(p =>
+    (p.nome || "").toLowerCase().includes(t) ||
+    String(p.codigo || "").includes(t)
+  );
+
+  renderizar(res);
+});
+
+// ── ABRIR PAINEL ──
+function abrir(codigo) {
+  atual = produtos.find(p => String(p.codigo) === String(codigo));
+  qtdAtual = 1;
+
+  const est = estoqueNumero(atual.estoque);
+  const cor = est === 0 ? 'var(--vermelho)' : est <= 5 ? 'var(--amarelo)' : 'var(--verde)';
+
+  document.getElementById("painel-nome").textContent    = atual.nome;
+  document.getElementById("painel-est").textContent     = est;
+  document.getElementById("painel-est").style.color     = cor;
+  document.getElementById("painel-cod").textContent     = "Cód. " + atual.codigo;
+  document.getElementById("qtd").textContent            = 1;
+
+  document.getElementById("overlay").style.display = "block";
+  const painel = document.getElementById("painel");
+  painel.style.display = "block";
+  setTimeout(() => painel.classList.add("aberto"), 10);
 }
 
-/* BUSCA */
-.busca-wrap {
-  padding: 12px 12px 0;
-  position: relative;
+function fechar() {
+  const painel = document.getElementById("painel");
+  painel.classList.remove("aberto");
+  setTimeout(() => { painel.style.display = "none"; }, 280);
+  document.getElementById("overlay").style.display = "none";
+  atual = null;
 }
 
-.busca-wrap svg {
-  position: absolute;
-  left: 24px;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 18px;
-  height: 18px;
-  color: var(--sub);
-  pointer-events: none;
+document.getElementById("overlay").addEventListener("click", fechar);
+
+function mais()  { qtdAtual++; document.getElementById("qtd").textContent = qtdAtual; }
+function menos() { if (qtdAtual > 1) { qtdAtual--; document.getElementById("qtd").textContent = qtdAtual; } }
+
+// ── ADD CARRINHO ──
+function add(tipo) {
+  carrinho.push({
+    nome:   atual.nome,
+    codigo: atual.codigo,
+    qtd:    qtdAtual,
+    tipo,
+    estoque: estoqueNumero(atual.estoque)
+  });
+  atualizarBadge();
+  fechar();
 }
 
-#busca {
-  width: 100%;
-  padding: 13px 13px 13px 42px;
-  border-radius: 12px;
-  border: 1.5px solid var(--borda);
-  font-size: 16px;
-  background: var(--branco);
-  outline: none;
-  color: var(--texto);
-  -webkit-appearance: none;
+function atualizarBadge() {
+  const n = carrinho.length;
+  document.getElementById("carrinhoCount").textContent = n;
+  document.getElementById("btnCarrinho").style.display = n ? "flex" : "none";
 }
 
-#busca:focus { border-color: var(--azul); }
-#busca::placeholder { color: #9CA3AF; }
+// ── CARRINHO ──
+document.getElementById("btnCarrinho").addEventListener("click", abrirCarrinho);
 
-/* LISTA */
-#resultados {
-  padding: 10px 12px 100px;
+function abrirCarrinho() {
+  const lista = document.getElementById("listaCarrinho");
+  lista.innerHTML = carrinho.length ? carrinho.map(it => `
+    <div class="c-item">
+      <div>
+        <div class="c-nome">${it.nome}</div>
+        <div class="c-sub">${it.qtd} un · Cód. ${it.codigo}</div>
+      </div>
+      <span class="c-badge badge-${it.tipo}">${it.tipo === 'entrada' ? '↑ Entrada' : '↓ Saída'}</span>
+    </div>`).join('')
+  : '<div class="vazio">Carrinho vazio.</div>';
+
+  document.getElementById("carrinho-painel").classList.add("aberto");
 }
 
-.vazio {
-  text-align: center;
-  padding: 40px 16px;
-  color: var(--sub);
-  font-size: 14px;
+function fecharCarrinho() {
+  document.getElementById("carrinho-painel").classList.remove("aberto");
 }
 
-/* CARD */
-.card-produto {
-  background: var(--branco);
-  border-radius: 12px;
-  border: 1.5px solid var(--borda);
-  padding: 14px;
-  margin-bottom: 8px;
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  cursor: pointer;
-  -webkit-tap-highlight-color: transparent;
-  active-color: transparent;
+function enviar() {
+  if (!carrinho.length) { alert("Carrinho vazio"); return; }
+  console.table(carrinho);
+  alert("Enviado " + carrinho.length + " item(ns)");
+  carrinho = [];
+  atualizarBadge();
+  fecharCarrinho();
 }
-
-.card-produto:active { background: #f0f4ff; }
-
-.card-info { flex: 1; min-width: 0; }
-
-.card-nome {
-  font-size: 14px;
-  font-weight: 600;
-  line-height: 1.3;
-  /* allow wrapping on mobile */
-}
-
-.card-cod {
-  font-size: 12px;
-  color: var(--sub);
-  margin-top: 3px;
-}
-
-/* BADGE ESTOQUE */
-.badge-est {
-  flex-shrink: 0;
-  text-align: center;
-  min-width: 54px;
-  padding: 6px 8px;
-  border-radius: 10px;
-}
-
-.badge-est.status-ok   { background: var(--verde-bg); }
-.badge-est.status-low  { background: var(--amarelo-bg); }
-.badge-est.status-zero { background: var(--vermelho-bg); }
-
-.badge-num {
-  font-size: 22px;
-  font-weight: 800;
-  line-height: 1;
-}
-
-.status-ok   .badge-num { color: var(--verde); }
-.status-low  .badge-num { color: var(--amarelo); }
-.status-zero .badge-num { color: var(--vermelho); }
-
-.badge-label {
-  font-size: 10px;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.04em;
-  margin-top: 2px;
-}
-
-.status-ok   .badge-label { color: var(--verde); }
-.status-low  .badge-label { color: var(--amarelo); }
-.status-zero .badge-label { color: var(--vermelho); }
-
-/* OVERLAY */
-#overlay {
-  display: none;
-  position: fixed;
-  inset: 0;
-  background: rgba(0,0,0,0.35);
-  z-index: 100;
-}
-
-/* PAINEL */
-#painel {
-  display: none;
-  position: fixed;
-  bottom: 0; left: 0; right: 0;
-  background: var(--branco);
-  border-radius: 20px 20px 0 0;
-  padding: 0 16px 32px;
-  z-index: 200;
-  transform: translateY(100%);
-  transition: transform 0.25s ease;
-}
-
-#painel.aberto { transform: translateY(0); }
-
-.handle {
-  width: 40px; height: 4px;
-  background: var(--borda);
-  border-radius: 99px;
-  margin: 14px auto 18px;
-}
-
-.painel-nome {
-  font-size: 16px;
-  font-weight: 700;
-  line-height: 1.3;
-  margin-bottom: 4px;
-}
-
-.painel-cod {
-  font-size: 12px;
-  color: var(--sub);
-  margin-bottom: 14px;
-}
-
-.painel-est-row {
-  display: flex;
-  align-items: baseline;
-  gap: 6px;
-  margin-bottom: 20px;
-}
-
-#painel-est {
-  font-size: 40px;
-  font-weight: 800;
-  line-height: 1;
-}
-
-.painel-est-label {
-  font-size: 13px;
-  color: var(--sub);
-}
-
-/* CONTADOR */
-.contador {
-  display: flex;
-  align-items: center;
-  background: var(--bg);
-  border-radius: 12px;
-  padding: 6px;
-  margin-bottom: 14px;
-  gap: 0;
-}
-
-.btn-c {
-  width: 52px; height: 52px;
-  border: none;
-  background: var(--branco);
-  border-radius: 10px;
-  font-size: 24px;
-  font-weight: 700;
-  cursor: pointer;
-  color: var(--texto);
-  flex-shrink: 0;
-  border: 1.5px solid var(--borda);
-}
-
-.btn-c:active { background: var(--borda); }
-
-#qtd {
-  flex: 1;
-  text-align: center;
-  font-size: 28px;
-  font-weight: 800;
-}
-
-/* BOTÕES AÇÃO */
-.btn-row {
-  display: flex;
-  gap: 10px;
-  margin-bottom: 10px;
-}
-
-.btn-acao {
-  flex: 1;
-  padding: 17px;
-  border: none;
-  border-radius: 12px;
-  font-size: 16px;
-  font-weight: 700;
-  cursor: pointer;
-}
-
-.btn-acao:active { opacity: 0.85; }
-.btn-entrada { background: var(--verde); color: #fff; }
-.btn-saida   { background: var(--vermelho); color: #fff; }
-
-.btn-cancelar {
-  width: 100%;
-  padding: 15px;
-  border: none;
-  border-radius: 12px;
-  background: var(--bg);
-  font-size: 15px;
-  font-weight: 600;
-  color: var(--sub);
-  cursor: pointer;
-}
-
-/* CARRINHO TELA */
-#carrinho-painel {
-  display: none;
-  position: fixed;
-  inset: 0;
-  background: var(--branco);
-  z-index: 300;
-  flex-direction: column;
-}
-
-#carrinho-painel.aberto { display: flex; }
-
-.c-header {
-  padding: 16px;
-  border-bottom: 1px solid var(--borda);
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.c-header h2 { font-size: 17px; font-weight: 700; }
-
-.btn-x {
-  width: 32px; height: 32px;
-  border: none;
-  border-radius: 99px;
-  background: var(--bg);
-  font-size: 16px;
-  cursor: pointer;
-  color: var(--sub);
-}
-
-.c-lista {
-  flex: 1;
-  overflow-y: auto;
-  padding: 12px 16px;
-}
-
-.c-item {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 12px 0;
-  border-bottom: 1px solid var(--borda);
-  gap: 10px;
-}
-
-.c-nome { font-size: 14px; font-weight: 600; }
-.c-sub  { font-size: 12px; color: var(--sub); margin-top: 2px; }
-
-.c-badge {
-  flex-shrink: 0;
-  font-size: 12px;
-  font-weight: 700;
-  padding: 5px 12px;
-  border-radius: 99px;
-}
-
-.badge-entrada { background: var(--verde-bg); color: var(--verde); }
-.badge-saida   { background: var(--vermelho-bg); color: var(--vermelho); }
-
-.c-footer {
-  padding: 16px;
-  border-top: 1px solid var(--borda);
-}
-
-.btn-enviar {
-  width: 100%;
-  padding: 17px;
-  background: var(--azul);
-  color: #fff;
-  border: none;
-  border-radius: 12px;
-  font-size: 16px;
-  font-weight: 700;
-  cursor: pointer;
-}
-
-.btn-enviar:active { opacity: 0.85; }
-</style>
-</head>
-<body>
-
-<header>
-  <h1>📦 Estoque Pro</h1>
-  <button id="btnCarrinho">🛒 <span id="carrinhoCount">0</span></button>
-</header>
-
-<div class="busca-wrap">
-  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-    <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
-  </svg>
-  <input id="busca" placeholder="Buscar por nome ou código..." autocomplete="off">
-</div>
-
-<div id="resultados"><div class="vazio">Carregando produtos...</div></div>
-
-<div id="overlay"></div>
-
-<!-- PAINEL PRODUTO -->
-<div id="painel">
-  <div class="handle"></div>
-  <div class="painel-nome" id="painel-nome"></div>
-  <div class="painel-cod"  id="painel-cod"></div>
-  <div class="painel-est-row">
-    <div id="painel-est">—</div>
-    <div class="painel-est-label">em estoque</div>
-  </div>
-  <div class="contador">
-    <button class="btn-c" onclick="menos()">−</button>
-    <div id="qtd">1</div>
-    <button class="btn-c" onclick="mais()">+</button>
-  </div>
-  <div class="btn-row">
-    <button class="btn-acao btn-entrada" onclick="add('entrada')">↑ Entrada</button>
-    <button class="btn-acao btn-saida"   onclick="add('saida')">↓ Saída</button>
-  </div>
-  <button class="btn-cancelar" onclick="fechar()">Cancelar</button>
-</div>
-
-<!-- CARRINHO -->
-<div id="carrinho-painel">
-  <div class="c-header">
-    <h2>🛒 Carrinho</h2>
-    <button class="btn-x" onclick="fecharCarrinho()">✕</button>
-  </div>
-  <div class="c-lista" id="listaCarrinho"></div>
-  <div class="c-footer">
-    <button class="btn-enviar" onclick="enviar()">Enviar tudo</button>
-  </div>
-</div>
-
-<script src="app.js"></script>
-</body>
-</html>
