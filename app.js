@@ -20,10 +20,6 @@ async function hashSenha(str) {
     .join("");
 }
 
-function verificarSenha() {
-  return sessionStorage.getItem("auth") === "ok";
-}
-
 window.login = async function () {
   const input = document.getElementById("senhaInput").value;
   const hash = await hashSenha(input);
@@ -107,6 +103,7 @@ window.abrirProduto = function (codigo) {
   document.getElementById("painel-cod").textContent = atual.codigo;
   document.getElementById("painel-preco").textContent =
     "R$ " + (atual.preco ?? "-");
+
   document.getElementById("painel-est").textContent = estoqueNumero(
     atual.estoque
   );
@@ -126,7 +123,6 @@ window.fechar = function () {
   painel.classList.remove("aberto");
 };
 
-// clique fora fecha
 document.getElementById("overlay")?.addEventListener("click", window.fechar);
 
 // ── CONTADOR ──
@@ -140,14 +136,13 @@ window.menos = function () {
   document.getElementById("qtd").value = qtdAtual;
 };
 
-// sincroniza input manual
 document.addEventListener("input", (e) => {
   if (e.target.id === "qtd") {
     qtdAtual = parseInt(e.target.value || 1);
   }
 });
 
-// ── ADD (entrada/saída) ──
+// ── ADD CARRINHO ──
 window.add = function (tipo) {
   if (!atual) return;
 
@@ -160,27 +155,92 @@ window.add = function (tipo) {
     tipo
   });
 
+  atualizarCarrinho();
   toast(`Adicionado: ${tipo} (${qtd})`);
   window.fechar();
 };
+
+// ── CONTADOR UI ──
+function atualizarCarrinho() {
+  const el = document.getElementById("carrinhoCount");
+  if (el) el.textContent = window.carrinho.length;
+}
 
 // ── BUSCA ──
 const busca = document.getElementById("busca");
 
 if (busca) {
   busca.addEventListener("input", (e) => {
-    const termo = e.target.value.toLowerCase().trim();
+    const termo = e.target.value.toLowerCase();
 
-    const filtrado = produtos.filter((p) => {
-      return (
-        String(p.nome).toLowerCase().includes(termo) ||
-        String(p.codigo).toLowerCase().includes(termo)
-      );
-    });
+    const filtrado = produtos.filter((p) =>
+      p.nome.toLowerCase().includes(termo) ||
+      p.codigo.toLowerCase().includes(termo)
+    );
 
     renderizar(filtrado);
   });
 }
+
+// ── ENVIAR GITHUB ──
+window.enviar = async function () {
+  if (!window.carrinho.length) {
+    toast("Carrinho vazio");
+    return;
+  }
+
+  try {
+    const url =
+      "https://api.github.com/repos/" +
+      REPO +
+      "/contents/" +
+      PATH;
+
+    const getFile = await fetch(url, {
+      headers: {
+        Authorization: "Bearer " + GH_TOKEN,
+        Accept: "application/vnd.github+json"
+      }
+    });
+
+    const file = await getFile.json();
+
+    let dados = { itens: [] };
+
+    try {
+      dados = JSON.parse(atob(file.content));
+    } catch {}
+
+    const sha = file.sha;
+
+    window.carrinho.forEach((it) => {
+      dados.itens.push(it);
+    });
+
+    const salvar = await fetch(url, {
+      method: "PUT",
+      headers: {
+        Authorization: "Bearer " + GH_TOKEN,
+        Accept: "application/vnd.github+json",
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({
+        message: "movimentacao estoque",
+        content: btoa(JSON.stringify(dados, null, 2)),
+        sha
+      })
+    });
+
+    if (!salvar.ok) throw new Error("Erro ao enviar");
+
+    window.carrinho = [];
+    atualizarCarrinho();
+    toast("Enviado com sucesso!");
+  } catch (err) {
+    console.error(err);
+    toast("Erro ao enviar");
+  }
+};
 
 // ── SERVICE WORKER ──
 if ("serviceWorker" in navigator) {
