@@ -1,4 +1,5 @@
 ```javascript
+alert("APP.JS CARREGOU");
 console.log("APP OK");
 
 // ⚠️ IMPORTANTE: regenere esse token depois
