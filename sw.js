@@ -1,4 +1,5 @@
-const CACHE = "estoque-v1";
+const CACHE = "estoque-v2";
+
 const ARQUIVOS = [
   "/Web.embalagens/estoque.html",
   "/Web.embalagens/app.js",
@@ -6,30 +7,59 @@ const ARQUIVOS = [
   "/Web.embalagens/front-index/produtos.json"
 ];
 
-self.addEventListener("install", e => {
-  e.waitUntil(
-    caches.open(CACHE).then(c => c.addAll(ARQUIVOS))
+// INSTALL
+self.addEventListener("install", (event) => {
+  event.waitUntil(
+    caches.open(CACHE).then((cache) => {
+      return cache.addAll(ARQUIVOS);
+    })
   );
+
+  // força ativação imediata
   self.skipWaiting();
 });
 
-self.addEventListener("activate", e => {
-  e.waitUntil(
-    caches.keys().then(keys =>
-      Promise.all(keys.filter(k => k !== CACHE).map(k => caches.delete(k)))
-    )
+// ACTIVATE
+self.addEventListener("activate", (event) => {
+  event.waitUntil(
+    caches.keys().then((keys) => {
+      return Promise.all(
+        keys.map((key) => {
+          if (key !== CACHE) {
+            return caches.delete(key);
+          }
+        })
+      );
+    })
   );
+
   self.clients.claim();
 });
 
-self.addEventListener("fetch", e => {
-  e.respondWith(
-    fetch(e.request)
-      .then(res => {
-        const clone = res.clone();
-        caches.open(CACHE).then(c => c.put(e.request, clone));
-        return res;
+// FETCH (corrigido para não quebrar arquivos JS/HTML)
+self.addEventListener("fetch", (event) => {
+  event.respondWith(
+    fetch(event.request)
+      .then((response) => {
+        // só cacheia respostas válidas
+        if (
+          !response ||
+          response.status !== 200 ||
+          response.type !== "basic"
+        ) {
+          return response;
+        }
+
+        const clone = response.clone();
+
+        caches.open(CACHE).then((cache) => {
+          cache.put(event.request, clone);
+        });
+
+        return response;
       })
-      .catch(() => caches.match(e.request))
+      .catch(() => {
+        return caches.match(event.request);
+      })
   );
 });
