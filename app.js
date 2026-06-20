@@ -112,11 +112,19 @@ function fechar() {
 
 document.getElementById("overlay").addEventListener("click", fechar);
 
-function mais()  { qtdAtual++; document.getElementById("qtd").textContent = qtdAtual; }
-function menos() { if (qtdAtual > 1) { qtdAtual--; document.getElementById("qtd").textContent = qtdAtual; } }
+function mais()  { qtdAtual++; document.getElementById("qtd").value = qtdAtual; }
+function menos() { if (qtdAtual > 1) { qtdAtual--; document.getElementById("qtd").value = qtdAtual; } }
+
+document.getElementById("qtd").addEventListener("input", function () {
+  const v = parseInt(this.value) || 1;
+  qtdAtual = v < 1 ? 1 : v;
+  this.value = qtdAtual;
+});
 
 // ── ADD CARRINHO ──
 function add(tipo) {
+  const inputVal = parseInt(document.getElementById("qtd").value) || 1;
+  qtdAtual = inputVal < 1 ? 1 : inputVal;
   carrinho.push({
     nome:   atual.nome,
     codigo: atual.codigo,
