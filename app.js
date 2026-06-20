@@ -5,15 +5,6 @@ let carrinho = [];
 let atual = null;
 let qtdAtual = 1;
 
-// ── LOAD ──
-fetch("front-index/produtos.json")
-  .then(r => r.json())
-  .then(data => {
-    produtos = data;
-    console.log("Produtos carregados:", produtos.length);
-  })
-  .catch(err => console.error("Erro ao carregar produtos.json:", err));
-
 // ── UTILS ──
 function estoqueNumero(valor) {
   return parseFloat(
@@ -36,13 +27,50 @@ function labelStatus(n) {
   return 'OK';
 }
 
+// ── RENDER ──
+function renderizar(lista) {
+  const div = document.getElementById("resultados");
+
+  if (!lista.length) {
+    div.innerHTML = '<div class="vazio">Nenhum produto encontrado.</div>';
+    return;
+  }
+
+  div.innerHTML = lista.map(p => {
+    const est = estoqueNumero(p.estoque);
+    const st  = statusEstoque(est);
+    return `
+    <div class="card-produto status-${st}" onclick="abrir('${p.codigo}')">
+      <div class="card-info">
+        <div class="card-nome">${p.nome}</div>
+        <div class="card-cod">Cód. ${p.codigo}</div>
+      </div>
+      <div class="badge-est status-${st}">
+        <div class="badge-num">${est}</div>
+        <div class="badge-label">${labelStatus(est)}</div>
+      </div>
+    </div>`;
+  }).join('');
+}
+
+// ── LOAD ──
+fetch("front-index/produtos.json")
+  .then(r => r.json())
+  .then(data => {
+    produtos = data;
+    renderizar(produtos);
+  })
+  .catch(err => {
+    document.getElementById("resultados").innerHTML = '<div class="vazio">Erro ao carregar produtos.</div>';
+    console.error(err);
+  });
+
 // ── BUSCA ──
 document.getElementById("busca").addEventListener("input", function () {
   const t = this.value.toLowerCase().trim();
-  const div = document.getElementById("resultados");
 
-  if (t.length < 2) {
-    div.innerHTML = "";
+  if (!t) {
+    renderizar(produtos);
     return;
   }
 
@@ -51,30 +79,7 @@ document.getElementById("busca").addEventListener("input", function () {
     String(p.codigo || "").includes(t)
   );
 
-  if (!res.length) {
-    div.innerHTML = '<div class="vazio">Nenhum produto encontrado.</div>';
-    return;
-  }
-
-  div.innerHTML = res.slice(0, 10).map(p => {
-    const est = estoqueNumero(p.estoque);
-    const st  = statusEstoque(est);
-    return `
-    <div class="card-produto status-${st}" onclick="abrir('${p.codigo}')">
-      <div class="card-produto-info">
-        <div class="card-produto-nome">${p.nome}</div>
-        <div class="card-produto-cat">${p.codigo}</div>
-      </div>
-      <div class="badge-estoque">
-        <div class="badge-num">${est}</div>
-        <div class="badge-label">${labelStatus(est)}</div>
-      </div>
-      <svg class="chevron" width="16" height="16" viewBox="0 0 24 24" fill="none"
-        stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-        <polyline points="9 18 15 12 9 6"/>
-      </svg>
-    </div>`;
-  }).join('');
+  renderizar(res);
 });
 
 // ── ABRIR PAINEL ──
@@ -85,13 +90,11 @@ function abrir(codigo) {
   const est = estoqueNumero(atual.estoque);
   const cor = est === 0 ? 'var(--vermelho)' : est <= 5 ? 'var(--amarelo)' : 'var(--verde)';
 
-  document.getElementById("nome").textContent        = atual.nome;
-  document.getElementById("estoque-num").textContent = est;
-  document.getElementById("estoque-num").style.color = cor;
-  document.getElementById("qtd").textContent         = 1;
-
-  document.getElementById("resultados").innerHTML = "";
-  document.getElementById("busca").value = "";
+  document.getElementById("painel-nome").textContent    = atual.nome;
+  document.getElementById("painel-est").textContent     = est;
+  document.getElementById("painel-est").style.color     = cor;
+  document.getElementById("painel-cod").textContent     = "Cód. " + atual.codigo;
+  document.getElementById("qtd").textContent            = 1;
 
   document.getElementById("overlay").style.display = "block";
   const painel = document.getElementById("painel");
@@ -112,12 +115,12 @@ document.getElementById("overlay").addEventListener("click", fechar);
 function mais()  { qtdAtual++; document.getElementById("qtd").textContent = qtdAtual; }
 function menos() { if (qtdAtual > 1) { qtdAtual--; document.getElementById("qtd").textContent = qtdAtual; } }
 
-// ── CARRINHO ──
+// ── ADD CARRINHO ──
 function add(tipo) {
   carrinho.push({
-    nome:    atual.nome,
-    codigo:  atual.codigo,
-    qtd:     qtdAtual,
+    nome:   atual.nome,
+    codigo: atual.codigo,
+    qtd:    qtdAtual,
     tipo,
     estoque: estoqueNumero(atual.estoque)
   });
@@ -126,31 +129,25 @@ function add(tipo) {
 }
 
 function atualizarBadge() {
-  const n   = carrinho.length;
-  const btn = document.getElementById("btnCarrinho");
+  const n = carrinho.length;
   document.getElementById("carrinhoCount").textContent = n;
-  btn.style.display = n ? "flex" : "none";
+  document.getElementById("btnCarrinho").style.display = n ? "flex" : "none";
 }
 
+// ── CARRINHO ──
 document.getElementById("btnCarrinho").addEventListener("click", abrirCarrinho);
 
 function abrirCarrinho() {
   const lista = document.getElementById("listaCarrinho");
-
-  if (!carrinho.length) {
-    lista.innerHTML = '<div class="carrinho-vazio">Nenhum item no carrinho.</div>';
-  } else {
-    lista.innerHTML = carrinho.map(it => `
-      <div class="carrinho-item">
-        <div>
-          <div class="carrinho-item-nome">${it.nome}</div>
-          <div class="carrinho-item-qtd">${it.qtd} unidade${it.qtd > 1 ? 's' : ''} · Cód. ${it.codigo}</div>
-        </div>
-        <span class="carrinho-badge badge-${it.tipo}">
-          ${it.tipo === 'entrada' ? '↑ Entrada' : '↓ Saída'}
-        </span>
-      </div>`).join('');
-  }
+  lista.innerHTML = carrinho.length ? carrinho.map(it => `
+    <div class="c-item">
+      <div>
+        <div class="c-nome">${it.nome}</div>
+        <div class="c-sub">${it.qtd} un · Cód. ${it.codigo}</div>
+      </div>
+      <span class="c-badge badge-${it.tipo}">${it.tipo === 'entrada' ? '↑ Entrada' : '↓ Saída'}</span>
+    </div>`).join('')
+  : '<div class="vazio">Carrinho vazio.</div>';
 
   document.getElementById("carrinho-painel").classList.add("aberto");
 }
@@ -160,14 +157,9 @@ function fecharCarrinho() {
 }
 
 function enviar() {
-  if (!carrinho.length) {
-    alert("Carrinho vazio");
-    return;
-  }
-
+  if (!carrinho.length) { alert("Carrinho vazio"); return; }
   console.table(carrinho);
   alert("Enviado " + carrinho.length + " item(ns)");
-
   carrinho = [];
   atualizarBadge();
   fecharCarrinho();
