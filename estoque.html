@@ -283,7 +283,58 @@ header h1 { font-size: 17px; font-weight: 700; }
 <div id="toast"></div>
 
 <!-- PAINEL -->
-<div id="painel"></div>
+<!-- PAINEL -->
+<div id="painel">
+
+  <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:16px;">
+    <h2 id="painel-nome">Produto</h2>
+    <button onclick="fechar()" style="border:none;background:none;font-size:20px;">✕</button>
+  </div>
+
+  <div style="margin-bottom:10px;">
+    <strong>Código:</strong>
+    <span id="painel-cod"></span>
+  </div>
+
+  <div style="margin-bottom:10px;">
+    <strong>Preço:</strong>
+    <span id="painel-preco"></span>
+  </div>
+
+  <div style="margin-bottom:20px;">
+    <strong>Estoque:</strong>
+    <span id="painel-est"></span>
+  </div>
+
+  <div style="display:flex;align-items:center;gap:10px;margin-bottom:20px;">
+    <button onclick="menos()" style="width:40px;height:40px;">−</button>
+
+    <input
+      id="qtd"
+      type="number"
+      min="1"
+      value="1"
+      style="width:70px;text-align:center;"
+    >
+
+    <button onclick="mais()" style="width:40px;height:40px;">+</button>
+  </div>
+
+  <div style="display:flex;gap:10px;">
+    <button
+      onclick="add('entrada')"
+      style="flex:1;padding:14px;background:#00B37E;color:#fff;border:none;border-radius:12px;">
+      Entrada
+    </button>
+
+    <button
+      onclick="add('saida')"
+      style="flex:1;padding:14px;background:#E63946;color:#fff;border:none;border-radius:12px;">
+      Saída
+    </button>
+  </div>
+
+</div>
 
 <!-- CARRINHO -->
 <div id="carrinho-painel">
