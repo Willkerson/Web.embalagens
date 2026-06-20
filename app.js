@@ -1,7 +1,9 @@
 alert("APP CARREGOU");
 console.log("APP OK");
 
-// ── LOGINa ──
+// ─────────────────────────────
+// LOGIN
+// ─────────────────────────────
 const SENHA_HASH = "158a323a7ba44870f23d96f1516dd70aa48e9a72db4ebb026b0a89e212a208ab";
 
 async function hashSenha(str) {
@@ -13,6 +15,10 @@ async function hashSenha(str) {
   return Array.from(new Uint8Array(buf))
     .map(b => b.toString(16).padStart(2, "0"))
     .join("");
+}
+
+function verificarSenha() {
+  return sessionStorage.getItem("auth") === "ok";
 }
 
 window.login = async function () {
@@ -29,10 +35,6 @@ window.login = async function () {
   }
 };
 
-function verificarSenha() {
-  return sessionStorage.getItem("auth") === "ok";
-}
-
 document.addEventListener("DOMContentLoaded", () => {
   if (verificarSenha()) {
     document.getElementById("telaLogin").style.display = "none";
@@ -41,30 +43,35 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 });
 
-// ── DADOS ──
+// ─────────────────────────────
+// ESTADO
+// ─────────────────────────────
 let produtos = [];
 let carrinho = [];
 let historico = JSON.parse(localStorage.getItem("hist") || "[]");
-
 let atual = null;
-let qtdAtual = 1;
 
-// ── INICIAR ──
+// ─────────────────────────────
+// INICIAR
+// ─────────────────────────────
 function iniciar() {
   fetch("front-index/produtos.json")
     .then(r => r.json())
     .then(data => {
-      produtos = data;
+      produtos = data || [];
       renderizar(produtos);
-    });
+    })
+    .catch(err => console.error(err));
 }
 
-// ── RENDER LISTA ──
+// ─────────────────────────────
+// RENDER LISTA
+// ─────────────────────────────
 function renderizar(lista) {
   const el = document.getElementById("resultados");
 
   if (!lista.length) {
-    el.innerHTML = `<div class="vazio">Nada encontrado</div>`;
+    el.innerHTML = `<div class="vazio">Nenhum produto</div>`;
     return;
   }
 
@@ -74,29 +81,28 @@ function renderizar(lista) {
         <div class="card-nome">${p.nome}</div>
         <div class="card-meta">${p.codigo}</div>
       </div>
+
       <div class="badge-est status-ok">
-        <div class="badge-num">${p.estoque}</div>
+        <div class="badge-num">${p.estoque ?? 0}</div>
         <div class="badge-label">est</div>
       </div>
     </div>
   `).join("");
 }
 
-// ── ABRIR PRODUTO ──
+// ─────────────────────────────
+// ABRIR PRODUTO (PAINEL)
+// ─────────────────────────────
 window.abrirProduto = function (codigo) {
-  console.log("clicou produto:", codigo);
-
   atual = produtos.find(p =>
     String(p.codigo).trim() === String(codigo).trim()
   );
 
   if (!atual) {
-    console.log("produto não encontrado");
-    toast("Produto não encontrado");
+    console.log("Produto não encontrado");
     return;
   }
 
-  // abrir painel SEM depender de ordem
   const painel = document.getElementById("painel");
   const overlay = document.getElementById("overlay");
 
@@ -107,25 +113,39 @@ window.abrirProduto = function (codigo) {
     painel.classList.add("aberto");
   });
 
-  document.getElementById("painel-nome").textContent = atual.nome || "";
-  document.getElementById("painel-cod").textContent = atual.codigo || "";
+  document.getElementById("painel-nome").textContent = atual.nome;
+  document.getElementById("painel-cod").textContent = atual.codigo;
   document.getElementById("painel-est").textContent = atual.estoque ?? 0;
   document.getElementById("qtd").value = 1;
 };
-// ── FECHAR ──
+
+// ─────────────────────────────
+// FECHAR PAINEL
+// ─────────────────────────────
 window.fechar = function () {
   document.getElementById("painel").classList.remove("aberto");
-  document.getElementById("overlay").style.display = "none";
+
+  setTimeout(() => {
+    document.getElementById("painel").style.display = "none";
+    document.getElementById("overlay").style.display = "none";
+  }, 200);
 };
 
-// ── CONTADOR ──
-window.mais = () => document.getElementById("qtd").value++;
-window.menos = () => {
-  const v = document.getElementById("qtd");
-  if (v.value > 1) v.value--;
+// ─────────────────────────────
+// CONTADOR
+// ─────────────────────────────
+window.mais = function () {
+  document.getElementById("qtd").value++;
 };
 
-// ── ADD CARRINHO ──
+window.menos = function () {
+  const el = document.getElementById("qtd");
+  if (el.value > 1) el.value--;
+};
+
+// ─────────────────────────────
+// CARRINHO
+// ─────────────────────────────
 window.add = function (tipo) {
   const qtd = Number(document.getElementById("qtd").value);
 
@@ -138,12 +158,13 @@ window.add = function (tipo) {
 
   atualizarCarrinho();
   fechar();
-  toast("Adicionado ao carrinho");
+  toast("Adicionado");
 };
 
-// ── CARRINHO ──
 function atualizarCarrinho() {
   document.getElementById("carrinhoCount").textContent = carrinho.length;
+
+  document.getElementById("btnCarrinho").style.display = "flex";
 
   const el = document.getElementById("listaCarrinho");
 
@@ -155,11 +176,11 @@ function atualizarCarrinho() {
       </div>
     </div>
   `).join("");
-
-  document.getElementById("btnCarrinho").style.display = "flex";
 }
 
-// ── ABRIR CARRINHO ──
+// ─────────────────────────────
+// ABRIR / FECHAR CARRINHO
+// ─────────────────────────────
 window.abrirCarrinho = function () {
   document.getElementById("carrinho-painel").classList.add("aberto");
 };
@@ -168,7 +189,9 @@ window.fecharCarrinho = function () {
   document.getElementById("carrinho-painel").classList.remove("aberto");
 };
 
-// ── HISTÓRICO ──
+// ─────────────────────────────
+// HISTÓRICO
+// ─────────────────────────────
 window.abrirHist = function () {
   document.getElementById("hist-painel").classList.add("aberto");
 
@@ -192,7 +215,9 @@ window.limparHist = function () {
   abrirHist();
 };
 
-// ── TOAST ──
+// ─────────────────────────────
+// TOAST
+// ─────────────────────────────
 function toast(msg) {
   const el = document.getElementById("toast");
   el.textContent = msg;
