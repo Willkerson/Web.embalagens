@@ -1,4 +1,4 @@
-```javascript
+
 alert("APP.JS CARREGOU");
 console.log("APP OK");
 
@@ -196,4 +196,4 @@ if ("serviceWorker" in navigator) {
       .catch(err => console.error("SW erro:", err));
   });
 }
-```
+
