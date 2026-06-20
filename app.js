@@ -1,7 +1,7 @@
 alert("APP CARREGOU");
 console.log("APP OK");
 
-// ── LOGIN ──
+// ── LOGINa ──
 const SENHA_HASH = "158a323a7ba44870f23d96f1516dd70aa48e9a72db4ebb026b0a89e212a208ab";
 
 async function hashSenha(str) {
