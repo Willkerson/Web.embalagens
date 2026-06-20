@@ -1,4 +1,7 @@
 console.log("APP OK");
+const GH_TOKEN = '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';
+const REPO = 'Willkerson/Automacao-ConnectPlug';
+const PATH = 'fila/movimentacao.json';
 
 // ── SENHA ──
 const SENHA_HASH = "158a323a7ba44870f23d96f1516dd70aa48e9a72db4ebb026b0a89e212a208ab";
@@ -299,21 +302,106 @@ function fecharCarrinho() {
   document.getElementById("carrinho-painel").classList.remove("aberto");
 }
 
-function enviar() {
-  if (!carrinho.length) { toast("Carrinho vazio"); return; }
+async function enviar() {
 
-  const agora = new Date().toLocaleString('pt-BR');
-  carrinho.forEach(it => historico.unshift({ ...it, data: agora }));
-  if (historico.length > 200) historico = historico.slice(0, 200);
-  localStorage.setItem("hist", JSON.stringify(historico));
+  if (!carrinho.length) {
+    toast("Carrinho vazio");
+    return;
+  }
 
-  console.table(carrinho);
-  toast(`✓ ${carrinho.length} item(ns) enviado(s)`, '#0057FF');
-  carrinho = [];
-  atualizarBadge();
-  fecharCarrinho();
+  try {
+
+    const url =
+      `https://api.github.com/repos/${REPO}/contents/${PATH}`;
+
+    // Lê fila atual
+    const getFile = await fetch(url, {
+      headers: {
+        Authorization: `Bearer ${GH_TOKEN}`,
+        Accept: 'application/vnd.github+json'
+      }
+    });
+
+    const file = await getFile.json();
+
+    const sha = file.sha;
+
+    let dados = {
+      itens: []
+    };
+
+    try {
+      dados = JSON.parse(
+        atob(file.content.replace(/\n/g, ''))
+      );
+    } catch {}
+
+    // Adiciona itens do carrinho
+    carrinho.forEach(it => {
+      dados.itens.push({
+        codigo: String(it.codigo),
+        qtd: Number(it.qtd),
+        tipo: it.tipo
+      });
+    });
+
+    // Salva novamente
+    const salvar = await fetch(url, {
+      method: 'PUT',
+      headers: {
+        Authorization: `Bearer ${GH_TOKEN}`,
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        message: 'nova movimentacao',
+        content: btoa(
+          JSON.stringify(dados, null, 2)
+        ),
+        sha
+      })
+    });
+
+    if (!salvar.ok) {
+      throw new Error(
+        `GitHub ${salvar.status}`
+      );
+    }
+
+    const agora = new Date().toLocaleString('pt-BR');
+
+    carrinho.forEach(it =>
+      historico.unshift({
+        ...it,
+        data: agora
+      })
+    );
+
+    localStorage.setItem(
+      "hist",
+      JSON.stringify(historico)
+    );
+
+    toast(
+      `✓ ${carrinho.length} item(ns) enviado(s)`,
+      '#0057FF'
+    );
+
+    carrinho = [];
+
+    atualizarBadge();
+
+    fecharCarrinho();
+
+  } catch (err) {
+
+    console.error(err);
+
+    toast(
+      'Erro ao enviar',
+      '#E63946'
+    );
+  }
 }
-
 // ── HISTÓRICO ──
 function abrirHist() {
   const lista = document.getElementById("listaHist");
