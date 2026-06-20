@@ -4,9 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, viewport-fit=cover">
 <title>CIA EMBALAGENS</title>
-
 <link rel="manifest" href="manifest.json">
-
 <meta name="mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="default">
@@ -14,33 +12,236 @@
 <meta name="theme-color" content="#0057FF">
 
 <style>
-/* ===== SEU CSS (mantido) ===== */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
 :root {
-  --azul:#0057FF;
-  --verde:#00B37E;
-  --verde-bg:#e6f7f2;
-  --amarelo:#D97706;
-  --amarelo-bg:#fef3c7;
-  --vermelho:#E63946;
-  --vermelho-bg:#fdecea;
-  --bg:#F0F2F5;
-  --borda:#E2E6EA;
-  --texto:#111827;
-  --sub:#6B7280;
-  --branco:#fff;
+  --azul: #0057FF;
+  --verde: #00B37E;
+  --verde-bg: #e6f7f2;
+  --amarelo: #D97706;
+  --amarelo-bg: #fef3c7;
+  --vermelho: #E63946;
+  --vermelho-bg: #fdecea;
+  --bg: #F0F2F5;
+  --borda: #E2E6EA;
+  --texto: #111827;
+  --sub: #6B7280;
+  --branco: #fff;
 }
 
 body {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   background: var(--bg);
   color: var(--texto);
+  min-height: 100vh;
 }
 
-/* (mantive compacto — seu CSS pode continuar igual) */
+input, select, textarea { font-size: 16px !important; }
 
-#appContent { display:none; }
+/* LOGIN */
+#telaLogin {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+}
+
+.login-card {
+  background: var(--branco);
+  border-radius: 20px;
+  padding: 36px 28px;
+  width: 100%;
+  max-width: 340px;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+  text-align: center;
+}
+
+.login-icon { font-size: 48px; margin-bottom: 12px; }
+
+.login-card h2 { font-size: 20px; font-weight: 700; margin-bottom: 4px; }
+.login-card p { font-size: 13px; color: var(--sub); margin-bottom: 28px; }
+
+#senhaInput {
+  width: 100%;
+  padding: 14px;
+  border-radius: 12px;
+  border: 1.5px solid var(--borda);
+  text-align: center;
+  font-size: 24px !important;
+  font-weight: 700;
+  letter-spacing: 8px;
+  outline: none;
+}
+
+#senhaInput:focus { border-color: var(--azul); }
+
+.btn-login {
+  width: 100%;
+  padding: 16px;
+  background: var(--azul);
+  color: #fff;
+  border: none;
+  border-radius: 12px;
+  font-weight: 700;
+}
+
+#senhaErro {
+  display: none;
+  margin-top: 12px;
+  color: var(--vermelho);
+}
+
+/* APP */
+#appContent { display: none; }
+
+header {
+  background: var(--branco);
+  border-bottom: 1px solid var(--borda);
+  padding: 12px 14px;
+  position: sticky;
+  top: 0;
+  z-index: 50;
+}
+
+.header-row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+header h1 { font-size: 17px; font-weight: 700; }
+
+.header-badges {
+  display: flex;
+  gap: 8px;
+}
+
+#btnCarrinho {
+  display: none;
+  background: var(--azul);
+  color: #fff;
+  border: none;
+  border-radius: 99px;
+  padding: 7px 13px;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+#btnHist {
+  background: var(--bg);
+  border: none;
+  border-radius: 99px;
+  padding: 7px 13px;
+}
+
+/* filtros */
+.filtros-wrap { display: flex; gap: 8px; overflow-x: auto; }
+
+.chip {
+  padding: 6px 14px;
+  border-radius: 99px;
+  border: 1px solid var(--borda);
+  background: var(--branco);
+  font-size: 13px;
+}
+
+.chip.ativo {
+  background: var(--azul);
+  color: #fff;
+}
+
+/* busca */
+.busca-wrap { padding: 10px 12px 0; position: relative; }
+
+#busca {
+  width: 100%;
+  padding: 13px 13px 13px 42px;
+  border-radius: 12px;
+  border: 1px solid var(--borda);
+}
+
+/* lista */
+#resultados { padding: 10px 12px 120px; }
+
+.card-produto {
+  background: var(--branco);
+  border-radius: 12px;
+  border: 1px solid var(--borda);
+  padding: 14px;
+  margin-bottom: 8px;
+  display: flex;
+  justify-content: space-between;
+}
+
+/* overlay + toast */
+#overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.35);
+  z-index: 100;
+}
+
+#toast {
+  position: fixed;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #111;
+  color: #fff;
+  padding: 12px 20px;
+  border-radius: 99px;
+  opacity: 0;
+}
+
+/* painel */
+#painel {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: #fff;
+  border-radius: 20px 20px 0 0;
+  padding: 16px;
+  transform: translateY(100%);
+}
+
+#painel.aberto { transform: translateY(0); }
+
+/* carrinho e histórico */
+#carrinho-painel, #hist-painel {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: #fff;
+  z-index: 300;
+  flex-direction: column;
+}
+
+#carrinho-painel.aberto, #hist-painel.aberto {
+  display: flex;
+}
+
+.tela-header {
+  padding: 16px;
+  border-bottom: 1px solid var(--borda);
+  display: flex;
+  justify-content: space-between;
+}
+
+.tela-lista { flex: 1; overflow-y: auto; padding: 12px 16px; }
+
+.tela-footer { padding: 16px; border-top: 1px solid var(--borda); }
+
+.btn-enviar {
+  width: 100%;
+  padding: 17px;
+  background: var(--azul);
+  color: #fff;
+  border: none;
+  border-radius: 12px;
+}
 </style>
 </head>
 
@@ -49,13 +250,12 @@ body {
 <!-- LOGIN -->
 <div id="telaLogin">
   <div class="login-card">
+    <div class="login-icon">📥</div>
     <h2>CIA EMBALAGENS</h2>
-    <p>Digite a senha</p>
-
-    <input id="senhaInput" type="password" placeholder="••••">
+    <p>Digite a senha para continuar</p>
+    <input id="senhaInput" type="password" inputmode="numeric">
     <button class="btn-login" onclick="login()">Entrar</button>
-
-    <div id="senhaErro" style="display:none;color:red;">Senha incorreta</div>
+    <div id="senhaErro">Senha incorreta</div>
   </div>
 </div>
 
@@ -65,57 +265,38 @@ body {
 <header>
   <div class="header-row">
     <h1>📦 CIA EMBALAGENS</h1>
-
     <div class="header-badges">
+      <button id="badgeZerados">⚠️ <span id="countZerados">0</span></button>
       <button id="btnHist" onclick="abrirHist()">📋</button>
-
-      <!-- ✔ BOTÃO CERTO DO CARRINHO -->
-      <button id="btnCarrinho">
-        🛒 <span id="carrinhoCount">0</span>
-      </button>
+      <button id="btnCarrinho" onclick="abrirCarrinho()">🛒 <span id="carrinhoCount">0</span></button>
     </div>
   </div>
 </header>
 
-<!-- BUSCA -->
 <div class="busca-wrap">
-  <input id="busca" placeholder="Buscar...">
+  <input id="busca" placeholder="Buscar produtos...">
 </div>
 
-<!-- LISTA -->
 <div id="resultados"></div>
 
-<!-- TOAST -->
+<div id="overlay"></div>
 <div id="toast"></div>
 
-<!-- PAINEL PRODUTO -->
-<div id="painel">
-  <div class="handle"></div>
+<!-- PAINEL -->
+<div id="painel"></div>
 
-  <div id="painel-nome"></div>
-  <div id="painel-cod"></div>
-  <div id="painel-preco"></div>
-
-  <div id="painel-est">0</div>
-
-  <input id="qtd" type="number" value="1">
-
-  <button onclick="add('entrada')">Entrada</button>
-  <button onclick="add('saida')">Saída</button>
-
-  <button onclick="fechar()">Fechar</button>
-</div>
-
-<!-- CARRINHO ✔ CORRIGIDO -->
+<!-- CARRINHO -->
 <div id="carrinho-painel">
   <div class="tela-header">
     <h2>🛒 Carrinho</h2>
     <button onclick="fecharCarrinho()">✕</button>
   </div>
 
-  <div id="listaCarrinho"></div>
+  <div class="tela-lista" id="listaCarrinho"></div>
 
-  <button onclick="enviar()">Enviar tudo</button>
+  <div class="tela-footer">
+    <button class="btn-enviar" onclick="enviar()">Enviar tudo</button>
+  </div>
 </div>
 
 <!-- HISTÓRICO -->
@@ -125,17 +306,15 @@ body {
     <button onclick="fecharHist()">✕</button>
   </div>
 
-  <div id="listaHist"></div>
+  <div class="tela-lista" id="listaHist"></div>
+
+  <div class="tela-footer">
+    <button class="btn-enviar" onclick="limparHist()">Limpar</button>
+  </div>
 </div>
 
 </div>
 
 <script src="app.js"></script>
-
-<!-- ✔ EVENTO DO CARRINHO (IMPORTANTE) -->
-<script>
-document.getElementById("btnCarrinho").onclick = abrirCarrinho;
-</script>
-
 </body>
 </html>
