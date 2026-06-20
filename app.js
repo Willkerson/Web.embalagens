@@ -24,7 +24,7 @@ function verificarSenha() {
   return sessionStorage.getItem("auth") === "ok";
 }
 
-async function login() {
+window.login = async function () {
   const input = document.getElementById("senhaInput").value;
   const hash = await hashSenha(input);
 
@@ -39,7 +39,7 @@ async function login() {
     document.getElementById("senhaInput").value = "";
     setTimeout(() => err.style.display = "none", 2500);
   }
-}
+};
 
 document.addEventListener("DOMContentLoaded", () => {
   if (verificarSenha()) {
@@ -64,8 +64,8 @@ let ordemAtiva = "nome";
 
 // ── GITHUB ──
 const githubHeaders = {
-  Authorization: `Bearer ${GH_TOKEN}`,
-  Accept: "application/vnd.github+json"
+  "Authorization": "Bearer " + GH_TOKEN,
+  "Accept": "application/vnd.github+json"
 };
 
 // ── UTIL ──
