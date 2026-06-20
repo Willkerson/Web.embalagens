@@ -1,5 +1,47 @@
 console.log("APP OK");
 
+// ── SENHA ──
+const SENHA_HASH = "158a323a7ba44870f23d96f1516dd70aa48e9a72db4ebb026b0a89e212a208ab";
+
+async function hashSenha(str) {
+  const buf = await crypto.subtle.digest("SHA-256", new TextEncoder().encode(str));
+  return Array.from(new Uint8Array(buf)).map(b => b.toString(16).padStart(2, "0")).join("");
+}
+
+function verificarSenha() {
+  return sessionStorage.getItem("auth") === "ok";
+}
+
+async function login() {
+  const input = document.getElementById("senhaInput").value;
+  const hash = await hashSenha(input);
+  if (hash === SENHA_HASH) {
+    sessionStorage.setItem("auth", "ok");
+    document.getElementById("telaLogin").style.display = "none";
+    document.getElementById("appContent").style.display = "block";
+    iniciar();
+  } else {
+    const err = document.getElementById("senhaErro");
+    err.style.display = "block";
+    document.getElementById("senhaInput").value = "";
+    document.getElementById("senhaInput").focus();
+    setTimeout(() => err.style.display = "none", 2500);
+  }
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+  if (verificarSenha()) {
+    document.getElementById("telaLogin").style.display = "none";
+    document.getElementById("appContent").style.display = "block";
+    iniciar();
+  }
+
+  document.getElementById("senhaInput").addEventListener("keydown", e => {
+    if (e.key === "Enter") login();
+  });
+});
+
+// ── DADOS ──
 let produtos = [];
 let carrinho = [];
 let historico = JSON.parse(localStorage.getItem("hist") || "[]");
@@ -155,19 +197,21 @@ document.querySelectorAll('.btn-ordem').forEach(btn => {
 // ── BUSCA ──
 document.getElementById("busca").addEventListener("input", aplicarFiltro);
 
-// ── LOAD ──
-fetch("front-index/produtos.json")
-  .then(r => r.json())
-  .then(data => {
-    produtos = data;
-    buildFiltros();
-    atualizarZerados();
-    renderizar(produtos);
-  })
-  .catch(err => {
-    document.getElementById("resultados").innerHTML = '<div class="vazio">Erro ao carregar produtos.</div>';
-    console.error(err);
-  });
+// ── INICIAR (após login) ──
+function iniciar() {
+  fetch("front-index/produtos.json")
+    .then(r => r.json())
+    .then(data => {
+      produtos = data;
+      buildFiltros();
+      atualizarZerados();
+      renderizar(produtos);
+    })
+    .catch(err => {
+      document.getElementById("resultados").innerHTML = '<div class="vazio">Erro ao carregar produtos.</div>';
+      console.error(err);
+    });
+}
 
 // ── PAINEL ──
 function abrir(codigo) {
@@ -177,11 +221,11 @@ function abrir(codigo) {
   const est = estoqueNumero(atual.estoque);
   const cor = est === 0 ? 'var(--vermelho)' : est <= 5 ? 'var(--amarelo)' : 'var(--verde)';
 
-  document.getElementById("painel-nome").textContent = atual.nome;
-  document.getElementById("painel-cod").textContent  = "Cód. " + atual.codigo;
+  document.getElementById("painel-nome").textContent  = atual.nome;
+  document.getElementById("painel-cod").textContent   = "Cód. " + atual.codigo;
   document.getElementById("painel-preco").textContent = atual.preco ? formatPreco(atual.preco) : '';
-  document.getElementById("painel-est").textContent  = est;
-  document.getElementById("painel-est").style.color  = cor;
+  document.getElementById("painel-est").textContent   = est;
+  document.getElementById("painel-est").style.color   = cor;
   document.getElementById("qtd").value = 1;
 
   document.getElementById("overlay").style.display = "block";
@@ -259,9 +303,7 @@ function enviar() {
   if (!carrinho.length) { toast("Carrinho vazio"); return; }
 
   const agora = new Date().toLocaleString('pt-BR');
-  carrinho.forEach(it => {
-    historico.unshift({ ...it, data: agora });
-  });
+  carrinho.forEach(it => historico.unshift({ ...it, data: agora }));
   if (historico.length > 200) historico = historico.slice(0, 200);
   localStorage.setItem("hist", JSON.stringify(historico));
 
@@ -303,7 +345,7 @@ function limparHist() {
 // ── PWA SERVICE WORKER ──
 if ('serviceWorker' in navigator) {
   window.addEventListener('load', () => {
-    navigator.serviceWorker.register('/Web.embalagens/sw.js')
+    navigator.serviceWorker.register('/Automacao-ConnectPlug/sw.js')
       .then(() => console.log("SW registrado"))
       .catch(err => console.error("SW erro:", err));
   });
