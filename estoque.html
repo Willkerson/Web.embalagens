@@ -4,8 +4,6 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, viewport-fit=cover">
 <title>Estoque Pro</title>
-
-<!-- PWA -->
 <link rel="manifest" href="manifest.json">
 <meta name="mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-capable" content="yes">
@@ -36,6 +34,84 @@ body {
   color: var(--texto);
   min-height: 100vh;
 }
+
+input, select, textarea { font-size: 16px !important; }
+
+/* ── TELA LOGIN ── */
+#telaLogin {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  background: var(--bg);
+}
+
+.login-card {
+  background: var(--branco);
+  border-radius: 20px;
+  padding: 36px 28px;
+  width: 100%;
+  max-width: 340px;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+  text-align: center;
+}
+
+.login-icon { font-size: 48px; margin-bottom: 12px; }
+
+.login-card h2 {
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+
+.login-card p {
+  font-size: 13px;
+  color: var(--sub);
+  margin-bottom: 28px;
+}
+
+#senhaInput {
+  width: 100%;
+  padding: 14px;
+  border-radius: 12px;
+  border: 1.5px solid var(--borda);
+  text-align: center;
+  font-size: 24px !important;
+  font-weight: 700;
+  letter-spacing: 8px;
+  outline: none;
+  margin-bottom: 14px;
+  color: var(--texto);
+  -webkit-appearance: none;
+}
+
+#senhaInput:focus { border-color: var(--azul); }
+
+.btn-login {
+  width: 100%;
+  padding: 16px;
+  background: var(--azul);
+  color: #fff;
+  border: none;
+  border-radius: 12px;
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.btn-login:active { opacity: 0.85; }
+
+#senhaErro {
+  display: none;
+  margin-top: 12px;
+  color: var(--vermelho);
+  font-size: 13px;
+  font-weight: 600;
+}
+
+/* ── APP ── */
+#appContent { display: none; }
 
 /* HEADER */
 header {
@@ -86,7 +162,19 @@ header h1 { font-size: 17px; font-weight: 700; }
   cursor: pointer;
 }
 
-/* FILTROS CATEGORIA */
+#btnHist {
+  display: flex;
+  align-items: center;
+  background: var(--bg);
+  color: var(--sub);
+  border: none;
+  border-radius: 99px;
+  padding: 7px 13px;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
 .filtros-wrap {
   display: flex;
   gap: 8px;
@@ -137,15 +225,11 @@ header h1 { font-size: 17px; font-weight: 700; }
   padding: 13px 13px 13px 42px;
   border-radius: 12px;
   border: 1.5px solid var(--borda);
-  font-size: 16px;
   background: var(--branco);
   outline: none;
   color: var(--texto);
   -webkit-appearance: none;
 }
-
-/* iOS zoom fix — nunca deixar input com font-size < 16px */
-input, select, textarea { font-size: 16px !important; }
 
 #busca:focus { border-color: var(--azul); }
 #busca::placeholder { color: #9CA3AF; }
@@ -155,11 +239,14 @@ input, select, textarea { font-size: 16px !important; }
   padding: 8px 12px 0;
   display: flex;
   gap: 8px;
+  overflow-x: auto;
+  scrollbar-width: none;
 }
+.ordem-wrap::-webkit-scrollbar { display: none; }
 
 .btn-ordem {
-  flex: 1;
-  padding: 8px;
+  flex-shrink: 0;
+  padding: 8px 12px;
   border-radius: 10px;
   border: 1.5px solid var(--borda);
   background: var(--branco);
@@ -167,7 +254,7 @@ input, select, textarea { font-size: 16px !important; }
   font-weight: 600;
   color: var(--sub);
   cursor: pointer;
-  text-align: center;
+  white-space: nowrap;
   -webkit-tap-highlight-color: transparent;
 }
 
@@ -202,7 +289,6 @@ input, select, textarea { font-size: 16px !important; }
 }
 
 .card-produto:active { background: #f0f4ff; }
-
 .card-info { flex: 1; min-width: 0; }
 
 .card-nome {
@@ -233,11 +319,7 @@ input, select, textarea { font-size: 16px !important; }
 .badge-est.status-low  { background: var(--amarelo-bg); }
 .badge-est.status-zero { background: var(--vermelho-bg); }
 
-.badge-num {
-  font-size: 22px;
-  font-weight: 800;
-  line-height: 1;
-}
+.badge-num { font-size: 22px; font-weight: 800; line-height: 1; }
 
 .status-ok   .badge-num { color: var(--verde); }
 .status-low  .badge-num { color: var(--amarelo); }
@@ -286,12 +368,7 @@ input, select, textarea { font-size: 16px !important; }
   margin: 14px auto 18px;
 }
 
-.painel-nome {
-  font-size: 16px;
-  font-weight: 700;
-  line-height: 1.3;
-  margin-bottom: 2px;
-}
+.painel-nome { font-size: 16px; font-weight: 700; line-height: 1.3; margin-bottom: 2px; }
 
 .painel-meta {
   font-size: 12px;
@@ -308,15 +385,9 @@ input, select, textarea { font-size: 16px !important; }
   margin-bottom: 20px;
 }
 
-#painel-est {
-  font-size: 40px;
-  font-weight: 800;
-  line-height: 1;
-}
-
+#painel-est { font-size: 40px; font-weight: 800; line-height: 1; }
 .painel-est-label { font-size: 13px; color: var(--sub); }
 
-/* CONTADOR */
 .contador {
   display: flex;
   align-items: center;
@@ -344,7 +415,6 @@ input, select, textarea { font-size: 16px !important; }
 #qtd {
   flex: 1;
   text-align: center;
-  font-size: 28px;
   font-weight: 800;
   border: none;
   background: transparent;
@@ -404,13 +474,10 @@ input, select, textarea { font-size: 16px !important; }
   pointer-events: none;
 }
 
-#toast.show {
-  opacity: 1;
-  transform: translateX(-50%) translateY(0);
-}
+#toast.show { opacity: 1; transform: translateX(-50%) translateY(0); }
 
-/* HISTÓRICO */
-#hist-painel {
+/* TELAS FULLSCREEN */
+#carrinho-painel, #hist-painel {
   display: none;
   position: fixed;
   inset: 0;
@@ -418,18 +485,8 @@ input, select, textarea { font-size: 16px !important; }
   z-index: 300;
   flex-direction: column;
 }
-#hist-painel.aberto { display: flex; }
 
-/* CARRINHO TELA */
-#carrinho-painel {
-  display: none;
-  position: fixed;
-  inset: 0;
-  background: var(--branco);
-  z-index: 300;
-  flex-direction: column;
-}
-#carrinho-painel.aberto { display: flex; }
+#carrinho-painel.aberto, #hist-painel.aberto { display: flex; }
 
 .tela-header {
   padding: 16px;
@@ -454,11 +511,7 @@ input, select, textarea { font-size: 16px !important; }
   color: var(--sub);
 }
 
-.tela-lista {
-  flex: 1;
-  overflow-y: auto;
-  padding: 12px 16px;
-}
+.tela-lista { flex: 1; overflow-y: auto; padding: 12px 16px; }
 
 .c-item {
   display: flex;
@@ -483,10 +536,7 @@ input, select, textarea { font-size: 16px !important; }
 .badge-entrada { background: var(--verde-bg); color: var(--verde); }
 .badge-saida   { background: var(--vermelho-bg); color: var(--vermelho); }
 
-.tela-footer {
-  padding: 16px;
-  border-top: 1px solid var(--borda);
-}
+.tela-footer { padding: 16px; border-top: 1px solid var(--borda); }
 
 .btn-enviar {
   width: 100%;
@@ -502,96 +552,109 @@ input, select, textarea { font-size: 16px !important; }
 
 .btn-enviar:active { opacity: 0.85; }
 
-.hist-item {
-  padding: 12px 0;
-  border-bottom: 1px solid var(--borda);
-}
-
+.hist-item { padding: 12px 0; border-bottom: 1px solid var(--borda); }
 .hist-nome { font-size: 14px; font-weight: 600; }
-.hist-meta { font-size: 12px; color: var(--sub); margin-top: 3px; display: flex; gap: 8px; align-items: center; }
+.hist-meta { font-size: 12px; color: var(--sub); margin-top: 3px; display: flex; gap: 8px; align-items: center; flex-wrap: wrap; }
 </style>
 </head>
 <body>
 
-<header>
-  <div class="header-row">
-    <h1>📦 Estoque Pro</h1>
-    <div class="header-badges">
-      <button id="badgeZerados">⚠️ <span id="countZerados">0</span> zerado(s)</button>
-      <button id="btnHist" onclick="abrirHist()" style="display:flex;align-items:center;gap:6px;background:var(--bg);color:var(--sub);border:none;border-radius:99px;padding:7px 13px;font-size:13px;font-weight:700;cursor:pointer;">📋</button>
-      <button id="btnCarrinho">🛒 <span id="carrinhoCount">0</span></button>
+<!-- TELA LOGIN -->
+<div id="telaLogin">
+  <div class="login-card">
+    <div class="login-icon">📦</div>
+    <h2>Estoque Pro</h2>
+    <p>Digite a senha para continuar</p>
+    <input id="senhaInput" type="password" inputmode="numeric" pattern="[0-9]*" placeholder="••••" autocomplete="off">
+    <button class="btn-login" onclick="login()">Entrar</button>
+    <div id="senhaErro">Senha incorreta. Tente novamente.</div>
+  </div>
+</div>
+
+<!-- APP -->
+<div id="appContent">
+
+  <header>
+    <div class="header-row">
+      <h1>📦 Estoque Pro</h1>
+      <div class="header-badges">
+        <button id="badgeZerados">⚠️ <span id="countZerados">0</span></button>
+        <button id="btnHist" onclick="abrirHist()">📋</button>
+        <button id="btnCarrinho">🛒 <span id="carrinhoCount">0</span></button>
+      </div>
+    </div>
+    <div class="filtros-wrap" id="filtros"></div>
+  </header>
+
+  <div class="busca-wrap">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
+    </svg>
+    <input id="busca" placeholder="Buscar por nome, código ou preço..." autocomplete="off">
+  </div>
+
+  <div class="ordem-wrap">
+    <button class="btn-ordem ativo" data-ordem="nome">A–Z</button>
+    <button class="btn-ordem" data-ordem="estoque-asc">Estoque ↑</button>
+    <button class="btn-ordem" data-ordem="estoque-desc">Estoque ↓</button>
+    <button class="btn-ordem" data-ordem="preco-asc">Preço ↑</button>
+    <button class="btn-ordem" data-ordem="preco-desc">Preço ↓</button>
+  </div>
+
+  <div id="resultados"><div class="vazio">Carregando produtos...</div></div>
+
+  <div id="overlay"></div>
+  <div id="toast"></div>
+
+  <!-- PAINEL PRODUTO -->
+  <div id="painel">
+    <div class="handle"></div>
+    <div class="painel-nome" id="painel-nome"></div>
+    <div class="painel-meta">
+      <span id="painel-cod"></span>
+      <span id="painel-preco"></span>
+    </div>
+    <div class="painel-est-row">
+      <div id="painel-est">—</div>
+      <div class="painel-est-label">em estoque</div>
+    </div>
+    <div class="contador">
+      <button class="btn-c" onclick="menos()">−</button>
+      <input id="qtd" type="number" value="1" min="1" inputmode="numeric" pattern="[0-9]*">
+      <button class="btn-c" onclick="mais()">+</button>
+    </div>
+    <div class="btn-row">
+      <button class="btn-acao btn-entrada" onclick="add('entrada')">↑ Entrada</button>
+      <button class="btn-acao btn-saida"   onclick="add('saida')">↓ Saída</button>
+    </div>
+    <button class="btn-cancelar" onclick="fechar()">Cancelar</button>
+  </div>
+
+  <!-- CARRINHO -->
+  <div id="carrinho-painel">
+    <div class="tela-header">
+      <h2>🛒 Carrinho</h2>
+      <button class="btn-x" onclick="fecharCarrinho()">✕</button>
+    </div>
+    <div class="tela-lista" id="listaCarrinho"></div>
+    <div class="tela-footer">
+      <button class="btn-enviar" onclick="enviar()">Enviar tudo</button>
     </div>
   </div>
-  <div class="filtros-wrap" id="filtros"></div>
-</header>
 
-<div class="busca-wrap">
-  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-    <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
-  </svg>
-  <input id="busca" placeholder="Buscar por nome, código ou preço..." autocomplete="off">
-</div>
+  <!-- HISTÓRICO -->
+  <div id="hist-painel">
+    <div class="tela-header">
+      <h2>📋 Histórico</h2>
+      <button class="btn-x" onclick="fecharHist()">✕</button>
+    </div>
+    <div class="tela-lista" id="listaHist"></div>
+    <div class="tela-footer">
+      <button class="btn-enviar" style="background:var(--vermelho)" onclick="limparHist()">Limpar histórico</button>
+    </div>
+  </div>
 
-<div class="ordem-wrap">
-  <button class="btn-ordem ativo" data-ordem="nome">A–Z</button>
-  <button class="btn-ordem" data-ordem="estoque-asc">Estoque ↑</button>
-  <button class="btn-ordem" data-ordem="estoque-desc">Estoque ↓</button>
-  <button class="btn-ordem" data-ordem="preco-asc">Preço ↑</button>
-  <button class="btn-ordem" data-ordem="preco-desc">Preço ↓</button>
-</div>
-
-<div id="resultados"><div class="vazio">Carregando produtos...</div></div>
-
-<div id="overlay"></div>
-<div id="toast"></div>
-
-<!-- PAINEL PRODUTO -->
-<div id="painel">
-  <div class="handle"></div>
-  <div class="painel-nome" id="painel-nome"></div>
-  <div class="painel-meta">
-    <span id="painel-cod"></span>
-    <span id="painel-preco"></span>
-  </div>
-  <div class="painel-est-row">
-    <div id="painel-est">—</div>
-    <div class="painel-est-label">em estoque</div>
-  </div>
-  <div class="contador">
-    <button class="btn-c" onclick="menos()">−</button>
-    <input id="qtd" type="number" value="1" min="1" inputmode="numeric" pattern="[0-9]*">
-    <button class="btn-c" onclick="mais()">+</button>
-  </div>
-  <div class="btn-row">
-    <button class="btn-acao btn-entrada" onclick="add('entrada')">↑ Entrada</button>
-    <button class="btn-acao btn-saida"   onclick="add('saida')">↓ Saída</button>
-  </div>
-  <button class="btn-cancelar" onclick="fechar()">Cancelar</button>
-</div>
-
-<!-- CARRINHO -->
-<div id="carrinho-painel">
-  <div class="tela-header">
-    <h2>🛒 Carrinho</h2>
-    <button class="btn-x" onclick="fecharCarrinho()">✕</button>
-  </div>
-  <div class="tela-lista" id="listaCarrinho"></div>
-  <div class="tela-footer">
-    <button class="btn-enviar" onclick="enviar()">Enviar tudo</button>
-  </div>
-</div>
-
-<!-- HISTÓRICO -->
-<div id="hist-painel">
-  <div class="tela-header">
-    <h2>📋 Histórico</h2>
-    <button class="btn-x" onclick="fecharHist()">✕</button>
-  </div>
-  <div class="tela-lista" id="listaHist"></div>
-  <div class="tela-footer">
-    <button class="btn-enviar" style="background:#eb5757" onclick="limparHist()">Limpar histórico</button>
-  </div>
-</div>
+</div><!-- fim appContent -->
 
 <script src="app.js"></script>
 </body>
