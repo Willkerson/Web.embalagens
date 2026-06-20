@@ -433,7 +433,7 @@ function limparHist() {
 // ── PWA SERVICE WORKER ──
 if ('serviceWorker' in navigator) {
   window.addEventListener('load', () => {
-    navigator.serviceWorker.register('/Automacao-ConnectPlug/sw.js')
+    navigator.serviceWorker.register('/Web.embalagens/sw.js')
       .then(() => console.log("SW registrado"))
       .catch(err => console.error("SW erro:", err));
   });
