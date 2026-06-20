@@ -5,517 +5,429 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 <title>Estoque Pro</title>
 <style>
-
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
 :root {
   --azul: #0057FF;
-  --azul-light: #e8f0ff;
   --verde: #00B37E;
-  --verde-light: #e6f7f2;
-  --amarelo: #F59E0B;
-  --amarelo-light: #fef3c7;
+  --verde-bg: #e6f7f2;
+  --amarelo: #D97706;
+  --amarelo-bg: #fef3c7;
   --vermelho: #E63946;
-  --vermelho-light: #fdecea;
-  --cinza-bg: #F2F4F7;
-  --cinza-borda: #E2E6EA;
-  --cinza-texto: #6B7280;
+  --vermelho-bg: #fdecea;
+  --bg: #F0F2F5;
+  --borda: #E2E6EA;
   --texto: #111827;
-  --branco: #ffffff;
-  --sombra: 0 2px 8px rgba(0,0,0,0.08);
-  --sombra-lg: 0 8px 32px rgba(0,0,0,0.14);
-  --radius: 14px;
-  --radius-sm: 8px;
+  --sub: #6B7280;
+  --branco: #fff;
 }
 
 body {
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
-  background: var(--cinza-bg);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  background: var(--bg);
   color: var(--texto);
   min-height: 100vh;
 }
 
-/* ── HEADER ── */
+/* HEADER */
 header {
   background: var(--branco);
-  border-bottom: 1px solid var(--cinza-borda);
-  position: sticky;
-  top: 0;
-  z-index: 100;
-}
-
-.header-inner {
-  max-width: 680px;
-  margin: 0 auto;
+  border-bottom: 1px solid var(--borda);
   padding: 14px 16px;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  position: sticky;
+  top: 0;
+  z-index: 50;
 }
 
-.header-inner h1 {
-  font-size: 18px;
+header h1 {
+  font-size: 17px;
   font-weight: 700;
-  color: var(--texto);
-  display: flex;
-  align-items: center;
-  gap: 8px;
 }
 
-.badge-carrinho {
-  background: var(--azul);
-  color: #fff;
-  font-size: 12px;
-  font-weight: 700;
-  border-radius: 20px;
-  padding: 3px 10px;
-  cursor: pointer;
+#btnCarrinho {
   display: none;
   align-items: center;
-  gap: 5px;
+  gap: 6px;
+  background: var(--azul);
+  color: #fff;
+  border: none;
+  border-radius: 99px;
+  padding: 8px 14px;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
 }
 
-/* ── MAIN ── */
-main {
-  max-width: 680px;
-  margin: 0 auto;
-  padding: 16px 16px 120px;
-}
-
-/* ── BUSCA ── */
+/* BUSCA */
 .busca-wrap {
+  padding: 12px 12px 0;
   position: relative;
-  margin-bottom: 16px;
 }
 
 .busca-wrap svg {
   position: absolute;
-  left: 14px;
+  left: 24px;
   top: 50%;
   transform: translateY(-50%);
-  color: var(--cinza-texto);
   width: 18px;
   height: 18px;
+  color: var(--sub);
   pointer-events: none;
 }
 
 #busca {
   width: 100%;
-  padding: 14px 14px 14px 44px;
-  border-radius: var(--radius);
-  border: 1.5px solid var(--cinza-borda);
+  padding: 13px 13px 13px 42px;
+  border-radius: 12px;
+  border: 1.5px solid var(--borda);
   font-size: 16px;
-  outline: none;
   background: var(--branco);
+  outline: none;
   color: var(--texto);
-  box-shadow: var(--sombra);
-  transition: border-color 0.2s;
+  -webkit-appearance: none;
 }
 
-#busca:focus {
-  border-color: var(--azul);
-}
-
+#busca:focus { border-color: var(--azul); }
 #busca::placeholder { color: #9CA3AF; }
 
-/* ── LABEL SEÇÃO ── */
-.secao-label {
-  font-size: 12px;
-  font-weight: 600;
-  color: var(--cinza-texto);
-  text-transform: uppercase;
-  letter-spacing: 0.06em;
-  margin-bottom: 8px;
+/* LISTA */
+#resultados {
+  padding: 10px 12px 100px;
 }
 
-/* ── CARD PRODUTO ── */
+.vazio {
+  text-align: center;
+  padding: 40px 16px;
+  color: var(--sub);
+  font-size: 14px;
+}
+
+/* CARD */
 .card-produto {
   background: var(--branco);
-  border-radius: var(--radius);
-  border: 1.5px solid var(--cinza-borda);
-  padding: 14px 16px;
+  border-radius: 12px;
+  border: 1.5px solid var(--borda);
+  padding: 14px;
   margin-bottom: 8px;
   display: flex;
   align-items: center;
-  gap: 14px;
+  gap: 12px;
   cursor: pointer;
-  transition: border-color 0.18s, box-shadow 0.18s, background 0.18s;
-  box-shadow: var(--sombra);
+  -webkit-tap-highlight-color: transparent;
+  active-color: transparent;
 }
 
-.card-produto:active {
-  background: var(--azul-light);
-  border-color: var(--azul);
-}
+.card-produto:active { background: #f0f4ff; }
 
-.card-produto-info {
-  flex: 1;
-  min-width: 0;
-}
+.card-info { flex: 1; min-width: 0; }
 
-.card-produto-nome {
-  font-size: 15px;
+.card-nome {
+  font-size: 14px;
   font-weight: 600;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
+  line-height: 1.3;
+  /* allow wrapping on mobile */
 }
 
-.card-produto-cat {
+.card-cod {
   font-size: 12px;
-  color: var(--cinza-texto);
-  margin-top: 2px;
+  color: var(--sub);
+  margin-top: 3px;
 }
 
-.badge-estoque {
+/* BADGE ESTOQUE */
+.badge-est {
   flex-shrink: 0;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 2px;
-  min-width: 58px;
+  text-align: center;
+  min-width: 54px;
+  padding: 6px 8px;
+  border-radius: 10px;
 }
+
+.badge-est.status-ok   { background: var(--verde-bg); }
+.badge-est.status-low  { background: var(--amarelo-bg); }
+.badge-est.status-zero { background: var(--vermelho-bg); }
 
 .badge-num {
-  font-size: 20px;
+  font-size: 22px;
   font-weight: 800;
   line-height: 1;
 }
 
+.status-ok   .badge-num { color: var(--verde); }
+.status-low  .badge-num { color: var(--amarelo); }
+.status-zero .badge-num { color: var(--vermelho); }
+
 .badge-label {
   font-size: 10px;
-  font-weight: 600;
+  font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.04em;
-  border-radius: 20px;
-  padding: 2px 8px;
+  margin-top: 2px;
 }
 
-/* cores por status */
-.status-ok   .badge-num   { color: var(--verde); }
-.status-ok   .badge-label { background: var(--verde-light); color: var(--verde); }
-.status-low  .badge-num   { color: var(--amarelo); }
-.status-low  .badge-label { background: var(--amarelo-light); color: #92400E; }
-.status-zero .badge-num   { color: var(--vermelho); }
-.status-zero .badge-label { background: var(--vermelho-light); color: var(--vermelho); }
+.status-ok   .badge-label { color: var(--verde); }
+.status-low  .badge-label { color: var(--amarelo); }
+.status-zero .badge-label { color: var(--vermelho); }
 
-.chevron {
-  color: #D1D5DB;
-  flex-shrink: 0;
-}
-
-/* ── VAZIO ── */
-.vazio {
-  text-align: center;
-  padding: 40px 20px;
-  color: var(--cinza-texto);
-  font-size: 14px;
-}
-
-/* ── OVERLAY ── */
+/* OVERLAY */
 #overlay {
   display: none;
   position: fixed;
   inset: 0;
-  background: rgba(0,0,0,0.3);
-  z-index: 200;
-  backdrop-filter: blur(2px);
+  background: rgba(0,0,0,0.35);
+  z-index: 100;
 }
 
-/* ── PAINEL INFERIOR ── */
+/* PAINEL */
 #painel {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  background: var(--branco);
-  border-top-left-radius: 20px;
-  border-top-right-radius: 20px;
-  box-shadow: var(--sombra-lg);
-  padding: 0 16px 24px;
-  z-index: 300;
   display: none;
-  max-width: 680px;
-  margin: 0 auto;
+  position: fixed;
+  bottom: 0; left: 0; right: 0;
+  background: var(--branco);
+  border-radius: 20px 20px 0 0;
+  padding: 0 16px 32px;
+  z-index: 200;
   transform: translateY(100%);
-  transition: transform 0.28s cubic-bezier(0.4,0,0.2,1);
+  transition: transform 0.25s ease;
 }
 
-#painel.aberto {
-  transform: translateY(0);
-}
+#painel.aberto { transform: translateY(0); }
 
-.painel-handle {
-  width: 36px;
-  height: 4px;
-  background: #E2E6EA;
+.handle {
+  width: 40px; height: 4px;
+  background: var(--borda);
   border-radius: 99px;
-  margin: 12px auto 16px;
-}
-
-.painel-header {
-  margin-bottom: 16px;
+  margin: 14px auto 18px;
 }
 
 .painel-nome {
-  font-size: 18px;
+  font-size: 16px;
   font-weight: 700;
-  color: var(--texto);
-  margin-bottom: 6px;
+  line-height: 1.3;
+  margin-bottom: 4px;
 }
 
-.painel-estoque-row {
+.painel-cod {
+  font-size: 12px;
+  color: var(--sub);
+  margin-bottom: 14px;
+}
+
+.painel-est-row {
+  display: flex;
+  align-items: baseline;
+  gap: 6px;
+  margin-bottom: 20px;
+}
+
+#painel-est {
+  font-size: 40px;
+  font-weight: 800;
+  line-height: 1;
+}
+
+.painel-est-label {
+  font-size: 13px;
+  color: var(--sub);
+}
+
+/* CONTADOR */
+.contador {
   display: flex;
   align-items: center;
-  gap: 8px;
+  background: var(--bg);
+  border-radius: 12px;
+  padding: 6px;
+  margin-bottom: 14px;
+  gap: 0;
 }
 
-.painel-estoque-num {
+.btn-c {
+  width: 52px; height: 52px;
+  border: none;
+  background: var(--branco);
+  border-radius: 10px;
+  font-size: 24px;
+  font-weight: 700;
+  cursor: pointer;
+  color: var(--texto);
+  flex-shrink: 0;
+  border: 1.5px solid var(--borda);
+}
+
+.btn-c:active { background: var(--borda); }
+
+#qtd {
+  flex: 1;
+  text-align: center;
   font-size: 28px;
   font-weight: 800;
 }
 
-.painel-estoque-txt {
-  font-size: 13px;
-  color: var(--cinza-texto);
-}
-
-/* contador */
-.contador-wrap {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0;
-  background: var(--cinza-bg);
-  border-radius: var(--radius);
-  padding: 6px;
-  margin-bottom: 16px;
-}
-
-.btn-contador {
-  background: var(--branco);
-  border: 1.5px solid var(--cinza-borda);
-  border-radius: var(--radius-sm);
-  width: 48px;
-  height: 48px;
-  font-size: 22px;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: var(--texto);
-  font-weight: 700;
-  flex-shrink: 0;
-  transition: background 0.15s;
-  user-select: none;
-}
-
-.btn-contador:active { background: var(--cinza-borda); }
-
-#qtd {
-  font-size: 26px;
-  font-weight: 800;
-  width: 80px;
-  text-align: center;
-  color: var(--texto);
-}
-
-/* botões ação */
+/* BOTÕES AÇÃO */
 .btn-row {
   display: flex;
   gap: 10px;
   margin-bottom: 10px;
 }
 
-.btn {
+.btn-acao {
   flex: 1;
+  padding: 17px;
   border: none;
-  border-radius: var(--radius);
-  padding: 16px;
-  font-size: 15px;
+  border-radius: 12px;
+  font-size: 16px;
   font-weight: 700;
   cursor: pointer;
-  transition: opacity 0.15s, transform 0.1s;
 }
 
-.btn:active { opacity: 0.85; transform: scale(0.98); }
+.btn-acao:active { opacity: 0.85; }
+.btn-entrada { background: var(--verde); color: #fff; }
+.btn-saida   { background: var(--vermelho); color: #fff; }
 
-.btn-verde   { background: var(--verde); color: #fff; }
-.btn-vermelho{ background: var(--vermelho); color: #fff; }
-.btn-fechar  { background: var(--cinza-bg); color: var(--cinza-texto); width: 100%; border: none; border-radius: var(--radius); padding: 14px; font-size: 15px; font-weight: 600; cursor: pointer; }
+.btn-cancelar {
+  width: 100%;
+  padding: 15px;
+  border: none;
+  border-radius: 12px;
+  background: var(--bg);
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--sub);
+  cursor: pointer;
+}
 
-/* ── CARRINHO PAINEL ── */
+/* CARRINHO TELA */
 #carrinho-painel {
   display: none;
   position: fixed;
   inset: 0;
   background: var(--branco);
-  z-index: 400;
+  z-index: 300;
   flex-direction: column;
 }
 
 #carrinho-painel.aberto { display: flex; }
 
-.carrinho-header {
+.c-header {
   padding: 16px;
-  border-bottom: 1px solid var(--cinza-borda);
+  border-bottom: 1px solid var(--borda);
   display: flex;
   align-items: center;
   justify-content: space-between;
-  max-width: 680px;
-  margin: 0 auto;
-  width: 100%;
 }
 
-.carrinho-header h2 {
-  font-size: 17px;
-  font-weight: 700;
-}
+.c-header h2 { font-size: 17px; font-weight: 700; }
 
-.btn-fechar-carrinho {
-  background: var(--cinza-bg);
+.btn-x {
+  width: 32px; height: 32px;
   border: none;
   border-radius: 99px;
-  width: 32px;
-  height: 32px;
+  background: var(--bg);
   font-size: 16px;
   cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: var(--cinza-texto);
+  color: var(--sub);
 }
 
-.carrinho-lista {
+.c-lista {
   flex: 1;
   overflow-y: auto;
-  padding: 16px;
-  max-width: 680px;
-  margin: 0 auto;
-  width: 100%;
+  padding: 12px 16px;
 }
 
-.carrinho-item {
+.c-item {
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 12px 0;
-  border-bottom: 1px solid var(--cinza-borda);
+  border-bottom: 1px solid var(--borda);
+  gap: 10px;
 }
 
-.carrinho-item-nome {
-  font-size: 14px;
-  font-weight: 600;
-}
+.c-nome { font-size: 14px; font-weight: 600; }
+.c-sub  { font-size: 12px; color: var(--sub); margin-top: 2px; }
 
-.carrinho-item-qtd {
-  font-size: 13px;
-  color: var(--cinza-texto);
-  margin-top: 2px;
-}
-
-.carrinho-badge {
-  font-size: 13px;
+.c-badge {
+  flex-shrink: 0;
+  font-size: 12px;
   font-weight: 700;
-  padding: 4px 12px;
+  padding: 5px 12px;
   border-radius: 99px;
 }
 
-.badge-entrada { background: var(--verde-light); color: var(--verde); }
-.badge-saida   { background: var(--vermelho-light); color: var(--vermelho); }
+.badge-entrada { background: var(--verde-bg); color: var(--verde); }
+.badge-saida   { background: var(--vermelho-bg); color: var(--vermelho); }
 
-.carrinho-footer {
+.c-footer {
   padding: 16px;
-  border-top: 1px solid var(--cinza-borda);
-  max-width: 680px;
-  margin: 0 auto;
-  width: 100%;
+  border-top: 1px solid var(--borda);
 }
 
 .btn-enviar {
   width: 100%;
+  padding: 17px;
   background: var(--azul);
   color: #fff;
   border: none;
-  border-radius: var(--radius);
-  padding: 17px;
+  border-radius: 12px;
   font-size: 16px;
   font-weight: 700;
   cursor: pointer;
-  transition: opacity 0.15s;
 }
 
 .btn-enviar:active { opacity: 0.85; }
-
-.carrinho-vazio {
-  text-align: center;
-  padding: 60px 20px;
-  color: var(--cinza-texto);
-  font-size: 14px;
-}
-
 </style>
 </head>
 <body>
 
 <header>
-  <div class="header-inner">
-    <h1>📦 Estoque Pro</h1>
-    <div class="badge-carrinho" id="btnCarrinho">
-      🛒 <span id="carrinhoCount">0</span>
-    </div>
-  </div>
+  <h1>📦 Estoque Pro</h1>
+  <button id="btnCarrinho">🛒 <span id="carrinhoCount">0</span></button>
 </header>
 
-<main>
-  <div class="busca-wrap">
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-      <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
-    </svg>
-    <input id="busca" placeholder="Buscar produto..." autocomplete="off">
-  </div>
-
-  <div class="secao-label">Produtos</div>
-  <div id="resultados"></div>
-</main>
-
-<!-- overlay -->
-<div id="overlay" onclick="fechar()"></div>
-
-<!-- PAINEL -->
-<div id="painel">
-  <div class="painel-handle"></div>
-
-  <div class="painel-header">
-    <div class="painel-nome" id="nome"></div>
-    <div class="painel-estoque-row">
-      <div class="painel-estoque-num" id="estoque-num" style="color:var(--verde)">—</div>
-      <div class="painel-estoque-txt">em estoque</div>
-    </div>
-  </div>
-
-  <div class="contador-wrap">
-    <button class="btn-contador" onclick="menos()">−</button>
-    <div id="qtd">1</div>
-    <button class="btn-contador" onclick="mais()">+</button>
-  </div>
-
-  <div class="btn-row">
-    <button class="btn btn-verde"    onclick="add('entrada')">↑ Entrada</button>
-    <button class="btn btn-vermelho" onclick="add('saida')">↓ Saída</button>
-  </div>
-
-  <button class="btn-fechar" onclick="fechar()">Cancelar</button>
+<div class="busca-wrap">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
+  </svg>
+  <input id="busca" placeholder="Buscar por nome ou código..." autocomplete="off">
 </div>
 
-<!-- CARRINHO PAINEL -->
-<div id="carrinho-painel">
-  <div class="carrinho-header">
-    <h2>🛒 Carrinho</h2>
-    <button class="btn-fechar-carrinho" onclick="fecharCarrinho()">✕</button>
+<div id="resultados"><div class="vazio">Carregando produtos...</div></div>
+
+<div id="overlay"></div>
+
+<!-- PAINEL PRODUTO -->
+<div id="painel">
+  <div class="handle"></div>
+  <div class="painel-nome" id="painel-nome"></div>
+  <div class="painel-cod"  id="painel-cod"></div>
+  <div class="painel-est-row">
+    <div id="painel-est">—</div>
+    <div class="painel-est-label">em estoque</div>
   </div>
-  <div class="carrinho-lista" id="listaCarrinho"></div>
-  <div class="carrinho-footer">
+  <div class="contador">
+    <button class="btn-c" onclick="menos()">−</button>
+    <div id="qtd">1</div>
+    <button class="btn-c" onclick="mais()">+</button>
+  </div>
+  <div class="btn-row">
+    <button class="btn-acao btn-entrada" onclick="add('entrada')">↑ Entrada</button>
+    <button class="btn-acao btn-saida"   onclick="add('saida')">↓ Saída</button>
+  </div>
+  <button class="btn-cancelar" onclick="fechar()">Cancelar</button>
+</div>
+
+<!-- CARRINHO -->
+<div id="carrinho-painel">
+  <div class="c-header">
+    <h2>🛒 Carrinho</h2>
+    <button class="btn-x" onclick="fecharCarrinho()">✕</button>
+  </div>
+  <div class="c-lista" id="listaCarrinho"></div>
+  <div class="c-footer">
     <button class="btn-enviar" onclick="enviar()">Enviar tudo</button>
   </div>
 </div>
