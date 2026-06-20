@@ -4,6 +4,14 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, viewport-fit=cover">
 <title>Estoque Pro</title>
+
+<!-- PWA -->
+<link rel="manifest" href="manifest.json">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="apple-mobile-web-app-title" content="Estoque">
+<meta name="theme-color" content="#0057FF">
 <style>
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -135,6 +143,9 @@ header h1 { font-size: 17px; font-weight: 700; }
   color: var(--texto);
   -webkit-appearance: none;
 }
+
+/* iOS zoom fix — nunca deixar input com font-size < 16px */
+input, select, textarea { font-size: 16px !important; }
 
 #busca:focus { border-color: var(--azul); }
 #busca::placeholder { color: #9CA3AF; }
