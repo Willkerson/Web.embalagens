@@ -1,13 +1,12 @@
-
 alert("APP.JS CARREGOU");
 console.log("APP OK");
 
-// ⚠️ IMPORTANTE: regenere esse token depois
-const GH_TOKEN = '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';
+// ── CONFIG ──
+const GH_TOKEN = 'SEU_TOKEN_AQUI';
 const REPO = 'Willkerson/Automacao-ConnectPlug';
 const PATH = 'fila/movimentacao.json';
 
-// ── SENHA ──
+// ── LOGIN ──
 const SENHA_HASH = "158a323a7ba44870f23d96f1516dd70aa48e9a72db4ebb026b0a89e212a208ab";
 
 async function hashSenha(str) {
@@ -37,54 +36,25 @@ window.login = async function () {
   } else {
     const err = document.getElementById("senhaErro");
     err.style.display = "block";
-    document.getElementById("senhaInput").value = "";
-    setTimeout(() => err.style.display = "none", 2500);
+    setTimeout(() => err.style.display = "none", 2000);
   }
 };
 
-document.addEventListener("DOMContentLoaded", () => {
-  if (verificarSenha()) {
-    document.getElementById("telaLogin").style.display = "none";
-    document.getElementById("appContent").style.display = "block";
-    iniciar();
-  }
-
-  document.getElementById("senhaInput").addEventListener("keydown", e => {
-    if (e.key === "Enter") login();
-  });
-});
-
-// ── DADOS ──
+// ── ESTADO ──
 let produtos = [];
-let carrinho = [];
-let historico = JSON.parse(localStorage.getItem("hist") || "[]");
 let atual = null;
-let qtdAtual = 1;
-let categoriaAtiva = "todas";
-let ordemAtiva = "nome";
-
-// ── GITHUB ──
-const githubHeaders = {
-  "Authorization": "Bearer " + GH_TOKEN,
-  "Accept": "application/vnd.github+json"
-};
 
 // ── UTIL ──
-function estoqueNumero(valor) {
-  return parseFloat(
-    String(valor || "0")
-      .replace(/\s*un\.?/i, "")
-      .replace(/\./g, "")
-      .replace(",", ".")
-  ) || 0;
+function estoqueNumero(v) {
+  return parseFloat(String(v || 0)) || 0;
 }
 
-function toast(msg, cor) {
+function toast(msg) {
   const el = document.getElementById("toast");
+  if (!el) return;
   el.textContent = msg;
-  el.style.background = cor || "#1a1a2e";
   el.classList.add("show");
-  setTimeout(() => el.classList.remove("show"), 2200);
+  setTimeout(() => el.classList.remove("show"), 2000);
 }
 
 // ── INICIAR ──
@@ -95,97 +65,52 @@ function iniciar() {
       produtos = data;
       renderizar(produtos);
     })
-    .catch(err => {
-      console.error(err);
-    });
+    .catch(err => console.error(err));
 }
 
-// ── ENVIO GITHUB ──
-async function enviar() {
+// ── RENDER ──
+function renderizar(lista) {
+  const el = document.getElementById("resultados");
 
-  if (!carrinho.length) {
-    toast("Carrinho vazio");
+  if (!lista || lista.length === 0) {
+    el.innerHTML = `<div class="vazio">Nenhum produto</div>`;
     return;
   }
 
-  try {
+  el.innerHTML = lista.map(p => {
+    const est = estoqueNumero(p.estoque);
 
-const url =
-  "https://api.github.com/repos/" +
-  REPO +
-  "/contents/" +
-  PATH;
-
-    // GET arquivo atual
-    const getFile = await fetch(url, {
-      headers: githubHeaders
-    });
-
-    const getText = await getFile.text();
-
-    if (!getFile.ok) {
-throw new Error(
-  "GET falhou: " + getFile.status + " - " + getText
-);
-    }
-
-    const file = JSON.parse(getText);
-
-    let dados = { itens: [] };
-
-    try {
-      dados = JSON.parse(atob(file.content.replace(/\n/g, "")));
-    } catch {}
-
-    const sha = file.sha;
-
-    carrinho.forEach(it => {
-      dados.itens.push({
-        codigo: String(it.codigo),
-        qtd: Number(it.qtd),
-        tipo: it.tipo
-      });
-    });
-
-    // PUT atualizado
-    const salvar = await fetch(url, {
-      method: "PUT",
-      headers: {
-        ...githubHeaders,
-        "Content-Type": "application/json"
-      },
-      body: JSON.stringify({
-        message: "nova movimentacao",
-        content: btoa(JSON.stringify(dados, null, 2)),
-        sha
-      })
-    });
-
-    const salvarText = await salvar.text();
-
-    if (!salvar.ok) {
-    throw new Error(
-  "PUT falhou: " + salvar.status + " - " + salvarText
-);
-    }
-
-    const agora = new Date().toLocaleString("pt-BR");
-
-    carrinho.forEach(it =>
-      historico.unshift({ ...it, data: agora })
-    );
-
-    localStorage.setItem("hist", JSON.stringify(historico));
-
-    carrinho = [];
-
-    toast("Enviado com sucesso", "#0057FF");
-
-  } catch (err) {
-    console.error("ERRO:", err);
-    toast(err.message || "Erro ao enviar", "#E63946");
-  }
+    return `
+      <div class="card-produto" onclick="abrirProduto('${p.codigo}')">
+        <div class="card-info">
+          <div class="card-nome">${p.nome}</div>
+          <div class="card-meta">Cód: ${p.codigo}</div>
+        </div>
+        <div class="badge-est">${est}</div>
+      </div>
+    `;
+  }).join("");
 }
+
+// ── ABRIR PRODUTO ──
+window.abrirProduto = function (codigo) {
+  atual = produtos.find(p => p.codigo == codigo);
+  if (!atual) return;
+
+  document.getElementById("painel-nome").textContent = atual.nome;
+  document.getElementById("painel-cod").textContent = "Cód: " + atual.codigo;
+  document.getElementById("painel-preco").textContent = atual.preco ?? "-";
+  document.getElementById("painel-est").textContent = estoqueNumero(atual.estoque);
+
+  document.getElementById("overlay").style.display = "block";
+  document.getElementById("painel").classList.add("aberto");
+};
+
+// ── FECHAR PAINEL ──
+window.fechar = function () {
+  document.getElementById("overlay").style.display = "none";
+  document.getElementById("painel").classList.remove("aberto");
+};
 
 // ── SERVICE WORKER ──
 if ("serviceWorker" in navigator) {
@@ -193,7 +118,6 @@ if ("serviceWorker" in navigator) {
     navigator.serviceWorker
       .register("./sw.js")
       .then(() => console.log("SW OK"))
-      .catch(err => console.error("SW erro:", err));
+      .catch(err => console.error(err));
   });
 }
-
