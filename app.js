@@ -1,7 +1,7 @@
 console.log("APP OK");
 
-// ── CONFIGa ──
-const GH_TOKEN = "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";
+// ── CONFIG 2v ──
+const GH_TOKEN = "SEU_TOKEN_AQUI";
 const REPO = "Willkerson/Automacao-ConnectPlug";
 const PATH = "fila/movimentacao.json";
 
@@ -30,9 +30,10 @@ window.login = async function () {
     document.getElementById("appContent").style.display = "block";
     iniciar();
   } else {
-    const err = document.getElementById("senhaErro");
-    err.style.display = "block";
-    setTimeout(() => (err.style.display = "none"), 2000);
+    document.getElementById("senhaErro").style.display = "block";
+    setTimeout(() => {
+      document.getElementById("senhaErro").style.display = "none";
+    }, 2000);
   }
 };
 
@@ -62,30 +63,22 @@ function iniciar() {
     .then((data) => {
       produtos = data;
       renderizar(produtos);
-    })
-    .catch(console.error);
+    });
 }
 
-// ── RENDER ──
+// ── RENDER PRODUTOS ──
 function renderizar(lista) {
   const el = document.getElementById("resultados");
 
-  if (!lista || lista.length === 0) {
-    el.innerHTML = `<div class="vazio">Nenhum produto</div>`;
-    return;
-  }
-
   el.innerHTML = lista
     .map((p) => {
-      const est = estoqueNumero(p.estoque);
-
       return `
       <div class="card-produto" onclick="abrirProduto('${p.codigo}')">
         <div class="card-info">
           <div class="card-nome">${p.nome}</div>
-          <div class="card-meta">Cód: ${p.codigo}</div>
+          <div class="card-meta">${p.codigo}</div>
         </div>
-        <div class="badge-est">${est}</div>
+        <div class="badge-est">${estoqueNumero(p.estoque)}</div>
       </div>
     `;
     })
@@ -101,9 +94,6 @@ window.abrirProduto = function (codigo) {
 
   document.getElementById("painel-nome").textContent = atual.nome;
   document.getElementById("painel-cod").textContent = atual.codigo;
-  document.getElementById("painel-preco").textContent =
-    "R$ " + (atual.preco ?? "-");
-
   document.getElementById("painel-est").textContent = estoqueNumero(
     atual.estoque
   );
@@ -111,19 +101,14 @@ window.abrirProduto = function (codigo) {
   document.getElementById("qtd").value = 1;
 
   document.getElementById("overlay").style.display = "block";
-  const painel = document.getElementById("painel");
-  painel.style.display = "block";
-  painel.classList.add("aberto");
+  document.getElementById("painel").classList.add("aberto");
 };
 
-// ── FECHAR ──
+// ── FECHAR PAINEL ──
 window.fechar = function () {
   document.getElementById("overlay").style.display = "none";
-  const painel = document.getElementById("painel");
-  painel.classList.remove("aberto");
+  document.getElementById("painel").classList.remove("aberto");
 };
-
-document.getElementById("overlay")?.addEventListener("click", window.fechar);
 
 // ── CONTADOR ──
 window.mais = function () {
@@ -135,12 +120,6 @@ window.menos = function () {
   if (qtdAtual > 1) qtdAtual--;
   document.getElementById("qtd").value = qtdAtual;
 };
-
-document.addEventListener("input", (e) => {
-  if (e.target.id === "qtd") {
-    qtdAtual = parseInt(e.target.value || 1);
-  }
-});
 
 // ── ADD CARRINHO ──
 window.add = function (tipo) {
@@ -156,35 +135,77 @@ window.add = function (tipo) {
   });
 
   atualizarCarrinho();
-  toast(`Adicionado: ${tipo} (${qtd})`);
+  renderizarCarrinho();
+  toast("Adicionado ao carrinho");
   window.fechar();
 };
 
-// ── CONTADOR UI ──
+// ── CONTADOR CARRINHO ──
 function atualizarCarrinho() {
   const el = document.getElementById("carrinhoCount");
   if (el) el.textContent = window.carrinho.length;
 }
 
-// ── BUSCA ──
-const busca = document.getElementById("busca");
+// ── RENDER CARRINHO ──
+function renderizarCarrinho() {
+  const el = document.getElementById("listaCarrinho");
+  if (!el) return;
 
-if (busca) {
-  busca.addEventListener("input", (e) => {
-    const termo = e.target.value.toLowerCase();
+  if (window.carrinho.length === 0) {
+    el.innerHTML = `<div class="vazio">Carrinho vazio</div>`;
+    return;
+  }
 
-    const filtrado = produtos.filter((p) =>
-      p.nome.toLowerCase().includes(termo) ||
-      p.codigo.toLowerCase().includes(termo)
-    );
+  el.innerHTML = window.carrinho
+    .map((item) => {
+      return `
+      <div class="c-item">
+        <div>
+          <div class="c-nome">${item.nome}</div>
+          <div class="c-sub">Código: ${item.codigo}</div>
+        </div>
 
-    renderizar(filtrado);
-  });
+        <div style="text-align:right">
+          <div class="c-badge ${
+            item.tipo === "entrada" ? "badge-entrada" : "badge-saida"
+          }">
+            ${item.tipo}
+          </div>
+          <div class="c-sub">Qtd: ${item.qtd}</div>
+        </div>
+      </div>
+    `;
+    })
+    .join("");
 }
 
-// ── ENVIAR GITHUB ──
+// ── ABRIR CARRINHO ──
+document.getElementById("btnCarrinho")?.addEventListener("click", () => {
+  document.getElementById("carrinho-painel").classList.add("aberto");
+  renderizarCarrinho();
+});
+
+// ── FECHAR CARRINHO ──
+window.fecharCarrinho = function () {
+  document.getElementById("carrinho-painel").classList.remove("aberto");
+};
+
+// ── BUSCA ──
+document.getElementById("busca")?.addEventListener("input", (e) => {
+  const t = e.target.value.toLowerCase();
+
+  const filtrado = produtos.filter(
+    (p) =>
+      p.nome.toLowerCase().includes(t) ||
+      p.codigo.toLowerCase().includes(t)
+  );
+
+  renderizar(filtrado);
+});
+
+// ── ENVIAR PARA GITHUB ──
 window.enviar = async function () {
-  if (!window.carrinho.length) {
+  if (window.carrinho.length === 0) {
     toast("Carrinho vazio");
     return;
   }
@@ -213,9 +234,7 @@ window.enviar = async function () {
 
     const sha = file.sha;
 
-    window.carrinho.forEach((it) => {
-      dados.itens.push(it);
-    });
+    window.carrinho.forEach((it) => dados.itens.push(it));
 
     const salvar = await fetch(url, {
       method: "PUT",
@@ -235,6 +254,7 @@ window.enviar = async function () {
 
     window.carrinho = [];
     atualizarCarrinho();
+    renderizarCarrinho();
     toast("Enviado com sucesso!");
   } catch (err) {
     console.error(err);
