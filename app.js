@@ -1,13 +1,13 @@
-alert("APP.JS CARREGOU");
 console.log("APP OK");
 
 // ── CONFIG ──
-const GH_TOKEN = 'SEU_TOKEN_AQUI';
-const REPO = 'Willkerson/Automacao-ConnectPlug';
-const PATH = 'fila/movimentacao.json';
+const GH_TOKEN = "SEU_TOKEN_AQUI";
+const REPO = "Willkerson/Automacao-ConnectPlug";
+const PATH = "fila/movimentacao.json";
 
 // ── LOGIN ──
-const SENHA_HASH = "158a323a7ba44870f23d96f1516dd70aa48e9a72db4ebb026b0a89e212a208ab";
+const SENHA_HASH =
+  "158a323a7ba44870f23d96f1516dd70aa48e9a72db4ebb026b0a89e212a208ab";
 
 async function hashSenha(str) {
   const buf = await crypto.subtle.digest(
@@ -16,7 +16,7 @@ async function hashSenha(str) {
   );
 
   return Array.from(new Uint8Array(buf))
-    .map(b => b.toString(16).padStart(2, "0"))
+    .map((b) => b.toString(16).padStart(2, "0"))
     .join("");
 }
 
@@ -36,13 +36,14 @@ window.login = async function () {
   } else {
     const err = document.getElementById("senhaErro");
     err.style.display = "block";
-    setTimeout(() => err.style.display = "none", 2000);
+    setTimeout(() => (err.style.display = "none"), 2000);
   }
 };
 
 // ── ESTADO ──
 let produtos = [];
 let atual = null;
+let qtdAtual = 1;
 
 // ── UTIL ──
 function estoqueNumero(v) {
@@ -60,12 +61,12 @@ function toast(msg) {
 // ── INICIAR ──
 function iniciar() {
   fetch("front-index/produtos.json")
-    .then(r => r.json())
-    .then(data => {
+    .then((r) => r.json())
+    .then((data) => {
       produtos = data;
       renderizar(produtos);
     })
-    .catch(err => console.error(err));
+    .catch(console.error);
 }
 
 // ── RENDER ──
@@ -77,10 +78,11 @@ function renderizar(lista) {
     return;
   }
 
-  el.innerHTML = lista.map(p => {
-    const est = estoqueNumero(p.estoque);
+  el.innerHTML = lista
+    .map((p) => {
+      const est = estoqueNumero(p.estoque);
 
-    return `
+      return `
       <div class="card-produto" onclick="abrirProduto('${p.codigo}')">
         <div class="card-info">
           <div class="card-nome">${p.nome}</div>
@@ -89,28 +91,59 @@ function renderizar(lista) {
         <div class="badge-est">${est}</div>
       </div>
     `;
-  }).join("");
+    })
+    .join("");
 }
 
 // ── ABRIR PRODUTO ──
 window.abrirProduto = function (codigo) {
-  atual = produtos.find(p => p.codigo == codigo);
+  atual = produtos.find((p) => p.codigo == codigo);
   if (!atual) return;
 
+  qtdAtual = 1;
+
   document.getElementById("painel-nome").textContent = atual.nome;
-  document.getElementById("painel-cod").textContent = "Cód: " + atual.codigo;
-  document.getElementById("painel-preco").textContent = atual.preco ?? "-";
-  document.getElementById("painel-est").textContent = estoqueNumero(atual.estoque);
+  document.getElementById("painel-cod").textContent = atual.codigo;
+  document.getElementById("painel-preco").textContent =
+    "R$ " + (atual.preco ?? "-");
+
+  document.getElementById("painel-est").textContent = estoqueNumero(
+    atual.estoque
+  );
+
+  document.getElementById("qtd").value = 1;
 
   document.getElementById("overlay").style.display = "block";
   document.getElementById("painel").classList.add("aberto");
+  document.getElementById("painel").style.display = "block";
 };
 
-// ── FECHAR PAINEL ──
+// ── FECHAR ──
 window.fechar = function () {
   document.getElementById("overlay").style.display = "none";
   document.getElementById("painel").classList.remove("aberto");
 };
+
+// clique fora fecha
+document.getElementById("overlay").addEventListener("click", window.fechar);
+
+// ── CONTADOR ──
+window.mais = function () {
+  qtdAtual++;
+  document.getElementById("qtd").value = qtdAtual;
+};
+
+window.menos = function () {
+  if (qtdAtual > 1) qtdAtual--;
+  document.getElementById("qtd").value = qtdAtual;
+};
+
+// sincronizar input manual
+document.addEventListener("input", (e) => {
+  if (e.target.id === "qtd") {
+    qtdAtual = parseInt(e.target.value || 1);
+  }
+});
 
 // ── SERVICE WORKER ──
 if ("serviceWorker" in navigator) {
@@ -118,6 +151,6 @@ if ("serviceWorker" in navigator) {
     navigator.serviceWorker
       .register("./sw.js")
       .then(() => console.log("SW OK"))
-      .catch(err => console.error(err));
+      .catch(console.error);
   });
 }
