@@ -1,7 +1,7 @@
 console.log("APP OK");
 
 // ── CONFIG ──
-const GH_TOKEN = "SEU_TOKEN_AQUI";
+const GH_TOKEN = "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";
 const REPO = "Willkerson/Automacao-ConnectPlug";
 const PATH = "fila/movimentacao.json";
 
@@ -44,6 +44,7 @@ window.login = async function () {
 let produtos = [];
 let atual = null;
 let qtdAtual = 1;
+window.carrinho = [];
 
 // ── UTIL ──
 function estoqueNumero(v) {
@@ -106,7 +107,6 @@ window.abrirProduto = function (codigo) {
   document.getElementById("painel-cod").textContent = atual.codigo;
   document.getElementById("painel-preco").textContent =
     "R$ " + (atual.preco ?? "-");
-
   document.getElementById("painel-est").textContent = estoqueNumero(
     atual.estoque
   );
@@ -114,18 +114,20 @@ window.abrirProduto = function (codigo) {
   document.getElementById("qtd").value = 1;
 
   document.getElementById("overlay").style.display = "block";
-  document.getElementById("painel").classList.add("aberto");
-  document.getElementById("painel").style.display = "block";
+  const painel = document.getElementById("painel");
+  painel.style.display = "block";
+  painel.classList.add("aberto");
 };
 
 // ── FECHAR ──
 window.fechar = function () {
   document.getElementById("overlay").style.display = "none";
-  document.getElementById("painel").classList.remove("aberto");
+  const painel = document.getElementById("painel");
+  painel.classList.remove("aberto");
 };
 
 // clique fora fecha
-document.getElementById("overlay").addEventListener("click", window.fechar);
+document.getElementById("overlay")?.addEventListener("click", window.fechar);
 
 // ── CONTADOR ──
 window.mais = function () {
@@ -138,12 +140,47 @@ window.menos = function () {
   document.getElementById("qtd").value = qtdAtual;
 };
 
-// sincronizar input manual
+// sincroniza input manual
 document.addEventListener("input", (e) => {
   if (e.target.id === "qtd") {
     qtdAtual = parseInt(e.target.value || 1);
   }
 });
+
+// ── ADD (entrada/saída) ──
+window.add = function (tipo) {
+  if (!atual) return;
+
+  const qtd = parseInt(document.getElementById("qtd").value || 1);
+
+  window.carrinho.push({
+    codigo: atual.codigo,
+    nome: atual.nome,
+    qtd,
+    tipo
+  });
+
+  toast(`Adicionado: ${tipo} (${qtd})`);
+  window.fechar();
+};
+
+// ── BUSCA ──
+const busca = document.getElementById("busca");
+
+if (busca) {
+  busca.addEventListener("input", (e) => {
+    const termo = e.target.value.toLowerCase().trim();
+
+    const filtrado = produtos.filter((p) => {
+      return (
+        String(p.nome).toLowerCase().includes(termo) ||
+        String(p.codigo).toLowerCase().includes(termo)
+      );
+    });
+
+    renderizar(filtrado);
+  });
+}
 
 // ── SERVICE WORKER ──
 if ("serviceWorker" in navigator) {
