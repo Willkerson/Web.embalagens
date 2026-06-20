@@ -84,19 +84,23 @@ function renderizar(lista) {
 
 // ── ABRIR PRODUTO ──
 window.abrirProduto = function (codigo) {
-  atual = produtos.find(p => String(p.codigo) === String(codigo));
+  console.log("CLICK RECEBIDO:", codigo);
+  console.log("PRODUTOS:", produtos);
+
+  atual = produtos.find(p =>
+    String(p.codigo).trim() === String(codigo).trim()
+  );
+
+  console.log("ENCONTRADO:", atual);
 
   if (!atual) {
     toast("Produto não encontrado");
     return;
   }
 
-  qtdAtual = 1;
-
-  document.getElementById("painel-nome").textContent = atual.nome || "";
-  document.getElementById("painel-cod").textContent = atual.codigo || "";
-  document.getElementById("painel-est").textContent = atual.estoque ?? 0;
-  document.getElementById("qtd").value = 1;
+  document.getElementById("painel-nome").textContent = atual.nome;
+  document.getElementById("painel-cod").textContent = atual.codigo;
+  document.getElementById("painel-est").textContent = atual.estoque;
 
   document.getElementById("overlay").style.display = "block";
   document.getElementById("painel").classList.add("aberto");
