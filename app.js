@@ -110,7 +110,11 @@ async function enviar() {
 
   try {
 
-    const url = `https://api.github.com/repos/${REPO}/contents/${PATH}`;
+const url =
+  "https://api.github.com/repos/" +
+  REPO +
+  "/contents/" +
+  PATH;
 
     // GET arquivo atual
     const getFile = await fetch(url, {
@@ -120,7 +124,9 @@ async function enviar() {
     const getText = await getFile.text();
 
     if (!getFile.ok) {
-      throw new Error(`GET falhou: ${getFile.status} - ${getText}`);
+throw new Error(
+  "GET falhou: " + getFile.status + " - " + getText
+);
     }
 
     const file = JSON.parse(getText);
@@ -158,7 +164,9 @@ async function enviar() {
     const salvarText = await salvar.text();
 
     if (!salvar.ok) {
-      throw new Error(`PUT falhou: ${salvar.status} - ${salvarText}`);
+    throw new Error(
+  "PUT falhou: " + salvar.status + " - " + salvarText
+);
     }
 
     const agora = new Date().toLocaleString("pt-BR");
