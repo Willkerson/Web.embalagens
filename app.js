@@ -1,5 +1,5 @@
 console.log("APP OK");
-const GH_TOKEN = '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';
+const GH_TOKEN = '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';
 const REPO = 'Willkerson/Automacao-ConnectPlug';
 const PATH = 'fila/movimentacao.json';
 
