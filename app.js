@@ -2,7 +2,7 @@
 console.log("APP OK");
 
 // ⚠️ IMPORTANTE: regenere esse token depois
-const GH_TOKEN = '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';
+const GH_TOKEN = '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';
 const REPO = 'Willkerson/Automacao-ConnectPlug';
 const PATH = 'fila/movimentacao.json';
 
