@@ -2,8 +2,11 @@ console.log("APP OK");
 
 let produtos = [];
 let carrinho = [];
+let historico = JSON.parse(localStorage.getItem("hist") || "[]");
 let atual = null;
 let qtdAtual = 1;
+let categoriaAtiva = "todas";
+let ordemAtiva = "nome";
 
 // ── UTILS ──
 function estoqueNumero(valor) {
@@ -27,23 +30,52 @@ function labelStatus(n) {
   return 'OK';
 }
 
+function formatPreco(p) {
+  if (!p && p !== 0) return '';
+  return 'R$ ' + Number(p).toFixed(2).replace('.', ',');
+}
+
+function ordenar(lista) {
+  const l = [...lista];
+  if (ordemAtiva === 'nome')         return l.sort((a,b) => (a.nome||'').localeCompare(b.nome||''));
+  if (ordemAtiva === 'estoque-asc')  return l.sort((a,b) => estoqueNumero(a.estoque) - estoqueNumero(b.estoque));
+  if (ordemAtiva === 'estoque-desc') return l.sort((a,b) => estoqueNumero(b.estoque) - estoqueNumero(a.estoque));
+  if (ordemAtiva === 'preco-asc')    return l.sort((a,b) => (a.preco||0) - (b.preco||0));
+  if (ordemAtiva === 'preco-desc')   return l.sort((a,b) => (b.preco||0) - (a.preco||0));
+  return l;
+}
+
+// ── TOAST ──
+function toast(msg, cor) {
+  const el = document.getElementById("toast");
+  el.textContent = msg;
+  el.style.background = cor || "#1a1a2e";
+  el.classList.add("show");
+  setTimeout(() => el.classList.remove("show"), 2200);
+}
+
 // ── RENDER ──
 function renderizar(lista) {
   const div = document.getElementById("resultados");
+  const final = ordenar(lista);
 
-  if (!lista.length) {
+  if (!final.length) {
     div.innerHTML = '<div class="vazio">Nenhum produto encontrado.</div>';
     return;
   }
 
-  div.innerHTML = lista.map(p => {
+  div.innerHTML = final.map(p => {
     const est = estoqueNumero(p.estoque);
     const st  = statusEstoque(est);
+    const preco = p.preco ? formatPreco(p.preco) : '';
     return `
-    <div class="card-produto status-${st}" onclick="abrir('${p.codigo}')">
+    <div class="card-produto" onclick="abrir('${p.codigo}')">
       <div class="card-info">
         <div class="card-nome">${p.nome}</div>
-        <div class="card-cod">Cód. ${p.codigo}</div>
+        <div class="card-meta">
+          <span>Cód. ${p.codigo}</span>
+          ${preco ? `<span class="card-preco">${preco}</span>` : ''}
+        </div>
       </div>
       <div class="badge-est status-${st}">
         <div class="badge-num">${est}</div>
@@ -53,11 +85,83 @@ function renderizar(lista) {
   }).join('');
 }
 
+function aplicarFiltro() {
+  const t = document.getElementById("busca").value.toLowerCase().trim();
+  let lista = produtos;
+
+  if (categoriaAtiva !== "todas") {
+    lista = lista.filter(p => (p.categoria || '') === categoriaAtiva);
+  }
+
+  if (t) {
+    lista = lista.filter(p =>
+      (p.nome || '').toLowerCase().includes(t) ||
+      String(p.codigo || '').includes(t) ||
+      String(p.preco || '').includes(t)
+    );
+  }
+
+  renderizar(lista);
+}
+
+// ── CATEGORIAS ──
+function buildFiltros() {
+  const cats = ['todas', ...new Set(produtos.map(p => p.categoria).filter(Boolean).sort())];
+  const wrap = document.getElementById("filtros");
+  wrap.innerHTML = cats.map(c => `
+    <div class="chip ${c === 'todas' ? 'ativo' : ''}" data-cat="${c}">
+      ${c === 'todas' ? 'Todas' : c}
+    </div>`).join('');
+
+  wrap.querySelectorAll('.chip').forEach(chip => {
+    chip.addEventListener('click', function () {
+      wrap.querySelectorAll('.chip').forEach(c => c.classList.remove('ativo'));
+      this.classList.add('ativo');
+      categoriaAtiva = this.dataset.cat;
+      aplicarFiltro();
+    });
+  });
+}
+
+// ── BADGE ZERADOS ──
+function atualizarZerados() {
+  const n = produtos.filter(p => estoqueNumero(p.estoque) === 0).length;
+  const el = document.getElementById("badgeZerados");
+  document.getElementById("countZerados").textContent = n;
+  el.style.display = n ? "flex" : "none";
+}
+
+document.getElementById("badgeZerados").addEventListener("click", () => {
+  categoriaAtiva = "todas";
+  document.querySelectorAll('.chip').forEach(c => c.classList.remove('ativo'));
+  document.querySelector('.chip[data-cat="todas"]')?.classList.add('ativo');
+  document.getElementById("busca").value = "";
+  ordemAtiva = "estoque-asc";
+  document.querySelectorAll('.btn-ordem').forEach(b => b.classList.remove('ativo'));
+  document.querySelector('[data-ordem="estoque-asc"]')?.classList.add('ativo');
+  renderizar(produtos.filter(p => estoqueNumero(p.estoque) === 0));
+});
+
+// ── ORDENAÇÃO ──
+document.querySelectorAll('.btn-ordem').forEach(btn => {
+  btn.addEventListener('click', function () {
+    document.querySelectorAll('.btn-ordem').forEach(b => b.classList.remove('ativo'));
+    this.classList.add('ativo');
+    ordemAtiva = this.dataset.ordem;
+    aplicarFiltro();
+  });
+});
+
+// ── BUSCA ──
+document.getElementById("busca").addEventListener("input", aplicarFiltro);
+
 // ── LOAD ──
 fetch("front-index/produtos.json")
   .then(r => r.json())
   .then(data => {
     produtos = data;
+    buildFiltros();
+    atualizarZerados();
     renderizar(produtos);
   })
   .catch(err => {
@@ -65,24 +169,7 @@ fetch("front-index/produtos.json")
     console.error(err);
   });
 
-// ── BUSCA ──
-document.getElementById("busca").addEventListener("input", function () {
-  const t = this.value.toLowerCase().trim();
-
-  if (!t) {
-    renderizar(produtos);
-    return;
-  }
-
-  const res = produtos.filter(p =>
-    (p.nome || "").toLowerCase().includes(t) ||
-    String(p.codigo || "").includes(t)
-  );
-
-  renderizar(res);
-});
-
-// ── ABRIR PAINEL ──
+// ── PAINEL ──
 function abrir(codigo) {
   atual = produtos.find(p => String(p.codigo) === String(codigo));
   qtdAtual = 1;
@@ -90,11 +177,12 @@ function abrir(codigo) {
   const est = estoqueNumero(atual.estoque);
   const cor = est === 0 ? 'var(--vermelho)' : est <= 5 ? 'var(--amarelo)' : 'var(--verde)';
 
-  document.getElementById("painel-nome").textContent    = atual.nome;
-  document.getElementById("painel-est").textContent     = est;
-  document.getElementById("painel-est").style.color     = cor;
-  document.getElementById("painel-cod").textContent     = "Cód. " + atual.codigo;
-  document.getElementById("qtd").textContent            = 1;
+  document.getElementById("painel-nome").textContent = atual.nome;
+  document.getElementById("painel-cod").textContent  = "Cód. " + atual.codigo;
+  document.getElementById("painel-preco").textContent = atual.preco ? formatPreco(atual.preco) : '';
+  document.getElementById("painel-est").textContent  = est;
+  document.getElementById("painel-est").style.color  = cor;
+  document.getElementById("qtd").value = 1;
 
   document.getElementById("overlay").style.display = "block";
   const painel = document.getElementById("painel");
@@ -121,17 +209,22 @@ document.getElementById("qtd").addEventListener("input", function () {
   this.value = qtdAtual;
 });
 
-// ── ADD CARRINHO ──
+// ── CARRINHO ──
 function add(tipo) {
   const inputVal = parseInt(document.getElementById("qtd").value) || 1;
   qtdAtual = inputVal < 1 ? 1 : inputVal;
+
   carrinho.push({
-    nome:   atual.nome,
-    codigo: atual.codigo,
-    qtd:    qtdAtual,
+    nome:    atual.nome,
+    codigo:  atual.codigo,
+    qtd:     qtdAtual,
     tipo,
     estoque: estoqueNumero(atual.estoque)
   });
+
+  const emoji = tipo === 'entrada' ? '↑' : '↓';
+  toast(`${emoji} ${atual.nome.slice(0, 28)} — ${qtdAtual} un`, tipo === 'entrada' ? '#00B37E' : '#E63946');
+
   atualizarBadge();
   fechar();
 }
@@ -142,7 +235,6 @@ function atualizarBadge() {
   document.getElementById("btnCarrinho").style.display = n ? "flex" : "none";
 }
 
-// ── CARRINHO ──
 document.getElementById("btnCarrinho").addEventListener("click", abrirCarrinho);
 
 function abrirCarrinho() {
@@ -156,7 +248,6 @@ function abrirCarrinho() {
       <span class="c-badge badge-${it.tipo}">${it.tipo === 'entrada' ? '↑ Entrada' : '↓ Saída'}</span>
     </div>`).join('')
   : '<div class="vazio">Carrinho vazio.</div>';
-
   document.getElementById("carrinho-painel").classList.add("aberto");
 }
 
@@ -165,10 +256,46 @@ function fecharCarrinho() {
 }
 
 function enviar() {
-  if (!carrinho.length) { alert("Carrinho vazio"); return; }
+  if (!carrinho.length) { toast("Carrinho vazio"); return; }
+
+  const agora = new Date().toLocaleString('pt-BR');
+  carrinho.forEach(it => {
+    historico.unshift({ ...it, data: agora });
+  });
+  if (historico.length > 200) historico = historico.slice(0, 200);
+  localStorage.setItem("hist", JSON.stringify(historico));
+
   console.table(carrinho);
-  alert("Enviado " + carrinho.length + " item(ns)");
+  toast(`✓ ${carrinho.length} item(ns) enviado(s)`, '#0057FF');
   carrinho = [];
   atualizarBadge();
   fecharCarrinho();
+}
+
+// ── HISTÓRICO ──
+function abrirHist() {
+  const lista = document.getElementById("listaHist");
+  lista.innerHTML = historico.length ? historico.map(it => `
+    <div class="hist-item">
+      <div class="hist-nome">${it.nome}</div>
+      <div class="hist-meta">
+        <span class="c-badge badge-${it.tipo}" style="font-size:11px;padding:3px 10px">${it.tipo === 'entrada' ? '↑ Entrada' : '↓ Saída'}</span>
+        <span>${it.qtd} un · Cód. ${it.codigo}</span>
+        <span style="margin-left:auto">${it.data}</span>
+      </div>
+    </div>`).join('')
+  : '<div class="vazio">Nenhuma movimentação ainda.</div>';
+  document.getElementById("hist-painel").classList.add("aberto");
+}
+
+function fecharHist() {
+  document.getElementById("hist-painel").classList.remove("aberto");
+}
+
+function limparHist() {
+  if (!confirm("Limpar todo o histórico?")) return;
+  historico = [];
+  localStorage.removeItem("hist");
+  fecharHist();
+  toast("Histórico limpo");
 }
