@@ -9,10 +9,13 @@ var loadObserver  = null;
 var _debouncedRender = debounce(renderizar, 200);
 
 function getListaFiltrada() {
-  var lista = prods().filter(function(p) { return !p.oculto; });
+  var lista = prods().filter(function(p) {
+  return !p.oculto && parseInt(p.estoque || 0) > 0;
+});
 if (estado.produtoSelecionado) {
   return prods().filter(function(p) {
-    return String(p.id) === String(estado.produtoSelecionado);
+    return String(p.id) === String(estado.produtoSelecionado)
+      && parseInt(p.estoque || 0) > 0;
   });
 }
   // ── Filtro por preço ──────────────────────────────────────────
@@ -24,11 +27,16 @@ if (estado.produtoSelecionado) {
   }
 
   if (estado.busca) {
-    var results = buscaFuzzy(estado.busca);
-    return results
-      .filter(function(r) { return r.score >= 30; })
-      .map(function(r) { return r.prod; });
-  }
+  var results = buscaFuzzy(estado.busca);
+  return results
+    .filter(function(r) {
+      return r.score >= 30 &&
+             parseInt(r.prod.estoque || 0) > 0;
+    })
+    .map(function(r) {
+      return r.prod;
+    });
+}
 
   if (estado.cat !== 'todos') {
   var subs = catMap[estado.cat] || [];
@@ -122,7 +130,9 @@ function renderizar() {
   if (loadObserver) { loadObserver.disconnect(); loadObserver = null; }
 
   var lista     = getListaFiltrada();
-  var listaBase = prods().filter(function(p) { return !p.oculto; });
+  var listaBase = prods().filter(function(p) {
+  return !p.oculto && parseInt(p.estoque || 0) > 0;
+});
 
 if (true) {
   listaBase = listaBase.filter(function(p) {
