@@ -11,14 +11,14 @@
     "nome": "PRENDEDOR DE ROUPA C/12 PÇS PRENDE MAIS",
     "categoria": "UTENSILIOS",
     "preco": 4.99,
-    "estoque": "42,00 un"
+    "estoque": "1,00 un"
   },
   {
     "codigo": "103",
     "nome": "SACOLA KRAFT M 1UN 19X12X26CM",
     "categoria": "Embalagem",
     "preco": 1.55,
-    "estoque": "-26,00 un"
+    "estoque": "0,00 un"
   },
   {
     "codigo": "104",
@@ -130,7 +130,7 @@
     "nome": "SABONETE LIQ. C MANGA ROSA & TANGERINA 5L SOFT PLUS TRILHA",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 30.5,
-    "estoque": "-2,00 un"
+    "estoque": "1,00 un"
   },
   {
     "codigo": "145",
@@ -200,7 +200,7 @@
     "nome": "LIXEIRA BRANCA 6L RATTAN",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 32.5,
-    "estoque": "-2,00 un"
+    "estoque": "0,00 un"
   },
   {
     "codigo": "212",
@@ -256,7 +256,7 @@
     "nome": "CABO DE MADEIRA 1,30CM LISO SANCHES",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 7.5,
-    "estoque": "-23,00 un"
+    "estoque": "-33,00 un"
   },
   {
     "codigo": "253",
@@ -452,7 +452,7 @@
     "nome": "ESPONJA LIMPEZA PESADA MAX",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 5.5,
-    "estoque": "0,00 un"
+    "estoque": "3,00 un"
   },
   {
     "codigo": "348",
@@ -613,7 +613,7 @@
     "nome": "COLHER BRANCA SOBREMESA C/50UN PRAFESTA",
     "categoria": "DESCARTAVEIS",
     "preco": 4.3,
-    "estoque": "-5,00 un"
+    "estoque": "15,00 un"
   },
   {
     "codigo": "413",
@@ -823,7 +823,7 @@
     "nome": "PROCESSADOR DE ALIMENTOS 500ML TINGS",
     "categoria": "ALIMENTO/GENERO ALIMENTICIO",
     "preco": 14.99,
-    "estoque": "2,00 un"
+    "estoque": "1,00 un"
   },
   {
     "codigo": "535",
@@ -1453,7 +1453,7 @@
     "nome": "ESPREMEDOR DE LIMÃO EM ALUMINIO",
     "categoria": "-",
     "preco": 15.5,
-    "estoque": "0,00 un"
+    "estoque": "2,00 un"
   },
   {
     "codigo": "794",
@@ -1761,7 +1761,7 @@
     "nome": "SACOLA SOS LIMA M C/ALÇA C/20UN 19X12X26 PLUMA",
     "categoria": "Embalagem",
     "preco": 29,
-    "estoque": "0,00 un"
+    "estoque": "5,00 un"
   },
   {
     "codigo": "907",
@@ -2328,7 +2328,7 @@
     "nome": "PAPEL INTERFOLHADO CAI CAI FOLHA DUPLA 10X20,5CM C/800 FOLHAS",
     "categoria": "PRODUTO DE HIGIENE",
     "preco": 89.5,
-    "estoque": "0,00 un"
+    "estoque": "1,00 un"
   },
   {
     "codigo": "1160",
@@ -2440,7 +2440,7 @@
     "nome": "CAIXA P/BOLO N07 COM ALCA 20X20X10",
     "categoria": "Embalagem",
     "preco": 6.5,
-    "estoque": "0,00 un"
+    "estoque": "7,00 un"
   },
   {
     "codigo": "1272",
