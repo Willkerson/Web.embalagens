@@ -2,7 +2,7 @@
 <html lang="pt-BR">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, viewport-fit=cover">
 <title>CIA Embalagens — Estoque</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -34,6 +34,12 @@
 }
 
 * { box-sizing: border-box; margin: 0; padding: 0; -webkit-tap-highlight-color: transparent; }
+
+/* ── BLOQUEIO DE ZOOM (iOS / Android) ── */
+html, body {
+  touch-action: manipulation;
+  -ms-touch-action: manipulation;
+}
 
 body {
   font-family: 'Inter', -apple-system, sans-serif;
@@ -946,11 +952,25 @@ header {
 <div class="toast" id="toast"></div>
 
 <script>
+// ── BLOQUEIO DE ZOOM (iOS Safari: pinch + double-tap) ──
+document.addEventListener('gesturestart',  e => e.preventDefault(), { passive: false });
+document.addEventListener('gesturechange', e => e.preventDefault(), { passive: false });
+document.addEventListener('gestureend',    e => e.preventDefault(), { passive: false });
+
+let _lastTap = 0;
+document.addEventListener('touchend', e => {
+  const now = Date.now();
+  if (now - _lastTap < 300) e.preventDefault();
+  _lastTap = now;
+}, { passive: false });
+
+// ─────────────────────────────────────────────────────
+
 const REPO      = "Willkerson/Automacao-ConnectPlug";
 const WORKFLOW  = "movimentar.yml";
 const FILA_PATH = "fila/movimentacao.json";
 const BRANCH    = "main";
-const DELAY_MS  = 5000; // aguarda 5s após commit antes de disparar o workflow
+const DELAY_MS  = 5000;
 
 const SENHA_HASH = "158a323a7ba44870f23d96f1516dd70aa48e9a72db4ebb026b0a89e212a208ab";
 
@@ -1270,7 +1290,6 @@ async function salvar() {
   btn.textContent = "Commitando fila…";
 
   try {
-    /* 1. Busca SHA + conteúdo atual da fila */
     const filaUrl = `https://api.github.com/repos/${REPO}/contents/${FILA_PATH}?ref=${BRANCH}`;
     const getRes  = await fetch(filaUrl, {
       headers: { Authorization: "Bearer " + token, Accept: "application/vnd.github+json" }
@@ -1285,7 +1304,6 @@ async function salvar() {
       filaAtual = JSON.parse(atob(d.content.replace(/\n/g, "")));
     }
 
-    /* 2. Monta fila atualizada */
     const novos = carrinho.map(i => ({
       codigo: String(i.codigo),
       nome:   i.nome,
@@ -1296,7 +1314,6 @@ async function salvar() {
     const filaAtualizada = { itens: [...(filaAtual.itens || []), ...novos] };
     const b64 = btoa(unescape(encodeURIComponent(JSON.stringify(filaAtualizada, null, 2))));
 
-    /* 3. Commit da fila */
     const putBody = {
       message: `fila: ${novos.length} movimentacao(oes)`,
       content: b64,
@@ -1319,11 +1336,9 @@ async function salvar() {
       throw new Error(e.message || "Erro ao commitar fila");
     }
 
-    /* 4. Aguarda o commit propagar no GitHub antes de disparar o workflow */
     btn.textContent = `Aguardando ${DELAY_MS / 1000}s…`;
     await new Promise(r => setTimeout(r, DELAY_MS));
 
-    /* 5. Dispara o workflow movimentar.yml */
     btn.textContent = "Disparando workflow…";
     const dispRes = await fetch(
       `https://api.github.com/repos/${REPO}/actions/workflows/${WORKFLOW}/dispatches`,
@@ -1343,7 +1358,6 @@ async function salvar() {
       throw new Error(e.message || "Erro ao disparar workflow");
     }
 
-    /* 6. Limpa carrinho */
     carrinho = [];
     atualizarBadge();
     fecharCart();
