@@ -78,7 +78,7 @@ function mostrarSugestoes(query) {
   // ── Busca por preço ──────────────────────────────────────────
   var precoQuery = _extrairPreco(query);
   if (precoQuery !== null) {
-    var todosParaPreco = prods().filter(function(p) { return !p.oculto; });
+    var todosParaPreco = prods().filter(function(p) { return !p.oculto && estoqueNum(p.estoque) > 0; });
     var porPreco = todosParaPreco.filter(function(p) {
       var v = precoNum(p.preco)
       return !isNaN(v) && Math.abs(v - precoQuery) <= 0.05;
@@ -114,7 +114,9 @@ function mostrarSugestoes(query) {
 
   // ── Busca normal por nome/marca ──────────────────────────────
   var qNorm = normalizar(query);
-  var todosProds = prods().filter(function(p) { return !p.oculto; });
+  var todosProds = prods().filter(function(p) {var todosProds = prods().filter(function(p) {
+  return !p.oculto && estoqueNum(p.estoque) > 0;
+});
 
   var diretos = todosProds.filter(function(p) {
     var nNorm = normalizar(p.nome);
@@ -217,21 +219,55 @@ function confirmarBuscaCompleta() {
 }
 
 function selecionarSugestao(id) {
-  var prod = prods().find(function(p) { return p.id === id; });
+  var prod = prods().find(function(p) {
+    return String(p.id) === String(id);
+  });
+
   if (!prod) return;
+
   esconderSugestoes();
+
   document.getElementById('searchInput').value = prod.nome;
-  estado.busca       = prod.nome.toLowerCase();
+
+  estado.busca = '';
   estado.precoFiltro = null;
-  estado.cat         = 'todos';
-  estado.sub         = 'todas';
-  estado.marca       = 'todas';
-  document.querySelectorAll('.ftab').forEach(function(b) { b.classList.remove('on'); });
+  estado.produtoSelecionado = prod.id;
+
+  estado.cat = 'todos';
+  estado.sub = 'todas';
+  estado.marca = 'todas';
+
+  document.querySelectorAll('.ftab').forEach(function(b) {
+    b.classList.remove('on');
+  });
+
   var all = document.querySelector('.ftab[data-cat="todos"]');
   if (all) all.classList.add('on');
-  document.querySelectorAll('.subtabs').forEach(function(b) { b.classList.remove('on'); });
+
+  document.querySelectorAll('.subtabs').forEach(function(b) {
+    b.classList.remove('on');
+  });
+
   document.getElementById('brandFilterWrap').classList.remove('on');
+
   renderizar();
+
+  setTimeout(function () {
+    var card = document.getElementById('card-' + prod.id);
+
+    if (card) {
+      card.scrollIntoView({
+        behavior: 'smooth',
+        block: 'center'
+      });
+
+      card.style.outline = '3px solid #2563eb';
+
+      setTimeout(function () {
+        card.style.outline = '';
+      }, 2000);
+    }
+  }, 300);
 }
 
 function limparBusca() {
