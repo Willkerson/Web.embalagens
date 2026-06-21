@@ -1,5 +1,5 @@
 // ─────────────────────────────────────────────────────────────
-// BUSCA.JS — Sugestões de busca e handlers do campo de pesquisa
+// BUSCA.JS — Sugestões de busca e handlers do campo de pesquisaaa
 // ─────────────────────────────────────────────────────────────
 function precoNum(valor) {
   return parseFloat(String(valor).replace(',', '.'));
