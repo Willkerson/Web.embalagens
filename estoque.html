@@ -2,119 +2,834 @@
 <html lang="pt-BR">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>CIA Embalagens — Admin</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>CIA Embalagens — Estoque</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
-*{box-sizing:border-box;margin:0;padding:0}
-body{font-family:'Inter',Arial,sans-serif;background:#f0f4f9;color:#1a1f2e;min-height:100vh}
+:root {
+  --blue:    #0057FF;
+  --blue-dk: #0040CC;
+  --blue-lt: #EEF3FF;
+  --ok:      #059669;
+  --ok-bg:   #D1FAE5;
+  --ok-dk:   #065F46;
+  --warn:    #D97706;
+  --warn-bg: #FEF3C7;
+  --warn-dk: #92400E;
+  --crit:    #DC2626;
+  --crit-bg: #FEE2E2;
+  --crit-dk: #991B1B;
+  --neg:     #7C3AED;
+  --neg-bg:  #EDE9FE;
+  --neg-dk:  #4C1D95;
+  --surface: #F5F7FA;
+  --card:    #FFFFFF;
+  --border:  #E8EBF0;
+  --text1:   #0F172A;
+  --text2:   #475569;
+  --text3:   #94A3B8;
+  --radius:  14px;
+  --radius-sm: 8px;
+}
 
-/* LOGIN */
-#login{min-height:100vh;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,#0057FF 0%,#003db3 100%)}
-.login-card{background:#fff;border-radius:16px;padding:36px 32px;width:300px;text-align:center;box-shadow:0 8px 32px rgba(0,0,0,.18)}
-.login-logo{width:52px;height:52px;background:#0057FF;border-radius:12px;display:flex;align-items:center;justify-content:center;margin:0 auto 16px;font-size:22px;font-weight:700;color:#fff;letter-spacing:-1px}
-.login-card h2{font-size:18px;font-weight:600;color:#1a1f2e;margin-bottom:4px}
-.login-card p{font-size:13px;color:#6b7280;margin-bottom:24px}
-.login-card input{width:100%;padding:11px 14px;border:1.5px solid #e5e7eb;border-radius:10px;font-size:15px;font-family:inherit;color:#1a1f2e;outline:none;transition:border-color .2s;margin-bottom:10px}
-.login-card input:focus{border-color:#0057FF}
-.token-label{font-size:11px;color:#9ca3af;text-align:left;display:block;margin-bottom:4px;margin-top:2px}
-.btn-login{width:100%;margin-top:4px;padding:12px;background:#0057FF;color:#fff;border:none;border-radius:10px;font-size:15px;font-weight:500;font-family:inherit;cursor:pointer;transition:background .2s}
-.btn-login:hover{background:#003db3}
-#login-erro{font-size:13px;color:#ef4444;margin-top:10px;min-height:18px}
+* { box-sizing: border-box; margin: 0; padding: 0; -webkit-tap-highlight-color: transparent; }
 
-/* APP */
-#app{display:none;flex-direction:column;min-height:100vh}
+body {
+  font-family: 'Inter', -apple-system, sans-serif;
+  background: var(--surface);
+  color: var(--text1);
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+}
 
-/* HEADER */
-header{background:#0057FF;color:#fff;padding:0 16px;height:56px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:10}
-.header-logo{font-weight:700;font-size:17px;letter-spacing:-.3px}
-.header-sub{font-size:12px;opacity:.7}
-.btn-cart{background:rgba(255,255,255,.15);border:none;color:#fff;padding:8px 14px;border-radius:20px;font-size:13px;font-weight:500;font-family:inherit;cursor:pointer;display:flex;align-items:center;gap:6px;transition:background .2s;position:relative}
-.btn-cart:hover{background:rgba(255,255,255,.25)}
-.btn-cart svg{width:16px;height:16px}
-#cart-count{background:#fff;color:#0057FF;border-radius:50%;width:18px;height:18px;font-size:11px;font-weight:700;display:none;align-items:center;justify-content:center;position:absolute;top:-4px;right:-4px}
+/* ── LOGIN ── */
+#login {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--blue);
+  padding: 24px;
+}
 
-/* BUSCA */
-.search-bar{padding:12px 16px;background:#fff;border-bottom:1px solid #e5e7eb;position:sticky;top:56px;z-index:9}
-.search-wrap{display:flex;align-items:center;gap:8px;background:#f3f4f6;border-radius:10px;padding:0 12px}
-.search-wrap svg{width:16px;height:16px;color:#9ca3af;flex-shrink:0}
-.search-wrap input{flex:1;border:none;background:transparent;padding:10px 0;font-size:14px;font-family:inherit;color:#1a1f2e;outline:none}
-.search-wrap input::placeholder{color:#9ca3af}
+.login-card {
+  background: #fff;
+  border-radius: 20px;
+  padding: 32px 28px 28px;
+  width: 100%;
+  max-width: 340px;
+  text-align: center;
+}
 
-/* RESUMO */
-.resumo{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;padding:14px 16px}
-.resumo-card{background:#fff;border-radius:12px;padding:12px;text-align:center;border:1px solid #e5e7eb}
-.resumo-card .num{font-size:20px;font-weight:700}
-.resumo-card .lbl{font-size:11px;color:#6b7280;margin-top:2px}
-.num-ok{color:#059669}.num-warn{color:#d97706}.num-crit{color:#ef4444}
+.login-icon {
+  width: 56px;
+  height: 56px;
+  background: var(--blue);
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 18px;
+}
 
-/* LISTA */
-#lista{padding:0 16px 120px}
-.card{background:#fff;border-radius:12px;padding:14px 16px;margin-bottom:8px;border:1px solid #e5e7eb;display:flex;align-items:center;gap:12px;cursor:pointer;transition:border-color .2s,box-shadow .2s;-webkit-tap-highlight-color:transparent}
-.card:active{transform:scale(.99)}
-.card:hover{border-color:#c7d2fe;box-shadow:0 2px 8px rgba(0,87,255,.08)}
-.card-bar{width:4px;border-radius:2px;flex-shrink:0;align-self:stretch}
-.bar-ok{background:#059669}.bar-warn{background:#d97706}.bar-crit{background:#ef4444}
-.card-info{flex:1;min-width:0}
-.card-nome{font-size:14px;font-weight:500;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.card-meta{font-size:12px;color:#6b7280;margin-top:2px}
-.card-right{text-align:right;flex-shrink:0}
-.card-estoque{font-size:18px;font-weight:700}
-.card-un{font-size:11px;color:#9ca3af}
-.est-ok{color:#059669}.est-warn{color:#d97706}.est-crit{color:#ef4444}
-.empty{text-align:center;padding:48px 16px;color:#9ca3af}
+.login-icon svg { width: 28px; height: 28px; color: #fff; }
 
-/* OVERLAY */
-.overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.35);z-index:20}
-.overlay.on{display:block}
+.login-card h2 {
+  font-size: 19px;
+  font-weight: 700;
+  color: var(--text1);
+  margin-bottom: 4px;
+}
 
-/* PAINEL PRODUTO */
-#painel{position:fixed;bottom:0;left:0;right:0;background:#fff;border-radius:20px 20px 0 0;padding:0 20px 32px;transform:translateY(100%);transition:transform .3s cubic-bezier(.32,1,.45,1);z-index:21;box-shadow:0 -4px 24px rgba(0,0,0,.12)}
-#painel.open{transform:translateY(0)}
-.drag-handle{width:36px;height:4px;border-radius:2px;background:#e5e7eb;margin:12px auto 20px}
-#painel h3{font-size:17px;font-weight:600;margin-bottom:4px}
-.painel-meta{font-size:13px;color:#6b7280;margin-bottom:16px}
-.painel-row{display:flex;gap:12px;align-items:center;background:#f3f4f6;border-radius:12px;padding:12px;margin-bottom:16px}
-.painel-row svg{width:20px;height:20px;color:#6b7280}
-.painel-row-info{flex:1}
-.painel-row-label{font-size:11px;color:#6b7280}
-.painel-row-val{font-size:16px;font-weight:600;margin-top:1px}
-.qtd-wrap{display:flex;align-items:center;gap:12px;margin-bottom:20px}
-.qtd-wrap label{font-size:13px;color:#6b7280;flex-shrink:0}
-.qtd-wrap input{flex:1;padding:10px 14px;border:1.5px solid #e5e7eb;border-radius:10px;font-size:16px;font-family:inherit;outline:none;transition:border-color .2s}
-.qtd-wrap input:focus{border-color:#0057FF}
-.btns-row{display:flex;gap:10px;margin-bottom:12px}
-.btns-row button{flex:1;padding:14px;border:none;border-radius:12px;font-size:14px;font-weight:600;font-family:inherit;cursor:pointer;transition:opacity .2s}
-.btns-row button:active{opacity:.8}
-.btn-entrada{background:#059669;color:#fff}.btn-saida{background:#ef4444;color:#fff}
-.btn-fechar{width:100%;padding:12px;border:1.5px solid #e5e7eb;border-radius:12px;background:#fff;font-size:14px;font-family:inherit;cursor:pointer;color:#6b7280}
-.btn-fechar:hover{background:#f9fafb}
+.login-card p {
+  font-size: 13px;
+  color: var(--text2);
+  margin-bottom: 24px;
+}
 
-/* CARRINHO PAINEL */
-#cartPanel{position:fixed;inset:0;background:#fff;z-index:30;display:none;flex-direction:column}
-#cartPanel.on{display:flex}
-.cart-header{background:#0057FF;color:#fff;padding:0 16px;height:56px;display:flex;align-items:center;justify-content:space-between}
-.cart-header h3{font-size:17px;font-weight:600}
-.btn-close-cart{background:rgba(255,255,255,.15);border:none;color:#fff;width:34px;height:34px;border-radius:50%;font-size:18px;cursor:pointer;display:flex;align-items:center;justify-content:center}
-#cartList{flex:1;overflow-y:auto;padding:12px 16px}
-.cart-item{background:#fff;border:1px solid #e5e7eb;border-radius:12px;padding:14px;margin-bottom:8px;display:flex;align-items:center;justify-content:space-between}
-.cart-item-nome{font-size:14px;font-weight:500}
-.cart-item-meta{font-size:12px;color:#6b7280;margin-top:2px}
-.badge-tipo{padding:3px 10px;border-radius:20px;font-size:11px;font-weight:600}
-.badge-entrada{background:#d1fae5;color:#065f46}.badge-saida{background:#fee2e2;color:#991b1b}
-.btn-rm{background:none;border:none;cursor:pointer;color:#9ca3af;padding:4px;margin-left:8px;font-size:20px;line-height:1}
-.btn-rm:hover{color:#ef4444}
-.cart-vazio{text-align:center;padding:60px 16px;color:#9ca3af}
-.cart-footer{padding:16px;border-top:1px solid #e5e7eb}
-.btn-salvar{width:100%;padding:14px;background:#0057FF;color:#fff;border:none;border-radius:12px;font-size:15px;font-weight:600;font-family:inherit;cursor:pointer;transition:background .2s}
-.btn-salvar:hover{background:#003db3}
-.btn-salvar:disabled{background:#93aff7;cursor:not-allowed}
-.btn-limpar{width:100%;margin-top:8px;padding:11px;background:#fff;border:1.5px solid #e5e7eb;border-radius:12px;font-size:14px;font-family:inherit;cursor:pointer;color:#6b7280}
+.field-label {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--text3);
+  text-align: left;
+  display: block;
+  margin-bottom: 5px;
+  text-transform: uppercase;
+  letter-spacing: .5px;
+}
 
-/* TOAST */
-.toast{position:fixed;bottom:24px;left:50%;transform:translateX(-50%) translateY(80px);background:#1a1f2e;color:#fff;padding:10px 20px;border-radius:20px;font-size:13px;font-weight:500;z-index:99;transition:transform .3s;white-space:nowrap}
-.toast.show{transform:translateX(-50%) translateY(0)}
+.login-card input {
+  width: 100%;
+  padding: 12px 14px;
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius-sm);
+  font-size: 15px;
+  font-family: inherit;
+  color: var(--text1);
+  background: var(--surface);
+  outline: none;
+  transition: border-color .15s;
+  margin-bottom: 14px;
+}
+
+.login-card input:focus { border-color: var(--blue); background: #fff; }
+
+.btn-primary {
+  width: 100%;
+  padding: 13px;
+  background: var(--blue);
+  color: #fff;
+  border: none;
+  border-radius: var(--radius-sm);
+  font-size: 15px;
+  font-weight: 600;
+  font-family: inherit;
+  cursor: pointer;
+  transition: background .15s, transform .1s;
+  margin-top: 4px;
+}
+
+.btn-primary:active { background: var(--blue-dk); transform: scale(.98); }
+
+#login-erro {
+  font-size: 13px;
+  color: var(--crit);
+  margin-top: 10px;
+  min-height: 18px;
+  font-weight: 500;
+}
+
+.btn-ghost {
+  background: none;
+  border: none;
+  font-size: 12px;
+  color: var(--text3);
+  font-family: inherit;
+  cursor: pointer;
+  margin-top: 14px;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  padding: 4px;
+}
+
+/* ── APP SHELL ── */
+#app { display: none; flex-direction: column; min-height: 100vh; }
+
+/* ── HEADER ── */
+header {
+  background: var(--blue);
+  color: #fff;
+  padding: 0 16px;
+  height: 58px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: sticky;
+  top: 0;
+  z-index: 50;
+}
+
+.header-left { display: flex; align-items: center; gap: 10px; }
+
+.header-icon {
+  width: 34px;
+  height: 34px;
+  background: rgba(255,255,255,.15);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.header-icon svg { width: 18px; height: 18px; }
+
+.header-title { font-size: 16px; font-weight: 700; letter-spacing: -.2px; }
+.header-sub   { font-size: 11px; opacity: .65; margin-top: 1px; }
+
+.btn-cart {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(255,255,255,.15);
+  border: none;
+  color: #fff;
+  padding: 8px 14px;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: 500;
+  font-family: inherit;
+  cursor: pointer;
+  transition: background .15s;
+}
+
+.btn-cart:active { background: rgba(255,255,255,.25); }
+.btn-cart svg { width: 15px; height: 15px; }
+
+#cart-badge {
+  display: none;
+  position: absolute;
+  top: -5px;
+  right: -5px;
+  background: #FF3B30;
+  color: #fff;
+  width: 18px;
+  height: 18px;
+  border-radius: 9px;
+  font-size: 10px;
+  font-weight: 700;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid var(--blue);
+}
+
+/* ── BUSCA ── */
+.search-area {
+  background: var(--blue);
+  padding: 0 16px 16px;
+}
+
+.search-box {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: rgba(255,255,255,.15);
+  border-radius: 12px;
+  padding: 0 14px;
+  border: 1.5px solid rgba(255,255,255,.2);
+  transition: background .15s;
+}
+
+.search-box:focus-within {
+  background: rgba(255,255,255,.22);
+  border-color: rgba(255,255,255,.4);
+}
+
+.search-box svg { width: 15px; height: 15px; color: rgba(255,255,255,.7); flex-shrink: 0; }
+
+.search-box input {
+  flex: 1;
+  border: none;
+  background: transparent;
+  padding: 11px 0;
+  font-size: 14px;
+  font-family: inherit;
+  color: #fff;
+  outline: none;
+}
+
+.search-box input::placeholder { color: rgba(255,255,255,.55); }
+
+/* ── PILLS FILTRO ── */
+.filter-area {
+  background: var(--blue);
+  padding: 0 16px 14px;
+  display: flex;
+  gap: 6px;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+}
+.filter-area::-webkit-scrollbar { display: none; }
+
+.pill {
+  flex-shrink: 0;
+  padding: 5px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+  font-family: inherit;
+  cursor: pointer;
+  border: none;
+  background: rgba(255,255,255,.15);
+  color: rgba(255,255,255,.8);
+  transition: all .15s;
+  white-space: nowrap;
+}
+
+.pill.active {
+  background: #fff;
+  color: var(--blue);
+}
+
+/* ── RESUMO ── */
+.resumo {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 8px;
+  padding: 14px 14px 0;
+}
+
+.resumo-card {
+  background: var(--card);
+  border-radius: 12px;
+  padding: 11px 8px;
+  text-align: center;
+  border: 1px solid var(--border);
+}
+
+.resumo-num {
+  font-size: 21px;
+  font-weight: 700;
+  line-height: 1;
+  margin-bottom: 3px;
+}
+
+.resumo-lbl {
+  font-size: 10px;
+  color: var(--text2);
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: .3px;
+}
+
+.r-ok  { color: var(--ok); }
+.r-warn{ color: var(--warn); }
+.r-crit{ color: var(--crit); }
+.r-neg { color: var(--neg); }
+
+/* ── LISTA ── */
+#lista { padding: 10px 14px 120px; }
+
+.section-title {
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--text3);
+  text-transform: uppercase;
+  letter-spacing: .6px;
+  padding: 12px 2px 6px;
+}
+
+/* ── CARD PRODUTO ── */
+.card {
+  background: var(--card);
+  border-radius: var(--radius);
+  margin-bottom: 8px;
+  border: 1px solid var(--border);
+  display: flex;
+  align-items: stretch;
+  cursor: pointer;
+  transition: border-color .15s, box-shadow .15s;
+  overflow: hidden;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.card:active { transform: scale(.99); }
+
+.card-stripe {
+  width: 5px;
+  flex-shrink: 0;
+}
+
+.stripe-ok   { background: var(--ok); }
+.stripe-warn { background: var(--warn); }
+.stripe-crit { background: var(--crit); }
+.stripe-neg  { background: var(--neg); }
+
+.card-body {
+  flex: 1;
+  padding: 13px 14px 13px 12px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-width: 0;
+}
+
+.card-main { flex: 1; min-width: 0; }
+
+.card-nome {
+  font-size: 14px;
+  font-weight: 600;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  color: var(--text1);
+  margin-bottom: 4px;
+}
+
+.card-row2 {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.chip {
+  display: inline-flex;
+  align-items: center;
+  padding: 2px 7px;
+  border-radius: 5px;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: .2px;
+}
+
+.chip-id   { background: var(--blue-lt); color: var(--blue-dk); }
+.chip-cat  { background: #F1F5F9; color: #475569; font-weight: 500; }
+
+.card-preco {
+  font-size: 11px;
+  color: var(--text2);
+  margin-top: 1px;
+  font-weight: 500;
+}
+
+/* Bloco estoque – lado direito */
+.card-stock {
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: center;
+  gap: 2px;
+}
+
+.stock-pill {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 2px;
+  padding: 4px 10px;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.stock-unit {
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: .3px;
+  text-transform: uppercase;
+}
+
+.stock-ok   { background: var(--ok-bg);  color: var(--ok-dk); }
+.stock-warn { background: var(--warn-bg);color: var(--warn-dk); }
+.stock-crit { background: var(--crit-bg);color: var(--crit-dk); }
+.stock-neg  { background: var(--neg-bg); color: var(--neg-dk); }
+
+.stock-label {
+  font-size: 10px;
+  color: var(--text3);
+  font-weight: 500;
+  text-align: right;
+}
+
+.empty-state {
+  text-align: center;
+  padding: 60px 16px;
+  color: var(--text3);
+}
+
+.empty-state svg { width: 40px; height: 40px; margin-bottom: 12px; opacity: .4; }
+.empty-state p { font-size: 14px; }
+
+/* ── OVERLAY ── */
+.overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,.4);
+  z-index: 60;
+  backdrop-filter: blur(2px);
+}
+.overlay.on { display: block; }
+
+/* ── SHEET (PAINEL PRODUTO) ── */
+#painel {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: var(--card);
+  border-radius: 20px 20px 0 0;
+  padding: 0 20px env(safe-area-inset-bottom, 20px);
+  padding-bottom: calc(20px + env(safe-area-inset-bottom, 0px));
+  transform: translateY(100%);
+  transition: transform .3s cubic-bezier(.32,1,.45,1);
+  z-index: 70;
+  max-height: 88vh;
+  overflow-y: auto;
+}
+
+#painel.open { transform: translateY(0); }
+
+.drag-handle {
+  width: 36px;
+  height: 4px;
+  background: var(--border);
+  border-radius: 2px;
+  margin: 12px auto 20px;
+}
+
+#painel h3 {
+  font-size: 17px;
+  font-weight: 700;
+  color: var(--text1);
+  margin-bottom: 2px;
+}
+
+.painel-meta {
+  font-size: 12px;
+  color: var(--text2);
+  margin-bottom: 18px;
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+/* Grid de stats no painel */
+.painel-stats {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin-bottom: 18px;
+}
+
+.stat-box {
+  background: var(--surface);
+  border-radius: 12px;
+  padding: 12px 14px;
+  border: 1px solid var(--border);
+}
+
+.stat-box-label {
+  font-size: 11px;
+  color: var(--text2);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: .4px;
+  margin-bottom: 4px;
+}
+
+.stat-box-val {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--text1);
+}
+
+.stat-box-val.v-ok   { color: var(--ok); }
+.stat-box-val.v-warn { color: var(--warn); }
+.stat-box-val.v-crit { color: var(--crit); }
+.stat-box-val.v-neg  { color: var(--neg); }
+
+.stat-box-unit {
+  font-size: 11px;
+  color: var(--text3);
+  margin-top: 2px;
+}
+
+/* Qtd input */
+.qtd-section { margin-bottom: 18px; }
+
+.qtd-section label {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text2);
+  text-transform: uppercase;
+  letter-spacing: .4px;
+  display: block;
+  margin-bottom: 8px;
+}
+
+.qtd-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.qtd-btn {
+  width: 42px;
+  height: 42px;
+  border-radius: 10px;
+  border: 1.5px solid var(--border);
+  background: var(--surface);
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: var(--text1);
+  flex-shrink: 0;
+  font-family: inherit;
+  transition: background .1s;
+  user-select: none;
+}
+
+.qtd-btn:active { background: var(--border); }
+
+.qtd-input {
+  flex: 1;
+  padding: 10px;
+  border: 1.5px solid var(--border);
+  border-radius: 10px;
+  font-size: 18px;
+  font-weight: 700;
+  font-family: inherit;
+  text-align: center;
+  color: var(--text1);
+  outline: none;
+  transition: border-color .15s;
+}
+
+.qtd-input:focus { border-color: var(--blue); }
+
+/* Botões ação */
+.action-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin-bottom: 12px;
+}
+
+.btn-entrada, .btn-saida {
+  padding: 15px;
+  border: none;
+  border-radius: 12px;
+  font-size: 15px;
+  font-weight: 700;
+  font-family: inherit;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  transition: opacity .15s, transform .1s;
+}
+
+.btn-entrada:active, .btn-saida:active { transform: scale(.98); }
+
+.btn-entrada {
+  background: var(--ok-bg);
+  color: var(--ok-dk);
+}
+
+.btn-saida {
+  background: var(--crit-bg);
+  color: var(--crit-dk);
+}
+
+.btn-fechar {
+  width: 100%;
+  padding: 13px;
+  border: 1.5px solid var(--border);
+  border-radius: 12px;
+  background: transparent;
+  font-size: 14px;
+  font-family: inherit;
+  cursor: pointer;
+  color: var(--text2);
+  font-weight: 500;
+  transition: background .1s;
+}
+
+.btn-fechar:active { background: var(--surface); }
+
+/* ── CARRINHO PAINEL ── */
+#cartPanel {
+  position: fixed;
+  inset: 0;
+  background: var(--surface);
+  z-index: 80;
+  display: none;
+  flex-direction: column;
+}
+
+#cartPanel.on { display: flex; }
+
+.cart-header {
+  background: var(--blue);
+  color: #fff;
+  padding: 0 16px;
+  height: 58px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-shrink: 0;
+}
+
+.cart-header h3 { font-size: 17px; font-weight: 700; }
+
+.btn-close-cart {
+  background: rgba(255,255,255,.15);
+  border: none;
+  color: #fff;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  line-height: 1;
+}
+
+#cartList { flex: 1; overflow-y: auto; padding: 12px 14px; }
+
+.cart-item {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 13px 14px;
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.cart-item-icon {
+  width: 38px;
+  height: 38px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  font-size: 16px;
+  font-weight: 800;
+}
+
+.icon-entrada { background: var(--ok-bg); color: var(--ok-dk); }
+.icon-saida   { background: var(--crit-bg); color: var(--crit-dk); }
+
+.cart-item-info { flex: 1; min-width: 0; }
+
+.cart-item-nome {
+  font-size: 14px;
+  font-weight: 600;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  color: var(--text1);
+}
+
+.cart-item-meta {
+  font-size: 12px;
+  color: var(--text2);
+  margin-top: 2px;
+}
+
+.btn-rm {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--text3);
+  padding: 6px;
+  font-size: 18px;
+  line-height: 1;
+  flex-shrink: 0;
+  border-radius: 6px;
+  transition: color .1s, background .1s;
+}
+
+.btn-rm:active { color: var(--crit); background: var(--crit-bg); }
+
+.cart-vazio {
+  text-align: center;
+  padding: 60px 16px;
+  color: var(--text3);
+}
+
+.cart-vazio svg { width: 40px; height: 40px; margin-bottom: 12px; opacity: .4; }
+
+.cart-footer {
+  padding: 12px 14px calc(12px + env(safe-area-inset-bottom, 0px));
+  border-top: 1px solid var(--border);
+  background: var(--card);
+  flex-shrink: 0;
+}
+
+.btn-salvar {
+  width: 100%;
+  padding: 15px;
+  background: var(--blue);
+  color: #fff;
+  border: none;
+  border-radius: 12px;
+  font-size: 15px;
+  font-weight: 700;
+  font-family: inherit;
+  cursor: pointer;
+  transition: background .15s;
+  margin-bottom: 8px;
+}
+
+.btn-salvar:active { background: var(--blue-dk); }
+.btn-salvar:disabled { background: #93AFF7; cursor: not-allowed; }
+
+.btn-limpar {
+  width: 100%;
+  padding: 12px;
+  background: transparent;
+  border: 1.5px solid var(--border);
+  border-radius: 12px;
+  font-size: 14px;
+  font-family: inherit;
+  cursor: pointer;
+  color: var(--text2);
+  font-weight: 500;
+}
+
+/* ── TOAST ── */
+.toast {
+  position: fixed;
+  bottom: 28px;
+  left: 50%;
+  transform: translateX(-50%) translateY(80px);
+  background: var(--text1);
+  color: #fff;
+  padding: 11px 22px;
+  border-radius: 24px;
+  font-size: 13px;
+  font-weight: 500;
+  z-index: 200;
+  transition: transform .3s cubic-bezier(.32,1,.45,1);
+  white-space: nowrap;
+  box-shadow: 0 4px 20px rgba(0,0,0,.25);
+}
+
+.toast.show { transform: translateX(-50%) translateY(0); }
 </style>
 </head>
 <body>
@@ -122,36 +837,66 @@ header{background:#0057FF;color:#fff;padding:0 16px;height:56px;display:flex;ali
 <!-- LOGIN -->
 <div id="login">
   <div class="login-card">
-    <div class="login-logo">CE</div>
+    <div class="login-icon">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z"/>
+      </svg>
+    </div>
     <h2>CIA Embalagens</h2>
-    <p>Painel administrativo</p>
-    <input id="senhaInput" type="password" placeholder="Senha de acesso" onkeydown="if(event.key==='Enter')logar()">
-    <span class="token-label">GitHub Token (para salvar movimentações)</span>
+    <p>Painel de gestão de estoque</p>
+
+    <label class="field-label">Senha</label>
+    <input id="senhaInput" type="password" placeholder="••••••••" onkeydown="if(event.key==='Enter')logar()">
+
+    <label class="field-label">GitHub Token</label>
     <input id="tokenInput" type="password" placeholder="ghp_...">
-    <button class="btn-login" onclick="logar()">Entrar</button>
+
+    <button class="btn-primary" onclick="logar()">Entrar</button>
     <p id="login-erro"></p>
+    <button class="btn-ghost" onclick="esquecerToken()">Esquecer token deste aparelho</button>
   </div>
 </div>
 
 <!-- APP -->
 <div id="app">
   <header>
-    <div>
-      <div class="header-logo">CIA Embalagens</div>
-      <div class="header-sub">Gestão de estoque</div>
+    <div class="header-left">
+      <div class="header-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z"/>
+        </svg>
+      </div>
+      <div>
+        <div class="header-title">CIA Embalagens</div>
+        <div class="header-sub">Gestão de estoque</div>
+      </div>
     </div>
     <button class="btn-cart" onclick="abrirCart()">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/>
+        <line x1="3" y1="6" x2="21" y2="6"/>
+        <path d="M16 10a4 4 0 01-8 0"/>
+      </svg>
       Carrinho
-      <span id="cart-count">0</span>
+      <span id="cart-badge">0</span>
     </button>
   </header>
 
-  <div class="search-bar">
-    <div class="search-wrap">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
-      <input id="busca" placeholder="Buscar produto..." oninput="render()">
+  <div class="search-area">
+    <div class="search-box">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
+      </svg>
+      <input id="busca" placeholder="Buscar produto ou código..." oninput="render()">
     </div>
+  </div>
+
+  <div class="filter-area" id="filterPills">
+    <button class="pill active" onclick="setFiltro('todos', this)">Todos</button>
+    <button class="pill" onclick="setFiltro('neg', this)">Negativos</button>
+    <button class="pill" onclick="setFiltro('crit', this)">Zerados</button>
+    <button class="pill" onclick="setFiltro('warn', this)">Atenção</button>
+    <button class="pill" onclick="setFiltro('ok', this)">Em estoque</button>
   </div>
 
   <div class="resumo" id="resumo"></div>
@@ -165,25 +910,39 @@ header{background:#0057FF;color:#fff;padding:0 16px;height:56px;display:flex;ali
 <div id="painel">
   <div class="drag-handle"></div>
   <h3 id="p-nome"></h3>
-  <p class="painel-meta" id="p-meta"></p>
-  <div class="painel-row">
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v16"/></svg>
-    <div class="painel-row-info">
-      <div class="painel-row-label">Estoque atual</div>
-      <div class="painel-row-val" id="p-estoque"></div>
+  <div class="painel-meta" id="p-meta"></div>
+
+  <div class="painel-stats">
+    <div class="stat-box">
+      <div class="stat-box-label">Estoque atual</div>
+      <div class="stat-box-val" id="p-estoque-val"></div>
+      <div class="stat-box-unit" id="p-unidade"></div>
     </div>
-    <div style="text-align:right">
-      <div class="painel-row-label">Preço unit.</div>
-      <div class="painel-row-val" id="p-preco"></div>
+    <div class="stat-box">
+      <div class="stat-box-label">Preço unitário</div>
+      <div class="stat-box-val" id="p-preco"></div>
+      <div class="stat-box-unit">por unidade</div>
     </div>
   </div>
-  <div class="qtd-wrap">
+
+  <div class="qtd-section">
     <label>Quantidade</label>
-    <input id="qtd" type="number" value="1" min="1" max="9999">
+    <div class="qtd-row">
+      <button class="qtd-btn" onclick="ajustarQtd(-1)">−</button>
+      <input class="qtd-input" id="qtd" type="number" value="1" min="1" max="9999">
+      <button class="qtd-btn" onclick="ajustarQtd(1)">+</button>
+    </div>
   </div>
-  <div class="btns-row">
-    <button class="btn-entrada" onclick="addCart('entrada')">＋ Entrada</button>
-    <button class="btn-saida" onclick="addCart('saida')">－ Saída</button>
+
+  <div class="action-grid">
+    <button class="btn-entrada" onclick="addCart('entrada')">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><polyline points="5 12 12 19 19 12"/></svg>
+      Entrada
+    </button>
+    <button class="btn-saida" onclick="addCart('saida')">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="19" x2="12" y2="5"/><polyline points="19 12 12 5 5 12"/></svg>
+      Saída
+    </button>
   </div>
   <button class="btn-fechar" onclick="fecharPainel()">Fechar</button>
 </div>
@@ -191,7 +950,7 @@ header{background:#0057FF;color:#fff;padding:0 16px;height:56px;display:flex;ali
 <!-- CARRINHO -->
 <div id="cartPanel">
   <div class="cart-header">
-    <h3>Carrinho</h3>
+    <h3>Movimentações</h3>
     <button class="btn-close-cart" onclick="fecharCart()">✕</button>
   </div>
   <div id="cartList"></div>
@@ -205,13 +964,11 @@ header{background:#0057FF;color:#fff;padding:0 16px;height:56px;display:flex;ali
 <div class="toast" id="toast"></div>
 
 <script>
-/* ── CONFIG ── */
 const REPO      = "Willkerson/Automacao-ConnectPlug";
 const WORKFLOW  = "movimentar.yml";
 const FILA_PATH = "fila/movimentacao.json";
 const BRANCH    = "main";
 
-/* ── HASH ── */
 const SENHA_HASH = "158a323a7ba44870f23d96f1516dd70aa48e9a72db4ebb026b0a89e212a208ab";
 
 async function hashSenha(str) {
@@ -219,7 +976,7 @@ async function hashSenha(str) {
   return [...new Uint8Array(buf)].map(b => b.toString(16).padStart(2,"0")).join("");
 }
 
-/* ── LOGIN ── */
+/* LOGIN */
 async function logar() {
   const senha = document.getElementById("senhaInput").value;
   const token = document.getElementById("tokenInput").value.trim();
@@ -227,7 +984,7 @@ async function logar() {
 
   if (hash !== SENHA_HASH) {
     document.getElementById("login-erro").textContent = "Senha incorreta";
-    setTimeout(() => document.getElementById("login-erro").textContent = "", 2000);
+    setTimeout(() => document.getElementById("login-erro").textContent = "", 2500);
     return;
   }
   if (!token) {
@@ -235,15 +992,23 @@ async function logar() {
     return;
   }
 
-  sessionStorage.setItem("auth", "ok");
-  sessionStorage.setItem("gh_token", token);
+  localStorage.setItem("auth", "ok");
+  localStorage.setItem("gh_token", token);
   document.getElementById("login").style.display = "none";
   document.getElementById("app").style.display   = "flex";
   carregarProdutos();
 }
 
+function esquecerToken() {
+  if (!confirm("Remover o token salvo deste aparelho?")) return;
+  localStorage.removeItem("auth");
+  localStorage.removeItem("gh_token");
+  document.getElementById("tokenInput").value = "";
+  showToast("Token removido deste aparelho");
+}
+
 document.addEventListener("DOMContentLoaded", () => {
-  if (sessionStorage.getItem("auth") === "ok") {
+  if (localStorage.getItem("auth") === "ok" && localStorage.getItem("gh_token")) {
     document.getElementById("login").style.display = "none";
     document.getElementById("app").style.display   = "flex";
     carregarProdutos();
@@ -253,11 +1018,11 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
-/* ── PARSE ESTOQUE ── "28,00 un" → 28 */
+/* PARSE ESTOQUE — preserva negativos */
 function parseEst(val) {
   if (val === null || val === undefined) return 0;
   if (typeof val === "number") return val;
-  const n = parseFloat(String(val).replace(/[^\d,\.]/g,"").replace(",","."));
+  const n = parseFloat(String(val).replace(/[^\d,\.\-]/g,"").replace(",","."));
   return isNaN(n) ? 0 : n;
 }
 
@@ -266,12 +1031,21 @@ function fmtEst(val) {
   return n % 1 === 0 ? String(n) : n.toFixed(2);
 }
 
-/* ── DADOS ── */
+/* CLASSIFICAÇÃO — 4 estados */
+function classeEst(val) {
+  const n = parseEst(val);
+  if (n < 0)   return "neg";
+  if (n === 0) return "crit";
+  if (n <= 10) return "warn";
+  return "ok";
+}
+
+/* DADOS */
 let produtos = [];
 let carrinho = [];
 let atual    = null;
+let filtroAtivo = "todos";
 
-/* ── CARREGAR JSON ── */
 function carregarProdutos() {
   fetch("front-index/produtos.json?t=" + Date.now())
     .then(r => { if (!r.ok) throw new Error("HTTP " + r.status); return r.json(); })
@@ -281,74 +1055,134 @@ function carregarProdutos() {
     })
     .catch(err => {
       document.getElementById("lista").innerHTML =
-        `<div class="empty">Erro ao carregar produtos.json<br><small>${err.message}</small></div>`;
+        `<div class="empty-state"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg><p>Erro ao carregar produtos<br><small style="color:#CBD5E1">${err.message}</small></p></div>`;
     });
 }
 
-/* ── CLASSE DE STATUS ── */
-function classeEst(val) {
-  const n = parseEst(val);
-  if (n <= 0)  return "crit";
-  if (n <= 10) return "warn";
-  return "ok";
-}
-
-/* ── RENDER RESUMO ── */
+/* RESUMO */
 function renderResumo() {
-  const ok   = produtos.filter(p => parseEst(p.estoque) > 10).length;
+  const neg  = produtos.filter(p => parseEst(p.estoque) < 0).length;
+  const crit = produtos.filter(p => parseEst(p.estoque) === 0).length;
   const warn = produtos.filter(p => { const e = parseEst(p.estoque); return e > 0 && e <= 10; }).length;
-  const crit = produtos.filter(p => parseEst(p.estoque) <= 0).length;
+  const ok   = produtos.filter(p => parseEst(p.estoque) > 10).length;
+
   document.getElementById("resumo").innerHTML = `
-    <div class="resumo-card"><div class="num num-ok">${ok}</div><div class="lbl">Em estoque</div></div>
-    <div class="resumo-card"><div class="num num-warn">${warn}</div><div class="lbl">Atenção</div></div>
-    <div class="resumo-card"><div class="num num-crit">${crit}</div><div class="lbl">Zerados</div></div>
+    <div class="resumo-card">
+      <div class="resumo-num r-ok">${ok}</div>
+      <div class="resumo-lbl">OK</div>
+    </div>
+    <div class="resumo-card">
+      <div class="resumo-num r-warn">${warn}</div>
+      <div class="resumo-lbl">Baixo</div>
+    </div>
+    <div class="resumo-card">
+      <div class="resumo-num r-crit">${crit}</div>
+      <div class="resumo-lbl">Zero</div>
+    </div>
+    <div class="resumo-card">
+      <div class="resumo-num r-neg">${neg}</div>
+      <div class="resumo-lbl">Neg.</div>
+    </div>
   `;
 }
 
-/* ── RENDER LISTA ── */
+/* FILTRO PILLS */
+function setFiltro(tipo, btn) {
+  filtroAtivo = tipo;
+  document.querySelectorAll(".pill").forEach(p => p.classList.remove("active"));
+  btn.classList.add("active");
+  render();
+}
+
+/* RENDER LISTA */
 function render() {
   renderResumo();
-  const v  = (document.getElementById("busca").value || "").toLowerCase();
-  const el = document.getElementById("lista");
-  const lista = produtos.filter(p =>
-    (p.nome || "").toLowerCase().includes(v) ||
-    String(p.codigo || "").includes(v)
+  const busca = (document.getElementById("busca").value || "").toLowerCase();
+
+  let lista = produtos.filter(p =>
+    (p.nome || "").toLowerCase().includes(busca) ||
+    String(p.codigo || "").toLowerCase().includes(busca)
   );
 
+  /* Aplica filtro de status */
+  if (filtroAtivo !== "todos") {
+    lista = lista.filter(p => classeEst(p.estoque) === filtroAtivo);
+  }
+
+  const el = document.getElementById("lista");
+
   if (!lista.length) {
-    el.innerHTML = `<div class="empty">Nenhum produto encontrado</div>`;
+    el.innerHTML = `
+      <div class="empty-state">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+          <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
+        </svg>
+        <p>Nenhum produto encontrado</p>
+      </div>`;
     return;
   }
+
+  /* Ordem: neg → crit → warn → ok */
+  const ordem = { neg:0, crit:1, warn:2, ok:3 };
+  lista.sort((a,b) => ordem[classeEst(a.estoque)] - ordem[classeEst(b.estoque)]);
 
   el.innerHTML = lista.map(p => {
     const cl    = classeEst(p.estoque);
     const est   = fmtEst(p.estoque);
     const preco = p.preco ? `R$ ${Number(p.preco).toFixed(2)}` : "—";
     const cat   = [p.categoria, p.subcategoria].filter(Boolean).join(" › ");
+    const id    = p.codigo || p.id || "—";
+    const un    = p.unidade || "un";
+
     return `
       <div class="card" onclick="openProduto('${p.codigo}')">
-        <div class="card-bar bar-${cl}"></div>
-        <div class="card-info">
-          <div class="card-nome">${p.nome || "Sem nome"}</div>
-          <div class="card-meta">${preco}${cat ? " · " + cat : ""}</div>
-        </div>
-        <div class="card-right">
-          <div class="card-estoque est-${cl}">${est}</div>
-          <div class="card-un">${p.unidade || "un"}</div>
+        <div class="card-stripe stripe-${cl}"></div>
+        <div class="card-body">
+          <div class="card-main">
+            <div class="card-nome">${p.nome || "Sem nome"}</div>
+            <div class="card-row2">
+              <span class="chip chip-id">#${id}</span>
+              ${cat ? `<span class="chip chip-cat">${cat}</span>` : ""}
+            </div>
+            <div class="card-preco">${preco}</div>
+          </div>
+          <div class="card-stock">
+            <div class="stock-pill stock-${cl}">
+              ${est}
+              <span class="stock-unit">${un}</span>
+            </div>
+            <div class="stock-label">estoque</div>
+          </div>
         </div>
       </div>`;
   }).join("");
 }
 
-/* ── ABRIR PRODUTO ── */
+/* PAINEL PRODUTO */
 function openProduto(codigo) {
   atual = produtos.find(p => String(p.codigo) === String(codigo));
   if (!atual) return;
 
+  const cl  = classeEst(atual.estoque);
   const cat = [atual.categoria, atual.subcategoria].filter(Boolean).join(" › ");
-  document.getElementById("p-nome").textContent    = atual.nome || "";
-  document.getElementById("p-meta").textContent    = cat || atual.marca || "";
-  document.getElementById("p-estoque").textContent = fmtEst(atual.estoque) + " " + (atual.unidade || "un");
+  const id  = atual.codigo || atual.id || "—";
+
+  document.getElementById("p-nome").textContent = atual.nome || "";
+
+  // Meta: ID + marca + categoria
+  const metaEl = document.getElementById("p-meta");
+  metaEl.innerHTML = `
+    <span class="chip chip-id">#${id}</span>
+    ${atual.marca ? `<span class="chip chip-cat">${atual.marca}</span>` : ""}
+    ${cat ? `<span class="chip chip-cat">${cat}</span>` : ""}
+  `;
+
+  // Estoque com classe de cor
+  const estoqueEl = document.getElementById("p-estoque-val");
+  estoqueEl.textContent = fmtEst(atual.estoque);
+  estoqueEl.className   = `stat-box-val v-${cl}`;
+
+  document.getElementById("p-unidade").textContent = atual.unidade || "un";
   document.getElementById("p-preco").textContent   = atual.preco ? `R$ ${Number(atual.preco).toFixed(2)}` : "—";
   document.getElementById("qtd").value = 1;
 
@@ -361,7 +1195,13 @@ function fecharPainel() {
   document.getElementById("overlay").classList.remove("on");
 }
 
-/* ── ADD CARRINHO ── */
+function ajustarQtd(delta) {
+  const input = document.getElementById("qtd");
+  const val = Math.max(1, Math.min(9999, (parseInt(input.value) || 1) + delta));
+  input.value = val;
+}
+
+/* CARRINHO */
 function addCart(tipo) {
   const qtd = Math.max(1, Number(document.getElementById("qtd").value) || 1);
   carrinho.push({ codigo: atual.codigo, nome: atual.nome, qtd, tipo });
@@ -370,24 +1210,30 @@ function addCart(tipo) {
   showToast(`${tipo === "entrada" ? "Entrada" : "Saída"} de ${qtd} adicionada`);
 }
 
-/* ── BADGE ── */
 function atualizarBadge() {
-  const badge = document.getElementById("cart-count");
+  const badge = document.getElementById("cart-badge");
   if (carrinho.length > 0) {
-    badge.textContent    = carrinho.length;
-    badge.style.display  = "flex";
+    badge.textContent   = carrinho.length;
+    badge.style.display = "flex";
   } else {
-    badge.style.display  = "none";
+    badge.style.display = "none";
   }
 }
 
-/* ── RENDER CARRINHO ── */
 function renderCart() {
   const list   = document.getElementById("cartList");
   const footer = document.getElementById("cartFooter");
 
   if (!carrinho.length) {
-    list.innerHTML    = `<div class="cart-vazio">Carrinho vazio</div>`;
+    list.innerHTML = `
+      <div class="cart-vazio">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+          <path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/>
+          <line x1="3" y1="6" x2="21" y2="6"/>
+          <path d="M16 10a4 4 0 01-8 0"/>
+        </svg>
+        <p>Nenhuma movimentação adicionada</p>
+      </div>`;
     footer.style.display = "none";
     return;
   }
@@ -395,11 +1241,13 @@ function renderCart() {
   footer.style.display = "block";
   list.innerHTML = carrinho.map((item, i) => `
     <div class="cart-item">
-      <div style="flex:1;min-width:0">
-        <div class="cart-item-nome">${item.nome}</div>
-        <div class="cart-item-meta">#${item.codigo} · ${item.qtd} un</div>
+      <div class="cart-item-icon icon-${item.tipo}">
+        ${item.tipo === "entrada" ? "↓" : "↑"}
       </div>
-      <span class="badge-tipo badge-${item.tipo === 'entrada' ? 'entrada' : 'saida'}">${item.tipo}</span>
+      <div class="cart-item-info">
+        <div class="cart-item-nome">${item.nome}</div>
+        <div class="cart-item-meta">#${item.codigo} · ${item.qtd} ${item.tipo === "entrada" ? "entrando" : "saindo"}</div>
+      </div>
       <button class="btn-rm" onclick="removeItem(${i})" title="Remover">×</button>
     </div>
   `).join("");
@@ -427,11 +1275,11 @@ function limparCarrinho() {
   renderCart();
 }
 
-/* ── SALVAR → commit fila + dispatch workflow ── */
+/* SALVAR → commit fila + dispatch workflow */
 async function salvar() {
   if (!carrinho.length) { showToast("Carrinho vazio"); return; }
 
-  const token = sessionStorage.getItem("gh_token");
+  const token = localStorage.getItem("gh_token");
   if (!token) { showToast("Token não encontrado. Faça login novamente."); return; }
 
   const btn = document.getElementById("btn-salvar");
@@ -439,7 +1287,6 @@ async function salvar() {
   btn.textContent = "Enviando…";
 
   try {
-    /* 1. Busca SHA + conteúdo atual da fila */
     const filaUrl = `https://api.github.com/repos/${REPO}/contents/${FILA_PATH}?ref=${BRANCH}`;
     const getRes  = await fetch(filaUrl, {
       headers: { Authorization: "Bearer " + token, Accept: "application/vnd.github+json" }
@@ -454,23 +1301,17 @@ async function salvar() {
       filaAtual = JSON.parse(atob(d.content.replace(/\n/g, "")));
     }
 
-    /* 2. Monta fila atualizada */
     const novos = carrinho.map(i => ({
       codigo: String(i.codigo),
       nome:   i.nome,
       qtd:    i.qtd,
-      tipo:   i.tipo   // "entrada" ou "saida"
+      tipo:   i.tipo
     }));
 
     const filaAtualizada = { itens: [...(filaAtual.itens || []), ...novos] };
     const b64 = btoa(unescape(encodeURIComponent(JSON.stringify(filaAtualizada, null, 2))));
 
-    /* 3. Commit */
-    const putBody = {
-      message: `fila: ${novos.length} movimentação(ões)`,
-      content: b64,
-      branch:  BRANCH
-    };
+    const putBody = { message: `fila: ${novos.length} movimentação(ões)`, content: b64, branch: BRANCH };
     if (sha) putBody.sha = sha;
 
     const putRes = await fetch(filaUrl, {
@@ -484,7 +1325,6 @@ async function salvar() {
       throw new Error(e.message || "Erro ao commitar fila");
     }
 
-    /* 4. Dispara workflow imediatamente */
     const dispRes = await fetch(
       `https://api.github.com/repos/${REPO}/actions/workflows/${WORKFLOW}/dispatches`,
       {
@@ -499,7 +1339,6 @@ async function salvar() {
       throw new Error(e.message || "Erro ao disparar workflow");
     }
 
-    /* 5. Limpa */
     carrinho = [];
     atualizarBadge();
     fecharCart();
@@ -514,7 +1353,7 @@ async function salvar() {
   }
 }
 
-/* ── TOAST ── */
+/* TOAST */
 let _tt;
 function showToast(msg) {
   const el = document.getElementById("toast");
