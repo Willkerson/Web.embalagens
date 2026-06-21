@@ -8,14 +8,24 @@ var maxPorRender  = 30;
 var loadObserver  = null;
 var _debouncedRender = debounce(renderizar, 200);
 
+function estoqueNum(valor) {
+  if (!valor) return 0;
+
+  return parseFloat(
+    String(valor)
+      .replace('un', '')
+      .replace(',', '.')
+      .trim()
+  ) || 0;
+}
 function getListaFiltrada() {
   var lista = prods().filter(function(p) {
-  return !p.oculto && parseInt(p.estoque || 0) > 0;
+  return !p.oculto && estoqueNum(p.estoque > 0;
 });
+  
 if (estado.produtoSelecionado) {
   return prods().filter(function(p) {
-    return String(p.id) === String(estado.produtoSelecionado)
-      && parseInt(p.estoque || 0) > 0;
+    return String(p.id) === String(estado.produtoSelecionado);
   });
 }
   // ── Filtro por preço ──────────────────────────────────────────
