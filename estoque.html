@@ -3,271 +3,588 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>CIA EMBALAGENS</title>
-
+<title>CIA Embalagens — Admin</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
+*{box-sizing:border-box;margin:0;padding:0}
+
 body{
-  font-family:Arial;
-  margin:0;
-  background:#f3f4f6;
+  font-family:'Inter',Arial,sans-serif;
+  background:#f0f4f9;
+  color:#1a1f2e;
+  min-height:100vh;
 }
+
+/* ── LOGIN ── */
+#login{
+  min-height:100vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background:linear-gradient(135deg,#0057FF 0%,#003db3 100%);
+}
+
+.login-card{
+  background:#fff;
+  border-radius:16px;
+  padding:36px 32px;
+  width:300px;
+  text-align:center;
+  box-shadow:0 8px 32px rgba(0,0,0,.18);
+}
+
+.login-logo{
+  width:52px;height:52px;
+  background:#0057FF;
+  border-radius:12px;
+  display:flex;align-items:center;justify-content:center;
+  margin:0 auto 16px;
+  font-size:22px;font-weight:700;color:#fff;letter-spacing:-1px;
+}
+
+.login-card h2{font-size:18px;font-weight:600;color:#1a1f2e;margin-bottom:4px}
+.login-card p{font-size:13px;color:#6b7280;margin-bottom:24px}
+
+.login-card input{
+  width:100%;padding:11px 14px;
+  border:1.5px solid #e5e7eb;border-radius:10px;
+  font-size:15px;font-family:inherit;color:#1a1f2e;
+  outline:none;transition:border-color .2s;
+}
+.login-card input:focus{border-color:#0057FF}
+
+.btn-login{
+  width:100%;margin-top:12px;padding:12px;
+  background:#0057FF;color:#fff;border:none;
+  border-radius:10px;font-size:15px;font-weight:500;
+  font-family:inherit;cursor:pointer;transition:background .2s;
+}
+.btn-login:hover{background:#003db3}
+
+#erro{font-size:13px;color:#ef4444;margin-top:10px;min-height:18px}
+
+/* ── APP ── */
+#app{display:none;flex-direction:column;min-height:100vh}
 
 header{
-  background:#0057FF;
-  color:#fff;
-  padding:12px;
-  font-weight:bold;
+  background:#0057FF;color:#fff;
+  padding:0 16px;height:56px;
+  display:flex;align-items:center;justify-content:space-between;
+  position:sticky;top:0;z-index:10;
 }
 
-input, button{
-  font-size:16px;
+.header-left{display:flex;align-items:center;gap:10px}
+.header-logo{font-weight:700;font-size:17px;letter-spacing:-.3px}
+.header-sub{font-size:12px;opacity:.7}
+
+.btn-cart{
+  background:rgba(255,255,255,.15);border:none;color:#fff;
+  padding:8px 14px;border-radius:20px;font-size:13px;font-weight:500;
+  font-family:inherit;cursor:pointer;display:flex;align-items:center;gap:6px;
+  transition:background .2s;position:relative;
+}
+.btn-cart:hover{background:rgba(255,255,255,.25)}
+.btn-cart svg{width:16px;height:16px}
+#cart-count{
+  background:#fff;color:#0057FF;
+  border-radius:50%;width:18px;height:18px;
+  font-size:11px;font-weight:700;
+  display:flex;align-items:center;justify-content:center;
+  position:absolute;top:-4px;right:-4px;
+  display:none;
 }
 
-/* LOGIN */
-#login{
-  height:100vh;
-  display:flex;
-  justify-content:center;
-  align-items:center;
+/* ── BUSCA ── */
+.search-bar{
+  padding:12px 16px;background:#fff;
+  border-bottom:1px solid #e5e7eb;
+  position:sticky;top:56px;z-index:9;
 }
 
-.box{
-  background:#fff;
-  padding:20px;
-  border-radius:12px;
-  width:280px;
-  text-align:center;
+.search-wrap{
+  display:flex;align-items:center;gap:8px;
+  background:#f3f4f6;border-radius:10px;padding:0 12px;
 }
 
-/* LISTA */
-#app{display:none;padding:10px;}
+.search-wrap svg{width:16px;height:16px;color:#9ca3af;flex-shrink:0}
+
+.search-wrap input{
+  flex:1;border:none;background:transparent;
+  padding:10px 0;font-size:14px;font-family:inherit;
+  color:#1a1f2e;outline:none;
+}
+.search-wrap input::placeholder{color:#9ca3af}
+
+/* ── RESUMO ── */
+.resumo{
+  display:grid;grid-template-columns:repeat(3,1fr);
+  gap:10px;padding:14px 16px;
+}
+
+.resumo-card{
+  background:#fff;border-radius:12px;padding:12px;
+  text-align:center;border:1px solid #e5e7eb;
+}
+.resumo-card .num{font-size:20px;font-weight:700}
+.resumo-card .lbl{font-size:11px;color:#6b7280;margin-top:2px}
+.num-ok{color:#059669}
+.num-warn{color:#d97706}
+.num-crit{color:#ef4444}
+
+/* ── LISTA ── */
+#lista{padding:0 16px 120px}
+
+.section-label{
+  font-size:11px;font-weight:600;color:#6b7280;letter-spacing:.6px;
+  text-transform:uppercase;margin:16px 0 8px;
+}
 
 .card{
-  background:#fff;
-  padding:12px;
-  margin:8px 0;
-  border-radius:10px;
-  display:flex;
-  justify-content:space-between;
-  cursor:pointer;
+  background:#fff;border-radius:12px;padding:14px 16px;
+  margin-bottom:8px;border:1px solid #e5e7eb;
+  display:flex;align-items:center;gap:12px;
+  cursor:pointer;transition:border-color .2s,box-shadow .2s;
+  -webkit-tap-highlight-color:transparent;
 }
+.card:active{transform:scale(.99)}
+.card:hover{border-color:#c7d2fe;box-shadow:0 2px 8px rgba(0,87,255,.08)}
 
-.badge{
-  padding:6px 10px;
-  border-radius:20px;
-  color:#fff;
-  font-size:12px;
+.card-bar{
+  width:4px;border-radius:2px;flex-shrink:0;
+  align-self:stretch;
 }
+.bar-ok{background:#059669}
+.bar-warn{background:#d97706}
+.bar-crit{background:#ef4444}
 
-.green{background:#00b37e;}
-.yellow{background:#f59e0b;}
-.red{background:#ef4444;}
+.card-info{flex:1;min-width:0}
+.card-nome{font-size:14px;font-weight:500;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.card-meta{font-size:12px;color:#6b7280;margin-top:2px}
 
-/* PAINEL */
+.card-right{text-align:right;flex-shrink:0}
+.card-estoque{font-size:18px;font-weight:700}
+.card-un{font-size:11px;color:#9ca3af}
+.est-ok{color:#059669}
+.est-warn{color:#d97706}
+.est-crit{color:#ef4444}
+
+.empty{text-align:center;padding:48px 16px;color:#9ca3af}
+.empty svg{width:40px;height:40px;margin:0 auto 12px;display:block}
+
+/* ── PAINEL (bottom sheet) ── */
+.overlay{
+  display:none;position:fixed;inset:0;
+  background:rgba(0,0,0,.35);z-index:20;
+}
+.overlay.on{display:block}
+
 #painel{
-  position:fixed;
-  bottom:0;
-  left:0;
-  right:0;
-  background:#fff;
-  padding:16px;
-  border-radius:20px 20px 0 0;
+  position:fixed;bottom:0;left:0;right:0;
+  background:#fff;border-radius:20px 20px 0 0;
+  padding:0 20px 32px;
   transform:translateY(100%);
-  transition:.3s;
+  transition:transform .3s cubic-bezier(.32,1,.45,1);
+  z-index:21;
+  box-shadow:0 -4px 24px rgba(0,0,0,.12);
+}
+#painel.open{transform:translateY(0)}
+
+.drag-handle{
+  width:36px;height:4px;border-radius:2px;
+  background:#e5e7eb;margin:12px auto 20px;
 }
 
-#painel.open{
-  transform:translateY(0);
+#painel h3{font-size:17px;font-weight:600;margin-bottom:4px}
+.painel-meta{font-size:13px;color:#6b7280;margin-bottom:16px}
+
+.painel-row{
+  display:flex;gap:12px;align-items:center;
+  background:#f3f4f6;border-radius:12px;padding:12px;
+  margin-bottom:16px;
+}
+.painel-row svg{width:20px;height:20px;color:#6b7280}
+.painel-row-info{flex:1}
+.painel-row-label{font-size:11px;color:#6b7280}
+.painel-row-val{font-size:16px;font-weight:600;margin-top:1px}
+
+.qtd-wrap{
+  display:flex;align-items:center;gap:12px;margin-bottom:20px;
+}
+.qtd-wrap label{font-size:13px;color:#6b7280;flex-shrink:0}
+.qtd-wrap input{
+  flex:1;padding:10px 14px;border:1.5px solid #e5e7eb;
+  border-radius:10px;font-size:16px;font-family:inherit;
+  outline:none;transition:border-color .2s;
+}
+.qtd-wrap input:focus{border-color:#0057FF}
+
+.btns-row{display:flex;gap:10px;margin-bottom:12px}
+.btns-row button{
+  flex:1;padding:14px;border:none;border-radius:12px;
+  font-size:14px;font-weight:600;font-family:inherit;cursor:pointer;
+  transition:opacity .2s;
+}
+.btns-row button:active{opacity:.8}
+.btn-entrada{background:#059669;color:#fff}
+.btn-saida{background:#ef4444;color:#fff}
+
+.btn-fechar{
+  width:100%;padding:12px;border:1.5px solid #e5e7eb;
+  border-radius:12px;background:#fff;font-size:14px;
+  font-family:inherit;cursor:pointer;color:#6b7280;
+}
+.btn-fechar:hover{background:#f9fafb}
+
+/* ── CARRINHO ── */
+#cartPanel{
+  position:fixed;inset:0;background:#fff;
+  z-index:30;display:none;flex-direction:column;
+}
+#cartPanel.on{display:flex}
+
+.cart-header{
+  background:#0057FF;color:#fff;
+  padding:0 16px;height:56px;
+  display:flex;align-items:center;justify-content:space-between;
+}
+.cart-header h3{font-size:17px;font-weight:600}
+.btn-close-cart{
+  background:rgba(255,255,255,.15);border:none;color:#fff;
+  width:34px;height:34px;border-radius:50%;
+  font-size:18px;cursor:pointer;
+  display:flex;align-items:center;justify-content:center;
 }
 
-.row{
-  display:flex;
-  gap:10px;
-  margin-top:10px;
+#cartList{flex:1;overflow-y:auto;padding:12px 16px}
+
+.cart-item{
+  background:#fff;border:1px solid #e5e7eb;border-radius:12px;
+  padding:14px;margin-bottom:8px;
+  display:flex;align-items:center;justify-content:space-between;
+}
+.cart-item-nome{font-size:14px;font-weight:500}
+.cart-item-meta{font-size:12px;color:#6b7280;margin-top:2px}
+.badge-tipo{
+  padding:3px 10px;border-radius:20px;font-size:11px;font-weight:600;
+}
+.badge-entrada{background:#d1fae5;color:#065f46}
+.badge-saida{background:#fee2e2;color:#991b1b}
+
+.btn-rm{
+  background:none;border:none;cursor:pointer;
+  color:#9ca3af;padding:4px;margin-left:8px;
+  font-size:18px;line-height:1;
+}
+.btn-rm:hover{color:#ef4444}
+
+.cart-footer{
+  padding:16px;border-top:1px solid #e5e7eb;
+}
+.btn-enviar{
+  width:100%;padding:14px;background:#0057FF;color:#fff;
+  border:none;border-radius:12px;font-size:15px;font-weight:600;
+  font-family:inherit;cursor:pointer;transition:background .2s;
+}
+.btn-enviar:hover{background:#003db3}
+.btn-limpar{
+  width:100%;margin-top:8px;padding:11px;background:#fff;
+  border:1.5px solid #e5e7eb;border-radius:12px;font-size:14px;
+  font-family:inherit;cursor:pointer;color:#6b7280;
 }
 
-.row button{
-  flex:1;
-  padding:12px;
-  border:none;
-  color:#fff;
-  border-radius:10px;
+.cart-vazio{
+  text-align:center;padding:60px 16px;color:#9ca3af;
 }
 
-.btn-green{background:#00b37e;}
-.btn-red{background:#ef4444;}
-
-/* CARRINHO */
-#cart{
-  position:fixed;
-  top:0;
-  right:0;
-  width:100%;
-  height:100%;
-  background:#fff;
-  display:none;
-  padding:10px;
+.toast{
+  position:fixed;bottom:24px;left:50%;transform:translateX(-50%) translateY(80px);
+  background:#1a1f2e;color:#fff;padding:10px 20px;
+  border-radius:20px;font-size:13px;font-weight:500;
+  z-index:99;transition:transform .3s;white-space:nowrap;
 }
-
-.item{
-  border-bottom:1px solid #ddd;
-  padding:10px 0;
-}
+.toast.show{transform:translateX(-50%) translateY(0)}
 </style>
 </head>
-
 <body>
 
 <!-- LOGIN -->
 <div id="login">
-  <div class="box">
-    <h3>LOGIN</h3>
-    <input id="senha" type="password" placeholder="senha"><br><br>
-    <button onclick="logar()">Entrar</button>
-    <p id="erro" style="color:red"></p>
+  <div class="login-card">
+    <div class="login-logo">CE</div>
+    <h2>CIA Embalagens</h2>
+    <p>Painel administrativo</p>
+    <input id="senha" type="password" placeholder="Senha de acesso"
+      onkeydown="if(event.key==='Enter')logar()">
+    <button class="btn-login" onclick="logar()">Entrar</button>
+    <p id="erro"></p>
   </div>
 </div>
 
 <!-- APP -->
 <div id="app">
+  <header>
+    <div class="header-left">
+      <div>
+        <div class="header-logo">CIA Embalagens</div>
+        <div class="header-sub">Gestão de estoque</div>
+      </div>
+    </div>
+    <button class="btn-cart" onclick="abrirCart()">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg>
+      Carrinho
+      <span id="cart-count">0</span>
+    </button>
+  </header>
 
-<header>CIA EMBALAGENS</header>
-
-<input id="busca" placeholder="Buscar..." oninput="render()">
-
-<div id="lista"></div>
-
-</div>
-
-<!-- PAINEL -->
-<div id="painel">
-  <h3 id="nome"></h3>
-  <p>Estoque: <span id="estoque"></span></p>
-  <p>Preço: <span id="preco"></span></p>
-
-  <input id="qtd" type="number" value="1" min="1">
-
-  <div class="row">
-    <button class="btn-green" onclick="add('entrada')">Entrada</button>
-    <button class="btn-red" onclick="add('saida')">Saída</button>
+  <div class="search-bar">
+    <div class="search-wrap">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+      <input id="busca" placeholder="Buscar produto..." oninput="render()">
+    </div>
   </div>
 
-  <button onclick="fechar()">Fechar</button>
+  <div class="resumo" id="resumo"></div>
+
+  <div id="lista"></div>
+</div>
+
+<!-- OVERLAY -->
+<div class="overlay" id="overlay" onclick="fecharPainel()"></div>
+
+<!-- PAINEL PRODUTO -->
+<div id="painel">
+  <div class="drag-handle"></div>
+  <h3 id="p-nome"></h3>
+  <p class="painel-meta" id="p-meta"></p>
+
+  <div class="painel-row">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v16"/></svg>
+    <div class="painel-row-info">
+      <div class="painel-row-label">Estoque atual</div>
+      <div class="painel-row-val" id="p-estoque"></div>
+    </div>
+    <div style="text-align:right">
+      <div class="painel-row-label">Preço unit.</div>
+      <div class="painel-row-val" id="p-preco"></div>
+    </div>
+  </div>
+
+  <div class="qtd-wrap">
+    <label>Quantidade</label>
+    <input id="qtd" type="number" value="1" min="1" max="9999">
+  </div>
+
+  <div class="btns-row">
+    <button class="btn-entrada" onclick="addCart('Entrada')">＋ Entrada</button>
+    <button class="btn-saida" onclick="addCart('Saída')">－ Saída</button>
+  </div>
+  <button class="btn-fechar" onclick="fecharPainel()">Fechar</button>
 </div>
 
 <!-- CARRINHO -->
-<div id="cart">
-  <h3>Carrinho</h3>
+<div id="cartPanel">
+  <div class="cart-header">
+    <h3>Carrinho</h3>
+    <button class="btn-close-cart" onclick="fecharCart()">✕</button>
+  </div>
   <div id="cartList"></div>
-  <button onclick="fecharCart()">Fechar</button>
+  <div class="cart-footer" id="cartFooter" style="display:none">
+    <button class="btn-enviar" onclick="enviarCarrinho()">Confirmar movimentações</button>
+    <button class="btn-limpar" onclick="limparCarrinho()">Limpar tudo</button>
+  </div>
 </div>
 
+<!-- TOAST -->
+<div class="toast" id="toast"></div>
+
 <script>
-/* LOGIN SHA256 */
 const HASH = "158a323a7ba44870f23d96f1516dd70aa48e9a72db4ebb026b0a89e212a208ab";
 
 async function sha(str){
-  const buf = await crypto.subtle.digest("SHA-256", new TextEncoder().encode(str));
+  const buf = await crypto.subtle.digest("SHA-256",new TextEncoder().encode(str));
   return [...new Uint8Array(buf)].map(b=>b.toString(16).padStart(2,"0")).join("");
 }
 
 async function logar(){
   const s = document.getElementById("senha").value;
+  if(!s){document.getElementById("erro").textContent="Digite a senha";return}
   const h = await sha(s);
-
-  if(h === HASH){
+  if(h===HASH){
     document.getElementById("login").style.display="none";
-    document.getElementById("app").style.display="block";
-    render();
+    document.getElementById("app").style.display="flex";
+    await carregarProdutos();
   } else {
     document.getElementById("erro").textContent="Senha incorreta";
   }
 }
 
-/* DADOS */
-let produtos = [
-  {codigo:1,nome:"Caixa P",estoque:5,preco:10},
-  {codigo:2,nome:"Caixa M",estoque:0,preco:15},
-  {codigo:3,nome:"Caixa G",estoque:25,preco:20}
-];
-
+let produtos = [];
 let atual = null;
 let carrinho = [];
 
-/* RENDER */
+async function carregarProdutos(){
+  try{
+    const r = await fetch("front-index/produtos.json");
+    if(!r.ok) throw new Error("HTTP "+r.status);
+    const data = await r.json();
+    produtos = Array.isArray(data) ? data : Object.values(data);
+    render();
+  } catch(e){
+    console.error("Erro ao carregar produtos.json:",e);
+    document.getElementById("lista").innerHTML = `<div class="empty"><p>Não foi possível carregar produtos.json</p><p style="font-size:12px;margin-top:4px">${e.message}</p></div>`;
+  }
+}
+
+function nomeCategoria(p){
+  return [p.categoria, p.subcategoria].filter(Boolean).join(" › ") || "";
+}
+
+function getClasse(p){
+  const est = Number(p.estoque)||0;
+  if(est<=0) return "crit";
+  if(est<=10) return "warn";
+  return "ok";
+}
+
+function renderResumo(){
+  const ok = produtos.filter(p=>(Number(p.estoque)||0)>10).length;
+  const warn = produtos.filter(p=>{const e=Number(p.estoque)||0;return e>0&&e<=10}).length;
+  const crit = produtos.filter(p=>(Number(p.estoque)||0)<=0).length;
+  document.getElementById("resumo").innerHTML=`
+    <div class="resumo-card"><div class="num num-ok">${ok}</div><div class="lbl">Em estoque</div></div>
+    <div class="resumo-card"><div class="num num-warn">${warn}</div><div class="lbl">Atenção</div></div>
+    <div class="resumo-card"><div class="num num-crit">${crit}</div><div class="lbl">Zerados</div></div>
+  `;
+}
+
 function render(){
-  const v = document.getElementById("busca").value?.toLowerCase() || "";
+  renderResumo();
+  const v = (document.getElementById("busca").value||"").toLowerCase();
   const el = document.getElementById("lista");
-  el.innerHTML="";
+  const filtrados = produtos.filter(p=>(p.nome||"").toLowerCase().includes(v) || (p.codigo||"").toString().includes(v));
 
-  produtos
-  .filter(p=>p.nome.toLowerCase().includes(v))
-  .forEach(p=>{
+  if(!filtrados.length){
+    el.innerHTML=`<div class="empty"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>Nenhum produto encontrado</div>`;
+    return;
+  }
 
-    let c = "green";
-    if(p.estoque<=0) c="red";
-    else if(p.estoque<=10) c="yellow";
-
-    el.innerHTML += `
-      <div class="card" onclick="openP(${p.codigo})">
-        <div>
-          <b>${p.nome}</b><br>
-          R$ ${p.preco}
+  el.innerHTML = filtrados.map(p=>{
+    const est = Number(p.estoque)||0;
+    const cl = getClasse(p);
+    const preco = p.preco ? `R$ ${Number(p.preco).toFixed(2)}` : "—";
+    const cat = nomeCategoria(p);
+    return `
+      <div class="card" onclick="openProduto('${p.id||p.codigo}')">
+        <div class="card-bar bar-${cl}"></div>
+        <div class="card-info">
+          <div class="card-nome">${p.nome||"Sem nome"}</div>
+          <div class="card-meta">${preco}${cat?" · "+cat:""}</div>
         </div>
-
-        <div class="badge ${c}">
-          ${p.estoque}
+        <div class="card-right">
+          <div class="card-estoque est-${cl}">${est}</div>
+          <div class="card-un">${p.unidade||"un"}</div>
         </div>
       </div>
     `;
-  });
+  }).join("");
 }
 
-/* PAINEL */
-function openP(id){
-  atual = produtos.find(p=>p.codigo===id);
-
-  document.getElementById("nome").textContent = atual.nome;
-  document.getElementById("estoque").textContent = atual.estoque;
-  document.getElementById("preco").textContent = atual.preco;
-
+function openProduto(id){
+  atual = produtos.find(p=>(p.id||p.codigo)==id)||null;
+  if(!atual) return;
+  const est = Number(atual.estoque)||0;
+  document.getElementById("p-nome").textContent = atual.nome||"";
+  document.getElementById("p-meta").textContent = nomeCategoria(atual)||(atual.marca||"");
+  document.getElementById("p-estoque").textContent = est+" "+(atual.unidade||"un");
+  document.getElementById("p-preco").textContent = atual.preco ? `R$ ${Number(atual.preco).toFixed(2)}` : "—";
+  document.getElementById("qtd").value = 1;
   document.getElementById("painel").classList.add("open");
+  document.getElementById("overlay").classList.add("on");
 }
 
-function fechar(){
+function fecharPainel(){
   document.getElementById("painel").classList.remove("open");
+  document.getElementById("overlay").classList.remove("on");
 }
 
-/* CARRINHO */
-function add(tipo){
-  const qtd = Number(document.getElementById("qtd").value);
-
-  carrinho.push({
-    nome:atual.nome,
-    qtd,
-    tipo
-  });
-
-  fechar();
-  alert("Adicionado");
+function addCart(tipo){
+  const qtd = Math.max(1,Number(document.getElementById("qtd").value)||1);
+  carrinho.push({id:atual.id||atual.codigo, nome:atual.nome, qtd, tipo});
+  atualizarBadge();
+  fecharPainel();
+  showToast(`${tipo} de ${qtd} "${atual.nome}" adicionada`);
 }
 
-/* CART */
+function atualizarBadge(){
+  const badge = document.getElementById("cart-count");
+  if(carrinho.length>0){
+    badge.textContent=carrinho.length;
+    badge.style.display="flex";
+  } else {
+    badge.style.display="none";
+  }
+}
+
 function abrirCart(){
-  document.getElementById("cart").style.display="block";
-
-  document.getElementById("cartList").innerHTML =
-    carrinho.map(i=>`
-      <div class="item">
-        ${i.nome} - ${i.qtd} (${i.tipo})
-      </div>
-    `).join("");
+  const el = document.getElementById("cartPanel");
+  el.classList.add("on");
+  renderCart();
 }
 
 function fecharCart(){
-  document.getElementById("cart").style.display="none";
+  document.getElementById("cartPanel").classList.remove("on");
+}
+
+function renderCart(){
+  const list = document.getElementById("cartList");
+  const footer = document.getElementById("cartFooter");
+  if(!carrinho.length){
+    list.innerHTML=`<div class="cart-vazio"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="44" height="44" style="margin:0 auto 12px;display:block"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg>Carrinho vazio</div>`;
+    footer.style.display="none";
+    return;
+  }
+  footer.style.display="block";
+  list.innerHTML = carrinho.map((item,i)=>`
+    <div class="cart-item">
+      <div style="flex:1;min-width:0">
+        <div class="cart-item-nome">${item.nome}</div>
+        <div class="cart-item-meta">Qtd: ${item.qtd}</div>
+      </div>
+      <span class="badge-tipo badge-${item.tipo==='Entrada'?'entrada':'saida'}">${item.tipo}</span>
+      <button class="btn-rm" onclick="removeItem(${i})" title="Remover">×</button>
+    </div>
+  `).join("");
+}
+
+function removeItem(i){
+  carrinho.splice(i,1);
+  atualizarBadge();
+  renderCart();
+}
+
+function limparCarrinho(){
+  if(!confirm("Limpar todos os itens do carrinho?")) return;
+  carrinho=[];
+  atualizarBadge();
+  renderCart();
+}
+
+function enviarCarrinho(){
+  showToast(`${carrinho.length} movimentação(ões) confirmada(s)`);
+  carrinho=[];
+  atualizarBadge();
+  fecharCart();
+}
+
+let toastTimer;
+function showToast(msg){
+  const t = document.getElementById("toast");
+  t.textContent=msg;
+  t.classList.add("show");
+  clearTimeout(toastTimer);
+  toastTimer = setTimeout(()=>t.classList.remove("show"),2500);
 }
 </script>
-
 </body>
 </html>
