@@ -1,12 +1,5 @@
 [
   {
-    "codigo": "l",
-    "nome": "LIXEIRA PARA COPO PLASTICO CLEAN EXECUTIVA",
-    "categoria": "UTENSILIOS",
-    "preco": 64,
-    "estoque": "0,00 un"
-  },
-  {
     "codigo": "035",
     "nome": "ESCOVA SANITARIA C/ ESTOJO SANIBRISA",
     "categoria": "PRODUTO DE LIMPEZA",
@@ -18,7 +11,7 @@
     "nome": "PRENDEDOR DE ROUPA C/12 PÇS PRENDE MAIS",
     "categoria": "UTENSILIOS",
     "preco": 4.99,
-    "estoque": "1,00 un"
+    "estoque": "42,00 un"
   },
   {
     "codigo": "103",
@@ -726,6 +719,13 @@
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 15,
     "estoque": "25,00 un"
+  },
+  {
+    "codigo": "454",
+    "nome": "LIXEIRA PARA COPO PLASTICO CLEAN EXECUTIVA",
+    "categoria": "UTENSILIOS",
+    "preco": 64,
+    "estoque": "0,00 un"
   },
   {
     "codigo": "455",
@@ -1663,7 +1663,7 @@
     "nome": "AGUA SANITARIA DACLOR 2L",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 8.8,
-    "estoque": "-3,00 un"
+    "estoque": "-2,00 un"
   },
   {
     "codigo": "875",
@@ -6913,7 +6913,7 @@
     "nome": "ABRIDIR DE LATAS",
     "categoria": "UTENSILIOS",
     "preco": 3.5,
-    "estoque": "3,00 un"
+    "estoque": "2,00 un"
   },
   {
     "codigo": "129061",
