@@ -43,7 +43,7 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
-/* ── LOGIN ── */
+/* LOGIN */
 #login {
   min-height: 100vh;
   display: flex;
@@ -153,10 +153,10 @@ body {
   padding: 4px;
 }
 
-/* ── APP SHELL ── */
+/* APP SHELL */
 #app { display: none; flex-direction: column; min-height: 100vh; }
 
-/* ── HEADER ── */
+/* HEADER */
 header {
   background: var(--blue);
   color: #fff;
@@ -224,7 +224,7 @@ header {
   border: 2px solid var(--blue);
 }
 
-/* ── BUSCA ── */
+/* BUSCA */
 .search-area {
   background: var(--blue);
   padding: 0 16px 16px;
@@ -261,7 +261,7 @@ header {
 
 .search-box input::placeholder { color: rgba(255,255,255,.55); }
 
-/* ── PILLS FILTRO ── */
+/* PILLS FILTRO */
 .filter-area {
   background: var(--blue);
   padding: 0 16px 14px;
@@ -293,7 +293,7 @@ header {
   color: var(--blue);
 }
 
-/* ── RESUMO ── */
+/* RESUMO */
 .resumo {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -329,19 +329,10 @@ header {
 .r-crit{ color: var(--crit); }
 .r-neg { color: var(--neg); }
 
-/* ── LISTA ── */
+/* LISTA */
 #lista { padding: 10px 14px 120px; }
 
-.section-title {
-  font-size: 11px;
-  font-weight: 700;
-  color: var(--text3);
-  text-transform: uppercase;
-  letter-spacing: .6px;
-  padding: 12px 2px 6px;
-}
-
-/* ── CARD PRODUTO ── */
+/* CARD PRODUTO */
 .card {
   background: var(--card);
   border-radius: var(--radius);
@@ -350,18 +341,13 @@ header {
   display: flex;
   align-items: stretch;
   cursor: pointer;
-  transition: border-color .15s, box-shadow .15s;
+  transition: border-color .15s;
   overflow: hidden;
-  -webkit-tap-highlight-color: transparent;
 }
 
 .card:active { transform: scale(.99); }
 
-.card-stripe {
-  width: 5px;
-  flex-shrink: 0;
-}
-
+.card-stripe { width: 5px; flex-shrink: 0; }
 .stripe-ok   { background: var(--ok); }
 .stripe-warn { background: var(--warn); }
 .stripe-crit { background: var(--crit); }
@@ -393,6 +379,7 @@ header {
   align-items: center;
   gap: 6px;
   flex-wrap: wrap;
+  margin-bottom: 3px;
 }
 
 .chip {
@@ -405,17 +392,16 @@ header {
   letter-spacing: .2px;
 }
 
-.chip-id   { background: var(--blue-lt); color: var(--blue-dk); }
-.chip-cat  { background: #F1F5F9; color: #475569; font-weight: 500; }
+.chip-id  { background: var(--blue-lt); color: var(--blue-dk); }
+.chip-cat { background: #F1F5F9; color: #475569; font-weight: 500; }
 
 .card-preco {
   font-size: 11px;
   color: var(--text2);
-  margin-top: 1px;
   font-weight: 500;
 }
 
-/* Bloco estoque – lado direito */
+/* Bloco estoque lado direito */
 .card-stock {
   flex-shrink: 0;
   display: flex;
@@ -464,7 +450,7 @@ header {
 .empty-state svg { width: 40px; height: 40px; margin-bottom: 12px; opacity: .4; }
 .empty-state p { font-size: 14px; }
 
-/* ── OVERLAY ── */
+/* OVERLAY */
 .overlay {
   display: none;
   position: fixed;
@@ -475,7 +461,7 @@ header {
 }
 .overlay.on { display: block; }
 
-/* ── SHEET (PAINEL PRODUTO) ── */
+/* SHEET PAINEL PRODUTO */
 #painel {
   position: fixed;
   bottom: 0;
@@ -483,7 +469,7 @@ header {
   right: 0;
   background: var(--card);
   border-radius: 20px 20px 0 0;
-  padding: 0 20px env(safe-area-inset-bottom, 20px);
+  padding: 0 20px;
   padding-bottom: calc(20px + env(safe-area-inset-bottom, 0px));
   transform: translateY(100%);
   transition: transform .3s cubic-bezier(.32,1,.45,1);
@@ -518,7 +504,6 @@ header {
   flex-wrap: wrap;
 }
 
-/* Grid de stats no painel */
 .painel-stats {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -614,7 +599,7 @@ header {
 
 .qtd-input:focus { border-color: var(--blue); }
 
-/* Botões ação */
+/* Botoes acao */
 .action-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -638,16 +623,8 @@ header {
 }
 
 .btn-entrada:active, .btn-saida:active { transform: scale(.98); }
-
-.btn-entrada {
-  background: var(--ok-bg);
-  color: var(--ok-dk);
-}
-
-.btn-saida {
-  background: var(--crit-bg);
-  color: var(--crit-dk);
-}
+.btn-entrada { background: var(--ok-bg); color: var(--ok-dk); }
+.btn-saida   { background: var(--crit-bg); color: var(--crit-dk); }
 
 .btn-fechar {
   width: 100%;
@@ -665,7 +642,7 @@ header {
 
 .btn-fechar:active { background: var(--surface); }
 
-/* ── CARRINHO PAINEL ── */
+/* CARRINHO PAINEL */
 #cartPanel {
   position: fixed;
   inset: 0;
@@ -774,7 +751,8 @@ header {
 .cart-vazio svg { width: 40px; height: 40px; margin-bottom: 12px; opacity: .4; }
 
 .cart-footer {
-  padding: 12px 14px calc(12px + env(safe-area-inset-bottom, 0px));
+  padding: 12px 14px;
+  padding-bottom: calc(12px + env(safe-area-inset-bottom, 0px));
   border-top: 1px solid var(--border);
   background: var(--card);
   flex-shrink: 0;
@@ -811,7 +789,7 @@ header {
   font-weight: 500;
 }
 
-/* ── TOAST ── */
+/* TOAST */
 .toast {
   position: fixed;
   bottom: 28px;
@@ -846,7 +824,7 @@ header {
     <p>Painel de gestão de estoque</p>
 
     <label class="field-label">Senha</label>
-    <input id="senhaInput" type="password" placeholder="••••••••" onkeydown="if(event.key==='Enter')logar()">
+    <input id="senhaInput" type="password" placeholder="••••••••">
 
     <label class="field-label">GitHub Token</label>
     <input id="tokenInput" type="password" placeholder="ghp_...">
@@ -891,7 +869,7 @@ header {
     </div>
   </div>
 
-  <div class="filter-area" id="filterPills">
+  <div class="filter-area">
     <button class="pill active" onclick="setFiltro('todos', this)">Todos</button>
     <button class="pill" onclick="setFiltro('neg', this)">Negativos</button>
     <button class="pill" onclick="setFiltro('crit', this)">Zerados</button>
@@ -936,11 +914,15 @@ header {
 
   <div class="action-grid">
     <button class="btn-entrada" onclick="addCart('entrada')">
-      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><polyline points="5 12 12 19 19 12"/></svg>
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+        <line x1="12" y1="5" x2="12" y2="19"/><polyline points="5 12 12 19 19 12"/>
+      </svg>
       Entrada
     </button>
     <button class="btn-saida" onclick="addCart('saida')">
-      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="19" x2="12" y2="5"/><polyline points="19 12 12 5 5 12"/></svg>
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+        <line x1="12" y1="19" x2="12" y2="5"/><polyline points="19 12 12 5 5 12"/>
+      </svg>
       Saída
     </button>
   </div>
@@ -968,6 +950,7 @@ const REPO      = "Willkerson/Automacao-ConnectPlug";
 const WORKFLOW  = "movimentar.yml";
 const FILA_PATH = "fila/movimentacao.json";
 const BRANCH    = "main";
+const DELAY_MS  = 5000; // aguarda 5s após commit antes de disparar o workflow
 
 const SENHA_HASH = "158a323a7ba44870f23d96f1516dd70aa48e9a72db4ebb026b0a89e212a208ab";
 
@@ -976,7 +959,7 @@ async function hashSenha(str) {
   return [...new Uint8Array(buf)].map(b => b.toString(16).padStart(2,"0")).join("");
 }
 
-/* LOGIN */
+/* ── LOGIN ── */
 async function logar() {
   const senha = document.getElementById("senhaInput").value;
   const token = document.getElementById("tokenInput").value.trim();
@@ -1018,7 +1001,7 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
-/* PARSE ESTOQUE — preserva negativos */
+/* ── PARSE ESTOQUE — preserva negativos ── */
 function parseEst(val) {
   if (val === null || val === undefined) return 0;
   if (typeof val === "number") return val;
@@ -1031,7 +1014,7 @@ function fmtEst(val) {
   return n % 1 === 0 ? String(n) : n.toFixed(2);
 }
 
-/* CLASSIFICAÇÃO — 4 estados */
+/* ── CLASSIFICAÇÃO — 4 estados ── */
 function classeEst(val) {
   const n = parseEst(val);
   if (n < 0)   return "neg";
@@ -1040,11 +1023,11 @@ function classeEst(val) {
   return "ok";
 }
 
-/* DADOS */
-let produtos = [];
-let carrinho = [];
-let atual    = null;
-let filtroAtivo = "todos";
+/* ── DADOS ── */
+let produtos     = [];
+let carrinho     = [];
+let atual        = null;
+let filtroAtivo  = "todos";
 
 function carregarProdutos() {
   fetch("front-index/produtos.json?t=" + Date.now())
@@ -1055,11 +1038,18 @@ function carregarProdutos() {
     })
     .catch(err => {
       document.getElementById("lista").innerHTML =
-        `<div class="empty-state"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg><p>Erro ao carregar produtos<br><small style="color:#CBD5E1">${err.message}</small></p></div>`;
+        `<div class="empty-state">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <circle cx="12" cy="12" r="10"/>
+            <line x1="12" y1="8" x2="12" y2="12"/>
+            <line x1="12" y1="16" x2="12.01" y2="16"/>
+          </svg>
+          <p>Erro ao carregar produtos<br><small style="color:#CBD5E1">${err.message}</small></p>
+        </div>`;
     });
 }
 
-/* RESUMO */
+/* ── RESUMO ── */
 function renderResumo() {
   const neg  = produtos.filter(p => parseEst(p.estoque) < 0).length;
   const crit = produtos.filter(p => parseEst(p.estoque) === 0).length;
@@ -1086,7 +1076,7 @@ function renderResumo() {
   `;
 }
 
-/* FILTRO PILLS */
+/* ── FILTRO PILLS ── */
 function setFiltro(tipo, btn) {
   filtroAtivo = tipo;
   document.querySelectorAll(".pill").forEach(p => p.classList.remove("active"));
@@ -1094,7 +1084,7 @@ function setFiltro(tipo, btn) {
   render();
 }
 
-/* RENDER LISTA */
+/* ── RENDER LISTA ── */
 function render() {
   renderResumo();
   const busca = (document.getElementById("busca").value || "").toLowerCase();
@@ -1104,7 +1094,6 @@ function render() {
     String(p.codigo || "").toLowerCase().includes(busca)
   );
 
-  /* Aplica filtro de status */
   if (filtroAtivo !== "todos") {
     lista = lista.filter(p => classeEst(p.estoque) === filtroAtivo);
   }
@@ -1122,7 +1111,6 @@ function render() {
     return;
   }
 
-  /* Ordem: neg → crit → warn → ok */
   const ordem = { neg:0, crit:1, warn:2, ok:3 };
   lista.sort((a,b) => ordem[classeEst(a.estoque)] - ordem[classeEst(b.estoque)]);
 
@@ -1148,8 +1136,7 @@ function render() {
           </div>
           <div class="card-stock">
             <div class="stock-pill stock-${cl}">
-              ${est}
-              <span class="stock-unit">${un}</span>
+              ${est}<span class="stock-unit">${un}</span>
             </div>
             <div class="stock-label">estoque</div>
           </div>
@@ -1158,7 +1145,7 @@ function render() {
   }).join("");
 }
 
-/* PAINEL PRODUTO */
+/* ── PAINEL PRODUTO ── */
 function openProduto(codigo) {
   atual = produtos.find(p => String(p.codigo) === String(codigo));
   if (!atual) return;
@@ -1169,15 +1156,12 @@ function openProduto(codigo) {
 
   document.getElementById("p-nome").textContent = atual.nome || "";
 
-  // Meta: ID + marca + categoria
-  const metaEl = document.getElementById("p-meta");
-  metaEl.innerHTML = `
+  document.getElementById("p-meta").innerHTML = `
     <span class="chip chip-id">#${id}</span>
     ${atual.marca ? `<span class="chip chip-cat">${atual.marca}</span>` : ""}
     ${cat ? `<span class="chip chip-cat">${cat}</span>` : ""}
   `;
 
-  // Estoque com classe de cor
   const estoqueEl = document.getElementById("p-estoque-val");
   estoqueEl.textContent = fmtEst(atual.estoque);
   estoqueEl.className   = `stat-box-val v-${cl}`;
@@ -1197,11 +1181,10 @@ function fecharPainel() {
 
 function ajustarQtd(delta) {
   const input = document.getElementById("qtd");
-  const val = Math.max(1, Math.min(9999, (parseInt(input.value) || 1) + delta));
-  input.value = val;
+  input.value = Math.max(1, Math.min(9999, (parseInt(input.value) || 1) + delta));
 }
 
-/* CARRINHO */
+/* ── CARRINHO ── */
 function addCart(tipo) {
   const qtd = Math.max(1, Number(document.getElementById("qtd").value) || 1);
   carrinho.push({ codigo: atual.codigo, nome: atual.nome, qtd, tipo });
@@ -1248,7 +1231,7 @@ function renderCart() {
         <div class="cart-item-nome">${item.nome}</div>
         <div class="cart-item-meta">#${item.codigo} · ${item.qtd} ${item.tipo === "entrada" ? "entrando" : "saindo"}</div>
       </div>
-      <button class="btn-rm" onclick="removeItem(${i})" title="Remover">×</button>
+      <button class="btn-rm" onclick="removeItem(${i})">×</button>
     </div>
   `).join("");
 }
@@ -1275,7 +1258,7 @@ function limparCarrinho() {
   renderCart();
 }
 
-/* SALVAR → commit fila + dispatch workflow */
+/* ── SALVAR ── */
 async function salvar() {
   if (!carrinho.length) { showToast("Carrinho vazio"); return; }
 
@@ -1284,9 +1267,10 @@ async function salvar() {
 
   const btn = document.getElementById("btn-salvar");
   btn.disabled    = true;
-  btn.textContent = "Enviando…";
+  btn.textContent = "Commitando fila…";
 
   try {
+    /* 1. Busca SHA + conteúdo atual da fila */
     const filaUrl = `https://api.github.com/repos/${REPO}/contents/${FILA_PATH}?ref=${BRANCH}`;
     const getRes  = await fetch(filaUrl, {
       headers: { Authorization: "Bearer " + token, Accept: "application/vnd.github+json" }
@@ -1296,11 +1280,12 @@ async function salvar() {
     let filaAtual = { itens: [] };
 
     if (getRes.ok) {
-      const d  = await getRes.json();
-      sha      = d.sha;
+      const d   = await getRes.json();
+      sha       = d.sha;
       filaAtual = JSON.parse(atob(d.content.replace(/\n/g, "")));
     }
 
+    /* 2. Monta fila atualizada */
     const novos = carrinho.map(i => ({
       codigo: String(i.codigo),
       nome:   i.nome,
@@ -1311,13 +1296,22 @@ async function salvar() {
     const filaAtualizada = { itens: [...(filaAtual.itens || []), ...novos] };
     const b64 = btoa(unescape(encodeURIComponent(JSON.stringify(filaAtualizada, null, 2))));
 
-    const putBody = { message: `fila: ${novos.length} movimentação(ões)`, content: b64, branch: BRANCH };
+    /* 3. Commit da fila */
+    const putBody = {
+      message: `fila: ${novos.length} movimentacao(oes)`,
+      content: b64,
+      branch:  BRANCH
+    };
     if (sha) putBody.sha = sha;
 
     const putRes = await fetch(filaUrl, {
       method:  "PUT",
-      headers: { Authorization: "Bearer " + token, Accept: "application/vnd.github+json", "Content-Type": "application/json" },
-      body:    JSON.stringify(putBody)
+      headers: {
+        Authorization: "Bearer " + token,
+        Accept: "application/vnd.github+json",
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(putBody)
     });
 
     if (!putRes.ok) {
@@ -1325,12 +1319,22 @@ async function salvar() {
       throw new Error(e.message || "Erro ao commitar fila");
     }
 
+    /* 4. Aguarda o commit propagar no GitHub antes de disparar o workflow */
+    btn.textContent = `Aguardando ${DELAY_MS / 1000}s…`;
+    await new Promise(r => setTimeout(r, DELAY_MS));
+
+    /* 5. Dispara o workflow movimentar.yml */
+    btn.textContent = "Disparando workflow…";
     const dispRes = await fetch(
       `https://api.github.com/repos/${REPO}/actions/workflows/${WORKFLOW}/dispatches`,
       {
         method:  "POST",
-        headers: { Authorization: "Bearer " + token, Accept: "application/vnd.github+json", "Content-Type": "application/json" },
-        body:    JSON.stringify({ ref: BRANCH })
+        headers: {
+          Authorization: "Bearer " + token,
+          Accept: "application/vnd.github+json",
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify({ ref: BRANCH })
       }
     );
 
@@ -1339,10 +1343,11 @@ async function salvar() {
       throw new Error(e.message || "Erro ao disparar workflow");
     }
 
+    /* 6. Limpa carrinho */
     carrinho = [];
     atualizarBadge();
     fecharCart();
-    showToast("✓ Fila enviada! Workflow iniciado.");
+    showToast("✓ Enviado! Workflow iniciado.");
 
   } catch (err) {
     console.error(err);
@@ -1353,7 +1358,7 @@ async function salvar() {
   }
 }
 
-/* TOAST */
+/* ── TOAST ── */
 let _tt;
 function showToast(msg) {
   const el = document.getElementById("toast");
