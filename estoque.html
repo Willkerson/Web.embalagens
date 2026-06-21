@@ -35,11 +35,7 @@
 
 * { box-sizing: border-box; margin: 0; padding: 0; -webkit-tap-highlight-color: transparent; }
 
-/* ── BLOQUEIO DE ZOOM (iOS / Android) ── */
-html, body {
-  touch-action: manipulation;
-  -ms-touch-action: manipulation;
-}
+html, body { touch-action: manipulation; -ms-touch-action: manipulation; }
 
 body {
   font-family: 'Inter', -apple-system, sans-serif;
@@ -58,7 +54,6 @@ body {
   background: var(--blue);
   padding: 24px;
 }
-
 .login-card {
   background: #fff;
   border-radius: 20px;
@@ -67,752 +62,401 @@ body {
   max-width: 340px;
   text-align: center;
 }
-
 .login-icon {
-  width: 56px;
-  height: 56px;
+  width: 56px; height: 56px;
   background: var(--blue);
   border-radius: 14px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  display: flex; align-items: center; justify-content: center;
   margin: 0 auto 18px;
 }
-
 .login-icon svg { width: 28px; height: 28px; color: #fff; }
-
-.login-card h2 {
-  font-size: 19px;
-  font-weight: 700;
-  color: var(--text1);
-  margin-bottom: 4px;
-}
-
-.login-card p {
-  font-size: 13px;
-  color: var(--text2);
-  margin-bottom: 24px;
-}
-
+.login-card h2 { font-size: 19px; font-weight: 700; color: var(--text1); margin-bottom: 4px; }
+.login-card p  { font-size: 13px; color: var(--text2); margin-bottom: 24px; }
 .field-label {
-  font-size: 11px;
-  font-weight: 600;
-  color: var(--text3);
-  text-align: left;
-  display: block;
-  margin-bottom: 5px;
-  text-transform: uppercase;
-  letter-spacing: .5px;
+  font-size: 11px; font-weight: 600; color: var(--text3);
+  text-align: left; display: block; margin-bottom: 5px;
+  text-transform: uppercase; letter-spacing: .5px;
 }
-
 .login-card input {
-  width: 100%;
-  padding: 12px 14px;
-  border: 1.5px solid var(--border);
-  border-radius: var(--radius-sm);
-  font-size: 15px;
-  font-family: inherit;
-  color: var(--text1);
-  background: var(--surface);
-  outline: none;
-  transition: border-color .15s;
-  margin-bottom: 14px;
+  width: 100%; padding: 12px 14px;
+  border: 1.5px solid var(--border); border-radius: var(--radius-sm);
+  font-size: 15px; font-family: inherit; color: var(--text1);
+  background: var(--surface); outline: none;
+  transition: border-color .15s; margin-bottom: 14px;
 }
-
 .login-card input:focus { border-color: var(--blue); background: #fff; }
-
 .btn-primary {
-  width: 100%;
-  padding: 13px;
-  background: var(--blue);
-  color: #fff;
-  border: none;
-  border-radius: var(--radius-sm);
-  font-size: 15px;
-  font-weight: 600;
-  font-family: inherit;
-  cursor: pointer;
-  transition: background .15s, transform .1s;
-  margin-top: 4px;
+  width: 100%; padding: 13px; background: var(--blue); color: #fff;
+  border: none; border-radius: var(--radius-sm); font-size: 15px;
+  font-weight: 600; font-family: inherit; cursor: pointer;
+  transition: background .15s, transform .1s; margin-top: 4px;
 }
-
 .btn-primary:active { background: var(--blue-dk); transform: scale(.98); }
-
-#login-erro {
-  font-size: 13px;
-  color: var(--crit);
-  margin-top: 10px;
-  min-height: 18px;
-  font-weight: 500;
-}
-
+#login-erro { font-size: 13px; color: var(--crit); margin-top: 10px; min-height: 18px; font-weight: 500; }
 .btn-ghost {
-  background: none;
-  border: none;
-  font-size: 12px;
-  color: var(--text3);
-  font-family: inherit;
-  cursor: pointer;
-  margin-top: 14px;
-  text-decoration: underline;
-  text-underline-offset: 3px;
-  padding: 4px;
+  background: none; border: none; font-size: 12px; color: var(--text3);
+  font-family: inherit; cursor: pointer; margin-top: 14px;
+  text-decoration: underline; text-underline-offset: 3px; padding: 4px;
 }
 
-/* APP SHELL */
+/* APP */
 #app { display: none; flex-direction: column; min-height: 100vh; }
 
 /* HEADER */
 header {
-  background: var(--blue);
-  color: #fff;
-  padding: 0 16px;
-  height: 58px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  position: sticky;
-  top: 0;
-  z-index: 50;
+  background: var(--blue); color: #fff;
+  padding: 0 16px; height: 58px;
+  display: flex; align-items: center; justify-content: space-between;
+  position: sticky; top: 0; z-index: 50;
 }
-
 .header-left { display: flex; align-items: center; gap: 10px; }
-
 .header-icon {
-  width: 34px;
-  height: 34px;
+  width: 34px; height: 34px;
   background: rgba(255,255,255,.15);
   border-radius: 8px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  display: flex; align-items: center; justify-content: center;
 }
-
 .header-icon svg { width: 18px; height: 18px; }
-
 .header-title { font-size: 16px; font-weight: 700; letter-spacing: -.2px; }
 .header-sub   { font-size: 11px; opacity: .65; margin-top: 1px; }
 
-.btn-cart {
-  position: relative;
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  background: rgba(255,255,255,.15);
-  border: none;
-  color: #fff;
-  padding: 8px 14px;
-  border-radius: 20px;
-  font-size: 13px;
-  font-weight: 500;
-  font-family: inherit;
-  cursor: pointer;
-  transition: background .15s;
-}
+/* BOTÕES HEADER */
+.header-actions { display: flex; gap: 8px; align-items: center; }
 
-.btn-cart:active { background: rgba(255,255,255,.25); }
-.btn-cart svg { width: 15px; height: 15px; }
+.btn-header {
+  position: relative;
+  display: flex; align-items: center; gap: 6px;
+  background: rgba(255,255,255,.15);
+  border: none; color: #fff;
+  padding: 8px 12px;
+  border-radius: 20px;
+  font-size: 13px; font-weight: 500; font-family: inherit;
+  cursor: pointer; transition: background .15s;
+  white-space: nowrap;
+}
+.btn-header:active { background: rgba(255,255,255,.25); }
+.btn-header svg { width: 15px; height: 15px; flex-shrink: 0; }
 
 #cart-badge {
-  display: none;
-  position: absolute;
-  top: -5px;
-  right: -5px;
-  background: #FF3B30;
-  color: #fff;
-  width: 18px;
-  height: 18px;
-  border-radius: 9px;
-  font-size: 10px;
-  font-weight: 700;
-  align-items: center;
-  justify-content: center;
+  display: none; position: absolute; top: -5px; right: -5px;
+  background: #FF3B30; color: #fff;
+  width: 18px; height: 18px; border-radius: 9px;
+  font-size: 10px; font-weight: 700;
+  align-items: center; justify-content: center;
   border: 2px solid var(--blue);
 }
 
-/* BUSCA */
-.search-area {
-  background: var(--blue);
-  padding: 0 16px 16px;
+/* BANNER OFFLINE */
+#offlineBanner {
+  display: none;
+  background: var(--warn); color: #fff;
+  text-align: center; padding: 7px 16px;
+  font-size: 12px; font-weight: 600;
+  position: sticky; top: 58px; z-index: 49;
 }
+#offlineBanner.show { display: block; }
 
+/* BUSCA */
+.search-area { background: var(--blue); padding: 0 16px 16px; }
 .search-box {
-  display: flex;
-  align-items: center;
-  gap: 10px;
+  display: flex; align-items: center; gap: 10px;
   background: rgba(255,255,255,.15);
-  border-radius: 12px;
-  padding: 0 14px;
+  border-radius: 12px; padding: 0 14px;
   border: 1.5px solid rgba(255,255,255,.2);
   transition: background .15s;
 }
-
-.search-box:focus-within {
-  background: rgba(255,255,255,.22);
-  border-color: rgba(255,255,255,.4);
-}
-
+.search-box:focus-within { background: rgba(255,255,255,.22); border-color: rgba(255,255,255,.4); }
 .search-box svg { width: 15px; height: 15px; color: rgba(255,255,255,.7); flex-shrink: 0; }
-
 .search-box input {
-  flex: 1;
-  border: none;
-  background: transparent;
-  padding: 11px 0;
-  font-size: 14px;
-  font-family: inherit;
-  color: #fff;
-  outline: none;
+  flex: 1; border: none; background: transparent;
+  padding: 11px 0; font-size: 14px; font-family: inherit;
+  color: #fff; outline: none;
 }
-
 .search-box input::placeholder { color: rgba(255,255,255,.55); }
 
-/* PILLS FILTRO */
+/* PILLS */
 .filter-area {
-  background: var(--blue);
-  padding: 0 16px 14px;
-  display: flex;
-  gap: 6px;
-  overflow-x: auto;
-  -webkit-overflow-scrolling: touch;
-  scrollbar-width: none;
+  background: var(--blue); padding: 0 16px 14px;
+  display: flex; gap: 6px; overflow-x: auto;
+  -webkit-overflow-scrolling: touch; scrollbar-width: none;
 }
 .filter-area::-webkit-scrollbar { display: none; }
-
 .pill {
-  flex-shrink: 0;
-  padding: 5px 12px;
-  border-radius: 20px;
-  font-size: 12px;
-  font-weight: 600;
-  font-family: inherit;
-  cursor: pointer;
-  border: none;
-  background: rgba(255,255,255,.15);
-  color: rgba(255,255,255,.8);
-  transition: all .15s;
-  white-space: nowrap;
+  flex-shrink: 0; padding: 5px 12px; border-radius: 20px;
+  font-size: 12px; font-weight: 600; font-family: inherit;
+  cursor: pointer; border: none;
+  background: rgba(255,255,255,.15); color: rgba(255,255,255,.8);
+  transition: all .15s; white-space: nowrap;
 }
-
-.pill.active {
-  background: #fff;
-  color: var(--blue);
-}
+.pill.active { background: #fff; color: var(--blue); }
 
 /* RESUMO */
-.resumo {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 8px;
-  padding: 14px 14px 0;
-}
-
+.resumo { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; padding: 14px 14px 0; }
 .resumo-card {
-  background: var(--card);
-  border-radius: 12px;
-  padding: 11px 8px;
-  text-align: center;
-  border: 1px solid var(--border);
+  background: var(--card); border-radius: 12px;
+  padding: 11px 8px; text-align: center; border: 1px solid var(--border);
 }
-
-.resumo-num {
-  font-size: 21px;
-  font-weight: 700;
-  line-height: 1;
-  margin-bottom: 3px;
-}
-
-.resumo-lbl {
-  font-size: 10px;
-  color: var(--text2);
-  font-weight: 500;
-  text-transform: uppercase;
-  letter-spacing: .3px;
-}
-
-.r-ok  { color: var(--ok); }
-.r-warn{ color: var(--warn); }
-.r-crit{ color: var(--crit); }
-.r-neg { color: var(--neg); }
+.resumo-num { font-size: 21px; font-weight: 700; line-height: 1; margin-bottom: 3px; }
+.resumo-lbl { font-size: 10px; color: var(--text2); font-weight: 500; text-transform: uppercase; letter-spacing: .3px; }
+.r-ok   { color: var(--ok); }
+.r-warn { color: var(--warn); }
+.r-crit { color: var(--crit); }
+.r-neg  { color: var(--neg); }
 
 /* LISTA */
 #lista { padding: 10px 14px 120px; }
 
-/* CARD PRODUTO */
+/* CARD */
 .card {
-  background: var(--card);
-  border-radius: var(--radius);
-  margin-bottom: 8px;
-  border: 1px solid var(--border);
-  display: flex;
-  align-items: stretch;
-  cursor: pointer;
-  transition: border-color .15s;
-  overflow: hidden;
+  background: var(--card); border-radius: var(--radius);
+  margin-bottom: 8px; border: 1px solid var(--border);
+  display: flex; align-items: stretch; cursor: pointer;
+  transition: border-color .15s; overflow: hidden;
 }
-
 .card:active { transform: scale(.99); }
-
 .card-stripe { width: 5px; flex-shrink: 0; }
 .stripe-ok   { background: var(--ok); }
 .stripe-warn { background: var(--warn); }
 .stripe-crit { background: var(--crit); }
 .stripe-neg  { background: var(--neg); }
-
 .card-body {
-  flex: 1;
-  padding: 13px 14px 13px 12px;
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  min-width: 0;
+  flex: 1; padding: 13px 14px 13px 12px;
+  display: flex; align-items: center; gap: 12px; min-width: 0;
 }
-
 .card-main { flex: 1; min-width: 0; }
-
 .card-nome {
-  font-size: 14px;
-  font-weight: 600;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  color: var(--text1);
-  margin-bottom: 4px;
+  font-size: 14px; font-weight: 600;
+  white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+  color: var(--text1); margin-bottom: 4px;
 }
-
-.card-row2 {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  flex-wrap: wrap;
-  margin-bottom: 3px;
-}
-
+.card-row2 { display: flex; align-items: center; gap: 6px; flex-wrap: wrap; margin-bottom: 3px; }
 .chip {
-  display: inline-flex;
-  align-items: center;
-  padding: 2px 7px;
-  border-radius: 5px;
-  font-size: 10px;
-  font-weight: 700;
-  letter-spacing: .2px;
+  display: inline-flex; align-items: center;
+  padding: 2px 7px; border-radius: 5px;
+  font-size: 10px; font-weight: 700; letter-spacing: .2px;
 }
-
 .chip-id  { background: var(--blue-lt); color: var(--blue-dk); }
 .chip-cat { background: #F1F5F9; color: #475569; font-weight: 500; }
-
-.card-preco {
-  font-size: 11px;
-  color: var(--text2);
-  font-weight: 500;
-}
-
-/* Bloco estoque lado direito */
+.card-preco { font-size: 11px; color: var(--text2); font-weight: 500; }
 .card-stock {
-  flex-shrink: 0;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  justify-content: center;
-  gap: 2px;
+  flex-shrink: 0; display: flex; flex-direction: column;
+  align-items: flex-end; justify-content: center; gap: 2px;
 }
-
 .stock-pill {
-  display: inline-flex;
-  align-items: baseline;
-  gap: 2px;
-  padding: 4px 10px;
-  border-radius: 8px;
-  font-size: 16px;
-  font-weight: 700;
-  line-height: 1;
+  display: inline-flex; align-items: baseline; gap: 2px;
+  padding: 4px 10px; border-radius: 8px;
+  font-size: 16px; font-weight: 700; line-height: 1;
 }
-
-.stock-unit {
-  font-size: 10px;
-  font-weight: 600;
-  letter-spacing: .3px;
-  text-transform: uppercase;
-}
-
+.stock-unit { font-size: 10px; font-weight: 600; letter-spacing: .3px; text-transform: uppercase; }
 .stock-ok   { background: var(--ok-bg);  color: var(--ok-dk); }
-.stock-warn { background: var(--warn-bg);color: var(--warn-dk); }
-.stock-crit { background: var(--crit-bg);color: var(--crit-dk); }
-.stock-neg  { background: var(--neg-bg); color: var(--neg-dk); }
-
-.stock-label {
-  font-size: 10px;
-  color: var(--text3);
-  font-weight: 500;
-  text-align: right;
-}
-
-.empty-state {
-  text-align: center;
-  padding: 60px 16px;
-  color: var(--text3);
-}
-
+.stock-warn { background: var(--warn-bg); color: var(--warn-dk); }
+.stock-crit { background: var(--crit-bg); color: var(--crit-dk); }
+.stock-neg  { background: var(--neg-bg);  color: var(--neg-dk); }
+.stock-label { font-size: 10px; color: var(--text3); font-weight: 500; text-align: right; }
+.empty-state { text-align: center; padding: 60px 16px; color: var(--text3); }
 .empty-state svg { width: 40px; height: 40px; margin-bottom: 12px; opacity: .4; }
 .empty-state p { font-size: 14px; }
 
 /* OVERLAY */
 .overlay {
-  display: none;
-  position: fixed;
-  inset: 0;
-  background: rgba(0,0,0,.4);
-  z-index: 60;
-  backdrop-filter: blur(2px);
+  display: none; position: fixed; inset: 0;
+  background: rgba(0,0,0,.4); z-index: 60; backdrop-filter: blur(2px);
 }
 .overlay.on { display: block; }
 
-/* SHEET PAINEL PRODUTO */
+/* PAINEL PRODUTO */
 #painel {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  background: var(--card);
-  border-radius: 20px 20px 0 0;
+  position: fixed; bottom: 0; left: 0; right: 0;
+  background: var(--card); border-radius: 20px 20px 0 0;
   padding: 0 20px;
   padding-bottom: calc(20px + env(safe-area-inset-bottom, 0px));
   transform: translateY(100%);
   transition: transform .3s cubic-bezier(.32,1,.45,1);
-  z-index: 70;
-  max-height: 88vh;
-  overflow-y: auto;
+  z-index: 70; max-height: 88vh; overflow-y: auto;
 }
-
 #painel.open { transform: translateY(0); }
-
 .drag-handle {
-  width: 36px;
-  height: 4px;
-  background: var(--border);
-  border-radius: 2px;
-  margin: 12px auto 20px;
+  width: 36px; height: 4px; background: var(--border);
+  border-radius: 2px; margin: 12px auto 20px;
 }
-
-#painel h3 {
-  font-size: 17px;
-  font-weight: 700;
-  color: var(--text1);
-  margin-bottom: 2px;
-}
-
-.painel-meta {
-  font-size: 12px;
-  color: var(--text2);
-  margin-bottom: 18px;
-  display: flex;
-  gap: 6px;
-  flex-wrap: wrap;
-}
-
-.painel-stats {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 10px;
-  margin-bottom: 18px;
-}
-
-.stat-box {
-  background: var(--surface);
-  border-radius: 12px;
-  padding: 12px 14px;
-  border: 1px solid var(--border);
-}
-
-.stat-box-label {
-  font-size: 11px;
-  color: var(--text2);
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: .4px;
-  margin-bottom: 4px;
-}
-
-.stat-box-val {
-  font-size: 20px;
-  font-weight: 700;
-  color: var(--text1);
-}
-
+#painel h3 { font-size: 17px; font-weight: 700; color: var(--text1); margin-bottom: 2px; }
+.painel-meta { font-size: 12px; color: var(--text2); margin-bottom: 18px; display: flex; gap: 6px; flex-wrap: wrap; }
+.painel-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 18px; }
+.stat-box { background: var(--surface); border-radius: 12px; padding: 12px 14px; border: 1px solid var(--border); }
+.stat-box-label { font-size: 11px; color: var(--text2); font-weight: 600; text-transform: uppercase; letter-spacing: .4px; margin-bottom: 4px; }
+.stat-box-val { font-size: 20px; font-weight: 700; color: var(--text1); }
 .stat-box-val.v-ok   { color: var(--ok); }
 .stat-box-val.v-warn { color: var(--warn); }
 .stat-box-val.v-crit { color: var(--crit); }
 .stat-box-val.v-neg  { color: var(--neg); }
-
-.stat-box-unit {
-  font-size: 11px;
-  color: var(--text3);
-  margin-top: 2px;
-}
-
-/* Qtd input */
+.stat-box-unit { font-size: 11px; color: var(--text3); margin-top: 2px; }
 .qtd-section { margin-bottom: 18px; }
-
 .qtd-section label {
-  font-size: 12px;
-  font-weight: 600;
-  color: var(--text2);
-  text-transform: uppercase;
-  letter-spacing: .4px;
-  display: block;
-  margin-bottom: 8px;
+  font-size: 12px; font-weight: 600; color: var(--text2);
+  text-transform: uppercase; letter-spacing: .4px; display: block; margin-bottom: 8px;
 }
-
-.qtd-row {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-
+.qtd-row { display: flex; align-items: center; gap: 10px; }
 .qtd-btn {
-  width: 42px;
-  height: 42px;
-  border-radius: 10px;
-  border: 1.5px solid var(--border);
-  background: var(--surface);
-  font-size: 20px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  color: var(--text1);
-  flex-shrink: 0;
-  font-family: inherit;
-  transition: background .1s;
-  user-select: none;
+  width: 42px; height: 42px; border-radius: 10px;
+  border: 1.5px solid var(--border); background: var(--surface);
+  font-size: 20px; display: flex; align-items: center; justify-content: center;
+  cursor: pointer; color: var(--text1); flex-shrink: 0;
+  font-family: inherit; transition: background .1s; user-select: none;
 }
-
 .qtd-btn:active { background: var(--border); }
-
 .qtd-input {
-  flex: 1;
-  padding: 10px;
-  border: 1.5px solid var(--border);
-  border-radius: 10px;
-  font-size: 18px;
-  font-weight: 700;
-  font-family: inherit;
-  text-align: center;
-  color: var(--text1);
-  outline: none;
-  transition: border-color .15s;
+  flex: 1; padding: 10px; border: 1.5px solid var(--border);
+  border-radius: 10px; font-size: 18px; font-weight: 700;
+  font-family: inherit; text-align: center; color: var(--text1);
+  outline: none; transition: border-color .15s;
 }
-
 .qtd-input:focus { border-color: var(--blue); }
-
-/* Botoes acao */
-.action-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 10px;
-  margin-bottom: 12px;
-}
-
+.action-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 12px; }
 .btn-entrada, .btn-saida {
-  padding: 15px;
-  border: none;
-  border-radius: 12px;
-  font-size: 15px;
-  font-weight: 700;
-  font-family: inherit;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 7px;
+  padding: 15px; border: none; border-radius: 12px;
+  font-size: 15px; font-weight: 700; font-family: inherit; cursor: pointer;
+  display: flex; align-items: center; justify-content: center; gap: 7px;
   transition: opacity .15s, transform .1s;
 }
-
 .btn-entrada:active, .btn-saida:active { transform: scale(.98); }
 .btn-entrada { background: var(--ok-bg); color: var(--ok-dk); }
 .btn-saida   { background: var(--crit-bg); color: var(--crit-dk); }
-
 .btn-fechar {
-  width: 100%;
-  padding: 13px;
-  border: 1.5px solid var(--border);
-  border-radius: 12px;
-  background: transparent;
-  font-size: 14px;
-  font-family: inherit;
-  cursor: pointer;
-  color: var(--text2);
-  font-weight: 500;
-  transition: background .1s;
+  width: 100%; padding: 13px; border: 1.5px solid var(--border);
+  border-radius: 12px; background: transparent; font-size: 14px;
+  font-family: inherit; cursor: pointer; color: var(--text2);
+  font-weight: 500; transition: background .1s;
 }
-
 .btn-fechar:active { background: var(--surface); }
 
-/* CARRINHO PAINEL */
-#cartPanel {
-  position: fixed;
-  inset: 0;
-  background: var(--surface);
-  z-index: 80;
-  display: none;
-  flex-direction: column;
+/* PAINEL FULLSCREEN (carrinho + histórico) */
+.fullpanel {
+  position: fixed; inset: 0;
+  background: var(--surface); z-index: 80;
+  display: none; flex-direction: column;
+}
+.fullpanel.on { display: flex; }
+.fullpanel-header {
+  background: var(--blue); color: #fff; padding: 0 16px; height: 58px;
+  display: flex; align-items: center; justify-content: space-between; flex-shrink: 0;
+}
+.fullpanel-header h3 { font-size: 17px; font-weight: 700; }
+.btn-close-panel {
+  background: rgba(255,255,255,.15); border: none; color: #fff;
+  width: 34px; height: 34px; border-radius: 50%; cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 18px; line-height: 1;
 }
 
-#cartPanel.on { display: flex; }
-
-.cart-header {
-  background: var(--blue);
-  color: #fff;
-  padding: 0 16px;
-  height: 58px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  flex-shrink: 0;
-}
-
-.cart-header h3 { font-size: 17px; font-weight: 700; }
-
-.btn-close-cart {
-  background: rgba(255,255,255,.15);
-  border: none;
-  color: #fff;
-  width: 34px;
-  height: 34px;
-  border-radius: 50%;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 18px;
-  line-height: 1;
-}
-
+/* CARRINHO */
 #cartList { flex: 1; overflow-y: auto; padding: 12px 14px; }
-
 .cart-item {
-  background: var(--card);
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  padding: 13px 14px;
-  margin-bottom: 8px;
-  display: flex;
-  align-items: center;
-  gap: 12px;
+  background: var(--card); border: 1px solid var(--border);
+  border-radius: var(--radius); padding: 13px 14px;
+  margin-bottom: 8px; display: flex; align-items: center; gap: 12px;
 }
-
 .cart-item-icon {
-  width: 38px;
-  height: 38px;
-  border-radius: 10px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
-  font-size: 16px;
-  font-weight: 800;
+  width: 38px; height: 38px; border-radius: 10px;
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0; font-size: 16px; font-weight: 800;
 }
-
 .icon-entrada { background: var(--ok-bg); color: var(--ok-dk); }
 .icon-saida   { background: var(--crit-bg); color: var(--crit-dk); }
-
 .cart-item-info { flex: 1; min-width: 0; }
-
 .cart-item-nome {
-  font-size: 14px;
-  font-weight: 600;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  color: var(--text1);
+  font-size: 14px; font-weight: 600;
+  white-space: nowrap; overflow: hidden; text-overflow: ellipsis; color: var(--text1);
 }
-
-.cart-item-meta {
-  font-size: 12px;
-  color: var(--text2);
-  margin-top: 2px;
-}
-
+.cart-item-meta { font-size: 12px; color: var(--text2); margin-top: 2px; }
 .btn-rm {
-  background: none;
-  border: none;
-  cursor: pointer;
-  color: var(--text3);
-  padding: 6px;
-  font-size: 18px;
-  line-height: 1;
-  flex-shrink: 0;
-  border-radius: 6px;
-  transition: color .1s, background .1s;
+  background: none; border: none; cursor: pointer; color: var(--text3);
+  padding: 6px; font-size: 18px; line-height: 1; flex-shrink: 0;
+  border-radius: 6px; transition: color .1s, background .1s;
 }
-
 .btn-rm:active { color: var(--crit); background: var(--crit-bg); }
-
-.cart-vazio {
-  text-align: center;
-  padding: 60px 16px;
-  color: var(--text3);
-}
-
-.cart-vazio svg { width: 40px; height: 40px; margin-bottom: 12px; opacity: .4; }
-
+.panel-vazio { text-align: center; padding: 60px 16px; color: var(--text3); }
+.panel-vazio svg { width: 40px; height: 40px; margin-bottom: 12px; opacity: .4; }
+.panel-vazio p { font-size: 14px; }
 .cart-footer {
   padding: 12px 14px;
   padding-bottom: calc(12px + env(safe-area-inset-bottom, 0px));
-  border-top: 1px solid var(--border);
-  background: var(--card);
-  flex-shrink: 0;
+  border-top: 1px solid var(--border); background: var(--card); flex-shrink: 0;
 }
-
 .btn-salvar {
-  width: 100%;
-  padding: 15px;
-  background: var(--blue);
-  color: #fff;
-  border: none;
-  border-radius: 12px;
-  font-size: 15px;
-  font-weight: 700;
-  font-family: inherit;
-  cursor: pointer;
-  transition: background .15s;
-  margin-bottom: 8px;
+  width: 100%; padding: 15px; background: var(--blue); color: #fff;
+  border: none; border-radius: 12px; font-size: 15px; font-weight: 700;
+  font-family: inherit; cursor: pointer; transition: background .15s; margin-bottom: 8px;
 }
-
 .btn-salvar:active { background: var(--blue-dk); }
 .btn-salvar:disabled { background: #93AFF7; cursor: not-allowed; }
-
 .btn-limpar {
-  width: 100%;
-  padding: 12px;
-  background: transparent;
-  border: 1.5px solid var(--border);
-  border-radius: 12px;
-  font-size: 14px;
-  font-family: inherit;
-  cursor: pointer;
-  color: var(--text2);
-  font-weight: 500;
+  width: 100%; padding: 12px; background: transparent;
+  border: 1.5px solid var(--border); border-radius: 12px;
+  font-size: 14px; font-family: inherit; cursor: pointer; color: var(--text2); font-weight: 500;
+}
+
+/* HISTÓRICO */
+#histList { flex: 1; overflow-y: auto; padding: 12px 14px; }
+
+/* filtro tabs histórico */
+.hist-tabs {
+  display: flex; gap: 6px; padding: 10px 14px 0;
+  background: var(--surface); flex-shrink: 0;
+  border-bottom: 1px solid var(--border);
+  overflow-x: auto; scrollbar-width: none;
+}
+.hist-tabs::-webkit-scrollbar { display: none; }
+.hist-tab {
+  flex-shrink: 0; padding: 7px 14px; border-radius: 8px 8px 0 0;
+  font-size: 12px; font-weight: 600; font-family: inherit;
+  border: none; cursor: pointer; background: transparent; color: var(--text3);
+  border-bottom: 2px solid transparent; transition: all .15s;
+}
+.hist-tab.active { color: var(--blue); border-bottom-color: var(--blue); background: rgba(0,87,255,.06); }
+
+.hist-item {
+  background: var(--card); border: 1px solid var(--border);
+  border-radius: var(--radius); padding: 12px 14px;
+  margin-bottom: 8px; display: flex; align-items: flex-start; gap: 12px;
+}
+.hist-icon {
+  width: 36px; height: 36px; border-radius: 10px;
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0; font-size: 15px; font-weight: 800;
+}
+.hist-info { flex: 1; min-width: 0; }
+.hist-nome {
+  font-size: 13px; font-weight: 600; color: var(--text1);
+  white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+}
+.hist-meta { font-size: 11px; color: var(--text2); margin-top: 3px; }
+.hist-qtd {
+  font-size: 15px; font-weight: 700; flex-shrink: 0;
+  align-self: center;
+}
+.hist-qtd.entrada { color: var(--ok); }
+.hist-qtd.saida   { color: var(--crit); }
+
+.hist-date-label {
+  font-size: 11px; font-weight: 700; color: var(--text3);
+  text-transform: uppercase; letter-spacing: .5px;
+  padding: 12px 0 6px;
+}
+
+.hist-loading {
+  text-align: center; padding: 40px 16px; color: var(--text3); font-size: 13px;
 }
 
 /* TOAST */
 .toast {
-  position: fixed;
-  bottom: 28px;
-  left: 50%;
+  position: fixed; bottom: 28px; left: 50%;
   transform: translateX(-50%) translateY(80px);
-  background: var(--text1);
-  color: #fff;
-  padding: 11px 22px;
-  border-radius: 24px;
-  font-size: 13px;
-  font-weight: 500;
-  z-index: 200;
+  background: var(--text1); color: #fff;
+  padding: 11px 22px; border-radius: 24px;
+  font-size: 13px; font-weight: 500; z-index: 200;
   transition: transform .3s cubic-bezier(.32,1,.45,1);
-  white-space: nowrap;
-  box-shadow: 0 4px 20px rgba(0,0,0,.25);
+  white-space: nowrap; box-shadow: 0 4px 20px rgba(0,0,0,.25);
 }
-
 .toast.show { transform: translateX(-50%) translateY(0); }
 </style>
 </head>
@@ -828,13 +472,10 @@ header {
     </div>
     <h2>CIA Embalagens</h2>
     <p>Painel de gestão de estoque</p>
-
     <label class="field-label">Senha</label>
     <input id="senhaInput" type="password" placeholder="••••••••">
-
     <label class="field-label">GitHub Token</label>
     <input id="tokenInput" type="password" placeholder="ghp_...">
-
     <button class="btn-primary" onclick="logar()">Entrar</button>
     <p id="login-erro"></p>
     <button class="btn-ghost" onclick="esquecerToken()">Esquecer token deste aparelho</button>
@@ -855,16 +496,28 @@ header {
         <div class="header-sub">Gestão de estoque</div>
       </div>
     </div>
-    <button class="btn-cart" onclick="abrirCart()">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-        <path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/>
-        <line x1="3" y1="6" x2="21" y2="6"/>
-        <path d="M16 10a4 4 0 01-8 0"/>
-      </svg>
-      Carrinho
-      <span id="cart-badge">0</span>
-    </button>
+    <div class="header-actions">
+      <button class="btn-header" onclick="abrirHistorico()">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <circle cx="12" cy="12" r="10"/>
+          <polyline points="12 6 12 12 16 14"/>
+        </svg>
+        Histórico
+      </button>
+      <button class="btn-header" onclick="abrirCart()">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/>
+          <line x1="3" y1="6" x2="21" y2="6"/>
+          <path d="M16 10a4 4 0 01-8 0"/>
+        </svg>
+        Carrinho
+        <span id="cart-badge">0</span>
+      </button>
+    </div>
   </header>
+
+  <!-- Banner offline -->
+  <div id="offlineBanner">⚠️ Sem conexão — carrinho salvo localmente</div>
 
   <div class="search-area">
     <div class="search-box">
@@ -895,7 +548,6 @@ header {
   <div class="drag-handle"></div>
   <h3 id="p-nome"></h3>
   <div class="painel-meta" id="p-meta"></div>
-
   <div class="painel-stats">
     <div class="stat-box">
       <div class="stat-box-label">Estoque atual</div>
@@ -908,7 +560,6 @@ header {
       <div class="stat-box-unit">por unidade</div>
     </div>
   </div>
-
   <div class="qtd-section">
     <label>Quantidade</label>
     <div class="qtd-row">
@@ -917,7 +568,6 @@ header {
       <button class="qtd-btn" onclick="ajustarQtd(1)">+</button>
     </div>
   </div>
-
   <div class="action-grid">
     <button class="btn-entrada" onclick="addCart('entrada')">
       <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
@@ -936,10 +586,10 @@ header {
 </div>
 
 <!-- CARRINHO -->
-<div id="cartPanel">
-  <div class="cart-header">
-    <h3>Movimentações</h3>
-    <button class="btn-close-cart" onclick="fecharCart()">✕</button>
+<div id="cartPanel" class="fullpanel">
+  <div class="fullpanel-header">
+    <h3>Carrinho</h3>
+    <button class="btn-close-panel" onclick="fecharCart()">✕</button>
   </div>
   <div id="cartList"></div>
   <div class="cart-footer" id="cartFooter" style="display:none">
@@ -948,15 +598,28 @@ header {
   </div>
 </div>
 
+<!-- HISTÓRICO -->
+<div id="histPanel" class="fullpanel">
+  <div class="fullpanel-header">
+    <h3>Histórico</h3>
+    <button class="btn-close-panel" onclick="fecharHistorico()">✕</button>
+  </div>
+  <div class="hist-tabs">
+    <button class="hist-tab active" onclick="setHistFiltro('todos', this)">Todos</button>
+    <button class="hist-tab" onclick="setHistFiltro('entrada', this)">Entradas</button>
+    <button class="hist-tab" onclick="setHistFiltro('saida', this)">Saídas</button>
+  </div>
+  <div id="histList"></div>
+</div>
+
 <!-- TOAST -->
 <div class="toast" id="toast"></div>
 
 <script>
-// ── BLOQUEIO DE ZOOM (iOS Safari: pinch + double-tap) ──
+// ── BLOQUEIO DE ZOOM ──
 document.addEventListener('gesturestart',  e => e.preventDefault(), { passive: false });
 document.addEventListener('gesturechange', e => e.preventDefault(), { passive: false });
 document.addEventListener('gestureend',    e => e.preventDefault(), { passive: false });
-
 let _lastTap = 0;
 document.addEventListener('touchend', e => {
   const now = Date.now();
@@ -964,14 +627,14 @@ document.addEventListener('touchend', e => {
   _lastTap = now;
 }, { passive: false });
 
-// ─────────────────────────────────────────────────────
-
-const REPO      = "Willkerson/Automacao-ConnectPlug";
-const WORKFLOW  = "movimentar.yml";
-const FILA_PATH = "fila/movimentacao.json";
-const BRANCH    = "main";
-const DELAY_MS  = 5000;
-
+// ── CONSTANTES ──
+const REPO       = "Willkerson/Automacao-ConnectPlug";
+const WORKFLOW   = "movimentar.yml";
+const FILA_PATH  = "fila/movimentacao.json";
+const HIST_PATH  = "fila/historico.json";
+const BRANCH     = "main";
+const DELAY_MS   = 5000;
+const CART_KEY   = "cia_carrinho";   // localStorage key
 const SENHA_HASH = "158a323a7ba44870f23d96f1516dd70aa48e9a72db4ebb026b0a89e212a208ab";
 
 async function hashSenha(str) {
@@ -979,22 +642,25 @@ async function hashSenha(str) {
   return [...new Uint8Array(buf)].map(b => b.toString(16).padStart(2,"0")).join("");
 }
 
-/* ── LOGIN ── */
+// ── OFFLINE ──
+function atualizarOffline() {
+  document.getElementById("offlineBanner").classList.toggle("show", !navigator.onLine);
+}
+window.addEventListener("online",  atualizarOffline);
+window.addEventListener("offline", atualizarOffline);
+atualizarOffline();
+
+// ── LOGIN ──
 async function logar() {
   const senha = document.getElementById("senhaInput").value;
   const token = document.getElementById("tokenInput").value.trim();
   const hash  = await hashSenha(senha);
-
   if (hash !== SENHA_HASH) {
     document.getElementById("login-erro").textContent = "Senha incorreta";
     setTimeout(() => document.getElementById("login-erro").textContent = "", 2500);
     return;
   }
-  if (!token) {
-    document.getElementById("login-erro").textContent = "Informe o GitHub Token";
-    return;
-  }
-
+  if (!token) { document.getElementById("login-erro").textContent = "Informe o GitHub Token"; return; }
   localStorage.setItem("auth", "ok");
   localStorage.setItem("gh_token", token);
   document.getElementById("login").style.display = "none";
@@ -1021,20 +687,17 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
-/* ── PARSE ESTOQUE — preserva negativos ── */
+// ── PARSE ESTOQUE ──
 function parseEst(val) {
   if (val === null || val === undefined) return 0;
   if (typeof val === "number") return val;
-  const n = parseFloat(String(val).replace(/[^\d,\.\-]/g,"").replace(",","."));
+  const n = parseFloat(String(val).replace(/[^\d,.\-]/g,"").replace(",","."));
   return isNaN(n) ? 0 : n;
 }
-
 function fmtEst(val) {
   const n = parseEst(val);
   return n % 1 === 0 ? String(n) : n.toFixed(2);
 }
-
-/* ── CLASSIFICAÇÃO — 4 estados ── */
 function classeEst(val) {
   const n = parseEst(val);
   if (n < 0)   return "neg";
@@ -1043,17 +706,29 @@ function classeEst(val) {
   return "ok";
 }
 
-/* ── DADOS ── */
-let produtos     = [];
-let carrinho     = [];
-let atual        = null;
-let filtroAtivo  = "todos";
+// ── DADOS ──
+let produtos    = [];
+let carrinho    = carregarCarrinhoLocal();
+let atual       = null;
+let filtroAtivo = "todos";
+
+// ── CARRINHO PERSISTENTE (localStorage) ──
+function carregarCarrinhoLocal() {
+  try { return JSON.parse(localStorage.getItem(CART_KEY) || "[]"); } catch { return []; }
+}
+function salvarCarrinhoLocal() {
+  localStorage.setItem(CART_KEY, JSON.stringify(carrinho));
+}
+function limparCarrinhoLocal() {
+  localStorage.removeItem(CART_KEY);
+}
 
 function carregarProdutos() {
   fetch("front-index/produtos.json?t=" + Date.now())
     .then(r => { if (!r.ok) throw new Error("HTTP " + r.status); return r.json(); })
     .then(data => {
       produtos = Array.isArray(data) ? data : Object.values(data);
+      atualizarBadge(); // reflete carrinho salvo
       render();
     })
     .catch(err => {
@@ -1069,34 +744,21 @@ function carregarProdutos() {
     });
 }
 
-/* ── RESUMO ── */
+// ── RESUMO ──
 function renderResumo() {
   const neg  = produtos.filter(p => parseEst(p.estoque) < 0).length;
   const crit = produtos.filter(p => parseEst(p.estoque) === 0).length;
   const warn = produtos.filter(p => { const e = parseEst(p.estoque); return e > 0 && e <= 10; }).length;
   const ok   = produtos.filter(p => parseEst(p.estoque) > 10).length;
-
   document.getElementById("resumo").innerHTML = `
-    <div class="resumo-card">
-      <div class="resumo-num r-ok">${ok}</div>
-      <div class="resumo-lbl">OK</div>
-    </div>
-    <div class="resumo-card">
-      <div class="resumo-num r-warn">${warn}</div>
-      <div class="resumo-lbl">Baixo</div>
-    </div>
-    <div class="resumo-card">
-      <div class="resumo-num r-crit">${crit}</div>
-      <div class="resumo-lbl">Zero</div>
-    </div>
-    <div class="resumo-card">
-      <div class="resumo-num r-neg">${neg}</div>
-      <div class="resumo-lbl">Neg.</div>
-    </div>
+    <div class="resumo-card"><div class="resumo-num r-ok">${ok}</div><div class="resumo-lbl">OK</div></div>
+    <div class="resumo-card"><div class="resumo-num r-warn">${warn}</div><div class="resumo-lbl">Baixo</div></div>
+    <div class="resumo-card"><div class="resumo-num r-crit">${crit}</div><div class="resumo-lbl">Zero</div></div>
+    <div class="resumo-card"><div class="resumo-num r-neg">${neg}</div><div class="resumo-lbl">Neg.</div></div>
   `;
 }
 
-/* ── FILTRO PILLS ── */
+// ── FILTRO ──
 function setFiltro(tipo, btn) {
   filtroAtivo = tipo;
   document.querySelectorAll(".pill").forEach(p => p.classList.remove("active"));
@@ -1104,36 +766,25 @@ function setFiltro(tipo, btn) {
   render();
 }
 
-/* ── RENDER LISTA ── */
+// ── RENDER LISTA ──
 function render() {
   renderResumo();
   const busca = (document.getElementById("busca").value || "").toLowerCase();
-
   let lista = produtos.filter(p =>
     (p.nome || "").toLowerCase().includes(busca) ||
     String(p.codigo || "").toLowerCase().includes(busca)
   );
-
-  if (filtroAtivo !== "todos") {
-    lista = lista.filter(p => classeEst(p.estoque) === filtroAtivo);
-  }
-
+  if (filtroAtivo !== "todos") lista = lista.filter(p => classeEst(p.estoque) === filtroAtivo);
   const el = document.getElementById("lista");
-
   if (!lista.length) {
-    el.innerHTML = `
-      <div class="empty-state">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-          <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
-        </svg>
-        <p>Nenhum produto encontrado</p>
-      </div>`;
+    el.innerHTML = `<div class="empty-state">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+        <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
+      </svg><p>Nenhum produto encontrado</p></div>`;
     return;
   }
-
   const ordem = { neg:0, crit:1, warn:2, ok:3 };
   lista.sort((a,b) => ordem[classeEst(a.estoque)] - ordem[classeEst(b.estoque)]);
-
   el.innerHTML = lista.map(p => {
     const cl    = classeEst(p.estoque);
     const est   = fmtEst(p.estoque);
@@ -1141,7 +792,6 @@ function render() {
     const cat   = [p.categoria, p.subcategoria].filter(Boolean).join(" › ");
     const id    = p.codigo || p.id || "—";
     const un    = p.unidade || "un";
-
     return `
       <div class="card" onclick="openProduto('${p.codigo}')">
         <div class="card-stripe stripe-${cl}"></div>
@@ -1155,9 +805,7 @@ function render() {
             <div class="card-preco">${preco}</div>
           </div>
           <div class="card-stock">
-            <div class="stock-pill stock-${cl}">
-              ${est}<span class="stock-unit">${un}</span>
-            </div>
+            <div class="stock-pill stock-${cl}">${est}<span class="stock-unit">${un}</span></div>
             <div class="stock-label">estoque</div>
           </div>
         </div>
@@ -1165,49 +813,42 @@ function render() {
   }).join("");
 }
 
-/* ── PAINEL PRODUTO ── */
+// ── PAINEL PRODUTO ──
 function openProduto(codigo) {
   atual = produtos.find(p => String(p.codigo) === String(codigo));
   if (!atual) return;
-
   const cl  = classeEst(atual.estoque);
   const cat = [atual.categoria, atual.subcategoria].filter(Boolean).join(" › ");
   const id  = atual.codigo || atual.id || "—";
-
   document.getElementById("p-nome").textContent = atual.nome || "";
-
   document.getElementById("p-meta").innerHTML = `
     <span class="chip chip-id">#${id}</span>
     ${atual.marca ? `<span class="chip chip-cat">${atual.marca}</span>` : ""}
     ${cat ? `<span class="chip chip-cat">${cat}</span>` : ""}
   `;
-
   const estoqueEl = document.getElementById("p-estoque-val");
   estoqueEl.textContent = fmtEst(atual.estoque);
   estoqueEl.className   = `stat-box-val v-${cl}`;
-
   document.getElementById("p-unidade").textContent = atual.unidade || "un";
   document.getElementById("p-preco").textContent   = atual.preco ? `R$ ${Number(atual.preco).toFixed(2)}` : "—";
   document.getElementById("qtd").value = 1;
-
   document.getElementById("painel").classList.add("open");
   document.getElementById("overlay").classList.add("on");
 }
-
 function fecharPainel() {
   document.getElementById("painel").classList.remove("open");
   document.getElementById("overlay").classList.remove("on");
 }
-
 function ajustarQtd(delta) {
   const input = document.getElementById("qtd");
   input.value = Math.max(1, Math.min(9999, (parseInt(input.value) || 1) + delta));
 }
 
-/* ── CARRINHO ── */
+// ── CARRINHO ──
 function addCart(tipo) {
   const qtd = Math.max(1, Number(document.getElementById("qtd").value) || 1);
   carrinho.push({ codigo: atual.codigo, nome: atual.nome, qtd, tipo });
+  salvarCarrinhoLocal(); // persiste offline
   atualizarBadge();
   fecharPainel();
   showToast(`${tipo === "entrada" ? "Entrada" : "Saída"} de ${qtd} adicionada`);
@@ -1226,38 +867,31 @@ function atualizarBadge() {
 function renderCart() {
   const list   = document.getElementById("cartList");
   const footer = document.getElementById("cartFooter");
-
   if (!carrinho.length) {
-    list.innerHTML = `
-      <div class="cart-vazio">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-          <path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/>
-          <line x1="3" y1="6" x2="21" y2="6"/>
-          <path d="M16 10a4 4 0 01-8 0"/>
-        </svg>
-        <p>Nenhuma movimentação adicionada</p>
-      </div>`;
+    list.innerHTML = `<div class="panel-vazio">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+        <path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/>
+        <line x1="3" y1="6" x2="21" y2="6"/>
+        <path d="M16 10a4 4 0 01-8 0"/>
+      </svg><p>Nenhuma movimentação adicionada</p></div>`;
     footer.style.display = "none";
     return;
   }
-
   footer.style.display = "block";
   list.innerHTML = carrinho.map((item, i) => `
     <div class="cart-item">
-      <div class="cart-item-icon icon-${item.tipo}">
-        ${item.tipo === "entrada" ? "↓" : "↑"}
-      </div>
+      <div class="cart-item-icon icon-${item.tipo}">${item.tipo === "entrada" ? "↓" : "↑"}</div>
       <div class="cart-item-info">
         <div class="cart-item-nome">${item.nome}</div>
         <div class="cart-item-meta">#${item.codigo} · ${item.qtd} ${item.tipo === "entrada" ? "entrando" : "saindo"}</div>
       </div>
       <button class="btn-rm" onclick="removeItem(${i})">×</button>
-    </div>
-  `).join("");
+    </div>`).join("");
 }
 
 function removeItem(i) {
   carrinho.splice(i, 1);
+  salvarCarrinhoLocal();
   atualizarBadge();
   renderCart();
 }
@@ -1266,21 +900,21 @@ function abrirCart() {
   renderCart();
   document.getElementById("cartPanel").classList.add("on");
 }
-
 function fecharCart() {
   document.getElementById("cartPanel").classList.remove("on");
 }
-
 function limparCarrinho() {
   if (!confirm("Limpar todos os itens?")) return;
   carrinho = [];
+  limparCarrinhoLocal();
   atualizarBadge();
   renderCart();
 }
 
-/* ── SALVAR ── */
+// ── SALVAR ──
 async function salvar() {
   if (!carrinho.length) { showToast("Carrinho vazio"); return; }
+  if (!navigator.onLine) { showToast("⚠️ Sem conexão — itens salvos localmente"); return; }
 
   const token = localStorage.getItem("gh_token");
   if (!token) { showToast("Token não encontrado. Faça login novamente."); return; }
@@ -1290,52 +924,41 @@ async function salvar() {
   btn.textContent = "Commitando fila…";
 
   try {
+    // 1. Busca fila atual
     const filaUrl = `https://api.github.com/repos/${REPO}/contents/${FILA_PATH}?ref=${BRANCH}`;
     const getRes  = await fetch(filaUrl, {
       headers: { Authorization: "Bearer " + token, Accept: "application/vnd.github+json" }
     });
-
-    let sha = null;
-    let filaAtual = { itens: [] };
-
+    let sha = null, filaAtual = { itens: [] };
     if (getRes.ok) {
-      const d   = await getRes.json();
-      sha       = d.sha;
+      const d = await getRes.json();
+      sha = d.sha;
       filaAtual = JSON.parse(atob(d.content.replace(/\n/g, "")));
     }
 
+    const agora = new Date().toISOString();
     const novos = carrinho.map(i => ({
-      codigo: String(i.codigo),
-      nome:   i.nome,
-      qtd:    i.qtd,
-      tipo:   i.tipo
+      codigo: String(i.codigo), nome: i.nome,
+      qtd: i.qtd, tipo: i.tipo, data: agora
     }));
 
+    // 2. Commit fila
     const filaAtualizada = { itens: [...(filaAtual.itens || []), ...novos] };
-    const b64 = btoa(unescape(encodeURIComponent(JSON.stringify(filaAtualizada, null, 2))));
-
-    const putBody = {
-      message: `fila: ${novos.length} movimentacao(oes)`,
-      content: b64,
-      branch:  BRANCH
-    };
+    const b64fila = btoa(unescape(encodeURIComponent(JSON.stringify(filaAtualizada, null, 2))));
+    const putBody = { message: `fila: ${novos.length} movimentacao(oes)`, content: b64fila, branch: BRANCH };
     if (sha) putBody.sha = sha;
 
     const putRes = await fetch(filaUrl, {
-      method:  "PUT",
-      headers: {
-        Authorization: "Bearer " + token,
-        Accept: "application/vnd.github+json",
-        "Content-Type": "application/json"
-      },
+      method: "PUT",
+      headers: { Authorization: "Bearer " + token, Accept: "application/vnd.github+json", "Content-Type": "application/json" },
       body: JSON.stringify(putBody)
     });
+    if (!putRes.ok) { const e = await putRes.json(); throw new Error(e.message || "Erro ao commitar fila"); }
 
-    if (!putRes.ok) {
-      const e = await putRes.json();
-      throw new Error(e.message || "Erro ao commitar fila");
-    }
+    // 3. Salva no histórico global
+    await salvarHistorico(token, novos);
 
+    // 4. Aguarda e dispara workflow
     btn.textContent = `Aguardando ${DELAY_MS / 1000}s…`;
     await new Promise(r => setTimeout(r, DELAY_MS));
 
@@ -1343,22 +966,18 @@ async function salvar() {
     const dispRes = await fetch(
       `https://api.github.com/repos/${REPO}/actions/workflows/${WORKFLOW}/dispatches`,
       {
-        method:  "POST",
-        headers: {
-          Authorization: "Bearer " + token,
-          Accept: "application/vnd.github+json",
-          "Content-Type": "application/json"
-        },
+        method: "POST",
+        headers: { Authorization: "Bearer " + token, Accept: "application/vnd.github+json", "Content-Type": "application/json" },
         body: JSON.stringify({ ref: BRANCH })
       }
     );
-
     if (!dispRes.ok && dispRes.status !== 204) {
       const e = await dispRes.json().catch(() => ({}));
       throw new Error(e.message || "Erro ao disparar workflow");
     }
 
     carrinho = [];
+    limparCarrinhoLocal();
     atualizarBadge();
     fecharCart();
     showToast("✓ Enviado! Workflow iniciado.");
@@ -1372,7 +991,112 @@ async function salvar() {
   }
 }
 
-/* ── TOAST ── */
+// ── HISTÓRICO ──
+async function salvarHistorico(token, novos) {
+  try {
+    const url    = `https://api.github.com/repos/${REPO}/contents/${HIST_PATH}?ref=${BRANCH}`;
+    const getRes = await fetch(url, {
+      headers: { Authorization: "Bearer " + token, Accept: "application/vnd.github+json", "Cache-Control": "no-cache" }
+    });
+    let sha = null, hist = { movimentacoes: [] };
+    if (getRes.ok) {
+      const d = await getRes.json();
+      sha = d.sha;
+      hist = JSON.parse(atob(d.content.replace(/\n/g, "")));
+    }
+
+    // Adiciona no início (mais recentes primeiro) e mantém últimos 500
+    hist.movimentacoes = [...novos, ...(hist.movimentacoes || [])].slice(0, 500);
+
+    const b64 = btoa(unescape(encodeURIComponent(JSON.stringify(hist, null, 2))));
+    const body = { message: "hist: atualiza historico", content: b64, branch: BRANCH };
+    if (sha) body.sha = sha;
+
+    await fetch(url.replace(`?ref=${BRANCH}`, ""), {
+      method: "PUT",
+      headers: { Authorization: "Bearer " + token, Accept: "application/vnd.github+json", "Content-Type": "application/json" },
+      body: JSON.stringify(body)
+    });
+  } catch (e) {
+    console.warn("Histórico não salvo:", e.message);
+  }
+}
+
+let histFiltro = "todos";
+let histDados  = [];
+
+function setHistFiltro(tipo, btn) {
+  histFiltro = tipo;
+  document.querySelectorAll(".hist-tab").forEach(t => t.classList.remove("active"));
+  btn.classList.add("active");
+  renderHistorico();
+}
+
+async function abrirHistorico() {
+  document.getElementById("histPanel").classList.add("on");
+  document.getElementById("histList").innerHTML = `<div class="hist-loading">Carregando histórico…</div>`;
+
+  const token = localStorage.getItem("gh_token");
+  try {
+    const url = `https://api.github.com/repos/${REPO}/contents/${HIST_PATH}?ref=${BRANCH}`;
+    const res = await fetch(url, {
+      headers: { Authorization: "Bearer " + token, Accept: "application/vnd.github+json", "Cache-Control": "no-cache" }
+    });
+    if (!res.ok) throw new Error("Histórico ainda vazio");
+    const d    = await res.json();
+    const hist = JSON.parse(atob(d.content.replace(/\n/g, "")));
+    histDados  = hist.movimentacoes || [];
+  } catch (e) {
+    histDados = [];
+  }
+  renderHistorico();
+}
+
+function fecharHistorico() {
+  document.getElementById("histPanel").classList.remove("on");
+}
+
+function renderHistorico() {
+  const el   = document.getElementById("histList");
+  let lista  = histDados;
+
+  if (histFiltro !== "todos") lista = lista.filter(m => m.tipo === histFiltro);
+
+  if (!lista.length) {
+    el.innerHTML = `<div class="panel-vazio">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+        <circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/>
+      </svg><p>Nenhuma movimentação registrada</p></div>`;
+    return;
+  }
+
+  // Agrupa por dia
+  const grupos = {};
+  lista.forEach(m => {
+    const dia = m.data ? new Date(m.data).toLocaleDateString("pt-BR", { weekday:"short", day:"2-digit", month:"short" }) : "Sem data";
+    if (!grupos[dia]) grupos[dia] = [];
+    grupos[dia].push(m);
+  });
+
+  el.innerHTML = Object.entries(grupos).map(([dia, items]) => `
+    <div class="hist-date-label">${dia}</div>
+    ${items.map(m => {
+      const icon  = m.tipo === "entrada" ? "↓" : "↑";
+      const hora  = m.data ? new Date(m.data).toLocaleTimeString("pt-BR", { hour:"2-digit", minute:"2-digit" }) : "";
+      return `
+        <div class="hist-item">
+          <div class="hist-icon icon-${m.tipo}">${icon}</div>
+          <div class="hist-info">
+            <div class="hist-nome">${m.nome}</div>
+            <div class="hist-meta">#${m.codigo}${hora ? ` · ${hora}` : ""}</div>
+          </div>
+          <div class="hist-qtd ${m.tipo}">${m.tipo === "entrada" ? "+" : "-"}${m.qtd}</div>
+        </div>`;
+    }).join("")}
+  `).join("");
+}
+
+// ── TOAST ──
 let _tt;
 function showToast(msg) {
   const el = document.getElementById("toast");
