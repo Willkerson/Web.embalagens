@@ -1,11 +1,10 @@
 // ─────────────────────────────────────────────────────────────
-// BUSCA.JS — Sugestões de busca e handlers do campo de pesquisaaa
+// BUSCA.JS — Sugestões de busca e handlers do campo de pesquisa
 // ─────────────────────────────────────────────────────────────
 function precoNum(valor) {
   return parseFloat(String(valor).replace(',', '.'));
 }
-var _sugTimeout 
-  = null;
+var _sugTimeout = null;
 var _tocandoSugestao = false;
 var _debouncedSearch = debounce(function(q) { mostrarSugestoes(q); }, 120);
 
@@ -56,9 +55,11 @@ document.addEventListener('DOMContentLoaded', function() {
 function _extrairPreco(texto) {
   if (!texto) return null;
 
+  // Remove "R$", troca ponto de milhar por nada, vírgula decimal por ponto
   texto = String(texto)
     .replace(/[Rr]\$/g, '')
-    .replace(',', '.')
+    .replace(/\./g, '')      // remove pontos de milhar: "1.234,56" → "1234,56"
+    .replace(',', '.')        // vírgula decimal → ponto: "1234,56" → "1234.56"
     .trim();
 
   var num = parseFloat(texto);
@@ -113,39 +114,39 @@ function mostrarSugestoes(query) {
   }
 
   // ── Busca normal por nome/marca ──────────────────────────────
- // ── Busca normal por nome/marca ──────────────────────────────
-var qNorm = normalizar(query);
+  var qNorm = normalizar(query);
 
-var todosProds = prods().filter(function(p) {
-  return !p.oculto && estoqueNum(p.estoque) > 0;
-});
+  var todosProds = prods().filter(function(p) {
+    return !p.oculto && estoqueNum(p.estoque) > 0;
+  });
 
-var diretos = todosProds.filter(function(p) {
-  var nNorm = normalizar(p.nome);
-  var mNorm = normalizar(p.marca || '');
+  var diretos = todosProds.filter(function(p) {
+    var nNorm = normalizar(p.nome);
+    var mNorm = normalizar(p.marca || '');
 
-  return nNorm.includes(qNorm) || mNorm.includes(qNorm);
-});
+    return nNorm.includes(qNorm) || mNorm.includes(qNorm);
+  });
 
-var palavras = qNorm.split(/\s+/).filter(Boolean);
+  var palavras = qNorm.split(/\s+/).filter(Boolean);
 
-var jaEncontrados = diretos.map(function(p) {
-  return p.id;
-});
+  var jaEncontrados = diretos.map(function(p) {
+    return p.id;
+  });
 
-var porPalavras = palavras.length > 1
-  ? todosProds.filter(function(p) {
-      if (jaEncontrados.indexOf(p.id) >= 0) return false;
+  var porPalavras = palavras.length > 1
+    ? todosProds.filter(function(p) {
+        if (jaEncontrados.indexOf(p.id) >= 0) return false;
 
-      var nNorm =
-        normalizar(p.nome) + ' ' +
-        normalizar(p.marca || '');
+        var nNorm =
+          normalizar(p.nome) + ' ' +
+          normalizar(p.marca || '');
 
-      return palavras.every(function(w) {
-        return nNorm.includes(w);
-      });
-    })
-  : [];
+        return palavras.every(function(w) {
+          return nNorm.includes(w);
+        });
+      })
+    : [];
+
   var idsJaVistos = diretos.concat(porPalavras).map(function(p) { return p.id; });
   var fuzzyProds = [];
   if (diretos.length + porPalavras.length < 3) {
@@ -203,7 +204,7 @@ var porPalavras = palavras.length > 1
   box.classList.add('on');
 }
 
-// ── CORRIGIDO: seta estado.precoFiltro quando query é um preço ──
+// ── Confirma busca completa e filtra por preço ou texto ──────
 function confirmarBuscaCompleta() {
   var inp = document.getElementById('searchInput');
   var q = inp ? inp.value.trim() : '';
@@ -212,7 +213,8 @@ function confirmarBuscaCompleta() {
   esconderSugestoes();
 
   if (precoQuery !== null) {
-    estado.busca = prod.nome.toLowerCase();
+    // FIX: era "estado.busca = prod.nome.toLowerCase()" — prod não existe aqui
+    estado.busca       = '';
     estado.precoFiltro = precoQuery;
     estado.cat         = 'todos';
     estado.sub         = 'todas';
@@ -222,6 +224,9 @@ function confirmarBuscaCompleta() {
     if (all) all.classList.add('on');
     document.querySelectorAll('.subtabs').forEach(function(b) { b.classList.remove('on'); });
     document.getElementById('brandFilterWrap').classList.remove('on');
+  } else {
+    estado.busca       = q.toLowerCase();
+    estado.precoFiltro = null;
   }
 
   renderizar();
@@ -240,12 +245,12 @@ function selecionarSugestao(id) {
 
   document.getElementById('searchInput').value = prod.nome;
 
-  estado.busca = '';
-  estado.precoFiltro = null;
+  estado.busca             = '';
+  estado.precoFiltro       = null;
   estado.produtoSelecionado = null;
 
-  estado.cat = 'todos';
-  estado.sub = 'todas';
+  estado.cat   = 'todos';
+  estado.sub   = 'todas';
   estado.marca = 'todas';
 
   document.querySelectorAll('.ftab').forEach(function(b) {
@@ -263,7 +268,7 @@ function selecionarSugestao(id) {
 
   renderizar();
 
-  setTimeout(function () {
+  setTimeout(function() {
     var card = document.getElementById('card-' + prod.id);
 
     if (card) {
@@ -274,7 +279,7 @@ function selecionarSugestao(id) {
 
       card.style.outline = '3px solid #2563eb';
 
-      setTimeout(function () {
+      setTimeout(function() {
         card.style.outline = '';
       }, 2000);
     }
@@ -312,8 +317,9 @@ function buscarPorTermo(termo) {
 
 function handleSearch(e) {
   var q = e.target.value;
-  estado.busca = q.toLowerCase();
+  estado.busca       = q.toLowerCase();
   estado.precoFiltro = null;
+
   if (q.length >= 2) {
     estado.cat   = 'todos';
     estado.sub   = 'todas';
@@ -325,7 +331,9 @@ function handleSearch(e) {
     document.getElementById('brandFilterWrap').classList.remove('on');
     _debouncedSearch(q);
   } else {
+    // FIX: ao apagar o campo, esconde sugestões e re-renderiza todos os produtos
     esconderSugestoes();
   }
+
   _debouncedRender();
 }
