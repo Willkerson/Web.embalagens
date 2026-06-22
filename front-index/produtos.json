@@ -186,7 +186,7 @@
     "nome": "MARMITA PRETA 850ML C/3 DIVISORIAS C/10UN",
     "categoria": "DESCARTAVEIS",
     "preco": 16.5,
-    "estoque": "6,00 un"
+    "estoque": "4,00 un"
   },
   {
     "codigo": "183",
@@ -305,7 +305,7 @@
     "nome": "ESPONJA MULTIUSO C/4UN ALCKLIN",
     "categoria": "UTENSILIOS",
     "preco": 3.5,
-    "estoque": "88,00 un"
+    "estoque": "85,00 un"
   },
   {
     "codigo": "294",
@@ -697,7 +697,7 @@
     "nome": "POTE REDONDO 250ML C/TAMPA C/24UN PRAFESTA",
     "categoria": "DESCARTAVEIS",
     "preco": 19.99,
-    "estoque": "17,00 un"
+    "estoque": "13,00 un"
   },
   {
     "codigo": "445",
@@ -1635,7 +1635,7 @@
     "nome": "DESINFETANTE LAVANDA BOUQUET 2L SUPREMA",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 8,
-    "estoque": "6,00 un"
+    "estoque": "5,00 un"
   },
   {
     "codigo": "860",
@@ -2510,7 +2510,7 @@
     "nome": "ESPONJA DE LÃ DE AÇO ASSOLAN 45G",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 3,
-    "estoque": "20,00 un"
+    "estoque": "19,00 un"
   },
   {
     "codigo": "1301",
@@ -2937,7 +2937,7 @@
     "nome": "AGUA SANITARIA 5L SUPREMA",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 18.99,
-    "estoque": "14,00 un"
+    "estoque": "13,00 un"
   },
   {
     "codigo": "1542",
@@ -3119,7 +3119,7 @@
     "nome": "SACOLA VERDE REFORÇADA 1KG 60X80",
     "categoria": "Embalagem",
     "preco": 19.99,
-    "estoque": "-90,00 un"
+    "estoque": "-91,00 un"
   },
   {
     "codigo": "1715",
@@ -3203,7 +3203,7 @@
     "nome": "COPO 200ML CRISTAL C/10UN ELITE",
     "categoria": "DESCARTAVEIS",
     "preco": 6.25,
-    "estoque": "64,00 un"
+    "estoque": "63,00 un"
   },
   {
     "codigo": "1780",
@@ -3273,7 +3273,7 @@
     "nome": "PEDRA SANITARIA 25G MISTA AZULIM",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 2.99,
-    "estoque": "101,00 un"
+    "estoque": "100,00 un"
   },
   {
     "codigo": "1853",
@@ -3322,7 +3322,7 @@
     "nome": "LIMPA CERAMICAS E AZULEJOS 2L AZULIM START",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 21.99,
-    "estoque": "16,00 un"
+    "estoque": "15,00 un"
   },
   {
     "codigo": "1900",
@@ -3469,7 +3469,7 @@
     "nome": "SACO P/ LIXO PRETO 200L C/10UN",
     "categoria": "SACO LIXO",
     "preco": 21,
-    "estoque": "17,00 un"
+    "estoque": "16,00 un"
   },
   {
     "codigo": "2002",
@@ -4218,7 +4218,7 @@
     "nome": "POTE REDONDO 250ML C/TAMPA C/24UN DANUBIO",
     "categoria": "DESCARTAVEIS",
     "preco": 17.5,
-    "estoque": "20,00 un"
+    "estoque": "19,00 un"
   },
   {
     "codigo": "2717",
@@ -4295,7 +4295,7 @@
     "nome": "BANDEJA BR04 RASA C/10U BOM APETITE 272X148X14",
     "categoria": "Embalagem",
     "preco": 3.8,
-    "estoque": "7,00 un"
+    "estoque": "6,00 un"
   },
   {
     "codigo": "2816",
@@ -4421,7 +4421,7 @@
     "nome": "CAIXA TERMICA ISOPOR 5L BRANCA",
     "categoria": "DESCARTAVEIS",
     "preco": 14.5,
-    "estoque": "9,00 un"
+    "estoque": "8,00 un"
   },
   {
     "codigo": "2850",
@@ -4596,7 +4596,7 @@
     "nome": "DETERGENTE NEUTRO 5L DVISAO",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 21.5,
-    "estoque": "6,00 un"
+    "estoque": "5,00 un"
   },
   {
     "codigo": "2985",
@@ -4698,7 +4698,7 @@
   },
   {
     "codigo": "3035",
-    "nome": "D6FS 500ML FOLHA DE ALUMINIO C10/UN C/TAMPA PT WYDA",
+    "nome": "D6-1B 500ML FOLHA DE ALUMINIO C10/UN C/TAMPA PT WYDA",
     "categoria": "Embalagem",
     "preco": 16.5,
     "estoque": "-2,00 un"
@@ -4715,7 +4715,7 @@
     "nome": "HAMBURGUEIRA BH01 C/10UN BOM APETITE",
     "categoria": "DESCARTAVEIS",
     "preco": 3.5,
-    "estoque": "82,00 un"
+    "estoque": "81,00 un"
   },
   {
     "codigo": "3048",
@@ -4855,7 +4855,7 @@
     "nome": "POTE E TAMPA REDONDO 500ML C/TAMPA C/24UN DANUBIO",
     "categoria": "DESCARTAVEIS",
     "preco": 19.99,
-    "estoque": "13,00 un"
+    "estoque": "12,00 un"
   },
   {
     "codigo": "3120",
@@ -5107,7 +5107,7 @@
     "nome": "SABONETE ERVA DOCE 500ML ZAHARA",
     "categoria": "PRODUTO DE HIGIENE",
     "preco": 9.99,
-    "estoque": "5,00 un"
+    "estoque": "4,00 un"
   },
   {
     "codigo": "3496",
@@ -5457,7 +5457,7 @@
     "nome": "B120 FOLHA D ALUMINIO 500ML C/10UN PRAV.",
     "categoria": "Embalagem",
     "preco": 9.5,
-    "estoque": "0,00 un"
+    "estoque": "-1,00 un"
   },
   {
     "codigo": "6050",
