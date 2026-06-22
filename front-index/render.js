@@ -2,24 +2,20 @@
 // RENDER.JS — Renderização do grid de produtos
 // ─────────────────────────────────────────────────────────────
 
-var gruposRender  = [];
-var maxPorRender  = 30;
-var loadObserver  = null;
+var gruposRender     = [];
+var maxPorRender     = 30;
+var loadObserver     = null;
 var _debouncedRender = debounce(renderizar, 200);
 
 function estoqueNum(valor) {
   if (!valor) return 0;
-
   return parseFloat(
-    String(valor)
-      .replace('un', '')
-      .replace(',', '.')
-      .trim()
+    String(valor).replace('un', '').replace(',', '.').trim()
   ) || 0;
 }
 
 function getListaFiltrada() {
-  // Produto selecionado diretamente (caminho legado — não usado pelo selecionarSugestao)
+  // ── Produto único selecionado pela sugestão ──────────────────
   if (estado.produtoSelecionado) {
     return prods().filter(function(p) {
       return !p.oculto &&
@@ -28,12 +24,12 @@ function getListaFiltrada() {
     });
   }
 
-  // Base: somente produtos visíveis com estoque positivo
+  // ── Base: visíveis com estoque positivo ─────────────────────
   var lista = prods().filter(function(p) {
     return !p.oculto && estoqueNum(p.estoque) > 0;
   });
 
-  // Filtro por preço exato
+  // ── Filtro por preço exato ───────────────────────────────────
   if (estado.precoFiltro !== null && estado.precoFiltro !== undefined) {
     return lista.filter(function(p) {
       var v = parseFloat(p.preco);
@@ -41,19 +37,17 @@ function getListaFiltrada() {
     });
   }
 
-  // Busca por texto (fuzzy) — FIX: usa estoqueNum em vez de parseInt
+  // ── Busca por texto (fuzzy) ──────────────────────────────────
   if (estado.busca) {
     var results = buscaFuzzy(estado.busca);
     return results
       .filter(function(r) {
         return r.score >= 30 && estoqueNum(r.prod.estoque) > 0;
       })
-      .map(function(r) {
-        return r.prod;
-      });
+      .map(function(r) { return r.prod; });
   }
 
-  // Filtro por categoria/subcategoria
+  // ── Filtro por categoria / subcategoria ──────────────────────
   if (estado.cat !== 'todos') {
     lista = lista.filter(function(p) {
       if (p.categoria !== estado.cat) return false;
@@ -62,7 +56,7 @@ function getListaFiltrada() {
     });
   }
 
-  // Filtro por marca
+  // ── Filtro por marca ─────────────────────────────────────────
   if (estado.marca && estado.marca !== 'todas') {
     lista = lista.filter(function(p) {
       return (p.marca || '').trim() === estado.marca;
@@ -104,8 +98,45 @@ function buildCardImg(p) {
   }
 }
 
-// selecionarSugestao vive APENAS em busca.js — removida daqui para evitar
-// que a versão do render.js sobrescreva a correta ao ser carregada depois.
+// ─────────────────────────────────────────────────────────────
+// selecionarSugestao — definida AQUI e em nenhum outro lugar
+// ─────────────────────────────────────────────────────────────
+function selecionarSugestao(id) {
+  var prod = prods().find(function(p) {
+    return String(p.id) === String(id);
+  });
+  if (!prod) return;
+
+  esconderSugestoes();
+
+  // Mostra só este produto no grid (lista de 1 item)
+  estado.produtoSelecionado = prod.id;
+  estado.busca              = '';
+  estado.precoFiltro        = null;
+  estado.cat                = 'todos';
+  estado.sub                = 'todas';
+  estado.marca              = 'todas';
+
+  document.getElementById('searchInput').value = prod.nome;
+
+  document.querySelectorAll('.ftab').forEach(function(b) { b.classList.remove('on'); });
+  var all = document.querySelector('.ftab[data-cat="todos"]');
+  if (all) all.classList.add('on');
+  document.querySelectorAll('.subtabs').forEach(function(b) { b.classList.remove('on'); });
+  document.getElementById('brandFilterWrap').classList.remove('on');
+
+  renderizar();
+
+  // Card garantido no DOM (é o único item renderizado)
+  setTimeout(function() {
+    var card = document.getElementById('card-' + prod.id);
+    if (card) {
+      card.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      card.style.outline = '3px solid #2563eb';
+      setTimeout(function() { card.style.outline = ''; }, 2000);
+    }
+  }, 150);
+}
 
 function renderizar() {
   var c = document.getElementById('containerProdutos');
@@ -114,8 +145,7 @@ function renderizar() {
 
   var lista = getListaFiltrada();
 
-  // Base para o filtro de marca: respeita categoria/subcategoria ativa
-  // FIX: era "if (true)" — corrigido para rodar só quando não há busca por texto/preço
+  // Base para renderBrandFilter: respeita categoria ativa quando não há busca
   var listaBase = prods().filter(function(p) {
     return !p.oculto && estoqueNum(p.estoque) > 0;
   });
@@ -149,12 +179,7 @@ function renderizar() {
   });
 
   gruposRender = Object.keys(grupos).map(function(k) {
-    return {
-      id:    grupos[k].id,
-      label: grupos[k].label,
-      itens: grupos[k].itens,
-      count: 0
-    };
+    return { id: grupos[k].id, label: grupos[k].label, itens: grupos[k].itens, count: 0 };
   });
 
   renderMais();
@@ -280,7 +305,7 @@ function renderMais() {
   if (pendentes) {
     if (!anchor) {
       anchor = document.createElement('div');
-      anchor.id = 'scroll-anchor';
+      anchor.id          = 'scroll-anchor';
       anchor.style.height    = '1px';
       anchor.style.marginTop = '2rem';
     }
