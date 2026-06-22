@@ -243,11 +243,14 @@ function selecionarSugestao(id) {
 
   esconderSugestoes();
 
+  // Preenche o input com o nome exato do produto
   document.getElementById('searchInput').value = prod.nome;
 
-  estado.busca             = '';
-  estado.precoFiltro       = null;
-  estado.produtoSelecionado = null;
+  // Usa busca por nome — getListaFiltrada via buscaFuzzy renderiza todos
+  // os resultados relevantes e o scroll abaixo localiza o card pelo id
+  estado.busca              = prod.nome.toLowerCase();
+  estado.precoFiltro        = null;
+  estado.produtoSelecionado = null; // nunca usar produtoSelecionado aqui
 
   estado.cat   = 'todos';
   estado.sub   = 'todas';
@@ -268,20 +271,14 @@ function selecionarSugestao(id) {
 
   renderizar();
 
+  // Aguarda o DOM renderizar e localiza o card pelo id exato do produto
   setTimeout(function() {
     var card = document.getElementById('card-' + prod.id);
 
     if (card) {
-      card.scrollIntoView({
-        behavior: 'smooth',
-        block: 'center'
-      });
-
+      card.scrollIntoView({ behavior: 'smooth', block: 'center' });
       card.style.outline = '3px solid #2563eb';
-
-      setTimeout(function() {
-        card.style.outline = '';
-      }, 2000);
+      setTimeout(function() { card.style.outline = ''; }, 2000);
     }
   }, 300);
 }
