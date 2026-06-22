@@ -242,7 +242,7 @@ function selecionarSugestao(id) {
 
   estado.busca = '';
   estado.precoFiltro = null;
-  estado.produtoSelecionado = prod.id;
+  estado.produtoSelecionado = null;
 
   estado.cat = 'todos';
   estado.sub = 'todas';
