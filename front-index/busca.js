@@ -212,7 +212,7 @@ function confirmarBuscaCompleta() {
   esconderSugestoes();
 
   if (precoQuery !== null) {
-    estado.busca       = '';
+    estado.busca = prod.nome.toLowerCase();
     estado.precoFiltro = precoQuery;
     estado.cat         = 'todos';
     estado.sub         = 'todas';
