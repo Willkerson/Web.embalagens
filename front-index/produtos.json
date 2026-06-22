@@ -32,7 +32,7 @@
     "nome": "SACOLA KRAFT G 1UN 24X16CM",
     "categoria": "Embalagem",
     "preco": 1.99,
-    "estoque": "-36,00 un"
+    "estoque": "-34,00 un"
   },
   {
     "codigo": "106",
@@ -3035,7 +3035,7 @@
     "nome": "SACO BRANCO KRAFT VI 19X19CM C/100UN",
     "categoria": "DESCARTAVEIS",
     "preco": 14,
-    "estoque": "-5,00 un"
+    "estoque": "-6,00 un"
   },
   {
     "codigo": "1600",
@@ -3665,7 +3665,7 @@
     "nome": "SACOLA BRANCA 1KG 90x100",
     "categoria": "SACO LIXO",
     "preco": 27,
-    "estoque": "-3,00 un"
+    "estoque": "-4,00 un"
   },
   {
     "codigo": "2122",
@@ -3805,7 +3805,7 @@
     "nome": "ESPETO DE BAMBU 30CM C/50UN VABENE",
     "categoria": "UTENSILIOS",
     "preco": 4,
-    "estoque": "-5,00 un"
+    "estoque": "-7,00 un"
   },
   {
     "codigo": "2311",
@@ -4390,7 +4390,7 @@
   },
   {
     "codigo": "2838",
-    "nome": "PAPEL ACOPLADO C/PELICULA 30X38 C/100UN",
+    "nome": "PAPEL ACOPLADO C/PELICULA 30X38 300g (C/100UN)",
     "categoria": "DESCARTAVEIS",
     "preco": 18.5,
     "estoque": "10,00 un"
@@ -6038,7 +6038,7 @@
     "nome": "POTE QUADRADO 250ML C/20UN PRAFESTA",
     "categoria": "DESCARTAVEIS",
     "preco": 21,
-    "estoque": "25,00 un"
+    "estoque": "22,00 un"
   },
   {
     "codigo": "11180",
@@ -6948,7 +6948,7 @@
     "nome": "ISQUEIRO BIC MAXI",
     "categoria": "-",
     "preco": 9,
-    "estoque": "4,00 un"
+    "estoque": "3,00 un"
   },
   {
     "codigo": "129066",
