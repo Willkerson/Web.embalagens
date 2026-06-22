@@ -234,54 +234,7 @@ function confirmarBuscaCompleta() {
   if (c) setTimeout(function() { c.scrollIntoView({ behavior: 'smooth', block: 'start' }); }, 80);
 }
 
-function selecionarSugestao(id) {
-  var prod = prods().find(function(p) {
-    return String(p.id) === String(id);
-  });
-
-  if (!prod) return;
-
-  esconderSugestoes();
-
-  // Preenche o input com o nome exato do produto
-  document.getElementById('searchInput').value = prod.nome;
-
-  // Usa busca por nome — getListaFiltrada via buscaFuzzy renderiza todos
-  // os resultados relevantes e o scroll abaixo localiza o card pelo id
-  estado.busca              = prod.nome.toLowerCase();
-  estado.precoFiltro        = null;
-  estado.produtoSelecionado = null; // nunca usar produtoSelecionado aqui
-
-  estado.cat   = 'todos';
-  estado.sub   = 'todas';
-  estado.marca = 'todas';
-
-  document.querySelectorAll('.ftab').forEach(function(b) {
-    b.classList.remove('on');
-  });
-
-  var all = document.querySelector('.ftab[data-cat="todos"]');
-  if (all) all.classList.add('on');
-
-  document.querySelectorAll('.subtabs').forEach(function(b) {
-    b.classList.remove('on');
-  });
-
-  document.getElementById('brandFilterWrap').classList.remove('on');
-
-  renderizar();
-
-  // Aguarda o DOM renderizar e localiza o card pelo id exato do produto
-  setTimeout(function() {
-    var card = document.getElementById('card-' + prod.id);
-
-    if (card) {
-      card.scrollIntoView({ behavior: 'smooth', block: 'center' });
-      card.style.outline = '3px solid #2563eb';
-      setTimeout(function() { card.style.outline = ''; }, 2000);
-    }
-  }, 300);
-}
+// selecionarSugestao está definida em render.js — não duplicar aqui
 
 function limparBusca() {
   estado.busca       = '';
