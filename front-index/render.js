@@ -1,4 +1,3 @@
-
 // ─────────────────────────────────────────────────────────────
 // RENDER.JS — Renderização do grid de produtos
 // ─────────────────────────────────────────────────────────────
@@ -18,18 +17,23 @@ function estoqueNum(valor) {
       .trim()
   ) || 0;
 }
+
 function getListaFiltrada() {
+  // Produto selecionado diretamente (caminho legado — não usado pelo selecionarSugestao)
+  if (estado.produtoSelecionado) {
+    return prods().filter(function(p) {
+      return !p.oculto &&
+             estoqueNum(p.estoque) > 0 &&
+             String(p.id) === String(estado.produtoSelecionado);
+    });
+  }
+
+  // Base: somente produtos visíveis com estoque positivo
   var lista = prods().filter(function(p) {
     return !p.oculto && estoqueNum(p.estoque) > 0;
   });
 
-  if (estado.produtoSelecionado) {
-    return prods().filter(function(p) {
-      return String(p.id) === String(estado.produtoSelecionado);
-    });
-  }
-
-  // ── Filtro por preço ──────────────────────────────────────────
+  // Filtro por preço exato
   if (estado.precoFiltro !== null && estado.precoFiltro !== undefined) {
     return lista.filter(function(p) {
       var v = parseFloat(p.preco);
@@ -37,31 +41,28 @@ function getListaFiltrada() {
     });
   }
 
+  // Busca por texto (fuzzy) — FIX: usa estoqueNum em vez de parseInt
   if (estado.busca) {
     var results = buscaFuzzy(estado.busca);
-
     return results
       .filter(function(r) {
-        return r.score >= 30 &&
-               parseInt(r.prod.estoque || 0) > 0;
+        return r.score >= 30 && estoqueNum(r.prod.estoque) > 0;
       })
       .map(function(r) {
         return r.prod;
       });
   }
 
+  // Filtro por categoria/subcategoria
   if (estado.cat !== 'todos') {
-    var subs = catMap[estado.cat] || [];
-
     lista = lista.filter(function(p) {
       if (p.categoria !== estado.cat) return false;
-
       if (estado.sub === 'todas') return true;
-
       return p.subcategoria === estado.sub;
     });
   }
 
+  // Filtro por marca
   if (estado.marca && estado.marca !== 'todas') {
     lista = lista.filter(function(p) {
       return (p.marca || '').trim() === estado.marca;
@@ -76,7 +77,7 @@ function buildCardImg(p) {
   var esgBadge = '<span class="pcard-esg-badge">⚠ Esgotado</span>';
 
   if (p.imagem && p.imgmode === 'thumbnail') {
-    var d   = document.createElement('div');
+    var d = document.createElement('div');
     d.className = 'pimg-thumb';
     d.innerHTML = badge + esgBadge;
     var img = document.createElement('img');
@@ -86,7 +87,7 @@ function buildCardImg(p) {
     return d;
 
   } else if (p.imagem && p.imgmode === 'replace') {
-    var d   = document.createElement('div');
+    var d = document.createElement('div');
     d.className = 'pimg-replace';
     d.innerHTML = badge + esgBadge;
     var img = document.createElement('img');
@@ -102,57 +103,30 @@ function buildCardImg(p) {
     return d;
   }
 }
-function selecionarSugestao(id) {
-  var prod = prods().find(function(p) {
-    return String(p.id) === String(id);
-  });
 
-  if (!prod) return;
+// selecionarSugestao vive APENAS em busca.js — removida daqui para evitar
+// que a versão do render.js sobrescreva a correta ao ser carregada depois.
 
-  esconderSugestoes();
-
-  document.getElementById('searchInput').value = prod.nome;
-
-  estado.busca = '';
-  estado.precoFiltro = null;
-
-  // 👇 FORÇA O PRODUTO EXATO
-  estado.produtoSelecionado = prod.id;
-
-  renderizar();
-
-  setTimeout(function() {
-    var card = document.getElementById('card-' + prod.id);
-
-    if (card) {
-      card.scrollIntoView({
-        behavior: 'smooth',
-        block: 'center'
-      });
-
-      card.style.outline = '3px solid #2563eb';
-      setTimeout(function() {
-        card.style.outline = '';
-      }, 2000);
-    }
-  }, 300);
-}
 function renderizar() {
   var c = document.getElementById('containerProdutos');
   if (!c) return;
   if (loadObserver) { loadObserver.disconnect(); loadObserver = null; }
 
-  var lista     = getListaFiltrada();
-  var listaBase = prods().filter(function(p) {
-  return !p.oculto && parseInt(p.estoque || 0) > 0;
-});
+  var lista = getListaFiltrada();
 
-if (true) {
-  listaBase = listaBase.filter(function(p) {
-    if (p.categoria !== estado.cat) return false;
-    if (estado.sub === 'todas') return true;
-    return p.subcategoria === estado.sub;
+  // Base para o filtro de marca: respeita categoria/subcategoria ativa
+  // FIX: era "if (true)" — corrigido para rodar só quando não há busca por texto/preço
+  var listaBase = prods().filter(function(p) {
+    return !p.oculto && estoqueNum(p.estoque) > 0;
   });
+
+  if (!estado.busca && estado.precoFiltro === null && !estado.produtoSelecionado && estado.cat !== 'todos') {
+    listaBase = listaBase.filter(function(p) {
+      if (p.categoria !== estado.cat) return false;
+      if (estado.sub === 'todas') return true;
+      return p.subcategoria === estado.sub;
+    });
+  }
 
   renderBrandFilter(listaBase);
   c.innerHTML = '';
@@ -174,9 +148,9 @@ if (true) {
     grupos[k].itens.push(p);
   });
 
-   gruposRender = Object.keys(grupos).map(function(k) {
+  gruposRender = Object.keys(grupos).map(function(k) {
     return {
-      id: grupos[k].id,
+      id:    grupos[k].id,
       label: grupos[k].label,
       itens: grupos[k].itens,
       count: 0
@@ -184,10 +158,7 @@ if (true) {
   });
 
   renderMais();
-
-} // <-- FECHA O if (!estado.busca && estado.cat !== 'todos')
-
-} // <-- FECHA A função renderizar()
+}
 
 function renderMais() {
   var c        = document.getElementById('containerProdutos');
@@ -208,7 +179,7 @@ function renderMais() {
       sec.id        = secId;
       sec.setAttribute('data-sub', g.id);
 
-      var emoji     = catEmojis[g.id] || '📦';
+      var emoji      = catEmojis[g.id] || '📦';
       var marcaBadge = (estado.marca && estado.marca !== 'todas')
         ? '<span class="psec-brand">' + estado.marca + '</span>'
         : '';
@@ -231,19 +202,15 @@ function renderMais() {
 
     while (g.count < g.itens.length && addCount < maxPorRender) {
       var p      = g.itens[g.count];
-var esg    = isEsgotado(p);
-var inCart = !!carrinho[p.id];
+      var esg    = isEsgotado(p);
+      var inCart = !!carrinho[p.id];
 
-// aceita número ou string numérica
-var preco = Number(p.preco);
+      var preco = Number(p.preco);
+      if (isNaN(preco)) preco = 0;
 
-if (isNaN(preco)) {
-  preco = 0;
-}
-
-var precoStr = preco > 0
-  ? 'R$ ' + preco.toFixed(2).replace('.', ',')
-  : 'Sob consulta';
+      var precoStr = preco > 0
+        ? 'R$ ' + preco.toFixed(2).replace('.', ',')
+        : 'Sob consulta';
 
       var marcaTag = p.marca
         ? '<span class="pmarca-tag">' + p.marca + '</span>'
