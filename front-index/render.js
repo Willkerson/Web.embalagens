@@ -20,14 +20,15 @@ function estoqueNum(valor) {
 }
 function getListaFiltrada() {
   var lista = prods().filter(function(p) {
-  return !p.oculto && estoqueNum(p.estoque > 0;
-});
-  
-if (estado.produtoSelecionado) {
-  return prods().filter(function(p) {
-    return String(p.id) === String(estado.produtoSelecionado);
+    return !p.oculto && estoqueNum(p.estoque) > 0;
   });
-}
+
+  if (estado.produtoSelecionado) {
+    return prods().filter(function(p) {
+      return String(p.id) === String(estado.produtoSelecionado);
+    });
+  }
+
   // ── Filtro por preço ──────────────────────────────────────────
   if (estado.precoFiltro !== null && estado.precoFiltro !== undefined) {
     return lista.filter(function(p) {
@@ -37,27 +38,29 @@ if (estado.produtoSelecionado) {
   }
 
   if (estado.busca) {
-  var results = buscaFuzzy(estado.busca);
-  return results
-    .filter(function(r) {
-      return r.score >= 30 &&
-             parseInt(r.prod.estoque || 0) > 0;
-    })
-    .map(function(r) {
-      return r.prod;
-    });
-}
+    var results = buscaFuzzy(estado.busca);
+
+    return results
+      .filter(function(r) {
+        return r.score >= 30 &&
+               parseInt(r.prod.estoque || 0) > 0;
+      })
+      .map(function(r) {
+        return r.prod;
+      });
+  }
 
   if (estado.cat !== 'todos') {
-  var subs = catMap[estado.cat] || [];
-  lista = lista.filter(function(p) {
-    // produto pertence à categoria principal?
-    if (p.categoria !== estado.cat) return false;
-    // subcategoria selecionada?
-    if (estado.sub === 'todas') return true;
-    return p.subcategoria === estado.sub;
-  });
-}
+    var subs = catMap[estado.cat] || [];
+
+    lista = lista.filter(function(p) {
+      if (p.categoria !== estado.cat) return false;
+
+      if (estado.sub === 'todas') return true;
+
+      return p.subcategoria === estado.sub;
+    });
+  }
 
   if (estado.marca && estado.marca !== 'todas') {
     lista = lista.filter(function(p) {
