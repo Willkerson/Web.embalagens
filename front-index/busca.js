@@ -113,28 +113,39 @@ function mostrarSugestoes(query) {
   }
 
   // ── Busca normal por nome/marca ──────────────────────────────
-  var qNorm = normalizar(query);
-  var todosProds = prods().filter(function(p) {var todosProds = prods().filter(function(p) {
+ // ── Busca normal por nome/marca ──────────────────────────────
+var qNorm = normalizar(query);
+
+var todosProds = prods().filter(function(p) {
   return !p.oculto && estoqueNum(p.estoque) > 0;
 });
 
-  var diretos = todosProds.filter(function(p) {
-    var nNorm = normalizar(p.nome);
-    var mNorm = normalizar(p.marca || '');
-    return nNorm.includes(qNorm) || mNorm.includes(qNorm);
-  });
+var diretos = todosProds.filter(function(p) {
+  var nNorm = normalizar(p.nome);
+  var mNorm = normalizar(p.marca || '');
 
-  var palavras = qNorm.split(/\s+/).filter(Boolean);
-  var jaEncontrados = diretos.map(function(p) { return p.id; });
+  return nNorm.includes(qNorm) || mNorm.includes(qNorm);
+});
 
-  var porPalavras = palavras.length > 1
-    ? todosProds.filter(function(p) {
-        if (jaEncontrados.indexOf(p.id) >= 0) return false;
-        var nNorm = normalizar(p.nome) + ' ' + normalizar(p.marca || '');
-        return palavras.every(function(w) { return nNorm.includes(w); });
-      })
-    : [];
+var palavras = qNorm.split(/\s+/).filter(Boolean);
 
+var jaEncontrados = diretos.map(function(p) {
+  return p.id;
+});
+
+var porPalavras = palavras.length > 1
+  ? todosProds.filter(function(p) {
+      if (jaEncontrados.indexOf(p.id) >= 0) return false;
+
+      var nNorm =
+        normalizar(p.nome) + ' ' +
+        normalizar(p.marca || '');
+
+      return palavras.every(function(w) {
+        return nNorm.includes(w);
+      });
+    })
+  : [];
   var idsJaVistos = diretos.concat(porPalavras).map(function(p) { return p.id; });
   var fuzzyProds = [];
   if (diretos.length + porPalavras.length < 3) {
