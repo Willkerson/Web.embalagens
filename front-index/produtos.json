@@ -2244,21 +2244,21 @@
     "nome": "RODO ALUMINIO 30CM C/CABO 1,30MT C/ROSCA SANCHES",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 41,
-    "estoque": "-9,00 un"
+    "estoque": "13,00 un"
   },
   {
     "codigo": "1133",
     "nome": "RODO ALUMINIO 40CM C/CABO 1,50 MT C/ROSCA SANCHES",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 43.5,
-    "estoque": "-11,00 un"
+    "estoque": "12,00 un"
   },
   {
     "codigo": "1134",
     "nome": "RODO ALUMINIO 50CM C/CABO 1,50 MT C/ROSCA SANCHES",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 45,
-    "estoque": "-3,00 un"
+    "estoque": "12,00 un"
   },
   {
     "codigo": "1135",
@@ -2279,7 +2279,7 @@
     "nome": "REFIL RODO ALUMINIO 30CM SANCHES",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 4,
-    "estoque": "-7,00 un"
+    "estoque": "6,00 un"
   },
   {
     "codigo": "1141",
@@ -2293,7 +2293,7 @@
     "nome": "REFIL RODO ALUMINIO 60CM SANCHES",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 6,
-    "estoque": "-9,00 un"
+    "estoque": "10,00 un"
   },
   {
     "codigo": "1147",
@@ -5688,7 +5688,7 @@
     "nome": "REFIL RODO ALUMINIO 40CM SANCHES",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 4.3,
-    "estoque": "4,00 un"
+    "estoque": "10,00 un"
   },
   {
     "codigo": "7832",
@@ -7298,7 +7298,7 @@
     "nome": "RODO COMB. 22CM",
     "categoria": "-",
     "preco": 46.5,
-    "estoque": "-6,00 un"
+    "estoque": "8,00 un"
   },
   {
     "codigo": "129110",
