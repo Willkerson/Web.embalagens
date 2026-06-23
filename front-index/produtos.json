@@ -1201,7 +1201,7 @@
     "nome": "LIMPA TENIS 250ML SUPER DOM",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 15.5,
-    "estoque": "2,00 un"
+    "estoque": "1,00 un"
   },
   {
     "codigo": "684",
@@ -1418,7 +1418,7 @@
     "nome": "LIMPA AIR FRYER SPRAY 250ML SUPER DOM",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 21,
-    "estoque": "4,00 un"
+    "estoque": "3,00 un"
   },
   {
     "codigo": "781",
@@ -1622,6 +1622,13 @@
     "categoria": "UTENSILIOS",
     "preco": 17.99,
     "estoque": "3,00 un"
+  },
+  {
+    "codigo": "849",
+    "nome": "RODO PIA IDEAL SANCHES",
+    "categoria": "PRODUTO DE LIMPEZA",
+    "preco": 5.99,
+    "estoque": "12,00 un"
   },
   {
     "codigo": "852",
@@ -2125,7 +2132,7 @@
     "nome": "SACO P/ LIXO PRETO P8 60L C/10UN",
     "categoria": "SACO LIXO",
     "preco": 8.99,
-    "estoque": "26,00 un"
+    "estoque": "25,00 un"
   },
   {
     "codigo": "1053",
@@ -2300,21 +2307,21 @@
     "nome": "FIBRA LIMP. USO GERAL 1UN 260X102MM BETTANIN",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 4.5,
-    "estoque": "-10,00 un"
+    "estoque": "9,00 un"
   },
   {
     "codigo": "1149",
     "nome": "FIBRA LIMP. USO GERAL 1UN 260X102MM BETTANIN",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 4,
-    "estoque": "-19,00 un"
+    "estoque": "18,00 un"
   },
   {
     "codigo": "1150",
     "nome": "FIBRA BRANCA LIMP. LEVE BETTANIN",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 3,
-    "estoque": "-17,90 un"
+    "estoque": "13,00 un"
   },
   {
     "codigo": "1151",
@@ -2482,7 +2489,7 @@
     "nome": "PAPEL HIGIENICO BRANCO ROLAO EUROPEL 08 ROLOS",
     "categoria": "PRODUTO DE HIGIENE",
     "preco": 35.5,
-    "estoque": "33,00 un"
+    "estoque": "32,00 un"
   },
   {
     "codigo": "1290",
@@ -2629,7 +2636,7 @@
     "nome": "TOALHA INTERFOLHA (OURO) CELULOSE ISAPEL C/1000UN",
     "categoria": "PRODUTO DE HIGIENE",
     "preco": 23,
-    "estoque": "45,00 un"
+    "estoque": "43,00 un"
   },
   {
     "codigo": "1341",
@@ -5679,7 +5686,7 @@
   {
     "codigo": "7645",
     "nome": "REFIL RODO ALUMINIO 40CM SANCHES",
-    "categoria": "Outras",
+    "categoria": "PRODUTO DE LIMPEZA",
     "preco": 4.3,
     "estoque": "4,00 un"
   },
@@ -5744,7 +5751,7 @@
     "nome": "CORDA DE VARAL MAX CLEAN 20M",
     "categoria": "-",
     "preco": 20,
-    "estoque": "-1,00 un"
+    "estoque": "-2,00 un"
   },
   {
     "codigo": "7901",
@@ -6080,7 +6087,7 @@
     "nome": "LIMPEZA PESADA SEM CABO SANCHES",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 11.8,
-    "estoque": "9,00 un"
+    "estoque": "15,00 un"
   },
   {
     "codigo": "11537",
