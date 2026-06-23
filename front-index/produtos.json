@@ -25,7 +25,7 @@
     "nome": "ESTOJO BH101 S/DIV C/50UN B. APETITE",
     "categoria": "DESCARTAVEIS",
     "preco": 35.99,
-    "estoque": "8,00 un"
+    "estoque": "6,00 un"
   },
   {
     "codigo": "105",
@@ -550,7 +550,7 @@
     "nome": "PANO DE CHAO BRANCO ALVEJADO 45CMX69CM SOUZA PPR28",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 6.7,
-    "estoque": "33,00 un"
+    "estoque": "31,00 un"
   },
   {
     "codigo": "391",
@@ -991,7 +991,7 @@
     "nome": "PAPEL MANTEIGA 7,5MX29CM WYDA",
     "categoria": "DESCARTAVEIS",
     "preco": 8.99,
-    "estoque": "-21,00 un"
+    "estoque": "-22,00 un"
   },
   {
     "codigo": "608",
@@ -1736,6 +1736,13 @@
     "estoque": "73,00 un"
   },
   {
+    "codigo": "901",
+    "nome": "COPO DESCARTAVEL TRANSPARENTE 180ML C/100UN GLIGHT",
+    "categoria": "DESCARTAVEIS",
+    "preco": 5.99,
+    "estoque": "25,00 un"
+  },
+  {
     "codigo": "902",
     "nome": "COPO DESCARTAVEL TRANSPARENTE 300ML C/100UN TOTAL PLAST",
     "categoria": "DESCARTAVEIS",
@@ -1776,6 +1783,13 @@
     "categoria": "Embalagem",
     "preco": 39.99,
     "estoque": "30,00 un"
+  },
+  {
+    "codigo": "910",
+    "nome": "B131 FOLHA D ALUMINIO 750ML C/10UN PRAV.",
+    "categoria": "DESCARTAVEIS",
+    "preco": 12.99,
+    "estoque": "11,00 un"
   },
   {
     "codigo": "914",
@@ -4721,7 +4735,7 @@
     "codigo": "3048",
     "nome": "COPO TERMICO 180ML C/25UN ULTRA",
     "categoria": "DESCARTAVEIS",
-    "preco": 9,
+    "preco": 7.99,
     "estoque": "-3,00 un"
   },
   {
@@ -5324,7 +5338,7 @@
     "nome": "BOBINA PICOTADO 25X35 C/550UN (1.6KG) ALTAPLAST",
     "categoria": "Embalagem",
     "preco": 43.5,
-    "estoque": "0,00 un"
+    "estoque": "2,00 un"
   },
   {
     "codigo": "4008",
@@ -5457,7 +5471,7 @@
     "nome": "B120 FOLHA D ALUMINIO 500ML C/10UN PRAV.",
     "categoria": "Embalagem",
     "preco": 9.5,
-    "estoque": "10,00 un"
+    "estoque": "32,00 un"
   },
   {
     "codigo": "6050",
