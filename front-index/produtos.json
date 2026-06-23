@@ -1922,7 +1922,7 @@
     "nome": "MARMITEX DE ISOPOR 750ML C/10UN COPABRAS",
     "categoria": "DESCARTAVEIS",
     "preco": 8,
-    "estoque": "-19,00 un"
+    "estoque": "31,00 un"
   },
   {
     "codigo": "0229",
@@ -2629,7 +2629,7 @@
     "nome": "MARMITEX DE ISOPOR 750ML C100/UN COPOBRAS",
     "categoria": "DESCARTAVEIS",
     "preco": 60.5,
-    "estoque": "8,00 un"
+    "estoque": "18,00 un"
   },
   {
     "codigo": "1343",
@@ -3840,7 +3840,7 @@
     "nome": "CUMBUCA S/TAMPA 300ML C/100UN",
     "categoria": "DESCARTAVEIS",
     "preco": 32.5,
-    "estoque": "1,00 un"
+    "estoque": "6,00 un"
   },
   {
     "codigo": "2346",
@@ -6108,14 +6108,14 @@
     "nome": "CUMBUCA COM/TAMPA 300ML C/100UN",
     "categoria": "DESCARTAVEIS",
     "preco": 58.5,
-    "estoque": "0,00 un"
+    "estoque": "2,00 un"
   },
   {
     "codigo": "24696",
     "nome": "D-695 KIT POTE TRANSPARENTE P/ MOLHO CAIXA FECHADA",
     "categoria": "DESCARTAVEIS",
     "preco": 168,
-    "estoque": "104,01 un"
+    "estoque": "1,00 un"
   },
   {
     "codigo": "25813",
@@ -6150,7 +6150,7 @@
     "nome": "D640 DOCE REDONDO 170ML CRISTAL C/10UN DONA RITA",
     "categoria": "DESCARTAVEIS",
     "preco": 3.99,
-    "estoque": "-23,00 un"
+    "estoque": "77,00 un"
   },
   {
     "codigo": "29817",
