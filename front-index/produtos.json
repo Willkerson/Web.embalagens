@@ -368,7 +368,7 @@
     "nome": "PAPEL HIGIENICO F/DUPLA C/16UN 10X30M NESS",
     "categoria": "PRODUTO DE HIGIENE",
     "preco": 31.99,
-    "estoque": "1,00 un"
+    "estoque": "13,00 un"
   },
   {
     "codigo": "315",
@@ -1789,7 +1789,7 @@
     "nome": "B131 FOLHA D ALUMINIO 750ML C/10UN PRAV.",
     "categoria": "DESCARTAVEIS",
     "preco": 12.99,
-    "estoque": "11,00 un"
+    "estoque": "10,00 un"
   },
   {
     "codigo": "914",
@@ -3910,7 +3910,7 @@
     "nome": "COPO TERMICO 240ML C/25UN ULTRA",
     "categoria": "DESCARTAVEIS",
     "preco": 10.5,
-    "estoque": "9,00 un"
+    "estoque": "49,00 un"
   },
   {
     "codigo": "2382",
@@ -4736,7 +4736,7 @@
     "nome": "COPO TERMICO 180ML C/25UN ULTRA",
     "categoria": "DESCARTAVEIS",
     "preco": 7.99,
-    "estoque": "-3,00 un"
+    "estoque": "41,00 un"
   },
   {
     "codigo": "3051",
@@ -6549,7 +6549,7 @@
     "nome": "RODO MAGICO - SANCHES",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 67.5,
-    "estoque": "0,00 un"
+    "estoque": "6,00 un"
   },
   {
     "codigo": "128999",
