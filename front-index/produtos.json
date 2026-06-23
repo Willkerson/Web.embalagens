@@ -2048,7 +2048,7 @@
     "nome": "SACO P/ LIXO PRETO P8 60L C/50UN",
     "categoria": "SACO LIXO",
     "preco": 38.25,
-    "estoque": "2,00 un"
+    "estoque": "1,00 un"
   },
   {
     "codigo": "1042",
@@ -2090,7 +2090,7 @@
     "nome": "SACO P/ LIXO PRETO 100L C/50UN",
     "categoria": "SACO LIXO",
     "preco": 57.5,
-    "estoque": "14,00 un"
+    "estoque": "13,00 un"
   },
   {
     "codigo": "1049",
@@ -2615,7 +2615,7 @@
     "nome": "TOALHA INTERFOLHA (OURO) CELULOSE ISAPEL C/1000UN",
     "categoria": "PRODUTO DE HIGIENE",
     "preco": 23,
-    "estoque": "46,00 un"
+    "estoque": "45,00 un"
   },
   {
     "codigo": "1341",
@@ -2671,7 +2671,7 @@
     "nome": "KIT POTE E TAMPA RET. 500ML C/12UN GOUR MAX",
     "categoria": "DESCARTAVEIS",
     "preco": 16,
-    "estoque": "23,00 un"
+    "estoque": "4,00 un"
   },
   {
     "codigo": "1360",
@@ -3665,7 +3665,7 @@
     "nome": "SACOLA BRANCA 1KG 90x100",
     "categoria": "SACO LIXO",
     "preco": 27,
-    "estoque": "-4,00 un"
+    "estoque": "-5,00 un"
   },
   {
     "codigo": "2122",
@@ -4274,7 +4274,7 @@
     "nome": "KIT POTE E TAMPA RET. 350ML C/12UN GOUR MAX",
     "categoria": "DESCARTAVEIS",
     "preco": 13,
-    "estoque": "24,00 un"
+    "estoque": "5,00 un"
   },
   {
     "codigo": "2802",
@@ -4778,7 +4778,7 @@
     "nome": "KIT POTE E TAMPA RET. 750ML C/12UN GOUR MAX",
     "categoria": "DESCARTAVEIS",
     "preco": 22.5,
-    "estoque": "0,00 un"
+    "estoque": "3,00 un"
   },
   {
     "codigo": "3078",
