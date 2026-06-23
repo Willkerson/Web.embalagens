@@ -211,6 +211,7 @@ function confirmarBuscaCompleta() {
   var precoQuery = _extrairPreco(q);
 
   esconderSugestoes();
+  estado.produtoSelecionado = null; // FIX: limpa seleção anterior
 
   if (precoQuery !== null) {
     // FIX: era "estado.busca = prod.nome.toLowerCase()" — prod não existe aqui
@@ -237,8 +238,9 @@ function confirmarBuscaCompleta() {
 // selecionarSugestao está definida em render.js — não duplicar aqui
 
 function limparBusca() {
-  estado.busca       = '';
-  estado.precoFiltro = null;
+  estado.busca              = '';
+  estado.precoFiltro        = null;
+  estado.produtoSelecionado = null; // FIX: limpa seleção anterior
   var inp = document.getElementById('searchInput');
   if (inp) inp.value = '';
   esconderSugestoes();
@@ -267,8 +269,9 @@ function buscarPorTermo(termo) {
 
 function handleSearch(e) {
   var q = e.target.value;
-  estado.busca       = q.toLowerCase();
-  estado.precoFiltro = null;
+  estado.busca              = q.toLowerCase();
+  estado.precoFiltro        = null;
+  estado.produtoSelecionado = null; // FIX: limpa seleção anterior ao digitar
 
   if (q.length >= 2) {
     estado.cat   = 'todos';
