@@ -3248,6 +3248,13 @@
     "estoque": "-4,00 un"
   },
   {
+    "codigo": "1789",
+    "nome": "RODO MAGICO - SANCHES",
+    "categoria": "PRODUTO DE LIMPEZA",
+    "preco": 67.5,
+    "estoque": "18,00 un"
+  },
+  {
     "codigo": "1803",
     "nome": "PRATO ISOPOR BPR-23 C/25UN BOM APETITE",
     "categoria": "DESCARTAVEIS",
@@ -3356,7 +3363,7 @@
     "codigo": "1902",
     "nome": "LIMPA VIDRO SANCHES",
     "categoria": "PRODUTO DE LIMPEZA",
-    "preco": 16,
+    "preco": 8.5,
     "estoque": "14,00 un"
   },
   {
@@ -4715,7 +4722,7 @@
     "nome": "D6-1B 500ML FOLHA DE ALUMINIO C10/UN C/TAMPA PT WYDA",
     "categoria": "Embalagem",
     "preco": 16.5,
-    "estoque": "-2,00 un"
+    "estoque": "10,00 un"
   },
   {
     "codigo": "3039",
@@ -5471,7 +5478,7 @@
     "nome": "B120 FOLHA D ALUMINIO 500ML C/10UN PRAV.",
     "categoria": "Embalagem",
     "preco": 9.5,
-    "estoque": "32,00 un"
+    "estoque": "10,00 un"
   },
   {
     "codigo": "6050",
@@ -6545,13 +6552,6 @@
     "estoque": "0,00 un"
   },
   {
-    "codigo": "001789",
-    "nome": "RODO MAGICO - SANCHES",
-    "categoria": "PRODUTO DE LIMPEZA",
-    "preco": 67.5,
-    "estoque": "18,00 un"
-  },
-  {
     "codigo": "128999",
     "nome": "DOSADOR MULTI (DONA COTA)",
     "categoria": "Outras",
@@ -6575,7 +6575,7 @@
   {
     "codigo": "129003",
     "nome": "DESENTUPIDOR SANCHES",
-    "categoria": "Outras",
+    "categoria": "PRODUTO DE LIMPEZA",
     "preco": 11.5,
     "estoque": "13,00 un"
   },
