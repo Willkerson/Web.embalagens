@@ -1,11 +1,16 @@
 // ─────────────────────────────────────────────────────────────
 // CONFIG.JS — Estado global, mapeamentos de categorias e labels
 // ─────────────────────────────────────────────────────────────
-
 var carrinho = {};
-var estado = { cat: 'todos', sub: 'todas', busca: '', marca: 'todas' };
+var estado = {
+  cat:               'todos',
+  sub:               'todas',
+  busca:             '',
+  marca:             'todas',
+  precoFiltro:       null,
+  produtoSelecionado: null   // FIX: declarado aqui para nunca ficar undefined
+};
 var pagtoSelecionado = '';
-
 var catMap = {
   caixas:     ['caixas-correio', 'caixas-alimentos', 'caixas-ondulados'],
   sacolas:    ['sacos-lixo', 'sacolas-papel', 'sacolas-plasticas'],
@@ -16,7 +21,6 @@ var catMap = {
   utilidades: ['pilhas-baterias', 'organiz-limpeza', 'ferramentas', 'escritorio', 'ganchos'],
   diversos:   ['isopor-geral', 'emb-flexiveis', 'emb-diversas', 'outros']
 };
-
 var subLabels = {
   'caixas-correio':    'Caixas Correios',
   'caixas-alimentos':  'Caixas p/ Alimentos',
@@ -44,7 +48,6 @@ var subLabels = {
   'caixas-ondulados':  'Caixas Ondulados',
   'pratos':            'Pratos Descartáveis'
 };
-
 var catEmojis = {
   caixas:'📦', sacolas:'🛍️', plastico:'🧪', festa:'🥂', limpeza:'🧹',
   higiene:'🧻', utilidades:'🔧', diversos:'🔓',
@@ -57,10 +60,8 @@ var catEmojis = {
   'ganchos':'🪝', 'isopor-geral':'❄️', 'emb-flexiveis':'📜',
   'emb-diversas':'🎁', 'outros':'📎'
 };
-
 // Chave de esgotados no localStorage (sincronizado com admin)
 var ESGOTADOS_KEY = 'cia_esgotados_v1';
-
 function prods() {
   return window.produtos || [];
 }
