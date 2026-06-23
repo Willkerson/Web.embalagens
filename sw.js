@@ -1,5 +1,4 @@
 const CACHE = "estoque-v2";
-
 const ARQUIVOS = [
   "/Web.embalagens/estoque.html",
   "/Web.embalagens/app.js",
@@ -14,8 +13,6 @@ self.addEventListener("install", (event) => {
       return cache.addAll(ARQUIVOS);
     })
   );
-
-  // força ativação imediata
   self.skipWaiting();
 });
 
@@ -32,16 +29,26 @@ self.addEventListener("activate", (event) => {
       );
     })
   );
-
   self.clients.claim();
 });
 
-// FETCH (corrigido para não quebrar arquivos JS/HTML)
+// FETCH
 self.addEventListener("fetch", (event) => {
+  const url = new URL(event.request.url);
+
+  // ✅ Ignora requisições externas (API GitHub, etc) — browser lida diretamente
+  if (url.origin !== self.location.origin) {
+    return;
+  }
+
+  // ✅ Ignora métodos não-GET (POST, PUT, PATCH, DELETE)
+  if (event.request.method !== "GET") {
+    return;
+  }
+
   event.respondWith(
     fetch(event.request)
       .then((response) => {
-        // só cacheia respostas válidas
         if (
           !response ||
           response.status !== 200 ||
@@ -49,13 +56,10 @@ self.addEventListener("fetch", (event) => {
         ) {
           return response;
         }
-
         const clone = response.clone();
-
         caches.open(CACHE).then((cache) => {
           cache.put(event.request, clone);
         });
-
         return response;
       })
       .catch(() => {
