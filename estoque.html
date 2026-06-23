@@ -628,14 +628,20 @@ document.addEventListener('touchend', e => {
 }, { passive: false });
 
 // ── CONSTANTES ──
-const REPO       = "Willkerson/Automacao-ConnectPlug";
-const WORKFLOW   = "movimentar.yml";
-const FILA_PATH  = "fila/movimentacao.json";
-const HIST_PATH  = "fila/historico.json";
-const BRANCH     = "main";
-const DELAY_MS   = 5000;
-const CART_KEY   = "cia_carrinho";   // localStorage key
+const REPO      = "Willkerson/Automacao-ConnectPlug";
+const WORKFLOW  = "movimentar.yml";
+const BRANCH    = "main";
+const DELAY_MS  = 5000;
+const CART_KEY  = "cia_carrinho";
 const SENHA_HASH = "158a323a7ba44870f23d96f1516dd70aa48e9a72db4ebb026b0a89e212a208ab";
+
+// URLs limpas como constantes — sem ?ref= para PUT, com ?ref= para GET
+function apiUrl(path) {
+  return `https://api.github.com/repos/${REPO}/contents/${path}`;
+}
+function apiUrlGet(path) {
+  return `${apiUrl(path)}?ref=${BRANCH}`;
+}
 
 async function hashSenha(str) {
   const buf = await crypto.subtle.digest("SHA-256", new TextEncoder().encode(str));
@@ -728,7 +734,7 @@ function carregarProdutos() {
     .then(r => { if (!r.ok) throw new Error("HTTP " + r.status); return r.json(); })
     .then(data => {
       produtos = Array.isArray(data) ? data : Object.values(data);
-      atualizarBadge(); // reflete carrinho salvo
+      atualizarBadge();
       render();
     })
     .catch(err => {
@@ -848,7 +854,7 @@ function ajustarQtd(delta) {
 function addCart(tipo) {
   const qtd = Math.max(1, Number(document.getElementById("qtd").value) || 1);
   carrinho.push({ codigo: atual.codigo, nome: atual.nome, qtd, tipo });
-  salvarCarrinhoLocal(); // persiste offline
+  salvarCarrinhoLocal();
   atualizarBadge();
   fecharPainel();
   showToast(`${tipo === "entrada" ? "Entrada" : "Saída"} de ${qtd} adicionada`);
@@ -911,6 +917,47 @@ function limparCarrinho() {
   renderCart();
 }
 
+// ── HELPERS GITHUB API ──
+async function ghGet(path, token) {
+  const res = await fetch(apiUrlGet(path), {
+    headers: {
+      Authorization: "Bearer " + token,
+      Accept: "application/vnd.github+json",
+      "Cache-Control": "no-cache"
+    }
+  });
+  if (res.status === 404) return { found: false, sha: null, data: null };
+  if (!res.ok) {
+    const e = await res.json().catch(() => ({}));
+    throw new Error(e.message || `Erro GET ${path} (${res.status})`);
+  }
+  const d    = await res.json();
+  const sha  = d.sha;
+  const data = JSON.parse(atob(d.content.replace(/\n/g, "")));
+  return { found: true, sha, data };
+}
+
+async function ghPut(path, token, content, sha, message) {
+  const b64  = btoa(unescape(encodeURIComponent(JSON.stringify(content, null, 2))));
+  const body = { message, content: b64, branch: BRANCH };
+  if (sha) body.sha = sha;
+
+  const res = await fetch(apiUrl(path), {
+    method: "PUT",
+    headers: {
+      Authorization: "Bearer " + token,
+      Accept: "application/vnd.github+json",
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify(body)
+  });
+  if (!res.ok) {
+    const e = await res.json().catch(() => ({}));
+    throw new Error(e.message || `Erro PUT ${path} (${res.status})`);
+  }
+  return res;
+}
+
 // ── SALVAR ──
 async function salvar() {
   if (!carrinho.length) { showToast("Carrinho vazio"); return; }
@@ -925,16 +972,8 @@ async function salvar() {
 
   try {
     // 1. Busca fila atual
-    const filaUrl = `https://api.github.com/repos/${REPO}/contents/${FILA_PATH}?ref=${BRANCH}`;
-    const getRes  = await fetch(filaUrl, {
-      headers: { Authorization: "Bearer " + token, Accept: "application/vnd.github+json" }
-    });
-    let sha = null, filaAtual = { itens: [] };
-    if (getRes.ok) {
-      const d = await getRes.json();
-      sha = d.sha;
-      filaAtual = JSON.parse(atob(d.content.replace(/\n/g, "")));
-    }
+    const fila = await ghGet("fila/movimentacao.json", token);
+    const filaAtual = fila.found ? fila.data : { itens: [] };
 
     const agora = new Date().toISOString();
     const novos = carrinho.map(i => ({
@@ -944,18 +983,14 @@ async function salvar() {
 
     // 2. Commit fila
     const filaAtualizada = { itens: [...(filaAtual.itens || []), ...novos] };
-    const b64fila = btoa(unescape(encodeURIComponent(JSON.stringify(filaAtualizada, null, 2))));
-    const putBody = { message: `fila: ${novos.length} movimentacao(oes)`, content: b64fila, branch: BRANCH };
-    if (sha) putBody.sha = sha;
+    await ghPut(
+      "fila/movimentacao.json", token,
+      filaAtualizada, fila.sha,
+      `fila: ${novos.length} movimentacao(oes)`
+    );
 
-    const putRes = await fetch(filaUrl, {
-      method: "PUT",
-      headers: { Authorization: "Bearer " + token, Accept: "application/vnd.github+json", "Content-Type": "application/json" },
-      body: JSON.stringify(putBody)
-    });
-    if (!putRes.ok) { const e = await putRes.json(); throw new Error(e.message || "Erro ao commitar fila"); }
-
-    // 3. Salva no histórico global
+    // 3. Salva no histórico global (com erro visível)
+    btn.textContent = "Salvando histórico…";
     await salvarHistorico(token, novos);
 
     // 4. Aguarda e dispara workflow
@@ -967,7 +1002,11 @@ async function salvar() {
       `https://api.github.com/repos/${REPO}/actions/workflows/${WORKFLOW}/dispatches`,
       {
         method: "POST",
-        headers: { Authorization: "Bearer " + token, Accept: "application/vnd.github+json", "Content-Type": "application/json" },
+        headers: {
+          Authorization: "Bearer " + token,
+          Accept: "application/vnd.github+json",
+          "Content-Type": "application/json"
+        },
         body: JSON.stringify({ ref: BRANCH })
       }
     );
@@ -993,33 +1032,18 @@ async function salvar() {
 
 // ── HISTÓRICO ──
 async function salvarHistorico(token, novos) {
-  try {
-    const url    = `https://api.github.com/repos/${REPO}/contents/${HIST_PATH}?ref=${BRANCH}`;
-    const getRes = await fetch(url, {
-      headers: { Authorization: "Bearer " + token, Accept: "application/vnd.github+json", "Cache-Control": "no-cache" }
-    });
-    let sha = null, hist = { movimentacoes: [] };
-    if (getRes.ok) {
-      const d = await getRes.json();
-      sha = d.sha;
-      hist = JSON.parse(atob(d.content.replace(/\n/g, "")));
-    }
+  // Lança erro para o chamador ver — não engole mais silenciosamente
+  const hist = await ghGet("fila/historico.json", token);
+  const histAtual = hist.found ? hist.data : { movimentacoes: [] };
 
-    // Adiciona no início (mais recentes primeiro) e mantém últimos 500
-    hist.movimentacoes = [...novos, ...(hist.movimentacoes || [])].slice(0, 500);
+  // Adiciona no início (mais recentes primeiro) e mantém últimos 500
+  const movimentacoes = [...novos, ...(histAtual.movimentacoes || [])].slice(0, 500);
 
-    const b64 = btoa(unescape(encodeURIComponent(JSON.stringify(hist, null, 2))));
-    const body = { message: "hist: atualiza historico", content: b64, branch: BRANCH };
-    if (sha) body.sha = sha;
-
-    await fetch(url.replace(`?ref=${BRANCH}`, ""), {
-      method: "PUT",
-      headers: { Authorization: "Bearer " + token, Accept: "application/vnd.github+json", "Content-Type": "application/json" },
-      body: JSON.stringify(body)
-    });
-  } catch (e) {
-    console.warn("Histórico não salvo:", e.message);
-  }
+  await ghPut(
+    "fila/historico.json", token,
+    { movimentacoes }, hist.sha,
+    "hist: atualiza historico"
+  );
 }
 
 let histFiltro = "todos";
@@ -1038,16 +1062,11 @@ async function abrirHistorico() {
 
   const token = localStorage.getItem("gh_token");
   try {
-    const url = `https://api.github.com/repos/${REPO}/contents/${HIST_PATH}?ref=${BRANCH}`;
-    const res = await fetch(url, {
-      headers: { Authorization: "Bearer " + token, Accept: "application/vnd.github+json", "Cache-Control": "no-cache" }
-    });
-    if (!res.ok) throw new Error("Histórico ainda vazio");
-    const d    = await res.json();
-    const hist = JSON.parse(atob(d.content.replace(/\n/g, "")));
-    histDados  = hist.movimentacoes || [];
+    const hist = await ghGet("fila/historico.json", token);
+    histDados  = hist.found ? (hist.data.movimentacoes || []) : [];
   } catch (e) {
     histDados = [];
+    showToast("Erro ao carregar histórico: " + e.message);
   }
   renderHistorico();
 }
@@ -1057,8 +1076,8 @@ function fecharHistorico() {
 }
 
 function renderHistorico() {
-  const el   = document.getElementById("histList");
-  let lista  = histDados;
+  const el  = document.getElementById("histList");
+  let lista = histDados;
 
   if (histFiltro !== "todos") lista = lista.filter(m => m.tipo === histFiltro);
 
@@ -1073,7 +1092,9 @@ function renderHistorico() {
   // Agrupa por dia
   const grupos = {};
   lista.forEach(m => {
-    const dia = m.data ? new Date(m.data).toLocaleDateString("pt-BR", { weekday:"short", day:"2-digit", month:"short" }) : "Sem data";
+    const dia = m.data
+      ? new Date(m.data).toLocaleDateString("pt-BR", { weekday:"short", day:"2-digit", month:"short" })
+      : "Sem data";
     if (!grupos[dia]) grupos[dia] = [];
     grupos[dia].push(m);
   });
@@ -1081,8 +1102,10 @@ function renderHistorico() {
   el.innerHTML = Object.entries(grupos).map(([dia, items]) => `
     <div class="hist-date-label">${dia}</div>
     ${items.map(m => {
-      const icon  = m.tipo === "entrada" ? "↓" : "↑";
-      const hora  = m.data ? new Date(m.data).toLocaleTimeString("pt-BR", { hour:"2-digit", minute:"2-digit" }) : "";
+      const icon = m.tipo === "entrada" ? "↓" : "↑";
+      const hora = m.data
+        ? new Date(m.data).toLocaleTimeString("pt-BR", { hour:"2-digit", minute:"2-digit" })
+        : "";
       return `
         <div class="hist-item">
           <div class="hist-icon icon-${m.tipo}">${icon}</div>
