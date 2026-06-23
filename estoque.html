@@ -920,10 +920,10 @@ function limparCarrinho() {
 // ── HELPERS GITHUB API ──
 async function ghGet(path, token) {
   const res = await fetch(apiUrlGet(path), {
+    cache: "no-store",
     headers: {
       Authorization: "Bearer " + token,
-      Accept: "application/vnd.github+json",
-      "Cache-Control": "no-cache"
+      Accept: "application/vnd.github+json"
     }
   });
   if (res.status === 404) return { found: false, sha: null, data: null };
