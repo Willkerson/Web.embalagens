@@ -1,5 +1,5 @@
 // ─────────────────────────────────────────────────────────────
-// RENDER.JS — Renderização do grid de produtos
+// RENDER.JS — Renderização do grid de produtos (versão DEBUG)
 // ─────────────────────────────────────────────────────────────
 
 var gruposRender     = [];
@@ -15,6 +15,17 @@ function estoqueNum(valor) {
 }
 
 function getListaFiltrada() {
+  // ── DEBUG ────────────────────────────────────────────────────
+  console.group('[getListaFiltrada]');
+  console.log('produtoSelecionado:', estado.produtoSelecionado);
+  console.log('busca:', estado.busca);
+  console.log('precoFiltro:', estado.precoFiltro);
+  console.log('cat:', estado.cat);
+  console.log('sub:', estado.sub);
+  console.trace('chamado de:');
+  console.groupEnd();
+  // ────────────────────────────────────────────────────────────
+
   // ── Produto único selecionado pela sugestão ──────────────────
   if (estado.produtoSelecionado) {
     return prods().filter(function(p) {
@@ -109,7 +120,6 @@ function selecionarSugestao(id) {
 
   esconderSugestoes();
 
-  // Mostra só este produto no grid (lista de 1 item)
   estado.produtoSelecionado = prod.id;
   estado.busca              = '';
   estado.precoFiltro        = null;
@@ -127,7 +137,6 @@ function selecionarSugestao(id) {
 
   renderizar();
 
-  // Card garantido no DOM (é o único item renderizado)
   setTimeout(function() {
     var card = document.getElementById('card-' + prod.id);
     if (card) {
@@ -145,7 +154,6 @@ function renderizar() {
 
   var lista = getListaFiltrada();
 
-  // Base para renderBrandFilter: respeita categoria ativa quando não há busca
   var listaBase = prods().filter(function(p) {
     return !p.oculto && estoqueNum(p.estoque) > 0;
   });
@@ -298,7 +306,6 @@ function renderMais() {
     if (addCount >= maxPorRender) break;
   }
 
-  // Lazy-load via IntersectionObserver
   var pendentes = gruposRender.some(function(g) { return g.count < g.itens.length; });
   var anchor    = document.getElementById('scroll-anchor');
 
