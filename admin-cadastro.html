@@ -1,0 +1,618 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cadastro de Produto — CIA das Embalagens</title>
+  <style>
+    /* ── Tokens ──────────────────────────────────────────────────────────── */
+    :root {
+      --bg:        #0f1117;
+      --surface:   #1a1d27;
+      --surface2:  #22263a;
+      --border:    #2e3250;
+      --accent:    #4f8ef7;
+      --accent-h:  #3a7aee;
+      --success:   #22c55e;
+      --warn:      #f59e0b;
+      --danger:    #ef4444;
+      --text:      #e8eaf2;
+      --muted:     #7c82a0;
+      --radius:    12px;
+      --radius-sm: 7px;
+      --font:      'Inter', system-ui, sans-serif;
+    }
+
+    /* ── Reset ───────────────────────────────────────────────────────────── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: var(--font);
+      background: var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+      padding: 24px 16px 80px;
+    }
+
+    /* ── Header ─────────────────────────────────────────────────────────── */
+    header {
+      max-width: 680px;
+      margin: 0 auto 32px;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+    .logo {
+      width: 42px; height: 42px;
+      background: var(--accent);
+      border-radius: 10px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 20px; font-weight: 800; color: #fff;
+      flex-shrink: 0;
+    }
+    header h1 { font-size: 1.25rem; font-weight: 700; }
+    header p  { font-size: 0.8rem; color: var(--muted); }
+
+    /* ── Card ────────────────────────────────────────────────────────────── */
+    .card {
+      max-width: 680px;
+      margin: 0 auto 20px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 28px;
+    }
+
+    .card-title {
+      font-size: 0.7rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: .1em;
+      color: var(--muted);
+      margin-bottom: 20px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    /* ── Form grid ───────────────────────────────────────────────────────── */
+    .row {
+      display: grid;
+      gap: 16px;
+      margin-bottom: 16px;
+    }
+    .row-2 { grid-template-columns: 1fr 1fr; }
+    .row-3 { grid-template-columns: 1fr 1fr 1fr; }
+
+    label {
+      display: block;
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: var(--muted);
+      margin-bottom: 6px;
+      text-transform: uppercase;
+      letter-spacing: .05em;
+    }
+
+    input, textarea {
+      width: 100%;
+      background: var(--surface2);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      color: var(--text);
+      font-family: var(--font);
+      font-size: 0.95rem;
+      padding: 10px 14px;
+      outline: none;
+      transition: border-color .15s;
+    }
+    input:focus, textarea:focus {
+      border-color: var(--accent);
+    }
+    input::placeholder, textarea::placeholder {
+      color: var(--muted);
+    }
+    textarea {
+      resize: vertical;
+      min-height: 80px;
+    }
+
+    /* ── Auth section ────────────────────────────────────────────────────── */
+    .auth-toggle {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.8rem;
+      color: var(--muted);
+      cursor: pointer;
+      user-select: none;
+      margin-bottom: 16px;
+    }
+    .auth-toggle input { width: auto; }
+
+    /* ── Hint ─────────────────────────────────────────────────────────────── */
+    .hint {
+      font-size: 0.72rem;
+      color: var(--muted);
+      margin-top: 5px;
+    }
+
+    /* ── Fila ────────────────────────────────────────────────────────────── */
+    #fila-container { max-width: 680px; margin: 0 auto 20px; }
+
+    #fila-lista { display: flex; flex-direction: column; gap: 10px; }
+
+    .fila-item {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      padding: 14px 16px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+    }
+    .fila-info { flex: 1; min-width: 0; }
+    .fila-nome {
+      font-weight: 600;
+      font-size: 0.9rem;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    .fila-meta {
+      font-size: 0.72rem;
+      color: var(--muted);
+      margin-top: 2px;
+    }
+    .btn-remove-item {
+      background: transparent;
+      border: 1px solid var(--border);
+      color: var(--danger);
+      border-radius: var(--radius-sm);
+      padding: 5px 10px;
+      font-size: 0.75rem;
+      cursor: pointer;
+      white-space: nowrap;
+      transition: background .15s;
+    }
+    .btn-remove-item:hover { background: rgba(239,68,68,.1); }
+
+    /* ── Buttons ─────────────────────────────────────────────────────────── */
+    .btn-row {
+      max-width: 680px;
+      margin: 0 auto;
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    button {
+      font-family: var(--font);
+      font-size: 0.9rem;
+      font-weight: 600;
+      border: none;
+      border-radius: var(--radius-sm);
+      padding: 11px 22px;
+      cursor: pointer;
+      transition: background .15s, opacity .15s;
+    }
+
+    .btn-add {
+      background: var(--surface2);
+      color: var(--text);
+      border: 1px solid var(--border);
+    }
+    .btn-add:hover { background: var(--border); }
+
+    .btn-primary {
+      background: var(--accent);
+      color: #fff;
+      flex: 1;
+    }
+    .btn-primary:hover { background: var(--accent-h); }
+    .btn-primary:disabled { opacity: .45; cursor: not-allowed; }
+
+    .btn-clear {
+      background: transparent;
+      border: 1px solid var(--border);
+      color: var(--muted);
+    }
+    .btn-clear:hover { color: var(--danger); border-color: var(--danger); }
+
+    /* ── Toast ───────────────────────────────────────────────────────────── */
+    #toast {
+      position: fixed;
+      bottom: 24px; right: 24px;
+      background: var(--surface2);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      padding: 14px 20px;
+      font-size: 0.88rem;
+      max-width: 340px;
+      z-index: 999;
+      display: none;
+      gap: 10px;
+      align-items: center;
+      box-shadow: 0 8px 32px rgba(0,0,0,.5);
+    }
+    #toast.show { display: flex; }
+    #toast.ok   { border-color: var(--success); }
+    #toast.err  { border-color: var(--danger); }
+    #toast .icon { font-size: 1.1rem; }
+
+    /* ── Status badge ────────────────────────────────────────────────────── */
+    #status-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.75rem;
+      padding: 4px 10px;
+      border-radius: 20px;
+      background: var(--surface2);
+      border: 1px solid var(--border);
+      color: var(--muted);
+      margin-left: auto;
+    }
+    #status-badge.ok  { border-color: var(--success); color: var(--success); }
+    #status-badge.err { border-color: var(--danger);  color: var(--danger);  }
+
+    /* ── Responsive ──────────────────────────────────────────────────────── */
+    @media (max-width: 540px) {
+      .row-2, .row-3 { grid-template-columns: 1fr; }
+      .card { padding: 20px 16px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <div class="logo">C</div>
+    <div>
+      <h1>Cadastro de Produto</h1>
+      <p>CIA das Embalagens · ConnectPlug</p>
+    </div>
+    <span id="status-badge">● pronto</span>
+  </header>
+
+  <!-- Config GitHub -->
+  <div class="card">
+    <div class="card-title">Configuração GitHub</div>
+
+    <label class="auth-toggle">
+      <input type="checkbox" id="toggle-config" onchange="toggleConfig(this)"> Mostrar configurações de acesso
+    </label>
+
+    <div id="config-section" style="display:none">
+      <div class="row row-2">
+        <div>
+          <label for="gh-owner">Usuário / Owner</label>
+          <input id="gh-owner" type="text" placeholder="Willkerson" />
+        </div>
+        <div>
+          <label for="gh-repo">Repositório</label>
+          <input id="gh-repo" type="text" placeholder="Automacao-ConnectPlug" />
+        </div>
+      </div>
+      <div class="row">
+        <div>
+          <label for="gh-token">Token GitHub (PAT)</label>
+          <input id="gh-token" type="password" placeholder="ghp_..." />
+          <p class="hint">Precisa de permissão: Contents (write) + Actions (write)</p>
+        </div>
+      </div>
+      <button class="btn-add" onclick="salvarConfig()">💾 Salvar configurações</button>
+    </div>
+  </div>
+
+  <!-- Formulário de produto -->
+  <div class="card">
+    <div class="card-title">Dados do Produto</div>
+
+    <div class="row">
+      <div>
+        <label for="f-nome">Nome do Produto *</label>
+        <input id="f-nome" type="text" placeholder="SACOLA KRAFT M 1UN 19X12X26CM" maxlength="200" />
+      </div>
+    </div>
+
+    <div class="row row-2">
+      <div>
+        <label for="f-sku">SKU / Código *</label>
+        <input id="f-sku" type="text" placeholder="7909875076503" maxlength="30" />
+      </div>
+      <div>
+        <label for="f-valor">Valor de Venda *</label>
+        <input id="f-valor" type="text" placeholder="1,55" maxlength="14" />
+        <p class="hint">Use vírgula: ex. 1,55</p>
+      </div>
+    </div>
+
+    <div class="row">
+      <div>
+        <label for="f-ncm">NCM (opcional)</label>
+        <input id="f-ncm" type="text" placeholder="Ex: 4819 (busca no ConnectPlug)" maxlength="20" />
+        <p class="hint">Deixe em branco para pular. O script buscará pelo código digitado.</p>
+      </div>
+    </div>
+
+    <div class="row row-2">
+      <div>
+        <label for="f-apelido">Apelido (opcional)</label>
+        <input id="f-apelido" type="text" placeholder="Nome curto ou interno" maxlength="200" />
+      </div>
+      <div>
+        <label for="f-descricao">Descrição (opcional)</label>
+        <textarea id="f-descricao" placeholder="Descrição do produto..." maxlength="500" rows="2"></textarea>
+      </div>
+    </div>
+
+    <button class="btn-add" onclick="adicionarNaFila()">+ Adicionar à fila</button>
+  </div>
+
+  <!-- Fila -->
+  <div id="fila-container">
+    <div class="card-title" style="max-width:680px;margin:0 auto 12px;padding-left:4px">
+      Fila de Cadastro (<span id="fila-count">0</span>)
+    </div>
+    <div id="fila-lista">
+      <p style="color:var(--muted);font-size:.85rem;padding:0 4px">Nenhum produto na fila ainda.</p>
+    </div>
+  </div>
+
+  <!-- Botões de ação -->
+  <div class="btn-row" style="margin-top:20px">
+    <button class="btn-clear" onclick="limparFila()">🗑 Limpar fila</button>
+    <button class="btn-primary" id="btn-enviar" onclick="enviarFila()" disabled>
+      🚀 Enviar para ConnectPlug
+    </button>
+  </div>
+
+  <!-- Toast -->
+  <div id="toast">
+    <span class="icon" id="toast-icon">✅</span>
+    <span id="toast-msg"></span>
+  </div>
+
+  <script>
+    // ── Storage keys ───────────────────────────────────────────────────────
+    const KEYS = {
+      owner: 'cia_owner',
+      repo:  'cia_repo',
+      token: 'cia_token',
+    };
+
+    // ── Estado ──────────────────────────────────────────────────────────────
+    let fila = [];
+
+    // ── Init ────────────────────────────────────────────────────────────────
+    (function init() {
+      const saved = {
+        owner: localStorage.getItem(KEYS.owner) || '',
+        repo:  localStorage.getItem(KEYS.repo)  || '',
+        token: localStorage.getItem(KEYS.token) || '',
+      };
+      if (saved.owner) document.getElementById('gh-owner').value = saved.owner;
+      if (saved.repo)  document.getElementById('gh-repo').value  = saved.repo;
+      if (saved.token) document.getElementById('gh-token').value = saved.token;
+    })();
+
+    // ── Config ──────────────────────────────────────────────────────────────
+    function toggleConfig(el) {
+      document.getElementById('config-section').style.display = el.checked ? 'block' : 'none';
+    }
+
+    function salvarConfig() {
+      localStorage.setItem(KEYS.owner, document.getElementById('gh-owner').value.trim());
+      localStorage.setItem(KEYS.repo,  document.getElementById('gh-repo').value.trim());
+      localStorage.setItem(KEYS.token, document.getElementById('gh-token').value.trim());
+      toast('ok', '✅ Configurações salvas!');
+    }
+
+    function getConfig() {
+      return {
+        owner: localStorage.getItem(KEYS.owner) || document.getElementById('gh-owner').value.trim(),
+        repo:  localStorage.getItem(KEYS.repo)  || document.getElementById('gh-repo').value.trim(),
+        token: localStorage.getItem(KEYS.token) || document.getElementById('gh-token').value.trim(),
+      };
+    }
+
+    // ── Fila ────────────────────────────────────────────────────────────────
+    function adicionarNaFila() {
+      const nome    = document.getElementById('f-nome').value.trim();
+      const sku     = document.getElementById('f-sku').value.trim();
+      const valor   = document.getElementById('f-valor').value.trim();
+      const ncm     = document.getElementById('f-ncm').value.trim();
+      const apelido = document.getElementById('f-apelido').value.trim();
+      const descricao = document.getElementById('f-descricao').value.trim();
+
+      if (!nome || !sku || !valor) {
+        toast('err', '⚠️ Nome, SKU e Valor são obrigatórios.');
+        return;
+      }
+
+      fila.push({ nome, sku, valor, ncm, apelido, descricao });
+      renderFila();
+
+      // Limpa campos do formulário
+      ['f-nome','f-sku','f-valor','f-ncm','f-apelido','f-descricao'].forEach(id => {
+        const el = document.getElementById(id);
+        el.value = '';
+      });
+      document.getElementById('f-nome').focus();
+      toast('ok', `✅ "${nome}" adicionado à fila.`);
+    }
+
+    function removerDaFila(idx) {
+      fila.splice(idx, 1);
+      renderFila();
+    }
+
+    function limparFila() {
+      if (fila.length === 0) return;
+      if (!confirm('Limpar toda a fila?')) return;
+      fila = [];
+      renderFila();
+    }
+
+    function renderFila() {
+      const lista = document.getElementById('fila-lista');
+      document.getElementById('fila-count').textContent = fila.length;
+      document.getElementById('btn-enviar').disabled = fila.length === 0;
+
+      if (fila.length === 0) {
+        lista.innerHTML = '<p style="color:var(--muted);font-size:.85rem;padding:0 4px">Nenhum produto na fila ainda.</p>';
+        return;
+      }
+
+      lista.innerHTML = fila.map((p, i) => `
+        <div class="fila-item">
+          <div class="fila-info">
+            <div class="fila-nome">${p.nome}</div>
+            <div class="fila-meta">SKU: ${p.sku} · R$ ${p.valor}${p.ncm ? ' · NCM: ' + p.ncm : ''}</div>
+          </div>
+          <button class="btn-remove-item" onclick="removerDaFila(${i})">✕ Remover</button>
+        </div>
+      `).join('');
+    }
+
+    // ── GitHub API ──────────────────────────────────────────────────────────
+    async function ghGet(cfg, path) {
+      const res = await fetch(
+        `https://api.github.com/repos/${cfg.owner}/${cfg.repo}/contents/${path}`,
+        {
+          headers: {
+            Authorization: `Bearer ${cfg.token}`,
+            Accept: 'application/vnd.github.v3+json',
+          },
+        }
+      );
+      if (res.status === 404) return null;
+      if (!res.ok) throw new Error(`ghGet ${path}: ${res.status}`);
+      return res.json();
+    }
+
+    async function ghPut(cfg, path, content, message, sha) {
+      const body = {
+        message,
+        content: btoa(unescape(encodeURIComponent(content))),
+        branch: 'main',
+      };
+      if (sha) body.sha = sha;
+
+      const res = await fetch(
+        `https://api.github.com/repos/${cfg.owner}/${cfg.repo}/contents/${path}`,
+        {
+          method: 'PUT',
+          headers: {
+            Authorization: `Bearer ${cfg.token}`,
+            Accept: 'application/vnd.github.v3+json',
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(body),
+        }
+      );
+      if (!res.ok) {
+        const err = await res.json().catch(() => ({}));
+        throw new Error(`ghPut ${path}: ${res.status} — ${err.message || ''}`);
+      }
+      return res.json();
+    }
+
+    async function dispararWorkflow(cfg, workflow) {
+      const res = await fetch(
+        `https://api.github.com/repos/${cfg.owner}/${cfg.repo}/actions/workflows/${workflow}/dispatches`,
+        {
+          method: 'POST',
+          headers: {
+            Authorization: `Bearer ${cfg.token}`,
+            Accept: 'application/vnd.github.v3+json',
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({ ref: 'main' }),
+        }
+      );
+      if (!res.ok) {
+        const err = await res.json().catch(() => ({}));
+        throw new Error(`Workflow dispatch: ${res.status} — ${err.message || ''}`);
+      }
+    }
+
+    // ── Enviar fila ─────────────────────────────────────────────────────────
+    async function enviarFila() {
+      const cfg = getConfig();
+      if (!cfg.owner || !cfg.repo || !cfg.token) {
+        toast('err', '⚠️ Configure o GitHub antes de enviar.');
+        document.getElementById('toggle-config').checked = true;
+        toggleConfig(document.getElementById('toggle-config'));
+        return;
+      }
+
+      const btn = document.getElementById('btn-enviar');
+      btn.disabled = true;
+      btn.textContent = '⏳ Enviando...';
+      setBadge('', '⏳ enviando...');
+
+      try {
+        // 1. Lê SHA atual do fila-cadastro.json (pode não existir)
+        const atual = await ghGet(cfg, 'fila-cadastro.json');
+        const sha   = atual ? atual.sha : undefined;
+
+        // 2. Commita a fila
+        await ghPut(
+          cfg,
+          'fila-cadastro.json',
+          JSON.stringify(fila, null, 2),
+          `🛒 fila: ${fila.length} produto(s) para cadastro — ${new Date().toLocaleString('pt-BR')}`,
+          sha
+        );
+
+        // 3. Aguarda propagação
+        await new Promise(r => setTimeout(r, 4000));
+
+        // 4. Dispara workflow
+        await dispararWorkflow(cfg, 'cadastrar.yml');
+
+        toast('ok', `🚀 Fila enviada! ${fila.length} produto(s) sendo cadastrado(s) no ConnectPlug.`);
+        setBadge('ok', '✓ disparado');
+
+        fila = [];
+        renderFila();
+      } catch (e) {
+        console.error(e);
+        toast('err', `❌ Erro: ${e.message}`);
+        setBadge('err', '✗ erro');
+      } finally {
+        btn.textContent = '🚀 Enviar para ConnectPlug';
+        btn.disabled = fila.length === 0;
+      }
+    }
+
+    // ── UI helpers ──────────────────────────────────────────────────────────
+    let toastTimer;
+    function toast(type, msg) {
+      const el   = document.getElementById('toast');
+      const icon = document.getElementById('toast-icon');
+      const txt  = document.getElementById('toast-msg');
+      el.className = `show ${type}`;
+      icon.textContent = type === 'ok' ? '✅' : '⚠️';
+      txt.textContent  = msg;
+      clearTimeout(toastTimer);
+      toastTimer = setTimeout(() => el.classList.remove('show'), 5000);
+    }
+
+    function setBadge(cls, txt) {
+      const b = document.getElementById('status-badge');
+      b.className = cls;
+      b.textContent = (cls === 'ok' ? '● ' : cls === 'err' ? '● ' : '● ') + txt;
+    }
+
+    // Enter no formulário adiciona à fila
+    document.addEventListener('keydown', e => {
+      if (e.key === 'Enter' && e.target.tagName !== 'TEXTAREA' && e.target.closest('.card:not(:first-child)')) {
+        adicionarNaFila();
+      }
+    });
+  </script>
+</body>
+</html>
