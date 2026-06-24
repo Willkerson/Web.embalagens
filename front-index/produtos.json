@@ -403,7 +403,7 @@
     "nome": "SACO P/ LIXO PRETO 20L C/100UN",
     "categoria": "SACO LIXO",
     "preco": 30,
-    "estoque": "10,00 un"
+    "estoque": "20,00 un"
   },
   {
     "codigo": "330",
@@ -2069,14 +2069,14 @@
     "nome": "SACO P/ LIXO PRETO P8 60L C/50UN",
     "categoria": "SACO LIXO",
     "preco": 38.25,
-    "estoque": "5,00 un"
+    "estoque": "9,00 un"
   },
   {
     "codigo": "1042",
     "nome": "SACO P/ LIXO PRETO P8 60L C/100UN",
     "categoria": "SACO LIXO",
     "preco": 76.5,
-    "estoque": "4,00 un"
+    "estoque": "2,00 un"
   },
   {
     "codigo": "1044",
@@ -2111,35 +2111,35 @@
     "nome": "SACO P/ LIXO PRETO 100L C/50UN",
     "categoria": "SACO LIXO",
     "preco": 57.5,
-    "estoque": "1,00 un"
+    "estoque": "-11,00 un"
   },
   {
     "codigo": "1049",
     "nome": "SACO P/ LIXO PRETO 100L C/100UN",
     "categoria": "SACO LIXO",
     "preco": 115,
-    "estoque": "8,00 un"
+    "estoque": "3,00 un"
   },
   {
     "codigo": "1051",
     "nome": "SACO P/ LIXO PRETO P6 40L C/10UN",
     "categoria": "SACO LIXO",
     "preco": 5.5,
-    "estoque": "8,00 un"
+    "estoque": "-13,00 un"
   },
   {
     "codigo": "1052",
     "nome": "SACO P/ LIXO PRETO P8 60L C/10UN",
     "categoria": "SACO LIXO",
     "preco": 8.99,
-    "estoque": "13,00 un"
+    "estoque": "1,00 un"
   },
   {
     "codigo": "1053",
     "nome": "SACOS P/LIXO 100L P8 C10UN PRETO",
     "categoria": "SACO LIXO",
     "preco": 13.5,
-    "estoque": "11,00 un"
+    "estoque": "4,00 un"
   },
   {
     "codigo": "1055",
@@ -2405,14 +2405,14 @@
     "nome": "SACO P/ LIXO PRETO P6 40L C/50UN",
     "categoria": "SACO LIXO",
     "preco": 25,
-    "estoque": "5,00 un"
+    "estoque": "2,00 un"
   },
   {
     "codigo": "1188",
     "nome": "SACO P/ LIXO PRETO P6 40L C/100UN",
     "categoria": "SACO LIXO",
     "preco": 50,
-    "estoque": "4,00 un"
+    "estoque": "3,00 un"
   },
   {
     "codigo": "1199",
@@ -5709,7 +5709,7 @@
     "nome": "SACO P/LIXO 20L PRETO P5 C/50UN",
     "categoria": "SACO LIXO",
     "preco": 17,
-    "estoque": "6,00 un"
+    "estoque": "-13,00 un"
   },
   {
     "codigo": "7893",
