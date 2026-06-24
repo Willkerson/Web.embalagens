@@ -319,7 +319,7 @@
     "nome": "VASSOURA PREMIUM COM CABO ALKLIN",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 18,
-    "estoque": "12,00 un"
+    "estoque": "11,00 un"
   },
   {
     "codigo": "296",
@@ -417,7 +417,7 @@
     "nome": "MOP SPRAY 120CM C/RESERV. 300ML",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 24.99,
-    "estoque": "2,00 un"
+    "estoque": "1,00 un"
   },
   {
     "codigo": "334",
@@ -543,7 +543,7 @@
     "nome": "PANO DE CHAO XADREZ 45CMX68CM SOUZA BR2",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 4.7,
-    "estoque": "69,00 un"
+    "estoque": "66,00 un"
   },
   {
     "codigo": "390",
@@ -655,7 +655,7 @@
     "nome": "COLHER SOBREMESA BRANCA C/50UN ELITE",
     "categoria": "DESCARTAVEIS",
     "preco": 3.99,
-    "estoque": "31,00 un"
+    "estoque": "30,00 un"
   },
   {
     "codigo": "428",
@@ -1019,7 +1019,7 @@
     "nome": "FOLHA DE ALUMINIO 7,5MX30CM WYDA",
     "categoria": "DESCARTAVEIS",
     "preco": 8.75,
-    "estoque": "-49,00 un"
+    "estoque": "-51,00 un"
   },
   {
     "codigo": "616",
@@ -1544,7 +1544,7 @@
     "nome": "DESINFETANTE EUCALIPTO 2L SANOL",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 10.15,
-    "estoque": "6,00 un"
+    "estoque": "5,00 un"
   },
   {
     "codigo": "827",
@@ -1607,7 +1607,7 @@
     "nome": "HAMBURGUEIRA BH03 C/10UN BOM APETITE",
     "categoria": "Embalagem",
     "preco": 4.5,
-    "estoque": "-25,00 un"
+    "estoque": "-26,00 un"
   },
   {
     "codigo": "847",
@@ -1656,7 +1656,7 @@
     "nome": "COPO SUPREMO 300ML C/10UN PRAFESTA",
     "categoria": "DESCARTAVEIS",
     "preco": 18.99,
-    "estoque": "15,00 un"
+    "estoque": "14,00 un"
   },
   {
     "codigo": "866",
@@ -1719,7 +1719,7 @@
     "nome": "COPO DESCARTAVEL TRANSPARENTE 180ML C/100UN TOTAL PLAST",
     "categoria": "DESCARTAVEIS",
     "preco": 8.99,
-    "estoque": "436,00 un"
+    "estoque": "434,00 un"
   },
   {
     "codigo": "897",
@@ -1740,7 +1740,7 @@
     "nome": "GUARDANAPO 30X31CM C/50UN LUXO PLUMA",
     "categoria": "DESCARTAVEIS",
     "preco": 3.9,
-    "estoque": "73,00 un"
+    "estoque": "71,00 un"
   },
   {
     "codigo": "901",
@@ -1761,7 +1761,7 @@
     "nome": "COPO DESCARTAVEL TRANSPARENTE 50ML C/100UN TOTAL PLAST",
     "categoria": "DESCARTAVEIS",
     "preco": 3.5,
-    "estoque": "41,00 un"
+    "estoque": "39,00 un"
   },
   {
     "codigo": "904",
@@ -2118,7 +2118,7 @@
     "nome": "SACO P/ LIXO PRETO 100L C/100UN",
     "categoria": "SACO LIXO",
     "preco": 115,
-    "estoque": "8,00 un"
+    "estoque": "6,00 un"
   },
   {
     "codigo": "1051",
@@ -2545,7 +2545,7 @@
     "nome": "TOALHA DE PAPEL BOBINA 6X20X200 FD WHITE PAPER",
     "categoria": "PRODUTO DE HIGIENE",
     "preco": 95,
-    "estoque": "-1,00 un"
+    "estoque": "-2,00 un"
   },
   {
     "codigo": "1313",
@@ -3063,7 +3063,7 @@
     "nome": "D50MM TORTA MDIA 1,5KG BR24CM DONA RITA",
     "categoria": "DESCARTAVEIS",
     "preco": 3,
-    "estoque": "0,00 un"
+    "estoque": "-1,00 un"
   },
   {
     "codigo": "1649",
@@ -3182,7 +3182,7 @@
     "nome": "CANUDO BIO 8M P/ MILKE SHAKE C/100UN IT´S BIO",
     "categoria": "DESCARTAVEIS",
     "preco": 16,
-    "estoque": "5,00 un"
+    "estoque": "4,00 un"
   },
   {
     "codigo": "1770",
@@ -3308,7 +3308,7 @@
     "nome": "TOP LIXO BRANCO 15L C/60UN PACK LIXO",
     "categoria": "SACO LIXO",
     "preco": 19,
-    "estoque": "-8,00 un"
+    "estoque": "-9,00 un"
   },
   {
     "codigo": "1854",
@@ -3329,7 +3329,7 @@
     "nome": "HAMBURGUEIRA BH03 C/100UN BOM APETITE",
     "categoria": "DESCARTAVEIS",
     "preco": 38,
-    "estoque": "-1,00 un"
+    "estoque": "-2,00 un"
   },
   {
     "codigo": "1888",
@@ -3357,7 +3357,7 @@
     "nome": "ESCOVAO C/CABO ALKLIN",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 20,
-    "estoque": "5,00 un"
+    "estoque": "4,00 un"
   },
   {
     "codigo": "1901",
@@ -3595,7 +3595,7 @@
     "nome": "POTE TERMICO 480ML C/25UN ULTRA",
     "categoria": "DESCARTAVEIS",
     "preco": 15.99,
-    "estoque": "2,00 un"
+    "estoque": "1,00 un"
   },
   {
     "codigo": "2078",
@@ -3658,21 +3658,21 @@
     "nome": "SACOLA BRANCA 1KG 30x40",
     "categoria": "SACO LIXO",
     "preco": 27,
-    "estoque": "-15,00 un"
+    "estoque": "9,00 un"
   },
   {
     "codigo": "2102",
     "nome": "SACOLA BRANCA 1KG 35x45",
     "categoria": "Embalagem",
     "preco": 27,
-    "estoque": "38,00 un"
+    "estoque": "12,00 un"
   },
   {
     "codigo": "2103",
     "nome": "SACOLA BRANCA 1KG 40x50",
     "categoria": "SACO LIXO",
     "preco": 27,
-    "estoque": "-21,00 un"
+    "estoque": "2,00 un"
   },
   {
     "codigo": "2104",
@@ -3854,14 +3854,14 @@
     "nome": "SACO HERMETICO M ZIPBAG C/10UN 18X23CM WYDA",
     "categoria": "Embalagem",
     "preco": 15,
-    "estoque": "6,00 un"
+    "estoque": "4,00 un"
   },
   {
     "codigo": "2322",
     "nome": "G70 Bolo/Torta Retangular MEDIA GALVONOTEK - 34,2 x 24 x 11,5 cm",
     "categoria": "DESCARTAVEIS",
     "preco": 15,
-    "estoque": "-16,00 un"
+    "estoque": "-17,00 un"
   },
   {
     "codigo": "2345",
@@ -3875,7 +3875,7 @@
     "nome": "CUMBUCA C/TAMPA 300ML C/10UN B APETITE",
     "categoria": "DESCARTAVEIS",
     "preco": 6,
-    "estoque": "0,00 un"
+    "estoque": "-1,00 un"
   },
   {
     "codigo": "2350",
@@ -4435,7 +4435,7 @@
     "nome": "TAMPA P/ POTE 240/300/360 E 480ML C/25UN ULTRA",
     "categoria": "DESCARTAVEIS",
     "preco": 8.8,
-    "estoque": "-8,00 un"
+    "estoque": "-9,00 un"
   },
   {
     "codigo": "2848",
@@ -4883,7 +4883,7 @@
     "nome": "POTE E TAMPA REDONDO 500ML C/TAMPA C/24UN DANUBIO",
     "categoria": "DESCARTAVEIS",
     "preco": 19.99,
-    "estoque": "12,00 un"
+    "estoque": "8,00 un"
   },
   {
     "codigo": "3120",
@@ -6073,7 +6073,7 @@
     "nome": "RODO ALUMINIO 60CM C/CABO 1,50 MT SANCHES",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 44,
-    "estoque": "-2,00 un"
+    "estoque": "-3,00 un"
   },
   {
     "codigo": "11526",
@@ -7340,7 +7340,7 @@
     "nome": "SACO P/LIXO PRETO 20L P5 C/10UN",
     "categoria": "SACO LIXO",
     "preco": 4,
-    "estoque": "8,00 un"
+    "estoque": "15,00 un"
   },
   {
     "codigo": "1003_857",
