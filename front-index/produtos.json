@@ -403,7 +403,7 @@
     "nome": "SACO P/ LIXO PRETO 20L C/100UN",
     "categoria": "SACO LIXO",
     "preco": 30,
-    "estoque": "40,00 un"
+    "estoque": "60,00 un"
   },
   {
     "codigo": "330",
@@ -2069,14 +2069,14 @@
     "nome": "SACO P/ LIXO PRETO P8 60L C/50UN",
     "categoria": "SACO LIXO",
     "preco": 38.25,
-    "estoque": "17,00 un"
+    "estoque": "25,00 un"
   },
   {
     "codigo": "1042",
     "nome": "SACO P/ LIXO PRETO P8 60L C/100UN",
     "categoria": "SACO LIXO",
     "preco": 76.5,
-    "estoque": "-2,00 un"
+    "estoque": "-6,00 un"
   },
   {
     "codigo": "1044",
@@ -2111,35 +2111,35 @@
     "nome": "SACO P/ LIXO PRETO 100L C/50UN",
     "categoria": "SACO LIXO",
     "preco": 57.5,
-    "estoque": "-35,00 un"
+    "estoque": "-59,00 un"
   },
   {
     "codigo": "1049",
     "nome": "SACO P/ LIXO PRETO 100L C/100UN",
     "categoria": "SACO LIXO",
     "preco": 115,
-    "estoque": "-7,00 un"
+    "estoque": "-17,00 un"
   },
   {
     "codigo": "1051",
     "nome": "SACO P/ LIXO PRETO P6 40L C/10UN",
     "categoria": "SACO LIXO",
     "preco": 5.5,
-    "estoque": "-55,00 un"
+    "estoque": "-97,00 un"
   },
   {
     "codigo": "1052",
     "nome": "SACO P/ LIXO PRETO P8 60L C/10UN",
     "categoria": "SACO LIXO",
     "preco": 8.99,
-    "estoque": "-23,00 un"
+    "estoque": "-47,00 un"
   },
   {
     "codigo": "1053",
     "nome": "SACOS P/LIXO 100L P8 C10UN PRETO",
     "categoria": "SACO LIXO",
     "preco": 13.5,
-    "estoque": "-10,00 un"
+    "estoque": "-24,00 un"
   },
   {
     "codigo": "1055",
@@ -2405,14 +2405,14 @@
     "nome": "SACO P/ LIXO PRETO P6 40L C/50UN",
     "categoria": "SACO LIXO",
     "preco": 25,
-    "estoque": "-4,00 un"
+    "estoque": "-10,00 un"
   },
   {
     "codigo": "1188",
     "nome": "SACO P/ LIXO PRETO P6 40L C/100UN",
     "categoria": "SACO LIXO",
     "preco": 50,
-    "estoque": "1,00 un"
+    "estoque": "-1,00 un"
   },
   {
     "codigo": "1199",
@@ -2650,7 +2650,7 @@
     "nome": "MARMITEX DE ISOPOR 750ML C100/UN COPOBRAS",
     "categoria": "DESCARTAVEIS",
     "preco": 60.5,
-    "estoque": "18,00 un"
+    "estoque": "17,00 un"
   },
   {
     "codigo": "1343",
@@ -5709,7 +5709,7 @@
     "nome": "SACO P/LIXO 20L PRETO P5 C/50UN",
     "categoria": "SACO LIXO",
     "preco": 17,
-    "estoque": "-51,00 un"
+    "estoque": "-89,00 un"
   },
   {
     "codigo": "7893",
@@ -7340,7 +7340,7 @@
     "nome": "SACO P/LIXO PRETO 20L P5 C/10UN",
     "categoria": "SACO LIXO",
     "preco": 4,
-    "estoque": "13,00 un"
+    "estoque": "10,00 un"
   },
   {
     "codigo": "1003_857",
