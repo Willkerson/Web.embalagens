@@ -438,7 +438,7 @@
     "nome": "PLASTICO BOLHA 43X10M MICRA 20 MN. PLAST",
     "categoria": "Embalagem",
     "preco": 16.2,
-    "estoque": "-14,00 un"
+    "estoque": "-15,00 un"
   },
   {
     "codigo": "343",
@@ -501,7 +501,7 @@
     "nome": "PANO PARA PIA ESTAMPADO C/3U N ALKLIN",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 5.5,
-    "estoque": "15,00 un"
+    "estoque": "14,00 un"
   },
   {
     "codigo": "361",
@@ -1124,7 +1124,7 @@
     "nome": "ASSADEIRA DE ALUMINIO RETANGULAR PRA VIAGEM 4L",
     "categoria": "DESCARTAVEIS",
     "preco": 5.99,
-    "estoque": "24,00 un"
+    "estoque": "22,00 un"
   },
   {
     "codigo": "656",
@@ -2111,21 +2111,21 @@
     "nome": "SACO P/ LIXO PRETO 100L C/50UN",
     "categoria": "SACO LIXO",
     "preco": 57.5,
-    "estoque": "-60,00 un"
+    "estoque": "2,00 un"
   },
   {
     "codigo": "1049",
     "nome": "SACO P/ LIXO PRETO 100L C/100UN",
     "categoria": "SACO LIXO",
     "preco": 115,
-    "estoque": "-17,00 un"
+    "estoque": "8,00 un"
   },
   {
     "codigo": "1051",
     "nome": "SACO P/ LIXO PRETO P6 40L C/10UN",
     "categoria": "SACO LIXO",
     "preco": 5.5,
-    "estoque": "-97,00 un"
+    "estoque": "4,00 un"
   },
   {
     "codigo": "1052",
@@ -2139,7 +2139,7 @@
     "nome": "SACOS P/LIXO 100L P8 C10UN PRETO",
     "categoria": "SACO LIXO",
     "preco": 13.5,
-    "estoque": "-24,00 un"
+    "estoque": "12,00 un"
   },
   {
     "codigo": "1055",
@@ -2405,14 +2405,14 @@
     "nome": "SACO P/ LIXO PRETO P6 40L C/50UN",
     "categoria": "SACO LIXO",
     "preco": 25,
-    "estoque": "-10,00 un"
+    "estoque": "6,00 un"
   },
   {
     "codigo": "1188",
     "nome": "SACO P/ LIXO PRETO P6 40L C/100UN",
     "categoria": "SACO LIXO",
     "preco": 50,
-    "estoque": "-1,00 un"
+    "estoque": "4,00 un"
   },
   {
     "codigo": "1199",
@@ -3931,7 +3931,7 @@
     "nome": "PAPEL DE PRESENTE (GRANDE)",
     "categoria": "Embalagem",
     "preco": 4.5,
-    "estoque": "-6,00 un"
+    "estoque": "-8,00 un"
   },
   {
     "codigo": "2386",
@@ -4120,7 +4120,7 @@
     "nome": "SACO SOS PARDO GG C/50UN 30X20X36 PLUMA",
     "categoria": "Embalagem",
     "preco": 69.5,
-    "estoque": "13,00 un"
+    "estoque": "12,00 un"
   },
   {
     "codigo": "2580",
@@ -7340,7 +7340,7 @@
     "nome": "SACO P/LIXO PRETO 20L P5 C/10UN",
     "categoria": "SACO LIXO",
     "preco": 4,
-    "estoque": "10,00 un"
+    "estoque": "8,00 un"
   },
   {
     "codigo": "1003_857",
