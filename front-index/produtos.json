@@ -305,7 +305,7 @@
     "nome": "ESPONJA MULTIUSO C/4UN ALCKLIN",
     "categoria": "UTENSILIOS",
     "preco": 3.5,
-    "estoque": "81,00 un"
+    "estoque": "79,00 un"
   },
   {
     "codigo": "294",
@@ -466,7 +466,7 @@
     "nome": "ESCOVA MULTIUSO C/CABO ALKLIN",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 6,
-    "estoque": "10,00 un"
+    "estoque": "9,00 un"
   },
   {
     "codigo": "351",
@@ -522,7 +522,7 @@
     "nome": "LUVA LATEX M PLUS SANRO LARANJA P/LIMPEZA",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 11.5,
-    "estoque": "6,00 un"
+    "estoque": "5,00 un"
   },
   {
     "codigo": "374",
@@ -550,7 +550,7 @@
     "nome": "PANO DE CHAO BRANCO ALVEJADO 45CMX69CM SOUZA PPR28",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 6.7,
-    "estoque": "31,00 un"
+    "estoque": "30,00 un"
   },
   {
     "codigo": "391",
@@ -1439,7 +1439,7 @@
     "nome": "LIMPA CERAMICAS E AZULEJOS AZULIM LAVANDA 1L START",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 11.5,
-    "estoque": "8,00 un"
+    "estoque": "7,00 un"
   },
   {
     "codigo": "789",
@@ -1719,7 +1719,7 @@
     "nome": "COPO DESCARTAVEL TRANSPARENTE 180ML C/100UN TOTAL PLAST",
     "categoria": "DESCARTAVEIS",
     "preco": 8.99,
-    "estoque": "434,00 un"
+    "estoque": "433,00 un"
   },
   {
     "codigo": "897",
@@ -1859,7 +1859,7 @@
     "nome": "CAIXA P/CORREIO N02 26X17X08",
     "categoria": "Embalagem",
     "preco": 6.5,
-    "estoque": "-22,00 un"
+    "estoque": "-23,00 un"
   },
   {
     "codigo": "940",
@@ -2146,7 +2146,7 @@
     "nome": "CAIXA P/CORREIO N01 21X15X6,5 NIAGRA",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 4.6,
-    "estoque": "-20,00 un"
+    "estoque": "-21,00 un"
   },
   {
     "codigo": "1056",
@@ -2244,7 +2244,7 @@
     "nome": "RODO ALUMINIO 30CM C/CABO 1,30MT C/ROSCA SANCHES",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 41,
-    "estoque": "13,00 un"
+    "estoque": "12,00 un"
   },
   {
     "codigo": "1133",
@@ -2510,7 +2510,7 @@
     "nome": "CAIXA DE CELULAR 22X11X05 1 UN",
     "categoria": "Embalagem",
     "preco": 2.5,
-    "estoque": "23,00 un"
+    "estoque": "22,00 un"
   },
   {
     "codigo": "1295",
@@ -3119,7 +3119,7 @@
     "nome": "SACOLA VERDE REFORÇADA 1KG 30x40",
     "categoria": "Embalagem",
     "preco": 16.99,
-    "estoque": "-8,00 un"
+    "estoque": "-9,00 un"
   },
   {
     "codigo": "1712",
@@ -3161,7 +3161,7 @@
     "nome": "SACOLA PRETA 1KG 40X50",
     "categoria": "Embalagem",
     "preco": 16.99,
-    "estoque": "-43,00 un"
+    "estoque": "-44,00 un"
   },
   {
     "codigo": "1751",
@@ -3224,7 +3224,7 @@
     "nome": "COPO 200ML CRISTAL C/10UN ELITE",
     "categoria": "DESCARTAVEIS",
     "preco": 6.25,
-    "estoque": "63,00 un"
+    "estoque": "62,00 un"
   },
   {
     "codigo": "1780",
@@ -3371,7 +3371,7 @@
     "nome": "LIMPA VIDRO SANCHES",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 8.5,
-    "estoque": "14,00 un"
+    "estoque": "13,00 un"
   },
   {
     "codigo": "1905",
@@ -3658,14 +3658,14 @@
     "nome": "SACOLA BRANCA 1KG 30x40",
     "categoria": "SACO LIXO",
     "preco": 27,
-    "estoque": "9,00 un"
+    "estoque": "-2,00 un"
   },
   {
     "codigo": "2102",
     "nome": "SACOLA BRANCA 1KG 35x45",
     "categoria": "Embalagem",
     "preco": 27,
-    "estoque": "12,00 un"
+    "estoque": "19,00 un"
   },
   {
     "codigo": "2103",
@@ -3679,21 +3679,21 @@
     "nome": "SACOLA BRANCA 1KG 45x60",
     "categoria": "SACO LIXO",
     "preco": 27,
-    "estoque": "-12,00 un"
+    "estoque": "6,00 un"
   },
   {
     "codigo": "2105",
     "nome": "SACOLA BRANCA 1KG 60x80",
     "categoria": "SACO LIXO",
     "preco": 27,
-    "estoque": "-5,00 un"
+    "estoque": "12,00 un"
   },
   {
     "codigo": "2106",
     "nome": "SACOLA BRANCA 1KG 90x100",
     "categoria": "SACO LIXO",
     "preco": 27,
-    "estoque": "-5,00 un"
+    "estoque": "30,00 un"
   },
   {
     "codigo": "2122",
@@ -4070,7 +4070,7 @@
     "codigo": "2484",
     "nome": "PAPEL SULFITE A4 C/500 FOLHAS REPORT",
     "categoria": "PAPELARIA",
-    "preco": 44,
+    "preco": 41.99,
     "estoque": "5,00 un"
   },
   {
@@ -4127,7 +4127,7 @@
     "nome": "ESPONJA ANTIRISCO C/4UN ALCKLIN",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 4,
-    "estoque": "204,00 un"
+    "estoque": "203,00 un"
   },
   {
     "codigo": "2599",
@@ -4267,7 +4267,7 @@
     "nome": "SACO KRAFT P3 C/100UN 11X15CM PLUMA",
     "categoria": "DESCARTAVEIS",
     "preco": 7,
-    "estoque": "43,00 un"
+    "estoque": "39,00 un"
   },
   {
     "codigo": "2775",
@@ -4540,7 +4540,7 @@
     "nome": "SACOLA KRAFT BRANCO H2 C/100UN 19X12CM PLUMA",
     "categoria": "DESCARTAVEIS",
     "preco": 8,
-    "estoque": "11,00 un"
+    "estoque": "9,00 un"
   },
   {
     "codigo": "2922",
@@ -5184,7 +5184,7 @@
     "nome": "LXEIRA RATTAN C/PEDAL 6L M. LIBANO",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 30.5,
-    "estoque": "2,00 un"
+    "estoque": "1,00 un"
   },
   {
     "codigo": "3974",
@@ -6031,7 +6031,7 @@
     "nome": "PANO MULTIUSO AZUL C/50 PANOS 30CMX25CM MR. PLUS TALGE",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 17,
-    "estoque": "31,00 un"
+    "estoque": "30,00 un"
   },
   {
     "codigo": "11176",
@@ -6423,7 +6423,7 @@
     "nome": "NEUTRALIZADOR DE ODORES ONLY LAVANDA 500ML",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 23,
-    "estoque": "10,00 un"
+    "estoque": "9,00 un"
   },
   {
     "codigo": "31683",
