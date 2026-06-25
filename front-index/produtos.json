@@ -669,7 +669,7 @@
     "nome": "KIT GARFO E FACA C/50UN ELITE",
     "categoria": "DESCARTAVEIS",
     "preco": 22.99,
-    "estoque": "31,00 un"
+    "estoque": "30,00 un"
   },
   {
     "codigo": "433",
@@ -886,14 +886,14 @@
     "nome": "AGUA SANITARIA SUPREMA 2L",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 8,
-    "estoque": "17,00 un"
+    "estoque": "16,00 un"
   },
   {
     "codigo": "568",
     "nome": "REMOVEDOR TRADICIONAL SUPREMA 500ML",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 8,
-    "estoque": "14,00 un"
+    "estoque": "13,00 un"
   },
   {
     "codigo": "569",
@@ -2132,7 +2132,7 @@
     "nome": "SACO P/ LIXO PRETO P8 60L C/10UN",
     "categoria": "SACO LIXO",
     "preco": 8.99,
-    "estoque": "-48,00 un"
+    "estoque": "-49,00 un"
   },
   {
     "codigo": "1053",
@@ -3063,7 +3063,7 @@
     "nome": "D50MM TORTA MDIA 1,5KG BR24CM DONA RITA",
     "categoria": "DESCARTAVEIS",
     "preco": 3,
-    "estoque": "-1,00 un"
+    "estoque": "-6,00 un"
   },
   {
     "codigo": "1649",
@@ -4232,7 +4232,7 @@
     "nome": "ODORIZANTE DE AMBIENTE 60G GEL CARRO LAVANDA PURO AR",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 12.3,
-    "estoque": "-13,00 un"
+    "estoque": "-14,00 un"
   },
   {
     "codigo": "2703",
@@ -4295,7 +4295,7 @@
     "nome": "GARFO REFEICAO BRANCO C/50UN ELITE",
     "categoria": "DESCARTAVEIS",
     "preco": 10.25,
-    "estoque": "28,00 un"
+    "estoque": "27,00 un"
   },
   {
     "codigo": "2799",
@@ -5730,7 +5730,7 @@
     "nome": "DESINFETANTE PINHO ORIGINAL SANOL 500ML",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 6,
-    "estoque": "-3,00 un"
+    "estoque": "-4,00 un"
   },
   {
     "codigo": "7899",
@@ -7116,7 +7116,7 @@
     "nome": "PILHA ALFACELL SUPER ALCALINA 2UNI (AAA/LR03)",
     "categoria": "UTENSILIOS",
     "preco": 6,
-    "estoque": "0,00 un"
+    "estoque": "-2,00 un"
   },
   {
     "codigo": "129085",
