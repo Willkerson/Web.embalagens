@@ -3658,7 +3658,7 @@
     "nome": "SACOLA BRANCA 1KG 30x40",
     "categoria": "SACO LIXO",
     "preco": 27,
-    "estoque": "-2,00 un"
+    "estoque": "-3,00 un"
   },
   {
     "codigo": "2102",
@@ -3707,7 +3707,7 @@
     "nome": "LUVA NITRILICA PRETA G S/PO C/100UN TALGE",
     "categoria": "DESCARTAVEIS",
     "preco": 29.99,
-    "estoque": "13,00 un"
+    "estoque": "11,00 un"
   },
   {
     "codigo": "2140",
@@ -4155,7 +4155,7 @@
     "nome": "G37MA TORTA ALTA 1,2KG 23CM GALVONOTECK",
     "categoria": "Embalagem",
     "preco": 4.5,
-    "estoque": "87,00 un"
+    "estoque": "86,00 un"
   },
   {
     "codigo": "2631",
@@ -5485,7 +5485,7 @@
     "nome": "B120 FOLHA D ALUMINIO 500ML C/10UN PRAV.",
     "categoria": "Embalagem",
     "preco": 9.5,
-    "estoque": "10,00 un"
+    "estoque": "9,00 un"
   },
   {
     "codigo": "6050",
@@ -5709,7 +5709,7 @@
     "nome": "SACO P/LIXO 20L PRETO P5 C/50UN",
     "categoria": "SACO LIXO",
     "preco": 17,
-    "estoque": "-89,00 un"
+    "estoque": "-90,00 un"
   },
   {
     "codigo": "7893",
