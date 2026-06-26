@@ -543,7 +543,7 @@
     "nome": "PANO DE CHAO XADREZ 45CMX68CM SOUZA BR2",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 4.7,
-    "estoque": "66,00 un"
+    "estoque": "63,00 un"
   },
   {
     "codigo": "390",
@@ -599,7 +599,7 @@
     "nome": "GARFO SOBREMESA BRANCO C/50UN PRAFESTA",
     "categoria": "DESCARTAVEIS",
     "preco": 5,
-    "estoque": "27,00 un"
+    "estoque": "26,00 un"
   },
   {
     "codigo": "407",
@@ -1075,7 +1075,7 @@
     "nome": "TOP LIXO PRETO 15L C/60UN PACK LIXO",
     "categoria": "SACO LIXO",
     "preco": 19,
-    "estoque": "6,00 un"
+    "estoque": "5,00 un"
   },
   {
     "codigo": "637",
@@ -1740,7 +1740,7 @@
     "nome": "GUARDANAPO 30X31CM C/50UN LUXO PLUMA",
     "categoria": "DESCARTAVEIS",
     "preco": 3.9,
-    "estoque": "70,00 un"
+    "estoque": "67,00 un"
   },
   {
     "codigo": "901",
@@ -2069,7 +2069,7 @@
     "nome": "SACO P/ LIXO PRETO P8 60L C/50UN",
     "categoria": "SACO LIXO",
     "preco": 38.25,
-    "estoque": "23,00 un"
+    "estoque": "22,00 un"
   },
   {
     "codigo": "1042",
@@ -2104,7 +2104,7 @@
     "nome": "TOP LIXO PIA E BANHEIRO LAVANDA C/40UN PACK LIXO",
     "categoria": "SACO LIXO",
     "preco": 10,
-    "estoque": "24,00 un"
+    "estoque": "23,00 un"
   },
   {
     "codigo": "1048",
@@ -2132,14 +2132,14 @@
     "nome": "SACO P/ LIXO PRETO P8 60L C/10UN",
     "categoria": "SACO LIXO",
     "preco": 8.99,
-    "estoque": "-51,00 un"
+    "estoque": "-52,00 un"
   },
   {
     "codigo": "1053",
     "nome": "SACOS P/LIXO 100L P8 C10UN PRETO",
     "categoria": "SACO LIXO",
     "preco": 13.5,
-    "estoque": "7,00 un"
+    "estoque": "6,00 un"
   },
   {
     "codigo": "1055",
@@ -2853,7 +2853,7 @@
     "nome": "D50MA TORTA ALTA 1,7KG DONA RITA",
     "categoria": "Embalagem",
     "preco": 3.5,
-    "estoque": "34,00 un"
+    "estoque": "29,00 un"
   },
   {
     "codigo": "1475",
@@ -2979,7 +2979,7 @@
     "nome": "PRATO BRANCO RASO 15CM C/10UN TOTAL PLAST",
     "categoria": "DESCARTAVEIS",
     "preco": 2.5,
-    "estoque": "77,00 un"
+    "estoque": "73,00 un"
   },
   {
     "codigo": "1548",
@@ -3623,7 +3623,7 @@
     "nome": "FOLHA DE ALUMINIO 4MX30CM WYDA",
     "categoria": "Embalagem",
     "preco": 5.5,
-    "estoque": "-55,00 un"
+    "estoque": "-56,00 un"
   },
   {
     "codigo": "2094",
@@ -3714,7 +3714,7 @@
     "nome": "FITA ADESIVA 45X100M TRANSPARENTE KORETECH",
     "categoria": "PAPELARIA",
     "preco": 10.5,
-    "estoque": "45,00 un"
+    "estoque": "42,00 un"
   },
   {
     "codigo": "2164",
@@ -3959,7 +3959,7 @@
     "nome": "PEGADOR DE SALADA SILICONE INOX 27CM",
     "categoria": "UTENSILIOS",
     "preco": 14.99,
-    "estoque": "12,00 un"
+    "estoque": "11,00 un"
   },
   {
     "codigo": "2403",
@@ -4036,7 +4036,7 @@
     "nome": "POTE TERMICO 360ML C/25UN ULTRA",
     "categoria": "DESCARTAVEIS",
     "preco": 14,
-    "estoque": "33,00 un"
+    "estoque": "31,00 un"
   },
   {
     "codigo": "2457",
@@ -4092,7 +4092,7 @@
     "nome": "LIMPADOR CONCENTRADO ALECRIM 120ML SANOL",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 11.5,
-    "estoque": "-5,00 un"
+    "estoque": "-6,00 un"
   },
   {
     "codigo": "2531",
@@ -4379,7 +4379,7 @@
     "nome": "POTE ISOPOR 240ML C/25UN ULTRA",
     "categoria": "DESCARTAVEIS",
     "preco": 12.5,
-    "estoque": "20,00 un"
+    "estoque": "19,00 un"
   },
   {
     "codigo": "2830",
@@ -4435,7 +4435,7 @@
     "nome": "TAMPA P/ POTE 240/300/360 E 480ML C/25UN ULTRA",
     "categoria": "DESCARTAVEIS",
     "preco": 8.8,
-    "estoque": "-9,00 un"
+    "estoque": "-10,00 un"
   },
   {
     "codigo": "2848",
@@ -4750,7 +4750,7 @@
     "nome": "COPO TERMICO 180ML C/25UN ULTRA",
     "categoria": "DESCARTAVEIS",
     "preco": 7.99,
-    "estoque": "41,00 un"
+    "estoque": "40,00 un"
   },
   {
     "codigo": "3051",
@@ -4855,7 +4855,7 @@
     "nome": "DETERGENTE NEUTRO SUPREMA 5L",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 32.99,
-    "estoque": "8,00 un"
+    "estoque": "7,00 un"
   },
   {
     "codigo": "3110",
@@ -7431,7 +7431,7 @@
     "nome": "GUARUFILME BOBINA PVC RES 28CMX15M",
     "categoria": "Embalagem",
     "preco": 5.8,
-    "estoque": "12,00 un"
+    "estoque": "11,00 un"
   },
   {
     "codigo": "7893595170103",
@@ -7466,7 +7466,7 @@
     "nome": "TotalPlast 20,8cm",
     "categoria": "Embalagem",
     "preco": 3.5,
-    "estoque": "-60,00 un"
+    "estoque": "-62,00 un"
   },
   {
     "codigo": "7893595170108",
@@ -7578,7 +7578,7 @@
     "nome": "SACOLA VERDE REFORÇÂDA 60x80 kg",
     "categoria": "-",
     "preco": 19.99,
-    "estoque": "-6,00 un"
+    "estoque": "-7,00 un"
   },
   {
     "codigo": "7909875076499",
