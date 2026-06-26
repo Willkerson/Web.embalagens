@@ -305,7 +305,7 @@
     "nome": "ESPONJA MULTIUSO C/4UN ALCKLIN",
     "categoria": "UTENSILIOS",
     "preco": 3.5,
-    "estoque": "76,00 un"
+    "estoque": "75,00 un"
   },
   {
     "codigo": "294",
@@ -669,7 +669,7 @@
     "nome": "KIT GARFO E FACA C/50UN ELITE",
     "categoria": "DESCARTAVEIS",
     "preco": 22.99,
-    "estoque": "29,00 un"
+    "estoque": "28,00 un"
   },
   {
     "codigo": "433",
@@ -683,14 +683,14 @@
     "nome": "CUMBUCA QUALITY LINE 12 C/10UN PRAFESTA",
     "categoria": "DESCARTAVEIS",
     "preco": 2.99,
-    "estoque": "91,00 un"
+    "estoque": "85,00 un"
   },
   {
     "codigo": "441",
     "nome": "POTE OVAL QUALITY LINE C/10UN PRAFESTA",
     "categoria": "DESCARTAVEIS",
     "preco": 3,
-    "estoque": "49,00 un"
+    "estoque": "43,00 un"
   },
   {
     "codigo": "443",
@@ -1019,7 +1019,7 @@
     "nome": "FOLHA DE ALUMINIO 7,5MX30CM WYDA",
     "categoria": "DESCARTAVEIS",
     "preco": 8.75,
-    "estoque": "-54,00 un"
+    "estoque": "-56,00 un"
   },
   {
     "codigo": "616",
@@ -1306,7 +1306,7 @@
     "nome": "LIMPADOR GEL DESINFETANTE LAVANDA 500ML AZULIM START",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 9.99,
-    "estoque": "10,82 un"
+    "estoque": "9,82 un"
   },
   {
     "codigo": "745",
@@ -1586,7 +1586,7 @@
     "nome": "REMOVADOR SUPREMA FLORATA 500ML",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 8.5,
-    "estoque": "12,00 un"
+    "estoque": "11,00 un"
   },
   {
     "codigo": "838",
@@ -1649,7 +1649,7 @@
     "nome": "COPO SUPEMO 200ML C/50UN PRAFESTA",
     "categoria": "DESCARTAVEIS",
     "preco": 18.99,
-    "estoque": "19,00 un"
+    "estoque": "17,00 un"
   },
   {
     "codigo": "861",
@@ -1740,7 +1740,7 @@
     "nome": "GUARDANAPO 30X31CM C/50UN LUXO PLUMA",
     "categoria": "DESCARTAVEIS",
     "preco": 3.9,
-    "estoque": "67,00 un"
+    "estoque": "61,00 un"
   },
   {
     "codigo": "901",
@@ -2132,7 +2132,7 @@
     "nome": "SACO P/ LIXO PRETO P8 60L C/10UN",
     "categoria": "SACO LIXO",
     "preco": 8.99,
-    "estoque": "-52,00 un"
+    "estoque": "-54,00 un"
   },
   {
     "codigo": "1053",
@@ -2559,7 +2559,7 @@
     "nome": "TOP LIXO PIA E BANHEIRO BRANCO C/40UN PACK LIXO",
     "categoria": "SACO LIXO",
     "preco": 10,
-    "estoque": "45,00 un"
+    "estoque": "44,00 un"
   },
   {
     "codigo": "1315",
@@ -2832,7 +2832,7 @@
     "nome": "POTE 100ML C/100UN COPOMAIS",
     "categoria": "DESCARTAVEIS",
     "preco": 7.5,
-    "estoque": "18,00 un"
+    "estoque": "16,00 un"
   },
   {
     "codigo": "1465",
@@ -2874,7 +2874,7 @@
     "nome": "G80MA BOLO ALTA MILLENIUM GALVONOTEK",
     "categoria": "DESCARTAVEIS",
     "preco": 12.5,
-    "estoque": "37,00 un"
+    "estoque": "36,00 un"
   },
   {
     "codigo": "1479",
@@ -2979,7 +2979,7 @@
     "nome": "PRATO BRANCO RASO 15CM C/10UN TOTAL PLAST",
     "categoria": "DESCARTAVEIS",
     "preco": 2.5,
-    "estoque": "73,00 un"
+    "estoque": "53,00 un"
   },
   {
     "codigo": "1548",
@@ -3070,7 +3070,7 @@
     "nome": "COPO 80ML PS DESCART. C/100UN COPOBRAS",
     "categoria": "DESCARTAVEIS",
     "preco": 8.5,
-    "estoque": "27,00 un"
+    "estoque": "26,00 un"
   },
   {
     "codigo": "1655",
@@ -3224,7 +3224,7 @@
     "nome": "COPO 200ML CRISTAL C/10UN ELITE",
     "categoria": "DESCARTAVEIS",
     "preco": 6.25,
-    "estoque": "62,00 un"
+    "estoque": "56,00 un"
   },
   {
     "codigo": "1780",
@@ -3266,7 +3266,7 @@
     "nome": "PRATO ISOPOR BPR-23 C/25UN BOM APETITE",
     "categoria": "DESCARTAVEIS",
     "preco": 13.5,
-    "estoque": "31,00 un"
+    "estoque": "29,00 un"
   },
   {
     "codigo": "1813",
@@ -3588,7 +3588,7 @@
     "nome": "TAMPA P/COPO 100/150/180 E 200ML C/100UN COPOMAIS",
     "categoria": "DESCARTAVEIS",
     "preco": 8.5,
-    "estoque": "-12,00 un"
+    "estoque": "-14,00 un"
   },
   {
     "codigo": "2075",
@@ -4008,7 +4008,7 @@
     "nome": "GUARDANAPO DE PAPEL WHITEPAPER C/50UN 20X22CM",
     "categoria": "DESCARTAVEIS",
     "preco": 1.7,
-    "estoque": "29,00 un"
+    "estoque": "23,00 un"
   },
   {
     "codigo": "2445",
@@ -4036,7 +4036,7 @@
     "nome": "POTE TERMICO 360ML C/25UN ULTRA",
     "categoria": "DESCARTAVEIS",
     "preco": 14,
-    "estoque": "31,00 un"
+    "estoque": "29,00 un"
   },
   {
     "codigo": "2457",
@@ -4393,7 +4393,7 @@
     "nome": "COPO ISOPOR 70ML C/20UN TOTAL PLAST",
     "categoria": "DESCARTAVEIS",
     "preco": 3,
-    "estoque": "128,00 un"
+    "estoque": "124,00 un"
   },
   {
     "codigo": "2833",
@@ -4596,7 +4596,7 @@
     "nome": "PRATO QUADRADO 150MM CRISTAL C/10UN",
     "categoria": "DESCARTAVEIS",
     "preco": 7.99,
-    "estoque": "47,00 un"
+    "estoque": "39,00 un"
   },
   {
     "codigo": "2957",
@@ -4722,7 +4722,7 @@
     "nome": "COPO DESCARTAVEL 330ML C/50UN ULTRA",
     "categoria": "DESCARTAVEIS",
     "preco": 12.5,
-    "estoque": "29,00 un"
+    "estoque": "28,00 un"
   },
   {
     "codigo": "3035",
@@ -5107,7 +5107,7 @@
     "nome": "PAPEL TOALHA SCALA PLUS C/120 TOALHAS C/2 ROLOS",
     "categoria": "PRODUTO DE HIGIENE",
     "preco": 8,
-    "estoque": "32,00 un"
+    "estoque": "31,00 un"
   },
   {
     "codigo": "3267",
@@ -5366,7 +5366,7 @@
     "nome": "FITA CREPE 24MMX45M",
     "categoria": "UTENSILIOS",
     "preco": 7,
-    "estoque": "8,00 un"
+    "estoque": "7,00 un"
   },
   {
     "codigo": "4035",
@@ -5947,7 +5947,7 @@
     "nome": "COPO DESCARTAVEL TRANSPARENTE 300ML C/100UN ULTRA PP",
     "categoria": "DESCARTAVEIS",
     "preco": 16.5,
-    "estoque": "17,00 un"
+    "estoque": "16,00 un"
   },
   {
     "codigo": "9039",
@@ -6234,7 +6234,7 @@
     "nome": "DETERGENTE YPÊ NEUTRO 500ML",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 4,
-    "estoque": "7,00 un"
+    "estoque": "6,00 un"
   },
   {
     "codigo": "31653",
