@@ -18,7 +18,7 @@
     "nome": "SACOLA KRAFT M 1UN 19X12X26CM",
     "categoria": "Embalagem",
     "preco": 1.55,
-    "estoque": "0,00 un"
+    "estoque": "-1,00 un"
   },
   {
     "codigo": "104",
@@ -32,7 +32,7 @@
     "nome": "SACOLA KRAFT G 1UN 24X16CM",
     "categoria": "Embalagem",
     "preco": 1.99,
-    "estoque": "-28,00 un"
+    "estoque": "-30,00 un"
   },
   {
     "codigo": "106",
@@ -158,7 +158,7 @@
     "nome": "SACOLA KRAF P 1UN 17X10CM PLUMA",
     "categoria": "Embalagem",
     "preco": 1.4,
-    "estoque": "-110,00 un"
+    "estoque": "-112,00 un"
   },
   {
     "codigo": "163",
@@ -305,7 +305,7 @@
     "nome": "ESPONJA MULTIUSO C/4UN ALCKLIN",
     "categoria": "UTENSILIOS",
     "preco": 3.5,
-    "estoque": "77,00 un"
+    "estoque": "76,00 un"
   },
   {
     "codigo": "294",
@@ -438,7 +438,7 @@
     "nome": "PLASTICO BOLHA 43X10M MICRA 20 MN. PLAST",
     "categoria": "Embalagem",
     "preco": 16.2,
-    "estoque": "-17,00 un"
+    "estoque": "-18,00 un"
   },
   {
     "codigo": "343",
@@ -543,21 +543,21 @@
     "nome": "PANO DE CHAO XADREZ 45CMX68CM SOUZA BR2",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 4.7,
-    "estoque": "63,00 un"
+    "estoque": "57,00 un"
   },
   {
     "codigo": "390",
     "nome": "PANO DE CHAO BRANCO ALVEJADO 45CMX69CM SOUZA PPR28",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 6.7,
-    "estoque": "24,00 un"
+    "estoque": "21,00 un"
   },
   {
     "codigo": "391",
     "nome": "PANO DE CHAO ALVEJADO CAIPIRA 45CMX68CM",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 5.25,
-    "estoque": "39,00 un"
+    "estoque": "38,00 un"
   },
   {
     "codigo": "398",
@@ -585,7 +585,7 @@
     "nome": "FILM DE PVC 30MTS 28X15M TECKFIM",
     "categoria": "ALIMENTO/GENERO ALIMENTICIO",
     "preco": 4.5,
-    "estoque": "24,00 un"
+    "estoque": "22,00 un"
   },
   {
     "codigo": "405",
@@ -746,7 +746,7 @@
     "nome": "D56 B0LO E TORTA ROMA MEDIA B BRANCA",
     "categoria": "DESCARTAVEIS",
     "preco": 4,
-    "estoque": "32,00 un"
+    "estoque": "30,00 un"
   },
   {
     "codigo": "466",
@@ -1747,7 +1747,7 @@
     "nome": "COPO DESCARTAVEL TRANSPARENTE 180ML C/100UN GLIGHT",
     "categoria": "DESCARTAVEIS",
     "preco": 5.99,
-    "estoque": "16,00 un"
+    "estoque": "12,00 un"
   },
   {
     "codigo": "902",
@@ -1915,7 +1915,7 @@
     "nome": "RALO DE INOX 9CM PARA PIA TINGS",
     "categoria": "UTENSILIOS",
     "preco": 9,
-    "estoque": "3,00 un"
+    "estoque": "2,00 un"
   },
   {
     "codigo": "980",
@@ -2034,7 +2034,7 @@
     "nome": "SACOS PLASTICO 200G 15x20 +/-120un",
     "categoria": "Embalagem",
     "preco": 10,
-    "estoque": "-15,00 un"
+    "estoque": "-16,00 un"
   },
   {
     "codigo": "1016",
@@ -2069,7 +2069,7 @@
     "nome": "SACO P/ LIXO PRETO P8 60L C/50UN",
     "categoria": "SACO LIXO",
     "preco": 38.25,
-    "estoque": "22,00 un"
+    "estoque": "21,00 un"
   },
   {
     "codigo": "1042",
@@ -2139,7 +2139,7 @@
     "nome": "SACOS P/LIXO 100L P8 C10UN PRETO",
     "categoria": "SACO LIXO",
     "preco": 13.5,
-    "estoque": "6,00 un"
+    "estoque": "5,00 un"
   },
   {
     "codigo": "1055",
@@ -2188,7 +2188,7 @@
     "nome": "LUVA NITRILICA PRETA G 10 UN TALGE",
     "categoria": "DESCARTAVEIS",
     "preco": 6,
-    "estoque": "-2,00 un"
+    "estoque": "-4,00 un"
   },
   {
     "codigo": "1085",
@@ -2405,7 +2405,7 @@
     "nome": "SACO P/ LIXO PRETO P6 40L C/50UN",
     "categoria": "SACO LIXO",
     "preco": 25,
-    "estoque": "6,00 un"
+    "estoque": "5,00 un"
   },
   {
     "codigo": "1188",
@@ -2832,7 +2832,7 @@
     "nome": "POTE 100ML C/100UN COPOMAIS",
     "categoria": "DESCARTAVEIS",
     "preco": 7.5,
-    "estoque": "19,00 un"
+    "estoque": "18,00 un"
   },
   {
     "codigo": "1465",
@@ -2937,14 +2937,14 @@
     "nome": "TOALHA INTERFOLHA BRANCA PREMIUM WHITE PAPER C/1000UN",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 24,
-    "estoque": "20,00 un"
+    "estoque": "19,00 un"
   },
   {
     "codigo": "1526",
     "nome": "PANO DE PRATO BRANCO/ESTAMPADO TATI/NACIONAL 66X38CM",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 4.3,
-    "estoque": "-25,00 un"
+    "estoque": "-27,00 un"
   },
   {
     "codigo": "1530",
@@ -3364,7 +3364,7 @@
     "nome": "VASSOURA PIAÇAVA SINTETICA ALKLIN C/CABO",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 14,
-    "estoque": "-11,00 un"
+    "estoque": "-12,00 un"
   },
   {
     "codigo": "1902",
@@ -3448,7 +3448,7 @@
     "nome": "BANDEJA BF03 FUNDA C/100UN 235X180X33MM BOM APETITE",
     "categoria": "DESCARTAVEIS",
     "preco": 40,
-    "estoque": "5,00 un"
+    "estoque": "4,00 un"
   },
   {
     "codigo": "1937",
@@ -3658,7 +3658,7 @@
     "nome": "SACOLA BRANCA 1KG 30x40",
     "categoria": "SACO LIXO",
     "preco": 27,
-    "estoque": "-3,00 un"
+    "estoque": "-4,00 un"
   },
   {
     "codigo": "2102",
@@ -3714,7 +3714,7 @@
     "nome": "FITA ADESIVA 45X100M TRANSPARENTE KORETECH",
     "categoria": "PAPELARIA",
     "preco": 10.5,
-    "estoque": "42,00 un"
+    "estoque": "41,00 un"
   },
   {
     "codigo": "2164",
@@ -3924,7 +3924,7 @@
     "nome": "COPO TERMICO 240ML C/25UN ULTRA",
     "categoria": "DESCARTAVEIS",
     "preco": 10.5,
-    "estoque": "47,00 un"
+    "estoque": "45,00 un"
   },
   {
     "codigo": "2382",
@@ -4379,7 +4379,7 @@
     "nome": "POTE ISOPOR 240ML C/25UN ULTRA",
     "categoria": "DESCARTAVEIS",
     "preco": 12.5,
-    "estoque": "19,00 un"
+    "estoque": "17,00 un"
   },
   {
     "codigo": "2830",
@@ -4771,7 +4771,7 @@
     "nome": "POTE E TAMPA RET.350ML C/24UN GOUR MAX",
     "categoria": "DESCARTAVEIS",
     "preco": 28,
-    "estoque": "17,00 un"
+    "estoque": "16,00 un"
   },
   {
     "codigo": "3060",
@@ -5079,7 +5079,7 @@
     "nome": "PAPEL HIGIENICO FOFINHO FOLHA DUPLA 4X30M",
     "categoria": "PRODUTO DE HIGIENE",
     "preco": 8.5,
-    "estoque": "84,00 un"
+    "estoque": "82,00 un"
   },
   {
     "codigo": "3192",
@@ -5366,7 +5366,7 @@
     "nome": "FITA CREPE 24MMX45M",
     "categoria": "UTENSILIOS",
     "preco": 7,
-    "estoque": "9,00 un"
+    "estoque": "8,00 un"
   },
   {
     "codigo": "4035",
@@ -6157,7 +6157,7 @@
     "nome": "G32MM TORTA MEDIA BAIXA 1KG",
     "categoria": "Embalagem",
     "preco": 1.99,
-    "estoque": "188,00 un"
+    "estoque": "187,00 un"
   },
   {
     "codigo": "28366",
@@ -7067,7 +7067,7 @@
     "nome": "RALO P/PIA 70MM TINGS",
     "categoria": "UTENSILIOS",
     "preco": 7,
-    "estoque": "12,00 un"
+    "estoque": "11,00 un"
   },
   {
     "codigo": "129076",
