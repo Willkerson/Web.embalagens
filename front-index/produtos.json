@@ -193,7 +193,7 @@
     "nome": "COPO TERMICO 180ML C/20UN TOTALPLAST",
     "categoria": "DESCARTAVEIS",
     "preco": 5.99,
-    "estoque": "82,00 un"
+    "estoque": "81,00 un"
   },
   {
     "codigo": "189",
@@ -424,7 +424,7 @@
     "nome": "SACOLA UNIDADE GRANDE",
     "categoria": "SACO LIXO",
     "preco": 0.5,
-    "estoque": "-10,00 un"
+    "estoque": "-14,00 un"
   },
   {
     "codigo": "335",
@@ -522,7 +522,7 @@
     "nome": "LUVA LATEX M PLUS SANRO LARANJA P/LIMPEZA",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 11.5,
-    "estoque": "5,00 un"
+    "estoque": "4,00 un"
   },
   {
     "codigo": "374",
@@ -550,7 +550,7 @@
     "nome": "PANO DE CHAO BRANCO ALVEJADO 45CMX69CM SOUZA PPR28",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 6.7,
-    "estoque": "19,00 un"
+    "estoque": "16,00 un"
   },
   {
     "codigo": "391",
@@ -655,7 +655,7 @@
     "nome": "COLHER SOBREMESA BRANCA C/50UN ELITE",
     "categoria": "DESCARTAVEIS",
     "preco": 3.99,
-    "estoque": "22,00 un"
+    "estoque": "18,00 un"
   },
   {
     "codigo": "428",
@@ -683,7 +683,7 @@
     "nome": "CUMBUCA QUALITY LINE 12 C/10UN PRAFESTA",
     "categoria": "DESCARTAVEIS",
     "preco": 2.99,
-    "estoque": "85,00 un"
+    "estoque": "83,00 un"
   },
   {
     "codigo": "441",
@@ -697,7 +697,7 @@
     "nome": "POTE REDONDO 250ML C/TAMPA C/24UN PRAFESTA",
     "categoria": "DESCARTAVEIS",
     "preco": 19.99,
-    "estoque": "13,00 un"
+    "estoque": "12,00 un"
   },
   {
     "codigo": "445",
@@ -1075,7 +1075,7 @@
     "nome": "TOP LIXO PRETO 15L C/60UN PACK LIXO",
     "categoria": "SACO LIXO",
     "preco": 19,
-    "estoque": "5,00 un"
+    "estoque": "2,00 un"
   },
   {
     "codigo": "637",
@@ -1131,7 +1131,7 @@
     "nome": "D2 1L FOLHA ALUMINIO C/10UN WYDA",
     "categoria": "Embalagem",
     "preco": 18.5,
-    "estoque": "-17,00 un"
+    "estoque": "-18,00 un"
   },
   {
     "codigo": "658",
@@ -1404,7 +1404,7 @@
     "nome": "TIRA FERRUGEM 50ML AZULIM",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 8.5,
-    "estoque": "13,00 un"
+    "estoque": "12,00 un"
   },
   {
     "codigo": "773",
@@ -1747,7 +1747,7 @@
     "nome": "COPO DESCARTAVEL TRANSPARENTE 180ML C/100UN GLIGHT",
     "categoria": "DESCARTAVEIS",
     "preco": 5.99,
-    "estoque": "8,00 un"
+    "estoque": "7,00 un"
   },
   {
     "codigo": "902",
@@ -1873,7 +1873,7 @@
     "nome": "CAIXA P/CORREIO N04 34X27X14",
     "categoria": "Embalagem",
     "preco": 15,
-    "estoque": "11,00 un"
+    "estoque": "9,00 un"
   },
   {
     "codigo": "943",
@@ -2020,7 +2020,7 @@
     "nome": "SACOS PLASTICO PEBD 1KG 20X30X0,06 COLOMBO/HELVIPACK",
     "categoria": "Embalagem",
     "preco": 46,
-    "estoque": "4,00 un"
+    "estoque": "2,00 un"
   },
   {
     "codigo": "1013",
@@ -2111,7 +2111,7 @@
     "nome": "SACO P/ LIXO PRETO 100L C/50UN",
     "categoria": "SACO LIXO",
     "preco": 57.5,
-    "estoque": "1,00 un"
+    "estoque": "0,00 un"
   },
   {
     "codigo": "1049",
@@ -2125,14 +2125,14 @@
     "nome": "SACO P/ LIXO PRETO P6 40L C/10UN",
     "categoria": "SACO LIXO",
     "preco": 5.5,
-    "estoque": "2,00 un"
+    "estoque": "1,00 un"
   },
   {
     "codigo": "1052",
     "nome": "SACO P/ LIXO PRETO P8 60L C/10UN",
     "categoria": "SACO LIXO",
     "preco": 8.99,
-    "estoque": "-58,00 un"
+    "estoque": "-60,00 un"
   },
   {
     "codigo": "1053",
@@ -2307,7 +2307,7 @@
     "nome": "FIBRA LIMP. USO GERAL 1UN 260X102MM BETTANIN",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 4.5,
-    "estoque": "4,00 un"
+    "estoque": "2,00 un"
   },
   {
     "codigo": "1149",
@@ -2321,7 +2321,7 @@
     "nome": "FIBRA BRANCA LIMP. LEVE BETTANIN",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 3,
-    "estoque": "12,00 un"
+    "estoque": "11,00 un"
   },
   {
     "codigo": "1151",
@@ -2440,7 +2440,7 @@
     "nome": "BOBINA PICOTADA 2KG C/500UN P/ ALIMENTOS 20X28CM EXTRUSA",
     "categoria": "Embalagem",
     "preco": 19,
-    "estoque": "17,00 un"
+    "estoque": "16,00 un"
   },
   {
     "codigo": "1225",
@@ -2482,7 +2482,7 @@
     "nome": "BOBINA PICOTADA 2,5KG C/500UN P/ ALIMENTOS 25X33 EXTRUSA",
     "categoria": "Embalagem",
     "preco": 25,
-    "estoque": "14,00 un"
+    "estoque": "13,00 un"
   },
   {
     "codigo": "1281",
@@ -3084,7 +3084,7 @@
     "nome": "HAMBURGUEIRA BH01 C/100UN BOM APETITE",
     "categoria": "Embalagem",
     "preco": 26,
-    "estoque": "11,00 un"
+    "estoque": "10,00 un"
   },
   {
     "codigo": "1666",
@@ -3308,7 +3308,7 @@
     "nome": "TOP LIXO BRANCO 15L C/60UN PACK LIXO",
     "categoria": "SACO LIXO",
     "preco": 19,
-    "estoque": "-9,00 un"
+    "estoque": "-10,00 un"
   },
   {
     "codigo": "1854",
@@ -3336,7 +3336,7 @@
     "nome": "SACO PARA GELADINHO PEQ. C/100UN 4X24X0,02",
     "categoria": "DESCARTAVEIS",
     "preco": 4,
-    "estoque": "145,00 un"
+    "estoque": "144,00 un"
   },
   {
     "codigo": "1889",
@@ -3371,7 +3371,7 @@
     "nome": "LIMPA VIDRO SANCHES",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 8.5,
-    "estoque": "13,00 un"
+    "estoque": "12,00 un"
   },
   {
     "codigo": "1905",
@@ -3665,7 +3665,7 @@
     "nome": "SACOLA BRANCA 1KG 35x45",
     "categoria": "Embalagem",
     "preco": 27,
-    "estoque": "5,00 un"
+    "estoque": "4,00 un"
   },
   {
     "codigo": "2103",
@@ -4036,7 +4036,7 @@
     "nome": "POTE TERMICO 360ML C/25UN ULTRA",
     "categoria": "DESCARTAVEIS",
     "preco": 14,
-    "estoque": "29,00 un"
+    "estoque": "27,00 un"
   },
   {
     "codigo": "2457",
@@ -4127,7 +4127,7 @@
     "nome": "ESPONJA ANTIRISCO C/4UN ALCKLIN",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 4,
-    "estoque": "202,00 un"
+    "estoque": "201,00 un"
   },
   {
     "codigo": "2599",
@@ -4295,7 +4295,7 @@
     "nome": "GARFO REFEICAO BRANCO C/50UN ELITE",
     "categoria": "DESCARTAVEIS",
     "preco": 10.25,
-    "estoque": "21,00 un"
+    "estoque": "20,00 un"
   },
   {
     "codigo": "2799",
@@ -4393,7 +4393,7 @@
     "nome": "COPO ISOPOR 70ML C/20UN TOTAL PLAST",
     "categoria": "DESCARTAVEIS",
     "preco": 3,
-    "estoque": "124,00 un"
+    "estoque": "118,00 un"
   },
   {
     "codigo": "2833",
@@ -4435,7 +4435,7 @@
     "nome": "TAMPA P/ POTE 240/300/360 E 480ML C/25UN ULTRA",
     "categoria": "DESCARTAVEIS",
     "preco": 8.8,
-    "estoque": "-14,00 un"
+    "estoque": "-15,00 un"
   },
   {
     "codigo": "2848",
@@ -4484,7 +4484,7 @@
     "nome": "G640 DOCE REDONDO 170ML CRISTAL C/10UN GALVONOTEK",
     "categoria": "DESCARTAVEIS",
     "preco": 4,
-    "estoque": "20,00 un"
+    "estoque": "15,00 un"
   },
   {
     "codigo": "2875",
@@ -4841,14 +4841,14 @@
     "nome": "POTE E TAMPA RET. 750ML C/24UN GOUR MAX",
     "categoria": "DESCARTAVEIS",
     "preco": 42,
-    "estoque": "14,00 un"
+    "estoque": "13,00 un"
   },
   {
     "codigo": "3107",
     "nome": "POTE E TAMPA REDONDO 750ML C/24UN DANUBIO",
     "categoria": "DESCARTAVEIS",
     "preco": 21.5,
-    "estoque": "21,00 un"
+    "estoque": "20,00 un"
   },
   {
     "codigo": "3108",
@@ -5128,7 +5128,7 @@
     "nome": "FITA ISOLANTE 10X17MM ALFACEL",
     "categoria": "UTENSILIOS",
     "preco": 4.99,
-    "estoque": "19,00 un"
+    "estoque": "18,00 un"
   },
   {
     "codigo": "3420",
@@ -5219,7 +5219,7 @@
     "nome": "LIMPADOR CONCENTRADO LAVANDA 120ML SANOL",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 11.5,
-    "estoque": "3,00 un"
+    "estoque": "2,00 un"
   },
   {
     "codigo": "3979",
@@ -5849,7 +5849,7 @@
     "nome": "RALO P/PIA METAL 9CM",
     "categoria": "UTENSILIOS",
     "preco": 9,
-    "estoque": "9,00 un"
+    "estoque": "8,00 un"
   },
   {
     "codigo": "8205",
@@ -6010,7 +6010,7 @@
     "nome": "SACOS PLASTICO PEBD 200G 10X20X0,06 COLOMBO/HELVIPACK",
     "categoria": "Embalagem",
     "preco": 10,
-    "estoque": "-3,00 un"
+    "estoque": "-5,00 un"
   },
   {
     "codigo": "10075",
@@ -6360,7 +6360,7 @@
     "nome": "G650 POTE QUAD.200ML C/10 UNI",
     "categoria": "Embalagem",
     "preco": 7.5,
-    "estoque": "17,00 un"
+    "estoque": "15,00 un"
   },
   {
     "codigo": "31671",
@@ -7473,7 +7473,7 @@
     "nome": "TotalPlast 20,8cm",
     "categoria": "Embalagem",
     "preco": 3.5,
-    "estoque": "-64,00 un"
+    "estoque": "-69,00 un"
   },
   {
     "codigo": "7893595170108",
