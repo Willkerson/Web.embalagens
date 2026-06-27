@@ -424,7 +424,7 @@
     "nome": "SACOLA UNIDADE GRANDE",
     "categoria": "SACO LIXO",
     "preco": 0.5,
-    "estoque": "-14,00 un"
+    "estoque": "-15,00 un"
   },
   {
     "codigo": "335",
@@ -508,7 +508,7 @@
     "nome": "POTE RED.145 C/TAMPA C/24UN PRAFESTA",
     "categoria": "DESCARTAVEIS",
     "preco": 15,
-    "estoque": "32,00 un"
+    "estoque": "29,00 un"
   },
   {
     "codigo": "372",
@@ -655,7 +655,7 @@
     "nome": "COLHER SOBREMESA BRANCA C/50UN ELITE",
     "categoria": "DESCARTAVEIS",
     "preco": 3.99,
-    "estoque": "17,00 un"
+    "estoque": "15,00 un"
   },
   {
     "codigo": "428",
@@ -1663,7 +1663,7 @@
     "nome": "BANDEJA ISOPOR FUNDA BF01 C/10UN BOM APETITE",
     "categoria": "Embalagem",
     "preco": 2.5,
-    "estoque": "-15,00 un"
+    "estoque": "-16,00 un"
   },
   {
     "codigo": "874",
@@ -1915,7 +1915,7 @@
     "nome": "RALO DE INOX 9CM PARA PIA TINGS",
     "categoria": "UTENSILIOS",
     "preco": 9,
-    "estoque": "2,00 un"
+    "estoque": "1,00 un"
   },
   {
     "codigo": "980",
@@ -2055,7 +2055,7 @@
     "nome": "SACOS PLASTICO 35x45x0,06 200G COLOMBO/HELVIPACK",
     "categoria": "Embalagem",
     "preco": 10,
-    "estoque": "-10,00 un"
+    "estoque": "-11,00 un"
   },
   {
     "codigo": "1033",
@@ -2524,7 +2524,7 @@
     "nome": "CAIXA P/BOLO N07 MEDIA 28X28X10 NIAGRA",
     "categoria": "Embalagem",
     "preco": 6.2,
-    "estoque": "-2,00 un"
+    "estoque": "-3,00 un"
   },
   {
     "codigo": "1299",
@@ -2706,7 +2706,7 @@
     "nome": "H04 HOT DOG C/10UN BOM APETITE",
     "categoria": "Embalagem",
     "preco": 4.99,
-    "estoque": "40,00 un"
+    "estoque": "35,00 un"
   },
   {
     "codigo": "1363",
@@ -7388,13 +7388,6 @@
     "codigo": "2164_735",
     "nome": "Cópia de SUPORTE LT C/ VELCRO BIG SANCHES",
     "categoria": "PRODUTO DE LIMPEZA",
-    "preco": 20,
-    "estoque": "0,00 un"
-  },
-  {
-    "codigo": "3054_1104",
-    "nome": "Cópia de KIT POTE E TAMPA RET. 1000ML C/12UN GOUR MAX",
-    "categoria": "DESCARTAVEIS",
     "preco": 20,
     "estoque": "0,00 un"
   },
