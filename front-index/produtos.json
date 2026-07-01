@@ -39,7 +39,7 @@
     "nome": "SACOLA KRAFT GG 1UN 30X20X36CM",
     "categoria": "Embalagem",
     "preco": 2.5,
-    "estoque": "-45,00 un"
+    "estoque": "-50,00 un"
   },
   {
     "codigo": "110",
@@ -333,7 +333,7 @@
     "nome": "RODO DE PIA 15CM ALKLIN",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 6.5,
-    "estoque": "10,00 un"
+    "estoque": "9,00 un"
   },
   {
     "codigo": "302",
@@ -2034,7 +2034,7 @@
     "nome": "SACOS PLASTICO 200G 15x20 +/-120un",
     "categoria": "Embalagem",
     "preco": 10,
-    "estoque": "-16,00 un"
+    "estoque": "-17,00 un"
   },
   {
     "codigo": "1016",
@@ -2251,7 +2251,7 @@
     "nome": "RODO ALUMINIO 40CM C/CABO 1,50 MT C/ROSCA SANCHES",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 43.5,
-    "estoque": "12,00 un"
+    "estoque": "11,00 un"
   },
   {
     "codigo": "1134",
@@ -2895,7 +2895,7 @@
     "nome": "D645 POTE REDONDO BASE E TAMPA C/10UN 120ML",
     "categoria": "DESCARTAVEIS",
     "preco": 3.5,
-    "estoque": "29,00 un"
+    "estoque": "26,00 un"
   },
   {
     "codigo": "1489",
@@ -3118,7 +3118,7 @@
     "codigo": "1711",
     "nome": "SACOLA VERDE REFORÇADA 1KG 30x40",
     "categoria": "Embalagem",
-    "preco": 19.99,
+    "preco": 16.99,
     "estoque": "41,00 un"
   },
   {
@@ -3153,14 +3153,14 @@
     "codigo": "1717",
     "nome": "SACOLA PRETA 1KG 30X40",
     "categoria": "Embalagem",
-    "preco": 16.99,
+    "preco": 19.99,
     "estoque": "8,00 un"
   },
   {
     "codigo": "1719",
     "nome": "SACOLA PRETA 1KG 40X50",
     "categoria": "Embalagem",
-    "preco": 19,
+    "preco": 19.99,
     "estoque": "-49,00 un"
   },
   {
@@ -4484,7 +4484,7 @@
     "nome": "G640 DOCE REDONDO 170ML CRISTAL C/10UN GALVONOTEK",
     "categoria": "DESCARTAVEIS",
     "preco": 4,
-    "estoque": "15,00 un"
+    "estoque": "12,00 un"
   },
   {
     "codigo": "2875",
@@ -4771,7 +4771,7 @@
     "nome": "POTE E TAMPA RET.350ML C/24UN GOUR MAX",
     "categoria": "DESCARTAVEIS",
     "preco": 28,
-    "estoque": "16,00 un"
+    "estoque": "15,00 un"
   },
   {
     "codigo": "3060",
@@ -5527,7 +5527,7 @@
     "nome": "G680 - GALVONOTEK POTE REDONDO DE SOBREMESA 250 ml C/5UN",
     "categoria": "DESCARTAVEIS",
     "preco": 5.99,
-    "estoque": "50,00 un"
+    "estoque": "49,00 un"
   },
   {
     "codigo": "6544",
@@ -5688,7 +5688,7 @@
     "nome": "REFIL RODO ALUMINIO 40CM SANCHES",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 4.3,
-    "estoque": "10,00 un"
+    "estoque": "9,00 un"
   },
   {
     "codigo": "7832",
