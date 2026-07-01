@@ -74,7 +74,7 @@
     "nome": "SUPER PÁ C/CABO",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 17,
-    "estoque": "19,00 un"
+    "estoque": "18,00 un"
   },
   {
     "codigo": "129",
@@ -305,7 +305,7 @@
     "nome": "ESPONJA MULTIUSO C/4UN ALCKLIN",
     "categoria": "UTENSILIOS",
     "preco": 3.5,
-    "estoque": "71,00 un"
+    "estoque": "70,00 un"
   },
   {
     "codigo": "294",
@@ -424,7 +424,7 @@
     "nome": "SACOLA UNIDADE GRANDE",
     "categoria": "SACO LIXO",
     "preco": 0.5,
-    "estoque": "-20,00 un"
+    "estoque": "-21,00 un"
   },
   {
     "codigo": "335",
@@ -655,7 +655,7 @@
     "nome": "COLHER SOBREMESA BRANCA C/50UN ELITE",
     "categoria": "DESCARTAVEIS",
     "preco": 3.99,
-    "estoque": "15,00 un"
+    "estoque": "14,00 un"
   },
   {
     "codigo": "428",
@@ -732,7 +732,7 @@
     "nome": "POTE E TAMPA RET.500ML C/24UN PRAFESTA",
     "categoria": "DESCARTAVEIS",
     "preco": 35.5,
-    "estoque": "43,00 un"
+    "estoque": "42,00 un"
   },
   {
     "codigo": "459",
@@ -1138,7 +1138,7 @@
     "nome": "D5 1,15L FOLHA DE ALUMINIO C/10UN WYDA",
     "categoria": "Embalagem",
     "preco": 17.5,
-    "estoque": "-9,00 un"
+    "estoque": "-10,00 un"
   },
   {
     "codigo": "659",
@@ -1285,7 +1285,7 @@
     "nome": "PAPEL HIGIENICO FOLHA DUPLA DELICATTO C/12UN 10X20M",
     "categoria": "PRODUTO DE HIGIENE",
     "preco": 14.99,
-    "estoque": "-2,00 un"
+    "estoque": "-3,00 un"
   },
   {
     "codigo": "726",
@@ -1607,7 +1607,7 @@
     "nome": "HAMBURGUEIRA BH03 C/10UN BOM APETITE",
     "categoria": "Embalagem",
     "preco": 4.5,
-    "estoque": "38,00 un"
+    "estoque": "37,00 un"
   },
   {
     "codigo": "847",
@@ -1719,7 +1719,7 @@
     "nome": "COPO DESCARTAVEL TRANSPARENTE 180ML C/100UN TOTAL PLAST",
     "categoria": "DESCARTAVEIS",
     "preco": 7.5,
-    "estoque": "432,00 un"
+    "estoque": "431,00 un"
   },
   {
     "codigo": "897",
@@ -1852,7 +1852,7 @@
     "nome": "CAIXA P/CORREIO N0016X11X07 1UN NIAGRA",
     "categoria": "Embalagem",
     "preco": 3.5,
-    "estoque": "-10,00 un"
+    "estoque": "-11,00 un"
   },
   {
     "codigo": "939",
@@ -2062,14 +2062,14 @@
     "nome": "RALO P/PIA BORDA DE ALUM.",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 3.5,
-    "estoque": "7,00 un"
+    "estoque": "6,00 un"
   },
   {
     "codigo": "1041",
     "nome": "SACO P/ LIXO PRETO P8 60L C/50UN",
     "categoria": "SACO LIXO",
     "preco": 38.25,
-    "estoque": "21,00 un"
+    "estoque": "20,00 un"
   },
   {
     "codigo": "1042",
@@ -2125,7 +2125,7 @@
     "nome": "SACO P/ LIXO PRETO P6 40L C/10UN",
     "categoria": "SACO LIXO",
     "preco": 5.5,
-    "estoque": "-5,00 un"
+    "estoque": "-6,00 un"
   },
   {
     "codigo": "1052",
@@ -2139,7 +2139,7 @@
     "nome": "SACOS P/LIXO 100L P8 C10UN PRETO",
     "categoria": "SACO LIXO",
     "preco": 13.5,
-    "estoque": "-2,00 un"
+    "estoque": "-4,00 un"
   },
   {
     "codigo": "1055",
@@ -2216,14 +2216,14 @@
     "nome": "MARMITEX DE ISOPOR 1100ML C/10UN COPOBRAS",
     "categoria": "DESCARTAVEIS",
     "preco": 8.5,
-    "estoque": "11,00 un"
+    "estoque": "10,00 un"
   },
   {
     "codigo": "1103",
     "nome": "MARMITEX DE ISOPOR 750ML C/10UN BOM APETITE",
     "categoria": "DESCARTAVEIS",
     "preco": 8,
-    "estoque": "-68,00 un"
+    "estoque": "-70,00 un"
   },
   {
     "codigo": "1113",
@@ -2279,7 +2279,7 @@
     "nome": "REFIL RODO ALUMINIO 30CM SANCHES",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 4,
-    "estoque": "6,00 un"
+    "estoque": "5,00 un"
   },
   {
     "codigo": "1141",
@@ -2531,7 +2531,7 @@
     "nome": "ESPONJA DE LÃ DE AÇO ASSOLAN 45G",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 3,
-    "estoque": "18,00 un"
+    "estoque": "17,00 un"
   },
   {
     "codigo": "1301",
@@ -2622,7 +2622,7 @@
     "nome": "TOALHA INTERFOLHA BRANCA (VERDE) C/1000UN ISAPEL",
     "categoria": "PRODUTO DE HIGIENE",
     "preco": 16,
-    "estoque": "78,00 un"
+    "estoque": "76,00 un"
   },
   {
     "codigo": "1331",
@@ -2832,7 +2832,7 @@
     "nome": "POTE 100ML C/100UN COPOMAIS",
     "categoria": "DESCARTAVEIS",
     "preco": 7.5,
-    "estoque": "16,00 un"
+    "estoque": "14,00 un"
   },
   {
     "codigo": "1465",
@@ -2895,7 +2895,7 @@
     "nome": "D645 POTE REDONDO BASE E TAMPA C/10UN 120ML",
     "categoria": "DESCARTAVEIS",
     "preco": 3.5,
-    "estoque": "26,00 un"
+    "estoque": "24,00 un"
   },
   {
     "codigo": "1489",
@@ -3063,7 +3063,7 @@
     "nome": "D50MM TORTA MDIA 1,5KG BR24CM DONA RITA",
     "categoria": "DESCARTAVEIS",
     "preco": 3,
-    "estoque": "-10,00 un"
+    "estoque": "-11,00 un"
   },
   {
     "codigo": "1649",
@@ -3077,7 +3077,7 @@
     "nome": "HAMBURGUEIRA BH02 C/100UN BOM APETITE",
     "categoria": "DESCARTAVEIS",
     "preco": 34.99,
-    "estoque": "11,00 un"
+    "estoque": "10,00 un"
   },
   {
     "codigo": "1659",
@@ -3091,7 +3091,7 @@
     "nome": "CABO DE ALUMINIO C/ROSCA 1,5MT SANCHES",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 22,
-    "estoque": "0,00 un"
+    "estoque": "-1,00 un"
   },
   {
     "codigo": "1683",
@@ -3329,7 +3329,7 @@
     "nome": "HAMBURGUEIRA BH03 C/100UN BOM APETITE",
     "categoria": "DESCARTAVEIS",
     "preco": 38.99,
-    "estoque": "9,00 un"
+    "estoque": "7,00 un"
   },
   {
     "codigo": "1888",
@@ -3364,7 +3364,7 @@
     "nome": "VASSOURA PIAÇAVA SINTETICA ALKLIN C/CABO",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 14,
-    "estoque": "-15,00 un"
+    "estoque": "-16,00 un"
   },
   {
     "codigo": "1902",
@@ -3588,7 +3588,7 @@
     "nome": "TAMPA P/COPO 100/150/180 E 200ML C/100UN COPOMAIS",
     "categoria": "DESCARTAVEIS",
     "preco": 8.5,
-    "estoque": "-14,00 un"
+    "estoque": "-15,00 un"
   },
   {
     "codigo": "2075",
@@ -3637,7 +3637,7 @@
     "nome": "SACO SOS M PARDO C/50UN 19X12X26 PLUMA",
     "categoria": "Embalagem",
     "preco": 32.5,
-    "estoque": "8,00 un"
+    "estoque": "7,00 un"
   },
   {
     "codigo": "2096",
@@ -3651,7 +3651,7 @@
     "nome": "SACO SOS G PARDO PLUMA C/50UN",
     "categoria": "Embalagem",
     "preco": 47,
-    "estoque": "10,00 un"
+    "estoque": "9,00 un"
   },
   {
     "codigo": "2101",
@@ -4267,7 +4267,7 @@
     "nome": "SACO KRAFT P3 C/100UN 11X15CM PLUMA",
     "categoria": "DESCARTAVEIS",
     "preco": 7,
-    "estoque": "38,00 un"
+    "estoque": "37,00 un"
   },
   {
     "codigo": "2775",
@@ -4659,7 +4659,7 @@
     "nome": "COPO DESCARTAVEL 180ML PS C/100UN FASTCUP",
     "categoria": "DESCARTAVEIS",
     "preco": 6.99,
-    "estoque": "13,00 un"
+    "estoque": "12,00 un"
   },
   {
     "codigo": "2995",
@@ -4764,7 +4764,7 @@
     "nome": "POTE E TAMPA RET.350ML C/24UN GOUR MAX",
     "categoria": "DESCARTAVEIS",
     "preco": 28,
-    "estoque": "15,00 un"
+    "estoque": "14,00 un"
   },
   {
     "codigo": "3060",
@@ -4991,6 +4991,13 @@
     "estoque": "-3,00 un"
   },
   {
+    "codigo": "3155",
+    "nome": "DESINFETANTE FLORAL 5L DVISAO",
+    "categoria": "PRODUTO DE LIMPEZA",
+    "preco": 18.99,
+    "estoque": "0,00 un"
+  },
+  {
     "codigo": "3156",
     "nome": "SACO ECO KRAFT 2KG C/100UN 18,5X29CM PLUMA",
     "categoria": "Embalagem",
@@ -5093,7 +5100,7 @@
     "nome": "COPO E TAMPA 140ML C/25UN ULTRA PP",
     "categoria": "DESCARTAVEIS",
     "preco": 12.5,
-    "estoque": "-7,00 un"
+    "estoque": "-8,00 un"
   },
   {
     "codigo": "3199",
@@ -5219,7 +5226,7 @@
     "nome": "LIMPADOR CONCENTRADO MISTERIO ARABE 120ML SANOL",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 11.5,
-    "estoque": "-5,00 un"
+    "estoque": "-10,00 un"
   },
   {
     "codigo": "3980",
@@ -5814,7 +5821,7 @@
     "nome": "alop",
     "categoria": "-",
     "preco": 8,
-    "estoque": "-1,00 un"
+    "estoque": "-2,00 un"
   },
   {
     "codigo": "7978",
@@ -6031,7 +6038,7 @@
     "nome": "LUVA NITRILICA PRETA P 10 UN TALGE",
     "categoria": "DESCARTAVEIS",
     "preco": 6,
-    "estoque": "-4,00 un"
+    "estoque": "-5,00 un"
   },
   {
     "codigo": "11175",
@@ -6123,6 +6130,13 @@
     "categoria": "Embalagem",
     "preco": 10,
     "estoque": "-4,00 un"
+  },
+  {
+    "codigo": "20021",
+    "nome": "SACOLA PLASTICA MILHEIRO BRANCA 25X35 200G",
+    "categoria": "Embalagem",
+    "preco": 8.99,
+    "estoque": "4,00 un"
   },
   {
     "codigo": "20032",
@@ -6458,7 +6472,7 @@
     "nome": "SODA CAUSTICA VOREL 500G",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 20,
-    "estoque": "-1,00 un"
+    "estoque": "-2,00 un"
   },
   {
     "codigo": "31686",
@@ -6556,7 +6570,7 @@
     "nome": "AGUA SANITARIA DACLOR 1L",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 5.4,
-    "estoque": "-2,00 un"
+    "estoque": "-3,00 un"
   },
   {
     "codigo": "89815",
@@ -7341,13 +7355,6 @@
     "categoria": "DESCARTAVEIS",
     "preco": 103,
     "estoque": "-77,00 un"
-  },
-  {
-    "codigo": "298178",
-    "nome": "DESINFETANTE FLORAL 5L DVISAO",
-    "categoria": "PRODUTO DE LIMPEZA",
-    "preco": 18.99,
-    "estoque": "0,00 un"
   },
   {
     "codigo": "789475",
