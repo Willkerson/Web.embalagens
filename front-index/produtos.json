@@ -550,7 +550,7 @@
     "nome": "PANO DE CHAO BRANCO ALVEJADO 45CMX69CM SOUZA PPR28",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 6.7,
-    "estoque": "14,00 un"
+    "estoque": "12,00 un"
   },
   {
     "codigo": "391",
@@ -1313,7 +1313,7 @@
     "nome": "LIMPA PEDRAS 2L PEDREX START",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 24.5,
-    "estoque": "9,00 un"
+    "estoque": "8,00 un"
   },
   {
     "codigo": "746",
@@ -1719,7 +1719,7 @@
     "nome": "COPO DESCARTAVEL TRANSPARENTE 180ML C/100UN TOTAL PLAST",
     "categoria": "DESCARTAVEIS",
     "preco": 7.5,
-    "estoque": "431,00 un"
+    "estoque": "430,00 un"
   },
   {
     "codigo": "897",
@@ -2111,7 +2111,7 @@
     "nome": "SACO P/ LIXO PRETO 100L C/50UN",
     "categoria": "SACO LIXO",
     "preco": 57.5,
-    "estoque": "-1,00 un"
+    "estoque": "-2,00 un"
   },
   {
     "codigo": "1049",
@@ -2482,7 +2482,7 @@
     "nome": "BOBINA PICOTADA 2,5KG C/500UN P/ ALIMENTOS 25X33 EXTRUSA",
     "categoria": "Embalagem",
     "preco": 25,
-    "estoque": "10,00 un"
+    "estoque": "8,00 un"
   },
   {
     "codigo": "1281",
@@ -2965,7 +2965,7 @@
     "nome": "AMACIANTE DE ROUPAS SUPREMA ALEGRE ENCANTOS 2L",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 10,
-    "estoque": "5,00 un"
+    "estoque": "4,00 un"
   },
   {
     "codigo": "1543",
@@ -3623,7 +3623,7 @@
     "nome": "FOLHA DE ALUMINIO 4MX30CM WYDA",
     "categoria": "Embalagem",
     "preco": 5.5,
-    "estoque": "-57,00 un"
+    "estoque": "-58,00 un"
   },
   {
     "codigo": "2094",
@@ -3959,7 +3959,7 @@
     "nome": "PEGADOR DE SALADA SILICONE INOX 27CM",
     "categoria": "UTENSILIOS",
     "preco": 14.99,
-    "estoque": "11,00 un"
+    "estoque": "10,00 un"
   },
   {
     "codigo": "2403",
@@ -4393,7 +4393,7 @@
     "nome": "COPO ISOPOR 70ML C/20UN TOTAL PLAST",
     "categoria": "DESCARTAVEIS",
     "preco": 3,
-    "estoque": "114,00 un"
+    "estoque": "111,00 un"
   },
   {
     "codigo": "2833",
@@ -4645,7 +4645,7 @@
     "nome": "AÇUCAR EM SACHE 100X5G UNIAO",
     "categoria": "ALIMENTO/GENERO ALIMENTICIO",
     "preco": 10,
-    "estoque": "4,00 un"
+    "estoque": "2,00 un"
   },
   {
     "codigo": "2993",
@@ -6374,7 +6374,7 @@
     "nome": "G650 POTE QUAD.200ML C/10 UNI",
     "categoria": "Embalagem",
     "preco": 7.5,
-    "estoque": "15,00 un"
+    "estoque": "14,00 un"
   },
   {
     "codigo": "31671",
@@ -6423,7 +6423,7 @@
     "nome": "FLOTADOR AZULIM 500ML LIMPEZA PEZADA SPRAY",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 19,
-    "estoque": "7,00 un"
+    "estoque": "6,00 un"
   },
   {
     "codigo": "31679",
@@ -7369,6 +7369,13 @@
     "categoria": "SACO LIXO",
     "preco": 4,
     "estoque": "15,00 un"
+  },
+  {
+    "codigo": "790987",
+    "nome": "TEST123",
+    "categoria": "-",
+    "preco": 7000,
+    "estoque": "0,00 un"
   },
   {
     "codigo": "1013_856",
