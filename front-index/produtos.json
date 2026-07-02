@@ -305,7 +305,7 @@
     "nome": "ESPONJA MULTIUSO C/4UN ALCKLIN",
     "categoria": "UTENSILIOS",
     "preco": 3.5,
-    "estoque": "70,00 un"
+    "estoque": "69,00 un"
   },
   {
     "codigo": "294",
@@ -354,7 +354,7 @@
     "nome": "COPO TERMICO 240ML C/20UN TOTALPLAST",
     "categoria": "DESCARTAVEIS",
     "preco": 6.99,
-    "estoque": "33,00 un"
+    "estoque": "32,00 un"
   },
   {
     "codigo": "313",
@@ -543,7 +543,7 @@
     "nome": "PANO DE CHAO XADREZ 45CMX68CM SOUZA BR2",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 4.7,
-    "estoque": "52,00 un"
+    "estoque": "49,00 un"
   },
   {
     "codigo": "390",
@@ -1138,7 +1138,7 @@
     "nome": "D7 750ML FOLHA DE ALUMINIO C/10UN WYDA",
     "categoria": "Embalagem",
     "preco": 14,
-    "estoque": "-22,00 un"
+    "estoque": "-23,00 un"
   },
   {
     "codigo": "660",
@@ -2118,7 +2118,7 @@
     "nome": "SACO P/ LIXO PRETO P6 40L C/10UN",
     "categoria": "SACO LIXO",
     "preco": 5.5,
-    "estoque": "-6,00 un"
+    "estoque": "-7,00 un"
   },
   {
     "codigo": "1052",
@@ -2363,7 +2363,7 @@
     "nome": "D70MB BOLO E TORTA RET BAIXA PRETA",
     "categoria": "DESCARTAVEIS",
     "preco": 12.99,
-    "estoque": "13,00 un"
+    "estoque": "12,00 un"
   },
   {
     "codigo": "1171",
@@ -2874,7 +2874,7 @@
     "nome": "D78MM RET.5KG PRETA JUMBO 44X35X5 1UN HELVIPACK",
     "categoria": "DESCARTAVEIS",
     "preco": 18.6,
-    "estoque": "19,00 un"
+    "estoque": "18,00 un"
   },
   {
     "codigo": "1481",
@@ -2986,7 +2986,7 @@
     "nome": "GARRAFA PE QUADRADA 200ML C/10UN MALUGER",
     "categoria": "Embalagem",
     "preco": 9.75,
-    "estoque": "-16,00 un"
+    "estoque": "-18,00 un"
   },
   {
     "codigo": "1558",
@@ -3777,7 +3777,7 @@
     "nome": "LUVA PLASTICA DESCARTAVEL HDPE C/100UN MEDIX",
     "categoria": "DESCARTAVEIS",
     "preco": 3,
-    "estoque": "-38,00 un"
+    "estoque": "-42,00 un"
   },
   {
     "codigo": "2278",
@@ -4414,7 +4414,7 @@
     "nome": "PAPEL ACOPLADO C/PELICULA 30X38 300g (C/100UN)",
     "categoria": "DESCARTAVEIS",
     "preco": 18.5,
-    "estoque": "9,00 un"
+    "estoque": "8,00 un"
   },
   {
     "codigo": "2842",
@@ -4652,7 +4652,7 @@
     "nome": "COPO DESCARTAVEL 180ML PS C/100UN FASTCUP",
     "categoria": "DESCARTAVEIS",
     "preco": 6.99,
-    "estoque": "12,00 un"
+    "estoque": "112,00 un"
   },
   {
     "codigo": "2995",
@@ -4757,7 +4757,7 @@
     "nome": "POTE E TAMPA RET.350ML C/24UN GOUR MAX",
     "categoria": "DESCARTAVEIS",
     "preco": 28,
-    "estoque": "14,00 un"
+    "estoque": "13,00 un"
   },
   {
     "codigo": "3060",
@@ -5387,7 +5387,7 @@
     "nome": "TOP LIXO PRETO 50L C/30UN PACK LIXO",
     "categoria": "SACO LIXO",
     "preco": 23.99,
-    "estoque": "9,00 un"
+    "estoque": "8,00 un"
   },
   {
     "codigo": "4391",
@@ -6458,7 +6458,7 @@
     "nome": "SAPONACEO CREMOSO AZULIM 300ML",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 13.5,
-    "estoque": "19,00 un"
+    "estoque": "18,00 un"
   },
   {
     "codigo": "31685",
