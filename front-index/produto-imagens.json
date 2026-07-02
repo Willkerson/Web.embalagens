@@ -1,673 +1,93 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Imagens de Produto — CIA das Embalagens</title>
-  <style>
-    /* ── Tokens (mesma paleta do admin-cadastro.html) ──────────────────────── */
-    :root {
-      --bg:        #0f1117;
-      --surface:   #1a1d27;
-      --surface2:  #22263a;
-      --border:    #2e3250;
-      --accent:    #4f8ef7;
-      --accent-h:  #3a7aee;
-      --success:   #22c55e;
-      --warn:      #f59e0b;
-      --danger:    #ef4444;
-      --text:      #e8eaf2;
-      --muted:     #7c82a0;
-      --radius:    12px;
-      --radius-sm: 7px;
-      --font:      'Inter', system-ui, sans-serif;
+// ─────────────────────────────────────────────────────────────
+// APP.JS
+// ─────────────────────────────────────────────────────────────
+async function carregarProdutos() {
+  try {
+    const [respProdutos, respImagens] = await Promise.all([
+      fetch('front-index/produtos.json'),
+      // produto-imagens.json é opcional: se ainda não existir ou der erro,
+      // o site continua funcionando normalmente, só sem foto extra.
+      fetch('front-index/produto-imagens.json').catch(function () { return null; })
+    ]);
+
+    if (!respProdutos.ok) {
+      throw new Error(`Erro HTTP ${respProdutos.status}`);
     }
 
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    const produtos = await respProdutos.json();
 
-    body {
-      font-family: var(--font);
-      background: var(--bg);
-      color: var(--text);
-      min-height: 100vh;
-      padding: 24px 16px 80px;
-    }
-
-    header {
-      max-width: 760px;
-      margin: 0 auto 32px;
-      display: flex;
-      align-items: center;
-      gap: 14px;
-    }
-    .logo {
-      width: 42px; height: 42px;
-      background: var(--accent);
-      border-radius: 10px;
-      display: flex; align-items: center; justify-content: center;
-      font-size: 20px; font-weight: 800; color: #fff;
-      flex-shrink: 0;
-    }
-    header h1 { font-size: 1.25rem; font-weight: 700; }
-    header p  { font-size: 0.8rem; color: var(--muted); }
-
-    .card {
-      max-width: 760px;
-      margin: 0 auto 20px;
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      padding: 28px;
-    }
-
-    .card-title {
-      font-size: 0.7rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: .1em;
-      color: var(--muted);
-      margin-bottom: 20px;
-      padding-bottom: 12px;
-      border-bottom: 1px solid var(--border);
-    }
-
-    .row { display: grid; gap: 16px; margin-bottom: 16px; }
-    .row-2 { grid-template-columns: 1fr 1fr; }
-    .row-3 { grid-template-columns: 2fr 1fr 1fr; }
-
-    label {
-      display: block;
-      font-size: 0.75rem;
-      font-weight: 600;
-      color: var(--muted);
-      margin-bottom: 6px;
-      text-transform: uppercase;
-      letter-spacing: .05em;
-    }
-
-    input, select, textarea {
-      width: 100%;
-      background: var(--surface2);
-      border: 1px solid var(--border);
-      border-radius: var(--radius-sm);
-      color: var(--text);
-      font-family: var(--font);
-      font-size: 0.95rem;
-      padding: 10px 14px;
-      outline: none;
-      transition: border-color .15s;
-    }
-    input:focus, select:focus, textarea:focus { border-color: var(--accent); }
-    input::placeholder, textarea::placeholder { color: var(--muted); }
-
-    input[type="file"] {
-      padding: 8px 10px;
-      cursor: pointer;
-    }
-
-    .auth-toggle {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      font-size: 0.8rem;
-      color: var(--muted);
-      cursor: pointer;
-      user-select: none;
-      margin-bottom: 16px;
-    }
-    .auth-toggle input { width: auto; }
-
-    .hint { font-size: 0.72rem; color: var(--muted); margin-top: 5px; }
-
-    /* ── Produto encontrado (autocomplete simples) ──────────────────────── */
-    #produto-found {
-      display: none;
-      background: var(--surface2);
-      border: 1px solid var(--border);
-      border-radius: var(--radius-sm);
-      padding: 10px 14px;
-      font-size: 0.85rem;
-      margin-bottom: 16px;
-    }
-    #produto-found.ok   { border-color: var(--success); color: var(--success); }
-    #produto-found.warn { border-color: var(--warn);    color: var(--warn); }
-
-    /* ── Preview ─────────────────────────────────────────────────────────── */
-    .preview-wrap {
-      display: flex;
-      align-items: center;
-      gap: 16px;
-      margin-bottom: 16px;
-    }
-    .preview-box {
-      width: 96px; height: 96px;
-      background: var(--surface2);
-      border: 1px dashed var(--border);
-      border-radius: var(--radius-sm);
-      display: flex; align-items: center; justify-content: center;
-      overflow: hidden;
-      flex-shrink: 0;
-    }
-    .preview-box img { max-width: 100%; max-height: 100%; object-fit: contain; }
-    .preview-box span { font-size: 0.7rem; color: var(--muted); text-align: center; padding: 4px; }
-
-    /* ── Buttons ─────────────────────────────────────────────────────────── */
-    button {
-      font-family: var(--font);
-      font-size: 0.9rem;
-      font-weight: 600;
-      border: none;
-      border-radius: var(--radius-sm);
-      padding: 11px 22px;
-      cursor: pointer;
-      transition: background .15s, opacity .15s;
-    }
-    .btn-add { background: var(--surface2); color: var(--text); border: 1px solid var(--border); }
-    .btn-add:hover { background: var(--border); }
-    .btn-primary { background: var(--accent); color: #fff; }
-    .btn-primary:hover { background: var(--accent-h); }
-    .btn-primary:disabled { opacity: .45; cursor: not-allowed; }
-    .btn-clear { background: transparent; border: 1px solid var(--border); color: var(--muted); }
-    .btn-clear:hover { color: var(--danger); border-color: var(--danger); }
-    .btn-row { display: flex; gap: 12px; flex-wrap: wrap; }
-
-    /* ── Lista de imagens salvas ─────────────────────────────────────────── */
-    #lista-imagens {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
-      gap: 12px;
-    }
-    .img-item {
-      background: var(--surface2);
-      border: 1px solid var(--border);
-      border-radius: var(--radius-sm);
-      padding: 10px;
-      text-align: center;
-      position: relative;
-    }
-    .img-item img {
-      width: 100%; height: 80px;
-      object-fit: contain;
-      margin-bottom: 6px;
-      background: #fff;
-      border-radius: 4px;
-    }
-    .img-item .codigo { font-size: 0.75rem; font-weight: 700; }
-    .img-item .modo { font-size: 0.65rem; color: var(--muted); }
-    .img-item .btn-del {
-      margin-top: 6px;
-      width: 100%;
-      background: transparent;
-      border: 1px solid var(--border);
-      color: var(--danger);
-      font-size: 0.7rem;
-      padding: 4px;
-    }
-    .img-item .btn-del:hover { background: rgba(239,68,68,.1); }
-
-    #busca-lista {
-      margin-bottom: 14px;
-    }
-
-    /* ── Toast ───────────────────────────────────────────────────────────── */
-    #toast {
-      position: fixed;
-      bottom: 24px; right: 24px;
-      background: var(--surface2);
-      border: 1px solid var(--border);
-      border-radius: var(--radius-sm);
-      padding: 14px 20px;
-      font-size: 0.88rem;
-      max-width: 340px;
-      z-index: 999;
-      display: none;
-      gap: 10px;
-      align-items: center;
-      box-shadow: 0 8px 32px rgba(0,0,0,.5);
-    }
-    #toast.show { display: flex; }
-    #toast.ok   { border-color: var(--success); }
-    #toast.err  { border-color: var(--danger); }
-    #toast .icon { font-size: 1.1rem; }
-
-    #status-badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      font-size: 0.75rem;
-      padding: 4px 10px;
-      border-radius: 20px;
-      background: var(--surface2);
-      border: 1px solid var(--border);
-      color: var(--muted);
-      margin-left: auto;
-    }
-    #status-badge.ok  { border-color: var(--success); color: var(--success); }
-    #status-badge.err { border-color: var(--danger);  color: var(--danger);  }
-
-    @media (max-width: 540px) {
-      .row-2, .row-3 { grid-template-columns: 1fr; }
-      .card { padding: 20px 16px; }
-    }
-  </style>
-</head>
-<body>
-
-  <header>
-    <div class="logo">C</div>
-    <div>
-      <h1>Imagens de Produto</h1>
-      <p>CIA das Embalagens · não mexe em produtos.json nem no estoque</p>
-    </div>
-    <span id="status-badge">● pronto</span>
-  </header>
-
-  <!-- Config GitHub -->
-  <div class="card">
-    <div class="card-title">Configuração GitHub</div>
-    <label class="auth-toggle">
-      <input type="checkbox" id="toggle-config" onchange="toggleConfig(this)"> Mostrar configurações de acesso
-    </label>
-    <div id="config-section" style="display:none">
-      <div class="row row-2">
-        <div>
-          <label for="gh-owner">Usuário / Owner</label>
-          <input id="gh-owner" type="text" placeholder="Willkerson" />
-        </div>
-        <div>
-          <label for="gh-repo">Repositório</label>
-          <input id="gh-repo" type="text" placeholder="Web.embalagens" />
-        </div>
-      </div>
-      <div class="row">
-        <div>
-          <label for="gh-token">Token GitHub (PAT)</label>
-          <input id="gh-token" type="password" placeholder="ghp_..." />
-          <p class="hint">Precisa de permissão: Contents (read + write) neste repositório.</p>
-        </div>
-      </div>
-      <button class="btn-add" onclick="salvarConfig()">💾 Salvar configurações</button>
-    </div>
-  </div>
-
-  <!-- Formulário de imagem -->
-  <div class="card">
-    <div class="card-title">Adicionar / Atualizar Imagem</div>
-
-    <div class="row">
-      <div>
-        <label for="f-codigo">Código do Produto *</label>
-        <input id="f-codigo" type="text" placeholder="Ex: 129038" maxlength="30" oninput="buscarProdutoPorCodigo()" />
-      </div>
-    </div>
-    <div id="produto-found"></div>
-
-    <div class="row row-2">
-      <div>
-        <label for="f-url">URL da imagem</label>
-        <input id="f-url" type="text" placeholder="https://..." oninput="atualizarPreviewUrl()" />
-        <p class="hint">Cole um link direto de imagem, ou use o upload de arquivo abaixo.</p>
-      </div>
-      <div>
-        <label for="f-arquivo">Ou envie um arquivo</label>
-        <input id="f-arquivo" type="file" accept="image/*" onchange="carregarArquivo(event)" />
-        <p class="hint">A imagem é convertida e salva direto no JSON (base64).</p>
-      </div>
-    </div>
-
-    <div class="row">
-      <div>
-        <label for="f-modo">Modo de exibição</label>
-        <select id="f-modo">
-          <option value="thumbnail">thumbnail (miniatura no card)</option>
-          <option value="replace">replace (substitui o ícone padrão)</option>
-        </select>
-      </div>
-    </div>
-
-    <div class="preview-wrap">
-      <div class="preview-box" id="preview-box"><span>Pré-visualização</span></div>
-    </div>
-
-    <div class="btn-row">
-      <button class="btn-clear" onclick="limparFormulario()">🗑 Limpar</button>
-      <button class="btn-primary" id="btn-salvar" onclick="salvarImagem()">💾 Salvar imagem</button>
-    </div>
-  </div>
-
-  <!-- Lista de imagens já salvas -->
-  <div class="card">
-    <div class="card-title">Imagens já cadastradas (<span id="total-count">0</span>)</div>
-    <input id="busca-lista" type="text" placeholder="Filtrar por código..." oninput="renderLista()" />
-    <div id="lista-imagens"></div>
-  </div>
-
-  <!-- Toast -->
-  <div id="toast">
-    <span class="icon" id="toast-icon">✅</span>
-    <span id="toast-msg"></span>
-  </div>
-
-  <script>
-    // ── Storage keys (compartilha config com admin-cadastro se quiser, mas
-    //    aqui usa chaves próprias pra não confundir repositórios diferentes) ──
-    const KEYS = {
-      owner: 'cia_img_owner',
-      repo:  'cia_img_repo',
-      token: 'cia_img_token',
-    };
-
-    let imagensAtuais = {};   // conteúdo atual de produto-imagens.json
-    let imagensSha    = null; // sha do arquivo no GitHub (necessário pra sobrescrever)
-    let produtosCache = null; // produtos.json (só leitura, pra mostrar o nome do produto)
-    let imagemPendente = null; // { imagem, imgmode } prestes a ser salva
-
-    const PATH_IMAGENS  = 'front-index/produto-imagens.json';
-    const PATH_PRODUTOS = 'front-index/produtos.json';
-
-    // ── Init ────────────────────────────────────────────────────────────────
-    (function init() {
-      const saved = {
-        owner: localStorage.getItem(KEYS.owner) || 'Willkerson',
-        repo:  localStorage.getItem(KEYS.repo)  || 'Web.embalagens',
-        token: localStorage.getItem(KEYS.token) || '',
-      };
-      document.getElementById('gh-owner').value = saved.owner;
-      document.getElementById('gh-repo').value  = saved.repo;
-      if (saved.token) document.getElementById('gh-token').value = saved.token;
-
-      carregarProdutosPublico();
-      carregarImagensAtuais();
-    })();
-
-    function toggleConfig(el) {
-      document.getElementById('config-section').style.display = el.checked ? 'block' : 'none';
-    }
-
-    function salvarConfig() {
-      localStorage.setItem(KEYS.owner, document.getElementById('gh-owner').value.trim());
-      localStorage.setItem(KEYS.repo,  document.getElementById('gh-repo').value.trim());
-      localStorage.setItem(KEYS.token, document.getElementById('gh-token').value.trim());
-      toast('ok', '✅ Configurações salvas!');
-      carregarProdutosPublico();
-      carregarImagensAtuais();
-    }
-
-    function getConfig() {
-      return {
-        owner: localStorage.getItem(KEYS.owner) || document.getElementById('gh-owner').value.trim(),
-        repo:  localStorage.getItem(KEYS.repo)  || document.getElementById('gh-repo').value.trim(),
-        token: localStorage.getItem(KEYS.token) || document.getElementById('gh-token').value.trim(),
-      };
-    }
-
-    // ── Leitura pública (sem token) do produtos.json, só pra exibir o nome ──
-    async function carregarProdutosPublico() {
+    let imagens = {};
+    if (respImagens && respImagens.ok) {
       try {
-        const cfg = getConfig();
-        if (!cfg.owner || !cfg.repo) return;
-        const url = `https://raw.githubusercontent.com/${cfg.owner}/${cfg.repo}/main/${PATH_PRODUTOS}`;
-        const res = await fetch(url, { cache: 'no-store' });
-        if (!res.ok) return;
-        produtosCache = await res.json();
+        imagens = await respImagens.json();
       } catch (e) {
-        console.warn('Não foi possível carregar produtos.json para autocomplete', e);
+        console.warn('produto-imagens.json inválido, seguindo sem fotos extras.', e);
       }
     }
 
-    function buscarProdutoPorCodigo() {
-      const codigo = document.getElementById('f-codigo').value.trim();
-      const el = document.getElementById('produto-found');
-      if (!codigo) { el.style.display = 'none'; return; }
+    window.produtos = produtos;
 
-      if (!produtosCache) {
-        el.className = 'warn';
-        el.textContent = '⚠️ Lista de produtos ainda não carregada (verifique owner/repo).';
-        el.style.display = 'block';
-        return;
-      }
+    // Garante campos mínimos + mescla imagem separada
+    window.produtos.forEach(function (p, i) {
+      // FIX: garante que todo produto tem campo "id" (usa codigo ou índice)
+      if (!p.id) p.id = p.codigo || String(i);
+      if (!p.categoria)    p.categoria    = 'todos';
+      if (!p.subcategoria) p.subcategoria = '';
+      if (!p.marca)        p.marca        = '';
+      if (!p.estoque)      p.estoque      = 0;
+      if (!p.preco)        p.preco        = 0;
 
-      const p = produtosCache.find(x => String(x.codigo) === codigo);
-      el.style.display = 'block';
-      if (p) {
-        el.className = 'ok';
-        el.textContent = `✓ ${p.nome} — ${p.categoria || ''}`;
-      } else {
-        el.className = 'warn';
-        el.textContent = '⚠️ Código não encontrado no produtos.json atual (pode salvar mesmo assim).';
-      }
-    }
-
-    // ── GitHub API (mesmo padrão do admin-cadastro.html) ──────────────────
-    async function ghGet(cfg, path) {
-      const res = await fetch(
-        `https://api.github.com/repos/${cfg.owner}/${cfg.repo}/contents/${path}`,
-        {
-          headers: {
-            Authorization: `Bearer ${cfg.token}`,
-            Accept: 'application/vnd.github.v3+json',
-          },
+      // ── Mescla imagem do arquivo separado (produto-imagens.json) ──
+      // Chave usada: codigo do produto (fallback: id).
+      // Nunca sobrescreve se o produtos.json já trouxer uma imagem própria.
+      if (!p.imagem) {
+        const img = imagens[p.codigo] || imagens[p.id];
+        if (img) {
+          p.imagem  = img.imagem  || img.url || '';
+          p.imgmode = img.imgmode || 'thumbnail';
         }
-      );
-      if (res.status === 404) return null;
-      if (!res.ok) throw new Error(`ghGet ${path}: ${res.status}`);
-      return res.json();
-    }
-
-    async function ghPut(cfg, path, content, message, sha) {
-      const body = {
-        message,
-        content: btoa(unescape(encodeURIComponent(content))),
-        branch: 'main',
-      };
-      if (sha) body.sha = sha;
-
-      const res = await fetch(
-        `https://api.github.com/repos/${cfg.owner}/${cfg.repo}/contents/${path}`,
-        {
-          method: 'PUT',
-          headers: {
-            Authorization: `Bearer ${cfg.token}`,
-            Accept: 'application/vnd.github.v3+json',
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify(body),
-        }
-      );
-      if (!res.ok) {
-        const err = await res.json().catch(() => ({}));
-        throw new Error(`ghPut ${path}: ${res.status} — ${err.message || ''}`);
       }
-      return res.json();
+    });
+
+    console.log(window.produtos.length + ' produtos carregados');
+    console.log('Exemplo de produto:', window.produtos[0]); // DEBUG — remova depois
+
+    estado.cat                = 'todos';
+    estado.sub                = 'todas';
+    estado.busca              = '';
+    estado.marca              = 'todas';
+    estado.precoFiltro        = null;
+    estado.produtoSelecionado = null;
+    document.dispatchEvent(new CustomEvent('planilhaCarregada'));
+  } catch (erro) {
+    console.error('Erro ao carregar produtos.json', erro);
+  }
+}
+carregarProdutos();
+
+// ─────────────────────────────────────────────────────────────
+// Inicialização
+// ─────────────────────────────────────────────────────────────
+function inicializarLoja() {
+  if (typeof restaurarCarrinho === 'function') restaurarCarrinho();
+  estado.cat                = 'todos';
+  estado.sub                = 'todas';
+  estado.busca              = '';
+  estado.marca              = 'todas';
+  estado.precoFiltro        = null;
+  estado.produtoSelecionado = null;
+  if (typeof updateBadge === 'function') updateBadge();
+  if (typeof renderizar  === 'function') renderizar();
+}
+
+document.addEventListener(
+  'planilhaCarregada',
+  function() {
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', inicializarLoja);
+    } else {
+      inicializarLoja();
     }
-
-    // ── Carrega produto-imagens.json atual (via API, pra já ter o sha) ────
-    async function carregarImagensAtuais() {
-      const cfg = getConfig();
-      if (!cfg.owner || !cfg.repo || !cfg.token) {
-        renderLista();
-        return;
-      }
-      try {
-        const atual = await ghGet(cfg, PATH_IMAGENS);
-        if (atual) {
-          imagensSha = atual.sha;
-          const decoded = decodeURIComponent(escape(atob(atual.content)));
-          imagensAtuais = JSON.parse(decoded);
-        } else {
-          imagensSha = null;
-          imagensAtuais = {};
-        }
-      } catch (e) {
-        console.warn('Não foi possível carregar produto-imagens.json', e);
-      }
-      renderLista();
-    }
-
-    // ── Preview ─────────────────────────────────────────────────────────────
-    function atualizarPreviewUrl() {
-      const url = document.getElementById('f-url').value.trim();
-      if (!url) return;
-      imagemPendente = { imagem: url };
-      mostrarPreview(url);
-    }
-
-    function carregarArquivo(evt) {
-      const file = evt.target.files[0];
-      if (!file) return;
-      const reader = new FileReader();
-      reader.onload = function (e) {
-        imagemPendente = { imagem: e.target.result };
-        document.getElementById('f-url').value = ''; // upload tem prioridade
-        mostrarPreview(e.target.result);
-      };
-      reader.readAsDataURL(file);
-    }
-
-    function mostrarPreview(src) {
-      const box = document.getElementById('preview-box');
-      box.innerHTML = `<img src="${src}" alt="preview" onerror="this.parentElement.innerHTML='<span>Não foi possível carregar</span>'">`;
-    }
-
-    // ── Salvar ──────────────────────────────────────────────────────────────
-    async function salvarImagem() {
-      const cfg = getConfig();
-      if (!cfg.owner || !cfg.repo || !cfg.token) {
-        toast('err', '⚠️ Configure o GitHub antes de salvar.');
-        document.getElementById('toggle-config').checked = true;
-        toggleConfig(document.getElementById('toggle-config'));
-        return;
-      }
-
-      const codigo = document.getElementById('f-codigo').value.trim();
-      const urlDigitada = document.getElementById('f-url').value.trim();
-      const modo = document.getElementById('f-modo').value;
-
-      const fonteImagem = (imagemPendente && imagemPendente.imagem) || urlDigitada;
-
-      if (!codigo) { toast('err', '⚠️ Informe o código do produto.'); return; }
-      if (!fonteImagem) { toast('err', '⚠️ Cole uma URL ou envie um arquivo de imagem.'); return; }
-
-      const btn = document.getElementById('btn-salvar');
-      btn.disabled = true;
-      btn.textContent = '⏳ Salvando...';
-      setBadge('', '⏳ salvando...');
-
-      try {
-        // Sempre relê antes de escrever, pra evitar sha desatualizado
-        const atual = await ghGet(cfg, PATH_IMAGENS);
-        const shaAtual = atual ? atual.sha : undefined;
-        const dadosAtuais = atual
-          ? JSON.parse(decodeURIComponent(escape(atob(atual.content))))
-          : {};
-
-        dadosAtuais[codigo] = { imagem: fonteImagem, imgmode: modo };
-
-        await ghPut(
-          cfg,
-          PATH_IMAGENS,
-          JSON.stringify(dadosAtuais, null, 2),
-          `🖼️ imagem do produto ${codigo} — ${new Date().toLocaleString('pt-BR')}`,
-          shaAtual
-        );
-
-        imagensAtuais = dadosAtuais;
-        toast('ok', `✅ Imagem do produto ${codigo} salva!`);
-        setBadge('ok', '✓ salvo');
-        limparFormulario();
-        renderLista();
-      } catch (e) {
-        console.error(e);
-        toast('err', `❌ Erro: ${e.message}`);
-        setBadge('err', '✗ erro');
-      } finally {
-        btn.textContent = '💾 Salvar imagem';
-        btn.disabled = false;
-      }
-    }
-
-    async function removerImagem(codigo) {
-      if (!confirm(`Remover a imagem do produto ${codigo}?`)) return;
-      const cfg = getConfig();
-      if (!cfg.owner || !cfg.repo || !cfg.token) {
-        toast('err', '⚠️ Configure o GitHub antes de remover.');
-        return;
-      }
-      try {
-        const atual = await ghGet(cfg, PATH_IMAGENS);
-        if (!atual) return;
-        const dados = JSON.parse(decodeURIComponent(escape(atob(atual.content))));
-        delete dados[codigo];
-
-        await ghPut(
-          cfg,
-          PATH_IMAGENS,
-          JSON.stringify(dados, null, 2),
-          `🗑️ remove imagem do produto ${codigo} — ${new Date().toLocaleString('pt-BR')}`,
-          atual.sha
-        );
-
-        imagensAtuais = dados;
-        toast('ok', `✅ Imagem do produto ${codigo} removida.`);
-        renderLista();
-      } catch (e) {
-        console.error(e);
-        toast('err', `❌ Erro: ${e.message}`);
-      }
-    }
-
-    function limparFormulario() {
-      document.getElementById('f-codigo').value = '';
-      document.getElementById('f-url').value = '';
-      document.getElementById('f-arquivo').value = '';
-      document.getElementById('f-modo').value = 'thumbnail';
-      document.getElementById('produto-found').style.display = 'none';
-      document.getElementById('preview-box').innerHTML = '<span>Pré-visualização</span>';
-      imagemPendente = null;
-    }
-
-    // ── Lista de imagens salvas ─────────────────────────────────────────────
-    function renderLista() {
-      const container = document.getElementById('lista-imagens');
-      const filtro = (document.getElementById('busca-lista').value || '').trim();
-      const entradas = Object.entries(imagensAtuais)
-        .filter(([codigo]) => !filtro || codigo.includes(filtro));
-
-      document.getElementById('total-count').textContent = Object.keys(imagensAtuais).length;
-
-      if (entradas.length === 0) {
-        container.innerHTML = '<p style="color:var(--muted);font-size:.85rem">Nenhuma imagem cadastrada ainda.</p>';
-        return;
-      }
-
-      container.innerHTML = entradas.map(([codigo, dados]) => `
-        <div class="img-item">
-          <img src="${dados.imagem || dados.url || ''}" alt="${codigo}" onerror="this.style.opacity=0.3">
-          <div class="codigo">${codigo}</div>
-          <div class="modo">${dados.imgmode || 'thumbnail'}</div>
-          <button class="btn-del" onclick="removerImagem('${codigo}')">✕ Remover</button>
-        </div>
-      `).join('');
-    }
-
-    // ── UI helpers ──────────────────────────────────────────────────────────
-    let toastTimer;
-    function toast(type, msg) {
-      const el   = document.getElementById('toast');
-      const icon = document.getElementById('toast-icon');
-      const txt  = document.getElementById('toast-msg');
-      el.className = `show ${type}`;
-      icon.textContent = type === 'ok' ? '✅' : '⚠️';
-      txt.textContent  = msg;
-      clearTimeout(toastTimer);
-      toastTimer = setTimeout(() => el.classList.remove('show'), 5000);
-    }
-
-    function setBadge(cls, txt) {
-      const b = document.getElementById('status-badge');
-      b.className = cls;
-      b.textContent = '● ' + txt;
-    }
-  </script>
-</body>
-</html>
+  },
+  { once: true }
+);
