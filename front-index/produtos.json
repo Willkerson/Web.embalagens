@@ -39,7 +39,7 @@
     "nome": "SACOLA KRAFT GG 1UN 30X20X36CM",
     "categoria": "Embalagem",
     "preco": 2.5,
-    "estoque": "-50,00 un"
+    "estoque": "-55,00 un"
   },
   {
     "codigo": "110",
@@ -333,7 +333,7 @@
     "nome": "RODO DE PIA 15CM ALKLIN",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 6.5,
-    "estoque": "9,00 un"
+    "estoque": "8,00 un"
   },
   {
     "codigo": "302",
@@ -347,7 +347,7 @@
     "nome": "PANO PANOTEK REUTILIZAVEL C/40UN",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 12,
-    "estoque": "34,00 un"
+    "estoque": "33,00 un"
   },
   {
     "codigo": "312",
@@ -424,7 +424,7 @@
     "nome": "SACOLA UNIDADE GRANDE",
     "categoria": "SACO LIXO",
     "preco": 0.5,
-    "estoque": "-27,00 un"
+    "estoque": "-28,00 un"
   },
   {
     "codigo": "335",
@@ -627,7 +627,7 @@
     "nome": "MEXEDOR PARA CAFE C/250UN PRAFESTA",
     "categoria": "DESCARTAVEIS",
     "preco": 7.5,
-    "estoque": "22,00 un"
+    "estoque": "21,00 un"
   },
   {
     "codigo": "417",
@@ -732,7 +732,7 @@
     "nome": "POTE E TAMPA RET.500ML C/24UN PRAFESTA",
     "categoria": "DESCARTAVEIS",
     "preco": 35.5,
-    "estoque": "40,00 un"
+    "estoque": "39,00 un"
   },
   {
     "codigo": "459",
@@ -1362,7 +1362,7 @@
     "nome": "Limpador Multiuso Uso Diário Ação Clareadora 500ml Azulim Start",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 5.5,
-    "estoque": "1,00 un"
+    "estoque": "0,00 un"
   },
   {
     "codigo": "763",
@@ -1621,7 +1621,7 @@
     "nome": "RODO PIA IDEAL SANCHES",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 5.99,
-    "estoque": "10,00 un"
+    "estoque": "9,00 un"
   },
   {
     "codigo": "852",
@@ -1712,7 +1712,7 @@
     "nome": "COPO DESCARTAVEL TRANSPARENTE 180ML C/100UN TOTAL PLAST",
     "categoria": "DESCARTAVEIS",
     "preco": 7.5,
-    "estoque": "424,00 un"
+    "estoque": "421,00 un"
   },
   {
     "codigo": "897",
@@ -1754,7 +1754,7 @@
     "nome": "COPO DESCARTAVEL TRANSPARENTE 50ML C/100UN TOTAL PLAST",
     "categoria": "DESCARTAVEIS",
     "preco": 3.5,
-    "estoque": "37,00 un"
+    "estoque": "35,00 un"
   },
   {
     "codigo": "904",
@@ -2125,7 +2125,7 @@
     "nome": "SACO P/ LIXO PRETO P8 60L C/10UN",
     "categoria": "SACO LIXO",
     "preco": 8.99,
-    "estoque": "-69,00 un"
+    "estoque": "-70,00 un"
   },
   {
     "codigo": "1053",
@@ -2846,7 +2846,7 @@
     "nome": "D50MA TORTA ALTA 1,7KG DONA RITA",
     "categoria": "Embalagem",
     "preco": 3.5,
-    "estoque": "28,00 un"
+    "estoque": "27,00 un"
   },
   {
     "codigo": "1475",
@@ -2930,7 +2930,7 @@
     "nome": "TOALHA INTERFOLHA BRANCA PREMIUM WHITE PAPER C/1000UN",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 24,
-    "estoque": "13,00 un"
+    "estoque": "12,00 un"
   },
   {
     "codigo": "1526",
@@ -3154,7 +3154,7 @@
     "nome": "SACOLA PRETA 1KG 40X50",
     "categoria": "Embalagem",
     "preco": 19.99,
-    "estoque": "-51,00 un"
+    "estoque": "-52,00 un"
   },
   {
     "codigo": "1751",
@@ -3686,7 +3686,7 @@
     "nome": "SACOLA BRANCA 1KG 90x100",
     "categoria": "SACO LIXO",
     "preco": 27,
-    "estoque": "10,00 un"
+    "estoque": "9,00 un"
   },
   {
     "codigo": "2122",
@@ -4029,7 +4029,7 @@
     "nome": "POTE TERMICO 360ML C/25UN ULTRA",
     "categoria": "DESCARTAVEIS",
     "preco": 14,
-    "estoque": "23,00 un"
+    "estoque": "21,00 un"
   },
   {
     "codigo": "2457",
@@ -4232,7 +4232,7 @@
     "nome": "G32MA MINI TORTA ALTA 1KG GALVONOTEK",
     "categoria": "Embalagem",
     "preco": 3.5,
-    "estoque": "-16,00 un"
+    "estoque": "-18,00 un"
   },
   {
     "codigo": "2709",
@@ -4295,7 +4295,7 @@
     "nome": "KIT POTE E TAMPA RET. 350ML C/12UN GOUR MAX",
     "categoria": "DESCARTAVEIS",
     "preco": 13,
-    "estoque": "0,00 un"
+    "estoque": "-1,00 un"
   },
   {
     "codigo": "2802",
@@ -5072,7 +5072,7 @@
     "nome": "PAPEL HIGIENICO FOFINHO FOLHA DUPLA 4X30M",
     "categoria": "PRODUTO DE HIGIENE",
     "preco": 8.5,
-    "estoque": "79,00 un"
+    "estoque": "77,00 un"
   },
   {
     "codigo": "3192",
@@ -5338,7 +5338,7 @@
     "nome": "BOBINA PICOTADO 30X40 C/450UN SOLDA FUNDO 1,95KG",
     "categoria": "ALIMENTO/GENERO ALIMENTICIO",
     "preco": 80.5,
-    "estoque": "7,00 un"
+    "estoque": "6,00 un"
   },
   {
     "codigo": "4007",
@@ -5387,7 +5387,7 @@
     "nome": "TOP LIXO PRETO 50L C/30UN PACK LIXO",
     "categoria": "SACO LIXO",
     "preco": 23.99,
-    "estoque": "8,00 un"
+    "estoque": "7,00 un"
   },
   {
     "codigo": "4391",
@@ -5583,7 +5583,7 @@
     "nome": "PALITO DENTAL C/200UN FIAT LUX",
     "categoria": "ALIMENTO/GENERO ALIMENTICIO",
     "preco": 2.25,
-    "estoque": "8,00 un"
+    "estoque": "7,00 un"
   },
   {
     "codigo": "7012",
@@ -6297,7 +6297,7 @@
     "nome": "FOLHA ALUMINIO D92000ML C/ 5UNI",
     "categoria": "Embalagem",
     "preco": 18,
-    "estoque": "-12,00 un"
+    "estoque": "-13,00 un"
   },
   {
     "codigo": "31661",
@@ -6465,7 +6465,7 @@
     "nome": "SODA CAUSTICA VOREL 500G",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 20,
-    "estoque": "-2,00 un"
+    "estoque": "-3,00 un"
   },
   {
     "codigo": "31686",
@@ -7620,6 +7620,13 @@
     "nome": "FATIADOR 3 EM 1",
     "categoria": "-",
     "preco": 59.99,
+    "estoque": "0,00 un"
+  },
+  {
+    "codigo": "7893595170104_1108",
+    "nome": "Cópia de SACOLA VERDE LISA 50X70 1KG+/-270UN",
+    "categoria": "SACO LIXO",
+    "preco": 34,
     "estoque": "0,00 un"
   }
 ]
