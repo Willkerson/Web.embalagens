@@ -1,9 +1,7 @@
-const CACHE = "estoque-v2";
+const CACHE = "estoque-v3";
 const ARQUIVOS = [
   "/Web.embalagens/estoque.html",
-  "/Web.embalagens/app.js",
-  "/Web.embalagens/manifest.json",
-  "/Web.embalagens/front-index/produtos.json"
+  "/Web.embalagens/manifest-estoque.json"
 ];
 
 // INSTALL
@@ -32,16 +30,14 @@ self.addEventListener("activate", (event) => {
   self.clients.claim();
 });
 
-// FETCH
+// FETCH — network-first, cai pro cache só se estiver offline.
 self.addEventListener("fetch", (event) => {
   const url = new URL(event.request.url);
 
-  // ✅ Ignora requisições externas (API GitHub, etc) — browser lida diretamente
   if (url.origin !== self.location.origin) {
     return;
   }
 
-  // ✅ Ignora métodos não-GET (POST, PUT, PATCH, DELETE)
   if (event.request.method !== "GET") {
     return;
   }
