@@ -454,6 +454,36 @@
       return res.json();
     }
 
+    // A API "contents" do GitHub só devolve o conteúdo do arquivo (campo
+    // "content") para arquivos até 1MB. Como produto-imagens.json passa
+    // disso (imagens em base64), pra arquivos grandes ela devolve content
+    // vazio — então buscamos o conteúdo real via API de blob (git_url),
+    // que suporta até 100MB.
+    async function ghGetFileJSON(cfg, path) {
+      const meta = await ghGet(cfg, path);
+      if (!meta) return { sha: null, data: {} };
+
+      let base64 = meta.content;
+      if (!base64 && meta.git_url) {
+        const blobRes = await fetch(meta.git_url, {
+          headers: {
+            Authorization: `Bearer ${cfg.token}`,
+            Accept: 'application/vnd.github.v3+json',
+          },
+        });
+        if (!blobRes.ok) throw new Error(`Erro ao ler blob: ${blobRes.status}`);
+        const blob = await blobRes.json();
+        base64 = blob.content;
+      }
+
+      if (!base64) return { sha: meta.sha, data: {} };
+
+      const limpo = base64.replace(/\n/g, '');
+      const decoded = decodeURIComponent(escape(atob(limpo)));
+      const data = decoded.trim() ? JSON.parse(decoded) : {};
+      return { sha: meta.sha, data };
+    }
+
     async function ghPut(cfg, path, content, message, sha) {
       const body = {
         message,
@@ -489,15 +519,9 @@
         return;
       }
       try {
-        const atual = await ghGet(cfg, PATH_IMAGENS);
-        if (atual) {
-          imagensSha = atual.sha;
-          const decoded = decodeURIComponent(escape(atob(atual.content)));
-          imagensAtuais = JSON.parse(decoded);
-        } else {
-          imagensSha = null;
-          imagensAtuais = {};
-        }
+        const { sha, data } = await ghGetFileJSON(cfg, PATH_IMAGENS);
+        imagensSha = sha;
+        imagensAtuais = data;
       } catch (e) {
         console.warn('Não foi possível carregar produto-imagens.json', e);
       }
@@ -555,11 +579,7 @@
 
       try {
         // Sempre relê antes de escrever, pra evitar sha desatualizado
-        const atual = await ghGet(cfg, PATH_IMAGENS);
-        const shaAtual = atual ? atual.sha : undefined;
-        const dadosAtuais = atual
-          ? JSON.parse(decodeURIComponent(escape(atob(atual.content))))
-          : {};
+        const { sha: shaAtual, data: dadosAtuais } = await ghGetFileJSON(cfg, PATH_IMAGENS);
 
         dadosAtuais[codigo] = { imagem: fonteImagem, imgmode: modo };
 
@@ -594,9 +614,8 @@
         return;
       }
       try {
-        const atual = await ghGet(cfg, PATH_IMAGENS);
-        if (!atual) return;
-        const dados = JSON.parse(decodeURIComponent(escape(atob(atual.content))));
+        const { sha, data: dados } = await ghGetFileJSON(cfg, PATH_IMAGENS);
+        if (!sha) return;
         delete dados[codigo];
 
         await ghPut(
@@ -604,7 +623,7 @@
           PATH_IMAGENS,
           JSON.stringify(dados, null, 2),
           `🗑️ remove imagem do produto ${codigo} — ${new Date().toLocaleString('pt-BR')}`,
-          atual.sha
+          sha
         );
 
         imagensAtuais = dados;
