@@ -14,7 +14,7 @@ function mudaQtd(id, d) {
 }
 
 function addCart(id) {
-  var prod = prods().find(function(p) { return p.id === id; });
+  var prod = prods().find(function(p) { return String(p.id) === String(id); });
   if (!prod) return;
   if (isEsgotado(prod)) { alert('Este produto está temporariamente esgotado.'); return; }
 
@@ -31,7 +31,7 @@ function addCart(id) {
 }
 
 function addSugestao(id) {
-  var prod = prods().find(function(p) { return p.id === id; });
+  var prod = prods().find(function(p) { return String(p.id) === String(id); });
   if (!prod || isEsgotado(prod)) return;
   carrinho[id] = { prod: prod, qtd: (carrinho[id] ? carrinho[id].qtd : 0) + 1 };
   salvarCarrinho();
@@ -125,7 +125,7 @@ function renderCartList() {
       '</div>' +
       '<div class="ci-right">' +
         '<span class="ci-total">' + ss + '</span>' +
-        '<span class="ci-remove" onclick="removerItem(' + p.id + ')">🗑 remover</span>' +
+        '<span class="ci-remove" onclick="removerItem(\'' + p.id + '\')">🗑 remover</span>' +
       '</div>';
 
     list.appendChild(div);
@@ -171,7 +171,7 @@ function renderCartList() {
       card.innerHTML =
         '<div style="font-size:.7rem;height:30px;overflow:hidden;color:var(--text2)">' + p.nome + '</div>' +
         '<div style="font-size:.75rem;font-weight:600">' + precoStr + '</div>' +
-        '<button onclick="addSugestao(' + p.id + ')" ' +
+        '<button onclick="addSugestao(\'' + p.id + '\')" ' +
           'style="margin-top:4px;background:var(--blue);color:#fff;border:none;border-radius:6px;' +
           'padding:4px 8px;font-size:.7rem;cursor:pointer;">+</button>';
       wrap.appendChild(card);
