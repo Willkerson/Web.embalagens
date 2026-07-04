@@ -272,11 +272,11 @@ function renderMais() {
         actHtml =
           '<div class="pactions">' +
             '<div class="qty-ctrl">' +
-              '<button class="bq" onclick="mudaQtd(' + p.id + ',-1)">−</button>' +
+              '<button class="bq" onclick="mudaQtd(\'' + p.id + '\',-1)">−</button>' +
               '<input class="iq" type="number" id="qtd-' + p.id + '" value="1" min="1">' +
-              '<button class="bq" onclick="mudaQtd(' + p.id + ',1)">+</button>' +
+              '<button class="bq" onclick="mudaQtd(\'' + p.id + '\',1)">+</button>' +
             '</div>' +
-            '<button class="badd' + (inCart ? ' done' : '') + '" id="badd-' + p.id + '" onclick="addCart(' + p.id + ')">' +
+            '<button class="badd' + (inCart ? ' done' : '') + '" id="badd-' + p.id + '" onclick="addCart(\'' + p.id + '\')">' +
               (inCart ? '✓ Adicionado' : '+ Adicionar') +
             '</button>' +
           '</div>';
