@@ -532,8 +532,9 @@
     // ── GitHub API (mesmo padrão do admin-cadastro.html) ──────────────────
     async function ghGet(cfg, path) {
       const res = await fetch(
-        `https://api.github.com/repos/${cfg.owner}/${cfg.repo}/contents/${path}`,
+        `https://api.github.com/repos/${cfg.owner}/${cfg.repo}/contents/${path}?t=${Date.now()}`,
         {
+          cache: 'no-store',
           headers: {
             Authorization: `Bearer ${cfg.token}`,
             Accept: 'application/vnd.github.v3+json',
@@ -557,6 +558,7 @@
       let base64 = meta.content;
       if (!base64 && meta.git_url) {
         const blobRes = await fetch(meta.git_url, {
+          cache: 'no-store',
           headers: {
             Authorization: `Bearer ${cfg.token}`,
             Accept: 'application/vnd.github.v3+json',
@@ -597,9 +599,34 @@
       );
       if (!res.ok) {
         const err = await res.json().catch(() => ({}));
-        throw new Error(`ghPut ${path}: ${res.status} — ${err.message || ''}`);
+        const erro = new Error(`ghPut ${path}: ${res.status} — ${err.message || ''}`);
+        erro.status = res.status;
+        throw erro;
       }
       return res.json();
+    }
+
+    // Lê o arquivo mais recente, aplica a mutação e salva. Se o GitHub
+    // recusar por sha desatualizado (409 — comum quando o arquivo é
+    // editado em sequência rápida), relê o sha atual e tenta de novo
+    // automaticamente antes de desistir.
+    async function atualizarArquivoImagens(cfg, mutarFn, mensagem, tentativas = 3) {
+      let ultimoErro;
+      for (let i = 0; i < tentativas; i++) {
+        const { sha, data } = await ghGetFileJSON(cfg, PATH_IMAGENS);
+        const resultado = mutarFn(data);
+        if (resultado === null) return null; // mutarFn cancelou a operação
+        try {
+          await ghPut(cfg, PATH_IMAGENS, JSON.stringify(resultado, null, 2), mensagem, sha);
+          imagensAtuais = resultado;
+          return resultado;
+        } catch (e) {
+          ultimoErro = e;
+          if (e.status === 409 && i < tentativas - 1) continue; // sha mudou, tenta de novo
+          throw e;
+        }
+      }
+      throw ultimoErro;
     }
 
     // ── Carrega produto-imagens.json atual (via API, pra já ter o sha) ────
@@ -673,20 +700,15 @@
       setBadge('', '⏳ salvando...');
 
       try {
-        // Sempre relê antes de escrever, pra evitar sha desatualizado
-        const { sha: shaAtual, data: dadosAtuais } = await ghGetFileJSON(cfg, PATH_IMAGENS);
-
-        dadosAtuais[codigo] = { imagem: fonteImagem, imgmode: modo };
-
-        await ghPut(
+        await atualizarArquivoImagens(
           cfg,
-          PATH_IMAGENS,
-          JSON.stringify(dadosAtuais, null, 2),
-          `🖼️ imagem do produto ${codigo} — ${new Date().toLocaleString('pt-BR')}`,
-          shaAtual
+          (dados) => {
+            dados[codigo] = { imagem: fonteImagem, imgmode: modo };
+            return dados;
+          },
+          `🖼️ imagem do produto ${codigo} — ${new Date().toLocaleString('pt-BR')}`
         );
 
-        imagensAtuais = dadosAtuais;
         toast('ok', `✅ Imagem do produto ${codigo} salva!`);
         setBadge('ok', '✓ salvo');
         limparFormulario();
@@ -709,19 +731,15 @@
         return;
       }
       try {
-        const { sha, data: dados } = await ghGetFileJSON(cfg, PATH_IMAGENS);
-        if (!sha) return;
-        delete dados[codigo];
-
-        await ghPut(
+        await atualizarArquivoImagens(
           cfg,
-          PATH_IMAGENS,
-          JSON.stringify(dados, null, 2),
-          `🗑️ remove imagem do produto ${codigo} — ${new Date().toLocaleString('pt-BR')}`,
-          sha
+          (dados) => {
+            delete dados[codigo];
+            return dados;
+          },
+          `🗑️ remove imagem do produto ${codigo} — ${new Date().toLocaleString('pt-BR')}`
         );
 
-        imagensAtuais = dados;
         toast('ok', `✅ Imagem do produto ${codigo} removida.`);
         renderLista();
       } catch (e) {
@@ -761,26 +779,28 @@
         return;
       }
 
-      try {
-        const { sha, data: dados } = await ghGetFileJSON(cfg, PATH_IMAGENS);
-        if (!sha) { toast('err', '⚠️ Arquivo não encontrado.'); return; }
+      if (imagensAtuais[novoCodigo] && !confirm(`Já existe uma foto salva no código ${novoCodigo}. Substituir?`)) {
+        return;
+      }
 
-        if (dados[novoCodigo] && !confirm(`Já existe uma foto salva no código ${novoCodigo}. Substituir?`)) {
+      try {
+        const resultado = await atualizarArquivoImagens(
+          cfg,
+          (dados) => {
+            if (!dados[codigoAtual]) return null; // já não existe mais, nada a fazer
+            dados[novoCodigo] = dados[codigoAtual];
+            delete dados[codigoAtual];
+            return dados;
+          },
+          `✎ código ${codigoAtual} → ${novoCodigo} — ${new Date().toLocaleString('pt-BR')}`
+        );
+
+        if (resultado === null) {
+          toast('err', '⚠️ Essa entrada não existe mais (pode já ter sido alterada).');
+          renderLista();
           return;
         }
 
-        dados[novoCodigo] = dados[codigoAtual];
-        delete dados[codigoAtual];
-
-        await ghPut(
-          cfg,
-          PATH_IMAGENS,
-          JSON.stringify(dados, null, 2),
-          `✎ código ${codigoAtual} → ${novoCodigo} — ${new Date().toLocaleString('pt-BR')}`,
-          sha
-        );
-
-        imagensAtuais = dados;
         toast('ok', `✅ Código atualizado: ${codigoAtual} → ${novoCodigo}`);
         renderLista();
       } catch (e) {
