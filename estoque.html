@@ -6,6 +6,14 @@
 <title>CIA Embalagens — Estoque</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<!-- ─── PWA: instalar como app no Android/iPhone ─── -->
+<link rel="manifest" href="manifest-estoque.json">
+<meta name="theme-color" content="#0057FF">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Estoque">
+<link rel="apple-touch-icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 192 192'%3E%3Crect width='192' height='192' rx='40' fill='%230057FF'/%3E%3Ctext y='130' x='96' text-anchor='middle' font-size='110'%3E%F0%9F%93%8A%3C/text%3E%3C/svg%3E">
 <style>
 :root {
   --blue:    #0057FF;
@@ -1129,5 +1137,16 @@ function showToast(msg) {
   _tt = setTimeout(() => el.classList.remove("show"), 2500);
 }
 </script>
+
+<!-- ─── PWA: registra o service worker do estoque ─── -->
+<script>
+  if ('serviceWorker' in navigator) {
+    window.addEventListener('load', function () {
+      navigator.serviceWorker.register('/Web.embalagens/sw-estoque.js')
+        .catch(function (err) { console.warn('SW falhou:', err); });
+    });
+  }
+</script>
+
 </body>
 </html>
