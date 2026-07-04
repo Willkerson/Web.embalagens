@@ -205,6 +205,51 @@
     }
     .img-item .btn-del:hover { background: rgba(239,68,68,.1); }
 
+    /* ── Sugestões (busca por nome/código) ──────────────────────────────── */
+    #sugestoes-lista {
+      position: absolute;
+      left: 0; right: 0; top: 100%;
+      z-index: 20;
+      background: var(--surface2);
+      border: 1px solid var(--border);
+      border-top: none;
+      border-radius: 0 0 var(--radius-sm) var(--radius-sm);
+      max-height: 260px;
+      overflow-y: auto;
+      display: none;
+    }
+    #sugestoes-lista.show { display: block; }
+    .sugestao-item {
+      padding: 10px 14px;
+      cursor: pointer;
+      font-size: 0.85rem;
+      border-bottom: 1px solid var(--border);
+    }
+    .sugestao-item:last-child { border-bottom: none; }
+    .sugestao-item:hover { background: var(--surface); }
+    .sugestao-item .cod { color: var(--muted); font-size: 0.72rem; }
+    .sugestao-item .tag-foto { color: var(--success); font-size: 0.68rem; margin-left: 6px; }
+
+    /* ── Edição de código na lista salva ────────────────────────────────── */
+    .img-item .codigo-edit {
+      display: flex; gap: 4px; align-items: center; justify-content: center;
+      margin-top: 4px;
+    }
+    .img-item .codigo-edit input {
+      font-size: 0.7rem;
+      padding: 4px 6px;
+      text-align: center;
+    }
+    .img-item .btn-mini {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      color: var(--text);
+      font-size: 0.65rem;
+      padding: 4px 6px;
+      white-space: nowrap;
+    }
+    .img-item .btn-mini:hover { background: var(--border); }
+
     #busca-lista {
       margin-bottom: 14px;
     }
@@ -295,12 +340,17 @@
     <div class="card-title">Adicionar / Atualizar Imagem</div>
 
     <div class="row">
-      <div>
-        <label for="f-codigo">Código do Produto *</label>
-        <input id="f-codigo" type="text" placeholder="Ex: 129038" maxlength="30" oninput="buscarProdutoPorCodigo()" />
+      <div style="position:relative">
+        <label for="f-busca-produto">Buscar Produto (nome ou código) *</label>
+        <input id="f-busca-produto" type="text" autocomplete="off" placeholder="Ex: sacola kraft, ou 129038"
+               oninput="buscarSugestoes()" onfocus="buscarSugestoes()" />
+        <div id="sugestoes-lista"></div>
+        <input id="f-codigo" type="hidden" />
+        <p class="hint">Escolha um item da lista pra preencher certinho, ou digite o código direto se ele não estiver no produtos.json.</p>
       </div>
     </div>
     <div id="produto-found"></div>
+
 
     <div class="row row-2">
       <div>
@@ -415,28 +465,69 @@
       }
     }
 
-    function buscarProdutoPorCodigo() {
-      const codigo = document.getElementById('f-codigo').value.trim();
-      const el = document.getElementById('produto-found');
-      if (!codigo) { el.style.display = 'none'; return; }
+    function buscarSugestoes() {
+      const termo = document.getElementById('f-busca-produto').value.trim().toLowerCase();
+      const lista = document.getElementById('sugestoes-lista');
 
-      if (!produtosCache) {
-        el.className = 'warn';
-        el.textContent = '⚠️ Lista de produtos ainda não carregada (verifique owner/repo).';
-        el.style.display = 'block';
+      if (!termo || !produtosCache) {
+        lista.classList.remove('show');
+        lista.innerHTML = '';
         return;
       }
 
-      const p = produtosCache.find(x => String(x.codigo) === codigo);
+      const resultados = produtosCache
+        .filter(p =>
+          String(p.codigo).toLowerCase().includes(termo) ||
+          (p.nome || '').toLowerCase().includes(termo)
+        )
+        .slice(0, 15);
+
+      if (resultados.length === 0) {
+        lista.innerHTML = '<div class="sugestao-item">Nenhum produto encontrado</div>';
+        lista.classList.add('show');
+        return;
+      }
+
+      lista.innerHTML = resultados.map(p => {
+        const temFoto = imagensAtuais[p.codigo] ? '<span class="tag-foto">✓ já tem foto</span>' : '';
+        return `
+          <div class="sugestao-item" onclick="selecionarProduto('${p.codigo}')">
+            ${p.nome}${temFoto}
+            <div class="cod">código: ${p.codigo}</div>
+          </div>
+        `;
+      }).join('');
+      lista.classList.add('show');
+    }
+
+    function selecionarProduto(codigo) {
+      const p = produtosCache.find(x => String(x.codigo) === String(codigo));
+      document.getElementById('f-codigo').value = codigo;
+      document.getElementById('f-busca-produto').value = p ? `${p.nome} (${codigo})` : codigo;
+      document.getElementById('sugestoes-lista').classList.remove('show');
+
+      const el = document.getElementById('produto-found');
       el.style.display = 'block';
-      if (p) {
+
+      const existente = imagensAtuais[codigo];
+      if (existente) {
         el.className = 'ok';
-        el.textContent = `✓ ${p.nome} — ${p.categoria || ''}`;
+        el.textContent = `✓ Este produto já tem foto — salvar de novo irá substituí-la.`;
+        document.getElementById('f-url').value = existente.imagem || existente.url || '';
+        document.getElementById('f-modo').value = existente.imgmode || 'thumbnail';
+        mostrarPreview(existente.imagem || existente.url || '');
       } else {
         el.className = 'warn';
-        el.textContent = '⚠️ Código não encontrado no produtos.json atual (pode salvar mesmo assim).';
+        el.textContent = p ? '○ Produto sem foto cadastrada ainda.' : '⚠️ Código não encontrado no produtos.json atual.';
       }
     }
+
+    // Fecha a lista de sugestões ao clicar fora
+    document.addEventListener('click', function (e) {
+      if (!e.target.closest('#f-busca-produto') && !e.target.closest('#sugestoes-lista')) {
+        document.getElementById('sugestoes-lista').classList.remove('show');
+      }
+    });
 
     // ── GitHub API (mesmo padrão do admin-cadastro.html) ──────────────────
     async function ghGet(cfg, path) {
@@ -563,7 +654,11 @@
         return;
       }
 
-      const codigo = document.getElementById('f-codigo').value.trim();
+      // Usa o código escolhido via sugestão; se o usuário digitou o código
+      // direto (sem clicar numa sugestão — útil pra códigos que não estão
+      // no produtos.json atual), usa o texto digitado como código.
+      let codigo = document.getElementById('f-codigo').value.trim();
+      if (!codigo) codigo = document.getElementById('f-busca-produto').value.trim();
       const urlDigitada = document.getElementById('f-url').value.trim();
       const modo = document.getElementById('f-modo').value;
 
@@ -635,12 +730,73 @@
       }
     }
 
+    function iniciarEdicaoCodigo(codigoAtual) {
+      const box = document.getElementById(`codigo-edit-${codigoAtual}`);
+      if (!box) return;
+      box.innerHTML = `
+        <input type="text" id="novo-codigo-${codigoAtual}" value="${codigoAtual}" maxlength="30" />
+        <button class="btn-mini" onclick="confirmarNovoCodigo('${codigoAtual}')">✓</button>
+      `;
+      const input = document.getElementById(`novo-codigo-${codigoAtual}`);
+      input.focus();
+      input.select();
+      input.addEventListener('keydown', e => {
+        if (e.key === 'Enter') confirmarNovoCodigo(codigoAtual);
+      });
+    }
+
+    async function confirmarNovoCodigo(codigoAtual) {
+      const input = document.getElementById(`novo-codigo-${codigoAtual}`);
+      const novoCodigo = input.value.trim();
+
+      if (!novoCodigo) { toast('err', '⚠️ Informe um código válido.'); return; }
+      if (novoCodigo === codigoAtual) {
+        document.getElementById(`codigo-edit-${codigoAtual}`).innerHTML = '';
+        return;
+      }
+
+      const cfg = getConfig();
+      if (!cfg.owner || !cfg.repo || !cfg.token) {
+        toast('err', '⚠️ Configure o GitHub antes de editar.');
+        return;
+      }
+
+      try {
+        const { sha, data: dados } = await ghGetFileJSON(cfg, PATH_IMAGENS);
+        if (!sha) { toast('err', '⚠️ Arquivo não encontrado.'); return; }
+
+        if (dados[novoCodigo] && !confirm(`Já existe uma foto salva no código ${novoCodigo}. Substituir?`)) {
+          return;
+        }
+
+        dados[novoCodigo] = dados[codigoAtual];
+        delete dados[codigoAtual];
+
+        await ghPut(
+          cfg,
+          PATH_IMAGENS,
+          JSON.stringify(dados, null, 2),
+          `✎ código ${codigoAtual} → ${novoCodigo} — ${new Date().toLocaleString('pt-BR')}`,
+          sha
+        );
+
+        imagensAtuais = dados;
+        toast('ok', `✅ Código atualizado: ${codigoAtual} → ${novoCodigo}`);
+        renderLista();
+      } catch (e) {
+        console.error(e);
+        toast('err', `❌ Erro: ${e.message}`);
+      }
+    }
+
     function limparFormulario() {
+      document.getElementById('f-busca-produto').value = '';
       document.getElementById('f-codigo').value = '';
       document.getElementById('f-url').value = '';
       document.getElementById('f-arquivo').value = '';
       document.getElementById('f-modo').value = 'thumbnail';
       document.getElementById('produto-found').style.display = 'none';
+      document.getElementById('sugestoes-lista').classList.remove('show');
       document.getElementById('preview-box').innerHTML = '<span>Pré-visualização</span>';
       imagemPendente = null;
     }
@@ -659,14 +815,22 @@
         return;
       }
 
-      container.innerHTML = entradas.map(([codigo, dados]) => `
+      container.innerHTML = entradas.map(([codigo, dados]) => {
+        const nomeProduto = produtosCache
+          ? (produtosCache.find(x => String(x.codigo) === codigo) || {}).nome
+          : null;
+        return `
         <div class="img-item">
           <img src="${dados.imagem || dados.url || ''}" alt="${codigo}" onerror="this.style.opacity=0.3">
-          <div class="codigo">${codigo}</div>
+          <div class="codigo" id="codigo-label-${codigo}">${codigo}</div>
+          ${nomeProduto ? `<div class="modo" title="${nomeProduto}">${nomeProduto.slice(0, 22)}${nomeProduto.length > 22 ? '…' : ''}</div>` : ''}
           <div class="modo">${dados.imgmode || 'thumbnail'}</div>
+          <div class="codigo-edit" id="codigo-edit-${codigo}"></div>
+          <button class="btn-mini" onclick="iniciarEdicaoCodigo('${codigo}')">✎ Código</button>
           <button class="btn-del" onclick="removerImagem('${codigo}')">✕ Remover</button>
         </div>
-      `).join('');
+      `;
+      }).join('');
     }
 
     // ── UI helpers ──────────────────────────────────────────────────────────
