@@ -9,6 +9,14 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="front-index/estilo.css">
   <link rel="stylesheet" href="front-index/mobile.css">
+
+<!-- ─── PWA: instalar como app no Android/iPhone ─── -->
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#0057FF">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="CIA Embalagens">
+<link rel="apple-touch-icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 192 192'%3E%3Crect width='192' height='192' rx='40' fill='%230057FF'/%3E%3Ctext y='130' x='96' text-anchor='middle' font-size='110'%3E%F0%9F%93%A6%3C/text%3E%3C/svg%3E">
 </head>
 <body>
 
@@ -270,6 +278,16 @@
 <script src="front-index/nav.js"></script>
   <script src="front-index/mobile-fix.js"></script>
 <script src="front-index/app.js"></script>
+
+<!-- ─── PWA: registra o service worker da loja ─── -->
+<script>
+  if ('serviceWorker' in navigator) {
+    window.addEventListener('load', function () {
+      navigator.serviceWorker.register('/Web.embalagens/sw.js')
+        .catch(function (err) { console.warn('SW falhou:', err); });
+    });
+  }
+</script>
 
 </body>
 </html>
