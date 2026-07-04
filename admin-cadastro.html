@@ -3,9 +3,9 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Imagens de Produto — CIA das Embalagens</title>
+  <title>Cadastro de Produto — CIA das Embalagens</title>
   <style>
-    /* ── Tokens (mesma paleta do admin-cadastro.html) ──────────────────────── */
+    /* ── Tokens ──────────────────────────────────────────────────────────── */
     :root {
       --bg:        #0f1117;
       --surface:   #1a1d27;
@@ -23,6 +23,7 @@
       --font:      'Inter', system-ui, sans-serif;
     }
 
+    /* ── Reset ───────────────────────────────────────────────────────────── */
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     body {
@@ -33,8 +34,9 @@
       padding: 24px 16px 80px;
     }
 
+    /* ── Header ─────────────────────────────────────────────────────────── */
     header {
-      max-width: 760px;
+      max-width: 680px;
       margin: 0 auto 32px;
       display: flex;
       align-items: center;
@@ -51,8 +53,9 @@
     header h1 { font-size: 1.25rem; font-weight: 700; }
     header p  { font-size: 0.8rem; color: var(--muted); }
 
+    /* ── Card ────────────────────────────────────────────────────────────── */
     .card {
-      max-width: 760px;
+      max-width: 680px;
       margin: 0 auto 20px;
       background: var(--surface);
       border: 1px solid var(--border);
@@ -71,9 +74,14 @@
       border-bottom: 1px solid var(--border);
     }
 
-    .row { display: grid; gap: 16px; margin-bottom: 16px; }
+    /* ── Form grid ───────────────────────────────────────────────────────── */
+    .row {
+      display: grid;
+      gap: 16px;
+      margin-bottom: 16px;
+    }
     .row-2 { grid-template-columns: 1fr 1fr; }
-    .row-3 { grid-template-columns: 2fr 1fr 1fr; }
+    .row-3 { grid-template-columns: 1fr 1fr 1fr; }
 
     label {
       display: block;
@@ -85,7 +93,7 @@
       letter-spacing: .05em;
     }
 
-    input, select, textarea {
+    input, textarea {
       width: 100%;
       background: var(--surface2);
       border: 1px solid var(--border);
@@ -97,14 +105,18 @@
       outline: none;
       transition: border-color .15s;
     }
-    input:focus, select:focus, textarea:focus { border-color: var(--accent); }
-    input::placeholder, textarea::placeholder { color: var(--muted); }
-
-    input[type="file"] {
-      padding: 8px 10px;
-      cursor: pointer;
+    input:focus, textarea:focus {
+      border-color: var(--accent);
+    }
+    input::placeholder, textarea::placeholder {
+      color: var(--muted);
+    }
+    textarea {
+      resize: vertical;
+      min-height: 80px;
     }
 
+    /* ── Auth section ────────────────────────────────────────────────────── */
     .auth-toggle {
       display: flex;
       align-items: center;
@@ -117,41 +129,63 @@
     }
     .auth-toggle input { width: auto; }
 
-    .hint { font-size: 0.72rem; color: var(--muted); margin-top: 5px; }
+    /* ── Hint ─────────────────────────────────────────────────────────────── */
+    .hint {
+      font-size: 0.72rem;
+      color: var(--muted);
+      margin-top: 5px;
+    }
 
-    /* ── Produto encontrado (autocomplete simples) ──────────────────────── */
-    #produto-found {
-      display: none;
-      background: var(--surface2);
+    /* ── Fila ────────────────────────────────────────────────────────────── */
+    #fila-container { max-width: 680px; margin: 0 auto 20px; }
+
+    #fila-lista { display: flex; flex-direction: column; gap: 10px; }
+
+    .fila-item {
+      background: var(--surface);
       border: 1px solid var(--border);
       border-radius: var(--radius-sm);
-      padding: 10px 14px;
-      font-size: 0.85rem;
-      margin-bottom: 16px;
-    }
-    #produto-found.ok   { border-color: var(--success); color: var(--success); }
-    #produto-found.warn { border-color: var(--warn);    color: var(--warn); }
-
-    /* ── Preview ─────────────────────────────────────────────────────────── */
-    .preview-wrap {
+      padding: 14px 16px;
       display: flex;
+      justify-content: space-between;
       align-items: center;
-      gap: 16px;
-      margin-bottom: 16px;
+      gap: 12px;
     }
-    .preview-box {
-      width: 96px; height: 96px;
-      background: var(--surface2);
-      border: 1px dashed var(--border);
-      border-radius: var(--radius-sm);
-      display: flex; align-items: center; justify-content: center;
+    .fila-info { flex: 1; min-width: 0; }
+    .fila-nome {
+      font-weight: 600;
+      font-size: 0.9rem;
+      white-space: nowrap;
       overflow: hidden;
-      flex-shrink: 0;
+      text-overflow: ellipsis;
     }
-    .preview-box img { max-width: 100%; max-height: 100%; object-fit: contain; }
-    .preview-box span { font-size: 0.7rem; color: var(--muted); text-align: center; padding: 4px; }
+    .fila-meta {
+      font-size: 0.72rem;
+      color: var(--muted);
+      margin-top: 2px;
+    }
+    .btn-remove-item {
+      background: transparent;
+      border: 1px solid var(--border);
+      color: var(--danger);
+      border-radius: var(--radius-sm);
+      padding: 5px 10px;
+      font-size: 0.75rem;
+      cursor: pointer;
+      white-space: nowrap;
+      transition: background .15s;
+    }
+    .btn-remove-item:hover { background: rgba(239,68,68,.1); }
 
     /* ── Buttons ─────────────────────────────────────────────────────────── */
+    .btn-row {
+      max-width: 680px;
+      margin: 0 auto;
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
     button {
       font-family: var(--font);
       font-size: 0.9rem;
@@ -162,52 +196,28 @@
       cursor: pointer;
       transition: background .15s, opacity .15s;
     }
-    .btn-add { background: var(--surface2); color: var(--text); border: 1px solid var(--border); }
+
+    .btn-add {
+      background: var(--surface2);
+      color: var(--text);
+      border: 1px solid var(--border);
+    }
     .btn-add:hover { background: var(--border); }
-    .btn-primary { background: var(--accent); color: #fff; }
+
+    .btn-primary {
+      background: var(--accent);
+      color: #fff;
+      flex: 1;
+    }
     .btn-primary:hover { background: var(--accent-h); }
     .btn-primary:disabled { opacity: .45; cursor: not-allowed; }
-    .btn-clear { background: transparent; border: 1px solid var(--border); color: var(--muted); }
-    .btn-clear:hover { color: var(--danger); border-color: var(--danger); }
-    .btn-row { display: flex; gap: 12px; flex-wrap: wrap; }
 
-    /* ── Lista de imagens salvas ─────────────────────────────────────────── */
-    #lista-imagens {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
-      gap: 12px;
-    }
-    .img-item {
-      background: var(--surface2);
-      border: 1px solid var(--border);
-      border-radius: var(--radius-sm);
-      padding: 10px;
-      text-align: center;
-      position: relative;
-    }
-    .img-item img {
-      width: 100%; height: 80px;
-      object-fit: contain;
-      margin-bottom: 6px;
-      background: #fff;
-      border-radius: 4px;
-    }
-    .img-item .codigo { font-size: 0.75rem; font-weight: 700; }
-    .img-item .modo { font-size: 0.65rem; color: var(--muted); }
-    .img-item .btn-del {
-      margin-top: 6px;
-      width: 100%;
+    .btn-clear {
       background: transparent;
       border: 1px solid var(--border);
-      color: var(--danger);
-      font-size: 0.7rem;
-      padding: 4px;
+      color: var(--muted);
     }
-    .img-item .btn-del:hover { background: rgba(239,68,68,.1); }
-
-    #busca-lista {
-      margin-bottom: 14px;
-    }
+    .btn-clear:hover { color: var(--danger); border-color: var(--danger); }
 
     /* ── Toast ───────────────────────────────────────────────────────────── */
     #toast {
@@ -230,6 +240,7 @@
     #toast.err  { border-color: var(--danger); }
     #toast .icon { font-size: 1.1rem; }
 
+    /* ── Status badge ────────────────────────────────────────────────────── */
     #status-badge {
       display: inline-flex;
       align-items: center;
@@ -245,6 +256,7 @@
     #status-badge.ok  { border-color: var(--success); color: var(--success); }
     #status-badge.err { border-color: var(--danger);  color: var(--danger);  }
 
+    /* ── Responsive ──────────────────────────────────────────────────────── */
     @media (max-width: 540px) {
       .row-2, .row-3 { grid-template-columns: 1fr; }
       .card { padding: 20px 16px; }
@@ -253,11 +265,12 @@
 </head>
 <body>
 
+  <!-- Header -->
   <header>
     <div class="logo">C</div>
     <div>
-      <h1>Imagens de Produto</h1>
-      <p>CIA das Embalagens · não mexe em produtos.json nem no estoque</p>
+      <h1>Cadastro de Produto</h1>
+      <p>CIA das Embalagens · ConnectPlug</p>
     </div>
     <span id="status-badge">● pronto</span>
   </header>
@@ -265,9 +278,11 @@
   <!-- Config GitHub -->
   <div class="card">
     <div class="card-title">Configuração GitHub</div>
+
     <label class="auth-toggle">
       <input type="checkbox" id="toggle-config" onchange="toggleConfig(this)"> Mostrar configurações de acesso
     </label>
+
     <div id="config-section" style="display:none">
       <div class="row row-2">
         <div>
@@ -276,70 +291,81 @@
         </div>
         <div>
           <label for="gh-repo">Repositório</label>
-          <input id="gh-repo" type="text" placeholder="Web.embalagens" />
+          <input id="gh-repo" type="text" placeholder="Automacao-ConnectPlug" />
         </div>
       </div>
       <div class="row">
         <div>
           <label for="gh-token">Token GitHub (PAT)</label>
           <input id="gh-token" type="password" placeholder="ghp_..." />
-          <p class="hint">Precisa de permissão: Contents (read + write) neste repositório.</p>
+          <p class="hint">Precisa de permissão: Contents (write) + Actions (write)</p>
         </div>
       </div>
       <button class="btn-add" onclick="salvarConfig()">💾 Salvar configurações</button>
     </div>
   </div>
 
-  <!-- Formulário de imagem -->
+  <!-- Formulário de produto -->
   <div class="card">
-    <div class="card-title">Adicionar / Atualizar Imagem</div>
+    <div class="card-title">Dados do Produto</div>
 
     <div class="row">
       <div>
-        <label for="f-codigo">Código do Produto *</label>
-        <input id="f-codigo" type="text" placeholder="Ex: 129038" maxlength="30" oninput="buscarProdutoPorCodigo()" />
+        <label for="f-nome">Nome do Produto *</label>
+        <input id="f-nome" type="text" placeholder="SACOLA KRAFT M 1UN 19X12X26CM" maxlength="200" />
       </div>
     </div>
-    <div id="produto-found"></div>
 
     <div class="row row-2">
       <div>
-        <label for="f-url">URL da imagem</label>
-        <input id="f-url" type="text" placeholder="https://..." oninput="atualizarPreviewUrl()" />
-        <p class="hint">Cole um link direto de imagem, ou use o upload de arquivo abaixo.</p>
+        <label for="f-sku">SKU / Código *</label>
+        <input id="f-sku" type="text" placeholder="7909875076503" maxlength="30" />
       </div>
       <div>
-        <label for="f-arquivo">Ou envie um arquivo</label>
-        <input id="f-arquivo" type="file" accept="image/*" onchange="carregarArquivo(event)" />
-        <p class="hint">A imagem é convertida e salva direto no JSON (base64).</p>
+        <label for="f-valor">Valor de Venda *</label>
+        <input id="f-valor" type="text" placeholder="1,55" maxlength="14" />
+        <p class="hint">Use vírgula: ex. 1,55</p>
       </div>
     </div>
 
     <div class="row">
       <div>
-        <label for="f-modo">Modo de exibição</label>
-        <select id="f-modo">
-          <option value="thumbnail">thumbnail (miniatura no card)</option>
-          <option value="replace">replace (substitui o ícone padrão)</option>
-        </select>
+        <label for="f-ncm">NCM (opcional)</label>
+        <input id="f-ncm" type="text" placeholder="Ex: 4819 (busca no ConnectPlug)" maxlength="20" />
+        <p class="hint">Deixe em branco para pular. O script buscará pelo código digitado.</p>
       </div>
     </div>
 
-    <div class="preview-wrap">
-      <div class="preview-box" id="preview-box"><span>Pré-visualização</span></div>
+    <div class="row row-2">
+      <div>
+        <label for="f-apelido">Apelido (opcional)</label>
+        <input id="f-apelido" type="text" placeholder="Nome curto ou interno" maxlength="200" />
+      </div>
+      <div>
+        <label for="f-descricao">Descrição (opcional)</label>
+        <textarea id="f-descricao" placeholder="Descrição do produto..." maxlength="500" rows="2"></textarea>
+      </div>
     </div>
 
-    <div class="btn-row">
-      <button class="btn-clear" onclick="limparFormulario()">🗑 Limpar</button>
-      <button class="btn-primary" id="btn-salvar" onclick="salvarImagem()">💾 Salvar imagem</button>
+    <button class="btn-add" onclick="adicionarNaFila()">+ Adicionar à fila</button>
+  </div>
+
+  <!-- Fila -->
+  <div id="fila-container">
+    <div class="card-title" style="max-width:680px;margin:0 auto 12px;padding-left:4px">
+      Fila de Cadastro (<span id="fila-count">0</span>)
+    </div>
+    <div id="fila-lista">
+      <p style="color:var(--muted);font-size:.85rem;padding:0 4px">Nenhum produto na fila ainda.</p>
     </div>
   </div>
 
-  <!-- Lista de imagens já salvas -->
-  <div class="card">
-    <div class="card-title">Imagens já cadastradas (<span id="total-count">0</span>)</div>
-    <input id="busca-lista" type="text" placeholder="Filtrar por código..." oninput="renderLista()" />
-    <div id="lista-imagens"></div>
+  <!-- Botões de ação -->
+  <div class="btn-row" style="margin-top:20px">
+    <button class="btn-clear" onclick="limparFila()">🗑 Limpar fila</button>
+    <button class="btn-primary" id="btn-enviar" onclick="enviarFila()" disabled>
+      🚀 Enviar para ConnectPlug
+    </button>
   </div>
 
   <!-- Toast -->
@@ -349,37 +375,29 @@
   </div>
 
   <script>
-    // ── Storage keys (compartilha config com admin-cadastro se quiser, mas
-    //    aqui usa chaves próprias pra não confundir repositórios diferentes) ──
+    // ── Storage keys ───────────────────────────────────────────────────────
     const KEYS = {
-      owner: 'cia_img_owner',
-      repo:  'cia_img_repo',
-      token: 'cia_img_token',
+      owner: 'cia_owner',
+      repo:  'cia_repo',
+      token: 'cia_token',
     };
 
-    let imagensAtuais = {};   // conteúdo atual de produto-imagens.json
-    let imagensSha    = null; // sha do arquivo no GitHub (necessário pra sobrescrever)
-    let produtosCache = null; // produtos.json (só leitura, pra mostrar o nome do produto)
-    let imagemPendente = null; // { imagem, imgmode } prestes a ser salva
-
-    const PATH_IMAGENS  = 'front-index/produto-imagens.json';
-    const PATH_PRODUTOS = 'front-index/produtos.json';
+    // ── Estado ──────────────────────────────────────────────────────────────
+    let fila = [];
 
     // ── Init ────────────────────────────────────────────────────────────────
     (function init() {
       const saved = {
-        owner: localStorage.getItem(KEYS.owner) || 'Willkerson',
-        repo:  localStorage.getItem(KEYS.repo)  || 'Web.embalagens',
+        owner: localStorage.getItem(KEYS.owner) || '',
+        repo:  localStorage.getItem(KEYS.repo)  || '',
         token: localStorage.getItem(KEYS.token) || '',
       };
-      document.getElementById('gh-owner').value = saved.owner;
-      document.getElementById('gh-repo').value  = saved.repo;
+      if (saved.owner) document.getElementById('gh-owner').value = saved.owner;
+      if (saved.repo)  document.getElementById('gh-repo').value  = saved.repo;
       if (saved.token) document.getElementById('gh-token').value = saved.token;
-
-      carregarProdutosPublico();
-      carregarImagensAtuais();
     })();
 
+    // ── Config ──────────────────────────────────────────────────────────────
     function toggleConfig(el) {
       document.getElementById('config-section').style.display = el.checked ? 'block' : 'none';
     }
@@ -389,8 +407,6 @@
       localStorage.setItem(KEYS.repo,  document.getElementById('gh-repo').value.trim());
       localStorage.setItem(KEYS.token, document.getElementById('gh-token').value.trim());
       toast('ok', '✅ Configurações salvas!');
-      carregarProdutosPublico();
-      carregarImagensAtuais();
     }
 
     function getConfig() {
@@ -401,44 +417,66 @@
       };
     }
 
-    // ── Leitura pública (sem token) do produtos.json, só pra exibir o nome ──
-    async function carregarProdutosPublico() {
-      try {
-        const cfg = getConfig();
-        if (!cfg.owner || !cfg.repo) return;
-        const url = `https://raw.githubusercontent.com/${cfg.owner}/${cfg.repo}/main/${PATH_PRODUTOS}`;
-        const res = await fetch(url, { cache: 'no-store' });
-        if (!res.ok) return;
-        produtosCache = await res.json();
-      } catch (e) {
-        console.warn('Não foi possível carregar produtos.json para autocomplete', e);
-      }
-    }
+    // ── Fila ────────────────────────────────────────────────────────────────
+    function adicionarNaFila() {
+      const nome    = document.getElementById('f-nome').value.trim();
+      const sku     = document.getElementById('f-sku').value.trim();
+      const valor   = document.getElementById('f-valor').value.trim();
+      const ncm     = document.getElementById('f-ncm').value.trim();
+      const apelido = document.getElementById('f-apelido').value.trim();
+      const descricao = document.getElementById('f-descricao').value.trim();
 
-    function buscarProdutoPorCodigo() {
-      const codigo = document.getElementById('f-codigo').value.trim();
-      const el = document.getElementById('produto-found');
-      if (!codigo) { el.style.display = 'none'; return; }
-
-      if (!produtosCache) {
-        el.className = 'warn';
-        el.textContent = '⚠️ Lista de produtos ainda não carregada (verifique owner/repo).';
-        el.style.display = 'block';
+      if (!nome || !sku || !valor) {
+        toast('err', '⚠️ Nome, SKU e Valor são obrigatórios.');
         return;
       }
 
-      const p = produtosCache.find(x => String(x.codigo) === codigo);
-      el.style.display = 'block';
-      if (p) {
-        el.className = 'ok';
-        el.textContent = `✓ ${p.nome} — ${p.categoria || ''}`;
-      } else {
-        el.className = 'warn';
-        el.textContent = '⚠️ Código não encontrado no produtos.json atual (pode salvar mesmo assim).';
-      }
+      fila.push({ nome, sku, valor, ncm, apelido, descricao });
+      renderFila();
+
+      // Limpa campos do formulário
+      ['f-nome','f-sku','f-valor','f-ncm','f-apelido','f-descricao'].forEach(id => {
+        const el = document.getElementById(id);
+        el.value = '';
+      });
+      document.getElementById('f-nome').focus();
+      toast('ok', `✅ "${nome}" adicionado à fila.`);
     }
 
-    // ── GitHub API (mesmo padrão do admin-cadastro.html) ──────────────────
+    function removerDaFila(idx) {
+      fila.splice(idx, 1);
+      renderFila();
+    }
+
+    function limparFila() {
+      if (fila.length === 0) return;
+      if (!confirm('Limpar toda a fila?')) return;
+      fila = [];
+      renderFila();
+    }
+
+    function renderFila() {
+      const lista = document.getElementById('fila-lista');
+      document.getElementById('fila-count').textContent = fila.length;
+      document.getElementById('btn-enviar').disabled = fila.length === 0;
+
+      if (fila.length === 0) {
+        lista.innerHTML = '<p style="color:var(--muted);font-size:.85rem;padding:0 4px">Nenhum produto na fila ainda.</p>';
+        return;
+      }
+
+      lista.innerHTML = fila.map((p, i) => `
+        <div class="fila-item">
+          <div class="fila-info">
+            <div class="fila-nome">${p.nome}</div>
+            <div class="fila-meta">SKU: ${p.sku} · R$ ${p.valor}${p.ncm ? ' · NCM: ' + p.ncm : ''}</div>
+          </div>
+          <button class="btn-remove-item" onclick="removerDaFila(${i})">✕ Remover</button>
+        </div>
+      `).join('');
+    }
+
+    // ── GitHub API ──────────────────────────────────────────────────────────
     async function ghGet(cfg, path) {
       const res = await fetch(
         `https://api.github.com/repos/${cfg.owner}/${cfg.repo}/contents/${path}`,
@@ -481,173 +519,73 @@
       return res.json();
     }
 
-    // ── Carrega produto-imagens.json atual (via API, pra já ter o sha) ────
-    async function carregarImagensAtuais() {
-      const cfg = getConfig();
-      if (!cfg.owner || !cfg.repo || !cfg.token) {
-        renderLista();
-        return;
-      }
-      try {
-        const atual = await ghGet(cfg, PATH_IMAGENS);
-        if (atual) {
-          imagensSha = atual.sha;
-          const decoded = decodeURIComponent(escape(atob(atual.content)));
-          imagensAtuais = JSON.parse(decoded);
-        } else {
-          imagensSha = null;
-          imagensAtuais = {};
+    async function dispararWorkflow(cfg, workflow) {
+      const res = await fetch(
+        `https://api.github.com/repos/${cfg.owner}/${cfg.repo}/actions/workflows/${workflow}/dispatches`,
+        {
+          method: 'POST',
+          headers: {
+            Authorization: `Bearer ${cfg.token}`,
+            Accept: 'application/vnd.github.v3+json',
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({ ref: 'main' }),
         }
-      } catch (e) {
-        console.warn('Não foi possível carregar produto-imagens.json', e);
+      );
+      if (!res.ok) {
+        const err = await res.json().catch(() => ({}));
+        throw new Error(`Workflow dispatch: ${res.status} — ${err.message || ''}`);
       }
-      renderLista();
     }
 
-    // ── Preview ─────────────────────────────────────────────────────────────
-    function atualizarPreviewUrl() {
-      const url = document.getElementById('f-url').value.trim();
-      if (!url) return;
-      imagemPendente = { imagem: url };
-      mostrarPreview(url);
-    }
-
-    function carregarArquivo(evt) {
-      const file = evt.target.files[0];
-      if (!file) return;
-      const reader = new FileReader();
-      reader.onload = function (e) {
-        imagemPendente = { imagem: e.target.result };
-        document.getElementById('f-url').value = ''; // upload tem prioridade
-        mostrarPreview(e.target.result);
-      };
-      reader.readAsDataURL(file);
-    }
-
-    function mostrarPreview(src) {
-      const box = document.getElementById('preview-box');
-      box.innerHTML = `<img src="${src}" alt="preview" onerror="this.parentElement.innerHTML='<span>Não foi possível carregar</span>'">`;
-    }
-
-    // ── Salvar ──────────────────────────────────────────────────────────────
-    async function salvarImagem() {
+    // ── Enviar fila ─────────────────────────────────────────────────────────
+    async function enviarFila() {
       const cfg = getConfig();
       if (!cfg.owner || !cfg.repo || !cfg.token) {
-        toast('err', '⚠️ Configure o GitHub antes de salvar.');
+        toast('err', '⚠️ Configure o GitHub antes de enviar.');
         document.getElementById('toggle-config').checked = true;
         toggleConfig(document.getElementById('toggle-config'));
         return;
       }
 
-      const codigo = document.getElementById('f-codigo').value.trim();
-      const urlDigitada = document.getElementById('f-url').value.trim();
-      const modo = document.getElementById('f-modo').value;
-
-      const fonteImagem = (imagemPendente && imagemPendente.imagem) || urlDigitada;
-
-      if (!codigo) { toast('err', '⚠️ Informe o código do produto.'); return; }
-      if (!fonteImagem) { toast('err', '⚠️ Cole uma URL ou envie um arquivo de imagem.'); return; }
-
-      const btn = document.getElementById('btn-salvar');
+      const btn = document.getElementById('btn-enviar');
       btn.disabled = true;
-      btn.textContent = '⏳ Salvando...';
-      setBadge('', '⏳ salvando...');
+      btn.textContent = '⏳ Enviando...';
+      setBadge('', '⏳ enviando...');
 
       try {
-        // Sempre relê antes de escrever, pra evitar sha desatualizado
-        const atual = await ghGet(cfg, PATH_IMAGENS);
-        const shaAtual = atual ? atual.sha : undefined;
-        const dadosAtuais = atual
-          ? JSON.parse(decodeURIComponent(escape(atob(atual.content))))
-          : {};
+        // 1. Lê SHA atual do fila-cadastro.json (pode não existir)
+        const atual = await ghGet(cfg, 'fila-cadastro.json');
+        const sha   = atual ? atual.sha : undefined;
 
-        dadosAtuais[codigo] = { imagem: fonteImagem, imgmode: modo };
-
+        // 2. Commita a fila
         await ghPut(
           cfg,
-          PATH_IMAGENS,
-          JSON.stringify(dadosAtuais, null, 2),
-          `🖼️ imagem do produto ${codigo} — ${new Date().toLocaleString('pt-BR')}`,
-          shaAtual
+          'fila-cadastro.json',
+          JSON.stringify(fila, null, 2),
+          `🛒 fila: ${fila.length} produto(s) para cadastro — ${new Date().toLocaleString('pt-BR')}`,
+          sha
         );
 
-        imagensAtuais = dadosAtuais;
-        toast('ok', `✅ Imagem do produto ${codigo} salva!`);
-        setBadge('ok', '✓ salvo');
-        limparFormulario();
-        renderLista();
+        // 3. Aguarda propagação
+        await new Promise(r => setTimeout(r, 4000));
+
+        // 4. Dispara workflow
+        await dispararWorkflow(cfg, 'cadastrar.yml');
+
+        toast('ok', `🚀 Fila enviada! ${fila.length} produto(s) sendo cadastrado(s) no ConnectPlug.`);
+        setBadge('ok', '✓ disparado');
+
+        fila = [];
+        renderFila();
       } catch (e) {
         console.error(e);
         toast('err', `❌ Erro: ${e.message}`);
         setBadge('err', '✗ erro');
       } finally {
-        btn.textContent = '💾 Salvar imagem';
-        btn.disabled = false;
+        btn.textContent = '🚀 Enviar para ConnectPlug';
+        btn.disabled = fila.length === 0;
       }
-    }
-
-    async function removerImagem(codigo) {
-      if (!confirm(`Remover a imagem do produto ${codigo}?`)) return;
-      const cfg = getConfig();
-      if (!cfg.owner || !cfg.repo || !cfg.token) {
-        toast('err', '⚠️ Configure o GitHub antes de remover.');
-        return;
-      }
-      try {
-        const atual = await ghGet(cfg, PATH_IMAGENS);
-        if (!atual) return;
-        const dados = JSON.parse(decodeURIComponent(escape(atob(atual.content))));
-        delete dados[codigo];
-
-        await ghPut(
-          cfg,
-          PATH_IMAGENS,
-          JSON.stringify(dados, null, 2),
-          `🗑️ remove imagem do produto ${codigo} — ${new Date().toLocaleString('pt-BR')}`,
-          atual.sha
-        );
-
-        imagensAtuais = dados;
-        toast('ok', `✅ Imagem do produto ${codigo} removida.`);
-        renderLista();
-      } catch (e) {
-        console.error(e);
-        toast('err', `❌ Erro: ${e.message}`);
-      }
-    }
-
-    function limparFormulario() {
-      document.getElementById('f-codigo').value = '';
-      document.getElementById('f-url').value = '';
-      document.getElementById('f-arquivo').value = '';
-      document.getElementById('f-modo').value = 'thumbnail';
-      document.getElementById('produto-found').style.display = 'none';
-      document.getElementById('preview-box').innerHTML = '<span>Pré-visualização</span>';
-      imagemPendente = null;
-    }
-
-    // ── Lista de imagens salvas ─────────────────────────────────────────────
-    function renderLista() {
-      const container = document.getElementById('lista-imagens');
-      const filtro = (document.getElementById('busca-lista').value || '').trim();
-      const entradas = Object.entries(imagensAtuais)
-        .filter(([codigo]) => !filtro || codigo.includes(filtro));
-
-      document.getElementById('total-count').textContent = Object.keys(imagensAtuais).length;
-
-      if (entradas.length === 0) {
-        container.innerHTML = '<p style="color:var(--muted);font-size:.85rem">Nenhuma imagem cadastrada ainda.</p>';
-        return;
-      }
-
-      container.innerHTML = entradas.map(([codigo, dados]) => `
-        <div class="img-item">
-          <img src="${dados.imagem || dados.url || ''}" alt="${codigo}" onerror="this.style.opacity=0.3">
-          <div class="codigo">${codigo}</div>
-          <div class="modo">${dados.imgmode || 'thumbnail'}</div>
-          <button class="btn-del" onclick="removerImagem('${codigo}')">✕ Remover</button>
-        </div>
-      `).join('');
     }
 
     // ── UI helpers ──────────────────────────────────────────────────────────
@@ -666,8 +604,15 @@
     function setBadge(cls, txt) {
       const b = document.getElementById('status-badge');
       b.className = cls;
-      b.textContent = '● ' + txt;
+      b.textContent = (cls === 'ok' ? '● ' : cls === 'err' ? '● ' : '● ') + txt;
     }
+
+    // Enter no formulário adiciona à fila
+    document.addEventListener('keydown', e => {
+      if (e.key === 'Enter' && e.target.tagName !== 'TEXTAREA' && e.target.closest('.card:not(:first-child)')) {
+        adicionarNaFila();
+      }
+    });
   </script>
 </body>
 </html>
