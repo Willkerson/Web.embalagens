@@ -74,7 +74,7 @@
     "nome": "SUPER PÁ C/CABO",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 17,
-    "estoque": "18,00 un"
+    "estoque": "17,00 un"
   },
   {
     "codigo": "129",
@@ -305,7 +305,7 @@
     "nome": "ESPONJA MULTIUSO C/4UN ALCKLIN",
     "categoria": "UTENSILIOS",
     "preco": 3.5,
-    "estoque": "66,00 un"
+    "estoque": "65,00 un"
   },
   {
     "codigo": "294",
@@ -333,7 +333,7 @@
     "nome": "RODO DE PIA 15CM ALKLIN",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 6.5,
-    "estoque": "8,00 un"
+    "estoque": "7,00 un"
   },
   {
     "codigo": "302",
@@ -424,7 +424,7 @@
     "nome": "SACOLA UNIDADE GRANDE",
     "categoria": "SACO LIXO",
     "preco": 0.5,
-    "estoque": "-30,00 un"
+    "estoque": "-32,00 un"
   },
   {
     "codigo": "335",
@@ -494,7 +494,7 @@
     "nome": "PANO MULTIUSO AMARELO C/10UN ALKLIN",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 19.99,
-    "estoque": "14,00 un"
+    "estoque": "13,00 un"
   },
   {
     "codigo": "357",
@@ -676,7 +676,7 @@
     "nome": "KIT CHURRASCO C/10UN PRAFESTA",
     "categoria": "-",
     "preco": 28.99,
-    "estoque": "8,00 un"
+    "estoque": "4,00 un"
   },
   {
     "codigo": "439",
@@ -1067,8 +1067,8 @@
     "codigo": "635",
     "nome": "TOP LIXO PRETO 15L C/60UN PACK LIXO",
     "categoria": "SACO LIXO",
-    "preco": 19,
-    "estoque": "-2,00 un"
+    "preco": 17.99,
+    "estoque": "14,00 un"
   },
   {
     "codigo": "637",
@@ -1621,7 +1621,7 @@
     "nome": "RODO PIA IDEAL SANCHES",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 5.99,
-    "estoque": "9,00 un"
+    "estoque": "8,00 un"
   },
   {
     "codigo": "852",
@@ -1649,7 +1649,7 @@
     "nome": "COPO SUPREMO 300ML C/10UN PRAFESTA",
     "categoria": "DESCARTAVEIS",
     "preco": 18.99,
-    "estoque": "14,00 un"
+    "estoque": "13,00 un"
   },
   {
     "codigo": "866",
@@ -1719,14 +1719,14 @@
     "nome": "GUARDANAPO DE PAPEL 20X21CM C/100UN LUXO PLUMA",
     "categoria": "DESCARTAVEIS",
     "preco": 4,
-    "estoque": "42,00 un"
+    "estoque": "39,00 un"
   },
   {
     "codigo": "898",
     "nome": "GUARDANAPO DE PAPEL 30X31CM C/100UN LUXO PLUMA",
     "categoria": "DESCARTAVEIS",
     "preco": 7.75,
-    "estoque": "-23,00 un"
+    "estoque": "-24,00 un"
   },
   {
     "codigo": "900",
@@ -1747,7 +1747,7 @@
     "nome": "COPO DESCARTAVEL TRANSPARENTE 300ML C/100UN TOTAL PLAST",
     "categoria": "DESCARTAVEIS",
     "preco": 16.5,
-    "estoque": "46,00 un"
+    "estoque": "45,00 un"
   },
   {
     "codigo": "903",
@@ -2433,7 +2433,7 @@
     "nome": "BOBINA PICOTADA 2KG C/500UN P/ ALIMENTOS 20X28CM EXTRUSA",
     "categoria": "Embalagem",
     "preco": 19,
-    "estoque": "12,00 un"
+    "estoque": "11,00 un"
   },
   {
     "codigo": "1225",
@@ -2551,14 +2551,14 @@
     "codigo": "1314",
     "nome": "TOP LIXO PIA E BANHEIRO BRANCO C/40UN PACK LIXO",
     "categoria": "SACO LIXO",
-    "preco": 10,
+    "preco": 8.99,
     "estoque": "40,00 un"
   },
   {
     "codigo": "1315",
     "nome": "PACK LIXO PIA E BANHEIRO TUTTI-FRUITI C/80UN DIVA",
     "categoria": "SACO LIXO",
-    "preco": 17,
+    "preco": 16.5,
     "estoque": "20,00 un"
   },
   {
@@ -2573,7 +2573,7 @@
     "nome": "CAIXA P/BOLO N05 22X22X10",
     "categoria": "Embalagem",
     "preco": 5,
-    "estoque": "-6,00 un"
+    "estoque": "-12,00 un"
   },
   {
     "codigo": "1322",
@@ -2853,7 +2853,7 @@
     "nome": "G56MA BOLO ALTA MILLENIUM GALVONOTEK",
     "categoria": "DESCARTAVEIS",
     "preco": 7,
-    "estoque": "34,00 un"
+    "estoque": "33,00 un"
   },
   {
     "codigo": "1476",
@@ -2937,7 +2937,7 @@
     "nome": "PANO DE PRATO BRANCO/ESTAMPADO TATI/NACIONAL 66X38CM",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 4.3,
-    "estoque": "-41,00 un"
+    "estoque": "-43,00 un"
   },
   {
     "codigo": "1530",
@@ -3049,7 +3049,7 @@
     "nome": "SACO BRANCO KRAFT VI 19X19CM C/100UN",
     "categoria": "DESCARTAVEIS",
     "preco": 14,
-    "estoque": "-10,00 un"
+    "estoque": "-11,00 un"
   },
   {
     "codigo": "1600",
@@ -3133,7 +3133,7 @@
     "nome": "SACOLA VERDE REFORÇADA 1KG 60X80",
     "categoria": "Embalagem",
     "preco": 19.99,
-    "estoque": "-94,00 un"
+    "estoque": "-95,00 un"
   },
   {
     "codigo": "1715",
@@ -3300,15 +3300,15 @@
     "codigo": "1853",
     "nome": "TOP LIXO BRANCO 15L C/60UN PACK LIXO",
     "categoria": "SACO LIXO",
-    "preco": 19,
-    "estoque": "-10,00 un"
+    "preco": 17.99,
+    "estoque": "12,00 un"
   },
   {
     "codigo": "1854",
     "nome": "TOP LIXO BRANCO 30L C/30UN PACK LIXO",
     "categoria": "SACO LIXO",
-    "preco": 19,
-    "estoque": "19,00 un"
+    "preco": 17.99,
+    "estoque": "17,00 un"
   },
   {
     "codigo": "1885",
@@ -3707,7 +3707,7 @@
     "nome": "FITA ADESIVA 45X100M TRANSPARENTE KORETECH",
     "categoria": "PAPELARIA",
     "preco": 10.5,
-    "estoque": "35,00 un"
+    "estoque": "34,00 un"
   },
   {
     "codigo": "2164",
@@ -3811,8 +3811,8 @@
     "codigo": "2299",
     "nome": "TOP LIXO PRETO 30L C/30UN PACK LIXO",
     "categoria": "SACO LIXO",
-    "preco": 19,
-    "estoque": "-3,00 un"
+    "preco": 17.99,
+    "estoque": "17,00 un"
   },
   {
     "codigo": "2302",
@@ -3994,7 +3994,7 @@
     "nome": "ESPONJA MAGICA TIRA MANCHAS CLEAN TECH",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 1.5,
-    "estoque": "8,00 un"
+    "estoque": "7,00 un"
   },
   {
     "codigo": "2444",
@@ -4585,11 +4585,18 @@
     "estoque": "4,00 un"
   },
   {
+    "codigo": "2938",
+    "nome": "PRATO QUADRADO 150MM BRANCO C/10UN",
+    "categoria": "Produto em Processo",
+    "preco": 7.99,
+    "estoque": "47,00 un"
+  },
+  {
     "codigo": "2939",
     "nome": "PRATO QUADRADO 150MM CRISTAL C/10UN",
     "categoria": "DESCARTAVEIS",
     "preco": 7.99,
-    "estoque": "22,00 un"
+    "estoque": "-8,00 un"
   },
   {
     "codigo": "2957",
@@ -4820,7 +4827,7 @@
     "nome": "POTE E TAMPA RET.500ML C/24UN GOUR MAX",
     "categoria": "DESCARTAVEIS",
     "preco": 29,
-    "estoque": "6,00 un"
+    "estoque": "5,00 un"
   },
   {
     "codigo": "3106",
@@ -4961,6 +4968,13 @@
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 11,
     "estoque": "-11,00 un"
+  },
+  {
+    "codigo": "3144",
+    "nome": "PACK LIXO PIA E BANHEIRO BIO CHA BRANCO C/80UN",
+    "categoria": "SACO LIXO",
+    "preco": 13.99,
+    "estoque": "20,00 un"
   },
   {
     "codigo": "3147",
@@ -5387,14 +5401,14 @@
     "nome": "TOP LIXO PRETO 50L C/30UN PACK LIXO",
     "categoria": "SACO LIXO",
     "preco": 23.99,
-    "estoque": "6,00 un"
+    "estoque": "5,00 un"
   },
   {
     "codigo": "4391",
     "nome": "CUMBUCA 15 QUALITY LINE C/10UN PRAFESTA",
     "categoria": "DESCARTAVEIS",
     "preco": 3.5,
-    "estoque": "85,00 un"
+    "estoque": "81,00 un"
   },
   {
     "codigo": "4434",
@@ -5429,7 +5443,7 @@
     "nome": "FORMA FRITADEIRA PAPEL 16CM C/50UN TINGS",
     "categoria": "DESCARTAVEIS",
     "preco": 15,
-    "estoque": "2,00 un"
+    "estoque": "1,00 un"
   },
   {
     "codigo": "5102",
@@ -5933,7 +5947,7 @@
     "nome": "COPO DESCARTAVEL 500ML C/50UN ULTRA",
     "categoria": "DESCARTAVEIS",
     "preco": 16.99,
-    "estoque": "36,00 un"
+    "estoque": "35,00 un"
   },
   {
     "codigo": "9021",
@@ -6101,7 +6115,7 @@
     "nome": "LIMPA AZULEJO SEM CABO SANCHES",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 8.5,
-    "estoque": "6,00 un"
+    "estoque": "4,00 un"
   },
   {
     "codigo": "12345",
@@ -7375,7 +7389,7 @@
     "nome": "SACO P/LIXO PRETO 20L P5 C/10UN",
     "categoria": "SACO LIXO",
     "preco": 4,
-    "estoque": "15,00 un"
+    "estoque": "13,00 un"
   },
   {
     "codigo": "790987",
@@ -7487,7 +7501,7 @@
     "nome": "TotalPlast 20,8cm",
     "categoria": "Embalagem",
     "preco": 3.5,
-    "estoque": "-79,00 un"
+    "estoque": "-82,00 un"
   },
   {
     "codigo": "7893595170108",
