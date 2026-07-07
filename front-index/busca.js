@@ -4,24 +4,14 @@
 function precoNum(valor) {
   return parseFloat(String(valor).replace(',', '.'));
 }
-var _sugTimeout = null;
-var _tocandoSugestao = false;
 var _debouncedSearch = debounce(function(q) { mostrarSugestoes(q); }, 120);
 
-
 function esconderSugestoes() {
-  if (_tocandoSugestao) return;
   var el = document.getElementById('searchSuggestions');
   if (el) { el.classList.remove('on'); el.innerHTML = ''; }
 }
 
-function hideSuggestionsDelayed() {
-  var delay = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent) ? 400 : 200;
-  _sugTimeout = setTimeout(esconderSugestoes, delay);
-}
-
 function handleSearchFocus() {
-  clearTimeout(_sugTimeout);
   var q = document.getElementById('searchInput').value.trim();
   if (q.length >= 2) mostrarSugestoes(q);
 }
@@ -36,19 +26,17 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   }
 
-  var box = document.getElementById('searchSuggestions');
-
-  if (!box) return;
-
-  box.addEventListener('touchstart', function() {
-    _tocandoSugestao = true;
+  // Fecha as sugestões só quando o toque/clique é de fato FORA da barra
+  // de busca. Isso substitui o antigo "fecha ao perder o foco (blur)",
+  // que fechava a caixa sozinho ao rolar a página ou ao tocar no botão
+  // "OK"/"Buscar" do teclado do celular antes do clique registrar.
+  document.addEventListener('touchstart', function(e) {
+    if (!e.target.closest('#searchWrap')) esconderSugestoes();
   }, { passive: true });
 
-  box.addEventListener('touchend', function() {
-    setTimeout(function() {
-      _tocandoSugestao = false;
-    }, 500);
-  }, { passive: true });
+  document.addEventListener('mousedown', function(e) {
+    if (!e.target.closest('#searchWrap')) esconderSugestoes();
+  });
 
 });
 
@@ -75,6 +63,33 @@ function mostrarSugestoes(query) {
   if (!query || query.length < 2) { esconderSugestoes(); return; }
 
 
+
+  // ── Busca por código do produto (checa ANTES de tentar ler como preço,
+  //    senão um código tipo "129038" era interpretado como R$ 129.038,00) ──
+  var porCodigo = prods().filter(function(p) {
+    return !p.oculto && estoqueNum(p.estoque) > 0 &&
+      String(p.codigo || '').toLowerCase().indexOf(query.trim().toLowerCase()) === 0;
+  });
+  if (porCodigo.length > 0 && /^\d+$/.test(query.trim())) {
+    var htmlCod = '<div class="sug-section-label" style="padding:8px 14px 5px">' +
+      porCodigo.length + ' produto' + (porCodigo.length !== 1 ? 's' : '') + ' com esse código' +
+    '</div>';
+    porCodigo.slice(0, 8).forEach(function(p) {
+      var icoCod = catEmojis[p.subcategoria] || catEmojis[p.categoria] || '📦';
+      var catCod = subLabels[p.subcategoria] || p.categoria || '';
+      htmlCod += '<div class="search-sug-item" onclick="selecionarSugestao(' + p.id + ')">' +
+        '<span class="sug-ico">' + icoCod + '</span>' +
+        '<div style="flex:1;min-width:0">' +
+          '<div class="sug-name">' + p.nome + '</div>' +
+          (catCod ? '<div class="sug-cat">' + catCod + '</div>' : '') +
+        '</div>' +
+        (precoNum(p.preco) > 0 ? '<div class="sug-cat" style="white-space:nowrap">R$ ' + precoNum(p.preco).toFixed(2).replace('.', ',') + '</div>' : '') +
+      '</div>';
+    });
+    box.innerHTML = htmlCod;
+    box.classList.add('on');
+    return;
+  }
 
   // ── Busca por preço ──────────────────────────────────────────
   var precoQuery = _extrairPreco(query);
