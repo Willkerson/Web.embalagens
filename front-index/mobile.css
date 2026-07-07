@@ -86,13 +86,13 @@
 /* ─── 4. CATALOG SECTION — padding e espaçamentos ─── */
 @media (max-width: 768px) {
   .sec-catalog {
-    padding: calc(var(--nav-h) + 1.5rem) 12px 5rem;
+    padding: calc(var(--nav-h) + var(--safe-top) + 1rem) 12px 5rem;
   }
 
-  .cat-head { margin-bottom: 1.5rem; }
+  .cat-head { margin-bottom: 1rem; }
 
-  .sec-title { font-size: 1.6rem; }
-  .sec-sub { font-size: .875rem; }
+  .sec-title { font-size: 1.3rem; }
+  .sec-sub { font-size: .8125rem; }
 }
 
 /* ─── 5. FILTROS DE CATEGORIA — scroll horizontal suave ─── */
@@ -172,30 +172,30 @@
   /* 2 colunas confortáveis em telas médias */
   .pgrid {
     grid-template-columns: repeat(2, 1fr);
-    gap: .625rem;
+    gap: .5rem;
   }
 
   /* Card: body com menos padding */
-  .pbody { padding: .75rem; gap: .375rem; }
+  .pbody { padding: .625rem; gap: .3rem; }
 
-  .pname { font-size: .8125rem; }
+  .pname { font-size: .78125rem; }
 
-  .pprice { font-size: 1.0625rem; }
+  .pprice { font-size: 1rem; }
 
   /* Fotos: mantém contain, reduz altura no mobile */
   .pimg,
   .pimg-thumb,
   .pimg-replace {
-    height: 130px;
+    height: 108px;
   }
 
   /* Botões de ação maiores para toque */
   .badd, .badd-esg {
-    height: 36px;
-    font-size: .8rem;
+    height: 34px;
+    font-size: .78rem;
   }
-  .bq { width: 32px; height: 36px; font-size: 1rem; }
-  .iq  { width: 32px; height: 36px; }
+  .bq { width: 30px; height: 34px; font-size: .9rem; }
+  .iq  { width: 30px; height: 34px; }
 }
 
 @media (max-width: 380px) {
@@ -227,7 +227,7 @@
 /* ─── 10. WHATSAPP FLOAT — sobe acima do teclado virtual ─── */
 @media (max-width: 768px) {
   .wpp-float {
-    bottom: 16px;
+    bottom: calc(16px + var(--safe-bottom));
     right: 14px;
   }
   .wpp-btn { width: 48px; height: 48px; }
