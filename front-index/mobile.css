@@ -19,7 +19,7 @@
 @media (max-width: 768px) {
   :root { --nav-h: 52px; }
 
-  .hdr-inner { padding: 0 12px; gap: 6px; }
+  .hdr-inner { padding: var(--safe-top) 12px 0; gap: 6px; }
 
   /* Logo menor */
   .logo-name { font-size: .8rem; }
