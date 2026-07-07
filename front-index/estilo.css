@@ -107,7 +107,7 @@ img { display:block; }
 .sec-sub { font-size:.9375rem; color:var(--text3); max-width:420px; margin:0 auto; font-weight:300; }
 .search-wrap { max-width:520px; margin:0 auto 2rem; position:relative; }
 .search-icon { position:absolute; left:16px; top:50%; transform:translateY(-50%); font-size:.9rem; opacity:.35; pointer-events:none; }
-.search-inp { width:100%; padding:12px 16px 12px 44px; background:var(--surface); border:1px solid var(--border); border-radius:12px; color:var(--text); font-family:var(--font); font-size:.9rem; outline:none; transition:border-color .2s, box-shadow .2s; scroll-margin-top:calc(var(--nav-h) + var(--safe-top) + 16px); }
+.search-inp { width:100%; padding:12px 16px 12px 44px; background:var(--surface); border:1px solid var(--border); border-radius:12px; color:var(--text); font-family:var(--font); font-size:.9rem; outline:none; transition:border-color .2s, box-shadow .2s; }
 .search-inp:focus { border-color:var(--blue); box-shadow:0 0 0 3px rgba(0,113,227,0.15); }
 .search-inp::placeholder { color:var(--text3); }
 .search-suggestions { position:absolute; top:calc(100% + 6px); left:0; right:0; z-index:200; background:var(--surface); border:1px solid var(--border); border-radius:12px; box-shadow:0 12px 40px rgba(0,0,0,.12); overflow:hidden; display:none; }
