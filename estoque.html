@@ -332,27 +332,12 @@ header {
 .btn-entrada { background: var(--ok-bg); color: var(--ok-dk); }
 .btn-saida   { background: var(--crit-bg); color: var(--crit-dk); }
 
-/* COMPLEMENTAR ESTOQUE NEGATIVO */
-.comp-box {
-  background: var(--neg-bg); border: 1.5px solid var(--neg);
-  border-radius: 14px; padding: 14px 16px; margin-bottom: 18px;
+/* COMPLEMENTAR ESTOQUE NEGATIVO — só uma linha discreta, sem caixa/botão extra */
+.comp-hint-line {
+  font-size: 12.5px; color: var(--neg-dk); background: var(--neg-bg);
+  border-radius: 8px; padding: 8px 12px; margin: -8px 0 16px; line-height: 1.4;
 }
-.comp-title { font-size: 13px; font-weight: 700; color: var(--neg-dk); margin-bottom: 10px; }
-.comp-calc {
-  display: flex; align-items: baseline; gap: 6px; flex-wrap: wrap;
-  font-size: 19px; font-weight: 700; color: var(--neg-dk); margin-bottom: 6px;
-}
-.comp-sign { font-size: 15px; font-weight: 600; opacity: .55; }
-.comp-resultado { color: var(--text1); font-size: 21px; }
-.comp-unid { font-size: 12px; font-weight: 500; opacity: .6; }
-.comp-hint { font-size: 11.5px; color: var(--neg-dk); opacity: .8; line-height: 1.4; }
-.btn-complementar {
-  width: 100%; padding: 14px; margin-bottom: 12px;
-  background: var(--neg); color: #fff; border: none; border-radius: 12px;
-  font-size: 14px; font-weight: 700; font-family: inherit; cursor: pointer;
-  transition: opacity .15s, transform .1s;
-}
-.btn-complementar:active { transform: scale(.98); }
+.comp-hint-line strong { font-weight: 700; }
 
 .btn-fechar {
   width: 100%; padding: 13px; border: 1.5px solid var(--border);
@@ -370,7 +355,10 @@ header {
 }
 .fullpanel.on { display: flex; }
 .fullpanel-header {
-  background: var(--blue); color: #fff; padding: 0 16px; height: 58px;
+  background: var(--blue); color: #fff;
+  padding: calc(16px + env(safe-area-inset-top, 0px)) 16px 16px;
+  min-height: 58px;
+  box-sizing: border-box;
   display: flex; align-items: center; justify-content: space-between; flex-shrink: 0;
 }
 .fullpanel-header h3 { font-size: 17px; font-weight: 700; }
@@ -593,19 +581,6 @@ header {
       <div class="stat-box-unit">por unidade</div>
     </div>
   </div>
-  <!-- Só aparece quando o estoque do produto está negativo -->
-  <div class="comp-box" id="compBox" style="display:none">
-    <div class="comp-title">🧮 Complementar estoque negativo</div>
-    <div class="comp-calc">
-      <span id="compNeg">-30</span>
-      <span class="comp-sign">+</span>
-      <span id="compQtd">0</span>
-      <span class="comp-sign">=</span>
-      <span id="compResultado" class="comp-resultado">-30</span>
-      <span class="comp-unid" id="compUnid"></span>
-    </div>
-    <p class="comp-hint">Digite quanto chegou — o resultado já soma com o negativo automaticamente.</p>
-  </div>
   <div class="qtd-section">
     <label>Quantidade</label>
     <div class="qtd-row">
@@ -613,6 +588,8 @@ header {
       <input class="qtd-input" id="qtd" type="number" value="1" min="1" max="9999" oninput="atualizarComplemento()">
       <button class="qtd-btn" onclick="ajustarQtd(1)">+</button>
     </div>
+    <!-- Só aparece quando o estoque do produto está negativo -->
+    <div class="comp-hint-line" id="compHint" style="display:none"></div>
   </div>
   <div class="action-grid">
     <button class="btn-entrada" onclick="addCart('entrada')">
@@ -628,10 +605,6 @@ header {
       Saída
     </button>
   </div>
-  <!-- Botão extra: só aparece quando o produto está com estoque negativo -->
-  <button class="btn-complementar" id="btnComplementar" onclick="complementar()" style="display:none">
-    🧮 Complementar (confirmar entrada de <span id="compQtdBtn">0</span>)
-  </button>
   <button class="btn-fechar" onclick="fecharPainel()">Fechar</button>
 </div>
 
@@ -889,18 +862,12 @@ function openProduto(codigo) {
   document.getElementById("p-preco").textContent   = atual.preco ? `R$ ${Number(atual.preco).toFixed(2)}` : "—";
   document.getElementById("qtd").value = 1;
 
-  // ── Complementar estoque negativo ──
-  const compBox = document.getElementById("compBox");
-  const btnComp = document.getElementById("btnComplementar");
+  // ── Complementar estoque negativo (só uma linha de aviso) ──
   if (cl === "neg") {
-    compBox.style.display = "block";
-    btnComp.style.display = "block";
-    document.getElementById("compNeg").textContent  = fmtEst(atual.estoque);
-    document.getElementById("compUnid").textContent  = atual.unidade || "un";
+    document.getElementById("compHint").style.display = "block";
     atualizarComplemento();
   } else {
-    compBox.style.display = "none";
-    btnComp.style.display = "none";
+    document.getElementById("compHint").style.display = "none";
   }
 
   document.getElementById("painel").classList.add("open");
@@ -917,34 +884,22 @@ function ajustarQtd(delta) {
 }
 
 // ── COMPLEMENTAR ESTOQUE NEGATIVO ──
-// Mostra ao vivo: estoque negativo atual + quantidade que está chegando = resultado final.
-// Evita ter que calcular de cabeça antes de lançar a entrada.
+// Enquanto o estoque estiver negativo, mostra uma linha simples avisando
+// o resultado final. O botão "Entrada" continua sendo o único usado —
+// ele já soma normalmente com o estoque atual (mesmo sendo negativo).
 function atualizarComplemento() {
-  if (!atual || classeEst(atual.estoque) !== "neg") return;
-  const qtd = Math.max(1, Number(document.getElementById("qtd").value) || 1);
-  const negativo  = parseEst(atual.estoque);
-  const resultado = negativo + qtd;
-
-  document.getElementById("compQtd").textContent = qtd;
-  document.getElementById("compQtdBtn").textContent = qtd;
-
-  const resEl = document.getElementById("compResultado");
-  resEl.textContent = resultado % 1 === 0 ? resultado : resultado.toFixed(2);
-  resEl.style.color = resultado < 0 ? "var(--crit)" : (resultado === 0 ? "var(--text2)" : "var(--ok)");
-}
-
-function complementar() {
+  const hint = document.getElementById("compHint");
+  if (!atual || classeEst(atual.estoque) !== "neg") {
+    hint.style.display = "none";
+    return;
+  }
   const qtd = Math.max(1, Number(document.getElementById("qtd").value) || 1);
   const negativo  = parseEst(atual.estoque);
   const resultado = negativo + qtd;
   const resultadoFmt = resultado % 1 === 0 ? resultado : resultado.toFixed(2);
 
-  if (!confirm(`Estoque atual: ${fmtEst(atual.estoque)}\nChegando: ${qtd}\nResultado final: ${resultadoFmt}\n\nConfirmar entrada?`)) {
-    return;
-  }
-  // Mesma movimentação de uma "Entrada" normal — a automação já soma
-  // ao estoque atual, então o negativo é resolvido automaticamente.
-  addCart("entrada");
+  hint.style.display = "block";
+  hint.innerHTML = `Estoque com ${Math.abs(negativo)} negativo + ${qtd} chegando = <strong>${resultadoFmt}</strong>`;
 }
 
 // ── CARRINHO ──
