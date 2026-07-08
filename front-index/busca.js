@@ -62,73 +62,8 @@ function mostrarSugestoes(query) {
   if (!box) return;
   if (!query || query.length < 2) { esconderSugestoes(); return; }
 
-
-
-  // ── Busca por código do produto (checa ANTES de tentar ler como preço,
-  //    senão um código tipo "129038" era interpretado como R$ 129.038,00) ──
-  var porCodigo = prods().filter(function(p) {
-    return !p.oculto && estoqueNum(p.estoque) > 0 &&
-      String(p.codigo || '').toLowerCase().indexOf(query.trim().toLowerCase()) === 0;
-  });
-  if (porCodigo.length > 0 && /^\d+$/.test(query.trim())) {
-    var htmlCod = '<div class="sug-section-label" style="padding:8px 14px 5px">' +
-      porCodigo.length + ' produto' + (porCodigo.length !== 1 ? 's' : '') + ' com esse código' +
-    '</div>';
-    porCodigo.slice(0, 8).forEach(function(p) {
-      var icoCod = catEmojis[p.subcategoria] || catEmojis[p.categoria] || '📦';
-      var catCod = subLabels[p.subcategoria] || p.categoria || '';
-      htmlCod += '<div class="search-sug-item" onclick="selecionarSugestao(' + p.id + ')">' +
-        '<span class="sug-ico">' + icoCod + '</span>' +
-        '<div style="flex:1;min-width:0">' +
-          '<div class="sug-name">' + p.nome + '</div>' +
-          (catCod ? '<div class="sug-cat">' + catCod + '</div>' : '') +
-        '</div>' +
-        (precoNum(p.preco) > 0 ? '<div class="sug-cat" style="white-space:nowrap">R$ ' + precoNum(p.preco).toFixed(2).replace('.', ',') + '</div>' : '') +
-      '</div>';
-    });
-    box.innerHTML = htmlCod;
-    box.classList.add('on');
-    return;
-  }
-
-  // ── Busca por preço ──────────────────────────────────────────
-  var precoQuery = _extrairPreco(query);
-  if (precoQuery !== null) {
-    var todosParaPreco = prods().filter(function(p) { return !p.oculto && estoqueNum(p.estoque) > 0; });
-    var porPreco = todosParaPreco.filter(function(p) {
-      var v = precoNum(p.preco)
-      return !isNaN(v) && Math.abs(v - precoQuery) <= 0.05;
-    });
-    if (porPreco.length === 0) {
-      box.innerHTML = '<div class="sug-section-label" style="padding:12px 14px">Nenhum produto com preço R$ ' + precoQuery.toFixed(2).replace('.', ',') + '</div>';
-      box.classList.add('on');
-    } else {
-      var html = '<div class="sug-section-label" style="display:flex;align-items:center;justify-content:space-between;padding:8px 14px 5px">' +
-        '<span>💰 ' + porPreco.length + ' produto' + (porPreco.length !== 1 ? 's' : '') + ' por R$ ' + precoQuery.toFixed(2).replace('.', ',') + '</span>' +
-        '</div>';
-      porPreco.slice(0, 8).forEach(function(p) {
-        var ico = catEmojis[p.subcategoria] || catEmojis[p.categoria] || '📦';
-        var cat = subLabels[p.subcategoria] || p.categoria || '';
-        var esgTag = isEsgotado(p) ? '<span style="font-size:.6rem;background:#ea580c;color:#fff;padding:1px 6px;border-radius:99px;margin-left:4px;font-weight:700">ESGOTADO</span>' : '';
-        html += '<div class="search-sug-item" onclick="selecionarSugestao(' + p.id + ')">' +
-          '<span class="sug-ico">' + ico + '</span>' +
-          '<div style="flex:1;min-width:0">' +
-            '<div class="sug-name">' + p.nome + esgTag + '</div>' +
-            (cat ? '<div class="sug-cat">' + cat + '</div>' : '') +
-          '</div>' +
-          '<div class="sug-cat" style="white-space:nowrap;color:#16a34a;font-weight:700">R$ ' + precoNum(p.preco).toFixed(2).replace('.', ',') + '</div>' +
-        '</div>';
-      });
-      if (porPreco.length > 8) {
-        html += '<div onclick="confirmarBuscaCompleta()" style="text-align:center;padding:10px;font-size:.78rem;font-weight:600;color:var(--blue);cursor:pointer;border-top:1px solid var(--border);background:var(--blue-soft)">Ver todos os ' + porPreco.length + ' resultados →</div>';
-      }
-      box.innerHTML = html;
-      box.classList.add('on');
-    }
-    return;
-  }
-
-  // ── Busca normal por nome/marca ──────────────────────────────
+  // ── Busca simples por nome/marca — mostra SÓ o nome do produto,
+  //    sem código, sem categoria, sem preço. ──────────────────────
   var qNorm = normalizar(query);
 
   var todosProds = prods().filter(function(p) {
@@ -138,82 +73,58 @@ function mostrarSugestoes(query) {
   var diretos = todosProds.filter(function(p) {
     var nNorm = normalizar(p.nome);
     var mNorm = normalizar(p.marca || '');
-
     return nNorm.includes(qNorm) || mNorm.includes(qNorm);
   });
 
   var palavras = qNorm.split(/\s+/).filter(Boolean);
-
-  var jaEncontrados = diretos.map(function(p) {
-    return p.id;
-  });
+  var idsDiretos = diretos.map(function(p) { return p.id; });
 
   var porPalavras = palavras.length > 1
     ? todosProds.filter(function(p) {
-        if (jaEncontrados.indexOf(p.id) >= 0) return false;
-
-        var nNorm =
-          normalizar(p.nome) + ' ' +
-          normalizar(p.marca || '');
-
-        return palavras.every(function(w) {
-          return nNorm.includes(w);
-        });
+        if (idsDiretos.indexOf(p.id) >= 0) return false;
+        var nNorm = normalizar(p.nome) + ' ' + normalizar(p.marca || '');
+        return palavras.every(function(w) { return nNorm.includes(w); });
       })
     : [];
 
-  var idsJaVistos = diretos.concat(porPalavras).map(function(p) { return p.id; });
+  var encontrados = diretos.concat(porPalavras);
+
+  var idsJaVistos = encontrados.map(function(p) { return p.id; });
   var fuzzyProds = [];
-  if (diretos.length + porPalavras.length < 3) {
+  if (encontrados.length < 3) {
     fuzzyProds = buscaFuzzy(query)
       .filter(function(r) { return r.score >= 45 && idsJaVistos.indexOf(r.prod.id) < 0; })
       .map(function(r) { return r.prod; })
       .slice(0, 4);
   }
 
-  var encontrados = diretos.concat(porPalavras);
-  var totalDireto = encontrados.length;
+  if (!encontrados.length && !fuzzyProds.length) { esconderSugestoes(); return; }
 
-  if (!totalDireto && !fuzzyProds.length) { esconderSugestoes(); return; }
+  function itemHTML(p, nomeExibido) {
+    var preco = precoNum(p.preco);
+    var precoTxt = preco > 0
+      ? '<span class="sug-cat" style="white-space:nowrap;color:#16a34a;font-weight:700">R$ ' + preco.toFixed(2).replace('.', ',') + '</span>'
+      : '';
+    return '<div class="search-sug-item" onclick="selecionarSugestao(\'' + p.id + '\')">' +
+      '<span class="sug-name" style="flex:1;min-width:0">' + nomeExibido + '</span>' +
+      precoTxt +
+    '</div>';
+  }
 
   var html = '';
+  var limite = 8;
 
-  if (totalDireto > 0) {
-    var limite = 7;
-    html += '<div class="sug-section-label" style="display:flex;align-items:center;justify-content:space-between;padding:8px 14px 5px">' +
-      '<span>' + totalDireto + ' produto' + (totalDireto !== 1 ? 's' : '') + ' encontrado' + (totalDireto !== 1 ? 's' : '') + '</span>' +
-      (totalDireto > limite ? '<span onclick="confirmarBuscaCompleta()" style="color:var(--blue);font-weight:700;cursor:pointer;font-size:.7rem;padding:2px 6px">Ver todos ' + totalDireto + ' →</span>' : '') +
-    '</div>';
-    encontrados.slice(0, limite).forEach(function(p) {
-      var ico  = catEmojis[p.subcategoria] || catEmojis[p.categoria] || '📦';
-      var cat  = subLabels[p.subcategoria] || p.categoria || '';
-      var nome = highlightMatch(p.nome, query);
-      var esgTag = isEsgotado(p) ? '<span style="font-size:.6rem;background:#ea580c;color:#fff;padding:1px 6px;border-radius:99px;margin-left:4px;font-weight:700">ESGOTADO</span>' : '';
-      html += '<div class="search-sug-item" onclick="selecionarSugestao(' + p.id + ')">' +
-        '<span class="sug-ico">' + ico + '</span>' +
-        '<div style="flex:1;min-width:0">' +
-          '<div class="sug-name">' + nome + esgTag + '</div>' +
-          (cat ? '<div class="sug-cat">' + cat + '</div>' : '') +
-        '</div>' +
-        (precoNum(p.preco) > 0 ? '<div class="sug-cat" style="white-space:nowrap">R$ ' + precoNum(p.preco).toFixed(2).replace('.', ',') + '</div>' : '') +
-      '</div>';
-    });
-    if (totalDireto > limite) {
-      html += '<div onclick="confirmarBuscaCompleta()" style="text-align:center;padding:10px;font-size:.78rem;font-weight:600;color:var(--blue);cursor:pointer;border-top:1px solid var(--border);background:var(--blue-soft)">Ver todos os ' + totalDireto + ' resultados →</div>';
-    }
+  encontrados.slice(0, limite).forEach(function(p) {
+    html += itemHTML(p, highlightMatch(p.nome, query));
+  });
+
+  if (encontrados.length > limite) {
+    html += '<div onclick="confirmarBuscaCompleta()" style="text-align:center;padding:10px;font-size:.78rem;font-weight:600;color:var(--blue);cursor:pointer;border-top:1px solid var(--border);background:var(--blue-soft)">Ver todos os ' + encontrados.length + ' resultados →</div>';
   }
 
-  if (fuzzyProds.length) {
-    html += '<div class="sug-section-label">💡 Você quis dizer…</div>';
-    fuzzyProds.forEach(function(p) {
-      var ico = catEmojis[p.subcategoria] || catEmojis[p.categoria] || '📦';
-      html += '<div class="search-sug-item" onclick="selecionarSugestao(' + p.id + ')">' +
-        '<span class="sug-ico">' + ico + '</span>' +
-        '<div style="flex:1;min-width:0"><div class="sug-name">' + p.nome + '</div></div>' +
-        (precoNum(p.preco) > 0 ? '<div class="sug-cat" style="white-space:nowrap">R$ ' + precoNum(p.preco).toFixed(2).replace('.', ',') + '</div>' : '') +
-      '</div>';
-    });
-  }
+  fuzzyProds.forEach(function(p) {
+    html += itemHTML(p, p.nome);
+  });
 
   box.innerHTML = html;
   box.classList.add('on');
