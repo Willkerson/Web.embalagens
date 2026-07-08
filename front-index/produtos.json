@@ -431,7 +431,7 @@
     "nome": "SACOLA UNIDADE GRANDE",
     "categoria": "SACO LIXO",
     "preco": 0.5,
-    "estoque": "-41,00 un"
+    "estoque": "-45,00 un"
   },
   {
     "codigo": "335",
@@ -1583,7 +1583,7 @@
   },
   {
     "codigo": "834",
-    "nome": "G60MM TORTA MEDIA 2,2KG 29CM HIVERPACK",
+    "nome": "G60MM MILLENIUM TORTA MEDIA 2,2KG 29CM",
     "categoria": "DESCARTAVEIS",
     "preco": 5.5,
     "estoque": "-10,00 un"
@@ -1642,7 +1642,7 @@
     "nome": "HAMBURGUEIRA BH02 C/10UN BOM APETITE",
     "categoria": "Embalagem",
     "preco": 3.99,
-    "estoque": "38,00 un"
+    "estoque": "37,00 un"
   },
   {
     "codigo": "857",
@@ -2076,7 +2076,7 @@
     "nome": "SACO P/ LIXO PRETO P8 60L C/50UN",
     "categoria": "SACO LIXO",
     "preco": 38.25,
-    "estoque": "24,00 un"
+    "estoque": "23,00 un"
   },
   {
     "codigo": "1042",
@@ -2223,7 +2223,7 @@
     "nome": "MARMITEX DE ISOPOR 1100ML C/10UN COPOBRAS",
     "categoria": "DESCARTAVEIS",
     "preco": 8.5,
-    "estoque": "10,00 un"
+    "estoque": "7,00 un"
   },
   {
     "codigo": "1103",
@@ -2867,11 +2867,11 @@
     "nome": "G56MA BOLO ALTA MILLENIUM GALVONOTEK",
     "categoria": "DESCARTAVEIS",
     "preco": 7,
-    "estoque": "33,00 un"
+    "estoque": "32,00 un"
   },
   {
     "codigo": "1476",
-    "nome": "G60 / H60 MA GALVONOTEK BOLO GR. ALTA 2,45KG BR29CM",
+    "nome": "G60MA GALVONOTEK BOLO GR. ALTA 2,45KG BR29CM",
     "categoria": "DESCARTAVEIS",
     "preco": 9.5,
     "estoque": "27,00 un"
@@ -3070,7 +3070,7 @@
     "nome": "D50MM TORTA MDIA 1,5KG BR24CM DONA RITA",
     "categoria": "DESCARTAVEIS",
     "preco": 3,
-    "estoque": "-11,00 un"
+    "estoque": "-12,00 un"
   },
   {
     "codigo": "1649",
@@ -3175,7 +3175,7 @@
     "nome": "ASSADEIRA DE ALUMINIO OVAL 4L PRA VIAGEM",
     "categoria": "DESCARTAVEIS",
     "preco": 5.99,
-    "estoque": "11,00 un"
+    "estoque": "10,00 un"
   },
   {
     "codigo": "1755",
@@ -3434,7 +3434,7 @@
     "nome": "CUMBUCA C/TAMPA 500ML C/10UN BOM APETITE",
     "categoria": "DESCARTAVEIS",
     "preco": 6.99,
-    "estoque": "-7,00 un"
+    "estoque": "-10,00 un"
   },
   {
     "codigo": "1932",
@@ -3889,7 +3889,7 @@
     "nome": "PAPEL DE PRESENTE (PEQUENO)",
     "categoria": "Embalagem",
     "preco": 0.8,
-    "estoque": "-8,00 un"
+    "estoque": "-14,00 un"
   },
   {
     "codigo": "2355",
@@ -4253,7 +4253,7 @@
     "nome": "POTE REDONDO 250ML C/TAMPA C/24UN DANUBIO",
     "categoria": "DESCARTAVEIS",
     "preco": 17.5,
-    "estoque": "14,00 un"
+    "estoque": "13,00 un"
   },
   {
     "codigo": "2717",
@@ -4428,7 +4428,7 @@
     "nome": "PAPEL ACOPLADO C/PELICULA 30X38 300g (C/100UN)",
     "categoria": "DESCARTAVEIS",
     "preco": 18.5,
-    "estoque": "7,00 un"
+    "estoque": "6,00 un"
   },
   {
     "codigo": "2842",
@@ -4491,7 +4491,7 @@
     "nome": "G640 DOCE REDONDO 170ML CRISTAL C/10UN GALVONOTEK",
     "categoria": "DESCARTAVEIS",
     "preco": 4,
-    "estoque": "6,00 un"
+    "estoque": "3,00 un"
   },
   {
     "codigo": "2875",
@@ -5240,7 +5240,7 @@
     "nome": "LIMPADOR CONCENTRADO LAVANDA 120ML SANOL",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 11.5,
-    "estoque": "2,00 un"
+    "estoque": "1,00 un"
   },
   {
     "codigo": "3979",
@@ -5426,7 +5426,7 @@
   },
   {
     "codigo": "4434",
-    "nome": "G60M BOLO MEDIA MILL. GALVANOTEK",
+    "nome": "G60M BOLO MEDIA GALVANOTEK",
     "categoria": "-",
     "preco": 7.5,
     "estoque": "46,00 un"
