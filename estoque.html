@@ -305,6 +305,16 @@ header {
   font-size: 12px; font-weight: 600; color: var(--text2);
   text-transform: uppercase; letter-spacing: .4px; display: block; margin-bottom: 8px;
 }
+.qtd-header { display: flex; align-items: center; justify-content: space-between; gap: 8px; }
+.qtd-header label { margin-bottom: 8px; }
+.qtd-mode-btn {
+  border: none; background: transparent; color: var(--blue);
+  font-size: 11.5px; font-weight: 700; font-family: inherit;
+  cursor: pointer; padding: 4px 9px; border-radius: 8px;
+  white-space: nowrap; margin-bottom: 6px; transition: background .15s, color .15s;
+}
+.qtd-mode-btn:active { opacity: .7; }
+.qtd-mode-btn.active { background: var(--neg-bg); color: var(--neg-dk); }
 .qtd-row { display: flex; align-items: center; gap: 10px; }
 .qtd-btn {
   width: 42px; height: 42px; border-radius: 10px;
@@ -321,6 +331,12 @@ header {
   outline: none; transition: border-color .15s;
 }
 .qtd-input:focus { border-color: var(--blue); }
+.qtd-hint {
+  font-size: 12px; color: var(--text2); margin-top: 8px; line-height: 1.4; min-height: 16px;
+}
+.qtd-hint strong { font-size: 13px; }
+.qtd-hint-ok   { color: var(--ok-dk); }
+.qtd-hint-warn { color: var(--neg-dk); }
 .action-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 12px; }
 
 /* TOGGLE: vender no site */
@@ -352,32 +368,6 @@ header {
 .btn-entrada:active, .btn-saida:active { transform: scale(.98); }
 .btn-entrada { background: var(--ok-bg); color: var(--ok-dk); }
 .btn-saida   { background: var(--crit-bg); color: var(--crit-dk); }
-
-/* POSITIVAR ESTOQUE NEGATIVO — pergunta a quantidade FINAL desejada e
-   calcula sozinho a entrada necessária pra chegar lá */
-.comp-box {
-  background: var(--neg-bg); border: 1.5px solid var(--neg);
-  border-radius: 14px; padding: 14px; margin-bottom: 16px;
-}
-.comp-pergunta { font-size: 13px; font-weight: 700; color: var(--neg-dk); margin-bottom: 2px; }
-.comp-atual { font-size: 12px; color: var(--neg-dk); opacity: .85; margin-bottom: 10px; }
-.comp-final-row { display: flex; gap: 8px; }
-.comp-final-row input {
-  flex: 1; padding: 12px; border: 1.5px solid var(--neg); border-radius: 10px;
-  font-size: 16px; font-weight: 700; text-align: center; color: var(--text1);
-  font-family: inherit; background: #fff;
-}
-.comp-final-row input:focus { outline: none; border-color: var(--blue); }
-.comp-btn-confirmar {
-  padding: 0 18px; background: var(--neg); color: #fff; border: none;
-  border-radius: 10px; font-size: 14px; font-weight: 700; font-family: inherit;
-  cursor: pointer; white-space: nowrap;
-}
-.comp-btn-confirmar:active { opacity: .8; }
-.comp-resultado-txt {
-  font-size: 12px; color: var(--neg-dk); margin-top: 8px; line-height: 1.4; min-height: 16px;
-}
-.comp-resultado-txt strong { font-size: 13px; }
 
 .btn-fechar {
   width: 100%; padding: 13px; border: 1.5px solid var(--border);
@@ -511,12 +501,15 @@ header {
 /* TOAST */
 .toast {
   position: fixed; bottom: calc(28px + env(safe-area-inset-bottom, 0px)); left: 50%;
-  transform: translateX(-50%) translateY(80px);
+  transform: translateX(-50%) translateY(120%);
   background: var(--text1); color: #fff;
   padding: 11px 22px; border-radius: 24px;
   font-size: 13px; font-weight: 500; z-index: 200;
   transition: transform .3s cubic-bezier(.32,1,.45,1);
-  white-space: nowrap; box-shadow: 0 4px 20px rgba(0,0,0,.25);
+  max-width: calc(100vw - 32px); width: max-content;
+  white-space: normal; text-align: center; word-break: break-word;
+  box-shadow: 0 4px 20px rgba(0,0,0,.25);
+  pointer-events: none;
 }
 .toast.show { transform: translateX(-50%) translateY(0); }
 </style>
@@ -628,32 +621,26 @@ header {
     </div>
     <div class="vis-switch" id="visSwitch"><div class="vis-knob"></div></div>
   </div>
-  <!-- Só aparece quando o estoque do produto está negativo -->
-  <div class="comp-box" id="compBox" style="display:none">
-    <div class="comp-pergunta">📦 Chegou estoque — qual a quantidade final?</div>
-    <div class="comp-atual">Estoque atual: <strong id="compAtualVal">-10</strong></div>
-    <div class="comp-final-row">
-      <input type="number" id="compFinal" min="0" placeholder="Ex: 20" oninput="atualizarComplemento()">
-      <button class="comp-btn-confirmar" onclick="confirmarPositivar()">✓ Confirmar</button>
-    </div>
-    <div class="comp-resultado-txt" id="compResultadoTxt">Digite a quantidade final (a contagem que ficou no lugar).</div>
-  </div>
   <div class="qtd-section">
-    <label>Quantidade</label>
+    <div class="qtd-header">
+      <label id="qtdLabel">Quantidade</label>
+      <button type="button" class="qtd-mode-btn" id="qtdModeBtn" onclick="alternarModoQtd()">🔢 Digitar contagem final</button>
+    </div>
     <div class="qtd-row">
       <button class="qtd-btn" onclick="ajustarQtd(-1)">−</button>
-      <input class="qtd-input" id="qtd" type="number" value="1" min="1" max="9999">
+      <input class="qtd-input" id="qtd" type="number" value="1" min="1" max="99999" oninput="atualizarHintQtd()">
       <button class="qtd-btn" onclick="ajustarQtd(1)">+</button>
     </div>
+    <div class="qtd-hint" id="qtdHint"></div>
   </div>
-  <div class="action-grid">
-    <button class="btn-entrada" onclick="addCart('entrada')">
+  <div class="action-grid" id="actionGrid">
+    <button class="btn-entrada" id="btnEntrada" onclick="addCart('entrada')">
       <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
         <line x1="12" y1="5" x2="12" y2="19"/><polyline points="5 12 12 19 19 12"/>
       </svg>
       Entrada
     </button>
-    <button class="btn-saida" onclick="addCart('saida')">
+    <button class="btn-saida" id="btnSaida" onclick="addCart('saida')">
       <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
         <line x1="12" y1="19" x2="12" y2="5"/><polyline points="19 12 12 5 5 12"/>
       </svg>
@@ -933,17 +920,11 @@ function openProduto(codigo) {
   estoqueEl.className   = `stat-box-val v-${cl}`;
   document.getElementById("p-unidade").textContent = atual.unidade || "un";
   document.getElementById("p-preco").textContent   = atual.preco ? `R$ ${Number(atual.preco).toFixed(2)}` : "—";
-  document.getElementById("qtd").value = 1;
 
-  // ── Positivar estoque negativo ──
-  if (cl === "neg") {
-    document.getElementById("compBox").style.display = "block";
-    document.getElementById("compAtualVal").textContent = fmtEst(atual.estoque);
-    document.getElementById("compFinal").value = "";
-    document.getElementById("compResultadoTxt").textContent = "Digite a quantidade final (a contagem que ficou no lugar).";
-  } else {
-    document.getElementById("compBox").style.display = "none";
-  }
+  // Estoque negativo já entra direto no modo "contagem final", que é o
+  // jeito mais fácil de zerar/positivar sem fazer conta de cabeça.
+  modoFinal = (cl === "neg");
+  configurarModoQtd();
 
   document.getElementById("painel").classList.add("open");
   document.getElementById("overlay").classList.add("on");
@@ -1012,65 +993,113 @@ async function alternarVisibilidade() {
     sw.style.opacity = "1";
   }
 }
+// ── UM SÓ CONTADOR, DOIS MODOS ──
+// Modo normal: o número digitado É a quantidade a lançar (como sempre foi).
+// Modo "contagem final": em vez de fazer conta de cabeça, você digita a
+// contagem física que ficou no lugar e o sistema calcula sozinho a
+// entrada/saída necessária pra chegar lá.
+// Ex.: estoque -10, digita 20 no modo contagem final → lança entrada de 30.
+let modoFinal = false;
+
+function alternarModoQtd() {
+  modoFinal = !modoFinal;
+  configurarModoQtd();
+}
+
+function configurarModoQtd() {
+  const label = document.getElementById("qtdLabel");
+  const btn   = document.getElementById("qtdModeBtn");
+  const input = document.getElementById("qtd");
+
+  if (modoFinal) {
+    label.textContent = "Contagem final (o que ficou no lugar)";
+    btn.textContent = "↩ Digitar quantidade direto";
+    btn.classList.add("active");
+    input.min = 0;
+    input.value = Math.max(0, parseEst(atual.estoque));
+  } else {
+    label.textContent = "Quantidade";
+    btn.textContent = "🔢 Digitar contagem final";
+    btn.classList.remove("active");
+    input.min = 1;
+    input.value = 1;
+  }
+  atualizarHintQtd();
+}
+
 function ajustarQtd(delta) {
   const input = document.getElementById("qtd");
-  input.value = Math.max(1, Math.min(9999, (parseInt(input.value) || 1) + delta));
+  const min = modoFinal ? 0 : 1;
+  input.value = Math.max(min, Math.min(99999, (parseInt(input.value) || 0) + delta));
+  atualizarHintQtd();
 }
 
-// ── POSITIVAR ESTOQUE NEGATIVO ──
-// Em vez de pedir "quanto chegou" (o que obriga a fazer conta de cabeça
-// com o negativo), pede a quantidade FINAL desejada (a contagem física) e
-// calcula sozinho a entrada necessária pra chegar lá.
-// Ex: estoque -10, você digita 20 → sistema lança entrada de 30.
-function atualizarComplemento() {
-  const txt = document.getElementById("compResultadoTxt");
-  const final = document.getElementById("compFinal").value;
+function atualizarHintQtd() {
+  const hint       = document.getElementById("qtdHint");
+  const btnEntrada = document.getElementById("btnEntrada");
+  const btnSaida   = document.getElementById("btnSaida");
 
-  if (final === "" || final === null) {
-    txt.textContent = "Digite a quantidade final (a contagem que ficou no lugar).";
-    return;
-  }
-  const alvo = Number(final);
-  const negativo = parseEst(atual.estoque);
-  const delta = alvo - negativo;
-
-  if (delta <= 0) {
-    txt.innerHTML = `⚠️ Essa quantidade final é menor ou igual ao estoque atual (${fmtEst(atual.estoque)}). Aumente o valor.`;
-    return;
-  }
-  txt.innerHTML = `Vai lançar uma <strong>entrada de ${delta}</strong> pra chegar em <strong>${alvo}</strong>.`;
-}
-
-function confirmarPositivar() {
-  const final = document.getElementById("compFinal").value;
-  if (final === "" || final === null) {
-    showToast("Digite a quantidade final primeiro");
-    return;
-  }
-  const alvo = Number(final);
-  const negativo = parseEst(atual.estoque);
-  const delta = alvo - negativo;
-
-  if (delta <= 0) {
-    showToast("Quantidade final precisa ser maior que o estoque atual");
+  if (!modoFinal) {
+    hint.textContent = "";
+    hint.className = "qtd-hint";
+    btnEntrada.style.display = "";
+    btnSaida.style.display = "";
     return;
   }
 
-  carrinho.push({ codigo: atual.codigo, nome: atual.nome, qtd: delta, tipo: "entrada" });
-  salvarCarrinhoLocal();
-  atualizarBadge();
-  fecharPainel();
-  showToast(`Entrada de ${delta} adicionada — vai ficar ${alvo}`);
+  const valorBruto = document.getElementById("qtd").value;
+  if (valorBruto === "" || valorBruto === null) {
+    hint.textContent = "Digite a contagem final (o que ficou no lugar).";
+    hint.className = "qtd-hint";
+    btnEntrada.style.display = "none";
+    btnSaida.style.display = "none";
+    return;
+  }
+
+  const alvo  = Number(valorBruto);
+  const atualEst = parseEst(atual.estoque);
+  const delta = alvo - atualEst;
+
+  if (delta === 0) {
+    hint.innerHTML = `Já está em <strong>${fmtEst(atual.estoque)}</strong> — nada a lançar.`;
+    hint.className = "qtd-hint qtd-hint-warn";
+    btnEntrada.style.display = "none";
+    btnSaida.style.display = "none";
+  } else if (delta > 0) {
+    hint.innerHTML = `Vai lançar uma <strong>entrada de ${delta}</strong> pra chegar em <strong>${alvo}</strong>.`;
+    hint.className = "qtd-hint qtd-hint-ok";
+    btnEntrada.style.display = "";
+    btnSaida.style.display = "none";
+  } else {
+    hint.innerHTML = `Vai lançar uma <strong>saída de ${Math.abs(delta)}</strong> pra chegar em <strong>${alvo}</strong>.`;
+    hint.className = "qtd-hint qtd-hint-ok";
+    btnEntrada.style.display = "none";
+    btnSaida.style.display = "";
+  }
 }
 
 // ── CARRINHO ──
 function addCart(tipo) {
-  const qtd = Math.max(1, Number(document.getElementById("qtd").value) || 1);
+  let qtd;
+  let alvoTxt = "";
+
+  if (modoFinal) {
+    const alvo = Number(document.getElementById("qtd").value);
+    const atualEst = parseEst(atual.estoque);
+    const delta = alvo - atualEst;
+    if (!delta) { showToast("Digite uma contagem final diferente da atual"); return; }
+    qtd  = Math.abs(delta);
+    tipo = delta > 0 ? "entrada" : "saida";
+    alvoTxt = ` — vai ficar ${alvo}`;
+  } else {
+    qtd = Math.max(1, Number(document.getElementById("qtd").value) || 1);
+  }
+
   carrinho.push({ codigo: atual.codigo, nome: atual.nome, qtd, tipo });
   salvarCarrinhoLocal();
   atualizarBadge();
   fecharPainel();
-  showToast(`${tipo === "entrada" ? "Entrada" : "Saída"} de ${qtd} adicionada`);
+  showToast(`${tipo === "entrada" ? "Entrada" : "Saída"} de ${qtd} adicionada${alvoTxt}`);
 }
 
 function atualizarBadge() {
