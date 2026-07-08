@@ -134,8 +134,8 @@ img { display:block; }
   transition:opacity .2s var(--ease), transform .2s var(--ease), visibility 0s linear 0s;
 }
 .search-sug-item {
-  display:flex; align-items:center; gap:10px; padding:9px 10px; cursor:pointer;
-  border-radius:10px; font-size:.875rem; color:var(--text2);
+  display:flex; align-items:center; gap:8px; padding:7px 10px; cursor:pointer;
+  border-radius:8px; font-size:.8rem; color:var(--text2);
   transition:background .15s var(--ease), transform .15s var(--ease);
   opacity:0; transform:translateY(-4px);
   animation:sugItemIn .28s var(--ease) forwards;
@@ -152,33 +152,18 @@ img { display:block; }
 .search-sug-item:hover { background:rgba(0,0,0,.045); color:var(--text); transform:translateX(2px); }
 [data-theme="dark"] .search-sug-item:hover { background:rgba(255,255,255,.07); }
 .search-sug-item + .search-sug-item { margin-top:1px; }
-
-/* ícone de categoria em chip circular colorido */
-.sug-ico-chip {
-  flex-shrink:0; width:30px; height:30px; border-radius:9px;
-  display:flex; align-items:center; justify-content:center;
-  font-size:.95rem; background:var(--blue-soft);
-}
-.sug-ico-chip.c-caixas     { background:var(--blue-soft); }
-.sug-ico-chip.c-sacolas    { background:var(--orange-soft); }
-.sug-ico-chip.c-plastico   { background:var(--teal-soft); }
-.sug-ico-chip.c-festa      { background:var(--pink-soft); }
-.sug-ico-chip.c-limpeza    { background:rgba(29,145,71,.1); }
-.sug-ico-chip.c-higiene    { background:var(--purple-soft); }
-.sug-ico-chip.c-utilidades { background:var(--amber-soft); }
-.sug-ico-chip.c-diversos   { background:var(--gray-soft); }
-.sug-ico-chip.c-parecido   { background:var(--gray-soft); filter:grayscale(.15); }
+.search-sug-item.sug-parecido { opacity:.85; }
 
 .search-sug-item .sug-name {
-  flex:1; min-width:0; color:var(--text); font-weight:500; font-size:.8375rem;
+  flex:1; min-width:0; color:var(--text); font-weight:500; font-size:.75rem;
   white-space:nowrap; overflow:hidden; text-overflow:ellipsis;
 }
 
 /* preço como pill verde */
 .sug-price {
-  flex-shrink:0; white-space:nowrap; font-size:.7rem; font-weight:700;
+  flex-shrink:0; white-space:nowrap; font-size:.65rem; font-weight:700;
   color:var(--green); background:rgba(29,145,71,.1);
-  padding:4px 9px; border-radius:99px;
+  padding:3px 8px; border-radius:99px;
 }
 
 .sug-section-label {
