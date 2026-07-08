@@ -6,6 +6,21 @@ function precoNum(valor) {
 }
 var _debouncedSearch = debounce(function(q) { mostrarSugestoes(q); }, 120);
 
+// Posiciona a caixa de sugestões EM PIXELS EXATOS, calculado a partir do
+// campo de busca (position:fixed). Isso evita de vez qualquer bug de
+// "caixa aparecendo longe do campo" causado por CSS de container pai
+// (transform/overflow de algum ancestral quebrando o position:absolute).
+function posicionarSugestoes() {
+  var inp = document.getElementById('searchInput');
+  var box = document.getElementById('searchSuggestions');
+  if (!inp || !box) return;
+  var r = inp.getBoundingClientRect();
+  box.style.position = 'fixed';
+  box.style.top   = (r.bottom + 6) + 'px';
+  box.style.left  = r.left + 'px';
+  box.style.width = r.width + 'px';
+}
+
 function esconderSugestoes() {
   var el = document.getElementById('searchSuggestions');
   if (el) { el.classList.remove('on'); el.innerHTML = ''; }
@@ -17,6 +32,10 @@ function handleSearchFocus() {
 }
 
 document.addEventListener('DOMContentLoaded', function() {
+
+  // Reposiciona se a página rolar ou o teclado mudar o tamanho da tela
+  window.addEventListener('resize', posicionarSugestoes);
+  window.addEventListener('scroll', posicionarSugestoes, { passive: true });
 
   var inp = document.getElementById('searchInput');
 
@@ -127,6 +146,7 @@ function mostrarSugestoes(query) {
   });
 
   box.innerHTML = html;
+  posicionarSugestoes();
   box.classList.add('on');
 }
 
