@@ -8,23 +8,17 @@
 
   var isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
 
-  // ── 1. BUSCA: reposiciona sugestões quando teclado virtual sobe ──
-  // No iOS e Android, o teclado empurra o viewport.
-  // Recalculamos a posição das sugestões com base no campo visível.
+  // ── 1. BUSCA: sugestões ficam por conta do CSS (position:absolute,
+  // relativo a #searchWrap) — ver front-index/estilo.css e mobile.css.
+  // Havia aqui uma função "reposicionarSugestoes" que recalculava
+  // box.style.top com inp.getBoundingClientRect().bottom (coordenadas
+  // relativas à JANELA) e aplicava esse valor num elemento posicionado de
+  // forma ABSOLUTA (coordenadas relativas ao próprio #searchWrap, não à
+  // janela). Misturar esses dois sistemas de coordenadas jogava a caixa
+  // de sugestões pra um ponto bem mais abaixo na página — exatamente o
+  // bug de "sugestão cobrindo o catálogo" ao rolar a tela. Removida.
   function reposicionarSugestoes() {
-    var box = document.getElementById('searchSuggestions');
-    var inp = document.getElementById('searchInput');
-    if (!box || !inp) return;
-
-    if (!box.classList.contains('on')) return;
-
-    var rect = inp.getBoundingClientRect();
-    var top  = rect.bottom + 6;
-
-    // Garante que não sai da tela
-    var maxH = window.innerHeight - top - 16;
-    box.style.top      = top + 'px';
-    box.style.maxHeight = Math.min(Math.max(maxH, 120), window.innerHeight * 0.45) + 'px';
+    // no-op — mantido só pra não quebrar as chamadas abaixo.
   }
 
   if (isMobile) {
