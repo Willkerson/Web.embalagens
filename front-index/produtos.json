@@ -32,7 +32,7 @@
     "nome": "SACOLA KRAFT G 1UN 24X16CM",
     "categoria": "Embalagem",
     "preco": 1.99,
-    "estoque": "-30,00 un"
+    "estoque": "20,00 un"
   },
   {
     "codigo": "106",
@@ -774,7 +774,7 @@
     "nome": "BLOCO P/CX ACOPLADA LAVANDA 50G PANTANAL",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 9.99,
-    "estoque": "-10,00 un"
+    "estoque": "-5,00 un"
   },
   {
     "codigo": "500",
@@ -1677,7 +1677,7 @@
     "nome": "AGUA SANITARIA DACLOR 2L",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 8.8,
-    "estoque": "5,00 un"
+    "estoque": "12,00 un"
   },
   {
     "codigo": "875",
@@ -2160,7 +2160,7 @@
     "nome": "FITA ADESIVA 45MMX40M MARROM",
     "categoria": "PAPELARIA",
     "preco": 4.99,
-    "estoque": "100,00 un"
+    "estoque": "201,00 un"
   },
   {
     "codigo": "1069",
@@ -3581,7 +3581,7 @@
     "nome": "COPO DESCARTAVEL 770ML C/25UN ULTRA",
     "categoria": "DESCARTAVEIS",
     "preco": 16.99,
-    "estoque": "51,00 un"
+    "estoque": "84,00 un"
   },
   {
     "codigo": "2072",
@@ -4757,7 +4757,7 @@
     "nome": "COPO TERMICO 180ML C/25UN ULTRA",
     "categoria": "DESCARTAVEIS",
     "preco": 7.99,
-    "estoque": "26,00 un"
+    "estoque": "23,00 un"
   },
   {
     "codigo": "3051",
@@ -6815,7 +6815,7 @@
     "nome": "PROTETOR DE FELTRO C/8UN",
     "categoria": "UTENSILIOS",
     "preco": 7.5,
-    "estoque": "-3,00 un"
+    "estoque": "-4,00 un"
   },
   {
     "codigo": "129029",
@@ -6836,14 +6836,14 @@
     "nome": "ESTILETE C/ACABEMENTO PLAST.15CM",
     "categoria": "UTENSILIOS",
     "preco": 5,
-    "estoque": "-9,00 un"
+    "estoque": "-12,00 un"
   },
   {
     "codigo": "129032",
     "nome": "ESTILETES C/3UN MONALIZA",
     "categoria": "UTENSILIOS",
     "preco": 8.99,
-    "estoque": "-6,00 un"
+    "estoque": "-8,00 un"
   },
   {
     "codigo": "129033",
@@ -6878,21 +6878,21 @@
     "nome": "ESTILETE LAMINAS 18MM T/HOUSE",
     "categoria": "UTENSILIOS",
     "preco": 5,
-    "estoque": "-9,00 un"
+    "estoque": "-12,00 un"
   },
   {
     "codigo": "129038",
     "nome": "CHAVE DE VENDA E ESTILETE",
     "categoria": "UTENSILIOS",
     "preco": 12.5,
-    "estoque": "-6,00 un"
+    "estoque": "-8,00 un"
   },
   {
     "codigo": "129039",
     "nome": "P. PROTETOR DE PVC MAXIMO",
     "categoria": "UTENSILIOS",
     "preco": 9,
-    "estoque": "-3,00 un"
+    "estoque": "-4,00 un"
   },
   {
     "codigo": "129040",
@@ -6920,7 +6920,7 @@
     "nome": "ACENDEDOR ELETRONICO MONALIZA",
     "categoria": "UTENSILIOS",
     "preco": 14,
-    "estoque": "-6,00 un"
+    "estoque": "-8,00 un"
   },
   {
     "codigo": "129044",
@@ -6969,7 +6969,7 @@
     "nome": "PINCEL DE SILICONE",
     "categoria": "UTENSILIOS",
     "preco": 6,
-    "estoque": "-9,00 un"
+    "estoque": "-12,00 un"
   },
   {
     "codigo": "129051",
@@ -7039,7 +7039,7 @@
     "nome": "KIT VINHO CLINK",
     "categoria": "UTENSILIOS",
     "preco": 14.9,
-    "estoque": "-6,00 un"
+    "estoque": "-8,00 un"
   },
   {
     "codigo": "129062",
@@ -7060,7 +7060,7 @@
     "nome": "PANEIRA DE INOX 10CM",
     "categoria": "UTENSILIOS",
     "preco": 8,
-    "estoque": "-3,00 un"
+    "estoque": "-4,00 un"
   },
   {
     "codigo": "129065",
@@ -7123,7 +7123,7 @@
     "nome": "PLASTIC COATED IRON HOOK",
     "categoria": "UTENSILIOS",
     "preco": 9,
-    "estoque": "-6,00 un"
+    "estoque": "-8,00 un"
   },
   {
     "codigo": "129074",
@@ -7144,7 +7144,7 @@
     "nome": "BATERIA ALCALINA 12V",
     "categoria": "UTENSILIOS",
     "preco": 4.5,
-    "estoque": "-12,00 un"
+    "estoque": "-16,00 un"
   },
   {
     "codigo": "129077",
@@ -7158,7 +7158,7 @@
     "nome": "PILHA ALFACELL",
     "categoria": "UTENSILIOS",
     "preco": 2.5,
-    "estoque": "-3,00 un"
+    "estoque": "-4,00 un"
   },
   {
     "codigo": "129079",
@@ -7627,7 +7627,7 @@
     "nome": "JOGO DE CHAVE FENDE E PHILIPS C/4UN",
     "categoria": "Outras",
     "preco": 10,
-    "estoque": "-3,00 un"
+    "estoque": "-4,00 un"
   },
   {
     "codigo": "7893595170129",
