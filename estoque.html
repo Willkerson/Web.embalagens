@@ -1384,6 +1384,21 @@ function showToast(msg) {
   clearTimeout(_tt);
   _tt = setTimeout(() => el.classList.remove("show"), 1800);
 }
+
+// FIX: barra/pill preta presa no rodapé no iPhone. Causa: o Safari usa
+// bfcache — se o app for pra segundo plano (troca de app, tela bloqueada)
+// logo depois de um toast aparecer, a página congela com o toast ainda
+// visível e o setTimeout que ia escondê-lo fica pausado junto. Ao voltar,
+// o Safari restaura esse estado congelado (sem recarregar a página), e o
+// toast fica preso na tela pra sempre. O evento "pageshow" dispara toda
+// vez que a página volta a ficar visível — inclusive quando restaurada
+// do bfcache (nesse caso e.persisted é true) — então garantimos aqui que
+// o toast nunca fica grudado.
+window.addEventListener("pageshow", () => {
+  clearTimeout(_tt);
+  const el = document.getElementById("toast");
+  if (el) el.classList.remove("show");
+});
 </script>
 
 <!-- ─── PWA: registra o service worker do estoque ─── -->
