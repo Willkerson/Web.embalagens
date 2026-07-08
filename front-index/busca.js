@@ -6,19 +6,23 @@ function precoNum(valor) {
 }
 var _debouncedSearch = debounce(function(q) { mostrarSugestoes(q); }, 120);
 
-// Posiciona a caixa de sugestões EM PIXELS EXATOS, calculado a partir do
-// campo de busca (position:fixed). Isso evita de vez qualquer bug de
-// "caixa aparecendo longe do campo" causado por CSS de container pai
-// (transform/overflow de algum ancestral quebrando o position:absolute).
+// A caixa de sugestões é posicionada via CSS (position:absolute, relativo
+// a #searchWrap que tem position:relative — ver estilo.css e mobile.css).
+// Isso já a mantém sempre colada embaixo do campo de busca, tanto no
+// desktop quanto no mobile.
+//
+// OBS: antes isso era feito calculando pixels exatos em JS com
+// position:fixed a partir de inp.getBoundingClientRect(). O problema é
+// que no iOS, quando o teclado virtual abre, a página rola pra manter o
+// campo visível acima do teclado — mas esse scroll nem sempre dispara o
+// evento "scroll" da window (é o visualViewport que muda). Resultado: a
+// caixa ficava "grudada" na posição antiga (lá em cima), enquanto o campo
+// de busca real descia pra perto do teclado — cobrindo a barra de busca
+// com a lista de sugestões. Usar position:absolute (relativo ao próprio
+// container do campo) elimina esse cálculo manual e o bug junto.
 function posicionarSugestoes() {
-  var inp = document.getElementById('searchInput');
-  var box = document.getElementById('searchSuggestions');
-  if (!inp || !box) return;
-  var r = inp.getBoundingClientRect();
-  box.style.position = 'fixed';
-  box.style.top   = (r.bottom + 6) + 'px';
-  box.style.left  = r.left + 'px';
-  box.style.width = r.width + 'px';
+  // Mantido como no-op por compatibilidade com as chamadas existentes.
+  // O posicionamento agora é 100% CSS.
 }
 
 function esconderSugestoes() {
