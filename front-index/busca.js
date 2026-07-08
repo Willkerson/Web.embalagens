@@ -123,13 +123,16 @@ function mostrarSugestoes(query) {
 
   if (!encontrados.length && !fuzzyProds.length) { esconderSugestoes(); return; }
 
-  function itemHTML(p, nomeExibido) {
+  function itemHTML(p, nomeExibido, parecido) {
     var preco = precoNum(p.preco);
     var precoTxt = preco > 0
-      ? '<span class="sug-cat" style="white-space:nowrap;color:#16a34a;font-weight:700">R$ ' + preco.toFixed(2).replace('.', ',') + '</span>'
+      ? '<span class="sug-price">R$ ' + preco.toFixed(2).replace('.', ',') + '</span>'
       : '';
+    var emoji = catEmojis[p.subcategoria] || catEmojis[p.categoria] || '📦';
+    var chipClass = parecido ? 'c-parecido' : ('c-' + (p.categoria || 'diversos'));
     return '<div class="search-sug-item" onclick="selecionarSugestao(\'' + p.id + '\')">' +
-      '<span class="sug-name" style="flex:1;min-width:0">' + nomeExibido + '</span>' +
+      '<span class="sug-ico-chip ' + chipClass + '">' + emoji + '</span>' +
+      '<span class="sug-name">' + nomeExibido + '</span>' +
       precoTxt +
     '</div>';
   }
@@ -138,15 +141,18 @@ function mostrarSugestoes(query) {
   var limite = 8;
 
   encontrados.slice(0, limite).forEach(function(p) {
-    html += itemHTML(p, highlightMatch(p.nome, query));
+    html += itemHTML(p, highlightMatch(p.nome, query), false);
   });
 
   if (encontrados.length > limite) {
-    html += '<div onclick="confirmarBuscaCompleta()" style="text-align:center;padding:10px;font-size:.78rem;font-weight:600;color:var(--blue);cursor:pointer;border-top:1px solid var(--border);background:var(--blue-soft)">Ver todos os ' + encontrados.length + ' resultados →</div>';
+    html += '<div class="sug-ver-todos" onclick="confirmarBuscaCompleta()">Ver todos os ' + encontrados.length + ' resultados →</div>';
   }
 
+  if (fuzzyProds.length) {
+    html += '<div class="sug-section-label">🔎 Você quis dizer?</div>';
+  }
   fuzzyProds.forEach(function(p) {
-    html += itemHTML(p, p.nome);
+    html += itemHTML(p, p.nome, true);
   });
 
   box.innerHTML = html;
