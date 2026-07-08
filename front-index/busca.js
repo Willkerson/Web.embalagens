@@ -128,10 +128,7 @@ function mostrarSugestoes(query) {
     var precoTxt = preco > 0
       ? '<span class="sug-price">R$ ' + preco.toFixed(2).replace('.', ',') + '</span>'
       : '';
-    var emoji = catEmojis[p.subcategoria] || catEmojis[p.categoria] || '📦';
-    var chipClass = parecido ? 'c-parecido' : ('c-' + (p.categoria || 'diversos'));
-    return '<div class="search-sug-item" onclick="selecionarSugestao(\'' + p.id + '\')">' +
-      '<span class="sug-ico-chip ' + chipClass + '">' + emoji + '</span>' +
+    return '<div class="search-sug-item' + (parecido ? ' sug-parecido' : '') + '" onclick="selecionarSugestao(\'' + p.id + '\')">' +
       '<span class="sug-name">' + nomeExibido + '</span>' +
       precoTxt +
     '</div>';
