@@ -4,7 +4,7 @@
     "nome": "ESCOVA SANITARIA C/ ESTOJO SANIBRISA",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 14.5,
-    "estoque": "25,00 un"
+    "estoque": "24,00 un"
   },
   {
     "codigo": "044",
@@ -60,7 +60,7 @@
     "nome": "RODO ALKLIN 30CM C/CABO",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 15,
-    "estoque": "11,00 un"
+    "estoque": "10,00 un"
   },
   {
     "codigo": "124",
@@ -193,7 +193,7 @@
     "nome": "COPO TERMICO 180ML C/20UN TOTALPLAST",
     "categoria": "DESCARTAVEIS",
     "preco": 5.99,
-    "estoque": "121,00 un"
+    "estoque": "118,00 un"
   },
   {
     "codigo": "189",
@@ -228,7 +228,7 @@
     "nome": "PRENDEDOR ROUPA MADEIRA C/12UN",
     "categoria": "UTENSILIOS",
     "preco": 3,
-    "estoque": "-4,00 un"
+    "estoque": "-8,00 un"
   },
   {
     "codigo": "223",
@@ -347,7 +347,7 @@
     "nome": "GANCHO DE BAMBU/METAL C/2UN HOUSE",
     "categoria": "UTENSILIOS",
     "preco": 5.99,
-    "estoque": "-2,00 un"
+    "estoque": "-4,00 un"
   },
   {
     "codigo": "308",
@@ -361,7 +361,7 @@
     "nome": "COPO TERMICO 240ML C/20UN TOTALPLAST",
     "categoria": "DESCARTAVEIS",
     "preco": 6.99,
-    "estoque": "28,00 un"
+    "estoque": "27,00 un"
   },
   {
     "codigo": "313",
@@ -382,7 +382,7 @@
     "nome": "FITA ADESIVA 18X50M EUROCEL",
     "categoria": "UTENSILIOS",
     "preco": 3.99,
-    "estoque": "-10,00 un"
+    "estoque": "-20,00 un"
   },
   {
     "codigo": "317",
@@ -431,7 +431,7 @@
     "nome": "SACOLA UNIDADE GRANDE",
     "categoria": "SACO LIXO",
     "preco": 0.5,
-    "estoque": "-38,00 un"
+    "estoque": "-41,00 un"
   },
   {
     "codigo": "335",
@@ -522,7 +522,7 @@
     "nome": "POTE RED.145 C/TAMPA C/24UN PRAFESTA",
     "categoria": "DESCARTAVEIS",
     "preco": 15,
-    "estoque": "24,00 un"
+    "estoque": "22,00 un"
   },
   {
     "codigo": "372",
@@ -711,7 +711,7 @@
     "nome": "POTE REDONDO 250ML C/TAMPA C/24UN PRAFESTA",
     "categoria": "DESCARTAVEIS",
     "preco": 19.99,
-    "estoque": "12,00 un"
+    "estoque": "8,00 un"
   },
   {
     "codigo": "445",
@@ -774,7 +774,7 @@
     "nome": "BLOCO P/CX ACOPLADA LAVANDA 50G PANTANAL",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 9.99,
-    "estoque": "-5,00 un"
+    "estoque": "-10,00 un"
   },
   {
     "codigo": "500",
@@ -851,7 +851,7 @@
     "nome": "GARRAFA PE QUADRADA 500ML C/10UN MALUGER",
     "categoria": "Embalagem",
     "preco": 13,
-    "estoque": "-33,00 un"
+    "estoque": "-34,00 un"
   },
   {
     "codigo": "554",
@@ -872,7 +872,7 @@
     "nome": "KIT PA E VASSOURA 31CM CLINK MAX",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 10,
-    "estoque": "-6,00 un"
+    "estoque": "-12,00 un"
   },
   {
     "codigo": "558",
@@ -956,7 +956,7 @@
     "nome": "RODO DE PIA 18CM C/2 CLINK",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 9.99,
-    "estoque": "-7,00 un"
+    "estoque": "-13,00 un"
   },
   {
     "codigo": "579",
@@ -970,7 +970,7 @@
     "nome": "COLA VINIL P/PVC 17G GARIN",
     "categoria": "UTENSILIOS",
     "preco": 14.99,
-    "estoque": "-4,00 un"
+    "estoque": "-8,00 un"
   },
   {
     "codigo": "590",
@@ -1082,7 +1082,7 @@
     "nome": "TOP LIXO PRETO 15L C/60UN PACK LIXO",
     "categoria": "SACO LIXO",
     "preco": 17.99,
-    "estoque": "61,00 un"
+    "estoque": "93,00 un"
   },
   {
     "codigo": "637",
@@ -1278,7 +1278,7 @@
     "nome": "D12 220ML FOLHA DE ALUMINIO MOLDADA C/10UN WYDA",
     "categoria": "Embalagem",
     "preco": 7.6,
-    "estoque": "-49,00 un"
+    "estoque": "-53,00 un"
   },
   {
     "codigo": "716",
@@ -1439,7 +1439,7 @@
     "nome": "KIT GARFO E FACA MASTER C/25 PRAFESTA",
     "categoria": "DESCARTAVEIS",
     "preco": 21,
-    "estoque": "8,00 un"
+    "estoque": "7,00 un"
   },
   {
     "codigo": "785",
@@ -1677,7 +1677,7 @@
     "nome": "AGUA SANITARIA DACLOR 2L",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 8.8,
-    "estoque": "-2,00 un"
+    "estoque": "5,00 un"
   },
   {
     "codigo": "875",
@@ -1740,7 +1740,7 @@
     "nome": "GUARDANAPO DE PAPEL 30X31CM C/100UN LUXO PLUMA",
     "categoria": "DESCARTAVEIS",
     "preco": 7.75,
-    "estoque": "95,00 un"
+    "estoque": "93,00 un"
   },
   {
     "codigo": "900",
@@ -1817,7 +1817,7 @@
     "nome": "DESINFETANTE MISTERIO ARABE 2L SANOL",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 8.5,
-    "estoque": "-4,00 un"
+    "estoque": "-8,00 un"
   },
   {
     "codigo": "927",
@@ -1929,7 +1929,7 @@
     "nome": "GANCHOS C/2UN MONALIZA",
     "categoria": "UTENSILIOS",
     "preco": 8,
-    "estoque": "-4,00 un"
+    "estoque": "-8,00 un"
   },
   {
     "codigo": "0017",
@@ -2160,7 +2160,7 @@
     "nome": "FITA ADESIVA 45MMX40M MARROM",
     "categoria": "PAPELARIA",
     "preco": 4.99,
-    "estoque": "-1,00 un"
+    "estoque": "100,00 un"
   },
   {
     "codigo": "1069",
@@ -2174,7 +2174,7 @@
     "nome": "GANCHO DE PORTA C/1UN",
     "categoria": "UTENSILIOS",
     "preco": 8,
-    "estoque": "-4,00 un"
+    "estoque": "-8,00 un"
   },
   {
     "codigo": "1079",
@@ -2328,7 +2328,7 @@
     "nome": "FIBRA BRANCA LIMP. LEVE BETTANIN",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 3,
-    "estoque": "7,00 un"
+    "estoque": "4,00 un"
   },
   {
     "codigo": "1151",
@@ -2475,7 +2475,7 @@
     "nome": "GANCHO DUPLO C/1UN",
     "categoria": "UTENSILIOS",
     "preco": 4,
-    "estoque": "-6,00 un"
+    "estoque": "-12,00 un"
   },
   {
     "codigo": "1275",
@@ -2825,7 +2825,7 @@
     "nome": "APULVERIZADOR UNILUK 500ML C/ BICO ABRE-FECH",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 10,
-    "estoque": "-2,00 un"
+    "estoque": "-4,00 un"
   },
   {
     "codigo": "1463",
@@ -2958,7 +2958,7 @@
     "nome": "ACCESSORIOS P/CORTINAS SANTONE",
     "categoria": "UTENSILIOS",
     "preco": 35,
-    "estoque": "-4,00 un"
+    "estoque": "-8,00 un"
   },
   {
     "codigo": "1540",
@@ -3217,7 +3217,7 @@
     "nome": "COPO DESCARTAVEL TRANSPARENTE 250ML C/100UN TOTAL PLAST",
     "categoria": "DESCARTAVEIS",
     "preco": 13.5,
-    "estoque": "14,00 un"
+    "estoque": "13,00 un"
   },
   {
     "codigo": "1778",
@@ -3315,14 +3315,14 @@
     "nome": "TOP LIXO BRANCO 15L C/60UN PACK LIXO",
     "categoria": "SACO LIXO",
     "preco": 17.99,
-    "estoque": "76,00 un"
+    "estoque": "120,00 un"
   },
   {
     "codigo": "1854",
     "nome": "TOP LIXO BRANCO 30L C/30UN PACK LIXO",
     "categoria": "SACO LIXO",
     "preco": 17.99,
-    "estoque": "10,00 un"
+    "estoque": "6,00 un"
   },
   {
     "codigo": "1885",
@@ -3581,7 +3581,7 @@
     "nome": "COPO DESCARTAVEL 770ML C/25UN ULTRA",
     "categoria": "DESCARTAVEIS",
     "preco": 16.99,
-    "estoque": "18,00 un"
+    "estoque": "51,00 un"
   },
   {
     "codigo": "2072",
@@ -3826,7 +3826,7 @@
     "nome": "TOP LIXO PRETO 30L C/30UN PACK LIXO",
     "categoria": "SACO LIXO",
     "preco": 17.99,
-    "estoque": "76,00 un"
+    "estoque": "116,00 un"
   },
   {
     "codigo": "2302",
@@ -3994,7 +3994,7 @@
     "nome": "POTE E TAMPA RET.350ML C/24UN PRAFESTA",
     "categoria": "DESCARTAVEIS",
     "preco": 32.99,
-    "estoque": "-1,00 un"
+    "estoque": "-2,00 un"
   },
   {
     "codigo": "2412",
@@ -4295,7 +4295,7 @@
     "nome": "GARFO SOBREMESA CRISTAL C/50UN ELITE",
     "categoria": "DESCARTAVEIS",
     "preco": 3.99,
-    "estoque": "-25,00 un"
+    "estoque": "-31,00 un"
   },
   {
     "codigo": "2785",
@@ -4477,7 +4477,7 @@
     "nome": "UTLIZADO",
     "categoria": "UTENSILIOS",
     "preco": 5.99,
-    "estoque": "-4,00 un"
+    "estoque": "-8,00 un"
   },
   {
     "codigo": "2861",
@@ -4610,7 +4610,7 @@
     "nome": "PRATO QUADRADO 150MM CRISTAL C/10UN",
     "categoria": "DESCARTAVEIS",
     "preco": 7.99,
-    "estoque": "-53,00 un"
+    "estoque": "-83,00 un"
   },
   {
     "codigo": "2957",
@@ -4757,7 +4757,7 @@
     "nome": "COPO TERMICO 180ML C/25UN ULTRA",
     "categoria": "DESCARTAVEIS",
     "preco": 7.99,
-    "estoque": "29,00 un"
+    "estoque": "26,00 un"
   },
   {
     "codigo": "3051",
@@ -5422,7 +5422,7 @@
     "nome": "CUMBUCA 15 QUALITY LINE C/10UN PRAFESTA",
     "categoria": "DESCARTAVEIS",
     "preco": 3.5,
-    "estoque": "81,00 un"
+    "estoque": "76,00 un"
   },
   {
     "codigo": "4434",
@@ -5478,7 +5478,7 @@
     "nome": "D56 B0LO E TORTA ROMA MEDIA B BRANCA",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 22,
-    "estoque": "-45,00 un"
+    "estoque": "-81,00 un"
   },
   {
     "codigo": "5383",
@@ -5513,7 +5513,7 @@
     "nome": "TESOURA MULTIUSO 9,5 PRATIKA",
     "categoria": "UTENSILIOS",
     "preco": 15,
-    "estoque": "-4,00 un"
+    "estoque": "-8,00 un"
   },
   {
     "codigo": "6087",
@@ -5982,14 +5982,14 @@
     "nome": "COPO DESCARTAVEL TRANSPARENTE 300ML C/100UN ULTRA PP",
     "categoria": "DESCARTAVEIS",
     "preco": 16.5,
-    "estoque": "10,00 un"
+    "estoque": "9,00 un"
   },
   {
     "codigo": "9039",
     "nome": "GARRAFA PLASTICO 600ML LARANJA NEON",
     "categoria": "UTENSILIOS",
     "preco": 11.5,
-    "estoque": "-2,00 un"
+    "estoque": "-4,00 un"
   },
   {
     "codigo": "9063",
@@ -6010,7 +6010,7 @@
     "nome": "PANEIRA DE PLASTICO 16CM",
     "categoria": "UTENSILIOS",
     "preco": 5,
-    "estoque": "-6,00 un"
+    "estoque": "-12,00 un"
   },
   {
     "codigo": "9112",
@@ -6703,7 +6703,7 @@
     "nome": "GANCHOS VENTOSA C/2UN",
     "categoria": "UTENSILIOS",
     "preco": 7.9,
-    "estoque": "-2,00 un"
+    "estoque": "-4,00 un"
   },
   {
     "codigo": "129012",
@@ -6724,7 +6724,7 @@
     "nome": "KIT GANCHOS C/3UN",
     "categoria": "UTENSILIOS",
     "preco": 8,
-    "estoque": "-15,00 un"
+    "estoque": "-27,00 un"
   },
   {
     "codigo": "129015",
@@ -6752,21 +6752,21 @@
     "nome": "GANCHOS C/4UN",
     "categoria": "UTENSILIOS",
     "preco": 8.5,
-    "estoque": "-6,00 un"
+    "estoque": "-12,00 un"
   },
   {
     "codigo": "129019",
     "nome": "GANCHOS C/3UN",
     "categoria": "UTENSILIOS",
     "preco": 8,
-    "estoque": "-2,00 un"
+    "estoque": "-4,00 un"
   },
   {
     "codigo": "129021",
     "nome": "GANCHOS C/9UN",
     "categoria": "UTENSILIOS",
     "preco": 10,
-    "estoque": "-2,00 un"
+    "estoque": "-4,00 un"
   },
   {
     "codigo": "129022",
@@ -6780,7 +6780,7 @@
     "nome": "GANCHOS C/5UN",
     "categoria": "UTENSILIOS",
     "preco": 8,
-    "estoque": "-2,00 un"
+    "estoque": "-4,00 un"
   },
   {
     "codigo": "129024",
@@ -6815,7 +6815,7 @@
     "nome": "PROTETOR DE FELTRO C/8UN",
     "categoria": "UTENSILIOS",
     "preco": 7.5,
-    "estoque": "-2,00 un"
+    "estoque": "-3,00 un"
   },
   {
     "codigo": "129029",
@@ -6836,14 +6836,14 @@
     "nome": "ESTILETE C/ACABEMENTO PLAST.15CM",
     "categoria": "UTENSILIOS",
     "preco": 5,
-    "estoque": "-6,00 un"
+    "estoque": "-9,00 un"
   },
   {
     "codigo": "129032",
     "nome": "ESTILETES C/3UN MONALIZA",
     "categoria": "UTENSILIOS",
     "preco": 8.99,
-    "estoque": "-4,00 un"
+    "estoque": "-6,00 un"
   },
   {
     "codigo": "129033",
@@ -6878,21 +6878,21 @@
     "nome": "ESTILETE LAMINAS 18MM T/HOUSE",
     "categoria": "UTENSILIOS",
     "preco": 5,
-    "estoque": "-6,00 un"
+    "estoque": "-9,00 un"
   },
   {
     "codigo": "129038",
     "nome": "CHAVE DE VENDA E ESTILETE",
     "categoria": "UTENSILIOS",
     "preco": 12.5,
-    "estoque": "-4,00 un"
+    "estoque": "-6,00 un"
   },
   {
     "codigo": "129039",
     "nome": "P. PROTETOR DE PVC MAXIMO",
     "categoria": "UTENSILIOS",
     "preco": 9,
-    "estoque": "-2,00 un"
+    "estoque": "-3,00 un"
   },
   {
     "codigo": "129040",
@@ -6920,7 +6920,7 @@
     "nome": "ACENDEDOR ELETRONICO MONALIZA",
     "categoria": "UTENSILIOS",
     "preco": 14,
-    "estoque": "-4,00 un"
+    "estoque": "-6,00 un"
   },
   {
     "codigo": "129044",
@@ -6969,7 +6969,7 @@
     "nome": "PINCEL DE SILICONE",
     "categoria": "UTENSILIOS",
     "preco": 6,
-    "estoque": "-6,00 un"
+    "estoque": "-9,00 un"
   },
   {
     "codigo": "129051",
@@ -7039,7 +7039,7 @@
     "nome": "KIT VINHO CLINK",
     "categoria": "UTENSILIOS",
     "preco": 14.9,
-    "estoque": "-4,00 un"
+    "estoque": "-6,00 un"
   },
   {
     "codigo": "129062",
@@ -7060,7 +7060,7 @@
     "nome": "PANEIRA DE INOX 10CM",
     "categoria": "UTENSILIOS",
     "preco": 8,
-    "estoque": "-2,00 un"
+    "estoque": "-3,00 un"
   },
   {
     "codigo": "129065",
@@ -7123,7 +7123,7 @@
     "nome": "PLASTIC COATED IRON HOOK",
     "categoria": "UTENSILIOS",
     "preco": 9,
-    "estoque": "-4,00 un"
+    "estoque": "-6,00 un"
   },
   {
     "codigo": "129074",
@@ -7144,7 +7144,7 @@
     "nome": "BATERIA ALCALINA 12V",
     "categoria": "UTENSILIOS",
     "preco": 4.5,
-    "estoque": "-8,00 un"
+    "estoque": "-12,00 un"
   },
   {
     "codigo": "129077",
@@ -7158,7 +7158,7 @@
     "nome": "PILHA ALFACELL",
     "categoria": "UTENSILIOS",
     "preco": 2.5,
-    "estoque": "-2,00 un"
+    "estoque": "-3,00 un"
   },
   {
     "codigo": "129079",
@@ -7256,7 +7256,7 @@
     "nome": "PORTA DETERGENTE 550ML C/SPONJA OVAL PRETO",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 11,
-    "estoque": "-2,00 un"
+    "estoque": "-4,00 un"
   },
   {
     "codigo": "129093",
@@ -7522,7 +7522,7 @@
     "nome": "TotalPlast 20,8cm",
     "categoria": "Embalagem",
     "preco": 3.5,
-    "estoque": "-83,00 un"
+    "estoque": "-93,00 un"
   },
   {
     "codigo": "7893595170108",
@@ -7627,7 +7627,7 @@
     "nome": "JOGO DE CHAVE FENDE E PHILIPS C/4UN",
     "categoria": "Outras",
     "preco": 10,
-    "estoque": "-2,00 un"
+    "estoque": "-3,00 un"
   },
   {
     "codigo": "7893595170129",
