@@ -113,18 +113,43 @@ function highlightMatch(text, query) {
   var nq   = normalizar(query);
   if (!nq) return text;
   var words = nq.split(/\s+/).filter(Boolean);
-  var highlighted = text;
+
+  // 1) Acha, no texto ORIGINAL (sem marcação), onde cada palavra bate.
+  //    Guardamos só posições — nada de HTML ainda.
+  var ranges = [];
   words.forEach(function(w) {
     if (!w) return;
     var idx = norm.indexOf(w);
-    if (idx >= 0) {
-      highlighted =
-        highlighted.substring(0, idx) +
-        '<span class="sug-match">' + highlighted.substring(idx, idx + w.length) + '</span>' +
-        highlighted.substring(idx + w.length);
-    }
+    if (idx >= 0) ranges.push({ start: idx, end: idx + w.length });
   });
-  return highlighted;
+  if (!ranges.length) return text;
+
+  // 2) Ordena e funde ranges sobrepostos (ex: duas palavras da busca
+  //    que caem uma dentro da outra no texto), pra nunca aninhar <span>.
+  ranges.sort(function(a, b) { return a.start - b.start; });
+  var merged = [ranges[0]];
+  for (var i = 1; i < ranges.length; i++) {
+    var last = merged[merged.length - 1];
+    if (ranges[i].start <= last.end) {
+      last.end = Math.max(last.end, ranges[i].end);
+    } else {
+      merged.push(ranges[i]);
+    }
+  }
+
+  // 3) Monta o HTML final numa única passada da esquerda pra direita,
+  //    sempre usando os índices do texto ORIGINAL — nunca re-buscando
+  //    dentro de uma string que já foi alterada. É isso que evita o
+  //    bug de cortar no meio de uma tag já inserida.
+  var out = '';
+  var cursor = 0;
+  merged.forEach(function(r) {
+    out += text.substring(cursor, r.start);
+    out += '<span class="sug-match">' + text.substring(r.start, r.end) + '</span>';
+    cursor = r.end;
+  });
+  out += text.substring(cursor);
+  return out;
 }
 
 function buscaFuzzy(query) {
