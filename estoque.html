@@ -45,17 +45,26 @@
 
 html, body { touch-action: manipulation; -ms-touch-action: manipulation; }
 
+/* FIX: barra preta embaixo no iPhone (Safari) — com viewport-fit=cover,
+   a faixa da safe-area (home indicator) não fica coberta pelo fundo do
+   body quando ele usa só 100vh; o WebKit pinta essa faixa com o preto
+   padrão dele. Pintando o <html> com a mesma cor do fundo e trocando
+   100vh por 100dvh (altura real visível) resolve os dois problemas. */
+html { background: var(--surface); }
+
 body {
   font-family: 'Inter', -apple-system, sans-serif;
   background: var(--surface);
   color: var(--text1);
   min-height: 100vh;
+  min-height: 100dvh;
   -webkit-font-smoothing: antialiased;
 }
 
 /* LOGIN */
 #login {
   min-height: 100vh;
+  min-height: 100dvh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -108,7 +117,7 @@ body {
 }
 
 /* APP */
-#app { display: none; flex-direction: column; min-height: 100vh; }
+#app { display: none; flex-direction: column; min-height: 100vh; min-height: 100dvh; background: var(--surface); }
 
 /* HEADER */
 header {
