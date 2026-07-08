@@ -14,6 +14,15 @@
   --green-glow: rgba(29,145,71,0.25);
   --orange: #ea580c;
   --orange-soft: rgba(234,88,12,0.1);
+  --purple: #7c3aed;
+  --purple-soft: rgba(124,58,237,0.1);
+  --pink: #db2777;
+  --pink-soft: rgba(219,39,119,0.1);
+  --teal: #0d9488;
+  --teal-soft: rgba(13,148,136,0.1);
+  --amber: #b45309;
+  --amber-soft: rgba(180,83,9,0.1);
+  --gray-soft: rgba(110,110,115,0.1);
   --radius: 12px;
   --radius-lg: 18px;
   --nav-h: 52px;
@@ -110,17 +119,83 @@ img { display:block; }
 .search-inp { width:100%; padding:12px 16px 12px 44px; background:var(--surface); border:1px solid var(--border); border-radius:12px; color:var(--text); font-family:var(--font); font-size:.9rem; outline:none; transition:border-color .2s, box-shadow .2s; }
 .search-inp:focus { border-color:var(--blue); box-shadow:0 0 0 3px rgba(0,113,227,0.15); }
 .search-inp::placeholder { color:var(--text3); }
-.search-suggestions { position:absolute; top:calc(100% + 6px); left:0; right:0; z-index:200; background:var(--surface); border:1px solid var(--border); border-radius:12px; box-shadow:0 12px 40px rgba(0,0,0,.12); overflow:hidden; display:none; }
-.search-suggestions.on { display:block; }
-.search-sug-item { display:flex; align-items:center; gap:10px; padding:10px 14px; cursor:pointer; transition:background .12s; font-size:.875rem; color:var(--text2); }
-.search-sug-item:hover { background:rgba(0,0,0,.04); color:var(--text); }
-[data-theme="dark"] .search-sug-item:hover { background:rgba(255,255,255,.06); }
-.search-sug-item .sug-ico { font-size:.9rem; flex-shrink:0; }
-.search-sug-item .sug-name { flex:1; color:var(--text); font-weight:500; font-size:.8375rem; }
-.search-sug-item .sug-cat { font-size:.7rem; color:var(--text3); white-space:nowrap; }
-.sug-section-label { font-size:.6875rem; color:var(--text3); padding:6px 14px 4px; text-transform:uppercase; letter-spacing:.06em; font-weight:600; border-top:1px solid var(--border); background:rgba(0,0,0,.02); }
-[data-theme="dark"] .sug-section-label { background:rgba(255,255,255,.02); }
+.search-suggestions {
+  position:absolute; top:calc(100% + 6px); left:0; right:0; z-index:200;
+  background:var(--surface); border:1px solid var(--border); border-radius:14px;
+  box-shadow:0 16px 44px rgba(0,0,0,.14), 0 2px 8px rgba(0,0,0,.05);
+  overflow:hidden; padding:6px;
+  opacity:0; visibility:hidden; pointer-events:none;
+  transform:translateY(-6px) scale(.98);
+  transition:opacity .18s var(--ease), transform .18s var(--ease), visibility 0s linear .18s;
+}
+.search-suggestions.on {
+  opacity:1; visibility:visible; pointer-events:auto;
+  transform:translateY(0) scale(1);
+  transition:opacity .2s var(--ease), transform .2s var(--ease), visibility 0s linear 0s;
+}
+.search-sug-item {
+  display:flex; align-items:center; gap:10px; padding:9px 10px; cursor:pointer;
+  border-radius:10px; font-size:.875rem; color:var(--text2);
+  transition:background .15s var(--ease), transform .15s var(--ease);
+  opacity:0; transform:translateY(-4px);
+  animation:sugItemIn .28s var(--ease) forwards;
+}
+.search-suggestions.on .search-sug-item:nth-child(1) { animation-delay:.02s; }
+.search-suggestions.on .search-sug-item:nth-child(2) { animation-delay:.05s; }
+.search-suggestions.on .search-sug-item:nth-child(3) { animation-delay:.08s; }
+.search-suggestions.on .search-sug-item:nth-child(4) { animation-delay:.11s; }
+.search-suggestions.on .search-sug-item:nth-child(5) { animation-delay:.14s; }
+.search-suggestions.on .search-sug-item:nth-child(6) { animation-delay:.17s; }
+.search-suggestions.on .search-sug-item:nth-child(7) { animation-delay:.2s; }
+.search-suggestions.on .search-sug-item:nth-child(8) { animation-delay:.23s; }
+@keyframes sugItemIn { to { opacity:1; transform:translateY(0); } }
+.search-sug-item:hover { background:rgba(0,0,0,.045); color:var(--text); transform:translateX(2px); }
+[data-theme="dark"] .search-sug-item:hover { background:rgba(255,255,255,.07); }
+.search-sug-item + .search-sug-item { margin-top:1px; }
+
+/* ícone de categoria em chip circular colorido */
+.sug-ico-chip {
+  flex-shrink:0; width:30px; height:30px; border-radius:9px;
+  display:flex; align-items:center; justify-content:center;
+  font-size:.95rem; background:var(--blue-soft);
+}
+.sug-ico-chip.c-caixas     { background:var(--blue-soft); }
+.sug-ico-chip.c-sacolas    { background:var(--orange-soft); }
+.sug-ico-chip.c-plastico   { background:var(--teal-soft); }
+.sug-ico-chip.c-festa      { background:var(--pink-soft); }
+.sug-ico-chip.c-limpeza    { background:rgba(29,145,71,.1); }
+.sug-ico-chip.c-higiene    { background:var(--purple-soft); }
+.sug-ico-chip.c-utilidades { background:var(--amber-soft); }
+.sug-ico-chip.c-diversos   { background:var(--gray-soft); }
+.sug-ico-chip.c-parecido   { background:var(--gray-soft); filter:grayscale(.15); }
+
+.search-sug-item .sug-name {
+  flex:1; min-width:0; color:var(--text); font-weight:500; font-size:.8375rem;
+  white-space:nowrap; overflow:hidden; text-overflow:ellipsis;
+}
+
+/* preço como pill verde */
+.sug-price {
+  flex-shrink:0; white-space:nowrap; font-size:.7rem; font-weight:700;
+  color:var(--green); background:rgba(29,145,71,.1);
+  padding:4px 9px; border-radius:99px;
+}
+
+.sug-section-label {
+  font-size:.6875rem; color:var(--text3); padding:9px 10px 5px;
+  text-transform:uppercase; letter-spacing:.06em; font-weight:600;
+  margin-top:4px; border-top:1px solid var(--border);
+  display:flex; align-items:center; gap:5px;
+}
+[data-theme="dark"] .sug-section-label { border-top-color:var(--border); }
 .sug-match { color:var(--blue); font-weight:600; }
+
+.sug-ver-todos {
+  text-align:center; padding:10px; font-size:.78rem; font-weight:600;
+  color:var(--blue); cursor:pointer; border-radius:10px; margin-top:2px;
+  background:var(--blue-soft); transition:background .15s;
+}
+.sug-ver-todos:hover { background:rgba(0,113,227,.18); }
 
 .filter-tabs { display:flex; gap:6px; justify-content:center; flex-wrap:wrap; margin-bottom:.75rem; }
 .ftab { display:flex; align-items:center; gap:5px; padding:7px 14px; border-radius:99px; font-size:.8rem; font-weight:500; color:var(--text3); background:var(--surface); border:1px solid var(--border); transition:all .15s; cursor:pointer; white-space:nowrap; }
