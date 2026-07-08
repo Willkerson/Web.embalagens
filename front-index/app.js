@@ -3,11 +3,13 @@
 // ─────────────────────────────────────────────────────────────
 async function carregarProdutos() {
   try {
-    const [respProdutos, respImagens] = await Promise.all([
+    const [respProdutos, respImagens, respVisibilidade] = await Promise.all([
       fetch('front-index/produtos.json'),
-      // produto-imagens.json é opcional: se ainda não existir ou der erro,
-      // o site continua funcionando normalmente, só sem foto extra.
-      fetch('front-index/produto-imagens.json').catch(function () { return null; })
+      // produto-imagens.json e produto-visibilidade.json são opcionais: se
+      // ainda não existirem ou derem erro, o site continua funcionando
+      // normalmente (sem foto extra / sem nada desativado).
+      fetch('front-index/produto-imagens.json').catch(function () { return null; }),
+      fetch('front-index/produto-visibilidade.json').catch(function () { return null; })
     ]);
 
     if (!respProdutos.ok) {
@@ -22,6 +24,15 @@ async function carregarProdutos() {
         imagens = await respImagens.json();
       } catch (e) {
         console.warn('produto-imagens.json inválido, seguindo sem fotos extras.', e);
+      }
+    }
+
+    let visibilidade = {};
+    if (respVisibilidade && respVisibilidade.ok) {
+      try {
+        visibilidade = await respVisibilidade.json();
+      } catch (e) {
+        console.warn('produto-visibilidade.json inválido, seguindo sem ocultar nada.', e);
       }
     }
 
@@ -46,6 +57,15 @@ async function carregarProdutos() {
           p.imagem  = img.imagem  || img.url || '';
           p.imgmode = img.imgmode || 'thumbnail';
         }
+      }
+
+      // ── Produto desativado da loja (produto-visibilidade.json) ──
+      // Reaproveita o mesmo campo "oculto" que o restante do site já
+      // respeita pra não mostrar no catálogo — mas o estoque.html não usa
+      // esse arquivo pra nada, então o produto continua aparecendo lá
+      // normalmente pro controle de estoque.
+      if (visibilidade[p.codigo] || visibilidade[p.id]) {
+        p.oculto = true;
       }
     });
 
