@@ -322,6 +322,27 @@ header {
 }
 .qtd-input:focus { border-color: var(--blue); }
 .action-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 12px; }
+
+/* TOGGLE: vender no site */
+.vis-row {
+  display: flex; align-items: center; justify-content: space-between;
+  background: var(--surface); border: 1px solid var(--border);
+  border-radius: 12px; padding: 12px 14px; margin-bottom: 18px; cursor: pointer;
+}
+.vis-label { font-size: 13.5px; font-weight: 700; color: var(--text1); }
+.vis-sub { font-size: 11.5px; color: var(--text2); margin-top: 1px; }
+.vis-switch {
+  width: 44px; height: 26px; border-radius: 13px; background: var(--ok);
+  position: relative; flex-shrink: 0; transition: background .2s;
+}
+.vis-switch.off { background: #CBD5E1; }
+.vis-knob {
+  width: 22px; height: 22px; border-radius: 50%; background: #fff;
+  position: absolute; top: 2px; left: 2px;
+  transition: left .2s; box-shadow: 0 1px 3px rgba(0,0,0,.3);
+}
+.vis-switch.off .vis-knob { left: 20px; }
+
 .btn-entrada, .btn-saida {
   padding: 15px; border: none; border-radius: 12px;
   font-size: 15px; font-weight: 700; font-family: inherit; cursor: pointer;
@@ -332,12 +353,31 @@ header {
 .btn-entrada { background: var(--ok-bg); color: var(--ok-dk); }
 .btn-saida   { background: var(--crit-bg); color: var(--crit-dk); }
 
-/* COMPLEMENTAR ESTOQUE NEGATIVO — só uma linha discreta, sem caixa/botão extra */
-.comp-hint-line {
-  font-size: 12.5px; color: var(--neg-dk); background: var(--neg-bg);
-  border-radius: 8px; padding: 8px 12px; margin: -8px 0 16px; line-height: 1.4;
+/* POSITIVAR ESTOQUE NEGATIVO — pergunta a quantidade FINAL desejada e
+   calcula sozinho a entrada necessária pra chegar lá */
+.comp-box {
+  background: var(--neg-bg); border: 1.5px solid var(--neg);
+  border-radius: 14px; padding: 14px; margin-bottom: 16px;
 }
-.comp-hint-line strong { font-weight: 700; }
+.comp-pergunta { font-size: 13px; font-weight: 700; color: var(--neg-dk); margin-bottom: 2px; }
+.comp-atual { font-size: 12px; color: var(--neg-dk); opacity: .85; margin-bottom: 10px; }
+.comp-final-row { display: flex; gap: 8px; }
+.comp-final-row input {
+  flex: 1; padding: 12px; border: 1.5px solid var(--neg); border-radius: 10px;
+  font-size: 16px; font-weight: 700; text-align: center; color: var(--text1);
+  font-family: inherit; background: #fff;
+}
+.comp-final-row input:focus { outline: none; border-color: var(--blue); }
+.comp-btn-confirmar {
+  padding: 0 18px; background: var(--neg); color: #fff; border: none;
+  border-radius: 10px; font-size: 14px; font-weight: 700; font-family: inherit;
+  cursor: pointer; white-space: nowrap;
+}
+.comp-btn-confirmar:active { opacity: .8; }
+.comp-resultado-txt {
+  font-size: 12px; color: var(--neg-dk); margin-top: 8px; line-height: 1.4; min-height: 16px;
+}
+.comp-resultado-txt strong { font-size: 13px; }
 
 .btn-fechar {
   width: 100%; padding: 13px; border: 1.5px solid var(--border);
@@ -581,15 +621,30 @@ header {
       <div class="stat-box-unit">por unidade</div>
     </div>
   </div>
+  <div class="vis-row" id="visRow" onclick="alternarVisibilidade()">
+    <div class="vis-info">
+      <div class="vis-label">Vender no site</div>
+      <div class="vis-sub" id="visSub">Aparece no catálogo pro cliente</div>
+    </div>
+    <div class="vis-switch" id="visSwitch"><div class="vis-knob"></div></div>
+  </div>
+  <!-- Só aparece quando o estoque do produto está negativo -->
+  <div class="comp-box" id="compBox" style="display:none">
+    <div class="comp-pergunta">📦 Chegou estoque — qual a quantidade final?</div>
+    <div class="comp-atual">Estoque atual: <strong id="compAtualVal">-10</strong></div>
+    <div class="comp-final-row">
+      <input type="number" id="compFinal" min="0" placeholder="Ex: 20" oninput="atualizarComplemento()">
+      <button class="comp-btn-confirmar" onclick="confirmarPositivar()">✓ Confirmar</button>
+    </div>
+    <div class="comp-resultado-txt" id="compResultadoTxt">Digite a quantidade final (a contagem que ficou no lugar).</div>
+  </div>
   <div class="qtd-section">
     <label>Quantidade</label>
     <div class="qtd-row">
       <button class="qtd-btn" onclick="ajustarQtd(-1)">−</button>
-      <input class="qtd-input" id="qtd" type="number" value="1" min="1" max="9999" oninput="atualizarComplemento()">
+      <input class="qtd-input" id="qtd" type="number" value="1" min="1" max="9999">
       <button class="qtd-btn" onclick="ajustarQtd(1)">+</button>
     </div>
-    <!-- Só aparece quando o estoque do produto está negativo -->
-    <div class="comp-hint-line" id="compHint" style="display:none"></div>
   </div>
   <div class="action-grid">
     <button class="btn-entrada" onclick="addCart('entrada')">
@@ -652,6 +707,8 @@ document.addEventListener('touchend', e => {
 
 // ── CONSTANTES ──
 const REPO      = "Willkerson/Automacao-ConnectPlug";
+const REPO_LOJA = "Willkerson/Web.embalagens";
+const VIS_PATH  = "front-index/produto-visibilidade.json";
 const WORKFLOW  = "movimentar.yml";
 const BRANCH    = "main";
 const DELAY_MS  = 5000;
@@ -659,11 +716,11 @@ const CART_KEY  = "cia_carrinho";
 const SENHA_HASH = "158a323a7ba44870f23d96f1516dd70aa48e9a72db4ebb026b0a89e212a208ab";
 
 // URLs limpas como constantes — sem ?ref= para PUT, com ?ref= para GET
-function apiUrl(path) {
-  return `https://api.github.com/repos/${REPO}/contents/${path}`;
+function apiUrl(path, repo) {
+  return `https://api.github.com/repos/${repo || REPO}/contents/${path}`;
 }
-function apiUrlGet(path) {
-  return `${apiUrl(path)}?ref=${BRANCH}`;
+function apiUrlGet(path, repo) {
+  return `${apiUrl(path, repo)}?ref=${BRANCH}`;
 }
 
 async function hashSenha(str) {
@@ -695,6 +752,7 @@ async function logar() {
   document.getElementById("login").style.display = "none";
   document.getElementById("app").style.display   = "flex";
   carregarProdutos();
+  carregarVisibilidade();
 }
 
 function esquecerToken() {
@@ -710,6 +768,7 @@ document.addEventListener("DOMContentLoaded", () => {
     document.getElementById("login").style.display = "none";
     document.getElementById("app").style.display   = "flex";
     carregarProdutos();
+    carregarVisibilidade();
   }
   document.getElementById("senhaInput").addEventListener("keydown", e => {
     if (e.key === "Enter") logar();
@@ -737,6 +796,7 @@ function classeEst(val) {
 
 // ── DADOS ──
 let produtos    = [];
+let visibilidade = {}; // { "codigo": true } = produto desativado da loja online
 let carrinho    = carregarCarrinhoLocal();
 let atual       = null;
 let filtroAtivo = "todos";
@@ -771,6 +831,16 @@ function carregarProdutos() {
           <p>Erro ao carregar produtos<br><small style="color:#CBD5E1">${err.message}</small></p>
         </div>`;
     });
+}
+
+// Lê front-index/produto-visibilidade.json — leitura pública, sem token.
+// Marca quais produtos estão desativados da loja online (mas continuam
+// aparecendo normalmente aqui no estoque).
+function carregarVisibilidade() {
+  fetch("front-index/produto-visibilidade.json?t=" + Date.now())
+    .then(r => { if (!r.ok) throw new Error("HTTP " + r.status); return r.json(); })
+    .then(data => { visibilidade = data || {}; render(); })
+    .catch(() => { visibilidade = {}; }); // arquivo pode ainda não existir — tudo bem
 }
 
 // ── RESUMO ──
@@ -821,6 +891,7 @@ function render() {
     const cat   = [p.categoria, p.subcategoria].filter(Boolean).join(" › ");
     const id    = p.codigo || p.id || "—";
     const un    = p.unidade || "un";
+    const forasite = !!visibilidade[String(p.codigo)];
     return `
       <div class="card" onclick="openProduto('${p.codigo}')">
         <div class="card-stripe stripe-${cl}"></div>
@@ -830,6 +901,7 @@ function render() {
             <div class="card-row2">
               <span class="chip chip-id">#${id}</span>
               ${cat ? `<span class="chip chip-cat">${cat}</span>` : ""}
+              ${forasite ? `<span class="chip" style="background:#F1F5F9;color:#64748B">🚫 Fora do site</span>` : ""}
             </div>
             <div class="card-preco">${preco}</div>
           </div>
@@ -855,6 +927,7 @@ function openProduto(codigo) {
     ${atual.marca ? `<span class="chip chip-cat">${atual.marca}</span>` : ""}
     ${cat ? `<span class="chip chip-cat">${cat}</span>` : ""}
   `;
+  atualizarToggleVisibilidade();
   const estoqueEl = document.getElementById("p-estoque-val");
   estoqueEl.textContent = fmtEst(atual.estoque);
   estoqueEl.className   = `stat-box-val v-${cl}`;
@@ -862,12 +935,14 @@ function openProduto(codigo) {
   document.getElementById("p-preco").textContent   = atual.preco ? `R$ ${Number(atual.preco).toFixed(2)}` : "—";
   document.getElementById("qtd").value = 1;
 
-  // ── Complementar estoque negativo (só uma linha de aviso) ──
+  // ── Positivar estoque negativo ──
   if (cl === "neg") {
-    document.getElementById("compHint").style.display = "block";
-    atualizarComplemento();
+    document.getElementById("compBox").style.display = "block";
+    document.getElementById("compAtualVal").textContent = fmtEst(atual.estoque);
+    document.getElementById("compFinal").value = "";
+    document.getElementById("compResultadoTxt").textContent = "Digite a quantidade final (a contagem que ficou no lugar).";
   } else {
-    document.getElementById("compHint").style.display = "none";
+    document.getElementById("compBox").style.display = "none";
   }
 
   document.getElementById("painel").classList.add("open");
@@ -877,29 +952,115 @@ function fecharPainel() {
   document.getElementById("painel").classList.remove("open");
   document.getElementById("overlay").classList.remove("on");
 }
+
+// ── VENDER NO SITE (visibilidade separada do produtos.json) ──
+function atualizarToggleVisibilidade() {
+  const desativado = !!visibilidade[String(atual.codigo)];
+  const sw  = document.getElementById("visSwitch");
+  const sub = document.getElementById("visSub");
+  sw.classList.toggle("off", desativado);
+  sub.textContent = desativado
+    ? "Escondido do catálogo — continua no estoque"
+    : "Aparece no catálogo pro cliente";
+}
+
+async function alternarVisibilidade() {
+  if (!atual) return;
+  const token = localStorage.getItem("gh_token");
+  if (!token) { showToast("Token não encontrado. Faça login novamente."); return; }
+
+  const codigo = String(atual.codigo);
+  const novoEstado = !visibilidade[codigo]; // true = desativado (fora do site)
+
+  const sw = document.getElementById("visSwitch");
+  sw.style.opacity = ".5";
+
+  try {
+    // Relê + tenta de novo automaticamente se der conflito de sha (409)
+    let ultimoErro;
+    for (let i = 0; i < 3; i++) {
+      const atualArq = await ghGet(VIS_PATH, token, REPO_LOJA);
+      const dados = atualArq.found ? (atualArq.data || {}) : {};
+
+      if (novoEstado) dados[codigo] = true;
+      else delete dados[codigo];
+
+      try {
+        await ghPut(
+          VIS_PATH, token, dados, atualArq.sha,
+          `${novoEstado ? "desativa" : "reativa"} produto ${codigo} na loja`,
+          REPO_LOJA
+        );
+        visibilidade = dados;
+        ultimoErro = null;
+        break;
+      } catch (e) {
+        ultimoErro = e;
+        if (e.status === 409 && i < 2) continue;
+        throw e;
+      }
+    }
+    if (ultimoErro) throw ultimoErro;
+
+    atualizarToggleVisibilidade();
+    render();
+    showToast(novoEstado ? "🚫 Produto tirado do site" : "✅ Produto de volta no site");
+  } catch (e) {
+    console.error(e);
+    showToast(`❌ Erro: ${e.message}`);
+  } finally {
+    sw.style.opacity = "1";
+  }
+}
 function ajustarQtd(delta) {
   const input = document.getElementById("qtd");
   input.value = Math.max(1, Math.min(9999, (parseInt(input.value) || 1) + delta));
-  atualizarComplemento();
 }
 
-// ── COMPLEMENTAR ESTOQUE NEGATIVO ──
-// Enquanto o estoque estiver negativo, mostra uma linha simples avisando
-// o resultado final. O botão "Entrada" continua sendo o único usado —
-// ele já soma normalmente com o estoque atual (mesmo sendo negativo).
+// ── POSITIVAR ESTOQUE NEGATIVO ──
+// Em vez de pedir "quanto chegou" (o que obriga a fazer conta de cabeça
+// com o negativo), pede a quantidade FINAL desejada (a contagem física) e
+// calcula sozinho a entrada necessária pra chegar lá.
+// Ex: estoque -10, você digita 20 → sistema lança entrada de 30.
 function atualizarComplemento() {
-  const hint = document.getElementById("compHint");
-  if (!atual || classeEst(atual.estoque) !== "neg") {
-    hint.style.display = "none";
+  const txt = document.getElementById("compResultadoTxt");
+  const final = document.getElementById("compFinal").value;
+
+  if (final === "" || final === null) {
+    txt.textContent = "Digite a quantidade final (a contagem que ficou no lugar).";
     return;
   }
-  const qtd = Math.max(1, Number(document.getElementById("qtd").value) || 1);
-  const negativo  = parseEst(atual.estoque);
-  const resultado = negativo + qtd;
-  const resultadoFmt = resultado % 1 === 0 ? resultado : resultado.toFixed(2);
+  const alvo = Number(final);
+  const negativo = parseEst(atual.estoque);
+  const delta = alvo - negativo;
 
-  hint.style.display = "block";
-  hint.innerHTML = `Estoque com ${Math.abs(negativo)} negativo + ${qtd} chegando = <strong>${resultadoFmt}</strong>`;
+  if (delta <= 0) {
+    txt.innerHTML = `⚠️ Essa quantidade final é menor ou igual ao estoque atual (${fmtEst(atual.estoque)}). Aumente o valor.`;
+    return;
+  }
+  txt.innerHTML = `Vai lançar uma <strong>entrada de ${delta}</strong> pra chegar em <strong>${alvo}</strong>.`;
+}
+
+function confirmarPositivar() {
+  const final = document.getElementById("compFinal").value;
+  if (final === "" || final === null) {
+    showToast("Digite a quantidade final primeiro");
+    return;
+  }
+  const alvo = Number(final);
+  const negativo = parseEst(atual.estoque);
+  const delta = alvo - negativo;
+
+  if (delta <= 0) {
+    showToast("Quantidade final precisa ser maior que o estoque atual");
+    return;
+  }
+
+  carrinho.push({ codigo: atual.codigo, nome: atual.nome, qtd: delta, tipo: "entrada" });
+  salvarCarrinhoLocal();
+  atualizarBadge();
+  fecharPainel();
+  showToast(`Entrada de ${delta} adicionada — vai ficar ${alvo}`);
 }
 
 // ── CARRINHO ──
@@ -970,8 +1131,8 @@ function limparCarrinho() {
 }
 
 // ── HELPERS GITHUB API ──
-async function ghGet(path, token) {
-  const res = await fetch(apiUrlGet(path), {
+async function ghGet(path, token, repo) {
+  const res = await fetch(apiUrlGet(path, repo), {
     cache: "no-store",
     headers: {
       Authorization: "Bearer " + token,
@@ -989,12 +1150,12 @@ async function ghGet(path, token) {
   return { found: true, sha, data };
 }
 
-async function ghPut(path, token, content, sha, message) {
+async function ghPut(path, token, content, sha, message, repo) {
   const b64  = btoa(unescape(encodeURIComponent(JSON.stringify(content, null, 2))));
   const body = { message, content: b64, branch: BRANCH };
   if (sha) body.sha = sha;
 
-  const res = await fetch(apiUrl(path), {
+  const res = await fetch(apiUrl(path, repo), {
     method: "PUT",
     headers: {
       Authorization: "Bearer " + token,
@@ -1005,7 +1166,9 @@ async function ghPut(path, token, content, sha, message) {
   });
   if (!res.ok) {
     const e = await res.json().catch(() => ({}));
-    throw new Error(e.message || `Erro PUT ${path} (${res.status})`);
+    const erro = new Error(e.message || `Erro PUT ${path} (${res.status})`);
+    erro.status = res.status;
+    throw erro;
   }
   return res;
 }
