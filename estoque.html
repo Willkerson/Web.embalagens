@@ -501,7 +501,10 @@ header {
 /* TOAST */
 .toast {
   position: fixed; bottom: calc(28px + env(safe-area-inset-bottom, 0px)); left: 50%;
-  transform: translateX(-50%) translateY(120%);
+  /* translateY precisa cobrir a própria altura (100%) MAIS a distância
+     fixa do bottom (28px) pra sumir de vez — só 100% (ou 120%) deixava
+     uma tira do toast ainda visível colada na base da tela. */
+  transform: translateX(-50%) translateY(calc(100% + 40px));
   background: var(--text1); color: #fff;
   padding: 11px 22px; border-radius: 24px;
   font-size: 13px; font-weight: 500; z-index: 200;
@@ -1370,7 +1373,7 @@ function showToast(msg) {
   el.textContent = msg;
   el.classList.add("show");
   clearTimeout(_tt);
-  _tt = setTimeout(() => el.classList.remove("show"), 2500);
+  _tt = setTimeout(() => el.classList.remove("show"), 1800);
 }
 </script>
 
