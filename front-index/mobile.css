@@ -75,7 +75,8 @@
   }
 
   .search-sug-item .sug-name { font-size: .875rem; }
-  .search-sug-item .sug-ico  { font-size: 1.1rem; }
+  .sug-ico-chip { width: 34px; height: 34px; font-size: 1.05rem; border-radius: 10px; }
+  .sug-price { font-size: .7rem; padding: 5px 10px; }
 
   .sug-section-label {
     padding: 8px 16px 5px;
