@@ -111,6 +111,19 @@ function confirmarEEnviar() {
 
   fecharModal();
   window.open('https://wa.me/5511972999835?text=' + encodeURIComponent(msg), '_blank');
+
+  // ── Limpa o carrinho depois de enviar (sem o "confirm" que o botão
+  //    normal de limpar tem — aqui é automático, já foi enviado) ──
+  Object.keys(carrinho).forEach(function(id) {
+    var card = document.getElementById('card-' + id);
+    var btn  = document.getElementById('badd-' + id);
+    if (card) card.classList.remove('incart');
+    if (btn)  { btn.textContent = '+ Adicionar'; btn.classList.remove('done'); }
+  });
+  carrinho = {};
+  salvarCarrinho();
+  updateBadge();
+  renderCartList();
 }
 
 // Animação de shake para validação
