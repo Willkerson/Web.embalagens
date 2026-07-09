@@ -24,6 +24,24 @@
     "cat": "festa",
     "sub": "pratos",
     "marca": null,
-    "id": "rmrdjjktizb02"
+    "id": "rmrdkqvlvdrtg"
+  },
+  {
+    "padrao": "ESTOJO",
+    "tipo": "prefixo",
+    "seguidoNumero": false,
+    "cat": "isopor",
+    "sub": "isopor-geral",
+    "marca": "BOM APETITE",
+    "id": "rmrdkrl1owghr"
+  },
+  {
+    "padrao": "CAIXA TERMICA",
+    "tipo": "prefixo",
+    "seguidoNumero": false,
+    "cat": "isopor",
+    "sub": "isopor-geral",
+    "marca": "CAIXAS TERMICAS",
+    "id": "rmrdkrubf8vvk"
   }
 ]
