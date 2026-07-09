@@ -166,6 +166,9 @@
     .btn-add:hover { background: var(--border); }
     .btn-primary { background: var(--accent); color: #fff; }
     .btn-primary:hover { background: var(--accent-h); }
+    .btn-dirty { background: var(--warn) !important; }
+    .btn-dirty:hover { filter: brightness(1.05); }
+    #regras-pendentes-info.regras-dirty { color: var(--warn); font-weight: 600; }
     .btn-primary:disabled { opacity: .45; cursor: not-allowed; }
     .btn-clear { background: transparent; border: 1px solid var(--border); color: var(--muted); }
     .btn-clear:hover { color: var(--danger); border-color: var(--danger); }
@@ -470,7 +473,9 @@
 
     <div class="btn-row">
       <button class="btn-primary" onclick="adicionarRegra()">+ Adicionar regra</button>
+      <button class="btn-primary" id="btn-salvar-regras" onclick="salvarRegrasPendentes()">💾 Salvar alterações</button>
     </div>
+    <p id="regras-pendentes-info" class="hint"></p>
 
     <div class="card-title" style="margin-top:24px;font-size:0.85rem">Regras cadastradas (<span id="regras-count">0</span>)</div>
     <div id="lista-regras"></div>
@@ -514,8 +519,10 @@
       diversos:   { label: 'Diversos',      subs: { 'emb-flexiveis': 'Emb. Flexíveis', 'emb-diversas': 'Emb. Diversas', 'outros': 'Outros' } },
     };
 
-    let regrasAtuais = []; // conteúdo atual de regras-menu.json
-    let regrasSha    = null;
+    let regrasAtuais    = []; // último estado confirmado como salvo no GitHub
+    let regrasSha       = null;
+    let regrasPendentes = []; // cópia de trabalho editada na tela; só vira commit ao clicar em "Salvar alterações"
+    let regrasSujo      = false; // true = existem alterações locais ainda não publicadas
 
     // ── Init ────────────────────────────────────────────────────────────────
     (function init() {
@@ -833,7 +840,11 @@
       } catch (e) {
         console.warn('Não foi possível carregar regras-menu.json', e);
       }
+      // Se já havia edições locais não salvas (ex: recarregou a lista de produtos
+      // no meio do caminho), preserva elas em vez de descartar.
+      if (!regrasSujo) regrasPendentes = regrasAtuais.slice();
       renderRegras();
+      atualizarBadgeRegras();
     }
 
     // Igual ao atualizarArquivoImagens, mas genérico (recebe o path) e
@@ -858,7 +869,44 @@
       throw ultimoErro;
     }
 
-    async function adicionarRegra() {
+    // Adiciona a regra só na lista local (em memória). Nada é commitado
+    // aqui — isso evita que cada regra vire um commit separado e vários
+    // cliques em sequência acabem cancelando uns aos outros (409 no PUT
+    // por causa do sha desatualizado, que às vezes fazia a mudança nem
+    // aparecer no site). O commit real só acontece em salvarRegrasPendentes().
+    function adicionarRegra() {
+      const regra = lerFormularioRegra();
+      if (!regra.padrao) { toast('err', '⚠️ Escreva o padrão do nome (ex: BH, G, DANUBIO...).'); return; }
+      regra.id = 'r' + Date.now().toString(36) + Math.random().toString(36).slice(2, 6);
+
+      regrasPendentes.push(regra);
+      regrasSujo = true;
+      toast('ok', `Regra "${regra.padrao}" adicionada. Clique em "💾 Salvar alterações" pra publicar.`);
+      document.getElementById('rg-padrao').value = '';
+      document.getElementById('rg-marca').value  = '';
+      document.getElementById('rg-seguido-numero').checked = false;
+      document.getElementById('regra-preview-count').textContent = '';
+      renderRegras();
+      atualizarBadgeRegras();
+    }
+
+    // Mesma ideia: remove só da lista local, sem commitar.
+    function removerRegra(id) {
+      const regra = regrasPendentes.find(function(r) { return r.id === id; });
+      if (!regra) return;
+      if (!confirm(`Remover a regra "${regra.padrao}"? (só será publicado ao clicar em "Salvar alterações")`)) return;
+      regrasPendentes = regrasPendentes.filter(function(r) { return r.id !== id; });
+      regrasSujo = true;
+      renderRegras();
+      atualizarBadgeRegras();
+    }
+
+    // Publica de uma vez só (um único commit) todo o estado atual da lista
+    // local. Como o mutarFn abaixo ignora o conteúdo lido do GitHub e
+    // devolve sempre regrasPendentes, mesmo que o sha tenha mudado entre
+    // a leitura e o PUT, o retry automático do atualizarArquivoRegras
+    // resolve sozinho — sem risco de duas gravações se pisando.
+    async function salvarRegrasPendentes() {
       const cfg = getConfig();
       if (!cfg.owner || !cfg.repo || !cfg.token) {
         toast('err', '⚠️ Configure o GitHub antes de salvar.');
@@ -866,65 +914,63 @@
         toggleConfig(document.getElementById('toggle-config'));
         return;
       }
-      const regra = lerFormularioRegra();
-      if (!regra.padrao) { toast('err', '⚠️ Escreva o padrão do nome (ex: BH, G, DANUBIO...).'); return; }
-      regra.id = 'r' + Date.now().toString(36) + Math.random().toString(36).slice(2, 6);
+      if (!regrasSujo) { toast('ok', 'Nada pra salvar — nenhuma alteração pendente.'); return; }
 
+      const btn = document.getElementById('btn-salvar-regras');
+      const txtOriginal = btn.textContent;
+      btn.disabled = true;
+      btn.textContent = '⏳ Salvando...';
       setBadge('', '⏳ salvando...');
       try {
+        const paraSalvar = regrasPendentes.slice();
         await atualizarArquivoRegras(
           cfg,
-          function(lista) { lista.push(regra); return lista; },
-          `🗂️ nova regra de menu: "${regra.padrao}" → ${regra.cat}${regra.sub ? '/' + regra.sub : ''} — ${new Date().toLocaleString('pt-BR')}`
+          function() { return paraSalvar; },
+          `🗂️ atualiza regras de menu (${paraSalvar.length} regra${paraSalvar.length !== 1 ? 's' : ''}) — ${new Date().toLocaleString('pt-BR')}`
         );
-        toast('ok', `✅ Regra "${regra.padrao}" salva!`);
+        regrasSujo = false;
+        toast('ok', '✅ Alterações no menu publicadas!');
         setBadge('ok', '✓ salvo');
-        document.getElementById('rg-padrao').value = '';
-        document.getElementById('rg-marca').value  = '';
-        document.getElementById('rg-seguido-numero').checked = false;
-        document.getElementById('regra-preview-count').textContent = '';
-        renderRegras();
       } catch (e) {
         console.error(e);
         toast('err', `❌ Erro: ${e.message}`);
         setBadge('err', '✗ erro');
+      } finally {
+        btn.disabled = false;
+        btn.textContent = txtOriginal;
+        atualizarBadgeRegras();
       }
     }
 
-    async function removerRegra(id) {
-      const regra = regrasAtuais.find(function(r) { return r.id === id; });
-      if (!regra) return;
-      if (!confirm(`Remover a regra "${regra.padrao}"?`)) return;
-      const cfg = getConfig();
-      if (!cfg.owner || !cfg.repo || !cfg.token) {
-        toast('err', '⚠️ Configure o GitHub antes de remover.');
-        return;
-      }
-      setBadge('', '⏳ removendo...');
-      try {
-        await atualizarArquivoRegras(
-          cfg,
-          function(lista) { return lista.filter(function(r) { return r.id !== id; }); },
-          `🗑️ remove regra de menu: "${regra.padrao}" — ${new Date().toLocaleString('pt-BR')}`
-        );
-        toast('ok', '✅ Regra removida!');
-        setBadge('ok', '✓ salvo');
-        renderRegras();
-      } catch (e) {
-        console.error(e);
-        toast('err', `❌ Erro: ${e.message}`);
-        setBadge('err', '✗ erro');
+    function atualizarBadgeRegras() {
+      const info = document.getElementById('regras-pendentes-info');
+      const btn  = document.getElementById('btn-salvar-regras');
+      if (regrasSujo) {
+        info.textContent = '● Você tem alterações não publicadas — clique em "Salvar alterações" pra enviar tudo num commit só.';
+        info.className = 'hint regras-dirty';
+        btn.classList.add('btn-dirty');
+      } else {
+        info.textContent = '';
+        info.className = 'hint';
+        btn.classList.remove('btn-dirty');
       }
     }
+
+    window.addEventListener('beforeunload', function(e) {
+      if (regrasSujo) {
+        e.preventDefault();
+        e.returnValue = '';
+      }
+    });
 
     function renderRegras() {
       const wrap = document.getElementById('lista-regras');
-      document.getElementById('regras-count').textContent = regrasAtuais.length;
-      if (!regrasAtuais.length) {
+      document.getElementById('regras-count').textContent = regrasPendentes.length;
+      if (!regrasPendentes.length) {
         wrap.innerHTML = '<p class="hint">Nenhuma regra cadastrada ainda — o site usa só a organização automática.</p>';
         return;
       }
-      wrap.innerHTML = regrasAtuais.map(function(r) {
+      wrap.innerHTML = regrasPendentes.map(function(r) {
         const catInfo = CATS_DATA[r.cat];
         const catLabel = catInfo ? catInfo.label : r.cat;
         const subLabel = (r.sub && catInfo && catInfo.subs[r.sub]) ? ' › ' + catInfo.subs[r.sub] : '';
