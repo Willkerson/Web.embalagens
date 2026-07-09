@@ -16,5 +16,14 @@
     "sub": "embalagens-bolo",
     "marca": "DONA RITA",
     "id": "rmrcsqkeoeyry"
+  },
+  {
+    "padrao": "KIT CHURRASCO C/10UN PRAFESTA",
+    "tipo": "prefixo",
+    "seguidoNumero": false,
+    "cat": "festa",
+    "sub": "pratos",
+    "marca": null,
+    "id": "rmrdjjktizb02"
   }
 ]
