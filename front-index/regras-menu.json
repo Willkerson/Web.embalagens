@@ -43,5 +43,14 @@
     "sub": "isopor-geral",
     "marca": "ULTRA",
     "id": "rmrcwyfov42v6"
+  },
+  {
+    "padrao": "ESTOJO",
+    "tipo": "prefixo",
+    "seguidoNumero": false,
+    "cat": "isopor",
+    "sub": "isopor-geral",
+    "marca": "BOM APETITE",
+    "id": "rmrdhdzw6jw96"
   }
 ]
