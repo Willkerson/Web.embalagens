@@ -250,6 +250,31 @@
     }
     .img-item .btn-mini:hover { background: var(--border); }
 
+    /* ── Organização do menu (regras de categoria/marca) ─────────────── */
+    .regra-item {
+      display: flex; align-items: center; gap: 10px; padding: 10px 12px;
+      border: 1px solid var(--border); border-radius: var(--radius-sm);
+      background: var(--surface2); margin-bottom: 8px; flex-wrap: wrap;
+    }
+    .regra-padrao { font-weight: 700; font-family: monospace; font-size: 0.85rem; }
+    .regra-seta { color: var(--muted); font-size: 0.8rem; }
+    .regra-destino { font-size: 0.78rem; color: var(--text); }
+    .regra-marca-tag {
+      font-size: 0.68rem; background: rgba(79,142,247,.15); color: var(--accent);
+      padding: 2px 8px; border-radius: 20px; font-weight: 600;
+    }
+    .regra-count {
+      font-size: 0.68rem; color: var(--muted); margin-left: auto;
+    }
+    .regra-item .btn-del {
+      background: none; border: none; color: var(--danger); cursor: pointer;
+      font-size: 0.9rem; padding: 4px 8px; border-radius: 6px;
+    }
+    .regra-item .btn-del:hover { background: rgba(239,68,68,.1); }
+    #regra-preview-count {
+      font-size: 0.72rem; color: var(--accent); margin-top: 4px; min-height: 16px;
+    }
+
     #busca-lista {
       margin-bottom: 14px;
     }
@@ -392,6 +417,65 @@
     <div id="lista-imagens"></div>
   </div>
 
+  <!-- Organização do menu (categorias, subcategorias e marca por padrão de nome) -->
+  <div class="card">
+    <div class="card-title">🗂️ Organização do Menu (categoria, subcategoria e marca)</div>
+    <p class="hint">
+      Crie regras pra corrigir produtos que caem no menu errado. Ex: escrever <b>BH</b> ligado à
+      categoria <b>Isopor</b> manda todo produto cujo nome começa com "BH" pra lá. Ou <b>G</b>
+      (marcando "seguido de número") + marca <b>GALVONOTEK</b> pega nomes tipo "G34P..." e
+      "G677...". As regras daqui têm prioridade sobre a organização automática do site.
+    </p>
+
+    <div class="row row-3">
+      <div>
+        <label for="rg-padrao">Padrão no nome do produto</label>
+        <input id="rg-padrao" type="text" placeholder="Ex: BH, G, D, DANUBIO..." oninput="atualizarPreviewRegra()" />
+      </div>
+      <div>
+        <label for="rg-tipo">Onde procurar</label>
+        <select id="rg-tipo" onchange="atualizarPreviewRegra()">
+          <option value="prefixo">Começa com</option>
+          <option value="contem">Contém em qualquer lugar</option>
+        </select>
+      </div>
+      <div>
+        <label for="rg-seguido-numero" style="display:flex;align-items:center;gap:6px;margin-top:22px;font-size:0.8rem;font-weight:500;color:var(--text)">
+          <input id="rg-seguido-numero" type="checkbox" style="width:auto" onchange="atualizarPreviewRegra()" />
+          Seguido de número (ex: G123, D456)
+        </label>
+      </div>
+    </div>
+
+    <div class="row row-2">
+      <div>
+        <label for="rg-categoria">Categoria (menu principal)</label>
+        <select id="rg-categoria" onchange="popularSubsRegra()"></select>
+      </div>
+      <div>
+        <label for="rg-sub">Subcategoria (opcional)</label>
+        <select id="rg-sub"></select>
+      </div>
+    </div>
+
+    <div class="row">
+      <div>
+        <label for="rg-marca">Marca (opcional)</label>
+        <input id="rg-marca" type="text" placeholder="Ex: GALVONOTEK, DONA RITA..." />
+        <p class="hint">Se preenchida, sobrepõe a marca que o site detectaria sozinho pelo nome.</p>
+      </div>
+    </div>
+
+    <p id="regra-preview-count"></p>
+
+    <div class="btn-row">
+      <button class="btn-primary" onclick="adicionarRegra()">+ Adicionar regra</button>
+    </div>
+
+    <div class="card-title" style="margin-top:24px;font-size:0.85rem">Regras cadastradas (<span id="regras-count">0</span>)</div>
+    <div id="lista-regras"></div>
+  </div>
+
   <!-- Toast -->
   <div id="toast">
     <span class="icon" id="toast-icon">✅</span>
@@ -414,6 +498,24 @@
 
     const PATH_IMAGENS  = 'front-index/produto-imagens.json';
     const PATH_PRODUTOS = 'front-index/produtos.json';
+    const PATH_REGRAS   = 'front-index/regras-menu.json';
+
+    // Mesma estrutura do catMap/subLabels em front-index/config.js — se
+    // adicionar/mudar categoria lá, replique aqui também.
+    const CATS_DATA = {
+      caixas:     { label: 'Caixas',        subs: { 'caixas-correio': 'Caixas Correios', 'caixas-alimentos': 'Caixas p/ Alimentos', 'caixas-ondulados': 'Caixas Ondulados' } },
+      sacolas:    { label: 'Sacolas & Lixo', subs: { 'sacos-lixo': 'Sacos de Lixo', 'sacolas-papel': 'Sacolas de Papel', 'sacolas-plasticas': 'Sacolas Plásticas' } },
+      plastico:   { label: 'Plásticos',     subs: { 'potes-tampas': 'Potes e Tampas', 'embalagens-bolo': 'Embalagens p/ Bolo' } },
+      festa:      { label: 'Festa',         subs: { 'copos-pratos': 'Copos e Pratos', 'talheres': 'Talheres', 'pratos': 'Pratos Descartáveis' } },
+      limpeza:    { label: 'Limpeza',       subs: { 'produtos-limpeza': 'Produtos Químicos', 'utensilios-limpeza': 'Utensílios', 'epi': 'EPI & Proteção' } },
+      higiene:    { label: 'Higiene',       subs: { 'papel-higiene': 'Papel & Sabonetes', 'aromas-inseticidas': 'Aromas & Inseticidas' } },
+      utilidades: { label: 'Utilidades',    subs: { 'pilhas-baterias': 'Pilhas & Baterias', 'organiz-limpeza': 'Organização', 'ferramentas': 'Ferramentas', 'escritorio': 'Escritório', 'ganchos': 'Ganchos' } },
+      isopor:     { label: 'Isopor',        subs: { 'isopor-geral': 'Isopor Geral' } },
+      diversos:   { label: 'Diversos',      subs: { 'emb-flexiveis': 'Emb. Flexíveis', 'emb-diversas': 'Emb. Diversas', 'outros': 'Outros' } },
+    };
+
+    let regrasAtuais = []; // conteúdo atual de regras-menu.json
+    let regrasSha    = null;
 
     // ── Init ────────────────────────────────────────────────────────────────
     (function init() {
@@ -428,7 +530,27 @@
 
       carregarProdutosPublico();
       carregarImagensAtuais();
+      popularCategoriasRegra();
+      carregarRegrasAtuais();
     })();
+
+    function popularCategoriasRegra() {
+      const sel = document.getElementById('rg-categoria');
+      sel.innerHTML = Object.keys(CATS_DATA).map(function(key) {
+        return `<option value="${key}">${CATS_DATA[key].label}</option>`;
+      }).join('');
+      popularSubsRegra();
+    }
+
+    function popularSubsRegra() {
+      const cat = document.getElementById('rg-categoria').value;
+      const sel = document.getElementById('rg-sub');
+      const subs = (CATS_DATA[cat] && CATS_DATA[cat].subs) || {};
+      sel.innerHTML = '<option value="">— nenhuma (categoria inteira) —</option>' +
+        Object.keys(subs).map(function(key) {
+          return `<option value="${key}">${subs[key]}</option>`;
+        }).join('');
+    }
 
     function toggleConfig(el) {
       document.getElementById('config-section').style.display = el.checked ? 'block' : 'none';
@@ -441,6 +563,7 @@
       toast('ok', '✅ Configurações salvas!');
       carregarProdutosPublico();
       carregarImagensAtuais();
+      carregarRegrasAtuais();
     }
 
     function getConfig() {
@@ -644,6 +767,182 @@
         console.warn('Não foi possível carregar produto-imagens.json', e);
       }
       renderLista();
+    }
+
+    // ── Organização do menu: regras de categoria/marca por padrão de nome ──
+
+    // Mesma lógica usada em front-index/mapeamento.js — se mudar aqui,
+    // replicar lá também (e vice-versa) pra preview e site baterem igual.
+    function regraBate(nomeUpper, regra) {
+      const padrao = (regra.padrao || '').toUpperCase().trim();
+      if (!padrao) return false;
+      let idx;
+      if (regra.tipo === 'contem') {
+        idx = nomeUpper.indexOf(padrao);
+        if (idx === -1) return false;
+      } else {
+        if (!nomeUpper.startsWith(padrao)) return false;
+        idx = 0;
+      }
+      if (regra.seguidoNumero) {
+        const prox = nomeUpper.charAt(idx + padrao.length);
+        if (!/[0-9]/.test(prox)) return false;
+      }
+      return true;
+    }
+
+    function contarMatches(regra) {
+      if (!produtosCache || !regra.padrao) return 0;
+      return produtosCache.filter(function(p) {
+        return regraBate((p.nome || '').toUpperCase(), regra);
+      }).length;
+    }
+
+    function lerFormularioRegra() {
+      return {
+        padrao:        document.getElementById('rg-padrao').value.trim(),
+        tipo:          document.getElementById('rg-tipo').value,
+        seguidoNumero: document.getElementById('rg-seguido-numero').checked,
+        cat:           document.getElementById('rg-categoria').value,
+        sub:           document.getElementById('rg-sub').value || null,
+        marca:         document.getElementById('rg-marca').value.trim().toUpperCase() || null,
+      };
+    }
+
+    function atualizarPreviewRegra() {
+      const regra = lerFormularioRegra();
+      const el = document.getElementById('regra-preview-count');
+      if (!regra.padrao) { el.textContent = ''; return; }
+      if (!produtosCache) { el.textContent = 'Carregando produtos pra contar...'; return; }
+      const n = contarMatches(regra);
+      el.textContent = n === 0
+        ? '⚠️ Nenhum produto bate com esse padrão ainda.'
+        : `✓ ${n} produto${n !== 1 ? 's' : ''} vai${n !== 1 ? 'ão' : ''} pra esse menu.`;
+    }
+
+    async function carregarRegrasAtuais() {
+      const cfg = getConfig();
+      if (!cfg.owner || !cfg.repo || !cfg.token) {
+        renderRegras();
+        return;
+      }
+      try {
+        const { sha, data } = await ghGetFileJSON(cfg, PATH_REGRAS);
+        regrasSha    = sha;
+        regrasAtuais = Array.isArray(data) ? data : [];
+      } catch (e) {
+        console.warn('Não foi possível carregar regras-menu.json', e);
+      }
+      renderRegras();
+    }
+
+    // Igual ao atualizarArquivoImagens, mas genérico (recebe o path) e
+    // trabalha com array em vez de objeto — regras-menu.json é uma lista.
+    async function atualizarArquivoRegras(cfg, mutarFn, mensagem, tentativas = 3) {
+      let ultimoErro;
+      for (let i = 0; i < tentativas; i++) {
+        const lido = await ghGetFileJSON(cfg, PATH_REGRAS);
+        const dadosAtuais = Array.isArray(lido.data) ? lido.data : [];
+        const resultado = mutarFn(dadosAtuais);
+        if (resultado === null) return null;
+        try {
+          await ghPut(cfg, PATH_REGRAS, JSON.stringify(resultado, null, 2), mensagem, lido.sha);
+          regrasAtuais = resultado;
+          return resultado;
+        } catch (e) {
+          ultimoErro = e;
+          if (e.status === 409 && i < tentativas - 1) continue;
+          throw e;
+        }
+      }
+      throw ultimoErro;
+    }
+
+    async function adicionarRegra() {
+      const cfg = getConfig();
+      if (!cfg.owner || !cfg.repo || !cfg.token) {
+        toast('err', '⚠️ Configure o GitHub antes de salvar.');
+        document.getElementById('toggle-config').checked = true;
+        toggleConfig(document.getElementById('toggle-config'));
+        return;
+      }
+      const regra = lerFormularioRegra();
+      if (!regra.padrao) { toast('err', '⚠️ Escreva o padrão do nome (ex: BH, G, DANUBIO...).'); return; }
+      regra.id = 'r' + Date.now().toString(36) + Math.random().toString(36).slice(2, 6);
+
+      setBadge('', '⏳ salvando...');
+      try {
+        await atualizarArquivoRegras(
+          cfg,
+          function(lista) { lista.push(regra); return lista; },
+          `🗂️ nova regra de menu: "${regra.padrao}" → ${regra.cat}${regra.sub ? '/' + regra.sub : ''} — ${new Date().toLocaleString('pt-BR')}`
+        );
+        toast('ok', `✅ Regra "${regra.padrao}" salva!`);
+        setBadge('ok', '✓ salvo');
+        document.getElementById('rg-padrao').value = '';
+        document.getElementById('rg-marca').value  = '';
+        document.getElementById('rg-seguido-numero').checked = false;
+        document.getElementById('regra-preview-count').textContent = '';
+        renderRegras();
+      } catch (e) {
+        console.error(e);
+        toast('err', `❌ Erro: ${e.message}`);
+        setBadge('err', '✗ erro');
+      }
+    }
+
+    async function removerRegra(id) {
+      const regra = regrasAtuais.find(function(r) { return r.id === id; });
+      if (!regra) return;
+      if (!confirm(`Remover a regra "${regra.padrao}"?`)) return;
+      const cfg = getConfig();
+      if (!cfg.owner || !cfg.repo || !cfg.token) {
+        toast('err', '⚠️ Configure o GitHub antes de remover.');
+        return;
+      }
+      setBadge('', '⏳ removendo...');
+      try {
+        await atualizarArquivoRegras(
+          cfg,
+          function(lista) { return lista.filter(function(r) { return r.id !== id; }); },
+          `🗑️ remove regra de menu: "${regra.padrao}" — ${new Date().toLocaleString('pt-BR')}`
+        );
+        toast('ok', '✅ Regra removida!');
+        setBadge('ok', '✓ salvo');
+        renderRegras();
+      } catch (e) {
+        console.error(e);
+        toast('err', `❌ Erro: ${e.message}`);
+        setBadge('err', '✗ erro');
+      }
+    }
+
+    function renderRegras() {
+      const wrap = document.getElementById('lista-regras');
+      document.getElementById('regras-count').textContent = regrasAtuais.length;
+      if (!regrasAtuais.length) {
+        wrap.innerHTML = '<p class="hint">Nenhuma regra cadastrada ainda — o site usa só a organização automática.</p>';
+        return;
+      }
+      wrap.innerHTML = regrasAtuais.map(function(r) {
+        const catInfo = CATS_DATA[r.cat];
+        const catLabel = catInfo ? catInfo.label : r.cat;
+        const subLabel = (r.sub && catInfo && catInfo.subs[r.sub]) ? ' › ' + catInfo.subs[r.sub] : '';
+        const marcaTag = r.marca ? `<span class="regra-marca-tag">${r.marca}</span>` : '';
+        const tipoTxt  = r.tipo === 'contem' ? 'contém' : 'começa com';
+        const seguidoTxt = r.seguidoNumero ? ' + número' : '';
+        const n = contarMatches(r);
+        return `
+          <div class="regra-item">
+            <span class="regra-padrao">${r.padrao}</span>
+            <span class="regra-seta">(${tipoTxt}${seguidoTxt}) →</span>
+            <span class="regra-destino">${catLabel}${subLabel}</span>
+            ${marcaTag}
+            <span class="regra-count">${n} produto${n !== 1 ? 's' : ''}</span>
+            <button class="btn-del" onclick="removerRegra('${r.id}')" title="Remover">✕</button>
+          </div>
+        `;
+      }).join('');
     }
 
     // ── Preview ─────────────────────────────────────────────────────────────
