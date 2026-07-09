@@ -178,10 +178,10 @@
                'EXTENSAO', 'ALCA ADESIVA', 'VEDANTE', 'CALÇA P/PORTA', 'DESENTUPIDOR SANCHES'],
       cat: 'utilidades' },
 
-    // ── DIVERSOS – Isopor ─────────────────────────────────────────────────
+    // ── ISOPOR – categoria própria (antes ficava escondida dentro de "Diversos") ──
     { termos: ['CAIXA TERMICA', 'MARMITEX DE ISOPOR', 'POTE ISOPOR', 'COPO ISOPOR', 'ISOPOR',
                'BANDEJA ISOPOR', 'ESTOJO ISOPOR', 'HAMBURGUEIRA'],
-      cat: 'diversos', sub: 'isopor-geral' },
+      cat: 'isopor', sub: 'isopor-geral' },
 
     // ── DIVERSOS – Embalagens Flexíveis ──────────────────────────────────
     { termos: ['PLASTICO BOLHA', 'FILME STRETCH', 'FILME PVC', 'FILME DE POLIESTER',
@@ -246,7 +246,39 @@
     return { cat: 'diversos', sub: 'outros' };
   }
 
+  // ─── 5. MARCA (FABRICANTE) ──────────────────────────────────────────────────
+  // O produtos.json não tem campo de marca — o nome do fabricante vem
+  // "grudado" no final do nome do produto (ex: "...C/24UN DANUBIO").
+  // Lista curada com as marcas que aparecem nos produtos da loja.
+  // Fácil de manter: só adicionar/remover nomes aqui quando um fornecedor
+  // novo entrar (ou sair) do catálogo.
+  const MARCAS_CONHECIDAS = [
+    'BOM APETITE', 'COLOMBO/HELVIPACK', 'HELVIPACK', 'COLOMBO',
+    'PRAFESTA', 'DANUBIO', 'WYDA', 'PLUMA', 'ARQPLAST', 'SANOL',
+    'TALGE', 'ALKLIN', 'NIAGRA', 'TOTALPLAST', 'SANREMO', 'GALVONOTEK',
+    'PLASUTIL', 'TRILHA', 'TINGS', 'MALUGER', 'FRATELLI', 'PLASNEW',
+    'CLINK', 'ALFACELL', 'KEITA', 'MONALIZA', 'AZULIM', 'COPOBRAS',
+    'COPABRAS', 'ISOTERM', 'ARMAZEM', 'COALA', 'SANCHES',
+  ];
+  // Ordena da mais longa pra mais curta, pra "BOM APETITE" ser testado
+  // antes de um eventual "APETITE" sozinho, evitando bater errado.
+  MARCAS_CONHECIDAS.sort(function(a, b) { return b.length - a.length; });
+
+  /**
+   * Recebe o nome do produto e devolve a marca conhecida no final dele,
+   * ou '' se nenhuma marca da lista aparecer.
+   */
+  function extrairMarca(nome) {
+    if (!nome) return '';
+    const n = nome.toUpperCase().trim();
+    for (const marca of MARCAS_CONHECIDAS) {
+      if (n === marca || n.endsWith(' ' + marca)) return marca;
+    }
+    return '';
+  }
+
   // Exporta globalmente para que os outros scripts possam usar
   global.mapearProduto = mapearProduto;
+  global.extrairMarca  = extrairMarca;
 
 })(window);
