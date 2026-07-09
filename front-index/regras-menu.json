@@ -133,5 +133,14 @@
     "sub": "isopor-geral",
     "marca": "BOM APETITE",
     "id": "rmrdhjxcpim3k"
+  },
+  {
+    "padrao": "CAIXA TERMICA",
+    "tipo": "contem",
+    "seguidoNumero": false,
+    "cat": "isopor",
+    "sub": "isopor-geral",
+    "marca": "CAIXAS TERMICAS",
+    "id": "rmrdhl7d4fimc"
   }
 ]
