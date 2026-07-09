@@ -42,9 +42,26 @@ async function carregarProdutos() {
     window.produtos.forEach(function (p, i) {
       // FIX: garante que todo produto tem campo "id" (usa codigo ou índice)
       if (!p.id) p.id = p.codigo || String(i);
-      if (!p.categoria)    p.categoria    = 'todos';
-      if (!p.subcategoria) p.subcategoria = '';
-      if (!p.marca)        p.marca        = '';
+
+      // FIX CRÍTICO: até aqui p.categoria era a string BRUTA que vem do
+      // ConnectPlug (ex: "PRODUTO DE LIMPEZA", "Embalagem", "-"...), que
+      // nunca bate com as chaves usadas pelos filtros do site (caixas,
+      // sacolas, festa...). Isso fazia toda aba do menu (fora "Todos")
+      // sempre dar 0 resultado. Aqui chamamos mapearProduto(), que já
+      // existia em mapeamento.js mas nunca era usado, pra traduzir de
+      // verdade a categoria/subcategoria antes de qualquer filtro rodar.
+      var mapeado = (typeof mapearProduto === 'function')
+        ? mapearProduto(p)
+        : { cat: 'diversos', sub: 'outros' };
+      p.categoria    = mapeado.cat || 'diversos';
+      p.subcategoria = mapeado.sub || '';
+
+      // FIX: extrai a marca (fabricante) a partir do nome do produto —
+      // ex: "SACOLA KRAFT M 1UN 19X12X26 DANUBIO" → marca "DANUBIO".
+      // Isso ativa as sub-abas de marca que já existiam em filtros.js
+      // mas nunca apareciam porque p.marca nunca era preenchido.
+      p.marca = (typeof extrairMarca === 'function') ? extrairMarca(p.nome) : '';
+
       if (!p.estoque)      p.estoque      = 0;
       if (!p.preco)        p.preco        = 0;
 
