@@ -25,5 +25,14 @@
     "sub": "isopor-geral",
     "marca": null,
     "id": "rmrcsr0jll0pm"
+  },
+  {
+    "padrao": "CUMBUCA",
+    "tipo": "prefixo",
+    "seguidoNumero": false,
+    "cat": "isopor",
+    "sub": "isopor-geral",
+    "marca": "BOM APETITE",
+    "id": "rmrcwxc5yc9sn"
   }
 ]
