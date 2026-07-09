@@ -347,7 +347,7 @@
     "nome": "RODO DE PIA 15CM ALKLIN",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 6.5,
-    "estoque": "6,00 un"
+    "estoque": "5,00 un"
   },
   {
     "codigo": "302",
@@ -585,7 +585,7 @@
     "nome": "PANO DE CHAO XADREZ 45CMX68CM SOUZA BR2",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 4.7,
-    "estoque": "22,00 un"
+    "estoque": "19,00 un"
   },
   {
     "codigo": "390",
@@ -816,7 +816,7 @@
     "nome": "POTE E TAMPA RET.500ML C/24UN PRAFESTA",
     "categoria": "DESCARTAVEIS",
     "preco": 35.5,
-    "estoque": "35,00 un"
+    "estoque": "34,00 un"
   },
   {
     "codigo": "458",
@@ -1432,7 +1432,7 @@
     "nome": "LUSTRA MOVEIS 200ML LAVANDA AZULIM",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 9,
-    "estoque": "6,00 un"
+    "estoque": "5,00 un"
   },
   {
     "codigo": "757",
@@ -2223,7 +2223,7 @@
     "nome": "SACO P/ LIXO PRETO P8 60L C/10UN",
     "categoria": "SACO LIXO",
     "preco": 8.99,
-    "estoque": "26,00 un"
+    "estoque": "25,00 un"
   },
   {
     "codigo": "1053",
@@ -2650,7 +2650,7 @@
     "nome": "TOP LIXO PIA E BANHEIRO BRANCO C/40UN PACK LIXO",
     "categoria": "SACO LIXO",
     "preco": 8.99,
-    "estoque": "37,00 un"
+    "estoque": "36,00 un"
   },
   {
     "codigo": "1315",
@@ -3070,7 +3070,7 @@
     "nome": "PRATO BRANCO RASO 15CM C/10UN TOTAL PLAST",
     "categoria": "DESCARTAVEIS",
     "preco": 2.5,
-    "estoque": "18,00 un"
+    "estoque": "8,00 un"
   },
   {
     "codigo": "1548",
@@ -3406,7 +3406,7 @@
     "nome": "TOP LIXO BRANCO 30L C/30UN PACK LIXO",
     "categoria": "SACO LIXO",
     "preco": 17.99,
-    "estoque": "10,00 un"
+    "estoque": "9,00 un"
   },
   {
     "codigo": "1885",
@@ -3735,7 +3735,7 @@
     "nome": "SACOLA SOS P LISO C/ALÇA C/20UN 17X10X27 PLUMA",
     "categoria": "Embalagem",
     "preco": 27,
-    "estoque": "5,00 un"
+    "estoque": "3,00 un"
   },
   {
     "codigo": "2099",
@@ -5086,7 +5086,7 @@
     "nome": "CAIXA TERMICA ISOPOR ISOTERM 500G",
     "categoria": "DESCARTAVEIS",
     "preco": 3.5,
-    "estoque": "46,00 un"
+    "estoque": "26,00 un"
   },
   {
     "codigo": "3150",
@@ -5401,7 +5401,7 @@
     "nome": "PANOS DE MICROFIBRAS C/3UN ALKLIN",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 10.99,
-    "estoque": "4,00 un"
+    "estoque": "2,00 un"
   },
   {
     "codigo": "3995",
@@ -5885,6 +5885,13 @@
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 18,
     "estoque": "9,00 un"
+  },
+  {
+    "codigo": "7907",
+    "nome": "DIFUSOR DE AROMAS CEREJA E AVELÂ SENALAR",
+    "categoria": "PRODUTO DE LIMPEZA",
+    "preco": 18,
+    "estoque": "0,00 un"
   },
   {
     "codigo": "7908",
@@ -7235,7 +7242,7 @@
     "nome": "RALO P/PIA 70MM TINGS",
     "categoria": "UTENSILIOS",
     "preco": 7,
-    "estoque": "11,00 un"
+    "estoque": "9,00 un"
   },
   {
     "codigo": "129076",
@@ -7319,7 +7326,7 @@
     "nome": "POTE REDONDO 500ML C/TAMPA C/24UN PRAFESTA",
     "categoria": "DESCARTAVEIS",
     "preco": 30.5,
-    "estoque": "4,00 un"
+    "estoque": "3,00 un"
   },
   {
     "codigo": "129088",
@@ -7550,13 +7557,6 @@
     "nome": "Cópia de DESINFETANTE ORIGINAL SANOL 2L",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 10.15,
-    "estoque": "0,00 un"
-  },
-  {
-    "codigo": "7906_1129",
-    "nome": "Cópia de DIFUSOR DE AROMAS CITRONELA SENALAR",
-    "categoria": "PRODUTO DE LIMPEZA",
-    "preco": 18,
     "estoque": "0,00 un"
   },
   {
