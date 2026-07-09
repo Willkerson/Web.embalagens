@@ -3,6 +3,12 @@
 // ─────────────────────────────────────────────────────────────
 async function carregarProdutos() {
   try {
+    // Carrega as regras customizadas (admin-foto.html) ANTES de mapear os
+    // produtos, senão elas chegariam tarde demais pra valer nessa passada.
+    if (typeof carregarRegrasCustom === 'function') {
+      await carregarRegrasCustom();
+    }
+
     const [respProdutos, respImagens, respVisibilidade] = await Promise.all([
       fetch('front-index/produtos.json'),
       // produto-imagens.json e produto-visibilidade.json são opcionais: se
@@ -59,8 +65,9 @@ async function carregarProdutos() {
       // FIX: extrai a marca (fabricante) a partir do nome do produto —
       // ex: "SACOLA KRAFT M 1UN 19X12X26 DANUBIO" → marca "DANUBIO".
       // Isso ativa as sub-abas de marca que já existiam em filtros.js
-      // mas nunca apareciam porque p.marca nunca era preenchido.
-      p.marca = (typeof extrairMarca === 'function') ? extrairMarca(p.nome) : '';
+      // mas nunca apareciam porque p.marca nunca era preenchido. Se uma
+      // regra customizada do admin já definiu a marca, ela tem prioridade.
+      p.marca = mapeado.marca || ((typeof extrairMarca === 'function') ? extrairMarca(p.nome) : '');
 
       if (!p.estoque)      p.estoque      = 0;
       if (!p.preco)        p.preco        = 0;
