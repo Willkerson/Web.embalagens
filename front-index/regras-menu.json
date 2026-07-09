@@ -160,5 +160,14 @@
     "sub": "pratos",
     "marca": "PRAFESTA",
     "id": "rmrdho22pezpz"
+  },
+  {
+    "padrao": "isoterm",
+    "tipo": "contem",
+    "seguidoNumero": false,
+    "cat": "isopor",
+    "sub": "isopor-geral",
+    "marca": "CAIXAS TERMICAS",
+    "id": "rmrdhp0v4jgfm"
   }
 ]
