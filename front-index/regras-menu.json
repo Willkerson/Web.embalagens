@@ -18,15 +18,6 @@
     "id": "rmrcsqkeoeyry"
   },
   {
-    "padrao": "CUMBUCA",
-    "tipo": "prefixo",
-    "seguidoNumero": false,
-    "cat": "isopor",
-    "sub": "isopor-geral",
-    "marca": "BOM APETITE",
-    "id": "rmrcwxc5yc9sn"
-  },
-  {
     "padrao": "COPO TERMICO",
     "tipo": "prefixo",
     "seguidoNumero": false,
