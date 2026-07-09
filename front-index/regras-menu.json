@@ -88,5 +88,14 @@
     "sub": "isopor-geral",
     "marca": "BOM APETITE",
     "id": "rmrdhh8zqkxj0"
+  },
+  {
+    "padrao": "wyda",
+    "tipo": "contem",
+    "seguidoNumero": false,
+    "cat": "diversos",
+    "sub": "outros",
+    "marca": null,
+    "id": "rmrdhidax61q5"
   }
 ]
