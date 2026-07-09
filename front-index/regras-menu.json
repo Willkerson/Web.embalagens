@@ -151,5 +151,14 @@
     "sub": "isopor-geral",
     "marca": "CAIXAS TERMICAS",
     "id": "rmrdhmw8wtg95"
+  },
+  {
+    "padrao": "KIT CHURRASCO C/10UN PRAFESTA",
+    "tipo": "contem",
+    "seguidoNumero": false,
+    "cat": "festa",
+    "sub": "pratos",
+    "marca": "PRAFESTA",
+    "id": "rmrdho22pezpz"
   }
 ]
