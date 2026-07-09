@@ -79,5 +79,14 @@
     "sub": "isopor-geral",
     "marca": "BOM APETITE",
     "id": "rmrdhfqq5916h"
+  },
+  {
+    "padrao": "BH-",
+    "tipo": "prefixo",
+    "seguidoNumero": true,
+    "cat": "isopor",
+    "sub": "isopor-geral",
+    "marca": null,
+    "id": "rmrdhgfc1hn84"
   }
 ]
