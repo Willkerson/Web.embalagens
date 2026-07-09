@@ -218,14 +218,58 @@
 
   // ─── 4. FUNÇÃO PRINCIPAL ────────────────────────────────────────────────────
 
+  // ─── 0. REGRAS CUSTOMIZADAS (definidas pelo lojista no admin-foto.html) ────
+  // Ficam em front-index/regras-menu.json. Têm prioridade sobre tudo abaixo,
+  // porque são uma correção manual explícita pra um produto que caiu no
+  // menu errado.
+  let REGRAS_CUSTOM = [];
+
+  async function carregarRegrasCustom() {
+    try {
+      const resp = await fetch('front-index/regras-menu.json?t=' + Date.now());
+      if (resp.ok) {
+        const dados = await resp.json();
+        REGRAS_CUSTOM = Array.isArray(dados) ? dados : [];
+      }
+    } catch (e) {
+      console.warn('regras-menu.json não encontrado — seguindo só com a organização automática.', e);
+      REGRAS_CUSTOM = [];
+    }
+  }
+
+  // Mesma lógica usada no admin-foto.html — se mudar aqui, replicar lá.
+  function regraCustomBate(nomeUpper, regra) {
+    const padrao = (regra.padrao || '').toUpperCase().trim();
+    if (!padrao) return false;
+    let idx;
+    if (regra.tipo === 'contem') {
+      idx = nomeUpper.indexOf(padrao);
+      if (idx === -1) return false;
+    } else {
+      if (!nomeUpper.startsWith(padrao)) return false;
+      idx = 0;
+    }
+    if (regra.seguidoNumero) {
+      const prox = nomeUpper.charAt(idx + padrao.length);
+      if (!/[0-9]/.test(prox)) return false;
+    }
+    return true;
+  }
+
   /**
-   * Recebe um objeto produto do JSON e retorna { cat, sub }.
-   * Regras de nome têm prioridade; caso não encontre, usa a categoria do JSON;
-   * caso ainda não encontre, cai para 'diversos'.
+   * Recebe um objeto produto do JSON e retorna { cat, sub, marca }.
+   * Ordem de prioridade: regra customizada do admin > regra de nome > JSON > fallback.
    */
   function mapearProduto(produto) {
     const nome = (produto.nome || '').toUpperCase();
     const catJson = produto.categoria || '';
+
+    // 0. Regras customizadas do admin-foto.html têm prioridade máxima
+    for (const r of REGRAS_CUSTOM) {
+      if (regraCustomBate(nome, r)) {
+        return { cat: r.cat, sub: r.sub || null, marca: r.marca || null };
+      }
+    }
 
     // 1. Verificar regras de nome
     for (const regra of REGRAS_NOME) {
@@ -278,7 +322,8 @@
   }
 
   // Exporta globalmente para que os outros scripts possam usar
-  global.mapearProduto = mapearProduto;
-  global.extrairMarca  = extrairMarca;
+  global.mapearProduto        = mapearProduto;
+  global.extrairMarca         = extrairMarca;
+  global.carregarRegrasCustom = carregarRegrasCustom;
 
 })(window);
