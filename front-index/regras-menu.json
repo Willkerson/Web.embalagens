@@ -61,5 +61,14 @@
     "sub": "potes-tampas",
     "marca": null,
     "id": "rmrdhehryaje7"
+  },
+  {
+    "padrao": "BANDEJA",
+    "tipo": "prefixo",
+    "seguidoNumero": false,
+    "cat": "isopor",
+    "sub": "isopor-geral",
+    "marca": "BOM APETITE",
+    "id": "rmrdhf67ijzon"
   }
 ]
