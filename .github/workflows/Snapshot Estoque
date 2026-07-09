@@ -1,0 +1,33 @@
+name: Snapshot Estoque
+
+on:
+  schedule:
+    # 03:00 UTC = 00:00 horário de Brasília (UTC-3)
+    - cron: '0 3 * * *'
+  workflow_dispatch: {}  # permite rodar manualmente também, se quiser testar
+
+permissions:
+  contents: write
+
+jobs:
+  snapshot:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Gera snapshot do estoque de hoje
+        run: node scripts/snapshot-estoque.js
+
+      - name: Commit snapshot (só se algo mudou)
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add front-index/historico-estoque.json
+          git diff --staged --quiet || git commit -m "snapshot: estoque do dia $(date -u +%Y-%m-%d)"
+          git push
