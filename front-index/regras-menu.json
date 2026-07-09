@@ -97,5 +97,14 @@
     "sub": "outros",
     "marca": null,
     "id": "rmrdhidax61q5"
+  },
+  {
+    "padrao": "bh",
+    "tipo": "contem",
+    "seguidoNumero": false,
+    "cat": "isopor",
+    "sub": "isopor-geral",
+    "marca": "BOM APETITE",
+    "id": "rmrdhixkhedqy"
   }
 ]
