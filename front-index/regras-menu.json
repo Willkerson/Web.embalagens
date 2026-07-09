@@ -142,5 +142,14 @@
     "sub": "isopor-geral",
     "marca": "CAIXAS TERMICAS",
     "id": "rmrdhl7d4fimc"
+  },
+  {
+    "padrao": "CAIXA TERMICA ISOPOR",
+    "tipo": "contem",
+    "seguidoNumero": false,
+    "cat": "isopor",
+    "sub": "isopor-geral",
+    "marca": "CAIXAS TERMICAS",
+    "id": "rmrdhmw8wtg95"
   }
 ]
