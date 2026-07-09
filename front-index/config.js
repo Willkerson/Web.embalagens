@@ -19,7 +19,8 @@ var catMap = {
   limpeza:    ['produtos-limpeza', 'utensilios-limpeza', 'epi'],
   higiene:    ['papel-higiene', 'aromas-inseticidas'],
   utilidades: ['pilhas-baterias', 'organiz-limpeza', 'ferramentas', 'escritorio', 'ganchos'],
-  diversos:   ['isopor-geral', 'emb-flexiveis', 'emb-diversas', 'outros']
+  isopor:     ['isopor-geral'],
+  diversos:   ['emb-flexiveis', 'emb-diversas', 'outros']
 };
 var subLabels = {
   'caixas-correio':    'Caixas Correios',
@@ -50,7 +51,7 @@ var subLabels = {
 };
 var catEmojis = {
   caixas:'📦', sacolas:'🛍️', plastico:'🧪', festa:'🥂', limpeza:'🧹',
-  higiene:'🧻', utilidades:'🔧', diversos:'🔓',
+  higiene:'🧻', utilidades:'🔧', isopor:'❄️', diversos:'🔓',
   'caixas-correio':'📬', 'caixas-alimentos':'🍕', 'sacos-lixo':'🗑️',
   'sacolas-papel':'🧻', 'sacolas-plasticas':'🛒', 'potes-tampas':'🫙',
   'embalagens-bolo':'🎂', 'copos-pratos':'🥤', 'talheres':'🍴',
