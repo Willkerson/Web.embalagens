@@ -506,6 +506,33 @@ header {
 .hist-loading {
   text-align: center; padding: 40px 16px; color: var(--text3); font-size: 13px;
 }
+
+/* MAIS VENDIDOS */
+.rank-note {
+  font-size: 11.5px; color: var(--text3); padding: 10px 16px; line-height: 1.4;
+}
+.rank-item {
+  display: flex; align-items: center; gap: 12px;
+  padding: 12px 16px; border-bottom: 1px solid var(--border);
+}
+.rank-pos {
+  width: 28px; text-align: center; font-size: 15px; font-weight: 700;
+  color: var(--text2); flex-shrink: 0;
+}
+.rank-info { flex: 1; min-width: 0; }
+.rank-nome {
+  font-size: 13.5px; font-weight: 600; color: var(--text1);
+  white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+}
+.rank-meta { font-size: 11px; color: var(--text2); margin: 2px 0 6px; }
+.rank-bar {
+  height: 5px; background: var(--surface); border-radius: 3px; overflow: hidden;
+}
+.rank-bar-fill { height: 100%; background: var(--blue); border-radius: 3px; }
+.rank-total {
+  font-size: 15px; font-weight: 700; color: var(--text1); flex-shrink: 0;
+  min-width: 32px; text-align: right;
+}
 </style>
 </head>
 <body>
@@ -667,6 +694,7 @@ header {
     <button class="hist-tab active" onclick="setHistFiltro('todos', this)">Todos</button>
     <button class="hist-tab" onclick="setHistFiltro('entrada', this)">Entradas</button>
     <button class="hist-tab" onclick="setHistFiltro('saida', this)">Saídas</button>
+    <button class="hist-tab" onclick="setHistFiltro('vendidos', this)">🏆 Mais vendidos</button>
   </div>
   <div id="histList"></div>
 </div>
@@ -1283,6 +1311,7 @@ async function salvarHistorico(token, novos) {
 
 let histFiltro = "todos";
 let histDados  = [];
+let snapshotsEstoque = {}; // front-index/historico-estoque.json — snapshot diário de estoque
 
 function setHistFiltro(tipo, btn) {
   histFiltro = tipo;
@@ -1303,6 +1332,15 @@ async function abrirHistorico() {
     histDados = [];
     showToast("Erro ao carregar histórico: " + e.message);
   }
+
+  // Snapshot de estoque: arquivo público no repo Web.embalagens, sem token
+  try {
+    const r = await fetch("front-index/historico-estoque.json?t=" + Date.now());
+    snapshotsEstoque = r.ok ? await r.json() : {};
+  } catch (e) {
+    snapshotsEstoque = {};
+  }
+
   renderHistorico();
 }
 
@@ -1311,6 +1349,8 @@ function fecharHistorico() {
 }
 
 function renderHistorico() {
+  if (histFiltro === "vendidos") { renderRanking(); return; }
+
   const el  = document.getElementById("histList");
   let lista = histDados;
 
@@ -1353,6 +1393,104 @@ function renderHistorico() {
     }).join("")}
   `).join("");
 }
+
+// ── MAIS VENDIDOS ──
+// Calcula pela QUEDA REAL de estoque entre snapshots diários (dado que
+// vem direto do ConnectPlug, via produtos.json), descontando as entradas
+// (reposições) registradas no meio do caminho — assim uma reposição não
+// esconde uma venda que aconteceu antes dela.
+//
+// vendido_no_dia = estoque_dia_anterior − estoque_dia_atual + entradas_no_dia
+//
+// Só conta o que sobrar positivo (queda que a entrada não explica).
+function renderRanking() {
+  const el   = document.getElementById("histList");
+  const dias = Object.keys(snapshotsEstoque).sort();
+
+  if (dias.length < 2) {
+    el.innerHTML = `<div class="panel-vazio">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+        <circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/>
+      </svg><p>Ainda não há snapshots suficientes.<br>O ranking aparece a partir do 2º dia de coleta.</p></div>`;
+    return;
+  }
+
+  // Entradas (reposições) por produto, por dia (YYYY-MM-DD)
+  const entradasPorDiaProduto = {};
+  histDados.forEach(m => {
+    if (m.tipo !== "entrada" || !m.data) return;
+    const dia = String(m.data).slice(0, 10);
+    const key = String(m.codigo);
+    if (!entradasPorDiaProduto[key]) entradasPorDiaProduto[key] = {};
+    entradasPorDiaProduto[key][dia] = (entradasPorDiaProduto[key][dia] || 0) + (Number(m.qtd) || 0);
+  });
+
+  const nomesPorCodigo = {};
+  produtos.forEach(p => { nomesPorCodigo[String(p.codigo)] = p.nome; });
+
+  const vendidoTotal = {};
+
+  for (let i = 1; i < dias.length; i++) {
+    const diaAnterior  = dias[i - 1];
+    const diaAtual     = dias[i];
+    const snapAnterior = snapshotsEstoque[diaAnterior] || {};
+    const snapAtual    = snapshotsEstoque[diaAtual]    || {};
+
+    const codigos = new Set([...Object.keys(snapAnterior), ...Object.keys(snapAtual)]);
+    codigos.forEach(codigo => {
+      const antes = Number(snapAnterior[codigo]) || 0;
+      const agora = Number(snapAtual[codigo])    || 0;
+      const entrouNesseDia = (entradasPorDiaProduto[codigo] && entradasPorDiaProduto[codigo][diaAtual]) || 0;
+
+      const vendidoNoIntervalo = (antes - agora) + entrouNesseDia;
+      if (vendidoNoIntervalo > 0) {
+        vendidoTotal[codigo] = (vendidoTotal[codigo] || 0) + vendidoNoIntervalo;
+      }
+    });
+  }
+
+  const ranking = Object.entries(vendidoTotal)
+    .map(([codigo, total]) => ({
+      codigo,
+      total,
+      nome: nomesPorCodigo[codigo] || `Produto #${codigo}`
+    }))
+    .filter(p => p.total > 0)
+    .sort((a, b) => b.total - a.total);
+
+  if (!ranking.length) {
+    el.innerHTML = `<div class="panel-vazio">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+        <circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/>
+      </svg><p>Nenhuma queda de estoque detectada ainda</p></div>`;
+    return;
+  }
+
+  const maior = ranking[0].total || 1;
+  const desde = new Date(dias[0] + "T00:00:00").toLocaleDateString("pt-BR", { day: "2-digit", month: "short" });
+  const ate   = new Date(dias[dias.length - 1] + "T00:00:00").toLocaleDateString("pt-BR", { day: "2-digit", month: "short" });
+
+  el.innerHTML = `
+    <div class="rank-note">
+      Baseado na queda real de estoque (ConnectPlug) entre ${desde} e ${ate}, já descontando reposições registradas.
+    </div>
+    ${ranking.map((p, i) => {
+      const medalha = i === 0 ? "🥇" : i === 1 ? "🥈" : i === 2 ? "🥉" : (i + 1);
+      const pct = Math.round((p.total / maior) * 100);
+      return `
+        <div class="rank-item">
+          <div class="rank-pos">${medalha}</div>
+          <div class="rank-info">
+            <div class="rank-nome">${p.nome}</div>
+            <div class="rank-meta">#${p.codigo}</div>
+            <div class="rank-bar"><div class="rank-bar-fill" style="width:${pct}%"></div></div>
+          </div>
+          <div class="rank-total">${Math.round(p.total)}</div>
+        </div>`;
+    }).join("")}
+  `;
+}
+
 
 // ── TOAST removido (dava bug de barra preta presa no rodapé no iPhone) ──
 // Função mantida vazia pra não precisar mexer nas 13 chamadas de showToast()
