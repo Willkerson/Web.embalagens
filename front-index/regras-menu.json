@@ -18,15 +18,6 @@
     "id": "rmrcsqkeoeyry"
   },
   {
-    "padrao": "BH",
-    "tipo": "prefixo",
-    "seguidoNumero": true,
-    "cat": "isopor",
-    "sub": "isopor-geral",
-    "marca": null,
-    "id": "rmrcsr0jll0pm"
-  },
-  {
     "padrao": "CUMBUCA",
     "tipo": "prefixo",
     "seguidoNumero": false,
