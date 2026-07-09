@@ -506,24 +506,6 @@ header {
 .hist-loading {
   text-align: center; padding: 40px 16px; color: var(--text3); font-size: 13px;
 }
-
-/* TOAST */
-.toast {
-  position: fixed; bottom: calc(28px + env(safe-area-inset-bottom, 0px)); left: 50%;
-  /* translateY precisa cobrir a própria altura (100%) MAIS a distância
-     fixa do bottom (28px) pra sumir de vez — só 100% (ou 120%) deixava
-     uma tira do toast ainda visível colada na base da tela. */
-  transform: translateX(-50%) translateY(calc(100% + 40px));
-  background: var(--text1); color: #fff;
-  padding: 11px 22px; border-radius: 24px;
-  font-size: 13px; font-weight: 500; z-index: 200;
-  transition: transform .3s cubic-bezier(.32,1,.45,1);
-  max-width: calc(100vw - 32px); width: max-content;
-  white-space: normal; text-align: center; word-break: break-word;
-  box-shadow: 0 4px 20px rgba(0,0,0,.25);
-  pointer-events: none;
-}
-.toast.show { transform: translateX(-50%) translateY(0); }
 </style>
 </head>
 <body>
@@ -688,9 +670,6 @@ header {
   </div>
   <div id="histList"></div>
 </div>
-
-<!-- TOAST -->
-<div class="toast" id="toast"></div>
 
 <script>
 // ── BLOQUEIO DE ZOOM ──
@@ -1375,30 +1354,12 @@ function renderHistorico() {
   `).join("");
 }
 
-// ── TOAST ──
-let _tt;
+// ── TOAST removido (dava bug de barra preta presa no rodapé no iPhone) ──
+// Função mantida vazia pra não precisar mexer nas 13 chamadas de showToast()
+// espalhadas pelo código — elas continuam existindo mas não fazem mais nada.
 function showToast(msg) {
-  const el = document.getElementById("toast");
-  el.textContent = msg;
-  el.classList.add("show");
-  clearTimeout(_tt);
-  _tt = setTimeout(() => el.classList.remove("show"), 1800);
+  console.log(msg);
 }
-
-// FIX: barra/pill preta presa no rodapé no iPhone. Causa: o Safari usa
-// bfcache — se o app for pra segundo plano (troca de app, tela bloqueada)
-// logo depois de um toast aparecer, a página congela com o toast ainda
-// visível e o setTimeout que ia escondê-lo fica pausado junto. Ao voltar,
-// o Safari restaura esse estado congelado (sem recarregar a página), e o
-// toast fica preso na tela pra sempre. O evento "pageshow" dispara toda
-// vez que a página volta a ficar visível — inclusive quando restaurada
-// do bfcache (nesse caso e.persisted é true) — então garantimos aqui que
-// o toast nunca fica grudado.
-window.addEventListener("pageshow", () => {
-  clearTimeout(_tt);
-  const el = document.getElementById("toast");
-  if (el) el.classList.remove("show");
-});
 </script>
 
 <!-- ─── PWA: registra o service worker do estoque ─── -->
