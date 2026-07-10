@@ -633,7 +633,7 @@
     "codigo": "405",
     "nome": "GARFO SOBREMESA BRANCO C/50UN ELITE",
     "categoria": "DESCARTAVEIS",
-    "preco": 3,
+    "preco": 3.99,
     "estoque": "-39,00 un"
   },
   {
@@ -2195,7 +2195,7 @@
     "nome": "TOP LIXO PIA E BANHEIRO LAVANDA C/40UN PACK LIXO",
     "categoria": "SACO LIXO",
     "preco": 10,
-    "estoque": "4,00 un"
+    "estoque": "28,00 un"
   },
   {
     "codigo": "1048",
@@ -2573,7 +2573,7 @@
     "nome": "BOBINA PICOTADA 2,5KG C/500UN P/ ALIMENTOS 25X33 EXTRUSA",
     "categoria": "Embalagem",
     "preco": 25,
-    "estoque": "7,00 un"
+    "estoque": "11,00 un"
   },
   {
     "codigo": "1281",
@@ -3399,7 +3399,7 @@
     "nome": "TOP LIXO BRANCO 15L C/60UN PACK LIXO",
     "categoria": "SACO LIXO",
     "preco": 17.99,
-    "estoque": "206,00 un"
+    "estoque": "18,00 un"
   },
   {
     "codigo": "1854",
@@ -3895,7 +3895,7 @@
     "codigo": "2296",
     "nome": "GARFO SOFT BRANCO C/50UN ELITE",
     "categoria": "DESCARTAVEIS",
-    "preco": 4.5,
+    "preco": 5.5,
     "estoque": "-28,00 un"
   },
   {
@@ -4932,7 +4932,7 @@
     "nome": "POTE E TAMPA RET.500ML C/24UN GOUR MAX",
     "categoria": "DESCARTAVEIS",
     "preco": 29.99,
-    "estoque": "11,00 un"
+    "estoque": "10,00 un"
   },
   {
     "codigo": "3106",
