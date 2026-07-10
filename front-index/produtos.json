@@ -172,7 +172,7 @@
     "nome": "COLHER SOFT BRANCA C/50UN ELITE",
     "categoria": "DESCARTAVEIS",
     "preco": 6.5,
-    "estoque": "-2,00 un"
+    "estoque": "59,00 un"
   },
   {
     "codigo": "178",
@@ -438,7 +438,7 @@
     "nome": "SACOLA UNIDADE GRANDE",
     "categoria": "SACO LIXO",
     "preco": 0.5,
-    "estoque": "-66,00 un"
+    "estoque": "-68,00 un"
   },
   {
     "codigo": "335",
@@ -634,7 +634,7 @@
     "nome": "GARFO SOBREMESA BRANCO C/50UN ELITE",
     "categoria": "DESCARTAVEIS",
     "preco": 3.99,
-    "estoque": "-39,00 un"
+    "estoque": "51,00 un"
   },
   {
     "codigo": "406",
@@ -648,7 +648,7 @@
     "nome": "G56MM TORTA MEDIA 1,7KG BR26CM GALVONOTEK",
     "categoria": "DESCARTAVEIS",
     "preco": 5.5,
-    "estoque": "30,00 un"
+    "estoque": "28,00 un"
   },
   {
     "codigo": "409",
@@ -697,14 +697,14 @@
     "nome": "COLHER DE SOPA BRANCA C/50UN ELITE",
     "categoria": "DESCARTAVEIS",
     "preco": 10.5,
-    "estoque": "2,00 un"
+    "estoque": "80,00 un"
   },
   {
     "codigo": "422",
     "nome": "COLHER SOBREMESA BRANCA C/50UN ELITE",
     "categoria": "DESCARTAVEIS",
     "preco": 3.99,
-    "estoque": "-10,00 un"
+    "estoque": "-9,00 un"
   },
   {
     "codigo": "423",
@@ -823,7 +823,7 @@
     "nome": "COLHER SOBREMESA CRISTAL C/50UN ELITE",
     "categoria": "DESCARTAVEIS",
     "preco": 3.99,
-    "estoque": "4,00 un"
+    "estoque": "44,00 un"
   },
   {
     "codigo": "459",
@@ -1159,7 +1159,7 @@
     "nome": "TOP LIXO PRETO 15L C/60UN PACK LIXO",
     "categoria": "SACO LIXO",
     "preco": 17.99,
-    "estoque": "156,00 un"
+    "estoque": "155,00 un"
   },
   {
     "codigo": "637",
@@ -1341,7 +1341,7 @@
     "nome": "PALITO DENTAL NATURAL BAMBU C/100UN",
     "categoria": "DESCARTAVEIS",
     "preco": 1.5,
-    "estoque": "22,00 un"
+    "estoque": "12,00 un"
   },
   {
     "codigo": "711",
@@ -1852,7 +1852,7 @@
     "nome": "COPO DESCARTAVEL TRANSPARENTE 50ML C/100UN TOTAL PLAST",
     "categoria": "DESCARTAVEIS",
     "preco": 3.5,
-    "estoque": "31,00 un"
+    "estoque": "25,00 un"
   },
   {
     "codigo": "904",
@@ -1880,7 +1880,7 @@
     "nome": "SACOLA SOS LISA GG C/ALÇA C/20UN 30X20X36 PLUMA (PA00735)",
     "categoria": "Embalagem",
     "preco": 39.99,
-    "estoque": "30,00 un"
+    "estoque": "29,00 un"
   },
   {
     "codigo": "910",
@@ -3308,7 +3308,7 @@
     "nome": "COPO 300ML CRISTAL C/10UN ELITE",
     "categoria": "DESCARTAVEIS",
     "preco": 7.5,
-    "estoque": "5,00 un"
+    "estoque": "48,00 un"
   },
   {
     "codigo": "1779",
@@ -3560,7 +3560,7 @@
     "nome": "BANDEJA B3 C/10UN 235X18X16MM",
     "categoria": "Embalagem",
     "preco": 3.5,
-    "estoque": "6,00 un"
+    "estoque": "5,00 un"
   },
   {
     "codigo": "1940",
@@ -3896,7 +3896,7 @@
     "nome": "GARFO SOFT BRANCO C/50UN ELITE",
     "categoria": "DESCARTAVEIS",
     "preco": 5.5,
-    "estoque": "-28,00 un"
+    "estoque": "25,00 un"
   },
   {
     "codigo": "2298",
@@ -3980,7 +3980,7 @@
     "nome": "GARFO P/ REFEIÇAO C/200UN ELITE",
     "categoria": "DESCARTAVEIS",
     "preco": 42.99,
-    "estoque": "-15,00 un"
+    "estoque": "5,00 un"
   },
   {
     "codigo": "2356",
@@ -4372,14 +4372,14 @@
     "nome": "GARFO SOBREMESA CRISTAL C/50UN ELITE",
     "categoria": "DESCARTAVEIS",
     "preco": 3.99,
-    "estoque": "-32,00 un"
+    "estoque": "73,00 un"
   },
   {
     "codigo": "2785",
     "nome": "GARFO REFEICAO BRANCO C/50UN ELITE",
     "categoria": "DESCARTAVEIS",
     "preco": 10.25,
-    "estoque": "11,00 un"
+    "estoque": "31,00 un"
   },
   {
     "codigo": "2799",
@@ -4638,7 +4638,7 @@
     "nome": "PRATO QUADRADO GRANDE C10UNI ELITE",
     "categoria": "DESCARTAVEIS",
     "preco": 15.99,
-    "estoque": "18,00 un"
+    "estoque": "58,00 un"
   },
   {
     "codigo": "2924",
@@ -4685,16 +4685,16 @@
   {
     "codigo": "2938",
     "nome": "PRATO QUADRADO 150MM BRANCO C/10UN",
-    "categoria": "Produto em Processo",
+    "categoria": "ALIMENTO/GENERO ALIMENTICIO",
     "preco": 7.99,
-    "estoque": "47,00 un"
+    "estoque": "87,00 un"
   },
   {
     "codigo": "2939",
     "nome": "PRATO QUADRADO 150MM CRISTAL C/10UN",
     "categoria": "DESCARTAVEIS",
     "preco": 7.99,
-    "estoque": "36,00 un"
+    "estoque": "76,00 un"
   },
   {
     "codigo": "2957",
@@ -5079,7 +5079,7 @@
     "nome": "PACK LIXO PIA E BANHEIRO BIO CHA BRANCO C/80UN",
     "categoria": "SACO LIXO",
     "preco": 13.99,
-    "estoque": "18,00 un"
+    "estoque": "14,00 un"
   },
   {
     "codigo": "3147",
@@ -5135,7 +5135,7 @@
     "nome": "FITA ADESIVA 18MMX40M / 18MMx50M KORETEC",
     "categoria": "PAPELARIA",
     "preco": 2.5,
-    "estoque": "-72,00 un"
+    "estoque": "-73,00 un"
   },
   {
     "codigo": "3161",
@@ -5856,7 +5856,7 @@
     "nome": "B05 RASA BAND ISOPOR FR05 B16 C/10UN FIBRAFORM",
     "categoria": "DESCARTAVEIS",
     "preco": 7,
-    "estoque": "-6,00 un"
+    "estoque": "-8,00 un"
   },
   {
     "codigo": "7897",
@@ -6157,7 +6157,7 @@
     "nome": "SACOS PLASTICO PEBD 10X15X0,06 200G COLOMBO",
     "categoria": "Embalagem",
     "preco": 10,
-    "estoque": "13,00 un"
+    "estoque": "11,00 un"
   },
   {
     "codigo": "10044",
