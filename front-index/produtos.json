@@ -326,7 +326,7 @@
     "nome": "VASSOURA DENTRO E FORA C/CABO ALKLIN",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 15,
-    "estoque": "-1,00 un"
+    "estoque": "-2,00 un"
   },
   {
     "codigo": "295",
@@ -438,7 +438,7 @@
     "nome": "SACOLA UNIDADE GRANDE",
     "categoria": "SACO LIXO",
     "preco": 0.5,
-    "estoque": "-59,00 un"
+    "estoque": "-60,00 un"
   },
   {
     "codigo": "335",
@@ -452,7 +452,7 @@
     "nome": "SACO DE LIXO UNIDADE PRETO GRANDE",
     "categoria": "SACO LIXO",
     "preco": 2,
-    "estoque": "-3,00 un"
+    "estoque": "-4,00 un"
   },
   {
     "codigo": "342",
@@ -592,7 +592,7 @@
     "nome": "PANO DE CHAO BRANCO ALVEJADO 45CMX69CM SOUZA PPR28",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 6.7,
-    "estoque": "-3,00 un"
+    "estoque": "-5,00 un"
   },
   {
     "codigo": "391",
@@ -669,7 +669,7 @@
     "nome": "GARFO MASTER BRANCO C/50UN PRAFESTA",
     "categoria": "DESCARTAVEIS",
     "preco": 12.5,
-    "estoque": "7,00 un"
+    "estoque": "6,00 un"
   },
   {
     "codigo": "416",
@@ -837,7 +837,7 @@
     "nome": "D56 B0LO E TORTA ROMA MEDIA B BRANCA",
     "categoria": "DESCARTAVEIS",
     "preco": 4,
-    "estoque": "26,00 un"
+    "estoque": "24,00 un"
   },
   {
     "codigo": "466",
@@ -893,7 +893,7 @@
     "nome": "DESINFETANTE SUPREMA LAVANDA B 5L",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 21.99,
-    "estoque": "2,00 un"
+    "estoque": "0,00 un"
   },
   {
     "codigo": "526",
@@ -1103,7 +1103,7 @@
     "nome": "FOLHA DE ALUMINIO 7,5MX30CM WYDA",
     "categoria": "DESCARTAVEIS",
     "preco": 8.75,
-    "estoque": "-61,00 un"
+    "estoque": "-62,00 un"
   },
   {
     "codigo": "616",
@@ -1656,7 +1656,7 @@
     "nome": "G32MB BAIXA TORTA MINI 750G GALV.",
     "categoria": "DESCARTAVEIS",
     "preco": 1.99,
-    "estoque": "121,00 un"
+    "estoque": "120,00 un"
   },
   {
     "codigo": "831",
@@ -1810,14 +1810,14 @@
     "nome": "COPO DESCARTAVEL TRANSPARENTE 180ML C/100UN TOTAL PLAST",
     "categoria": "DESCARTAVEIS",
     "preco": 7.5,
-    "estoque": "417,00 un"
+    "estoque": "412,00 un"
   },
   {
     "codigo": "897",
     "nome": "GUARDANAPO DE PAPEL 20X21CM C/100UN LUXO PLUMA",
     "categoria": "DESCARTAVEIS",
     "preco": 4,
-    "estoque": "35,00 un"
+    "estoque": "33,00 un"
   },
   {
     "codigo": "898",
@@ -1837,7 +1837,7 @@
     "codigo": "901",
     "nome": "COPO DESCARTAVEL TRANSPARENTE 180ML C/100UN GLIGHT",
     "categoria": "DESCARTAVEIS",
-    "preco": 5.99,
+    "preco": 6.5,
     "estoque": "50,00 un"
   },
   {
@@ -2202,28 +2202,28 @@
     "nome": "SACO P/ LIXO PRETO 100L C/50UN",
     "categoria": "SACO LIXO",
     "preco": 57.5,
-    "estoque": "17,00 un"
+    "estoque": "16,00 un"
   },
   {
     "codigo": "1049",
     "nome": "SACO P/ LIXO PRETO 100L C/100UN",
     "categoria": "SACO LIXO",
     "preco": 115,
-    "estoque": "16,00 un"
+    "estoque": "15,00 un"
   },
   {
     "codigo": "1051",
     "nome": "SACO P/ LIXO PRETO P6 40L C/10UN",
     "categoria": "SACO LIXO",
     "preco": 5.5,
-    "estoque": "18,00 un"
+    "estoque": "16,00 un"
   },
   {
     "codigo": "1052",
     "nome": "SACO P/ LIXO PRETO P8 60L C/10UN",
     "categoria": "SACO LIXO",
     "preco": 8.99,
-    "estoque": "24,00 un"
+    "estoque": "20,00 un"
   },
   {
     "codigo": "1053",
@@ -2384,7 +2384,7 @@
     "nome": "REFIL RODO ALUMINIO 60CM SANCHES",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 6,
-    "estoque": "10,00 un"
+    "estoque": "9,00 un"
   },
   {
     "codigo": "1147",
@@ -2496,7 +2496,7 @@
     "nome": "SACO P/ LIXO PRETO P6 40L C/50UN",
     "categoria": "SACO LIXO",
     "preco": 25,
-    "estoque": "23,00 un"
+    "estoque": "19,00 un"
   },
   {
     "codigo": "1188",
@@ -2531,7 +2531,7 @@
     "nome": "BOBINA PICOTADA 2KG C/500UN P/ ALIMENTOS 20X28CM EXTRUSA",
     "categoria": "Embalagem",
     "preco": 19,
-    "estoque": "8,00 un"
+    "estoque": "7,00 un"
   },
   {
     "codigo": "1225",
@@ -2657,7 +2657,7 @@
     "nome": "PACK LIXO PIA E BANHEIRO TUTTI-FRUITI C/80UN DIVA",
     "categoria": "SACO LIXO",
     "preco": 16.5,
-    "estoque": "20,00 un"
+    "estoque": "18,00 un"
   },
   {
     "codigo": "1316",
@@ -2937,7 +2937,7 @@
     "nome": "D32MM TORTA MINI 19CM 750G DONA RITA",
     "categoria": "Embalagem",
     "preco": 1.5,
-    "estoque": "77,00 un"
+    "estoque": "76,00 un"
   },
   {
     "codigo": "1474",
@@ -3028,7 +3028,7 @@
     "nome": "TOALHA INTERFOLHA BRANCA PREMIUM WHITE PAPER C/1000UN",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 24,
-    "estoque": "9,00 un"
+    "estoque": "7,00 un"
   },
   {
     "codigo": "1526",
@@ -3070,7 +3070,7 @@
     "nome": "PRATO BRANCO RASO 15CM C/10UN TOTAL PLAST",
     "categoria": "DESCARTAVEIS",
     "preco": 2.5,
-    "estoque": "8,00 un"
+    "estoque": "3,00 un"
   },
   {
     "codigo": "1548",
@@ -3154,7 +3154,7 @@
     "nome": "D50MM TORTA MDIA 1,5KG BR24CM DONA RITA",
     "categoria": "DESCARTAVEIS",
     "preco": 3,
-    "estoque": "111,00 un"
+    "estoque": "110,00 un"
   },
   {
     "codigo": "1649",
@@ -3245,7 +3245,7 @@
     "nome": "SACOLA PRETA 1KG 30X40",
     "categoria": "Embalagem",
     "preco": 16.99,
-    "estoque": "7,00 un"
+    "estoque": "5,00 un"
   },
   {
     "codigo": "1719",
@@ -3301,7 +3301,7 @@
     "nome": "COPO DESCARTAVEL TRANSPARENTE 250ML C/100UN TOTAL PLAST",
     "categoria": "DESCARTAVEIS",
     "preco": 13.5,
-    "estoque": "13,00 un"
+    "estoque": "10,00 un"
   },
   {
     "codigo": "1778",
@@ -3399,7 +3399,7 @@
     "nome": "TOP LIXO BRANCO 15L C/60UN PACK LIXO",
     "categoria": "SACO LIXO",
     "preco": 17.99,
-    "estoque": "207,00 un"
+    "estoque": "206,00 un"
   },
   {
     "codigo": "1854",
@@ -3910,7 +3910,7 @@
     "nome": "TOP LIXO PRETO 30L C/30UN PACK LIXO",
     "categoria": "SACO LIXO",
     "preco": 17.99,
-    "estoque": "196,00 un"
+    "estoque": "195,00 un"
   },
   {
     "codigo": "2302",
@@ -5072,7 +5072,7 @@
     "nome": "PACK LIXO PIA E BANHEIRO BIO CHA BRANCO C/80UN",
     "categoria": "SACO LIXO",
     "preco": 13.99,
-    "estoque": "19,00 un"
+    "estoque": "18,00 un"
   },
   {
     "codigo": "3147",
@@ -5184,7 +5184,7 @@
     "nome": "PAPEL HIGIENICO FOFINHO FOLHA DUPLA 4X30M",
     "categoria": "PRODUTO DE HIGIENE",
     "preco": 8.5,
-    "estoque": "74,00 un"
+    "estoque": "73,00 un"
   },
   {
     "codigo": "3192",
@@ -5212,7 +5212,7 @@
     "nome": "PAPEL TOALHA SCALA PLUS C/120 TOALHAS C/2 ROLOS",
     "categoria": "PRODUTO DE HIGIENE",
     "preco": 8,
-    "estoque": "24,00 un"
+    "estoque": "22,00 un"
   },
   {
     "codigo": "3267",
@@ -5331,7 +5331,7 @@
     "nome": "LIMPADOR CONCENTRADO LAVANDA 120ML SANOL",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 11.5,
-    "estoque": "0,00 un"
+    "estoque": "-2,00 un"
   },
   {
     "codigo": "3979",
@@ -5401,7 +5401,7 @@
     "nome": "PANOS DE MICROFIBRAS C/3UN ALKLIN",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 10.99,
-    "estoque": "2,00 un"
+    "estoque": "1,00 un"
   },
   {
     "codigo": "3995",
@@ -5450,7 +5450,7 @@
     "nome": "BOBINA PICOTADA 20X30CM C/700UN P/ ALIMENTOS SOLDA FUNDO (1,3KG)",
     "categoria": "Embalagem",
     "preco": 63,
-    "estoque": "0,00 un"
+    "estoque": "-1,00 un"
   },
   {
     "codigo": "4006",
@@ -5821,7 +5821,7 @@
     "nome": "SACO P/LIXO 20L PRETO P5 C/50UN",
     "categoria": "SACO LIXO",
     "preco": 17,
-    "estoque": "59,00 un"
+    "estoque": "58,00 un"
   },
   {
     "codigo": "7893",
@@ -6178,7 +6178,7 @@
     "nome": "PANO MULTIUSO AZUL C/50 PANOS 30CMX25CM MR. PLUS TALGE",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 17,
-    "estoque": "36,00 un"
+    "estoque": "35,00 un"
   },
   {
     "codigo": "11176",
@@ -6451,7 +6451,7 @@
     "nome": "FOLHA ALUMINIO D92000ML C/ 5UNI",
     "categoria": "Embalagem",
     "preco": 18,
-    "estoque": "5,00 un"
+    "estoque": "4,00 un"
   },
   {
     "codigo": "31661",
