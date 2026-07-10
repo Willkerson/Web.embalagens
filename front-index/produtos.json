@@ -438,7 +438,7 @@
     "nome": "SACOLA UNIDADE GRANDE",
     "categoria": "SACO LIXO",
     "preco": 0.5,
-    "estoque": "-58,00 un"
+    "estoque": "-59,00 un"
   },
   {
     "codigo": "335",
@@ -1838,7 +1838,7 @@
     "nome": "COPO DESCARTAVEL TRANSPARENTE 180ML C/100UN GLIGHT",
     "categoria": "DESCARTAVEIS",
     "preco": 5.99,
-    "estoque": "0,00 un"
+    "estoque": "50,00 un"
   },
   {
     "codigo": "902",
@@ -2223,14 +2223,14 @@
     "nome": "SACO P/ LIXO PRETO P8 60L C/10UN",
     "categoria": "SACO LIXO",
     "preco": 8.99,
-    "estoque": "25,00 un"
+    "estoque": "24,00 un"
   },
   {
     "codigo": "1053",
     "nome": "SACOS P/LIXO 100L P8 C10UN PRETO",
     "categoria": "SACO LIXO",
     "preco": 13.5,
-    "estoque": "29,00 un"
+    "estoque": "28,00 un"
   },
   {
     "codigo": "1055",
@@ -3364,7 +3364,7 @@
     "nome": "LUVA NITRILICA PRETA P S/PO C/100UN TALGE",
     "categoria": "DESCARTAVEIS",
     "preco": 31.99,
-    "estoque": "25,00 un"
+    "estoque": "24,00 un"
   },
   {
     "codigo": "1818",
@@ -3651,7 +3651,7 @@
     "nome": "TOUCAS DESCARTAVEIS C/100UN 45X50CM BOMPACK",
     "categoria": "DESCARTAVEIS",
     "preco": 13.5,
-    "estoque": "5,00 un"
+    "estoque": "12,00 un"
   },
   {
     "codigo": "2067",
@@ -3665,7 +3665,7 @@
     "nome": "COPO DESCARTAVEL 770ML C/25UN ULTRA",
     "categoria": "DESCARTAVEIS",
     "preco": 16.99,
-    "estoque": "182,00 un"
+    "estoque": "48,00 un"
   },
   {
     "codigo": "2072",
@@ -3686,7 +3686,7 @@
     "nome": "POTE TERMICO 480ML C/25UN ULTRA",
     "categoria": "DESCARTAVEIS",
     "preco": 15.99,
-    "estoque": "0,00 un"
+    "estoque": "20,00 un"
   },
   {
     "codigo": "2078",
@@ -4009,13 +4009,6 @@
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 13.5,
     "estoque": "10,00 un"
-  },
-  {
-    "codigo": "2362",
-    "nome": "COPO TERMICO 240ML C/25UN ULTRA",
-    "categoria": "DESCARTAVEIS",
-    "preco": 10.5,
-    "estoque": "40,00 un"
   },
   {
     "codigo": "2382",
@@ -4470,7 +4463,7 @@
     "nome": "POTE ISOPOR 240ML C/25UN ULTRA",
     "categoria": "DESCARTAVEIS",
     "preco": 12.5,
-    "estoque": "6,00 un"
+    "estoque": "46,00 un"
   },
   {
     "codigo": "2830",
@@ -4743,14 +4736,14 @@
     "nome": "AÇUCAR EM SACHE 100X5G UNIAO",
     "categoria": "ALIMENTO/GENERO ALIMENTICIO",
     "preco": 10,
-    "estoque": "0,00 un"
+    "estoque": "3,00 un"
   },
   {
     "codigo": "2993",
     "nome": "AÇUCAR EM SACHE 400X5G UNIAO CAIXA FECHADA",
     "categoria": "ALIMENTO/GENERO ALIMENTICIO",
     "preco": 38.5,
-    "estoque": "2,00 un"
+    "estoque": "3,00 un"
   },
   {
     "codigo": "2994",
@@ -4820,7 +4813,14 @@
     "nome": "COPO DESCARTAVEL 330ML C/50UN ULTRA",
     "categoria": "DESCARTAVEIS",
     "preco": 12.5,
-    "estoque": "26,00 un"
+    "estoque": "36,00 un"
+  },
+  {
+    "codigo": "3035",
+    "nome": "D6-1B 500ML FOLHA DE ALUMINIO C10/UN C/TAMPA PT WYDA D",
+    "categoria": "Embalagem",
+    "preco": 16.5,
+    "estoque": "9,00 un"
   },
   {
     "codigo": "3039",
@@ -5205,7 +5205,7 @@
     "nome": "COPO E TAMPA 140ML C/25UN ULTRA PP",
     "categoria": "DESCARTAVEIS",
     "preco": 12.5,
-    "estoque": "-28,00 un"
+    "estoque": "49,00 un"
   },
   {
     "codigo": "3199",
@@ -6003,7 +6003,7 @@
     "nome": "ALCOOL 70% LIQUIDO 5L BARBAREX",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 49.99,
-    "estoque": "-1,00 un"
+    "estoque": "4,00 un"
   },
   {
     "codigo": "8349",
@@ -6388,7 +6388,7 @@
     "nome": "DETERGENTE YPÊ CLEAR 500ML",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 4,
-    "estoque": "19,00 un"
+    "estoque": "18,00 un"
   },
   {
     "codigo": "31651",
@@ -7505,7 +7505,7 @@
   },
   {
     "codigo": "286457",
-    "nome": "D640 DOCE REDONDO 170ML CRISTAL C/10UN DONA RITA",
+    "nome": "D640 DOCE REDONDO 170ML CRISTAL CAIXA FECHADA DONA RITA",
     "categoria": "DESCARTAVEIS",
     "preco": 103,
     "estoque": "-77,00 un"
