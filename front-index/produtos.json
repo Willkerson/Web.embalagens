@@ -74,7 +74,7 @@
     "nome": "SUPER PÁ C/CABO",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 17,
-    "estoque": "13,00 un"
+    "estoque": "12,00 un"
   },
   {
     "codigo": "129",
@@ -466,7 +466,7 @@
     "nome": "PLASTICO BOLHA 65MX50M MICRA 20 MN.PLAST",
     "categoria": "Embalagem",
     "preco": 52.99,
-    "estoque": "9,00 un"
+    "estoque": "8,00 un"
   },
   {
     "codigo": "346",
@@ -1275,10 +1275,10 @@
   },
   {
     "codigo": "670",
-    "nome": "SACO KRAFT ECO C/100UN 21X33CM",
+    "nome": "SACO KRAFT ECO 3KG C/100UN 21X33CM",
     "categoria": "Embalagem",
-    "preco": 77.85,
-    "estoque": "5,00 un"
+    "preco": 15.99,
+    "estoque": "11,00 un"
   },
   {
     "codigo": "681",
@@ -1390,7 +1390,7 @@
     "nome": "DESENGORDURANTE 500ML LIMPEZA PESADA LIMAO AZULIM START",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 16,
-    "estoque": "12,00 un"
+    "estoque": "11,00 un"
   },
   {
     "codigo": "743",
@@ -2195,7 +2195,7 @@
     "nome": "TOP LIXO PIA E BANHEIRO LAVANDA C/40UN PACK LIXO",
     "categoria": "SACO LIXO",
     "preco": 10,
-    "estoque": "8,00 un"
+    "estoque": "4,00 un"
   },
   {
     "codigo": "1048",
@@ -2636,7 +2636,7 @@
     "nome": "TOALHA DE PAPEL BOBINA 6X20X200 FD WHITE PAPER",
     "categoria": "PRODUTO DE HIGIENE",
     "preco": 95,
-    "estoque": "-2,00 un"
+    "estoque": "0,00 un"
   },
   {
     "codigo": "1313",
@@ -2713,14 +2713,14 @@
     "nome": "TOALHA INTERFOLHA BRANCA (VERDE) C/1000UN ISAPEL",
     "categoria": "PRODUTO DE HIGIENE",
     "preco": 16,
-    "estoque": "63,00 un"
+    "estoque": "61,00 un"
   },
   {
     "codigo": "1331",
     "nome": "TOALHA BOBINA BRANCA 8X20X100 FD WHITE PAPER",
     "categoria": "PRODUTO DE HIGIENE",
     "preco": 55,
-    "estoque": "1,00 un"
+    "estoque": "6,00 un"
   },
   {
     "codigo": "1332",
@@ -3189,7 +3189,7 @@
     "nome": "POTE REDONDO 200ML C/TAMPA C/24UN PRAFESTA",
     "categoria": "DESCARTAVEIS",
     "preco": 17.99,
-    "estoque": "12,00 un"
+    "estoque": "11,00 un"
   },
   {
     "codigo": "1684",
@@ -3462,7 +3462,7 @@
     "nome": "LIMPA VIDRO SANCHES",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 8.5,
-    "estoque": "7,00 un"
+    "estoque": "6,00 un"
   },
   {
     "codigo": "1905",
@@ -5008,7 +5008,7 @@
     "codigo": "3131",
     "nome": "DESENTUPIDOR PIAS E VASOS SANITARIOS1L START",
     "categoria": "PRODUTO DE LIMPEZA",
-    "preco": 30.99,
+    "preco": 26.99,
     "estoque": "6,00 un"
   },
   {
@@ -5478,7 +5478,7 @@
     "nome": "FITA CREPE 24MMX45M",
     "categoria": "UTENSILIOS",
     "preco": 7,
-    "estoque": "4,00 un"
+    "estoque": "3,00 un"
   },
   {
     "codigo": "4035",
@@ -6227,14 +6227,14 @@
     "nome": "LIMPEZA PESADA SEM CABO SANCHES",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 11.8,
-    "estoque": "14,00 un"
+    "estoque": "13,00 un"
   },
   {
     "codigo": "11537",
     "nome": "LIMPA AZULEJO SEM CABO SANCHES",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 8.5,
-    "estoque": "3,00 un"
+    "estoque": "2,00 un"
   },
   {
     "codigo": "12345",
