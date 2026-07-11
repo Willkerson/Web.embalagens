@@ -1,10 +1,8 @@
 name: Snapshot Estoque
-
 on:
   schedule:
-    # 03:00 UTC = 00:00 horário de Brasília (UTC-3)
-    - cron: '0 3 * * *'
-  workflow_dispatch: {}  # permite rodar manualmente também, se quiser testar
+    - cron: '0 */6 * * *'
+  workflow_dispatch:
 
 permissions:
   contents: write
