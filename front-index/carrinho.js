@@ -12,7 +12,13 @@ function mudaQtd(id, d) {
     }
   }
 }
-
+function toggleCart(id) {
+  if (carrinho[id]) {
+    removerItem(id);
+  } else {
+    addCart(id);
+  }
+}
 function addCart(id) {
   var prod = prods().find(function(p) { return String(p.id) === String(id); });
   if (!prod) return;
