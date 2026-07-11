@@ -43,5 +43,32 @@
     "sub": "isopor-geral",
     "marca": "CAIXAS TERMICAS",
     "id": "rmrdkrubf8vvk"
+  },
+  {
+    "padrao": "garfo",
+    "tipo": "prefixo",
+    "seguidoNumero": false,
+    "cat": "festa",
+    "sub": "talheres",
+    "marca": null,
+    "id": "rmrfpzyi76e0y"
+  },
+  {
+    "padrao": "Isopor",
+    "tipo": "contem",
+    "seguidoNumero": false,
+    "cat": "isopor",
+    "sub": "isopor-geral",
+    "marca": null,
+    "id": "rmrfq0rb77jd6"
+  },
+  {
+    "padrao": "Copo Desca",
+    "tipo": "contem",
+    "seguidoNumero": false,
+    "cat": "festa",
+    "sub": "copos-pratos",
+    "marca": null,
+    "id": "rmrfq1aoyx23i"
   }
 ]
