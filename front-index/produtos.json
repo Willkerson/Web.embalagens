@@ -438,7 +438,7 @@
     "nome": "SACOLA UNIDADE GRANDE",
     "categoria": "SACO LIXO",
     "preco": 0.5,
-    "estoque": "-68,00 un"
+    "estoque": "-69,00 un"
   },
   {
     "codigo": "335",
@@ -2951,7 +2951,7 @@
     "nome": "G56MA BOLO ALTA MILLENIUM GALVONOTEK",
     "categoria": "DESCARTAVEIS",
     "preco": 7,
-    "estoque": "182,00 un"
+    "estoque": "181,00 un"
   },
   {
     "codigo": "1476",
