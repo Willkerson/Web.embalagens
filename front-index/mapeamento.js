@@ -302,7 +302,7 @@
     'TALGE', 'ALKLIN', 'NIAGRA', 'TOTALPLAST', 'SANREMO', 'GALVONOTEK',
     'PLASUTIL', 'TRILHA', 'TINGS', 'MALUGER', 'FRATELLI', 'PLASNEW',
     'CLINK', 'ALFACELL', 'KEITA', 'MONALIZA', 'AZULIM', 'COPOBRAS',
-    'COPABRAS', 'ISOTERM', 'ARMAZEM', 'COALA', 'SANCHES',
+     'ISOTERM', 'ARMAZEM', 'COALA', 'SANCHES',
   ];
   // Ordena da mais longa pra mais curta, pra "BOM APETITE" ser testado
   // antes de um eventual "APETITE" sozinho, evitando bater errado.
