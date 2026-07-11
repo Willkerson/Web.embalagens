@@ -70,5 +70,68 @@
     "sub": "copos-pratos",
     "marca": null,
     "id": "rmrfq1aoyx23i"
+  },
+  {
+    "padrao": "Toalha",
+    "tipo": "contem",
+    "seguidoNumero": false,
+    "cat": "higiene",
+    "sub": "papel-higiene",
+    "marca": null,
+    "id": "rmrfq2k7wvfdf"
+  },
+  {
+    "padrao": "Sabao",
+    "tipo": "contem",
+    "seguidoNumero": false,
+    "cat": "higiene",
+    "sub": "papel-higiene",
+    "marca": null,
+    "id": "rmrfq2v0atays"
+  },
+  {
+    "padrao": "deter",
+    "tipo": "contem",
+    "seguidoNumero": false,
+    "cat": "higiene",
+    "sub": "papel-higiene",
+    "marca": null,
+    "id": "rmrfq31ys9ipo"
+  },
+  {
+    "padrao": "pano",
+    "tipo": "contem",
+    "seguidoNumero": false,
+    "cat": "higiene",
+    "sub": "papel-higiene",
+    "marca": null,
+    "id": "rmrfq38sb25n2"
+  },
+  {
+    "padrao": "Marmitex",
+    "tipo": "contem",
+    "seguidoNumero": false,
+    "cat": "isopor",
+    "sub": "isopor-geral",
+    "marca": "MARMITEX, CUMBUCAS",
+    "id": "rmrfq41id8zyw"
+  },
+  {
+    "padrao": "Cumbuca",
+    "tipo": "contem",
+    "seguidoNumero": false,
+    "cat": "isopor",
+    "sub": "isopor-geral",
+    "marca": "MARMITEX, CUMBUCAS",
+    "id": "rmrfq4ahsbp3k"
+  },
+  {
+    "padrao": "Balde",
+    "tipo": "contem",
+    "seguidoNumero": false,
+    "cat": "diversos",
+    "sub": "outros",
+    "marca": "BALDES",
+    "id": "rmrfq58dboobm"
   }
 ]
