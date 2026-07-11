@@ -23,7 +23,7 @@
 
   /* Logo menor */
   .logo-name { font-size: .8rem; }
-  .logo-mark { width: 26px; height: 26px; }
+  .logo-mark { width: 34px; height: 34px; }
 
   /* Botão WhatsApp: esconde texto, mantém ícone */
   .btn-wpp span { display: none; }
