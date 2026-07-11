@@ -133,5 +133,14 @@
     "sub": "outros",
     "marca": "BALDES",
     "id": "rmrfq58dboobm"
+  },
+  {
+    "padrao": "Esponja",
+    "tipo": "contem",
+    "seguidoNumero": false,
+    "cat": "limpeza",
+    "sub": "utensilios-limpeza",
+    "marca": "ESPONJAS",
+    "id": "rmrgiyf6c8y71"
   }
 ]
