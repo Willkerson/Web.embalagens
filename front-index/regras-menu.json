@@ -135,12 +135,12 @@
     "id": "rmrfq58dboobm"
   },
   {
-    "padrao": "Esponja",
+    "padrao": "esponja",
     "tipo": "contem",
     "seguidoNumero": false,
     "cat": "limpeza",
     "sub": "utensilios-limpeza",
-    "marca": "ESPONJAS",
-    "id": "rmrgiyf6c8y71"
+    "marca": null,
+    "id": "rmrgj0f1l829w"
   }
 ]
