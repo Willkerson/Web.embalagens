@@ -21,7 +21,7 @@
 
   .hdr-inner { padding: var(--safe-top) 12px 0; gap: 6px; }
 
-  /* Logo menor */
+  /* Logo menor *//
   .logo-name { font-size: .8rem; }
   .logo-mark { width: 34px; height: 34px; }
 
