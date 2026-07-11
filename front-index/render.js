@@ -276,7 +276,7 @@ function renderMais() {
               '<input class="iq" type="number" id="qtd-' + p.id + '" value="1" min="1">' +
               '<button class="bq" onclick="mudaQtd(\'' + p.id + '\',1)">+</button>' +
             '</div>' +
-            '<button class="badd' + (inCart ? ' done' : '') + '" id="badd-' + p.id + '" onclick="addCart(\'' + p.id + '\')">' +
+            '<button class="badd' + (inCart ? ' done' : '') + '" id="badd-' + p.id + '" onclick="toggleCart(\'' + p.id + '\')">' +
               (inCart ? '✓ Adicionado' : '+ Adicionar') +
             '</button>' +
           '</div>';
