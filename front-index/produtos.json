@@ -67,14 +67,14 @@
     "nome": "RODO ALKLIN 40CM C/CABO",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 14,
-    "estoque": "41,00 un"
+    "estoque": "40,00 un"
   },
   {
     "codigo": "125",
     "nome": "SUPER PÁ C/CABO",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 17,
-    "estoque": "11,00 un"
+    "estoque": "10,00 un"
   },
   {
     "codigo": "129",
@@ -172,7 +172,7 @@
     "nome": "COLHER SOFT BRANCA C/50UN ELITE",
     "categoria": "DESCARTAVEIS",
     "preco": 6.5,
-    "estoque": "57,00 un"
+    "estoque": "53,00 un"
   },
   {
     "codigo": "178",
@@ -333,7 +333,7 @@
     "nome": "VASSOURA PREMIUM COM CABO ALKLIN",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 18,
-    "estoque": "11,00 un"
+    "estoque": "10,00 un"
   },
   {
     "codigo": "296",
@@ -774,7 +774,7 @@
     "nome": "POTE OVAL QUALITY LINE C/10UN PRAFESTA",
     "categoria": "DESCARTAVEIS",
     "preco": 3,
-    "estoque": "39,00 un"
+    "estoque": "35,00 un"
   },
   {
     "codigo": "443",
@@ -1208,7 +1208,7 @@
     "nome": "ASSADEIRA DE ALUMINIO RETANGULAR PRA VIAGEM 4L",
     "categoria": "DESCARTAVEIS",
     "preco": 5.99,
-    "estoque": "11,00 un"
+    "estoque": "9,00 un"
   },
   {
     "codigo": "656",
@@ -2160,7 +2160,7 @@
     "nome": "SACO P/ LIXO PRETO P8 60L C/50UN",
     "categoria": "SACO LIXO",
     "preco": 38.25,
-    "estoque": "22,00 un"
+    "estoque": "21,00 un"
   },
   {
     "codigo": "1042",
@@ -2307,7 +2307,7 @@
     "nome": "MARMITEX DE ISOPOR 1100ML C/10UN COPOBRAS",
     "categoria": "DESCARTAVEIS",
     "preco": 8.5,
-    "estoque": "3,00 un"
+    "estoque": "1,00 un"
   },
   {
     "codigo": "1103",
@@ -3116,9 +3116,9 @@
   },
   {
     "codigo": "1583",
-    "nome": "GARRAFA PE QUADRADA 300ML C/100UN MALUGER",
+    "nome": "GARRAFA PE QUADRADA 300ML C/100UN DECOPLAST",
     "categoria": "Embalagem",
-    "preco": 108,
+    "preco": 92.99,
     "estoque": "2,00 un"
   },
   {
@@ -3714,7 +3714,7 @@
     "nome": "FOLHA DE ALUMINIO 4MX30CM WYDA",
     "categoria": "Embalagem",
     "preco": 5.5,
-    "estoque": "5,00 un"
+    "estoque": "4,00 un"
   },
   {
     "codigo": "2094",
@@ -3805,7 +3805,7 @@
     "nome": "FITA ADESIVA 45X100M TRANSPARENTE KORETECH",
     "categoria": "PAPELARIA",
     "preco": 10.5,
-    "estoque": "24,00 un"
+    "estoque": "23,00 un"
   },
   {
     "codigo": "2164",
@@ -5716,7 +5716,7 @@
     "nome": "PALITO DENTAL C/200UN FIAT LUX",
     "categoria": "ALIMENTO/GENERO ALIMENTICIO",
     "preco": 2.25,
-    "estoque": "6,00 un"
+    "estoque": "5,00 un"
   },
   {
     "codigo": "7012",
@@ -6472,7 +6472,7 @@
     "nome": "FOLHA ALUMINIO D92000ML C/ 5UNI",
     "categoria": "Embalagem",
     "preco": 18,
-    "estoque": "4,00 un"
+    "estoque": "3,00 un"
   },
   {
     "codigo": "31661",
@@ -6605,7 +6605,7 @@
     "nome": "LIMPA TELAS START 120ML + PZNO MICROFIBRA22X25CM",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 16,
-    "estoque": "9,00 un"
+    "estoque": "8,00 un"
   },
   {
     "codigo": "31681",
@@ -7767,7 +7767,7 @@
     "nome": "SACOLA VERDE REFORÇÂDA 60x80 kg",
     "categoria": "-",
     "preco": 19.99,
-    "estoque": "-13,00 un"
+    "estoque": "-14,00 un"
   },
   {
     "codigo": "7909875076499",
