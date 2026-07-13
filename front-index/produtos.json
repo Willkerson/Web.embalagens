@@ -438,7 +438,7 @@
     "nome": "SACOLA UNIDADE GRANDE",
     "categoria": "SACO LIXO",
     "preco": 0.5,
-    "estoque": "-77,00 un"
+    "estoque": "-78,00 un"
   },
   {
     "codigo": "335",
@@ -585,7 +585,7 @@
     "nome": "PANO DE CHAO XADREZ 45CMX68CM SOUZA BR2",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 4.7,
-    "estoque": "17,00 un"
+    "estoque": "16,00 un"
   },
   {
     "codigo": "390",
@@ -599,7 +599,7 @@
     "nome": "PANO DE CHAO ALVEJADO CAIPIRA 45CMX68CM",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 5.25,
-    "estoque": "25,00 un"
+    "estoque": "-5,00 un"
   },
   {
     "codigo": "398",
@@ -2034,7 +2034,7 @@
     "nome": "MARMITEX DE ISOPOR 750ML C/10UN COPOBRAS",
     "categoria": "DESCARTAVEIS",
     "preco": 8,
-    "estoque": "26,00 un"
+    "estoque": "25,00 un"
   },
   {
     "codigo": "0229",
@@ -2118,7 +2118,7 @@
     "nome": "SACOS PLASTICO PEBD 25X35X0,06 1KG HELVIPACK",
     "categoria": "Embalagem",
     "preco": 46,
-    "estoque": "7,00 un"
+    "estoque": "6,00 un"
   },
   {
     "codigo": "1015",
@@ -2167,7 +2167,7 @@
     "nome": "SACO P/ LIXO PRETO P8 60L C/100UN",
     "categoria": "SACO LIXO",
     "preco": 76.5,
-    "estoque": "16,00 un"
+    "estoque": "0,00 un"
   },
   {
     "codigo": "1044",
@@ -2916,7 +2916,7 @@
     "nome": "LUVA LATEX LONGA M DANNY LONGATEX",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 18.5,
-    "estoque": "8,00 un"
+    "estoque": "6,00 un"
   },
   {
     "codigo": "1464",
@@ -2965,7 +2965,7 @@
     "nome": "G80MA BOLO ALTA MILLENIUM GALVONOTEK",
     "categoria": "DESCARTAVEIS",
     "preco": 12.5,
-    "estoque": "33,00 un"
+    "estoque": "32,00 un"
   },
   {
     "codigo": "1479",
@@ -3371,7 +3371,7 @@
     "nome": "LUVA DE VINIL M S/TALCO C/100UN TALGE",
     "categoria": "DESCARTAVEIS",
     "preco": 21,
-    "estoque": "17,00 un"
+    "estoque": "14,00 un"
   },
   {
     "codigo": "1819",
@@ -3420,7 +3420,7 @@
     "nome": "HAMBURGUEIRA BH03 C/100UN BOM APETITE",
     "categoria": "DESCARTAVEIS",
     "preco": 38.99,
-    "estoque": "7,00 un"
+    "estoque": "6,00 un"
   },
   {
     "codigo": "1888",
@@ -3588,7 +3588,7 @@
     "nome": "SACO P/ LIXO PRETO 200L C/10UN",
     "categoria": "SACO LIXO",
     "preco": 21,
-    "estoque": "11,00 un"
+    "estoque": "10,00 un"
   },
   {
     "codigo": "2002",
@@ -4043,7 +4043,7 @@
     "nome": "PEGADOR DE SALADA SILICONE INOX 27CM",
     "categoria": "UTENSILIOS",
     "preco": 14.99,
-    "estoque": "9,00 un"
+    "estoque": "8,00 un"
   },
   {
     "codigo": "2403",
@@ -4211,7 +4211,7 @@
     "nome": "ESPONJA ANTIRISCO C/4UN ALCKLIN",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 4,
-    "estoque": "192,00 un"
+    "estoque": "191,00 un"
   },
   {
     "codigo": "2599",
@@ -4827,7 +4827,7 @@
     "nome": "D6-1B 500ML FOLHA DE ALUMINIO C10/UN C/TAMPA PT WYDA D",
     "categoria": "Embalagem",
     "preco": 16.5,
-    "estoque": "8,00 un"
+    "estoque": "7,00 un"
   },
   {
     "codigo": "3039",
@@ -4841,7 +4841,7 @@
     "nome": "HAMBURGUEIRA BH01 C/10UN BOM APETITE",
     "categoria": "DESCARTAVEIS",
     "preco": 3.5,
-    "estoque": "62,00 un"
+    "estoque": "61,00 un"
   },
   {
     "codigo": "3048",
@@ -6192,7 +6192,7 @@
     "nome": "PANO MULTIUSO AZUL C/50 PANOS 30CMX25CM MR. PLUS TALGE",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 17,
-    "estoque": "34,00 un"
+    "estoque": "33,00 un"
   },
   {
     "codigo": "11176",
