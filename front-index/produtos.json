@@ -74,7 +74,7 @@
     "nome": "SUPER PÁ C/CABO",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 17,
-    "estoque": "10,00 un"
+    "estoque": "9,00 un"
   },
   {
     "codigo": "129",
@@ -417,7 +417,7 @@
     "nome": "SACO P/ LIXO PRETO 20L C/100UN",
     "categoria": "SACO LIXO",
     "preco": 33.99,
-    "estoque": "58,00 un"
+    "estoque": "14,00 un"
   },
   {
     "codigo": "330",
@@ -466,7 +466,7 @@
     "nome": "PLASTICO BOLHA 65MX50M MICRA 20 MN.PLAST",
     "categoria": "Embalagem",
     "preco": 52.99,
-    "estoque": "7,00 un"
+    "estoque": "6,00 un"
   },
   {
     "codigo": "346",
@@ -921,7 +921,7 @@
     "nome": "CAIXA ONDULADA N05",
     "categoria": "Embalagem",
     "preco": 26.5,
-    "estoque": "6,00 un"
+    "estoque": "5,00 un"
   },
   {
     "codigo": "553",
@@ -1607,7 +1607,7 @@
     "nome": "TESOURA P/ CABELO 7,5 HOMEMORE",
     "categoria": "UTENSILIOS",
     "preco": 14.99,
-    "estoque": "2,00 un"
+    "estoque": "1,00 un"
   },
   {
     "codigo": "820",
@@ -2209,14 +2209,14 @@
     "nome": "SACO P/ LIXO PRETO 100L C/100UN",
     "categoria": "SACO LIXO",
     "preco": 115,
-    "estoque": "15,00 un"
+    "estoque": "4,00 un"
   },
   {
     "codigo": "1051",
     "nome": "SACO P/ LIXO PRETO P6 40L C/10UN",
     "categoria": "SACO LIXO",
     "preco": 5.5,
-    "estoque": "16,00 un"
+    "estoque": "14,00 un"
   },
   {
     "codigo": "1052",
@@ -2503,7 +2503,7 @@
     "nome": "SACO P/ LIXO PRETO P6 40L C/100UN",
     "categoria": "SACO LIXO",
     "preco": 50,
-    "estoque": "14,00 un"
+    "estoque": "9,00 un"
   },
   {
     "codigo": "1199",
@@ -3574,7 +3574,7 @@
     "nome": "TOALHA INTERFOLHA LUXO 20X21CM C/1000FOLHAS WHITE PAPER",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 22,
-    "estoque": "32,00 un"
+    "estoque": "30,00 un"
   },
   {
     "codigo": "1981",
@@ -3644,7 +3644,7 @@
     "nome": "LAVA ROUPAS EM PO 800G APYCE",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 5.9,
-    "estoque": "3,00 un"
+    "estoque": "2,00 un"
   },
   {
     "codigo": "2058",
@@ -5198,7 +5198,7 @@
     "nome": "PAPEL HIGIENICO FOFINHO FOLHA DUPLA 4X30M",
     "categoria": "PRODUTO DE HIGIENE",
     "preco": 8.5,
-    "estoque": "73,00 un"
+    "estoque": "72,00 un"
   },
   {
     "codigo": "3192",
@@ -5709,7 +5709,7 @@
     "nome": "SACO P/ LIXO PRETO P12 200L C/50UN",
     "categoria": "SACO LIXO",
     "preco": 100,
-    "estoque": "10,00 un"
+    "estoque": "5,00 un"
   },
   {
     "codigo": "7011",
@@ -5898,7 +5898,7 @@
     "nome": "DIFUSOR DE AROMAS CITRONELA SENALAR",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 18,
-    "estoque": "9,00 un"
+    "estoque": "8,00 un"
   },
   {
     "codigo": "7907",
@@ -6423,7 +6423,7 @@
     "nome": "DETERGENTE YPÊ NEUTRO 500ML",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 4,
-    "estoque": "1,00 un"
+    "estoque": "0,00 un"
   },
   {
     "codigo": "31653",
@@ -6745,7 +6745,7 @@
     "nome": "AGUA SANITARIA DACLOR 1L",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 5.4,
-    "estoque": "-5,00 un"
+    "estoque": "-6,00 un"
   },
   {
     "codigo": "89815",
