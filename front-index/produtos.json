@@ -172,7 +172,7 @@
     "nome": "COLHER SOFT BRANCA C/50UN ELITE",
     "categoria": "DESCARTAVEIS",
     "preco": 6.5,
-    "estoque": "53,00 un"
+    "estoque": "51,00 un"
   },
   {
     "codigo": "178",
@@ -193,7 +193,7 @@
     "nome": "COPO TERMICO 180ML C/20UN TOTALPLAST",
     "categoria": "DESCARTAVEIS",
     "preco": 5.99,
-    "estoque": "114,00 un"
+    "estoque": "113,00 un"
   },
   {
     "codigo": "189",
@@ -375,7 +375,7 @@
     "nome": "PAPEL HIGIENICO PREM. DUPLA DELICATTO C/4UN 10X30M",
     "categoria": "PRODUTO DE HIGIENE",
     "preco": 7.5,
-    "estoque": "12,00 un"
+    "estoque": "11,00 un"
   },
   {
     "codigo": "314",
@@ -438,7 +438,7 @@
     "nome": "SACOLA UNIDADE GRANDE",
     "categoria": "SACO LIXO",
     "preco": 0.5,
-    "estoque": "-81,00 un"
+    "estoque": "-82,00 un"
   },
   {
     "codigo": "335",
@@ -704,7 +704,7 @@
     "nome": "COLHER SOBREMESA BRANCA C/50UN ELITE",
     "categoria": "DESCARTAVEIS",
     "preco": 3.99,
-    "estoque": "26,00 un"
+    "estoque": "25,00 un"
   },
   {
     "codigo": "423",
@@ -823,7 +823,7 @@
     "nome": "COLHER SOBREMESA CRISTAL C/50UN ELITE",
     "categoria": "DESCARTAVEIS",
     "preco": 3.99,
-    "estoque": "37,00 un"
+    "estoque": "35,00 un"
   },
   {
     "codigo": "459",
@@ -1669,8 +1669,8 @@
     "codigo": "834",
     "nome": "G60MM MILLENIUM TORTA MEDIA 2,2KG 29CM",
     "categoria": "DESCARTAVEIS",
-    "preco": 5.5,
-    "estoque": "-11,00 un"
+    "preco": 6.99,
+    "estoque": "100,00 un"
   },
   {
     "codigo": "837",
@@ -1831,7 +1831,7 @@
     "nome": "GUARDANAPO 30X31CM C/50UN LUXO PLUMA",
     "categoria": "DESCARTAVEIS",
     "preco": 3.9,
-    "estoque": "94,00 un"
+    "estoque": "93,00 un"
   },
   {
     "codigo": "901",
@@ -2377,7 +2377,7 @@
     "nome": "REFIL RODO ALUMINIO 50CM SANCHES",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 5,
-    "estoque": "5,00 un"
+    "estoque": "4,00 un"
   },
   {
     "codigo": "1142",
@@ -2531,7 +2531,7 @@
     "nome": "BOBINA PICOTADA 2KG C/500UN P/ ALIMENTOS 20X28CM EXTRUSA",
     "categoria": "Embalagem",
     "preco": 19,
-    "estoque": "4,00 un"
+    "estoque": "2,00 un"
   },
   {
     "codigo": "1225",
@@ -2944,7 +2944,7 @@
     "nome": "D50MA TORTA ALTA 1,7KG DONA RITA",
     "categoria": "Embalagem",
     "preco": 3.5,
-    "estoque": "19,00 un"
+    "estoque": "69,00 un"
   },
   {
     "codigo": "1475",
@@ -2972,7 +2972,7 @@
     "nome": "D78MM RET.5KG PRETA JUMBO 44X35X5 1UN HELVIPACK",
     "categoria": "DESCARTAVEIS",
     "preco": 18.6,
-    "estoque": "18,00 un"
+    "estoque": "33,00 un"
   },
   {
     "codigo": "1481",
@@ -2986,7 +2986,7 @@
     "nome": "D645 POTE REDONDO BASE E TAMPA C/10UN 120ML",
     "categoria": "DESCARTAVEIS",
     "preco": 3.5,
-    "estoque": "16,00 un"
+    "estoque": "46,00 un"
   },
   {
     "codigo": "1489",
@@ -3140,7 +3140,7 @@
     "nome": "SACO KRAFT P3 MINI LANCHE C/100UN PLUMA",
     "categoria": "DESCARTAVEIS",
     "preco": 5.99,
-    "estoque": "81,00 un"
+    "estoque": "77,00 un"
   },
   {
     "codigo": "1588",
@@ -3154,7 +3154,7 @@
     "nome": "D50MM TORTA MDIA 1,5KG BR24CM DONA RITA",
     "categoria": "DESCARTAVEIS",
     "preco": 3,
-    "estoque": "107,00 un"
+    "estoque": "157,00 un"
   },
   {
     "codigo": "1649",
@@ -3182,7 +3182,7 @@
     "nome": "CABO DE ALUMINIO C/ROSCA 1,5MT SANCHES",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 22,
-    "estoque": "-5,00 un"
+    "estoque": "-7,00 un"
   },
   {
     "codigo": "1683",
@@ -3238,7 +3238,7 @@
     "nome": "SACOLA VERDE REFORÇADA 1KG 90X100",
     "categoria": "Embalagem",
     "preco": 19.99,
-    "estoque": "17,00 un"
+    "estoque": "16,00 un"
   },
   {
     "codigo": "1717",
@@ -3357,7 +3357,7 @@
     "nome": "PRATO ISOPOR BPR-23 C/25UN BOM APETITE",
     "categoria": "DESCARTAVEIS",
     "preco": 13.5,
-    "estoque": "29,00 un"
+    "estoque": "49,00 un"
   },
   {
     "codigo": "1813",
@@ -3392,7 +3392,7 @@
     "nome": "PEDRA SANITARIA 25G MISTA AZULIM",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 2.99,
-    "estoque": "81,00 un"
+    "estoque": "74,00 un"
   },
   {
     "codigo": "1853",
@@ -3686,7 +3686,7 @@
     "nome": "POTE TERMICO 480ML C/25UN ULTRA",
     "categoria": "DESCARTAVEIS",
     "preco": 19.99,
-    "estoque": "20,00 un"
+    "estoque": "16,00 un"
   },
   {
     "codigo": "2078",
@@ -3952,7 +3952,7 @@
     "nome": "G70 BOLO/TORTA RETANGULAR MEDIA GALVONOTEK - 34,2 x 24 x 11,5 cm",
     "categoria": "DESCARTAVEIS",
     "preco": 15,
-    "estoque": "10,00 un"
+    "estoque": "30,00 un"
   },
   {
     "codigo": "2345",
@@ -4064,7 +4064,7 @@
     "nome": "G78M BOLO MEDIA MILL. GALVANOTEK",
     "categoria": "DESCARTAVEIS",
     "preco": 24.5,
-    "estoque": "10,00 un"
+    "estoque": "30,00 un"
   },
   {
     "codigo": "2411",
@@ -4092,14 +4092,14 @@
     "nome": "GUARDANAPO DE PAPEL WHITEPAPER C/50UN 20X22CM",
     "categoria": "DESCARTAVEIS",
     "preco": 1.7,
-    "estoque": "-41,00 un"
+    "estoque": "-46,00 un"
   },
   {
     "codigo": "2445",
     "nome": "GUARDANAPO DE PAPEL 30X30CM C/50UN WHITEPAPER",
     "categoria": "DESCARTAVEIS",
     "preco": 3,
-    "estoque": "31,00 un"
+    "estoque": "30,00 un"
   },
   {
     "codigo": "2452",
@@ -4323,7 +4323,7 @@
     "nome": "G32MA MINI TORTA ALTA 1KG GALVONOTEK",
     "categoria": "Embalagem",
     "preco": 3.5,
-    "estoque": "96,00 un"
+    "estoque": "116,00 un"
   },
   {
     "codigo": "2709",
@@ -4477,14 +4477,14 @@
     "nome": "COPO TERMICO 70ML C/25UN ULTRA",
     "categoria": "DESCARTAVEIS",
     "preco": 4.5,
-    "estoque": "42,00 un"
+    "estoque": "41,00 un"
   },
   {
     "codigo": "2832",
     "nome": "COPO ISOPOR 70ML C/20UN TOTAL PLAST",
     "categoria": "DESCARTAVEIS",
     "preco": 3,
-    "estoque": "105,00 un"
+    "estoque": "104,00 un"
   },
   {
     "codigo": "2833",
@@ -4848,7 +4848,7 @@
     "nome": "COPO TERMICO 180ML C/25UN ULTRA",
     "categoria": "DESCARTAVEIS",
     "preco": 7.99,
-    "estoque": "13,00 un"
+    "estoque": "11,00 un"
   },
   {
     "codigo": "3051",
@@ -4932,7 +4932,7 @@
     "nome": "POTE E TAMPA RET.500ML C/24UN GOUR MAX",
     "categoria": "DESCARTAVEIS",
     "preco": 29.99,
-    "estoque": "10,00 un"
+    "estoque": "28,00 un"
   },
   {
     "codigo": "3106",
@@ -5915,13 +5915,6 @@
     "estoque": "-3,00 un"
   },
   {
-    "codigo": "7909",
-    "nome": "D78 Bolos e Tortas Roma Média Base Branca 5kg",
-    "categoria": "Embalagem",
-    "preco": 18.5,
-    "estoque": "10,00 un"
-  },
-  {
     "codigo": "7911",
     "nome": "BH-200 3 DIVISORIAS - BRANCA. C/100",
     "categoria": "-",
@@ -6249,6 +6242,13 @@
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 8.5,
     "estoque": "2,00 un"
+  },
+  {
+    "codigo": "11682",
+    "nome": "D70M BOLO E TORTA RET MEDIA BASE BRANCA",
+    "categoria": "DESCARTAVEIS",
+    "preco": 11.99,
+    "estoque": "20,00 un"
   },
   {
     "codigo": "12345",
@@ -7571,6 +7571,13 @@
     "nome": "Cópia de SUPORTE LT C/ VELCRO BIG SANCHES",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 20,
+    "estoque": "0,00 un"
+  },
+  {
+    "codigo": "2578_1136",
+    "nome": "Cópia de SACO SOS PARDO GG C/50UN 30X20X36 PLUMA",
+    "categoria": "Embalagem",
+    "preco": 69.5,
     "estoque": "0,00 un"
   },
   {
