@@ -438,7 +438,7 @@
     "nome": "SACOLA UNIDADE GRANDE",
     "categoria": "SACO LIXO",
     "preco": 0.5,
-    "estoque": "-82,00 un"
+    "estoque": "-83,00 un"
   },
   {
     "codigo": "335",
@@ -2314,7 +2314,7 @@
     "nome": "MARMITEX DE ISOPOR 750ML C/10UN BOM APETITE",
     "categoria": "DESCARTAVEIS",
     "preco": 8,
-    "estoque": "10,00 un"
+    "estoque": "8,00 un"
   },
   {
     "codigo": "1113",
@@ -4841,7 +4841,7 @@
     "nome": "HAMBURGUEIRA BH01 C/10UN BOM APETITE",
     "categoria": "DESCARTAVEIS",
     "preco": 3.5,
-    "estoque": "61,00 un"
+    "estoque": "59,00 un"
   },
   {
     "codigo": "3048",
@@ -4932,7 +4932,7 @@
     "nome": "POTE E TAMPA RET.500ML C/24UN GOUR MAX",
     "categoria": "DESCARTAVEIS",
     "preco": 29.99,
-    "estoque": "28,00 un"
+    "estoque": "27,00 un"
   },
   {
     "codigo": "3106",
