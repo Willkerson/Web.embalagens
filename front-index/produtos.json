@@ -319,7 +319,7 @@
     "nome": "ESPONJA MULTIUSO C/4UN ALCKLIN",
     "categoria": "UTENSILIOS",
     "preco": 3.5,
-    "estoque": "59,00 un"
+    "estoque": "58,00 un"
   },
   {
     "codigo": "294",
@@ -438,7 +438,7 @@
     "nome": "SACOLA UNIDADE GRANDE",
     "categoria": "SACO LIXO",
     "preco": 0.5,
-    "estoque": "-83,00 un"
+    "estoque": "-84,00 un"
   },
   {
     "codigo": "335",
@@ -1551,7 +1551,7 @@
     "nome": "FILME PVC ESTICAVEL DF15 PROTECT 28CMX15M ALPFILM",
     "categoria": "Embalagem",
     "preco": 3.7,
-    "estoque": "1,00 un"
+    "estoque": "-1,00 un"
   },
   {
     "codigo": "795",
@@ -2496,7 +2496,7 @@
     "nome": "SACO P/ LIXO PRETO P6 40L C/50UN",
     "categoria": "SACO LIXO",
     "preco": 25,
-    "estoque": "17,00 un"
+    "estoque": "16,00 un"
   },
   {
     "codigo": "1188",
@@ -2657,7 +2657,7 @@
     "nome": "PACK LIXO PIA E BANHEIRO TUTTI-FRUITI C/80UN DIVA",
     "categoria": "SACO LIXO",
     "preco": 16.5,
-    "estoque": "18,00 un"
+    "estoque": "17,00 un"
   },
   {
     "codigo": "1316",
@@ -2951,7 +2951,7 @@
     "nome": "G56MA BOLO ALTA MILLENIUM GALVONOTEK",
     "categoria": "DESCARTAVEIS",
     "preco": 7,
-    "estoque": "179,00 un"
+    "estoque": "174,00 un"
   },
   {
     "codigo": "1476",
@@ -3973,7 +3973,7 @@
     "nome": "PAPEL DE PRESENTE (PEQUENO)",
     "categoria": "Embalagem",
     "preco": 0.8,
-    "estoque": "-14,00 un"
+    "estoque": "-15,00 un"
   },
   {
     "codigo": "2355",
@@ -4085,7 +4085,7 @@
     "nome": "ESPONJA MAGICA TIRA MANCHAS CLEAN TECH",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 1.5,
-    "estoque": "7,00 un"
+    "estoque": "3,00 un"
   },
   {
     "codigo": "2444",
@@ -5485,7 +5485,7 @@
     "nome": "FILME DE PVC 300 METROS 38CMX300M TECFILM",
     "categoria": "Embalagem",
     "preco": 52,
-    "estoque": "6,00 un"
+    "estoque": "5,00 un"
   },
   {
     "codigo": "4009",
@@ -6157,7 +6157,7 @@
     "nome": "SACOS PLASTICO PEBD 200G 10X20X0,06 COLOMBO/HELVIPACK",
     "categoria": "Embalagem",
     "preco": 10,
-    "estoque": "-7,00 un"
+    "estoque": "-8,00 un"
   },
   {
     "codigo": "10075",
@@ -6563,7 +6563,7 @@
     "nome": "TEK BOND INSTANTÂNEA 2G",
     "categoria": "PAPELARIA",
     "preco": 3.99,
-    "estoque": "-8,00 un"
+    "estoque": "-9,00 un"
   },
   {
     "codigo": "31674",
@@ -6850,7 +6850,7 @@
     "nome": "KIT GANCHOS C/3UN",
     "categoria": "UTENSILIOS",
     "preco": 8,
-    "estoque": "-52,00 un"
+    "estoque": "-54,00 un"
   },
   {
     "codigo": "129015",
