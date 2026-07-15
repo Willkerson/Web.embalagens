@@ -3,7 +3,7 @@
 // ─────────────────────────────────────────────────────────────
 
 // URL da API multi-cliente rodando no Render (substitui produtos.json estático)
-const PRODUTOS_API_URL = 'https://automacao-connectplug.onrender.com';
+const PRODUTOS_API_URL = 'https://automacao-connectplug.onrender.com/clients/embalagens/produtos';
 
 async function carregarProdutos() {
   try {
