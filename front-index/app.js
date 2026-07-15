@@ -1,6 +1,10 @@
 // ─────────────────────────────────────────────────────────────
 // APP.JS
 // ─────────────────────────────────────────────────────────────
+
+// URL da API multi-cliente rodando no Render (substitui produtos.json estático)
+const PRODUTOS_API_URL = 'https://automacao-connectplug.onrender.com';
+
 async function carregarProdutos() {
   try {
     // Carrega as regras customizadas (admin-foto.html) ANTES de mapear os
@@ -10,7 +14,7 @@ async function carregarProdutos() {
     }
 
     const [respProdutos, respImagens, respVisibilidade] = await Promise.all([
-      fetch('front-index/produtos.json'),
+      fetch(PRODUTOS_API_URL, { cache: 'no-store' }),
       // produto-imagens.json e produto-visibilidade.json são opcionais: se
       // ainda não existirem ou derem erro, o site continua funcionando
       // normalmente (sem foto extra / sem nada desativado).
@@ -22,7 +26,8 @@ async function carregarProdutos() {
       throw new Error(`Erro HTTP ${respProdutos.status}`);
     }
 
-    const produtos = await respProdutos.json();
+    const dataProdutos = await respProdutos.json();
+    const produtos = dataProdutos.produtos; // API retorna { produtos, atualizado_em, total }, não a lista pura
 
     let imagens = {};
     if (respImagens && respImagens.ok) {
@@ -69,6 +74,10 @@ async function carregarProdutos() {
       // regra customizada do admin já definiu a marca, ela tem prioridade.
       p.marca = mapeado.marca || ((typeof extrairMarca === 'function') ? extrairMarca(p.nome) : '');
 
+      // FIX: a API nova usa "valor" em vez de "preco" — traduz aqui pra não
+      // precisar mexer no resto do site que já espera p.preco.
+      if (!p.preco && p.valor) p.preco = p.valor;
+
       if (!p.estoque)      p.estoque      = 0;
       if (!p.preco)        p.preco        = 0;
 
@@ -104,7 +113,7 @@ async function carregarProdutos() {
     estado.produtoSelecionado = null;
     document.dispatchEvent(new CustomEvent('planilhaCarregada'));
   } catch (erro) {
-    console.error('Erro ao carregar produtos.json', erro);
+    console.error('Erro ao carregar produtos da API', erro);
   }
 }
 carregarProdutos();
