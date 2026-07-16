@@ -396,7 +396,7 @@
     "nome": "PAPEL HIGIENICO PREM. DUPLA DELICATTO C/4UN 10X30M",
     "categoria": "PRODUTO DE HIGIENE",
     "preco": 7.5,
-    "estoque": 11.0
+    "estoque": 10.0
   },
   {
     "codigo": "314",
@@ -459,7 +459,7 @@
     "nome": "SACOLA UNIDADE GRANDE",
     "categoria": "SACO LIXO",
     "preco": 0.5,
-    "estoque": -90.0
+    "estoque": -91.0
   },
   {
     "codigo": "335",
@@ -515,7 +515,7 @@
     "nome": "ESCOVA MULTIUSO C/RASPADOR",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 6.99,
-    "estoque": 3.0
+    "estoque": 2.0
   },
   {
     "codigo": "352",
@@ -536,7 +536,7 @@
     "nome": "PANO MULTIUSO AMARELO C/10UN ALKLIN",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 19.99,
-    "estoque": 13.0
+    "estoque": 12.0
   },
   {
     "codigo": "357",
@@ -1628,7 +1628,7 @@
     "nome": "LIMPADOR  PERF. INTENSE LAVANDA 500ML SANOL",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 6.5,
-    "estoque": 11.0
+    "estoque": 10.0
   },
   {
     "codigo": "812",
@@ -1866,7 +1866,7 @@
     "nome": "GUARDANAPO DE PAPEL 30X31CM C/100UN LUXO PLUMA",
     "categoria": "DESCARTAVEIS",
     "preco": 7.75,
-    "estoque": 89.0
+    "estoque": 88.0
   },
   {
     "codigo": "900",
@@ -1894,7 +1894,7 @@
     "nome": "COPO DESCARTAVEL TRANSPARENTE 50ML C/100UN TOTAL PLAST",
     "categoria": "DESCARTAVEIS",
     "preco": 3.5,
-    "estoque": 25.0
+    "estoque": 24.0
   },
   {
     "codigo": "904",
@@ -2258,7 +2258,7 @@
     "nome": "SACO P/ LIXO PRETO P6 40L C/10UN",
     "categoria": "SACO LIXO",
     "preco": 5.5,
-    "estoque": 13.0
+    "estoque": 11.0
   },
   {
     "codigo": "1052",
@@ -2440,7 +2440,7 @@
     "nome": "FIBRA LIMP. PESADA 1UN 260X102MM BETTANIN",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 4.5,
-    "estoque": 22.0
+    "estoque": 21.0
   },
   {
     "codigo": "1149",
@@ -2993,7 +2993,7 @@
     "nome": "D50MA TORTA ALTA 1,7KG DONA RITA",
     "categoria": "Embalagem",
     "preco": 3.5,
-    "estoque": 69.0
+    "estoque": 68.0
   },
   {
     "codigo": "1475",
@@ -3420,7 +3420,7 @@
     "nome": "LUVA DE VINIL M S/TALCO C/100UN TALGE",
     "categoria": "DESCARTAVEIS",
     "preco": 21.0,
-    "estoque": 12.0
+    "estoque": 11.0
   },
   {
     "codigo": "1819",
@@ -5030,7 +5030,7 @@
     "nome": "POTE E TAMPA REDONDO 500ML C/TAMPA C/24UN DANUBIO",
     "categoria": "DESCARTAVEIS",
     "preco": 19.99,
-    "estoque": 39.0
+    "estoque": 35.0
   },
   {
     "codigo": "3120",
@@ -5184,7 +5184,7 @@
     "nome": "FITA ADESIVA 18MMX40M / 18MMx50M KORETEC",
     "categoria": "PAPELARIA",
     "preco": 2.5,
-    "estoque": -73.0
+    "estoque": -74.0
   },
   {
     "codigo": "3161",
@@ -6493,7 +6493,7 @@
     "nome": "DETERGENTE YPÊ NEUTRO 500ML",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 4.0,
-    "estoque": 0.0
+    "estoque": -1.0
   },
   {
     "codigo": "31653",
@@ -6612,7 +6612,7 @@
     "nome": "G650 POTE QUAD.200ML C/10 UNI",
     "categoria": "Embalagem",
     "preco": 7.5,
-    "estoque": 9.0
+    "estoque": 8.0
   },
   {
     "codigo": "31671",
