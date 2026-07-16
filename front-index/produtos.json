@@ -74,7 +74,7 @@
     "nome": "RODO ALKLIN 30CM C/CABO",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 15.0,
-    "estoque": 9.0
+    "estoque": 29.0
   },
   {
     "codigo": "124",
@@ -85,10 +85,10 @@
   },
   {
     "codigo": "125",
-    "nome": "SUPER PÁ C/CABO",
+    "nome": "SUPER PÁ C/CABO ALKLIN",
     "categoria": "PRODUTO DE LIMPEZA",
-    "preco": 17.0,
-    "estoque": 9.0
+    "preco": 19.99,
+    "estoque": 21.0
   },
   {
     "codigo": "129",
@@ -337,17 +337,17 @@
   },
   {
     "codigo": "289",
-    "nome": "ESPONJA MULTIUSO C/4UN ALCKLIN",
+    "nome": "ESPONJA MULTIUSO C/4UN ALKLIN",
     "categoria": "UTENSILIOS",
-    "preco": 3.5,
-    "estoque": 56.0
+    "preco": 3.99,
+    "estoque": 196.0
   },
   {
     "codigo": "294",
     "nome": "VASSOURA DENTRO E FORA C/CABO ALKLIN",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 15.0,
-    "estoque": -2.0
+    "estoque": 12.0
   },
   {
     "codigo": "295",
@@ -360,15 +360,15 @@
     "codigo": "296",
     "nome": "VASSOURA  DE CASA COM CABO ALKLIN",
     "categoria": "PRODUTO DE LIMPEZA",
-    "preco": 18.5,
-    "estoque": -15.0
+    "preco": 19.99,
+    "estoque": 15.0
   },
   {
     "codigo": "299",
     "nome": "RODO DE PIA 15CM ALKLIN",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 6.5,
-    "estoque": 4.0
+    "estoque": 16.0
   },
   {
     "codigo": "302",
@@ -396,7 +396,7 @@
     "nome": "PAPEL HIGIENICO PREM. DUPLA DELICATTO C/4UN 10X30M",
     "categoria": "PRODUTO DE HIGIENE",
     "preco": 7.5,
-    "estoque": 10.0
+    "estoque": 9.0
   },
   {
     "codigo": "314",
@@ -459,7 +459,7 @@
     "nome": "SACOLA UNIDADE GRANDE",
     "categoria": "SACO LIXO",
     "preco": 0.5,
-    "estoque": -91.0
+    "estoque": -93.0
   },
   {
     "codigo": "335",
@@ -487,7 +487,7 @@
     "nome": "PLASTICO BOLHA 65MX50M MICRA 20 MN.PLAST",
     "categoria": "Embalagem",
     "preco": 52.99,
-    "estoque": 5.0
+    "estoque": 3.0
   },
   {
     "codigo": "346",
@@ -536,14 +536,14 @@
     "nome": "PANO MULTIUSO AMARELO C/10UN ALKLIN",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 19.99,
-    "estoque": 12.0
+    "estoque": 30.0
   },
   {
     "codigo": "357",
     "nome": "PANO PARA PIA ESTAMPADO C/3U N ALKLIN",
     "categoria": "PRODUTO DE LIMPEZA",
-    "preco": 5.5,
-    "estoque": -2.0
+    "preco": 10.5,
+    "estoque": 54.0
   },
   {
     "codigo": "361",
@@ -634,7 +634,7 @@
     "nome": "FACA MASTER BRANCA C/50UN PRAFESTA",
     "categoria": "DESCARTAVEIS",
     "preco": 12.5,
-    "estoque": 22.0
+    "estoque": 21.0
   },
   {
     "codigo": "401",
@@ -711,14 +711,14 @@
     "nome": "COLHER LITTLE COFFE CRISTAL C/100UN PRAFESTA",
     "categoria": "DESCARTAVEIS",
     "preco": 7.5,
-    "estoque": 16.0
+    "estoque": 15.0
   },
   {
     "codigo": "420",
     "nome": "COLHER DE SOPA BRANCA C/50UN ELITE",
     "categoria": "DESCARTAVEIS",
     "preco": 10.5,
-    "estoque": 75.0
+    "estoque": 73.0
   },
   {
     "codigo": "422",
@@ -837,7 +837,7 @@
     "nome": "POTE E TAMPA RET.500ML C/24UN PRAFESTA",
     "categoria": "DESCARTAVEIS",
     "preco": 35.5,
-    "estoque": 32.0
+    "estoque": 31.0
   },
   {
     "codigo": "458",
@@ -858,7 +858,7 @@
     "nome": "D56 B0LO E TORTA ROMA MEDIA B BRANCA",
     "categoria": "DESCARTAVEIS",
     "preco": 4.0,
-    "estoque": 17.0
+    "estoque": 14.0
   },
   {
     "codigo": "466",
@@ -1180,7 +1180,7 @@
     "nome": "TOP LIXO PRETO 15L C/60UN PACK LIXO",
     "categoria": "SACO LIXO",
     "preco": 17.99,
-    "estoque": 15.0
+    "estoque": 25.0
   },
   {
     "codigo": "637",
@@ -1414,13 +1414,6 @@
     "estoque": 9.0
   },
   {
-    "codigo": "737",
-    "nome": "SACO ZIP 24X36 C/20UN ARMAZEM",
-    "categoria": "Embalagem",
-    "preco": 16.99,
-    "estoque": 0.0
-  },
-  {
     "codigo": "738",
     "nome": "SACO ZIP 24X36 C/20UN ARMAZEM",
     "categoria": "Embalagem",
@@ -1614,7 +1607,7 @@
     "nome": "FILME PVC ESTICAVEL 250MX38CM ALPFILM",
     "categoria": "DESCARTAVEIS",
     "preco": 40.9,
-    "estoque": -10.0
+    "estoque": -11.0
   },
   {
     "codigo": "804",
@@ -1740,7 +1733,7 @@
     "nome": "HAMBURGUEIRA BH03 C/10UN BOM APETITE",
     "categoria": "Embalagem",
     "preco": 4.5,
-    "estoque": 31.0
+    "estoque": 30.0
   },
   {
     "codigo": "847",
@@ -1866,7 +1859,7 @@
     "nome": "GUARDANAPO DE PAPEL 30X31CM C/100UN LUXO PLUMA",
     "categoria": "DESCARTAVEIS",
     "preco": 7.75,
-    "estoque": 88.0
+    "estoque": 86.0
   },
   {
     "codigo": "900",
@@ -2188,7 +2181,7 @@
     "nome": "SACOS PLASTICO  35x45x0,06 200G  COLOMBO/HELVIPACK",
     "categoria": "Embalagem",
     "preco": 10.0,
-    "estoque": 2.0
+    "estoque": 1.0
   },
   {
     "codigo": "1033",
@@ -2258,21 +2251,21 @@
     "nome": "SACO P/ LIXO PRETO P6 40L C/10UN",
     "categoria": "SACO LIXO",
     "preco": 5.5,
-    "estoque": 11.0
+    "estoque": 10.0
   },
   {
     "codigo": "1052",
     "nome": "SACO P/ LIXO PRETO P8 60L C/10UN",
     "categoria": "SACO LIXO",
     "preco": 8.99,
-    "estoque": 11.0
+    "estoque": 10.0
   },
   {
     "codigo": "1053",
     "nome": "SACOS P/LIXO 100L P8 C10UN PRETO",
     "categoria": "SACO LIXO",
     "preco": 13.5,
-    "estoque": 17.0
+    "estoque": 11.0
   },
   {
     "codigo": "1055",
@@ -2573,7 +2566,7 @@
     "nome": "BOBINA PICOTADA 2KG C/500UN P/ ALIMENTOS 20X28CM EXTRUSA",
     "categoria": "Embalagem",
     "preco": 19.0,
-    "estoque": 0.0
+    "estoque": 10.0
   },
   {
     "codigo": "1225",
@@ -2615,7 +2608,7 @@
     "nome": "BOBINA PICOTADA 2,5KG C/500UN P/ ALIMENTOS 25X33 EXTRUSA",
     "categoria": "Embalagem",
     "preco": 25.0,
-    "estoque": 20.0
+    "estoque": 19.0
   },
   {
     "codigo": "1281",
@@ -2762,7 +2755,7 @@
     "nome": "TOALHA INTERFOLHA BRANCA (VERDE) C/1000UN ISAPEL",
     "categoria": "PRODUTO DE HIGIENE",
     "preco": 16.0,
-    "estoque": 58.0
+    "estoque": 57.0
   },
   {
     "codigo": "1331",
@@ -2923,7 +2916,7 @@
     "nome": "LIMP. M/USO 500ML  TRADICIONAL SUPREMA",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 3.99,
-    "estoque": 20.0
+    "estoque": 19.0
   },
   {
     "codigo": "1434",
@@ -2993,7 +2986,7 @@
     "nome": "D50MA TORTA ALTA 1,7KG DONA RITA",
     "categoria": "Embalagem",
     "preco": 3.5,
-    "estoque": 68.0
+    "estoque": 65.0
   },
   {
     "codigo": "1475",
@@ -3105,7 +3098,7 @@
     "nome": "AMACIANTE DE ROUPAS SUPREMA ALEGRE ENCANTOS 2L",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 10.0,
-    "estoque": 3.0
+    "estoque": 2.0
   },
   {
     "codigo": "1543",
@@ -3497,14 +3490,14 @@
     "nome": "ESCOVAO C/CABO ALKLIN",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 20.0,
-    "estoque": 1.0
+    "estoque": 13.0
   },
   {
     "codigo": "1901",
     "nome": "VASSOURA PIAÇAVA SINTETICA ALKLIN C/CABO",
     "categoria": "PRODUTO DE LIMPEZA",
-    "preco": 14.0,
-    "estoque": -17.0
+    "preco": 16.25,
+    "estoque": 12.0
   },
   {
     "codigo": "1902",
@@ -3637,7 +3630,7 @@
     "nome": "SACO P/ LIXO PRETO 200L C/10UN",
     "categoria": "SACO LIXO",
     "preco": 21.0,
-    "estoque": 6.0
+    "estoque": 5.0
   },
   {
     "codigo": "2002",
@@ -3749,7 +3742,7 @@
     "nome": "PLASTICO BOLHA 130X100M MICRA MN. PLAST",
     "categoria": "Embalagem",
     "preco": 100.0,
-    "estoque": 7.0
+    "estoque": 5.0
   },
   {
     "codigo": "2084",
@@ -3889,7 +3882,7 @@
     "nome": "VASSOURA VARRE KANTO C/CABO ALKLIN",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 15.0,
-    "estoque": 22.0
+    "estoque": 34.0
   },
   {
     "codigo": "2193",
@@ -4015,7 +4008,7 @@
     "nome": "CUMBUCA C/TAMPA 300ML C/10UN B APETITE",
     "categoria": "DESCARTAVEIS",
     "preco": 6.0,
-    "estoque": 4.0
+    "estoque": 3.0
   },
   {
     "codigo": "2350",
@@ -4057,7 +4050,7 @@
     "nome": "Desorizador Sanitário Bloco Para Cx Acoplada Lavanda Azulim",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 13.5,
-    "estoque": 10.0
+    "estoque": 8.0
   },
   {
     "codigo": "2382",
@@ -4148,7 +4141,7 @@
     "nome": "GUARDANAPO DE PAPEL 30X30CM C/50UN WHITEPAPER",
     "categoria": "DESCARTAVEIS",
     "preco": 3.0,
-    "estoque": 30.0
+    "estoque": 27.0
   },
   {
     "codigo": "2452",
@@ -4218,7 +4211,7 @@
     "nome": "G540 BANDEJA  C/4 DIVISORIAS CRISTAL 1UN",
     "categoria": "DESCARTAVEIS",
     "preco": 2.5,
-    "estoque": -12.0
+    "estoque": -16.0
   },
   {
     "codigo": "2513",
@@ -4257,7 +4250,7 @@
   },
   {
     "codigo": "2580",
-    "nome": "ESPONJA  ANTIRISCO C/4UN ALCKLIN",
+    "nome": "ESPONJA  ANTIRISCO C/4UN ALKLIN",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 4.0,
     "estoque": 191.0
@@ -4379,7 +4372,7 @@
     "nome": "POTE REDONDO 250ML C/TAMPA C/24UN DANUBIO",
     "categoria": "DESCARTAVEIS",
     "preco": 17.5,
-    "estoque": 12.0
+    "estoque": 11.0
   },
   {
     "codigo": "2717",
@@ -4428,14 +4421,14 @@
     "nome": "GARFO REFEICAO BRANCO C/50UN ELITE",
     "categoria": "DESCARTAVEIS",
     "preco": 10.25,
-    "estoque": 31.0
+    "estoque": 30.0
   },
   {
     "codigo": "2799",
     "nome": "KIT POTE E TAMPA RET. 350ML C/12UN GOUR MAX",
     "categoria": "DESCARTAVEIS",
     "preco": 14.99,
-    "estoque": 6.0
+    "estoque": 5.0
   },
   {
     "codigo": "2802",
@@ -4582,7 +4575,7 @@
     "nome": "CAIXA TERMICA ISOPOR 3L BRANCA",
     "categoria": "DESCARTAVEIS",
     "preco": 9.99,
-    "estoque": 12.0
+    "estoque": 10.0
   },
   {
     "codigo": "2849",
@@ -4680,7 +4673,7 @@
     "nome": "SACOLA KRAFT BRANCO H2 C/100UN 19X12CM PLUMA",
     "categoria": "DESCARTAVEIS",
     "preco": 8.0,
-    "estoque": 40.0
+    "estoque": 39.0
   },
   {
     "codigo": "2922",
@@ -4750,7 +4743,7 @@
     "nome": "CAIXA PAP. ONDULADO N04  50X40X35",
     "categoria": "Embalagem",
     "preco": 16.99,
-    "estoque": 25.0
+    "estoque": 19.0
   },
   {
     "codigo": "2964",
@@ -4806,7 +4799,7 @@
     "nome": "COPO DESCARTAVEL 180ML PS C/100UN FASTCUP",
     "categoria": "DESCARTAVEIS",
     "preco": 6.99,
-    "estoque": 105.0
+    "estoque": 103.0
   },
   {
     "codigo": "2995",
@@ -4890,7 +4883,7 @@
     "nome": "HAMBURGUEIRA BH01 C/10UN BOM APETITE",
     "categoria": "DESCARTAVEIS",
     "preco": 3.5,
-    "estoque": 59.0
+    "estoque": 56.0
   },
   {
     "codigo": "3048",
@@ -4967,7 +4960,7 @@
     "nome": "POTE REDONDO 200ML C/TAMPA C/24UN DANUBIO",
     "categoria": "DESCARTAVEIS",
     "preco": 11.5,
-    "estoque": 23.0
+    "estoque": 22.0
   },
   {
     "codigo": "3091",
@@ -5142,7 +5135,7 @@
     "nome": "CAIXA TERMICA ISOPOR ISOTERM 500G",
     "categoria": "DESCARTAVEIS",
     "preco": 3.5,
-    "estoque": 26.0
+    "estoque": 1.0
   },
   {
     "codigo": "3150",
@@ -5156,7 +5149,7 @@
     "nome": "SACO ECO KRAFT PARDO C/100UN 18.5X29CM (PA10313) PLUMA",
     "categoria": "Embalagem",
     "preco": 12.99,
-    "estoque": 0.0
+    "estoque": -1.0
   },
   {
     "codigo": "3155",
@@ -5275,7 +5268,7 @@
     "nome": "PAPEL TOALHA SCALA PLUS C/120 TOALHAS C/2 ROLOS",
     "categoria": "PRODUTO DE HIGIENE",
     "preco": 8.0,
-    "estoque": 21.0
+    "estoque": 20.0
   },
   {
     "codigo": "3267",
@@ -5464,7 +5457,7 @@
     "nome": "PANOS DE MICROFIBRAS C/3UN ALKLIN",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 10.99,
-    "estoque": 0.0
+    "estoque": 20.0
   },
   {
     "codigo": "3995",
@@ -5506,7 +5499,7 @@
     "nome": "FILM DE PVC 30MTS  28X30M TECKFIM",
     "categoria": "Embalagem",
     "preco": 6.5,
-    "estoque": 28.0
+    "estoque": 26.0
   },
   {
     "codigo": "4005",
@@ -5568,8 +5561,8 @@
     "codigo": "4254",
     "nome": "TOP LIXO PRETO 50L C/30UN PACK LIXO",
     "categoria": "SACO LIXO",
-    "preco": 23.99,
-    "estoque": 3.0
+    "preco": 19.99,
+    "estoque": 13.0
   },
   {
     "codigo": "4391",
@@ -5926,7 +5919,7 @@
     "nome": "SACO P/LIXO PRETO 20L P5 C/10UN",
     "categoria": "SACO LIXO",
     "preco": 4.0,
-    "estoque": 52.0
+    "estoque": 51.0
   },
   {
     "codigo": "7899",
@@ -6066,7 +6059,7 @@
     "nome": "ALCOOL LIQUIDO 1L 70% BARBAREX",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 10.99,
-    "estoque": 10.0
+    "estoque": 9.0
   },
   {
     "codigo": "8277",
@@ -6087,7 +6080,7 @@
     "nome": "TRENA PLASTICO 7,5M X20MM  STANDARD",
     "categoria": "UTENSILIOS",
     "preco": 19.99,
-    "estoque": 2.0
+    "estoque": 1.0
   },
   {
     "codigo": "8481",
@@ -6144,13 +6137,6 @@
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 9.5,
     "estoque": 10.0
-  },
-  {
-    "codigo": "9022",
-    "nome": "COPO DESCARTAVEL TRANSPARENTE 300ML C/100UN TOTAL PLAST",
-    "categoria": "DESCARTAVEIS",
-    "preco": 14.99,
-    "estoque": 1.0
   },
   {
     "codigo": "9031",
@@ -6437,7 +6423,7 @@
     "nome": "D640 DOCE REDONDO 170ML CRISTAL C/10UN DONA RITA",
     "categoria": "DESCARTAVEIS",
     "preco": 3.99,
-    "estoque": 74.0
+    "estoque": 73.0
   },
   {
     "codigo": "29817",
@@ -6514,7 +6500,7 @@
     "nome": "SABAO EM PO 800G MINUANO CX",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 12.0,
-    "estoque": 16.0
+    "estoque": 15.0
   },
   {
     "codigo": "31656",
@@ -6562,8 +6548,8 @@
     "codigo": "31663",
     "nome": "MOP ABRASIVO REFIL ALKLIN 1UN",
     "categoria": "PRODUTO DE LIMPEZA",
-    "preco": 10.0,
-    "estoque": 0.0
+    "preco": 12.99,
+    "estoque": 20.0
   },
   {
     "codigo": "31664",
@@ -6612,7 +6598,7 @@
     "nome": "G650 POTE QUAD.200ML C/10 UNI",
     "categoria": "Embalagem",
     "preco": 7.5,
-    "estoque": 8.0
+    "estoque": 7.0
   },
   {
     "codigo": "31671",
@@ -6640,7 +6626,7 @@
     "nome": "PRATO BRANCO FUNDO 15CM C/10UN TOTALPLAST",
     "categoria": "DESCARTAVEIS",
     "preco": 2.5,
-    "estoque": 88.0
+    "estoque": 81.0
   },
   {
     "codigo": "31676",
@@ -6717,7 +6703,7 @@
     "nome": "TIRA LIMO C/ CLORO ATIVO AZULIM 500ML",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 5.0,
-    "estoque": -22.0
+    "estoque": -23.0
   },
   {
     "codigo": "31981",
@@ -6731,14 +6717,14 @@
     "nome": "ALCOOL LIQUIDO 1L 70% SULMAR",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 12.99,
-    "estoque": 0.0
+    "estoque": -1.0
   },
   {
     "codigo": "40075",
     "nome": "BOBINA PICOTADO 35X45 C/450UN SOLDA FUNDO 2.41KG",
     "categoria": "ALIMENTO/GENERO ALIMENTICIO",
     "preco": 99.0,
-    "estoque": 3.0
+    "estoque": 2.0
   },
   {
     "codigo": "61057",
@@ -7543,7 +7529,7 @@
     "nome": "LIMPEZA PROFUNDA GEL 750ML PATO",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 15.0,
-    "estoque": 14.0
+    "estoque": 13.0
   },
   {
     "codigo": "129106",
