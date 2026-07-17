@@ -984,7 +984,7 @@
     "nome": "DETERGENTE SUPREMA  NEUTRO 500ML",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 3.5,
-    "estoque": 0.0
+    "estoque": -1.0
   },
   {
     "codigo": "562",
@@ -1383,7 +1383,7 @@
     "nome": "D12 220ML FOLHA DE ALUMINIO MOLDADA C/10UN WYDA",
     "categoria": "Embalagem",
     "preco": 7.6,
-    "estoque": -59.0
+    "estoque": -60.0
   },
   {
     "codigo": "716",
@@ -2230,7 +2230,7 @@
     "nome": "TOP LIXO PIA E BANHEIRO LAVANDA C/40UN PACK LIXO",
     "categoria": "SACO LIXO",
     "preco": 8.99,
-    "estoque": 46.0
+    "estoque": 45.0
   },
   {
     "codigo": "1048",
@@ -2265,7 +2265,7 @@
     "nome": "SACOS P/LIXO 100L P8 C10UN PRETO",
     "categoria": "SACO LIXO",
     "preco": 13.5,
-    "estoque": 11.0
+    "estoque": 10.0
   },
   {
     "codigo": "1055",
@@ -3231,7 +3231,7 @@
     "nome": "POTE REDONDO 200ML C/TAMPA C/24UN PRAFESTA",
     "categoria": "DESCARTAVEIS",
     "preco": 17.99,
-    "estoque": 11.0
+    "estoque": 10.0
   },
   {
     "codigo": "1684",
@@ -4161,7 +4161,7 @@
     "codigo": "2456",
     "nome": "POTE TERMICO 360ML C/25UN ULTRA",
     "categoria": "DESCARTAVEIS",
-    "preco": 14.0,
+    "preco": 15.99,
     "estoque": 18.0
   },
   {
@@ -5842,7 +5842,7 @@
     "nome": "AROMATIZADOR DE AMBIENTE JASMIN 250ML ESSENCIAS",
     "categoria": "PRODUTO DE HIGIENE",
     "preco": 15.0,
-    "estoque": 19.0
+    "estoque": 18.0
   },
   {
     "codigo": "7523",
@@ -6843,7 +6843,7 @@
     "nome": "DESENTUPIDOR SANCHES",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 11.5,
-    "estoque": 7.0
+    "estoque": 6.0
   },
   {
     "codigo": "129006",
@@ -7760,7 +7760,7 @@
     "nome": "AROMATIZADOR DE AMBIENTE OVALHO 250ML ESSENCIAS",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 15.0,
-    "estoque": 10.0
+    "estoque": 9.0
   },
   {
     "codigo": "7893595170122",
