@@ -186,7 +186,7 @@
     "nome": "COLHER SOFT BRANCA C/50UN ELITE",
     "categoria": "DESCARTAVEIS",
     "preco": 6.5,
-    "estoque": 48.0
+    "estoque": 45.0
   },
   {
     "codigo": "177",
@@ -206,7 +206,7 @@
     "codigo": "181",
     "nome": "MARMITA PRETA 850ML C/3 DIVISORIAS C/10UN",
     "categoria": "DESCARTAVEIS",
-    "preco": 16.5,
+    "preco": 16.99,
     "estoque": 3.0
   },
   {
@@ -214,7 +214,7 @@
     "nome": "MARMITA PRETA 750ML C/3 DIVISORIAS C/10UN",
     "categoria": "DESCARTAVEIS",
     "preco": 16.25,
-    "estoque": 0.0
+    "estoque": 10.0
   },
   {
     "codigo": "183",
@@ -235,7 +235,7 @@
     "nome": "COPO TERMICO 120ML C/20UN BOM APETITE",
     "categoria": "DESCARTAVEIS",
     "preco": 3.99,
-    "estoque": 41.0
+    "estoque": 39.0
   },
   {
     "codigo": "212",
@@ -389,14 +389,14 @@
     "nome": "PANO PANOTEK  REUTILIZAVEL C/40UN",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 12.0,
-    "estoque": 28.0
+    "estoque": 27.0
   },
   {
     "codigo": "312",
     "nome": "COPO TERMICO 240ML C/20UN TOTALPLAST",
     "categoria": "DESCARTAVEIS",
     "preco": 6.99,
-    "estoque": 26.0
+    "estoque": 25.0
   },
   {
     "codigo": "313",
@@ -536,7 +536,7 @@
     "nome": "PANO MULTIUSO AZUL C/600 PANOS 28CMX240M MR.PLUS TALGE",
     "categoria": "PRODUTO DE HIGIENE",
     "preco": 84.99,
-    "estoque": 3.0
+    "estoque": 2.0
   },
   {
     "codigo": "356",
@@ -564,7 +564,7 @@
     "nome": "FOLHA DE ALUMINIO 7,5X30CM VABENA",
     "categoria": "ALIMENTO/GENERO ALIMENTICIO",
     "preco": 6.75,
-    "estoque": 23.0
+    "estoque": 21.0
   },
   {
     "codigo": "372",
@@ -1859,7 +1859,7 @@
     "nome": "GUARDANAPO DE PAPEL 20X21CM C/100UN LUXO PLUMA",
     "categoria": "DESCARTAVEIS",
     "preco": 4.0,
-    "estoque": 32.0
+    "estoque": 30.0
   },
   {
     "codigo": "898",
@@ -1880,14 +1880,14 @@
     "nome": "COPO DESCARTAVEL TRANSPARENTE 180ML C/100UN GLIGHT",
     "categoria": "DESCARTAVEIS",
     "preco": 6.5,
-    "estoque": 37.0
+    "estoque": 36.0
   },
   {
     "codigo": "902",
     "nome": "COPO DESCARTAVEL TRANSPARENTE 300ML C/100UN TOTAL PLAST",
     "categoria": "DESCARTAVEIS",
     "preco": 14.99,
-    "estoque": 64.0
+    "estoque": 63.0
   },
   {
     "codigo": "903",
@@ -2076,7 +2076,7 @@
     "nome": "MARMITEX DE ISOPOR 750ML C/10UN COPOBRAS",
     "categoria": "DESCARTAVEIS",
     "preco": 8.0,
-    "estoque": 24.0
+    "estoque": 21.0
   },
   {
     "codigo": "0229",
@@ -2454,7 +2454,7 @@
     "nome": "FIBRA BRANCA LIMP. LEVE BETTANIN",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 3.0,
-    "estoque": 1.0
+    "estoque": 0.0
   },
   {
     "codigo": "1151",
@@ -2818,7 +2818,7 @@
     "nome": "COPO TERMICO 120ML C/25UN ULTRA",
     "categoria": "DESCARTAVEIS",
     "preco": 5.99,
-    "estoque": 45.0
+    "estoque": 44.0
   },
   {
     "codigo": "1352",
@@ -2993,7 +2993,7 @@
     "nome": "D50MA TORTA ALTA 1,7KG DONA RITA",
     "categoria": "Embalagem",
     "preco": 3.5,
-    "estoque": 62.0
+    "estoque": 61.0
   },
   {
     "codigo": "1475",
@@ -3119,7 +3119,7 @@
     "nome": "PRATO BRANCO RASO 15CM C/10UN TOTAL PLAST",
     "categoria": "DESCARTAVEIS",
     "preco": 2.5,
-    "estoque": -26.0
+    "estoque": -29.0
   },
   {
     "codigo": "1548",
@@ -3945,7 +3945,7 @@
     "nome": "GARFO SOFT BRANCO C/50UN ELITE",
     "categoria": "DESCARTAVEIS",
     "preco": 5.5,
-    "estoque": 23.0
+    "estoque": 18.0
   },
   {
     "codigo": "2298",
@@ -4708,7 +4708,7 @@
     "nome": "TAMPA P/COPO PP 300/330ML C/100UN",
     "categoria": "DESCARTAVEIS",
     "preco": 11.0,
-    "estoque": 19.0
+    "estoque": 18.0
   },
   {
     "codigo": "2931",
@@ -4806,7 +4806,7 @@
     "nome": "COPO DESCARTAVEL 180ML PS C/100UN FASTCUP",
     "categoria": "DESCARTAVEIS",
     "preco": 6.99,
-    "estoque": 100.0
+    "estoque": 99.0
   },
   {
     "codigo": "2995",
@@ -4932,7 +4932,7 @@
     "nome": "SACO PLASTICO PE C/100UN P/GELAO 05X24X02",
     "categoria": "DESCARTAVEIS",
     "preco": 4.0,
-    "estoque": 154.0
+    "estoque": 153.0
   },
   {
     "codigo": "3072",
@@ -5156,7 +5156,7 @@
     "nome": "SACO ECO KRAFT PARDO C/100UN 18.5X29CM (PA10313) PLUMA",
     "categoria": "Embalagem",
     "preco": 12.99,
-    "estoque": -1.0
+    "estoque": -5.0
   },
   {
     "codigo": "3155",
@@ -5184,7 +5184,7 @@
     "nome": "FITA ADESIVA 18MMX40M / 18MMx50M KORETEC",
     "categoria": "PAPELARIA",
     "preco": 2.5,
-    "estoque": -74.0
+    "estoque": -77.0
   },
   {
     "codigo": "3161",
@@ -6066,14 +6066,14 @@
     "nome": "ALCOOL LIQUIDO 1L 70% BARBAREX",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 10.99,
-    "estoque": 9.0
+    "estoque": 8.0
   },
   {
     "codigo": "8277",
     "nome": "ALCOOL 70% LIQUIDO 5L BARBAREX",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 49.99,
-    "estoque": 4.0
+    "estoque": 3.0
   },
   {
     "codigo": "8349",
@@ -6703,7 +6703,7 @@
     "nome": "SAPONACEO CREMOSO AZULIM 300ML",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 13.5,
-    "estoque": 17.0
+    "estoque": 15.0
   },
   {
     "codigo": "31685",
