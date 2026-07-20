@@ -88,7 +88,7 @@
     "nome": "SUPER PÁ C/CABO ALKLIN",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 19.99,
-    "estoque": 21.0
+    "estoque": 20.0
   },
   {
     "codigo": "129",
@@ -466,7 +466,7 @@
     "nome": "SACOLA UNIDADE GRANDE",
     "categoria": "SACO LIXO",
     "preco": 0.5,
-    "estoque": -100.0
+    "estoque": -102.0
   },
   {
     "codigo": "335",
@@ -1852,7 +1852,7 @@
     "nome": "COPO DESCARTAVEL TRANSPARENTE 180ML C/100UN TOTAL PLAST",
     "categoria": "DESCARTAVEIS",
     "preco": 7.5,
-    "estoque": 403.0
+    "estoque": 401.0
   },
   {
     "codigo": "897",
@@ -1964,7 +1964,7 @@
     "nome": "CAIXA P/BOLO N06 26X26X10 NIAGRA",
     "categoria": "Embalagem",
     "preco": 5.7,
-    "estoque": -7.0
+    "estoque": -8.0
   },
   {
     "codigo": "931",
@@ -2188,7 +2188,7 @@
     "nome": "SACOS PLASTICO  35x45x0,06 200G  COLOMBO/HELVIPACK",
     "categoria": "Embalagem",
     "preco": 10.0,
-    "estoque": 1.0
+    "estoque": 0.0
   },
   {
     "codigo": "1033",
@@ -2202,7 +2202,7 @@
     "nome": "SACO P/ LIXO PRETO P8 60L C/50UN",
     "categoria": "SACO LIXO",
     "preco": 38.25,
-    "estoque": 19.0
+    "estoque": 18.0
   },
   {
     "codigo": "1042",
@@ -2272,7 +2272,7 @@
     "nome": "SACOS P/LIXO 100L P8 C10UN PRETO",
     "categoria": "SACO LIXO",
     "preco": 13.5,
-    "estoque": 3.0
+    "estoque": 2.0
   },
   {
     "codigo": "1055",
@@ -2440,14 +2440,14 @@
     "nome": "FIBRA LIMP. PESADA 1UN 260X102MM BETTANIN",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 4.5,
-    "estoque": 16.0
+    "estoque": 15.0
   },
   {
     "codigo": "1149",
     "nome": "FIBRA LIMP. USO GERAL 1UN 260X102MM BETTANIN",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 4.0,
-    "estoque": 4.0
+    "estoque": 3.0
   },
   {
     "codigo": "1150",
@@ -2622,7 +2622,7 @@
     "nome": "PAPEL HIGIENICO BRANCO ROLAO EUROPEL 08 ROLOS",
     "categoria": "PRODUTO DE HIGIENE",
     "preco": 35.5,
-    "estoque": 25.0
+    "estoque": 21.0
   },
   {
     "codigo": "1290",
@@ -2790,7 +2790,7 @@
     "nome": "MARMITEX DE ISOPOR 750ML C100/UN COPOBRAS",
     "categoria": "DESCARTAVEIS",
     "preco": 60.5,
-    "estoque": 13.0
+    "estoque": 12.0
   },
   {
     "codigo": "1343",
@@ -2993,7 +2993,7 @@
     "nome": "D50MA TORTA ALTA 1,7KG DONA RITA",
     "categoria": "Embalagem",
     "preco": 3.5,
-    "estoque": 61.0
+    "estoque": 56.0
   },
   {
     "codigo": "1475",
@@ -3077,7 +3077,7 @@
     "nome": "TOALHA INTERFOLHA BRANCA PREMIUM WHITE PAPER C/1000UN",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 24.0,
-    "estoque": -12.0
+    "estoque": -14.0
   },
   {
     "codigo": "1526",
@@ -3224,7 +3224,7 @@
     "nome": "HAMBURGUEIRA BH01 C/100UN BOM APETITE",
     "categoria": "Embalagem",
     "preco": 26.0,
-    "estoque": 8.0
+    "estoque": 7.0
   },
   {
     "codigo": "1666",
@@ -4428,7 +4428,7 @@
     "nome": "GARFO REFEICAO BRANCO C/50UN ELITE",
     "categoria": "DESCARTAVEIS",
     "preco": 10.25,
-    "estoque": 27.0
+    "estoque": 25.0
   },
   {
     "codigo": "2799",
@@ -4526,7 +4526,7 @@
     "nome": "COPO TERMICO 70ML C/25UN ULTRA",
     "categoria": "DESCARTAVEIS",
     "preco": 4.5,
-    "estoque": 40.0
+    "estoque": 38.0
   },
   {
     "codigo": "2832",
@@ -4876,7 +4876,7 @@
     "nome": "D6-1B 500ML FOLHA DE ALUMINIO C10/UN C/TAMPA PT WYDA D",
     "categoria": "Embalagem",
     "preco": 16.5,
-    "estoque": 7.0
+    "estoque": 6.0
   },
   {
     "codigo": "3039",
@@ -5394,7 +5394,7 @@
     "nome": "LIMPADOR CONCENTRADO LAVANDA 120ML SANOL",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 12.99,
-    "estoque": -5.0
+    "estoque": -6.0
   },
   {
     "codigo": "3979",
@@ -5660,7 +5660,7 @@
     "nome": "B120 FOLHA D ALUMINIO 500ML C/10UN PRAV.",
     "categoria": "Embalagem",
     "preco": 9.5,
-    "estoque": 2.0
+    "estoque": 1.0
   },
   {
     "codigo": "6050",
@@ -6014,7 +6014,7 @@
   },
   {
     "codigo": "7973",
-    "nome": "PANEIRA DE INOX  18CM TINGS",
+    "nome": "PENEIRA DE INOX  18CM TINGS",
     "categoria": "ALIMENTO/GENERO ALIMENTICIO",
     "preco": 11.0,
     "estoque": -3.0
@@ -6175,7 +6175,7 @@
   },
   {
     "codigo": "9081",
-    "nome": "PANEIRA DE PLASTICO 16CM",
+    "nome": "PENEIRA DE PLASTICO 16CM",
     "categoria": "UTENSILIOS",
     "preco": 5.0,
     "estoque": -24.0
@@ -6213,7 +6213,7 @@
     "nome": "SACOS PLASTICO PEBD 10X15X0,06 200G COLOMBO",
     "categoria": "Embalagem",
     "preco": 10.0,
-    "estoque": 10.0
+    "estoque": 9.0
   },
   {
     "codigo": "10044",
@@ -6773,7 +6773,7 @@
     "nome": "SACOLA VERDE LISA 38x48 1KG",
     "categoria": "SACO LIXO",
     "preco": 34.0,
-    "estoque": 10.0
+    "estoque": 9.0
   },
   {
     "codigo": "78935",
@@ -7253,10 +7253,10 @@
   },
   {
     "codigo": "129064",
-    "nome": "PANEIRA DE INOX 10CM",
+    "nome": "PENEIRA DE INOX 10CM",
     "categoria": "UTENSILIOS",
     "preco": 8.0,
-    "estoque": -7.0
+    "estoque": -8.0
   },
   {
     "codigo": "129065",
@@ -7508,7 +7508,7 @@
     "nome": "ESPATULAR  RETA  PROFISIONAL FRATELLI",
     "categoria": "UTENSILIOS",
     "preco": 19.0,
-    "estoque": 4.0
+    "estoque": 3.0
   },
   {
     "codigo": "129101",
