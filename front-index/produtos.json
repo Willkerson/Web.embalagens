@@ -354,7 +354,7 @@
     "nome": "VASSOURA DENTRO E FORA C/CABO ALKLIN",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 15.0,
-    "estoque": 8.0
+    "estoque": 7.0
   },
   {
     "codigo": "295",
@@ -466,7 +466,7 @@
     "nome": "SACOLA UNIDADE GRANDE",
     "categoria": "SACO LIXO",
     "preco": 0.5,
-    "estoque": -102.0
+    "estoque": -103.0
   },
   {
     "codigo": "335",
@@ -620,7 +620,7 @@
     "nome": "PANO DE CHAO BRANCO ALVEJADO 45CMX69CM SOUZA PPR28",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 6.7,
-    "estoque": -24.0
+    "estoque": -26.0
   },
   {
     "codigo": "391",
@@ -1320,7 +1320,7 @@
     "nome": "LIMPA TENIS 250ML SUPER DOM",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 15.5,
-    "estoque": 8.0
+    "estoque": 7.0
   },
   {
     "codigo": "684",
@@ -1880,7 +1880,7 @@
     "nome": "COPO DESCARTAVEL TRANSPARENTE 180ML C/100UN GLIGHT",
     "categoria": "DESCARTAVEIS",
     "preco": 6.5,
-    "estoque": 31.0
+    "estoque": 56.0
   },
   {
     "codigo": "902",
@@ -1901,7 +1901,7 @@
     "nome": "FITA DUPLA FACE 18MMX2M MEGAGIFT",
     "categoria": "UTENSILIOS",
     "preco": 7.5,
-    "estoque": 6.0
+    "estoque": 5.0
   },
   {
     "codigo": "905",
@@ -1999,14 +1999,14 @@
     "nome": "CAIXA P CORREIO N03 30X20X11 NIAGRA",
     "categoria": "Embalagem",
     "preco": 10.0,
-    "estoque": 35.0
+    "estoque": 34.0
   },
   {
     "codigo": "941",
     "nome": "CAIXA P/CORREIO N04 34X27X14",
     "categoria": "Embalagem",
     "preco": 15.0,
-    "estoque": 8.0
+    "estoque": 7.0
   },
   {
     "codigo": "943",
@@ -2153,7 +2153,7 @@
     "nome": "SACOS PLASTICO PEBD 1KG 20X30X0,06 COLOMBO/HELVIPACK",
     "categoria": "Embalagem",
     "preco": 46.0,
-    "estoque": 2.0
+    "estoque": 1.0
   },
   {
     "codigo": "1013",
@@ -2202,7 +2202,7 @@
     "nome": "SACO P/ LIXO PRETO P8 60L C/50UN",
     "categoria": "SACO LIXO",
     "preco": 38.25,
-    "estoque": 18.0
+    "estoque": 17.0
   },
   {
     "codigo": "1042",
@@ -2321,7 +2321,7 @@
     "nome": "LUVA NITRILICA PRETA G 10 UN TALGE",
     "categoria": "DESCARTAVEIS",
     "preco": 6.0,
-    "estoque": -6.0
+    "estoque": -7.0
   },
   {
     "codigo": "1085",
@@ -2363,7 +2363,7 @@
     "nome": "SACOS PLASTICO PEBD 15X20X0,06 COLOMBO/HELVIPACK",
     "categoria": "Embalagem",
     "preco": 46.0,
-    "estoque": 16.0
+    "estoque": 15.0
   },
   {
     "codigo": "1129",
@@ -2573,7 +2573,7 @@
     "nome": "BOBINA PICOTADA 2KG C/500UN P/ ALIMENTOS 20X28CM EXTRUSA",
     "categoria": "Embalagem",
     "preco": 19.0,
-    "estoque": 9.0
+    "estoque": 8.0
   },
   {
     "codigo": "1225",
@@ -2650,7 +2650,7 @@
     "nome": "CAIXA DE CELULAR 22X11X05 1 UN",
     "categoria": "Embalagem",
     "preco": 2.5,
-    "estoque": 19.0
+    "estoque": 17.0
   },
   {
     "codigo": "1295",
@@ -2769,7 +2769,7 @@
     "nome": "TOALHA  BOBINA BRANCA 8X20X100 FD WHITE PAPER",
     "categoria": "PRODUTO DE HIGIENE",
     "preco": 49.99,
-    "estoque": 2.0
+    "estoque": 1.0
   },
   {
     "codigo": "1332",
@@ -2880,7 +2880,7 @@
     "codigo": "1382",
     "nome": "LIMPA PISO PORCELANATO 750ML  LAVANDA START",
     "categoria": "PRODUTO DE LIMPEZA",
-    "preco": 13.0,
+    "preco": 11.99,
     "estoque": 29.0
   },
   {
@@ -3000,7 +3000,7 @@
     "nome": "G56MA BOLO ALTA  MILLENIUM GALVONOTEK",
     "categoria": "DESCARTAVEIS",
     "preco": 7.0,
-    "estoque": 174.0
+    "estoque": 173.0
   },
   {
     "codigo": "1476",
@@ -3203,7 +3203,7 @@
     "nome": "D50MM TORTA MDIA 1,5KG BR24CM DONA RITA",
     "categoria": "DESCARTAVEIS",
     "preco": 3.0,
-    "estoque": 146.0
+    "estoque": 135.0
   },
   {
     "codigo": "1649",
@@ -3476,7 +3476,7 @@
     "nome": "SACO PARA GELADINHO PEQ. C/100UN 4X24X0,02",
     "categoria": "DESCARTAVEIS",
     "preco": 4.0,
-    "estoque": 141.0
+    "estoque": 140.0
   },
   {
     "codigo": "1889",
@@ -3924,7 +3924,7 @@
     "nome": "LUVA PLASTICA DESCARTAVEL HDPE C/100UN MEDIX",
     "categoria": "DESCARTAVEIS",
     "preco": 3.0,
-    "estoque": -47.0
+    "estoque": -48.0
   },
   {
     "codigo": "2278",
@@ -4561,7 +4561,7 @@
     "nome": "PAPEL ACOPLADO C/PELICULA 30X38 300g (C/100UN)",
     "categoria": "DESCARTAVEIS",
     "preco": 18.5,
-    "estoque": 5.0
+    "estoque": 13.0
   },
   {
     "codigo": "2842",
@@ -4792,7 +4792,7 @@
     "nome": "AÇUCAR EM SACHE 100X5G UNIAO",
     "categoria": "ALIMENTO/GENERO ALIMENTICIO",
     "preco": 10.0,
-    "estoque": 0.0
+    "estoque": 10.0
   },
   {
     "codigo": "2993",
@@ -4806,7 +4806,7 @@
     "nome": "COPO DESCARTAVEL 180ML PS C/100UN FASTCUP",
     "categoria": "DESCARTAVEIS",
     "preco": 6.99,
-    "estoque": 99.0
+    "estoque": 124.0
   },
   {
     "codigo": "2995",
@@ -5275,7 +5275,7 @@
     "nome": "PAPEL TOALHA SCALA PLUS C/120 TOALHAS C/2 ROLOS",
     "categoria": "PRODUTO DE HIGIENE",
     "preco": 8.0,
-    "estoque": 17.0
+    "estoque": 77.0
   },
   {
     "codigo": "3267",
@@ -6066,7 +6066,7 @@
     "nome": "ALCOOL LIQUIDO 1L 70% BARBAREX",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 10.99,
-    "estoque": 8.0
+    "estoque": 7.0
   },
   {
     "codigo": "8277",
@@ -6150,7 +6150,7 @@
     "nome": "COPO DESCARTAVEL TRANSPARENTE 300ML C/100UN ULTRA PP",
     "categoria": "DESCARTAVEIS",
     "preco": 16.5,
-    "estoque": 6.0
+    "estoque": 26.0
   },
   {
     "codigo": "9039",
@@ -6248,7 +6248,7 @@
     "nome": "PANO MULTIUSO AZUL C/50 PANOS 30CMX25CM MR. PLUS TALGE",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 17.0,
-    "estoque": 27.0
+    "estoque": 26.0
   },
   {
     "codigo": "11176",
@@ -6420,10 +6420,10 @@
   },
   {
     "codigo": "28387",
-    "nome": "PAPEL ACOPLADO C/PELICULA 30X38 fechada",
+    "nome": "PAPEL ACOPLADO C/PELICULA 30X38 C/400UN",
     "categoria": "DESCARTAVEIS",
-    "preco": 83.25,
-    "estoque": -1.0
+    "preco": 61.99,
+    "estoque": 2.0
   },
   {
     "codigo": "28645",
@@ -6444,7 +6444,7 @@
     "nome": "DESINFETANTE LAVANDA  5L DVISAO",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 18.99,
-    "estoque": -3.0
+    "estoque": 4.0
   },
   {
     "codigo": "31644",
@@ -6478,22 +6478,22 @@
     "codigo": "31650",
     "nome": "DETERGENTE YPÊ CLEAR 500ML",
     "categoria": "PRODUTO DE LIMPEZA",
-    "preco": 4.0,
-    "estoque": 16.0
+    "preco": 4.5,
+    "estoque": 40.0
   },
   {
     "codigo": "31651",
     "nome": "DETERGENTE YPÊ COCO 500ML",
     "categoria": "PRODUTO DE LIMPEZA",
-    "preco": 4.0,
+    "preco": 4.5,
     "estoque": 16.0
   },
   {
     "codigo": "31652",
     "nome": "DETERGENTE YPÊ NEUTRO 500ML",
     "categoria": "PRODUTO DE LIMPEZA",
-    "preco": 4.0,
-    "estoque": -1.0
+    "preco": 4.5,
+    "estoque": 19.0
   },
   {
     "codigo": "31653",
