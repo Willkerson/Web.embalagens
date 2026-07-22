@@ -466,7 +466,7 @@
     "nome": "SACOLA UNIDADE GRANDE",
     "categoria": "SACO LIXO",
     "preco": 0.5,
-    "estoque": -104.0
+    "estoque": -105.0
   },
   {
     "codigo": "335",
@@ -613,7 +613,7 @@
     "nome": "PANO DE CHAO XADREZ 45CMX68CM SOUZA BR2",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 4.7,
-    "estoque": -3.0
+    "estoque": -5.0
   },
   {
     "codigo": "390",
@@ -2272,7 +2272,7 @@
     "nome": "SACOS P/LIXO 100L P8 C10UN PRETO",
     "categoria": "SACO LIXO",
     "preco": 13.5,
-    "estoque": 1.0
+    "estoque": -2.0
   },
   {
     "codigo": "1055",
@@ -2850,7 +2850,7 @@
   },
   {
     "codigo": "1361",
-    "nome": "H04 HOT DOG C/10UN BOM APETITE",
+    "nome": "BH04 HOT DOG C/10UN BOM APETITE",
     "categoria": "Embalagem",
     "preco": 4.99,
     "estoque": 32.0
@@ -3035,7 +3035,7 @@
     "nome": "G65M TORTA RET PEQUENA 2KG 1UN GALVONOTEK",
     "categoria": "DESCARTAVEIS",
     "preco": 6.8,
-    "estoque": 18.0
+    "estoque": 17.0
   },
   {
     "codigo": "1484",
@@ -3210,7 +3210,7 @@
     "nome": "D50MM TORTA MDIA 1,5KG BR24CM DONA RITA",
     "categoria": "DESCARTAVEIS",
     "preco": 3.0,
-    "estoque": 135.0
+    "estoque": 133.0
   },
   {
     "codigo": "1649",
@@ -3644,7 +3644,7 @@
     "nome": "SACO P/ LIXO PRETO 200L C/10UN",
     "categoria": "SACO LIXO",
     "preco": 21.0,
-    "estoque": 5.0
+    "estoque": 4.0
   },
   {
     "codigo": "2002",
@@ -5520,7 +5520,7 @@
     "nome": "BOBINA PICOTADA 20X30CM  C/700UN P/ ALIMENTOS SOLDA FUNDO (1,3KG)",
     "categoria": "Embalagem",
     "preco": 63.0,
-    "estoque": -1.0
+    "estoque": -2.0
   },
   {
     "codigo": "4006",
@@ -5541,7 +5541,7 @@
     "nome": "FILME DE PVC  300 METROS 38CMX300M TECFILM",
     "categoria": "Embalagem",
     "preco": 52.0,
-    "estoque": 4.0
+    "estoque": 2.0
   },
   {
     "codigo": "4009",
@@ -6073,7 +6073,7 @@
     "nome": "ALCOOL LIQUIDO 1L 70% BARBAREX",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 10.99,
-    "estoque": 7.0
+    "estoque": 6.0
   },
   {
     "codigo": "8277",
