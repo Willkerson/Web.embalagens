@@ -347,7 +347,7 @@
     "nome": "ESPONJA MULTIUSO C/4UN ALKLIN",
     "categoria": "UTENSILIOS",
     "preco": 3.99,
-    "estoque": 188.0
+    "estoque": 187.0
   },
   {
     "codigo": "294",
@@ -669,7 +669,7 @@
     "nome": "GARFO SOBREMESA BRANCO C/50UN PRAFESTA",
     "categoria": "DESCARTAVEIS",
     "preco": 5.0,
-    "estoque": 20.0
+    "estoque": 40.0
   },
   {
     "codigo": "407",
@@ -788,7 +788,7 @@
     "nome": "KIT CHURRASCO C/10UN  PRAFESTA",
     "categoria": "-",
     "preco": 28.99,
-    "estoque": 1.0
+    "estoque": 11.0
   },
   {
     "codigo": "439",
@@ -809,7 +809,7 @@
     "nome": "POTE REDONDO 250ML C/TAMPA C/24UN PRAFESTA",
     "categoria": "DESCARTAVEIS",
     "preco": 18.5,
-    "estoque": 6.0
+    "estoque": 24.0
   },
   {
     "codigo": "445",
@@ -844,7 +844,7 @@
     "nome": "POTE E TAMPA RET.500ML C/24UN PRAFESTA",
     "categoria": "DESCARTAVEIS",
     "preco": 31.99,
-    "estoque": 30.0
+    "estoque": 42.0
   },
   {
     "codigo": "458",
@@ -1565,7 +1565,7 @@
     "nome": "KIT GARFO E FACA MASTER C/25  PRAFESTA",
     "categoria": "DESCARTAVEIS",
     "preco": 21.0,
-    "estoque": 2.0
+    "estoque": 22.0
   },
   {
     "codigo": "785",
@@ -2076,7 +2076,7 @@
     "nome": "MARMITEX DE ISOPOR 750ML C/10UN COPOBRAS",
     "categoria": "DESCARTAVEIS",
     "preco": 8.0,
-    "estoque": 21.0
+    "estoque": 20.0
   },
   {
     "codigo": "0229",
@@ -2671,7 +2671,7 @@
     "nome": "POTE REDONDO 500ML C/TAMPA C/24UN PRAFESTA",
     "categoria": "DESCARTAVEIS",
     "preco": 28.99,
-    "estoque": 3.0
+    "estoque": 27.0
   },
   {
     "codigo": "1299",
@@ -2691,8 +2691,8 @@
     "codigo": "1310",
     "nome": "TOALHA DE PAPEL BOBINA 6X20X200 FD WHITE PAPER",
     "categoria": "PRODUTO DE HIGIENE",
-    "preco": 95.0,
-    "estoque": 0.0
+    "preco": 96.99,
+    "estoque": 5.0
   },
   {
     "codigo": "1313",
@@ -2775,8 +2775,8 @@
     "codigo": "1331",
     "nome": "TOALHA  BOBINA BRANCA 8X20X100 FD WHITE PAPER",
     "categoria": "PRODUTO DE HIGIENE",
-    "preco": 49.99,
-    "estoque": 1.0
+    "preco": 56.99,
+    "estoque": 6.0
   },
   {
     "codigo": "1332",
@@ -2797,7 +2797,7 @@
     "nome": "MARMITEX DE ISOPOR 750ML C100/UN COPOBRAS",
     "categoria": "DESCARTAVEIS",
     "preco": 60.5,
-    "estoque": 12.0
+    "estoque": 22.0
   },
   {
     "codigo": "1343",
@@ -3217,7 +3217,7 @@
     "nome": "COPO 80ML PS DESCART. C/100UN COPOBRAS",
     "categoria": "DESCARTAVEIS",
     "preco": 8.5,
-    "estoque": 18.0
+    "estoque": 17.0
   },
   {
     "codigo": "1655",
@@ -3238,7 +3238,7 @@
     "nome": "CABO DE ALUMINIO C/ROSCA 1,5MT SANCHES",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 22.0,
-    "estoque": -7.0
+    "estoque": -8.0
   },
   {
     "codigo": "1683",
@@ -3475,7 +3475,7 @@
     "codigo": "1887",
     "nome": "HAMBURGUEIRA BH03 C/100UN BOM APETITE",
     "categoria": "DESCARTAVEIS",
-    "preco": 38.99,
+    "preco": 39.99,
     "estoque": 6.0
   },
   {
@@ -3594,7 +3594,7 @@
     "codigo": "1934",
     "nome": "BANDEJA BF03 FUNDA C/100UN 235X180X33MM BOM APETITE",
     "categoria": "DESCARTAVEIS",
-    "preco": 40.0,
+    "preco": 35.99,
     "estoque": 4.0
   },
   {
@@ -3959,7 +3959,7 @@
     "nome": "PAPEL HIGIENICO LUXO 8R (AZUL) EUROPEL",
     "categoria": "PRODUTO DE HIGIENE",
     "preco": 41.99,
-    "estoque": 13.0
+    "estoque": 23.0
   },
   {
     "codigo": "2299",
@@ -4127,14 +4127,14 @@
     "nome": "POTE E TAMPA RET.350ML C/24UN PRAFESTA",
     "categoria": "DESCARTAVEIS",
     "preco": 30.5,
-    "estoque": -5.0
+    "estoque": 7.0
   },
   {
     "codigo": "2412",
     "nome": "POTE E TAMPA RET.250ML C/24UN PRAFESTA",
     "categoria": "DESCARTAVEIS",
     "preco": 23.99,
-    "estoque": 4.0
+    "estoque": 16.0
   },
   {
     "codigo": "2427",
@@ -4147,8 +4147,8 @@
     "codigo": "2444",
     "nome": "GUARDANAPO DE PAPEL WHITEPAPER C/50UN 20X22CM",
     "categoria": "DESCARTAVEIS",
-    "preco": 1.7,
-    "estoque": -51.0
+    "preco": 1.99,
+    "estoque": 199.0
   },
   {
     "codigo": "2445",
@@ -6304,7 +6304,7 @@
     "nome": "LIMPA AZULEJO  SEM CABO SANCHES",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 8.5,
-    "estoque": 2.0
+    "estoque": 1.0
   },
   {
     "codigo": "11682",
@@ -6816,6 +6816,13 @@
     "categoria": "-",
     "preco": 22.5,
     "estoque": -3.0
+  },
+  {
+    "codigo": "79094",
+    "nome": "REFIL RODO MAGICO",
+    "categoria": "Outras",
+    "preco": 14.99,
+    "estoque": 0.0
   },
   {
     "codigo": "87687",
@@ -7410,7 +7417,7 @@
     "nome": "PILHA ALFACELL SUPER ALCALINA 2UNI (AA/LR6)",
     "categoria": "UTENSILIOS",
     "preco": 7.0,
-    "estoque": 28.0
+    "estoque": 26.0
   },
   {
     "codigo": "129086",
