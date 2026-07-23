@@ -347,14 +347,14 @@
     "nome": "ESPONJA MULTIUSO C/4UN ALKLIN",
     "categoria": "UTENSILIOS",
     "preco": 3.99,
-    "estoque": 187.0
+    "estoque": 327.0
   },
   {
     "codigo": "294",
     "nome": "VASSOURA DENTRO E FORA C/CABO ALKLIN",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 15.0,
-    "estoque": 5.0
+    "estoque": 1.0
   },
   {
     "codigo": "295",
@@ -487,14 +487,14 @@
     "nome": "PLASTICO BOLHA 43X10M MICRA 20 MN. PLAST",
     "categoria": "Embalagem",
     "preco": 16.99,
-    "estoque": 15.0
+    "estoque": 30.0
   },
   {
     "codigo": "343",
     "nome": "PLASTICO BOLHA 65MX50M MICRA 20 MN.PLAST",
     "categoria": "Embalagem",
     "preco": 41.99,
-    "estoque": 5.0
+    "estoque": 9.0
   },
   {
     "codigo": "346",
@@ -613,21 +613,21 @@
     "nome": "PANO DE CHAO XADREZ 45CMX68CM SOUZA BR2",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 4.7,
-    "estoque": 203.0
+    "estoque": 308.0
   },
   {
     "codigo": "390",
     "nome": "PANO DE CHAO BRANCO ALVEJADO 45CMX69CM SOUZA PPR28",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 6.7,
-    "estoque": 222.0
+    "estoque": 348.0
   },
   {
     "codigo": "391",
     "nome": "PANO DE CHAO ALVEJADO CAIPIRA 45CMX68CM",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 5.25,
-    "estoque": 209.0
+    "estoque": 318.0
   },
   {
     "codigo": "398",
@@ -2272,7 +2272,7 @@
     "nome": "SACOS P/LIXO 100L P8 C10UN PRETO",
     "categoria": "SACO LIXO",
     "preco": 13.5,
-    "estoque": -3.0
+    "estoque": -4.0
   },
   {
     "codigo": "1055",
@@ -2349,7 +2349,7 @@
     "nome": "MARMITEX DE ISOPOR 1100ML C/10UN COPOBRAS",
     "categoria": "DESCARTAVEIS",
     "preco": 8.5,
-    "estoque": 1.0
+    "estoque": 0.0
   },
   {
     "codigo": "1103",
@@ -2678,7 +2678,7 @@
     "nome": "ESPONJA DE LÃ DE AÇO ASSOLAN  45G",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 3.0,
-    "estoque": 12.0
+    "estoque": 10.0
   },
   {
     "codigo": "1301",
@@ -3518,7 +3518,7 @@
     "nome": "LIMPA VIDRO  SANCHES",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 8.5,
-    "estoque": 6.0
+    "estoque": 5.0
   },
   {
     "codigo": "1905",
@@ -3756,7 +3756,7 @@
     "nome": "PLASTICO BOLHA 130X100M MICRA MN. PLAST",
     "categoria": "Embalagem",
     "preco": 100.0,
-    "estoque": 5.0
+    "estoque": 7.0
   },
   {
     "codigo": "2084",
@@ -4190,7 +4190,7 @@
     "nome": "D-695 KIT POTE TRANSPARENTE  P/ MOLHO C/50UN",
     "categoria": "DESCARTAVEIS",
     "preco": 13.5,
-    "estoque": 29.0
+    "estoque": 28.0
   },
   {
     "codigo": "2474",
@@ -4267,7 +4267,7 @@
     "nome": "ESPONJA  ANTIRISCO C/4UN ALKLIN",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 4.0,
-    "estoque": 188.0
+    "estoque": 186.0
   },
   {
     "codigo": "2599",
@@ -4568,7 +4568,7 @@
     "nome": "PAPEL ACOPLADO C/PELICULA 30X38 300g (C/100UN)",
     "categoria": "DESCARTAVEIS",
     "preco": 18.5,
-    "estoque": 13.0
+    "estoque": 12.0
   },
   {
     "codigo": "2842",
@@ -4687,7 +4687,7 @@
     "nome": "SACOLA KRAFT BRANCO H2 C/100UN 19X12CM PLUMA",
     "categoria": "DESCARTAVEIS",
     "preco": 8.0,
-    "estoque": 39.0
+    "estoque": 38.0
   },
   {
     "codigo": "2922",
@@ -7809,7 +7809,7 @@
     "nome": "BORRIFADOR 500ML  NIPO",
     "categoria": "UTENSILIOS",
     "preco": 8.0,
-    "estoque": 1.0
+    "estoque": 0.0
   },
   {
     "codigo": "7893595170127",
