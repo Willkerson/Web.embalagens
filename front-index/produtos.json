@@ -129,29 +129,29 @@
     "codigo": "142",
     "nome": "SABONETE LIQ. CREMOSO PITANGA PLUS TRILHA 5L",
     "categoria": "PRODUTO DE LIMPEZA",
-    "preco": 30.5,
+    "preco": 27.99,
     "estoque": 7.0
   },
   {
     "codigo": "143",
     "nome": "SABONETE LIQ. CREMOSO ERVA DOCE 5L  SOFT PLUS TRILHA",
     "categoria": "PRODUTO DE LIMPEZA",
-    "preco": 30.0,
+    "preco": 27.99,
     "estoque": 8.0
   },
   {
     "codigo": "144",
     "nome": "SABONETE LIQ. C MANGA ROSA & TANGERINA 5L  SOFT PLUS TRILHA",
     "categoria": "PRODUTO DE LIMPEZA",
-    "preco": 30.5,
-    "estoque": 0.0
+    "preco": 27.99,
+    "estoque": 1.0
   },
   {
     "codigo": "145",
     "nome": "SABONETE LIQ. FRAGRANCIA FLORES DO CAMPO AZUL 5L  SOFT PLUS TRILHA",
     "categoria": "PRODUTO DE LIMPEZA",
-    "preco": 30.5,
-    "estoque": 0.0
+    "preco": 27.99,
+    "estoque": 8.0
   },
   {
     "codigo": "148",
@@ -354,7 +354,7 @@
     "nome": "VASSOURA DENTRO E FORA C/CABO ALKLIN",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 15.0,
-    "estoque": 6.0
+    "estoque": 5.0
   },
   {
     "codigo": "295",
@@ -466,7 +466,7 @@
     "nome": "SACOLA UNIDADE GRANDE",
     "categoria": "SACO LIXO",
     "preco": 0.5,
-    "estoque": -105.0
+    "estoque": -110.0
   },
   {
     "codigo": "335",
@@ -487,14 +487,14 @@
     "nome": "PLASTICO BOLHA 43X10M MICRA 20 MN. PLAST",
     "categoria": "Embalagem",
     "preco": 16.99,
-    "estoque": 0.0
+    "estoque": 15.0
   },
   {
     "codigo": "343",
     "nome": "PLASTICO BOLHA 65MX50M MICRA 20 MN.PLAST",
     "categoria": "Embalagem",
-    "preco": 52.99,
-    "estoque": 1.0
+    "preco": 41.99,
+    "estoque": 5.0
   },
   {
     "codigo": "346",
@@ -613,21 +613,21 @@
     "nome": "PANO DE CHAO XADREZ 45CMX68CM SOUZA BR2",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 4.7,
-    "estoque": 98.0
+    "estoque": 203.0
   },
   {
     "codigo": "390",
     "nome": "PANO DE CHAO BRANCO ALVEJADO 45CMX69CM SOUZA PPR28",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 6.7,
-    "estoque": 96.0
+    "estoque": 222.0
   },
   {
     "codigo": "391",
     "nome": "PANO DE CHAO ALVEJADO CAIPIRA 45CMX68CM",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 5.25,
-    "estoque": 100.0
+    "estoque": 209.0
   },
   {
     "codigo": "398",
@@ -725,7 +725,7 @@
     "nome": "COLHER DE SOPA BRANCA C/50UN ELITE",
     "categoria": "DESCARTAVEIS",
     "preco": 10.5,
-    "estoque": 69.0
+    "estoque": 68.0
   },
   {
     "codigo": "422",
@@ -795,7 +795,7 @@
     "nome": "CUMBUCA QUALITY LINE 12 C/10UN PRAFESTA",
     "categoria": "DESCARTAVEIS",
     "preco": 2.99,
-    "estoque": 58.0
+    "estoque": 56.0
   },
   {
     "codigo": "441",
@@ -1243,7 +1243,7 @@
     "nome": "D2 1L FOLHA ALUMINIO C/10UN WYDA",
     "categoria": "Embalagem",
     "preco": 18.5,
-    "estoque": -21.0
+    "estoque": -22.0
   },
   {
     "codigo": "658",
@@ -2244,7 +2244,7 @@
     "nome": "SACO P/ LIXO PRETO 100L C/50UN",
     "categoria": "SACO LIXO",
     "preco": 57.5,
-    "estoque": 13.0
+    "estoque": 12.0
   },
   {
     "codigo": "1049",
@@ -2265,7 +2265,7 @@
     "nome": "SACO P/ LIXO PRETO P8 60L C/10UN",
     "categoria": "SACO LIXO",
     "preco": 8.99,
-    "estoque": 2.0
+    "estoque": 1.0
   },
   {
     "codigo": "1053",
@@ -2607,7 +2607,7 @@
     "codigo": "1275",
     "nome": "SABONETE LIQ. FRAGRANCIA FRAMBOESA & AMORA 500ML  LAFEH",
     "categoria": "PRODUTO DE LIMPEZA",
-    "preco": 10.5,
+    "preco": 8.99,
     "estoque": 2.0
   },
   {
@@ -2783,7 +2783,7 @@
     "nome": "TOALHA INTERFOLHA (OURO) CELULOSE ISAPEL C/1000UN",
     "categoria": "PRODUTO DE HIGIENE",
     "preco": 23.0,
-    "estoque": 24.0
+    "estoque": 23.0
   },
   {
     "codigo": "1341",
@@ -3756,7 +3756,7 @@
     "nome": "PLASTICO BOLHA 130X100M MICRA MN. PLAST",
     "categoria": "Embalagem",
     "preco": 100.0,
-    "estoque": 3.0
+    "estoque": 5.0
   },
   {
     "codigo": "2084",
@@ -3770,7 +3770,7 @@
     "nome": "FOLHA DE ALUMINIO 4MX30CM WYDA",
     "categoria": "Embalagem",
     "preco": 5.5,
-    "estoque": 3.0
+    "estoque": 2.0
   },
   {
     "codigo": "2094",
@@ -3966,7 +3966,7 @@
     "nome": "TOP LIXO PRETO 30L C/30UN PACK LIXO",
     "categoria": "SACO LIXO",
     "preco": 17.99,
-    "estoque": 12.0
+    "estoque": 11.0
   },
   {
     "codigo": "2302",
@@ -4127,7 +4127,7 @@
     "nome": "POTE E TAMPA RET.350ML C/24UN PRAFESTA",
     "categoria": "DESCARTAVEIS",
     "preco": 30.5,
-    "estoque": 7.0
+    "estoque": 6.0
   },
   {
     "codigo": "2412",
@@ -4148,7 +4148,7 @@
     "nome": "GUARDANAPO DE PAPEL WHITEPAPER C/50UN 20X22CM",
     "categoria": "DESCARTAVEIS",
     "preco": 1.99,
-    "estoque": 199.0
+    "estoque": 198.0
   },
   {
     "codigo": "2445",
@@ -4218,7 +4218,7 @@
     "nome": "LUVA LATEX G PLUS SANRO LARANJA P/LIMPEZA",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 11.5,
-    "estoque": 1.0
+    "estoque": 0.0
   },
   {
     "codigo": "2500",
@@ -5037,7 +5037,7 @@
     "nome": "POTE E TAMPA REDONDO 500ML C/TAMPA C/24UN DANUBIO",
     "categoria": "DESCARTAVEIS",
     "preco": 19.99,
-    "estoque": 34.0
+    "estoque": 31.0
   },
   {
     "codigo": "3120",
@@ -5275,7 +5275,7 @@
     "nome": "COPO E TAMPA 140ML C/25UN ULTRA PP",
     "categoria": "DESCARTAVEIS",
     "preco": 12.5,
-    "estoque": 41.0
+    "estoque": 40.0
   },
   {
     "codigo": "3199",
@@ -5513,7 +5513,7 @@
     "nome": "FILM DE PVC 30MTS  28X30M TECKFIM",
     "categoria": "Embalagem",
     "preco": 6.5,
-    "estoque": 25.0
+    "estoque": 24.0
   },
   {
     "codigo": "4005",
@@ -5597,7 +5597,7 @@
     "nome": "SABONETEIRA OVAL C/GRELHA",
     "categoria": "Outras",
     "preco": 4.4,
-    "estoque": -2.0
+    "estoque": 0.0
   },
   {
     "codigo": "4918",
@@ -5829,6 +5829,20 @@
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 5.5,
     "estoque": 2.0
+  },
+  {
+    "codigo": "7287",
+    "nome": "SABONETE LIQ. FRAGRANCIA ERVA DOCE 500ML  LAFEH",
+    "categoria": "PRODUTO DE LIMPEZA",
+    "preco": 8.99,
+    "estoque": 12.0
+  },
+  {
+    "codigo": "7288",
+    "nome": "SABONETE LIQ. FRAGRANCIA ALGAS MARINHAS 500ML  LAFEH",
+    "categoria": "PRODUTO DE LIMPEZA",
+    "preco": 8.99,
+    "estoque": 6.0
   },
   {
     "codigo": "7322",
@@ -6178,7 +6192,7 @@
     "nome": "FORMINHA PAPEL 0B BRANCA C/10UN REIKI",
     "categoria": "DESCARTAVEIS",
     "preco": 6.0,
-    "estoque": 8.0
+    "estoque": 7.0
   },
   {
     "codigo": "9081",
@@ -6283,7 +6297,7 @@
     "nome": "POTE QUADRADO 250ML C/20UN PRAFESTA",
     "categoria": "DESCARTAVEIS",
     "preco": 21.0,
-    "estoque": 21.0
+    "estoque": 20.0
   },
   {
     "codigo": "11180",
@@ -6717,7 +6731,7 @@
     "nome": "SODA CAUSTICA VOREL 500G",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 20.0,
-    "estoque": 24.0
+    "estoque": 23.0
   },
   {
     "codigo": "31686",
@@ -7602,6 +7616,13 @@
     "estoque": -77.0
   },
   {
+    "codigo": "316514",
+    "nome": "DETERGENTE YPÊ LIMÃO 500ML",
+    "categoria": "PRODUTO DE LIMPEZA",
+    "preco": 4.5,
+    "estoque": 0.0
+  },
+  {
     "codigo": "789475",
     "nome": "EVITA MOFO SEC NEUTRO SANOL 100G",
     "categoria": "PRODUTO DE LIMPEZA",
@@ -7656,20 +7677,6 @@
     "categoria": "PRODUTO DE HIGIENE",
     "preco": 28.0,
     "estoque": -1.0
-  },
-  {
-    "codigo": "7893595170098",
-    "nome": "SABONETE LIQ. FRAGRANCIA ALGAS MARINHAS 500ML  LAFEH",
-    "categoria": "PRODUTO DE LIMPEZA",
-    "preco": 10.5,
-    "estoque": -6.0
-  },
-  {
-    "codigo": "7893595170099",
-    "nome": "SABONETE LIQ. FRAGRANCIA ERVA DOCE 500ML  LAFEH",
-    "categoria": "PRODUTO DE LIMPEZA",
-    "preco": 10.5,
-    "estoque": -6.0
   },
   {
     "codigo": "7893595170100",
