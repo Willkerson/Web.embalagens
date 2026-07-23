@@ -88,7 +88,7 @@
     "nome": "SUPER PÁ C/CABO ALKLIN",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 19.99,
-    "estoque": 18.0
+    "estoque": 16.0
   },
   {
     "codigo": "129",
@@ -669,7 +669,7 @@
     "nome": "GARFO SOBREMESA BRANCO C/50UN PRAFESTA",
     "categoria": "DESCARTAVEIS",
     "preco": 5.0,
-    "estoque": 40.0
+    "estoque": 39.0
   },
   {
     "codigo": "407",
@@ -781,7 +781,7 @@
     "nome": "KIT GARFO E FACA C/50UN ELITE",
     "categoria": "DESCARTAVEIS",
     "preco": 22.99,
-    "estoque": 23.0
+    "estoque": 20.0
   },
   {
     "codigo": "433",
@@ -935,7 +935,7 @@
     "nome": "FITA ADESIVA 18X50M ALFACELL",
     "categoria": "Embalagem",
     "preco": 2.5,
-    "estoque": 5.0
+    "estoque": 4.0
   },
   {
     "codigo": "534",
@@ -984,7 +984,7 @@
     "nome": "DETERGENTE SUPREMA NATURAL CLEAR 500ML",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 3.5,
-    "estoque": -7.0
+    "estoque": -8.0
   },
   {
     "codigo": "559",
@@ -1271,7 +1271,7 @@
     "nome": "FILME DE POLIESTER PARA CHURRASCO",
     "categoria": "Embalagem",
     "preco": 16.5,
-    "estoque": 12.0
+    "estoque": 11.0
   },
   {
     "codigo": "666",
@@ -1544,7 +1544,7 @@
     "nome": "TIRA LIMO SPRAY 500ML AZULIM START",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 11.99,
-    "estoque": 30.0
+    "estoque": 29.0
   },
   {
     "codigo": "780",
@@ -1586,7 +1586,7 @@
     "nome": "ESPREMEDOR DE LIMÃO EM ALUMINIO",
     "categoria": "-",
     "preco": 15.5,
-    "estoque": 2.0
+    "estoque": 1.0
   },
   {
     "codigo": "794",
@@ -2244,7 +2244,7 @@
     "nome": "SACO P/ LIXO PRETO 100L C/50UN",
     "categoria": "SACO LIXO",
     "preco": 57.5,
-    "estoque": 12.0
+    "estoque": 11.0
   },
   {
     "codigo": "1049",
@@ -2384,7 +2384,7 @@
     "nome": "RODO ALUMINIO 40CM C/CABO 1,50 MT C/ROSCA SANCHES",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 43.5,
-    "estoque": 8.0
+    "estoque": 7.0
   },
   {
     "codigo": "1134",
@@ -3084,7 +3084,7 @@
     "nome": "TOALHA INTERFOLHA BRANCA PREMIUM WHITE PAPER C/1000UN",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 25.99,
-    "estoque": -16.0
+    "estoque": -17.0
   },
   {
     "codigo": "1526",
@@ -3105,7 +3105,7 @@
     "nome": "AGUA SANITARIA 5L SUPREMA",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 18.99,
-    "estoque": 9.0
+    "estoque": 8.0
   },
   {
     "codigo": "1542",
@@ -3126,7 +3126,7 @@
     "nome": "PRATO BRANCO RASO 15CM C/10UN TOTAL PLAST",
     "categoria": "DESCARTAVEIS",
     "preco": 2.5,
-    "estoque": -33.0
+    "estoque": -38.0
   },
   {
     "codigo": "1548",
@@ -3231,7 +3231,7 @@
     "nome": "HAMBURGUEIRA BH01 C/100UN BOM APETITE",
     "categoria": "Embalagem",
     "preco": 26.0,
-    "estoque": 7.0
+    "estoque": 6.0
   },
   {
     "codigo": "1666",
@@ -3336,7 +3336,7 @@
     "nome": "CANUDO BIO FLEXIVEL 5,8MM C/100UN EM SACHE COPAC",
     "categoria": "DESCARTAVEIS",
     "preco": 8.0,
-    "estoque": -6.0
+    "estoque": 8.0
   },
   {
     "codigo": "1771",
@@ -3504,7 +3504,7 @@
     "nome": "ESCOVAO C/CABO ALKLIN",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 20.0,
-    "estoque": 12.0
+    "estoque": 10.0
   },
   {
     "codigo": "1901",
@@ -3700,7 +3700,7 @@
     "nome": "LAVA ROUPAS EM PO 800G APYCE",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 5.9,
-    "estoque": -1.0
+    "estoque": -2.0
   },
   {
     "codigo": "2058",
@@ -3742,7 +3742,7 @@
     "nome": "POTE TERMICO 480ML C/25UN ULTRA",
     "categoria": "DESCARTAVEIS",
     "preco": 19.99,
-    "estoque": 11.0
+    "estoque": 31.0
   },
   {
     "codigo": "2078",
@@ -3896,7 +3896,7 @@
     "nome": "VASSOURA VARRE KANTO C/CABO ALKLIN",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 15.0,
-    "estoque": 32.0
+    "estoque": 31.0
   },
   {
     "codigo": "2193",
@@ -4162,7 +4162,7 @@
     "nome": "LIMPA PISOS LAMINADOS LAVANDA 750ML AZULIM START",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 11.99,
-    "estoque": 14.0
+    "estoque": 13.0
   },
   {
     "codigo": "2454",
@@ -4218,7 +4218,7 @@
     "nome": "LUVA LATEX G PLUS SANRO LARANJA P/LIMPEZA",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 11.5,
-    "estoque": 0.0
+    "estoque": 10.0
   },
   {
     "codigo": "2500",
@@ -4288,7 +4288,7 @@
     "nome": "D35MA BOLO E TORTA ALTA 500G",
     "categoria": "DESCARTAVEIS",
     "preco": 1.5,
-    "estoque": 155.0
+    "estoque": 149.0
   },
   {
     "codigo": "2624",
@@ -4379,7 +4379,7 @@
     "nome": "G32MA MINI TORTA ALTA 1KG GALVONOTEK",
     "categoria": "Embalagem",
     "preco": 3.5,
-    "estoque": 114.0
+    "estoque": 104.0
   },
   {
     "codigo": "2709",
@@ -4694,7 +4694,7 @@
     "nome": "PRATO QUADRADO GRANDE CRYSTAL C10UNI ELITE",
     "categoria": "DESCARTAVEIS",
     "preco": 15.99,
-    "estoque": 58.0
+    "estoque": 55.0
   },
   {
     "codigo": "2924",
@@ -5401,7 +5401,7 @@
     "nome": "LIMPADOR CONCENTRADO LAVANDA 120ML SANOL",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 12.99,
-    "estoque": -7.0
+    "estoque": -8.0
   },
   {
     "codigo": "3979",
@@ -5555,7 +5555,7 @@
     "nome": "LUVA DE LATEX C/6UN M DESCARTAVELNRO SANRO",
     "categoria": "DESCARTAVEIS",
     "preco": 7.5,
-    "estoque": 0.0
+    "estoque": 10.0
   },
   {
     "codigo": "4040",
@@ -6087,7 +6087,7 @@
     "nome": "ALCOOL LIQUIDO 1L 70% BARBAREX",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 10.99,
-    "estoque": 4.0
+    "estoque": 3.0
   },
   {
     "codigo": "8277",
@@ -7256,7 +7256,7 @@
     "nome": "ABRIDIR DE LATAS",
     "categoria": "UTENSILIOS",
     "preco": 3.5,
-    "estoque": 1.0
+    "estoque": -1.0
   },
   {
     "codigo": "129061",
@@ -7571,7 +7571,7 @@
     "nome": "BARATAS E FORMIGAS  360ML BAYGON",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 18.0,
-    "estoque": 15.0
+    "estoque": 13.0
   },
   {
     "codigo": "129107",
