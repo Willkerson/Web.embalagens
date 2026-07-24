@@ -466,7 +466,7 @@
     "nome": "SACOLA UNIDADE GRANDE",
     "categoria": "SACO LIXO",
     "preco": 0.5,
-    "estoque": -114.0
+    "estoque": -115.0
   },
   {
     "codigo": "335",
@@ -1823,7 +1823,7 @@
     "codigo": "885",
     "nome": "BANDEJA ISOPOR BF02 FUNDA C/10UN BOM APETITE",
     "categoria": "Embalagem",
-    "preco": 2.5,
+    "preco": 3.5,
     "estoque": 3.0
   },
   {
@@ -1880,7 +1880,7 @@
     "nome": "COPO DESCARTAVEL TRANSPARENTE 180ML C/100UN GLIGHT",
     "categoria": "DESCARTAVEIS",
     "preco": 6.5,
-    "estoque": 55.0
+    "estoque": 54.0
   },
   {
     "codigo": "902",
@@ -2167,7 +2167,7 @@
     "nome": "SACOS PLASTICO  200G 15x20 +/-120un",
     "categoria": "Embalagem",
     "preco": 10.0,
-    "estoque": 3.0
+    "estoque": 2.0
   },
   {
     "codigo": "1016",
@@ -2955,7 +2955,7 @@
   },
   {
     "codigo": "1448",
-    "nome": "ESTOJO H101 S/DIV C/100UN B. APETITE",
+    "nome": "BH101 S/DIV C/100UN B. APETITE",
     "categoria": "DESCARTAVEIS",
     "preco": 71.0,
     "estoque": 6.0
@@ -3959,7 +3959,7 @@
     "nome": "PAPEL HIGIENICO LUXO 8R (AZUL) EUROPEL",
     "categoria": "PRODUTO DE HIGIENE",
     "preco": 41.99,
-    "estoque": 23.0
+    "estoque": 22.0
   },
   {
     "codigo": "2299",
@@ -4077,7 +4077,7 @@
     "codigo": "2386",
     "nome": "BANDEJA BF2 FUNDA C/100UN 210X140X28 B. APETITE",
     "categoria": "DESCARTAVEIS",
-    "preco": 20.0,
+    "preco": 27.5,
     "estoque": 5.0
   },
   {
@@ -4939,7 +4939,7 @@
     "nome": "SACO PLASTICO PE C/100UN P/GELAO 05X24X02",
     "categoria": "DESCARTAVEIS",
     "preco": 4.0,
-    "estoque": 152.0
+    "estoque": 151.0
   },
   {
     "codigo": "3072",
@@ -5657,7 +5657,7 @@
   },
   {
     "codigo": "6008",
-    "nome": "B120 FOLHA D ALUMINIO 500ML C/10UN PRAV.",
+    "nome": "B120 MARMITEX ALUMINIO 500ML C/10UN PRAV.",
     "categoria": "Embalagem",
     "preco": 9.5,
     "estoque": 1.0
@@ -5996,7 +5996,7 @@
     "nome": "PALITOS PARA PICOLÉ BAMBU C/ 100 UNIDADES",
     "categoria": "DESCARTAVEIS",
     "preco": 7.99,
-    "estoque": 5.0
+    "estoque": 4.0
   },
   {
     "codigo": "7911",
@@ -6255,7 +6255,7 @@
     "nome": "SACOS PLASTICO PEBD 8X40X0,06 200g  COLOMBO",
     "categoria": "Embalagem",
     "preco": 10.0,
-    "estoque": 100.0
+    "estoque": 99.0
   },
   {
     "codigo": "10887",
@@ -6731,7 +6731,7 @@
     "nome": "SODA CAUSTICA VOREL 500G",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 20.0,
-    "estoque": 23.0
+    "estoque": 22.0
   },
   {
     "codigo": "31686",
@@ -6885,7 +6885,7 @@
     "nome": "DESENTUPIDOR SANCHES",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 11.5,
-    "estoque": 4.0
+    "estoque": 3.0
   },
   {
     "codigo": "129006",
@@ -7586,13 +7586,6 @@
     "categoria": "-",
     "preco": 73.0,
     "estoque": -1.0
-  },
-  {
-    "codigo": "129110",
-    "nome": "BANDEJA BF2 FUNDA C/100UN 210X140X28 B. APETITE",
-    "categoria": "-",
-    "preco": 20.0,
-    "estoque": 5.0
   },
   {
     "codigo": "129111",
