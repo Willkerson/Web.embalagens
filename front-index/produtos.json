@@ -557,7 +557,7 @@
     "nome": "POTE RED.145 C/TAMPA C/24UN  PRAFESTA",
     "categoria": "DESCARTAVEIS",
     "preco": 15.0,
-    "estoque": 14.0
+    "estoque": 13.0
   },
   {
     "codigo": "367",
@@ -844,7 +844,7 @@
     "nome": "POTE E TAMPA RET.500ML C/24UN PRAFESTA",
     "categoria": "DESCARTAVEIS",
     "preco": 31.99,
-    "estoque": 41.0
+    "estoque": 40.0
   },
   {
     "codigo": "458",
@@ -950,6 +950,13 @@
     "categoria": "Embalagem",
     "preco": 26.5,
     "estoque": 30.0
+  },
+  {
+    "codigo": "544",
+    "nome": "BORRIFADOR 500ML  NIPO",
+    "categoria": "UTENSILIOS",
+    "preco": 5.0,
+    "estoque": 0.0
   },
   {
     "codigo": "553",
@@ -1425,7 +1432,7 @@
     "nome": "SACO ZIP 24X36 C/20UN ARMAZEM",
     "categoria": "Embalagem",
     "preco": 16.99,
-    "estoque": 4.0
+    "estoque": 3.0
   },
   {
     "codigo": "739",
@@ -1768,7 +1775,7 @@
     "nome": "HAMBURGUEIRA BH02 C/10UN BOM APETITE",
     "categoria": "Embalagem",
     "preco": 3.99,
-    "estoque": 29.0
+    "estoque": 27.0
   },
   {
     "codigo": "857",
@@ -1873,7 +1880,7 @@
     "nome": "GUARDANAPO 30X31CM C/50UN LUXO PLUMA",
     "categoria": "DESCARTAVEIS",
     "preco": 3.9,
-    "estoque": 86.0
+    "estoque": 84.0
   },
   {
     "codigo": "901",
@@ -2314,7 +2321,7 @@
     "nome": "GARRAFA PE QUADRADA 300ML C/10UN  DECOPLAST",
     "categoria": "Embalagem",
     "preco": 10.85,
-    "estoque": 28.0
+    "estoque": 27.0
   },
   {
     "codigo": "1084",
@@ -2692,7 +2699,7 @@
     "nome": "TOALHA DE PAPEL BOBINA 6X20X200 FD WHITE PAPER",
     "categoria": "PRODUTO DE HIGIENE",
     "preco": 96.99,
-    "estoque": 5.0
+    "estoque": 4.0
   },
   {
     "codigo": "1313",
@@ -3210,7 +3217,7 @@
     "nome": "D50MM TORTA MDIA 1,5KG BR24CM DONA RITA",
     "categoria": "DESCARTAVEIS",
     "preco": 3.0,
-    "estoque": 133.0
+    "estoque": 132.0
   },
   {
     "codigo": "1649",
@@ -3399,7 +3406,7 @@
     "nome": "SACOS PLASTICO  30X40X0,06 1KG COLOMBO",
     "categoria": "Embalagem",
     "preco": 46.0,
-    "estoque": 9.0
+    "estoque": 8.0
   },
   {
     "codigo": "1789",
@@ -3448,7 +3455,7 @@
     "nome": "PEDRA SANITARIA 25G MISTA AZULIM",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 2.99,
-    "estoque": 64.0
+    "estoque": 59.0
   },
   {
     "codigo": "1853",
@@ -3973,7 +3980,7 @@
     "nome": "BACIA 5,5L PLAMONT",
     "categoria": "UTENSILIOS",
     "preco": 7.0,
-    "estoque": 16.0
+    "estoque": 15.0
   },
   {
     "codigo": "2306",
@@ -4134,7 +4141,7 @@
     "nome": "POTE E TAMPA RET.250ML C/24UN PRAFESTA",
     "categoria": "DESCARTAVEIS",
     "preco": 23.99,
-    "estoque": 16.0
+    "estoque": 15.0
   },
   {
     "codigo": "2427",
@@ -4379,7 +4386,7 @@
     "nome": "G32MA MINI TORTA ALTA 1KG GALVONOTEK",
     "categoria": "Embalagem",
     "preco": 3.5,
-    "estoque": 104.0
+    "estoque": 103.0
   },
   {
     "codigo": "2709",
@@ -4442,7 +4449,7 @@
     "nome": "KIT POTE E TAMPA RET. 350ML C/12UN GOUR MAX",
     "categoria": "DESCARTAVEIS",
     "preco": 14.99,
-    "estoque": 1.0
+    "estoque": 0.0
   },
   {
     "codigo": "2802",
@@ -4876,7 +4883,7 @@
     "nome": "COPO DESCARTAVEL 330ML C/50UN ULTRA",
     "categoria": "DESCARTAVEIS",
     "preco": 8.5,
-    "estoque": 34.0
+    "estoque": 33.0
   },
   {
     "codigo": "3035",
@@ -5569,7 +5576,7 @@
     "nome": "TOP LIXO PRETO 50L C/30UN PACK LIXO",
     "categoria": "SACO LIXO",
     "preco": 19.99,
-    "estoque": 11.0
+    "estoque": 10.0
   },
   {
     "codigo": "4391",
@@ -5849,7 +5856,7 @@
     "nome": "LUVA NUTRILICA PRETA GG S/PO C/100UN TALGE",
     "categoria": "DESCARTAVEIS",
     "preco": 31.99,
-    "estoque": 26.0
+    "estoque": 25.0
   },
   {
     "codigo": "7478",
@@ -7508,7 +7515,7 @@
     "nome": "PULVERIZADOR DE PLASTICO 500ML CABELEIRO",
     "categoria": "UTENSILIOS",
     "preco": 5.5,
-    "estoque": 1.0
+    "estoque": 0.0
   },
   {
     "codigo": "129098",
@@ -7641,7 +7648,7 @@
     "nome": "SACOS PLASTICO PEBD 25X35X0,06 200G HELVIPACK",
     "categoria": "Embalagem",
     "preco": 10.0,
-    "estoque": -3.0
+    "estoque": -4.0
   },
   {
     "codigo": "2078_966",
@@ -7796,13 +7803,6 @@
     "categoria": "UTENSILIOS",
     "preco": 7.0,
     "estoque": -2.0
-  },
-  {
-    "codigo": "7893595170125",
-    "nome": "BORRIFADOR 500ML  NIPO",
-    "categoria": "UTENSILIOS",
-    "preco": 8.0,
-    "estoque": 0.0
   },
   {
     "codigo": "7893595170127",
