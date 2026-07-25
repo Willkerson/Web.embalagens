@@ -137,7 +137,7 @@
     "nome": "SABONETE LIQ. CREMOSO ERVA DOCE 5L  SOFT PLUS TRILHA",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 27.99,
-    "estoque": 8.0
+    "estoque": 7.0
   },
   {
     "codigo": "144",
@@ -725,7 +725,7 @@
     "nome": "COLHER DE SOPA BRANCA C/50UN ELITE",
     "categoria": "DESCARTAVEIS",
     "preco": 10.5,
-    "estoque": 66.0
+    "estoque": 65.0
   },
   {
     "codigo": "422",
@@ -1250,7 +1250,7 @@
     "nome": "D2 1L FOLHA ALUMINIO C/10UN WYDA",
     "categoria": "Embalagem",
     "preco": 18.5,
-    "estoque": -22.0
+    "estoque": -23.0
   },
   {
     "codigo": "658",
@@ -1775,7 +1775,7 @@
     "nome": "HAMBURGUEIRA BH02 C/10UN BOM APETITE",
     "categoria": "Embalagem",
     "preco": 3.99,
-    "estoque": 27.0
+    "estoque": 26.0
   },
   {
     "codigo": "857",
@@ -1880,7 +1880,7 @@
     "nome": "GUARDANAPO 30X31CM C/50UN LUXO PLUMA",
     "categoria": "DESCARTAVEIS",
     "preco": 3.9,
-    "estoque": 84.0
+    "estoque": 82.0
   },
   {
     "codigo": "901",
@@ -2013,7 +2013,7 @@
     "nome": "CAIXA P/CORREIO N04 34X27X14",
     "categoria": "Embalagem",
     "preco": 15.0,
-    "estoque": 7.0
+    "estoque": 6.0
   },
   {
     "codigo": "943",
@@ -2503,7 +2503,7 @@
     "nome": "FITA ADESIVA POLIPROPILENO TRANSPARENTE 48MMX40M TECTAPE",
     "categoria": "PAPELARIA",
     "preco": 4.99,
-    "estoque": 82.0
+    "estoque": 81.0
   },
   {
     "codigo": "1168",
@@ -2580,7 +2580,7 @@
     "nome": "BOBINA PICOTADA 2KG C/500UN P/ ALIMENTOS 20X28CM EXTRUSA",
     "categoria": "Embalagem",
     "preco": 19.0,
-    "estoque": 5.0
+    "estoque": 4.0
   },
   {
     "codigo": "1225",
@@ -2622,7 +2622,7 @@
     "nome": "BOBINA PICOTADA 2,5KG C/500UN P/ ALIMENTOS 25X33 EXTRUSA",
     "categoria": "Embalagem",
     "preco": 25.0,
-    "estoque": 16.0
+    "estoque": 15.0
   },
   {
     "codigo": "1281",
@@ -3546,7 +3546,7 @@
     "nome": "SACOS PLASTICO PEBD 40X60X0,10 200G COLOMBO/HELVIPACK",
     "categoria": "Embalagem",
     "preco": 10.0,
-    "estoque": 0.0
+    "estoque": -1.0
   },
   {
     "codigo": "1910",
@@ -3637,7 +3637,7 @@
     "nome": "TOALHA INTERFOLHA LUXO 20X21CM C/1000FOLHAS WHITE PAPER",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 24.99,
-    "estoque": 24.0
+    "estoque": 23.0
   },
   {
     "codigo": "1981",
@@ -4442,7 +4442,7 @@
     "nome": "GARFO REFEICAO BRANCO C/50UN ELITE",
     "categoria": "DESCARTAVEIS",
     "preco": 10.25,
-    "estoque": 14.0
+    "estoque": 13.0
   },
   {
     "codigo": "2799",
@@ -4743,7 +4743,7 @@
     "nome": "PRATO RASO PR26 BRC/10UN TOTAL PLAST",
     "categoria": "DESCARTAVEIS",
     "preco": 8.5,
-    "estoque": 3.0
+    "estoque": -2.0
   },
   {
     "codigo": "2938",
@@ -5282,7 +5282,7 @@
     "nome": "COPO E TAMPA 140ML C/25UN ULTRA PP",
     "categoria": "DESCARTAVEIS",
     "preco": 12.5,
-    "estoque": 36.0
+    "estoque": 32.0
   },
   {
     "codigo": "3199",
@@ -5520,7 +5520,7 @@
     "nome": "FILM DE PVC 30MTS  28X30M TECKFIM",
     "categoria": "Embalagem",
     "preco": 6.5,
-    "estoque": 24.0
+    "estoque": 23.0
   },
   {
     "codigo": "4005",
@@ -5583,7 +5583,7 @@
     "nome": "CUMBUCA 15 QUALITY LINE C/10UN PRAFESTA",
     "categoria": "DESCARTAVEIS",
     "preco": 3.5,
-    "estoque": 59.0
+    "estoque": 54.0
   },
   {
     "codigo": "4434",
@@ -6101,7 +6101,7 @@
     "nome": "ALCOOL 70% LIQUIDO 5L BARBAREX",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 49.99,
-    "estoque": 2.0
+    "estoque": 1.0
   },
   {
     "codigo": "8349",
@@ -6178,7 +6178,7 @@
     "nome": "COPO DESCARTAVEL TRANSPARENTE 300ML C/100UN ULTRA PP",
     "categoria": "DESCARTAVEIS",
     "preco": 16.5,
-    "estoque": 24.0
+    "estoque": 23.0
   },
   {
     "codigo": "9039",
@@ -6199,7 +6199,7 @@
     "nome": "FORMINHA PAPEL 0B BRANCA C/10UN REIKI",
     "categoria": "DESCARTAVEIS",
     "preco": 6.0,
-    "estoque": 7.0
+    "estoque": 6.0
   },
   {
     "codigo": "9081",
