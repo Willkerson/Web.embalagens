@@ -960,10 +960,10 @@
   },
   {
     "codigo": "553",
-    "nome": "GARRAFA PE QUADRADA 500ML C/10UN MALUGER",
+    "nome": "GARRAFA PE QUADRADA 500ML C/10UN DECOPLAST",
     "categoria": "Embalagem",
-    "preco": 13.0,
-    "estoque": -36.0
+    "preco": 12.99,
+    "estoque": 44.0
   },
   {
     "codigo": "554",
@@ -2167,7 +2167,7 @@
     "nome": "SACOS PLASTICO PEBD 25X35X0,06 1KG HELVIPACK",
     "categoria": "Embalagem",
     "preco": 46.0,
-    "estoque": 6.0
+    "estoque": 5.0
   },
   {
     "codigo": "1015",
@@ -2244,7 +2244,7 @@
     "nome": "TOP LIXO PIA E BANHEIRO LAVANDA C/40UN PACK LIXO",
     "categoria": "SACO LIXO",
     "preco": 8.99,
-    "estoque": 44.0
+    "estoque": 43.0
   },
   {
     "codigo": "1048",
@@ -2258,7 +2258,7 @@
     "nome": "SACO P/ LIXO PRETO 100L C/100UN",
     "categoria": "SACO LIXO",
     "preco": 115.0,
-    "estoque": 4.0
+    "estoque": 2.0
   },
   {
     "codigo": "1051",
@@ -2320,7 +2320,7 @@
     "codigo": "1080",
     "nome": "GARRAFA PE QUADRADA 300ML C/10UN  DECOPLAST",
     "categoria": "Embalagem",
-    "preco": 10.85,
+    "preco": 10.99,
     "estoque": 27.0
   },
   {
@@ -2503,7 +2503,7 @@
     "nome": "FITA ADESIVA POLIPROPILENO TRANSPARENTE 48MMX40M TECTAPE",
     "categoria": "PAPELARIA",
     "preco": 4.99,
-    "estoque": 76.0
+    "estoque": 74.0
   },
   {
     "codigo": "1168",
@@ -2713,7 +2713,7 @@
     "nome": "TOP LIXO PIA E BANHEIRO BRANCO C/40UN PACK LIXO",
     "categoria": "SACO LIXO",
     "preco": 8.99,
-    "estoque": 28.0
+    "estoque": 26.0
   },
   {
     "codigo": "1315",
@@ -3146,8 +3146,8 @@
     "codigo": "1555",
     "nome": "GARRAFA PE QUADRADA 200ML C/10UN MALUGER",
     "categoria": "Embalagem",
-    "preco": 9.75,
-    "estoque": -18.0
+    "preco": 8.99,
+    "estoque": 12.0
   },
   {
     "codigo": "1558",
@@ -3188,8 +3188,8 @@
     "codigo": "1584",
     "nome": "GARRAFA PE QUADRADA 500ML C/100UN DECOPLAST",
     "categoria": "Embalagem",
-    "preco": 130.0,
-    "estoque": 0.0
+    "preco": 111.99,
+    "estoque": 1.0
   },
   {
     "codigo": "1585",
@@ -3308,7 +3308,7 @@
     "nome": "SACOLA PRETA 1KG 30X40",
     "categoria": "Embalagem",
     "preco": 16.99,
-    "estoque": 2.0
+    "estoque": 1.0
   },
   {
     "codigo": "1719",
@@ -3868,7 +3868,7 @@
     "nome": "FITA ADESIVA 45X100M  TRANSPARENTE KORETECH",
     "categoria": "PAPELARIA",
     "preco": 10.5,
-    "estoque": 17.0
+    "estoque": 12.0
   },
   {
     "codigo": "2164",
@@ -4071,7 +4071,7 @@
     "nome": "Desorizador Sanitário Bloco Para Cx Acoplada Lavanda Azulim",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 13.5,
-    "estoque": 20.0
+    "estoque": 19.0
   },
   {
     "codigo": "2382",
@@ -4575,7 +4575,7 @@
     "nome": "PAPEL ACOPLADO C/PELICULA 30X38 300g (C/100UN)",
     "categoria": "DESCARTAVEIS",
     "preco": 18.5,
-    "estoque": 12.0
+    "estoque": 9.0
   },
   {
     "codigo": "2842",
@@ -4694,7 +4694,7 @@
     "nome": "SACOLA KRAFT BRANCO H2 C/100UN 19X12CM PLUMA",
     "categoria": "DESCARTAVEIS",
     "preco": 8.0,
-    "estoque": 38.0
+    "estoque": 36.0
   },
   {
     "codigo": "2922",
@@ -5576,7 +5576,7 @@
     "nome": "TOP LIXO PRETO 50L C/30UN PACK LIXO",
     "categoria": "SACO LIXO",
     "preco": 19.99,
-    "estoque": 9.0
+    "estoque": 8.0
   },
   {
     "codigo": "4391",
@@ -5870,7 +5870,7 @@
     "nome": "AROMATIZADOR DE AMBIENTE JASMIN 250ML ESSENCIAS",
     "categoria": "PRODUTO DE HIGIENE",
     "preco": 15.0,
-    "estoque": 12.0
+    "estoque": 11.0
   },
   {
     "codigo": "7523",
@@ -6094,7 +6094,7 @@
     "nome": "ALCOOL LIQUIDO 1L 70% BARBAREX",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 10.99,
-    "estoque": 2.0
+    "estoque": 1.0
   },
   {
     "codigo": "8277",
