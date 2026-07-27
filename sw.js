@@ -1,19 +1,19 @@
-const CACHE = "loja-v1";
+const CACHE = "loja-v2";
 const ARQUIVOS = [
-  "/Web.embalagens/index.html",
-  "/Web.embalagens/manifest.json",
-  "/Web.embalagens/front-index/config.js",
-  "/Web.embalagens/front-index/utils.js",
-  "/Web.embalagens/front-index/busca.js",
-  "/Web.embalagens/front-index/filtros.js",
-  "/Web.embalagens/front-index/render.js",
-  "/Web.embalagens/front-index/carrinho.js",
-  "/Web.embalagens/front-index/checkout.js",
-  "/Web.embalagens/front-index/nav.js",
-  "/Web.embalagens/front-index/mobile-fix.js",
-  "/Web.embalagens/front-index/app.js",
-  "/Web.embalagens/front-index/estilo.css",
-  "/Web.embalagens/front-index/mobile.css"
+  "/index.html",
+  "/manifest.json",
+  "/front-index/config.js",
+  "/front-index/utils.js",
+  "/front-index/busca.js",
+  "/front-index/filtros.js",
+  "/front-index/render.js",
+  "/front-index/carrinho.js",
+  "/front-index/checkout.js",
+  "/front-index/nav.js",
+  "/front-index/mobile-fix.js",
+  "/front-index/app.js",
+  "/front-index/estilo.css",
+  "/front-index/mobile.css"
 ];
 
 // INSTALL
