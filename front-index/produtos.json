@@ -760,7 +760,7 @@
     "nome": "SACOLA PEAD 30X40X0,12 C/10UN OLIPEL",
     "categoria": "Embalagem",
     "preco": 12.99,
-    "estoque": 20.0
+    "estoque": 19.0
   },
   {
     "codigo": "427",
@@ -2467,7 +2467,7 @@
     "codigo": "1150",
     "nome": "FIBRA BRANCA LIMP. LEVE BETTANIN",
     "categoria": "PRODUTO DE LIMPEZA",
-    "preco": 3.0,
+    "preco": 3.99,
     "estoque": 10.0
   },
   {
@@ -2867,7 +2867,7 @@
     "nome": "BH04 HOT DOG C/10UN BOM APETITE",
     "categoria": "Embalagem",
     "preco": 4.99,
-    "estoque": 32.0
+    "estoque": 30.0
   },
   {
     "codigo": "1363",
@@ -4190,7 +4190,7 @@
     "nome": "POTE TERMICO 360ML C/25UN ULTRA",
     "categoria": "DESCARTAVEIS",
     "preco": 15.99,
-    "estoque": 375.0
+    "estoque": 125.0
   },
   {
     "codigo": "2457",
@@ -5153,7 +5153,7 @@
   },
   {
     "codigo": "3147",
-    "nome": "CAIXA DE PAP. ONDULADO N02 35X25X25 NIAGRA",
+    "nome": "CAIXA ONDULADO N02 35X25X25 NIAGRA",
     "categoria": "Embalagem",
     "preco": 7.0,
     "estoque": -1.0
@@ -5289,7 +5289,7 @@
     "nome": "COPO E TAMPA 140ML C/25UN ULTRA PP",
     "categoria": "DESCARTAVEIS",
     "preco": 12.5,
-    "estoque": 32.0
+    "estoque": 31.0
   },
   {
     "codigo": "3199",
