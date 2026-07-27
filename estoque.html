@@ -1194,7 +1194,29 @@ async function ghGet(path, token, repo) {
   }
   const d    = await res.json();
   const sha  = d.sha;
-  const data = JSON.parse(atob(d.content.replace(/\n/g, "")));
+
+  let raw;
+  if (d.content) {
+    // arquivo pequeno: Contents API traz o base64 inline
+    raw = atob(d.content.replace(/\n/g, ""));
+  } else {
+    // arquivo grande (>1MB): Contents API não traz "content", precisa buscar via Blob API
+    const blobRes = await fetch(
+      `https://api.github.com/repos/${repo || REPO}/git/blobs/${sha}`,
+      {
+        cache: "no-store",
+        headers: {
+          Authorization: "Bearer " + token,
+          Accept: "application/vnd.github+json"
+        }
+      }
+    );
+    if (!blobRes.ok) throw new Error(`Erro ao buscar blob de ${path} (${blobRes.status})`);
+    const blob = await blobRes.json();
+    raw = atob(blob.content.replace(/\n/g, ""));
+  }
+
+  const data = JSON.parse(raw);
   return { found: true, sha, data };
 }
 
@@ -1504,7 +1526,7 @@ function showToast(msg) {
 <script>
   if ('serviceWorker' in navigator) {
     window.addEventListener('load', function () {
-      navigator.serviceWorker.register('/Web.embalagens/sw-estoque.js')
+      navigator.serviceWorker.register('/sw-estoque.js')
         .catch(function (err) { console.warn('SW falhou:', err); });
     });
   }
