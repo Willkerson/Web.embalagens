@@ -1,7 +1,7 @@
-const CACHE = "estoque-v3";
+const CACHE = "estoque-v4";
 const ARQUIVOS = [
-  "/Web.embalagens/estoque.html",
-  "/Web.embalagens/manifest-estoque.json"
+  "/estoque.html",
+  "/manifest-estoque.json"
 ];
 
 // INSTALL
