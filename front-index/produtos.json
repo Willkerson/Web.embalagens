@@ -620,7 +620,7 @@
     "nome": "PANO DE CHAO BRANCO ALVEJADO 45CMX69CM SOUZA PPR28",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 6.7,
-    "estoque": 346.0
+    "estoque": 344.0
   },
   {
     "codigo": "391",
@@ -879,7 +879,7 @@
     "nome": "BLOCO P/CX ACOPLADA LAVANDA 50G PANTANAL",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 9.99,
-    "estoque": 3.0
+    "estoque": 2.0
   },
   {
     "codigo": "500",
@@ -1635,7 +1635,7 @@
     "nome": "LIMPADOR  PERF. INTENSE LAVANDA 500ML SANOL",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 6.5,
-    "estoque": 9.0
+    "estoque": 8.0
   },
   {
     "codigo": "812",
@@ -2209,7 +2209,7 @@
     "nome": "SACO P/ LIXO PRETO P8 60L C/50UN",
     "categoria": "SACO LIXO",
     "preco": 38.25,
-    "estoque": 17.0
+    "estoque": 16.0
   },
   {
     "codigo": "1042",
@@ -2251,7 +2251,7 @@
     "nome": "SACO P/ LIXO PRETO 100L C/50UN",
     "categoria": "SACO LIXO",
     "preco": 57.5,
-    "estoque": 10.0
+    "estoque": 9.0
   },
   {
     "codigo": "1049",
@@ -2580,7 +2580,7 @@
     "nome": "BOBINA PICOTADA 2KG C/500UN P/ ALIMENTOS 20X28CM EXTRUSA",
     "categoria": "Embalagem",
     "preco": 19.0,
-    "estoque": 3.0
+    "estoque": 2.0
   },
   {
     "codigo": "1225",
@@ -2790,7 +2790,7 @@
     "nome": "TOALHA INTERFOLHA (OURO) CELULOSE ISAPEL C/1000UN",
     "categoria": "PRODUTO DE HIGIENE",
     "preco": 23.0,
-    "estoque": 75.0
+    "estoque": 70.0
   },
   {
     "codigo": "1341",
@@ -3455,7 +3455,7 @@
     "nome": "PEDRA SANITARIA 25G MISTA AZULIM",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 2.99,
-    "estoque": 57.0
+    "estoque": 56.0
   },
   {
     "codigo": "1853",
@@ -3623,7 +3623,7 @@
     "nome": "BR03 C/10UN 235X18X16MM",
     "categoria": "Embalagem",
     "preco": 3.5,
-    "estoque": 1.0
+    "estoque": -2.0
   },
   {
     "codigo": "1940",
@@ -4904,7 +4904,7 @@
     "nome": "HAMBURGUEIRA BH01 C/10UN BOM APETITE",
     "categoria": "DESCARTAVEIS",
     "preco": 3.5,
-    "estoque": 51.0
+    "estoque": 50.0
   },
   {
     "codigo": "3048",
@@ -5590,7 +5590,7 @@
     "nome": "G60M  BOLO MEDIA  GALVANOTEK",
     "categoria": "-",
     "preco": 7.5,
-    "estoque": 46.0
+    "estoque": 45.0
   },
   {
     "codigo": "4561",
@@ -5828,7 +5828,7 @@
     "nome": "ESPONJA MULTIUSO NAO RISCA  FLASHLIMP",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 5.5,
-    "estoque": 1.0
+    "estoque": 0.0
   },
   {
     "codigo": "7287",
@@ -5933,7 +5933,7 @@
     "nome": "B05 RASA BAND ISOPOR FR05 B16 C/10UN FIBRAFORM",
     "categoria": "DESCARTAVEIS",
     "preco": 7.0,
-    "estoque": -9.0
+    "estoque": -10.0
   },
   {
     "codigo": "7897",
