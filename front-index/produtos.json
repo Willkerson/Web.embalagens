@@ -347,14 +347,14 @@
     "nome": "ESPONJA MULTIUSO C/4UN ALKLIN",
     "categoria": "UTENSILIOS",
     "preco": 3.99,
-    "estoque": 323.0
+    "estoque": 322.0
   },
   {
     "codigo": "294",
     "nome": "VASSOURA DENTRO E FORA C/CABO ALKLIN",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 15.0,
-    "estoque": -1.0
+    "estoque": -3.0
   },
   {
     "codigo": "295",
@@ -487,14 +487,14 @@
     "nome": "PLASTICO BOLHA 43X10M MICRA 20 MN. PLAST",
     "categoria": "Embalagem",
     "preco": 16.99,
-    "estoque": -151.0
+    "estoque": 164.0
   },
   {
     "codigo": "343",
     "nome": "PLASTICO BOLHA 65MX50M MICRA 20 MN.PLAST",
     "categoria": "Embalagem",
     "preco": 41.99,
-    "estoque": 0.0
+    "estoque": 3.0
   },
   {
     "codigo": "346",
@@ -1593,7 +1593,7 @@
     "nome": "FITA ISOLANTE 5M 1 UNIDADE",
     "categoria": "Embalagem",
     "preco": 3.5,
-    "estoque": -3.0
+    "estoque": -4.0
   },
   {
     "codigo": "790",
@@ -1782,7 +1782,7 @@
     "nome": "HAMBURGUEIRA BH02 C/10UN BOM APETITE",
     "categoria": "Embalagem",
     "preco": 3.99,
-    "estoque": 23.0
+    "estoque": 22.0
   },
   {
     "codigo": "857",
@@ -2216,7 +2216,7 @@
     "nome": "SACO P/ LIXO PRETO P8 60L C/50UN",
     "categoria": "SACO LIXO",
     "preco": 38.25,
-    "estoque": 16.0
+    "estoque": 15.0
   },
   {
     "codigo": "1042",
@@ -2251,21 +2251,21 @@
     "nome": "TOP LIXO PIA E BANHEIRO LAVANDA C/40UN PACK LIXO",
     "categoria": "SACO LIXO",
     "preco": 8.99,
-    "estoque": 42.0
+    "estoque": 41.0
   },
   {
     "codigo": "1048",
     "nome": "SACO P/ LIXO PRETO 100L C/50UN",
     "categoria": "SACO LIXO",
     "preco": 57.5,
-    "estoque": 9.0
+    "estoque": 7.0
   },
   {
     "codigo": "1049",
     "nome": "SACO P/ LIXO PRETO 100L C/100UN",
     "categoria": "SACO LIXO",
     "preco": 115.0,
-    "estoque": 2.0
+    "estoque": 1.0
   },
   {
     "codigo": "1051",
@@ -2398,7 +2398,7 @@
     "nome": "RODO ALUMINIO 40CM C/CABO 1,50 MT C/ROSCA SANCHES",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 43.5,
-    "estoque": 7.0
+    "estoque": 6.0
   },
   {
     "codigo": "1134",
@@ -2559,7 +2559,7 @@
     "nome": "SACO P/ LIXO PRETO P6 40L C/100UN",
     "categoria": "SACO LIXO",
     "preco": 50.0,
-    "estoque": 7.0
+    "estoque": 6.0
   },
   {
     "codigo": "1199",
@@ -3252,7 +3252,7 @@
     "nome": "CABO DE ALUMINIO C/ROSCA 1,5MT SANCHES",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 22.0,
-    "estoque": -9.0
+    "estoque": -10.0
   },
   {
     "codigo": "1683",
@@ -3630,7 +3630,7 @@
     "nome": "BR03 C/10UN 235X18X16MM",
     "categoria": "Embalagem",
     "preco": 3.5,
-    "estoque": -2.0
+    "estoque": -6.0
   },
   {
     "codigo": "1940",
@@ -3728,7 +3728,7 @@
     "nome": "BR02 RASA C/10UN 210X146X15 BOM APETITE",
     "categoria": "Embalagem",
     "preco": 2.5,
-    "estoque": -2.0
+    "estoque": -3.0
   },
   {
     "codigo": "2068",
@@ -3770,7 +3770,7 @@
     "nome": "PLASTICO BOLHA 130X100M MICRA MN. PLAST",
     "categoria": "Embalagem",
     "preco": 100.0,
-    "estoque": 4.0
+    "estoque": 5.0
   },
   {
     "codigo": "2084",
@@ -3868,7 +3868,7 @@
     "nome": "LUVA NITRILICA PRETA G  S/PO C/100UN TALGE",
     "categoria": "DESCARTAVEIS",
     "preco": 31.99,
-    "estoque": 16.0
+    "estoque": 15.0
   },
   {
     "codigo": "2140",
@@ -3973,7 +3973,7 @@
     "nome": "PAPEL HIGIENICO LUXO 8R (AZUL) EUROPEL",
     "categoria": "PRODUTO DE HIGIENE",
     "preco": 41.99,
-    "estoque": 22.0
+    "estoque": 21.0
   },
   {
     "codigo": "2299",
@@ -4456,7 +4456,7 @@
     "nome": "KIT POTE E TAMPA RET. 350ML C/12UN GOUR MAX",
     "categoria": "DESCARTAVEIS",
     "preco": 14.99,
-    "estoque": -1.0
+    "estoque": -2.0
   },
   {
     "codigo": "2802",
@@ -4974,7 +4974,7 @@
     "nome": "KIT POTE E TAMPA RET. 750ML C/12UN GOUR MAX",
     "categoria": "DESCARTAVEIS",
     "preco": 22.5,
-    "estoque": 24.0
+    "estoque": 23.0
   },
   {
     "codigo": "3078",
@@ -5632,7 +5632,7 @@
     "nome": "BALDE PLAST 10LTS ARQPLAST",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 11.5,
-    "estoque": 9.0
+    "estoque": 7.0
   },
   {
     "codigo": "5108",
@@ -6066,7 +6066,7 @@
     "nome": "ESTILETE 18MM REFIL C/3UN LAMINA",
     "categoria": "UTENSILIOS",
     "preco": 10.0,
-    "estoque": 4.0
+    "estoque": 3.0
   },
   {
     "codigo": "7991",
@@ -6780,7 +6780,7 @@
     "nome": "BOBINA PICOTADO 35X45 C/450UN SOLDA FUNDO 2.41KG",
     "categoria": "ALIMENTO/GENERO ALIMENTICIO",
     "preco": 99.0,
-    "estoque": 2.0
+    "estoque": 1.0
   },
   {
     "codigo": "61057",
@@ -6864,7 +6864,7 @@
     "nome": "AGUA SANITARIA DACLOR 1L",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 5.4,
-    "estoque": 5.0
+    "estoque": 4.0
   },
   {
     "codigo": "89815",
@@ -7046,7 +7046,7 @@
     "nome": "TESOURA DESM. P/COZINHA KEHOME",
     "categoria": "UTENSILIOS",
     "preco": 21.0,
-    "estoque": 4.0
+    "estoque": 3.0
   },
   {
     "codigo": "129027",
