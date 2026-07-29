@@ -879,7 +879,7 @@
     "nome": "BLOCO P/CX ACOPLADA LAVANDA 50G PANTANAL",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 9.99,
-    "estoque": 2.0
+    "estoque": 1.0
   },
   {
     "codigo": "500",
@@ -1145,7 +1145,7 @@
     "nome": "FOLHA DE ALUMINIO  7,5MX30CM WYDA",
     "categoria": "DESCARTAVEIS",
     "preco": 8.75,
-    "estoque": -67.0
+    "estoque": -69.0
   },
   {
     "codigo": "616",
@@ -1516,7 +1516,7 @@
     "nome": "LIMPADOR MULTIUSO AÇAO CLAREADORA 500ML AZULIM",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 5.5,
-    "estoque": 8.0
+    "estoque": 7.0
   },
   {
     "codigo": "763",
@@ -1789,7 +1789,7 @@
     "nome": "DESINFETANTE LAVANDA BOUQUET 2L SUPREMA",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 8.0,
-    "estoque": 23.0
+    "estoque": 22.0
   },
   {
     "codigo": "860",
@@ -1866,7 +1866,7 @@
     "nome": "COPO DESCARTAVEL TRANSPARENTE 180ML C/100UN TOTAL PLAST",
     "categoria": "DESCARTAVEIS",
     "preco": 7.5,
-    "estoque": 397.0
+    "estoque": 396.0
   },
   {
     "codigo": "897",
@@ -1894,7 +1894,7 @@
     "nome": "COPO DESCARTAVEL TRANSPARENTE 180ML C/100UN GLIGHT",
     "categoria": "DESCARTAVEIS",
     "preco": 6.5,
-    "estoque": 50.0
+    "estoque": 49.0
   },
   {
     "codigo": "902",
@@ -1908,7 +1908,7 @@
     "nome": "COPO DESCARTAVEL TRANSPARENTE 50ML C/100UN TOTAL PLAST",
     "categoria": "DESCARTAVEIS",
     "preco": 3.5,
-    "estoque": 20.0
+    "estoque": 19.0
   },
   {
     "codigo": "904",
@@ -2251,7 +2251,7 @@
     "nome": "TOP LIXO PIA E BANHEIRO LAVANDA C/40UN PACK LIXO",
     "categoria": "SACO LIXO",
     "preco": 8.99,
-    "estoque": 41.0
+    "estoque": 40.0
   },
   {
     "codigo": "1048",
@@ -2279,7 +2279,7 @@
     "nome": "SACO P/ LIXO PRETO P8 60L C/10UN",
     "categoria": "SACO LIXO",
     "preco": 8.99,
-    "estoque": -8.0
+    "estoque": -11.0
   },
   {
     "codigo": "1053",
@@ -2510,7 +2510,7 @@
     "nome": "FITA ADESIVA POLIPROPILENO TRANSPARENTE 48MMX40M TECTAPE",
     "categoria": "PAPELARIA",
     "preco": 4.99,
-    "estoque": 71.0
+    "estoque": 69.0
   },
   {
     "codigo": "1168",
@@ -2636,7 +2636,7 @@
     "nome": "PAPEL HIGIENICO BRANCO ROLAO EUROPEL 08 ROLOS",
     "categoria": "PRODUTO DE HIGIENE",
     "preco": 35.5,
-    "estoque": 18.0
+    "estoque": 17.0
   },
   {
     "codigo": "1290",
@@ -2797,7 +2797,7 @@
     "nome": "TOALHA INTERFOLHA (OURO) CELULOSE ISAPEL C/1000UN",
     "categoria": "PRODUTO DE HIGIENE",
     "preco": 23.0,
-    "estoque": 69.0
+    "estoque": 68.0
   },
   {
     "codigo": "1341",
@@ -3721,7 +3721,7 @@
     "nome": "TOUCAS DESCARTAVEIS C/100UN 45X50CM BOMPACK",
     "categoria": "DESCARTAVEIS",
     "preco": 13.5,
-    "estoque": 5.0
+    "estoque": 4.0
   },
   {
     "codigo": "2067",
@@ -3770,7 +3770,7 @@
     "nome": "PLASTICO BOLHA 130X100M MICRA MN. PLAST",
     "categoria": "Embalagem",
     "preco": 100.0,
-    "estoque": 5.0
+    "estoque": 4.0
   },
   {
     "codigo": "2084",
@@ -3819,7 +3819,7 @@
     "nome": "SACOLA BRANCA 1KG 30x40",
     "categoria": "SACO LIXO",
     "preco": 27.0,
-    "estoque": 2.0
+    "estoque": 1.0
   },
   {
     "codigo": "2102",
@@ -3854,7 +3854,7 @@
     "nome": "SACOLA BRANCA 1KG 90x100",
     "categoria": "SACO LIXO",
     "preco": 27.0,
-    "estoque": 9.0
+    "estoque": 8.0
   },
   {
     "codigo": "2122",
@@ -3875,7 +3875,7 @@
     "nome": "FITA ADESIVA 45X100M  TRANSPARENTE KORETECH",
     "categoria": "PAPELARIA",
     "preco": 10.5,
-    "estoque": 12.0
+    "estoque": 11.0
   },
   {
     "codigo": "2164",
@@ -4134,7 +4134,7 @@
     "nome": "G78M BOLO MEDIA MILL. GALVANOTEK",
     "categoria": "DESCARTAVEIS",
     "preco": 24.5,
-    "estoque": 29.0
+    "estoque": 28.0
   },
   {
     "codigo": "2411",
@@ -5268,14 +5268,14 @@
     "nome": "PAPEL HIGIENICO FOFINHO FOLHA DUPLA 4X30M",
     "categoria": "PRODUTO DE HIGIENE",
     "preco": 8.5,
-    "estoque": 70.0
+    "estoque": 68.0
   },
   {
     "codigo": "3192",
     "nome": "PAPEL HIGIENICO FOLHA DUPLA FOFINHO C/16ROLOS 10X30M",
     "categoria": "PRODUTO DE HIGIENE",
     "preco": 33.99,
-    "estoque": 13.0
+    "estoque": 12.0
   },
   {
     "codigo": "3197",
@@ -6248,7 +6248,7 @@
     "nome": "SACOS PLASTICO PEBD 10X15X0,06 200G COLOMBO",
     "categoria": "Embalagem",
     "preco": 10.0,
-    "estoque": 8.0
+    "estoque": 7.0
   },
   {
     "codigo": "10044",
@@ -6388,7 +6388,7 @@
     "nome": "SACOS PLASTICO  30X40X0,06  200G COLOMBO",
     "categoria": "Embalagem",
     "preco": 10.0,
-    "estoque": -11.0
+    "estoque": -12.0
   },
   {
     "codigo": "18021",
@@ -7802,7 +7802,7 @@
     "nome": "AROMATIZADOR DE AMBIENTE OVALHO 250ML ESSENCIAS",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 15.0,
-    "estoque": 7.0
+    "estoque": 5.0
   },
   {
     "codigo": "7893595170122",
