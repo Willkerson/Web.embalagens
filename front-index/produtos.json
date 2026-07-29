@@ -29,9 +29,9 @@
   },
   {
     "codigo": "104",
-    "nome": "ESTOJO BH101 S/DIV C/50UN B. APETITE",
+    "nome": "ESTOJO BH101 SEM DIVISÂO C/50UN B. APETITE",
     "categoria": "DESCARTAVEIS",
-    "preco": 35.99,
+    "preco": 33.99,
     "estoque": 6.0
   },
   {
@@ -543,7 +543,7 @@
     "nome": "PANO MULTIUSO AMARELO C/10UN ALKLIN",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 19.99,
-    "estoque": 26.0
+    "estoque": 24.0
   },
   {
     "codigo": "357",
@@ -613,7 +613,7 @@
     "nome": "PANO DE CHAO XADREZ 45CMX68CM SOUZA BR2",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 4.7,
-    "estoque": 305.0
+    "estoque": 302.0
   },
   {
     "codigo": "390",
@@ -1586,7 +1586,7 @@
     "nome": "LIMPA CERAMICAS E AZULEJOS AZULIM LAVANDA 1L START",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 11.5,
-    "estoque": 13.0
+    "estoque": 12.0
   },
   {
     "codigo": "789",
@@ -1775,7 +1775,7 @@
     "nome": "RODO PIA IDEAL SANCHES",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 5.99,
-    "estoque": 3.0
+    "estoque": 2.0
   },
   {
     "codigo": "852",
@@ -1866,7 +1866,7 @@
     "nome": "COPO DESCARTAVEL TRANSPARENTE 180ML C/100UN TOTAL PLAST",
     "categoria": "DESCARTAVEIS",
     "preco": 7.5,
-    "estoque": 398.0
+    "estoque": 397.0
   },
   {
     "codigo": "897",
@@ -2181,7 +2181,7 @@
     "nome": "SACOS PLASTICO  200G 15x20 +/-120un",
     "categoria": "Embalagem",
     "preco": 10.0,
-    "estoque": 2.0
+    "estoque": 1.0
   },
   {
     "codigo": "1016",
@@ -2286,7 +2286,7 @@
     "nome": "SACOS P/LIXO 100L P8 C10UN PRETO",
     "categoria": "SACO LIXO",
     "preco": 13.5,
-    "estoque": -9.0
+    "estoque": -10.0
   },
   {
     "codigo": "1055",
@@ -2797,7 +2797,7 @@
     "nome": "TOALHA INTERFOLHA (OURO) CELULOSE ISAPEL C/1000UN",
     "categoria": "PRODUTO DE HIGIENE",
     "preco": 23.0,
-    "estoque": 70.0
+    "estoque": 69.0
   },
   {
     "codigo": "1341",
@@ -2839,7 +2839,7 @@
     "nome": "COPO TERMICO 120ML C/25UN ULTRA",
     "categoria": "DESCARTAVEIS",
     "preco": 5.99,
-    "estoque": 44.0
+    "estoque": 42.0
   },
   {
     "codigo": "1352",
@@ -2969,9 +2969,9 @@
   },
   {
     "codigo": "1448",
-    "nome": "BH101 S/DIV C/100UN B. APETITE",
+    "nome": "BH101 SEM DIVISAO C/100UN B. APETITE",
     "categoria": "DESCARTAVEIS",
-    "preco": 71.0,
+    "preco": 67.99,
     "estoque": 6.0
   },
   {
@@ -3427,7 +3427,7 @@
     "nome": "PRATO  ISOPOR BPR-23 C/25UN BOM APETITE",
     "categoria": "DESCARTAVEIS",
     "preco": 13.5,
-    "estoque": 45.0
+    "estoque": 42.0
   },
   {
     "codigo": "1813",
@@ -4078,7 +4078,7 @@
     "nome": "Desorizador Sanitário Bloco Para Cx Acoplada Lavanda Azulim",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 13.5,
-    "estoque": 19.0
+    "estoque": 14.0
   },
   {
     "codigo": "2382",
@@ -4449,7 +4449,7 @@
     "nome": "GARFO REFEICAO BRANCO C/50UN ELITE",
     "categoria": "DESCARTAVEIS",
     "preco": 10.25,
-    "estoque": 11.0
+    "estoque": 9.0
   },
   {
     "codigo": "2799",
@@ -6370,6 +6370,13 @@
     "estoque": 4.0
   },
   {
+    "codigo": "14482",
+    "nome": "BH101 SEM DIVISAO C/10UN B. APETITE",
+    "categoria": "DESCARTAVEIS",
+    "preco": 8.99,
+    "estoque": 10.0
+  },
+  {
     "codigo": "17142",
     "nome": "SACOLA VERDE REFORÇADA 1KG 35X45",
     "categoria": "Embalagem",
@@ -6654,7 +6661,7 @@
     "nome": "G650 POTE QUAD.200ML C/10 UNI",
     "categoria": "Embalagem",
     "preco": 7.5,
-    "estoque": 3.0
+    "estoque": 0.0
   },
   {
     "codigo": "31671",
@@ -6717,7 +6724,7 @@
     "nome": "LIMPA TELAS START 120ML + PZNO MICROFIBRA22X25CM",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 16.0,
-    "estoque": 8.0
+    "estoque": 7.0
   },
   {
     "codigo": "31681",
