@@ -81,7 +81,7 @@
     "nome": "RODO 40CM C/CABO ALKLIN",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 16.25,
-    "estoque": 36.0
+    "estoque": 35.0
   },
   {
     "codigo": "125",
@@ -487,14 +487,14 @@
     "nome": "PLASTICO BOLHA 43X10M MICRA 20 MN. PLAST",
     "categoria": "Embalagem",
     "preco": 16.99,
-    "estoque": 164.0
+    "estoque": 479.0
   },
   {
     "codigo": "343",
     "nome": "PLASTICO BOLHA 65MX50M MICRA 20 MN.PLAST",
     "categoria": "Embalagem",
     "preco": 41.99,
-    "estoque": 1.0
+    "estoque": 4.0
   },
   {
     "codigo": "346",
@@ -1733,7 +1733,7 @@
     "nome": "REMOVADOR SUPREMA  FLORATA 500ML",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 8.5,
-    "estoque": 9.0
+    "estoque": 8.0
   },
   {
     "codigo": "838",
@@ -1859,7 +1859,7 @@
     "nome": "REMOVEDOR VERBENA 1L SUPREMA",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 14.0,
-    "estoque": 4.0
+    "estoque": 3.0
   },
   {
     "codigo": "896",
@@ -2006,7 +2006,7 @@
     "nome": "CAIXA P/CORREIO N02 26X17X08",
     "categoria": "Embalagem",
     "preco": 6.5,
-    "estoque": 5.0
+    "estoque": -23.0
   },
   {
     "codigo": "940",
@@ -2279,7 +2279,7 @@
     "nome": "SACO P/ LIXO PRETO P8 60L C/10UN",
     "categoria": "SACO LIXO",
     "preco": 8.99,
-    "estoque": -11.0
+    "estoque": -12.0
   },
   {
     "codigo": "1053",
@@ -2741,7 +2741,7 @@
     "nome": "CAIXA P/BOLO N05 22X22X10",
     "categoria": "Embalagem",
     "preco": 5.0,
-    "estoque": -12.0
+    "estoque": -44.0
   },
   {
     "codigo": "1322",
@@ -2797,7 +2797,7 @@
     "nome": "TOALHA INTERFOLHA (OURO) CELULOSE ISAPEL C/1000UN",
     "categoria": "PRODUTO DE HIGIENE",
     "preco": 23.0,
-    "estoque": 68.0
+    "estoque": 66.0
   },
   {
     "codigo": "1341",
@@ -2993,7 +2993,7 @@
     "nome": "POTE 100ML C/100UN COPOMAIS",
     "categoria": "DESCARTAVEIS",
     "preco": 7.5,
-    "estoque": 9.0
+    "estoque": 7.0
   },
   {
     "codigo": "1465",
@@ -3420,7 +3420,7 @@
     "nome": "RODO MAGICO - SANCHES",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 67.5,
-    "estoque": 17.0
+    "estoque": 16.0
   },
   {
     "codigo": "1803",
@@ -3770,7 +3770,7 @@
     "nome": "PLASTICO BOLHA 130X100M MICRA MN. PLAST",
     "categoria": "Embalagem",
     "preco": 100.0,
-    "estoque": 4.0
+    "estoque": 5.0
   },
   {
     "codigo": "2084",
@@ -3875,7 +3875,7 @@
     "nome": "FITA ADESIVA 45X100M  TRANSPARENTE KORETECH",
     "categoria": "PAPELARIA",
     "preco": 10.5,
-    "estoque": 10.0
+    "estoque": 7.0
   },
   {
     "codigo": "2164",
@@ -4141,7 +4141,7 @@
     "nome": "POTE E TAMPA RET.350ML C/24UN PRAFESTA",
     "categoria": "DESCARTAVEIS",
     "preco": 30.5,
-    "estoque": 5.0
+    "estoque": 4.0
   },
   {
     "codigo": "2412",
@@ -4603,14 +4603,14 @@
     "nome": "CAIXA TERMICA ISOPOR 3L BRANCA",
     "categoria": "DESCARTAVEIS",
     "preco": 9.99,
-    "estoque": 10.0
+    "estoque": 8.0
   },
   {
     "codigo": "2849",
     "nome": "CAIXA TERMICA ISOPOR 5L BRANCA",
     "categoria": "DESCARTAVEIS",
     "preco": 14.99,
-    "estoque": 13.0
+    "estoque": 12.0
   },
   {
     "codigo": "2850",
@@ -5016,7 +5016,7 @@
     "nome": "POTE E TAMPA REDONDO 750ML C/24UN DANUBIO",
     "categoria": "DESCARTAVEIS",
     "preco": 21.5,
-    "estoque": 20.0
+    "estoque": 19.0
   },
   {
     "codigo": "3108",
@@ -5163,7 +5163,7 @@
     "nome": "CAIXA TERMICA ISOPOR ISOTERM 500G",
     "categoria": "DESCARTAVEIS",
     "preco": 3.5,
-    "estoque": 1.0
+    "estoque": -1.0
   },
   {
     "codigo": "3150",
@@ -5342,10 +5342,10 @@
   },
   {
     "codigo": "3575",
-    "nome": "PANO MULTIUSO AZUL C/600 PANOS 26CMX240M CELESTE",
+    "nome": "PANO MULTIUSO AZUL C/600 PANOS 28CMX240M NOBRE",
     "categoria": "PRODUTO DE HIGIENE",
     "preco": 79.99,
-    "estoque": 0.0
+    "estoque": 3.0
   },
   {
     "codigo": "3665",
@@ -5989,7 +5989,7 @@
     "nome": "DIFUSOR DE AROMAS CITRONELA SENALAR",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 18.0,
-    "estoque": 5.0
+    "estoque": 4.0
   },
   {
     "codigo": "7907",
