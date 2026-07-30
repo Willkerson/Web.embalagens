@@ -1197,8 +1197,13 @@ async function ghGet(path, token, repo) {
 
   let raw;
   if (d.content) {
-    // arquivo pequeno: Contents API traz o base64 inline
-    raw = atob(d.content.replace(/\n/g, ""));
+    // arquivo pequeno: Contents API traz o base64 inline.
+    // ghPut grava com btoa(unescape(encodeURIComponent(str))) pra caber
+    // acento em base64; aqui precisa desfazer exatamente esse mesmo passo
+    // (decodeURIComponent(escape(...))), senão todo ã/ç/é vira lixo — e
+    // cada vez que esse lixo é relido e regravado, ele piora (foi o que
+    // inflou o historico.json pra 34MB).
+    raw = decodeURIComponent(escape(atob(d.content.replace(/\n/g, ""))));
   } else {
     // arquivo grande (>1MB): Contents API não traz "content", precisa buscar via Blob API
     const blobRes = await fetch(
@@ -1213,7 +1218,7 @@ async function ghGet(path, token, repo) {
     );
     if (!blobRes.ok) throw new Error(`Erro ao buscar blob de ${path} (${blobRes.status})`);
     const blob = await blobRes.json();
-    raw = atob(blob.content.replace(/\n/g, ""));
+    raw = decodeURIComponent(escape(atob(blob.content.replace(/\n/g, ""))));
   }
 
   const data = JSON.parse(raw);
