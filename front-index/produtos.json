@@ -494,7 +494,7 @@
     "nome": "PLASTICO BOLHA 65MX50M MICRA 20 MN.PLAST",
     "categoria": "Embalagem",
     "preco": 41.99,
-    "estoque": -2.0
+    "estoque": -11.0
   },
   {
     "codigo": "346",
@@ -3770,7 +3770,7 @@
     "nome": "PLASTICO BOLHA 130X100M MICRA MN. PLAST",
     "categoria": "Embalagem",
     "preco": 100.0,
-    "estoque": 0.0
+    "estoque": -3.0
   },
   {
     "codigo": "2084",
