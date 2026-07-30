@@ -109,7 +109,7 @@
     "nome": "SACOLA PLASTICA",
     "categoria": "Embalagem",
     "preco": 0.5,
-    "estoque": -38.0
+    "estoque": 193.0
   },
   {
     "codigo": "134",
@@ -361,7 +361,7 @@
     "nome": "VASSOURA PREMIUM COM CABO ALKLIN",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 18.0,
-    "estoque": 9.0
+    "estoque": 8.0
   },
   {
     "codigo": "296",
@@ -487,14 +487,14 @@
     "nome": "PLASTICO BOLHA 43X10M MICRA 20 MN. PLAST",
     "categoria": "Embalagem",
     "preco": 16.99,
-    "estoque": 1109.0
+    "estoque": -1083.0
   },
   {
     "codigo": "343",
     "nome": "PLASTICO BOLHA 65MX50M MICRA 20 MN.PLAST",
     "categoria": "Embalagem",
     "preco": 41.99,
-    "estoque": 14.0
+    "estoque": -2.0
   },
   {
     "codigo": "346",
@@ -522,7 +522,7 @@
     "nome": "ESCOVA MULTIUSO C/RASPADOR",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 6.99,
-    "estoque": 2.0
+    "estoque": 1.0
   },
   {
     "codigo": "352",
@@ -851,7 +851,7 @@
     "nome": "COLHER SOBREMESA CRISTAL C/50UN ELITE",
     "categoria": "DESCARTAVEIS",
     "preco": 3.99,
-    "estoque": 27.0
+    "estoque": 26.0
   },
   {
     "codigo": "459",
@@ -942,7 +942,7 @@
     "nome": "PROCESSADOR DE ALIMENTOS  500ML TINGS",
     "categoria": "ALIMENTO/GENERO ALIMENTICIO",
     "preco": 14.99,
-    "estoque": 1.0
+    "estoque": 0.0
   },
   {
     "codigo": "535",
@@ -1068,7 +1068,7 @@
     "nome": "RODO DE PIA 18CM C/2 CLINK",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 9.99,
-    "estoque": -25.0
+    "estoque": -26.0
   },
   {
     "codigo": "579",
@@ -2104,13 +2104,13 @@
     "nome": "BQALDE DE 7,4 LTS PLASNEW",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 13.0,
-    "estoque": -17.0
+    "estoque": -18.0
   },
   {
     "codigo": "0355",
     "nome": "PANO BRANCO MULTIUSO C/600 PANOS 28CMX240CM MR.PLUS",
     "categoria": "PRODUTO DE HIGIENE",
-    "preco": 84.99,
+    "preco": 79.99,
     "estoque": 7.0
   },
   {
@@ -2216,14 +2216,14 @@
     "nome": "SACO P/ LIXO PRETO P8 60L C/50UN",
     "categoria": "SACO LIXO",
     "preco": 38.25,
-    "estoque": 14.0
+    "estoque": 30.0
   },
   {
     "codigo": "1042",
     "nome": "SACO P/ LIXO PRETO P8 60L C/100UN",
     "categoria": "SACO LIXO",
     "preco": 76.5,
-    "estoque": -1.0
+    "estoque": 4.0
   },
   {
     "codigo": "1044",
@@ -2258,35 +2258,35 @@
     "nome": "SACO P/ LIXO PRETO 100L C/50UN",
     "categoria": "SACO LIXO",
     "preco": 57.5,
-    "estoque": 6.0
+    "estoque": 36.0
   },
   {
     "codigo": "1049",
     "nome": "SACO P/ LIXO PRETO 100L C/100UN",
     "categoria": "SACO LIXO",
     "preco": 115.0,
-    "estoque": 1.0
+    "estoque": 11.0
   },
   {
     "codigo": "1051",
     "nome": "SACO P/ LIXO PRETO P6 40L C/10UN",
     "categoria": "SACO LIXO",
     "preco": 5.5,
-    "estoque": -5.0
+    "estoque": 45.0
   },
   {
     "codigo": "1052",
     "nome": "SACO P/ LIXO PRETO P8 60L C/10UN",
     "categoria": "SACO LIXO",
     "preco": 8.99,
-    "estoque": -12.0
+    "estoque": 38.0
   },
   {
     "codigo": "1053",
     "nome": "SACOS P/LIXO 100L P8 C10UN PRETO",
     "categoria": "SACO LIXO",
     "preco": 13.5,
-    "estoque": -12.0
+    "estoque": 38.0
   },
   {
     "codigo": "1055",
@@ -2552,7 +2552,7 @@
     "nome": "SACO P/ LIXO PRETO P6 40L C/50UN",
     "categoria": "SACO LIXO",
     "preco": 25.0,
-    "estoque": 12.0
+    "estoque": 50.0
   },
   {
     "codigo": "1188",
@@ -2629,7 +2629,7 @@
     "nome": "BOBINA PICOTADA 2,5KG C/500UN P/ ALIMENTOS 25X33 EXTRUSA",
     "categoria": "Embalagem",
     "preco": 25.0,
-    "estoque": 10.0
+    "estoque": 21.0
   },
   {
     "codigo": "1281",
@@ -3448,7 +3448,7 @@
     "nome": "LUVA DE VINIL G S/PO C/100UN TALGE",
     "categoria": "DESCARTAVEIS",
     "preco": 21.0,
-    "estoque": 21.0
+    "estoque": 19.0
   },
   {
     "codigo": "1820",
@@ -3630,7 +3630,7 @@
     "nome": "BR03 C/10UN 235X18X16MM",
     "categoria": "Embalagem",
     "preco": 3.5,
-    "estoque": -6.0
+    "estoque": 34.0
   },
   {
     "codigo": "1940",
@@ -3658,7 +3658,7 @@
     "nome": "SACO P/ LIXO PRETO 200L C/10UN",
     "categoria": "SACO LIXO",
     "preco": 21.0,
-    "estoque": 0.0
+    "estoque": 50.0
   },
   {
     "codigo": "2002",
@@ -3735,7 +3735,7 @@
     "nome": "COPO DESCARTAVEL 770ML C/25UN ULTRA",
     "categoria": "DESCARTAVEIS",
     "preco": 10.99,
-    "estoque": 45.0
+    "estoque": 44.0
   },
   {
     "codigo": "2072",
@@ -3770,7 +3770,7 @@
     "nome": "PLASTICO BOLHA 130X100M MICRA MN. PLAST",
     "categoria": "Embalagem",
     "preco": 100.0,
-    "estoque": 6.0
+    "estoque": 0.0
   },
   {
     "codigo": "2084",
@@ -4260,7 +4260,7 @@
     "nome": "ESPONJA MULTIUSO C/CABO+REFIL",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 9.5,
-    "estoque": -4.0
+    "estoque": -5.0
   },
   {
     "codigo": "2573",
@@ -4421,7 +4421,7 @@
     "nome": "SACO KRAFT P3 C/100UN 11X15CM PLUMA",
     "categoria": "DESCARTAVEIS",
     "preco": 7.0,
-    "estoque": 30.0
+    "estoque": 27.0
   },
   {
     "codigo": "2775",
@@ -4806,7 +4806,7 @@
     "nome": "SACO ZIP N02 06x10CM  C/100UN ARMAZEM",
     "categoria": "Embalagem",
     "preco": 8.0,
-    "estoque": 7.0
+    "estoque": 6.0
   },
   {
     "codigo": "2992",
@@ -4953,7 +4953,7 @@
     "nome": "SACO PLASTICO PE C/100UN P/GELAO 05X24X02",
     "categoria": "DESCARTAVEIS",
     "preco": 4.0,
-    "estoque": 151.0
+    "estoque": 150.0
   },
   {
     "codigo": "3072",
@@ -5149,7 +5149,7 @@
     "nome": "PACK LIXO PIA E BANHEIRO BIO CHA BRANCO C/80UN",
     "categoria": "SACO LIXO",
     "preco": 13.99,
-    "estoque": 41.0
+    "estoque": 40.0
   },
   {
     "codigo": "3147",
@@ -5779,7 +5779,7 @@
     "nome": "SACO P/ LIXO PRETO P12 200L C/50UN",
     "categoria": "SACO LIXO",
     "preco": 100.0,
-    "estoque": 2.0
+    "estoque": 7.0
   },
   {
     "codigo": "7011",
@@ -5835,7 +5835,7 @@
     "nome": "LUVA DE VINIL GG S/PO C/100UN TALGE",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 21.0,
-    "estoque": 14.0
+    "estoque": 12.0
   },
   {
     "codigo": "7263",
@@ -6038,7 +6038,7 @@
     "nome": "BALANÇA DE COZINHA DIGITAL WINCY",
     "categoria": "UTENSILIOS",
     "preco": 25.0,
-    "estoque": 2.0
+    "estoque": 1.0
   },
   {
     "codigo": "7954",
