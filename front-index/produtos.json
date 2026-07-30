@@ -473,7 +473,7 @@
     "nome": "SACOLA UNIDADE GRANDE 60X90",
     "categoria": "SACO LIXO",
     "preco": 0.99,
-    "estoque": -5.0
+    "estoque": -6.0
   },
   {
     "codigo": "336",
@@ -494,7 +494,7 @@
     "nome": "PLASTICO BOLHA 65MX50M MICRA 20 MN.PLAST",
     "categoria": "Embalagem",
     "preco": 41.99,
-    "estoque": 4.0
+    "estoque": 9.0
   },
   {
     "codigo": "346",
@@ -809,7 +809,7 @@
     "nome": "POTE REDONDO 250ML C/TAMPA C/24UN PRAFESTA",
     "categoria": "DESCARTAVEIS",
     "preco": 18.5,
-    "estoque": 23.0
+    "estoque": 22.0
   },
   {
     "codigo": "445",
@@ -844,7 +844,7 @@
     "nome": "POTE E TAMPA RET.500ML C/24UN PRAFESTA",
     "categoria": "DESCARTAVEIS",
     "preco": 31.99,
-    "estoque": 39.0
+    "estoque": 38.0
   },
   {
     "codigo": "458",
@@ -865,7 +865,7 @@
     "nome": "D56 B0LO E TORTA ROMA MEDIA B BRANCA",
     "categoria": "DESCARTAVEIS",
     "preco": 4.0,
-    "estoque": 8.0
+    "estoque": 6.0
   },
   {
     "codigo": "466",
@@ -1054,14 +1054,14 @@
     "nome": "LAVA ROUPAS LIQ. 1L ULTRA ACAO VERDE SUPREMA",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 10.5,
-    "estoque": 9.0
+    "estoque": 8.0
   },
   {
     "codigo": "574",
     "nome": "LAVA ROUPAS LIQ. COCO 1L SUPREMA",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 10.5,
-    "estoque": 15.0
+    "estoque": 14.0
   },
   {
     "codigo": "577",
@@ -1201,7 +1201,7 @@
     "nome": "TOP LIXO PRETO 15L C/60UN PACK LIXO",
     "categoria": "SACO LIXO",
     "preco": 17.99,
-    "estoque": 19.0
+    "estoque": 17.0
   },
   {
     "codigo": "637",
@@ -1264,7 +1264,7 @@
     "nome": "D5 1,15L FOLHA DE ALUMINIO C/10UN  WYDA",
     "categoria": "Embalagem",
     "preco": 17.5,
-    "estoque": -12.0
+    "estoque": -13.0
   },
   {
     "codigo": "659",
@@ -1460,7 +1460,7 @@
     "nome": "LIMPA PEDRAS 2L PEDREX START",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 24.5,
-    "estoque": 4.0
+    "estoque": 3.0
   },
   {
     "codigo": "746",
@@ -2272,7 +2272,7 @@
     "nome": "SACO P/ LIXO PRETO P6 40L C/10UN",
     "categoria": "SACO LIXO",
     "preco": 5.5,
-    "estoque": 3.0
+    "estoque": 2.0
   },
   {
     "codigo": "1052",
@@ -3035,7 +3035,7 @@
     "nome": "G80MA BOLO ALTA MILLENIUM GALVONOTEK",
     "categoria": "DESCARTAVEIS",
     "preco": 12.5,
-    "estoque": 31.0
+    "estoque": 30.0
   },
   {
     "codigo": "1479",
@@ -3774,10 +3774,10 @@
   },
   {
     "codigo": "2084",
-    "nome": "PLASTICO BOLHA ONDULADO",
+    "nome": "ROLO DE PAPELÂO ONDULADO",
     "categoria": "-",
     "preco": 32.15,
-    "estoque": 0.0
+    "estoque": 3.0
   },
   {
     "codigo": "2085",
@@ -4575,7 +4575,7 @@
     "nome": "D650 DOCE QUADRADO 200ML C/10UN CRISTAL",
     "categoria": "DESCARTAVEIS",
     "preco": 5.0,
-    "estoque": 27.0
+    "estoque": 26.0
   },
   {
     "codigo": "2838",
@@ -4848,7 +4848,7 @@
     "nome": "SACO ZIP N03 07x12CM C/100UN  ARMAZEM",
     "categoria": "Embalagem",
     "preco": 10.0,
-    "estoque": 3.0
+    "estoque": 1.0
   },
   {
     "codigo": "3028",
@@ -6010,7 +6010,7 @@
     "nome": "SACO ZIP 17X26 C/ 100UN ARMAZEM",
     "categoria": "Embalagem",
     "preco": 44.5,
-    "estoque": 1.0
+    "estoque": 0.0
   },
   {
     "codigo": "7910",
@@ -6297,7 +6297,7 @@
     "nome": "PANO MULTIUSO AZUL C/50 PANOS 30CMX25CM MR. PLUS TALGE",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 17.0,
-    "estoque": 22.0
+    "estoque": 21.0
   },
   {
     "codigo": "11176",
@@ -7739,7 +7739,7 @@
     "nome": "SACO PLASTICO CRYSTAL  35X45X0,06  1KG COLOMBO",
     "categoria": "Embalagem",
     "preco": 46.0,
-    "estoque": -8.0
+    "estoque": -9.0
   },
   {
     "codigo": "7893595170107",
