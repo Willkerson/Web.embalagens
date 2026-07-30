@@ -1234,13 +1234,83 @@ async function ghPut(path, token, content, sha, message, repo) {
     },
     body: JSON.stringify(body)
   });
-  if (!res.ok) {
-    const e = await res.json().catch(() => ({}));
-    const erro = new Error(e.message || `Erro PUT ${path} (${res.status})`);
-    erro.status = res.status;
-    throw erro;
+  if (res.ok) return res;
+
+  const e = await res.json().catch(() => ({}));
+
+  // A Contents API (esse PUT) só aceita arquivos até ~1MB. Quando o
+  // historico.json cresce além disso, o GitHub devolve 422 "too large to
+  // be processed". Nesse caso, cai pra Git Data API (blob + tree + commit),
+  // que não tem esse limite (até 100MB por blob).
+  const tooLarge = res.status === 422 && /too large/i.test(e.message || "");
+  if (tooLarge) {
+    return await ghPutGitData(path, token, content, message, repo);
   }
-  return res;
+
+  const erro = new Error(e.message || `Erro PUT ${path} (${res.status})`);
+  erro.status = res.status;
+  throw erro;
+}
+
+// Grava um arquivo via Git Data API (blob -> tree -> commit -> atualiza a
+// branch). Usado como fallback quando o arquivo é grande demais pra
+// Contents API (PUT /contents/{path}) aceitar.
+async function ghPutGitData(path, token, content, message, repo) {
+  const repoFull = repo || REPO;
+  const apiBase  = `https://api.github.com/repos/${repoFull}`;
+  const headers  = {
+    Authorization: "Bearer " + token,
+    Accept: "application/vnd.github+json",
+    "Content-Type": "application/json"
+  };
+
+  // 1. commit atual da branch e a árvore base dele
+  const refRes = await fetch(`${apiBase}/git/ref/heads/${BRANCH}`, { headers, cache: "no-store" });
+  if (!refRes.ok) throw new Error(`Erro ao ler ref da branch (${refRes.status})`);
+  const { object: { sha: baseCommitSha } } = await refRes.json();
+
+  const commitRes = await fetch(`${apiBase}/git/commits/${baseCommitSha}`, { headers, cache: "no-store" });
+  if (!commitRes.ok) throw new Error(`Erro ao ler commit base (${commitRes.status})`);
+  const { tree: { sha: baseTreeSha } } = await commitRes.json();
+
+  // 2. cria um blob com o conteúdo novo
+  const b64 = btoa(unescape(encodeURIComponent(JSON.stringify(content, null, 2))));
+  const blobRes = await fetch(`${apiBase}/git/blobs`, {
+    method: "POST", headers,
+    body: JSON.stringify({ content: b64, encoding: "base64" })
+  });
+  if (!blobRes.ok) throw new Error(`Erro ao criar blob (${blobRes.status})`);
+  const blobData = await blobRes.json();
+
+  // 3. cria uma tree nova apontando o path pro blob novo
+  const treeRes = await fetch(`${apiBase}/git/trees`, {
+    method: "POST", headers,
+    body: JSON.stringify({
+      base_tree: baseTreeSha,
+      tree: [{ path, mode: "100644", type: "blob", sha: blobData.sha }]
+    })
+  });
+  if (!treeRes.ok) throw new Error(`Erro ao criar tree (${treeRes.status})`);
+  const treeData = await treeRes.json();
+
+  // 4. cria o commit novo
+  const newCommitRes = await fetch(`${apiBase}/git/commits`, {
+    method: "POST", headers,
+    body: JSON.stringify({ message, tree: treeData.sha, parents: [baseCommitSha] })
+  });
+  if (!newCommitRes.ok) throw new Error(`Erro ao criar commit (${newCommitRes.status})`);
+  const newCommitData = await newCommitRes.json();
+
+  // 5. move a branch pro commit novo
+  const updateRefRes = await fetch(`${apiBase}/git/refs/heads/${BRANCH}`, {
+    method: "PATCH", headers,
+    body: JSON.stringify({ sha: newCommitData.sha })
+  });
+  if (!updateRefRes.ok) {
+    const e = await updateRefRes.json().catch(() => ({}));
+    throw new Error(e.message || `Erro ao atualizar ref (${updateRefRes.status})`);
+  }
+  return newCommitData;
 }
 
 // ── SALVAR ──
