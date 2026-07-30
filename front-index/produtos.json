@@ -109,7 +109,7 @@
     "nome": "SACOLA PLASTICA",
     "categoria": "Embalagem",
     "preco": 0.5,
-    "estoque": 193.0
+    "estoque": 232.0
   },
   {
     "codigo": "134",
@@ -2272,21 +2272,21 @@
     "nome": "SACO P/ LIXO PRETO P6 40L C/10UN",
     "categoria": "SACO LIXO",
     "preco": 5.5,
-    "estoque": 45.0
+    "estoque": 65.0
   },
   {
     "codigo": "1052",
     "nome": "SACO P/ LIXO PRETO P8 60L C/10UN",
     "categoria": "SACO LIXO",
     "preco": 8.99,
-    "estoque": 38.0
+    "estoque": 70.0
   },
   {
     "codigo": "1053",
     "nome": "SACOS P/LIXO 100L P8 C10UN PRETO",
     "categoria": "SACO LIXO",
     "preco": 13.5,
-    "estoque": 38.0
+    "estoque": 60.0
   },
   {
     "codigo": "1055",
@@ -7648,7 +7648,7 @@
     "nome": "DETERGENTE YPÊ LIMÃO 500ML",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 4.5,
-    "estoque": -1.0
+    "estoque": 7.0
   },
   {
     "codigo": "789475",
