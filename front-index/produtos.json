@@ -200,7 +200,7 @@
     "nome": "TAMPA P/COPO 330/300/250ML C/50UN ULTRA",
     "categoria": "DESCARTAVEIS",
     "preco": 8.5,
-    "estoque": 38.0
+    "estoque": 37.0
   },
   {
     "codigo": "181",
@@ -585,7 +585,7 @@
     "nome": "LUVA LATEX P PLUS SANRO LARANJA P/ LIMPEZA",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 11.99,
-    "estoque": 5.0
+    "estoque": 4.0
   },
   {
     "codigo": "376",
@@ -725,7 +725,7 @@
     "nome": "COLHER DE SOPA BRANCA C/50UN ELITE",
     "categoria": "DESCARTAVEIS",
     "preco": 10.5,
-    "estoque": 59.0
+    "estoque": 58.0
   },
   {
     "codigo": "422",
@@ -2797,7 +2797,7 @@
     "nome": "TOALHA INTERFOLHA (OURO) CELULOSE ISAPEL C/1000UN",
     "categoria": "PRODUTO DE HIGIENE",
     "preco": 23.0,
-    "estoque": 66.0
+    "estoque": 65.0
   },
   {
     "codigo": "1341",
@@ -3021,7 +3021,7 @@
     "nome": "G56MA BOLO ALTA  MILLENIUM GALVONOTEK",
     "categoria": "DESCARTAVEIS",
     "preco": 7.0,
-    "estoque": 172.0
+    "estoque": 169.0
   },
   {
     "codigo": "1476",
@@ -3623,21 +3623,21 @@
     "nome": "DISCO ISOPOR BRANCO N25 C/10UN TOTALPLAST",
     "categoria": "Embalagem",
     "preco": 4.5,
-    "estoque": -9.0
+    "estoque": -10.0
   },
   {
     "codigo": "1939",
     "nome": "BR03 C/10UN 235X18X16MM",
     "categoria": "Embalagem",
     "preco": 3.5,
-    "estoque": 34.0
+    "estoque": 31.0
   },
   {
     "codigo": "1940",
     "nome": "BANDEJA BF03 FUNDA C/10UN BOM APETITE",
     "categoria": "Embalagem",
     "preco": 5.0,
-    "estoque": -17.0
+    "estoque": -18.0
   },
   {
     "codigo": "1949",
@@ -3763,7 +3763,7 @@
     "nome": "LIXEIRA C/PEDAL 7L PRETO PLASUTIL",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 25.5,
-    "estoque": 2.0
+    "estoque": 1.0
   },
   {
     "codigo": "2083",
@@ -4337,7 +4337,7 @@
     "nome": "TAMPA PP 90MM TRANSPARENTE S/FURO C/50UN COPO 500ML ULTRA",
     "categoria": "DESCARTAVEIS",
     "preco": 6.7,
-    "estoque": -9.0
+    "estoque": -10.0
   },
   {
     "codigo": "2671",
