@@ -487,14 +487,14 @@
     "nome": "PLASTICO BOLHA 43X10M MICRA 20 MN. PLAST",
     "categoria": "Embalagem",
     "preco": 16.99,
-    "estoque": -2178.0
+    "estoque": 14.0
   },
   {
     "codigo": "343",
     "nome": "PLASTICO BOLHA 65MX50M MICRA 20 MN.PLAST",
     "categoria": "Embalagem",
     "preco": 41.99,
-    "estoque": -11.0
+    "estoque": 6.0
   },
   {
     "codigo": "346",
@@ -725,7 +725,7 @@
     "nome": "COLHER DE SOPA BRANCA C/50UN ELITE",
     "categoria": "DESCARTAVEIS",
     "preco": 10.5,
-    "estoque": 58.0
+    "estoque": 57.0
   },
   {
     "codigo": "422",
@@ -795,7 +795,7 @@
     "nome": "CUMBUCA QUALITY LINE 12 C/10UN PRAFESTA",
     "categoria": "DESCARTAVEIS",
     "preco": 2.99,
-    "estoque": 54.0
+    "estoque": 46.0
   },
   {
     "codigo": "441",
@@ -1649,7 +1649,7 @@
     "nome": "LIMPADOR PERF. JASMINE 500ML SANOL",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 6.5,
-    "estoque": 10.0
+    "estoque": 8.0
   },
   {
     "codigo": "813",
@@ -2629,7 +2629,7 @@
     "nome": "BOBINA PICOTADA 2,5KG C/500UN P/ ALIMENTOS 25X33 EXTRUSA",
     "categoria": "Embalagem",
     "preco": 25.0,
-    "estoque": 21.0
+    "estoque": 19.0
   },
   {
     "codigo": "1281",
@@ -3350,7 +3350,7 @@
     "nome": "CANUDO BIO FLEXIVEL 5,8MM C/100UN EM SACHE COPAC",
     "categoria": "DESCARTAVEIS",
     "preco": 10.99,
-    "estoque": 8.0
+    "estoque": 7.0
   },
   {
     "codigo": "1771",
@@ -3483,7 +3483,7 @@
     "nome": "HAMBURGUEIRA H01 C/100UN TOTALPLAST",
     "categoria": "DESCARTAVEIS",
     "preco": 29.0,
-    "estoque": 13.0
+    "estoque": 4.0
   },
   {
     "codigo": "1887",
@@ -3770,11 +3770,11 @@
     "nome": "PLASTICO BOLHA 130X100M MICRA MN. PLAST",
     "categoria": "Embalagem",
     "preco": 100.0,
-    "estoque": -3.0
+    "estoque": 3.0
   },
   {
     "codigo": "2084",
-    "nome": "ROLO DE PAPELÂO ONDULADO",
+    "nome": "PAPELÂO ONDULADO  60X10M",
     "categoria": "-",
     "preco": 32.15,
     "estoque": 3.0
@@ -3812,7 +3812,7 @@
     "nome": "SACO SOS G PARDO PLUMA C/50UN",
     "categoria": "Embalagem",
     "preco": 47.0,
-    "estoque": 20.0
+    "estoque": 19.0
   },
   {
     "codigo": "2101",
@@ -3826,7 +3826,7 @@
     "nome": "SACOLA BRANCA 1KG 35x45",
     "categoria": "Embalagem",
     "preco": 27.0,
-    "estoque": -2.0
+    "estoque": 8.0
   },
   {
     "codigo": "2103",
@@ -3872,10 +3872,10 @@
   },
   {
     "codigo": "2140",
-    "nome": "FITA ADESIVA 45X100M  TRANSPARENTE KORETECH",
+    "nome": "FITA ADESIVA 45X100M  TRANSPARENTE PAPI",
     "categoria": "PAPELARIA",
     "preco": 10.5,
-    "estoque": 6.0
+    "estoque": 86.0
   },
   {
     "codigo": "2164",
@@ -4190,7 +4190,7 @@
     "nome": "POTE TERMICO 360ML C/25UN ULTRA",
     "categoria": "DESCARTAVEIS",
     "preco": 15.99,
-    "estoque": 124.0
+    "estoque": 119.0
   },
   {
     "codigo": "2457",
@@ -4399,8 +4399,8 @@
     "codigo": "2709",
     "nome": "POTE REDONDO 250ML C/TAMPA C/24UN DANUBIO",
     "categoria": "DESCARTAVEIS",
-    "preco": 17.5,
-    "estoque": 6.0
+    "preco": 15.99,
+    "estoque": 24.0
   },
   {
     "codigo": "2717",
@@ -4911,7 +4911,7 @@
     "nome": "HAMBURGUEIRA BH01 C/10UN BOM APETITE",
     "categoria": "DESCARTAVEIS",
     "preco": 3.5,
-    "estoque": 47.0
+    "estoque": 46.0
   },
   {
     "codigo": "3048",
@@ -4987,8 +4987,8 @@
     "codigo": "3079",
     "nome": "POTE REDONDO 200ML C/TAMPA C/24UN DANUBIO",
     "categoria": "DESCARTAVEIS",
-    "preco": 11.5,
-    "estoque": 20.0
+    "preco": 14.5,
+    "estoque": 38.0
   },
   {
     "codigo": "3091",
@@ -5387,7 +5387,7 @@
     "nome": "LXEIRA RATTAN C/PEDAL 6L M. LIBANO",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 30.5,
-    "estoque": 1.0
+    "estoque": 0.0
   },
   {
     "codigo": "3974",
