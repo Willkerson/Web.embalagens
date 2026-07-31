@@ -494,7 +494,7 @@
     "nome": "PLASTICO BOLHA 65MX50M MICRA 20 MN.PLAST",
     "categoria": "Embalagem",
     "preco": 41.99,
-    "estoque": 6.0
+    "estoque": 4.0
   },
   {
     "codigo": "346",
@@ -578,7 +578,7 @@
     "nome": "LUVA LATEX M PLUS SANRO LARANJA P/LIMPEZA",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 11.99,
-    "estoque": 2.0
+    "estoque": -1.0
   },
   {
     "codigo": "374",
@@ -795,7 +795,7 @@
     "nome": "CUMBUCA QUALITY LINE 12 C/10UN PRAFESTA",
     "categoria": "DESCARTAVEIS",
     "preco": 2.99,
-    "estoque": 46.0
+    "estoque": 41.0
   },
   {
     "codigo": "441",
@@ -956,7 +956,7 @@
     "nome": "BORRIFADOR 500ML  NIPO",
     "categoria": "UTENSILIOS",
     "preco": 5.0,
-    "estoque": 6.0
+    "estoque": 5.0
   },
   {
     "codigo": "553",
@@ -1012,7 +1012,7 @@
     "nome": "AGUA SANITARIA SUPREMA 2L",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 8.0,
-    "estoque": 9.0
+    "estoque": 8.0
   },
   {
     "codigo": "568",
@@ -2216,7 +2216,7 @@
     "nome": "SACO P/ LIXO PRETO P8 60L C/50UN",
     "categoria": "SACO LIXO",
     "preco": 38.25,
-    "estoque": 30.0
+    "estoque": 28.0
   },
   {
     "codigo": "1042",
@@ -2286,7 +2286,7 @@
     "nome": "SACOS P/LIXO 100L P8 C10UN PRETO",
     "categoria": "SACO LIXO",
     "preco": 13.5,
-    "estoque": 60.0
+    "estoque": 59.0
   },
   {
     "codigo": "1055",
@@ -2783,7 +2783,7 @@
     "nome": "TOALHA INTERFOLHA BRANCA (VERDE) C/1000UN ISAPEL",
     "categoria": "PRODUTO DE HIGIENE",
     "preco": 16.0,
-    "estoque": 83.0
+    "estoque": 73.0
   },
   {
     "codigo": "1331",
@@ -2797,7 +2797,7 @@
     "nome": "TOALHA INTERFOLHA (OURO) CELULOSE ISAPEL C/1000UN",
     "categoria": "PRODUTO DE HIGIENE",
     "preco": 23.0,
-    "estoque": 65.0
+    "estoque": 64.0
   },
   {
     "codigo": "1341",
@@ -3875,7 +3875,7 @@
     "nome": "FITA ADESIVA 45X100M  TRANSPARENTE PAPI",
     "categoria": "PAPELARIA",
     "preco": 10.5,
-    "estoque": 86.0
+    "estoque": 85.0
   },
   {
     "codigo": "2164",
@@ -4309,7 +4309,7 @@
     "nome": "G37MA TORTA ALTA 1,2KG 23CM GALVONOTECK",
     "categoria": "Embalagem",
     "preco": 4.5,
-    "estoque": 80.0
+    "estoque": 77.0
   },
   {
     "codigo": "2631",
@@ -4442,14 +4442,14 @@
     "nome": "GARFO SOBREMESA CRISTAL C/50UN ELITE",
     "categoria": "DESCARTAVEIS",
     "preco": 3.99,
-    "estoque": 42.0
+    "estoque": 40.0
   },
   {
     "codigo": "2785",
     "nome": "GARFO REFEICAO BRANCO C/50UN ELITE",
     "categoria": "DESCARTAVEIS",
     "preco": 10.25,
-    "estoque": 8.0
+    "estoque": 7.0
   },
   {
     "codigo": "2799",
@@ -5457,7 +5457,7 @@
     "nome": "LIMPADOR CONCENTRADO VANILLA GOLD 120ML SANOL",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 12.99,
-    "estoque": -4.0
+    "estoque": -5.0
   },
   {
     "codigo": "3984",
@@ -6192,7 +6192,7 @@
     "nome": "COPO DESCARTAVEL TRANSPARENTE 300ML C/100UN ULTRA PP",
     "categoria": "DESCARTAVEIS",
     "preco": 16.5,
-    "estoque": 21.0
+    "estoque": 20.0
   },
   {
     "codigo": "9039",
@@ -6220,7 +6220,7 @@
     "nome": "PENEIRA DE PLASTICO 16CM",
     "categoria": "UTENSILIOS",
     "preco": 5.0,
-    "estoque": -25.0
+    "estoque": -26.0
   },
   {
     "codigo": "9112",
@@ -6696,7 +6696,7 @@
     "nome": "PRATO BRANCO FUNDO 15CM C/10UN TOTALPLAST",
     "categoria": "DESCARTAVEIS",
     "preco": 2.5,
-    "estoque": 79.0
+    "estoque": 73.0
   },
   {
     "codigo": "31676",
