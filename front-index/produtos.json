@@ -515,7 +515,7 @@
     "nome": "ESCOVA MULTIUSO C/CABO ALKLIN",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 6.0,
-    "estoque": 7.0
+    "estoque": 6.0
   },
   {
     "codigo": "351",
@@ -599,7 +599,7 @@
     "nome": "LIMPEZA PESADA 500ML ORIG. VEJA",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 9.99,
-    "estoque": 23.0
+    "estoque": 22.0
   },
   {
     "codigo": "385",
@@ -1110,7 +1110,7 @@
     "nome": "PAPEL MANTEIGA 7,5MX29CM WYDA",
     "categoria": "DESCARTAVEIS",
     "preco": 8.99,
-    "estoque": 28.0
+    "estoque": 27.0
   },
   {
     "codigo": "608",
@@ -1201,7 +1201,7 @@
     "nome": "TOP LIXO PRETO 15L C/60UN PACK LIXO",
     "categoria": "SACO LIXO",
     "preco": 17.99,
-    "estoque": 17.0
+    "estoque": 16.0
   },
   {
     "codigo": "637",
@@ -1404,7 +1404,7 @@
     "nome": "D12 220ML FOLHA DE ALUMINIO MOLDADA C/10UN WYDA",
     "categoria": "Embalagem",
     "preco": 7.6,
-    "estoque": -63.0
+    "estoque": -64.0
   },
   {
     "codigo": "716",
@@ -1775,7 +1775,7 @@
     "nome": "RODO PIA IDEAL SANCHES",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 5.99,
-    "estoque": 2.0
+    "estoque": 1.0
   },
   {
     "codigo": "852",
@@ -2286,7 +2286,7 @@
     "nome": "SACOS P/LIXO 100L P8 C10UN PRETO",
     "categoria": "SACO LIXO",
     "preco": 13.5,
-    "estoque": 58.0
+    "estoque": 57.0
   },
   {
     "codigo": "1055",
@@ -3280,7 +3280,7 @@
     "nome": "Bandeja de Alumínio DSMFS 135ML Com Tampa C/10 un WYDA",
     "categoria": "Embalagem",
     "preco": 8.0,
-    "estoque": -24.0
+    "estoque": -25.0
   },
   {
     "codigo": "1711",
@@ -3308,7 +3308,7 @@
     "nome": "SACOLA VERDE REFORÇADA 1KG 60X80",
     "categoria": "Embalagem",
     "preco": 19.99,
-    "estoque": 2.0
+    "estoque": 0.0
   },
   {
     "codigo": "1715",
@@ -3791,7 +3791,7 @@
     "nome": "FOLHA DE ALUMINIO 4MX30CM WYDA",
     "categoria": "Embalagem",
     "preco": 5.5,
-    "estoque": 1.0
+    "estoque": 0.0
   },
   {
     "codigo": "2094",
@@ -3805,7 +3805,7 @@
     "nome": "SACO SOS M PARDO C/50UN 19X12X26 PLUMA",
     "categoria": "Embalagem",
     "preco": 32.5,
-    "estoque": 14.0
+    "estoque": 13.0
   },
   {
     "codigo": "2096",
@@ -4085,7 +4085,7 @@
     "nome": "Desorizador Sanitário Bloco Para Cx Acoplada Lavanda Azulim",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 13.5,
-    "estoque": 14.0
+    "estoque": 10.0
   },
   {
     "codigo": "2382",
@@ -4155,7 +4155,7 @@
     "nome": "POTE E TAMPA RET.250ML C/24UN PRAFESTA",
     "categoria": "DESCARTAVEIS",
     "preco": 23.99,
-    "estoque": 14.0
+    "estoque": 10.0
   },
   {
     "codigo": "2427",
@@ -4176,7 +4176,7 @@
     "nome": "GUARDANAPO DE PAPEL 30X30CM C/50UN WHITEPAPER",
     "categoria": "DESCARTAVEIS",
     "preco": 3.0,
-    "estoque": 14.0
+    "estoque": 13.0
   },
   {
     "codigo": "2452",
@@ -4267,7 +4267,7 @@
     "nome": "ESPONJA MULTIUSO C/CABO+REFIL",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 9.5,
-    "estoque": -5.0
+    "estoque": -6.0
   },
   {
     "codigo": "2573",
@@ -4421,7 +4421,7 @@
     "nome": "ESCOVAO LIMPA TUDO MEDIA SANCHES",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 15.0,
-    "estoque": -6.0
+    "estoque": -7.0
   },
   {
     "codigo": "2771",
@@ -5030,7 +5030,7 @@
     "nome": "DETERGENTE NEUTRO SUPREMA 5L",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 32.99,
-    "estoque": 6.0
+    "estoque": 4.0
   },
   {
     "codigo": "3110",
@@ -5156,7 +5156,7 @@
     "nome": "PACK LIXO PIA E BANHEIRO BIO CHA BRANCO C/80UN",
     "categoria": "SACO LIXO",
     "preco": 13.99,
-    "estoque": 40.0
+    "estoque": 38.0
   },
   {
     "codigo": "3147",
@@ -5303,7 +5303,7 @@
     "nome": "PAPEL TOALHA SCALA PLUS C/120 TOALHAS C/2 ROLOS",
     "categoria": "PRODUTO DE HIGIENE",
     "preco": 8.0,
-    "estoque": 73.0
+    "estoque": 72.0
   },
   {
     "codigo": "3267",
@@ -5779,7 +5779,7 @@
     "nome": "BACIA PLASTICA GIGANTE 30L PLASNEW",
     "categoria": "-",
     "preco": 35.99,
-    "estoque": 0.0
+    "estoque": -1.0
   },
   {
     "codigo": "7010",
@@ -6031,7 +6031,7 @@
     "nome": "PALITOS PARA PICOLÉ BAMBU C/ 100 UNIDADES",
     "categoria": "DESCARTAVEIS",
     "preco": 7.99,
-    "estoque": 4.0
+    "estoque": 1.0
   },
   {
     "codigo": "7911",
@@ -6066,7 +6066,7 @@
     "nome": "MULTI SEPT HC-60 ALCOOL GEL 70% FRASCO 60ML",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 5.5,
-    "estoque": 48.0
+    "estoque": 46.0
   },
   {
     "codigo": "7954",
@@ -6143,7 +6143,7 @@
     "nome": "ALCOOL 70% LIQUIDO 5L BARBAREX",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 49.99,
-    "estoque": 4.0
+    "estoque": 1.0
   },
   {
     "codigo": "8349",
@@ -6605,7 +6605,7 @@
     "nome": "SABAO EM PO 800G MINUANO CX",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 12.0,
-    "estoque": 14.0
+    "estoque": 12.0
   },
   {
     "codigo": "31656",
@@ -6766,7 +6766,7 @@
     "nome": "LIMPA TELAS START 120ML + PZNO MICROFIBRA22X25CM",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 16.0,
-    "estoque": 7.0
+    "estoque": 6.0
   },
   {
     "codigo": "31681",
@@ -6948,14 +6948,14 @@
     "nome": "AMACIANTE DE ROUPAS SUPREMA TOQUE DE AMOR 2L",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 10.0,
-    "estoque": 5.0
+    "estoque": 4.0
   },
   {
     "codigo": "129003",
     "nome": "DESENTUPIDOR SANCHES",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 11.5,
-    "estoque": 0.0
+    "estoque": -1.0
   },
   {
     "codigo": "129006",
@@ -7634,7 +7634,7 @@
     "nome": "LIMPEZA PROFUNDA GEL 750ML PATO",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 15.0,
-    "estoque": 12.0
+    "estoque": 11.0
   },
   {
     "codigo": "129106",
