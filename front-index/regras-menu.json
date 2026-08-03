@@ -142,5 +142,23 @@
     "sub": "utensilios-limpeza",
     "marca": null,
     "id": "rmrgj0f1l829w"
+  },
+  {
+    "padrao": "cakeboard",
+    "tipo": "prefixo",
+    "seguidoNumero": false,
+    "cat": "plastico",
+    "sub": "embalagens-bolo",
+    "marca": "CAKEBOARD",
+    "id": "rmsdp6voumdfh"
+  },
+  {
+    "padrao": "TABULEIRO",
+    "tipo": "contem",
+    "seguidoNumero": false,
+    "cat": "plastico",
+    "sub": "embalagens-bolo",
+    "marca": "PRATO TABULEIRO",
+    "id": "rmsdp7xslg1n1"
   }
 ]
