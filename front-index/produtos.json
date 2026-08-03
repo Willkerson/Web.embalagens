@@ -2006,7 +2006,7 @@
     "nome": "CAIXA P/CORREIO N02 26X17X08",
     "categoria": "Embalagem",
     "preco": 6.5,
-    "estoque": -23.0
+    "estoque": 26.0
   },
   {
     "codigo": "940",
@@ -2020,7 +2020,7 @@
     "nome": "CAIXA P/CORREIO N04 34X27X14",
     "categoria": "Embalagem",
     "preco": 15.0,
-    "estoque": 5.0
+    "estoque": 37.0
   },
   {
     "codigo": "943",
@@ -2293,7 +2293,7 @@
     "nome": "CAIXA P/CORREIO N01 21X15X6,5 NIAGRA",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 4.6,
-    "estoque": 2.0
+    "estoque": 41.0
   },
   {
     "codigo": "1056",
@@ -2741,7 +2741,7 @@
     "nome": "CAIXA P/BOLO N05 22X22X10",
     "categoria": "Embalagem",
     "preco": 5.5,
-    "estoque": -44.0
+    "estoque": 25.0
   },
   {
     "codigo": "1322",
@@ -7830,7 +7830,7 @@
     "nome": "Caixa Para Bolo B-15 (35x42x12)",
     "categoria": "-",
     "preco": 11.5,
-    "estoque": -2.0
+    "estoque": 23.0
   },
   {
     "codigo": "7893595170107",
