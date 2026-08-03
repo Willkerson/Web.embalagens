@@ -3070,7 +3070,7 @@
     "nome": "G630 EMBALAGEM PARA FATIA DE TORTA C/10UN  GALVONOTEK",
     "categoria": "DESCARTAVEIS",
     "preco": 11.0,
-    "estoque": 1.0
+    "estoque": 0.0
   },
   {
     "codigo": "1490",
@@ -6898,7 +6898,7 @@
     "codigo": "79015",
     "nome": "CAKEBOARD BRANCO 28CM",
     "categoria": "PAPELARIA",
-    "preco": 5.5,
+    "preco": 5.7,
     "estoque": 10.0
   },
   {
@@ -6934,28 +6934,28 @@
     "nome": "PRATO TABULEIRO LAMINADO N04, 25,5CM",
     "categoria": "DESCARTAVEIS",
     "preco": 2.99,
-    "estoque": 0.0
+    "estoque": 100.0
   },
   {
     "codigo": "79021",
     "nome": "PRATO TABULEIRO LAMINADO N05, 28,5CM",
     "categoria": "DESCARTAVEIS",
     "preco": 3.5,
-    "estoque": 0.0
+    "estoque": 100.0
   },
   {
     "codigo": "79022",
     "nome": "PRATO TABULEIRO LAMINADO N06, 31,0CM",
     "categoria": "DESCARTAVEIS",
     "preco": 4.5,
-    "estoque": 0.0
+    "estoque": 100.0
   },
   {
     "codigo": "79023",
     "nome": "PRATO TABULEIRO LAMINADO N03, 22,0CM",
     "categoria": "DESCARTAVEIS",
     "preco": 1.99,
-    "estoque": 0.0
+    "estoque": 100.0
   },
   {
     "codigo": "79047",
