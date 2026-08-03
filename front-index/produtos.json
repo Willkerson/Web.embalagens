@@ -67,7 +67,7 @@
     "nome": "G34P MINI COLOMBA 500ML GALVONOTEK",
     "categoria": "DESCARTAVEIS",
     "preco": 2.25,
-    "estoque": 14.0
+    "estoque": 10.0
   },
   {
     "codigo": "123",
@@ -88,7 +88,7 @@
     "nome": "SUPER PÁ C/CABO ALKLIN",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 19.99,
-    "estoque": 16.0
+    "estoque": 15.0
   },
   {
     "codigo": "129",
@@ -494,7 +494,7 @@
     "nome": "PLASTICO BOLHA 65MX50M MICRA 20 MN.PLAST",
     "categoria": "Embalagem",
     "preco": 41.99,
-    "estoque": 4.0
+    "estoque": 3.0
   },
   {
     "codigo": "346",
@@ -1894,7 +1894,7 @@
     "nome": "COPO DESCARTAVEL TRANSPARENTE 180ML C/100UN GLIGHT",
     "categoria": "DESCARTAVEIS",
     "preco": 6.5,
-    "estoque": 48.0
+    "estoque": 45.0
   },
   {
     "codigo": "902",
@@ -2272,7 +2272,7 @@
     "nome": "SACO P/ LIXO PRETO P6 40L C/10UN",
     "categoria": "SACO LIXO",
     "preco": 5.5,
-    "estoque": 65.0
+    "estoque": 62.0
   },
   {
     "codigo": "1052",
@@ -2510,7 +2510,7 @@
     "nome": "FITA ADESIVA POLIPROPILENO TRANSPARENTE 48MMX40M TECTAPE",
     "categoria": "PAPELARIA",
     "preco": 4.99,
-    "estoque": 68.0
+    "estoque": 66.0
   },
   {
     "codigo": "1168",
@@ -2629,14 +2629,14 @@
     "nome": "BOBINA PICOTADA 2,5KG C/500UN P/ ALIMENTOS 25X33 EXTRUSA",
     "categoria": "Embalagem",
     "preco": 25.0,
-    "estoque": 19.0
+    "estoque": 18.0
   },
   {
     "codigo": "1281",
     "nome": "PAPEL HIGIENICO BRANCO ROLAO EUROPEL 08 ROLOS",
     "categoria": "PRODUTO DE HIGIENE",
     "preco": 35.5,
-    "estoque": 17.0
+    "estoque": 16.0
   },
   {
     "codigo": "1290",
@@ -2811,14 +2811,14 @@
     "nome": "MARMITEX DE ISOPOR 750ML C100/UN COPOBRAS",
     "categoria": "DESCARTAVEIS",
     "preco": 60.5,
-    "estoque": 22.0
+    "estoque": 21.0
   },
   {
     "codigo": "1343",
     "nome": "MARMITEX DE ISOPOR 1100ML C/100UN COPOBRAS",
     "categoria": "DESCARTAVEIS",
     "preco": 68.5,
-    "estoque": 18.0
+    "estoque": 17.0
   },
   {
     "codigo": "1344",
@@ -3252,7 +3252,7 @@
     "nome": "HAMBURGUEIRA BH01 C/100UN BOM APETITE",
     "categoria": "Embalagem",
     "preco": 26.0,
-    "estoque": 6.0
+    "estoque": 5.0
   },
   {
     "codigo": "1666",
@@ -3280,7 +3280,7 @@
     "nome": "Bandeja de Alumínio DSMFS 135ML Com Tampa C/10 un WYDA",
     "categoria": "Embalagem",
     "preco": 8.0,
-    "estoque": -25.0
+    "estoque": -28.0
   },
   {
     "codigo": "1711",
@@ -3336,7 +3336,7 @@
     "nome": "ASSADEIRA DE ALUMINIO OVAL 4L PRA VIAGEM",
     "categoria": "DESCARTAVEIS",
     "preco": 5.99,
-    "estoque": 4.0
+    "estoque": -1.0
   },
   {
     "codigo": "1755",
@@ -3546,7 +3546,7 @@
     "nome": "SACOS PLASTICO PEBD 200G  20X30",
     "categoria": "Embalagem",
     "preco": 10.0,
-    "estoque": 43.0
+    "estoque": 42.0
   },
   {
     "codigo": "1908",
@@ -3644,7 +3644,7 @@
     "nome": "BANDEJA BF03 FUNDA C/10UN BOM APETITE",
     "categoria": "Embalagem",
     "preco": 5.0,
-    "estoque": -18.0
+    "estoque": -20.0
   },
   {
     "codigo": "1949",
@@ -3882,7 +3882,7 @@
     "nome": "FITA ADESIVA 45X100M  TRANSPARENTE PAPI",
     "categoria": "PAPELARIA",
     "preco": 10.5,
-    "estoque": 85.0
+    "estoque": 83.0
   },
   {
     "codigo": "2164",
@@ -3917,7 +3917,7 @@
     "nome": "VASSOURA VARRE KANTO C/CABO ALKLIN",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 15.0,
-    "estoque": 30.0
+    "estoque": 29.0
   },
   {
     "codigo": "2193",
@@ -4456,7 +4456,7 @@
     "nome": "GARFO REFEICAO BRANCO C/50UN ELITE",
     "categoria": "DESCARTAVEIS",
     "preco": 10.25,
-    "estoque": 6.0
+    "estoque": 4.0
   },
   {
     "codigo": "2799",
@@ -5009,7 +5009,7 @@
     "nome": "POTE E TAMPA RET.500ML C/24UN GOUR MAX",
     "categoria": "DESCARTAVEIS",
     "preco": 29.99,
-    "estoque": 14.0
+    "estoque": 12.0
   },
   {
     "codigo": "3106",
@@ -5303,7 +5303,7 @@
     "nome": "PAPEL TOALHA SCALA PLUS C/120 TOALHAS C/2 ROLOS",
     "categoria": "PRODUTO DE HIGIENE",
     "preco": 8.0,
-    "estoque": 71.0
+    "estoque": 70.0
   },
   {
     "codigo": "3267",
@@ -5569,7 +5569,7 @@
     "nome": "FILME DE PVC  300 METROS 38CMX300M TECFILM",
     "categoria": "Embalagem",
     "preco": 52.0,
-    "estoque": 1.0
+    "estoque": 0.0
   },
   {
     "codigo": "4009",
@@ -5597,7 +5597,7 @@
     "nome": "TOP LIXO PRETO 50L C/30UN PACK LIXO",
     "categoria": "SACO LIXO",
     "preco": 19.99,
-    "estoque": 6.0
+    "estoque": 5.0
   },
   {
     "codigo": "4391",
@@ -5828,7 +5828,7 @@
     "nome": "GUARDANAPO TV 14X13CM 500G",
     "categoria": "DESCARTAVEIS",
     "preco": 15.5,
-    "estoque": 25.0
+    "estoque": 24.0
   },
   {
     "codigo": "7212",
@@ -6290,7 +6290,7 @@
     "nome": "SACOS PLASTICO PEBD 200G 10X20X0,06 COLOMBO/HELVIPACK",
     "categoria": "Embalagem",
     "preco": 10.0,
-    "estoque": -12.0
+    "estoque": -13.0
   },
   {
     "codigo": "10075",
@@ -6895,11 +6895,60 @@
     "estoque": -1.0
   },
   {
+    "codigo": "79015",
+    "nome": "CAKEBOARD BRANCO 28CM",
+    "categoria": "PAPELARIA",
+    "preco": 5.5,
+    "estoque": 10.0
+  },
+  {
+    "codigo": "79016",
+    "nome": "CAKEBOARD BRANCO 24CM",
+    "categoria": "Embalagem",
+    "preco": 4.5,
+    "estoque": 10.0
+  },
+  {
+    "codigo": "79017",
+    "nome": "CAKEBOARD BRANCO 26CM",
+    "categoria": "Embalagem",
+    "preco": 4.99,
+    "estoque": 10.0
+  },
+  {
+    "codigo": "79018",
+    "nome": "CAKEBOARD BRANCO 22CM",
+    "categoria": "Embalagem",
+    "preco": 3.99,
+    "estoque": 10.0
+  },
+  {
     "codigo": "79019",
     "nome": "GLADE AUTOMATIC REFIL  2 UN (PROMOÇÃO)",
     "categoria": "-",
     "preco": 25.0,
     "estoque": -23.0
+  },
+  {
+    "codigo": "79020",
+    "nome": "PRATO TABULEIRO LAMINADO N04, 25,5CM",
+    "categoria": "DESCARTAVEIS",
+    "preco": 2.99,
+    "estoque": 0.0
+  },
+  {
+    "codigo": "79021",
+    "nome": "PRATO TABULEIRO LAMINADO N05, 28,5CM",
+    "categoria": "DESCARTAVEIS",
+    "preco": 3.5,
+    "estoque": 0.0
+  },
+  {
+    "codigo": "79022",
+    "nome": "PRATO TABULEIRO LAMINADO N06, 31,0CM",
+    "categoria": "DESCARTAVEIS",
+    "preco": 4.5,
+    "estoque": 0.0
   },
   {
     "codigo": "79047",
