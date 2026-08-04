@@ -1060,7 +1060,7 @@
     "codigo": "574",
     "nome": "LAVA ROUPAS LIQ. COCO 1L SUPREMA",
     "categoria": "PRODUTO DE LIMPEZA",
-    "preco": 10.5,
+    "preco": 10.99,
     "estoque": 14.0
   },
   {
@@ -3147,7 +3147,7 @@
     "nome": "PRATO BRANCO RASO 15CM C/10UN TOTAL PLAST",
     "categoria": "DESCARTAVEIS",
     "preco": 2.5,
-    "estoque": -93.0
+    "estoque": -96.0
   },
   {
     "codigo": "1548",
@@ -3973,7 +3973,7 @@
     "nome": "GARFO SOFT BRANCO C/50UN ELITE",
     "categoria": "DESCARTAVEIS",
     "preco": 5.5,
-    "estoque": 11.0
+    "estoque": 10.0
   },
   {
     "codigo": "2298",
@@ -5684,6 +5684,13 @@
     "estoque": -5.0
   },
   {
+    "codigo": "5691",
+    "nome": "REMOVEDOR SUPREMA CHA BRANCO 500ML",
+    "categoria": "PRODUTO DE LIMPEZA",
+    "preco": 8.5,
+    "estoque": 0.0
+  },
+  {
     "codigo": "6008",
     "nome": "B120 MARMITEX ALUMINIO 500ML C/10UN PRAV.",
     "categoria": "Embalagem",
@@ -5786,7 +5793,7 @@
     "nome": "SACO P/ LIXO PRETO P12 200L C/50UN",
     "categoria": "SACO LIXO",
     "preco": 100.0,
-    "estoque": 6.0
+    "estoque": 2.0
   },
   {
     "codigo": "7011",
@@ -5940,7 +5947,7 @@
     "nome": "SACO ZIP N01 05x8,5CM  C/100UN ARMAZEM",
     "categoria": "Embalagem",
     "preco": 5.0,
-    "estoque": 11.0
+    "estoque": 10.0
   },
   {
     "codigo": "7893",
