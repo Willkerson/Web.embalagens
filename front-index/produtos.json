@@ -354,7 +354,7 @@
     "nome": "VASSOURA DENTRO E FORA C/CABO ALKLIN",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 15.0,
-    "estoque": -9.0
+    "estoque": -10.0
   },
   {
     "codigo": "295",
@@ -991,14 +991,14 @@
     "nome": "DETERGENTE SUPREMA NATURAL CLEAR 500ML",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 3.5,
-    "estoque": -12.0
+    "estoque": 24.0
   },
   {
     "codigo": "559",
     "nome": "DETERGENTE SUPREMA  NEUTRO 500ML",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 3.5,
-    "estoque": -7.0
+    "estoque": 24.0
   },
   {
     "codigo": "562",
@@ -1012,7 +1012,7 @@
     "nome": "AGUA SANITARIA SUPREMA 2L",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 8.0,
-    "estoque": 7.0
+    "estoque": 19.0
   },
   {
     "codigo": "568",
@@ -1026,7 +1026,7 @@
     "nome": "REMOVEDOR SUPREMA FLORATA 1L",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 14.0,
-    "estoque": -4.0
+    "estoque": 12.0
   },
   {
     "codigo": "570",
@@ -1061,7 +1061,7 @@
     "nome": "LAVA ROUPAS LIQ. COCO 1L SUPREMA",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 10.99,
-    "estoque": 14.0
+    "estoque": 26.0
   },
   {
     "codigo": "577",
@@ -1733,7 +1733,7 @@
     "nome": "REMOVADOR SUPREMA  FLORATA 500ML",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 8.5,
-    "estoque": 8.0
+    "estoque": 20.0
   },
   {
     "codigo": "838",
@@ -2398,7 +2398,7 @@
     "nome": "RODO ALUMINIO 40CM C/CABO 1,50 MT C/ROSCA SANCHES",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 43.5,
-    "estoque": 6.0
+    "estoque": 5.0
   },
   {
     "codigo": "1134",
@@ -4974,7 +4974,7 @@
     "nome": "DETERGENTE LIMAO/ALOE VERA SUPREMA 500ML",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 3.5,
-    "estoque": -3.0
+    "estoque": 24.0
   },
   {
     "codigo": "3075",
@@ -5030,7 +5030,7 @@
     "nome": "DETERGENTE NEUTRO SUPREMA 5L",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 32.99,
-    "estoque": 4.0
+    "estoque": 7.0
   },
   {
     "codigo": "3110",
@@ -5688,7 +5688,7 @@
     "nome": "REMOVEDOR SUPREMA CHA BRANCO 500ML",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 8.5,
-    "estoque": 0.0
+    "estoque": 12.0
   },
   {
     "codigo": "6008",
