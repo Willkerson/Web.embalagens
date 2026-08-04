@@ -1138,7 +1138,7 @@
     "nome": "ALCOOL 70% LIQUIDO 1L  HORUS",
     "categoria": "PRODUTO DE HIGIENE",
     "preco": 9.99,
-    "estoque": 22.0
+    "estoque": 21.0
   },
   {
     "codigo": "615",
@@ -2075,7 +2075,7 @@
     "codigo": "0017",
     "nome": "RODO MAGICO - CELESTE",
     "categoria": "PRODUTO DE LIMPEZA",
-    "preco": 41.99,
+    "preco": 38.99,
     "estoque": 16.0
   },
   {
@@ -3231,7 +3231,7 @@
     "nome": "D50MM TORTA MDIA 1,5KG BR24CM DONA RITA",
     "categoria": "DESCARTAVEIS",
     "preco": 3.0,
-    "estoque": 127.0
+    "estoque": 121.0
   },
   {
     "codigo": "1649",
@@ -3259,7 +3259,7 @@
     "nome": "CABO DE ALUMINIO C/ROSCA 1,5MT SANCHES",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 22.0,
-    "estoque": -10.0
+    "estoque": -11.0
   },
   {
     "codigo": "1683",
@@ -3427,7 +3427,7 @@
     "nome": "RODO MAGICO - SANCHES",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 67.5,
-    "estoque": 16.0
+    "estoque": 4.0
   },
   {
     "codigo": "1803",
@@ -3854,7 +3854,7 @@
     "nome": "SACOLA BRANCA 1KG 60x80",
     "categoria": "SACO LIXO",
     "preco": 27.0,
-    "estoque": 11.0
+    "estoque": 10.0
   },
   {
     "codigo": "2106",
@@ -4463,7 +4463,7 @@
     "nome": "KIT POTE E TAMPA RET. 350ML C/12UN GOUR MAX",
     "categoria": "DESCARTAVEIS",
     "preco": 14.99,
-    "estoque": -2.0
+    "estoque": -3.0
   },
   {
     "codigo": "2802",
