@@ -557,7 +557,7 @@
     "nome": "POTE RED.145 C/TAMPA C/24UN  PRAFESTA",
     "categoria": "DESCARTAVEIS",
     "preco": 15.0,
-    "estoque": 8.0
+    "estoque": 6.0
   },
   {
     "codigo": "367",
@@ -613,7 +613,7 @@
     "nome": "PANO DE CHAO XADREZ 45CMX68CM SOUZA BR2",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 4.7,
-    "estoque": 298.0
+    "estoque": 296.0
   },
   {
     "codigo": "390",
@@ -928,7 +928,7 @@
     "nome": "CAIXA PAP. ONDULADO N3 40X30X30",
     "categoria": "Embalagem",
     "preco": 11.0,
-    "estoque": 30.0
+    "estoque": 29.0
   },
   {
     "codigo": "530",
@@ -1012,7 +1012,7 @@
     "nome": "AGUA SANITARIA SUPREMA 2L",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 8.0,
-    "estoque": 8.0
+    "estoque": 7.0
   },
   {
     "codigo": "568",
@@ -1026,7 +1026,7 @@
     "nome": "REMOVEDOR SUPREMA FLORATA 1L",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 14.0,
-    "estoque": -3.0
+    "estoque": -4.0
   },
   {
     "codigo": "570",
@@ -1138,7 +1138,7 @@
     "nome": "ALCOOL 70% LIQUIDO 1L  HORUS",
     "categoria": "PRODUTO DE HIGIENE",
     "preco": 9.99,
-    "estoque": 21.0
+    "estoque": 20.0
   },
   {
     "codigo": "615",
@@ -1985,7 +1985,7 @@
     "nome": "CAIXA P/BOLO N07 ALTA 28X28X12",
     "categoria": "Embalagem",
     "preco": 7.9,
-    "estoque": 8.0
+    "estoque": 6.0
   },
   {
     "codigo": "936",
@@ -2251,14 +2251,14 @@
     "nome": "TOP LIXO PIA E BANHEIRO LAVANDA C/40UN PACK LIXO",
     "categoria": "SACO LIXO",
     "preco": 8.99,
-    "estoque": 32.0
+    "estoque": 31.0
   },
   {
     "codigo": "1048",
     "nome": "SACO P/ LIXO PRETO 100L C/50UN",
     "categoria": "SACO LIXO",
     "preco": 57.5,
-    "estoque": 35.0
+    "estoque": 34.0
   },
   {
     "codigo": "1049",
@@ -2279,7 +2279,7 @@
     "nome": "SACO P/ LIXO PRETO P8 60L C/10UN",
     "categoria": "SACO LIXO",
     "preco": 8.99,
-    "estoque": 65.0
+    "estoque": 63.0
   },
   {
     "codigo": "1053",
@@ -2510,7 +2510,7 @@
     "nome": "FITA ADESIVA POLIPROPILENO TRANSPARENTE 48MMX40M TECTAPE",
     "categoria": "PAPELARIA",
     "preco": 4.99,
-    "estoque": 66.0
+    "estoque": 64.0
   },
   {
     "codigo": "1168",
@@ -3056,7 +3056,7 @@
     "nome": "D645 POTE REDONDO BASE E TAMPA C/10UN 120ML",
     "categoria": "DESCARTAVEIS",
     "preco": 3.5,
-    "estoque": 35.0
+    "estoque": 31.0
   },
   {
     "codigo": "1488",
@@ -3112,7 +3112,7 @@
     "nome": "PANO DE PRATO BRANCO/ESTAMPADO TATI/NACIONAL 66X38CM",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 4.3,
-    "estoque": 383.0
+    "estoque": 381.0
   },
   {
     "codigo": "1530",
@@ -3287,7 +3287,7 @@
     "nome": "SACOLA VERDE REFORÇADA 1KG 30x40",
     "categoria": "Embalagem",
     "preco": 16.99,
-    "estoque": 36.0
+    "estoque": 35.0
   },
   {
     "codigo": "1712",
@@ -4974,7 +4974,7 @@
     "nome": "DETERGENTE LIMAO/ALOE VERA SUPREMA 500ML",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 3.5,
-    "estoque": -2.0
+    "estoque": -3.0
   },
   {
     "codigo": "3075",
@@ -5422,7 +5422,7 @@
     "nome": "LIMPADOR CONCENTRADO FLOR DE LARANJEIRA 120ML SANOL",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 12.99,
-    "estoque": -4.0
+    "estoque": -5.0
   },
   {
     "codigo": "3978",
@@ -5541,7 +5541,7 @@
     "nome": "FILM DE PVC 30MTS  28X30M TECKFIM",
     "categoria": "Embalagem",
     "preco": 6.5,
-    "estoque": 21.0
+    "estoque": 20.0
   },
   {
     "codigo": "4005",
@@ -6073,7 +6073,7 @@
     "nome": "CONCHA DE SLICICONE 29,5CM  COSY",
     "categoria": "ALIMENTO/GENERO ALIMENTICIO",
     "preco": 18.0,
-    "estoque": 3.0
+    "estoque": 2.0
   },
   {
     "codigo": "7969",
@@ -6234,7 +6234,7 @@
     "nome": "FORMINHA PAPEL N.05 BRANCA REIKI",
     "categoria": "DESCARTAVEIS",
     "preco": 2.0,
-    "estoque": 9.0
+    "estoque": 8.0
   },
   {
     "codigo": "9065",
@@ -6528,7 +6528,7 @@
     "nome": "D640 DOCE REDONDO 170ML CRISTAL C/10UN DONA RITA",
     "categoria": "DESCARTAVEIS",
     "preco": 3.99,
-    "estoque": 71.0
+    "estoque": 67.0
   },
   {
     "codigo": "29227",
@@ -6577,7 +6577,7 @@
     "nome": "DETERGENTE YPÊ CLEAR 500ML",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 4.5,
-    "estoque": 38.0
+    "estoque": 37.0
   },
   {
     "codigo": "31651",
@@ -7571,7 +7571,7 @@
     "nome": "CANETA BIC DURA+",
     "categoria": "PAPELARIA",
     "preco": 1.5,
-    "estoque": 24.0
+    "estoque": 23.0
   },
   {
     "codigo": "129088",
