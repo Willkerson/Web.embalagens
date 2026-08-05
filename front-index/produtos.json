@@ -473,7 +473,7 @@
     "nome": "SACOLA UNIDADE GRANDE 60X90",
     "categoria": "SACO LIXO",
     "preco": 0.99,
-    "estoque": -9.0
+    "estoque": -10.0
   },
   {
     "codigo": "336",
@@ -851,7 +851,7 @@
     "nome": "COLHER SOBREMESA CRISTAL C/50UN ELITE",
     "categoria": "DESCARTAVEIS",
     "preco": 3.99,
-    "estoque": 24.0
+    "estoque": 23.0
   },
   {
     "codigo": "459",
@@ -2090,7 +2090,7 @@
     "nome": "MARMITEX DE ISOPOR 750ML C/10UN COPOBRAS",
     "categoria": "DESCARTAVEIS",
     "preco": 8.0,
-    "estoque": 15.0
+    "estoque": 12.0
   },
   {
     "codigo": "0229",
@@ -2181,7 +2181,7 @@
     "nome": "SACOS PLASTICO  200G 15x20 +/-120un",
     "categoria": "Embalagem",
     "preco": 10.0,
-    "estoque": -1.0
+    "estoque": -2.0
   },
   {
     "codigo": "1016",
@@ -2720,7 +2720,7 @@
     "nome": "TOP LIXO PIA E BANHEIRO BRANCO C/40UN PACK LIXO",
     "categoria": "SACO LIXO",
     "preco": 8.99,
-    "estoque": 23.0
+    "estoque": 22.0
   },
   {
     "codigo": "1315",
@@ -4722,7 +4722,7 @@
     "nome": "TAMPA P/COPO 770ML C/50UN ULTRA",
     "categoria": "DESCARTAVEIS",
     "preco": 15.99,
-    "estoque": -1.0
+    "estoque": -2.0
   },
   {
     "codigo": "2925",
@@ -4946,7 +4946,7 @@
     "nome": "POTE E TAMPA RET.350ML C/24UN GOUR MAX",
     "categoria": "DESCARTAVEIS",
     "preco": 28.99,
-    "estoque": 11.0
+    "estoque": 10.0
   },
   {
     "codigo": "3060",
@@ -5947,7 +5947,7 @@
     "nome": "SACO ZIP N01 05x8,5CM  C/100UN ARMAZEM",
     "categoria": "Embalagem",
     "preco": 5.0,
-    "estoque": 10.0
+    "estoque": 9.0
   },
   {
     "codigo": "7893",
