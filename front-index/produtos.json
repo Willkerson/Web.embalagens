@@ -74,7 +74,7 @@
     "nome": "RODO ALKLIN 30CM C/CABO",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 15.0,
-    "estoque": 20.0
+    "estoque": 19.0
   },
   {
     "codigo": "124",
@@ -704,7 +704,7 @@
     "nome": "MEXEDOR PARA CAFE C/250UN PRAFESTA",
     "categoria": "DESCARTAVEIS",
     "preco": 7.5,
-    "estoque": 16.0
+    "estoque": 15.0
   },
   {
     "codigo": "417",
@@ -718,7 +718,7 @@
     "nome": "COLHER LITTLE COFFE CRISTAL C/100UN PRAFESTA",
     "categoria": "DESCARTAVEIS",
     "preco": 7.5,
-    "estoque": 14.0
+    "estoque": 13.0
   },
   {
     "codigo": "420",
@@ -746,7 +746,7 @@
     "nome": "SACOLA PEAD 20X30X0,12 C/10UN OLIPEL",
     "categoria": "Embalagem",
     "preco": 7.5,
-    "estoque": 19.0
+    "estoque": 15.0
   },
   {
     "codigo": "425",
@@ -781,7 +781,7 @@
     "nome": "KIT GARFO E FACA C/50UN ELITE",
     "categoria": "DESCARTAVEIS",
     "preco": 22.99,
-    "estoque": 18.0
+    "estoque": 17.0
   },
   {
     "codigo": "433",
@@ -1138,7 +1138,7 @@
     "nome": "ALCOOL 70% LIQUIDO 1L  HORUS",
     "categoria": "PRODUTO DE HIGIENE",
     "preco": 9.99,
-    "estoque": 20.0
+    "estoque": 19.0
   },
   {
     "codigo": "615",
@@ -1488,7 +1488,7 @@
     "nome": "LUSTRA MOVEIS 200ML LAVANDA AZULIM",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 9.0,
-    "estoque": 13.0
+    "estoque": 12.0
   },
   {
     "codigo": "757",
@@ -1908,7 +1908,7 @@
     "nome": "COPO DESCARTAVEL TRANSPARENTE 50ML C/100UN TOTAL PLAST",
     "categoria": "DESCARTAVEIS",
     "preco": 3.5,
-    "estoque": 17.0
+    "estoque": 14.0
   },
   {
     "codigo": "904",
@@ -2090,7 +2090,7 @@
     "nome": "MARMITEX DE ISOPOR 750ML C/10UN COPOBRAS",
     "categoria": "DESCARTAVEIS",
     "preco": 8.0,
-    "estoque": 12.0
+    "estoque": 10.0
   },
   {
     "codigo": "0229",
@@ -2587,7 +2587,7 @@
     "nome": "BOBINA PICOTADA 2KG C/500UN P/ ALIMENTOS 20X28CM EXTRUSA",
     "categoria": "Embalagem",
     "preco": 19.0,
-    "estoque": -5.0
+    "estoque": -6.0
   },
   {
     "codigo": "1225",
@@ -2720,7 +2720,7 @@
     "nome": "TOP LIXO PIA E BANHEIRO BRANCO C/40UN PACK LIXO",
     "categoria": "SACO LIXO",
     "preco": 8.99,
-    "estoque": 22.0
+    "estoque": 19.0
   },
   {
     "codigo": "1315",
@@ -2783,7 +2783,7 @@
     "nome": "TOALHA INTERFOLHA BRANCA (VERDE) C/1000UN ISAPEL",
     "categoria": "PRODUTO DE HIGIENE",
     "preco": 16.0,
-    "estoque": 70.0
+    "estoque": 67.0
   },
   {
     "codigo": "1331",
@@ -3455,7 +3455,7 @@
     "nome": "LUVA DE VINIL G S/PO C/100UN TALGE",
     "categoria": "DESCARTAVEIS",
     "preco": 21.0,
-    "estoque": 17.0
+    "estoque": 16.0
   },
   {
     "codigo": "1820",
@@ -3476,7 +3476,7 @@
     "nome": "TOP LIXO BRANCO 15L C/60UN PACK LIXO",
     "categoria": "SACO LIXO",
     "preco": 17.99,
-    "estoque": 20.0
+    "estoque": 19.0
   },
   {
     "codigo": "1854",
@@ -3987,7 +3987,7 @@
     "nome": "TOP LIXO PRETO 30L C/30UN PACK LIXO",
     "categoria": "SACO LIXO",
     "preco": 17.99,
-    "estoque": 10.0
+    "estoque": 9.0
   },
   {
     "codigo": "2302",
@@ -4617,7 +4617,7 @@
     "nome": "CAIXA TERMICA ISOPOR 5L BRANCA",
     "categoria": "DESCARTAVEIS",
     "preco": 14.99,
-    "estoque": 12.0
+    "estoque": 10.0
   },
   {
     "codigo": "2850",
@@ -4918,7 +4918,7 @@
     "nome": "HAMBURGUEIRA BH01 C/10UN BOM APETITE",
     "categoria": "DESCARTAVEIS",
     "preco": 3.5,
-    "estoque": 42.0
+    "estoque": 40.0
   },
   {
     "codigo": "3048",
@@ -7578,7 +7578,7 @@
     "nome": "CANETA BIC DURA+",
     "categoria": "PAPELARIA",
     "preco": 1.5,
-    "estoque": 23.0
+    "estoque": 21.0
   },
   {
     "codigo": "129088",
