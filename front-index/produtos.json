@@ -2202,7 +2202,7 @@
     "nome": "SACOS PLASTICO  35x45x0,06 200G  COLOMBO/HELVIPACK",
     "categoria": "Embalagem",
     "preco": 10.0,
-    "estoque": 30.0
+    "estoque": 28.0
   },
   {
     "codigo": "1033",
@@ -2853,7 +2853,7 @@
     "nome": "KIT POTE E TAMPA RET. 500ML C/12UN GOUR MAX",
     "categoria": "DESCARTAVEIS",
     "preco": 16.99,
-    "estoque": -4.0
+    "estoque": -5.0
   },
   {
     "codigo": "1360",
@@ -3504,7 +3504,7 @@
     "nome": "SACO PARA GELADINHO PEQ. C/100UN 4X24X0,02",
     "categoria": "DESCARTAVEIS",
     "preco": 4.0,
-    "estoque": 135.0
+    "estoque": 134.0
   },
   {
     "codigo": "1889",
@@ -4540,7 +4540,7 @@
     "nome": "POTE ISOPOR 240ML C/25UN ULTRA",
     "categoria": "DESCARTAVEIS",
     "preco": 14.5,
-    "estoque": 35.0
+    "estoque": 19.0
   },
   {
     "codigo": "2829",
@@ -4603,7 +4603,7 @@
     "nome": "TAMPA P/ POTE 240/300/360 E 480ML C/25UN ULTRA",
     "categoria": "DESCARTAVEIS",
     "preco": 8.99,
-    "estoque": 0.0
+    "estoque": -16.0
   },
   {
     "codigo": "2848",
@@ -5016,7 +5016,7 @@
     "nome": "POTE E TAMPA RET. 750ML C/24UN GOUR MAX",
     "categoria": "DESCARTAVEIS",
     "preco": 42.0,
-    "estoque": 10.0
+    "estoque": 8.0
   },
   {
     "codigo": "3107",
