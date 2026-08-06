@@ -473,7 +473,7 @@
     "nome": "SACOLA UNIDADE GRANDE 60X90",
     "categoria": "SACO LIXO",
     "preco": 0.99,
-    "estoque": -14.0
+    "estoque": -15.0
   },
   {
     "codigo": "336",
@@ -865,7 +865,7 @@
     "nome": "D56 B0LO E TORTA ROMA MEDIA B BRANCA",
     "categoria": "DESCARTAVEIS",
     "preco": 4.0,
-    "estoque": 4.0
+    "estoque": 1.0
   },
   {
     "codigo": "466",
@@ -1907,8 +1907,8 @@
     "codigo": "903",
     "nome": "COPO DESCARTAVEL TRANSPARENTE 50ML C/100UN TOTAL PLAST",
     "categoria": "DESCARTAVEIS",
-    "preco": 3.5,
-    "estoque": 14.0
+    "preco": 4.5,
+    "estoque": 52.0
   },
   {
     "codigo": "904",
@@ -2006,7 +2006,7 @@
     "nome": "CAIXA P/CORREIO N02 26X17X08",
     "categoria": "Embalagem",
     "preco": 6.5,
-    "estoque": 26.0
+    "estoque": 25.0
   },
   {
     "codigo": "940",
@@ -2587,7 +2587,7 @@
     "nome": "BOBINA PICOTADA 2KG C/500UN P/ ALIMENTOS 20X28CM EXTRUSA",
     "categoria": "Embalagem",
     "preco": 19.0,
-    "estoque": -7.0
+    "estoque": -8.0
   },
   {
     "codigo": "1225",
@@ -2636,7 +2636,7 @@
     "nome": "PAPEL HIGIENICO BRANCO ROLAO EUROPEL 08 ROLOS",
     "categoria": "PRODUTO DE HIGIENE",
     "preco": 35.5,
-    "estoque": 14.0
+    "estoque": 13.0
   },
   {
     "codigo": "1290",
@@ -2664,7 +2664,7 @@
     "nome": "CAIXA DE CELULAR 22X11X05 1 UN",
     "categoria": "Embalagem",
     "preco": 2.5,
-    "estoque": 12.0
+    "estoque": 9.0
   },
   {
     "codigo": "1295",
@@ -2712,8 +2712,8 @@
     "codigo": "1313",
     "nome": "BPR-23 PRATO ISOPOR 23CM C/250UN BOM APETITE",
     "categoria": "DESCARTAVEIS",
-    "preco": 125.0,
-    "estoque": 1.0
+    "preco": 118.99,
+    "estoque": 2.0
   },
   {
     "codigo": "1314",
@@ -3007,7 +3007,7 @@
     "nome": "D32MM TORTA MINI 19CM 750G DONA RITA",
     "categoria": "Embalagem",
     "preco": 1.5,
-    "estoque": 57.0
+    "estoque": 55.0
   },
   {
     "codigo": "1474",
@@ -3336,7 +3336,7 @@
     "nome": "ASSADEIRA DE ALUMINIO OVAL 4L PRA VIAGEM",
     "categoria": "DESCARTAVEIS",
     "preco": 5.99,
-    "estoque": -1.0
+    "estoque": 20.0
   },
   {
     "codigo": "1755",
@@ -3433,7 +3433,7 @@
     "codigo": "1803",
     "nome": "PRATO  ISOPOR BPR-23 C/25UN BOM APETITE",
     "categoria": "DESCARTAVEIS",
-    "preco": 13.5,
+    "preco": 12.5,
     "estoque": 39.0
   },
   {
@@ -4530,9 +4530,9 @@
   },
   {
     "codigo": "2827",
-    "nome": "G697 POTE TRASPARENTE 60ML MULTIUSO C/50UN",
+    "nome": "G697 POTE TRASPARENTE 60ML MULTIUSO C/10UN",
     "categoria": "DESCARTAVEIS",
-    "preco": 16.15,
+    "preco": 4.5,
     "estoque": -6.0
   },
   {
@@ -4946,14 +4946,14 @@
     "nome": "POTE E TAMPA RET.350ML C/24UN GOUR MAX",
     "categoria": "DESCARTAVEIS",
     "preco": 28.99,
-    "estoque": 9.0
+    "estoque": 15.0
   },
   {
     "codigo": "3060",
     "nome": "POTE E TAMPA REDONDO 1000ML C/24UN DANUBIO",
     "categoria": "DESCARTAVEIS",
-    "preco": 45.99,
-    "estoque": 10.0
+    "preco": 39.5,
+    "estoque": 8.0
   },
   {
     "codigo": "3070",
@@ -5009,7 +5009,7 @@
     "nome": "POTE E TAMPA RET.500ML C/24UN GOUR MAX",
     "categoria": "DESCARTAVEIS",
     "preco": 29.99,
-    "estoque": 9.0
+    "estoque": 14.0
   },
   {
     "codigo": "3106",
