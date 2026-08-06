@@ -347,7 +347,7 @@
     "nome": "ESPONJA MULTIUSO C/4UN ALKLIN",
     "categoria": "UTENSILIOS",
     "preco": 3.99,
-    "estoque": 316.0
+    "estoque": 314.0
   },
   {
     "codigo": "294",
@@ -578,7 +578,7 @@
     "nome": "LUVA LATEX M PLUS SANRO LARANJA P/LIMPEZA",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 11.99,
-    "estoque": -6.0
+    "estoque": -7.0
   },
   {
     "codigo": "374",
@@ -613,7 +613,7 @@
     "nome": "PANO DE CHAO XADREZ 45CMX68CM SOUZA BR2",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 4.7,
-    "estoque": 296.0
+    "estoque": 292.0
   },
   {
     "codigo": "390",
@@ -1726,7 +1726,7 @@
     "nome": "G60MM  MILLENIUM TORTA MEDIA 2,2KG 29CM",
     "categoria": "DESCARTAVEIS",
     "preco": 6.99,
-    "estoque": 100.0
+    "estoque": 99.0
   },
   {
     "codigo": "837",
@@ -2181,7 +2181,7 @@
     "nome": "SACOS PLASTICO  200G 15x20 +/-120un",
     "categoria": "Embalagem",
     "preco": 10.0,
-    "estoque": -3.0
+    "estoque": -5.0
   },
   {
     "codigo": "1016",
@@ -2258,7 +2258,7 @@
     "nome": "SACO P/ LIXO PRETO 100L C/50UN",
     "categoria": "SACO LIXO",
     "preco": 57.5,
-    "estoque": 33.0
+    "estoque": 32.0
   },
   {
     "codigo": "1049",
@@ -2279,7 +2279,7 @@
     "nome": "SACO P/ LIXO PRETO P8 60L C/10UN",
     "categoria": "SACO LIXO",
     "preco": 8.99,
-    "estoque": 57.0
+    "estoque": 56.0
   },
   {
     "codigo": "1053",
@@ -2468,7 +2468,7 @@
     "nome": "FIBRA BRANCA LIMP. LEVE BETTANIN",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 3.99,
-    "estoque": 9.0
+    "estoque": 7.0
   },
   {
     "codigo": "1151",
@@ -3063,7 +3063,7 @@
     "nome": "D630  FATIA PARA TORTAS C/10UN  DONA RITA",
     "categoria": "DESCARTAVEIS",
     "preco": 11.0,
-    "estoque": 30.0
+    "estoque": 29.0
   },
   {
     "codigo": "1489",
@@ -3602,7 +3602,7 @@
     "nome": "MARMITEX DE ISOPOR 500ML C/10UN",
     "categoria": "DESCARTAVEIS",
     "preco": 7.0,
-    "estoque": -30.0
+    "estoque": -32.0
   },
   {
     "codigo": "1933",
@@ -3861,7 +3861,7 @@
     "nome": "SACOLA BRANCA 1KG 90x100",
     "categoria": "SACO LIXO",
     "preco": 27.0,
-    "estoque": 8.0
+    "estoque": 7.0
   },
   {
     "codigo": "2122",
@@ -4456,7 +4456,7 @@
     "nome": "GARFO REFEICAO BRANCO C/50UN ELITE",
     "categoria": "DESCARTAVEIS",
     "preco": 10.25,
-    "estoque": 4.0
+    "estoque": 2.0
   },
   {
     "codigo": "2799",
@@ -4918,7 +4918,7 @@
     "nome": "HAMBURGUEIRA BH01 C/10UN BOM APETITE",
     "categoria": "DESCARTAVEIS",
     "preco": 3.5,
-    "estoque": 38.0
+    "estoque": 36.0
   },
   {
     "codigo": "3048",
@@ -5429,7 +5429,7 @@
     "nome": "LIMPADOR CONCENTRADO LAVANDA 120ML SANOL",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 12.99,
-    "estoque": -10.0
+    "estoque": -11.0
   },
   {
     "codigo": "3979",
@@ -5499,7 +5499,7 @@
     "nome": "PANOS DE MICROFIBRAS C/3UN ALKLIN",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 10.99,
-    "estoque": 12.0
+    "estoque": 11.0
   },
   {
     "codigo": "3995",
