@@ -2258,7 +2258,7 @@
     "nome": "SACO P/ LIXO PRETO 100L C/50UN",
     "categoria": "SACO LIXO",
     "preco": 57.5,
-    "estoque": 34.0
+    "estoque": 33.0
   },
   {
     "codigo": "1049",
@@ -2587,7 +2587,7 @@
     "nome": "BOBINA PICOTADA 2KG C/500UN P/ ALIMENTOS 20X28CM EXTRUSA",
     "categoria": "Embalagem",
     "preco": 19.0,
-    "estoque": -6.0
+    "estoque": -7.0
   },
   {
     "codigo": "1225",
@@ -3266,7 +3266,7 @@
     "nome": "POTE REDONDO 200ML C/TAMPA C/24UN PRAFESTA",
     "categoria": "DESCARTAVEIS",
     "preco": 17.99,
-    "estoque": 9.0
+    "estoque": 8.0
   },
   {
     "codigo": "1684",
@@ -3286,7 +3286,7 @@
     "codigo": "1711",
     "nome": "SACOLA VERDE REFORÇADA 1KG 30x40",
     "categoria": "Embalagem",
-    "preco": 16.99,
+    "preco": 19.99,
     "estoque": 35.0
   },
   {
@@ -3321,7 +3321,7 @@
     "codigo": "1717",
     "nome": "SACOLA PRETA 1KG 30X40",
     "categoria": "Embalagem",
-    "preco": 16.99,
+    "preco": 19.99,
     "estoque": 0.0
   },
   {
@@ -4602,7 +4602,7 @@
     "codigo": "2845",
     "nome": "TAMPA P/ POTE 240/300/360 E 480ML C/25UN ULTRA",
     "categoria": "DESCARTAVEIS",
-    "preco": 8.8,
+    "preco": 8.99,
     "estoque": 0.0
   },
   {
@@ -4946,7 +4946,7 @@
     "nome": "POTE E TAMPA RET.350ML C/24UN GOUR MAX",
     "categoria": "DESCARTAVEIS",
     "preco": 28.99,
-    "estoque": 10.0
+    "estoque": 9.0
   },
   {
     "codigo": "3060",
@@ -5184,7 +5184,7 @@
     "nome": "SACO ECO KRAFT PARDO C/100UN 18.5X29CM (PA10313) PLUMA",
     "categoria": "Embalagem",
     "preco": 12.99,
-    "estoque": -5.0
+    "estoque": -6.0
   },
   {
     "codigo": "3155",
@@ -6010,7 +6010,7 @@
     "nome": "DIFUSOR DE AROMAS CITRONELA SENALAR",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 18.0,
-    "estoque": 3.0
+    "estoque": 2.0
   },
   {
     "codigo": "7907",
