@@ -1915,7 +1915,7 @@
     "nome": "FITA DUPLA FACE 18MMX2M MEGAGIFT",
     "categoria": "UTENSILIOS",
     "preco": 7.5,
-    "estoque": 3.0
+    "estoque": 2.0
   },
   {
     "codigo": "905",
@@ -1957,7 +1957,7 @@
     "nome": "DESINFETANTE MISTERIO ARABE 2L SANOL",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 8.99,
-    "estoque": 6.0
+    "estoque": 5.0
   },
   {
     "codigo": "927",
@@ -2034,7 +2034,7 @@
     "nome": "DESINFETANTE PINHO ULTRABAC SUPREMA 2L",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 8.0,
-    "estoque": 7.0
+    "estoque": 6.0
   },
   {
     "codigo": "967",
@@ -2202,7 +2202,7 @@
     "nome": "SACOS PLASTICO  35x45x0,06 200G  COLOMBO/HELVIPACK",
     "categoria": "Embalagem",
     "preco": 10.0,
-    "estoque": 28.0
+    "estoque": 27.0
   },
   {
     "codigo": "1033",
@@ -2454,7 +2454,7 @@
     "nome": "FIBRA LIMP. PESADA 1UN 260X102MM BETTANIN",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 4.99,
-    "estoque": 30.0
+    "estoque": 28.0
   },
   {
     "codigo": "1149",
@@ -2629,7 +2629,7 @@
     "nome": "BOBINA PICOTADA 2,5KG C/500UN P/ ALIMENTOS 25X33 EXTRUSA",
     "categoria": "Embalagem",
     "preco": 25.0,
-    "estoque": 15.0
+    "estoque": 14.0
   },
   {
     "codigo": "1281",
@@ -4855,7 +4855,7 @@
     "nome": "SACO ZIP N03 07x12CM C/100UN  ARMAZEM",
     "categoria": "Embalagem",
     "preco": 10.0,
-    "estoque": -1.0
+    "estoque": -2.0
   },
   {
     "codigo": "3028",
@@ -4918,7 +4918,7 @@
     "nome": "HAMBURGUEIRA BH01 C/10UN BOM APETITE",
     "categoria": "DESCARTAVEIS",
     "preco": 3.5,
-    "estoque": 35.0
+    "estoque": 33.0
   },
   {
     "codigo": "3048",
@@ -5436,7 +5436,7 @@
     "nome": "LIMPADOR CONCENTRADO MISTERIO ARABE 120ML SANOL",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 12.99,
-    "estoque": 18.0
+    "estoque": 17.0
   },
   {
     "codigo": "3980",
@@ -5912,7 +5912,7 @@
     "nome": "REFIL RODO ALUMINIO 40CM SANCHES",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 4.3,
-    "estoque": 5.0
+    "estoque": 4.0
   },
   {
     "codigo": "7832",
