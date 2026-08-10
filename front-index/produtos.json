@@ -221,7 +221,7 @@
     "nome": "COPO TERMICO 180ML C/20UN TOTALPLAST",
     "categoria": "DESCARTAVEIS",
     "preco": 5.99,
-    "estoque": 104.0
+    "estoque": 103.0
   },
   {
     "codigo": "189",
@@ -760,7 +760,7 @@
     "nome": "SACOLA PEAD 20X30X0,12 C/50UN OLIPEL",
     "categoria": "Embalagem",
     "preco": 29.99,
-    "estoque": 4.0
+    "estoque": 3.0
   },
   {
     "codigo": "426",
@@ -935,7 +935,7 @@
     "nome": "CAIXA PAP. ONDULADO N3 40X30X30",
     "categoria": "Embalagem",
     "preco": 11.0,
-    "estoque": 17.0
+    "estoque": 16.0
   },
   {
     "codigo": "530",
@@ -1229,7 +1229,7 @@
     "nome": "PAPEL ANTIADERENTE ASSALIGTH 3MX30CM WYDA",
     "categoria": "Embalagem",
     "preco": 8.5,
-    "estoque": 10.0
+    "estoque": 8.0
   },
   {
     "codigo": "642",
@@ -1726,7 +1726,7 @@
     "nome": "KIT POTE E TAMPA RET. 750ML C/24UN PRAFESTA",
     "categoria": "DESCARTAVEIS",
     "preco": 55.99,
-    "estoque": 1.0
+    "estoque": 0.0
   },
   {
     "codigo": "834",
@@ -1922,7 +1922,7 @@
     "nome": "COPO DESCARTAVEL TRANSPARENTE 50ML C/100UN TOTAL PLAST",
     "categoria": "DESCARTAVEIS",
     "preco": 4.5,
-    "estoque": 51.0
+    "estoque": 49.0
   },
   {
     "codigo": "904",
@@ -2230,7 +2230,7 @@
     "nome": "SACO P/ LIXO PRETO P8 60L C/50UN",
     "categoria": "SACO LIXO",
     "preco": 38.25,
-    "estoque": 21.0
+    "estoque": 20.0
   },
   {
     "codigo": "1042",
@@ -2286,7 +2286,7 @@
     "nome": "SACO P/ LIXO PRETO P6 40L C/10UN",
     "categoria": "SACO LIXO",
     "preco": 5.5,
-    "estoque": 49.0
+    "estoque": 45.0
   },
   {
     "codigo": "1052",
@@ -2867,7 +2867,7 @@
     "nome": "KIT POTE E TAMPA RET. 500ML C/12UN GOUR MAX",
     "categoria": "DESCARTAVEIS",
     "preco": 16.99,
-    "estoque": -6.0
+    "estoque": -7.0
   },
   {
     "codigo": "1360",
@@ -3343,7 +3343,7 @@
     "nome": "SACOLA PRETA 1KG 40X50",
     "categoria": "Embalagem",
     "preco": 19.99,
-    "estoque": 55.0
+    "estoque": 54.0
   },
   {
     "codigo": "1751",
@@ -3805,7 +3805,7 @@
     "nome": "FOLHA DE ALUMINIO 4MX30CM WYDA",
     "categoria": "Embalagem",
     "preco": 5.5,
-    "estoque": -3.0
+    "estoque": -5.0
   },
   {
     "codigo": "2094",
@@ -4169,7 +4169,7 @@
     "nome": "POTE E TAMPA RET.250ML C/24UN PRAFESTA",
     "categoria": "DESCARTAVEIS",
     "preco": 23.99,
-    "estoque": 8.0
+    "estoque": 7.0
   },
   {
     "codigo": "2427",
@@ -4960,7 +4960,7 @@
     "nome": "POTE E TAMPA RET.350ML C/24UN GOUR MAX",
     "categoria": "DESCARTAVEIS",
     "preco": 28.99,
-    "estoque": 13.0
+    "estoque": 12.0
   },
   {
     "codigo": "3060",
@@ -5457,7 +5457,7 @@
     "nome": "LIMPADOR CONCENTRADO MISTERIO ARABE 120ML SANOL",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 12.99,
-    "estoque": 16.0
+    "estoque": 14.0
   },
   {
     "codigo": "3980",
