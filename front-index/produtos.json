@@ -214,7 +214,7 @@
     "nome": "MARMITA PRETA 750ML C/3 DIVISORIAS C/10UN",
     "categoria": "DESCARTAVEIS",
     "preco": 16.25,
-    "estoque": 10.0
+    "estoque": 8.0
   },
   {
     "codigo": "183",
@@ -410,7 +410,7 @@
     "nome": "PAPEL HIGIENICO PREM. DUPLA DELICATTO C/4UN 10X30M",
     "categoria": "PRODUTO DE HIGIENE",
     "preco": 7.5,
-    "estoque": 7.0
+    "estoque": 6.0
   },
   {
     "codigo": "314",
@@ -606,7 +606,7 @@
     "nome": "LIMPEZA PESADA 500ML ORIG. VEJA",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 9.99,
-    "estoque": 21.0
+    "estoque": 20.0
   },
   {
     "codigo": "385",
@@ -1530,7 +1530,7 @@
     "nome": "MULTIUSO ORIGINAL AZULIM  500ML START",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 5.5,
-    "estoque": 11.0
+    "estoque": 10.0
   },
   {
     "codigo": "764",
@@ -1824,7 +1824,7 @@
     "nome": "AGUA SANITARIA DACLOR 2L",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 8.8,
-    "estoque": 4.0
+    "estoque": 3.0
   },
   {
     "codigo": "875",
@@ -2286,7 +2286,7 @@
     "nome": "SACO P/ LIXO PRETO P6 40L C/10UN",
     "categoria": "SACO LIXO",
     "preco": 5.5,
-    "estoque": 55.0
+    "estoque": 52.0
   },
   {
     "codigo": "1052",
@@ -2300,7 +2300,7 @@
     "nome": "SACOS P/LIXO 100L P8 C10UN PRETO",
     "categoria": "SACO LIXO",
     "preco": 13.5,
-    "estoque": 43.0
+    "estoque": 42.0
   },
   {
     "codigo": "1055",
@@ -3119,7 +3119,7 @@
     "nome": "TOALHA INTERFOLHA BRANCA PREMIUM WHITE PAPER C/1000UN",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 25.99,
-    "estoque": -17.0
+    "estoque": -27.0
   },
   {
     "codigo": "1526",
@@ -3175,7 +3175,7 @@
     "nome": "GARRAFA PE QUADRADA 200ML C/10UN MALUGER",
     "categoria": "Embalagem",
     "preco": 8.99,
-    "estoque": 11.0
+    "estoque": 10.0
   },
   {
     "codigo": "1558",
@@ -3497,7 +3497,7 @@
     "nome": "TOP LIXO BRANCO 30L C/30UN PACK LIXO",
     "categoria": "SACO LIXO",
     "preco": 17.99,
-    "estoque": 8.0
+    "estoque": 7.0
   },
   {
     "codigo": "1885",
@@ -6640,7 +6640,7 @@
     "nome": "SABAO EM PO 800G BABY SOFT SACHE",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 8.5,
-    "estoque": 17.0
+    "estoque": 16.0
   },
   {
     "codigo": "31655",
@@ -7775,6 +7775,13 @@
     "categoria": "DESCARTAVEIS",
     "preco": 103.0,
     "estoque": -77.0
+  },
+  {
+    "codigo": "299423",
+    "nome": "COPO DESCARTAVEL 180ML PS C/100UN FASTCUP CAIXA",
+    "categoria": "DESCARTAVEIS",
+    "preco": 164.76,
+    "estoque": -1.0
   },
   {
     "codigo": "316514",
