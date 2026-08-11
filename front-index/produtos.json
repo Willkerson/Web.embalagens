@@ -354,7 +354,7 @@
     "nome": "ESPONJA MULTIUSO C/4UN ALKLIN",
     "categoria": "UTENSILIOS",
     "preco": 3.99,
-    "estoque": 309.0
+    "estoque": 308.0
   },
   {
     "codigo": "294",
@@ -375,7 +375,7 @@
     "nome": "VASSOURA  DE CASA COM CABO ALKLIN",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 19.99,
-    "estoque": 11.0
+    "estoque": 10.0
   },
   {
     "codigo": "299",
@@ -494,7 +494,7 @@
     "nome": "PLASTICO BOLHA 43X10M MICRA 20 MN. PLAST",
     "categoria": "Embalagem",
     "preco": 16.99,
-    "estoque": 13.0
+    "estoque": 12.0
   },
   {
     "codigo": "343",
@@ -564,7 +564,7 @@
     "nome": "POTE RED.145 C/TAMPA C/24UN  PRAFESTA",
     "categoria": "DESCARTAVEIS",
     "preco": 15.0,
-    "estoque": 6.0
+    "estoque": 4.0
   },
   {
     "codigo": "367",
@@ -683,7 +683,7 @@
     "nome": "G56MM TORTA MEDIA 1,7KG BR26CM GALVONOTEK",
     "categoria": "DESCARTAVEIS",
     "preco": 5.5,
-    "estoque": 26.0
+    "estoque": 24.0
   },
   {
     "codigo": "409",
@@ -816,7 +816,7 @@
     "nome": "POTE REDONDO 250ML C/TAMPA C/24UN PRAFESTA",
     "categoria": "DESCARTAVEIS",
     "preco": 18.5,
-    "estoque": 21.0
+    "estoque": 20.0
   },
   {
     "codigo": "445",
@@ -1012,7 +1012,7 @@
     "nome": "AGUA SANITARIA 1L SUPREMA",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 3.5,
-    "estoque": 11.0
+    "estoque": 10.0
   },
   {
     "codigo": "563",
@@ -1145,7 +1145,7 @@
     "nome": "ALCOOL 70% LIQUIDO 1L  HORUS",
     "categoria": "PRODUTO DE HIGIENE",
     "preco": 9.99,
-    "estoque": 17.0
+    "estoque": 16.0
   },
   {
     "codigo": "615",
@@ -1460,7 +1460,7 @@
     "nome": "LIMPADOR GEL DESINFETANTE LAVANDA 500ML AZULIM START",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 9.99,
-    "estoque": 1.82
+    "estoque": 0.82
   },
   {
     "codigo": "745",
@@ -1873,7 +1873,7 @@
     "nome": "COPO DESCARTAVEL TRANSPARENTE 180ML C/100UN TOTAL PLAST",
     "categoria": "DESCARTAVEIS",
     "preco": 7.5,
-    "estoque": 382.0
+    "estoque": 381.0
   },
   {
     "codigo": "897",
@@ -1901,7 +1901,7 @@
     "nome": "GUARDANAPO 30X31CM C/50UN LUXO PLUMA",
     "categoria": "DESCARTAVEIS",
     "preco": 3.9,
-    "estoque": 67.0
+    "estoque": 66.0
   },
   {
     "codigo": "901",
@@ -1922,7 +1922,7 @@
     "nome": "COPO DESCARTAVEL TRANSPARENTE 50ML C/100UN TOTAL PLAST",
     "categoria": "DESCARTAVEIS",
     "preco": 4.5,
-    "estoque": 49.0
+    "estoque": 48.0
   },
   {
     "codigo": "904",
@@ -2013,21 +2013,21 @@
     "nome": "CAIXA P/CORREIO N0016X11X07 1UN NIAGRA",
     "categoria": "Embalagem",
     "preco": 3.5,
-    "estoque": 7.0
+    "estoque": 6.0
   },
   {
     "codigo": "939",
     "nome": "CAIXA P/CORREIO N02 26X17X08",
     "categoria": "Embalagem",
     "preco": 6.5,
-    "estoque": 22.0
+    "estoque": 21.0
   },
   {
     "codigo": "940",
     "nome": "CAIXA P CORREIO N03 30X20X11 NIAGRA",
     "categoria": "Embalagem",
     "preco": 10.0,
-    "estoque": 31.0
+    "estoque": 30.0
   },
   {
     "codigo": "941",
@@ -2524,7 +2524,7 @@
     "nome": "FITA ADESIVA POLIPROPILENO TRANSPARENTE 48MMX40M TECTAPE",
     "categoria": "PAPELARIA",
     "preco": 4.99,
-    "estoque": 51.0
+    "estoque": 50.0
   },
   {
     "codigo": "1168",
@@ -2643,7 +2643,7 @@
     "nome": "BOBINA PICOTADA 2,5KG C/500UN P/ ALIMENTOS 25X33 EXTRUSA",
     "categoria": "Embalagem",
     "preco": 25.0,
-    "estoque": 12.0
+    "estoque": 11.0
   },
   {
     "codigo": "1281",
@@ -2741,7 +2741,7 @@
     "nome": "PACK LIXO PIA E BANHEIRO TUTTI-FRUITI C/80UN DIVA",
     "categoria": "SACO LIXO",
     "preco": 13.99,
-    "estoque": 34.0
+    "estoque": 33.0
   },
   {
     "codigo": "1316",
@@ -2979,7 +2979,7 @@
     "nome": "LACRE SEGURANCA PARA LANCHE ROLO C/500UN 30MMX90MM PLUMA",
     "categoria": "PAPELARIA",
     "preco": 29.0,
-    "estoque": 3.0
+    "estoque": 2.0
   },
   {
     "codigo": "1448",
@@ -3070,7 +3070,7 @@
     "nome": "D645 POTE REDONDO BASE E TAMPA C/10UN 120ML",
     "categoria": "DESCARTAVEIS",
     "preco": 3.5,
-    "estoque": 30.0
+    "estoque": 29.0
   },
   {
     "codigo": "1488",
@@ -3567,7 +3567,7 @@
     "nome": "SACOS PLASTICO PEBD 40X60X0,10 1KG COLOMBO/HELVIPACK",
     "categoria": "Embalagem",
     "preco": 40.99,
-    "estoque": 4.0
+    "estoque": 3.0
   },
   {
     "codigo": "1909",
@@ -3896,7 +3896,7 @@
     "nome": "FITA ADESIVA 45X100M  TRANSPARENTE PAPI",
     "categoria": "PAPELARIA",
     "preco": 10.5,
-    "estoque": 82.0
+    "estoque": 81.0
   },
   {
     "codigo": "2164",
@@ -4099,7 +4099,7 @@
     "nome": "Desorizador Sanitário Bloco Para Cx Acoplada Lavanda Azulim",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 13.5,
-    "estoque": 10.0
+    "estoque": 9.0
   },
   {
     "codigo": "2382",
@@ -4302,7 +4302,7 @@
     "nome": "ESPONJA  ANTIRISCO C/4UN ALKLIN",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 4.0,
-    "estoque": 173.0
+    "estoque": 172.0
   },
   {
     "codigo": "2599",
@@ -4995,7 +4995,7 @@
     "nome": "KIT POTE E TAMPA RET. 750ML C/12UN GOUR MAX",
     "categoria": "DESCARTAVEIS",
     "preco": 22.5,
-    "estoque": 20.0
+    "estoque": 19.0
   },
   {
     "codigo": "3078",
@@ -5023,7 +5023,7 @@
     "nome": "POTE E TAMPA RET.500ML C/24UN GOUR MAX",
     "categoria": "DESCARTAVEIS",
     "preco": 29.99,
-    "estoque": 11.0
+    "estoque": 9.0
   },
   {
     "codigo": "3106",
@@ -5296,7 +5296,7 @@
     "nome": "PAPEL HIGIENICO FOFINHO FOLHA DUPLA 4X30M",
     "categoria": "PRODUTO DE HIGIENE",
     "preco": 8.5,
-    "estoque": 63.0
+    "estoque": 62.0
   },
   {
     "codigo": "3192",
@@ -5562,7 +5562,7 @@
     "nome": "FILM DE PVC 30MTS  28X30M TECKFIM",
     "categoria": "Embalagem",
     "preco": 6.5,
-    "estoque": 18.0
+    "estoque": 17.0
   },
   {
     "codigo": "4005",
@@ -5716,7 +5716,7 @@
     "nome": "B120 MARMITEX ALUMINIO 500ML C/10UN PRAV.",
     "categoria": "Embalagem",
     "preco": 9.5,
-    "estoque": 17.0
+    "estoque": 16.0
   },
   {
     "codigo": "6050",
@@ -6563,7 +6563,7 @@
     "nome": "D640 DOCE REDONDO 170ML CRISTAL C/10UN DONA RITA",
     "categoria": "DESCARTAVEIS",
     "preco": 3.99,
-    "estoque": 66.0
+    "estoque": 65.0
   },
   {
     "codigo": "29227",
@@ -6612,7 +6612,7 @@
     "nome": "DETERGENTE YPÊ CLEAR 500ML",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 4.5,
-    "estoque": 36.0
+    "estoque": 35.0
   },
   {
     "codigo": "31651",
@@ -7592,7 +7592,7 @@
     "nome": "PILHA ALFACELL SUPER ALCALINA 2UNI (AAA/LR03)",
     "categoria": "UTENSILIOS",
     "preco": 6.0,
-    "estoque": -5.0
+    "estoque": -6.0
   },
   {
     "codigo": "129085",
@@ -7767,6 +7767,13 @@
     "nome": "PURUS SACO DE LAVAR ROUPA COM ZIPER",
     "categoria": "-",
     "preco": 6.99,
+    "estoque": -1.0
+  },
+  {
+    "codigo": "151515",
+    "nome": "TAMPA PARA MARMITEX SEPARADA (100 UNIDADES)",
+    "categoria": "DESCARTAVEIS",
+    "preco": 29.99,
     "estoque": -1.0
   },
   {
