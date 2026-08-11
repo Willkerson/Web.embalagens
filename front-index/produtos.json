@@ -2503,7 +2503,7 @@
     "nome": "LIMPA AZULEJO C/CABO SANCHES",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 13.5,
-    "estoque": 0.0
+    "estoque": 12.0
   },
   {
     "codigo": "1159",
@@ -3553,7 +3553,7 @@
     "nome": "LIMPA VIDRO  SANCHES",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 8.5,
-    "estoque": 0.0
+    "estoque": 24.0
   },
   {
     "codigo": "1905",
@@ -6416,7 +6416,7 @@
     "nome": "LIMPA AZULEJO  SEM CABO SANCHES",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 8.5,
-    "estoque": 12.0
+    "estoque": 24.0
   },
   {
     "codigo": "11682",
