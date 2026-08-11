@@ -2405,14 +2405,14 @@
     "nome": "RODO ALUMINIO 30CM C/CABO 1,30MT C/ROSCA SANCHES",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 41.0,
-    "estoque": 19.0
+    "estoque": 31.0
   },
   {
     "codigo": "1133",
     "nome": "RODO ALUMINIO 40CM C/CABO 1,50 MT C/ROSCA SANCHES",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 43.5,
-    "estoque": 17.0
+    "estoque": 41.0
   },
   {
     "codigo": "1134",
@@ -2664,7 +2664,7 @@
     "nome": "RODO COMBINADO 22CM SANCHES",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 46.5,
-    "estoque": 7.0
+    "estoque": 10.0
   },
   {
     "codigo": "1293",
