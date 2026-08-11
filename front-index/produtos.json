@@ -291,7 +291,7 @@
     "nome": "CABO DE MADEIRA 1,30CM  LISO SANCHES",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 7.5,
-    "estoque": 14.0
+    "estoque": 38.0
   },
   {
     "codigo": "253",
@@ -1782,7 +1782,7 @@
     "nome": "RODO PIA IDEAL SANCHES",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 5.99,
-    "estoque": -1.0
+    "estoque": 12.0
   },
   {
     "codigo": "852",
@@ -2482,7 +2482,7 @@
     "nome": "FIBRA BRANCA LIMP. LEVE BETTANIN",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 3.99,
-    "estoque": 28.0
+    "estoque": 52.0
   },
   {
     "codigo": "1151",
@@ -2503,7 +2503,7 @@
     "nome": "LIMPA AZULEJO C/CABO SANCHES",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 13.5,
-    "estoque": 24.0
+    "estoque": 36.0
   },
   {
     "codigo": "1159",
@@ -3273,7 +3273,7 @@
     "nome": "CABO DE ALUMINIO C/ROSCA 1,5MT SANCHES",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 23.5,
-    "estoque": -12.0
+    "estoque": 24.0
   },
   {
     "codigo": "1683",
@@ -3553,7 +3553,7 @@
     "nome": "LIMPA VIDRO  SANCHES",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 8.5,
-    "estoque": 48.0
+    "estoque": 72.0
   },
   {
     "codigo": "1905",
@@ -6416,7 +6416,7 @@
     "nome": "LIMPA AZULEJO  SEM CABO SANCHES",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 8.5,
-    "estoque": 36.0
+    "estoque": 48.0
   },
   {
     "codigo": "11682",
@@ -6451,7 +6451,7 @@
     "nome": "DESENTUPIDOR SANCHES",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 11.5,
-    "estoque": 12.0
+    "estoque": 25.0
   },
   {
     "codigo": "14482",
@@ -7627,7 +7627,7 @@
     "nome": "FIBRA LIMP. USO GERAL",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 8.0,
-    "estoque": 20.0
+    "estoque": 41.0
   },
   {
     "codigo": "129089",
