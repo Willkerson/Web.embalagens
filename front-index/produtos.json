@@ -179,7 +179,7 @@
     "nome": "DESINFETANTE HERBAL 5L SANOL",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 22.99,
-    "estoque": 5.0
+    "estoque": 4.0
   },
   {
     "codigo": "164",
@@ -417,7 +417,7 @@
     "nome": "PAPEL HIGIENICO  F/DUPLA C/16UN 10X30M NESS",
     "categoria": "PRODUTO DE HIGIENE",
     "preco": 31.99,
-    "estoque": 9.0
+    "estoque": 8.0
   },
   {
     "codigo": "315",
@@ -494,7 +494,7 @@
     "nome": "PLASTICO BOLHA 43X10M MICRA 20 MN. PLAST",
     "categoria": "Embalagem",
     "preco": 16.99,
-    "estoque": 12.0
+    "estoque": 11.0
   },
   {
     "codigo": "343",
@@ -564,7 +564,7 @@
     "nome": "POTE RED.145 C/TAMPA C/24UN  PRAFESTA",
     "categoria": "DESCARTAVEIS",
     "preco": 15.0,
-    "estoque": 3.0
+    "estoque": 2.0
   },
   {
     "codigo": "367",
@@ -620,7 +620,7 @@
     "nome": "PANO DE CHAO XADREZ 45CMX68CM SOUZA BR2",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 4.7,
-    "estoque": 283.0
+    "estoque": 281.0
   },
   {
     "codigo": "390",
@@ -669,7 +669,7 @@
     "nome": "GARFO SOBREMESA BRANCO C/50UN ELITE",
     "categoria": "DESCARTAVEIS",
     "preco": 3.99,
-    "estoque": 48.0
+    "estoque": 45.0
   },
   {
     "codigo": "406",
@@ -683,7 +683,7 @@
     "nome": "G56MM TORTA MEDIA 1,7KG BR26CM GALVONOTEK",
     "categoria": "DESCARTAVEIS",
     "preco": 5.5,
-    "estoque": 24.0
+    "estoque": 23.0
   },
   {
     "codigo": "409",
@@ -739,7 +739,7 @@
     "nome": "COLHER SOBREMESA BRANCA C/50UN ELITE",
     "categoria": "DESCARTAVEIS",
     "preco": 3.99,
-    "estoque": 14.0
+    "estoque": 13.0
   },
   {
     "codigo": "423",
@@ -942,7 +942,7 @@
     "nome": "FITA ADESIVA 18X50M ALFACELL",
     "categoria": "Embalagem",
     "preco": 2.5,
-    "estoque": -11.0
+    "estoque": -12.0
   },
   {
     "codigo": "534",
@@ -998,7 +998,7 @@
     "nome": "DETERGENTE SUPREMA NATURAL CLEAR 500ML",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 3.5,
-    "estoque": 24.0
+    "estoque": 23.0
   },
   {
     "codigo": "559",
@@ -1145,7 +1145,7 @@
     "nome": "ALCOOL 70% LIQUIDO 1L  HORUS",
     "categoria": "PRODUTO DE HIGIENE",
     "preco": 9.99,
-    "estoque": 16.0
+    "estoque": 15.0
   },
   {
     "codigo": "615",
@@ -1257,7 +1257,7 @@
     "nome": "ASSADEIRA DE ALUMINIO RETANGULAR PRA VIAGEM 4L",
     "categoria": "DESCARTAVEIS",
     "preco": 5.99,
-    "estoque": 3.0
+    "estoque": 40.0
   },
   {
     "codigo": "656",
@@ -1873,7 +1873,7 @@
     "nome": "COPO DESCARTAVEL TRANSPARENTE 180ML C/100UN TOTAL PLAST",
     "categoria": "DESCARTAVEIS",
     "preco": 7.5,
-    "estoque": 381.0
+    "estoque": 379.0
   },
   {
     "codigo": "897",
@@ -2195,7 +2195,7 @@
     "nome": "SACOS PLASTICO  200G 15x20 +/-120un",
     "categoria": "Embalagem",
     "preco": 10.0,
-    "estoque": -6.0
+    "estoque": -8.0
   },
   {
     "codigo": "1016",
@@ -2230,7 +2230,7 @@
     "nome": "SACO P/ LIXO PRETO P8 60L C/50UN",
     "categoria": "SACO LIXO",
     "preco": 38.25,
-    "estoque": 20.0
+    "estoque": 19.0
   },
   {
     "codigo": "1042",
@@ -2265,7 +2265,7 @@
     "nome": "TOP LIXO PIA E BANHEIRO LAVANDA C/40UN PACK LIXO",
     "categoria": "SACO LIXO",
     "preco": 8.99,
-    "estoque": 49.0
+    "estoque": 47.0
   },
   {
     "codigo": "1048",
@@ -2286,21 +2286,21 @@
     "nome": "SACO P/ LIXO PRETO P6 40L C/10UN",
     "categoria": "SACO LIXO",
     "preco": 5.5,
-    "estoque": 45.0
+    "estoque": 41.0
   },
   {
     "codigo": "1052",
     "nome": "SACO P/ LIXO PRETO P8 60L C/10UN",
     "categoria": "SACO LIXO",
     "preco": 8.99,
-    "estoque": 44.0
+    "estoque": 43.0
   },
   {
     "codigo": "1053",
     "nome": "SACOS P/LIXO 100L P8 C10UN PRETO",
     "categoria": "SACO LIXO",
     "preco": 13.5,
-    "estoque": 38.0
+    "estoque": 35.0
   },
   {
     "codigo": "1055",
@@ -2468,7 +2468,7 @@
     "nome": "FIBRA LIMP. PESADA 1UN 260X102MM BETTANIN",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 4.99,
-    "estoque": 25.0
+    "estoque": 24.0
   },
   {
     "codigo": "1149",
@@ -2482,7 +2482,7 @@
     "nome": "FIBRA BRANCA LIMP. LEVE BETTANIN",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 3.99,
-    "estoque": 76.0
+    "estoque": 75.0
   },
   {
     "codigo": "1151",
@@ -2726,8 +2726,8 @@
     "codigo": "1313",
     "nome": "BPR-23 PRATO ISOPOR 23CM C/250UN BOM APETITE",
     "categoria": "DESCARTAVEIS",
-    "preco": 118.99,
-    "estoque": 2.0
+    "preco": 112.0,
+    "estoque": 3.0
   },
   {
     "codigo": "1314",
@@ -2811,7 +2811,7 @@
     "nome": "TOALHA INTERFOLHA (OURO) CELULOSE ISAPEL C/1000UN",
     "categoria": "PRODUTO DE HIGIENE",
     "preco": 23.0,
-    "estoque": 55.0
+    "estoque": 52.0
   },
   {
     "codigo": "1341",
@@ -2867,7 +2867,7 @@
     "nome": "KIT POTE E TAMPA RET. 500ML C/12UN GOUR MAX",
     "categoria": "DESCARTAVEIS",
     "preco": 16.99,
-    "estoque": -7.0
+    "estoque": -8.0
   },
   {
     "codigo": "1360",
@@ -3007,7 +3007,7 @@
     "nome": "POTE 100ML C/100UN COPOMAIS",
     "categoria": "DESCARTAVEIS",
     "preco": 6.5,
-    "estoque": 27.0
+    "estoque": 26.0
   },
   {
     "codigo": "1465",
@@ -3028,7 +3028,7 @@
     "nome": "D50MA TORTA ALTA 1,7KG DONA RITA",
     "categoria": "Embalagem",
     "preco": 3.5,
-    "estoque": 35.0
+    "estoque": 32.0
   },
   {
     "codigo": "1475",
@@ -3126,7 +3126,7 @@
     "nome": "PANO DE PRATO BRANCO/ESTAMPADO TATI/NACIONAL 66X38CM",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 4.3,
-    "estoque": 379.0
+    "estoque": 377.0
   },
   {
     "codigo": "1530",
@@ -3161,7 +3161,7 @@
     "nome": "PRATO BRANCO RASO 15CM C/10UN TOTAL PLAST",
     "categoria": "DESCARTAVEIS",
     "preco": 2.5,
-    "estoque": -136.0
+    "estoque": -140.0
   },
   {
     "codigo": "1548",
@@ -3245,7 +3245,7 @@
     "nome": "D50MM TORTA MDIA 1,5KG BR24CM DONA RITA",
     "categoria": "DESCARTAVEIS",
     "preco": 3.0,
-    "estoque": 114.0
+    "estoque": 94.0
   },
   {
     "codigo": "1649",
@@ -3266,7 +3266,7 @@
     "nome": "HAMBURGUEIRA BH01 C/100UN BOM APETITE",
     "categoria": "Embalagem",
     "preco": 26.0,
-    "estoque": 4.0
+    "estoque": 12.0
   },
   {
     "codigo": "1666",
@@ -3805,7 +3805,7 @@
     "nome": "FOLHA DE ALUMINIO 4MX30CM WYDA",
     "categoria": "Embalagem",
     "preco": 5.5,
-    "estoque": -5.0
+    "estoque": -6.0
   },
   {
     "codigo": "2094",
@@ -4358,7 +4358,7 @@
     "nome": "G240 BANDEJA PRETA FORNEAVEL C/ TAMPA 800ML GALVANOTEK",
     "categoria": "Embalagem",
     "preco": 3.0,
-    "estoque": 85.0
+    "estoque": 80.0
   },
   {
     "codigo": "2658",
@@ -4491,7 +4491,7 @@
     "nome": "ODORIZANTE DE AMBIENTE GEL 60G MARINE PURO AR",
     "categoria": "PRODUTO DE HIGIENE",
     "preco": 12.3,
-    "estoque": 31.0
+    "estoque": 30.0
   },
   {
     "codigo": "2806",
@@ -4533,7 +4533,7 @@
     "nome": "DISP. PAPEL HIG. ROLAO BRANCO PLUS SUST TRILHA",
     "categoria": "DESCARTAVEIS",
     "preco": 31.99,
-    "estoque": 11.0
+    "estoque": 9.0
   },
   {
     "codigo": "2823",
@@ -4603,7 +4603,7 @@
     "nome": "D650 DOCE QUADRADO 200ML C/10UN CRISTAL",
     "categoria": "DESCARTAVEIS",
     "preco": 5.0,
-    "estoque": 21.0
+    "estoque": 17.0
   },
   {
     "codigo": "2838",
@@ -4995,7 +4995,7 @@
     "nome": "DETERGENTE LIMAO/ALOE VERA SUPREMA 500ML",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 3.5,
-    "estoque": 24.0
+    "estoque": 22.0
   },
   {
     "codigo": "3075",
@@ -5036,8 +5036,8 @@
     "codigo": "3106",
     "nome": "POTE E TAMPA RET. 750ML C/24UN GOUR MAX",
     "categoria": "DESCARTAVEIS",
-    "preco": 42.0,
-    "estoque": 8.0
+    "preco": 42.99,
+    "estoque": 14.0
   },
   {
     "codigo": "3107",
@@ -5184,7 +5184,7 @@
     "nome": "PACK LIXO PIA E BANHEIRO BIO CHA BRANCO C/80UN",
     "categoria": "SACO LIXO",
     "preco": 13.99,
-    "estoque": 34.0
+    "estoque": 33.0
   },
   {
     "codigo": "3147",
@@ -5527,7 +5527,7 @@
     "nome": "PANOS DE MICROFIBRAS C/3UN ALKLIN",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 10.99,
-    "estoque": 7.0
+    "estoque": 6.0
   },
   {
     "codigo": "3995",
@@ -5625,7 +5625,7 @@
     "nome": "TOP LIXO PRETO 50L C/30UN PACK LIXO",
     "categoria": "SACO LIXO",
     "preco": 19.99,
-    "estoque": 11.0
+    "estoque": 10.0
   },
   {
     "codigo": "4391",
@@ -5653,6 +5653,13 @@
     "nome": "LIMPA ESTOFADOS SPRAY 300ML ZIP",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 13.0,
+    "estoque": 0.0
+  },
+  {
+    "codigo": "4992",
+    "nome": "PRATO RASO 15CM GPACK",
+    "categoria": "DESCARTAVEIS",
+    "preco": 1.99,
     "estoque": 0.0
   },
   {
@@ -6017,7 +6024,7 @@
     "nome": "SACO P/LIXO PRETO 20L P5 C/10UN",
     "categoria": "SACO LIXO",
     "preco": 4.0,
-    "estoque": 41.0
+    "estoque": 39.0
   },
   {
     "codigo": "7899",
@@ -6143,7 +6150,7 @@
     "nome": "ESTILETE 18MM REFIL C/3UN LAMINA",
     "categoria": "UTENSILIOS",
     "preco": 10.0,
-    "estoque": 2.0
+    "estoque": 1.0
   },
   {
     "codigo": "7991",
@@ -6297,7 +6304,7 @@
     "nome": "BANDEJA BR03 RASA C/100UN 235X18X18X16M",
     "categoria": "DESCARTAVEIS",
     "preco": 32.0,
-    "estoque": 6.0
+    "estoque": 8.0
   },
   {
     "codigo": "9191",
@@ -6850,7 +6857,7 @@
     "nome": "SODA CAUSTICA VOREL 500G",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 20.0,
-    "estoque": 18.0
+    "estoque": 17.0
   },
   {
     "codigo": "31686",
@@ -6969,7 +6976,7 @@
     "nome": "CAKEBOARD BRANCO 22CM",
     "categoria": "Embalagem",
     "preco": 3.99,
-    "estoque": 9.0
+    "estoque": 8.0
   },
   {
     "codigo": "79019",
@@ -7620,7 +7627,7 @@
     "nome": "CANETA BIC DURA+",
     "categoria": "PAPELARIA",
     "preco": 1.5,
-    "estoque": 19.0
+    "estoque": 17.0
   },
   {
     "codigo": "129088",
@@ -7765,7 +7772,7 @@
   {
     "codigo": "129108",
     "nome": "CABO EXTENSOR 3MT SANCHES",
-    "categoria": "-",
+    "categoria": "PRODUTO DE LIMPEZA",
     "preco": 73.0,
     "estoque": -1.0
   },
@@ -7837,7 +7844,7 @@
     "nome": "LIXEIRA C/PEDAL 7L PRETO ARQPLAST",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 25.5,
-    "estoque": -2.0
+    "estoque": -3.0
   },
   {
     "codigo": "2578_1136",
