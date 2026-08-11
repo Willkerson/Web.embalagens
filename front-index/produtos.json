@@ -2104,7 +2104,7 @@
     "nome": "MARMITEX DE ISOPOR 750ML C/10UN COPOBRAS",
     "categoria": "DESCARTAVEIS",
     "preco": 8.0,
-    "estoque": 9.0
+    "estoque": 7.0
   },
   {
     "codigo": "0229",
@@ -2661,7 +2661,7 @@
   },
   {
     "codigo": "1291",
-    "nome": "RODO COMB. 22CM SANCHES",
+    "nome": "RODO COMBINADO 22CM SANCHES",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 46.5,
     "estoque": 1.0
@@ -3896,7 +3896,7 @@
     "nome": "FITA ADESIVA 45X100M  TRANSPARENTE PAPI",
     "categoria": "PAPELARIA",
     "preco": 10.5,
-    "estoque": 81.0
+    "estoque": 80.0
   },
   {
     "codigo": "2164",
@@ -5590,7 +5590,7 @@
     "nome": "FILME DE PVC  300 METROS 38CMX300M TECFILM",
     "categoria": "Embalagem",
     "preco": 52.0,
-    "estoque": 0.0
+    "estoque": -1.0
   },
   {
     "codigo": "4009",
