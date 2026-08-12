@@ -4,7 +4,7 @@
     "nome": "ESCOVA SANITARIA C/ ESTOJO SANIBRISA",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 14.5,
-    "estoque": 18.0
+    "estoque": 17.0
   },
   {
     "codigo": "044",
@@ -179,7 +179,7 @@
     "nome": "DESINFETANTE HERBAL 5L SANOL",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 22.99,
-    "estoque": 4.0
+    "estoque": 3.0
   },
   {
     "codigo": "164",
@@ -627,7 +627,7 @@
     "nome": "PANO DE CHAO BRANCO ALVEJADO 45CMX69CM SOUZA PPR28",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 6.7,
-    "estoque": 335.0
+    "estoque": 331.0
   },
   {
     "codigo": "391",
@@ -1019,7 +1019,7 @@
     "nome": "AGUA SANITARIA SUPREMA 2L",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 8.0,
-    "estoque": 17.0
+    "estoque": 16.0
   },
   {
     "codigo": "568",
@@ -1306,7 +1306,7 @@
     "nome": "PANO MULTIUSO VERDE C/50 PANOS 30CMX25CM MR. PLUS TALGE",
     "categoria": "PRODUTO DE HIGIENE",
     "preco": 17.0,
-    "estoque": 18.0
+    "estoque": 17.0
   },
   {
     "codigo": "668",
@@ -1656,7 +1656,7 @@
     "nome": "LIMPADOR PERF. JASMINE 500ML SANOL",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 6.5,
-    "estoque": 7.0
+    "estoque": 6.0
   },
   {
     "codigo": "813",
@@ -2230,7 +2230,7 @@
     "nome": "SACO P/ LIXO PRETO P8 60L C/50UN",
     "categoria": "SACO LIXO",
     "preco": 38.25,
-    "estoque": 19.0
+    "estoque": 18.0
   },
   {
     "codigo": "1042",
@@ -2272,7 +2272,7 @@
     "nome": "SACO P/ LIXO PRETO 100L C/50UN",
     "categoria": "SACO LIXO",
     "preco": 57.5,
-    "estoque": 30.0
+    "estoque": 29.0
   },
   {
     "codigo": "1049",
@@ -2468,14 +2468,14 @@
     "nome": "FIBRA LIMP. PESADA 1UN 260X102MM BETTANIN",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 4.99,
-    "estoque": 24.0
+    "estoque": 23.0
   },
   {
     "codigo": "1149",
     "nome": "FIBRA LIMP. USO GERAL 1UN 260X102MM BETTANIN",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 3.0,
-    "estoque": -4.0
+    "estoque": -7.0
   },
   {
     "codigo": "1150",
@@ -3140,7 +3140,7 @@
     "nome": "AGUA SANITARIA 5L SUPREMA",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 18.99,
-    "estoque": 8.0
+    "estoque": 7.0
   },
   {
     "codigo": "1542",
@@ -3483,7 +3483,7 @@
     "nome": "PEDRA SANITARIA 25G MISTA AZULIM",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 2.99,
-    "estoque": 54.0
+    "estoque": 51.0
   },
   {
     "codigo": "1853",
@@ -3532,7 +3532,7 @@
     "nome": "LIMPA CERAMICAS E AZULEJOS 2L AZULIM START",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 21.99,
-    "estoque": 4.0
+    "estoque": 3.0
   },
   {
     "codigo": "1900",
@@ -4274,7 +4274,7 @@
     "nome": "LIMPADOR CONCENTRADO ALECRIM 120ML SANOL",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 12.99,
-    "estoque": -17.0
+    "estoque": -18.0
   },
   {
     "codigo": "2531",
@@ -5051,7 +5051,7 @@
     "nome": "DETERGENTE NEUTRO SUPREMA 5L",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 32.99,
-    "estoque": 7.0
+    "estoque": 6.0
   },
   {
     "codigo": "3110",
@@ -5457,7 +5457,7 @@
     "nome": "LIMPADOR CONCENTRADO LAVANDA 120ML SANOL",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 12.99,
-    "estoque": -12.0
+    "estoque": -13.0
   },
   {
     "codigo": "3979",
@@ -6129,7 +6129,7 @@
     "nome": "ESCOVA MULTIUSO DE ROUPA ALKLIN",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 7.5,
-    "estoque": 3.0
+    "estoque": 2.0
   },
   {
     "codigo": "7973",
@@ -6192,7 +6192,7 @@
     "nome": "ALCOOL 70% LIQUIDO 5L BARBAREX",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 49.99,
-    "estoque": 4.0
+    "estoque": 3.0
   },
   {
     "codigo": "8349",
@@ -6710,7 +6710,7 @@
     "nome": "MOP ABRASIVO REFIL ALKLIN 1UN",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 12.99,
-    "estoque": 12.0
+    "estoque": 9.0
   },
   {
     "codigo": "31664",
