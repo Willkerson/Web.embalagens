@@ -4,7 +4,7 @@
     "nome": "ESCOVA SANITARIA C/ ESTOJO SANIBRISA",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 14.5,
-    "estoque": 17.0
+    "estoque": 16.0
   },
   {
     "codigo": "044",
@@ -81,14 +81,14 @@
     "nome": "RODO 40CM C/CABO ALKLIN",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 16.25,
-    "estoque": 34.0
+    "estoque": 33.0
   },
   {
     "codigo": "125",
     "nome": "SUPER PÁ C/CABO ALKLIN",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 19.99,
-    "estoque": 14.0
+    "estoque": 13.0
   },
   {
     "codigo": "129",
@@ -172,7 +172,7 @@
     "nome": "SACOLA KRAF P 1UN 17X10CM PLUMA",
     "categoria": "Embalagem",
     "preco": 1.4,
-    "estoque": 12.0
+    "estoque": 9.0
   },
   {
     "codigo": "163",
@@ -326,7 +326,7 @@
     "nome": "DESINFETANTE LAVANDA 5L SANOL",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 22.99,
-    "estoque": 8.0
+    "estoque": 6.0
   },
   {
     "codigo": "271",
@@ -354,21 +354,21 @@
     "nome": "ESPONJA MULTIUSO C/4UN ALKLIN",
     "categoria": "UTENSILIOS",
     "preco": 3.99,
-    "estoque": 308.0
+    "estoque": 303.0
   },
   {
     "codigo": "294",
     "nome": "VASSOURA DENTRO E FORA C/CABO ALKLIN",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 15.0,
-    "estoque": -11.0
+    "estoque": -12.0
   },
   {
     "codigo": "295",
     "nome": "VASSOURA PREMIUM COM CABO ALKLIN",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 18.0,
-    "estoque": 8.0
+    "estoque": 7.0
   },
   {
     "codigo": "296",
@@ -396,7 +396,7 @@
     "nome": "PANO PANOTEK  REUTILIZAVEL C/40UN",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 12.0,
-    "estoque": 20.0
+    "estoque": 17.0
   },
   {
     "codigo": "312",
@@ -599,7 +599,7 @@
     "nome": "PAPEL MANTEIGA  7,5M X30CM THERM",
     "categoria": "Embalagem",
     "preco": 6.99,
-    "estoque": 23.0
+    "estoque": 22.0
   },
   {
     "codigo": "377",
@@ -620,21 +620,21 @@
     "nome": "PANO DE CHAO XADREZ 45CMX68CM SOUZA BR2",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 4.7,
-    "estoque": 278.0
+    "estoque": 272.0
   },
   {
     "codigo": "390",
     "nome": "PANO DE CHAO BRANCO ALVEJADO 45CMX69CM SOUZA PPR28",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 6.7,
-    "estoque": 331.0
+    "estoque": 318.0
   },
   {
     "codigo": "391",
     "nome": "PANO DE CHAO ALVEJADO CAIPIRA 45CMX68CM",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 5.25,
-    "estoque": 311.0
+    "estoque": 309.0
   },
   {
     "codigo": "398",
@@ -662,7 +662,7 @@
     "nome": "FILM DE PVC 30MTS  28X15M TECKFIM",
     "categoria": "ALIMENTO/GENERO ALIMENTICIO",
     "preco": 4.5,
-    "estoque": 16.0
+    "estoque": 15.0
   },
   {
     "codigo": "405",
@@ -676,7 +676,7 @@
     "nome": "GARFO SOBREMESA BRANCO C/50UN PRAFESTA",
     "categoria": "DESCARTAVEIS",
     "preco": 5.0,
-    "estoque": 32.0
+    "estoque": 31.0
   },
   {
     "codigo": "407",
@@ -1208,7 +1208,7 @@
     "nome": "TOP LIXO PRETO 15L C/60UN PACK LIXO",
     "categoria": "SACO LIXO",
     "preco": 17.99,
-    "estoque": 12.0
+    "estoque": 11.0
   },
   {
     "codigo": "637",
@@ -1306,7 +1306,7 @@
     "nome": "PANO MULTIUSO VERDE C/50 PANOS 30CMX25CM MR. PLUS TALGE",
     "categoria": "PRODUTO DE HIGIENE",
     "preco": 17.0,
-    "estoque": 17.0
+    "estoque": 16.0
   },
   {
     "codigo": "668",
@@ -1439,7 +1439,7 @@
     "nome": "DESENGORDURANTE 500ML LIMPEZA PESADA LIMAO  AZULIM START",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 16.0,
-    "estoque": 7.0
+    "estoque": 6.0
   },
   {
     "codigo": "738",
@@ -1565,7 +1565,7 @@
     "nome": "TIRA LIMO SPRAY 500ML AZULIM START",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 11.99,
-    "estoque": 25.0
+    "estoque": 24.0
   },
   {
     "codigo": "780",
@@ -1593,7 +1593,7 @@
     "nome": "LIMPA CERAMICAS E AZULEJOS AZULIM LAVANDA 1L START",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 11.5,
-    "estoque": 12.0
+    "estoque": 10.0
   },
   {
     "codigo": "789",
@@ -1656,7 +1656,7 @@
     "nome": "LIMPADOR PERF. JASMINE 500ML SANOL",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 6.5,
-    "estoque": 6.0
+    "estoque": 4.0
   },
   {
     "codigo": "813",
@@ -1950,7 +1950,7 @@
     "nome": "SACOLA  SOS LISA GG C/ALÇA C/20UN 30X20X36 PLUMA (PA00735)",
     "categoria": "Embalagem",
     "preco": 39.99,
-    "estoque": 28.0
+    "estoque": 26.0
   },
   {
     "codigo": "910",
@@ -1964,7 +1964,7 @@
     "nome": "DESINFETANTE LAVANDA SANOL 2L",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 8.99,
-    "estoque": 14.0
+    "estoque": 13.0
   },
   {
     "codigo": "915",
@@ -1978,14 +1978,14 @@
     "nome": "CAIXA P/ESFIHA N3 25X25X05 NIAGRA",
     "categoria": "Embalagem",
     "preco": 5.0,
-    "estoque": 10.0
+    "estoque": 9.0
   },
   {
     "codigo": "928",
     "nome": "CAIXA P/ESFIHAS N04 30X30X05 1 UN NIAGRA",
     "categoria": "Embalagem",
     "preco": 6.0,
-    "estoque": 2.0
+    "estoque": 1.0
   },
   {
     "codigo": "930",
@@ -2272,7 +2272,7 @@
     "nome": "SACO P/ LIXO PRETO 100L C/50UN",
     "categoria": "SACO LIXO",
     "preco": 57.5,
-    "estoque": 29.0
+    "estoque": 28.0
   },
   {
     "codigo": "1049",
@@ -2286,21 +2286,21 @@
     "nome": "SACO P/ LIXO PRETO P6 40L C/10UN",
     "categoria": "SACO LIXO",
     "preco": 5.5,
-    "estoque": 41.0
+    "estoque": 40.0
   },
   {
     "codigo": "1052",
     "nome": "SACO P/ LIXO PRETO P8 60L C/10UN",
     "categoria": "SACO LIXO",
     "preco": 8.99,
-    "estoque": 43.0
+    "estoque": 40.0
   },
   {
     "codigo": "1053",
     "nome": "SACOS P/LIXO 100L P8 C10UN PRETO",
     "categoria": "SACO LIXO",
     "preco": 13.5,
-    "estoque": 35.0
+    "estoque": 34.0
   },
   {
     "codigo": "1055",
@@ -2524,7 +2524,7 @@
     "nome": "FITA ADESIVA POLIPROPILENO TRANSPARENTE 48MMX40M TECTAPE",
     "categoria": "PAPELARIA",
     "preco": 4.99,
-    "estoque": 50.0
+    "estoque": 48.0
   },
   {
     "codigo": "1168",
@@ -2566,7 +2566,7 @@
     "nome": "SACO P/ LIXO PRETO P6 40L C/50UN",
     "categoria": "SACO LIXO",
     "preco": 25.0,
-    "estoque": 50.0
+    "estoque": 49.0
   },
   {
     "codigo": "1188",
@@ -2601,7 +2601,7 @@
     "nome": "BOBINA PICOTADA 2KG C/500UN P/ ALIMENTOS 20X28CM EXTRUSA",
     "categoria": "Embalagem",
     "preco": 19.0,
-    "estoque": 19.0
+    "estoque": 18.0
   },
   {
     "codigo": "1225",
@@ -2643,7 +2643,7 @@
     "nome": "BOBINA PICOTADA 2,5KG C/500UN P/ ALIMENTOS 25X33 EXTRUSA",
     "categoria": "Embalagem",
     "preco": 25.0,
-    "estoque": 10.0
+    "estoque": 9.0
   },
   {
     "codigo": "1281",
@@ -2706,11 +2706,11 @@
     "nome": "ESPONJA DE LÃ DE AÇO ASSOLAN  45G",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 3.0,
-    "estoque": 8.0
+    "estoque": 7.0
   },
   {
     "codigo": "1301",
-    "nome": "FILME STRETCH 50CM",
+    "nome": "FILME STRETCH 50CM X 300 M",
     "categoria": "Embalagem",
     "preco": 63.99,
     "estoque": 4.0
@@ -2734,7 +2734,7 @@
     "nome": "TOP LIXO PIA E BANHEIRO BRANCO C/40UN PACK LIXO",
     "categoria": "SACO LIXO",
     "preco": 8.99,
-    "estoque": 17.0
+    "estoque": 16.0
   },
   {
     "codigo": "1315",
@@ -2762,7 +2762,7 @@
     "nome": "FORMINHA DE PAPEL AZUL N4 C/100UN",
     "categoria": "Embalagem",
     "preco": 2.5,
-    "estoque": 7.0
+    "estoque": 6.0
   },
   {
     "codigo": "1323",
@@ -2979,7 +2979,7 @@
     "nome": "LACRE SEGURANCA PARA LANCHE ROLO C/500UN 30MMX90MM PLUMA",
     "categoria": "PAPELARIA",
     "preco": 29.0,
-    "estoque": 2.0
+    "estoque": 1.0
   },
   {
     "codigo": "1448",
@@ -3007,7 +3007,7 @@
     "nome": "POTE 100ML C/100UN COPOMAIS",
     "categoria": "DESCARTAVEIS",
     "preco": 6.5,
-    "estoque": 26.0
+    "estoque": 25.0
   },
   {
     "codigo": "1465",
@@ -3070,7 +3070,7 @@
     "nome": "D645 POTE REDONDO BASE E TAMPA C/10UN 120ML",
     "categoria": "DESCARTAVEIS",
     "preco": 3.5,
-    "estoque": 29.0
+    "estoque": 26.0
   },
   {
     "codigo": "1488",
@@ -3119,14 +3119,14 @@
     "nome": "TOALHA INTERFOLHA BRANCA PREMIUM WHITE PAPER C/1000UN",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 25.99,
-    "estoque": -27.0
+    "estoque": -39.0
   },
   {
     "codigo": "1526",
     "nome": "PANO DE PRATO BRANCO/ESTAMPADO TATI/NACIONAL 66X38CM",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 4.3,
-    "estoque": 377.0
+    "estoque": 373.0
   },
   {
     "codigo": "1530",
@@ -3140,7 +3140,7 @@
     "nome": "AGUA SANITARIA 5L SUPREMA",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 18.99,
-    "estoque": 7.0
+    "estoque": 5.0
   },
   {
     "codigo": "1542",
@@ -3161,7 +3161,7 @@
     "nome": "PRATO BRANCO RASO 15CM C/10UN TOTAL PLAST",
     "categoria": "DESCARTAVEIS",
     "preco": 2.5,
-    "estoque": -140.0
+    "estoque": -141.0
   },
   {
     "codigo": "1548",
@@ -3175,7 +3175,7 @@
     "nome": "GARRAFA PE QUADRADA 200ML C/10UN MALUGER",
     "categoria": "Embalagem",
     "preco": 8.99,
-    "estoque": 9.0
+    "estoque": 8.0
   },
   {
     "codigo": "1558",
@@ -3238,7 +3238,7 @@
     "nome": "SACO BRANCO KRAFT VI 19X19CM C/100UN",
     "categoria": "DESCARTAVEIS",
     "preco": 14.0,
-    "estoque": 30.0
+    "estoque": 27.0
   },
   {
     "codigo": "1600",
@@ -3273,7 +3273,7 @@
     "nome": "CABO DE ALUMINIO C/ROSCA 1,5MT SANCHES",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 23.5,
-    "estoque": 60.0
+    "estoque": 59.0
   },
   {
     "codigo": "1683",
@@ -3301,7 +3301,7 @@
     "nome": "SACOLA VERDE REFORÇADA 1KG 30x40",
     "categoria": "Embalagem",
     "preco": 19.99,
-    "estoque": 35.0
+    "estoque": 34.0
   },
   {
     "codigo": "1712",
@@ -3322,7 +3322,7 @@
     "nome": "SACOLA VERDE REFORÇADA 1KG 60X80",
     "categoria": "Embalagem",
     "preco": 19.99,
-    "estoque": 0.0
+    "estoque": -1.0
   },
   {
     "codigo": "1715",
@@ -3336,14 +3336,14 @@
     "nome": "SACOLA PRETA 1KG 30X40",
     "categoria": "Embalagem",
     "preco": 19.99,
-    "estoque": -1.0
+    "estoque": -2.0
   },
   {
     "codigo": "1719",
     "nome": "SACOLA PRETA 1KG 40X50",
     "categoria": "Embalagem",
     "preco": 19.99,
-    "estoque": 50.0
+    "estoque": 49.0
   },
   {
     "codigo": "1751",
@@ -3469,28 +3469,28 @@
     "nome": "LUVA DE VINIL G S/PO C/100UN TALGE",
     "categoria": "DESCARTAVEIS",
     "preco": 21.0,
-    "estoque": 16.0
+    "estoque": 15.0
   },
   {
     "codigo": "1820",
     "nome": "PANO MULTIUSO LARANJA C/50 PANOS 30CMX25CM MR. PLUS TALGE",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 17.0,
-    "estoque": 31.0
+    "estoque": 30.0
   },
   {
     "codigo": "1835",
     "nome": "PEDRA SANITARIA 25G MISTA AZULIM",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 2.99,
-    "estoque": 51.0
+    "estoque": 46.0
   },
   {
     "codigo": "1853",
     "nome": "TOP LIXO BRANCO 15L C/60UN PACK LIXO",
     "categoria": "SACO LIXO",
     "preco": 17.99,
-    "estoque": 18.0
+    "estoque": 17.0
   },
   {
     "codigo": "1854",
@@ -3532,7 +3532,7 @@
     "nome": "LIMPA CERAMICAS E AZULEJOS 2L AZULIM START",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 21.99,
-    "estoque": 3.0
+    "estoque": 2.0
   },
   {
     "codigo": "1900",
@@ -3553,14 +3553,14 @@
     "nome": "LIMPA VIDRO  SANCHES",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 8.5,
-    "estoque": 96.0
+    "estoque": 94.0
   },
   {
     "codigo": "1905",
     "nome": "SACOS PLASTICO PEBD 200G  20X30",
     "categoria": "Embalagem",
     "preco": 10.0,
-    "estoque": 40.0
+    "estoque": 39.0
   },
   {
     "codigo": "1908",
@@ -3609,7 +3609,7 @@
     "nome": "CUMBUCA C/TAMPA 500ML C/10UN BOM APETITE",
     "categoria": "DESCARTAVEIS",
     "preco": 6.99,
-    "estoque": -6.0
+    "estoque": -8.0
   },
   {
     "codigo": "1932",
@@ -3623,7 +3623,7 @@
     "nome": "MARMITEX DE ISOPOR 500ML C/100UN BOM APETITE",
     "categoria": "DESCARTAVEIS",
     "preco": 59.5,
-    "estoque": 8.0
+    "estoque": 7.0
   },
   {
     "codigo": "1934",
@@ -3665,7 +3665,7 @@
     "nome": "TOALHA INTERFOLHA LUXO 20X21CM C/1000FOLHAS WHITE PAPER",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 24.99,
-    "estoque": 22.0
+    "estoque": 21.0
   },
   {
     "codigo": "1981",
@@ -3679,7 +3679,7 @@
     "nome": "SACO P/ LIXO PRETO 200L C/10UN",
     "categoria": "SACO LIXO",
     "preco": 21.0,
-    "estoque": 40.0
+    "estoque": 39.0
   },
   {
     "codigo": "2002",
@@ -3742,7 +3742,7 @@
     "nome": "TOUCAS DESCARTAVEIS C/100UN 45X50CM BOMPACK",
     "categoria": "DESCARTAVEIS",
     "preco": 13.5,
-    "estoque": 12.0
+    "estoque": 11.0
   },
   {
     "codigo": "2067",
@@ -3840,14 +3840,14 @@
     "nome": "SACOLA BRANCA 1KG 30x40",
     "categoria": "SACO LIXO",
     "preco": 27.0,
-    "estoque": -1.0
+    "estoque": -2.0
   },
   {
     "codigo": "2102",
     "nome": "SACOLA BRANCA 1KG 35x45",
     "categoria": "Embalagem",
     "preco": 27.0,
-    "estoque": 7.0
+    "estoque": 6.0
   },
   {
     "codigo": "2103",
@@ -3896,7 +3896,7 @@
     "nome": "FITA ADESIVA 45X100M  TRANSPARENTE PAPI",
     "categoria": "PAPELARIA",
     "preco": 10.5,
-    "estoque": 77.0
+    "estoque": 76.0
   },
   {
     "codigo": "2164",
@@ -3966,7 +3966,7 @@
     "nome": "LUVA PLASTICA DESCARTAVEL HDPE C/100UN MEDIX",
     "categoria": "DESCARTAVEIS",
     "preco": 3.0,
-    "estoque": -50.0
+    "estoque": -51.0
   },
   {
     "codigo": "2278",
@@ -3980,7 +3980,7 @@
     "nome": "CAIXA COPO 180ML TOTALPLAST C/2500UN FECHADA",
     "categoria": "DESCARTAVEIS",
     "preco": 176.0,
-    "estoque": 15.0
+    "estoque": 14.0
   },
   {
     "codigo": "2296",
@@ -4015,7 +4015,7 @@
     "nome": "ESPETO DE BAMBU 30CM C/50UN VABENE",
     "categoria": "UTENSILIOS",
     "preco": 4.0,
-    "estoque": -14.0
+    "estoque": -16.0
   },
   {
     "codigo": "2311",
@@ -4169,7 +4169,7 @@
     "nome": "POTE E TAMPA RET.350ML C/24UN PRAFESTA",
     "categoria": "DESCARTAVEIS",
     "preco": 30.5,
-    "estoque": 4.0
+    "estoque": 3.0
   },
   {
     "codigo": "2412",
@@ -4190,14 +4190,14 @@
     "nome": "GUARDANAPO DE PAPEL WHITEPAPER C/50UN 20X22CM",
     "categoria": "DESCARTAVEIS",
     "preco": 1.99,
-    "estoque": 176.0
+    "estoque": 169.0
   },
   {
     "codigo": "2445",
     "nome": "GUARDANAPO DE PAPEL 30X30CM C/50UN WHITEPAPER",
     "categoria": "DESCARTAVEIS",
     "preco": 3.0,
-    "estoque": 6.0
+    "estoque": 5.0
   },
   {
     "codigo": "2452",
@@ -4232,7 +4232,7 @@
     "nome": "D-695 KIT POTE TRANSPARENTE  P/ MOLHO C/50UN",
     "categoria": "DESCARTAVEIS",
     "preco": 13.5,
-    "estoque": 38.0
+    "estoque": 37.0
   },
   {
     "codigo": "2474",
@@ -4274,7 +4274,7 @@
     "nome": "LIMPADOR CONCENTRADO ALECRIM 120ML SANOL",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 12.99,
-    "estoque": -18.0
+    "estoque": -22.0
   },
   {
     "codigo": "2531",
@@ -4337,7 +4337,7 @@
     "nome": "G37MA TORTA ALTA 1,2KG 23CM GALVONOTECK",
     "categoria": "Embalagem",
     "preco": 4.5,
-    "estoque": 77.0
+    "estoque": 76.0
   },
   {
     "codigo": "2631",
@@ -4428,7 +4428,7 @@
     "nome": "POTE REDONDO 250ML C/TAMPA C/24UN DANUBIO",
     "categoria": "DESCARTAVEIS",
     "preco": 15.99,
-    "estoque": 23.0
+    "estoque": 22.0
   },
   {
     "codigo": "2717",
@@ -4449,7 +4449,7 @@
     "nome": "SACO KRAFT P3 C/100UN 11X15CM PLUMA",
     "categoria": "DESCARTAVEIS",
     "preco": 7.0,
-    "estoque": 24.0
+    "estoque": 21.0
   },
   {
     "codigo": "2775",
@@ -4820,7 +4820,7 @@
     "nome": "DETERGENTE NEUTRO 5L DVISAO",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 25.99,
-    "estoque": 2.0
+    "estoque": 1.0
   },
   {
     "codigo": "2985",
@@ -4877,6 +4877,13 @@
     "categoria": "Embalagem",
     "preco": 10.0,
     "estoque": -2.0
+  },
+  {
+    "codigo": "2999",
+    "nome": "SACO ZIP N03 07x12CM C/20UN  ARMAZEM",
+    "categoria": "Embalagem",
+    "preco": 2.5,
+    "estoque": 0.0
   },
   {
     "codigo": "3028",
@@ -4967,7 +4974,7 @@
     "nome": "POTE E TAMPA RET.350ML C/24UN GOUR MAX",
     "categoria": "DESCARTAVEIS",
     "preco": 28.99,
-    "estoque": 12.0
+    "estoque": 11.0
   },
   {
     "codigo": "3060",
@@ -4981,7 +4988,7 @@
     "nome": "SACO PLASTICO PE C/100UN P/GELAO 05X24X02",
     "categoria": "DESCARTAVEIS",
     "preco": 4.0,
-    "estoque": 148.0
+    "estoque": 147.0
   },
   {
     "codigo": "3072",
@@ -5030,7 +5037,7 @@
     "nome": "POTE E TAMPA RET.500ML C/24UN GOUR MAX",
     "categoria": "DESCARTAVEIS",
     "preco": 29.99,
-    "estoque": 9.0
+    "estoque": 8.0
   },
   {
     "codigo": "3106",
@@ -5051,7 +5058,7 @@
     "nome": "DETERGENTE NEUTRO SUPREMA 5L",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 32.99,
-    "estoque": 6.0
+    "estoque": 5.0
   },
   {
     "codigo": "3110",
@@ -5100,7 +5107,7 @@
     "nome": "SACOLA S3 KRAFT  LISA DIPRIMA 23X11X29 C/10UN PLUMA (PA10803)",
     "categoria": "PAPELARIA",
     "preco": 16.8,
-    "estoque": 17.0
+    "estoque": 15.0
   },
   {
     "codigo": "3127",
@@ -5296,14 +5303,14 @@
     "nome": "PANO PARA PISO MICROFIIBRAS COLORS 48X70CM ALKLIN",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 12.5,
-    "estoque": -14.0
+    "estoque": -15.0
   },
   {
     "codigo": "3191",
     "nome": "PAPEL HIGIENICO FOFINHO FOLHA DUPLA 4X30M",
     "categoria": "PRODUTO DE HIGIENE",
     "preco": 8.5,
-    "estoque": 62.0
+    "estoque": 61.0
   },
   {
     "codigo": "3192",
@@ -5317,7 +5324,7 @@
     "nome": "POTE E TAMPA REDONDO 350ML C/24UN DANUBIO",
     "categoria": "DESCARTAVEIS",
     "preco": 19.5,
-    "estoque": 23.0
+    "estoque": 22.0
   },
   {
     "codigo": "3198",
@@ -5331,7 +5338,7 @@
     "nome": "PAPEL TOALHA SCALA PLUS C/120 TOALHAS C/2 ROLOS",
     "categoria": "PRODUTO DE HIGIENE",
     "preco": 8.5,
-    "estoque": 62.0
+    "estoque": 60.0
   },
   {
     "codigo": "3267",
@@ -5380,7 +5387,7 @@
     "nome": "PANO MULTIUSO AZUL C/600 PANOS 28CMX240M NOBRE",
     "categoria": "PRODUTO DE HIGIENE",
     "preco": 79.99,
-    "estoque": 2.0
+    "estoque": 1.0
   },
   {
     "codigo": "3665",
@@ -5478,7 +5485,7 @@
     "nome": "LIMPADOR CONCENTRADO CHA BRANCO 120ML SANOL",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 12.99,
-    "estoque": 10.0
+    "estoque": 9.0
   },
   {
     "codigo": "3982",
@@ -5527,7 +5534,7 @@
     "nome": "PANOS DE MICROFIBRAS C/3UN ALKLIN",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 10.99,
-    "estoque": 6.0
+    "estoque": 5.0
   },
   {
     "codigo": "3995",
@@ -5660,7 +5667,7 @@
     "nome": "PRATO RASO 15CM GPACK",
     "categoria": "DESCARTAVEIS",
     "preco": 1.99,
-    "estoque": 97.0
+    "estoque": 96.0
   },
   {
     "codigo": "5050",
@@ -5730,7 +5737,7 @@
     "nome": "B120 MARMITEX ALUMINIO 500ML C/10UN PRAV.",
     "categoria": "Embalagem",
     "preco": 9.5,
-    "estoque": 16.0
+    "estoque": 15.0
   },
   {
     "codigo": "6050",
@@ -5744,7 +5751,7 @@
     "nome": "CHAMA COLORIDA TOP FESTAS CINZA",
     "categoria": "-",
     "preco": 8.5,
-    "estoque": -4.0
+    "estoque": -5.0
   },
   {
     "codigo": "6105",
@@ -5905,7 +5912,7 @@
     "nome": "SABONETE LIQ. FRAGRANCIA ALGAS MARINHAS 500ML  LAFEH",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 8.99,
-    "estoque": 6.0
+    "estoque": 5.0
   },
   {
     "codigo": "7322",
@@ -6129,7 +6136,7 @@
     "nome": "ESCOVA MULTIUSO DE ROUPA ALKLIN",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 7.5,
-    "estoque": 2.0
+    "estoque": 1.0
   },
   {
     "codigo": "7973",
@@ -6192,7 +6199,7 @@
     "nome": "ALCOOL 70% LIQUIDO 5L BARBAREX",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 49.99,
-    "estoque": 3.0
+    "estoque": 2.0
   },
   {
     "codigo": "8349",
@@ -6304,7 +6311,7 @@
     "nome": "BANDEJA BR03 RASA C/100UN 235X18X18X16M",
     "categoria": "DESCARTAVEIS",
     "preco": 32.0,
-    "estoque": 8.0
+    "estoque": 7.0
   },
   {
     "codigo": "9191",
@@ -6353,7 +6360,7 @@
     "nome": "SACOS PLASTICO PEBD 8X40X0,06 200g  COLOMBO",
     "categoria": "Embalagem",
     "preco": 10.0,
-    "estoque": 97.0
+    "estoque": 96.0
   },
   {
     "codigo": "10134",
@@ -6374,7 +6381,7 @@
     "nome": "PANO MULTIUSO AZUL C/50 PANOS 30CMX25CM MR. PLUS TALGE",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 17.0,
-    "estoque": 17.0
+    "estoque": 16.0
   },
   {
     "codigo": "11176",
@@ -6430,7 +6437,7 @@
     "nome": "D70M BOLO E TORTA RET MEDIA BASE BRANCA",
     "categoria": "DESCARTAVEIS",
     "preco": 11.99,
-    "estoque": 18.0
+    "estoque": 17.0
   },
   {
     "codigo": "12345",
@@ -6577,7 +6584,7 @@
     "nome": "D640 DOCE REDONDO 170ML CRISTAL C/10UN DONA RITA",
     "categoria": "DESCARTAVEIS",
     "preco": 3.99,
-    "estoque": 64.0
+    "estoque": 57.0
   },
   {
     "codigo": "29227",
@@ -6710,7 +6717,7 @@
     "nome": "MOP ABRASIVO REFIL ALKLIN 1UN",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 12.99,
-    "estoque": 9.0
+    "estoque": 6.0
   },
   {
     "codigo": "31664",
@@ -7767,7 +7774,7 @@
     "nome": "PRENDEDOR PRENDE BEM C/12UN",
     "categoria": "UTENSILIOS",
     "preco": 3.0,
-    "estoque": -8.0
+    "estoque": -12.0
   },
   {
     "codigo": "129108",
@@ -7900,7 +7907,7 @@
     "nome": "Caixa Para Bolo B-15 (35x42x12)",
     "categoria": "-",
     "preco": 11.5,
-    "estoque": 23.0
+    "estoque": 22.0
   },
   {
     "codigo": "7893595170108",
