@@ -4568,7 +4568,7 @@
     "nome": "POTE ISOPOR 300ML C/25UN ULTRA",
     "categoria": "DESCARTAVEIS",
     "preco": 15.99,
-    "estoque": 32.0
+    "estoque": 52.0
   },
   {
     "codigo": "2830",
@@ -5324,7 +5324,7 @@
     "nome": "COPO E TAMPA 140ML C/25UN ULTRA PP",
     "categoria": "DESCARTAVEIS",
     "preco": 12.5,
-    "estoque": 30.0
+    "estoque": 70.0
   },
   {
     "codigo": "3199",
@@ -5660,7 +5660,7 @@
     "nome": "PRATO RASO 15CM GPACK",
     "categoria": "DESCARTAVEIS",
     "preco": 1.99,
-    "estoque": -3.0
+    "estoque": 97.0
   },
   {
     "codigo": "5050",
