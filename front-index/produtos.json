@@ -585,7 +585,7 @@
     "nome": "LUVA LATEX M PLUS SANRO LARANJA P/LIMPEZA",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 11.99,
-    "estoque": -10.0
+    "estoque": 11.0
   },
   {
     "codigo": "374",
@@ -620,7 +620,7 @@
     "nome": "PANO DE CHAO XADREZ 45CMX68CM SOUZA BR2",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 4.7,
-    "estoque": 281.0
+    "estoque": 278.0
   },
   {
     "codigo": "390",
@@ -676,7 +676,7 @@
     "nome": "GARFO SOBREMESA BRANCO C/50UN PRAFESTA",
     "categoria": "DESCARTAVEIS",
     "preco": 5.0,
-    "estoque": 33.0
+    "estoque": 32.0
   },
   {
     "codigo": "407",
@@ -858,7 +858,7 @@
     "nome": "COLHER SOBREMESA CRISTAL C/50UN ELITE",
     "categoria": "DESCARTAVEIS",
     "preco": 3.99,
-    "estoque": 21.0
+    "estoque": 20.0
   },
   {
     "codigo": "459",
@@ -1145,7 +1145,7 @@
     "nome": "ALCOOL 70% LIQUIDO 1L  HORUS",
     "categoria": "PRODUTO DE HIGIENE",
     "preco": 9.99,
-    "estoque": 15.0
+    "estoque": 14.0
   },
   {
     "codigo": "615",
@@ -2852,8 +2852,8 @@
     "codigo": "1349",
     "nome": "COPO TERMICO 120ML C/25UN ULTRA",
     "categoria": "DESCARTAVEIS",
-    "preco": 5.99,
-    "estoque": 40.0
+    "preco": 6.5,
+    "estoque": 80.0
   },
   {
     "codigo": "1352",
@@ -3742,7 +3742,7 @@
     "nome": "TOUCAS DESCARTAVEIS C/100UN 45X50CM BOMPACK",
     "categoria": "DESCARTAVEIS",
     "preco": 13.5,
-    "estoque": 13.0
+    "estoque": 12.0
   },
   {
     "codigo": "2067",
@@ -4218,7 +4218,7 @@
     "nome": "POTE TERMICO 360ML C/25UN ULTRA",
     "categoria": "DESCARTAVEIS",
     "preco": 15.99,
-    "estoque": 119.0
+    "estoque": 139.0
   },
   {
     "codigo": "2457",
@@ -4568,7 +4568,7 @@
     "nome": "POTE ISOPOR 300ML C/25UN ULTRA",
     "categoria": "DESCARTAVEIS",
     "preco": 15.99,
-    "estoque": 12.0
+    "estoque": 32.0
   },
   {
     "codigo": "2830",
@@ -5331,7 +5331,7 @@
     "nome": "PAPEL TOALHA SCALA PLUS C/120 TOALHAS C/2 ROLOS",
     "categoria": "PRODUTO DE HIGIENE",
     "preco": 8.5,
-    "estoque": 63.0
+    "estoque": 62.0
   },
   {
     "codigo": "3267",
@@ -5660,7 +5660,7 @@
     "nome": "PRATO RASO 15CM GPACK",
     "categoria": "DESCARTAVEIS",
     "preco": 1.99,
-    "estoque": 0.0
+    "estoque": -3.0
   },
   {
     "codigo": "5050",
@@ -6577,7 +6577,7 @@
     "nome": "D640 DOCE REDONDO 170ML CRISTAL C/10UN DONA RITA",
     "categoria": "DESCARTAVEIS",
     "preco": 3.99,
-    "estoque": 65.0
+    "estoque": 64.0
   },
   {
     "codigo": "29227",
@@ -6808,7 +6808,7 @@
     "nome": "FLOTADOR AZULIM 500ML LIMPEZA PEZADA  SPRAY",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 19.0,
-    "estoque": 8.0
+    "estoque": 7.0
   },
   {
     "codigo": "31679",
@@ -6836,7 +6836,7 @@
     "nome": "NEUTRALIZADOR DE ODORES ONLY LAVANDA 500ML",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 23.0,
-    "estoque": 8.0
+    "estoque": 7.0
   },
   {
     "codigo": "31683",
