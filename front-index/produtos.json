@@ -81,7 +81,7 @@
     "nome": "RODO 40CM C/CABO ALKLIN",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 16.25,
-    "estoque": 33.0
+    "estoque": 32.0
   },
   {
     "codigo": "125",
@@ -592,7 +592,7 @@
     "nome": "LUVA LATEX P PLUS SANRO LARANJA P/ LIMPEZA",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 11.99,
-    "estoque": 3.0
+    "estoque": 2.0
   },
   {
     "codigo": "376",
@@ -662,7 +662,7 @@
     "nome": "FILM DE PVC 30MTS  28X15M TECKFIM",
     "categoria": "ALIMENTO/GENERO ALIMENTICIO",
     "preco": 4.5,
-    "estoque": 15.0
+    "estoque": 14.0
   },
   {
     "codigo": "405",
@@ -753,7 +753,7 @@
     "nome": "SACOLA PEAD 20X30X0,12 C/10UN OLIPEL",
     "categoria": "Embalagem",
     "preco": 7.5,
-    "estoque": 15.0
+    "estoque": 14.0
   },
   {
     "codigo": "425",
@@ -1450,10 +1450,10 @@
   },
   {
     "codigo": "739",
-    "nome": "SACO ZIP 17X26 C/ 20UN ARMAZEM",
+    "nome": "SACO ZIP 17X24 C/ 20UN ARMAZEM",
     "categoria": "Embalagem",
     "preco": 9.99,
-    "estoque": 1.0
+    "estoque": 11.0
   },
   {
     "codigo": "743",
@@ -1957,7 +1957,7 @@
     "nome": "B131 FOLHA D ALUMINIO 750ML C/10UN PRAV.",
     "categoria": "DESCARTAVEIS",
     "preco": 12.99,
-    "estoque": 2.0
+    "estoque": 1.0
   },
   {
     "codigo": "914",
@@ -2013,7 +2013,7 @@
     "nome": "CAIXA P/CORREIO N0016X11X07 1UN NIAGRA",
     "categoria": "Embalagem",
     "preco": 3.5,
-    "estoque": 6.0
+    "estoque": 0.0
   },
   {
     "codigo": "939",
@@ -2027,7 +2027,7 @@
     "nome": "CAIXA P CORREIO N03 30X20X11 NIAGRA",
     "categoria": "Embalagem",
     "preco": 10.0,
-    "estoque": 30.0
+    "estoque": 29.0
   },
   {
     "codigo": "941",
@@ -2265,7 +2265,7 @@
     "nome": "TOP LIXO PIA E BANHEIRO LAVANDA C/40UN PACK LIXO",
     "categoria": "SACO LIXO",
     "preco": 8.99,
-    "estoque": 47.0
+    "estoque": 46.0
   },
   {
     "codigo": "1048",
@@ -2300,7 +2300,7 @@
     "nome": "SACOS P/LIXO 100L P8 C10UN PRETO",
     "categoria": "SACO LIXO",
     "preco": 13.5,
-    "estoque": 34.0
+    "estoque": 33.0
   },
   {
     "codigo": "1055",
@@ -2377,7 +2377,7 @@
     "nome": "MARMITEX DE ISOPOR 1100ML C/10UN COPOBRAS",
     "categoria": "DESCARTAVEIS",
     "preco": 8.5,
-    "estoque": 6.0
+    "estoque": 5.0
   },
   {
     "codigo": "1103",
@@ -2741,7 +2741,7 @@
     "nome": "PACK LIXO PIA E BANHEIRO TUTTI-FRUITI C/80UN DIVA",
     "categoria": "SACO LIXO",
     "preco": 13.99,
-    "estoque": 33.0
+    "estoque": 32.0
   },
   {
     "codigo": "1316",
@@ -2811,7 +2811,7 @@
     "nome": "TOALHA INTERFOLHA (OURO) CELULOSE ISAPEL C/1000UN",
     "categoria": "PRODUTO DE HIGIENE",
     "preco": 23.0,
-    "estoque": 52.0
+    "estoque": 51.0
   },
   {
     "codigo": "1341",
@@ -3441,7 +3441,7 @@
     "nome": "RODO MAGICO - SANCHES",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 67.5,
-    "estoque": 4.0
+    "estoque": 3.0
   },
   {
     "codigo": "1803",
@@ -3469,7 +3469,7 @@
     "nome": "LUVA DE VINIL G S/PO C/100UN TALGE",
     "categoria": "DESCARTAVEIS",
     "preco": 21.0,
-    "estoque": 15.0
+    "estoque": 13.0
   },
   {
     "codigo": "1820",
@@ -3805,7 +3805,7 @@
     "nome": "FOLHA DE ALUMINIO 4MX30CM WYDA",
     "categoria": "Embalagem",
     "preco": 5.5,
-    "estoque": -6.0
+    "estoque": -7.0
   },
   {
     "codigo": "2094",
@@ -3980,7 +3980,7 @@
     "nome": "CAIXA COPO 180ML TOTALPLAST C/2500UN FECHADA",
     "categoria": "DESCARTAVEIS",
     "preco": 176.0,
-    "estoque": 14.0
+    "estoque": 13.0
   },
   {
     "codigo": "2296",
@@ -4029,7 +4029,7 @@
     "nome": "LIMPADOR DE SUPERFICIE SANOL EUCALIPTO 120ML",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 12.99,
-    "estoque": 14.0
+    "estoque": 13.0
   },
   {
     "codigo": "2321",
@@ -4631,7 +4631,7 @@
     "nome": "CAIXA TERMICA ISOPOR 3L BRANCA",
     "categoria": "DESCARTAVEIS",
     "preco": 9.99,
-    "estoque": -2.0
+    "estoque": 36.0
   },
   {
     "codigo": "2849",
@@ -4799,7 +4799,7 @@
     "nome": "CAIXA PAP. ONDULADO N04  50X40X35",
     "categoria": "Embalagem",
     "preco": 16.99,
-    "estoque": 14.0
+    "estoque": 10.0
   },
   {
     "codigo": "2964",
@@ -4876,7 +4876,7 @@
     "nome": "SACO ZIP N03 07x12CM C/100UN  ARMAZEM",
     "categoria": "Embalagem",
     "preco": 10.0,
-    "estoque": -2.0
+    "estoque": 8.0
   },
   {
     "codigo": "2999",
@@ -5037,7 +5037,7 @@
     "nome": "POTE E TAMPA RET.500ML C/24UN GOUR MAX",
     "categoria": "DESCARTAVEIS",
     "preco": 29.99,
-    "estoque": 8.0
+    "estoque": 6.0
   },
   {
     "codigo": "3106",
@@ -5204,8 +5204,8 @@
     "codigo": "3148",
     "nome": "CAIXA TERMICA ISOPOR ISOTERM 500G",
     "categoria": "DESCARTAVEIS",
-    "preco": 3.5,
-    "estoque": -5.0
+    "preco": 3.99,
+    "estoque": 47.0
   },
   {
     "codigo": "3150",
@@ -5247,7 +5247,7 @@
     "nome": "FITA ADESIVA 18MMX40M / 18MMx50M KORETEC",
     "categoria": "PAPELARIA",
     "preco": 2.5,
-    "estoque": -82.0
+    "estoque": -83.0
   },
   {
     "codigo": "3161",
@@ -5338,7 +5338,7 @@
     "nome": "PAPEL TOALHA SCALA PLUS C/120 TOALHAS C/2 ROLOS",
     "categoria": "PRODUTO DE HIGIENE",
     "preco": 8.5,
-    "estoque": 60.0
+    "estoque": 59.0
   },
   {
     "codigo": "3267",
@@ -5589,8 +5589,8 @@
     "codigo": "4006",
     "nome": "BOBINA PICOTADO 30X40 C/450UN SOLDA FUNDO 1,95KG",
     "categoria": "ALIMENTO/GENERO ALIMENTICIO",
-    "preco": 80.5,
-    "estoque": 3.0
+    "preco": 76.5,
+    "estoque": 2.0
   },
   {
     "codigo": "4007",
@@ -6077,10 +6077,10 @@
   },
   {
     "codigo": "7909",
-    "nome": "SACO ZIP 17X26 C/ 100UN ARMAZEM",
+    "nome": "SACO ZIP 17X24  C/100UN ARMAZEM",
     "categoria": "Embalagem",
-    "preco": 44.5,
-    "estoque": 0.0
+    "preco": 42.99,
+    "estoque": 1.0
   },
   {
     "codigo": "7910",
@@ -6269,7 +6269,7 @@
     "nome": "ESPONJA ANTIRISCO  C/CABO+REFIL C/2UN ALKLIN",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 9.5,
-    "estoque": 10.0
+    "estoque": 9.0
   },
   {
     "codigo": "9031",
@@ -6499,15 +6499,15 @@
     "codigo": "18021",
     "nome": "SACO ZIP 20X30 C/ 100 UNIDADES",
     "categoria": "DESCARTAVEIS",
-    "preco": 62.0,
-    "estoque": -1.0
+    "preco": 58.99,
+    "estoque": 1.0
   },
   {
     "codigo": "18022",
-    "nome": "SACO ZIP 20X30 C/ 20 UNIDADES",
+    "nome": "SACO ZIP 20X30 C/20UN ARMAZEM",
     "categoria": "DESCARTAVEIS",
     "preco": 13.5,
-    "estoque": -1.0
+    "estoque": 10.0
   },
   {
     "codigo": "20021",
@@ -6717,7 +6717,7 @@
     "nome": "MOP ABRASIVO REFIL ALKLIN 1UN",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 12.99,
-    "estoque": 6.0
+    "estoque": 5.0
   },
   {
     "codigo": "31664",
@@ -6787,7 +6787,7 @@
     "nome": "TEK BOND INSTANTÂNEA 2G",
     "categoria": "PAPELARIA",
     "preco": 3.99,
-    "estoque": -9.0
+    "estoque": -10.0
   },
   {
     "codigo": "31674",
@@ -6864,7 +6864,7 @@
     "nome": "SODA CAUSTICA VOREL 500G",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 20.0,
-    "estoque": 17.0
+    "estoque": 16.0
   },
   {
     "codigo": "31686",
