@@ -81,7 +81,7 @@
     "nome": "RODO 40CM C/CABO ALKLIN",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 16.25,
-    "estoque": 32.0
+    "estoque": 31.0
   },
   {
     "codigo": "125",
@@ -627,7 +627,7 @@
     "nome": "PANO DE CHAO BRANCO ALVEJADO 45CMX69CM SOUZA PPR28",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 6.7,
-    "estoque": 318.0
+    "estoque": 316.0
   },
   {
     "codigo": "391",
@@ -669,7 +669,7 @@
     "nome": "GARFO SOBREMESA BRANCO C/50UN ELITE",
     "categoria": "DESCARTAVEIS",
     "preco": 3.99,
-    "estoque": 45.0
+    "estoque": 43.0
   },
   {
     "codigo": "406",
@@ -753,7 +753,7 @@
     "nome": "SACOLA PEAD 20X30X0,12 C/10UN OLIPEL",
     "categoria": "Embalagem",
     "preco": 7.5,
-    "estoque": 14.0
+    "estoque": 13.0
   },
   {
     "codigo": "425",
@@ -2300,7 +2300,7 @@
     "nome": "SACOS P/LIXO 100L P8 C10UN PRETO",
     "categoria": "SACO LIXO",
     "preco": 13.5,
-    "estoque": 33.0
+    "estoque": 32.0
   },
   {
     "codigo": "1055",
@@ -2797,7 +2797,7 @@
     "nome": "TOALHA INTERFOLHA BRANCA (VERDE) C/1000UN ISAPEL",
     "categoria": "PRODUTO DE HIGIENE",
     "preco": 16.0,
-    "estoque": 63.0
+    "estoque": 62.0
   },
   {
     "codigo": "1331",
@@ -3070,7 +3070,7 @@
     "nome": "D645 POTE REDONDO BASE E TAMPA C/10UN 120ML",
     "categoria": "DESCARTAVEIS",
     "preco": 3.5,
-    "estoque": 26.0
+    "estoque": 24.0
   },
   {
     "codigo": "1488",
@@ -3448,7 +3448,7 @@
     "nome": "PRATO  ISOPOR BPR-23 C/25UN BOM APETITE",
     "categoria": "DESCARTAVEIS",
     "preco": 12.5,
-    "estoque": 28.0
+    "estoque": 25.0
   },
   {
     "codigo": "1813",
@@ -5338,7 +5338,7 @@
     "nome": "PAPEL TOALHA SCALA PLUS C/120 TOALHAS C/2 ROLOS",
     "categoria": "PRODUTO DE HIGIENE",
     "preco": 8.5,
-    "estoque": 59.0
+    "estoque": 58.0
   },
   {
     "codigo": "3267",
@@ -6031,7 +6031,7 @@
     "nome": "SACO P/LIXO PRETO 20L P5 C/10UN",
     "categoria": "SACO LIXO",
     "preco": 4.0,
-    "estoque": 39.0
+    "estoque": 38.0
   },
   {
     "codigo": "7899",
