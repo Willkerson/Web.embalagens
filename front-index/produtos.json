@@ -361,7 +361,7 @@
     "nome": "VASSOURA DENTRO E FORA C/CABO ALKLIN",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 15.0,
-    "estoque": -12.0
+    "estoque": -13.0
   },
   {
     "codigo": "295",
@@ -2258,7 +2258,7 @@
     "nome": "BOBINA PICOTADA 40X60CM (2.27KG)",
     "categoria": "Embalagem",
     "preco": 93.0,
-    "estoque": 1.0
+    "estoque": 0.0
   },
   {
     "codigo": "1047",
@@ -2601,7 +2601,7 @@
     "nome": "BOBINA PICOTADA 2KG C/500UN P/ ALIMENTOS 20X28CM EXTRUSA",
     "categoria": "Embalagem",
     "preco": 19.0,
-    "estoque": 17.0
+    "estoque": 16.0
   },
   {
     "codigo": "1225",
@@ -2615,7 +2615,7 @@
     "nome": "CAIXA TERMICA ISOPOR 45L ISOTERM",
     "categoria": "DESCARTAVEIS",
     "preco": 76.0,
-    "estoque": 1.0
+    "estoque": 0.0
   },
   {
     "codigo": "1233",
@@ -2797,7 +2797,7 @@
     "nome": "TOALHA INTERFOLHA BRANCA (VERDE) C/1000UN ISAPEL",
     "categoria": "PRODUTO DE HIGIENE",
     "preco": 16.0,
-    "estoque": 58.0
+    "estoque": 57.0
   },
   {
     "codigo": "1331",
@@ -2811,7 +2811,7 @@
     "nome": "TOALHA INTERFOLHA (OURO) CELULOSE ISAPEL C/1000UN",
     "categoria": "PRODUTO DE HIGIENE",
     "preco": 23.0,
-    "estoque": 50.0
+    "estoque": 49.0
   },
   {
     "codigo": "1341",
@@ -3392,7 +3392,7 @@
     "nome": "COPO DESCARTAVEL TRANSPARENTE 250ML C/100UN TOTAL PLAST",
     "categoria": "DESCARTAVEIS",
     "preco": 11.99,
-    "estoque": 22.0
+    "estoque": 21.0
   },
   {
     "codigo": "1778",
@@ -3798,7 +3798,7 @@
     "nome": "PAPELÂO ONDULADO  60X10M",
     "categoria": "-",
     "preco": 32.15,
-    "estoque": 5.0
+    "estoque": 4.0
   },
   {
     "codigo": "2085",
@@ -4309,7 +4309,7 @@
     "nome": "ESPONJA  ANTIRISCO C/4UN ALKLIN",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 4.0,
-    "estoque": 169.0
+    "estoque": 168.0
   },
   {
     "codigo": "2599",
@@ -5485,7 +5485,7 @@
     "nome": "LIMPADOR CONCENTRADO CHA BRANCO 120ML SANOL",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 12.99,
-    "estoque": 9.0
+    "estoque": 7.0
   },
   {
     "codigo": "3982",
@@ -5667,7 +5667,7 @@
     "nome": "PRATO RASO 15CM GPACK",
     "categoria": "DESCARTAVEIS",
     "preco": 1.99,
-    "estoque": 96.0
+    "estoque": 91.0
   },
   {
     "codigo": "5050",
@@ -5975,7 +5975,7 @@
     "nome": "PRATO ISOPOR RASO 20,8cm TOTAL PLAST",
     "categoria": "Embalagem",
     "preco": 3.5,
-    "estoque": 40.0
+    "estoque": 32.0
   },
   {
     "codigo": "7887",
@@ -6374,14 +6374,14 @@
     "nome": "LUVA NITRILICA PRETA P 10 UN TALGE",
     "categoria": "DESCARTAVEIS",
     "preco": 6.0,
-    "estoque": -6.0
+    "estoque": -7.0
   },
   {
     "codigo": "11175",
     "nome": "PANO MULTIUSO AZUL C/50 PANOS 30CMX25CM MR. PLUS TALGE",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 17.0,
-    "estoque": 16.0
+    "estoque": 15.0
   },
   {
     "codigo": "11176",
