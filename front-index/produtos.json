@@ -1782,7 +1782,7 @@
     "nome": "RODO PIA IDEAL SANCHES",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 5.99,
-    "estoque": 25.0
+    "estoque": 23.0
   },
   {
     "codigo": "852",
@@ -2104,7 +2104,7 @@
     "nome": "MARMITEX DE ISOPOR 750ML C/10UN COPOBRAS",
     "categoria": "DESCARTAVEIS",
     "preco": 8.0,
-    "estoque": 7.0
+    "estoque": 5.0
   },
   {
     "codigo": "0229",
@@ -2524,7 +2524,7 @@
     "nome": "FITA ADESIVA POLIPROPILENO TRANSPARENTE 48MMX40M TECTAPE",
     "categoria": "PAPELARIA",
     "preco": 4.99,
-    "estoque": 48.0
+    "estoque": 46.0
   },
   {
     "codigo": "1168",
@@ -2538,7 +2538,7 @@
     "nome": "CAIXA P/ESFIHA ESPECIAL N1 35X35X07 NIAGRA",
     "categoria": "Embalagem",
     "preco": 7.7,
-    "estoque": 8.0
+    "estoque": 6.0
   },
   {
     "codigo": "1175",
@@ -3847,7 +3847,7 @@
     "nome": "SACOLA BRANCA 1KG 35x45",
     "categoria": "Embalagem",
     "preco": 27.0,
-    "estoque": 5.0
+    "estoque": 4.0
   },
   {
     "codigo": "2103",
@@ -5338,7 +5338,7 @@
     "nome": "PAPEL TOALHA SCALA PLUS C/120 TOALHAS C/2 ROLOS",
     "categoria": "PRODUTO DE HIGIENE",
     "preco": 8.5,
-    "estoque": 58.0
+    "estoque": 56.0
   },
   {
     "codigo": "3267",
@@ -6437,7 +6437,7 @@
     "nome": "D70M BOLO E TORTA RET MEDIA BASE BRANCA",
     "categoria": "DESCARTAVEIS",
     "preco": 11.99,
-    "estoque": 17.0
+    "estoque": 15.0
   },
   {
     "codigo": "12345",
@@ -7746,7 +7746,7 @@
     "nome": "VARAL DE PLASTICA C18UN PRENDEDORES OVAL",
     "categoria": "UTENSILIOS",
     "preco": 17.99,
-    "estoque": 1.0
+    "estoque": 0.0
   },
   {
     "codigo": "129104",
