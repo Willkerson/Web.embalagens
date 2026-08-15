@@ -1145,7 +1145,7 @@
     "nome": "ALCOOL 70% LIQUIDO 1L  HORUS",
     "categoria": "PRODUTO DE HIGIENE",
     "preco": 9.99,
-    "estoque": 12.0
+    "estoque": 11.0
   },
   {
     "codigo": "615",
@@ -6437,7 +6437,7 @@
     "nome": "D70M BOLO E TORTA RET MEDIA BASE BRANCA",
     "categoria": "DESCARTAVEIS",
     "preco": 11.99,
-    "estoque": 15.0
+    "estoque": 14.0
   },
   {
     "codigo": "12345",
