@@ -18,14 +18,14 @@
     "nome": "AGUA SANITARIA 2L SANOL",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 8.99,
-    "estoque": 6.0
+    "estoque": 5.0
   },
   {
     "codigo": "103",
     "nome": "SACOLA KRAFT M 1UN 19X12X26CM",
     "categoria": "Embalagem",
     "preco": 1.55,
-    "estoque": 8.0
+    "estoque": 6.0
   },
   {
     "codigo": "104",
@@ -221,7 +221,7 @@
     "nome": "COPO TERMICO 180ML C/20UN TOTALPLAST",
     "categoria": "DESCARTAVEIS",
     "preco": 5.99,
-    "estoque": 103.0
+    "estoque": 102.0
   },
   {
     "codigo": "189",
@@ -460,6 +460,13 @@
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 1.99,
     "estoque": 3.0
+  },
+  {
+    "codigo": "332",
+    "nome": "DESENGRAXDL  P/DESENGORDURANTE 5L START",
+    "categoria": "PRODUTO DE LIMPEZA",
+    "preco": 65.5,
+    "estoque": 4.0
   },
   {
     "codigo": "333",
@@ -1152,7 +1159,7 @@
     "nome": "FOLHA DE ALUMINIO  7,5MX30CM WYDA",
     "categoria": "DESCARTAVEIS",
     "preco": 8.75,
-    "estoque": -75.0
+    "estoque": -76.0
   },
   {
     "codigo": "616",
@@ -2265,7 +2272,7 @@
     "nome": "TOP LIXO PIA E BANHEIRO LAVANDA C/40UN PACK LIXO",
     "categoria": "SACO LIXO",
     "preco": 8.99,
-    "estoque": 45.0
+    "estoque": 43.0
   },
   {
     "codigo": "1048",
@@ -2293,7 +2300,7 @@
     "nome": "SACO P/ LIXO PRETO P8 60L C/10UN",
     "categoria": "SACO LIXO",
     "preco": 8.99,
-    "estoque": 36.0
+    "estoque": 32.0
   },
   {
     "codigo": "1053",
@@ -2349,7 +2356,7 @@
     "nome": "LUVA NITRILICA PRETA G 10 UN TALGE",
     "categoria": "DESCARTAVEIS",
     "preco": 6.99,
-    "estoque": -8.0
+    "estoque": -9.0
   },
   {
     "codigo": "1085",
@@ -2482,7 +2489,7 @@
     "nome": "FIBRA BRANCA LIMP. LEVE BETTANIN",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 3.99,
-    "estoque": 75.0
+    "estoque": 74.0
   },
   {
     "codigo": "1151",
@@ -2545,7 +2552,7 @@
     "nome": "PANO MULTIUSO BRANCO C/50 PANOS 30CMX50CM MR.PLUS",
     "categoria": "PRODUTO DE HIGIENE",
     "preco": 15.5,
-    "estoque": -41.0
+    "estoque": -42.0
   },
   {
     "codigo": "1176",
@@ -2706,7 +2713,7 @@
     "nome": "ESPONJA DE LÃ DE AÇO ASSOLAN  45G",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 3.0,
-    "estoque": 7.0
+    "estoque": 5.0
   },
   {
     "codigo": "1301",
@@ -3105,7 +3112,7 @@
     "nome": "BH05 LANCHEIRA HOT DOG C/10 UN",
     "categoria": "DESCARTAVEIS",
     "preco": 7.99,
-    "estoque": 20.0
+    "estoque": 19.0
   },
   {
     "codigo": "1520",
@@ -3322,7 +3329,7 @@
     "nome": "SACOLA VERDE REFORÇADA 1KG 60X80",
     "categoria": "Embalagem",
     "preco": 19.99,
-    "estoque": -2.0
+    "estoque": -3.0
   },
   {
     "codigo": "1715",
@@ -3511,7 +3518,7 @@
     "nome": "HAMBURGUEIRA BH03 C/100UN BOM APETITE",
     "categoria": "DESCARTAVEIS",
     "preco": 39.99,
-    "estoque": 6.0
+    "estoque": 5.0
   },
   {
     "codigo": "1888",
@@ -3532,7 +3539,7 @@
     "nome": "LIMPA CERAMICAS E AZULEJOS 2L AZULIM START",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 19.99,
-    "estoque": 8.0
+    "estoque": 7.0
   },
   {
     "codigo": "1900",
@@ -3553,7 +3560,7 @@
     "nome": "LIMPA VIDRO  SANCHES",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 8.5,
-    "estoque": 92.0
+    "estoque": 90.0
   },
   {
     "codigo": "1905",
@@ -3896,7 +3903,7 @@
     "nome": "FITA ADESIVA 45X100M  TRANSPARENTE PAPI",
     "categoria": "PAPELARIA",
     "preco": 10.5,
-    "estoque": 70.0
+    "estoque": 65.0
   },
   {
     "codigo": "2164",
@@ -4001,7 +4008,7 @@
     "nome": "TOP LIXO PRETO 30L C/30UN PACK LIXO",
     "categoria": "SACO LIXO",
     "preco": 16.99,
-    "estoque": 17.0
+    "estoque": 15.0
   },
   {
     "codigo": "2302",
@@ -4232,7 +4239,7 @@
     "nome": "D-695 KIT POTE TRANSPARENTE  P/ MOLHO C/50UN",
     "categoria": "DESCARTAVEIS",
     "preco": 13.5,
-    "estoque": 34.0
+    "estoque": 30.0
   },
   {
     "codigo": "2474",
@@ -5051,7 +5058,7 @@
     "nome": "POTE E TAMPA REDONDO 750ML C/24UN DANUBIO",
     "categoria": "DESCARTAVEIS",
     "preco": 21.5,
-    "estoque": 16.0
+    "estoque": 15.0
   },
   {
     "codigo": "3108",
@@ -5086,7 +5093,7 @@
     "nome": "POTE E TAMPA REDONDO 500ML C/TAMPA C/24UN DANUBIO",
     "categoria": "DESCARTAVEIS",
     "preco": 19.99,
-    "estoque": 20.0
+    "estoque": 19.0
   },
   {
     "codigo": "3120",
@@ -5310,7 +5317,7 @@
     "nome": "PAPEL HIGIENICO FOFINHO FOLHA DUPLA 4X30M",
     "categoria": "PRODUTO DE HIGIENE",
     "preco": 8.5,
-    "estoque": 60.0
+    "estoque": 59.0
   },
   {
     "codigo": "3192",
@@ -5485,7 +5492,7 @@
     "nome": "LIMPADOR CONCENTRADO CHA BRANCO 120ML SANOL",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 12.99,
-    "estoque": 7.0
+    "estoque": 6.0
   },
   {
     "codigo": "3982",
@@ -6297,7 +6304,7 @@
     "nome": "FORMINHA PAPEL 0B BRANCA C/10UN REIKI",
     "categoria": "DESCARTAVEIS",
     "preco": 6.0,
-    "estoque": 5.0
+    "estoque": 4.0
   },
   {
     "codigo": "9081",
@@ -6430,7 +6437,7 @@
     "nome": "LIMPA AZULEJO  SEM CABO SANCHES",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 8.5,
-    "estoque": 71.0
+    "estoque": 70.0
   },
   {
     "codigo": "11682",
@@ -6815,7 +6822,7 @@
     "nome": "FLOTADOR AZULIM 500ML LIMPEZA PEZADA  SPRAY",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 19.0,
-    "estoque": 7.0
+    "estoque": 6.0
   },
   {
     "codigo": "31679",
@@ -6843,7 +6850,7 @@
     "nome": "NEUTRALIZADOR DE ODORES ONLY LAVANDA 500ML",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 23.0,
-    "estoque": 7.0
+    "estoque": 6.0
   },
   {
     "codigo": "31683",
