@@ -354,7 +354,7 @@
     "nome": "ESPONJA MULTIUSO C/4UN ALKLIN",
     "categoria": "UTENSILIOS",
     "preco": 3.99,
-    "estoque": 297.0
+    "estoque": 296.0
   },
   {
     "codigo": "294",
@@ -592,7 +592,7 @@
     "nome": "LUVA LATEX M PLUS SANRO LARANJA P/LIMPEZA",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 11.99,
-    "estoque": 9.0
+    "estoque": 8.0
   },
   {
     "codigo": "374",
@@ -627,7 +627,7 @@
     "nome": "PANO DE CHAO XADREZ 45CMX68CM SOUZA BR2",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 4.7,
-    "estoque": 265.0
+    "estoque": 263.0
   },
   {
     "codigo": "390",
@@ -2300,7 +2300,7 @@
     "nome": "SACO P/ LIXO PRETO P8 60L C/10UN",
     "categoria": "SACO LIXO",
     "preco": 8.99,
-    "estoque": 32.0
+    "estoque": 29.0
   },
   {
     "codigo": "1053",
@@ -2353,14 +2353,14 @@
   },
   {
     "codigo": "1084",
-    "nome": "LUVA NITRILICA PRETA G 10 UN TALGE",
+    "nome": "LUVA NITRILICA PRETA G 10 PARES TALGE",
     "categoria": "DESCARTAVEIS",
     "preco": 6.99,
     "estoque": -9.0
   },
   {
     "codigo": "1085",
-    "nome": "LUVA NITRILICA PRETA M 10 UN TALGE",
+    "nome": "LUVA NITRILICA PRETA M 10 PARES TALGE",
     "categoria": "Outras",
     "preco": 6.99,
     "estoque": 15.0
@@ -2657,7 +2657,7 @@
     "nome": "PAPEL HIGIENICO BRANCO ROLAO EUROPEL 08 ROLOS",
     "categoria": "PRODUTO DE HIGIENE",
     "preco": 35.5,
-    "estoque": 20.0
+    "estoque": 19.0
   },
   {
     "codigo": "1290",
@@ -2804,7 +2804,7 @@
     "nome": "TOALHA INTERFOLHA BRANCA (VERDE) C/1000UN ISAPEL",
     "categoria": "PRODUTO DE HIGIENE",
     "preco": 16.0,
-    "estoque": 56.0
+    "estoque": 55.0
   },
   {
     "codigo": "1331",
@@ -3931,7 +3931,7 @@
     "nome": "MEGA RODO PLASTICO 58CM ALKLIN",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 24.5,
-    "estoque": 29.0
+    "estoque": 28.0
   },
   {
     "codigo": "2192",
@@ -4267,7 +4267,7 @@
     "nome": "LUVA LATEX G PLUS SANRO LARANJA P/LIMPEZA",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 11.99,
-    "estoque": 7.0
+    "estoque": 6.0
   },
   {
     "codigo": "2500",
@@ -6378,7 +6378,7 @@
   },
   {
     "codigo": "10887",
-    "nome": "LUVA NITRILICA PRETA P 10 UN TALGE",
+    "nome": "LUVA NITRILICA PRETA P 10 PARES TALGE",
     "categoria": "DESCARTAVEIS",
     "preco": 6.99,
     "estoque": -8.0
