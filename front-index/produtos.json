@@ -214,7 +214,7 @@
     "nome": "MARMITA PRETA 750ML C/3 DIVISORIAS C/10UN",
     "categoria": "DESCARTAVEIS",
     "preco": 16.25,
-    "estoque": 8.0
+    "estoque": 5.0
   },
   {
     "codigo": "183",
@@ -2468,7 +2468,7 @@
     "nome": "FIBRA LIMP. PESADA 1UN 260X102MM BETTANIN",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 4.99,
-    "estoque": 22.0
+    "estoque": 20.0
   },
   {
     "codigo": "1149",
@@ -3361,9 +3361,9 @@
   },
   {
     "codigo": "1769",
-    "nome": "CANUDO BIO 8M P/ MILKE SHAKE C/100UN IT´S BIO",
+    "nome": "CANUDO BIO 8x210MM P/ MILKE SHAKE C/100UN IT´S BIO",
     "categoria": "DESCARTAVEIS",
-    "preco": 16.0,
+    "preco": 17.5,
     "estoque": -3.0
   },
   {
@@ -6185,7 +6185,7 @@
     "nome": "RALO P/PIA METAL 9CM",
     "categoria": "UTENSILIOS",
     "preco": 9.0,
-    "estoque": 4.0
+    "estoque": 3.0
   },
   {
     "codigo": "8205",
