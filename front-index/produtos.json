@@ -668,7 +668,7 @@
     "codigo": "400",
     "nome": "FACA MASTER BRANCA C/50UN PRAFESTA",
     "categoria": "DESCARTAVEIS",
-    "preco": 12.5,
+    "preco": 12.99,
     "estoque": 18.0
   },
   {
@@ -738,7 +738,7 @@
     "codigo": "417",
     "nome": "MEXEDOR DRINK C/200UN PRAFESTA",
     "categoria": "DESCARTAVEIS",
-    "preco": 11.5,
+    "preco": 12.5,
     "estoque": -18.0
   },
   {
@@ -897,9 +897,9 @@
   },
   {
     "codigo": "466",
-    "nome": "copo mini 25ml cristal c/10",
+    "nome": "COPO MINI 25ML C / 10 UN",
     "categoria": "DESCARTAVEIS",
-    "preco": 3.3,
+    "preco": 3.5,
     "estoque": -9.0
   },
   {
@@ -1250,7 +1250,7 @@
     "nome": "TOP LIXO PRETO 15L C/60UN PACK LIXO",
     "categoria": "SACO LIXO",
     "preco": 17.99,
-    "estoque": 20.0
+    "estoque": 19.0
   },
   {
     "codigo": "637",
@@ -2272,7 +2272,7 @@
     "nome": "SACO P/ LIXO PRETO P8 60L C/50UN",
     "categoria": "SACO LIXO",
     "preco": 38.25,
-    "estoque": 12.0
+    "estoque": 11.0
   },
   {
     "codigo": "1042",
@@ -2517,7 +2517,7 @@
     "nome": "FIBRA BRANCA LIMP. LEVE BETTANIN",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 3.99,
-    "estoque": 70.0
+    "estoque": 67.0
   },
   {
     "codigo": "1151",
@@ -2559,7 +2559,7 @@
     "nome": "FITA ADESIVA POLIPROPILENO TRANSPARENTE 48MMX40M TECTAPE",
     "categoria": "PAPELARIA",
     "preco": 4.99,
-    "estoque": 45.0
+    "estoque": 44.0
   },
   {
     "codigo": "1168",
@@ -2685,7 +2685,7 @@
     "nome": "PAPEL HIGIENICO BRANCO ROLAO EUROPEL 08 ROLOS",
     "categoria": "PRODUTO DE HIGIENE",
     "preco": 35.5,
-    "estoque": 17.0
+    "estoque": 16.0
   },
   {
     "codigo": "1290",
@@ -2832,7 +2832,7 @@
     "nome": "TOALHA INTERFOLHA BRANCA (VERDE) C/1000UN ISAPEL",
     "categoria": "PRODUTO DE HIGIENE",
     "preco": 16.0,
-    "estoque": 50.0
+    "estoque": 49.0
   },
   {
     "codigo": "1331",
@@ -3357,7 +3357,7 @@
     "nome": "SACOLA VERDE REFORÇADA 1KG 60X80",
     "categoria": "Embalagem",
     "preco": 19.99,
-    "estoque": -3.0
+    "estoque": -4.0
   },
   {
     "codigo": "1715",
@@ -3518,7 +3518,7 @@
     "nome": "PEDRA SANITARIA 25G MISTA AZULIM",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 2.99,
-    "estoque": 38.0
+    "estoque": 36.0
   },
   {
     "codigo": "1853",
@@ -3711,9 +3711,9 @@
   },
   {
     "codigo": "1993",
-    "nome": "SACO P/ LIXO PRETO 200L C/10UN",
+    "nome": "SACO P/ LIXO PRETO 200L C/10UN (F)",
     "categoria": "SACO LIXO",
-    "preco": 21.0,
+    "preco": 18.99,
     "estoque": 34.0
   },
   {
@@ -5338,7 +5338,7 @@
     "nome": "PANO PARA PISO MICROFIIBRAS COLORS 48X70CM ALKLIN",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 12.5,
-    "estoque": -15.0
+    "estoque": -16.0
   },
   {
     "codigo": "3191",
@@ -5687,7 +5687,7 @@
     "codigo": "4391",
     "nome": "CUMBUCA 15 QUALITY LINE C/10UN PRAFESTA",
     "categoria": "DESCARTAVEIS",
-    "preco": 3.5,
+    "preco": 3.99,
     "estoque": 52.0
   },
   {
@@ -7081,7 +7081,7 @@
     "nome": "CABO METAL 1.3M CINZA SANCHES",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 7.5,
-    "estoque": 0.0
+    "estoque": -1.0
   },
   {
     "codigo": "79015",
@@ -7417,7 +7417,7 @@
     "nome": "ESTILETE C/ACABEMENTO PLAST.15CM",
     "categoria": "UTENSILIOS",
     "preco": 5.0,
-    "estoque": -24.0
+    "estoque": -25.0
   },
   {
     "codigo": "129032",
@@ -8019,7 +8019,7 @@
     "nome": "SABONETE LIQUIDO ORQUIDEA TROPICAL AROMAS",
     "categoria": "PRODUTO DE HIGIENE",
     "preco": 9.99,
-    "estoque": 1.0
+    "estoque": 0.0
   },
   {
     "codigo": "790985",
