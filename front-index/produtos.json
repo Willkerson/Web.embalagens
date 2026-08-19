@@ -333,7 +333,7 @@
     "nome": "DESINFETANTE LAVANDA 5L SANOL",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 22.99,
-    "estoque": 6.0
+    "estoque": 5.0
   },
   {
     "codigo": "271",
@@ -1908,7 +1908,7 @@
     "nome": "REMOVEDOR VERBENA 1L SUPREMA",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 14.0,
-    "estoque": 3.0
+    "estoque": 2.0
   },
   {
     "codigo": "896",
@@ -2339,7 +2339,7 @@
   },
   {
     "codigo": "1053",
-    "nome": "SACOS P/LIXO 100L P8 C10UN PRETO",
+    "nome": "SACOS P/LIXO 100L P8 C/10UN PRETO",
     "categoria": "SACO LIXO",
     "preco": 13.5,
     "estoque": 21.0
@@ -2832,7 +2832,7 @@
     "nome": "TOALHA INTERFOLHA BRANCA (VERDE) C/1000UN ISAPEL",
     "categoria": "PRODUTO DE HIGIENE",
     "preco": 16.0,
-    "estoque": 55.0
+    "estoque": 50.0
   },
   {
     "codigo": "1331",
@@ -3280,7 +3280,7 @@
     "nome": "D50MM TORTA MDIA 1,5KG BR24CM DONA RITA",
     "categoria": "DESCARTAVEIS",
     "preco": 3.0,
-    "estoque": 94.0
+    "estoque": 88.0
   },
   {
     "codigo": "1649",
@@ -5922,6 +5922,13 @@
     "estoque": -5.0
   },
   {
+    "codigo": "7101",
+    "nome": "SACO PRA LIXO REFORÇADO  200L  C/50  PRETO",
+    "categoria": "SACO LIXO",
+    "preco": 71.5,
+    "estoque": 0.0
+  },
+  {
     "codigo": "7171",
     "nome": "GUARDANAPO TV 14X13CM 500G",
     "categoria": "DESCARTAVEIS",
@@ -6221,6 +6228,13 @@
     "categoria": "DESCARTAVEIS",
     "preco": 34.99,
     "estoque": 3.0
+  },
+  {
+    "codigo": "7999",
+    "nome": "SACO PRA LIXO REFORÇADO  110L   PRETO",
+    "categoria": "SACO LIXO",
+    "preco": 98.99,
+    "estoque": 5.0
   },
   {
     "codigo": "8142",
