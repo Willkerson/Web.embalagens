@@ -582,9 +582,9 @@
   },
   {
     "codigo": "361",
-    "nome": "POTE RED.145 C/TAMPA C/24UN  PRAFESTA",
+    "nome": "POTE REDONDO 145ML C/TAMPA C/24UN  PRAFESTA",
     "categoria": "DESCARTAVEIS",
-    "preco": 15.0,
+    "preco": 12.99,
     "estoque": 2.0
   },
   {
@@ -851,7 +851,7 @@
     "nome": "POTE REDONDO 350ML C/TAMPA C/24UN PRAFESTA",
     "categoria": "DESCARTAVEIS",
     "preco": 22.5,
-    "estoque": 10.0
+    "estoque": 9.0
   },
   {
     "codigo": "453",
@@ -1047,7 +1047,7 @@
     "nome": "DETERGENTE SUPREMA  NEUTRO 500ML",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 3.5,
-    "estoque": 23.0
+    "estoque": 22.0
   },
   {
     "codigo": "562",
@@ -1306,14 +1306,14 @@
     "nome": "D2 1L FOLHA ALUMINIO C/10UN WYDA",
     "categoria": "Embalagem",
     "preco": 18.5,
-    "estoque": -24.0
+    "estoque": -25.0
   },
   {
     "codigo": "658",
     "nome": "D5 1,15L FOLHA DE ALUMINIO C/10UN  WYDA",
     "categoria": "Embalagem",
     "preco": 17.5,
-    "estoque": -13.0
+    "estoque": -15.0
   },
   {
     "codigo": "659",
@@ -2013,7 +2013,7 @@
     "nome": "DESINFETANTE MISTERIO ARABE 2L SANOL",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 8.99,
-    "estoque": 2.0
+    "estoque": 1.0
   },
   {
     "codigo": "927",
@@ -2055,7 +2055,7 @@
     "nome": "CAIXA P/CORREIO N0016X11X07 1UN NIAGRA",
     "categoria": "Embalagem",
     "preco": 3.5,
-    "estoque": -1.0
+    "estoque": -2.0
   },
   {
     "codigo": "939",
@@ -2297,9 +2297,9 @@
   },
   {
     "codigo": "1046",
-    "nome": "BOBINA PICOTADA 40X60CM (2.27KG)",
+    "nome": "BOBINA PICOTADA 40X60CM (2.32KG)",
     "categoria": "Embalagem",
-    "preco": 93.0,
+    "preco": 78.99,
     "estoque": -1.0
   },
   {
@@ -2314,7 +2314,7 @@
     "nome": "SACO P/ LIXO PRETO 100L C/50UN",
     "categoria": "SACO LIXO",
     "preco": 57.5,
-    "estoque": 26.0
+    "estoque": 25.0
   },
   {
     "codigo": "1049",
@@ -2328,14 +2328,14 @@
     "nome": "SACO P/ LIXO PRETO P6 40L C/10UN",
     "categoria": "SACO LIXO",
     "preco": 5.5,
-    "estoque": 34.0
+    "estoque": 27.0
   },
   {
     "codigo": "1052",
     "nome": "SACO P/ LIXO PRETO P8 60L C/10UN",
     "categoria": "SACO LIXO",
     "preco": 8.99,
-    "estoque": 20.0
+    "estoque": 18.0
   },
   {
     "codigo": "1053",
@@ -2790,7 +2790,7 @@
     "nome": "CAIXA P/BOLO N05 22X22X10",
     "categoria": "Embalagem",
     "preco": 5.5,
-    "estoque": 25.0
+    "estoque": 24.0
   },
   {
     "codigo": "1322",
@@ -2846,7 +2846,7 @@
     "nome": "TOALHA INTERFOLHA (OURO) CELULOSE ISAPEL C/1000UN",
     "categoria": "PRODUTO DE HIGIENE",
     "preco": 23.0,
-    "estoque": 44.0
+    "estoque": 43.0
   },
   {
     "codigo": "1341",
@@ -3161,7 +3161,7 @@
     "nome": "PANO DE PRATO BRANCO/ESTAMPADO TATI/NACIONAL 66X38CM",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 4.3,
-    "estoque": 366.0
+    "estoque": 364.0
   },
   {
     "codigo": "1530",
@@ -3406,7 +3406,7 @@
     "nome": "CANUDO BIO FLEXIVEL 5,8MM C/100UN EM SACHE COPAC",
     "categoria": "DESCARTAVEIS",
     "preco": 10.99,
-    "estoque": 3.0
+    "estoque": 2.0
   },
   {
     "codigo": "1771",
@@ -3854,7 +3854,7 @@
     "nome": "SACO SOS M PARDO C/50UN 19X12X26 PLUMA",
     "categoria": "Embalagem",
     "preco": 32.5,
-    "estoque": 13.0
+    "estoque": 12.0
   },
   {
     "codigo": "2096",
@@ -3875,7 +3875,7 @@
     "nome": "SACOLA BRANCA 1KG 30x40",
     "categoria": "SACO LIXO",
     "preco": 27.0,
-    "estoque": -2.0
+    "estoque": -3.0
   },
   {
     "codigo": "2102",
@@ -3931,7 +3931,7 @@
     "nome": "FITA ADESIVA 45X100M  TRANSPARENTE PAPI",
     "categoria": "PAPELARIA",
     "preco": 10.5,
-    "estoque": 64.0
+    "estoque": 63.0
   },
   {
     "codigo": "2164",
@@ -4092,7 +4092,7 @@
     "nome": "CUMBUCA C/TAMPA 300ML C/10UN B APETITE",
     "categoria": "DESCARTAVEIS",
     "preco": 6.0,
-    "estoque": 3.0
+    "estoque": 0.0
   },
   {
     "codigo": "2350",
@@ -4309,7 +4309,7 @@
     "nome": "LIMPADOR CONCENTRADO ALECRIM 120ML SANOL",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 12.99,
-    "estoque": -23.0
+    "estoque": -24.0
   },
   {
     "codigo": "2531",
@@ -4400,7 +4400,7 @@
     "nome": "TAMPA PP 90MM TRANSPARENTE S/FURO C/50UN  500ML ULTRA",
     "categoria": "DESCARTAVEIS",
     "preco": 8.99,
-    "estoque": 18.0
+    "estoque": 17.0
   },
   {
     "codigo": "2671",
@@ -4967,7 +4967,7 @@
     "nome": "D6-1B 500ML FOLHA DE ALUMINIO C10/UN C/TAMPA PT WYDA D",
     "categoria": "Embalagem",
     "preco": 16.5,
-    "estoque": 4.0
+    "estoque": 3.0
   },
   {
     "codigo": "3039",
@@ -5356,7 +5356,7 @@
   },
   {
     "codigo": "3197",
-    "nome": "POTE E TAMPA REDONDO 350ML C/24UN DANUBIO",
+    "nome": "POTE REDONDO 350ML C/24UN DANUBIO",
     "categoria": "DESCARTAVEIS",
     "preco": 19.5,
     "estoque": 22.0
@@ -5506,7 +5506,7 @@
     "nome": "LIMPADOR CONCENTRADO MISTERIO ARABE 120ML SANOL",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 12.99,
-    "estoque": 12.0
+    "estoque": 8.0
   },
   {
     "codigo": "3980",
@@ -5520,7 +5520,7 @@
     "nome": "LIMPADOR CONCENTRADO CHA BRANCO 120ML SANOL",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 12.99,
-    "estoque": 6.0
+    "estoque": 5.0
   },
   {
     "codigo": "3982",
@@ -5604,7 +5604,7 @@
     "nome": "FORMA DESCARTAVEL REDONDA PARA AIR FRYER C/50UN 20CM TINGS",
     "categoria": "UTENSILIOS",
     "preco": 13.99,
-    "estoque": -2.0
+    "estoque": -4.0
   },
   {
     "codigo": "4002",
@@ -5624,14 +5624,14 @@
     "codigo": "4005",
     "nome": "BOBINA PICOTADA 20X30CM  C/700UN P/ ALIMENTOS SOLDA FUNDO (1,3KG)",
     "categoria": "Embalagem",
-    "preco": 63.0,
+    "preco": 44.99,
     "estoque": -5.0
   },
   {
     "codigo": "4006",
     "nome": "BOBINA PICOTADO 30X40 C/450UN SOLDA FUNDO 1,95KG",
     "categoria": "ALIMENTO/GENERO ALIMENTICIO",
-    "preco": 76.5,
+    "preco": 55.99,
     "estoque": 1.0
   },
   {
@@ -5982,7 +5982,7 @@
     "nome": "LUVA NUTRILICA PRETA GG S/PO C/100UN TALGE",
     "categoria": "DESCARTAVEIS",
     "preco": 31.99,
-    "estoque": 22.0
+    "estoque": 21.0
   },
   {
     "codigo": "7478",
@@ -6332,7 +6332,7 @@
     "nome": "COPO DESCARTAVEL 500ML C/50UN ULTRA",
     "categoria": "DESCARTAVEIS",
     "preco": 13.99,
-    "estoque": 23.0
+    "estoque": 22.0
   },
   {
     "codigo": "9021",
@@ -6346,7 +6346,7 @@
     "nome": "COPO DESCARTAVEL TRANSPARENTE 300ML C/100UN ULTRA PP",
     "categoria": "DESCARTAVEIS",
     "preco": 16.5,
-    "estoque": 15.0
+    "estoque": 14.0
   },
   {
     "codigo": "9039",
@@ -6374,7 +6374,7 @@
     "nome": "PENEIRA DE PLASTICO 16CM",
     "categoria": "UTENSILIOS",
     "preco": 5.0,
-    "estoque": -26.0
+    "estoque": -27.0
   },
   {
     "codigo": "9112",
@@ -6451,14 +6451,14 @@
     "nome": "LUVA NITRILICA PRETA P 10 PARES TALGE",
     "categoria": "DESCARTAVEIS",
     "preco": 6.99,
-    "estoque": -8.0
+    "estoque": -9.0
   },
   {
     "codigo": "11175",
     "nome": "PANO MULTIUSO AZUL C/50 PANOS 30CMX25CM MR. PLUS TALGE",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 17.0,
-    "estoque": 56.0
+    "estoque": 55.0
   },
   {
     "codigo": "11176",
@@ -7494,7 +7494,7 @@
     "nome": "ACENDEDOR G/INFAMAVEL BJ8620",
     "categoria": "-",
     "preco": 6.5,
-    "estoque": 0.0
+    "estoque": -1.0
   },
   {
     "codigo": "129043",
