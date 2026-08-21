@@ -585,7 +585,7 @@
     "nome": "POTE REDONDO 145ML C/TAMPA C/24UN  PRAFESTA",
     "categoria": "DESCARTAVEIS",
     "preco": 12.99,
-    "estoque": 2.0
+    "estoque": 1.0
   },
   {
     "codigo": "367",
@@ -704,7 +704,7 @@
     "nome": "G56MM TORTA MEDIA 1,7KG BR26CM GALVONOTEK",
     "categoria": "DESCARTAVEIS",
     "preco": 5.5,
-    "estoque": 23.0
+    "estoque": 22.0
   },
   {
     "codigo": "409",
@@ -1537,7 +1537,7 @@
     "nome": "LUSTRA MOVEIS 200ML LAVANDA AZULIM",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 9.0,
-    "estoque": 7.0
+    "estoque": 6.0
   },
   {
     "codigo": "757",
@@ -2237,7 +2237,7 @@
     "nome": "SACOS PLASTICO  200G 15x20 +/-120un",
     "categoria": "Embalagem",
     "preco": 10.0,
-    "estoque": -10.0
+    "estoque": -11.0
   },
   {
     "codigo": "1016",
@@ -2335,7 +2335,7 @@
     "nome": "SACO P/ LIXO PRETO P6 40L C/10UN",
     "categoria": "SACO LIXO",
     "preco": 5.5,
-    "estoque": 25.0
+    "estoque": 23.0
   },
   {
     "codigo": "1052",
@@ -3406,7 +3406,7 @@
     "nome": "CANUDO BIO 8x210MM P/ MILKE SHAKE C/100UN IT´S BIO",
     "categoria": "DESCARTAVEIS",
     "preco": 17.5,
-    "estoque": 5.0
+    "estoque": 4.0
   },
   {
     "codigo": "1770",
@@ -3784,7 +3784,7 @@
     "nome": "TOUCAS DESCARTAVEIS C/100UN 45X50CM BOMPACK",
     "categoria": "DESCARTAVEIS",
     "preco": 13.5,
-    "estoque": 8.0
+    "estoque": 7.0
   },
   {
     "codigo": "2067",
@@ -3917,7 +3917,7 @@
     "nome": "SACOLA BRANCA 1KG 90x100",
     "categoria": "SACO LIXO",
     "preco": 27.0,
-    "estoque": 6.0
+    "estoque": 5.0
   },
   {
     "codigo": "2122",
@@ -6696,7 +6696,7 @@
     "nome": "D640 DOCE REDONDO 170ML CRISTAL C/10UN DONA RITA",
     "categoria": "DESCARTAVEIS",
     "preco": 3.99,
-    "estoque": 84.0
+    "estoque": 78.0
   },
   {
     "codigo": "29227",
