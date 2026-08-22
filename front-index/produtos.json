@@ -88,7 +88,7 @@
     "nome": "RODO 40CM C/CABO ALKLIN",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 16.25,
-    "estoque": 29.0
+    "estoque": 28.0
   },
   {
     "codigo": "125",
@@ -144,7 +144,7 @@
     "nome": "SABONETE LIQ. CREMOSO ERVA DOCE 5L  SOFT PLUS TRILHA",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 27.99,
-    "estoque": 5.0
+    "estoque": 4.0
   },
   {
     "codigo": "144",
@@ -424,7 +424,7 @@
     "nome": "COPO TERMICO 240ML C/20UN TOTALPLAST",
     "categoria": "DESCARTAVEIS",
     "preco": 6.99,
-    "estoque": 16.0
+    "estoque": 15.0
   },
   {
     "codigo": "313",
@@ -564,7 +564,7 @@
     "nome": "ESCOVA MULTIUSO C/RASPADOR",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 12.5,
-    "estoque": 1.0
+    "estoque": 0.0
   },
   {
     "codigo": "352",
@@ -585,7 +585,7 @@
     "nome": "PANO MULTIUSO AMARELO C/10UN ALKLIN",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 19.99,
-    "estoque": 21.0
+    "estoque": 20.0
   },
   {
     "codigo": "357",
@@ -598,7 +598,7 @@
     "codigo": "361",
     "nome": "POTE REDONDO 145ML C/TAMPA C/24UN  PRAFESTA",
     "categoria": "DESCARTAVEIS",
-    "preco": 12.99,
+    "preco": 13.5,
     "estoque": 1.0
   },
   {
@@ -682,7 +682,7 @@
     "codigo": "400",
     "nome": "FACA MASTER BRANCA C/50UN PRAFESTA",
     "categoria": "DESCARTAVEIS",
-    "preco": 12.99,
+    "preco": 12.5,
     "estoque": 18.0
   },
   {
@@ -697,7 +697,7 @@
     "nome": "FILM DE PVC 30MTS  28X15M TECKFIM",
     "categoria": "ALIMENTO/GENERO ALIMENTICIO",
     "preco": 4.5,
-    "estoque": 13.0
+    "estoque": 12.0
   },
   {
     "codigo": "405",
@@ -711,7 +711,7 @@
     "nome": "GARFO SOBREMESA BRANCO C/50UN PRAFESTA",
     "categoria": "DESCARTAVEIS",
     "preco": 5.0,
-    "estoque": 29.0
+    "estoque": 28.0
   },
   {
     "codigo": "407",
@@ -828,7 +828,7 @@
   {
     "codigo": "433",
     "nome": "KIT CHURRASCO C/10UN  PRAFESTA",
-    "categoria": "-",
+    "categoria": "DESCARTAVEIS",
     "preco": 28.99,
     "estoque": 11.0
   },
@@ -864,12 +864,12 @@
     "codigo": "447",
     "nome": "POTE REDONDO 350ML C/TAMPA C/24UN PRAFESTA",
     "categoria": "DESCARTAVEIS",
-    "preco": 22.5,
+    "preco": 21.99,
     "estoque": 9.0
   },
   {
     "codigo": "453",
-    "nome": "POTE E TAMPA RET.150ML C/20UN PRAFESTA",
+    "nome": "POTE  RETANGULAR 150ML C/20UN PRAFESTA",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 15.0,
     "estoque": 7.0
@@ -883,9 +883,9 @@
   },
   {
     "codigo": "455",
-    "nome": "POTE E TAMPA RET.500ML C/24UN PRAFESTA",
+    "nome": "POTE  RETANGULAR 500ML C/24UN PRAFESTA",
     "categoria": "DESCARTAVEIS",
-    "preco": 38.0,
+    "preco": 38.99,
     "estoque": 30.0
   },
   {
@@ -913,7 +913,7 @@
     "codigo": "466",
     "nome": "COPO MINI 25ML C / 10 UN",
     "categoria": "DESCARTAVEIS",
-    "preco": 3.5,
+    "preco": 3.99,
     "estoque": -9.0
   },
   {
@@ -1054,7 +1054,7 @@
     "nome": "DETERGENTE SUPREMA NATURAL CLEAR 500ML",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 3.5,
-    "estoque": 23.0
+    "estoque": 21.0
   },
   {
     "codigo": "559",
@@ -1082,7 +1082,7 @@
     "nome": "REMOVEDOR TRADICIONAL  SUPREMA 500ML",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 8.0,
-    "estoque": 12.0
+    "estoque": 11.0
   },
   {
     "codigo": "569",
@@ -1194,7 +1194,7 @@
     "nome": "PROTETOR DE FOGAO C/12UN FOLHA DE ALUMINIO MOLDADA WYDA",
     "categoria": "Embalagem",
     "preco": 10.5,
-    "estoque": 5.0
+    "estoque": 4.0
   },
   {
     "codigo": "613",
@@ -1313,7 +1313,7 @@
     "nome": "ASSADEIRA DE ALUMINIO RETANGULAR PRA VIAGEM 4L",
     "categoria": "DESCARTAVEIS",
     "preco": 5.99,
-    "estoque": 32.0
+    "estoque": 31.0
   },
   {
     "codigo": "656",
@@ -1348,7 +1348,7 @@
     "nome": "FILME DE POLIESTER PARA CHURRASCO",
     "categoria": "Embalagem",
     "preco": 16.5,
-    "estoque": 7.0
+    "estoque": 6.0
   },
   {
     "codigo": "666",
@@ -1641,7 +1641,7 @@
     "codigo": "784",
     "nome": "KIT GARFO E FACA MASTER C/25  PRAFESTA",
     "categoria": "DESCARTAVEIS",
-    "preco": 21.0,
+    "preco": 22.5,
     "estoque": 3.0
   },
   {
@@ -1779,7 +1779,7 @@
   },
   {
     "codigo": "831",
-    "nome": "KIT POTE E TAMPA RET. 750ML C/24UN PRAFESTA",
+    "nome": "POTE  RETANGULAR 750ML C/24UN PRAFESTA",
     "categoria": "DESCARTAVEIS",
     "preco": 56.99,
     "estoque": 0.0
@@ -1838,7 +1838,7 @@
     "nome": "RODO PIA IDEAL SANCHES",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 5.99,
-    "estoque": 22.0
+    "estoque": 21.0
   },
   {
     "codigo": "852",
@@ -2209,7 +2209,7 @@
     "nome": "SACOS PLASTICO PEBD 1KG 10X20X0,06 COLOMBO/HELVIPACK",
     "categoria": "Embalagem",
     "preco": 40.99,
-    "estoque": 10.0
+    "estoque": 9.0
   },
   {
     "codigo": "1008",
@@ -2524,7 +2524,7 @@
     "nome": "FIBRA LIMP. PESADA 1UN 260X102MM BETTANIN",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 4.99,
-    "estoque": 17.0
+    "estoque": 16.0
   },
   {
     "codigo": "1149",
@@ -2601,14 +2601,14 @@
     "nome": "PANO MULTIUSO BRANCO C/50 PANOS 30CMX50CM MR.PLUS",
     "categoria": "PRODUTO DE HIGIENE",
     "preco": 15.5,
-    "estoque": -43.0
+    "estoque": -44.0
   },
   {
     "codigo": "1176",
     "nome": "BALDE  ESPECIAL P 12L ARQPLAST",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 16.5,
-    "estoque": 1.0
+    "estoque": 0.0
   },
   {
     "codigo": "1182",
@@ -2762,7 +2762,7 @@
     "nome": "ESPONJA DE LÃ DE AÇO ASSOLAN  45G",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 3.0,
-    "estoque": 5.0
+    "estoque": 4.0
   },
   {
     "codigo": "1301",
@@ -3014,7 +3014,7 @@
     "nome": "LIMP. M/USO 500ML  TRADICIONAL SUPREMA",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 3.99,
-    "estoque": 19.0
+    "estoque": 18.0
   },
   {
     "codigo": "1434",
@@ -3182,7 +3182,7 @@
     "nome": "PANO DE PRATO BRANCO/ESTAMPADO TATI/NACIONAL 66X38CM",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 4.3,
-    "estoque": 360.0
+    "estoque": 358.0
   },
   {
     "codigo": "1530",
@@ -3406,7 +3406,7 @@
     "nome": "ASSADEIRA DE ALUMINIO OVAL 4L PRA VIAGEM",
     "categoria": "DESCARTAVEIS",
     "preco": 5.99,
-    "estoque": 16.0
+    "estoque": 15.0
   },
   {
     "codigo": "1755",
@@ -3798,7 +3798,7 @@
     "nome": "TOUCAS DESCARTAVEIS C/100UN 45X50CM BOMPACK",
     "categoria": "DESCARTAVEIS",
     "preco": 13.5,
-    "estoque": 7.0
+    "estoque": 6.0
   },
   {
     "codigo": "2067",
@@ -4222,16 +4222,16 @@
   },
   {
     "codigo": "2411",
-    "nome": "POTE E TAMPA RET.350ML C/24UN PRAFESTA",
+    "nome": "POTE  RETANGULAR  350ML C/24UN PRAFESTA",
     "categoria": "DESCARTAVEIS",
     "preco": 34.99,
     "estoque": 2.0
   },
   {
     "codigo": "2412",
-    "nome": "POTE E TAMPA RET.250ML C/24UN PRAFESTA",
+    "nome": "POTE  RETANGULAR 250ML C/24UN PRAFESTA",
     "categoria": "DESCARTAVEIS",
-    "preco": 23.99,
+    "preco": 26.5,
     "estoque": 2.0
   },
   {
@@ -4365,7 +4365,7 @@
     "nome": "ESPONJA  ANTIRISCO C/4UN ALKLIN",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 4.0,
-    "estoque": 158.0
+    "estoque": 156.0
   },
   {
     "codigo": "2599",
@@ -4841,7 +4841,7 @@
     "nome": "PRATO QUADRADO 150MM BRANCO C/10UN",
     "categoria": "ALIMENTO/GENERO ALIMENTICIO",
     "preco": 7.99,
-    "estoque": 79.0
+    "estoque": 77.0
   },
   {
     "codigo": "2939",
@@ -5394,7 +5394,7 @@
     "nome": "PAPEL TOALHA SCALA PLUS C/120 TOALHAS C/2 ROLOS",
     "categoria": "PRODUTO DE HIGIENE",
     "preco": 8.5,
-    "estoque": 20.0
+    "estoque": 19.0
   },
   {
     "codigo": "3267",
@@ -5758,7 +5758,7 @@
     "nome": "BALDE PLAST 10LTS ARQPLAST",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 11.5,
-    "estoque": 4.0
+    "estoque": 2.0
   },
   {
     "codigo": "5108",
@@ -6017,7 +6017,7 @@
     "nome": "AROMATIZADOR DE AMBIENTE JASMIN 250ML ESSENCIAS",
     "categoria": "PRODUTO DE HIGIENE",
     "preco": 15.0,
-    "estoque": 9.0
+    "estoque": 8.0
   },
   {
     "codigo": "7523",
@@ -6542,7 +6542,7 @@
     "nome": "LIMPA AZULEJO  SEM CABO SANCHES",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 8.5,
-    "estoque": 70.0
+    "estoque": 69.0
   },
   {
     "codigo": "11682",
@@ -6878,7 +6878,7 @@
     "nome": "MOP ABRASIVO REFIL ALKLIN 1UN",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 12.99,
-    "estoque": 5.0
+    "estoque": 4.0
   },
   {
     "codigo": "31664",
@@ -8012,7 +8012,7 @@
     "nome": "PURUS SACO DE LAVAR ROUPA COM ZIPER",
     "categoria": "-",
     "preco": 6.99,
-    "estoque": -1.0
+    "estoque": -2.0
   },
   {
     "codigo": "129140",
@@ -8068,7 +8068,7 @@
     "nome": "BALDE PLAST 12L QUADRADO",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 44.0,
-    "estoque": 0.0
+    "estoque": -1.0
   },
   {
     "codigo": "790984",
