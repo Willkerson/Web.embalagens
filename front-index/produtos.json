@@ -375,7 +375,7 @@
     "nome": "ESPONJA MULTIUSO C/4UN ALKLIN",
     "categoria": "UTENSILIOS",
     "preco": 3.99,
-    "estoque": 291.0
+    "estoque": 288.0
   },
   {
     "codigo": "294",
@@ -529,7 +529,7 @@
     "nome": "PLASTICO BOLHA 43X10M MICRA 20 MN. PLAST",
     "categoria": "Embalagem",
     "preco": 16.99,
-    "estoque": 10.0
+    "estoque": 9.0
   },
   {
     "codigo": "343",
@@ -655,7 +655,7 @@
     "nome": "PANO DE CHAO XADREZ 45CMX68CM SOUZA BR2",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 4.7,
-    "estoque": 249.0
+    "estoque": 245.0
   },
   {
     "codigo": "390",
@@ -1565,7 +1565,7 @@
     "nome": "MAXIMOOM LIMPADOR FLOTADOR 2L ALCALINO",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 37.0,
-    "estoque": 7.0
+    "estoque": 6.0
   },
   {
     "codigo": "759",
@@ -1649,7 +1649,7 @@
     "nome": "LIMPA CERAMICAS E AZULEJOS AZULIM LAVANDA 1L START",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 11.5,
-    "estoque": 9.0
+    "estoque": 8.0
   },
   {
     "codigo": "789",
@@ -1712,7 +1712,7 @@
     "nome": "LIMPADOR PERF. JASMINE 500ML SANOL",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 6.5,
-    "estoque": 1.0
+    "estoque": -1.0
   },
   {
     "codigo": "813",
@@ -2363,7 +2363,7 @@
     "nome": "SACOS P/LIXO 100L P8 C/10UN PRETO",
     "categoria": "SACO LIXO",
     "preco": 13.5,
-    "estoque": 20.0
+    "estoque": 18.0
   },
   {
     "codigo": "1055",
@@ -2517,14 +2517,14 @@
     "nome": "SUPORTE LT C/VELCRO SANCHES",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 20.0,
-    "estoque": 13.0
+    "estoque": 12.0
   },
   {
     "codigo": "1148",
     "nome": "FIBRA LIMP. PESADA 1UN 260X102MM BETTANIN",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 4.99,
-    "estoque": 16.0
+    "estoque": 15.0
   },
   {
     "codigo": "1149",
@@ -3175,7 +3175,7 @@
     "nome": "TOALHA INTERFOLHA CELULOSE PREMIUM WHITE PAPER C/1000UN",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 25.99,
-    "estoque": 66.0
+    "estoque": 63.0
   },
   {
     "codigo": "1526",
@@ -3252,7 +3252,7 @@
     "nome": "LIXEIRA BASCULANTE 10L SANREMO",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 30.99,
-    "estoque": -1.0
+    "estoque": -2.0
   },
   {
     "codigo": "1562",
@@ -3896,7 +3896,7 @@
     "nome": "SACOLA BRANCA 1KG 30x40",
     "categoria": "SACO LIXO",
     "preco": 27.0,
-    "estoque": -3.0
+    "estoque": -4.0
   },
   {
     "codigo": "2102",
@@ -4085,7 +4085,7 @@
     "nome": "LIMPADOR DE SUPERFICIE SANOL EUCALIPTO 120ML",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 12.99,
-    "estoque": 23.0
+    "estoque": 22.0
   },
   {
     "codigo": "2321",
@@ -4526,7 +4526,7 @@
     "nome": "GARFO SOBREMESA CRISTAL C/50UN ELITE",
     "categoria": "DESCARTAVEIS",
     "preco": 3.99,
-    "estoque": 33.0
+    "estoque": 32.0
   },
   {
     "codigo": "2785",
@@ -4848,7 +4848,7 @@
     "nome": "PRATO QUADRADO 150MM CRISTAL C/10UN",
     "categoria": "DESCARTAVEIS",
     "preco": 7.99,
-    "estoque": 57.0
+    "estoque": 55.0
   },
   {
     "codigo": "2957",
@@ -4981,7 +4981,7 @@
     "nome": "COPO DESCARTAVEL 330ML C/50UN ULTRA",
     "categoria": "DESCARTAVEIS",
     "preco": 8.5,
-    "estoque": 16.0
+    "estoque": 15.0
   },
   {
     "codigo": "3035",
@@ -5359,7 +5359,7 @@
     "nome": "PANO PARA PISO MICROFIIBRAS COLORS 48X70CM ALKLIN",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 12.5,
-    "estoque": -18.0
+    "estoque": -19.0
   },
   {
     "codigo": "3191",
@@ -5548,7 +5548,7 @@
     "nome": "LIMPADOR CONCENTRADO ROUPA LAVADA 120ML SANOL",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 12.99,
-    "estoque": 24.0
+    "estoque": 23.0
   },
   {
     "codigo": "3983",
@@ -5842,7 +5842,7 @@
     "nome": "VELA CHAMA COLORIDA ROSA",
     "categoria": "Outras",
     "preco": 8.5,
-    "estoque": -5.0
+    "estoque": -6.0
   },
   {
     "codigo": "6503",
@@ -6878,7 +6878,7 @@
     "nome": "MOP ABRASIVO REFIL ALKLIN 1UN",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 12.99,
-    "estoque": 4.0
+    "estoque": 3.0
   },
   {
     "codigo": "31664",
