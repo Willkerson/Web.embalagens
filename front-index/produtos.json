@@ -375,7 +375,7 @@
     "nome": "ESPONJA MULTIUSO C/4UN ALKLIN",
     "categoria": "UTENSILIOS",
     "preco": 3.99,
-    "estoque": 288.0
+    "estoque": 287.0
   },
   {
     "codigo": "294",
@@ -1201,7 +1201,7 @@
     "nome": "ALCOOL 70% LIQUIDO 1L  HORUS",
     "categoria": "PRODUTO DE HIGIENE",
     "preco": 9.99,
-    "estoque": 8.0
+    "estoque": 7.0
   },
   {
     "codigo": "615",
@@ -1950,7 +1950,7 @@
     "nome": "GUARDANAPO DE PAPEL 20X21CM C/50UN LUXO PLUMA",
     "categoria": "DESCARTAVEIS",
     "preco": 1.99,
-    "estoque": 54.0
+    "estoque": 52.0
   },
   {
     "codigo": "900",
@@ -1992,7 +1992,7 @@
     "nome": "SACOLA SOS LIMA M C/ALÇA C/20UN 19X12X26 PLUMA",
     "categoria": "Embalagem",
     "preco": 29.0,
-    "estoque": 19.0
+    "estoque": 18.0
   },
   {
     "codigo": "907",
@@ -2286,7 +2286,7 @@
     "nome": "SACO P/ LIXO PRETO P8 60L C/50UN",
     "categoria": "SACO LIXO",
     "preco": 38.25,
-    "estoque": 11.0
+    "estoque": 10.0
   },
   {
     "codigo": "1042",
@@ -2335,7 +2335,7 @@
     "nome": "SACO P/ LIXO PRETO 100L C/50UN",
     "categoria": "SACO LIXO",
     "preco": 57.5,
-    "estoque": 25.0
+    "estoque": 24.0
   },
   {
     "codigo": "1049",
@@ -2356,7 +2356,7 @@
     "nome": "SACO P/ LIXO PRETO P8 60L C/10UN",
     "categoria": "SACO LIXO",
     "preco": 8.99,
-    "estoque": 9.0
+    "estoque": 8.0
   },
   {
     "codigo": "1053",
@@ -2580,7 +2580,7 @@
     "nome": "FITA ADESIVA POLIPROPILENO TRANSPARENTE 48MMX40M TECTAPE",
     "categoria": "PAPELARIA",
     "preco": 4.99,
-    "estoque": 43.0
+    "estoque": 42.0
   },
   {
     "codigo": "1168",
@@ -2650,7 +2650,7 @@
     "nome": "LIXEIRA 6.5L SANREMO",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 25.0,
-    "estoque": -5.0
+    "estoque": -6.0
   },
   {
     "codigo": "1206",
@@ -2853,7 +2853,7 @@
     "nome": "TOALHA INTERFOLHA BRANCA (VERDE) C/1000UN ISAPEL",
     "categoria": "PRODUTO DE HIGIENE",
     "preco": 16.0,
-    "estoque": 44.0
+    "estoque": 43.0
   },
   {
     "codigo": "1331",
@@ -3063,7 +3063,7 @@
     "nome": "POTE 100ML C/100UN COPOMAIS",
     "categoria": "DESCARTAVEIS",
     "preco": 6.5,
-    "estoque": 18.0
+    "estoque": 16.0
   },
   {
     "codigo": "1465",
@@ -3077,7 +3077,7 @@
     "nome": "D32MM TORTA MINI 19CM 750G DONA RITA",
     "categoria": "Embalagem",
     "preco": 1.5,
-    "estoque": 55.0
+    "estoque": 54.0
   },
   {
     "codigo": "1474",
@@ -3336,7 +3336,7 @@
     "nome": "POTE REDONDO 200ML C/TAMPA C/24UN PRAFESTA",
     "categoria": "DESCARTAVEIS",
     "preco": 17.99,
-    "estoque": 5.0
+    "estoque": 4.0
   },
   {
     "codigo": "1684",
@@ -3826,7 +3826,7 @@
     "nome": "TAMPA P/COPO 100/150/180 E 200ML C/100UN COPOMAIS",
     "categoria": "DESCARTAVEIS",
     "preco": 9.99,
-    "estoque": 21.0
+    "estoque": 19.0
   },
   {
     "codigo": "2075",
@@ -3875,7 +3875,7 @@
     "nome": "SACO SOS M PARDO C/50UN 19X12X26 PLUMA",
     "categoria": "Embalagem",
     "preco": 32.5,
-    "estoque": 12.0
+    "estoque": 11.0
   },
   {
     "codigo": "2096",
@@ -3889,7 +3889,7 @@
     "nome": "SACO SOS G PARDO PLUMA C/50UN",
     "categoria": "Embalagem",
     "preco": 47.0,
-    "estoque": 17.0
+    "estoque": 16.0
   },
   {
     "codigo": "2101",
@@ -4078,7 +4078,7 @@
     "nome": "LUVA NITRILICA  PRETA M S/PO C/100UN TALGE",
     "categoria": "DESCARTAVEIS",
     "preco": 31.99,
-    "estoque": 32.0
+    "estoque": 31.0
   },
   {
     "codigo": "2315",
@@ -4666,7 +4666,7 @@
     "nome": "PAPEL ACOPLADO C/PELICULA 30X38 300g (C/100UN)",
     "categoria": "DESCARTAVEIS",
     "preco": 18.5,
-    "estoque": 8.0
+    "estoque": 6.0
   },
   {
     "codigo": "2842",
@@ -4911,7 +4911,7 @@
     "nome": "COPO DESCARTAVEL 180ML PS C/100UN FASTCUP",
     "categoria": "DESCARTAVEIS",
     "preco": 6.99,
-    "estoque": 110.0
+    "estoque": 105.0
   },
   {
     "codigo": "2995",
@@ -4967,7 +4967,7 @@
     "nome": "SACO SOS GG  PARDO C/10UN 17X10X24 PLUMA",
     "categoria": "Embalagem",
     "preco": 14.0,
-    "estoque": 6.0
+    "estoque": 5.0
   },
   {
     "codigo": "3033",
@@ -4988,7 +4988,7 @@
     "nome": "D6-1B 500ML FOLHA DE ALUMINIO C10/UN C/TAMPA PT WYDA D",
     "categoria": "Embalagem",
     "preco": 16.5,
-    "estoque": 2.0
+    "estoque": 0.0
   },
   {
     "codigo": "3039",
@@ -5394,7 +5394,7 @@
     "nome": "PAPEL TOALHA SCALA PLUS C/120 TOALHAS C/2 ROLOS",
     "categoria": "PRODUTO DE HIGIENE",
     "preco": 8.5,
-    "estoque": 19.0
+    "estoque": 17.0
   },
   {
     "codigo": "3267",
@@ -6444,7 +6444,7 @@
     "nome": "SACOS PLASTICO PEBD 200G 10X20X0,06 COLOMBO/HELVIPACK",
     "categoria": "Embalagem",
     "preco": 10.0,
-    "estoque": -14.0
+    "estoque": -15.0
   },
   {
     "codigo": "10075",
@@ -6794,7 +6794,7 @@
     "nome": "DETERGENTE YPÊ CLEAR 500ML",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 4.5,
-    "estoque": 35.0
+    "estoque": 34.0
   },
   {
     "codigo": "31651",
@@ -7942,7 +7942,7 @@
     "nome": "ESPATULAR  RETA  PROFISIONAL FRATELLI",
     "categoria": "UTENSILIOS",
     "preco": 19.0,
-    "estoque": 3.0
+    "estoque": 2.0
   },
   {
     "codigo": "129101",
@@ -8082,7 +8082,7 @@
     "nome": "SABONETE LIQUIDO BAMBU TROPICAL AROMAS",
     "categoria": "PRODUTO DE HIGIENE",
     "preco": 9.99,
-    "estoque": 0.0
+    "estoque": -1.0
   },
   {
     "codigo": "790987",
