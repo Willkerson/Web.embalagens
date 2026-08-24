@@ -56,6 +56,13 @@
     "estoque": 8.0
   },
   {
+    "codigo": "109",
+    "nome": "GANCHOS ADESIVO C/6UN HOME ART",
+    "categoria": "UTENSILIOS",
+    "preco": 8.99,
+    "estoque": 2.0
+  },
+  {
     "codigo": "110",
     "nome": "SAL EM SACHE C/200G BELLA",
     "categoria": "DESCARTAVEIS",
@@ -411,6 +418,13 @@
     "categoria": "UTENSILIOS",
     "preco": 5.99,
     "estoque": -9.0
+  },
+  {
+    "codigo": "303",
+    "nome": "ACENDEDOR FOGAO 22,5CM HOMEMORE",
+    "categoria": "UTENSILIOS",
+    "preco": 15.99,
+    "estoque": 2.0
   },
   {
     "codigo": "308",
@@ -2030,6 +2044,13 @@
     "estoque": 1.0
   },
   {
+    "codigo": "917",
+    "nome": "ESCOVA SANITARIA FJ91744",
+    "categoria": "PRODUTO DE LIMPEZA",
+    "preco": 14.99,
+    "estoque": 2.0
+  },
+  {
     "codigo": "927",
     "nome": "CAIXA P/ESFIHA N3 25X25X05 NIAGRA",
     "categoria": "Embalagem",
@@ -2098,6 +2119,13 @@
     "categoria": "PRODUTO DE HIGIENE",
     "preco": 12.99,
     "estoque": 4.0
+  },
+  {
+    "codigo": "955",
+    "nome": "CESTO ORGANIZADOR 220X30CM  ALÇA MEGAGIFT",
+    "categoria": "UTENSILIOS",
+    "preco": 15.99,
+    "estoque": 222.0
   },
   {
     "codigo": "957",
@@ -4858,6 +4886,13 @@
     "estoque": 0.0
   },
   {
+    "codigo": "2958",
+    "nome": "GANCHO ADESIVO C/6UN  HOOK",
+    "categoria": "UTENSILIOS",
+    "preco": 5.99,
+    "estoque": 3.0
+  },
+  {
     "codigo": "2964",
     "nome": "SACO ZIP  N00 04X5,5CM C/100UN  ARMAZEM",
     "categoria": "Embalagem",
@@ -5437,6 +5472,13 @@
     "categoria": "Embalagem",
     "preco": 112.0,
     "estoque": 0.0
+  },
+  {
+    "codigo": "3512",
+    "nome": "GANCHO DESIVO METALICO C/6UN  CLINK",
+    "categoria": "UTENSILIOS",
+    "preco": 14.5,
+    "estoque": 3.0
   },
   {
     "codigo": "3575",
@@ -6417,6 +6459,13 @@
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 67.99,
     "estoque": 0.0
+  },
+  {
+    "codigo": "9252",
+    "nome": "ESCOVA SANITARIA 12X50CM COSY",
+    "categoria": "PRODUTO DE LIMPEZA",
+    "preco": 14.99,
+    "estoque": 3.0
   },
   {
     "codigo": "9310",
@@ -7548,7 +7597,7 @@
   {
     "codigo": "129042",
     "nome": "ACENDEDOR G/INFAMAVEL BJ8620",
-    "categoria": "-",
+    "categoria": "UTENSILIOS",
     "preco": 6.5,
     "estoque": -1.0
   },
