@@ -767,7 +767,7 @@
     "nome": "MEXEDOR DRINK C/200UN PRAFESTA",
     "categoria": "DESCARTAVEIS",
     "preco": 12.5,
-    "estoque": -18.0
+    "estoque": -19.0
   },
   {
     "codigo": "419",
@@ -6101,7 +6101,7 @@
     "nome": "SACO P/LIXO 20L PRETO P5 C/50UN",
     "categoria": "SACO LIXO",
     "preco": 17.0,
-    "estoque": 52.0
+    "estoque": 51.0
   },
   {
     "codigo": "7891",
@@ -6542,7 +6542,7 @@
     "nome": "PANO MULTIUSO AZUL C/50 PANOS 30CMX25CM MR. PLUS TALGE",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 17.0,
-    "estoque": 77.0
+    "estoque": 76.0
   },
   {
     "codigo": "11176",
