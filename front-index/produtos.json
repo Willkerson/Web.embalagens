@@ -466,7 +466,7 @@
     "nome": "COPO TERMICO 240ML C/20UN TOTALPLAST",
     "categoria": "DESCARTAVEIS",
     "preco": 6.99,
-    "estoque": 15.0
+    "estoque": 13.0
   },
   {
     "codigo": "313",
@@ -1278,7 +1278,7 @@
     "nome": "ALCOOL 70% LIQUIDO 1L  HORUS",
     "categoria": "PRODUTO DE HIGIENE",
     "preco": 9.99,
-    "estoque": 7.0
+    "estoque": 6.0
   },
   {
     "codigo": "615",
@@ -2804,7 +2804,7 @@
     "nome": "PAPEL HIGIENICO BRANCO ROLAO EUROPEL 08 ROLOS",
     "categoria": "PRODUTO DE HIGIENE",
     "preco": 35.5,
-    "estoque": 15.0
+    "estoque": 14.0
   },
   {
     "codigo": "1290",
@@ -2979,14 +2979,14 @@
     "nome": "MARMITEX DE ISOPOR 750ML C100/UN COPOBRAS",
     "categoria": "DESCARTAVEIS",
     "preco": 60.5,
-    "estoque": 21.0
+    "estoque": 20.0
   },
   {
     "codigo": "1343",
     "nome": "MARMITEX DE ISOPOR 1100ML C/100UN COPOBRAS",
     "categoria": "DESCARTAVEIS",
     "preco": 68.5,
-    "estoque": 17.0
+    "estoque": 16.0
   },
   {
     "codigo": "1344",
@@ -3420,7 +3420,7 @@
     "nome": "HAMBURGUEIRA BH01 C/100UN BOM APETITE",
     "categoria": "Embalagem",
     "preco": 26.0,
-    "estoque": 11.0
+    "estoque": 10.0
   },
   {
     "codigo": "1666",
