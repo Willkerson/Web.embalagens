@@ -564,7 +564,7 @@
     "nome": "SACO DE LIXO UNIDADE PRETO GRANDE",
     "categoria": "SACO LIXO",
     "preco": 2.0,
-    "estoque": -4.0
+    "estoque": -5.0
   },
   {
     "codigo": "342",
@@ -697,14 +697,14 @@
     "nome": "PANO DE CHAO XADREZ 45CMX68CM SOUZA BR2",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 4.7,
-    "estoque": 232.0
+    "estoque": 230.0
   },
   {
     "codigo": "390",
     "nome": "PANO DE CHAO BRANCO ALVEJADO 45CMX69CM SOUZA PPR28",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 6.7,
-    "estoque": 304.0
+    "estoque": 301.0
   },
   {
     "codigo": "391",
@@ -973,10 +973,31 @@
     "estoque": 8.0
   },
   {
+    "codigo": "501",
+    "nome": "SACO P/PRESENTE 32X26CM",
+    "categoria": "Embalagem",
+    "preco": 10.99,
+    "estoque": 0.0
+  },
+  {
     "codigo": "502",
     "nome": "PASTA DE BRILHO LIMPA E DA BRILHO 500G ALUMIL",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 9.5,
+    "estoque": 0.0
+  },
+  {
+    "codigo": "503",
+    "nome": "SACO P/PRESENTE 28X18",
+    "categoria": "Embalagem",
+    "preco": 5.99,
+    "estoque": 0.0
+  },
+  {
+    "codigo": "504",
+    "nome": "SACO P/PRESENTE 23X18CM",
+    "categoria": "Embalagem",
+    "preco": 5.99,
     "estoque": 0.0
   },
   {
@@ -994,11 +1015,25 @@
     "estoque": 49.0
   },
   {
+    "codigo": "509",
+    "nome": "SACO P/PRESENTE 23X18X10CM",
+    "categoria": "Embalagem",
+    "preco": 5.99,
+    "estoque": 0.0
+  },
+  {
     "codigo": "511",
     "nome": "ESCOVAO LIMPA TUDO LEVE SANCHES",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 14.5,
     "estoque": -1.0
+  },
+  {
+    "codigo": "513",
+    "nome": "Cópia de SACO P/PRESENTE 28X24CM",
+    "categoria": "Embalagem",
+    "preco": 10.5,
+    "estoque": 0.0
   },
   {
     "codigo": "525",
@@ -1250,7 +1285,7 @@
     "nome": "FOLHA DE ALUMINIO  7,5MX30CM WYDA",
     "categoria": "DESCARTAVEIS",
     "preco": 8.75,
-    "estoque": -81.0
+    "estoque": -82.0
   },
   {
     "codigo": "616",
@@ -1761,7 +1796,7 @@
     "nome": "LIMPADOR PERF. JASMINE 500ML SANOL",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 6.5,
-    "estoque": -1.0
+    "estoque": -2.0
   },
   {
     "codigo": "813",
@@ -1978,7 +2013,7 @@
     "nome": "COPO DESCARTAVEL TRANSPARENTE 180ML C/100UN TOTAL PLAST",
     "categoria": "DESCARTAVEIS",
     "preco": 6.99,
-    "estoque": 362.0
+    "estoque": 360.0
   },
   {
     "codigo": "897",
@@ -2248,9 +2283,9 @@
   },
   {
     "codigo": "0406",
-    "nome": "SACOLA DE PAPEL CORAÇÕES 21CMX10M",
+    "nome": "SACOLA P/PRESENTE 21CMX10M",
     "categoria": "-",
-    "preco": 17.99,
+    "preco": 6.99,
     "estoque": 5.0
   },
   {
@@ -2398,7 +2433,7 @@
     "nome": "SACO P/ LIXO PRETO 100L C/50UN",
     "categoria": "SACO LIXO",
     "preco": 57.5,
-    "estoque": 23.0
+    "estoque": 22.0
   },
   {
     "codigo": "1049",
@@ -2426,7 +2461,7 @@
     "nome": "SACOS P/LIXO 100L P8 C/10UN PRETO",
     "categoria": "SACO LIXO",
     "preco": 13.5,
-    "estoque": 14.0
+    "estoque": 13.0
   },
   {
     "codigo": "1055",
@@ -2643,7 +2678,7 @@
     "nome": "FITA ADESIVA POLIPROPILENO TRANSPARENTE 48MMX40M TECTAPE",
     "categoria": "PAPELARIA",
     "preco": 4.99,
-    "estoque": 41.0
+    "estoque": 38.0
   },
   {
     "codigo": "1168",
@@ -2762,7 +2797,7 @@
     "nome": "BOBINA PICOTADA 2,5KG C/500UN P/ ALIMENTOS 25X33 EXTRUSA",
     "categoria": "Embalagem",
     "preco": 25.0,
-    "estoque": 10.0
+    "estoque": 9.0
   },
   {
     "codigo": "1281",
@@ -2916,14 +2951,14 @@
     "nome": "TOALHA INTERFOLHA BRANCA (VERDE) C/1000UN ISAPEL",
     "categoria": "PRODUTO DE HIGIENE",
     "preco": 16.0,
-    "estoque": 108.0
+    "estoque": 105.0
   },
   {
     "codigo": "1331",
     "nome": "TOALHA  BOBINA BRANCA 8X20X100 FD WHITE PAPER",
     "categoria": "PRODUTO DE HIGIENE",
     "preco": 56.99,
-    "estoque": 3.0
+    "estoque": 2.0
   },
   {
     "codigo": "1332",
@@ -3098,7 +3133,7 @@
     "nome": "LACRE SEGURANCA PARA LANCHE ROLO C/500UN 30MMX90MM PLUMA",
     "categoria": "PAPELARIA",
     "preco": 29.0,
-    "estoque": 1.0
+    "estoque": 0.0
   },
   {
     "codigo": "1448",
@@ -3189,7 +3224,7 @@
     "nome": "D645 POTE REDONDO BASE E TAMPA C/10UN 120ML",
     "categoria": "DESCARTAVEIS",
     "preco": 3.5,
-    "estoque": 52.0
+    "estoque": 51.0
   },
   {
     "codigo": "1488",
@@ -3245,7 +3280,7 @@
     "nome": "PANO DE PRATO BRANCO/ESTAMPADO TATI/NACIONAL 66X38CM",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 4.3,
-    "estoque": 358.0
+    "estoque": 357.0
   },
   {
     "codigo": "1530",
@@ -3602,7 +3637,7 @@
     "nome": "PEDRA SANITARIA 25G MISTA AZULIM",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 2.99,
-    "estoque": 36.0
+    "estoque": 33.0
   },
   {
     "codigo": "1853",
@@ -3931,7 +3966,7 @@
     "nome": "SACO SOS P PARDO C/50UN 17X10X24 PLUMA",
     "categoria": "Embalagem",
     "preco": 24.0,
-    "estoque": 1.0
+    "estoque": 0.0
   },
   {
     "codigo": "2095",
@@ -4043,7 +4078,7 @@
     "nome": "MEGA RODO PLASTICO 58CM ALKLIN",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 24.5,
-    "estoque": 28.0
+    "estoque": 27.0
   },
   {
     "codigo": "2192",
@@ -4428,7 +4463,7 @@
     "nome": "ESPONJA  ANTIRISCO C/4UN ALKLIN",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 4.0,
-    "estoque": 152.0
+    "estoque": 151.0
   },
   {
     "codigo": "2599",
@@ -4617,7 +4652,7 @@
     "nome": "G37MB TORTA PEQUENA BAIXA 1KG",
     "categoria": "Embalagem",
     "preco": 4.5,
-    "estoque": 40.0
+    "estoque": 39.0
   },
   {
     "codigo": "2815",
@@ -5317,7 +5352,7 @@
     "nome": "PACK LIXO PIA E BANHEIRO BIO CHA BRANCO C/80UN",
     "categoria": "SACO LIXO",
     "preco": 13.99,
-    "estoque": 29.0
+    "estoque": 28.0
   },
   {
     "codigo": "3147",
@@ -5331,7 +5366,7 @@
     "nome": "CAIXA TERMICA ISOPOR ISOTERM 500G",
     "categoria": "DESCARTAVEIS",
     "preco": 3.99,
-    "estoque": 47.0
+    "estoque": 36.0
   },
   {
     "codigo": "3150",
@@ -5730,7 +5765,7 @@
     "nome": "BOBINA PICOTADO 30X40 C/450UN SOLDA FUNDO 1,95KG",
     "categoria": "ALIMENTO/GENERO ALIMENTICIO",
     "preco": 63.99,
-    "estoque": 7.0
+    "estoque": 6.0
   },
   {
     "codigo": "4007",
@@ -5779,7 +5814,7 @@
     "nome": "TOP LIXO PRETO 50L C/30UN PACK LIXO",
     "categoria": "SACO LIXO",
     "preco": 19.99,
-    "estoque": 8.0
+    "estoque": 7.0
   },
   {
     "codigo": "4391",
@@ -5815,6 +5850,27 @@
     "categoria": "DESCARTAVEIS",
     "preco": 1.99,
     "estoque": 67.0
+  },
+  {
+    "codigo": "5012",
+    "nome": "SACO P/PRESENTE 40X30CM",
+    "categoria": "Embalagem",
+    "preco": 13.5,
+    "estoque": 0.0
+  },
+  {
+    "codigo": "5013",
+    "nome": "SACO P/PRESENTE 41X30CM",
+    "categoria": "Embalagem",
+    "preco": 13.5,
+    "estoque": 0.0
+  },
+  {
+    "codigo": "5031",
+    "nome": "SACO P/PRESENTE 32X26CM",
+    "categoria": "Embalagem",
+    "preco": 8.5,
+    "estoque": 0.0
   },
   {
     "codigo": "5050",
@@ -6209,8 +6265,22 @@
     "estoque": 4.0
   },
   {
+    "codigo": "7904",
+    "nome": "DIFUSOR DE AROMAS CHA BRANCA 250ML SENALAR",
+    "categoria": "PRODUTO DE LIMPEZA",
+    "preco": 18.0,
+    "estoque": 0.0
+  },
+  {
+    "codigo": "7905",
+    "nome": "DIFUSOR DE AROMAS LAVANDA 250ML SENALAR",
+    "categoria": "PRODUTO DE LIMPEZA",
+    "preco": 18.0,
+    "estoque": 0.0
+  },
+  {
     "codigo": "7906",
-    "nome": "DIFUSOR DE AROMAS CITRONELA SENALAR",
+    "nome": "DIFUSOR DE AROMAS CITRONELA 250ML SENALAR",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 18.0,
     "estoque": 1.0
@@ -6389,6 +6459,20 @@
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 11.5,
     "estoque": 4.0
+  },
+  {
+    "codigo": "8455",
+    "nome": "Cópia de TRENA PLASTICO 5M X20M STANDARD",
+    "categoria": "UTENSILIOS",
+    "preco": 22.99,
+    "estoque": 0.0
+  },
+  {
+    "codigo": "8467",
+    "nome": "TRENA PLASTICO 5M X20M STANDARD",
+    "categoria": "UTENSILIOS",
+    "preco": 19.99,
+    "estoque": 0.0
   },
   {
     "codigo": "8468",
@@ -7970,7 +8054,7 @@
     "nome": "CANETA BIC DURA+",
     "categoria": "PAPELARIA",
     "preco": 1.5,
-    "estoque": 17.0
+    "estoque": 16.0
   },
   {
     "codigo": "129088",
@@ -8232,17 +8316,17 @@
     "estoque": 0.0
   },
   {
+    "codigo": "5031_1245",
+    "nome": "Cópia de SACO P/PRESENTE 32X26CM",
+    "categoria": "Embalagem",
+    "preco": 8.5,
+    "estoque": 0.0
+  },
+  {
     "codigo": "789359514",
     "nome": "SACOLA VERDE LISA 60X80 1KG+/-270UN",
     "categoria": "SACO LIXO",
     "preco": 34.0,
-    "estoque": 0.0
-  },
-  {
-    "codigo": "8468_1235",
-    "nome": "Cópia de TRENA PLASTICO 7,5M X20MM  STANDARD",
-    "categoria": "UTENSILIOS",
-    "preco": 19.99,
     "estoque": 0.0
   },
   {
