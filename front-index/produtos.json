@@ -2076,7 +2076,7 @@
     "nome": "COPO DESCARTAVEL TRANSPARENTE 180ML C/100UN GLIGHT",
     "categoria": "DESCARTAVEIS",
     "preco": 6.5,
-    "estoque": 36.0
+    "estoque": 35.0
   },
   {
     "codigo": "902",
@@ -2741,7 +2741,7 @@
     "nome": "MARMITEX DE ISOPOR N8 750ML  C/100UN BOM APETITE",
     "categoria": "DESCARTAVEIS",
     "preco": 61.5,
-    "estoque": 3.0
+    "estoque": 2.0
   },
   {
     "codigo": "1187",
@@ -3175,7 +3175,7 @@
     "nome": "BORRIFADOR UNILUK 500ML C/ BICO ABRE-FECH",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 7.99,
-    "estoque": -9.0
+    "estoque": -10.0
   },
   {
     "codigo": "1463",
@@ -3644,7 +3644,7 @@
     "nome": "LUVA DE VINIL M S/TALCO C/100UN TALGE",
     "categoria": "DESCARTAVEIS",
     "preco": 19.99,
-    "estoque": 95.0
+    "estoque": 94.0
   },
   {
     "codigo": "1819",
@@ -3672,7 +3672,7 @@
     "nome": "TOP LIXO BRANCO 15L C/60UN PACK LIXO",
     "categoria": "SACO LIXO",
     "preco": 17.99,
-    "estoque": 27.0
+    "estoque": 26.0
   },
   {
     "codigo": "1854",
@@ -3987,7 +3987,7 @@
     "nome": "FOLHA DE ALUMINIO 4MX30CM WYDA",
     "categoria": "Embalagem",
     "preco": 5.5,
-    "estoque": -10.0
+    "estoque": -11.0
   },
   {
     "codigo": "2094",
@@ -5856,7 +5856,7 @@
     "nome": "TOP LIXO PRETO 50L C/30UN PACK LIXO",
     "categoria": "SACO LIXO",
     "preco": 19.99,
-    "estoque": 7.0
+    "estoque": 6.0
   },
   {
     "codigo": "4391",
@@ -6559,6 +6559,13 @@
     "estoque": -4.0
   },
   {
+    "codigo": "8910",
+    "nome": "CAPA PARA RODO 50X40 ALVEJADO",
+    "categoria": "PRODUTO DE HIGIENE",
+    "preco": 5.99,
+    "estoque": 24.0
+  },
+  {
     "codigo": "8922",
     "nome": "VELA DE ANIVERSÁRIO C/8UN SILVER FESTAS ROSE - PARABENS",
     "categoria": "-",
@@ -6780,7 +6787,7 @@
     "nome": "D70M BOLO E TORTA RET MEDIA BASE BRANCA",
     "categoria": "DESCARTAVEIS",
     "preco": 11.99,
-    "estoque": 32.0
+    "estoque": 31.0
   },
   {
     "codigo": "11882",
@@ -7284,7 +7291,7 @@
     "nome": "BOBINA PICOTADO 35X45 C/450UN SOLDA FUNDO 2.41KG",
     "categoria": "ALIMENTO/GENERO ALIMENTICIO",
     "preco": 99.0,
-    "estoque": 1.0
+    "estoque": 0.0
   },
   {
     "codigo": "50694",
