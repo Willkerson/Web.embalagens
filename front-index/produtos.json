@@ -413,6 +413,13 @@
     "estoque": 286.0
   },
   {
+    "codigo": "292",
+    "nome": "ESCOVA ANATOMICA ALKLIN",
+    "categoria": "PRODUTO DE LIMPEZA",
+    "preco": 6.99,
+    "estoque": 13.0
+  },
+  {
     "codigo": "294",
     "nome": "VASSOURA DENTRO E FORA C/CABO ALKLIN",
     "categoria": "PRODUTO DE LIMPEZA",
@@ -434,6 +441,13 @@
     "estoque": 8.0
   },
   {
+    "codigo": "298",
+    "nome": "DESENTUPIDOR P/PIA ALKLIN",
+    "categoria": "PRODUTO DE LIMPEZA",
+    "preco": 11.99,
+    "estoque": 12.0
+  },
+  {
     "codigo": "299",
     "nome": "RODO DE PIA 15CM ALKLIN",
     "categoria": "PRODUTO DE LIMPEZA",
@@ -453,6 +467,13 @@
     "categoria": "UTENSILIOS",
     "preco": 15.99,
     "estoque": 2.0
+  },
+  {
+    "codigo": "307",
+    "nome": "SUPER PANAO AZUL 20X90CM ALKLIN",
+    "categoria": "PRODUTO DE LIMPEZA",
+    "preco": 5.75,
+    "estoque": 24.0
   },
   {
     "codigo": "308",
@@ -606,7 +627,7 @@
     "nome": "ESCOVA MULTIUSO C/RASPADOR",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 12.5,
-    "estoque": 0.0
+    "estoque": -1.0
   },
   {
     "codigo": "352",
@@ -633,8 +654,15 @@
     "codigo": "357",
     "nome": "PANO PARA PIA ESTAMPADO C/3U N ALKLIN",
     "categoria": "PRODUTO DE LIMPEZA",
-    "preco": 10.5,
+    "preco": 6.99,
     "estoque": 42.0
+  },
+  {
+    "codigo": "358",
+    "nome": "ESPONJA SALVA UNHA ALCKLIN",
+    "categoria": "PRODUTO DE LIMPEZA",
+    "preco": 1.99,
+    "estoque": 40.0
   },
   {
     "codigo": "361",
@@ -655,7 +683,7 @@
     "nome": "LUVA LATEX LONGA G DANNY LONGATEX",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 18.5,
-    "estoque": 3.0
+    "estoque": 2.0
   },
   {
     "codigo": "373",
@@ -816,7 +844,7 @@
     "nome": "COLHER SOBREMESA BRANCA C/50UN ELITE",
     "categoria": "DESCARTAVEIS",
     "preco": 3.99,
-    "estoque": 11.0
+    "estoque": 10.0
   },
   {
     "codigo": "423",
@@ -1054,7 +1082,7 @@
     "nome": "FITA ADESIVA 18X50M ALFACELL",
     "categoria": "Embalagem",
     "preco": 2.5,
-    "estoque": -16.0
+    "estoque": -17.0
   },
   {
     "codigo": "534",
@@ -1166,7 +1194,7 @@
     "nome": "REMOVEDOR SUPREMA FLORATA 1L",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 14.0,
-    "estoque": 11.0
+    "estoque": 9.0
   },
   {
     "codigo": "570",
@@ -1614,7 +1642,7 @@
     "nome": "LIMPA PEDRAS PEDREX 5L START",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 59.99,
-    "estoque": 7.0
+    "estoque": 6.0
   },
   {
     "codigo": "747",
@@ -1929,7 +1957,7 @@
     "nome": "HAMBURGUEIRA BH02 C/10UN BOM APETITE",
     "categoria": "Embalagem",
     "preco": 3.99,
-    "estoque": 11.0
+    "estoque": 9.0
   },
   {
     "codigo": "857",
@@ -2118,7 +2146,7 @@
     "nome": "ESCOVA SANITARIA FJ91744",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 14.99,
-    "estoque": 2.0
+    "estoque": 1.0
   },
   {
     "codigo": "927",
@@ -2356,7 +2384,7 @@
     "nome": "SACOS PLASTICO  200G 15X30X0,06  COLOMBO/HELVIPACK",
     "categoria": "Embalagem",
     "preco": 10.0,
-    "estoque": -21.0
+    "estoque": -22.0
   },
   {
     "codigo": "1017",
@@ -2377,7 +2405,7 @@
     "nome": "RALO P/PIA  BORDA DE ALUM.",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 3.5,
-    "estoque": 1.0
+    "estoque": 0.0
   },
   {
     "codigo": "1041",
@@ -2461,7 +2489,7 @@
     "nome": "SACOS P/LIXO 100L P8 C/10UN PRETO",
     "categoria": "SACO LIXO",
     "preco": 13.5,
-    "estoque": 11.0
+    "estoque": 10.0
   },
   {
     "codigo": "1055",
@@ -3182,7 +3210,7 @@
     "nome": "D50MA TORTA ALTA 1,7KG DONA RITA",
     "categoria": "Embalagem",
     "preco": 3.5,
-    "estoque": 75.0
+    "estoque": 72.0
   },
   {
     "codigo": "1475",
@@ -3483,7 +3511,7 @@
     "nome": "SACOLA VERDE REFORÇADA 1KG 90X100",
     "categoria": "Embalagem",
     "preco": 19.99,
-    "estoque": 11.0
+    "estoque": 10.0
   },
   {
     "codigo": "1717",
@@ -3637,7 +3665,7 @@
     "nome": "PEDRA SANITARIA 25G MISTA AZULIM",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 2.99,
-    "estoque": 33.0
+    "estoque": 29.0
   },
   {
     "codigo": "1853",
@@ -4085,7 +4113,7 @@
     "nome": "VASSOURA VARRE KANTO C/CABO ALKLIN",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 15.5,
-    "estoque": 25.0
+    "estoque": 24.0
   },
   {
     "codigo": "2193",
@@ -4323,7 +4351,7 @@
     "nome": "POTE  RETANGULAR  350ML C/24UN PRAFESTA",
     "categoria": "DESCARTAVEIS",
     "preco": 34.99,
-    "estoque": 14.0
+    "estoque": 13.0
   },
   {
     "codigo": "2412",
@@ -4386,7 +4414,7 @@
     "nome": "D-695 KIT POTE TRANSPARENTE  P/ MOLHO C/50UN",
     "categoria": "DESCARTAVEIS",
     "preco": 13.5,
-    "estoque": 20.0
+    "estoque": 19.0
   },
   {
     "codigo": "2474",
@@ -5282,7 +5310,7 @@
     "nome": "G235 FORMA P/BOLO PRETA 830ML FORNEAVEL GALVONOTEK",
     "categoria": "DESCARTAVEIS",
     "preco": 4.5,
-    "estoque": 103.0
+    "estoque": 102.0
   },
   {
     "codigo": "3131",
@@ -5551,6 +5579,20 @@
     "estoque": 3.0
   },
   {
+    "codigo": "3571",
+    "nome": "PANO PARA PIA  ALVEJADO C/3U N ALKLIN",
+    "categoria": "PRODUTO DE LIMPEZA",
+    "preco": 6.99,
+    "estoque": 0.0
+  },
+  {
+    "codigo": "3572",
+    "nome": "PANO P/PIA ESFRE ALVEJADO 40X67CM C/3U N ALKLIN",
+    "categoria": "PRODUTO DE LIMPEZA",
+    "preco": 9.99,
+    "estoque": 0.0
+  },
+  {
     "codigo": "3575",
     "nome": "PANO MULTIUSO AZUL C/600 PANOS 28CMX240M NOBRE",
     "categoria": "PRODUTO DE HIGIENE",
@@ -5660,7 +5702,7 @@
     "nome": "LIMPADOR CONCENTRADO ROUPA LAVADA 120ML SANOL",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 12.99,
-    "estoque": 23.0
+    "estoque": 22.0
   },
   {
     "codigo": "3983",
@@ -6101,7 +6143,7 @@
     "nome": "LUVA DE VINIL GG S/PO C/100UN TALGE",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 19.99,
-    "estoque": 22.0
+    "estoque": 21.0
   },
   {
     "codigo": "7263",
@@ -6458,7 +6500,7 @@
     "nome": "RODINHO MULTIUSO  24,5CM D CASA",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 11.5,
-    "estoque": 4.0
+    "estoque": 3.0
   },
   {
     "codigo": "8455",
