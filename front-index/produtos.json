@@ -410,7 +410,7 @@
     "nome": "ESPONJA MULTIUSO C/4UN ALKLIN",
     "categoria": "UTENSILIOS",
     "preco": 3.99,
-    "estoque": 286.0
+    "estoque": 285.0
   },
   {
     "codigo": "292",
@@ -592,7 +592,7 @@
     "nome": "PLASTICO BOLHA 43X10M MICRA 20 MN. PLAST",
     "categoria": "Embalagem",
     "preco": 16.99,
-    "estoque": 9.0
+    "estoque": 8.0
   },
   {
     "codigo": "343",
@@ -2489,7 +2489,7 @@
     "nome": "SACOS P/LIXO 100L P8 C/10UN PRETO",
     "categoria": "SACO LIXO",
     "preco": 13.5,
-    "estoque": 10.0
+    "estoque": 9.0
   },
   {
     "codigo": "1055",
@@ -2706,7 +2706,7 @@
     "nome": "FITA ADESIVA POLIPROPILENO TRANSPARENTE 48MMX40M TECTAPE",
     "categoria": "PAPELARIA",
     "preco": 4.99,
-    "estoque": 36.0
+    "estoque": 35.0
   },
   {
     "codigo": "1168",
@@ -3865,9 +3865,9 @@
   },
   {
     "codigo": "2002",
-    "nome": "SACOLA PLASTICA MILHEIRO BRANCA 25X35 (1.000 UNIDADES)",
+    "nome": "SACOLA PLASTICA MILHEIRO BRANCA 25X35 1KG",
     "categoria": "Embalagem",
-    "preco": 52.0,
+    "preco": 42.99,
     "estoque": -3.0
   },
   {
@@ -3897,6 +3897,20 @@
     "categoria": "Embalagem",
     "preco": 42.0,
     "estoque": -9.0
+  },
+  {
+    "codigo": "2026",
+    "nome": "SACOLA PLASTICA MILHEIRO BRANCA 30X40 1KG",
+    "categoria": "Embalagem",
+    "preco": 11.99,
+    "estoque": 0.0
+  },
+  {
+    "codigo": "2027",
+    "nome": "SACOLA PLASTICA MILHEIRO BRANCA 30X40 1KG",
+    "categoria": "Embalagem",
+    "preco": 55.99,
+    "estoque": 0.0
   },
   {
     "codigo": "2032",
@@ -4414,7 +4428,7 @@
     "nome": "D-695 KIT POTE TRANSPARENTE  P/ MOLHO C/50UN",
     "categoria": "DESCARTAVEIS",
     "preco": 13.5,
-    "estoque": 18.0
+    "estoque": 17.0
   },
   {
     "codigo": "2474",
@@ -4491,7 +4505,7 @@
     "nome": "ESPONJA  ANTIRISCO C/4UN ALKLIN",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 4.0,
-    "estoque": 149.0
+    "estoque": 148.0
   },
   {
     "codigo": "2599",
@@ -6360,7 +6374,7 @@
     "nome": "PALITOS PARA PICOLÉ BAMBU C/ 100 UNIDADES",
     "categoria": "DESCARTAVEIS",
     "preco": 7.99,
-    "estoque": 9.0
+    "estoque": 8.0
   },
   {
     "codigo": "7911",
@@ -6578,6 +6592,13 @@
     "categoria": "-",
     "preco": 5.99,
     "estoque": 35.0
+  },
+  {
+    "codigo": "8513",
+    "nome": "CAIXINHA DE CLIPS METAL",
+    "categoria": "PAPELARIA",
+    "preco": 4.99,
+    "estoque": 12.0
   },
   {
     "codigo": "8541",
@@ -6843,7 +6864,7 @@
     "nome": "D70M BOLO E TORTA RET MEDIA BASE BRANCA",
     "categoria": "DESCARTAVEIS",
     "preco": 11.99,
-    "estoque": 31.0
+    "estoque": 29.0
   },
   {
     "codigo": "11882",
@@ -8419,6 +8440,13 @@
     "categoria": "DESCARTAVEIS",
     "preco": 30.49,
     "estoque": -1.0
+  },
+  {
+    "codigo": "2002_1271",
+    "nome": "Cópia de SACOLA PLASTICA MILHEIRO BRANCA 25X35 1KG",
+    "categoria": "Embalagem",
+    "preco": 42.99,
+    "estoque": 0.0
   },
   {
     "codigo": "2578_1136",
