@@ -60,7 +60,7 @@
     "nome": "GANCHOS ADESIVO C/6UN HOME ART",
     "categoria": "UTENSILIOS",
     "preco": 8.99,
-    "estoque": 2.0
+    "estoque": 1.0
   },
   {
     "codigo": "110",
@@ -452,7 +452,7 @@
     "nome": "RODO DE PIA 15CM ALKLIN",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 6.5,
-    "estoque": 14.0
+    "estoque": 13.0
   },
   {
     "codigo": "302",
@@ -655,7 +655,7 @@
     "nome": "PANO PARA PIA ESTAMPADO C/3U N ALKLIN",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 6.99,
-    "estoque": 40.0
+    "estoque": 39.0
   },
   {
     "codigo": "358",
@@ -732,14 +732,14 @@
     "nome": "PANO DE CHAO BRANCO ALVEJADO 45CMX69CM SOUZA PPR28",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 6.7,
-    "estoque": 294.0
+    "estoque": 293.0
   },
   {
     "codigo": "391",
     "nome": "PANO DE CHAO ALVEJADO CAIPIRA 45CMX68CM",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 5.25,
-    "estoque": 294.0
+    "estoque": 292.0
   },
   {
     "codigo": "398",
@@ -796,6 +796,13 @@
     "categoria": "DESCARTAVEIS",
     "preco": 4.3,
     "estoque": 15.0
+  },
+  {
+    "codigo": "411",
+    "nome": "CORDA PARA VARAL 30M JS",
+    "categoria": "UTENSILIOS",
+    "preco": 14.99,
+    "estoque": 0.0
   },
   {
     "codigo": "412",
@@ -893,7 +900,7 @@
     "nome": "KIT GARFO E FACA C/50UN ELITE",
     "categoria": "DESCARTAVEIS",
     "preco": 22.99,
-    "estoque": -1.0
+    "estoque": -3.0
   },
   {
     "codigo": "433",
@@ -907,7 +914,7 @@
     "nome": "CUMBUCA QUALITY LINE 12 C/10UN PRAFESTA",
     "categoria": "DESCARTAVEIS",
     "preco": 2.99,
-    "estoque": 201.0
+    "estoque": 200.0
   },
   {
     "codigo": "441",
@@ -984,7 +991,7 @@
     "nome": "COPO MINI 25ML C / 10 UN",
     "categoria": "DESCARTAVEIS",
     "preco": 3.99,
-    "estoque": 91.0
+    "estoque": 90.0
   },
   {
     "codigo": "474",
@@ -1208,7 +1215,7 @@
     "nome": "REMOVEDOR SUPREMA TRADICIONAL 1L",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 14.0,
-    "estoque": 20.0
+    "estoque": 19.0
   },
   {
     "codigo": "571",
@@ -1397,7 +1404,7 @@
     "nome": "PAPEL ANTIADERENTE ASSALIGTH 3MX30CM WYDA",
     "categoria": "Embalagem",
     "preco": 8.5,
-    "estoque": 7.0
+    "estoque": 6.0
   },
   {
     "codigo": "642",
@@ -2468,7 +2475,7 @@
     "nome": "TOP LIXO PIA E BANHEIRO LAVANDA C/40UN PACK LIXO",
     "categoria": "SACO LIXO",
     "preco": 8.99,
-    "estoque": 35.0
+    "estoque": 82.0
   },
   {
     "codigo": "1048",
@@ -2489,21 +2496,21 @@
     "nome": "SACO P/ LIXO PRETO P6 40L C/10UN",
     "categoria": "SACO LIXO",
     "preco": 5.5,
-    "estoque": 21.0
+    "estoque": 20.0
   },
   {
     "codigo": "1052",
     "nome": "SACO P/ LIXO PRETO P8 60L C/10UN",
     "categoria": "SACO LIXO",
     "preco": 8.99,
-    "estoque": 4.0
+    "estoque": 2.0
   },
   {
     "codigo": "1053",
     "nome": "SACOS P/LIXO 100L P8 C/10UN PRETO",
     "categoria": "SACO LIXO",
     "preco": 13.5,
-    "estoque": 5.0
+    "estoque": 4.0
   },
   {
     "codigo": "1055",
@@ -2545,7 +2552,7 @@
     "nome": "GARRAFA PE QUADRADA 300ML C/10UN  DECOPLAST",
     "categoria": "Embalagem",
     "preco": 10.99,
-    "estoque": 21.0
+    "estoque": 18.0
   },
   {
     "codigo": "1084",
@@ -2559,7 +2566,7 @@
     "nome": "LUVA NITRILICA PRETA M 10 PARES TALGE",
     "categoria": "Outras",
     "preco": 6.99,
-    "estoque": 12.0
+    "estoque": 11.0
   },
   {
     "codigo": "1093",
@@ -2580,7 +2587,7 @@
     "nome": "MARMITEX DE ISOPOR 750ML C/10UN BOM APETITE",
     "categoria": "DESCARTAVEIS",
     "preco": 8.0,
-    "estoque": -11.0
+    "estoque": -12.0
   },
   {
     "codigo": "1113",
@@ -2741,7 +2748,7 @@
     "nome": "PANO MULTIUSO BRANCO C/50 PANOS 30CMX50CM MR.PLUS",
     "categoria": "PRODUTO DE HIGIENE",
     "preco": 15.5,
-    "estoque": -45.0
+    "estoque": -46.0
   },
   {
     "codigo": "1176",
@@ -3070,7 +3077,7 @@
     "nome": "KIT POTE E TAMPA RET. 500ML C/12UN GOUR MAX",
     "categoria": "DESCARTAVEIS",
     "preco": 16.99,
-    "estoque": -24.0
+    "estoque": -26.0
   },
   {
     "codigo": "1360",
@@ -3434,7 +3441,7 @@
     "nome": "SACO KRAFT P3 MINI LANCHE C/100UN PLUMA",
     "categoria": "DESCARTAVEIS",
     "preco": 5.99,
-    "estoque": 64.0
+    "estoque": 63.0
   },
   {
     "codigo": "1588",
@@ -3483,7 +3490,7 @@
     "nome": "POTE REDONDO 200ML C/TAMPA C/24UN PRAFESTA",
     "categoria": "DESCARTAVEIS",
     "preco": 17.99,
-    "estoque": 4.0
+    "estoque": 3.0
   },
   {
     "codigo": "1684",
@@ -3875,7 +3882,7 @@
     "nome": "TOALHA INTERFOLHA LUXO 20X21CM C/1000UN WHITE PAPER",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 24.99,
-    "estoque": 40.0
+    "estoque": 39.0
   },
   {
     "codigo": "1981",
@@ -3941,6 +3948,13 @@
     "estoque": 2.0
   },
   {
+    "codigo": "2031",
+    "nome": "PILHA AA C/4UN ALFACELL",
+    "categoria": "UTENSILIOS",
+    "preco": 6.99,
+    "estoque": 0.0
+  },
+  {
     "codigo": "2032",
     "nome": "BATERIA LITIO ALFACELL",
     "categoria": "UTENSILIOS",
@@ -3962,11 +3976,18 @@
     "estoque": -3.0
   },
   {
+    "codigo": "2038",
+    "nome": "BATERIA LITIO CR2032 ALFACELL",
+    "categoria": "UTENSILIOS",
+    "preco": 3.5,
+    "estoque": 0.0
+  },
+  {
     "codigo": "2058",
     "nome": "TOUCAS DESCARTAVEIS C/100UN 45X50CM BOMPACK",
     "categoria": "DESCARTAVEIS",
     "preco": 13.5,
-    "estoque": 4.0
+    "estoque": 3.0
   },
   {
     "codigo": "2067",
@@ -4029,7 +4050,7 @@
     "nome": "FOLHA DE ALUMINIO 4MX30CM WYDA",
     "categoria": "Embalagem",
     "preco": 5.5,
-    "estoque": -13.0
+    "estoque": -14.0
   },
   {
     "codigo": "2094",
@@ -4127,6 +4148,13 @@
     "nome": "SUPORTE LT C/ VELCRO BIG SANCHES",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 20.0,
+    "estoque": 0.0
+  },
+  {
+    "codigo": "2166",
+    "nome": "PRENDEDOR DE METAL 5,5CM C/12UN HOME",
+    "categoria": "UTENSILIOS",
+    "preco": 8.99,
     "estoque": 0.0
   },
   {
@@ -4407,7 +4435,7 @@
     "nome": "ESPONJA MAGICA TIRA MANCHAS CLEAN TECH",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 1.5,
-    "estoque": 1.0
+    "estoque": 0.0
   },
   {
     "codigo": "2444",
@@ -4708,7 +4736,7 @@
     "nome": "KIT POTE E TAMPA RET. 350ML C/12UN GOUR MAX",
     "categoria": "DESCARTAVEIS",
     "preco": 14.99,
-    "estoque": -14.0
+    "estoque": -15.0
   },
   {
     "codigo": "2802",
@@ -5205,7 +5233,7 @@
     "nome": "POTE E TAMPA RET.350ML C/24UN GOUR MAX",
     "categoria": "DESCARTAVEIS",
     "preco": 27.99,
-    "estoque": 26.0
+    "estoque": 23.0
   },
   {
     "codigo": "3060",
@@ -5317,7 +5345,7 @@
     "nome": "POTE E TAMPA REDONDO 500ML C/TAMPA C/24UN DANUBIO",
     "categoria": "DESCARTAVEIS",
     "preco": 23.99,
-    "estoque": 26.0
+    "estoque": 24.0
   },
   {
     "codigo": "3120",
@@ -5479,6 +5507,13 @@
     "categoria": "PAPELARIA",
     "preco": 2.5,
     "estoque": -89.0
+  },
+  {
+    "codigo": "3159",
+    "nome": "FITA ADESIVA 3CMX2M TRANSP. INOVA",
+    "categoria": "PAPELARIA",
+    "preco": 6.99,
+    "estoque": 0.0
   },
   {
     "codigo": "3161",
@@ -5765,7 +5800,7 @@
     "nome": "LIMPADOR CONCENTRADO ROUPA LAVADA 120ML SANOL",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 12.99,
-    "estoque": 22.0
+    "estoque": 21.0
   },
   {
     "codigo": "3983",
@@ -5915,6 +5950,13 @@
     "estoque": -1.0
   },
   {
+    "codigo": "4111",
+    "nome": "CORDA PARA VARAL 4MMX19,5M MONALIZA",
+    "categoria": "UTENSILIOS",
+    "preco": 14.99,
+    "estoque": 0.0
+  },
+  {
     "codigo": "4254",
     "nome": "TOP LIXO PRETO 50L C/30UN PACK LIXO",
     "categoria": "SACO LIXO",
@@ -5954,7 +5996,7 @@
     "nome": "PRATO RASO 15CM GPACK",
     "categoria": "DESCARTAVEIS",
     "preco": 1.99,
-    "estoque": 62.0
+    "estoque": 60.0
   },
   {
     "codigo": "5012",
@@ -6220,7 +6262,7 @@
     "nome": "SABONETE LIQ. FRAGRANCIA ERVA DOCE 500ML  LAFEH",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 8.99,
-    "estoque": 10.0
+    "estoque": 9.0
   },
   {
     "codigo": "7288",
@@ -6346,7 +6388,7 @@
     "nome": "SACO P/LIXO PRETO 20L P5 C/10UN",
     "categoria": "SACO LIXO",
     "preco": 4.0,
-    "estoque": 31.0
+    "estoque": 30.0
   },
   {
     "codigo": "7899",
@@ -6563,7 +6605,7 @@
     "nome": "RALO P/PIA METAL 9CM",
     "categoria": "UTENSILIOS",
     "preco": 9.0,
-    "estoque": 3.0
+    "estoque": 2.0
   },
   {
     "codigo": "8205",
@@ -7998,7 +8040,7 @@
     "nome": "ACENDEDOR G/INFAMAVEL BJ8620",
     "categoria": "UTENSILIOS",
     "preco": 6.5,
-    "estoque": -1.0
+    "estoque": -2.0
   },
   {
     "codigo": "129043",
@@ -8747,7 +8789,7 @@
     "nome": "PROTETOR DE RALO MAXXIMO",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 7.5,
-    "estoque": 5.0
+    "estoque": 4.0
   },
   {
     "codigo": "7909875076505",
