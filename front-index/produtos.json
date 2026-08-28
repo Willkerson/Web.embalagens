@@ -991,7 +991,7 @@
     "nome": "COPO DESCARTAVEL 180ML PS C/100UN FASTCUP CAIXA",
     "categoria": "DESCARTAVEIS",
     "preco": 164.76,
-    "estoque": -1.0
+    "estoque": 2.0
   },
   {
     "codigo": "480",
@@ -1600,7 +1600,7 @@
     "nome": "PAPEL HIGIENICO FOLHA DUPLA DELICATTO C/12UN 10X20M",
     "categoria": "PRODUTO DE HIGIENE",
     "preco": 15.99,
-    "estoque": 2.0
+    "estoque": 8.0
   },
   {
     "codigo": "726",
@@ -2664,14 +2664,14 @@
     "nome": "FIBRA LIMP. PESADA 1UN 260X102MM BETTANIN",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 4.99,
-    "estoque": 12.0
+    "estoque": 22.0
   },
   {
     "codigo": "1149",
     "nome": "FIBRA LIMP. USO GERAL 1UN 260X102MM BETTANIN",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 4.5,
-    "estoque": -9.0
+    "estoque": 20.0
   },
   {
     "codigo": "1150",
@@ -2909,7 +2909,7 @@
     "nome": "PALHA DE AÇO ASSOLAN  45G",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 3.0,
-    "estoque": 4.0
+    "estoque": 14.0
   },
   {
     "codigo": "1301",
@@ -3567,14 +3567,14 @@
     "nome": "CANUDO BIO 8x210MM P/ MILKE SHAKE C/100UN IT´S BIO",
     "categoria": "DESCARTAVEIS",
     "preco": 17.5,
-    "estoque": 4.0
+    "estoque": 14.0
   },
   {
     "codigo": "1770",
     "nome": "CANUDO BIO FLEXIVEL 5,8MM C/100UN EM SACHE COPAC",
     "categoria": "DESCARTAVEIS",
     "preco": 10.99,
-    "estoque": 1.0
+    "estoque": 11.0
   },
   {
     "codigo": "1771",
@@ -4484,7 +4484,7 @@
     "nome": "LUVA LATEX G PLUS SANRO LARANJA P/LIMPEZA",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 11.99,
-    "estoque": 4.0
+    "estoque": 10.0
   },
   {
     "codigo": "2500",
@@ -6458,7 +6458,7 @@
     "nome": "ALCOOL GEL 70%  420G ASSEPTGEL",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 22.5,
-    "estoque": 0.0
+    "estoque": 6.0
   },
   {
     "codigo": "7949",
@@ -6577,7 +6577,7 @@
     "nome": "ALCOOL LIQUIDO 1L 70% BARBAREX",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 11.99,
-    "estoque": 0.0
+    "estoque": 12.0
   },
   {
     "codigo": "8277",
@@ -7151,7 +7151,7 @@
     "nome": "PAPEL HIGIENICO  F/DUPLA C/16UN 4X30M NESS",
     "categoria": "PRODUTO DE HIGIENE",
     "preco": 12.99,
-    "estoque": 0.0
+    "estoque": 16.0
   },
   {
     "codigo": "31414",
