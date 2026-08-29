@@ -732,7 +732,7 @@
     "nome": "PANO DE CHAO BRANCO ALVEJADO 45CMX69CM SOUZA PPR28",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 6.7,
-    "estoque": 293.0
+    "estoque": 291.0
   },
   {
     "codigo": "391",
@@ -1012,7 +1012,7 @@
     "nome": "BEXIGA COLORIDA C/50UN SÃO ROQUE",
     "categoria": "-",
     "preco": 12.99,
-    "estoque": 8.0
+    "estoque": 7.0
   },
   {
     "codigo": "501",
@@ -1705,7 +1705,7 @@
     "nome": "LIMPADOR MULTIUSO AÇAO CLAREADORA 500ML AZULIM",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 4.99,
-    "estoque": 14.0
+    "estoque": 13.0
   },
   {
     "codigo": "763",
@@ -1775,7 +1775,7 @@
     "nome": "LIMPA CERAMICAS E AZULEJOS AZULIM LAVANDA 1L START",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 11.5,
-    "estoque": 7.0
+    "estoque": 6.0
   },
   {
     "codigo": "789",
@@ -1922,7 +1922,7 @@
     "nome": "REMOVADOR SUPREMA  FLORATA 500ML",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 8.5,
-    "estoque": 17.0
+    "estoque": 16.0
   },
   {
     "codigo": "838",
@@ -3329,7 +3329,7 @@
     "nome": "TOALHA INTERFOLHA CELULOSE PREMIUM WHITE PAPER C/1000UN",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 25.99,
-    "estoque": 62.0
+    "estoque": 61.0
   },
   {
     "codigo": "1526",
@@ -3518,7 +3518,7 @@
     "nome": "SACOLA VERDE REFORÇADA 1KG 45x60",
     "categoria": "Embalagem",
     "preco": 19.99,
-    "estoque": 9.0
+    "estoque": 8.0
   },
   {
     "codigo": "1713",
@@ -3560,7 +3560,7 @@
     "nome": "ASSADEIRA DE ALUMINIO OVAL 4L PRA VIAGEM",
     "categoria": "DESCARTAVEIS",
     "preco": 5.99,
-    "estoque": 15.0
+    "estoque": 12.0
   },
   {
     "codigo": "1755",
@@ -6857,7 +6857,7 @@
     "nome": "SACOS PLASTICO PEBD 200G 10X20X0,06 COLOMBO/HELVIPACK",
     "categoria": "Embalagem",
     "preco": 10.0,
-    "estoque": -15.0
+    "estoque": -16.0
   },
   {
     "codigo": "10075",
