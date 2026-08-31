@@ -1,5 +1,12 @@
 [
   {
+    "codigo": "43",
+    "nome": "KIT PA E VASSOURA MAX CLEAN",
+    "categoria": "PRODUTO DE LIMPEZA",
+    "preco": 15.99,
+    "estoque": -5.0
+  },
+  {
     "codigo": "035",
     "nome": "ESCOVA SANITARIA C/ ESTOJO SANIBRISA",
     "categoria": "PRODUTO DE LIMPEZA",
@@ -445,7 +452,7 @@
     "nome": "DESENTUPIDOR P/PIA ALKLIN",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 11.99,
-    "estoque": 12.0
+    "estoque": 11.0
   },
   {
     "codigo": "299",
@@ -896,6 +903,13 @@
     "estoque": -2.0
   },
   {
+    "codigo": "431",
+    "nome": "KIT VASSOURA  E PA MAX CLEAN",
+    "categoria": "PRODUTO DE LIMPEZA",
+    "preco": 10.99,
+    "estoque": 0.0
+  },
+  {
     "codigo": "432",
     "nome": "KIT GARFO E FACA C/50UN ELITE",
     "categoria": "DESCARTAVEIS",
@@ -1006,6 +1020,13 @@
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 9.99,
     "estoque": 0.0
+  },
+  {
+    "codigo": "483",
+    "nome": "KIT ORGANIZADOR DE PIA",
+    "categoria": "PRODUTO DE LIMPEZA",
+    "preco": 9.99,
+    "estoque": 3.0
   },
   {
     "codigo": "500",
@@ -1522,7 +1543,7 @@
     "codigo": "683",
     "nome": "LIMPA TENIS 250ML SUPER DOM",
     "categoria": "PRODUTO DE LIMPEZA",
-    "preco": 15.5,
+    "preco": 22.5,
     "estoque": 2.0
   },
   {
@@ -1753,7 +1774,7 @@
     "codigo": "780",
     "nome": "LIMPA AIR FRYER SPRAY 250ML SUPER DOM",
     "categoria": "PRODUTO DE LIMPEZA",
-    "preco": 21.0,
+    "preco": 27.99,
     "estoque": 0.0
   },
   {
@@ -2475,7 +2496,7 @@
     "nome": "TOP LIXO PIA E BANHEIRO LAVANDA C/40UN PACK LIXO",
     "categoria": "SACO LIXO",
     "preco": 8.99,
-    "estoque": 82.0
+    "estoque": 81.0
   },
   {
     "codigo": "1048",
@@ -4036,7 +4057,7 @@
     "nome": "PLASTICO BOLHA 130X100M MICRA MN. PLAST",
     "categoria": "Embalagem",
     "preco": 100.0,
-    "estoque": 1.0
+    "estoque": 0.0
   },
   {
     "codigo": "2084",
@@ -4120,7 +4141,7 @@
     "nome": "SACOLA BRANCA 1KG 90x100",
     "categoria": "SACO LIXO",
     "preco": 25.5,
-    "estoque": 15.0
+    "estoque": 14.0
   },
   {
     "codigo": "2122",
@@ -8720,13 +8741,6 @@
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 15.0,
     "estoque": 3.0
-  },
-  {
-    "codigo": "7893595170122",
-    "nome": "KIT PA E VASSOURA MAX CLEAN",
-    "categoria": "PRODUTO DE LIMPEZA",
-    "preco": 16.0,
-    "estoque": -5.0
   },
   {
     "codigo": "7893595170124",
