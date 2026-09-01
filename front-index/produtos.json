@@ -102,14 +102,14 @@
     "nome": "RODO 40CM C/CABO ALKLIN",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 16.25,
-    "estoque": 22.0
+    "estoque": 21.0
   },
   {
     "codigo": "125",
     "nome": "SUPER PÁ C/CABO ALKLIN",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 19.99,
-    "estoque": 11.0
+    "estoque": 9.0
   },
   {
     "codigo": "127",
@@ -1992,7 +1992,7 @@
     "nome": "HAMBURGUEIRA BH02 C/10UN BOM APETITE",
     "categoria": "Embalagem",
     "preco": 3.99,
-    "estoque": 9.0
+    "estoque": 8.0
   },
   {
     "codigo": "857",
@@ -2040,7 +2040,7 @@
     "codigo": "876",
     "nome": "LIMPA GRELHA SPRAY 250ML SUPERDOM",
     "categoria": "PRODUTO DE LIMPEZA",
-    "preco": 16.99,
+    "preco": 21.99,
     "estoque": 2.0
   },
   {
@@ -2454,7 +2454,7 @@
     "nome": "SACO P/ LIXO PRETO P8 60L C/50UN",
     "categoria": "SACO LIXO",
     "preco": 38.25,
-    "estoque": 8.0
+    "estoque": 7.0
   },
   {
     "codigo": "1042",
@@ -4442,7 +4442,7 @@
     "nome": "POTE  RETANGULAR  350ML C/24UN PRAFESTA",
     "categoria": "DESCARTAVEIS",
     "preco": 34.99,
-    "estoque": 12.0
+    "estoque": 9.0
   },
   {
     "codigo": "2412",
@@ -5226,7 +5226,7 @@
     "nome": "HAMBURGUEIRA BH01 C/10UN BOM APETITE",
     "categoria": "DESCARTAVEIS",
     "preco": 3.5,
-    "estoque": 28.0
+    "estoque": 27.0
   },
   {
     "codigo": "3048",
@@ -6101,7 +6101,7 @@
     "nome": "REMOVEDOR SUPREMA CHA BRANCO 500ML",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 8.5,
-    "estoque": 10.0
+    "estoque": 9.0
   },
   {
     "codigo": "6008",
@@ -6920,7 +6920,7 @@
     "nome": "SACO P/ LIXO PRETO P8 60L C/10UN (F)",
     "categoria": "SACO LIXO",
     "preco": 6.5,
-    "estoque": 0.0
+    "estoque": -2.0
   },
   {
     "codigo": "10887",
@@ -7221,7 +7221,7 @@
     "nome": "ODORIZADOR DE TECIDOS CHÁ BRANCO 500ML",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 13.99,
-    "estoque": 0.0
+    "estoque": -1.0
   },
   {
     "codigo": "31415",
