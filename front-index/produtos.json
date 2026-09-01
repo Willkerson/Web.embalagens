@@ -263,7 +263,7 @@
     "nome": "COPO TERMICO 120ML C/20UN BOM APETITE",
     "categoria": "DESCARTAVEIS",
     "preco": 3.99,
-    "estoque": 62.0
+    "estoque": 60.0
   },
   {
     "codigo": "212",
@@ -295,7 +295,7 @@
   },
   {
     "codigo": "218",
-    "nome": "Cópia de KIT GANCHOS C/3UN",
+    "nome": "KIT GANCHOS C/3UN",
     "categoria": "UTENSILIOS",
     "preco": 5.99,
     "estoque": 0.0
@@ -627,7 +627,7 @@
     "nome": "ESCOVA MULTIUSO C/CABO ALKLIN",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 6.0,
-    "estoque": 5.0
+    "estoque": 4.0
   },
   {
     "codigo": "351",
@@ -844,7 +844,7 @@
     "nome": "COLHER LITTLE COFFE CRISTAL C/100UN PRAFESTA",
     "categoria": "DESCARTAVEIS",
     "preco": 7.5,
-    "estoque": 10.0
+    "estoque": 9.0
   },
   {
     "codigo": "420",
@@ -946,9 +946,16 @@
   },
   {
     "codigo": "445",
-    "nome": "VELA DE ANIVERSÁRIO C/8UN SILVER FESTAS DOURADA - PARABENS",
+    "nome": "VELA  ANIVERSÁRIO C/8UN SILVER FESTAS DOURADA",
     "categoria": "-",
     "preco": 18.4,
+    "estoque": 0.0
+  },
+  {
+    "codigo": "446",
+    "nome": "VELA  ANIVERSÁRIO C/16UN SILVER FESTAS",
+    "categoria": "Outras",
+    "preco": 9.99,
     "estoque": 0.0
   },
   {
@@ -984,7 +991,7 @@
     "nome": "COLHER SOBREMESA CRISTAL C/50UN ELITE",
     "categoria": "DESCARTAVEIS",
     "preco": 3.99,
-    "estoque": 7.0
+    "estoque": 5.0
   },
   {
     "codigo": "459",
@@ -1341,7 +1348,7 @@
     "nome": "ALCOOL 70% LIQUIDO 1L  HORUS",
     "categoria": "PRODUTO DE HIGIENE",
     "preco": 9.99,
-    "estoque": 3.0
+    "estoque": 2.0
   },
   {
     "codigo": "615",
@@ -1614,7 +1621,7 @@
     "nome": "D12 220ML FOLHA DE ALUMINIO MOLDADA C/10UN WYDA",
     "categoria": "Embalagem",
     "preco": 7.6,
-    "estoque": -78.0
+    "estoque": -79.0
   },
   {
     "codigo": "716",
@@ -1783,6 +1790,13 @@
     "categoria": "ALIMENTO/GENERO ALIMENTICIO",
     "preco": 19.0,
     "estoque": 1.0
+  },
+  {
+    "codigo": "783",
+    "nome": "LIMPA FORNO SPRAY 250ML SUPER DOM",
+    "categoria": "PRODUTO DE LIMPEZA",
+    "preco": 21.99,
+    "estoque": 0.0
   },
   {
     "codigo": "784",
@@ -2125,7 +2139,7 @@
     "nome": "COPO DESCARTAVEL TRANSPARENTE 50ML C/100UN TOTAL PLAST",
     "categoria": "DESCARTAVEIS",
     "preco": 4.5,
-    "estoque": 35.0
+    "estoque": 34.0
   },
   {
     "codigo": "904",
@@ -2308,6 +2322,20 @@
     "categoria": "UTENSILIOS",
     "preco": 8.0,
     "estoque": -17.0
+  },
+  {
+    "codigo": "981",
+    "nome": "GANCHOS QUADUPLO BAMBU  INTER",
+    "categoria": "UTENSILIOS",
+    "preco": 13.99,
+    "estoque": 0.0
+  },
+  {
+    "codigo": "984",
+    "nome": "GANCHOS C/3UN MONALIZA",
+    "categoria": "UTENSILIOS",
+    "preco": 5.99,
+    "estoque": 0.0
   },
   {
     "codigo": "0017",
@@ -2546,6 +2574,13 @@
     "categoria": "PAPELARIA",
     "preco": 4.99,
     "estoque": 503.0
+  },
+  {
+    "codigo": "1060",
+    "nome": "PASSA CERA PLASTICA",
+    "categoria": "PRODUTO DE LIMPEZA",
+    "preco": 8.99,
+    "estoque": 0.0
   },
   {
     "codigo": "1069",
@@ -2818,7 +2853,7 @@
     "nome": "LIXEIRA 6.5L SANREMO",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 25.0,
-    "estoque": -6.0
+    "estoque": -7.0
   },
   {
     "codigo": "1206",
@@ -2836,7 +2871,7 @@
   },
   {
     "codigo": "1229",
-    "nome": "Cópia de ESPONJA DE LÃ DE AÇO ASSOLAN  45G",
+    "nome": "ESPONJA DE LÃ DE AÇO ASSOLAN  45G",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 8.5,
     "estoque": 5.0
@@ -2902,7 +2937,7 @@
     "nome": "CAIXA REDONDA P/PIZZA N 35 NIAGRA",
     "categoria": "PAPELARIA",
     "preco": 3.75,
-    "estoque": 26.0
+    "estoque": 22.0
   },
   {
     "codigo": "1294",
@@ -2972,7 +3007,7 @@
     "nome": "PACK LIXO PIA E BANHEIRO TUTTI-FRUITI C/80UN DIVA",
     "categoria": "SACO LIXO",
     "preco": 13.99,
-    "estoque": 30.0
+    "estoque": 29.0
   },
   {
     "codigo": "1316",
@@ -3098,7 +3133,7 @@
     "nome": "KIT POTE E TAMPA RET. 500ML C/12UN GOUR MAX",
     "categoria": "DESCARTAVEIS",
     "preco": 16.99,
-    "estoque": -26.0
+    "estoque": -27.0
   },
   {
     "codigo": "1360",
@@ -3434,7 +3469,7 @@
     "nome": "LIXEIRA PLAST. LABEL CLICK PRATA 9L AEQPLAST",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 23.0,
-    "estoque": -4.0
+    "estoque": -5.0
   },
   {
     "codigo": "1583",
@@ -3546,7 +3581,7 @@
     "nome": "SACOLA VERDE REFORÇADA 1KG 50X70",
     "categoria": "Embalagem",
     "preco": 19.99,
-    "estoque": -6.0
+    "estoque": -7.0
   },
   {
     "codigo": "1714",
@@ -3693,7 +3728,7 @@
     "nome": "LUVA DE VINIL M S/TALCO C/100UN TALGE",
     "categoria": "DESCARTAVEIS",
     "preco": 19.99,
-    "estoque": 94.0
+    "estoque": 93.0
   },
   {
     "codigo": "1819",
@@ -3749,7 +3784,7 @@
     "nome": "SACO PARA GELADINHO PEQ. C/100UN 4X24X0,02",
     "categoria": "DESCARTAVEIS",
     "preco": 4.0,
-    "estoque": 117.0
+    "estoque": 116.0
   },
   {
     "codigo": "1889",
@@ -3784,7 +3819,7 @@
     "nome": "LIMPA VIDRO  SANCHES",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 8.5,
-    "estoque": 87.0
+    "estoque": 86.0
   },
   {
     "codigo": "1905",
@@ -3977,7 +4012,7 @@
   },
   {
     "codigo": "2032",
-    "nome": "BATERIA LITIO ALFACELL",
+    "nome": "BATERIA LITIO ALFACELL CR2032-5",
     "categoria": "UTENSILIOS",
     "preco": 3.5,
     "estoque": -5.0
@@ -4184,6 +4219,20 @@
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 43.5,
     "estoque": -3.0
+  },
+  {
+    "codigo": "2177",
+    "nome": "GRAMPEADOR C/GRAMPOS DE MESA",
+    "categoria": "UTENSILIOS",
+    "preco": 25.99,
+    "estoque": 0.0
+  },
+  {
+    "codigo": "2181",
+    "nome": "KIT GANCHOS C/3UN COSY",
+    "categoria": "UTENSILIOS",
+    "preco": 8.99,
+    "estoque": 0.0
   },
   {
     "codigo": "2186",
@@ -4743,7 +4792,7 @@
     "nome": "GARFO SOBREMESA CRISTAL C/50UN ELITE",
     "categoria": "DESCARTAVEIS",
     "preco": 3.99,
-    "estoque": 31.0
+    "estoque": 29.0
   },
   {
     "codigo": "2785",
@@ -5058,7 +5107,7 @@
     "nome": "PRATO QUADRADO 150MM BRANCO C/10UN",
     "categoria": "ALIMENTO/GENERO ALIMENTICIO",
     "preco": 7.99,
-    "estoque": 73.0
+    "estoque": 72.0
   },
   {
     "codigo": "2939",
@@ -5080,6 +5129,13 @@
     "categoria": "UTENSILIOS",
     "preco": 5.99,
     "estoque": 3.0
+  },
+  {
+    "codigo": "2959",
+    "nome": "GANCHO ADESIVO C/3UN  HOOK",
+    "categoria": "UTENSILIOS",
+    "preco": 4.99,
+    "estoque": 0.0
   },
   {
     "codigo": "2964",
@@ -5121,7 +5177,7 @@
     "nome": "AÇUCAR EM SACHE 100X5G UNIAO",
     "categoria": "ALIMENTO/GENERO ALIMENTICIO",
     "preco": 10.0,
-    "estoque": 7.0
+    "estoque": 6.0
   },
   {
     "codigo": "2993",
@@ -5135,7 +5191,7 @@
     "nome": "COPO DESCARTAVEL 180ML PS C/100UN FASTCUP",
     "categoria": "DESCARTAVEIS",
     "preco": 6.99,
-    "estoque": 103.0
+    "estoque": 102.0
   },
   {
     "codigo": "2995",
@@ -5219,7 +5275,7 @@
     "nome": "RODO DE PIA PIA KEITA",
     "categoria": "UTENSILIOS",
     "preco": 6.5,
-    "estoque": 5.0
+    "estoque": 4.0
   },
   {
     "codigo": "3046",
@@ -5261,7 +5317,7 @@
     "nome": "POTE E TAMPA REDONDO 1000ML C/24UN DANUBIO",
     "categoria": "DESCARTAVEIS",
     "preco": 39.5,
-    "estoque": 6.0
+    "estoque": 5.0
   },
   {
     "codigo": "3070",
@@ -5355,6 +5411,13 @@
     "estoque": -6.0
   },
   {
+    "codigo": "3112",
+    "nome": "ESCORREDOR DE LOUÇAS INOX 48X32CM CLINK",
+    "categoria": "PRODUTO DE HIGIENE",
+    "preco": 26.99,
+    "estoque": 2.0
+  },
+  {
     "codigo": "3113",
     "nome": "POTE E TAMPA RET.1000ML C/24UN GOUR MAX",
     "categoria": "DESCARTAVEIS",
@@ -5367,6 +5430,13 @@
     "categoria": "DESCARTAVEIS",
     "preco": 23.99,
     "estoque": 22.0
+  },
+  {
+    "codigo": "3119",
+    "nome": "ROLA TIRA ADESIVO 10 FOLHAS",
+    "categoria": "PRODUTO DE LIMPEZA",
+    "preco": 5.99,
+    "estoque": 3.0
   },
   {
     "codigo": "3120",
@@ -5426,7 +5496,7 @@
   },
   {
     "codigo": "3138",
-    "nome": "AROMATIZADOR DE TECIDOS SPAY 300ML LAVANDA E CEDRO SUPER DOM",
+    "nome": "AROMATIZADOR DE TECIDOS SPRAY 300ML LAVANDA E CEDRO SUPER DOM",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 13.99,
     "estoque": -10.0
@@ -5712,13 +5782,6 @@
     "estoque": 0.0
   },
   {
-    "codigo": "3665",
-    "nome": "LIMPADOR CONCENTRADO ORQUIDEA NEGRA",
-    "categoria": "PRODUTO DE LIMPEZA",
-    "preco": 15.5,
-    "estoque": 1.0
-  },
-  {
     "codigo": "3666",
     "nome": "LIMPADOR CONCENTRADO ORQUIDEA NEGRA",
     "categoria": "PRODUTO DE LIMPEZA",
@@ -5898,7 +5961,7 @@
     "nome": "FORMA DESCARTAVEL REDONDA PARA AIR FRYER C/50UN 20CM TINGS",
     "categoria": "UTENSILIOS",
     "preco": 13.99,
-    "estoque": -4.0
+    "estoque": -5.0
   },
   {
     "codigo": "4002",
@@ -6479,7 +6542,7 @@
     "nome": "PALITOS PARA PICOLÉ BAMBU C/ 100 UNIDADES",
     "categoria": "DESCARTAVEIS",
     "preco": 7.99,
-    "estoque": 8.0
+    "estoque": 6.0
   },
   {
     "codigo": "7911",
@@ -6765,7 +6828,7 @@
     "codigo": "8922",
     "nome": "VELA DE ANIVERSÁRIO C/8UN SILVER FESTAS ROSE - PARABENS",
     "categoria": "-",
-    "preco": 16.99,
+    "preco": 19.99,
     "estoque": -1.0
   },
   {
@@ -6797,6 +6860,13 @@
     "estoque": -8.0
   },
   {
+    "codigo": "9041",
+    "nome": "FITA ADESIVA ESPUMA DUPLA FACE 18MMX3M",
+    "categoria": "UTENSILIOS",
+    "preco": 8.99,
+    "estoque": 0.0
+  },
+  {
     "codigo": "9044",
     "nome": "FITA DUPLA FACE 18MMX2M MONALIZA",
     "categoria": "UTENSILIOS",
@@ -6815,7 +6885,7 @@
     "nome": "FORMINHA PAPEL 0B BRANCA C/10UN REIKI",
     "categoria": "DESCARTAVEIS",
     "preco": 6.0,
-    "estoque": 4.0
+    "estoque": 3.0
   },
   {
     "codigo": "9081",
@@ -6920,7 +6990,7 @@
     "nome": "SACO P/ LIXO PRETO P8 60L C/10UN (F)",
     "categoria": "SACO LIXO",
     "preco": 6.5,
-    "estoque": -2.0
+    "estoque": -5.0
   },
   {
     "codigo": "10887",
@@ -6934,7 +7004,7 @@
     "nome": "PANO MULTIUSO AZUL C/50 PANOS 30CMX25CM MR. PLUS TALGE",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 17.0,
-    "estoque": 72.0
+    "estoque": 70.0
   },
   {
     "codigo": "11176",
@@ -7019,6 +7089,13 @@
     "categoria": "Outras",
     "preco": 32.5,
     "estoque": 4.0
+  },
+  {
+    "codigo": "12912",
+    "nome": "BATERIA LITHIUM BOTAO CR2025-5  MAX",
+    "categoria": "UTENSILIOS",
+    "preco": 2.5,
+    "estoque": 0.0
   },
   {
     "codigo": "12930",
@@ -7220,7 +7297,7 @@
     "codigo": "31414",
     "nome": "ODORIZADOR DE TECIDOS CHÁ BRANCO 500ML",
     "categoria": "PRODUTO DE LIMPEZA",
-    "preco": 13.99,
+    "preco": 17.99,
     "estoque": -1.0
   },
   {
@@ -7234,22 +7311,22 @@
     "codigo": "31416",
     "nome": "ODORIZADOR DE TECIDOS VANILLA 500ML",
     "categoria": "PRODUTO DE LIMPEZA",
-    "preco": 13.99,
+    "preco": 17.99,
     "estoque": 0.0
   },
   {
     "codigo": "31417",
     "nome": "ODORIZADOR DE TECIDOS FLOR DE CEREJEIRA 500ML",
     "categoria": "PRODUTO DE LIMPEZA",
-    "preco": 13.99,
+    "preco": 17.99,
     "estoque": 0.0
   },
   {
     "codigo": "31418",
     "nome": "ODORIZADOR DE TECIDOS LAVANDA 500ML",
     "categoria": "PRODUTO DE LIMPEZA",
-    "preco": 13.99,
-    "estoque": -1.0
+    "preco": 17.99,
+    "estoque": -2.0
   },
   {
     "codigo": "31644",
@@ -7417,7 +7494,7 @@
     "nome": "G650 POTE QUAD.200ML C/10 UNI",
     "categoria": "Embalagem",
     "preco": 7.5,
-    "estoque": -15.0
+    "estoque": -19.0
   },
   {
     "codigo": "31671",
@@ -7544,6 +7621,13 @@
     "categoria": "ALIMENTO/GENERO ALIMENTICIO",
     "preco": 75.99,
     "estoque": 7.0
+  },
+  {
+    "codigo": "50311",
+    "nome": "SACO P/PRESENTE 37X28CM",
+    "categoria": "Embalagem",
+    "preco": 10.5,
+    "estoque": 0.0
   },
   {
     "codigo": "50694",
@@ -7693,8 +7777,15 @@
     "estoque": 100.0
   },
   {
+    "codigo": "79044",
+    "nome": "POTA CONDIMENTO C/4UN 200ML TOPMIX",
+    "categoria": "UTENSILIOS",
+    "preco": 24.99,
+    "estoque": 0.0
+  },
+  {
     "codigo": "79045",
-    "nome": "POTES PARA TEMPERO GLASS WARE",
+    "nome": "POTA CONDIMENTO C/4UN  100ML GLASS WARE",
     "categoria": "UTENSILIOS",
     "preco": 21.99,
     "estoque": 0.0
@@ -7767,7 +7858,7 @@
     "nome": "SACO PRA LIXO REFORÇADO  110L  C/10  PRETO (F)",
     "categoria": "SACO LIXO",
     "preco": 11.99,
-    "estoque": -1.0
+    "estoque": -3.0
   },
   {
     "codigo": "87687",
@@ -8060,7 +8151,7 @@
     "codigo": "129042",
     "nome": "ACENDEDOR G/INFAMAVEL BJ8620",
     "categoria": "UTENSILIOS",
-    "preco": 6.5,
+    "preco": 11.5,
     "estoque": -2.0
   },
   {
@@ -8522,7 +8613,7 @@
     "codigo": "129140",
     "nome": "ACENDEDOR BJ8619",
     "categoria": "Outras",
-    "preco": 7.5,
+    "preco": 14.99,
     "estoque": -1.0
   },
   {
@@ -8607,20 +8698,6 @@
     "nome": "SACO SOS PARDO GG C/50UN 30X20X36 PLUMA",
     "categoria": "Embalagem",
     "preco": 69.5,
-    "estoque": 0.0
-  },
-  {
-    "codigo": "3665_1267",
-    "nome": "LIMPADOR CONCENTRADO ORQUIDEA NEGRA",
-    "categoria": "PRODUTO DE LIMPEZA",
-    "preco": 15.5,
-    "estoque": 0.0
-  },
-  {
-    "codigo": "5031_1245",
-    "nome": "Cópia de SACO P/PRESENTE 32X26CM",
-    "categoria": "Embalagem",
-    "preco": 8.5,
     "estoque": 0.0
   },
   {
