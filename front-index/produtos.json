@@ -1663,7 +1663,7 @@
     "nome": "SACO ZIP 17X24 C/ 20UN ARMAZEM",
     "categoria": "Embalagem",
     "preco": 9.99,
-    "estoque": 9.0
+    "estoque": 8.0
   },
   {
     "codigo": "743",
@@ -5219,7 +5219,7 @@
     "nome": "SACO ZIP N03 07x12CM C/20UN  ARMAZEM",
     "categoria": "Embalagem",
     "preco": 2.5,
-    "estoque": -5.0
+    "estoque": -6.0
   },
   {
     "codigo": "3028",
