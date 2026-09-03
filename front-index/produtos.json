@@ -4,7 +4,7 @@
     "nome": "KIT PA E VASSOURA MAX CLEAN",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 15.99,
-    "estoque": -5.0
+    "estoque": 2.0
   },
   {
     "codigo": "035",
@@ -116,7 +116,7 @@
     "nome": "GANCHO 4KG C/1UN",
     "categoria": "UTENSILIOS",
     "preco": 6.5,
-    "estoque": 0.0
+    "estoque": 3.0
   },
   {
     "codigo": "129",
@@ -515,7 +515,7 @@
     "nome": "FITA ADESIVA 18X50M EUROCEL",
     "categoria": "UTENSILIOS",
     "preco": 3.99,
-    "estoque": -41.0
+    "estoque": 9.0
   },
   {
     "codigo": "317",
@@ -550,7 +550,7 @@
     "nome": "ESPONJA MAGICA LIMP. PESADO MAXCLEAN",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 3.5,
-    "estoque": 2.0
+    "estoque": 7.0
   },
   {
     "codigo": "331",
@@ -907,7 +907,7 @@
     "nome": "KIT VASSOURA  E PA MAX CLEAN",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 10.99,
-    "estoque": 0.0
+    "estoque": 3.0
   },
   {
     "codigo": "432",
@@ -956,7 +956,7 @@
     "nome": "VELA  ANIVERSÁRIO C/16UN SILVER FESTAS",
     "categoria": "Outras",
     "preco": 9.99,
-    "estoque": 0.0
+    "estoque": 1.0
   },
   {
     "codigo": "447",
@@ -1124,7 +1124,7 @@
     "nome": "FITA ADESIVA 18X50M ALFACELL",
     "categoria": "Embalagem",
     "preco": 2.5,
-    "estoque": -19.0
+    "estoque": 11.0
   },
   {
     "codigo": "534",
@@ -1551,7 +1551,7 @@
     "nome": "LIMPA TENIS 250ML SUPER DOM",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 22.5,
-    "estoque": 2.0
+    "estoque": 9.0
   },
   {
     "codigo": "684",
@@ -1593,7 +1593,7 @@
     "nome": "KIT ESCOVA E PA 22X34CM COSY",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 14.99,
-    "estoque": 0.0
+    "estoque": 1.0
   },
   {
     "codigo": "701",
@@ -1782,7 +1782,7 @@
     "nome": "LIMPA AIR FRYER SPRAY 250ML SUPER DOM",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 27.99,
-    "estoque": 0.0
+    "estoque": 5.0
   },
   {
     "codigo": "781",
@@ -1796,7 +1796,7 @@
     "nome": "LIMPA FORNO SPRAY 250ML SUPER DOM",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 21.99,
-    "estoque": 0.0
+    "estoque": 3.0
   },
   {
     "codigo": "784",
@@ -2055,7 +2055,7 @@
     "nome": "LIMPA GRELHA SPRAY 250ML SUPERDOM",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 21.99,
-    "estoque": 2.0
+    "estoque": 5.0
   },
   {
     "codigo": "885",
@@ -2321,21 +2321,21 @@
     "nome": "GANCHOS C/2UN MONALIZA",
     "categoria": "UTENSILIOS",
     "preco": 8.0,
-    "estoque": -17.0
+    "estoque": 3.0
   },
   {
     "codigo": "981",
     "nome": "GANCHOS QUADUPLO BAMBU  INTER",
     "categoria": "UTENSILIOS",
     "preco": 13.99,
-    "estoque": 0.0
+    "estoque": 1.0
   },
   {
     "codigo": "984",
     "nome": "GANCHOS C/3UN MONALIZA",
     "categoria": "UTENSILIOS",
     "preco": 5.99,
-    "estoque": 0.0
+    "estoque": 1.0
   },
   {
     "codigo": "0017",
@@ -2580,7 +2580,7 @@
     "nome": "PASSA CERA PLASTICA",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 8.99,
-    "estoque": 0.0
+    "estoque": 3.0
   },
   {
     "codigo": "1069",
@@ -2860,7 +2860,7 @@
     "nome": "BOBINA PICOTADA 2KG C/500UN P/ ALIMENTOS 20X28CM EXTRUSA",
     "categoria": "Embalagem",
     "preco": 19.0,
-    "estoque": 9.0
+    "estoque": 8.0
   },
   {
     "codigo": "1225",
@@ -3763,7 +3763,7 @@
     "nome": "TOP LIXO BRANCO 30L C/30UN PACK LIXO",
     "categoria": "SACO LIXO",
     "preco": 16.99,
-    "estoque": 11.0
+    "estoque": 10.0
   },
   {
     "codigo": "1885",
@@ -4015,7 +4015,7 @@
     "nome": "BATERIA LITIO ALFACELL CR2032-5",
     "categoria": "UTENSILIOS",
     "preco": 3.5,
-    "estoque": -7.0
+    "estoque": 8.0
   },
   {
     "codigo": "2033",
@@ -4225,14 +4225,14 @@
     "nome": "GRAMPEADOR C/GRAMPOS DE MESA",
     "categoria": "UTENSILIOS",
     "preco": 25.99,
-    "estoque": 0.0
+    "estoque": 1.0
   },
   {
     "codigo": "2181",
     "nome": "KIT GANCHOS C/3UN COSY",
     "categoria": "UTENSILIOS",
     "preco": 8.99,
-    "estoque": 0.0
+    "estoque": 2.0
   },
   {
     "codigo": "2186",
@@ -5135,7 +5135,7 @@
     "nome": "GANCHO ADESIVO C/3UN  HOOK",
     "categoria": "UTENSILIOS",
     "preco": 4.99,
-    "estoque": 0.0
+    "estoque": 2.0
   },
   {
     "codigo": "2964",
@@ -5597,7 +5597,7 @@
     "nome": "FITA ADESIVA 18MMX40M / 18MMx50M KORETEC",
     "categoria": "PAPELARIA",
     "preco": 2.5,
-    "estoque": -90.0
+    "estoque": 110.0
   },
   {
     "codigo": "3159",
@@ -6045,7 +6045,7 @@
     "nome": "TOP LIXO PRETO 50L C/30UN PACK LIXO",
     "categoria": "SACO LIXO",
     "preco": 19.99,
-    "estoque": 6.0
+    "estoque": 5.0
   },
   {
     "codigo": "4391",
@@ -6073,7 +6073,7 @@
     "nome": "LIMPA ESTOFADOS SPRAY 300ML ZIP",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 18.0,
-    "estoque": 4.0
+    "estoque": 16.0
   },
   {
     "codigo": "4992",
@@ -6500,28 +6500,28 @@
     "nome": "DIFUSOR DE AROMAS CHA BRANCA 250ML SENALAR",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 18.0,
-    "estoque": 0.0
+    "estoque": 12.0
   },
   {
     "codigo": "7905",
     "nome": "DIFUSOR DE AROMAS LAVANDA 250ML SENALAR",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 18.0,
-    "estoque": -1.0
+    "estoque": 10.0
   },
   {
     "codigo": "7906",
     "nome": "DIFUSOR DE AROMAS CITRONELA 250ML SENALAR",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 18.0,
-    "estoque": 1.0
+    "estoque": 13.0
   },
   {
     "codigo": "7907",
     "nome": "AROMATIZADOR DE  CEREJA E AVELÂ SENALAR",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 18.0,
-    "estoque": -2.0
+    "estoque": 16.0
   },
   {
     "codigo": "7908",
@@ -6626,7 +6626,7 @@
     "nome": "AROMATIZADOR FLOR DE LARANJEIRA 250ML  ALOP",
     "categoria": "PRODUTO DE HIGIENE",
     "preco": 12.5,
-    "estoque": 0.0
+    "estoque": 3.0
   },
   {
     "codigo": "7978",
@@ -6829,7 +6829,7 @@
     "nome": "VELA DE ANIVERSÁRIO C/8UN SILVER FESTAS ROSE - PARABENS",
     "categoria": "-",
     "preco": 19.99,
-    "estoque": -1.0
+    "estoque": 2.0
   },
   {
     "codigo": "8977",
@@ -6864,7 +6864,7 @@
     "nome": "FITA ADESIVA ESPUMA DUPLA FACE 18MMX3M",
     "categoria": "UTENSILIOS",
     "preco": 8.99,
-    "estoque": 0.0
+    "estoque": 3.0
   },
   {
     "codigo": "9044",
@@ -7088,7 +7088,7 @@
     "nome": "BATERIA LITHIUM BOTAO CR2025-5  MAX",
     "categoria": "UTENSILIOS",
     "preco": 2.5,
-    "estoque": 0.0
+    "estoque": 10.0
   },
   {
     "codigo": "12930",
@@ -7291,7 +7291,7 @@
     "nome": "ODORIZADOR DE TECIDOS CHÁ BRANCO 500ML",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 17.99,
-    "estoque": -1.0
+    "estoque": 4.0
   },
   {
     "codigo": "31415",
@@ -7305,21 +7305,21 @@
     "nome": "ODORIZADOR DE TECIDOS VANILLA 500ML",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 17.99,
-    "estoque": 0.0
+    "estoque": 3.0
   },
   {
     "codigo": "31417",
     "nome": "ODORIZADOR DE TECIDOS FLOR DE CEREJEIRA 500ML",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 17.99,
-    "estoque": 0.0
+    "estoque": 2.0
   },
   {
     "codigo": "31418",
     "nome": "ODORIZADOR DE TECIDOS LAVANDA 500ML",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 17.99,
-    "estoque": -2.0
+    "estoque": 1.0
   },
   {
     "codigo": "31644",
@@ -7620,7 +7620,7 @@
     "nome": "SACO P/PRESENTE 37X28CM",
     "categoria": "Embalagem",
     "preco": 10.5,
-    "estoque": 0.0
+    "estoque": 1.0
   },
   {
     "codigo": "50694",
@@ -7774,14 +7774,14 @@
     "nome": "POTA CONDIMENTO C/4UN 200ML TOPMIX",
     "categoria": "UTENSILIOS",
     "preco": 24.99,
-    "estoque": 0.0
+    "estoque": 1.0
   },
   {
     "codigo": "79045",
     "nome": "POTA CONDIMENTO C/4UN  100ML GLASS WARE",
     "categoria": "UTENSILIOS",
     "preco": 21.99,
-    "estoque": 0.0
+    "estoque": 2.0
   },
   {
     "codigo": "79047",
@@ -7935,7 +7935,7 @@
     "nome": "GANCHOS PORTA CHAVES C/3UN",
     "categoria": "UTENSILIOS",
     "preco": 8.0,
-    "estoque": -1.0
+    "estoque": 3.0
   },
   {
     "codigo": "129013",
@@ -8138,7 +8138,7 @@
     "nome": "ACENDEDOR G/INFAMAVEL BJ8620",
     "categoria": "UTENSILIOS",
     "preco": 11.5,
-    "estoque": -2.0
+    "estoque": 3.0
   },
   {
     "codigo": "129043",
@@ -8530,14 +8530,14 @@
     "nome": "BATERIA CARGA DE ALTA RESIST. LR44-5 ALFACELL",
     "categoria": "UTENSILIOS",
     "preco": 3.0,
-    "estoque": 12.0
+    "estoque": 17.0
   },
   {
     "codigo": "129102",
     "nome": "BATERIA LITHIUM BOTAO CR2025-5  1 UNIDADE",
     "categoria": "UTENSILIOS",
     "preco": 2.5,
-    "estoque": 24.0
+    "estoque": 29.0
   },
   {
     "codigo": "129103",
@@ -8600,7 +8600,7 @@
     "nome": "ACENDEDOR BJ8619",
     "categoria": "Outras",
     "preco": 14.99,
-    "estoque": -2.0
+    "estoque": 2.0
   },
   {
     "codigo": "151515",
