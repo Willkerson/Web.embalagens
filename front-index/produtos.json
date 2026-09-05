@@ -39,7 +39,7 @@
     "nome": "SACOLA KRAFT M 1UN 19X12X26CM",
     "categoria": "Embalagem",
     "preco": 1.55,
-    "estoque": 4.0
+    "estoque": -6.0
   },
   {
     "codigo": "104",
@@ -452,7 +452,7 @@
     "nome": "DESENTUPIDOR P/PIA ALKLIN",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 11.99,
-    "estoque": 11.0
+    "estoque": 10.0
   },
   {
     "codigo": "299",
@@ -585,7 +585,7 @@
     "nome": "SACOLA UNIDADE GRANDE 60X90",
     "categoria": "SACO LIXO",
     "preco": 0.99,
-    "estoque": -20.0
+    "estoque": -21.0
   },
   {
     "codigo": "336",
@@ -739,7 +739,7 @@
     "nome": "PANO DE CHAO BRANCO ALVEJADO 45CMX69CM SOUZA PPR28",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 6.7,
-    "estoque": 286.0
+    "estoque": 284.0
   },
   {
     "codigo": "391",
@@ -942,7 +942,7 @@
     "nome": "POTE REDONDO 250ML C/TAMPA C/24UN PRAFESTA",
     "categoria": "DESCARTAVEIS",
     "preco": 18.5,
-    "estoque": 17.0
+    "estoque": 16.0
   },
   {
     "codigo": "445",
@@ -963,7 +963,7 @@
     "nome": "POTE REDONDO 350ML C/TAMPA C/24UN PRAFESTA",
     "categoria": "DESCARTAVEIS",
     "preco": 21.99,
-    "estoque": 43.0
+    "estoque": 41.0
   },
   {
     "codigo": "453",
@@ -984,7 +984,7 @@
     "nome": "POTE  RETANGULAR 500ML C/24UN PRAFESTA",
     "categoria": "DESCARTAVEIS",
     "preco": 38.99,
-    "estoque": 38.0
+    "estoque": 37.0
   },
   {
     "codigo": "458",
@@ -1950,7 +1950,7 @@
     "nome": "POTE  RETANGULAR 750ML C/24UN PRAFESTA",
     "categoria": "DESCARTAVEIS",
     "preco": 56.99,
-    "estoque": 6.0
+    "estoque": 5.0
   },
   {
     "codigo": "834",
@@ -2489,7 +2489,7 @@
     "nome": "SACO P/ LIXO PRETO P8 60L C/50UN",
     "categoria": "SACO LIXO",
     "preco": 38.25,
-    "estoque": 3.0
+    "estoque": 2.0
   },
   {
     "codigo": "1042",
@@ -2538,7 +2538,7 @@
     "nome": "SACO P/ LIXO PRETO 100L C/50UN",
     "categoria": "SACO LIXO",
     "preco": 57.5,
-    "estoque": 18.0
+    "estoque": 17.0
   },
   {
     "codigo": "1049",
@@ -2552,14 +2552,14 @@
     "nome": "SACO P/ LIXO PRETO P6 40L C/10UN",
     "categoria": "SACO LIXO",
     "preco": 5.5,
-    "estoque": 7.0
+    "estoque": 6.0
   },
   {
     "codigo": "1052",
     "nome": "SACO P/ LIXO PRETO P8 60L C/10UN",
     "categoria": "SACO LIXO",
     "preco": 8.99,
-    "estoque": -5.0
+    "estoque": -6.0
   },
   {
     "codigo": "1053",
@@ -2587,7 +2587,7 @@
     "nome": "PASSA CERA PLASTICA",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 8.99,
-    "estoque": 3.0
+    "estoque": 2.0
   },
   {
     "codigo": "1069",
@@ -2650,7 +2650,7 @@
     "nome": "MARMITEX DE ISOPOR 750ML C/10UN BOM APETITE",
     "categoria": "DESCARTAVEIS",
     "preco": 8.0,
-    "estoque": -14.0
+    "estoque": -17.0
   },
   {
     "codigo": "1113",
@@ -2867,7 +2867,7 @@
     "nome": "BOBINA PICOTADA 2KG C/500UN P/ ALIMENTOS 20X28CM EXTRUSA",
     "categoria": "Embalagem",
     "preco": 19.0,
-    "estoque": 6.0
+    "estoque": 5.0
   },
   {
     "codigo": "1225",
@@ -3063,7 +3063,7 @@
     "nome": "FORMINHA DE PAPEL AZUL N5 C/100UN",
     "categoria": "Embalagem",
     "preco": 2.0,
-    "estoque": 9.0
+    "estoque": 8.0
   },
   {
     "codigo": "1330",
@@ -3084,7 +3084,7 @@
     "nome": "TOALHA INTERFOLHA (OURO) CELULOSE ISAPEL C/1000UN",
     "categoria": "PRODUTO DE HIGIENE",
     "preco": 23.0,
-    "estoque": 77.0
+    "estoque": 76.0
   },
   {
     "codigo": "1341",
@@ -3140,7 +3140,7 @@
     "nome": "KIT POTE E TAMPA RET. 500ML C/12UN GOUR MAX",
     "categoria": "DESCARTAVEIS",
     "preco": 16.99,
-    "estoque": -30.0
+    "estoque": -31.0
   },
   {
     "codigo": "1360",
@@ -3770,7 +3770,7 @@
     "nome": "TOP LIXO BRANCO 30L C/30UN PACK LIXO",
     "categoria": "SACO LIXO",
     "preco": 16.99,
-    "estoque": 9.0
+    "estoque": 8.0
   },
   {
     "codigo": "1885",
@@ -4057,7 +4057,7 @@
     "nome": "BR02 RASA C/10UN 210X146X15 BOM APETITE",
     "categoria": "Embalagem",
     "preco": 2.5,
-    "estoque": -9.0
+    "estoque": -11.0
   },
   {
     "codigo": "2068",
@@ -4155,14 +4155,14 @@
     "nome": "SACOLA BRANCA 1KG 35x45",
     "categoria": "Embalagem",
     "preco": 25.5,
-    "estoque": 2.0
+    "estoque": 1.0
   },
   {
     "codigo": "2103",
     "nome": "SACOLA BRANCA 1KG 40x50",
     "categoria": "SACO LIXO",
     "preco": 25.5,
-    "estoque": 25.0
+    "estoque": 23.0
   },
   {
     "codigo": "2104",
@@ -4505,14 +4505,14 @@
     "nome": "POTE  RETANGULAR 250ML C/24UN PRAFESTA",
     "categoria": "DESCARTAVEIS",
     "preco": 26.5,
-    "estoque": 11.0
+    "estoque": 10.0
   },
   {
     "codigo": "2427",
     "nome": "ESPONJA MAGICA TIRA MANCHAS CLEAN TECH",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 1.5,
-    "estoque": 0.0
+    "estoque": -1.0
   },
   {
     "codigo": "2444",
@@ -4638,7 +4638,7 @@
     "nome": "ESPONJA  ANTIRISCO C/4UN ALKLIN",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 4.0,
-    "estoque": 141.0
+    "estoque": 140.0
   },
   {
     "codigo": "2599",
@@ -5289,7 +5289,7 @@
     "nome": "HAMBURGUEIRA BH01 C/10UN BOM APETITE",
     "categoria": "DESCARTAVEIS",
     "preco": 3.5,
-    "estoque": 26.0
+    "estoque": 24.0
   },
   {
     "codigo": "3048",
@@ -5317,7 +5317,7 @@
     "nome": "POTE E TAMPA RET.350ML C/24UN GOUR MAX",
     "categoria": "DESCARTAVEIS",
     "preco": 27.99,
-    "estoque": 21.0
+    "estoque": 18.0
   },
   {
     "codigo": "3060",
@@ -5702,7 +5702,7 @@
     "nome": "PAPEL TOALHA SCALA PLUS C/120 TOALHAS C/2 ROLOS",
     "categoria": "PRODUTO DE HIGIENE",
     "preco": 8.5,
-    "estoque": 6.0
+    "estoque": 5.0
   },
   {
     "codigo": "3267",
@@ -5989,7 +5989,7 @@
     "nome": "BOBINA PICOTADA 20X30CM  C/700UN  SOLDA FUNDO (1,3KG)",
     "categoria": "Embalagem",
     "preco": 44.99,
-    "estoque": 6.0
+    "estoque": 5.0
   },
   {
     "codigo": "4006",
@@ -7004,7 +7004,7 @@
     "nome": "PANO MULTIUSO AZUL C/50 PANOS 30CMX25CM MR. PLUS TALGE",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 17.0,
-    "estoque": 68.0
+    "estoque": 67.0
   },
   {
     "codigo": "11176",
@@ -7319,7 +7319,7 @@
     "nome": "ODORIZADOR DE TECIDOS FLOR DE CEREJEIRA 500ML",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 17.99,
-    "estoque": 2.0
+    "estoque": 1.0
   },
   {
     "codigo": "31418",
@@ -7620,7 +7620,7 @@
     "nome": "BOBINA PICOTADO 35X45 C/450UN SOLDA FUNDO 2.41KG",
     "categoria": "ALIMENTO/GENERO ALIMENTICIO",
     "preco": 75.99,
-    "estoque": 7.0
+    "estoque": 6.0
   },
   {
     "codigo": "50311",
