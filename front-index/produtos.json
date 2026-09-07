@@ -942,7 +942,7 @@
     "nome": "POTE REDONDO 250ML C/TAMPA C/24UN PRAFESTA",
     "categoria": "DESCARTAVEIS",
     "preco": 18.5,
-    "estoque": 16.0
+    "estoque": 15.0
   },
   {
     "codigo": "445",
@@ -963,7 +963,7 @@
     "nome": "POTE REDONDO 350ML C/TAMPA C/24UN PRAFESTA",
     "categoria": "DESCARTAVEIS",
     "preco": 21.99,
-    "estoque": 41.0
+    "estoque": 40.0
   },
   {
     "codigo": "453",
@@ -2433,7 +2433,7 @@
     "nome": "SACOS PLASTICO PEBD 1KG 15X30X0,06 COLOMBO/HELVIPACK",
     "categoria": "Embalagem",
     "preco": 40.99,
-    "estoque": 9.0
+    "estoque": 8.0
   },
   {
     "codigo": "1012",
@@ -5289,7 +5289,7 @@
     "nome": "HAMBURGUEIRA BH01 C/10UN BOM APETITE",
     "categoria": "DESCARTAVEIS",
     "preco": 3.5,
-    "estoque": 22.0
+    "estoque": 19.0
   },
   {
     "codigo": "3048",
