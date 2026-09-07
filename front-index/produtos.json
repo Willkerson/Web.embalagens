@@ -46,7 +46,7 @@
     "nome": "ESTOJO BH101 SEM DIVISÂO C/50UN B. APETITE",
     "categoria": "DESCARTAVEIS",
     "preco": 33.99,
-    "estoque": 6.0
+    "estoque": 4.0
   },
   {
     "codigo": "105",
@@ -88,7 +88,7 @@
     "nome": "G34P MINI COLOMBA 500ML GALVONOTEK",
     "categoria": "DESCARTAVEIS",
     "preco": 2.25,
-    "estoque": -3.0
+    "estoque": -135.0
   },
   {
     "codigo": "123",
@@ -109,7 +109,7 @@
     "nome": "SUPER PÁ C/CABO ALKLIN",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 19.99,
-    "estoque": 7.0
+    "estoque": 6.0
   },
   {
     "codigo": "127",
@@ -298,7 +298,7 @@
     "nome": "KIT GANCHOS C/3UN",
     "categoria": "UTENSILIOS",
     "preco": 5.99,
-    "estoque": -1.0
+    "estoque": -2.0
   },
   {
     "codigo": "219",
@@ -662,7 +662,7 @@
     "nome": "PANO PARA PIA ESTAMPADO C/3U N ALKLIN",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 6.99,
-    "estoque": 35.0
+    "estoque": 34.0
   },
   {
     "codigo": "358",
@@ -739,14 +739,14 @@
     "nome": "PANO DE CHAO BRANCO ALVEJADO 45CMX69CM SOUZA PPR28",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 6.7,
-    "estoque": 283.0
+    "estoque": 281.0
   },
   {
     "codigo": "391",
     "nome": "PANO DE CHAO ALVEJADO CAIPIRA 45CMX68CM",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 5.25,
-    "estoque": 290.0
+    "estoque": 287.0
   },
   {
     "codigo": "398",
@@ -1985,7 +1985,7 @@
     "nome": "HAMBURGUEIRA BH03 C/10UN BOM APETITE",
     "categoria": "Embalagem",
     "preco": 4.5,
-    "estoque": 21.0
+    "estoque": 18.0
   },
   {
     "codigo": "847",
@@ -2097,7 +2097,7 @@
     "nome": "COPO DESCARTAVEL TRANSPARENTE 180ML C/100UN TOTAL PLAST",
     "categoria": "DESCARTAVEIS",
     "preco": 6.99,
-    "estoque": 351.0
+    "estoque": 350.0
   },
   {
     "codigo": "897",
@@ -2566,7 +2566,7 @@
     "nome": "SACOS P/LIXO 100L P8 C/10UN PRETO",
     "categoria": "SACO LIXO",
     "preco": 13.5,
-    "estoque": -5.0
+    "estoque": -6.0
   },
   {
     "codigo": "1055",
@@ -2643,7 +2643,7 @@
     "nome": "MARMITEX DE ISOPOR 1100ML C/10UN COPOBRAS",
     "categoria": "DESCARTAVEIS",
     "preco": 8.5,
-    "estoque": 1.0
+    "estoque": 0.0
   },
   {
     "codigo": "1103",
@@ -2923,7 +2923,7 @@
     "nome": "PAPEL HIGIENICO BRANCO ROLAO EUROPEL 08 ROLOS",
     "categoria": "PRODUTO DE HIGIENE",
     "preco": 35.5,
-    "estoque": 28.0
+    "estoque": 27.0
   },
   {
     "codigo": "1290",
@@ -3126,7 +3126,7 @@
     "nome": "COPO TERMICO 120ML C/25UN ULTRA",
     "categoria": "DESCARTAVEIS",
     "preco": 6.5,
-    "estoque": 70.0
+    "estoque": 68.0
   },
   {
     "codigo": "1352",
@@ -3140,7 +3140,7 @@
     "nome": "KIT POTE E TAMPA RET. 500ML C/12UN GOUR MAX",
     "categoria": "DESCARTAVEIS",
     "preco": 16.99,
-    "estoque": -31.0
+    "estoque": -33.0
   },
   {
     "codigo": "1360",
@@ -3378,7 +3378,7 @@
     "nome": "BH05 LANCHEIRA HOT DOG C/10 UN",
     "categoria": "DESCARTAVEIS",
     "preco": 7.99,
-    "estoque": 12.0
+    "estoque": 10.0
   },
   {
     "codigo": "1520",
@@ -3826,7 +3826,7 @@
     "nome": "LIMPA VIDRO  SANCHES",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 8.5,
-    "estoque": 86.0
+    "estoque": 85.0
   },
   {
     "codigo": "1905",
@@ -3889,7 +3889,7 @@
     "nome": "MARMITEX DE ISOPOR 500ML C/10UN",
     "categoria": "DESCARTAVEIS",
     "preco": 7.0,
-    "estoque": -44.0
+    "estoque": -45.0
   },
   {
     "codigo": "1933",
@@ -4099,7 +4099,7 @@
     "nome": "PLASTICO BOLHA 130X100M MICRA MN. PLAST",
     "categoria": "Embalagem",
     "preco": 100.0,
-    "estoque": -2.0
+    "estoque": -3.0
   },
   {
     "codigo": "2084",
@@ -4148,7 +4148,7 @@
     "nome": "SACOLA BRANCA 1KG 30x40",
     "categoria": "SACO LIXO",
     "preco": 25.5,
-    "estoque": 24.0
+    "estoque": 23.0
   },
   {
     "codigo": "2102",
@@ -4169,7 +4169,7 @@
     "nome": "SACOLA BRANCA 1KG 45x60",
     "categoria": "SACO LIXO",
     "preco": 25.5,
-    "estoque": 27.0
+    "estoque": 26.0
   },
   {
     "codigo": "2105",
@@ -4204,7 +4204,7 @@
     "nome": "FITA ADESIVA 45X100M  TRANSPARENTE PAPI",
     "categoria": "PAPELARIA",
     "preco": 10.5,
-    "estoque": 45.0
+    "estoque": 43.0
   },
   {
     "codigo": "2164",
@@ -4400,7 +4400,7 @@
     "nome": "GARFO P/ REFEIÇAO C/200UN ELITE",
     "categoria": "DESCARTAVEIS",
     "preco": 42.99,
-    "estoque": 4.0
+    "estoque": 3.0
   },
   {
     "codigo": "2356",
@@ -4414,7 +4414,7 @@
     "nome": "DISPENSER P/ COPO DE AGUA BOTAO BRANCO TRILHA",
     "categoria": "DESCARTAVEIS",
     "preco": 53.0,
-    "estoque": -7.0
+    "estoque": -8.0
   },
   {
     "codigo": "2360",
@@ -4855,7 +4855,7 @@
     "nome": "DISP. INTRFOLHA EXACCTA PLUS SUST. BRANCO TRILHA",
     "categoria": "DESCARTAVEIS",
     "preco": 32.99,
-    "estoque": 8.0
+    "estoque": 7.0
   },
   {
     "codigo": "2821",
@@ -5142,7 +5142,7 @@
     "nome": "GANCHO ADESIVO C/3UN  HOOK",
     "categoria": "UTENSILIOS",
     "preco": 4.99,
-    "estoque": 2.0
+    "estoque": 1.0
   },
   {
     "codigo": "2964",
@@ -5198,7 +5198,7 @@
     "nome": "COPO DESCARTAVEL 180ML PS C/100UN FASTCUP",
     "categoria": "DESCARTAVEIS",
     "preco": 6.99,
-    "estoque": 101.0
+    "estoque": 100.0
   },
   {
     "codigo": "2995",
@@ -5380,7 +5380,7 @@
     "nome": "POTE E TAMPA RET.500ML C/24UN GOUR MAX",
     "categoria": "DESCARTAVEIS",
     "preco": 29.99,
-    "estoque": 18.0
+    "estoque": 17.0
   },
   {
     "codigo": "3106",
@@ -5667,7 +5667,7 @@
     "nome": "PANO PARA PISO MICROFIIBRAS COLORS 48X70CM ALKLIN",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 12.5,
-    "estoque": -23.0
+    "estoque": -24.0
   },
   {
     "codigo": "3191",
@@ -5793,7 +5793,7 @@
     "nome": "LIMPADOR CONCENTRADO ORQUIDEA NEGRA",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 15.5,
-    "estoque": 1.0
+    "estoque": 0.0
   },
   {
     "codigo": "3730",
@@ -6010,7 +6010,7 @@
     "nome": "FILME DE PVC  300 METROS 38CMX300M TECFILM",
     "categoria": "Embalagem",
     "preco": 52.0,
-    "estoque": -5.0
+    "estoque": -6.0
   },
   {
     "codigo": "4009",
@@ -6087,7 +6087,7 @@
     "nome": "PRATO RASO 15CM GPACK",
     "categoria": "DESCARTAVEIS",
     "preco": 1.99,
-    "estoque": 14.0
+    "estoque": 2.0
   },
   {
     "codigo": "5012",
@@ -6948,7 +6948,7 @@
     "nome": "SACOS PLASTICO PEBD 10X15X0,06 200G COLOMBO",
     "categoria": "Embalagem",
     "preco": 10.0,
-    "estoque": 5.0
+    "estoque": 4.0
   },
   {
     "codigo": "10044",
@@ -7109,7 +7109,7 @@
     "nome": "BH101 SEM DIVISAO C/10UN B. APETITE",
     "categoria": "DESCARTAVEIS",
     "preco": 8.99,
-    "estoque": 4.0
+    "estoque": 3.0
   },
   {
     "codigo": "14881",
@@ -7270,7 +7270,7 @@
     "nome": "D640 DOCE REDONDO 170ML CRISTAL C/10UN DONA RITA",
     "categoria": "DESCARTAVEIS",
     "preco": 3.99,
-    "estoque": 71.0
+    "estoque": 69.0
   },
   {
     "codigo": "29227",
@@ -7522,7 +7522,7 @@
     "nome": "PRATO BRANCO FUNDO 15CM C/10UN TOTALPLAST",
     "categoria": "DESCARTAVEIS",
     "preco": 2.5,
-    "estoque": 71.0
+    "estoque": 61.0
   },
   {
     "codigo": "31676",
@@ -8299,7 +8299,7 @@
     "nome": "ISQUEIRO BIC MAXI",
     "categoria": "-",
     "preco": 8.5,
-    "estoque": 0.0
+    "estoque": -1.0
   },
   {
     "codigo": "129066",
