@@ -2559,7 +2559,7 @@
     "nome": "SACO P/ LIXO PRETO P8 60L C/10UN",
     "categoria": "SACO LIXO",
     "preco": 8.99,
-    "estoque": -9.0
+    "estoque": -10.0
   },
   {
     "codigo": "1053",
@@ -2790,7 +2790,7 @@
     "nome": "FITA ADESIVA POLIPROPILENO TRANSPARENTE 48MMX40M TECTAPE",
     "categoria": "PAPELARIA",
     "preco": 4.99,
-    "estoque": 27.0
+    "estoque": 26.0
   },
   {
     "codigo": "1168",
@@ -2811,7 +2811,7 @@
     "nome": "PANO MULTIUSO BRANCO C/50 PANOS 30CMX50CM MR.PLUS",
     "categoria": "PRODUTO DE HIGIENE",
     "preco": 15.5,
-    "estoque": -47.0
+    "estoque": -48.0
   },
   {
     "codigo": "1176",
@@ -3070,7 +3070,7 @@
     "nome": "TOALHA INTERFOLHA BRANCA (VERDE) C/1000UN ISAPEL",
     "categoria": "PRODUTO DE HIGIENE",
     "preco": 16.0,
-    "estoque": 71.0
+    "estoque": 70.0
   },
   {
     "codigo": "1331",
@@ -4106,7 +4106,7 @@
     "nome": "PAPELÂO ONDULADO  60X10M",
     "categoria": "-",
     "preco": 32.15,
-    "estoque": 2.0
+    "estoque": 1.0
   },
   {
     "codigo": "2085",
@@ -6010,7 +6010,7 @@
     "nome": "FILME DE PVC  300 METROS 38CMX300M TECFILM",
     "categoria": "Embalagem",
     "preco": 52.0,
-    "estoque": -6.0
+    "estoque": -7.0
   },
   {
     "codigo": "4009",
