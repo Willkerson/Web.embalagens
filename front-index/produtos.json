@@ -410,7 +410,7 @@
     "nome": "ESPONJA MULTIUSO C/4UN ALKLIN",
     "categoria": "UTENSILIOS",
     "preco": 3.99,
-    "estoque": 277.0
+    "estoque": 276.0
   },
   {
     "codigo": "292",
@@ -1355,7 +1355,7 @@
     "nome": "FOLHA DE ALUMINIO  7,5MX30CM WYDA",
     "categoria": "DESCARTAVEIS",
     "preco": 8.75,
-    "estoque": -88.0
+    "estoque": -90.0
   },
   {
     "codigo": "616",
@@ -1971,7 +1971,7 @@
     "nome": "REMOVADOR SUPREMA  FLORATA 500ML",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 8.5,
-    "estoque": 15.0
+    "estoque": 14.0
   },
   {
     "codigo": "838",
@@ -2104,7 +2104,7 @@
     "nome": "COPO DESCARTAVEL TRANSPARENTE 180ML C/100UN TOTAL PLAST",
     "categoria": "DESCARTAVEIS",
     "preco": 6.99,
-    "estoque": 348.0
+    "estoque": 347.0
   },
   {
     "codigo": "897",
@@ -2139,7 +2139,7 @@
     "nome": "COPO DESCARTAVEL 180ML PS C/100UN GLIGHT",
     "categoria": "DESCARTAVEIS",
     "preco": 5.99,
-    "estoque": 64.0
+    "estoque": 62.0
   },
   {
     "codigo": "902",
@@ -2153,7 +2153,7 @@
     "nome": "COPO DESCARTAVEL TRANSPARENTE 50ML C/100UN TOTAL PLAST",
     "categoria": "DESCARTAVEIS",
     "preco": 4.5,
-    "estoque": 26.0
+    "estoque": 24.0
   },
   {
     "codigo": "904",
@@ -2384,7 +2384,7 @@
     "nome": "BQALDE DE 7,4 LTS PLASNEW",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 13.0,
-    "estoque": -20.0
+    "estoque": -21.0
   },
   {
     "codigo": "0355",
@@ -2559,21 +2559,21 @@
     "nome": "SACO P/ LIXO PRETO P6 40L C/10UN",
     "categoria": "SACO LIXO",
     "preco": 5.5,
-    "estoque": 1.0
+    "estoque": 0.0
   },
   {
     "codigo": "1052",
     "nome": "SACO P/ LIXO PRETO P8 60L C/10UN",
     "categoria": "SACO LIXO",
     "preco": 8.99,
-    "estoque": -15.0
+    "estoque": -17.0
   },
   {
     "codigo": "1053",
     "nome": "SACOS P/LIXO 100L P8 C/10UN PRETO",
     "categoria": "SACO LIXO",
     "preco": 13.5,
-    "estoque": -6.0
+    "estoque": -8.0
   },
   {
     "codigo": "1055",
@@ -2797,7 +2797,7 @@
     "nome": "FITA ADESIVA POLIPROPILENO TRANSPARENTE 48MMX40M TECTAPE",
     "categoria": "PAPELARIA",
     "preco": 4.99,
-    "estoque": 26.0
+    "estoque": 25.0
   },
   {
     "codigo": "1168",
@@ -2839,7 +2839,7 @@
     "nome": "SACO P/ LIXO PRETO P6 40L C/50UN",
     "categoria": "SACO LIXO",
     "preco": 25.0,
-    "estoque": 45.0
+    "estoque": 44.0
   },
   {
     "codigo": "1188",
@@ -2874,14 +2874,14 @@
     "nome": "BOBINA PICOTADA 2KG C/500UN P/ ALIMENTOS 20X28CM EXTRUSA",
     "categoria": "Embalagem",
     "preco": 19.0,
-    "estoque": 4.0
+    "estoque": 3.0
   },
   {
     "codigo": "1225",
     "nome": "BACIA GRANDE CANELADA 32L ARQPLAST",
     "categoria": "UTENSILIOS",
     "preco": 32.0,
-    "estoque": 2.0
+    "estoque": 1.0
   },
   {
     "codigo": "1229",
@@ -2923,7 +2923,7 @@
     "nome": "BOBINA PICOTADA 2,5KG C/500UN P/ ALIMENTOS 25X33 EXTRUSA",
     "categoria": "Embalagem",
     "preco": 25.0,
-    "estoque": 1.0
+    "estoque": 0.0
   },
   {
     "codigo": "1281",
@@ -3350,7 +3350,7 @@
     "nome": "D645 POTE REDONDO BASE E TAMPA C/10UN 120ML",
     "categoria": "DESCARTAVEIS",
     "preco": 3.5,
-    "estoque": 40.0
+    "estoque": 38.0
   },
   {
     "codigo": "1488",
@@ -4022,7 +4022,7 @@
     "nome": "PILHA AA C/4UN ALFACELL",
     "categoria": "UTENSILIOS",
     "preco": 6.99,
-    "estoque": 18.0
+    "estoque": 17.0
   },
   {
     "codigo": "2032",
@@ -4358,7 +4358,7 @@
     "nome": "LUVA NITRILICA  PRETA M S/PO C/100UN TALGE",
     "categoria": "DESCARTAVEIS",
     "preco": 31.99,
-    "estoque": 30.0
+    "estoque": 29.0
   },
   {
     "codigo": "2315",
@@ -5352,7 +5352,7 @@
     "nome": "SACO PLASTICO PE C/100UN P/GELAO 05X24X02",
     "categoria": "DESCARTAVEIS",
     "preco": 4.0,
-    "estoque": 142.0
+    "estoque": 141.0
   },
   {
     "codigo": "3072",
@@ -5632,7 +5632,7 @@
     "nome": "FITA ADESIVA 3CMX2M TRANSP. INOVA",
     "categoria": "PAPELARIA",
     "preco": 6.99,
-    "estoque": 2.0
+    "estoque": 0.0
   },
   {
     "codigo": "3161",
@@ -5723,7 +5723,7 @@
     "nome": "PAPEL TOALHA SCALA PLUS C/120 TOALHAS C/2 ROLOS",
     "categoria": "PRODUTO DE HIGIENE",
     "preco": 8.5,
-    "estoque": 16.0
+    "estoque": 12.0
   },
   {
     "codigo": "3267",
@@ -5891,7 +5891,7 @@
     "nome": "LIMPADOR CONCENTRADO MISTERIO ARABE 120ML SANOL",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 12.99,
-    "estoque": 30.0
+    "estoque": 29.0
   },
   {
     "codigo": "3980",
@@ -6010,7 +6010,7 @@
     "nome": "BOBINA PICOTADA 20X30CM  C/700UN  SOLDA FUNDO (1,3KG)",
     "categoria": "Embalagem",
     "preco": 44.99,
-    "estoque": 5.0
+    "estoque": 4.0
   },
   {
     "codigo": "4006",
@@ -6535,7 +6535,7 @@
     "nome": "DIFUSOR DE AROMAS LAVANDA 250ML SENALAR",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 18.0,
-    "estoque": 9.0
+    "estoque": 8.0
   },
   {
     "codigo": "7906",
@@ -6969,7 +6969,7 @@
     "nome": "SACOS PLASTICO PEBD 10X15X0,06 200G COLOMBO",
     "categoria": "Embalagem",
     "preco": 10.0,
-    "estoque": 3.0
+    "estoque": 2.0
   },
   {
     "codigo": "10044",
@@ -7151,7 +7151,7 @@
     "nome": "SACOLA PLASTICA MILHEIRO BRANCA 25X35 200G",
     "categoria": "Embalagem",
     "preco": 8.99,
-    "estoque": 17.0
+    "estoque": 16.0
   },
   {
     "codigo": "20032",
@@ -7270,7 +7270,7 @@
     "nome": "D640 DOCE REDONDO 170ML CRISTAL C/10UN DONA RITA",
     "categoria": "DESCARTAVEIS",
     "preco": 3.99,
-    "estoque": 67.0
+    "estoque": 64.0
   },
   {
     "codigo": "29227",
@@ -7361,7 +7361,7 @@
     "nome": "DETERGENTE YPÊ CLEAR 500ML",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 4.5,
-    "estoque": 32.0
+    "estoque": 30.0
   },
   {
     "codigo": "31651",
@@ -8145,7 +8145,7 @@
     "nome": "ACENDEDOR G/INFAMAVEL BJ8620",
     "categoria": "UTENSILIOS",
     "preco": 11.5,
-    "estoque": 2.0
+    "estoque": 1.0
   },
   {
     "codigo": "129043",
