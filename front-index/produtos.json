@@ -669,7 +669,7 @@
     "nome": "ESPONJA SALVA UNHA ALCKLIN",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 1.99,
-    "estoque": 37.0
+    "estoque": 36.0
   },
   {
     "codigo": "361",
@@ -795,7 +795,7 @@
     "nome": "G56MM TORTA MEDIA 1,7KG BR26CM GALVONOTEK",
     "categoria": "DESCARTAVEIS",
     "preco": 5.5,
-    "estoque": 10.0
+    "estoque": 60.0
   },
   {
     "codigo": "409",
@@ -914,7 +914,7 @@
     "nome": "KIT GARFO E FACA C/50UN ELITE",
     "categoria": "DESCARTAVEIS",
     "preco": 22.99,
-    "estoque": -8.0
+    "estoque": 1.0
   },
   {
     "codigo": "433",
@@ -984,7 +984,7 @@
     "nome": "POTE  RETANGULAR 500ML C/24UN PRAFESTA",
     "categoria": "DESCARTAVEIS",
     "preco": 38.99,
-    "estoque": 36.0
+    "estoque": 35.0
   },
   {
     "codigo": "458",
@@ -1418,7 +1418,7 @@
     "nome": "TOP LIXO PRETO 15L C/60UN PACK LIXO",
     "categoria": "SACO LIXO",
     "preco": 17.99,
-    "estoque": 17.0
+    "estoque": 16.0
   },
   {
     "codigo": "637",
@@ -1523,7 +1523,7 @@
     "nome": "PANO MULTIUSO VERDE C/50 PANOS 30CMX25CM MR. PLUS TALGE",
     "categoria": "PRODUTO DE HIGIENE",
     "preco": 17.0,
-    "estoque": 8.0
+    "estoque": 7.0
   },
   {
     "codigo": "668",
@@ -2251,7 +2251,7 @@
     "nome": "CAIXA P/CORREIO N00 (16X11X07)1UN NIAGRA",
     "categoria": "Embalagem",
     "preco": 4.5,
-    "estoque": 24.0
+    "estoque": 14.0
   },
   {
     "codigo": "939",
@@ -2286,7 +2286,7 @@
     "nome": "CESTO ORGANIZADOR 220X30CM  ALÇA MEGAGIFT",
     "categoria": "UTENSILIOS",
     "preco": 15.99,
-    "estoque": 220.0
+    "estoque": 0.0
   },
   {
     "codigo": "956",
@@ -2426,7 +2426,7 @@
     "nome": "SACO PLASTICO PEBD 35X45CM HELVIPACK",
     "categoria": "Embalagem",
     "preco": 40.99,
-    "estoque": 14.0
+    "estoque": 13.0
   },
   {
     "codigo": "1009",
@@ -2468,7 +2468,7 @@
     "nome": "SACOS PLASTICO  200G 15x20 +/-120un",
     "categoria": "Embalagem",
     "preco": 10.0,
-    "estoque": -15.0
+    "estoque": -16.0
   },
   {
     "codigo": "1016",
@@ -2573,7 +2573,7 @@
     "nome": "SACOS P/LIXO 100L P8 C/10UN PRETO",
     "categoria": "SACO LIXO",
     "preco": 13.5,
-    "estoque": -8.0
+    "estoque": -10.0
   },
   {
     "codigo": "1055",
@@ -3021,7 +3021,7 @@
     "nome": "PACK LIXO PIA E BANHEIRO TUTTI-FRUITI C/80UN DIVA",
     "categoria": "SACO LIXO",
     "preco": 13.99,
-    "estoque": 26.0
+    "estoque": 25.0
   },
   {
     "codigo": "1316",
@@ -3077,7 +3077,7 @@
     "nome": "TOALHA INTERFOLHA BRANCA (VERDE) C/1000UN ISAPEL",
     "categoria": "PRODUTO DE HIGIENE",
     "preco": 16.0,
-    "estoque": 66.0
+    "estoque": 61.0
   },
   {
     "codigo": "1331",
@@ -3350,7 +3350,7 @@
     "nome": "D645 POTE REDONDO BASE E TAMPA C/10UN 120ML",
     "categoria": "DESCARTAVEIS",
     "preco": 3.5,
-    "estoque": 38.0
+    "estoque": 23.0
   },
   {
     "codigo": "1488",
@@ -3525,7 +3525,7 @@
     "nome": "D50MM TORTA MDIA 1,5KG BR24CM DONA RITA",
     "categoria": "DESCARTAVEIS",
     "preco": 3.0,
-    "estoque": 119.0
+    "estoque": 116.0
   },
   {
     "codigo": "1649",
@@ -3952,7 +3952,7 @@
     "nome": "TOALHA INTERFOLHA LUXO 20X21CM C/1000UN WHITE PAPER",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 24.99,
-    "estoque": 35.0
+    "estoque": 34.0
   },
   {
     "codigo": "1981",
@@ -4029,7 +4029,7 @@
     "nome": "BATERIA LITIO ALFACELL CR2032-5",
     "categoria": "UTENSILIOS",
     "preco": 3.5,
-    "estoque": 8.0
+    "estoque": 7.0
   },
   {
     "codigo": "2033",
@@ -4120,7 +4120,7 @@
     "nome": "FOLHA DE ALUMINIO 4MX30CM WYDA",
     "categoria": "Embalagem",
     "preco": 5.5,
-    "estoque": -17.0
+    "estoque": -18.0
   },
   {
     "codigo": "2094",
@@ -4211,7 +4211,7 @@
     "nome": "FITA ADESIVA 45X100M  TRANSPARENTE PAPI",
     "categoria": "PAPELARIA",
     "preco": 10.5,
-    "estoque": 42.0
+    "estoque": 41.0
   },
   {
     "codigo": "2164",
@@ -4505,7 +4505,7 @@
     "nome": "POTE  RETANGULAR  350ML C/24UN PRAFESTA",
     "categoria": "DESCARTAVEIS",
     "preco": 34.99,
-    "estoque": 8.0
+    "estoque": 7.0
   },
   {
     "codigo": "2412",
@@ -5233,7 +5233,7 @@
     "nome": "SACO ZIP N03 07x12CM C/100UN  ARMAZEM",
     "categoria": "Embalagem",
     "preco": 10.0,
-    "estoque": 7.0
+    "estoque": 6.0
   },
   {
     "codigo": "2999",
@@ -5401,7 +5401,7 @@
     "nome": "POTE E TAMPA RET.500ML C/24UN GOUR MAX",
     "categoria": "DESCARTAVEIS",
     "preco": 29.99,
-    "estoque": 14.0
+    "estoque": 13.0
   },
   {
     "codigo": "3106",
@@ -6031,7 +6031,7 @@
     "nome": "FILME DE PVC  300 METROS 38CMX300M TECFILM",
     "categoria": "Embalagem",
     "preco": 52.0,
-    "estoque": -7.0
+    "estoque": 3.0
   },
   {
     "codigo": "4009",
@@ -6843,7 +6843,7 @@
     "nome": "CAPA PARA RODO 50X40 ALVEJADO",
     "categoria": "PRODUTO DE HIGIENE",
     "preco": 5.99,
-    "estoque": 20.0
+    "estoque": 18.0
   },
   {
     "codigo": "8922",
@@ -7151,7 +7151,7 @@
     "nome": "SACOLA PLASTICA MILHEIRO BRANCA 25X35 200G",
     "categoria": "Embalagem",
     "preco": 8.99,
-    "estoque": 16.0
+    "estoque": 15.0
   },
   {
     "codigo": "20032",
@@ -7491,10 +7491,10 @@
   },
   {
     "codigo": "31670",
-    "nome": "G650 POTE QUAD.200ML C/10 UNI",
+    "nome": "G650 POTE QUAD.200ML C/10UN",
     "categoria": "Embalagem",
     "preco": 7.5,
-    "estoque": -24.0
+    "estoque": 44.0
   },
   {
     "codigo": "31671",
