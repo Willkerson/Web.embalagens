@@ -641,7 +641,7 @@
     "nome": "SUPORTE FILTRO DE CAFE INJETMP",
     "categoria": "ALIMENTO/GENERO ALIMENTICIO",
     "preco": 15.99,
-    "estoque": 1.0
+    "estoque": 0.0
   },
   {
     "codigo": "355",
@@ -1460,7 +1460,7 @@
     "nome": "PRENDEDOR ROUPAS C/12UN MONALIZA",
     "categoria": "UTENSILIOS",
     "preco": 5.5,
-    "estoque": 0.0
+    "estoque": -1.0
   },
   {
     "codigo": "647",
@@ -2538,7 +2538,7 @@
     "nome": "TOP LIXO PIA E BANHEIRO LAVANDA C/40UN PACK LIXO",
     "categoria": "SACO LIXO",
     "preco": 8.99,
-    "estoque": 77.0
+    "estoque": 75.0
   },
   {
     "codigo": "1048",
@@ -2923,14 +2923,14 @@
     "nome": "BOBINA PICOTADA 2,5KG C/500UN P/ ALIMENTOS 25X33 EXTRUSA",
     "categoria": "Embalagem",
     "preco": 25.0,
-    "estoque": 2.0
+    "estoque": 1.0
   },
   {
     "codigo": "1281",
     "nome": "PAPEL HIGIENICO BRANCO ROLAO EUROPEL 08 ROLOS",
     "categoria": "PRODUTO DE HIGIENE",
     "preco": 35.5,
-    "estoque": 27.0
+    "estoque": 26.0
   },
   {
     "codigo": "1290",
@@ -3014,7 +3014,7 @@
     "nome": "TOP LIXO PIA E BANHEIRO BRANCO C/40UN PACK LIXO",
     "categoria": "SACO LIXO",
     "preco": 8.99,
-    "estoque": -5.0
+    "estoque": -7.0
   },
   {
     "codigo": "1315",
@@ -4918,7 +4918,7 @@
     "nome": "COPO TERMICO 70ML C/25UN ULTRA",
     "categoria": "DESCARTAVEIS",
     "preco": 4.5,
-    "estoque": 32.0
+    "estoque": 31.0
   },
   {
     "codigo": "2832",
@@ -6234,7 +6234,7 @@
     "nome": "VELA CHAMA COLORIDA ROSA",
     "categoria": "Outras",
     "preco": 8.5,
-    "estoque": -8.0
+    "estoque": -9.0
   },
   {
     "codigo": "6503",
@@ -6668,7 +6668,7 @@
     "nome": "CUMBUCA S/TAMPA 500ML C/100UN",
     "categoria": "DESCARTAVEIS",
     "preco": 34.99,
-    "estoque": 3.0
+    "estoque": 2.0
   },
   {
     "codigo": "8104",
@@ -6878,7 +6878,7 @@
     "nome": "COPO DESCARTAVEL TRANSPARENTE 300ML C/100UN ULTRA PP",
     "categoria": "DESCARTAVEIS",
     "preco": 14.99,
-    "estoque": 29.0
+    "estoque": 28.0
   },
   {
     "codigo": "9039",
@@ -8579,7 +8579,7 @@
     "nome": "PRENDEDOR PRENDE BEM C/12UN",
     "categoria": "UTENSILIOS",
     "preco": 3.0,
-    "estoque": 3.0
+    "estoque": 1.0
   },
   {
     "codigo": "129108",
