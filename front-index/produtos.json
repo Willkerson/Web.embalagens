@@ -1320,7 +1320,7 @@
     "nome": "PAPEL MANTEIGA 7,5MX29CM WYDA",
     "categoria": "DESCARTAVEIS",
     "preco": 8.99,
-    "estoque": 26.0
+    "estoque": 25.0
   },
   {
     "codigo": "608",
@@ -1355,7 +1355,7 @@
     "nome": "FOLHA DE ALUMINIO  7,5MX30CM WYDA",
     "categoria": "DESCARTAVEIS",
     "preco": 8.75,
-    "estoque": -90.0
+    "estoque": -91.0
   },
   {
     "codigo": "616",
@@ -4057,7 +4057,7 @@
     "nome": "TOUCAS DESCARTAVEIS C/100UN 45X50CM BOMPACK",
     "categoria": "DESCARTAVEIS",
     "preco": 13.5,
-    "estoque": 11.0
+    "estoque": 10.0
   },
   {
     "codigo": "2067",
@@ -5072,7 +5072,7 @@
     "nome": "SACOLA KRAFT BRANCO H2 C/100UN 19X12CM PLUMA",
     "categoria": "DESCARTAVEIS",
     "preco": 8.0,
-    "estoque": 28.0
+    "estoque": 27.0
   },
   {
     "codigo": "2922",
@@ -6731,7 +6731,7 @@
     "nome": "ALCOOL LIQUIDO 1L 70% BARBAREX",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 11.99,
-    "estoque": 8.0
+    "estoque": 7.0
   },
   {
     "codigo": "8277",
