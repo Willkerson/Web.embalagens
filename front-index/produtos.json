@@ -53,7 +53,7 @@
     "nome": "SACOLA KRAFT GG 1UN  30X20X36CM",
     "categoria": "Embalagem",
     "preco": 2.5,
-    "estoque": 6.0
+    "estoque": 5.0
   },
   {
     "codigo": "109",
@@ -473,7 +473,7 @@
     "nome": "SUPER PANAO AZUL 20X90CM ALKLIN",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 5.75,
-    "estoque": 22.0
+    "estoque": 20.0
   },
   {
     "codigo": "308",
@@ -606,7 +606,7 @@
     "nome": "PLASTICO BOLHA 65MX50M MICRA 20 MN.PLAST",
     "categoria": "Embalagem",
     "preco": 41.99,
-    "estoque": -2.0
+    "estoque": 5.0
   },
   {
     "codigo": "346",
@@ -746,7 +746,7 @@
     "nome": "PANO DE CHAO ALVEJADO CAIPIRA 45CMX68CM",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 5.25,
-    "estoque": 287.0
+    "estoque": 285.0
   },
   {
     "codigo": "398",
@@ -2230,7 +2230,7 @@
     "nome": "CAIXA P/BOLO N06 26X26X10 NIAGRA",
     "categoria": "Embalagem",
     "preco": 5.7,
-    "estoque": -8.0
+    "estoque": 5.0
   },
   {
     "codigo": "931",
@@ -2475,7 +2475,7 @@
     "nome": "SACOS PLASTICO  200G 15X30X0,06  COLOMBO/HELVIPACK",
     "categoria": "Embalagem",
     "preco": 10.0,
-    "estoque": -26.0
+    "estoque": -27.0
   },
   {
     "codigo": "1017",
@@ -2573,7 +2573,7 @@
     "nome": "SACOS P/LIXO 100L P8 C/10UN PRETO",
     "categoria": "SACO LIXO",
     "preco": 13.5,
-    "estoque": -15.0
+    "estoque": -16.0
   },
   {
     "codigo": "1055",
@@ -2923,7 +2923,7 @@
     "nome": "BOBINA PICOTADA 2,5KG C/500UN P/ ALIMENTOS 25X33 EXTRUSA",
     "categoria": "Embalagem",
     "preco": 25.0,
-    "estoque": 0.0
+    "estoque": -1.0
   },
   {
     "codigo": "1281",
@@ -3539,7 +3539,7 @@
     "nome": "HAMBURGUEIRA BH02 C/100UN BOM APETITE",
     "categoria": "DESCARTAVEIS",
     "preco": 34.99,
-    "estoque": 7.0
+    "estoque": 6.0
   },
   {
     "codigo": "1659",
@@ -4008,7 +4008,7 @@
     "nome": "SACOLA PLASTICA MILHEIRO BRANCA 30X40 200G",
     "categoria": "Embalagem",
     "preco": 11.99,
-    "estoque": 10.0
+    "estoque": 8.0
   },
   {
     "codigo": "2027",
@@ -4106,7 +4106,7 @@
     "nome": "PLASTICO BOLHA 130X100M MICRA MN. PLAST",
     "categoria": "Embalagem",
     "preco": 100.0,
-    "estoque": -3.0
+    "estoque": 3.0
   },
   {
     "codigo": "2084",
@@ -4120,7 +4120,7 @@
     "nome": "FOLHA DE ALUMINIO 4MX30CM WYDA",
     "categoria": "Embalagem",
     "preco": 5.5,
-    "estoque": -18.0
+    "estoque": -20.0
   },
   {
     "codigo": "2094",
@@ -4498,7 +4498,7 @@
     "nome": "G78M BOLO MEDIA MILL. GALVANOTEK",
     "categoria": "DESCARTAVEIS",
     "preco": 24.5,
-    "estoque": 21.0
+    "estoque": 20.0
   },
   {
     "codigo": "2411",
@@ -4953,7 +4953,7 @@
     "nome": "PAPEL ACOPLADO C/PELICULA 30X38 300g (C/100UN)",
     "categoria": "DESCARTAVEIS",
     "preco": 15.99,
-    "estoque": 6.0
+    "estoque": 5.0
   },
   {
     "codigo": "2842",
@@ -5569,14 +5569,14 @@
     "nome": "PACK LIXO PIA E BANHEIRO BIO CHA BRANCO C/80UN",
     "categoria": "SACO LIXO",
     "preco": 13.99,
-    "estoque": 18.0
+    "estoque": 17.0
   },
   {
     "codigo": "3147",
     "nome": "CAIXA ONDULADO N02 35X25X25 NIAGRA",
     "categoria": "Embalagem",
     "preco": 7.0,
-    "estoque": -1.0
+    "estoque": 5.0
   },
   {
     "codigo": "3148",
@@ -6066,7 +6066,7 @@
     "nome": "CAIXA PARA ESFIHA N04 ESPECIAL (30X30X07) ALTA",
     "categoria": "Embalagem",
     "preco": 7.5,
-    "estoque": -2.0
+    "estoque": 5.0
   },
   {
     "codigo": "4111",
@@ -6633,7 +6633,7 @@
     "nome": "MULTI SEPT HC-60 ALCOOL GEL 70% FRASCO 60ML",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 5.5,
-    "estoque": 34.0
+    "estoque": 32.0
   },
   {
     "codigo": "7954",
@@ -6920,7 +6920,7 @@
     "nome": "FORMINHA PAPEL N.05 BRANCA REIKI",
     "categoria": "DESCARTAVEIS",
     "preco": 2.0,
-    "estoque": 8.0
+    "estoque": 5.0
   },
   {
     "codigo": "9065",
@@ -6990,7 +6990,7 @@
     "nome": "SACOS PLASTICO PEBD 200G 10X20X0,06 COLOMBO/HELVIPACK",
     "categoria": "Embalagem",
     "preco": 10.0,
-    "estoque": -17.0
+    "estoque": -18.0
   },
   {
     "codigo": "10075",
