@@ -137,7 +137,7 @@
     "nome": "FACA SOFT BRANCA C/50UN ELITE",
     "categoria": "DESCARTAVEIS",
     "preco": 5.5,
-    "estoque": 14.0
+    "estoque": 74.0
   },
   {
     "codigo": "138",
@@ -228,14 +228,14 @@
     "nome": "MARMITA PRETA 850ML C/3 DIVISORIAS C/10UN",
     "categoria": "DESCARTAVEIS",
     "preco": 16.99,
-    "estoque": 0.0
+    "estoque": 20.0
   },
   {
     "codigo": "182",
-    "nome": "MARMITA PRETA 750ML C/3 DIVISORIAS C/10UN",
+    "nome": "MARMITA PRETA 750ML C/3 DIVISORIAS C/10UN ELITE",
     "categoria": "DESCARTAVEIS",
     "preco": 16.25,
-    "estoque": 0.0
+    "estoque": 20.0
   },
   {
     "codigo": "183",
@@ -858,7 +858,7 @@
     "nome": "COLHER SOBREMESA BRANCA C/50UN ELITE",
     "categoria": "DESCARTAVEIS",
     "preco": 3.99,
-    "estoque": 4.0
+    "estoque": 44.0
   },
   {
     "codigo": "423",
@@ -991,7 +991,7 @@
     "nome": "COLHER SOBREMESA CRISTAL C/50UN ELITE",
     "categoria": "DESCARTAVEIS",
     "preco": 3.99,
-    "estoque": -1.0
+    "estoque": 59.0
   },
   {
     "codigo": "459",
@@ -1320,7 +1320,7 @@
     "nome": "PAPEL MANTEIGA 7,5MX29CM WYDA",
     "categoria": "DESCARTAVEIS",
     "preco": 8.99,
-    "estoque": 25.0
+    "estoque": 24.0
   },
   {
     "codigo": "608",
@@ -2797,7 +2797,7 @@
     "nome": "FITA ADESIVA POLIPROPILENO TRANSPARENTE 48MMX40M TECTAPE",
     "categoria": "PAPELARIA",
     "preco": 4.99,
-    "estoque": 23.0
+    "estoque": 22.0
   },
   {
     "codigo": "1168",
@@ -3546,7 +3546,7 @@
     "nome": "HAMBURGUEIRA BH01 C/100UN BOM APETITE",
     "categoria": "Embalagem",
     "preco": 26.0,
-    "estoque": 9.0
+    "estoque": 8.0
   },
   {
     "codigo": "1666",
@@ -4141,7 +4141,7 @@
     "nome": "SACOLA SOS P LISO C/ALÇA C/20UN 17X10X27 PLUMA",
     "categoria": "Embalagem",
     "preco": 27.0,
-    "estoque": 19.0
+    "estoque": 18.0
   },
   {
     "codigo": "2099",
@@ -4323,7 +4323,7 @@
     "nome": "GARFO SOFT BRANCO C/50UN ELITE",
     "categoria": "DESCARTAVEIS",
     "preco": 5.5,
-    "estoque": 2.0
+    "estoque": 62.0
   },
   {
     "codigo": "2298",
@@ -4498,7 +4498,7 @@
     "nome": "G78M BOLO MEDIA MILL. GALVANOTEK",
     "categoria": "DESCARTAVEIS",
     "preco": 24.5,
-    "estoque": 23.0
+    "estoque": 21.0
   },
   {
     "codigo": "2411",
@@ -4820,7 +4820,7 @@
     "nome": "GARFO REFEICAO BRANCO C/50UN ELITE",
     "categoria": "DESCARTAVEIS",
     "preco": 8.99,
-    "estoque": -6.0
+    "estoque": 74.0
   },
   {
     "codigo": "2799",
@@ -5076,9 +5076,9 @@
   },
   {
     "codigo": "2922",
-    "nome": "PRATO QUADRADO GRANDE CRYSTAL C10UNI ELITE",
+    "nome": "PRATO QUADRADO GR.210MM BRANCO C10UN ELITE",
     "categoria": "DESCARTAVEIS",
-    "preco": 15.99,
+    "preco": 14.99,
     "estoque": 40.0
   },
   {
@@ -7004,7 +7004,7 @@
     "nome": "SACOS PLASTICO PEBD 8X40X0,06 200g  COLOMBO",
     "categoria": "Embalagem",
     "preco": 10.0,
-    "estoque": 92.0
+    "estoque": 91.0
   },
   {
     "codigo": "10134",
@@ -7288,10 +7288,10 @@
   },
   {
     "codigo": "29227",
-    "nome": "PRATO QUADRADO GRANDE CRISTAL C10UNI ELITE",
+    "nome": "PRATO QUADRADO GR. 210MM CRISTAL C/10UN ELITE",
     "categoria": "DESCARTAVEIS",
-    "preco": 15.99,
-    "estoque": -15.0
+    "preco": 14.99,
+    "estoque": 19.0
   },
   {
     "codigo": "29817",
@@ -7305,7 +7305,7 @@
     "nome": "PAPEL HIGIENICO  F/DUPLA C/16UN 4X30M NESS",
     "categoria": "PRODUTO DE HIGIENE",
     "preco": 7.99,
-    "estoque": 13.0
+    "estoque": 12.0
   },
   {
     "codigo": "31414",
@@ -7375,7 +7375,7 @@
     "nome": "DETERGENTE YPÊ CLEAR 500ML",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 4.5,
-    "estoque": 30.0
+    "estoque": 29.0
   },
   {
     "codigo": "31651",
