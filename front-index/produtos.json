@@ -242,7 +242,7 @@
     "nome": "COPO TERMICO 180ML C/20UN TOTALPLAST",
     "categoria": "DESCARTAVEIS",
     "preco": 5.99,
-    "estoque": 95.0
+    "estoque": 93.0
   },
   {
     "codigo": "189",
@@ -599,7 +599,7 @@
     "nome": "PLASTICO BOLHA 43X10M MICRA 20 MN. PLAST",
     "categoria": "Embalagem",
     "preco": 16.99,
-    "estoque": 6.0
+    "estoque": 5.0
   },
   {
     "codigo": "343",
@@ -732,14 +732,14 @@
     "nome": "PANO DE CHAO XADREZ 45CMX68CM SOUZA BR2",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 4.7,
-    "estoque": 199.0
+    "estoque": 191.0
   },
   {
     "codigo": "390",
     "nome": "PANO DE CHAO BRANCO ALVEJADO 45CMX69CM SOUZA PPR28",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 6.7,
-    "estoque": 266.0
+    "estoque": 262.0
   },
   {
     "codigo": "391",
@@ -795,7 +795,7 @@
     "nome": "G56MM TORTA MEDIA 1,7KG BR26CM GALVONOTEK",
     "categoria": "DESCARTAVEIS",
     "preco": 5.5,
-    "estoque": 60.0
+    "estoque": 59.0
   },
   {
     "codigo": "409",
@@ -1138,7 +1138,7 @@
     "nome": "CAIXA PAP. ONDULADO  70X50X40 N05",
     "categoria": "Embalagem",
     "preco": 26.5,
-    "estoque": 27.0
+    "estoque": 26.0
   },
   {
     "codigo": "544",
@@ -2503,7 +2503,7 @@
     "nome": "SACO P/ LIXO PRETO P8 60L C/50UN",
     "categoria": "SACO LIXO",
     "preco": 38.25,
-    "estoque": -6.0
+    "estoque": -7.0
   },
   {
     "codigo": "1042",
@@ -3021,7 +3021,7 @@
     "nome": "PACK LIXO PIA E BANHEIRO TUTTI-FRUITI C/80UN DIVA",
     "categoria": "SACO LIXO",
     "preco": 13.99,
-    "estoque": 24.0
+    "estoque": 22.0
   },
   {
     "codigo": "1316",
@@ -3091,7 +3091,7 @@
     "nome": "TOALHA INTERFOLHA (OURO) CELULOSE ISAPEL C/1000UN",
     "categoria": "PRODUTO DE HIGIENE",
     "preco": 23.0,
-    "estoque": 69.0
+    "estoque": 68.0
   },
   {
     "codigo": "1341",
@@ -3147,7 +3147,7 @@
     "nome": "KIT POTE E TAMPA RET. 500ML C/12UN GOUR MAX",
     "categoria": "DESCARTAVEIS",
     "preco": 16.99,
-    "estoque": 19.0
+    "estoque": 17.0
   },
   {
     "codigo": "1360",
@@ -3525,7 +3525,7 @@
     "nome": "D50MM TORTA MDIA 1,5KG BR24CM DONA RITA",
     "categoria": "DESCARTAVEIS",
     "preco": 3.0,
-    "estoque": 116.0
+    "estoque": 114.0
   },
   {
     "codigo": "1649",
@@ -5282,7 +5282,7 @@
     "nome": "COPO DESCARTAVEL PP 330ML C/50UN ULTRA",
     "categoria": "DESCARTAVEIS",
     "preco": 8.5,
-    "estoque": 39.0
+    "estoque": 59.0
   },
   {
     "codigo": "3035",
@@ -6871,7 +6871,7 @@
     "nome": "COPO DESCARTAVEL 500ML C/50UN ULTRA",
     "categoria": "DESCARTAVEIS",
     "preco": 13.99,
-    "estoque": 8.0
+    "estoque": 48.0
   },
   {
     "codigo": "9011",
@@ -7669,7 +7669,7 @@
     "nome": "SACO PRA LIXO REFORÇADO  200L  C/10 PRETO",
     "categoria": "SACO LIXO",
     "preco": 21.0,
-    "estoque": -4.0
+    "estoque": -6.0
   },
   {
     "codigo": "72716",
