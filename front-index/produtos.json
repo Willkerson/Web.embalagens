@@ -88,7 +88,7 @@
     "nome": "RODO ALKLIN 30CM C/CABO",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 15.0,
-    "estoque": 5.0
+    "estoque": 4.0
   },
   {
     "codigo": "124",
@@ -480,7 +480,7 @@
     "nome": "PANO PANOTEK  REUTILIZAVEL C/40UN",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 12.0,
-    "estoque": 8.0
+    "estoque": 6.0
   },
   {
     "codigo": "312",
@@ -585,7 +585,7 @@
     "nome": "SACO DE LIXO UNIDADE PRETO GRANDE",
     "categoria": "SACO LIXO",
     "preco": 2.0,
-    "estoque": -6.0
+    "estoque": -7.0
   },
   {
     "codigo": "340",
@@ -669,7 +669,7 @@
     "nome": "ESPONJA SALVA UNHA ALCKLIN",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 1.99,
-    "estoque": 34.0
+    "estoque": 30.0
   },
   {
     "codigo": "361",
@@ -732,7 +732,7 @@
     "nome": "PANO DE CHAO XADREZ 45CMX68CM SOUZA BR2",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 4.7,
-    "estoque": 191.0
+    "estoque": 190.0
   },
   {
     "codigo": "390",
@@ -914,7 +914,7 @@
     "nome": "KIT GARFO E FACA C/50UN ELITE",
     "categoria": "DESCARTAVEIS",
     "preco": 22.99,
-    "estoque": 0.0
+    "estoque": -1.0
   },
   {
     "codigo": "433",
@@ -1005,7 +1005,7 @@
     "nome": "D56 B0LO E TORTA ROMA MEDIA B BRANCA",
     "categoria": "DESCARTAVEIS",
     "preco": 4.0,
-    "estoque": 39.0
+    "estoque": 36.0
   },
   {
     "codigo": "466",
@@ -1264,7 +1264,7 @@
     "nome": "LAVA ROUPAS LIQ. 1L ULTRA ACAO VERDE SUPREMA",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 10.5,
-    "estoque": 7.0
+    "estoque": 6.0
   },
   {
     "codigo": "574",
@@ -1964,7 +1964,7 @@
     "nome": "G60MM  MILLENIUM TORTA MEDIA 2,2KG 29CM",
     "categoria": "DESCARTAVEIS",
     "preco": 6.99,
-    "estoque": 93.0
+    "estoque": 90.0
   },
   {
     "codigo": "837",
@@ -2020,7 +2020,7 @@
     "nome": "HAMBURGUEIRA BH02 C/10UN BOM APETITE",
     "categoria": "Embalagem",
     "preco": 3.99,
-    "estoque": 3.0
+    "estoque": -2.0
   },
   {
     "codigo": "857",
@@ -2139,7 +2139,7 @@
     "nome": "COPO DESCARTAVEL 180ML PS C/100UN GLIGHT",
     "categoria": "DESCARTAVEIS",
     "preco": 5.99,
-    "estoque": 62.0
+    "estoque": 61.0
   },
   {
     "codigo": "902",
@@ -2566,7 +2566,7 @@
     "nome": "SACO P/ LIXO PRETO P8 60L C/10UN",
     "categoria": "SACO LIXO",
     "preco": 8.99,
-    "estoque": -24.0
+    "estoque": -25.0
   },
   {
     "codigo": "1053",
@@ -2839,7 +2839,7 @@
     "nome": "SACO P/ LIXO PRETO P6 40L C/50UN",
     "categoria": "SACO LIXO",
     "preco": 25.0,
-    "estoque": 43.0
+    "estoque": 42.0
   },
   {
     "codigo": "1188",
@@ -2874,7 +2874,7 @@
     "nome": "BOBINA PICOTADA 2KG C/500UN P/ ALIMENTOS 20X28CM EXTRUSA",
     "categoria": "Embalagem",
     "preco": 19.0,
-    "estoque": 3.0
+    "estoque": 2.0
   },
   {
     "codigo": "1225",
@@ -2888,7 +2888,7 @@
     "nome": "ESPONJA DE LÃ DE AÇO ASSOLAN  45G",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 8.5,
-    "estoque": 4.0
+    "estoque": 3.0
   },
   {
     "codigo": "1232",
@@ -3091,7 +3091,7 @@
     "nome": "TOALHA INTERFOLHA (OURO) CELULOSE ISAPEL C/1000UN",
     "categoria": "PRODUTO DE HIGIENE",
     "preco": 23.0,
-    "estoque": 68.0
+    "estoque": 66.0
   },
   {
     "codigo": "1341",
@@ -3518,7 +3518,7 @@
     "nome": "SACO BRANCO KRAFT VI 19X19CM C/100UN",
     "categoria": "DESCARTAVEIS",
     "preco": 14.0,
-    "estoque": 18.0
+    "estoque": 16.0
   },
   {
     "codigo": "1600",
@@ -4225,7 +4225,7 @@
     "nome": "PRENDEDOR DE METAL 5,5CM C/12UN HOME",
     "categoria": "UTENSILIOS",
     "preco": 8.99,
-    "estoque": 3.0
+    "estoque": 2.0
   },
   {
     "codigo": "2172",
@@ -5072,7 +5072,7 @@
     "nome": "SACOLA KRAFT BRANCO H2 C/100UN 19X12CM PLUMA",
     "categoria": "DESCARTAVEIS",
     "preco": 8.0,
-    "estoque": 22.0
+    "estoque": 20.0
   },
   {
     "codigo": "2922",
@@ -5310,7 +5310,7 @@
     "nome": "HAMBURGUEIRA BH01 C/10UN BOM APETITE",
     "categoria": "DESCARTAVEIS",
     "preco": 3.5,
-    "estoque": 10.0
+    "estoque": 9.0
   },
   {
     "codigo": "3048",
@@ -5401,7 +5401,7 @@
     "nome": "POTE E TAMPA RET.500ML C/24UN GOUR MAX",
     "categoria": "DESCARTAVEIS",
     "preco": 29.99,
-    "estoque": 31.0
+    "estoque": 29.0
   },
   {
     "codigo": "3106",
@@ -5723,7 +5723,7 @@
     "nome": "PAPEL TOALHA SCALA PLUS C/120 TOALHAS C/2 ROLOS",
     "categoria": "PRODUTO DE HIGIENE",
     "preco": 8.5,
-    "estoque": 11.0
+    "estoque": 10.0
   },
   {
     "codigo": "3232",
@@ -6017,7 +6017,7 @@
     "nome": "BOBINA PICOTADA 20X30CM  C/700UN  SOLDA FUNDO (1,3KG)",
     "categoria": "Embalagem",
     "preco": 44.99,
-    "estoque": 3.0
+    "estoque": 2.0
   },
   {
     "codigo": "4006",
@@ -6038,7 +6038,7 @@
     "nome": "FILME DE PVC  300 METROS 38CMX300M TECFILM",
     "categoria": "Embalagem",
     "preco": 52.0,
-    "estoque": 1.0
+    "estoque": 0.0
   },
   {
     "codigo": "4009",
@@ -6101,7 +6101,7 @@
     "nome": "G60M  BOLO MEDIA  GALVANOTEK",
     "categoria": "-",
     "preco": 7.5,
-    "estoque": 41.0
+    "estoque": 40.0
   },
   {
     "codigo": "4561",
@@ -6633,7 +6633,7 @@
     "nome": "MULTI SEPT HC-60 ALCOOL GEL 70% FRASCO 60ML",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 5.5,
-    "estoque": 32.0
+    "estoque": 31.0
   },
   {
     "codigo": "7954",
@@ -7074,7 +7074,7 @@
     "nome": "LIMPA AZULEJO  SEM CABO SANCHES",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 8.5,
-    "estoque": 66.0
+    "estoque": 64.0
   },
   {
     "codigo": "11682",
@@ -7144,7 +7144,7 @@
     "nome": "SACOS PLASTICO  30X40X0,06  200G COLOMBO",
     "categoria": "Embalagem",
     "preco": 10.0,
-    "estoque": -14.0
+    "estoque": -17.0
   },
   {
     "codigo": "18021",
@@ -7459,7 +7459,7 @@
     "nome": "MOP ABRASIVO REFIL ALKLIN 1UN",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 12.99,
-    "estoque": -5.0
+    "estoque": -6.0
   },
   {
     "codigo": "31664",
@@ -7508,7 +7508,7 @@
     "nome": "G650 POTE QUAD.200ML C/10UN",
     "categoria": "Embalagem",
     "preco": 7.5,
-    "estoque": 44.0
+    "estoque": 43.0
   },
   {
     "codigo": "31671",
@@ -7613,7 +7613,7 @@
     "nome": "TIRA LIMO C/ CLORO ATIVO AZULIM 500ML",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 5.99,
-    "estoque": 12.0
+    "estoque": 11.0
   },
   {
     "codigo": "31981",
