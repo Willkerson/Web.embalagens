@@ -1747,7 +1747,7 @@
     "nome": "LIMPADOR MULTIUSO AÇAO CLAREADORA 500ML AZULIM",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 4.99,
-    "estoque": 11.0
+    "estoque": 10.0
   },
   {
     "codigo": "763",
@@ -1789,7 +1789,7 @@
     "nome": "TIRA LIMO SPRAY 500ML AZULIM START",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 11.99,
-    "estoque": 19.0
+    "estoque": 18.0
   },
   {
     "codigo": "780",
@@ -2776,7 +2776,7 @@
     "nome": "LIMPA AZULEJO C/CABO SANCHES",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 16.0,
-    "estoque": 45.0
+    "estoque": 44.0
   },
   {
     "codigo": "1159",
@@ -3091,7 +3091,7 @@
     "nome": "TOALHA INTERFOLHA (OURO) CELULOSE ISAPEL C/1000UN",
     "categoria": "PRODUTO DE HIGIENE",
     "preco": 23.0,
-    "estoque": 54.0
+    "estoque": 53.0
   },
   {
     "codigo": "1341",
@@ -3819,7 +3819,7 @@
     "nome": "ESCOVAO C/CABO ALKLIN",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 20.0,
-    "estoque": 2.0
+    "estoque": 1.0
   },
   {
     "codigo": "1901",
@@ -3952,7 +3952,7 @@
     "nome": "TOALHA INTERFOLHA LUXO 20X21CM C/1000UN WHITE PAPER",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 24.99,
-    "estoque": 34.0
+    "estoque": 33.0
   },
   {
     "codigo": "1981",
@@ -4141,7 +4141,7 @@
     "nome": "SACO SOS M PARDO C/50UN 19X12X26 PLUMA",
     "categoria": "Embalagem",
     "preco": 32.5,
-    "estoque": 5.0
+    "estoque": 4.0
   },
   {
     "codigo": "2096",
