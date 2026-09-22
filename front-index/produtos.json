@@ -1908,7 +1908,7 @@
     "nome": "FILME PVC ESTICAVEL28CMX250M REFIL SUPERALPFILM",
     "categoria": "Embalagem",
     "preco": 31.5,
-    "estoque": -10.0
+    "estoque": 1.0
   },
   {
     "codigo": "816",
@@ -3987,7 +3987,7 @@
     "nome": "SACO P/ LIXO PRETO 200L C/10UN (F)",
     "categoria": "SACO LIXO",
     "preco": 18.99,
-    "estoque": 28.0
+    "estoque": 27.0
   },
   {
     "codigo": "2002",
@@ -5801,6 +5801,13 @@
     "categoria": "UTENSILIOS",
     "preco": 4.99,
     "estoque": 15.0
+  },
+  {
+    "codigo": "3401",
+    "nome": "PERCABONATO  DE SODIO 1KG DENSO",
+    "categoria": "PRODUTO DE LIMPEZA",
+    "preco": 10.99,
+    "estoque": 0.0
   },
   {
     "codigo": "3420",
@@ -8734,13 +8741,6 @@
     "categoria": "DESCARTAVEIS",
     "preco": 30.49,
     "estoque": -1.0
-  },
-  {
-    "codigo": "340_1324",
-    "nome": "Cópia de PERCABONATO  DE SODIO 1KG TUFF",
-    "categoria": "PRODUTO DE LIMPEZA",
-    "preco": 39.99,
-    "estoque": 0.0
   },
   {
     "codigo": "2578_1136",
