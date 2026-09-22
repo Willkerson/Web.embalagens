@@ -1005,7 +1005,7 @@
     "nome": "COLHER SOBREMESA CRISTAL C/50UN ELITE",
     "categoria": "DESCARTAVEIS",
     "preco": 3.99,
-    "estoque": 57.0
+    "estoque": 56.0
   },
   {
     "codigo": "459",
@@ -1869,13 +1869,6 @@
     "estoque": -16.0
   },
   {
-    "codigo": "801",
-    "nome": "FILME PVC ESTICAVEL 300M REFIL SUPERALPFILM",
-    "categoria": "Embalagem",
-    "preco": 37.5,
-    "estoque": 0.0
-  },
-  {
     "codigo": "802",
     "nome": "FILME PVC ESTICAVEL 250MX38CM ALPFILM",
     "categoria": "DESCARTAVEIS",
@@ -1908,7 +1901,7 @@
     "nome": "FILME PVC ESTICAVEL28CMX250M REFIL SUPERALPFILM",
     "categoria": "Embalagem",
     "preco": 31.5,
-    "estoque": 13.0
+    "estoque": 0.0
   },
   {
     "codigo": "816",
@@ -3574,7 +3567,7 @@
     "nome": "CABO DE ALUMINIO C/ROSCA 1,5MT SANCHES",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 23.5,
-    "estoque": 50.0
+    "estoque": 48.0
   },
   {
     "codigo": "1683",
@@ -6080,7 +6073,7 @@
     "nome": "FILME DE PVC  300 METROS 38CMX300M TECFILM",
     "categoria": "Embalagem",
     "preco": 52.0,
-    "estoque": 8.0
+    "estoque": 0.0
   },
   {
     "codigo": "4009",
@@ -7557,7 +7550,7 @@
     "nome": "G650 POTE QUAD.200ML C/10UN",
     "categoria": "Embalagem",
     "preco": 7.5,
-    "estoque": 35.0
+    "estoque": 33.0
   },
   {
     "codigo": "31671",
