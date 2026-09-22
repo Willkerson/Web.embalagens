@@ -739,7 +739,7 @@
     "nome": "PANO DE CHAO BRANCO ALVEJADO 45CMX69CM SOUZA PPR28",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 6.7,
-    "estoque": 240.0
+    "estoque": 235.0
   },
   {
     "codigo": "391",
@@ -998,7 +998,7 @@
     "nome": "POTE  RETANGULAR 500ML C/24UN PRAFESTA",
     "categoria": "DESCARTAVEIS",
     "preco": 38.99,
-    "estoque": 29.0
+    "estoque": 26.0
   },
   {
     "codigo": "458",
@@ -1187,7 +1187,7 @@
     "nome": "GARRAFA PE QUADRADA 500ML C/10UN DECOPLAST",
     "categoria": "Embalagem",
     "preco": 11.99,
-    "estoque": 48.0
+    "estoque": 47.0
   },
   {
     "codigo": "554",
@@ -1228,8 +1228,8 @@
     "codigo": "562",
     "nome": "AGUA SANITARIA 1L SUPREMA",
     "categoria": "PRODUTO DE LIMPEZA",
-    "preco": 3.5,
-    "estoque": 6.0
+    "preco": 3.75,
+    "estoque": 18.0
   },
   {
     "codigo": "563",
@@ -1249,14 +1249,14 @@
     "codigo": "569",
     "nome": "REMOVEDOR SUPREMA FLORATA 1L",
     "categoria": "PRODUTO DE LIMPEZA",
-    "preco": 14.0,
+    "preco": 13.99,
     "estoque": 8.0
   },
   {
     "codigo": "570",
     "nome": "REMOVEDOR SUPREMA TRADICIONAL 1L",
     "categoria": "PRODUTO DE LIMPEZA",
-    "preco": 14.0,
+    "preco": 13.99,
     "estoque": 18.0
   },
   {
@@ -1270,21 +1270,21 @@
     "codigo": "572",
     "nome": "LAVA ROUPAS LIQ. 1L MULTI ACAO SUPREMA",
     "categoria": "PRODUTO DE LIMPEZA",
-    "preco": 10.5,
-    "estoque": 18.0
+    "preco": 9.99,
+    "estoque": 26.0
   },
   {
     "codigo": "573",
     "nome": "LAVA ROUPAS LIQ. 1L ULTRA ACAO VERDE SUPREMA",
     "categoria": "PRODUTO DE LIMPEZA",
-    "preco": 10.5,
+    "preco": 9.99,
     "estoque": 6.0
   },
   {
     "codigo": "574",
     "nome": "LAVA ROUPAS LIQ. COCO 1L SUPREMA",
     "categoria": "PRODUTO DE LIMPEZA",
-    "preco": 10.99,
+    "preco": 9.99,
     "estoque": 22.0
   },
   {
@@ -1642,7 +1642,7 @@
     "nome": "D12 220ML FOLHA DE ALUMINIO MOLDADA C/10UN WYDA",
     "categoria": "Embalagem",
     "preco": 7.6,
-    "estoque": -86.0
+    "estoque": -87.0
   },
   {
     "codigo": "716",
@@ -1691,7 +1691,7 @@
     "nome": "SACO ZIP 17X24 C/ 20UN ARMAZEM",
     "categoria": "Embalagem",
     "preco": 9.99,
-    "estoque": 6.0
+    "estoque": 4.0
   },
   {
     "codigo": "743",
@@ -1824,7 +1824,7 @@
     "nome": "LIMPA FORNO SPRAY 250ML SUPER DOM",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 21.99,
-    "estoque": 3.0
+    "estoque": 2.0
   },
   {
     "codigo": "784",
@@ -1928,7 +1928,7 @@
     "codigo": "821",
     "nome": "DESINFETANTE OCEANIC 2L SUPREMA",
     "categoria": "PRODUTO DE LIMPEZA",
-    "preco": 8.0,
+    "preco": 7.25,
     "estoque": 3.0
   },
   {
@@ -1971,7 +1971,7 @@
     "nome": "POTE  RETANGULAR 750ML C/24UN PRAFESTA",
     "categoria": "DESCARTAVEIS",
     "preco": 56.99,
-    "estoque": 5.0
+    "estoque": 4.0
   },
   {
     "codigo": "834",
@@ -2040,7 +2040,7 @@
     "codigo": "857",
     "nome": "DESINFETANTE LAVANDA BOUQUET 2L SUPREMA",
     "categoria": "PRODUTO DE LIMPEZA",
-    "preco": 8.0,
+    "preco": 7.25,
     "estoque": 22.0
   },
   {
@@ -2110,8 +2110,8 @@
     "codigo": "895",
     "nome": "REMOVEDOR VERBENA 1L SUPREMA",
     "categoria": "PRODUTO DE LIMPEZA",
-    "preco": 14.0,
-    "estoque": -1.0
+    "preco": 13.99,
+    "estoque": 15.0
   },
   {
     "codigo": "896",
@@ -2265,7 +2265,7 @@
     "nome": "CAIXA P/CORREIO N00 (16X11X07)1UN NIAGRA",
     "categoria": "Embalagem",
     "preco": 4.5,
-    "estoque": 8.0
+    "estoque": -2.0
   },
   {
     "codigo": "939",
@@ -2313,8 +2313,8 @@
     "codigo": "957",
     "nome": "DESINFETANTE PINHO ULTRABAC SUPREMA 2L",
     "categoria": "PRODUTO DE LIMPEZA",
-    "preco": 8.0,
-    "estoque": 5.0
+    "preco": 70.25,
+    "estoque": 11.0
   },
   {
     "codigo": "967",
@@ -2349,7 +2349,7 @@
     "nome": "GANCHOS C/2UN MONALIZA",
     "categoria": "UTENSILIOS",
     "preco": 8.0,
-    "estoque": 3.0
+    "estoque": 2.0
   },
   {
     "codigo": "981",
@@ -2545,7 +2545,7 @@
     "nome": "BOBINA PICOTADA 40X60CM (2.32KG)",
     "categoria": "Embalagem",
     "preco": 78.99,
-    "estoque": 5.0
+    "estoque": 4.0
   },
   {
     "codigo": "1047",
@@ -2587,7 +2587,7 @@
     "nome": "SACOS P/LIXO 100L P8 C/10UN PRETO",
     "categoria": "SACO LIXO",
     "preco": 13.5,
-    "estoque": -37.0
+    "estoque": -39.0
   },
   {
     "codigo": "1055",
@@ -2615,7 +2615,7 @@
     "nome": "CAIXA P/BOLO TORRE 32 32X32X22 NIAGRA",
     "categoria": "Embalagem",
     "preco": 16.8,
-    "estoque": 7.0
+    "estoque": 6.0
   },
   {
     "codigo": "1078",
@@ -2734,7 +2734,7 @@
     "nome": "REFIL RODO ALUMINIO 50CM SANCHES",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 5.0,
-    "estoque": 0.0
+    "estoque": -1.0
   },
   {
     "codigo": "1142",
@@ -2944,7 +2944,7 @@
     "nome": "PAPEL HIGIENICO BRANCO ROLAO EUROPEL 08 ROLOS",
     "categoria": "PRODUTO DE HIGIENE",
     "preco": 35.5,
-    "estoque": 24.0
+    "estoque": 23.0
   },
   {
     "codigo": "1290",
@@ -3007,7 +3007,7 @@
     "nome": "FILME STRETCH 50CM X 300 M",
     "categoria": "Embalagem",
     "preco": 63.99,
-    "estoque": 5.0
+    "estoque": 2.0
   },
   {
     "codigo": "1310",
@@ -3028,7 +3028,7 @@
     "nome": "TOP LIXO PIA E BANHEIRO BRANCO C/40UN PACK LIXO",
     "categoria": "SACO LIXO",
     "preco": 8.99,
-    "estoque": -12.0
+    "estoque": -13.0
   },
   {
     "codigo": "1315",
@@ -3440,15 +3440,15 @@
     "codigo": "1540",
     "nome": "AGUA SANITARIA 5L SUPREMA",
     "categoria": "PRODUTO DE LIMPEZA",
-    "preco": 18.99,
-    "estoque": 1.0
+    "preco": 17.99,
+    "estoque": 12.0
   },
   {
     "codigo": "1542",
     "nome": "AMACIANTE DE ROUPAS SUPREMA ALEGRE ENCANTOS 2L",
     "categoria": "PRODUTO DE LIMPEZA",
-    "preco": 10.0,
-    "estoque": -1.0
+    "preco": 9.5,
+    "estoque": 5.0
   },
   {
     "codigo": "1543",
@@ -3644,7 +3644,7 @@
     "nome": "SACOLA PRETA 1KG 40X50",
     "categoria": "Embalagem",
     "preco": 19.99,
-    "estoque": 44.0
+    "estoque": 43.0
   },
   {
     "codigo": "1751",
@@ -3973,7 +3973,7 @@
     "nome": "TOALHA INTERFOLHA LUXO 20X21CM C/1000UN WHITE PAPER",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 24.99,
-    "estoque": 33.0
+    "estoque": 32.0
   },
   {
     "codigo": "1981",
@@ -4141,7 +4141,7 @@
     "nome": "FOLHA DE ALUMINIO 4MX30CM WYDA",
     "categoria": "Embalagem",
     "preco": 5.5,
-    "estoque": 18.0
+    "estoque": 16.0
   },
   {
     "codigo": "2089",
@@ -4533,7 +4533,7 @@
     "nome": "POTE  RETANGULAR  350ML C/24UN PRAFESTA",
     "categoria": "DESCARTAVEIS",
     "preco": 34.99,
-    "estoque": 4.0
+    "estoque": 3.0
   },
   {
     "codigo": "2412",
@@ -5247,7 +5247,7 @@
     "nome": "COPO DESCARTAVEL 180ML PS C/100UN FASTCUP",
     "categoria": "DESCARTAVEIS",
     "preco": 6.99,
-    "estoque": 94.0
+    "estoque": 92.0
   },
   {
     "codigo": "2995",
@@ -6087,7 +6087,7 @@
     "nome": "FITA CREPE 25MMX50M",
     "categoria": "UTENSILIOS",
     "preco": 9.99,
-    "estoque": 5.0
+    "estoque": 4.0
   },
   {
     "codigo": "4040",
@@ -6150,7 +6150,7 @@
     "nome": "LIMPA ESTOFADOS SPRAY 300ML ZIP",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 18.0,
-    "estoque": 12.0
+    "estoque": 11.0
   },
   {
     "codigo": "4992",
@@ -7144,7 +7144,7 @@
     "nome": "BALANÇA DIGITAL 10KG FRATELLI",
     "categoria": "Outras",
     "preco": 32.5,
-    "estoque": 4.0
+    "estoque": 3.0
   },
   {
     "codigo": "12912",
@@ -7186,21 +7186,21 @@
     "nome": "SACOS PLASTICO  30X40X0,06  200G COLOMBO",
     "categoria": "Embalagem",
     "preco": 10.0,
-    "estoque": -21.0
+    "estoque": -22.0
   },
   {
     "codigo": "18021",
     "nome": "SACO ZIP 20X30 C/ 100 UNIDADES",
     "categoria": "DESCARTAVEIS",
     "preco": 58.99,
-    "estoque": 1.0
+    "estoque": 0.0
   },
   {
     "codigo": "18022",
     "nome": "SACO ZIP 20X30 C/20UN ARMAZEM",
     "categoria": "DESCARTAVEIS",
     "preco": 13.5,
-    "estoque": 9.0
+    "estoque": 8.0
   },
   {
     "codigo": "20021",
@@ -7291,7 +7291,7 @@
     "nome": "D-695 KIT POTE TRANSPARENTE  P/ MOLHO CAIXA FECHADA",
     "categoria": "DESCARTAVEIS",
     "preco": 168.0,
-    "estoque": 2.0
+    "estoque": 1.0
   },
   {
     "codigo": "25813",
@@ -7690,7 +7690,7 @@
     "nome": "FORMA FRITADEIRA PAPEL 20CM C/50UN  QUADRADA TINGS",
     "categoria": "DESCARTAVEIS",
     "preco": 15.5,
-    "estoque": -1.0
+    "estoque": -2.0
   },
   {
     "codigo": "61057",
@@ -7948,7 +7948,7 @@
     "codigo": "129002",
     "nome": "AMACIANTE DE ROUPAS SUPREMA TOQUE DE AMOR 2L",
     "categoria": "PRODUTO DE LIMPEZA",
-    "preco": 10.0,
+    "preco": 9.5,
     "estoque": 4.0
   },
   {
@@ -7956,7 +7956,7 @@
     "nome": "ESPONJA DE AÇO BOMBRIL 45G",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 3.75,
-    "estoque": 0.0
+    "estoque": -3.0
   },
   {
     "codigo": "129007",
@@ -8734,6 +8734,13 @@
     "categoria": "DESCARTAVEIS",
     "preco": 30.49,
     "estoque": -1.0
+  },
+  {
+    "codigo": "340_1324",
+    "nome": "Cópia de PERCABONATO  DE SODIO 1KG TUFF",
+    "categoria": "PRODUTO DE LIMPEZA",
+    "preco": 39.99,
+    "estoque": 0.0
   },
   {
     "codigo": "2578_1136",
