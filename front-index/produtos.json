@@ -3000,7 +3000,7 @@
     "nome": "FILME STRETCH 50CM X 300 M",
     "categoria": "Embalagem",
     "preco": 63.99,
-    "estoque": 2.0
+    "estoque": 0.0
   },
   {
     "codigo": "1310",
@@ -4113,7 +4113,7 @@
     "nome": "PLASTICO BOLHA 130X100M MICRA MN. PLAST",
     "categoria": "Embalagem",
     "preco": 100.0,
-    "estoque": -1.0
+    "estoque": -2.0
   },
   {
     "codigo": "2084",
