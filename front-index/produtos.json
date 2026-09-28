@@ -1152,7 +1152,7 @@
     "nome": "CAIXA PAP. ONDULADO  70X50X40 N05",
     "categoria": "Embalagem",
     "preco": 26.5,
-    "estoque": 24.0
+    "estoque": 23.0
   },
   {
     "codigo": "544",
@@ -3098,7 +3098,7 @@
     "nome": "TOALHA INTERFOLHA (OURO) CELULOSE ISAPEL C/1000UN",
     "categoria": "PRODUTO DE HIGIENE",
     "preco": 23.0,
-    "estoque": 39.0
+    "estoque": 35.0
   },
   {
     "codigo": "1341",
