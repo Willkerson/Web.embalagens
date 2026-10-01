@@ -81,7 +81,7 @@
     "nome": "G34P MINI COLOMBA 500ML GALVONOTEK",
     "categoria": "DESCARTAVEIS",
     "preco": 2.25,
-    "estoque": -135.0
+    "estoque": -137.0
   },
   {
     "codigo": "123",
@@ -165,7 +165,7 @@
     "nome": "SABONETE LIQ. C MANGA ROSA & TANGERINA 5L  SOFT PLUS TRILHA",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 27.99,
-    "estoque": 8.0
+    "estoque": 7.0
   },
   {
     "codigo": "145",
@@ -2573,7 +2573,7 @@
     "nome": "SACO P/ LIXO PRETO P8 60L C/10UN",
     "categoria": "SACO LIXO",
     "preco": 8.99,
-    "estoque": 63.0
+    "estoque": 60.0
   },
   {
     "codigo": "1053",
@@ -2937,7 +2937,7 @@
     "nome": "PAPEL HIGIENICO BRANCO  EUROPEL 08 ROLOS",
     "categoria": "PRODUTO DE HIGIENE",
     "preco": 35.5,
-    "estoque": 25.0
+    "estoque": 24.0
   },
   {
     "codigo": "1290",
@@ -3420,7 +3420,7 @@
     "nome": "PANO DE PRATO BRANCO/ESTAMPADO TATI/NACIONAL 66X38CM",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 4.3,
-    "estoque": 332.0
+    "estoque": 328.0
   },
   {
     "codigo": "1530",
@@ -3616,7 +3616,7 @@
     "nome": "SACOLA VERDE REFORÇADA 1KG 60X80",
     "categoria": "Embalagem",
     "preco": 19.99,
-    "estoque": 10.0
+    "estoque": 9.0
   },
   {
     "codigo": "1715",
@@ -6045,7 +6045,7 @@
     "nome": "FILM DE PVC 30MTS  28X30M TECKFIM",
     "categoria": "Embalagem",
     "preco": 6.5,
-    "estoque": 28.0
+    "estoque": 27.0
   },
   {
     "codigo": "4003",
@@ -6906,7 +6906,7 @@
     "nome": "CAPA PARA RODO 50X40 ALVEJADO",
     "categoria": "PRODUTO DE HIGIENE",
     "preco": 5.99,
-    "estoque": 15.0
+    "estoque": 14.0
   },
   {
     "codigo": "8922",
@@ -8117,7 +8117,7 @@
     "nome": "PROTETOR DE FELTRO C/33UN CLINK",
     "categoria": "-",
     "preco": 19.99,
-    "estoque": 2.0
+    "estoque": 1.0
   },
   {
     "codigo": "129030",
