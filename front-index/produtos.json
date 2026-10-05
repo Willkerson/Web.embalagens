@@ -333,7 +333,7 @@
     "nome": "CABO DE MADEIRA 1,30CM  LISO SANCHES",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 7.5,
-    "estoque": 60.0
+    "estoque": 59.0
   },
   {
     "codigo": "253",
@@ -606,7 +606,7 @@
     "nome": "PLASTICO BOLHA 65MX50M MICRA 20 MN.PLAST",
     "categoria": "Embalagem",
     "preco": 41.99,
-    "estoque": 8.0
+    "estoque": 7.0
   },
   {
     "codigo": "346",
@@ -1236,7 +1236,7 @@
     "nome": "AGUA SANITARIA SUPREMA 2L",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 8.0,
-    "estoque": 8.0
+    "estoque": 7.0
   },
   {
     "codigo": "568",
@@ -1572,7 +1572,7 @@
     "nome": "LIMPA TENIS 250ML SUPER DOM",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 22.5,
-    "estoque": 7.0
+    "estoque": 6.0
   },
   {
     "codigo": "684",
@@ -2160,7 +2160,7 @@
     "nome": "COPO DESCARTAVEL TRANSPARENTE 50ML C/100UN TOTALPLAST",
     "categoria": "DESCARTAVEIS",
     "preco": 4.5,
-    "estoque": 57.0
+    "estoque": 56.0
   },
   {
     "codigo": "904",
@@ -2174,7 +2174,7 @@
     "nome": "SACOLA SOS LIMA M C/ALÇA C/20UN 19X12X26 PLUMA",
     "categoria": "Embalagem",
     "preco": 29.0,
-    "estoque": 12.0
+    "estoque": 11.0
   },
   {
     "codigo": "907",
@@ -2209,7 +2209,7 @@
     "nome": "DESINFETANTE MISTERIO ARABE 2L SANOL",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 8.99,
-    "estoque": 1.0
+    "estoque": -1.0
   },
   {
     "codigo": "917",
@@ -2510,14 +2510,14 @@
     "nome": "SACO P/ LIXO PRETO P8 60L C/50UN",
     "categoria": "SACO LIXO",
     "preco": 38.5,
-    "estoque": 15.0
+    "estoque": 25.0
   },
   {
     "codigo": "1042",
     "nome": "SACO P/ LIXO PRETO P8 60L C/100UN",
     "categoria": "SACO LIXO",
     "preco": 76.99,
-    "estoque": 5.0
+    "estoque": 10.0
   },
   {
     "codigo": "1044",
@@ -2573,14 +2573,14 @@
     "nome": "SACO P/ LIXO PRETO P8 60L C/10UN",
     "categoria": "SACO LIXO",
     "preco": 8.99,
-    "estoque": 44.0
+    "estoque": 83.0
   },
   {
     "codigo": "1053",
     "nome": "SACOS P/LIXO 100L P8 C/10UN PRETO",
     "categoria": "SACO LIXO",
     "preco": 13.5,
-    "estoque": 30.0
+    "estoque": 108.0
   },
   {
     "codigo": "1055",
@@ -2600,7 +2600,7 @@
     "codigo": "1057",
     "nome": "FITA ADESIVA 45MMX100M MARROM",
     "categoria": "PAPELARIA",
-    "preco": 9.99,
+    "preco": 10.5,
     "estoque": 80.0
   },
   {
@@ -3091,7 +3091,7 @@
     "nome": "TOALHA INTERFOLHA BRANCA (VERDE) C/1000UN ISAPEL",
     "categoria": "PRODUTO DE HIGIENE",
     "preco": 16.0,
-    "estoque": 91.0
+    "estoque": 88.0
   },
   {
     "codigo": "1331",
@@ -3280,7 +3280,7 @@
     "nome": "LACRE SEGURANCA PARA LANCHE ROLO C/500UN 30MMX90MM PLUMA",
     "categoria": "PAPELARIA",
     "preco": 29.0,
-    "estoque": -3.0
+    "estoque": -4.0
   },
   {
     "codigo": "1448",
@@ -3847,7 +3847,7 @@
     "nome": "VASSOURA PIAÇAVA SINTETICA ALKLIN C/CABO",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 16.25,
-    "estoque": -6.0
+    "estoque": -7.0
   },
   {
     "codigo": "1902",
@@ -4036,7 +4036,7 @@
     "nome": "PILHA AA C/4UN ALFACELL",
     "categoria": "UTENSILIOS",
     "preco": 6.99,
-    "estoque": 11.0
+    "estoque": 10.0
   },
   {
     "codigo": "2032",
@@ -4190,7 +4190,7 @@
     "nome": "SACOLA BRANCA 1KG 40x50",
     "categoria": "SACO LIXO",
     "preco": 25.5,
-    "estoque": 16.0
+    "estoque": 14.0
   },
   {
     "codigo": "2104",
@@ -4232,7 +4232,7 @@
     "nome": "FITA ADESIVA 45X100M  TRANSPARENTE PAPI",
     "categoria": "PAPELARIA",
     "preco": 10.5,
-    "estoque": 101.0
+    "estoque": 99.0
   },
   {
     "codigo": "2164",
@@ -4611,6 +4611,13 @@
     "categoria": "PAPELARIA",
     "preco": 40.5,
     "estoque": 18.0
+  },
+  {
+    "codigo": "2485",
+    "nome": "PAPEL SULFITE A4 C/100 FOLHAS REPORT",
+    "categoria": "PAPELARIA",
+    "preco": 9.5,
+    "estoque": -1.0
   },
   {
     "codigo": "2486",
@@ -5170,7 +5177,7 @@
     "nome": "CAIXA PAP. ONDULADO N04  50X40X35 NIAGRA",
     "categoria": "Embalagem",
     "preco": 16.99,
-    "estoque": 13.0
+    "estoque": 8.0
   },
   {
     "codigo": "2958",
@@ -5443,7 +5450,7 @@
     "nome": "POTE E TAMPA RET.500ML C/24UN GOUR MAX",
     "categoria": "DESCARTAVEIS",
     "preco": 29.99,
-    "estoque": 29.0
+    "estoque": 28.0
   },
   {
     "codigo": "3106",
@@ -5744,7 +5751,7 @@
     "nome": "PAPEL HIGIENICO FOLHA DUPLA FOFINHO C/16ROLOS 10X30M",
     "categoria": "PRODUTO DE HIGIENE",
     "preco": 33.99,
-    "estoque": 8.0
+    "estoque": 6.0
   },
   {
     "codigo": "3197",
@@ -5940,7 +5947,7 @@
     "nome": "LIMPADOR CONCENTRADO LAVANDA 120ML SANOL",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 12.99,
-    "estoque": 14.0
+    "estoque": 13.0
   },
   {
     "codigo": "3979",
@@ -5954,7 +5961,7 @@
     "nome": "LIMPADOR CONCENTRADO ORQUIDEA REAL 120ML SANOL",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 12.99,
-    "estoque": 20.0
+    "estoque": 19.0
   },
   {
     "codigo": "3981",
@@ -6563,7 +6570,7 @@
     "nome": "SACO P/LIXO PRETO 20L P5 C/10UN",
     "categoria": "SACO LIXO",
     "preco": 4.0,
-    "estoque": 12.0
+    "estoque": 42.0
   },
   {
     "codigo": "7899",
@@ -6801,7 +6808,7 @@
     "nome": "ALCOOL 70% LIQUIDO 5L SUPERVALE",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 49.99,
-    "estoque": 5.0
+    "estoque": 4.0
   },
   {
     "codigo": "8349",
@@ -7333,7 +7340,7 @@
     "nome": "PAPEL ACOPLADO C/PELICULA 30X38 C/400UN CAIXA FECHADA",
     "categoria": "DESCARTAVEIS",
     "preco": 61.99,
-    "estoque": 4.0
+    "estoque": 3.0
   },
   {
     "codigo": "28645",
@@ -7690,7 +7697,7 @@
     "nome": "BOBINA PICOTADA 35X45 C/450UN SOLDA FUNDO 2.41KG",
     "categoria": "ALIMENTO/GENERO ALIMENTICIO",
     "preco": 75.99,
-    "estoque": 6.0
+    "estoque": 4.0
   },
   {
     "codigo": "50311",
@@ -7711,7 +7718,7 @@
     "nome": "LIXEIRA C/PEDAL 10L PARAMOUNT",
     "categoria": "-",
     "preco": 45.0,
-    "estoque": -2.0
+    "estoque": -3.0
   },
   {
     "codigo": "70181",
@@ -8215,7 +8222,7 @@
     "nome": "ACENDEDOR G/INFAMAVEL BJ8620",
     "categoria": "UTENSILIOS",
     "preco": 11.5,
-    "estoque": 1.0
+    "estoque": 0.0
   },
   {
     "codigo": "129043",
