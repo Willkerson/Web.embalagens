@@ -606,7 +606,7 @@
     "nome": "PLASTICO BOLHA 65MX50M MICRA 20 MN.PLAST",
     "categoria": "Embalagem",
     "preco": 41.99,
-    "estoque": -7.0
+    "estoque": 8.0
   },
   {
     "codigo": "346",
@@ -2594,14 +2594,14 @@
     "nome": "FITA ADESIVA 45MMX40M MARROM",
     "categoria": "PAPELARIA",
     "preco": 4.99,
-    "estoque": 503.0
+    "estoque": 100.0
   },
   {
     "codigo": "1057",
     "nome": "FITA ADESIVA 45MMX100M MARROM",
     "categoria": "PAPELARIA",
     "preco": 9.99,
-    "estoque": 0.0
+    "estoque": 80.0
   },
   {
     "codigo": "1060",
@@ -2811,7 +2811,7 @@
     "nome": "FITA ADESIVA POLIPROPILENO TRANSPARENTE 48MMX40M TECTAPE",
     "categoria": "PAPELARIA",
     "preco": 4.99,
-    "estoque": 4.0
+    "estoque": 104.0
   },
   {
     "codigo": "1168",
@@ -4232,7 +4232,7 @@
     "nome": "FITA ADESIVA 45X100M  TRANSPARENTE PAPI",
     "categoria": "PAPELARIA",
     "preco": 10.5,
-    "estoque": 21.0
+    "estoque": 101.0
   },
   {
     "codigo": "2164",
@@ -5107,7 +5107,7 @@
     "nome": "PRATO QUADRADO GR.210MM BRANCO C10UN ELITE",
     "categoria": "DESCARTAVEIS",
     "preco": 14.99,
-    "estoque": 28.0
+    "estoque": 27.0
   },
   {
     "codigo": "2924",
@@ -7081,7 +7081,7 @@
     "nome": "PANO MULTIUSO AZUL C/50 PANOS 30CMX25CM MR. PLUS TALGE",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 17.0,
-    "estoque": 51.0
+    "estoque": 50.0
   },
   {
     "codigo": "11176",
@@ -7305,7 +7305,7 @@
     "nome": "D-695 KIT POTE TRANSPARENTE  P/ MOLHO CAIXA FECHADA",
     "categoria": "DESCARTAVEIS",
     "preco": 168.0,
-    "estoque": 3.0
+    "estoque": 2.0
   },
   {
     "codigo": "25813",
