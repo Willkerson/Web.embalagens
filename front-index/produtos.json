@@ -438,7 +438,7 @@
     "nome": "VASSOURA  DE CASA COM CABO ALKLIN",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 19.99,
-    "estoque": 7.0
+    "estoque": 6.0
   },
   {
     "codigo": "298",
@@ -746,7 +746,7 @@
     "nome": "PANO DE CHAO ALVEJADO CAIPIRA 45CMX68CM",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 5.25,
-    "estoque": 266.0
+    "estoque": 265.0
   },
   {
     "codigo": "398",
@@ -2146,7 +2146,7 @@
     "nome": "COPO DESCARTAVEL 180ML PS C/100UN GLIGHT",
     "categoria": "DESCARTAVEIS",
     "preco": 5.99,
-    "estoque": 75.0
+    "estoque": 72.0
   },
   {
     "codigo": "902",
@@ -2573,14 +2573,14 @@
     "nome": "SACO P/ LIXO PRETO P8 60L C/10UN",
     "categoria": "SACO LIXO",
     "preco": 8.99,
-    "estoque": 49.0
+    "estoque": 47.0
   },
   {
     "codigo": "1053",
     "nome": "SACOS P/LIXO 100L P8 C/10UN PRETO",
     "categoria": "SACO LIXO",
     "preco": 13.5,
-    "estoque": 31.0
+    "estoque": 30.0
   },
   {
     "codigo": "1055",
@@ -6780,7 +6780,7 @@
     "nome": "ALCOOL LIQUIDO 1L 70% BARBAREX",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 10.99,
-    "estoque": 9.0
+    "estoque": 7.0
   },
   {
     "codigo": "8277",
@@ -7438,7 +7438,7 @@
     "nome": "DETERGENTE YPÊ NEUTRO 500ML",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 4.5,
-    "estoque": 8.0
+    "estoque": 7.0
   },
   {
     "codigo": "31653",
