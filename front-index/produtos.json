@@ -480,7 +480,7 @@
     "nome": "PANO PANOTEK  REUTILIZAVEL C/40UN",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 12.0,
-    "estoque": -1.0
+    "estoque": -2.0
   },
   {
     "codigo": "312",
@@ -1257,7 +1257,7 @@
     "nome": "REMOVEDOR SUPREMA TRADICIONAL 1L",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 13.99,
-    "estoque": 18.0
+    "estoque": 17.0
   },
   {
     "codigo": "571",
@@ -1775,7 +1775,7 @@
     "nome": "NAFTALINA AZULIM 30G START",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 3.5,
-    "estoque": 1.0
+    "estoque": -1.0
   },
   {
     "codigo": "766",
@@ -3301,7 +3301,7 @@
     "nome": "LUVA LATEX LONGA M DANNY LONGATEX",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 18.5,
-    "estoque": 4.0
+    "estoque": 3.0
   },
   {
     "codigo": "1464",
@@ -4715,7 +4715,7 @@
     "nome": "SACOS PLASTICO PEBD 50X70X0,10 1KG HELVIPACK",
     "categoria": "Embalagem",
     "preco": 38.99,
-    "estoque": 8.0
+    "estoque": 7.0
   },
   {
     "codigo": "2656",
@@ -7501,7 +7501,7 @@
     "nome": "FOLHA  ALUMINIO D92000ML C/ 5UNI",
     "categoria": "Embalagem",
     "preco": 18.0,
-    "estoque": -7.0
+    "estoque": -8.0
   },
   {
     "codigo": "31661",
