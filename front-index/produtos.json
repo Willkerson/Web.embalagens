@@ -11,7 +11,7 @@
     "nome": "ESCOVA SANITARIA C/ ESTOJO SANIBRISA",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 14.5,
-    "estoque": 12.0
+    "estoque": 11.0
   },
   {
     "codigo": "044",
@@ -263,7 +263,7 @@
     "nome": "COPO TERMICO 120ML C/20UN BOM APETITE",
     "categoria": "DESCARTAVEIS",
     "preco": 3.99,
-    "estoque": 53.0
+    "estoque": 51.0
   },
   {
     "codigo": "212",
@@ -375,7 +375,7 @@
     "nome": "DESINFETANTE LAVANDA 5L SANOL",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 22.99,
-    "estoque": 11.0
+    "estoque": 9.0
   },
   {
     "codigo": "271",
@@ -417,7 +417,7 @@
     "nome": "ESPONJA MULTIUSO C/4UN ALKLIN",
     "categoria": "UTENSILIOS",
     "preco": 3.99,
-    "estoque": 248.0
+    "estoque": 245.0
   },
   {
     "codigo": "292",
@@ -557,7 +557,7 @@
     "nome": "ESPONJA MAGICA LIMPEZA 3 PEÇAS MAXCLEAN",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 7.5,
-    "estoque": -2.0
+    "estoque": -3.0
   },
   {
     "codigo": "332",
@@ -1257,7 +1257,7 @@
     "nome": "REMOVEDOR SUPREMA FLORATA 1L",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 13.99,
-    "estoque": 6.0
+    "estoque": 5.0
   },
   {
     "codigo": "570",
@@ -2034,7 +2034,7 @@
     "nome": "HAMBURGUEIRA BH02 C/10UN BOM APETITE",
     "categoria": "Embalagem",
     "preco": 3.99,
-    "estoque": 37.0
+    "estoque": 36.0
   },
   {
     "codigo": "857",
@@ -2097,7 +2097,7 @@
     "nome": "BANDEJA ISOPOR BR01 RASA C/10UN BOM APETITE",
     "categoria": "Embalagem",
     "preco": 2.0,
-    "estoque": 0.0
+    "estoque": -1.0
   },
   {
     "codigo": "889",
@@ -2118,7 +2118,7 @@
     "nome": "COPO DESCARTAVEL TRANSPARENTE 180ML C/100UN TOTAL PLAST",
     "categoria": "DESCARTAVEIS",
     "preco": 6.99,
-    "estoque": 350.0
+    "estoque": 347.0
   },
   {
     "codigo": "897",
@@ -2587,7 +2587,7 @@
     "nome": "SACOS P/LIXO 100L P8 C/10UN PRETO",
     "categoria": "SACO LIXO",
     "preco": 13.5,
-    "estoque": 104.0
+    "estoque": 103.0
   },
   {
     "codigo": "1055",
@@ -2951,7 +2951,7 @@
     "nome": "PAPEL HIGIENICO BRANCO  EUROPEL 08 ROLOS",
     "categoria": "PRODUTO DE HIGIENE",
     "preco": 35.5,
-    "estoque": 23.0
+    "estoque": 19.0
   },
   {
     "codigo": "1290",
@@ -3112,7 +3112,7 @@
     "nome": "TOALHA INTERFOLHA (OURO) CELULOSE ISAPEL C/1000UN",
     "categoria": "PRODUTO DE HIGIENE",
     "preco": 23.0,
-    "estoque": 71.0
+    "estoque": 64.0
   },
   {
     "codigo": "1341",
@@ -3448,7 +3448,7 @@
     "nome": "AGUA SANITARIA 5L SUPREMA",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 17.99,
-    "estoque": 11.0
+    "estoque": 10.0
   },
   {
     "codigo": "1542",
@@ -3504,7 +3504,7 @@
     "nome": "LIXEIRA BASCULANTE 10L SANREMO",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 30.99,
-    "estoque": -3.0
+    "estoque": -4.0
   },
   {
     "codigo": "1562",
@@ -3616,7 +3616,7 @@
     "nome": "SACOLA VERDE REFORÇADA 1KG 45x60",
     "categoria": "Embalagem",
     "preco": 19.99,
-    "estoque": 24.0
+    "estoque": 23.0
   },
   {
     "codigo": "1713",
@@ -3959,7 +3959,7 @@
     "nome": "BR03 C/10UN 235X18X16MM",
     "categoria": "Embalagem",
     "preco": 3.5,
-    "estoque": 20.0
+    "estoque": 19.0
   },
   {
     "codigo": "1940",
@@ -4463,7 +4463,7 @@
     "nome": "BLOCO  PARA CAIXA  ACOPLADA LAVANDA 50G AZULIM",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 12.5,
-    "estoque": 14.0
+    "estoque": 11.0
   },
   {
     "codigo": "2382",
@@ -6066,7 +6066,7 @@
     "nome": "FILM DE PVC 30MTS  28X30M TECKFIM",
     "categoria": "Embalagem",
     "preco": 6.5,
-    "estoque": 23.0
+    "estoque": 22.0
   },
   {
     "codigo": "4003",
@@ -8719,7 +8719,7 @@
     "nome": "DETERGENTE YPÊ LIMÃO 500ML",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 4.5,
-    "estoque": 7.0
+    "estoque": 5.0
   },
   {
     "codigo": "789475",
