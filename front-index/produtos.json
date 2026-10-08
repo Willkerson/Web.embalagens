@@ -102,14 +102,14 @@
     "nome": "RODO 40CM C/CABO ALKLIN",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 16.25,
-    "estoque": 9.0
+    "estoque": 8.0
   },
   {
     "codigo": "125",
     "nome": "SUPER PÁ C/CABO ALKLIN",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 19.99,
-    "estoque": -2.0
+    "estoque": -3.0
   },
   {
     "codigo": "127",
@@ -2167,7 +2167,7 @@
     "nome": "COPO DESCARTAVEL TRANSPARENTE 50ML C/100UN TOTALPLAST",
     "categoria": "DESCARTAVEIS",
     "preco": 4.5,
-    "estoque": 55.0
+    "estoque": 54.0
   },
   {
     "codigo": "904",
@@ -3098,7 +3098,7 @@
     "nome": "TOALHA INTERFOLHA BRANCA (VERDE) C/1000UN ISAPEL",
     "categoria": "PRODUTO DE HIGIENE",
     "preco": 16.0,
-    "estoque": 87.0
+    "estoque": 86.0
   },
   {
     "codigo": "1331",
@@ -6423,7 +6423,7 @@
     "nome": "GUARDANAPO TV 14X13CM 500G",
     "categoria": "DESCARTAVEIS",
     "preco": 15.5,
-    "estoque": 10.0
+    "estoque": 9.0
   },
   {
     "codigo": "7212",
@@ -7361,7 +7361,7 @@
     "nome": "PRATO QUADRADO GR. 210MM CRISTAL C/10UN ELITE",
     "categoria": "DESCARTAVEIS",
     "preco": 14.99,
-    "estoque": 12.0
+    "estoque": 10.0
   },
   {
     "codigo": "29817",
