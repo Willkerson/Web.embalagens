@@ -1845,7 +1845,7 @@
     "nome": "KIT GARFO E FACA MASTER C/25  PRAFESTA",
     "categoria": "DESCARTAVEIS",
     "preco": 22.5,
-    "estoque": 13.0
+    "estoque": 12.0
   },
   {
     "codigo": "785",
@@ -3364,7 +3364,7 @@
     "nome": "G80MA BOLO ALTA MILLENIUM GALVONOTEK",
     "categoria": "DESCARTAVEIS",
     "preco": 12.5,
-    "estoque": 25.0
+    "estoque": 24.0
   },
   {
     "codigo": "1479",
@@ -3385,7 +3385,7 @@
     "nome": "D645 POTE REDONDO BASE E TAMPA C/10UN 120ML",
     "categoria": "DESCARTAVEIS",
     "preco": 3.5,
-    "estoque": 7.0
+    "estoque": 3.0
   },
   {
     "codigo": "1488",
@@ -3595,7 +3595,7 @@
     "nome": "POTE REDONDO 200ML C/TAMPA C/24UN PRAFESTA",
     "categoria": "DESCARTAVEIS",
     "preco": 17.99,
-    "estoque": 2.0
+    "estoque": 1.0
   },
   {
     "codigo": "1684",
@@ -4323,7 +4323,7 @@
     "nome": "D305 MINI DOCE 100ML C/10UN DUO PLAST",
     "categoria": "DESCARTAVEIS",
     "preco": 4.5,
-    "estoque": -64.0
+    "estoque": -67.0
   },
   {
     "codigo": "2197",
@@ -5184,7 +5184,7 @@
     "nome": "PRATO QUADRADO 150MM CRISTAL C/10UN",
     "categoria": "DESCARTAVEIS",
     "preco": 7.99,
-    "estoque": 39.0
+    "estoque": 37.0
   },
   {
     "codigo": "2957",
@@ -5345,7 +5345,7 @@
     "nome": "COPO DESCARTAVEL PP 330ML C/50UN ULTRA",
     "categoria": "DESCARTAVEIS",
     "preco": 8.5,
-    "estoque": 65.0
+    "estoque": 64.0
   },
   {
     "codigo": "3035",
@@ -5401,7 +5401,7 @@
     "nome": "POTE E TAMPA RET.350ML C/24UN GOUR MAX",
     "categoria": "DESCARTAVEIS",
     "preco": 27.99,
-    "estoque": 28.0
+    "estoque": 27.0
   },
   {
     "codigo": "3060",
@@ -5464,7 +5464,7 @@
     "nome": "POTE E TAMPA RET.500ML C/24UN GOUR MAX",
     "categoria": "DESCARTAVEIS",
     "preco": 29.99,
-    "estoque": 37.0
+    "estoque": 36.0
   },
   {
     "codigo": "3106",
@@ -7368,7 +7368,7 @@
     "nome": "PRATO QUADRADO GR. 210MM CRISTAL C/10UN ELITE",
     "categoria": "DESCARTAVEIS",
     "preco": 14.99,
-    "estoque": 4.0
+    "estoque": 3.0
   },
   {
     "codigo": "29817",
