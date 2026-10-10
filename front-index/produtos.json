@@ -2685,7 +2685,7 @@
     "nome": "MARMITEX DE ISOPOR 750ML C/10UN BOM APETITE",
     "categoria": "DESCARTAVEIS",
     "preco": 8.0,
-    "estoque": -3.0
+    "estoque": -5.0
   },
   {
     "codigo": "1113",
@@ -5373,7 +5373,7 @@
     "nome": "HAMBURGUEIRA BH01 C/10UN BOM APETITE",
     "categoria": "DESCARTAVEIS",
     "preco": 3.5,
-    "estoque": 54.0
+    "estoque": 52.0
   },
   {
     "codigo": "3048",
