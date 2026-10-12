@@ -438,7 +438,7 @@
     "nome": "VASSOURA PREMIUM COM CABO ALKLIN",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 18.0,
-    "estoque": -6.0
+    "estoque": -7.0
   },
   {
     "codigo": "296",
@@ -788,7 +788,7 @@
     "nome": "FILM DE PVC 30MTS  28X15M TECKFIM",
     "categoria": "ALIMENTO/GENERO ALIMENTICIO",
     "preco": 4.5,
-    "estoque": 6.0
+    "estoque": 5.0
   },
   {
     "codigo": "405",
@@ -2951,7 +2951,7 @@
     "nome": "BOBINA PICOTADA 2,5KG C/500UN P/ ALIMENTOS 25X33 EXTRUSA",
     "categoria": "Embalagem",
     "preco": 25.0,
-    "estoque": 2.0
+    "estoque": 1.0
   },
   {
     "codigo": "1281",
@@ -3133,7 +3133,7 @@
     "nome": "MARMITEX DE ISOPOR 750ML C100/UN COPOBRAS",
     "categoria": "DESCARTAVEIS",
     "preco": 60.5,
-    "estoque": 20.0
+    "estoque": 19.0
   },
   {
     "codigo": "1343",
@@ -3301,7 +3301,7 @@
     "nome": "BH101 SEM DIVISAO C/100UN B. APETITE",
     "categoria": "DESCARTAVEIS",
     "preco": 67.99,
-    "estoque": 6.0
+    "estoque": 5.0
   },
   {
     "codigo": "1457",
@@ -3861,7 +3861,7 @@
     "nome": "VASSOURA PIAÇAVA SINTETICA ALKLIN C/CABO",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 16.25,
-    "estoque": -7.0
+    "estoque": -8.0
   },
   {
     "codigo": "1902",
@@ -4603,7 +4603,7 @@
     "nome": "D-695 KIT POTE TRANSPARENTE  P/ MOLHO C/50UN",
     "categoria": "DESCARTAVEIS",
     "preco": 13.5,
-    "estoque": 46.0
+    "estoque": 45.0
   },
   {
     "codigo": "2474",
@@ -4883,7 +4883,7 @@
     "nome": "ODORIZANTE DE AMBIENTE GEL 60G MARINE PURO AR",
     "categoria": "PRODUTO DE HIGIENE",
     "preco": 12.3,
-    "estoque": 29.0
+    "estoque": 28.0
   },
   {
     "codigo": "2806",
@@ -5317,7 +5317,7 @@
     "nome": "SACO SOS M PARDO C/10UN PLUMA",
     "categoria": "Embalagem",
     "preco": 7.5,
-    "estoque": 17.0
+    "estoque": 15.0
   },
   {
     "codigo": "3030",
@@ -5450,7 +5450,7 @@
     "nome": "POTE REDONDO 200ML C/TAMPA C/24UN DANUBIO",
     "categoria": "DESCARTAVEIS",
     "preco": 14.5,
-    "estoque": 32.0
+    "estoque": 31.0
   },
   {
     "codigo": "3091",
@@ -6388,7 +6388,7 @@
     "nome": "SACO P/ LIXO PRETO P12 200L C/50UN",
     "categoria": "SACO LIXO",
     "preco": 100.0,
-    "estoque": 0.0
+    "estoque": 5.0
   },
   {
     "codigo": "7011",
@@ -6535,7 +6535,7 @@
     "nome": "SACO P/LIXO 20L PRETO P5 C/50UN",
     "categoria": "SACO LIXO",
     "preco": 17.0,
-    "estoque": 45.0
+    "estoque": 44.0
   },
   {
     "codigo": "7891",
@@ -7032,7 +7032,7 @@
     "nome": "MOP ESFREGAO BALDE GIRATORIO 12L GIFTUTIL",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 67.99,
-    "estoque": -1.0
+    "estoque": -2.0
   },
   {
     "codigo": "9252",
@@ -7158,7 +7158,7 @@
     "nome": "D70M BOLO E TORTA RET MEDIA BASE BRANCA",
     "categoria": "DESCARTAVEIS",
     "preco": 11.99,
-    "estoque": 18.0
+    "estoque": 17.0
   },
   {
     "codigo": "12345",
@@ -7746,7 +7746,7 @@
     "nome": "SACO PRA LIXO REFORÇADO  200L  C/10 PRETO",
     "categoria": "SACO LIXO",
     "preco": 21.0,
-    "estoque": -17.0
+    "estoque": 20.0
   },
   {
     "codigo": "72716",
