@@ -200,7 +200,7 @@
     "nome": "SACOLA KRAF P 1UN 17X10CM PLUMA",
     "categoria": "Embalagem",
     "preco": 1.4,
-    "estoque": 33.0
+    "estoque": 23.0
   },
   {
     "codigo": "163",
@@ -550,7 +550,7 @@
     "nome": "ESPONJA MAGICA LIMP. PESADO MAXCLEAN",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 3.5,
-    "estoque": 6.0
+    "estoque": 5.0
   },
   {
     "codigo": "331",
@@ -907,7 +907,7 @@
     "nome": "SACOLA PEAD 30X40X0,12 C/10UN OLIPEL",
     "categoria": "Embalagem",
     "preco": 12.99,
-    "estoque": 8.0
+    "estoque": 7.0
   },
   {
     "codigo": "427",
@@ -1019,7 +1019,7 @@
     "nome": "COLHER SOBREMESA CRISTAL C/50UN ELITE",
     "categoria": "DESCARTAVEIS",
     "preco": 3.99,
-    "estoque": 39.0
+    "estoque": 38.0
   },
   {
     "codigo": "459",
@@ -2566,7 +2566,7 @@
     "nome": "SACO P/ LIXO PRETO 100L C/50UN",
     "categoria": "SACO LIXO",
     "preco": 57.5,
-    "estoque": 32.0
+    "estoque": 31.0
   },
   {
     "codigo": "1049",
@@ -2601,7 +2601,7 @@
     "nome": "CAIXA P/CORREIO N01 21X15X6,5 NIAGRA",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 4.6,
-    "estoque": 33.0
+    "estoque": 31.0
   },
   {
     "codigo": "1056",
@@ -2958,7 +2958,7 @@
     "nome": "PAPEL HIGIENICO BRANCO  EUROPEL 08 ROLOS - 150m",
     "categoria": "PRODUTO DE HIGIENE",
     "preco": 35.5,
-    "estoque": 14.0
+    "estoque": 13.0
   },
   {
     "codigo": "1290",
@@ -3105,7 +3105,7 @@
     "nome": "TOALHA INTERFOLHA BRANCA (VERDE) C/1000UN ISAPEL",
     "categoria": "PRODUTO DE HIGIENE",
     "preco": 16.0,
-    "estoque": 81.0
+    "estoque": 79.0
   },
   {
     "codigo": "1331",
@@ -3161,7 +3161,7 @@
     "nome": "COPO TERMICO 120ML C/25UN ULTRA",
     "categoria": "DESCARTAVEIS",
     "preco": 6.5,
-    "estoque": 44.0
+    "estoque": 43.0
   },
   {
     "codigo": "1352",
@@ -3175,7 +3175,7 @@
     "nome": "KIT POTE E TAMPA RET. 500ML C/12UN GOUR MAX",
     "categoria": "DESCARTAVEIS",
     "preco": 16.99,
-    "estoque": 7.0
+    "estoque": 6.0
   },
   {
     "codigo": "1356",
@@ -3504,7 +3504,7 @@
     "nome": "CESTO PLASTICO 15L BRANCO C/TAMPA TRILHA",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 20.3,
-    "estoque": -2.0
+    "estoque": -7.0
   },
   {
     "codigo": "1561",
@@ -3798,7 +3798,7 @@
     "nome": "PEDRA SANITARIA 25G MISTA AZULIM",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 2.99,
-    "estoque": 78.0
+    "estoque": 76.0
   },
   {
     "codigo": "1853",
@@ -4918,11 +4918,11 @@
     "nome": "DISP. INTRFOLHA EXACCTA PLUS SUST. BRANCO TRILHA",
     "categoria": "DESCARTAVEIS",
     "preco": 32.99,
-    "estoque": 5.0
+    "estoque": 3.0
   },
   {
     "codigo": "2821",
-    "nome": "DISP. PAPEL HIG. ROLAO BRANCO PLUS SUST TRILHA",
+    "nome": "DISPENSER PAPEL HIG. ROLAO BRANCO PLUS SUST TRILHA",
     "categoria": "DESCARTAVEIS",
     "preco": 31.99,
     "estoque": 9.0
@@ -5282,7 +5282,7 @@
     "nome": "DISPENSER DE PAPEL HIGIENICO CAI CAI",
     "categoria": "DESCARTAVEIS",
     "preco": 23.99,
-    "estoque": 6.0
+    "estoque": 4.0
   },
   {
     "codigo": "2997",
@@ -6157,7 +6157,7 @@
     "nome": "TOP LIXO PRETO 50L C/30UN PACK LIXO",
     "categoria": "SACO LIXO",
     "preco": 19.99,
-    "estoque": 10.0
+    "estoque": 9.0
   },
   {
     "codigo": "4391",
@@ -7060,7 +7060,7 @@
     "nome": "SACOS PLASTICO PEBD 10X15X0,06 200G COLOMBO",
     "categoria": "Embalagem",
     "preco": 10.0,
-    "estoque": -3.0
+    "estoque": -4.0
   },
   {
     "codigo": "10044",
@@ -7361,7 +7361,7 @@
     "nome": "D640 DOCE REDONDO 170ML CRISTAL C/10UN DONA RITA",
     "categoria": "DESCARTAVEIS",
     "preco": 3.99,
-    "estoque": 37.0
+    "estoque": 34.0
   },
   {
     "codigo": "29227",
@@ -8950,7 +8950,7 @@
     "nome": "PROTETOR DE RALO MAXXIMO",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 7.5,
-    "estoque": 3.0
+    "estoque": 2.0
   },
   {
     "codigo": "7909875076505",
