@@ -438,7 +438,7 @@
     "nome": "VASSOURA PREMIUM COM CABO ALKLIN",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 18.0,
-    "estoque": 5.0
+    "estoque": 29.0
   },
   {
     "codigo": "296",
@@ -1145,7 +1145,7 @@
     "nome": "CAIXA ONDULADO N3 40X30X30 NIAGRA",
     "categoria": "Embalagem",
     "preco": 11.5,
-    "estoque": 18.0
+    "estoque": 43.0
   },
   {
     "codigo": "530",
@@ -2272,7 +2272,7 @@
     "nome": "CAIXA P/CORREIO N00 (16X11X07)1UN NIAGRA",
     "categoria": "Embalagem",
     "preco": 4.5,
-    "estoque": 25.0
+    "estoque": 85.0
   },
   {
     "codigo": "939",
@@ -2986,7 +2986,7 @@
     "nome": "CAIXA DE CELULAR 20X11X05 1 UN",
     "categoria": "Embalagem",
     "preco": 2.5,
-    "estoque": 0.0
+    "estoque": 25.0
   },
   {
     "codigo": "1295",
@@ -3049,7 +3049,7 @@
     "nome": "PACK LIXO PIA E BANHEIRO TUTTI-FRUITI C/80UN DIVA",
     "categoria": "SACO LIXO",
     "preco": 13.99,
-    "estoque": 16.0
+    "estoque": 15.0
   },
   {
     "codigo": "1316",
@@ -4638,7 +4638,7 @@
     "nome": "LUVA LATEX G PLUS SANRO LARANJA P/LIMPEZA",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 11.99,
-    "estoque": 7.0
+    "estoque": 4.0
   },
   {
     "codigo": "2500",
@@ -5188,10 +5188,10 @@
   },
   {
     "codigo": "2957",
-    "nome": "CAIXA ONDULADO N04  50X40X35 NIAGRA",
+    "nome": "CAIXA ONDULADO N04 50X40X35 NIAGRA",
     "categoria": "Embalagem",
     "preco": 16.99,
-    "estoque": 4.0
+    "estoque": 29.0
   },
   {
     "codigo": "2958",
@@ -5240,7 +5240,7 @@
     "nome": "SACO ZIP N02 06x10CM  C/100UN ARMAZEM",
     "categoria": "Embalagem",
     "preco": 8.0,
-    "estoque": 6.0
+    "estoque": 5.0
   },
   {
     "codigo": "2990",
@@ -5436,7 +5436,7 @@
     "nome": "KIT POTE E TAMPA RET. 750ML C/12UN GOUR MAX",
     "categoria": "DESCARTAVEIS",
     "preco": 21.5,
-    "estoque": 27.0
+    "estoque": 26.0
   },
   {
     "codigo": "3078",
@@ -7214,7 +7214,7 @@
     "nome": "SACOS PLASTICO  30X40X0,06  200G COLOMBO",
     "categoria": "Embalagem",
     "preco": 10.0,
-    "estoque": -25.0
+    "estoque": -26.0
   },
   {
     "codigo": "18021",
@@ -7529,7 +7529,7 @@
     "nome": "MOP ABRASIVO REFIL ALKLIN 1UN",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 12.99,
-    "estoque": -24.0
+    "estoque": -25.0
   },
   {
     "codigo": "31664",
@@ -7886,7 +7886,7 @@
     "nome": "CAKEBOARD BRANCO RETANGULAR 20x35CM",
     "categoria": "Embalagem",
     "preco": 5.5,
-    "estoque": 0.0
+    "estoque": 50.0
   },
   {
     "codigo": "79075",
