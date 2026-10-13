@@ -620,7 +620,7 @@
     "nome": "PLASTICO BOLHA 65MX50M MICRA 20 MN.PLAST",
     "categoria": "Embalagem",
     "preco": 41.99,
-    "estoque": 6.0
+    "estoque": 5.0
   },
   {
     "codigo": "346",
@@ -1145,7 +1145,7 @@
     "nome": "CAIXA PAP. ONDULADO N3 40X30X30 NIAGRA",
     "categoria": "Embalagem",
     "preco": 11.0,
-    "estoque": 23.0
+    "estoque": 18.0
   },
   {
     "codigo": "530",
@@ -3868,7 +3868,7 @@
     "nome": "LIMPA VIDRO  SANCHES",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 8.5,
-    "estoque": 77.0
+    "estoque": 76.0
   },
   {
     "codigo": "1905",
@@ -5191,7 +5191,7 @@
     "nome": "CAIXA PAP. ONDULADO N04  50X40X35 NIAGRA",
     "categoria": "Embalagem",
     "preco": 16.99,
-    "estoque": 8.0
+    "estoque": 4.0
   },
   {
     "codigo": "2958",
@@ -7746,7 +7746,7 @@
     "nome": "SACO PRA LIXO REFORÇADO  200L  C/10 PRETO",
     "categoria": "SACO LIXO",
     "preco": 21.0,
-    "estoque": 20.0
+    "estoque": 18.0
   },
   {
     "codigo": "72716",
