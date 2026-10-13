@@ -417,7 +417,7 @@
     "nome": "ESPONJA MULTIUSO C/4UN ALKLIN",
     "categoria": "UTENSILIOS",
     "preco": 3.99,
-    "estoque": 240.0
+    "estoque": 239.0
   },
   {
     "codigo": "292",
@@ -501,7 +501,7 @@
     "nome": "PAPEL HIGIENICO PREM. DUPLA DELICATTO C/4UN 10X30M",
     "categoria": "PRODUTO DE HIGIENE",
     "preco": 6.99,
-    "estoque": 14.0
+    "estoque": 13.0
   },
   {
     "codigo": "314",
@@ -683,7 +683,7 @@
     "nome": "ESPONJA SALVA UNHA ALCKLIN",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 1.99,
-    "estoque": 26.0
+    "estoque": 24.0
   },
   {
     "codigo": "361",
@@ -1509,7 +1509,7 @@
     "nome": "D2 1L FOLHA ALUMINIO C/10UN WYDA",
     "categoria": "Embalagem",
     "preco": 18.5,
-    "estoque": -26.0
+    "estoque": -27.0
   },
   {
     "codigo": "658",
@@ -1586,7 +1586,7 @@
     "nome": "LIMPA TENIS 250ML SUPER DOM",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 22.5,
-    "estoque": 5.0
+    "estoque": 4.0
   },
   {
     "codigo": "684",
@@ -2125,7 +2125,7 @@
     "nome": "COPO DESCARTAVEL TRANSPARENTE 180ML C/100UN TOTAL PLAST",
     "categoria": "DESCARTAVEIS",
     "preco": 6.99,
-    "estoque": 346.0
+    "estoque": 345.0
   },
   {
     "codigo": "897",
@@ -2153,7 +2153,7 @@
     "nome": "GUARDANAPO 30X31CM C/50UN LUXO PLUMA",
     "categoria": "DESCARTAVEIS",
     "preco": 3.9,
-    "estoque": 33.0
+    "estoque": 32.0
   },
   {
     "codigo": "901",
@@ -2174,7 +2174,7 @@
     "nome": "COPO DESCARTAVEL TRANSPARENTE 50ML C/100UN TOTALPLAST",
     "categoria": "DESCARTAVEIS",
     "preco": 4.5,
-    "estoque": 53.0
+    "estoque": 52.0
   },
   {
     "codigo": "904",
@@ -2594,7 +2594,7 @@
     "nome": "SACOS P/LIXO 100L P8 C/10UN PRETO",
     "categoria": "SACO LIXO",
     "preco": 13.5,
-    "estoque": 88.0
+    "estoque": 87.0
   },
   {
     "codigo": "1055",
@@ -2678,7 +2678,7 @@
     "nome": "MARMITEX DE ISOPOR 1100ML C/10UN COPOBRAS",
     "categoria": "DESCARTAVEIS",
     "preco": 8.5,
-    "estoque": 2.0
+    "estoque": 0.0
   },
   {
     "codigo": "1103",
@@ -2902,7 +2902,7 @@
     "nome": "BOBINA PICOTADA 2KG C/500UN P/ ALIMENTOS 20X28CM EXTRUSA",
     "categoria": "Embalagem",
     "preco": 19.0,
-    "estoque": 6.0
+    "estoque": 5.0
   },
   {
     "codigo": "1225",
@@ -3441,7 +3441,7 @@
     "nome": "PANO DE PRATO BRANCO/ESTAMPADO TATI/NACIONAL 66X38CM",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 4.3,
-    "estoque": 321.0
+    "estoque": 320.0
   },
   {
     "codigo": "1530",
@@ -4204,7 +4204,7 @@
     "nome": "SACOLA BRANCA 1KG 40x50",
     "categoria": "SACO LIXO",
     "preco": 25.5,
-    "estoque": 14.0
+    "estoque": 13.0
   },
   {
     "codigo": "2104",
@@ -4302,7 +4302,7 @@
     "nome": "VASSOURA VARRE KANTO C/CABO ALKLIN",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 15.5,
-    "estoque": 17.0
+    "estoque": 16.0
   },
   {
     "codigo": "2193",
@@ -4463,7 +4463,7 @@
     "nome": "GARRAFA PLASTICO 600ML NEON  ROSA",
     "categoria": "UTENSILIOS",
     "preco": 11.5,
-    "estoque": 0.0
+    "estoque": -1.0
   },
   {
     "codigo": "2361",
@@ -4491,7 +4491,7 @@
     "nome": "TAMPA P/POTE TRANSP. 100,145,180 e 200 C/50UN ULTRA",
     "categoria": "-",
     "preco": 5.0,
-    "estoque": 2.0
+    "estoque": 1.0
   },
   {
     "codigo": "2392",
@@ -4540,14 +4540,14 @@
     "nome": "POTE  RETANGULAR  350ML C/24UN PRAFESTA",
     "categoria": "DESCARTAVEIS",
     "preco": 34.99,
-    "estoque": 1.0
+    "estoque": 0.0
   },
   {
     "codigo": "2412",
     "nome": "POTE  RETANGULAR 250ML C/24UN PRAFESTA",
     "categoria": "DESCARTAVEIS",
     "preco": 26.5,
-    "estoque": 4.0
+    "estoque": 3.0
   },
   {
     "codigo": "2427",
@@ -5583,7 +5583,7 @@
     "nome": "ODORIZANTE DE AMBIENTE GEL 60G CARRO NOVO",
     "categoria": "PRODUTO DE HIGIENE",
     "preco": 12.3,
-    "estoque": 24.0
+    "estoque": 23.0
   },
   {
     "codigo": "3138",
@@ -6108,7 +6108,7 @@
     "nome": "FILME DE PVC  300 METROS 38CMX300M TECFILM",
     "categoria": "Embalagem",
     "preco": 54.99,
-    "estoque": 11.0
+    "estoque": 10.0
   },
   {
     "codigo": "4009",
@@ -6157,7 +6157,7 @@
     "nome": "TOP LIXO PRETO 50L C/30UN PACK LIXO",
     "categoria": "SACO LIXO",
     "preco": 19.99,
-    "estoque": 9.0
+    "estoque": 8.0
   },
   {
     "codigo": "4391",
@@ -6318,7 +6318,7 @@
     "nome": "FOLHA DE ALUMINIO  7,5MX30CM P/VIAGEM",
     "categoria": "DESCARTAVEIS",
     "preco": 6.99,
-    "estoque": 22.0
+    "estoque": 21.0
   },
   {
     "codigo": "6398",
@@ -7536,7 +7536,7 @@
     "nome": "MOP ABRASIVO REFIL ALKLIN 1UN",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 12.99,
-    "estoque": -21.0
+    "estoque": -22.0
   },
   {
     "codigo": "31664",
