@@ -613,14 +613,14 @@
     "nome": "PLASTICO BOLHA 43X10M MICRA 20 MN. PLAST",
     "categoria": "Embalagem",
     "preco": 16.99,
-    "estoque": 15.0
+    "estoque": 38.0
   },
   {
     "codigo": "343",
     "nome": "PLASTICO BOLHA 65MX50M MICRA 20 MN.PLAST",
     "categoria": "Embalagem",
     "preco": 41.99,
-    "estoque": 6.0
+    "estoque": 13.0
   },
   {
     "codigo": "346",
@@ -4176,7 +4176,7 @@
     "nome": "PLASTICO BOLHA 130X100M MICRA MN. PLAST",
     "categoria": "Embalagem",
     "preco": 100.0,
-    "estoque": 10.0
+    "estoque": 26.0
   },
   {
     "codigo": "2084",
@@ -6633,7 +6633,7 @@
     "nome": "GEL SANITARIO AKTIV MARINE 37G BLISTER",
     "categoria": "PRODUTO DE HIGIENE",
     "preco": 16.99,
-    "estoque": 12.0
+    "estoque": 24.0
   },
   {
     "codigo": "7832",
@@ -6927,7 +6927,7 @@
     "nome": "TABLETE PARA CAIXA ACOPLADA AKTIV",
     "categoria": "PRODUTO DE HIGIENE",
     "preco": 10.5,
-    "estoque": 12.0
+    "estoque": 23.0
   },
   {
     "codigo": "8146",
