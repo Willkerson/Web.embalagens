@@ -214,7 +214,7 @@
     "nome": "COLHER SOFT BRANCA C/50UN ELITE",
     "categoria": "DESCARTAVEIS",
     "preco": 6.5,
-    "estoque": 33.0
+    "estoque": 32.0
   },
   {
     "codigo": "177",
@@ -368,7 +368,7 @@
     "nome": "LIXEIRA C/PEDAL 12L ARQPLAST",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 33.5,
-    "estoque": -3.0
+    "estoque": 2.0
   },
   {
     "codigo": "270",
@@ -925,7 +925,7 @@
   },
   {
     "codigo": "429",
-    "nome": "FLANELA LARANJA 28X48CM",
+    "nome": "FLANELA M BRANCA 28X48CM",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 2.5,
     "estoque": 12.0
@@ -1964,7 +1964,7 @@
     "nome": "DESINFETANTE OCEANIC 2L SUPREMA",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 7.25,
-    "estoque": 3.0
+    "estoque": 2.0
   },
   {
     "codigo": "822",
@@ -2006,7 +2006,7 @@
     "nome": "POTE  RETANGULAR 750ML C/24UN PRAFESTA",
     "categoria": "DESCARTAVEIS",
     "preco": 56.99,
-    "estoque": 2.0
+    "estoque": 1.0
   },
   {
     "codigo": "834",
@@ -2062,7 +2062,7 @@
     "nome": "RODO PIA IDEAL SANCHES",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 5.99,
-    "estoque": 18.0
+    "estoque": 17.0
   },
   {
     "codigo": "852",
@@ -2153,7 +2153,7 @@
     "nome": "COPO DESCARTAVEL TRANSPARENTE 180ML C/100UN TOTAL PLAST",
     "categoria": "DESCARTAVEIS",
     "preco": 6.99,
-    "estoque": 342.0
+    "estoque": 341.0
   },
   {
     "codigo": "897",
@@ -2237,7 +2237,7 @@
     "nome": "B131 MAMITEX DE ALUMINIO 750ML C/10UN PRAV.",
     "categoria": "DESCARTAVEIS",
     "preco": 12.99,
-    "estoque": 14.0
+    "estoque": 11.0
   },
   {
     "codigo": "914",
@@ -2426,7 +2426,7 @@
     "nome": "BALDE PLAST 20LTS",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 22.5,
-    "estoque": -5.0
+    "estoque": 2.0
   },
   {
     "codigo": "0231",
@@ -2475,7 +2475,7 @@
     "nome": "SACO PLASTICO PEBD 35X45CM HELVIPACK",
     "categoria": "Embalagem",
     "preco": 38.99,
-    "estoque": 8.0
+    "estoque": 7.0
   },
   {
     "codigo": "1009",
@@ -2538,7 +2538,7 @@
     "nome": "SACOS PLASTICO  35x45x0,06 200G  COLOMBO/HELVIPACK",
     "categoria": "Embalagem",
     "preco": 10.0,
-    "estoque": 22.0
+    "estoque": 21.0
   },
   {
     "codigo": "1033",
@@ -2615,7 +2615,7 @@
     "nome": "SACO P/ LIXO PRETO P8 60L C/10UN",
     "categoria": "SACO LIXO",
     "preco": 8.99,
-    "estoque": 61.0
+    "estoque": 59.0
   },
   {
     "codigo": "1053",
@@ -2671,7 +2671,7 @@
     "nome": "BACIA  PLASTICA 45L PLASMONT",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 49.5,
-    "estoque": -2.0
+    "estoque": 2.0
   },
   {
     "codigo": "1080",
@@ -2853,7 +2853,7 @@
     "nome": "FITA ADESIVA POLIPROPILENO TRANSPARENTE 48MMX40M TECTAPE",
     "categoria": "PAPELARIA",
     "preco": 4.99,
-    "estoque": 95.0
+    "estoque": 94.0
   },
   {
     "codigo": "1168",
@@ -2930,7 +2930,7 @@
     "nome": "BOBINA PICOTADA 2KG C/500UN P/ ALIMENTOS 20X28CM EXTRUSA",
     "categoria": "Embalagem",
     "preco": 19.0,
-    "estoque": 2.0
+    "estoque": 1.0
   },
   {
     "codigo": "1225",
@@ -2986,7 +2986,7 @@
     "nome": "PAPEL HIGIENICO BRANCO  EUROPEL 08 ROLOS - 150m",
     "categoria": "PRODUTO DE HIGIENE",
     "preco": 35.5,
-    "estoque": 12.0
+    "estoque": 32.0
   },
   {
     "codigo": "1290",
@@ -3014,7 +3014,7 @@
     "nome": "CAIXA DE CELULAR 20X11X05 1 UN",
     "categoria": "Embalagem",
     "preco": 2.5,
-    "estoque": 25.0
+    "estoque": 24.0
   },
   {
     "codigo": "1295",
@@ -3035,7 +3035,7 @@
     "nome": "POTE REDONDO 500ML C/TAMPA C/24UN PRAFESTA",
     "categoria": "DESCARTAVEIS",
     "preco": 28.99,
-    "estoque": 15.0
+    "estoque": 13.0
   },
   {
     "codigo": "1299",
@@ -3280,7 +3280,7 @@
     "nome": "LIXEIRA COM PEDAL 6.6L SANREMO",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 40.5,
-    "estoque": 2.0
+    "estoque": 4.0
   },
   {
     "codigo": "1426",
@@ -3301,7 +3301,7 @@
     "nome": "LIXEIRA DE PIA ECO BLACK 6,5L PLASUTIL",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 19.5,
-    "estoque": -4.0
+    "estoque": 2.0
   },
   {
     "codigo": "1433",
@@ -3392,7 +3392,7 @@
     "nome": "G60MA GALVONOTEK BOLO GR. ALTA 2,45KG BR29CM",
     "categoria": "DESCARTAVEIS",
     "preco": 9.5,
-    "estoque": 13.0
+    "estoque": 12.0
   },
   {
     "codigo": "1477",
@@ -3476,7 +3476,7 @@
     "nome": "TOALHA INTERFOLHA CELULOSE PREMIUM WHITE PAPER C/1000UN",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 23.99,
-    "estoque": 65.0
+    "estoque": 85.0
   },
   {
     "codigo": "1526",
@@ -3518,7 +3518,7 @@
     "nome": "PRATO BRANCO RASO 15CM C/10UN TOTAL PLAST",
     "categoria": "DESCARTAVEIS",
     "preco": 2.5,
-    "estoque": 167.0
+    "estoque": 164.0
   },
   {
     "codigo": "1548",
@@ -3560,7 +3560,7 @@
     "nome": "LIXEIRA PLAST. LABEL CLICK PRATA 9L AEQPLAST",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 24.5,
-    "estoque": -5.0
+    "estoque": 1.0
   },
   {
     "codigo": "1583",
@@ -3665,7 +3665,7 @@
     "nome": "SACOLA VERDE REFORÇADA 1KG 45x60",
     "categoria": "Embalagem",
     "preco": 19.99,
-    "estoque": 22.0
+    "estoque": 21.0
   },
   {
     "codigo": "1713",
@@ -3679,7 +3679,7 @@
     "nome": "SACOLA VERDE REFORÇADA 1KG 60X80",
     "categoria": "Embalagem",
     "preco": 19.99,
-    "estoque": 7.0
+    "estoque": 5.0
   },
   {
     "codigo": "1715",
@@ -3819,7 +3819,7 @@
     "nome": "LUVA DE VINIL M S/TALCO C/100UN TALGE",
     "categoria": "DESCARTAVEIS",
     "preco": 19.99,
-    "estoque": 85.0
+    "estoque": 84.0
   },
   {
     "codigo": "1819",
@@ -4029,7 +4029,7 @@
     "nome": "TOALHA INTERFOLHA LUXO 20X21CM C/1000UN WHITE PAPER",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 24.99,
-    "estoque": 28.0
+    "estoque": 48.0
   },
   {
     "codigo": "1981",
@@ -4078,7 +4078,7 @@
     "nome": "SACOLA PLASTICA MILHEIRO BRANCA 30X40 200G",
     "categoria": "Embalagem",
     "preco": 11.99,
-    "estoque": 4.0
+    "estoque": 3.0
   },
   {
     "codigo": "2027",
@@ -4239,7 +4239,7 @@
     "nome": "SACOLA BRANCA 1KG 35x45",
     "categoria": "Embalagem",
     "preco": 25.5,
-    "estoque": -11.0
+    "estoque": -12.0
   },
   {
     "codigo": "2103",
@@ -4404,9 +4404,9 @@
   },
   {
     "codigo": "2291",
-    "nome": "CAIXA COPO 180ML TOTALPLAST C/2500UN FECHADA",
+    "nome": "CAIXA COPO 180ML TOTALPLAST C/2500UN FECHADO",
     "categoria": "DESCARTAVEIS",
-    "preco": 169.99,
+    "preco": 150.5,
     "estoque": 7.0
   },
   {
@@ -4764,7 +4764,7 @@
     "nome": "ESPONJA  ANTIRISCO C/4UN ALKLIN",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 4.0,
-    "estoque": 99.0
+    "estoque": 98.0
   },
   {
     "codigo": "2599",
@@ -4799,7 +4799,7 @@
     "nome": "LIXEIRA C/PEDAL 10L ARQPLAST",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 32.0,
-    "estoque": 3.0
+    "estoque": 6.0
   },
   {
     "codigo": "2655",
@@ -5191,14 +5191,14 @@
     "nome": "BACIA PLASTICA 18L ARQPLAST",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 19.0,
-    "estoque": -2.0
+    "estoque": 3.0
   },
   {
     "codigo": "2913",
     "nome": "SACOLA KRAFT BRANCO H2 C/100UN 19X12CM PLUMA",
     "categoria": "DESCARTAVEIS",
     "preco": 8.0,
-    "estoque": 11.0
+    "estoque": 10.0
   },
   {
     "codigo": "2922",
@@ -5247,7 +5247,7 @@
     "nome": "PRATO RASO PR26 BRC/10UN TOTAL PLAST",
     "categoria": "DESCARTAVEIS",
     "preco": 8.5,
-    "estoque": 18.0
+    "estoque": 16.0
   },
   {
     "codigo": "2938",
@@ -5660,7 +5660,7 @@
     "nome": "DESENTUPIDOR PIAS E VASOS SANITARIOS1L START",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 26.99,
-    "estoque": 2.0
+    "estoque": 1.0
   },
   {
     "codigo": "3132",
@@ -5919,7 +5919,7 @@
     "nome": "PERCABONATO  DE SODIO 1KG DENSO",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 10.99,
-    "estoque": -13.0
+    "estoque": -14.0
   },
   {
     "codigo": "3420",
@@ -6080,7 +6080,7 @@
     "nome": "LIMPADOR CONCENTRADO VANILLA GOLD 120ML SANOL",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 12.99,
-    "estoque": 35.0
+    "estoque": 34.0
   },
   {
     "codigo": "3984",
@@ -6227,7 +6227,7 @@
     "nome": "CAIXA PARA ESFIHA N04 ESPECIAL (30X30X07) ALTA",
     "categoria": "Embalagem",
     "preco": 7.5,
-    "estoque": 3.0
+    "estoque": -2.0
   },
   {
     "codigo": "4111",
@@ -6262,7 +6262,7 @@
     "nome": "G60M  BOLO MEDIA  GALVANOTEK",
     "categoria": "-",
     "preco": 7.5,
-    "estoque": 37.0
+    "estoque": 36.0
   },
   {
     "codigo": "4561",
@@ -6346,7 +6346,7 @@
     "nome": "LIXEIRA C/PEDAL 7L MONTE LIBANO",
     "categoria": "PRODUTO DE HIGIENE",
     "preco": 31.99,
-    "estoque": -1.0
+    "estoque": 3.0
   },
   {
     "codigo": "5109",
@@ -6437,7 +6437,7 @@
     "nome": "LIXEIRA COM TAMPA 65L",
     "categoria": "Outras",
     "preco": 65.99,
-    "estoque": -2.0
+    "estoque": 2.0
   },
   {
     "codigo": "6503",
@@ -6493,7 +6493,7 @@
     "nome": "BACIA PLASTICA GIGANTE 30L PLASNEW",
     "categoria": "-",
     "preco": 27.99,
-    "estoque": -1.0
+    "estoque": 3.0
   },
   {
     "codigo": "7010",
@@ -6542,7 +6542,7 @@
     "nome": "GUARDANAPO TV 14X13CM 500G",
     "categoria": "DESCARTAVEIS",
     "preco": 15.5,
-    "estoque": 8.0
+    "estoque": 7.0
   },
   {
     "codigo": "7212",
@@ -6623,9 +6623,16 @@
   },
   {
     "codigo": "7700",
-    "nome": "PASTILHA ADESIVA 10G CARTUCHO C/3",
+    "nome": "PASTILHA ADESIVA 10G CARTUCHO C/3 Aktiv",
     "categoria": "PRODUTO DE HIGIENE",
     "preco": 10.5,
+    "estoque": 12.0
+  },
+  {
+    "codigo": "7802",
+    "nome": "GEL SANITARIO AKTIV MARINE 37G BLISTER",
+    "categoria": "PRODUTO DE HIGIENE",
+    "preco": 16.99,
     "estoque": 0.0
   },
   {
@@ -6634,6 +6641,13 @@
     "categoria": "Embalagem",
     "preco": 107.99,
     "estoque": 2.0
+  },
+  {
+    "codigo": "7864",
+    "nome": "BLOCO SANITARIO APARELHO",
+    "categoria": "PRODUTO DE HIGIENE",
+    "preco": 10.5,
+    "estoque": 0.0
   },
   {
     "codigo": "7874",
@@ -6891,8 +6905,8 @@
     "codigo": "8121",
     "nome": "TABLETE PARA CAIXA ACOPLADA DUO  AKTIV",
     "categoria": "PRODUTO DE HIGIENE",
-    "preco": 11.0,
-    "estoque": -1.0
+    "preco": 10.5,
+    "estoque": 12.0
   },
   {
     "codigo": "8140",
@@ -7011,7 +7025,7 @@
     "nome": "ELASTICO BESTFER",
     "categoria": "-",
     "preco": 5.99,
-    "estoque": 33.0
+    "estoque": 32.0
   },
   {
     "codigo": "8513",
@@ -7042,6 +7056,13 @@
     "estoque": -2.0
   },
   {
+    "codigo": "8878",
+    "nome": "PORTA  FILTRO DE CAFE",
+    "categoria": "Mercadoria para Revenda",
+    "preco": 20.0,
+    "estoque": 2.0
+  },
+  {
     "codigo": "8888",
     "nome": "KIT CONFEITEIRO C/ 9 PÇ",
     "categoria": "Embalagem",
@@ -7053,7 +7074,7 @@
     "nome": "BACIA PLASTICA CANELADA 12L ARQPLAST",
     "categoria": "-",
     "preco": 15.0,
-    "estoque": -4.0
+    "estoque": 4.0
   },
   {
     "codigo": "8910",
@@ -7263,7 +7284,7 @@
     "nome": "LIXEIRA PLAST. LABEL CLICK PRATA 13,5L SANREMO",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 60.99,
-    "estoque": 0.0
+    "estoque": 2.0
   },
   {
     "codigo": "11179",
@@ -7879,7 +7900,7 @@
     "nome": "LIXEIRA C/PEDAL 10L INOX",
     "categoria": "-",
     "preco": 45.99,
-    "estoque": -3.0
+    "estoque": 3.0
   },
   {
     "codigo": "70181",
@@ -7998,7 +8019,7 @@
     "nome": "PRATO TABULEIRO LAMINADO N05, 28,5CM",
     "categoria": "DESCARTAVEIS",
     "preco": 3.5,
-    "estoque": 97.0
+    "estoque": 96.0
   },
   {
     "codigo": "79022",
@@ -8670,7 +8691,7 @@
     "nome": "PILHA ALFACELL SUPER ALCALINA 2UNI (AA/LR6)",
     "categoria": "UTENSILIOS",
     "preco": 7.0,
-    "estoque": 20.0
+    "estoque": 19.0
   },
   {
     "codigo": "129086",
@@ -8852,7 +8873,7 @@
     "nome": "LIXEIRA C/PEDAL 7L PRETO ARQPLAST",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 25.5,
-    "estoque": -3.0
+    "estoque": 3.0
   },
   {
     "codigo": "286457",
@@ -8957,7 +8978,7 @@
     "nome": "GUARUFILME BOBINA PVC  RES 28CMX15M",
     "categoria": "Embalagem",
     "preco": 5.8,
-    "estoque": 7.0
+    "estoque": 6.0
   },
   {
     "codigo": "7893595170103",
@@ -9100,25 +9121,11 @@
     "estoque": 6.0
   },
   {
-    "codigo": "7909875076509",
-    "nome": "GEL ADESIVO APARELHO",
-    "categoria": "PRODUTO DE HIGIENE",
-    "preco": 16.99,
-    "estoque": 0.0
-  },
-  {
     "codigo": "7909875076510",
     "nome": "GEL ADESIVO REFIL",
     "categoria": "PRODUTO DE HIGIENE",
     "preco": 14.99,
     "estoque": 1.0
-  },
-  {
-    "codigo": "7909875076511",
-    "nome": "BLOCO SANITARIO APARELHO",
-    "categoria": "PRODUTO DE HIGIENE",
-    "preco": 7.99,
-    "estoque": 0.0
   },
   {
     "codigo": "7909875076512",
