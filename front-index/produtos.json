@@ -1939,6 +1939,13 @@
     "estoque": -1.0
   },
   {
+    "codigo": "815",
+    "nome": "RALO P/PIA INOX 11,5CM TINGS",
+    "categoria": "UTENSILIOS",
+    "preco": 7.99,
+    "estoque": 0.0
+  },
+  {
     "codigo": "816",
     "nome": "TESOURA P/ CABELO  7,5 HOMEMORE",
     "categoria": "UTENSILIOS",
@@ -2535,9 +2542,9 @@
   },
   {
     "codigo": "1033",
-    "nome": "RALO P/PIA  BORDA DE ALUM.",
+    "nome": "RALO P/PIA 7CM BORDA DE ALUM.",
     "categoria": "PRODUTO DE LIMPEZA",
-    "preco": 3.5,
+    "preco": 3.99,
     "estoque": -6.0
   },
   {
@@ -5276,6 +5283,13 @@
     "categoria": "Embalagem",
     "preco": 4.5,
     "estoque": 10.0
+  },
+  {
+    "codigo": "2968",
+    "nome": "GANCHO ADESIVO C/1UN  TOP",
+    "categoria": "UTENSILIOS",
+    "preco": 12.99,
+    "estoque": 0.0
   },
   {
     "codigo": "2977",
@@ -8874,13 +8888,6 @@
     "categoria": "DESCARTAVEIS",
     "preco": 30.49,
     "estoque": -1.0
-  },
-  {
-    "codigo": "814_1354",
-    "nome": "Cópia de RALO PIA PRETO NIPO",
-    "categoria": "UTENSILIOS",
-    "preco": 7.0,
-    "estoque": 0.0
   },
   {
     "codigo": "2578_1136",
