@@ -249,7 +249,7 @@
     "nome": "COPO TERMICO 180ML C/20UN TOTALPLAST",
     "categoria": "DESCARTAVEIS",
     "preco": 5.99,
-    "estoque": 83.0
+    "estoque": 82.0
   },
   {
     "codigo": "189",
@@ -263,7 +263,7 @@
     "nome": "COPO TERMICO 120ML C/20UN BOM APETITE",
     "categoria": "DESCARTAVEIS",
     "preco": 3.99,
-    "estoque": 48.0
+    "estoque": 47.0
   },
   {
     "codigo": "212",
@@ -494,7 +494,7 @@
     "nome": "COPO TERMICO 240ML C/20UN TOTALPLAST",
     "categoria": "DESCARTAVEIS",
     "preco": 6.99,
-    "estoque": 13.0
+    "estoque": 12.0
   },
   {
     "codigo": "313",
@@ -613,14 +613,14 @@
     "nome": "PLASTICO BOLHA 43X10M MICRA 20 MN. PLAST",
     "categoria": "Embalagem",
     "preco": 16.99,
-    "estoque": 4.0
+    "estoque": 15.0
   },
   {
     "codigo": "343",
     "nome": "PLASTICO BOLHA 65MX50M MICRA 20 MN.PLAST",
     "categoria": "Embalagem",
     "preco": 41.99,
-    "estoque": 5.0
+    "estoque": 6.0
   },
   {
     "codigo": "346",
@@ -2615,7 +2615,7 @@
     "nome": "SACO P/ LIXO PRETO P8 60L C/10UN",
     "categoria": "SACO LIXO",
     "preco": 8.99,
-    "estoque": 59.0
+    "estoque": 58.0
   },
   {
     "codigo": "1053",
@@ -2706,7 +2706,7 @@
     "nome": "MARMITEX DE ISOPOR 1100ML C/10UN COPOBRAS",
     "categoria": "DESCARTAVEIS",
     "preco": 8.5,
-    "estoque": 0.0
+    "estoque": -3.0
   },
   {
     "codigo": "1103",
@@ -3595,7 +3595,7 @@
     "nome": "SACO BRANCO KRAFT VI 19X19CM C/100UN",
     "categoria": "DESCARTAVEIS",
     "preco": 14.0,
-    "estoque": 6.0
+    "estoque": 5.0
   },
   {
     "codigo": "1600",
@@ -3665,7 +3665,7 @@
     "nome": "SACOLA VERDE REFORÇADA 1KG 45x60",
     "categoria": "Embalagem",
     "preco": 19.99,
-    "estoque": 21.0
+    "estoque": 20.0
   },
   {
     "codigo": "1713",
@@ -3966,7 +3966,7 @@
     "nome": "CUMBUCA C/TAMPA 500ML C/10UN BOM APETITE",
     "categoria": "DESCARTAVEIS",
     "preco": 6.99,
-    "estoque": 13.0
+    "estoque": 11.0
   },
   {
     "codigo": "1932",
@@ -4176,7 +4176,7 @@
     "nome": "PLASTICO BOLHA 130X100M MICRA MN. PLAST",
     "categoria": "Embalagem",
     "preco": 100.0,
-    "estoque": 4.0
+    "estoque": 10.0
   },
   {
     "codigo": "2084",
@@ -5198,7 +5198,7 @@
     "nome": "SACOLA KRAFT BRANCO H2 C/100UN 19X12CM PLUMA",
     "categoria": "DESCARTAVEIS",
     "preco": 8.0,
-    "estoque": 10.0
+    "estoque": 9.0
   },
   {
     "codigo": "2922",
@@ -6542,7 +6542,7 @@
     "nome": "GUARDANAPO TV 14X13CM 500G",
     "categoria": "DESCARTAVEIS",
     "preco": 15.5,
-    "estoque": 7.0
+    "estoque": 5.0
   },
   {
     "codigo": "7212",
@@ -6633,7 +6633,7 @@
     "nome": "GEL SANITARIO AKTIV MARINE 37G BLISTER",
     "categoria": "PRODUTO DE HIGIENE",
     "preco": 16.99,
-    "estoque": 0.0
+    "estoque": 12.0
   },
   {
     "codigo": "7832",
@@ -6927,7 +6927,7 @@
     "nome": "TABLETE PARA CAIXA ACOPLADA AKTIV",
     "categoria": "PRODUTO DE HIGIENE",
     "preco": 10.5,
-    "estoque": 1.0
+    "estoque": 12.0
   },
   {
     "codigo": "8146",
@@ -7704,7 +7704,7 @@
     "nome": "MOP ABRASIVO REFIL ALKLIN 1UN",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 12.99,
-    "estoque": -25.0
+    "estoque": -28.0
   },
   {
     "codigo": "31664",
