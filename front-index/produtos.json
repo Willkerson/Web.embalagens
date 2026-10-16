@@ -2307,7 +2307,7 @@
     "nome": "CAIXA P/CORREIO N02 26X17X09 NIAGRA",
     "categoria": "Embalagem",
     "preco": 6.5,
-    "estoque": 36.0
+    "estoque": 35.0
   },
   {
     "codigo": "940",
@@ -2629,7 +2629,7 @@
     "nome": "CAIXA P/CORREIO N01 21X15X6,5 NIAGRA",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 4.6,
-    "estoque": 31.0
+    "estoque": 30.0
   },
   {
     "codigo": "1056",
@@ -3014,7 +3014,7 @@
     "nome": "CAIXA DE CELULAR 20X11X05 1 UN",
     "categoria": "Embalagem",
     "preco": 2.5,
-    "estoque": 24.0
+    "estoque": 21.0
   },
   {
     "codigo": "1295",
