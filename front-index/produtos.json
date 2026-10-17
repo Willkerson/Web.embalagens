@@ -399,6 +399,13 @@
     "estoque": 7.0
   },
   {
+    "codigo": "277",
+    "nome": "CARRINHO DE COMPRA 96CM AZUL",
+    "categoria": "UTENSILIOS",
+    "preco": 63.99,
+    "estoque": 1.0
+  },
+  {
     "codigo": "284",
     "nome": "CAIXA TERMICA ISOPOR 18L ISOTERM",
     "categoria": "Embalagem",
@@ -976,7 +983,7 @@
     "codigo": "445",
     "nome": "VELA  ANIVERSÁRIO C/8UN SILVER FESTAS DOURADA",
     "categoria": "-",
-    "preco": 18.4,
+    "preco": 19.99,
     "estoque": 0.0
   },
   {
@@ -1342,6 +1349,13 @@
     "categoria": "DESCARTAVEIS",
     "preco": 5.99,
     "estoque": -10.0
+  },
+  {
+    "codigo": "601",
+    "nome": "HASTES FLEXIVEIS C/75UN COTTON",
+    "categoria": "PRODUTO DE HIGIENE",
+    "preco": 5.99,
+    "estoque": 7.0
   },
   {
     "codigo": "604",
@@ -1809,7 +1823,7 @@
     "codigo": "766",
     "nome": "ESPUMA DESENGORDURANTE 300ML SPRAY SUPER DOM",
     "categoria": "PRODUTO DE LIMPEZA",
-    "preco": 18.0,
+    "preco": 22.5,
     "estoque": 0.0
   },
   {
@@ -2202,7 +2216,7 @@
     "nome": "COPO DESCARTAVEL TRANSPARENTE 50ML C/100UN TOTALPLAST",
     "categoria": "DESCARTAVEIS",
     "preco": 4.5,
-    "estoque": 40.0
+    "estoque": 39.0
   },
   {
     "codigo": "904",
@@ -2552,7 +2566,7 @@
     "nome": "SACO P/ LIXO PRETO P8 60L C/50UN",
     "categoria": "SACO LIXO",
     "preco": 38.5,
-    "estoque": 17.0
+    "estoque": 16.0
   },
   {
     "codigo": "1042",
@@ -3749,7 +3763,7 @@
     "nome": "COPO DESCARTAVEL TRANSPARENTE 250ML C/100UN TOTAL PLAST",
     "categoria": "DESCARTAVEIS",
     "preco": 11.99,
-    "estoque": 13.0
+    "estoque": 12.0
   },
   {
     "codigo": "1778",
@@ -4074,6 +4088,20 @@
     "estoque": -9.0
   },
   {
+    "codigo": "2024",
+    "nome": "BATERIA SUPER ALCALINA  6LR61",
+    "categoria": "UTENSILIOS",
+    "preco": 16.5,
+    "estoque": 0.0
+  },
+  {
+    "codigo": "2025",
+    "nome": "BATERIA LITHIUM BOTAO CR2025-5  1 UNIDADE",
+    "categoria": "UTENSILIOS",
+    "preco": 2.5,
+    "estoque": 29.0
+  },
+  {
     "codigo": "2026",
     "nome": "SACOLA PLASTICA MILHEIRO BRANCA 30X40 200G",
     "categoria": "Embalagem",
@@ -4121,6 +4149,13 @@
     "categoria": "UTENSILIOS",
     "preco": 3.5,
     "estoque": 4.0
+  },
+  {
+    "codigo": "2043",
+    "nome": "PILHA AAA C/4UN ALFACELL",
+    "categoria": "UTENSILIOS",
+    "preco": 4.5,
+    "estoque": 0.0
   },
   {
     "codigo": "2058",
@@ -4267,7 +4302,7 @@
     "nome": "SACOLA BRANCA 1KG 90x100",
     "categoria": "SACO LIXO",
     "preco": 25.5,
-    "estoque": 8.0
+    "estoque": 7.0
   },
   {
     "codigo": "2122",
@@ -4680,7 +4715,7 @@
     "nome": "D695 KIT POTE TRANSPARENTE  P/ MOLHO C/50UN",
     "categoria": "DESCARTAVEIS",
     "preco": 13.5,
-    "estoque": 45.0
+    "estoque": 44.0
   },
   {
     "codigo": "2474",
@@ -5611,7 +5646,7 @@
     "nome": "POTE E TAMPA RET.1000ML C/24UN GOUR MAX",
     "categoria": "DESCARTAVEIS",
     "preco": 41.99,
-    "estoque": 2.0
+    "estoque": 1.0
   },
   {
     "codigo": "3114",
@@ -5878,6 +5913,13 @@
     "categoria": "PRODUTO DE HIGIENE",
     "preco": 8.5,
     "estoque": 20.0
+  },
+  {
+    "codigo": "3228",
+    "nome": "PILHA ALFACELL SUPER ALCALINA 2UNI (AAA/LR03)",
+    "categoria": "UTENSILIOS",
+    "preco": 6.0,
+    "estoque": 27.0
   },
   {
     "codigo": "3232",
@@ -6286,6 +6328,13 @@
     "estoque": -2.0
   },
   {
+    "codigo": "4633",
+    "nome": "FACA DE COZINHA 8\" BASS",
+    "categoria": "UTENSILIOS",
+    "preco": 16.99,
+    "estoque": 0.0
+  },
+  {
     "codigo": "4641",
     "nome": "FORMA DE COZIMENTO SILICONE 16CM REDONDO",
     "categoria": "ALIMENTO/GENERO ALIMENTICIO",
@@ -6499,7 +6548,7 @@
     "codigo": "6926",
     "nome": "MULTI INSETICIDA SPRAY 250ML  MULTIUSO",
     "categoria": "Outras",
-    "preco": 11.0,
+    "preco": 9.99,
     "estoque": 23.0
   },
   {
@@ -6979,6 +7028,13 @@
     "estoque": 0.0
   },
   {
+    "codigo": "8207",
+    "nome": "BALANCA DIGITAL10KG 23CM TINGS",
+    "categoria": "UTENSILIOS",
+    "preco": 24.99,
+    "estoque": 0.0
+  },
+  {
     "codigo": "8276",
     "nome": "ALCOOL LIQUIDO 1L 70% BARBAREX",
     "categoria": "PRODUTO DE LIMPEZA",
@@ -7084,6 +7140,13 @@
     "estoque": 2.0
   },
   {
+    "codigo": "8611",
+    "nome": "ACENDEDOR BJ8611",
+    "categoria": "Outras",
+    "preco": 14.99,
+    "estoque": 0.0
+  },
+  {
     "codigo": "8745",
     "nome": "CORDA  P/VARAL 15M CLEANTECH",
     "categoria": "Outras",
@@ -7175,6 +7238,13 @@
     "estoque": 0.0
   },
   {
+    "codigo": "9043",
+    "nome": "FITA DUPLA FACE 18MMX1.2M BARCELONA",
+    "categoria": "UTENSILIOS",
+    "preco": 6.5,
+    "estoque": 0.0
+  },
+  {
     "codigo": "9044",
     "nome": "FITA DUPLA FACE 18MMX2M MONALIZA",
     "categoria": "UTENSILIOS",
@@ -7213,7 +7283,7 @@
     "codigo": "9191",
     "nome": "MOP ESFREGAO BALDE GIRATORIO 12L JAVICK",
     "categoria": "PRODUTO DE LIMPEZA",
-    "preco": 36.0,
+    "preco": 67.99,
     "estoque": 0.0
   },
   {
@@ -8176,6 +8246,13 @@
     "estoque": 0.0
   },
   {
+    "codigo": "861'9",
+    "nome": "ACENDEDOR BJ8619",
+    "categoria": "Outras",
+    "preco": 14.99,
+    "estoque": 2.0
+  },
+  {
     "codigo": "87687",
     "nome": "AGUA SANITARIA DACLOR 1L",
     "categoria": "PRODUTO DE LIMPEZA",
@@ -8736,13 +8813,6 @@
     "estoque": 3.0
   },
   {
-    "codigo": "129084",
-    "nome": "PILHA ALFACELL SUPER ALCALINA 2UNI (AAA/LR03)",
-    "categoria": "UTENSILIOS",
-    "preco": 6.0,
-    "estoque": 27.0
-  },
-  {
     "codigo": "129085",
     "nome": "PILHA ALFACELL SUPER ALCALINA 2UNI (AA/LR6)",
     "categoria": "UTENSILIOS",
@@ -8848,13 +8918,6 @@
     "estoque": 16.0
   },
   {
-    "codigo": "129102",
-    "nome": "BATERIA LITHIUM BOTAO CR2025-5  1 UNIDADE",
-    "categoria": "UTENSILIOS",
-    "preco": 2.5,
-    "estoque": 29.0
-  },
-  {
     "codigo": "129103",
     "nome": "VARAL DE PLASTICA C18UN PRENDEDORES OVAL",
     "categoria": "UTENSILIOS",
@@ -8909,13 +8972,6 @@
     "categoria": "-",
     "preco": 6.99,
     "estoque": -2.0
-  },
-  {
-    "codigo": "129140",
-    "nome": "ACENDEDOR BJ8619",
-    "categoria": "Outras",
-    "preco": 14.99,
-    "estoque": 2.0
   },
   {
     "codigo": "151515",
