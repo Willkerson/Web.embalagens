@@ -263,7 +263,7 @@
     "nome": "COPO TERMICO 120ML C/20UN BOM APETITE",
     "categoria": "DESCARTAVEIS",
     "preco": 3.99,
-    "estoque": 45.0
+    "estoque": 43.0
   },
   {
     "codigo": "212",
@@ -494,7 +494,7 @@
     "nome": "PANO PANOTEK  REUTILIZAVEL C/40UN",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 12.0,
-    "estoque": -5.0
+    "estoque": -6.0
   },
   {
     "codigo": "312",
@@ -550,7 +550,7 @@
     "nome": "SACO P/ LIXO PRETO 20L  C/100UN",
     "categoria": "SACO LIXO",
     "preco": 33.99,
-    "estoque": 11.0
+    "estoque": 10.0
   },
   {
     "codigo": "330",
@@ -760,7 +760,7 @@
     "nome": "PANO DE CHAO BRANCO ALVEJADO 45CMX69CM SOUZA PPR28",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 6.7,
-    "estoque": 181.0
+    "estoque": 180.0
   },
   {
     "codigo": "391",
@@ -886,7 +886,7 @@
     "nome": "COLHER SOBREMESA BRANCA C/50UN ELITE",
     "categoria": "DESCARTAVEIS",
     "preco": 3.99,
-    "estoque": 33.0
+    "estoque": 29.0
   },
   {
     "codigo": "423",
@@ -2202,7 +2202,7 @@
     "nome": "COPO DESCARTAVEL 180ML PS C/100UN GLIGHT",
     "categoria": "DESCARTAVEIS",
     "preco": 5.99,
-    "estoque": 19.0
+    "estoque": 16.0
   },
   {
     "codigo": "902",
@@ -2552,7 +2552,7 @@
     "nome": "SACOS PLASTICO  35x45x0,06 200G  COLOMBO/HELVIPACK",
     "categoria": "Embalagem",
     "preco": 10.0,
-    "estoque": 21.0
+    "estoque": 20.0
   },
   {
     "codigo": "1033",
@@ -2622,21 +2622,21 @@
     "nome": "SACO P/ LIXO PRETO P6 40L C/10UN",
     "categoria": "SACO LIXO",
     "preco": 5.99,
-    "estoque": 50.0
+    "estoque": 49.0
   },
   {
     "codigo": "1052",
     "nome": "SACO P/ LIXO PRETO P8 60L C/10UN",
     "categoria": "SACO LIXO",
     "preco": 8.99,
-    "estoque": 46.0
+    "estoque": 43.0
   },
   {
     "codigo": "1053",
     "nome": "SACOS P/LIXO 100L P8 C/10UN PRETO",
     "categoria": "SACO LIXO",
     "preco": 13.5,
-    "estoque": 83.0
+    "estoque": 81.0
   },
   {
     "codigo": "1055",
@@ -2867,7 +2867,7 @@
     "nome": "FITA ADESIVA POLIPROPILENO TRANSPARENTE 48MMX40M TECTAPE",
     "categoria": "PAPELARIA",
     "preco": 4.99,
-    "estoque": 88.0
+    "estoque": 87.0
   },
   {
     "codigo": "1168",
@@ -2944,7 +2944,7 @@
     "nome": "BOBINA PICOTADA 2KG C/500UN P/ ALIMENTOS 20X28CM EXTRUSA",
     "categoria": "Embalagem",
     "preco": 19.0,
-    "estoque": -2.0
+    "estoque": -3.0
   },
   {
     "codigo": "1225",
@@ -3217,7 +3217,7 @@
     "nome": "KIT POTE E TAMPA RET. 500ML C/12UN GOUR MAX",
     "categoria": "DESCARTAVEIS",
     "preco": 16.99,
-    "estoque": -1.0
+    "estoque": -2.0
   },
   {
     "codigo": "1356",
@@ -3371,7 +3371,7 @@
     "nome": "POTE 100ML C/100UN COPOMAIS",
     "categoria": "DESCARTAVEIS",
     "preco": 6.5,
-    "estoque": 8.0
+    "estoque": 7.0
   },
   {
     "codigo": "1465",
@@ -3434,7 +3434,7 @@
     "nome": "D645 POTE REDONDO BASE E TAMPA C/10UN 120ML",
     "categoria": "DESCARTAVEIS",
     "preco": 3.5,
-    "estoque": 2.0
+    "estoque": -6.0
   },
   {
     "codigo": "1488",
@@ -3630,7 +3630,7 @@
     "nome": "HAMBURGUEIRA BH02 C/100UN BOM APETITE",
     "categoria": "DESCARTAVEIS",
     "preco": 34.99,
-    "estoque": 9.0
+    "estoque": 8.0
   },
   {
     "codigo": "1659",
@@ -3651,7 +3651,7 @@
     "nome": "POTE REDONDO 200ML C/TAMPA C/24UN PRAFESTA",
     "categoria": "DESCARTAVEIS",
     "preco": 17.99,
-    "estoque": 0.0
+    "estoque": -1.0
   },
   {
     "codigo": "1684",
@@ -4113,7 +4113,7 @@
     "nome": "SACOLA PLASTICA MILHEIRO BRANCA 30X40 200G",
     "categoria": "Embalagem",
     "preco": 11.99,
-    "estoque": 3.0
+    "estoque": 2.0
   },
   {
     "codigo": "2027",
@@ -4197,7 +4197,7 @@
     "nome": "TAMPA P/COPO 100/150/180 E 200ML C/100UN COPOMAIS",
     "categoria": "DESCARTAVEIS",
     "preco": 9.99,
-    "estoque": 15.0
+    "estoque": 14.0
   },
   {
     "codigo": "2075",
@@ -5331,7 +5331,7 @@
     "nome": "SACO ZIP  N00 04X5,5CM C/100UN  ARMAZEM",
     "categoria": "Embalagem",
     "preco": 4.5,
-    "estoque": 10.0
+    "estoque": 9.0
   },
   {
     "codigo": "2968",
@@ -5429,7 +5429,7 @@
     "nome": "SACO ZIP N03 07x12CM C/20UN  ARMAZEM",
     "categoria": "Embalagem",
     "preco": 2.5,
-    "estoque": 23.0
+    "estoque": 22.0
   },
   {
     "codigo": "3028",
@@ -5555,7 +5555,7 @@
     "nome": "SACO PLASTICO PE C/100UN P/GELAO 05X24X02",
     "categoria": "DESCARTAVEIS",
     "preco": 4.0,
-    "estoque": 130.0
+    "estoque": 129.0
   },
   {
     "codigo": "3072",
@@ -5604,7 +5604,7 @@
     "nome": "POTE E TAMPA RET.500ML C/24UN GOUR MAX",
     "categoria": "DESCARTAVEIS",
     "preco": 29.99,
-    "estoque": 29.0
+    "estoque": 28.0
   },
   {
     "codigo": "3106",
@@ -5779,7 +5779,7 @@
     "nome": "CAIXA TERMICA ISOPOR ISOTERM 500G",
     "categoria": "DESCARTAVEIS",
     "preco": 3.99,
-    "estoque": 90.0
+    "estoque": 89.0
   },
   {
     "codigo": "3150",
@@ -5919,7 +5919,7 @@
     "nome": "PAPEL TOALHA SCALA PLUS C/120 TOALHAS C/2 ROLOS",
     "categoria": "PRODUTO DE HIGIENE",
     "preco": 8.5,
-    "estoque": 19.0
+    "estoque": 18.0
   },
   {
     "codigo": "3228",
@@ -5968,7 +5968,7 @@
     "nome": "FITA ISOLANTE  10X17MM  ALFACEL",
     "categoria": "UTENSILIOS",
     "preco": 4.99,
-    "estoque": 15.0
+    "estoque": 14.0
   },
   {
     "codigo": "3401",
@@ -6535,7 +6535,14 @@
     "nome": "G680 - GALVONOTEK POTE REDONDO DE SOBREMESA 250 ml  C/5UN",
     "categoria": "DESCARTAVEIS",
     "preco": 5.99,
-    "estoque": 36.0
+    "estoque": 34.0
+  },
+  {
+    "codigo": "6512",
+    "nome": "PURO AR TALCO BABY POWDER",
+    "categoria": "-",
+    "preco": 16.99,
+    "estoque": -1.0
   },
   {
     "codigo": "6513",
@@ -6550,6 +6557,13 @@
     "categoria": "Outras",
     "preco": 35.99,
     "estoque": 2.0
+  },
+  {
+    "codigo": "6517",
+    "nome": "PANO MULTIUSO VERDE INOVEN",
+    "categoria": "-",
+    "preco": 16.5,
+    "estoque": 12.0
   },
   {
     "codigo": "6544",
@@ -6619,7 +6633,7 @@
     "nome": "PALITO DENTAL C/200UN FIAT LUX",
     "categoria": "ALIMENTO/GENERO ALIMENTICIO",
     "preco": 2.25,
-    "estoque": 35.0
+    "estoque": 33.0
   },
   {
     "codigo": "7012",
@@ -7385,6 +7399,13 @@
     "estoque": 2.0
   },
   {
+    "codigo": "9781",
+    "nome": "AROMATIZADOR DE AMBIENTE 500ML COMFORTO",
+    "categoria": "-",
+    "preco": 18.99,
+    "estoque": 1.0
+  },
+  {
     "codigo": "9801",
     "nome": "Cópia de GANCHOS C/2UN MONALIZA",
     "categoria": "UTENSILIOS",
@@ -7487,7 +7508,7 @@
     "nome": "LIMPEZA PESADA SEM CABO SANCHES",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 11.8,
-    "estoque": 7.0
+    "estoque": 6.0
   },
   {
     "codigo": "11537",
@@ -7501,7 +7522,7 @@
     "nome": "D70M BOLO E TORTA RET MEDIA BASE BRANCA",
     "categoria": "DESCARTAVEIS",
     "preco": 11.99,
-    "estoque": 15.0
+    "estoque": 14.0
   },
   {
     "codigo": "12345",
@@ -7745,35 +7766,35 @@
     "codigo": "31414",
     "nome": "ODORIZADOR DE TECIDOS CHÁ BRANCO 500ML",
     "categoria": "PRODUTO DE LIMPEZA",
-    "preco": 17.99,
+    "preco": 18.99,
     "estoque": 3.0
   },
   {
     "codigo": "31415",
     "nome": "ODORIZADOR DE TECIDOS ERVA DOCE 500ML",
     "categoria": "PRODUTO DE LIMPEZA",
-    "preco": 13.99,
+    "preco": 18.99,
     "estoque": 0.0
   },
   {
     "codigo": "31416",
     "nome": "ODORIZADOR DE TECIDOS VANILLA 500ML",
     "categoria": "PRODUTO DE LIMPEZA",
-    "preco": 17.99,
+    "preco": 18.99,
     "estoque": 2.0
   },
   {
     "codigo": "31417",
     "nome": "ODORIZADOR DE TECIDOS FLOR DE CEREJEIRA 500ML",
     "categoria": "PRODUTO DE LIMPEZA",
-    "preco": 17.99,
+    "preco": 18.99,
     "estoque": 0.0
   },
   {
     "codigo": "31418",
     "nome": "ODORIZADOR DE TECIDOS LAVANDA 500ML",
     "categoria": "PRODUTO DE LIMPEZA",
-    "preco": 17.99,
+    "preco": 18.99,
     "estoque": 0.0
   },
   {
@@ -8356,6 +8377,13 @@
     "categoria": "SACO LIXO",
     "preco": 34.0,
     "estoque": 0.0
+  },
+  {
+    "codigo": "076514",
+    "nome": "AROMATIZADOR DE AMBIENTE 500ML LAVANDA",
+    "categoria": "-",
+    "preco": 18.99,
+    "estoque": 2.0
   },
   {
     "codigo": "123445",
@@ -9322,13 +9350,6 @@
     "categoria": "PRODUTO DE HIGIENE",
     "preco": 14.99,
     "estoque": 1.0
-  },
-  {
-    "codigo": "7909875076512",
-    "nome": "PURO AR TALCO BABY POWDER",
-    "categoria": "-",
-    "preco": 16.99,
-    "estoque": -1.0
   },
   {
     "codigo": "7909875076513",
