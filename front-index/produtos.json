@@ -1236,7 +1236,7 @@
     "nome": "DETERGENTE SUPREMA NATURAL CLEAR 500ML",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 3.5,
-    "estoque": 13.0
+    "estoque": 37.0
   },
   {
     "codigo": "559",
@@ -1250,14 +1250,14 @@
     "nome": "AGUA SANITARIA 1L SUPREMA",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 3.75,
-    "estoque": 14.0
+    "estoque": 26.0
   },
   {
     "codigo": "563",
     "nome": "AGUA SANITARIA SUPREMA 2L",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 8.0,
-    "estoque": 4.0
+    "estoque": 10.0
   },
   {
     "codigo": "568",
@@ -2087,7 +2087,7 @@
   },
   {
     "codigo": "860",
-    "nome": "COPO SUPEMO 200ML C/50UN PRAFESTA",
+    "nome": "COPO SUPREMO 200ML C/50UN PRAFESTA",
     "categoria": "DESCARTAVEIS",
     "preco": 18.99,
     "estoque": 0.0
@@ -2098,6 +2098,13 @@
     "categoria": "DESCARTAVEIS",
     "preco": 18.99,
     "estoque": 8.0
+  },
+  {
+    "codigo": "862",
+    "nome": "COPO DE PAPEL 200ML C/50UN SW7-WH",
+    "categoria": "DESCARTAVEIS",
+    "preco": 14.99,
+    "estoque": 20.0
   },
   {
     "codigo": "866",
@@ -2713,7 +2720,7 @@
     "nome": "MARMITEX DE ISOPOR 1100ML C/10UN COPOBRAS",
     "categoria": "DESCARTAVEIS",
     "preco": 8.5,
-    "estoque": -6.0
+    "estoque": 14.0
   },
   {
     "codigo": "1103",
@@ -2905,6 +2912,20 @@
     "estoque": 3.0
   },
   {
+    "codigo": "1183",
+    "nome": "MARMITEX DE ISOPOR N8 750ML  C/100UN TOTALPLAST",
+    "categoria": "DESCARTAVEIS",
+    "preco": 54.99,
+    "estoque": 5.0
+  },
+  {
+    "codigo": "1184",
+    "nome": "MARMITEX DE ISOPOR 500ML C/100UN TOTALPLAST",
+    "categoria": "DESCARTAVEIS",
+    "preco": 51.99,
+    "estoque": 5.0
+  },
+  {
     "codigo": "1187",
     "nome": "SACO P/ LIXO PRETO P6 40L C/50UN",
     "categoria": "SACO LIXO",
@@ -2945,6 +2966,13 @@
     "categoria": "Embalagem",
     "preco": 19.0,
     "estoque": 17.0
+  },
+  {
+    "codigo": "1211",
+    "nome": "MARMITEX DE ISOPOR 1100ML C/100UN TOTALPLAST",
+    "categoria": "DESCARTAVEIS",
+    "preco": 62.99,
+    "estoque": 5.0
   },
   {
     "codigo": "1225",
@@ -3511,7 +3539,7 @@
     "nome": "AGUA SANITARIA 5L SUPREMA",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 17.99,
-    "estoque": 4.0
+    "estoque": 13.0
   },
   {
     "codigo": "1542",
@@ -4774,20 +4802,6 @@
     "estoque": 27.0
   },
   {
-    "codigo": "2524",
-    "nome": "LAVA ROUPA LIQUIDO SUPREMA 3L COCO",
-    "categoria": "-",
-    "preco": 28.99,
-    "estoque": 6.0
-  },
-  {
-    "codigo": "2530",
-    "nome": "LAVA ROUPA LIQUIDO SUPREMA 3L MULT AÇÃO",
-    "categoria": "PRODUTO DE HIGIENE",
-    "preco": 28.99,
-    "estoque": 6.0
-  },
-  {
     "codigo": "2531",
     "nome": "EXTENSAO BIPOLAR 3M FC",
     "categoria": "UTENSILIOS",
@@ -5583,7 +5597,7 @@
     "nome": "DETERGENTE LIMAO/ALOE VERA SUPREMA 500ML",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 3.5,
-    "estoque": 18.0
+    "estoque": 42.0
   },
   {
     "codigo": "3075",
@@ -5794,6 +5808,13 @@
     "categoria": "DESCARTAVEIS",
     "preco": 3.99,
     "estoque": 89.0
+  },
+  {
+    "codigo": "3149",
+    "nome": "CAIXA TERMICA ISOPOR ISOTERM 250G",
+    "categoria": "DESCARTAVEIS",
+    "preco": 3.5,
+    "estoque": 0.0
   },
   {
     "codigo": "3150",
@@ -6524,6 +6545,20 @@
     "estoque": 5.0
   },
   {
+    "codigo": "5721",
+    "nome": "LAVA ROUPAS LIQ. 1L MULTI ACAO SUPREMA",
+    "categoria": "PRODUTO DE LIMPEZA",
+    "preco": 27.99,
+    "estoque": 5.0
+  },
+  {
+    "codigo": "5741",
+    "nome": "LAVA ROUPAS LIQ. COCO 1L SUPREMA",
+    "categoria": "PRODUTO DE LIMPEZA",
+    "preco": 27.99,
+    "estoque": 6.0
+  },
+  {
     "codigo": "6008",
     "nome": "B120 FOLHA D ALUMINIO 500ML C/10UN PRAV.",
     "categoria": "Embalagem",
@@ -6980,7 +7015,7 @@
   },
   {
     "codigo": "7909",
-    "nome": "SACO ZIP 17X24 C/100UN N08 ARMAZEM",
+    "nome": "SACO ZIP 17X26 C/100UN N08 ARMAZEM",
     "categoria": "Embalagem",
     "preco": 42.99,
     "estoque": 1.0
@@ -7659,7 +7694,7 @@
   },
   {
     "codigo": "18021",
-    "nome": "SACO ZIP 20X30 C/ 100 UNIDADES",
+    "nome": "SACO ZIP 20X30 C/100UN ARMAZEM",
     "categoria": "DESCARTAVEIS",
     "preco": 58.99,
     "estoque": 0.0
