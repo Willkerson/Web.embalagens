@@ -431,7 +431,7 @@
     "nome": "VASSOURA DENTRO E FORA C/CABO ALKLIN",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 15.0,
-    "estoque": -29.0
+    "estoque": -30.0
   },
   {
     "codigo": "295",
@@ -1243,7 +1243,7 @@
     "nome": "DETERGENTE SUPREMA  NEUTRO 500ML",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 3.5,
-    "estoque": 22.0
+    "estoque": 21.0
   },
   {
     "codigo": "562",
@@ -1782,7 +1782,7 @@
     "nome": "LUSTRA MOVEIS 200ML LAVANDA AZULIM",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 9.0,
-    "estoque": 9.0
+    "estoque": 8.0
   },
   {
     "codigo": "757",
@@ -2825,7 +2825,7 @@
     "nome": "SUPORTE LT C/VELCRO SANCHES",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 20.0,
-    "estoque": 2.0
+    "estoque": 1.0
   },
   {
     "codigo": "1148",
@@ -2846,7 +2846,7 @@
     "nome": "FIBRA BRANCA LIMP. LEVE BETTANIN",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 3.99,
-    "estoque": 46.0
+    "estoque": 45.0
   },
   {
     "codigo": "1151",
@@ -3651,7 +3651,7 @@
     "nome": "SACO KRAFT P3 MINI LANCHE C/100UN PLUMA",
     "categoria": "DESCARTAVEIS",
     "preco": 5.99,
-    "estoque": 94.0
+    "estoque": 91.0
   },
   {
     "codigo": "1588",
@@ -4610,7 +4610,7 @@
     "nome": "GARFO P/ REFEIÇAO C/200UN ELITE",
     "categoria": "DESCARTAVEIS",
     "preco": 42.99,
-    "estoque": 3.0
+    "estoque": 2.0
   },
   {
     "codigo": "2356",
@@ -4743,7 +4743,7 @@
     "nome": "LIMPA PISOS LAMINADOS LAVANDA 750ML AZULIM START",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 11.99,
-    "estoque": 5.0
+    "estoque": 4.0
   },
   {
     "codigo": "2454",
@@ -5443,7 +5443,7 @@
     "nome": "COPO DESCARTAVEL 180ML PS C/100UN FASTCUP",
     "categoria": "DESCARTAVEIS",
     "preco": 6.99,
-    "estoque": 87.0
+    "estoque": 85.0
   },
   {
     "codigo": "2995",
@@ -5709,7 +5709,7 @@
     "nome": "POTE E TAMPA REDONDO 500ML C/TAMPA C/24UN DANUBIO",
     "categoria": "DESCARTAVEIS",
     "preco": 23.99,
-    "estoque": 22.0
+    "estoque": 21.0
   },
   {
     "codigo": "3119",
@@ -7823,7 +7823,7 @@
     "nome": "D695 KIT POTE TRANSPARENTE  P/ MOLHO CAIXA FECHADA",
     "categoria": "DESCARTAVEIS",
     "preco": 168.0,
-    "estoque": 0.0
+    "estoque": -1.0
   },
   {
     "codigo": "25813",
