@@ -21,11 +21,88 @@
     "estoque": 4.0
   },
   {
+    "codigo": "17",
+    "nome": "PRENDEDOR DE PLASTICO 50 PEÇAS 5CM COLORIDO",
+    "categoria": "-",
+    "preco": 13.99,
+    "estoque": 2.0
+  },
+  {
+    "codigo": "18",
+    "nome": "PÁ DE LIXO PLASTICO CABO CURTO",
+    "categoria": "-",
+    "preco": 5.0,
+    "estoque": 4.0
+  },
+  {
+    "codigo": "20",
+    "nome": "CESTA DE BAMBU",
+    "categoria": "-",
+    "preco": 28.0,
+    "estoque": 2.0
+  },
+  {
+    "codigo": "22",
+    "nome": "FESTÃO METALICO",
+    "categoria": "-",
+    "preco": 13.99,
+    "estoque": 1.0
+  },
+  {
+    "codigo": "23",
+    "nome": "ESPONJA MELAMINA",
+    "categoria": "-",
+    "preco": 2.0,
+    "estoque": 2.0
+  },
+  {
+    "codigo": "24",
+    "nome": "LANÇA CONFETE METALIZADO",
+    "categoria": "-",
+    "preco": 12.99,
+    "estoque": 2.0
+  },
+  {
+    "codigo": "30",
+    "nome": "HATES FLEXIVEIS 290 PEÇAS COTTON",
+    "categoria": "-",
+    "preco": 11.99,
+    "estoque": 2.0
+  },
+  {
+    "codigo": "42",
+    "nome": "BOLA DE BEACH",
+    "categoria": "-",
+    "preco": 28.99,
+    "estoque": 1.0
+  },
+  {
+    "codigo": "53",
+    "nome": "KIT TESOURA DE PLASTICO 3 PEÇAS",
+    "categoria": "-",
+    "preco": 15.99,
+    "estoque": 2.0
+  },
+  {
+    "codigo": "61",
+    "nome": "FACA DE COZINHA INOX 7 CABO DE MADEIRA",
+    "categoria": "-",
+    "preco": 11.5,
+    "estoque": 1.0
+  },
+  {
     "codigo": "79",
     "nome": "PORTA ESCOVA DE DENTE",
     "categoria": "UTENSILIOS",
     "preco": 12.99,
     "estoque": 2.0
+  },
+  {
+    "codigo": "98",
+    "nome": "FITA ADESIVA DUPLA FACE 12X30M",
+    "categoria": "-",
+    "preco": 10.99,
+    "estoque": 1.0
   },
   {
     "codigo": "035",
@@ -438,7 +515,7 @@
     "nome": "ESPONJA MULTIUSO C/4UN ALKLIN",
     "categoria": "UTENSILIOS",
     "preco": 3.99,
-    "estoque": 228.0
+    "estoque": 227.0
   },
   {
     "codigo": "292",
@@ -966,6 +1043,20 @@
     "estoque": 16.0
   },
   {
+    "codigo": "434",
+    "nome": "SACOLA SOS G NATAL 24X15",
+    "categoria": "-",
+    "preco": 15.0,
+    "estoque": 6.0
+  },
+  {
+    "codigo": "436",
+    "nome": "SACOLA SOS G NATAL 24X15 1 UNIDADE",
+    "categoria": "-",
+    "preco": 1.5,
+    "estoque": 0.0
+  },
+  {
     "codigo": "439",
     "nome": "CUMBUCA QUALITY LINE 12 C/10UN PRAFESTA",
     "categoria": "DESCARTAVEIS",
@@ -1279,6 +1370,13 @@
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 8.0,
     "estoque": 9.0
+  },
+  {
+    "codigo": "564",
+    "nome": "TESOURA MULTIUSO  9,5",
+    "categoria": "-",
+    "preco": 9.99,
+    "estoque": 2.0
   },
   {
     "codigo": "568",
@@ -2118,7 +2216,7 @@
     "nome": "HAMBURGUEIRA BH02 C/10UN BOM APETITE",
     "categoria": "Embalagem",
     "preco": 3.99,
-    "estoque": 26.0
+    "estoque": 24.0
   },
   {
     "codigo": "857",
@@ -2478,6 +2576,13 @@
     "estoque": 0.0
   },
   {
+    "codigo": "0100",
+    "nome": "RAQUETE DE FRESCOBOL",
+    "categoria": "Subproduto",
+    "preco": 23.99,
+    "estoque": -1.0
+  },
+  {
     "codigo": "0101",
     "nome": "MARMITEX DE ISOPOR 750ML C/10UN COPOBRAS",
     "categoria": "DESCARTAVEIS",
@@ -2671,7 +2776,7 @@
     "nome": "SACO P/ LIXO PRETO P8 60L C/10UN",
     "categoria": "SACO LIXO",
     "preco": 8.99,
-    "estoque": 77.0
+    "estoque": 75.0
   },
   {
     "codigo": "1053",
@@ -2734,7 +2839,7 @@
     "nome": "GARRAFA PE QUADRADA 300ML C/10UN  DECOPLAST",
     "categoria": "Embalagem",
     "preco": 10.99,
-    "estoque": 20.0
+    "estoque": 18.0
   },
   {
     "codigo": "1084",
@@ -2860,7 +2965,7 @@
     "nome": "FIBRA LIMP. PESADA 1UN 260X102MM BETTANIN",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 4.99,
-    "estoque": 26.0
+    "estoque": 24.0
   },
   {
     "codigo": "1149",
@@ -2923,7 +3028,7 @@
     "nome": "FITA ADESIVA POLIPROPILENO TRANSPARENTE 48MMX40M TECTAPE",
     "categoria": "PAPELARIA",
     "preco": 4.99,
-    "estoque": 85.0
+    "estoque": 84.0
   },
   {
     "codigo": "1168",
@@ -3007,7 +3112,14 @@
     "nome": "LIXEIRA 6.5L SANREMO",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 25.0,
-    "estoque": -7.0
+    "estoque": 3.0
+  },
+  {
+    "codigo": "1205",
+    "nome": "LIXEIRA FLIP PIA  2.5L SANREMO",
+    "categoria": "PRODUTO DE LIMPEZA",
+    "preco": 24.99,
+    "estoque": 2.0
   },
   {
     "codigo": "1206",
@@ -3644,7 +3756,7 @@
     "nome": "LIXEIRA BASCULANTE 10L SANREMO",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 30.99,
-    "estoque": -4.0
+    "estoque": 6.0
   },
   {
     "codigo": "1562",
@@ -3700,7 +3812,7 @@
     "nome": "COPO 80ML PS DESCART. C/100UN COPOBRAS",
     "categoria": "DESCARTAVEIS",
     "preco": 6.99,
-    "estoque": 16.0
+    "estoque": 15.0
   },
   {
     "codigo": "1655",
@@ -3742,7 +3854,7 @@
     "nome": "Bandeja de Alumínio DSMFS 135ML Com Tampa C/10 un WYDA",
     "categoria": "Embalagem",
     "preco": 8.0,
-    "estoque": -37.0
+    "estoque": -45.0
   },
   {
     "codigo": "1711",
@@ -4869,7 +4981,7 @@
     "nome": "BALDE PLASTICO 15L SANREMO",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 41.0,
-    "estoque": -3.0
+    "estoque": 2.0
   },
   {
     "codigo": "2578",
@@ -5471,7 +5583,7 @@
     "nome": "COPO DESCARTAVEL 180ML PS C/100UN FASTCUP",
     "categoria": "DESCARTAVEIS",
     "preco": 6.99,
-    "estoque": 84.0
+    "estoque": 83.0
   },
   {
     "codigo": "2995",
@@ -6486,7 +6598,7 @@
     "nome": "PRATO RASO 15CM GPACK",
     "categoria": "DESCARTAVEIS",
     "preco": 1.99,
-    "estoque": 63.0
+    "estoque": 57.0
   },
   {
     "codigo": "5012",
@@ -7582,7 +7694,7 @@
   },
   {
     "codigo": "9801",
-    "nome": "Cópia de GANCHOS C/2UN MONALIZA",
+    "nome": "GANCHOS C/2UN MONALIZA",
     "categoria": "UTENSILIOS",
     "preco": 8.0,
     "estoque": 2.0
@@ -9419,13 +9531,6 @@
     "nome": "MAXXIMO SACO PARA LAVAR ROUPAS KIT 3 PEÇAS",
     "categoria": "PRODUTO DE HIGIENE",
     "preco": 28.0,
-    "estoque": -1.0
-  },
-  {
-    "codigo": "7893595170100",
-    "nome": "Raquete eletrica exocell",
-    "categoria": "Subproduto",
-    "preco": 26.0,
     "estoque": -1.0
   },
   {
