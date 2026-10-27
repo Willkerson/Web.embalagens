@@ -1,5 +1,26 @@
 [
   {
+    "codigo": "14",
+    "nome": "LIXEIRA DE PLASTICO 5,5L COM TAMPA",
+    "categoria": "-",
+    "preco": 20.0,
+    "estoque": 3.0
+  },
+  {
+    "codigo": "15",
+    "nome": "SACOLA DE PAPEL 32X26CM CORAÇÃO",
+    "categoria": "-",
+    "preco": 6.99,
+    "estoque": 3.0
+  },
+  {
+    "codigo": "16",
+    "nome": "ROLO DE BARBANTE",
+    "categoria": "-",
+    "preco": 4.99,
+    "estoque": 4.0
+  },
+  {
     "codigo": "79",
     "nome": "PORTA ESCOVA DE DENTE",
     "categoria": "UTENSILIOS",
@@ -60,7 +81,7 @@
     "nome": "SACOLA KRAFT GG 1UN  30X20X36CM",
     "categoria": "Embalagem",
     "preco": 2.5,
-    "estoque": 31.0
+    "estoque": 29.0
   },
   {
     "codigo": "109",
@@ -214,7 +235,7 @@
     "nome": "COLHER SOFT BRANCA C/50UN ELITE",
     "categoria": "DESCARTAVEIS",
     "preco": 6.5,
-    "estoque": 32.0
+    "estoque": 31.0
   },
   {
     "codigo": "177",
@@ -613,7 +634,7 @@
     "nome": "PLASTICO BOLHA 65MX50M MICRA 20 MN.PLAST",
     "categoria": "Embalagem",
     "preco": 41.99,
-    "estoque": 13.0
+    "estoque": 12.0
   },
   {
     "codigo": "346",
@@ -655,7 +676,7 @@
     "nome": "PANO MULTIUSO AZUL C/600 PANOS 28CMX240M MR.PLUS TALGE",
     "categoria": "PRODUTO DE HIGIENE",
     "preco": 79.99,
-    "estoque": 2.0
+    "estoque": 1.0
   },
   {
     "codigo": "356",
@@ -746,7 +767,7 @@
     "nome": "PANO DE CHAO BRANCO ALVEJADO 45CMX69CM SOUZA PPR28",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 6.7,
-    "estoque": 163.0
+    "estoque": 160.0
   },
   {
     "codigo": "391",
@@ -760,7 +781,7 @@
     "nome": "FITA VEDA ROSCA  18MMX10M",
     "categoria": "Embalagem",
     "preco": 3.99,
-    "estoque": 8.0
+    "estoque": 7.0
   },
   {
     "codigo": "400",
@@ -963,7 +984,7 @@
     "nome": "POTE REDONDO 250ML C/TAMPA C/24UN PRAFESTA",
     "categoria": "DESCARTAVEIS",
     "preco": 18.5,
-    "estoque": 6.0
+    "estoque": 5.0
   },
   {
     "codigo": "445",
@@ -1691,7 +1712,7 @@
     "nome": "D12 220ML FOLHA DE ALUMINIO MOLDADA C/10UN WYDA",
     "categoria": "Embalagem",
     "preco": 7.6,
-    "estoque": -98.0
+    "estoque": -101.0
   },
   {
     "codigo": "716",
@@ -1887,7 +1908,7 @@
     "nome": "KIT GARFO E FACA MASTER C/25  PRAFESTA",
     "categoria": "DESCARTAVEIS",
     "preco": 22.5,
-    "estoque": 10.0
+    "estoque": 9.0
   },
   {
     "codigo": "785",
@@ -1943,7 +1964,7 @@
     "nome": "LIMPADOR  PERF. INTENSE LAVANDA 500ML SANOL",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 6.5,
-    "estoque": 12.0
+    "estoque": 11.0
   },
   {
     "codigo": "812",
@@ -2160,7 +2181,7 @@
     "nome": "ARVORE DE MESA NEVADA 25CM NATAL",
     "categoria": "-",
     "preco": 5.0,
-    "estoque": 2.0
+    "estoque": 0.0
   },
   {
     "codigo": "885",
@@ -2643,7 +2664,7 @@
     "nome": "SACO P/ LIXO PRETO P6 40L C/10UN",
     "categoria": "SACO LIXO",
     "preco": 5.99,
-    "estoque": 78.0
+    "estoque": 76.0
   },
   {
     "codigo": "1052",
@@ -2657,7 +2678,7 @@
     "nome": "SACOS P/LIXO 90X100 100L P8 C/10UN PRETO",
     "categoria": "SACO LIXO",
     "preco": 13.5,
-    "estoque": 70.0
+    "estoque": 69.0
   },
   {
     "codigo": "1055",
@@ -3126,7 +3147,7 @@
     "nome": "TOALHA DE PAPEL BOBINA 6X20X200 FD WHITE PAPER",
     "categoria": "PRODUTO DE HIGIENE",
     "preco": 96.99,
-    "estoque": 9.0
+    "estoque": 8.0
   },
   {
     "codigo": "1313",
@@ -3203,14 +3224,14 @@
     "nome": "TOALHA INTERFOLHA BRANCA (VERDE) C/1000UN ISAPEL",
     "categoria": "PRODUTO DE HIGIENE",
     "preco": 16.0,
-    "estoque": 27.0
+    "estoque": 24.0
   },
   {
     "codigo": "1331",
     "nome": "TOALHA  BOBINA BRANCA 8X20X100 FD WHITE PAPER",
     "categoria": "PRODUTO DE HIGIENE",
     "preco": 56.99,
-    "estoque": 6.0
+    "estoque": 4.0
   },
   {
     "codigo": "1332",
@@ -4127,7 +4148,7 @@
     "nome": "SACOLA BRANCA 25x35 1kg MIX B",
     "categoria": "Embalagem",
     "preco": 26.99,
-    "estoque": 11.0
+    "estoque": 10.0
   },
   {
     "codigo": "2018",
@@ -4274,7 +4295,7 @@
     "nome": "PLASTICO BOLHA 130X100M MICRA MN. PLAST",
     "categoria": "Embalagem",
     "preco": 100.0,
-    "estoque": 25.0
+    "estoque": 24.0
   },
   {
     "codigo": "2084",
@@ -4519,7 +4540,7 @@
     "nome": "PAPEL HIGIENICO LUXO 8R (AZUL) EUROPEL - 150m",
     "categoria": "PRODUTO DE HIGIENE",
     "preco": 41.99,
-    "estoque": 21.0
+    "estoque": 20.0
   },
   {
     "codigo": "2299",
@@ -4694,7 +4715,7 @@
     "nome": "CABO DE MADEIRA 1,50 CM  LISO SANCHES",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 7.5,
-    "estoque": 45.0
+    "estoque": 43.0
   },
   {
     "codigo": "2405",
@@ -4722,7 +4743,7 @@
     "nome": "POTE  RETANGULAR 250ML C/24UN PRAFESTA",
     "categoria": "DESCARTAVEIS",
     "preco": 26.5,
-    "estoque": 3.0
+    "estoque": 2.0
   },
   {
     "codigo": "2427",
@@ -4799,7 +4820,7 @@
     "nome": "PAPEL SULFITE A4 C/500 FOLHAS REPORT",
     "categoria": "PAPELARIA",
     "preco": 40.5,
-    "estoque": 16.0
+    "estoque": 14.0
   },
   {
     "codigo": "2485",
@@ -4862,7 +4883,7 @@
     "nome": "ESPONJA  ANTIRISCO C/4UN ALKLIN",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 4.0,
-    "estoque": 93.0
+    "estoque": 92.0
   },
   {
     "codigo": "2599",
@@ -5107,7 +5128,7 @@
     "nome": "DISPENSER  INTERFOLHAS  P PREMIUM  EXACCTA TRILHA",
     "categoria": "DESCARTAVEIS",
     "preco": 40.0,
-    "estoque": 12.0
+    "estoque": 11.0
   },
   {
     "codigo": "2825",
@@ -5450,7 +5471,7 @@
     "nome": "COPO DESCARTAVEL 180ML PS C/100UN FASTCUP",
     "categoria": "DESCARTAVEIS",
     "preco": 6.99,
-    "estoque": 85.0
+    "estoque": 84.0
   },
   {
     "codigo": "2995",
@@ -5555,7 +5576,7 @@
     "nome": "RODO DE PIA PIA KEITA",
     "categoria": "UTENSILIOS",
     "preco": 6.99,
-    "estoque": 3.0
+    "estoque": 2.0
   },
   {
     "codigo": "3039",
@@ -5660,7 +5681,7 @@
     "nome": "POTE E TAMPA RET.500ML C/24UN GOUR MAX",
     "categoria": "DESCARTAVEIS",
     "preco": 29.99,
-    "estoque": 30.0
+    "estoque": 29.0
   },
   {
     "codigo": "3106",
@@ -5716,7 +5737,7 @@
     "nome": "POTE E TAMPA REDONDO 500ML C/TAMPA C/24UN DANUBIO",
     "categoria": "DESCARTAVEIS",
     "preco": 23.99,
-    "estoque": 19.0
+    "estoque": 18.0
   },
   {
     "codigo": "3119",
@@ -5996,7 +6017,7 @@
     "nome": "PAPEL TOALHA SCALA PLUS C/120 TOALHAS C/2 ROLOS",
     "categoria": "PRODUTO DE HIGIENE",
     "preco": 8.5,
-    "estoque": 11.0
+    "estoque": 9.0
   },
   {
     "codigo": "3228",
@@ -6360,7 +6381,7 @@
     "nome": "FITA CREPE 25MMX50M",
     "categoria": "UTENSILIOS",
     "preco": 10.99,
-    "estoque": 6.0
+    "estoque": 5.0
   },
   {
     "codigo": "4040",
@@ -6675,7 +6696,7 @@
     "nome": "PURO AR TALCO BABY POWDER",
     "categoria": "-",
     "preco": 16.99,
-    "estoque": 3.0
+    "estoque": 2.0
   },
   {
     "codigo": "6513",
@@ -6717,7 +6738,7 @@
     "nome": "PAPEL HIGIENICO 300M ALVEFLOR 100% CEL",
     "categoria": "-",
     "preco": 12.5,
-    "estoque": 24.0
+    "estoque": 22.0
   },
   {
     "codigo": "6845",
@@ -7053,7 +7074,7 @@
     "nome": "DIFUSOR DE AROMAS CITRONELA 250ML SENALAR",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 18.0,
-    "estoque": 12.0
+    "estoque": 11.0
   },
   {
     "codigo": "7907",
@@ -7291,7 +7312,7 @@
     "nome": "ODORIZADOR DE AMBIENTE 400ML CHA BRANCO",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 16.99,
-    "estoque": 1.0
+    "estoque": 0.0
   },
   {
     "codigo": "8455",
@@ -7438,7 +7459,7 @@
     "nome": "COPO DESCARTAVEL TRANSPARENTE 300ML C/100UN ULTRA PP",
     "categoria": "DESCARTAVEIS",
     "preco": 14.99,
-    "estoque": 8.0
+    "estoque": 5.0
   },
   {
     "codigo": "9039",
@@ -8117,7 +8138,7 @@
     "nome": "G650 POTE QUAD.200ML C/10UN",
     "categoria": "Embalagem",
     "preco": 7.5,
-    "estoque": 13.0
+    "estoque": 12.0
   },
   {
     "codigo": "31671",
@@ -8271,7 +8292,7 @@
     "nome": "FESTÃO NEVADO 2Mx07CM VERDE",
     "categoria": "-",
     "preco": 7.0,
-    "estoque": 4.0
+    "estoque": 0.0
   },
   {
     "codigo": "61057",
@@ -8936,7 +8957,7 @@
     "nome": "XOLHER DE MADEIRA 53-52",
     "categoria": "ALIMENTO/GENERO ALIMENTICIO",
     "preco": 7.0,
-    "estoque": -1.0
+    "estoque": -3.0
   },
   {
     "codigo": "129056",
