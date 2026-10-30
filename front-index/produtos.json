@@ -333,14 +333,14 @@
     "nome": "MARMITA PRETA 850ML C/3 DIVISORIAS C/10UN",
     "categoria": "DESCARTAVEIS",
     "preco": 16.99,
-    "estoque": 13.0
+    "estoque": 12.0
   },
   {
     "codigo": "182",
     "nome": "MARMITA PRETA 750ML C/3 DIVISORIAS C/10UN ELITE",
     "categoria": "DESCARTAVEIS",
     "preco": 16.25,
-    "estoque": 17.0
+    "estoque": 12.0
   },
   {
     "codigo": "183",
@@ -4358,7 +4358,7 @@
     "nome": "TOUCAS DESCARTAVEIS C/100UN 45X50CM BOMPACK",
     "categoria": "DESCARTAVEIS",
     "preco": 13.5,
-    "estoque": -3.0
+    "estoque": -4.0
   },
   {
     "codigo": "2067",
