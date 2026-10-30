@@ -137,7 +137,7 @@
     "nome": "SACOLA KRAFT M 1UN 19X12X26CM",
     "categoria": "Embalagem",
     "preco": 1.55,
-    "estoque": -2.0
+    "estoque": -4.0
   },
   {
     "codigo": "104",
@@ -151,7 +151,7 @@
     "nome": "SACOLA KRAFT G 1UN 24X16CM",
     "categoria": "Embalagem",
     "preco": 1.99,
-    "estoque": 146.0
+    "estoque": 145.0
   },
   {
     "codigo": "106",
@@ -683,7 +683,7 @@
     "nome": "SACO DE LIXO UNIDADE PRETO GRANDE",
     "categoria": "SACO LIXO",
     "preco": 2.0,
-    "estoque": -9.0
+    "estoque": -14.0
   },
   {
     "codigo": "337",
@@ -704,7 +704,7 @@
     "nome": "PLASTICO BOLHA 43X10M MICRA 20 MN. PLAST",
     "categoria": "Embalagem",
     "preco": 16.99,
-    "estoque": 28.0
+    "estoque": 26.0
   },
   {
     "codigo": "343",
@@ -837,7 +837,7 @@
     "nome": "PANO DE CHAO XADREZ 45CMX68CM SOUZA BR2",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 4.7,
-    "estoque": 96.0
+    "estoque": 91.0
   },
   {
     "codigo": "390",
@@ -1019,7 +1019,7 @@
     "nome": "FLANELA M BRANCA 28X48CM",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 2.5,
-    "estoque": 5.0
+    "estoque": 4.0
   },
   {
     "codigo": "431",
@@ -1369,7 +1369,7 @@
     "nome": "AGUA SANITARIA SUPREMA 2L",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 8.0,
-    "estoque": 9.0
+    "estoque": 8.0
   },
   {
     "codigo": "564",
@@ -1439,7 +1439,7 @@
     "nome": "FITILHO SINTETICO F-10  100G ARMAZEM",
     "categoria": "Embalagem",
     "preco": 3.5,
-    "estoque": 20.0
+    "estoque": 18.0
   },
   {
     "codigo": "577",
@@ -1481,7 +1481,7 @@
     "nome": "HASTES FLEXIVEIS C/75UN COTTON",
     "categoria": "PRODUTO DE HIGIENE",
     "preco": 5.99,
-    "estoque": 7.0
+    "estoque": 5.0
   },
   {
     "codigo": "604",
@@ -1901,7 +1901,7 @@
     "nome": "LIMPA VIDROS 500ML AZULIM START",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 5.99,
-    "estoque": 13.0
+    "estoque": 11.0
   },
   {
     "codigo": "755",
@@ -1943,7 +1943,7 @@
     "nome": "MULTIUSO ORIGINAL AZULIM  500ML START",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 4.99,
-    "estoque": 17.0
+    "estoque": 16.0
   },
   {
     "codigo": "764",
@@ -1971,7 +1971,7 @@
     "nome": "TIRA FERRUGEM 50ML AZULIM",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 8.5,
-    "estoque": 7.0
+    "estoque": 6.0
   },
   {
     "codigo": "773",
@@ -2062,7 +2062,7 @@
     "nome": "LIMPADOR  PERF. INTENSE LAVANDA 500ML SANOL",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 6.5,
-    "estoque": 9.0
+    "estoque": 8.0
   },
   {
     "codigo": "812",
@@ -2628,21 +2628,21 @@
     "codigo": "1003",
     "nome": "SACOS PLASTICO PEBD 10X15X0,06 1KG COLOMBO",
     "categoria": "Embalagem",
-    "preco": 38.99,
+    "preco": 34.99,
     "estoque": 18.0
   },
   {
     "codigo": "1004",
     "nome": "SACOS PLASTICO PEBD 1KG 10X20X0,06 COLOMBO/HELVIPACK",
     "categoria": "Embalagem",
-    "preco": 38.99,
+    "preco": 34.99,
     "estoque": 6.0
   },
   {
     "codigo": "1009",
     "nome": "SACOS PLASTICO PEBD 1KG 60X80X0,10",
     "categoria": "Embalagem",
-    "preco": 38.99,
+    "preco": 34.99,
     "estoque": 12.0
   },
   {
@@ -2656,21 +2656,21 @@
     "codigo": "1011",
     "nome": "SACOS PLASTICO PEBD 1KG 15X30X0,06 COLOMBO/HELVIPACK",
     "categoria": "Embalagem",
-    "preco": 38.99,
+    "preco": 34.99,
     "estoque": 6.0
   },
   {
     "codigo": "1012",
     "nome": "SACOS PLASTICO PEBD 1KG 20X30X0,06 COLOMBO/HELVIPACK",
     "categoria": "Embalagem",
-    "preco": 38.99,
+    "preco": 34.99,
     "estoque": 10.0
   },
   {
     "codigo": "1013",
     "nome": "SACOS PLASTICO PEBD 25X35X0,06 1KG HELVIPACK",
     "categoria": "Embalagem",
-    "preco": 38.99,
+    "preco": 34.99,
     "estoque": 14.0
   },
   {
@@ -2755,14 +2755,14 @@
     "nome": "SACO P/ LIXO PRETO 90X100 100L C/50UN",
     "categoria": "SACO LIXO",
     "preco": 57.5,
-    "estoque": 22.0
+    "estoque": 21.0
   },
   {
     "codigo": "1049",
     "nome": "SACO P/ LIXO PRETO 90X100 100L C/100UN",
     "categoria": "SACO LIXO",
     "preco": 115.0,
-    "estoque": 13.0
+    "estoque": 12.0
   },
   {
     "codigo": "1051",
@@ -2776,14 +2776,14 @@
     "nome": "SACO P/ LIXO PRETO P8 60L C/10UN",
     "categoria": "SACO LIXO",
     "preco": 8.99,
-    "estoque": 69.0
+    "estoque": 68.0
   },
   {
     "codigo": "1053",
     "nome": "SACOS P/LIXO 90X100 100L P8 C/10UN PRETO",
     "categoria": "SACO LIXO",
     "preco": 13.5,
-    "estoque": 64.0
+    "estoque": 62.0
   },
   {
     "codigo": "1055",
@@ -2874,13 +2874,13 @@
     "nome": "MARMITEX DE ISOPOR 750ML C/10UN BOM APETITE",
     "categoria": "DESCARTAVEIS",
     "preco": 8.0,
-    "estoque": 41.0
+    "estoque": 40.0
   },
   {
     "codigo": "1113",
     "nome": "SACOS PLASTICO PEBD 15X20X0,06 1KG COLOMBO/HELVIPACK",
     "categoria": "Embalagem",
-    "preco": 38.99,
+    "preco": 34.99,
     "estoque": 10.0
   },
   {
@@ -3182,7 +3182,7 @@
     "nome": "BOBINA PICOTADA 2,5KG C/500UN P/ ALIMENTOS 25X33 EXTRUSA",
     "categoria": "Embalagem",
     "preco": 25.0,
-    "estoque": 15.0
+    "estoque": 14.0
   },
   {
     "codigo": "1281",
@@ -3406,7 +3406,7 @@
     "nome": "KIT POTE E TAMPA RET. 500ML C/12UN GOUR MAX",
     "categoria": "DESCARTAVEIS",
     "preco": 16.99,
-    "estoque": 21.0
+    "estoque": 20.0
   },
   {
     "codigo": "1356",
@@ -3462,7 +3462,7 @@
     "nome": "LIMPA PISO PORCELANATO 750ML  LAVANDA START",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 11.99,
-    "estoque": 23.0
+    "estoque": 22.0
   },
   {
     "codigo": "1389",
@@ -3602,7 +3602,7 @@
     "nome": "G80MA BOLO ALTA MILLENIUM GALVONOTEK",
     "categoria": "DESCARTAVEIS",
     "preco": 12.5,
-    "estoque": 23.0
+    "estoque": 22.0
   },
   {
     "codigo": "1479",
@@ -3798,7 +3798,7 @@
     "nome": "SACO BRANCO KRAFT VI 19X19CM C/100UN PLUMA",
     "categoria": "DESCARTAVEIS",
     "preco": 14.0,
-    "estoque": 34.0
+    "estoque": 33.0
   },
   {
     "codigo": "1600",
@@ -4015,7 +4015,7 @@
     "nome": "PRATO  ISOPOR BPR-23 C/25UN BOM APETITE",
     "categoria": "DESCARTAVEIS",
     "preco": 12.5,
-    "estoque": 17.0
+    "estoque": 15.0
   },
   {
     "codigo": "1813",
@@ -4120,7 +4120,7 @@
     "nome": "LIMPA VIDRO  SANCHES",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 8.5,
-    "estoque": 23.0
+    "estoque": 22.0
   },
   {
     "codigo": "1905",
@@ -4133,7 +4133,7 @@
     "codigo": "1908",
     "nome": "SACOS PLASTICO PEBD 40X60X0,10 1KG COLOMBO/HELVIPACK",
     "categoria": "Embalagem",
-    "preco": 38.99,
+    "preco": 34.99,
     "estoque": 1.0
   },
   {
@@ -4252,7 +4252,7 @@
     "codigo": "2002",
     "nome": "SACOLA PLASTICA MILHEIRO BRANCA 25X35 1KG",
     "categoria": "Embalagem",
-    "preco": 42.99,
+    "preco": 38.99,
     "estoque": 2.0
   },
   {
@@ -4301,14 +4301,14 @@
     "codigo": "2026",
     "nome": "SACOLA PLASTICA MILHEIRO BRANCA 30X40 200G",
     "categoria": "Embalagem",
-    "preco": 11.99,
+    "preco": 9.99,
     "estoque": 0.0
   },
   {
     "codigo": "2027",
     "nome": "SACOLA PLASTICA MILHEIRO BRANCA 30X40 1KG",
     "categoria": "Embalagem",
-    "preco": 55.99,
+    "preco": 46.99,
     "estoque": 1.0
   },
   {
@@ -4358,7 +4358,7 @@
     "nome": "TOUCAS DESCARTAVEIS C/100UN 45X50CM BOMPACK",
     "categoria": "DESCARTAVEIS",
     "preco": 13.5,
-    "estoque": -4.0
+    "estoque": -5.0
   },
   {
     "codigo": "2067",
@@ -4519,7 +4519,7 @@
     "nome": "FITA ADESIVA 45X100M  TRANSPARENTE PAPI",
     "categoria": "PAPELARIA",
     "preco": 10.5,
-    "estoque": 72.0
+    "estoque": 70.0
   },
   {
     "codigo": "2164",
@@ -4589,7 +4589,7 @@
     "nome": "BLISTER PARA DOCES C/25UN DUOPLAST",
     "categoria": "DESCARTAVEIS",
     "preco": 4.0,
-    "estoque": -2.0
+    "estoque": -3.0
   },
   {
     "codigo": "2194",
@@ -4841,7 +4841,7 @@
     "nome": "G78M BOLO MEDIA MILL. GALVANOTEK",
     "categoria": "DESCARTAVEIS",
     "preco": 24.5,
-    "estoque": 17.0
+    "estoque": 16.0
   },
   {
     "codigo": "2411",
@@ -4995,7 +4995,7 @@
     "nome": "ESPONJA  ANTIRISCO C/4UN ALKLIN",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 4.0,
-    "estoque": 90.0
+    "estoque": 89.0
   },
   {
     "codigo": "2599",
@@ -5036,7 +5036,7 @@
     "codigo": "2655",
     "nome": "SACOS PLASTICO PEBD 50X70X0,10 1KG HELVIPACK",
     "categoria": "Embalagem",
-    "preco": 38.99,
+    "preco": 34.99,
     "estoque": 7.0
   },
   {
@@ -6101,7 +6101,7 @@
     "nome": "PAPEL HIGIENICO FOFINHO FOLHA DUPLA 4X30M",
     "categoria": "PRODUTO DE HIGIENE",
     "preco": 8.99,
-    "estoque": 37.0
+    "estoque": 36.0
   },
   {
     "codigo": "3192",
@@ -6122,7 +6122,7 @@
     "nome": "COPO E TAMPA 140ML C/25UN ULTRA PP",
     "categoria": "DESCARTAVEIS",
     "preco": 11.5,
-    "estoque": 79.0
+    "estoque": 78.0
   },
   {
     "codigo": "3199",
@@ -6185,7 +6185,7 @@
     "nome": "PERCABONATO  DE SODIO 1KG DENSO",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 10.99,
-    "estoque": -20.0
+    "estoque": -21.0
   },
   {
     "codigo": "3420",
@@ -7108,7 +7108,7 @@
     "codigo": "7891",
     "nome": "SACO PLASTICO PEBD  35X45X0,06  1KG COLOMBO",
     "categoria": "Embalagem",
-    "preco": 38.99,
+    "preco": 34.99,
     "estoque": 5.0
   },
   {
@@ -7151,7 +7151,7 @@
     "nome": "SACO P/LIXO PRETO 20L P5 C/10UN",
     "categoria": "SACO LIXO",
     "preco": 4.0,
-    "estoque": 65.0
+    "estoque": 62.0
   },
   {
     "codigo": "7899",
@@ -7508,7 +7508,7 @@
     "nome": "CORDA  P/VARAL 15M CLEANTECH",
     "categoria": "Outras",
     "preco": 14.99,
-    "estoque": 1.0
+    "estoque": 0.0
   },
   {
     "codigo": "8777",
@@ -7731,7 +7731,7 @@
     "codigo": "10075",
     "nome": "SACOS PLASTICO PEBD 8X40X0,06 1KG COLOMBO",
     "categoria": "Embalagem",
-    "preco": 38.99,
+    "preco": 34.99,
     "estoque": 10.0
   },
   {
@@ -7913,7 +7913,7 @@
     "codigo": "20021",
     "nome": "SACOLA PLASTICA MILHEIRO BRANCA 25X35 200G",
     "categoria": "Embalagem",
-    "preco": 8.99,
+    "preco": 7.99,
     "estoque": 8.0
   },
   {
@@ -8131,7 +8131,7 @@
     "nome": "DETERGENTE YPÊ CLEAR 500ML",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 4.5,
-    "estoque": 24.0
+    "estoque": 23.0
   },
   {
     "codigo": "31651",
@@ -8159,7 +8159,7 @@
     "nome": "SABAO EM PO 800G BABY SOFT SACHE",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 8.5,
-    "estoque": 14.0
+    "estoque": 13.0
   },
   {
     "codigo": "31655",
@@ -8586,7 +8586,7 @@
     "nome": "PRATO TABULEIRO LAMINADO N06, 31,0CM",
     "categoria": "DESCARTAVEIS",
     "preco": 4.5,
-    "estoque": 92.0
+    "estoque": 91.0
   },
   {
     "codigo": "79023",
@@ -8712,7 +8712,7 @@
     "nome": "AGUA SANITARIA DACLOR 1L",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 5.4,
-    "estoque": 2.0
+    "estoque": 1.0
   },
   {
     "codigo": "89815",
@@ -8761,7 +8761,7 @@
     "nome": "ESPONJA DE AÇO BOMBRIL 45G",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 3.75,
-    "estoque": 19.0
+    "estoque": 18.0
   },
   {
     "codigo": "129007",
@@ -9146,7 +9146,7 @@
     "nome": "ISQUEIRO BIC MAXI",
     "categoria": "-",
     "preco": 8.5,
-    "estoque": -9.0
+    "estoque": -10.0
   },
   {
     "codigo": "129066",
