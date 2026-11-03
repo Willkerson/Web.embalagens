@@ -32,7 +32,7 @@
     "nome": "PÁ DE LIXO PLASTICO CABO CURTO",
     "categoria": "-",
     "preco": 5.0,
-    "estoque": 4.0
+    "estoque": 3.0
   },
   {
     "codigo": "20",
@@ -312,7 +312,7 @@
     "nome": "COLHER SOFT BRANCA C/50UN ELITE",
     "categoria": "DESCARTAVEIS",
     "preco": 6.5,
-    "estoque": 30.0
+    "estoque": 29.0
   },
   {
     "codigo": "177",
@@ -459,7 +459,7 @@
     "nome": "LIXEIRA C/PEDAL 12L ARQPLAST",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 33.5,
-    "estoque": 2.0
+    "estoque": 1.0
   },
   {
     "codigo": "270",
@@ -529,7 +529,7 @@
     "nome": "VASSOURA DENTRO E FORA C/CABO ALKLIN",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 15.0,
-    "estoque": -32.0
+    "estoque": -33.0
   },
   {
     "codigo": "295",
@@ -823,7 +823,7 @@
     "nome": "LIMPEZA PESADA 500ML ORIG. VEJA",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 9.99,
-    "estoque": 15.0
+    "estoque": 14.0
   },
   {
     "codigo": "385",
@@ -837,7 +837,7 @@
     "nome": "PANO DE CHAO XADREZ 45CMX68CM SOUZA BR2",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 4.7,
-    "estoque": 86.0
+    "estoque": 83.0
   },
   {
     "codigo": "390",
@@ -851,7 +851,7 @@
     "nome": "PANO DE CHAO ALVEJADO CAIPIRA 45CMX68CM",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 5.25,
-    "estoque": 252.0
+    "estoque": 250.0
   },
   {
     "codigo": "398",
@@ -1319,8 +1319,8 @@
     "codigo": "553",
     "nome": "GARRAFA PE QUADRADA 500ML C/10UN DECOPLAST",
     "categoria": "Embalagem",
-    "preco": 11.99,
-    "estoque": 43.0
+    "preco": 9.99,
+    "estoque": 93.0
   },
   {
     "codigo": "554",
@@ -1656,7 +1656,7 @@
     "nome": "ASSADEIRA DE ALUMINIO RETANGULAR PRA VIAGEM 4L",
     "categoria": "DESCARTAVEIS",
     "preco": 5.99,
-    "estoque": 19.0
+    "estoque": 17.0
   },
   {
     "codigo": "656",
@@ -2349,7 +2349,7 @@
     "nome": "COPO DESCARTAVEL 180ML PS C/100UN GLIGHT",
     "categoria": "DESCARTAVEIS",
     "preco": 5.99,
-    "estoque": -2.0
+    "estoque": -4.0
   },
   {
     "codigo": "902",
@@ -2510,7 +2510,7 @@
     "nome": "DESINFETANTE PINHO ULTRABAC SUPREMA 2L",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 7.25,
-    "estoque": 11.0
+    "estoque": 10.0
   },
   {
     "codigo": "967",
@@ -2608,7 +2608,7 @@
     "nome": "PANO BRANCO MULTIUSO C/600 PANOS 28CMX240CM MR.PLUS",
     "categoria": "PRODUTO DE HIGIENE",
     "preco": 79.99,
-    "estoque": 5.0
+    "estoque": 4.0
   },
   {
     "codigo": "0406",
@@ -2838,8 +2838,8 @@
     "codigo": "1080",
     "nome": "GARRAFA PE QUADRADA 300ML C/10UN  DECOPLAST",
     "categoria": "Embalagem",
-    "preco": 10.99,
-    "estoque": 18.0
+    "preco": 8.5,
+    "estoque": 118.0
   },
   {
     "codigo": "1084",
@@ -3070,7 +3070,7 @@
     "nome": "MARMITEX DE ISOPOR N8 750ML  C/100UN TOTALPLAST",
     "categoria": "DESCARTAVEIS",
     "preco": 54.99,
-    "estoque": -1.0
+    "estoque": -2.0
   },
   {
     "codigo": "1184",
@@ -3080,11 +3080,18 @@
     "estoque": 4.0
   },
   {
+    "codigo": "1185",
+    "nome": "MARMITEX DE ISOPOR 1100ML C/10UN  TOTALPLAST",
+    "categoria": "-",
+    "preco": 6.99,
+    "estoque": 5.0
+  },
+  {
     "codigo": "1187",
     "nome": "SACO P/ LIXO PRETO P6 40L C/50UN",
     "categoria": "SACO LIXO",
     "preco": 25.0,
-    "estoque": 28.0
+    "estoque": 27.0
   },
   {
     "codigo": "1188",
@@ -3175,14 +3182,14 @@
     "nome": "SABONETE LIQ. FRAGRANCIA FRAMBOESA & AMORA 500ML  LAFEH",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 8.99,
-    "estoque": 2.0
+    "estoque": 1.0
   },
   {
     "codigo": "1276",
     "nome": "BOBINA PICOTADA 2,5KG C/500UN P/ ALIMENTOS 25X33 EXTRUSA",
     "categoria": "Embalagem",
     "preco": 25.0,
-    "estoque": 13.0
+    "estoque": 12.0
   },
   {
     "codigo": "1281",
@@ -3280,7 +3287,7 @@
     "nome": "PACK LIXO PIA E BANHEIRO TUTTI-FRUITI C/80UN DIVA",
     "categoria": "SACO LIXO",
     "preco": 13.99,
-    "estoque": 14.0
+    "estoque": 13.0
   },
   {
     "codigo": "1316",
@@ -3686,7 +3693,7 @@
     "nome": "PANO DE PRATO BRANCO/ESTAMPADO TATI/NACIONAL 66X38CM",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 4.3,
-    "estoque": 297.0
+    "estoque": 295.0
   },
   {
     "codigo": "1530",
@@ -3734,8 +3741,8 @@
     "codigo": "1555",
     "nome": "GARRAFA PE QUADRADA 200ML C/10UN MALUGER",
     "categoria": "Embalagem",
-    "preco": 9.99,
-    "estoque": 5.0
+    "preco": 8.99,
+    "estoque": 35.0
   },
   {
     "codigo": "1558",
@@ -3769,15 +3776,15 @@
     "codigo": "1583",
     "nome": "GARRAFA PE QUADRADA 300ML C/100UN DECOPLAST",
     "categoria": "Embalagem",
-    "preco": 92.99,
-    "estoque": 2.0
+    "preco": 75.99,
+    "estoque": 5.0
   },
   {
     "codigo": "1584",
     "nome": "GARRAFA PE QUADRADA 500ML C/100UN DECOPLAST",
     "categoria": "Embalagem",
-    "preco": 106.99,
-    "estoque": 1.0
+    "preco": 90.99,
+    "estoque": 3.0
   },
   {
     "codigo": "1585",
@@ -4043,7 +4050,7 @@
     "nome": "PANO MULTIUSO LARANJA C/50 PANOS 30CMX25CM MR. PLUS TALGE",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 17.0,
-    "estoque": 0.0
+    "estoque": -1.0
   },
   {
     "codigo": "1835",
@@ -4253,7 +4260,7 @@
     "nome": "SACOLA PLASTICA MILHEIRO BRANCA 25X35 1KG",
     "categoria": "Embalagem",
     "preco": 38.99,
-    "estoque": 2.0
+    "estoque": 5.0
   },
   {
     "codigo": "2003",
@@ -4302,21 +4309,21 @@
     "nome": "SACOLA PLASTICA MILHEIRO BRANCA 30X40 200G",
     "categoria": "Embalagem",
     "preco": 9.99,
-    "estoque": 0.0
+    "estoque": 20.0
   },
   {
     "codigo": "2027",
     "nome": "SACOLA PLASTICA MILHEIRO BRANCA 30X40 1KG",
     "categoria": "Embalagem",
     "preco": 46.99,
-    "estoque": 1.0
+    "estoque": 6.0
   },
   {
     "codigo": "2031",
     "nome": "PILHA AA C/4UN ALFACELL",
     "categoria": "UTENSILIOS",
     "preco": 6.99,
-    "estoque": 9.0
+    "estoque": 8.0
   },
   {
     "codigo": "2032",
@@ -4512,14 +4519,14 @@
     "nome": "LUVA NITRILICA PRETA G  S/PO C/100UN TALGE",
     "categoria": "DESCARTAVEIS",
     "preco": 31.99,
-    "estoque": 18.0
+    "estoque": 17.0
   },
   {
     "codigo": "2140",
     "nome": "FITA ADESIVA 45X100M  TRANSPARENTE PAPI",
     "categoria": "PAPELARIA",
     "preco": 10.5,
-    "estoque": 70.0
+    "estoque": 69.0
   },
   {
     "codigo": "2164",
@@ -5176,8 +5183,8 @@
     "codigo": "2789",
     "nome": "GARRAFA PET QUADRADA 200ML C/100UN MALUGER",
     "categoria": "Embalagem",
-    "preco": 87.99,
-    "estoque": 2.0
+    "preco": 72.99,
+    "estoque": 5.0
   },
   {
     "codigo": "2799",
@@ -5478,7 +5485,7 @@
     "nome": "PRATO RASO PR26 BRC/10UN TOTAL PLAST",
     "categoria": "DESCARTAVEIS",
     "preco": 8.5,
-    "estoque": 16.0
+    "estoque": 14.0
   },
   {
     "codigo": "2938",
@@ -5793,7 +5800,7 @@
     "nome": "POTE E TAMPA RET.500ML C/24UN GOUR MAX",
     "categoria": "DESCARTAVEIS",
     "preco": 29.99,
-    "estoque": 24.0
+    "estoque": 22.0
   },
   {
     "codigo": "3106",
@@ -6094,7 +6101,7 @@
     "nome": "PANO PARA PISO MICROFIIBRAS COLORS 48X70CM ALKLIN",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 12.5,
-    "estoque": -37.0
+    "estoque": -38.0
   },
   {
     "codigo": "3191",
@@ -6129,7 +6136,7 @@
     "nome": "PAPEL TOALHA SCALA PLUS C/120 TOALHAS C/2 ROLOS",
     "categoria": "PRODUTO DE HIGIENE",
     "preco": 8.5,
-    "estoque": 7.0
+    "estoque": 6.0
   },
   {
     "codigo": "3228",
@@ -6451,7 +6458,7 @@
     "nome": "FILM DE PVC 30MTS  28X30M TECKFIM",
     "categoria": "Embalagem",
     "preco": 6.5,
-    "estoque": 15.0
+    "estoque": 14.0
   },
   {
     "codigo": "4003",
@@ -6976,7 +6983,7 @@
     "nome": "SABONETE LIQ. FRAGRANCIA ALGAS MARINHAS 500ML  LAFEH",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 8.99,
-    "estoque": 5.0
+    "estoque": 3.0
   },
   {
     "codigo": "7322",
@@ -7102,7 +7109,7 @@
     "nome": "SACO P/LIXO 20L PRETO P5 C/50UN",
     "categoria": "SACO LIXO",
     "preco": 17.0,
-    "estoque": 43.0
+    "estoque": 42.0
   },
   {
     "codigo": "7891",
@@ -7914,7 +7921,7 @@
     "nome": "SACOLA PLASTICA MILHEIRO BRANCA 25X35 200G",
     "categoria": "Embalagem",
     "preco": 7.99,
-    "estoque": 8.0
+    "estoque": 38.0
   },
   {
     "codigo": "20032",
@@ -8089,7 +8096,7 @@
     "nome": "ODORIZADOR DE TECIDOS VANILLA 500ML",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 18.99,
-    "estoque": 2.0
+    "estoque": 1.0
   },
   {
     "codigo": "31417",
@@ -8341,7 +8348,7 @@
     "nome": "NEUTRALIZADOR DE ODORES ONLY LAVANDA 500ML",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 23.0,
-    "estoque": 6.0
+    "estoque": 4.0
   },
   {
     "codigo": "31683",
