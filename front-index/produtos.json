@@ -529,7 +529,7 @@
     "nome": "VASSOURA DENTRO E FORA C/CABO ALKLIN",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 15.0,
-    "estoque": 22.0
+    "estoque": 21.0
   },
   {
     "codigo": "295",
@@ -585,7 +585,7 @@
     "nome": "PANO PANOTEK  REUTILIZAVEL C/40UN ALKIN",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 12.0,
-    "estoque": 37.0
+    "estoque": 36.0
   },
   {
     "codigo": "312",
@@ -781,7 +781,7 @@
     "nome": "POTE REDONDO 145ML C/TAMPA C/24UN  PRAFESTA",
     "categoria": "DESCARTAVEIS",
     "preco": 13.5,
-    "estoque": 36.0
+    "estoque": 35.0
   },
   {
     "codigo": "367",
@@ -970,7 +970,7 @@
     "nome": "COLHER SOBREMESA BRANCA C/50UN ELITE",
     "categoria": "DESCARTAVEIS",
     "preco": 3.99,
-    "estoque": 20.0
+    "estoque": 19.0
   },
   {
     "codigo": "423",
@@ -2874,7 +2874,7 @@
     "nome": "MARMITEX DE ISOPOR 750ML C/10UN BOM APETITE",
     "categoria": "DESCARTAVEIS",
     "preco": 8.0,
-    "estoque": 40.0
+    "estoque": 36.0
   },
   {
     "codigo": "1113",
@@ -2965,7 +2965,7 @@
     "nome": "FIBRA LIMP. PESADA 1UN 260X102MM BETTANIN",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 4.99,
-    "estoque": 15.0
+    "estoque": 10.0
   },
   {
     "codigo": "1149",
@@ -3091,7 +3091,7 @@
     "nome": "SACO P/ LIXO PRETO P6 40L C/50UN",
     "categoria": "SACO LIXO",
     "preco": 25.0,
-    "estoque": 25.0
+    "estoque": 24.0
   },
   {
     "codigo": "1188",
@@ -3133,7 +3133,7 @@
     "nome": "BOBINA PICOTADA 2KG C/500UN P/ ALIMENTOS 20X28CM EXTRUSA",
     "categoria": "Embalagem",
     "preco": 19.0,
-    "estoque": 11.0
+    "estoque": 10.0
   },
   {
     "codigo": "1211",
@@ -3875,7 +3875,7 @@
     "nome": "SACOLA VERDE REFORÇADA 1KG 45x60",
     "categoria": "Embalagem",
     "preco": 19.99,
-    "estoque": 12.0
+    "estoque": 11.0
   },
   {
     "codigo": "1713",
@@ -4022,7 +4022,7 @@
     "nome": "PRATO  ISOPOR BPR-23 C/25UN BOM APETITE",
     "categoria": "DESCARTAVEIS",
     "preco": 12.5,
-    "estoque": 61.0
+    "estoque": 54.0
   },
   {
     "codigo": "1813",
@@ -4071,7 +4071,7 @@
     "nome": "TOP LIXO BRANCO 30L C/30UN PACK LIXO",
     "categoria": "SACO LIXO",
     "preco": 16.99,
-    "estoque": 6.0
+    "estoque": 5.0
   },
   {
     "codigo": "1885",
@@ -4134,7 +4134,7 @@
     "nome": "SACOS PLASTICO PEBD 200G  20X30",
     "categoria": "Embalagem",
     "preco": 10.0,
-    "estoque": 25.0
+    "estoque": 24.0
   },
   {
     "codigo": "1908",
@@ -4190,7 +4190,7 @@
     "nome": "MARMITEX DE ISOPOR 500ML C/10UN",
     "categoria": "DESCARTAVEIS",
     "preco": 7.0,
-    "estoque": -1.0
+    "estoque": -2.0
   },
   {
     "codigo": "1933",
@@ -4876,7 +4876,7 @@
     "nome": "GUARDANAPO DE PAPEL WHITEPAPER C/50UN 20X22CM",
     "categoria": "DESCARTAVEIS",
     "preco": 1.99,
-    "estoque": 259.0
+    "estoque": 256.0
   },
   {
     "codigo": "2445",
@@ -5177,7 +5177,7 @@
     "nome": "GARFO REFEICAO BRANCO C/50UN ELITE",
     "categoria": "DESCARTAVEIS",
     "preco": 8.99,
-    "estoque": 53.0
+    "estoque": 52.0
   },
   {
     "codigo": "2789",
@@ -5590,7 +5590,7 @@
     "nome": "COPO DESCARTAVEL 180ML PS C/100UN FASTCUP",
     "categoria": "DESCARTAVEIS",
     "preco": 6.99,
-    "estoque": 80.0
+    "estoque": 79.0
   },
   {
     "codigo": "2995",
@@ -5751,7 +5751,7 @@
     "nome": "SACO PLASTICO PE C/100UN P/GELAO 05X24X02",
     "categoria": "DESCARTAVEIS",
     "preco": 4.0,
-    "estoque": 125.0
+    "estoque": 124.0
   },
   {
     "codigo": "3072",
@@ -5772,7 +5772,7 @@
     "nome": "KIT POTE E TAMPA RET. 750ML C/12UN GOUR MAX",
     "categoria": "DESCARTAVEIS",
     "preco": 21.5,
-    "estoque": 24.0
+    "estoque": 23.0
   },
   {
     "codigo": "3078",
@@ -6248,7 +6248,7 @@
     "nome": "PANO PARA PIA  ALVEJADO C/3U N ALKLIN",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 6.99,
-    "estoque": -6.0
+    "estoque": -7.0
   },
   {
     "codigo": "3572",
@@ -6339,7 +6339,7 @@
     "nome": "LIMPADOR CONCENTRADO LAVANDA 120ML SANOL",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 12.99,
-    "estoque": 14.0
+    "estoque": 13.0
   },
   {
     "codigo": "3979",
@@ -6458,7 +6458,7 @@
     "nome": "FILM DE PVC 30MTS  28X30M TECKFIM",
     "categoria": "Embalagem",
     "preco": 6.5,
-    "estoque": 14.0
+    "estoque": 12.0
   },
   {
     "codigo": "4003",
@@ -6612,7 +6612,7 @@
     "nome": "PRATO RASO 15CM GPACK",
     "categoria": "DESCARTAVEIS",
     "preco": 1.99,
-    "estoque": 48.0
+    "estoque": 43.0
   },
   {
     "codigo": "5012",
@@ -7900,7 +7900,7 @@
     "nome": "SACOLA VERDE REFORÇADA 1KG 35X45",
     "categoria": "Embalagem",
     "preco": 19.99,
-    "estoque": 21.0
+    "estoque": 20.0
   },
   {
     "codigo": "17845",
@@ -8012,7 +8012,7 @@
     "nome": "D695 KIT POTE TRANSPARENTE  P/ MOLHO CAIXA FECHADA",
     "categoria": "DESCARTAVEIS",
     "preco": 168.0,
-    "estoque": -1.0
+    "estoque": -2.0
   },
   {
     "codigo": "24722",
@@ -9440,7 +9440,7 @@
     "nome": "BARATAS E FORMIGAS  360ML BAYGON",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 18.0,
-    "estoque": 13.0
+    "estoque": 12.0
   },
   {
     "codigo": "129107",
