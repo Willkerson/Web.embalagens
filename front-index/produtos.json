@@ -2587,7 +2587,7 @@
     "nome": "MARMITEX DE ISOPOR 750ML C/10UN COPOBRAS",
     "categoria": "DESCARTAVEIS",
     "preco": 8.0,
-    "estoque": 8.0
+    "estoque": 7.0
   },
   {
     "codigo": "0229",
@@ -5443,7 +5443,7 @@
     "nome": "PRATO QUADRADO GR.210MM BRANCO C10UN ELITE",
     "categoria": "DESCARTAVEIS",
     "preco": 14.99,
-    "estoque": 23.0
+    "estoque": 22.0
   },
   {
     "codigo": "2924",
@@ -6860,6 +6860,13 @@
     "estoque": 0.0
   },
   {
+    "codigo": "6654",
+    "nome": "ALCOOL 70% LIQUIDO 5L  HORUS",
+    "categoria": "PRODUTO DE HIGIENE",
+    "preco": 44.99,
+    "estoque": 0.0
+  },
+  {
     "codigo": "6666",
     "nome": "G60MA CAIXA FECHADA",
     "categoria": "DESCARTAVEIS",
@@ -7410,7 +7417,7 @@
     "nome": "ALCOOL LIQUIDO 1L 70% BARBAREX",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 10.99,
-    "estoque": 0.0
+    "estoque": -1.0
   },
   {
     "codigo": "8277",
@@ -8012,7 +8019,7 @@
     "nome": "D695 KIT POTE TRANSPARENTE  P/ MOLHO CAIXA FECHADA",
     "categoria": "DESCARTAVEIS",
     "preco": 168.0,
-    "estoque": -2.0
+    "estoque": -3.0
   },
   {
     "codigo": "24722",
