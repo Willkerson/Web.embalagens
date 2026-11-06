@@ -32,7 +32,7 @@
     "nome": "PÁ DE LIXO PLASTICO CABO CURTO",
     "categoria": "-",
     "preco": 5.0,
-    "estoque": 3.0
+    "estoque": 2.0
   },
   {
     "codigo": "20",
@@ -193,7 +193,7 @@
     "nome": "RODO  30CM C/CABO ALKLIN",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 15.0,
-    "estoque": 38.0
+    "estoque": 37.0
   },
   {
     "codigo": "124",
@@ -809,7 +809,7 @@
     "nome": "LUVA LATEX P PLUS SANRO LARANJA P/ LIMPEZA",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 11.99,
-    "estoque": 8.0
+    "estoque": 10.0
   },
   {
     "codigo": "376",
@@ -2587,7 +2587,7 @@
     "nome": "MARMITEX DE ISOPOR 750ML C/10UN COPOBRAS",
     "categoria": "DESCARTAVEIS",
     "preco": 8.0,
-    "estoque": 7.0
+    "estoque": 5.0
   },
   {
     "codigo": "0229",
@@ -2769,7 +2769,7 @@
     "nome": "SACO P/ LIXO PRETO P6 40L C/10UN",
     "categoria": "SACO LIXO",
     "preco": 5.99,
-    "estoque": 75.0
+    "estoque": 74.0
   },
   {
     "codigo": "1052",
@@ -2965,14 +2965,14 @@
     "nome": "FIBRA LIMP. PESADA 1UN 260X102MM BETTANIN",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 4.99,
-    "estoque": 10.0
+    "estoque": 40.0
   },
   {
     "codigo": "1149",
     "nome": "FIBRA LIMP. USO GERAL 1UN 260X102MM BETTANIN",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 4.5,
-    "estoque": -1.0
+    "estoque": 40.0
   },
   {
     "codigo": "1150",
@@ -3140,7 +3140,7 @@
     "nome": "MARMITEX DE ISOPOR 1100ML C/100UN TOTALPLAST",
     "categoria": "DESCARTAVEIS",
     "preco": 62.99,
-    "estoque": 2.0
+    "estoque": 7.0
   },
   {
     "codigo": "1225",
@@ -6493,7 +6493,7 @@
     "nome": "FILME DE PVC  300 METROS 38CMX300M TECFILM",
     "categoria": "Embalagem",
     "preco": 54.99,
-    "estoque": 8.0
+    "estoque": 7.0
   },
   {
     "codigo": "4009",
@@ -6864,7 +6864,7 @@
     "nome": "ALCOOL 70% LIQUIDO 5L  HORUS",
     "categoria": "PRODUTO DE HIGIENE",
     "preco": 44.99,
-    "estoque": 0.0
+    "estoque": 8.0
   },
   {
     "codigo": "6666",
@@ -8054,7 +8054,7 @@
     "nome": "PAPEL ACOPLADO C/PELICULA 30X38 C/400UN CAIXA FECHADA",
     "categoria": "DESCARTAVEIS",
     "preco": 61.99,
-    "estoque": 1.0
+    "estoque": 2.0
   },
   {
     "codigo": "28645",
@@ -8803,7 +8803,7 @@
     "nome": "ESPONJA DE AÇO BOMBRIL 45G",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 3.75,
-    "estoque": 7.0
+    "estoque": 27.0
   },
   {
     "codigo": "129007",
