@@ -2216,7 +2216,7 @@
     "nome": "HAMBURGUEIRA BH02 C/10UN BOM APETITE",
     "categoria": "Embalagem",
     "preco": 3.99,
-    "estoque": 22.0
+    "estoque": 20.0
   },
   {
     "codigo": "857",
@@ -2804,7 +2804,7 @@
     "nome": "FITA ADESIVA 45MMX100M MARROM",
     "categoria": "PAPELARIA",
     "preco": 10.5,
-    "estoque": 73.0
+    "estoque": 72.0
   },
   {
     "codigo": "1060",
@@ -2951,7 +2951,7 @@
     "nome": "MARMITEX DE ISOPOR 500ML C/10UN TOTALPLAST",
     "categoria": "DESCARTAVEIS",
     "preco": 5.99,
-    "estoque": 0.0
+    "estoque": -1.0
   },
   {
     "codigo": "1145",
@@ -3084,7 +3084,7 @@
     "nome": "MARMITEX DE ISOPOR N8 750ML  C/100UN TOTALPLAST",
     "categoria": "DESCARTAVEIS",
     "preco": 54.99,
-    "estoque": 8.0
+    "estoque": 7.0
   },
   {
     "codigo": "1184",
@@ -3147,7 +3147,7 @@
     "nome": "BOBINA PICOTADA 2KG C/500UN P/ ALIMENTOS 20X28CM EXTRUSA",
     "categoria": "Embalagem",
     "preco": 19.0,
-    "estoque": 30.0
+    "estoque": 29.0
   },
   {
     "codigo": "1211",
@@ -3581,7 +3581,7 @@
     "nome": "POTE 100ML C/100UN COPOMAIS",
     "categoria": "DESCARTAVEIS",
     "preco": 6.5,
-    "estoque": 25.0
+    "estoque": 24.0
   },
   {
     "codigo": "1465",
@@ -4134,7 +4134,7 @@
     "nome": "VASSOURA PIAÇAVA SINTETICA ALKLIN C/CABO",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 16.25,
-    "estoque": 18.0
+    "estoque": 16.0
   },
   {
     "codigo": "1902",
@@ -4407,7 +4407,7 @@
     "nome": "TAMPA PARA COPO 100/150/180 E 200ML C/100UN COPOMAIS",
     "categoria": "DESCARTAVEIS",
     "preco": 8.99,
-    "estoque": 32.0
+    "estoque": 31.0
   },
   {
     "codigo": "2075",
@@ -4491,7 +4491,7 @@
     "nome": "SACOLA BRANCA 1KG 35x45",
     "categoria": "Embalagem",
     "preco": 20.5,
-    "estoque": -19.0
+    "estoque": -20.0
   },
   {
     "codigo": "2103",
@@ -4659,7 +4659,7 @@
     "nome": "CAIXA COPO 180ML TOTALPLAST C/2500UN FECHADO",
     "categoria": "DESCARTAVEIS",
     "preco": 150.5,
-    "estoque": 2.0
+    "estoque": 11.0
   },
   {
     "codigo": "2296",
@@ -4743,7 +4743,7 @@
     "nome": "G70 BOLO/TORTA RETANGULAR MEDIA GALVONOTEK - 34,2 x 24 x 11,5 cm",
     "categoria": "DESCARTAVEIS",
     "preco": 15.0,
-    "estoque": 14.0
+    "estoque": 13.0
   },
   {
     "codigo": "2345",
@@ -4967,7 +4967,7 @@
     "nome": "LUVA LATEX G PLUS SANRO LARANJA P/LIMPEZA",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 11.99,
-    "estoque": -9.0
+    "estoque": -10.0
   },
   {
     "codigo": "2500",
@@ -5184,7 +5184,7 @@
     "nome": "GARFO SOBREMESA CRISTAL C/50UN ELITE",
     "categoria": "DESCARTAVEIS",
     "preco": 3.0,
-    "estoque": 14.0
+    "estoque": 13.0
   },
   {
     "codigo": "2785",
@@ -5450,7 +5450,7 @@
     "nome": "SACOLA KRAFT BRANCO H2 C/100UN 19X12CM PLUMA",
     "categoria": "DESCARTAVEIS",
     "preco": 8.0,
-    "estoque": 27.0
+    "estoque": 26.0
   },
   {
     "codigo": "2922",
@@ -5723,7 +5723,7 @@
     "nome": "HAMBURGUEIRA BH01 C/10UN BOM APETITE",
     "categoria": "DESCARTAVEIS",
     "preco": 3.5,
-    "estoque": 115.0
+    "estoque": 113.0
   },
   {
     "codigo": "3048",
@@ -5765,7 +5765,7 @@
     "nome": "SACO PLASTICO PE C/100UN P/GELAO 05X24X02",
     "categoria": "DESCARTAVEIS",
     "preco": 4.0,
-    "estoque": 119.0
+    "estoque": 118.0
   },
   {
     "codigo": "3072",
@@ -6035,7 +6035,7 @@
   },
   {
     "codigo": "3158",
-    "nome": "FITA ADESIVA 18MMX40M / 18MMx50M KORETEC",
+    "nome": "FITA ADESIVA 18X40 KORETEC",
     "categoria": "PAPELARIA",
     "preco": 2.5,
     "estoque": 53.0
@@ -6598,7 +6598,7 @@
     "nome": "FACA DE COZINHA 8\" BASS",
     "categoria": "UTENSILIOS",
     "preco": 16.99,
-    "estoque": 3.0
+    "estoque": 1.0
   },
   {
     "codigo": "4641",
@@ -6626,7 +6626,7 @@
     "nome": "PRATO RASO 15CM GPACK",
     "categoria": "DESCARTAVEIS",
     "preco": 1.99,
-    "estoque": 35.0
+    "estoque": 32.0
   },
   {
     "codigo": "5012",
@@ -7858,7 +7858,7 @@
     "nome": "MARMITEX DE ISOPOR N8 750ML  C/50UN BOM APETITE",
     "categoria": "DESCARTAVEIS",
     "preco": 30.75,
-    "estoque": 7.0
+    "estoque": 6.0
   },
   {
     "codigo": "12345",
@@ -8327,7 +8327,7 @@
     "nome": "PRATO BRANCO FUNDO 15CM C/10UN TOTALPLAST",
     "categoria": "DESCARTAVEIS",
     "preco": 2.5,
-    "estoque": 26.0
+    "estoque": 21.0
   },
   {
     "codigo": "31676",
