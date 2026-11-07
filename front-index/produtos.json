@@ -1264,7 +1264,7 @@
     "nome": "CAIXA ONDULADO N3 40X30X30 NIAGRA",
     "categoria": "Embalagem",
     "preco": 11.5,
-    "estoque": 36.0
+    "estoque": 32.0
   },
   {
     "codigo": "530",
@@ -2783,7 +2783,7 @@
     "nome": "SACOS P/LIXO 90X100 100L P8 C/10UN PRETO",
     "categoria": "SACO LIXO",
     "preco": 13.5,
-    "estoque": 52.0
+    "estoque": 51.0
   },
   {
     "codigo": "1055",
@@ -3602,7 +3602,7 @@
     "nome": "D50MA TORTA ALTA 1,7KG DONA RITA",
     "categoria": "Embalagem",
     "preco": 3.5,
-    "estoque": 41.0
+    "estoque": 40.0
   },
   {
     "codigo": "1475",
@@ -3910,7 +3910,7 @@
     "nome": "SACOLA VERDE REFORÇADA 1KG 90X100",
     "categoria": "Embalagem",
     "preco": 16.99,
-    "estoque": 16.0
+    "estoque": 15.0
   },
   {
     "codigo": "1717",
@@ -4540,7 +4540,7 @@
     "nome": "FITA ADESIVA 45X100M  TRANSPARENTE PAPI",
     "categoria": "PAPELARIA",
     "preco": 10.5,
-    "estoque": 62.0
+    "estoque": 61.0
   },
   {
     "codigo": "2164",
@@ -5520,7 +5520,7 @@
     "nome": "CAIXA ONDULADO N04 50X40X35 NIAGRA",
     "categoria": "Embalagem",
     "preco": 16.99,
-    "estoque": 25.0
+    "estoque": 23.0
   },
   {
     "codigo": "2958",
@@ -8439,7 +8439,7 @@
     "nome": "LUVA LATEX M TOP SANRO VERDE",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 14.99,
-    "estoque": 2.0
+    "estoque": 1.0
   },
   {
     "codigo": "40075",
@@ -8614,7 +8614,7 @@
     "nome": "CAKEBOARD BRANCO 22CM",
     "categoria": "Embalagem",
     "preco": 3.99,
-    "estoque": 7.0
+    "estoque": 6.0
   },
   {
     "codigo": "79019",
