@@ -1600,7 +1600,7 @@
     "nome": "TOP LIXO PRETO 15L C/60UN PACK LIXO",
     "categoria": "SACO LIXO",
     "preco": 15.99,
-    "estoque": 30.0
+    "estoque": 28.0
   },
   {
     "codigo": "637",
@@ -2286,7 +2286,7 @@
     "nome": "BANDEJA ISOPOR BF02 FUNDA C/10UN BOM APETITE",
     "categoria": "Embalagem",
     "preco": 3.5,
-    "estoque": 93.0
+    "estoque": 91.0
   },
   {
     "codigo": "886",
@@ -2776,7 +2776,7 @@
     "nome": "SACO P/ LIXO PRETO P8 60L C/10UN",
     "categoria": "SACO LIXO",
     "preco": 8.99,
-    "estoque": 48.0
+    "estoque": 47.0
   },
   {
     "codigo": "1053",
@@ -3203,7 +3203,7 @@
     "nome": "BOBINA PICOTADA 2,5KG C/500UN P/ ALIMENTOS 25X33 EXTRUSA",
     "categoria": "Embalagem",
     "preco": 25.0,
-    "estoque": 9.0
+    "estoque": 8.0
   },
   {
     "codigo": "1281",
@@ -5226,7 +5226,7 @@
     "nome": "G37MB TORTA PEQUENA BAIXA 1KG",
     "categoria": "Embalagem",
     "preco": 4.5,
-    "estoque": 25.0
+    "estoque": 23.0
   },
   {
     "codigo": "2815",
@@ -5765,14 +5765,14 @@
     "nome": "POTE E TAMPA REDONDO 1000ML C/24UN DANUBIO",
     "categoria": "DESCARTAVEIS",
     "preco": 39.99,
-    "estoque": 8.0
+    "estoque": 6.0
   },
   {
     "codigo": "3070",
     "nome": "SACO PLASTICO PE C/100UN P/GELAO 05X24X02",
     "categoria": "DESCARTAVEIS",
     "preco": 4.0,
-    "estoque": 118.0
+    "estoque": 117.0
   },
   {
     "codigo": "3072",
@@ -6150,7 +6150,7 @@
     "nome": "COPO E TAMPA 140ML C/25UN ULTRA PP",
     "categoria": "DESCARTAVEIS",
     "preco": 11.5,
-    "estoque": 69.0
+    "estoque": 68.0
   },
   {
     "codigo": "3199",
@@ -6731,7 +6731,7 @@
     "nome": "PAPEL HIGIENICO SIMPLES 4X30 FOFINHO  30M X10CM",
     "categoria": "-",
     "preco": 5.99,
-    "estoque": 12.0
+    "estoque": 11.0
   },
   {
     "codigo": "5575",
@@ -8537,7 +8537,7 @@
     "nome": "SACO PRA LIXO REFORÇADO  200L  C/10 PRETO",
     "categoria": "SACO LIXO",
     "preco": 21.0,
-    "estoque": 20.0
+    "estoque": 18.0
   },
   {
     "codigo": "72716",
