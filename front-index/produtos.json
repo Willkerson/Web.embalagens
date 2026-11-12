@@ -991,7 +991,7 @@
     "nome": "SACOLA PEAD 20X30X0,12 C/50UN HELVIPACK",
     "categoria": "Embalagem",
     "preco": 16.99,
-    "estoque": 2.0
+    "estoque": 1.0
   },
   {
     "codigo": "426",
@@ -1320,7 +1320,7 @@
     "nome": "GARRAFA PE QUADRADA 500ML C/10UN DECOPLAST",
     "categoria": "Embalagem",
     "preco": 9.99,
-    "estoque": 93.0
+    "estoque": 91.0
   },
   {
     "codigo": "554",
@@ -1488,7 +1488,7 @@
     "nome": "GUARDA CHUVA MAUAL  93CM PRETO CASITA",
     "categoria": "UTENSILIOS",
     "preco": 15.0,
-    "estoque": -1.0
+    "estoque": -2.0
   },
   {
     "codigo": "606",
@@ -1523,7 +1523,7 @@
     "nome": "PROTETOR DE FOGAO C/12UN FOLHA DE ALUMINIO MOLDADA WYDA",
     "categoria": "Embalagem",
     "preco": 10.5,
-    "estoque": 0.0
+    "estoque": -1.0
   },
   {
     "codigo": "613",
@@ -2776,7 +2776,7 @@
     "nome": "SACO P/ LIXO PRETO P8 60L C/10UN",
     "categoria": "SACO LIXO",
     "preco": 8.99,
-    "estoque": 45.0
+    "estoque": 43.0
   },
   {
     "codigo": "1053",
@@ -3273,7 +3273,7 @@
     "nome": "FILME STRETCH 50CM X 300 M",
     "categoria": "Embalagem",
     "preco": 63.99,
-    "estoque": 2.0
+    "estoque": -1.0
   },
   {
     "codigo": "1310",
@@ -3364,7 +3364,7 @@
     "nome": "TOALHA INTERFOLHA BRANCA (VERDE) C/1000UN ISAPEL",
     "categoria": "PRODUTO DE HIGIENE",
     "preco": 16.0,
-    "estoque": -29.0
+    "estoque": -35.0
   },
   {
     "codigo": "1331",
@@ -3378,7 +3378,7 @@
     "nome": "TOALHA INTERFOLHA (OURO) CELULOSE ISAPEL C/1000UN",
     "categoria": "PRODUTO DE HIGIENE",
     "preco": 23.0,
-    "estoque": 27.0
+    "estoque": 26.0
   },
   {
     "codigo": "1341",
@@ -3651,7 +3651,7 @@
     "nome": "D645 POTE REDONDO BASE E TAMPA C/10UN 120ML",
     "categoria": "DESCARTAVEIS",
     "preco": 3.5,
-    "estoque": 20.0
+    "estoque": 18.0
   },
   {
     "codigo": "1488",
@@ -4155,7 +4155,7 @@
     "nome": "SACOS PLASTICO PEBD 200G  20X30",
     "categoria": "Embalagem",
     "preco": 10.0,
-    "estoque": 23.0
+    "estoque": 22.0
   },
   {
     "codigo": "1908",
@@ -4631,7 +4631,7 @@
     "nome": "D305 MINI DOCE 100ML C/10UN DUO PLAST",
     "categoria": "DESCARTAVEIS",
     "preco": 4.5,
-    "estoque": -79.0
+    "estoque": -82.0
   },
   {
     "codigo": "2197",
@@ -6857,7 +6857,7 @@
     "nome": "G680 - GALVONOTEK POTE REDONDO DE SOBREMESA 250 ml  C/5UN",
     "categoria": "DESCARTAVEIS",
     "preco": 5.99,
-    "estoque": 28.0
+    "estoque": 26.0
   },
   {
     "codigo": "6510",
@@ -7466,7 +7466,7 @@
     "nome": "ALCOOL LIQUIDO 1L 70% BARBAREX",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 10.99,
-    "estoque": 14.0
+    "estoque": 13.0
   },
   {
     "codigo": "8277",
