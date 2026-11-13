@@ -172,7 +172,7 @@
     "nome": "SAL EM SACHE C/200G BELLA",
     "categoria": "DESCARTAVEIS",
     "preco": 4.0,
-    "estoque": -3.0
+    "estoque": -4.0
   },
   {
     "codigo": "115",
@@ -1677,7 +1677,7 @@
     "nome": "D7 750ML FOLHA DE ALUMINIO C/10UN WYDA",
     "categoria": "Embalagem",
     "preco": 14.0,
-    "estoque": 13.0
+    "estoque": 12.0
   },
   {
     "codigo": "660",
@@ -2349,7 +2349,7 @@
     "nome": "COPO DESCARTAVEL 180ML PS C/100UN GLIGHT",
     "categoria": "DESCARTAVEIS",
     "preco": 5.99,
-    "estoque": 84.0
+    "estoque": 72.0
   },
   {
     "codigo": "902",
@@ -2776,14 +2776,14 @@
     "nome": "SACO P/ LIXO PRETO P8 60L C/10UN",
     "categoria": "SACO LIXO",
     "preco": 8.99,
-    "estoque": 41.0
+    "estoque": 40.0
   },
   {
     "codigo": "1053",
     "nome": "SACOS P/LIXO 90X100 100L P8 C/10UN PRETO",
     "categoria": "SACO LIXO",
     "preco": 13.5,
-    "estoque": 44.0
+    "estoque": 40.0
   },
   {
     "codigo": "1055",
@@ -2804,7 +2804,7 @@
     "nome": "FITA ADESIVA 45MMX100M MARROM",
     "categoria": "PAPELARIA",
     "preco": 10.5,
-    "estoque": 71.0
+    "estoque": 70.0
   },
   {
     "codigo": "1060",
@@ -3301,7 +3301,7 @@
     "nome": "TOP LIXO PIA E BANHEIRO TUTTI-FRUITI C/80UN DIVA",
     "categoria": "SACO LIXO",
     "preco": 13.99,
-    "estoque": 22.0
+    "estoque": 20.0
   },
   {
     "codigo": "1316",
@@ -3763,7 +3763,7 @@
     "nome": "GARRAFA PE QUADRADA 200ML C/10UN MALUGER",
     "categoria": "Embalagem",
     "preco": 8.99,
-    "estoque": 35.0
+    "estoque": 34.0
   },
   {
     "codigo": "1558",
@@ -4085,7 +4085,7 @@
     "nome": "TOP LIXO BRANCO 15L C/60UN PACK LIXO",
     "categoria": "SACO LIXO",
     "preco": 15.99,
-    "estoque": 25.0
+    "estoque": 24.0
   },
   {
     "codigo": "1854",
@@ -4435,7 +4435,7 @@
     "nome": "PLASTICO BOLHA 130X100M MICRA MN. PLAST",
     "categoria": "Embalagem",
     "preco": 100.0,
-    "estoque": 21.0
+    "estoque": 20.0
   },
   {
     "codigo": "2084",
@@ -4561,7 +4561,7 @@
     "nome": "PRENDEDOR DE METAL 5,5CM C/12UN HOME",
     "categoria": "UTENSILIOS",
     "preco": 8.99,
-    "estoque": 0.0
+    "estoque": -1.0
   },
   {
     "codigo": "2169",
@@ -4974,7 +4974,7 @@
     "nome": "LUVA LATEX G PLUS SANRO LARANJA P/LIMPEZA",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 11.99,
-    "estoque": -13.0
+    "estoque": -14.0
   },
   {
     "codigo": "2500",
@@ -5303,14 +5303,14 @@
     "nome": "COPO TERMICO 70ML C/25UN ULTRA",
     "categoria": "DESCARTAVEIS",
     "preco": 4.5,
-    "estoque": 26.0
+    "estoque": 24.0
   },
   {
     "codigo": "2832",
     "nome": "COPO ISOPOR 70ML C/20UN TOTAL PLAST",
     "categoria": "DESCARTAVEIS",
     "preco": 3.0,
-    "estoque": 118.0
+    "estoque": 117.0
   },
   {
     "codigo": "2833",
@@ -5597,7 +5597,7 @@
     "nome": "AÇUCAR EM SACHE 100X5G UNIAO",
     "categoria": "ALIMENTO/GENERO ALIMENTICIO",
     "preco": 10.0,
-    "estoque": 8.0
+    "estoque": 7.0
   },
   {
     "codigo": "2993",
@@ -6136,7 +6136,7 @@
     "nome": "PAPEL HIGIENICO FOFINHO FOLHA DUPLA 4X30M",
     "categoria": "PRODUTO DE HIGIENE",
     "preco": 8.99,
-    "estoque": 33.0
+    "estoque": 32.0
   },
   {
     "codigo": "3192",
@@ -6164,7 +6164,7 @@
     "nome": "PAPEL TOALHA SCALA PLUS C/120 TOALHAS C/2 ROLOS",
     "categoria": "PRODUTO DE HIGIENE",
     "preco": 8.5,
-    "estoque": 3.0
+    "estoque": 2.0
   },
   {
     "codigo": "3228",
@@ -6549,7 +6549,7 @@
     "nome": "CAIXA PARA ESFIHA N04 ESPECIAL (30X30X07) ALTA",
     "categoria": "Embalagem",
     "preco": 7.5,
-    "estoque": -2.0
+    "estoque": -6.0
   },
   {
     "codigo": "4111",
@@ -6731,7 +6731,7 @@
     "nome": "PANO MULTIUSO AZUL 28CMx50CM INOVEN",
     "categoria": "-",
     "preco": 17.0,
-    "estoque": 27.0
+    "estoque": 26.0
   },
   {
     "codigo": "5574",
@@ -7830,7 +7830,7 @@
     "nome": "SACOS PLASTICO PEBD 25X35X0,06 200G HELVIPACK",
     "categoria": "Embalagem",
     "preco": 10.0,
-    "estoque": -19.0
+    "estoque": -20.0
   },
   {
     "codigo": "10887",
@@ -7886,7 +7886,7 @@
     "nome": "LIMPA AZULEJO  SEM CABO SANCHES",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 8.5,
-    "estoque": -23.0
+    "estoque": -24.0
   },
   {
     "codigo": "11682",
@@ -8740,7 +8740,7 @@
     "nome": "CAKEBOARD BRANCO RETANGULAR 20x35CM",
     "categoria": "Embalagem",
     "preco": 5.5,
-    "estoque": 49.0
+    "estoque": 48.0
   },
   {
     "codigo": "79075",
@@ -9727,14 +9727,14 @@
     "nome": "AROMATIZADOR DE AMBIENTE CEREJA E AVELA 250ML ESSENCIAS",
     "categoria": "PRODUTO DE HIGIENE",
     "preco": 15.0,
-    "estoque": 9.0
+    "estoque": 8.0
   },
   {
     "codigo": "7893595170121",
     "nome": "AROMATIZADOR DE AMBIENTE OVALHO 250ML ESSENCIAS",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 15.0,
-    "estoque": 0.0
+    "estoque": -1.0
   },
   {
     "codigo": "7893595170128",
