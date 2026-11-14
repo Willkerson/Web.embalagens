@@ -515,7 +515,7 @@
     "nome": "ESPONJA MULTIUSO C/4UN ALKLIN",
     "categoria": "UTENSILIOS",
     "preco": 3.99,
-    "estoque": 315.0
+    "estoque": 314.0
   },
   {
     "codigo": "292",
@@ -893,7 +893,7 @@
     "nome": "GARFO SOBREMESA BRANCO C/50UN PRAFESTA",
     "categoria": "DESCARTAVEIS",
     "preco": 4.99,
-    "estoque": 46.0
+    "estoque": 45.0
   },
   {
     "codigo": "407",
@@ -2223,7 +2223,7 @@
     "nome": "DESINFETANTE LAVANDA BOUQUET 2L SUPREMA",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 7.25,
-    "estoque": 22.0
+    "estoque": 21.0
   },
   {
     "codigo": "860",
@@ -3581,7 +3581,7 @@
     "nome": "LUVA LATEX LONGA M DANNY LONGATEX",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 18.5,
-    "estoque": 4.0
+    "estoque": 3.0
   },
   {
     "codigo": "1464",
@@ -3749,7 +3749,7 @@
     "nome": "PRATO BRANCO RASO 15CM C/10UN TOTAL PLAST",
     "categoria": "DESCARTAVEIS",
     "preco": 2.5,
-    "estoque": 127.0
+    "estoque": 125.0
   },
   {
     "codigo": "1548",
@@ -4365,7 +4365,7 @@
     "nome": "LAVA ROUPAS EM PO 800G APYCE",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 5.9,
-    "estoque": -5.0
+    "estoque": -6.0
   },
   {
     "codigo": "2038",
@@ -5912,7 +5912,7 @@
     "nome": "DESINFETANTE AEROSOL CITRUS 360ML LYSOFORM",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 21.99,
-    "estoque": 12.0
+    "estoque": 11.0
   },
   {
     "codigo": "3127",
@@ -7179,7 +7179,7 @@
     "nome": "SACO ZIP N01 05x8,5CM  C/100UN ARMAZEM",
     "categoria": "Embalagem",
     "preco": 5.0,
-    "estoque": 7.0
+    "estoque": 6.0
   },
   {
     "codigo": "7893",
@@ -7214,7 +7214,7 @@
     "nome": "SACO P/LIXO PRETO 20L P5 C/10UN",
     "categoria": "SACO LIXO",
     "preco": 4.0,
-    "estoque": 56.0
+    "estoque": 55.0
   },
   {
     "codigo": "7899",
@@ -8670,7 +8670,7 @@
     "nome": "CAKEBOARD BRANCO 24CM",
     "categoria": "Embalagem",
     "preco": 4.5,
-    "estoque": 7.0
+    "estoque": 6.0
   },
   {
     "codigo": "79017",
@@ -9524,7 +9524,7 @@
     "nome": "LIMPEZA PROFUNDA GEL 750ML PATO",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 15.0,
-    "estoque": 7.0
+    "estoque": 6.0
   },
   {
     "codigo": "129106",
