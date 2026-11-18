@@ -200,7 +200,7 @@
     "nome": "RODO 40CM C/CABO ALKLIN",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 16.25,
-    "estoque": 36.0
+    "estoque": 35.0
   },
   {
     "codigo": "125",
@@ -760,7 +760,7 @@
     "nome": "PANO MULTIUSO AMARELO C/10UN ALKLIN",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 19.99,
-    "estoque": 38.0
+    "estoque": 34.0
   },
   {
     "codigo": "357",
@@ -823,7 +823,7 @@
     "nome": "LIMPEZA PESADA 500ML ORIG. VEJA",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 9.99,
-    "estoque": 14.0
+    "estoque": 13.0
   },
   {
     "codigo": "385",
@@ -837,7 +837,7 @@
     "nome": "PANO DE CHAO XADREZ 45CMX68CM SOUZA BR2",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 5.5,
-    "estoque": 180.0
+    "estoque": 175.0
   },
   {
     "codigo": "390",
@@ -851,7 +851,7 @@
     "nome": "PANO DE CHAO ALVEJADO CAIPIRA 45CMX68CM",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 5.5,
-    "estoque": 222.0
+    "estoque": 221.0
   },
   {
     "codigo": "398",
@@ -1698,7 +1698,7 @@
     "nome": "DESINFETANTE EUCALIPTO 5L SANOL",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 22.99,
-    "estoque": 5.0
+    "estoque": 4.0
   },
   {
     "codigo": "667",
@@ -1845,14 +1845,14 @@
     "nome": "DESENGORDURANTE 500ML LIMPEZA PESADA LIMAO SPRAY AZULIM",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 12.99,
-    "estoque": 10.0
+    "estoque": 8.0
   },
   {
     "codigo": "734",
     "nome": "DESENGORDURANTE 500ML LIMPEZA PESADA AZULIM START",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 7.99,
-    "estoque": 18.0
+    "estoque": 17.0
   },
   {
     "codigo": "738",
@@ -2349,7 +2349,7 @@
     "nome": "COPO DESCARTAVEL 180ML PS C/100UN GLIGHT",
     "categoria": "DESCARTAVEIS",
     "preco": 5.99,
-    "estoque": 71.0
+    "estoque": 70.0
   },
   {
     "codigo": "902",
@@ -2783,7 +2783,7 @@
     "nome": "SACOS P/LIXO 90X100 100L P8 C/10UN PRETO",
     "categoria": "SACO LIXO",
     "preco": 13.5,
-    "estoque": 35.0
+    "estoque": 32.0
   },
   {
     "codigo": "1055",
@@ -2965,7 +2965,7 @@
     "nome": "SUPORTE LT C/VELCRO SANCHES",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 20.0,
-    "estoque": -2.0
+    "estoque": -3.0
   },
   {
     "codigo": "1148",
@@ -2986,7 +2986,7 @@
     "nome": "FIBRA BRANCA LIMP. LEVE BETTANIN",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 3.99,
-    "estoque": 30.0
+    "estoque": 28.0
   },
   {
     "codigo": "1151",
@@ -3105,7 +3105,7 @@
     "nome": "SACO P/ LIXO PRETO P6 40L C/50UN",
     "categoria": "SACO LIXO",
     "preco": 25.0,
-    "estoque": 18.0
+    "estoque": 17.0
   },
   {
     "codigo": "1188",
@@ -3147,7 +3147,7 @@
     "nome": "BOBINA PICOTADA 2KG C/500UN P/ ALIMENTOS 20X28CM EXTRUSA",
     "categoria": "Embalagem",
     "preco": 19.0,
-    "estoque": 23.0
+    "estoque": 22.0
   },
   {
     "codigo": "1211",
@@ -3728,7 +3728,7 @@
     "nome": "AGUA SANITARIA 5L SUPREMA",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 17.99,
-    "estoque": 16.0
+    "estoque": 15.0
   },
   {
     "codigo": "1542",
@@ -3896,14 +3896,14 @@
     "nome": "SACOLA VERDE REFORÇADA 1KG 45x60",
     "categoria": "Embalagem",
     "preco": 19.99,
-    "estoque": 7.0
+    "estoque": 6.0
   },
   {
     "codigo": "1713",
     "nome": "SACOLA VERDE REFORÇADA 1KG 50X70",
     "categoria": "Embalagem",
     "preco": 16.99,
-    "estoque": 4.0
+    "estoque": 3.0
   },
   {
     "codigo": "1714",
@@ -3959,7 +3959,7 @@
     "nome": "CANUDO BIO FLEXIVEL 5,8MM C/100UN EM SACHE COPAC",
     "categoria": "DESCARTAVEIS",
     "preco": 10.99,
-    "estoque": 5.0
+    "estoque": 4.0
   },
   {
     "codigo": "1771",
@@ -4267,7 +4267,7 @@
     "nome": "TOALHA INTERFOLHA LUXO 20X21CM C/1000UN WHITE PAPER",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 24.99,
-    "estoque": 39.0
+    "estoque": 38.0
   },
   {
     "codigo": "1981",
@@ -4505,7 +4505,7 @@
     "nome": "SACOLA BRANCA 1KG 40x50",
     "categoria": "SACO LIXO",
     "preco": 20.5,
-    "estoque": 8.0
+    "estoque": 7.0
   },
   {
     "codigo": "2104",
@@ -5198,7 +5198,7 @@
     "nome": "GARFO REFEICAO BRANCO C/50UN ELITE",
     "categoria": "DESCARTAVEIS",
     "preco": 8.99,
-    "estoque": 45.0
+    "estoque": 43.0
   },
   {
     "codigo": "2789",
@@ -5758,7 +5758,7 @@
     "nome": "POTE E TAMPA RET.350ML C/24UN GOUR MAX",
     "categoria": "DESCARTAVEIS",
     "preco": 27.99,
-    "estoque": 32.0
+    "estoque": 31.0
   },
   {
     "codigo": "3060",
@@ -5821,7 +5821,7 @@
     "nome": "POTE E TAMPA RET.500ML C/24UN GOUR MAX",
     "categoria": "DESCARTAVEIS",
     "preco": 29.99,
-    "estoque": 26.0
+    "estoque": 24.0
   },
   {
     "codigo": "3106",
@@ -6787,7 +6787,7 @@
     "nome": "B120 FOLHA D ALUMINIO 500ML C/10UN PRAV.",
     "categoria": "Embalagem",
     "preco": 9.5,
-    "estoque": -1.0
+    "estoque": -4.0
   },
   {
     "codigo": "6017",
@@ -6836,7 +6836,7 @@
     "nome": "FOLHA DE ALUMINIO  7,5MX30CM P/VIAGEM",
     "categoria": "DESCARTAVEIS",
     "preco": 6.99,
-    "estoque": 13.0
+    "estoque": 12.0
   },
   {
     "codigo": "6398",
@@ -7158,7 +7158,7 @@
     "nome": "PRATO RASO 20,8cm TOTAL PLAST",
     "categoria": "Embalagem",
     "preco": 3.99,
-    "estoque": 78.0
+    "estoque": 71.0
   },
   {
     "codigo": "7887",
@@ -8229,7 +8229,7 @@
     "nome": "DETERGENTE YPÊ CLEAR 500ML",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 4.5,
-    "estoque": 23.0
+    "estoque": 22.0
   },
   {
     "codigo": "31651",
@@ -8467,7 +8467,7 @@
     "nome": "TIRA LIMO C/ CLORO ATIVO AZULIM 500ML",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 5.99,
-    "estoque": 19.0
+    "estoque": 17.0
   },
   {
     "codigo": "31981",
@@ -8502,7 +8502,7 @@
     "nome": "LUVA LATEX M TOP SANRO VERDE",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 14.99,
-    "estoque": 4.0
+    "estoque": 3.0
   },
   {
     "codigo": "37335",
@@ -9650,6 +9650,13 @@
     "nome": "SACO SOS PARDO GG C/50UN 30X20X36 PLUMA",
     "categoria": "Embalagem",
     "preco": 69.5,
+    "estoque": 0.0
+  },
+  {
+    "codigo": "7514_1466",
+    "nome": "Cópia de MARMITEX COPOBRAS 500ML C/10 UNIDADES",
+    "categoria": "-",
+    "preco": 5.0,
     "estoque": 0.0
   },
   {
