@@ -585,7 +585,7 @@
     "nome": "PANO PANOTEK  REUTILIZAVEL C/40UN ALKIN",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 12.0,
-    "estoque": 36.0
+    "estoque": 35.0
   },
   {
     "codigo": "312",
@@ -711,7 +711,7 @@
     "nome": "PLASTICO BOLHA 65MX50M MICRA 20 MN.PLAST",
     "categoria": "Embalagem",
     "preco": 41.99,
-    "estoque": 1.0
+    "estoque": 0.0
   },
   {
     "codigo": "346",
@@ -760,7 +760,7 @@
     "nome": "PANO MULTIUSO AMARELO C/10UN ALKLIN",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 19.99,
-    "estoque": 31.0
+    "estoque": 27.0
   },
   {
     "codigo": "357",
@@ -851,7 +851,7 @@
     "nome": "PANO DE CHAO ALVEJADO CAIPIRA 45CMX68CM",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 5.5,
-    "estoque": 211.0
+    "estoque": 206.0
   },
   {
     "codigo": "398",
@@ -1124,7 +1124,7 @@
     "nome": "COLHER SOBREMESA CRISTAL C/50UN ELITE",
     "categoria": "DESCARTAVEIS",
     "preco": 3.99,
-    "estoque": 27.0
+    "estoque": 26.0
   },
   {
     "codigo": "459",
@@ -1208,7 +1208,7 @@
     "nome": "SACO P/PRESENTE 23X18CM",
     "categoria": "Embalagem",
     "preco": 5.99,
-    "estoque": 0.0
+    "estoque": -1.0
   },
   {
     "codigo": "507",
@@ -1824,7 +1824,7 @@
     "nome": "PAPEL HIGIENICO FOLHA DUPLA DELICATTO C/12UN 10X20M",
     "categoria": "PRODUTO DE HIGIENE",
     "preco": 15.99,
-    "estoque": 6.0
+    "estoque": 5.0
   },
   {
     "codigo": "726",
@@ -1908,7 +1908,7 @@
     "nome": "LUSTRA MOVEIS 200ML LAVANDA AZULIM",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 9.0,
-    "estoque": 3.0
+    "estoque": 27.0
   },
   {
     "codigo": "757",
@@ -1936,14 +1936,14 @@
     "nome": "LIMPADOR MULTIUSO AÇAO CLAREADORA 500ML AZULIM",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 4.99,
-    "estoque": -1.0
+    "estoque": 23.0
   },
   {
     "codigo": "763",
     "nome": "MULTIUSO ORIGINAL AZULIM  500ML START",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 4.99,
-    "estoque": 15.0
+    "estoque": 39.0
   },
   {
     "codigo": "764",
@@ -1978,7 +1978,7 @@
     "nome": "TIRA LIMO SPRAY 500ML AZULIM START",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 11.99,
-    "estoque": 14.0
+    "estoque": 26.0
   },
   {
     "codigo": "780",
@@ -2244,7 +2244,7 @@
     "nome": "COPO DE PAPEL 200ML C/50UN SW7-WH",
     "categoria": "DESCARTAVEIS",
     "preco": 14.99,
-    "estoque": 18.0
+    "estoque": 16.0
   },
   {
     "codigo": "866",
@@ -2762,7 +2762,7 @@
     "nome": "SACO P/ LIXO PRETO 90X100 100L C/50UN",
     "categoria": "SACO LIXO",
     "preco": 57.5,
-    "estoque": 103.0
+    "estoque": 102.0
   },
   {
     "codigo": "1049",
@@ -2776,7 +2776,7 @@
     "nome": "SACO P/ LIXO PRETO P6 40L C/10UN",
     "categoria": "SACO LIXO",
     "preco": 5.99,
-    "estoque": 51.0
+    "estoque": 50.0
   },
   {
     "codigo": "1052",
@@ -2790,7 +2790,7 @@
     "nome": "SACOS P/LIXO 90X100 100L P8 C/10UN PRETO",
     "categoria": "SACO LIXO",
     "preco": 13.5,
-    "estoque": 277.0
+    "estoque": 275.0
   },
   {
     "codigo": "1055",
@@ -2811,7 +2811,7 @@
     "nome": "FITA ADESIVA 45MMX100M MARROM",
     "categoria": "PAPELARIA",
     "preco": 10.5,
-    "estoque": 70.0
+    "estoque": 69.0
   },
   {
     "codigo": "1060",
@@ -2993,7 +2993,7 @@
     "nome": "FIBRA BRANCA LIMP. LEVE BETTANIN",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 3.99,
-    "estoque": 26.0
+    "estoque": 126.0
   },
   {
     "codigo": "1151",
@@ -3042,7 +3042,7 @@
     "nome": "FITA ADESIVA POLIPROPILENO TRANSPARENTE 48MMX40M TECTAPE",
     "categoria": "PAPELARIA",
     "preco": 4.99,
-    "estoque": 70.0
+    "estoque": 69.0
   },
   {
     "codigo": "1168",
@@ -3077,7 +3077,7 @@
     "nome": "MARMITEX DE ISOPOR N8 750ML  C/10UN TOTALPLAST",
     "categoria": "DESCARTAVEIS",
     "preco": 7.0,
-    "estoque": 89.0
+    "estoque": 88.0
   },
   {
     "codigo": "1182",
@@ -3385,7 +3385,7 @@
     "nome": "TOALHA INTERFOLHA (OURO) CELULOSE ISAPEL C/1000UN",
     "categoria": "PRODUTO DE HIGIENE",
     "preco": 23.0,
-    "estoque": 118.0
+    "estoque": 114.0
   },
   {
     "codigo": "1341",
@@ -3455,7 +3455,7 @@
     "nome": "PANO MULTIUSO AMARELO C/1UN ALKLIN",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 1.99,
-    "estoque": -24.0
+    "estoque": -27.0
   },
   {
     "codigo": "1360",
@@ -3503,7 +3503,7 @@
     "codigo": "1382",
     "nome": "LIMPA PISO PORCELANATO 750ML  LAVANDA START",
     "categoria": "PRODUTO DE LIMPEZA",
-    "preco": 11.99,
+    "preco": 10.5,
     "estoque": 21.0
   },
   {
@@ -3623,14 +3623,14 @@
     "nome": "D50MA TORTA ALTA 1,7KG DONA RITA",
     "categoria": "Embalagem",
     "preco": 3.5,
-    "estoque": 39.0
+    "estoque": 34.0
   },
   {
     "codigo": "1475",
     "nome": "G56MA BOLO ALTA  MILLENIUM GALVONOTEK",
     "categoria": "DESCARTAVEIS",
     "preco": 7.0,
-    "estoque": 148.0
+    "estoque": 147.0
   },
   {
     "codigo": "1476",
@@ -4015,7 +4015,7 @@
     "nome": "COPO 300ML CRISTAL C/10UN ELITE",
     "categoria": "DESCARTAVEIS",
     "preco": 7.5,
-    "estoque": 10.0
+    "estoque": 9.0
   },
   {
     "codigo": "1779",
@@ -4099,7 +4099,7 @@
     "nome": "PEDRA SANITARIA 25G MISTA AZULIM",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 2.99,
-    "estoque": 38.0
+    "estoque": 86.0
   },
   {
     "codigo": "1842",
@@ -4155,14 +4155,14 @@
     "nome": "LIMPA CERAMICAS E AZULEJOS 2L AZULIM START",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 17.99,
-    "estoque": 3.0
+    "estoque": 15.0
   },
   {
     "codigo": "1900",
     "nome": "ESCOVAO C/CABO ALKLIN",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 20.0,
-    "estoque": 14.0
+    "estoque": 13.0
   },
   {
     "codigo": "1901",
@@ -4379,7 +4379,7 @@
     "nome": "PILHA AA C/4UN ALFACELL",
     "categoria": "UTENSILIOS",
     "preco": 6.99,
-    "estoque": 3.0
+    "estoque": 2.0
   },
   {
     "codigo": "2032",
@@ -4421,7 +4421,7 @@
     "nome": "TOUCAS DESCARTAVEIS C/100UN 45X50CM BOMPACK",
     "categoria": "DESCARTAVEIS",
     "preco": 13.5,
-    "estoque": 4.0
+    "estoque": 34.0
   },
   {
     "codigo": "2064",
@@ -4505,7 +4505,7 @@
     "nome": "FOLHA DE ALUMINIO 30X4 PRAVIAGEM",
     "categoria": "Embalagem",
     "preco": 4.5,
-    "estoque": 40.0
+    "estoque": 39.0
   },
   {
     "codigo": "2094",
@@ -4855,7 +4855,7 @@
     "nome": "BLOCO  PARA CAIXA  ACOPLADA FLORAL/LAV. 50G AZULIM",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 12.5,
-    "estoque": -1.0
+    "estoque": 24.0
   },
   {
     "codigo": "2382",
@@ -4960,7 +4960,7 @@
     "nome": "LIMPA PISOS LAMINADOS LAVANDA 750ML AZULIM START",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 10.5,
-    "estoque": 2.0
+    "estoque": 17.0
   },
   {
     "codigo": "2454",
@@ -5380,7 +5380,7 @@
     "nome": "D650 DOCE QUADRADO 200ML C/10UN CRISTAL",
     "categoria": "DESCARTAVEIS",
     "preco": 5.0,
-    "estoque": 174.0
+    "estoque": 173.0
   },
   {
     "codigo": "2837",
@@ -5625,7 +5625,7 @@
     "nome": "DETERGENTE NEUTRO 5L DVISAO",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 25.99,
-    "estoque": 5.0
+    "estoque": 16.0
   },
   {
     "codigo": "2985",
@@ -5744,7 +5744,7 @@
     "nome": "CERA AUTO 750ML BRILHO INCOLOR POLYLAR START",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 18.99,
-    "estoque": 0.0
+    "estoque": 12.0
   },
   {
     "codigo": "3034",
@@ -5975,7 +5975,7 @@
     "nome": "G687 POTE 180ML TAMPA BOLHA CRISTAL  PET GALVONOTEK 50 UN",
     "categoria": "DESCARTAVEIS",
     "preco": 45.0,
-    "estoque": -2.0
+    "estoque": -3.0
   },
   {
     "codigo": "3128",
@@ -6220,7 +6220,7 @@
     "nome": "PAPEL TOALHA SCALA PLUS C/120 TOALHAS C/2 ROLOS",
     "categoria": "PRODUTO DE HIGIENE",
     "preco": 8.5,
-    "estoque": 17.0
+    "estoque": 113.0
   },
   {
     "codigo": "3228",
@@ -6276,7 +6276,7 @@
     "nome": "PERCABONATO  DE SODIO 1KG DENSO",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 10.99,
-    "estoque": -25.0
+    "estoque": -26.0
   },
   {
     "codigo": "3420",
@@ -6353,7 +6353,7 @@
     "nome": "LIMPADOR CONCENTRADO CHA BRANCA COALA",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 15.5,
-    "estoque": -1.0
+    "estoque": -2.0
   },
   {
     "codigo": "3730",
@@ -6976,7 +6976,7 @@
     "nome": "ALCOOL 70% LIQUIDO 5L  HORUS",
     "categoria": "PRODUTO DE HIGIENE",
     "preco": 44.99,
-    "estoque": 5.0
+    "estoque": 17.0
   },
   {
     "codigo": "6666",
@@ -7109,7 +7109,7 @@
     "nome": "SABONETE LIQ. FRAGRANCIA ALGAS MARINHAS 500ML  LAFEH",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 8.99,
-    "estoque": 12.0
+    "estoque": 11.0
   },
   {
     "codigo": "7322",
@@ -7375,7 +7375,7 @@
     "nome": "PALITOS PARA PICOLÉ BAMBU C/ 100 UNIDADES",
     "categoria": "DESCARTAVEIS",
     "preco": 7.99,
-    "estoque": 1.0
+    "estoque": 31.0
   },
   {
     "codigo": "7911",
@@ -7949,7 +7949,7 @@
     "nome": "POTE QUADRADO 250ML C/20UN PRAFESTA",
     "categoria": "DESCARTAVEIS",
     "preco": 21.0,
-    "estoque": 11.0
+    "estoque": 8.0
   },
   {
     "codigo": "11180",
@@ -8522,8 +8522,8 @@
     "codigo": "31682",
     "nome": "NEUTRALIZADOR DE ODORES ONLY LAVANDA 500ML",
     "categoria": "PRODUTO DE LIMPEZA",
-    "preco": 23.0,
-    "estoque": 0.0
+    "preco": 23.5,
+    "estoque": 24.0
   },
   {
     "codigo": "31683",
@@ -8537,14 +8537,14 @@
     "nome": "SAPONACEO CREMOSO AZULIM 300ML",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 13.5,
-    "estoque": 4.0
+    "estoque": 16.0
   },
   {
     "codigo": "31685",
     "nome": "SODA CAUSTICA VOREL 500G AZULIM START",
     "categoria": "PRODUTO DE LIMPEZA",
     "preco": 21.99,
-    "estoque": 8.0
+    "estoque": 20.0
   },
   {
     "codigo": "31686",
@@ -9090,7 +9090,7 @@
     "nome": "GANCHOS C/5UN",
     "categoria": "UTENSILIOS",
     "preco": 8.0,
-    "estoque": -8.0
+    "estoque": -9.0
   },
   {
     "codigo": "129024",
